@@ -208,7 +208,7 @@ function rollDForm(dForm) {
 	dice=0
 	sides=0
 	addOn=0
-	
+
 	if (dIndex==0) {
 		dice=1
 	} else {
@@ -473,7 +473,8 @@ function _getSaveText() {
 	toSave+=varName+".setHd("+this.hd+")<br>"
 	toSave+=varName+".setAC("+this.ac+")<br>"
 	toSave+=varName+".setMaxHp("+this.maxHp+")<br>"
-	toSave+=varName+".setCurHp("+this.curHp+")<br>"
+	toSave+=varName+".setMiniature('"+this.miniature+"')<br>"
+		toSave+=varName+".setCurHp("+this.curHp+")<br>"
 	for (var i=0; i<this.rolls.length; i++) {
 		toSave+=varName+".addRoll('"+this.rollNames[i]+"', '"+this.rolls[i]+"')<br>"
 	}
@@ -573,7 +574,7 @@ function newCharacter(type) {
 <a href="https://archive.org/details/tsr02100addplayershandbook/mode/1up" target=_blank>The Players Handbook</a>
 <a href="https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/mode/1up" target=_blank>The Dungeon Masters Guide</a>Attack Matrixes on Page 75-76
 <a href="https://archive.org/details/tsr02009addmonstermanual/mode/2up" target=_blank>The Monster Manual</a>
-<a href="https://archive.org/details/tsr09045addthesecretofbonehill" target=_blank>Dungeon Module 1 The Secret of Bone Hill</a> 
+<a href="https://archive.org/details/tsr09045addthesecretofbonehill" target=_blank>Dungeon Module 1 The Secret of Bone Hill</a>
 <a href="https://www.gmbinder.com/share/-LAYmTPaah5wk8iHKw2a" target=_blank>Dungeon Module 1 The Secret of Bone Hill 4th Edition Tiles</a></td></tr></table>
 
 </body>
@@ -621,3 +622,6 @@ function dragElement(elmnt) {
 }
 </script>
 </html>
+
+    © 2021 GitHub, Inc.
+
