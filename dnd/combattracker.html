@@ -62,14 +62,6 @@ function AGEElement() {
 }
 
 function AGEBox(color, code, textColorCode, width, height) {
-	this.tl="images/boxes/"+color+"/tl.png"
-	this.t="images/boxes/"+color+"/t.png"
-	this.tr="images/boxes/"+color+"/tr.png"
-	this.r="images/boxes/"+color+"/r.png"
-	this.br="images/boxes/"+color+"/br.png"
-	this.b="images/boxes/"+color+"/b.png"
-	this.bl="images/boxes/"+color+"/bl.png"
-	this.l="images/boxes/"+color+"/l.png"
 	this.borderX=10
 	this.borderY=10
 	this.code=code
@@ -126,27 +118,8 @@ menuWidth=300
 pcBox=new AGEBox("blue", "#1111AA", "#FFF", characterBoxWidth, characterBoxHeight)
 pcMenu=new AGEBox("blue", "#1111AA", "#FFF", menuWidth)
 
-function addRollPrompt(x) {
-	rollName=prompt("What kind of roll would you like to give "+characters[x].name+"?")
-	if (rollName!=null) {
-		roll=prompt("How should "+characters[x].name+"'s "+rollName+" be rolled? (in the format XdY+Z)")
-		result=dFormParse(roll)
-		if (result==null) {
-			while(roll!=null) {
-				roll=prompt(roll+" is invalid. How should "+characters[x].name+"'s "+rollName+" be rolled? (in the format XdY+Z)")
-				result=dFormParse(roll)
-				if (result!=null) {
-					characters[x].addRoll(rollName, result)
-					break
-				}
-			}
-		} else {
-			characters[x].addRoll(rollName, result)
-		}
-	}
-}
-
-function _ref() {
+function _ref()
+{
 boxContents="<img src="+this.miniature+">"
 boxContents+="<table><tr><td>"+this.name+"<input type=button onClick='toggleMenu("+this.index+")' value=Menu>"
 boxContents+="</td></tr><tr><td>HP: "+this.curHp+"/"+this.maxHp
@@ -157,14 +130,14 @@ this.box.setContents(boxContents)
 
 menuContents="<div id=footer><table><tr><td>"
 menuContents+="</td></tr><tr><td><input onclick='characters["+this.index+"].save()' type=button value='Save this character?'>"
-	if (this.rolls.length==0) {
-		menuContents+="&nbsp;&nbsp;&nbsp;&nbsp;<i>None listed</i><br>"
-	} else {
-		for (var i=0; i<this.rolls.length; i++) {
-			menuContents+="<input type=button onclick='makeRoll("+this.index+", "+i+")' value='Roll?'> "+this.rollNames[i]+": "+this.rolls[i]+""
-			menuContents+="<input type=button onclick='deleteRollPrompt("+this.index+", "+i+")' value='X'>"
-		}
-	}
+if (this.rolls.length==0){menuContents+="&nbsp;&nbsp;&nbsp;&nbsp;<i>None listed</i><br>"
+} else {
+for (var i=0; i<this.rolls.length; i++)
+{
+menuContents+="<input type=button onclick='makeRoll("+this.index+", "+i+")' value='Roll?'> "+this.rollNames[i]+": "+this.rolls[i]+""
+menuContents+="<input type=button onclick='deleteRollPrompt("+this.index+", "+i+")' value='X'>"
+}
+}
 menuContents+="<input type=button onclick='addRollPrompt("+this.index+")' value='Add a custom roll?'>"
 
 menuContents+="<input  onclick='askInit("+this.index+")' type=button value='Roll this initiative?'>"
@@ -180,32 +153,6 @@ menuContents+="<lable>Miniature</lable><input maxlength=25 onchange='characters[
 menuContents+="<input onclick='removeChar("+this.index+")' type=button value='Delete this character?'></td></tr></div>"
 
 this.menu.setContents(menuContents)
-}
-
-function add(character)
-{
-x=characters.length;
-character.setIndex(x)
-characters[x]=character
-characters[x].refresh()
-characters[x].show()
-SET_DHTML(character.box.elementId)
-}
-
-function removeChar(x)
-{
-if (confirm("Are you sure you want to delete "+characters[x].name+"? This cannot be undone!"))
-{
-for (var i=x+1; i<characters.length; i++)
-{
-characters[i].setIndex(i-1)
-alert((i-1)+" == "+characters[i].index)
-characters[i].refresh()
-}
-characters[x].box.hide()
-characters[x].menu.hide()
-characters.splice(x, 1)
-}
 }
 
 function askInit(x){initRoll=characters[x].rollInit();characters[x].setInit(initRoll)}
@@ -246,27 +193,72 @@ function _showBox(){this.box.show()}
 function _showMenu(){this.menu.show();this.menuShown=true}
 function _updateXY(){this.x=document.getElementById(this.box.elementId).style.left;this.y=document.getElementById(this.box.elementId).style.top}
 
-function _getSaveText(){this.updateXY();varName="pc";varName+=Math.ceil(Math.random()*10000)
-  toSave="\/\/"+this.name+"<br>"
-  toSave+=varName+"=new Character('"+this.name+"')<br>"
-if (!isNaN(this.init)){toSave+=varName+".setInit("+this.init+")<br>"}
-	toSave+=varName+".setInitBonus("+this.initBonus+")<br>"
-	toSave+=varName+".setHd("+this.hd+")<br>"
-	toSave+=varName+".setAC("+this.ac+")<br>"
-	toSave+=varName+".setMaxHp("+this.maxHp+")<br>"
-	toSave+=varName+".setMiniature('"+this.miniature+"')<br>"
-		toSave+=varName+".setCurHp("+this.curHp+")<br>"
-	for (var i=0; i<this.rolls.length; i++) {
-		toSave+=varName+".addRoll('"+this.rollNames[i]+"', '"+this.rolls[i]+"')<br>"
-	}
-	if (this.menuShown) {
-		toSave+=varName+".showMenu()<br>"
-	}
-	toSave+=varName+".putAt(\'"+this.x+"\', \'"+this.y+"\')<br>"
-	toSave+="add("+varName+")<br>"
-	toSave+="\/\/End of "+this.name
+function add(character)
+{
+x=characters.length;
+character.setIndex(x)
+characters[x]=character
+characters[x].refresh()
+characters[x].show()
+SET_DHTML(character.box.elementId)
+}
 
-	return toSave
+function removeChar(x)
+{
+if (confirm("Are you sure you want to delete "+characters[x].name+"? This cannot be undone!"))
+{
+for (var i=x+1; i<characters.length; i++)
+{
+characters[i].setIndex(i-1)
+alert((i-1)+" == "+characters[i].index)
+characters[i].refresh()
+}
+characters[x].box.hide()
+characters[x].menu.hide()
+characters.splice(x, 1)
+}
+}
+
+function addRollPrompt(x)
+{
+rollName=prompt("What kind of roll would you like to give "+characters[x].name+"?")
+if (rollName!=null) {
+roll=prompt("How should "+characters[x].name+"'s "+rollName+" be rolled? (in the format XdY+Z)")
+result=dFormParse(roll)
+if (result==null) {
+while(roll!=null) {
+roll=prompt(roll+" is invalid. How should "+characters[x].name+"'s "+rollName+" be rolled? (in the format XdY+Z)")
+result=dFormParse(roll)
+if (result!=null) {
+characters[x].addRoll(rollName, result)
+break
+}
+}
+} else {
+characters[x].addRoll(rollName, result)
+}
+}
+}
+
+function _getSaveText(){this.updateXY();varName="pc";varName+=Math.ceil(Math.random()*10000)
+toSave="\/\/"+this.name+"<br>"
+toSave+=varName+"=new Character('"+this.name+"')<br>"
+toSave+=varName+".setAC("+this.ac+")<br>"
+toSave+=varName+".setCurHp("+this.curHp+")<br>"
+if (!isNaN(this.init)){toSave+=varName+".setInit("+this.init+")<br>"}
+toSave+=varName+".setInitBonus("+this.initBonus+")<br>"
+toSave+=varName+".setHd("+this.hd+")<br>"
+toSave+=varName+".setMaxHp("+this.maxHp+")<br>"
+toSave+=varName+".setMiniature('"+this.miniature+"')<br>"
+for (var i=0; i<this.rolls.length; i++)
+{
+toSave+=varName+".addRoll('"+this.rollNames[i]+"', '"+this.rolls[i]+"')<br>"
+}
+if (this.menuShown){toSave+=varName+".showMenu()<br>"}
+toSave+=varName+".putAt(\'"+this.x+"\', \'"+this.y+"\')<br>"
+toSave+="add("+varName+")<br>"
+toSave+="\/\/End of "+this.name
+return toSave
 }
 
 function Character(name)
@@ -320,17 +312,19 @@ this.menu=new AGEElement()
 this.refresh()
 }
 
-function newCharacter(){
-	response=prompt("What is the new name?")
-	if (response!=null) {
-		x=characters.length
-		newChar=new Character(response)
-		newChar.setIndex(x)
-		newChar.refresh()
-		newChar.show()
-		characters[x]=newChar
-		ADD_DHTML(newChar.box.elementId)
-	}
+function newCharacter()
+{
+response=prompt("What is the new name?")
+if (response!=null)
+{
+x=characters.length
+newChar=new Character(response)
+newChar.setIndex(x)
+newChar.refresh()
+newChar.show()
+characters[x]=newChar
+ADD_DHTML(newChar.box.elementId)
+}
 }
 
 </script>
