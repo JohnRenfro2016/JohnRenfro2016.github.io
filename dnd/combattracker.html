@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html><head><title>Advanced Dungeons & Dragons 1st Edition Encounter Manager (Asmor, Ren, Zorn)</title>
+<html>
+<head>
+<title>Advanced Dungeons & Dragons 1st Edition Encounter Manager (Asmor, Ren, Zorn)</title>
 <style>
 body{background: url(Map.jpg) no-repeat}
 
 tr:nth-child(odd){background-color: #f1f1f1;}
 tr:nth-child(even){background-color: #d3d3d3;}
 
-#footer {
+#footer
+{
     position: fixed;
     bottom: 0;
     left: 0;
@@ -228,6 +231,8 @@ function rollDForm(dForm) {
 PC="pc"
 NPC="npc"
 
+characters=new Array()
+
 mainMenuWrapper=new AGEBox("white", "#ffffff", "#000000")
 
 mainMenu=new AGEElement
@@ -237,12 +242,11 @@ mainMenu.setBottomWrapper(mainMenuWrapper.bottomWrapper)
 
 mainMenuContents="<div id='myDiv'><table><tr><td><input type=button value='Roll all initiatives' onclick='rollInitiatives()'>"
 mainMenuContents+="<input type=button value='Save all characters and creatures?' onclick='saveAll()'><br>"
-mainMenuContents+="Create a new: <input type=button value=PC onclick='newCharacter(PC)'><input type=button value=NPC onclick='newCharacter(NPC)'></td></tr></table></div>"
+mainMenuContents+="<input type=button value='Create a new character or creature?' onclick='newCharacter(PC)'></td></tr></table></div>"
 mainMenu.setContents(mainMenuContents)
 
 mainMenu.show()
 
-function rollInitiatives(){for(i=0; i<characters.length; i++){initRoll=characters[i].rollInit();characters[i].setInit(initRoll)}}
 
 savePaneBox=new AGEBox("white", "#FFFFFF", "#000000")
 
@@ -275,34 +279,6 @@ npcBox=new AGEBox("red", "#AA1111", "#FFF", characterBoxWidth, characterBoxHeigh
 pcMenu=new AGEBox("blue", "#1111AA", "#FFF", menuWidth)
 npcMenu=new AGEBox("red", "#AA1111", "#FFF", menuWidth)
 
-
-characters=new Array()
-
-function add(character) {
-	x=characters.length;
-	character.setIndex(x)
-	characters[x]=character
-	characters[x].refresh()
-	characters[x].show()
-	SET_DHTML(character.box.elementId)
-
-}
-
-function removeChar(x) {
-	if (confirm("Are you sure you want to delete "+characters[x].name+"? This cannot be undone!")) {
-		for (var i=x+1; i<characters.length; i++) {
-			characters[i].setIndex(i-1)
-			alert((i-1)+" == "+characters[i].index)
-			characters[i].refresh()
-		}
-		characters[x].box.hide()
-		characters[x].menu.hide()
-		characters.splice(x, 1)
-	}
-}
-
-
-
 function addRollPrompt(x) {
 	rollName=prompt("What kind of roll would you like to give "+characters[x].name+"?")
 	if (rollName!=null) {
@@ -323,68 +299,6 @@ function addRollPrompt(x) {
 	}
 }
 
-function toggleMenu(x) {
-	if (characters[x].menuShown) {
-		characters[x].hideMenu()
-	} else {
-		characters[x].showMenu()
-	}
-}
-
-function makeRoll(x,i) {
-	toReturn="Rolled "+characters[x].rollNames[i]+" for "+characters[x].name+"\n  Result: "
-	toReturn+=rollDForm(characters[x].rolls[i])
-	alert(toReturn);
-this.refresh()
-}
-
-function deleteRollPrompt(x, i) {
-	characters[x].deleteRoll(i)
-}
-
-function _showBox() {
-	this.box.show()
-}
-
-function _hideBox() {
-	this.box.hide()
-}
-
-function _showMenu() {
-	this.menu.show()
-	this.menuShown=true
-}
-
-function _hideMenu() {
-	this.menu.hide()
-	this.menuShown=false
-}
-
-function _putCharAt(x, y) {
-	this.x=x
-	this.y=y
-	numX=x.substring(0,x.length-2)
-	menuX=(numX/1+characterBoxWidth)+"px"
-	this.box.putAt(x, y)
-	this.menu.putAt(menuX, y)
-}
-
-function _setIndex(x) {
-	this.index=x
-}
-
-function askInitBonus(x) {
-	response=prompt("What should "+characters[x].name+"'s new initiative modifier be?", characters[x].initBonus)
-	if (response!=null) {
-		characters[x].setInitBonus(response)
-	}
-}
-
-function askInit(x) {
-	initRoll=characters[x].rollInit()
-		characters[x].setInit(initRoll)
-}
-
 function _ref() {
 boxContents="<img src="+this.miniature+">"
 boxContents+="<table><tr><td>"+this.name+"<input type=button onClick='toggleMenu("+this.index+")' value=Menu>"
@@ -392,7 +306,7 @@ boxContents+="</td></tr><tr><td>HP: "+this.curHp+"/"+this.maxHp
 boxContents+="</td></tr><tr><td>AC: "+this.ac
 boxContents+="</td></tr><tr><td>Init: "+this.init
 
-	this.box.setContents(boxContents)
+this.box.setContents(boxContents)
 
 menuContents="<div id=footer><table><tr><td>"
 menuContents+="</td></tr><tr><td><input onclick='characters["+this.index+"].save()' type=button value='Save this character?'>"
@@ -418,57 +332,67 @@ menuContents+="<lable>Heal?</lable><input maxlength=3 onchange='characters["+thi
 menuContents+="<lable>Miniature</lable><input maxlength=25 onchange='characters["+this.index+"].setMiniature(this.value)' type=input size=25 value="+this.miniature+">"
 menuContents+="<input onclick='removeChar("+this.index+")' type=button value='Delete this character?'></td></tr></div>"
 
-	this.menu.setContents(menuContents)
+this.menu.setContents(menuContents)
 }
 
+function add(character)
+{
+x=characters.length;
+character.setIndex(x)
+characters[x]=character
+characters[x].refresh()
+characters[x].show()
+SET_DHTML(character.box.elementId)
+}
+
+function removeChar(x)
+{
+if (confirm("Are you sure you want to delete "+characters[x].name+"? This cannot be undone!"))
+{
+for (var i=x+1; i<characters.length; i++)
+{
+characters[i].setIndex(i-1)
+alert((i-1)+" == "+characters[i].index)
+characters[i].refresh()
+}
+characters[x].box.hide()
+characters[x].menu.hide()
+characters.splice(x, 1)
+}
+}
+
+function askInit(x){initRoll=characters[x].rollInit();characters[x].setInit(initRoll)}
+function deleteRollPrompt(x, i){characters[x].deleteRoll(i)}
+function makeRoll(x,i){toReturn="Rolled "+characters[x].rollNames[i]+" for "+characters[x].name+"\n  Result: ";toReturn+=rollDForm(characters[x].rolls[i]);alert(toReturn);this.refresh()}
+function rollInitiatives(){for(i=0; i<characters.length; i++){initRoll=characters[i].rollInit();characters[i].setInit(initRoll)}}
+function toggleMenu(x){if (characters[x].menuShown){characters[x].hideMenu()}else{characters[x].showMenu()}}
+
+function _addRoll(name, roll){x=this.rolls.length;this.rolls[x]=roll;this.rollNames[x]=name;this.refresh()}
+function _deleteRoll(i){this.rolls.splice(i,1);this.rollNames.splice(i,1);this.refresh()}
+function _hideBox(){this.box.hide()}
+function _putCharAt(x, y){this.x=x;this.y=y;numX=x.substring(0,x.length-2);menuX=(numX/1+characterBoxWidth)+"px";this.box.putAt(x, y);this.menu.putAt(menuX, y)}
+function _hideMenu(){this.menu.hide();this.menuShown=false}
+function _rollInit(){return d(20)+this.initBonus}
+function _save(){toSave=this.getSaveText();showSavePrompt(this.name, toSave)}
 function _setAC(x){this.ac=x;this.refresh()}
 function _setCurHp(x){this.curHp=x;this.refresh()}
 function _setDamage(x){this.damage=x;this.curHp=this.curHp-this.damage;this.damage=0;this.refresh()}
 function _setHealing(x){this.healing=x;this.curHp=this.curHp+this.healing;if(this.curHp>this.maxHp){this.curHp=this.maxHp};this.healing=0;this.refresh()}
 function _setHd(x){this.hd=x;this.refresh()}
+function _setIndex(x){this.index=x;}
 function _setInit(x){this.init=x;this.refresh()}
 function _setInitBonus(x){this.initBonus=x;this.refresh()}
 function _setMaxHp(x){this.maxHp=x;this.refresh()}
 function _setMiniature(x){this.miniature=x;this.refresh()}
 function _setName(x){this.name=x;this.refresh()}
+function _showBox(){this.box.show()}
+function _showMenu(){this.menu.show();this.menuShown=true}
+function _updateXY(){this.x=document.getElementById(this.box.elementId).style.left;this.y=document.getElementById(this.box.elementId).style.top}
 
-function _addRoll(name, roll) {
-	x=this.rolls.length
-	this.rolls[x]=roll
-	this.rollNames[x]=name
-	this.refresh()
-}
-
-function _deleteRoll(i) {
-	this.rolls.splice(i,1)
-	this.rollNames.splice(i,1)
-	this.refresh()
-}
-
-function _rollInit() {
-	return d(20)+this.initBonus
-}
-
-function _updateXY() {
-	this.x=document.getElementById(this.box.elementId).style.left
-	this.y=document.getElementById(this.box.elementId).style.top
-}
-
-function _getSaveText() {
-	this.updateXY()
-	varName=""
-	if (this.type=="pc") {
-		varName="pc"
-	} else {
-		varName="npc"
-	}
-	varName+=Math.ceil(Math.random()*10000)
-
-	toSave="\/\/"+this.name+"<br>"
-	toSave+=varName+"=new Character('"+this.name+"', '"+this.type+"')<br>"
-	if (!isNaN(this.init)) {
-		toSave+=varName+".setInit("+this.init+")<br>"
-	}
+function _getSaveText(){this.updateXY();varName="pc";varName+=Math.ceil(Math.random()*10000)
+  toSave="\/\/"+this.name+"<br>"
+  toSave+=varName+"=new Character('"+this.name+"', '"+this.type+"')<br>"
+if (!isNaN(this.init)){toSave+=varName+".setInit("+this.init+")<br>"}
 	toSave+=varName+".setInitBonus("+this.initBonus+")<br>"
 	toSave+=varName+".setHd("+this.hd+")<br>"
 	toSave+=varName+".setAC("+this.ac+")<br>"
@@ -487,74 +411,64 @@ function _getSaveText() {
 
 	return toSave
 }
-function _save() {
-	toSave=this.getSaveText()
-	showSavePrompt(this.name, toSave)
-}
 
-function Character(name, type) {
-	this.x=0
-	this.y=0
-	this.index=null
-	this.name=name
-	this.initBonus=0
-	this.init="Unrolled"
-	this.extraRolls=new Array(0)
-	this.maxHp=0
-	this.curHp=this.maxHp
+function Character(name, type)
+ {
+this.ac=0
+this.addRoll=_addRoll
+this.boxWrapper=pcBox
+this.curHp=this.maxHp
 this.damage=0
-this.hd=0
-	this.setHd=_setHd
+this.deleteRoll=_deleteRoll
+this.extraRolls=new Array(0)
+this.getSaveText=_getSaveText
 this.healing=0
+this.hide=_hide
+this.hideMenu=_hideMenu
+this.hd=0
+this.index=null
+this.init="Unrolled"
+this.initBonus=0
+this.maxHp=0
+this.menuShown=false
+this.menuWrapper=pcMenu
+this.miniature='monster.png'
+this.name=name
+this.putAt=_putCharAt
+this.refresh=_ref
+this.rollInit=_rollInit
+this.rollNames=new Array()
+this.rolls=new Array()
+this.save=_save
+this.setAC=_setAC
+this.setCurHp=_setCurHp
 this.setDamage=_setDamage
 this.setHealing=_setHealing
+this.setHd=_setHd
+this.setIndex=_setIndex
+this.setInit=_setInit
+this.setInitBonus=_setInitBonus
+this.setMaxHp=_setMaxHp
 this.setMiniature=_setMiniature
-this.miniature='monster.png'
-	this.ac=0
-	this.type=type
-	this.menuShown=false
-	if (type=="pc") {
-		this.boxWrapper=pcBox
-		this.menuWrapper=pcMenu
-	} else {
-		this.boxWrapper=npcBox
-		this.menuWrapper=npcMenu
-	}
-	this.rollNames=new Array()
-	this.rolls=new Array()
+this.setName=_setName
+this.show=_showBox
+this.showMenu=_showMenu
+this.type=type
+this.updateXY=_updateXY
+this.x=0
+this.y=0
 
-	this.box=new AGEElement()
-	this.box.setTopWrapper(this.boxWrapper.topWrapper)
-	this.box.setBottomWrapper(this.boxWrapper.bottomWrapper)
-	this.menu=new AGEElement()
-	this.menu.setTopWrapper(this.menuWrapper.topWrapper)
-	this.menu.setBottomWrapper(this.menuWrapper.bottomWrapper)
+this.box=new AGEElement()
+this.box.setTopWrapper(this.boxWrapper.topWrapper)
+this.box.setBottomWrapper(this.boxWrapper.bottomWrapper)
+this.menu=new AGEElement()
+this.menu.setTopWrapper(this.menuWrapper.topWrapper)
+this.menu.setBottomWrapper(this.menuWrapper.bottomWrapper)
 
-	this.setName=_setName
-	this.setInit=_setInit
-	this.rollInit=_rollInit
-	this.setInitBonus=_setInitBonus
-	this.setAC=_setAC
-	this.setMaxHp=_setMaxHp
-	this.setCurHp=_setCurHp
-	this.setIndex=_setIndex
-	this.show=_showBox
-	this.hide=_hide
-	this.showMenu=_showMenu
-	this.hideMenu=_hideMenu
-	this.addRoll=_addRoll
-	this.deleteRoll=_deleteRoll
-	this.rollInit=_rollInit
-	this.putAt=_putCharAt
-	this.updateXY=_updateXY
-	this.refresh=_ref
-	this.getSaveText=_getSaveText
-	this.save=_save
-
-	this.refresh()
+this.refresh()
 }
 
-function newCharacter(type) {
+function newCharacter(type){
 	response=prompt("What is the new "+type+"'s name?")
 	if (response!=null) {
 		x=characters.length
@@ -622,6 +536,3 @@ function dragElement(elmnt) {
 }
 </script>
 </html>
-
-    © 2021 GitHub, Inc.
-
