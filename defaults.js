@@ -1,0 +1,31 @@
+//Zombie
+npc7212=new Character('Zombie', 'npc')
+npc7212.setInit(3)
+npc7212.setInitBonus(0)
+npc7212.setHd(2)
+npc7212.setAC(8)
+npc7212.setMaxHp(7)
+npc7212.setMiniature('Zombie.png')
+npc7212.setCurHp(7)
+npc7212.addRoll('Claw or Bite', '1d8+0')
+npc7212.putAt('474px', '245px')
+add(npc7212)
+//End of Zombie
+
+//Quail
+pc6822=new Character('Quail', 'pc')
+pc6822.setInit(2)
+pc6822.setInitBonus(0)
+pc6822.setHd(4)
+pc6822.setAC(4)
+pc6822.setMaxHp(19)
+pc6822.setMiniature('Cleric.png')
+pc6822.setCurHp(19)
+pc6822.addRoll('Cure Light Wounds x2', '1d8+0')
+pc6822.addRoll('Hold Person x2', '1d20+0')
+pc6822.addRoll('Mace', '1d20+0')
+pc6822.addRoll('Mace+Spiritual Hammer Damage', '1d6+1')
+pc6822.showMenu()
+pc6822.putAt('269px', '289px')
+add(pc6822)
+//End of Quail

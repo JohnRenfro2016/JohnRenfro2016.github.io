@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html><head><title>Advanced Dungeons & Dragons 1st Edition Encounter Manager (Asmor, Ren, Zorn)</title>
+<style>
+body{background: url(Map.jpg) no-repeat}
+
+tr:nth-child(odd){background-color: #f1f1f1;}
+tr:nth-child(even){background-color: #d3d3d3;}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#myDiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+</style>
+
+<script src="wz_dragdrop.js">
+</script>
+<script>
+/*
+	Asmor's Graphics Engine v0.1
+	Copyright 2006 Ian Toltz
+	http://www.asmor.com
+	itoltz@gmail.com
+*/
+
+AGEVersion=0.1
+
+//This will be incremented each time a new element is created, to ensure unique names.
+currentElementId=0
+
+//Will serve as parent to all divs
+//Div won't "exist" unless something's inside it. A space doesn't work, so I used a <br>
+document.write("<div id='topDiv'><br></div>")
+
+function _setContents(newContents) {
+	this.contents=newContents
+	this.refresh()
+}
+
+function _refresh() {
+	document.getElementById(this.elementId).innerHTML = this.contents
+}
+
+
+function _show() {
+	document.getElementById(this.elementId).style.visibility="visible"
+}
+
+function _hide() {
+	document.getElementById(this.elementId).style.visibility="hidden"
+}
+
+function _putAt(x, y) {
+	this.x=x
+	this.y=y
+	document.getElementById(this.elementId).style.top=y
+	document.getElementById(this.elementId).style.left=x
+}
+
+function _setX(x) {
+	this.x=x
+	this.putAt(x, this.y)
+}
+
+function _setY(y) {
+	this.y=y
+	this.putAt(this.x, y)
+}
+
+function _setStyle(att, style) {
+	eval("document.getElementById(this.elementId).style."+att+"=\""+style+"\"")
+}
+
+function _setTopWrapper(bleh) {
+	this.topWrapper=bleh
+	this.refresh()
+}
+
+function _setBottomWrapper(bleh) {
+	this.bottomWrapper=bleh
+	this.refresh()
+}
+
+
+function AGEElement() {
+	this.elementId="AGE"+currentElementId
+	currentElementId++
+	this.x=0
+	this.y=0
+	this.topWrapper=""
+	this.bottomWrapper=""
+	this.contents=""
+
+	this.hide=_hide
+	this.putAt=_putAt
+	this.refresh=_refresh
+	this.setBottomWrapper=_setBottomWrapper
+	this.setContents=_setContents
+	this.setStyle=_setStyle
+	this.setTopWrapper=_setTopWrapper
+	this.setX=_setX
+	this.setY=_setY
+	this.show=_show
+
+	newDiv=document.createElement('div')
+	newDiv.setAttribute('id', this.elementId)
+	parent=document.getElementById("topDiv")
+	parent.appendChild(newDiv)
+	newDiv.style.position="absolute"
+	newDiv.style.top=this.y
+	newDiv.style.left=this.x
+
+	//Start off with it hidden
+	this.hide()
+}
+
+function AGEBox(color, code, textColorCode, width, height) {
+	this.tl="images/boxes/"+color+"/tl.png"
+	this.t="images/boxes/"+color+"/t.png"
+	this.tr="images/boxes/"+color+"/tr.png"
+	this.r="images/boxes/"+color+"/r.png"
+	this.br="images/boxes/"+color+"/br.png"
+	this.b="images/boxes/"+color+"/b.png"
+	this.bl="images/boxes/"+color+"/bl.png"
+	this.l="images/boxes/"+color+"/l.png"
+	this.borderX=10
+	this.borderY=10
+	this.code=code
+	this.textColorCode=textColorCode
+	if (height) {
+		this.height=height
+	} else {
+		this.height="*"
+	}
+	if (width) {
+		this.width=width
+	} else {
+		this.width="*"
+	}
+
+
+	this.topWrapper="<table height="+this.height+" width="+this.width+" cellpadding=0 cellspacing=0><tr height="+this.borderX+">"
+	this.topWrapper+="<td width="+this.borderX+"></td>"
+	this.topWrapper+="<td background="+this.t+"></td>"
+	this.topWrapper+="<td width="+this.borderX+"></td>"
+	this.topWrapper+="</tr><tr>"
+	this.topWrapper+="<td background='"+this.l+"'></td>"
+	this.topWrapper+="<td bgcolor='"+this.code+"' style='color:"+this.textColorCode+"' valign=top>"
+
+
+	this.bottomWrapper="</td>"
+	this.bottomWrapper+="<td background='"+this.r+"'></td>"
+	this.bottomWrapper+="</tr><tr height="+this.borderX+">"
+	this.bottomWrapper+="<td width="+this.borderX+"></td>"
+	this.bottomWrapper+="<td background="+this.b+"></td>"
+	this.bottomWrapper+="<td width="+this.borderX+"></td>"
+	this.bottomWrapper+="</tr></table>"
+}
+
+//Regular expression for something in the form XdY+/-Z, with X and +/-Z optional
+diceRegex=/[0-9]{0,}[d|D][0-9]{1,}([+|-][0-9]{1,}){0,1}/
+
+function d(sides) {
+	return Math.ceil(Math.random()*sides)
+}
+
+function XdY(dice, sides) {
+	results=0
+	for (i=0; i<dice; i++) {
+		results+=d(sides)
+	}
+	return results
+}
+
+function dFormParse(toCheck) {
+	match=toCheck.match(diceRegex)
+	if (match!=null) {
+		return match[0]
+	} else {
+		return null
+	}
+}
+
+function rollDForm(dForm) {
+	dForm=dForm.toLowerCase()
+	dIndex=dForm.indexOf("d")
+	signIndex=dForm.indexOf("+")
+	sign=true
+	positive=true
+	if (signIndex==-1) {
+		positive=false
+		signIndex=dForm.indexOf("-")
+	}
+	if (signIndex==-1) {
+		signIndex=dForm.length
+		sign=false
+	}
+	dice=0
+	sides=0
+	addOn=0
+
+	if (dIndex==0) {
+		dice=1
+	} else {
+		dice=dForm.substring(0,dIndex)
+	}
+	sides=dForm.substring(dIndex+1,signIndex)
+	if (sign) {
+		addOn=dForm.substring(signIndex+1)
+		if (!positive) {
+			addOn*=-1
+		}
+	}
+	result=XdY(dice, sides)+(addOn/1)
+	return result
+}
+
+PC="pc"
+NPC="npc"
+
+mainMenuWrapper=new AGEBox("white", "#ffffff", "#000000")
+
+mainMenu=new AGEElement
+mainMenu.putAt(0,0)
+mainMenu.setTopWrapper(mainMenuWrapper.topWrapper)
+mainMenu.setBottomWrapper(mainMenuWrapper.bottomWrapper)
+
+mainMenuContents="<div id='myDiv'><table><tr><td><input type=button value='Roll all initiatives' onclick='rollInitiatives()'>"
+mainMenuContents+="<input type=button value='Save all characters and creatures?' onclick='saveAll()'><br>"
+mainMenuContents+="Create a new: <input type=button value=PC onclick='newCharacter(PC)'><input type=button value=NPC onclick='newCharacter(NPC)'></td></tr></table></div>"
+mainMenu.setContents(mainMenuContents)
+
+mainMenu.show()
+
+function rollInitiatives(){for(i=0; i<characters.length; i++){initRoll=characters[i].rollInit();characters[i].setInit(initRoll)}}
+
+savePaneBox=new AGEBox("white", "#FFFFFF", "#000000")
+
+savePane=new AGEElement()
+savePane.setStyle("zIndex", "100")
+savePane.putAt(100,100)
+savePane.setTopWrapper(savePaneBox.topWrapper)
+savePane.setBottomWrapper(""+savePaneBox.bottomWrapper)
+
+function saveAll() {
+	globalSave=""
+	for (var i=0; i<characters.length; i++) {
+		globalSave+=characters[i].getSaveText()+"<br><br>"
+	}
+	showSavePrompt("all characters", globalSave)
+}
+
+function showSavePrompt(name, toSave) {
+	toSave="<table><tr><td>Copy the code below into defaults.js to save "+name+"<hr>"+toSave+"<hr><input type=button onclick='savePane.hide()' value=Close></td></tr></table>"
+	savePane.setContents(toSave)
+	savePane.show()
+}
+
+characterBoxWidth=150
+characterBoxHeight="*"
+menuWidth=300
+
+pcBox=new AGEBox("blue", "#1111AA", "#FFF", characterBoxWidth, characterBoxHeight)
+npcBox=new AGEBox("red", "#AA1111", "#FFF", characterBoxWidth, characterBoxHeight)
+pcMenu=new AGEBox("blue", "#1111AA", "#FFF", menuWidth)
+npcMenu=new AGEBox("red", "#AA1111", "#FFF", menuWidth)
+
+
+characters=new Array()
+
+function add(character) {
+	x=characters.length;
+	character.setIndex(x)
+	characters[x]=character
+	characters[x].refresh()
+	characters[x].show()
+	SET_DHTML(character.box.elementId)
+
+}
+
+function removeChar(x) {
+	if (confirm("Are you sure you want to delete "+characters[x].name+"? This cannot be undone!")) {
+		for (var i=x+1; i<characters.length; i++) {
+			characters[i].setIndex(i-1)
+			alert((i-1)+" == "+characters[i].index)
+			characters[i].refresh()
+		}
+		characters[x].box.hide()
+		characters[x].menu.hide()
+		characters.splice(x, 1)
+	}
+}
+
+
+
+function addRollPrompt(x) {
+	rollName=prompt("What kind of roll would you like to give "+characters[x].name+"?")
+	if (rollName!=null) {
+		roll=prompt("How should "+characters[x].name+"'s "+rollName+" be rolled? (in the format XdY+Z)")
+		result=dFormParse(roll)
+		if (result==null) {
+			while(roll!=null) {
+				roll=prompt(roll+" is invalid. How should "+characters[x].name+"'s "+rollName+" be rolled? (in the format XdY+Z)")
+				result=dFormParse(roll)
+				if (result!=null) {
+					characters[x].addRoll(rollName, result)
+					break
+				}
+			}
+		} else {
+			characters[x].addRoll(rollName, result)
+		}
+	}
+}
+
+function toggleMenu(x) {
+	if (characters[x].menuShown) {
+		characters[x].hideMenu()
+	} else {
+		characters[x].showMenu()
+	}
+}
+
+function makeRoll(x,i) {
+	toReturn="Rolled "+characters[x].rollNames[i]+" for "+characters[x].name+"\n  Result: "
+	toReturn+=rollDForm(characters[x].rolls[i])
+	alert(toReturn);
+this.refresh()
+}
+
+function deleteRollPrompt(x, i) {
+	characters[x].deleteRoll(i)
+}
+
+function _showBox() {
+	this.box.show()
+}
+
+function _hideBox() {
+	this.box.hide()
+}
+
+function _showMenu() {
+	this.menu.show()
+	this.menuShown=true
+}
+
+function _hideMenu() {
+	this.menu.hide()
+	this.menuShown=false
+}
+
+function _putCharAt(x, y) {
+	this.x=x
+	this.y=y
+	numX=x.substring(0,x.length-2)
+	menuX=(numX/1+characterBoxWidth)+"px"
+	this.box.putAt(x, y)
+	this.menu.putAt(menuX, y)
+}
+
+function _setIndex(x) {
+	this.index=x
+}
+
+function askInitBonus(x) {
+	response=prompt("What should "+characters[x].name+"'s new initiative modifier be?", characters[x].initBonus)
+	if (response!=null) {
+		characters[x].setInitBonus(response)
+	}
+}
+
+function askInit(x) {
+	initRoll=characters[x].rollInit()
+		characters[x].setInit(initRoll)
+}
+
+function _ref() {
+boxContents="<img src="+this.miniature+">"
+boxContents+="<table><tr><td>"+this.name+"<input type=button onClick='toggleMenu("+this.index+")' value=Menu>"
+boxContents+="</td></tr><tr><td>HP: "+this.curHp+"/"+this.maxHp
+boxContents+="</td></tr><tr><td>AC: "+this.ac
+boxContents+="</td></tr><tr><td>Init: "+this.init
+
+	this.box.setContents(boxContents)
+
+menuContents="<div id=footer><table><tr><td>"
+menuContents+="</td></tr><tr><td><input onclick='characters["+this.index+"].save()' type=button value='Save this character?'>"
+	if (this.rolls.length==0) {
+		menuContents+="&nbsp;&nbsp;&nbsp;&nbsp;<i>None listed</i><br>"
+	} else {
+		for (var i=0; i<this.rolls.length; i++) {
+			menuContents+="<input type=button onclick='makeRoll("+this.index+", "+i+")' value='Roll?'> "+this.rollNames[i]+": "+this.rolls[i]+""
+			menuContents+="<input type=button onclick='deleteRollPrompt("+this.index+", "+i+")' value='X'>"
+		}
+	}
+menuContents+="<input type=button onclick='addRollPrompt("+this.index+")' value='Add a custom roll?'>"
+
+menuContents+="<input  onclick='askInit("+this.index+")' type=button value='Roll this initiative?'>"
+menuContents+="<lable>initMod</lable><input maxlength=3 onchange='characters["+this.index+"].setInitBonus(this.value/1)' type=input size=3 value="+this.initBonus+">"
+menuContents+="<lable>Name</lable><input maxlength=25 onchange='characters["+this.index+"].setName(this.value)' type=input size=25 value="+this.name+">"
+menuContents+="<lable>HD/lvl</lable><input maxlength=2 onchange='characters["+this.index+"].setHd(this.value)' type=input size=2 value="+this.hd+">"
+menuContents+="<lable>AC</lable><input maxlength=2 onchange='characters["+this.index+"].setAC(this.value)' type=input size=2 value="+this.ac+">"
+menuContents+="<lable>curHP</lable><input maxlength=3 onchange='characters["+this.index+"].setCurHp(this.value)' type=input size=3 value="+this.curHp+">"
+menuContents+="<lable>MaxHP</lable><input maxlength=3 onchange='characters["+this.index+"].setMaxHp(this.value)' type=input size=3 value="+this.maxHp+">"
+menuContents+="<lable>Damage?</lable><input maxlength=3 onchange='characters["+this.index+"].setDamage(this.value/1)' type=input size=3 value="+this.damage+">"
+menuContents+="<lable>Heal?</lable><input maxlength=3 onchange='characters["+this.index+"].setHealing(this.value/1)' type=input size=3 value="+this.healing+">"
+menuContents+="<lable>Miniature</lable><input maxlength=25 onchange='characters["+this.index+"].setMiniature(this.value)' type=input size=25 value="+this.miniature+">"
+menuContents+="<input onclick='removeChar("+this.index+")' type=button value='Delete this character?'></td></tr></div>"
+
+	this.menu.setContents(menuContents)
+}
+
+function _setAC(x){this.ac=x;this.refresh()}
+function _setCurHp(x){this.curHp=x;this.refresh()}
+function _setDamage(x){this.damage=x;this.curHp=this.curHp-this.damage;this.damage=0;this.refresh()}
+function _setHealing(x){this.healing=x;this.curHp=this.curHp+this.healing;if(this.curHp>this.maxHp){this.curHp=this.maxHp};this.healing=0;this.refresh()}
+function _setHd(x){this.hd=x;this.refresh()}
+function _setInit(x){this.init=x;this.refresh()}
+function _setInitBonus(x){this.initBonus=x;this.refresh()}
+function _setMaxHp(x){this.maxHp=x;this.refresh()}
+function _setMiniature(x){this.miniature=x;this.refresh()}
+function _setName(x){this.name=x;this.refresh()}
+
+function _addRoll(name, roll) {
+	x=this.rolls.length
+	this.rolls[x]=roll
+	this.rollNames[x]=name
+	this.refresh()
+}
+
+function _deleteRoll(i) {
+	this.rolls.splice(i,1)
+	this.rollNames.splice(i,1)
+	this.refresh()
+}
+
+function _rollInit() {
+	return d(20)+this.initBonus
+}
+
+function _updateXY() {
+	this.x=document.getElementById(this.box.elementId).style.left
+	this.y=document.getElementById(this.box.elementId).style.top
+}
+
+function _getSaveText() {
+	this.updateXY()
+	varName=""
+	if (this.type=="pc") {
+		varName="pc"
+	} else {
+		varName="npc"
+	}
+	varName+=Math.ceil(Math.random()*10000)
+
+	toSave="\/\/"+this.name+"<br>"
+	toSave+=varName+"=new Character('"+this.name+"', '"+this.type+"')<br>"
+	if (!isNaN(this.init)) {
+		toSave+=varName+".setInit("+this.init+")<br>"
+	}
+	toSave+=varName+".setInitBonus("+this.initBonus+")<br>"
+	toSave+=varName+".setHd("+this.hd+")<br>"
+	toSave+=varName+".setAC("+this.ac+")<br>"
+	toSave+=varName+".setMaxHp("+this.maxHp+")<br>"
+	toSave+=varName+".setMiniature('"+this.miniature+"')<br>"
+		toSave+=varName+".setCurHp("+this.curHp+")<br>"
+	for (var i=0; i<this.rolls.length; i++) {
+		toSave+=varName+".addRoll('"+this.rollNames[i]+"', '"+this.rolls[i]+"')<br>"
+	}
+	if (this.menuShown) {
+		toSave+=varName+".showMenu()<br>"
+	}
+	toSave+=varName+".putAt(\'"+this.x+"\', \'"+this.y+"\')<br>"
+	toSave+="add("+varName+")<br>"
+	toSave+="\/\/End of "+this.name
+
+	return toSave
+}
+function _save() {
+	toSave=this.getSaveText()
+	showSavePrompt(this.name, toSave)
+}
+
+function Character(name, type) {
+	this.x=0
+	this.y=0
+	this.index=null
+	this.name=name
+	this.initBonus=0
+	this.init="Unrolled"
+	this.extraRolls=new Array(0)
+	this.maxHp=0
+	this.curHp=this.maxHp
+this.damage=0
+this.hd=0
+	this.setHd=_setHd
+this.healing=0
+this.setDamage=_setDamage
+this.setHealing=_setHealing
+this.setMiniature=_setMiniature
+this.miniature='monster.png'
+	this.ac=0
+	this.type=type
+	this.menuShown=false
+	if (type=="pc") {
+		this.boxWrapper=pcBox
+		this.menuWrapper=pcMenu
+	} else {
+		this.boxWrapper=npcBox
+		this.menuWrapper=npcMenu
+	}
+	this.rollNames=new Array()
+	this.rolls=new Array()
+
+	this.box=new AGEElement()
+	this.box.setTopWrapper(this.boxWrapper.topWrapper)
+	this.box.setBottomWrapper(this.boxWrapper.bottomWrapper)
+	this.menu=new AGEElement()
+	this.menu.setTopWrapper(this.menuWrapper.topWrapper)
+	this.menu.setBottomWrapper(this.menuWrapper.bottomWrapper)
+
+	this.setName=_setName
+	this.setInit=_setInit
+	this.rollInit=_rollInit
+	this.setInitBonus=_setInitBonus
+	this.setAC=_setAC
+	this.setMaxHp=_setMaxHp
+	this.setCurHp=_setCurHp
+	this.setIndex=_setIndex
+	this.show=_showBox
+	this.hide=_hide
+	this.showMenu=_showMenu
+	this.hideMenu=_hideMenu
+	this.addRoll=_addRoll
+	this.deleteRoll=_deleteRoll
+	this.rollInit=_rollInit
+	this.putAt=_putCharAt
+	this.updateXY=_updateXY
+	this.refresh=_ref
+	this.getSaveText=_getSaveText
+	this.save=_save
+
+	this.refresh()
+}
+
+function newCharacter(type) {
+	response=prompt("What is the new "+type+"'s name?")
+	if (response!=null) {
+		x=characters.length
+		newChar=new Character(response, type)
+		newChar.setIndex(x)
+		newChar.refresh()
+		newChar.show()
+		characters[x]=newChar
+		ADD_DHTML(newChar.box.elementId)
+	}
+}
+
+</script>
+<script src="defaults.js"></script>
+
+</head><body><table><tr><td>
+<a href="https://archive.org/details/tsr02100addplayershandbook/mode/1up" target=_blank>The Players Handbook</a>
+<a href="https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/mode/1up" target=_blank>The Dungeon Masters Guide</a>Attack Matrixes on Page 75-76
+<a href="https://archive.org/details/tsr02009addmonstermanual/mode/2up" target=_blank>The Monster Manual</a>
+<a href="https://archive.org/details/tsr09045addthesecretofbonehill" target=_blank>Dungeon Module 1 The Secret of Bone Hill</a>
+<a href="https://www.gmbinder.com/share/-LAYmTPaah5wk8iHKw2a" target=_blank>Dungeon Module 1 The Secret of Bone Hill 4th Edition Tiles</a></td></tr></table>
+
+</body>
+<script>
+
+dragElement(document.getElementById("myDiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+</html>
+
+    © 2021 GitHub, Inc.
+
