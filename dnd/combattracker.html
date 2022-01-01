@@ -29,88 +29,25 @@ tr:nth-child(even){background-color: #d3d3d3;}
 <script src="wz_dragdrop.js">
 </script>
 <script>
-/*
-	Asmor's Graphics Engine v0.1
-	Copyright 2006 Ian Toltz
-	http://www.asmor.com
-	itoltz@gmail.com
-*/
 
 AGEVersion=0.1
 
-//This will be incremented each time a new element is created, to ensure unique names.
 currentElementId=0
 
-//Will serve as parent to all divs
-//Div won't "exist" unless something's inside it. A space doesn't work, so I used a <br>
 document.write("<div id='topDiv'><br></div>")
-
-function _setContents(newContents) {
-	this.contents=newContents
-	this.refresh()
-}
-
-function _refresh() {
-	document.getElementById(this.elementId).innerHTML = this.contents
-}
-
-
-function _show() {
-	document.getElementById(this.elementId).style.visibility="visible"
-}
-
-function _hide() {
-	document.getElementById(this.elementId).style.visibility="hidden"
-}
-
-function _putAt(x, y) {
-	this.x=x
-	this.y=y
-	document.getElementById(this.elementId).style.top=y
-	document.getElementById(this.elementId).style.left=x
-}
-
-function _setX(x) {
-	this.x=x
-	this.putAt(x, this.y)
-}
-
-function _setY(y) {
-	this.y=y
-	this.putAt(this.x, y)
-}
-
-function _setStyle(att, style) {
-	eval("document.getElementById(this.elementId).style."+att+"=\""+style+"\"")
-}
-
-function _setTopWrapper(bleh) {
-	this.topWrapper=bleh
-	this.refresh()
-}
-
-function _setBottomWrapper(bleh) {
-	this.bottomWrapper=bleh
-	this.refresh()
-}
-
 
 function AGEElement() {
 	this.elementId="AGE"+currentElementId
 	currentElementId++
 	this.x=0
 	this.y=0
-	this.topWrapper=""
-	this.bottomWrapper=""
 	this.contents=""
 
 	this.hide=_hide
 	this.putAt=_putAt
 	this.refresh=_refresh
-	this.setBottomWrapper=_setBottomWrapper
 	this.setContents=_setContents
 	this.setStyle=_setStyle
-	this.setTopWrapper=_setTopWrapper
 	this.setX=_setX
 	this.setY=_setY
 	this.show=_show
@@ -151,23 +88,6 @@ function AGEBox(color, code, textColorCode, width, height) {
 		this.width="*"
 	}
 
-
-	this.topWrapper="<table height="+this.height+" width="+this.width+" cellpadding=0 cellspacing=0><tr height="+this.borderX+">"
-	this.topWrapper+="<td width="+this.borderX+"></td>"
-	this.topWrapper+="<td background="+this.t+"></td>"
-	this.topWrapper+="<td width="+this.borderX+"></td>"
-	this.topWrapper+="</tr><tr>"
-	this.topWrapper+="<td background='"+this.l+"'></td>"
-	this.topWrapper+="<td bgcolor='"+this.code+"' style='color:"+this.textColorCode+"' valign=top>"
-
-
-	this.bottomWrapper="</td>"
-	this.bottomWrapper+="<td background='"+this.r+"'></td>"
-	this.bottomWrapper+="</tr><tr height="+this.borderX+">"
-	this.bottomWrapper+="<td width="+this.borderX+"></td>"
-	this.bottomWrapper+="<td background="+this.b+"></td>"
-	this.bottomWrapper+="<td width="+this.borderX+"></td>"
-	this.bottomWrapper+="</tr></table>"
 }
 
 //Regular expression for something in the form XdY+/-Z, with X and +/-Z optional
@@ -237,8 +157,6 @@ mainMenuWrapper=new AGEBox("white", "#ffffff", "#000000")
 
 mainMenu=new AGEElement
 mainMenu.putAt(0,0)
-mainMenu.setTopWrapper(mainMenuWrapper.topWrapper)
-mainMenu.setBottomWrapper(mainMenuWrapper.bottomWrapper)
 
 mainMenuContents="<div id='myDiv'><table><tr><td><input type=button value='Roll all initiatives' onclick='rollInitiatives()'>"
 mainMenuContents+="<input type=button value='Save all characters and creatures?' onclick='saveAll()'><br>"
@@ -253,8 +171,8 @@ savePaneBox=new AGEBox("white", "#FFFFFF", "#000000")
 savePane=new AGEElement()
 savePane.setStyle("zIndex", "100")
 savePane.putAt(100,100)
-savePane.setTopWrapper(savePaneBox.topWrapper)
-savePane.setBottomWrapper(""+savePaneBox.bottomWrapper)
+//savePane.setTopWrapper(savePaneBox.topWrapper)
+//savePane.setBottomWrapper(""+savePaneBox.bottomWrapper)
 
 function saveAll() {
 	globalSave=""
@@ -370,11 +288,15 @@ function toggleMenu(x){if (characters[x].menuShown){characters[x].hideMenu()}els
 function _addRoll(name, roll){x=this.rolls.length;this.rolls[x]=roll;this.rollNames[x]=name;this.refresh()}
 function _deleteRoll(i){this.rolls.splice(i,1);this.rollNames.splice(i,1);this.refresh()}
 function _hideBox(){this.box.hide()}
-function _putCharAt(x, y){this.x=x;this.y=y;numX=x.substring(0,x.length-2);menuX=(numX/1+characterBoxWidth)+"px";this.box.putAt(x, y);this.menu.putAt(menuX, y)}
+function _hide(){document.getElementById(this.elementId).style.visibility="hidden"}
 function _hideMenu(){this.menu.hide();this.menuShown=false}
+function _putAt(x, y){this.x=x;this.y=y;document.getElementById(this.elementId).style.top=y;document.getElementById(this.elementId).style.left=x}
+function _putCharAt(x, y){this.x=x;this.y=y;numX=x.substring(0,x.length-2);menuX=(numX/1+characterBoxWidth)+"px";this.box.putAt(x, y);this.menu.putAt(menuX, y)}
+function _refresh(){document.getElementById(this.elementId).innerHTML = this.contents}
 function _rollInit(){return d(20)+this.initBonus}
 function _save(){toSave=this.getSaveText();showSavePrompt(this.name, toSave)}
 function _setAC(x){this.ac=x;this.refresh()}
+function _setContents(newContents){this.contents=newContents;this.refresh()}
 function _setCurHp(x){this.curHp=x;this.refresh()}
 function _setDamage(x){this.damage=x;this.curHp=this.curHp-this.damage;this.damage=0;this.refresh()}
 function _setHealing(x){this.healing=x;this.curHp=this.curHp+this.healing;if(this.curHp>this.maxHp){this.curHp=this.maxHp};this.healing=0;this.refresh()}
@@ -385,6 +307,10 @@ function _setInitBonus(x){this.initBonus=x;this.refresh()}
 function _setMaxHp(x){this.maxHp=x;this.refresh()}
 function _setMiniature(x){this.miniature=x;this.refresh()}
 function _setName(x){this.name=x;this.refresh()}
+function _setStyle(att, style){eval("document.getElementById(this.elementId).style."+att+"=\""+style+"\"")}
+function _setX(x){this.x=x;this.putAt(x, this.y)}
+function _setY(y){this.y=y;this.putAt(this.x, y)}
+function _show(){document.getElementById(this.elementId).style.visibility="visible"}
 function _showBox(){this.box.show()}
 function _showMenu(){this.menu.show();this.menuShown=true}
 function _updateXY(){this.x=document.getElementById(this.box.elementId).style.left;this.y=document.getElementById(this.box.elementId).style.top}
@@ -459,11 +385,7 @@ this.x=0
 this.y=0
 
 this.box=new AGEElement()
-this.box.setTopWrapper(this.boxWrapper.topWrapper)
-this.box.setBottomWrapper(this.boxWrapper.bottomWrapper)
 this.menu=new AGEElement()
-this.menu.setTopWrapper(this.menuWrapper.topWrapper)
-this.menu.setBottomWrapper(this.menuWrapper.bottomWrapper)
 
 this.refresh()
 }
