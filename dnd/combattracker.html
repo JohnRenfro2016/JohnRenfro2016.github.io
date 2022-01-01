@@ -123,6 +123,7 @@ boxContents+="<table><tr><td>"+this.name+"<input type=button onClick='toggleMenu
 boxContents+="</td></tr><tr><td>HP: "+this.curHp+"/"+this.maxHp
 boxContents+="</td></tr><tr><td>AC: "+this.ac
 boxContents+="</td></tr><tr><td>Init: "+this.init
+boxContents+="</td></tr><tr><td><lable>Target?</lable><input name=targeted type=radio onchange='characters["+this.index+"].setTarget("+this.index+")'>"
 
 this.box.setContents(boxContents)
 
@@ -138,7 +139,7 @@ menuContents+="<input type=button onclick='deleteRollPrompt("+this.index+", "+i+
 }
 menuContents+="<input type=button onclick='addRollPrompt("+this.index+")' value='Add a custom roll?'>"
 
-menuContents+="<input  onclick='askInit("+this.index+")' type=button value='Roll this initiative?'>"
+menuContents+="<input onclick='askInit("+this.index+")' type=button value='Roll this initiative?'>"
 menuContents+="<lable>initMod</lable><input maxlength=3 onchange='characters["+this.index+"].setInitBonus(this.value/1)' type=input size=3 value="+this.initBonus+">"
 menuContents+="<lable>Name</lable><input maxlength=25 onchange='characters["+this.index+"].setName(this.value)' type=input size=25 value="+this.name+">"
 menuContents+="<lable>HD/lvl</lable><input maxlength=2 onchange='characters["+this.index+"].setHd(this.value)' type=input size=2 value="+this.hd+">"
@@ -155,9 +156,9 @@ this.menu.setContents(menuContents)
 
 function askInit(x){initRoll=characters[x].rollInit();characters[x].setInit(initRoll)}
 function deleteRollPrompt(x, i){characters[x].deleteRoll(i)}
-function makeRoll(x,i){toReturn="Rolled "+characters[x].rollNames[i]+" for "+characters[x].name+"\n  Result: ";toReturn+=rollDForm(characters[x].rolls[i]);alert(toReturn);this.refresh()}
 function rollInitiatives(){for(i=0; i<characters.length; i++){initRoll=characters[i].rollInit();characters[i].setInit(initRoll)}}
 function saveAll(){globalSave="";for(var i=0; i<characters.length; i++){globalSave+=characters[i].getSaveText()+"<br><br>"};showSavePrompt("all characters", globalSave)}
+function _setTarget(x){this.target=this.index;target=this.target}
 function showSavePrompt(name, toSave){toSave="<table><tr><td>Copy the code below into defaults.js to save "+name+"<hr>"+toSave+"<hr><input type=button onclick='savePane.hide()' value=Close></td></tr></table>";savePane.setContents(toSave);savePane.show()}
 function toggleMenu(x){if (characters[x].menuShown){characters[x].hideMenu()}else{characters[x].showMenu()}}
 
@@ -190,6 +191,10 @@ function _show(){document.getElementById(this.elementId).style.visibility="visib
 function _showBox(){this.box.show()}
 function _showMenu(){this.menu.show();this.menuShown=true}
 function _updateXY(){this.x=document.getElementById(this.box.elementId).style.left;this.y=document.getElementById(this.box.elementId).style.top}
+
+function makeRoll(x,i)
+{toReturn=characters[x].name+" rolled "+characters[x].rollNames[i]+" versus "+characters[target].name+"\nResult ";
+toReturn+=rollDForm(characters[x].rolls[i]);alert(toReturn)}
 
 function add(character)
 {
@@ -296,6 +301,7 @@ this.setInitBonus=_setInitBonus
 this.setMaxHp=_setMaxHp
 this.setMiniature=_setMiniature
 this.setName=_setName
+this.setTarget=_setTarget
 this.show=_showBox
 this.showMenu=_showMenu
 this.updateXY=_updateXY
@@ -348,42 +354,42 @@ ADD_DHTML(newChar.box.elementId)
 dragElement(document.getElementById("myDiv"));
 
 function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    elmnt.onmousedown = dragMouseDown;
-  }
+ var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+ if (document.getElementById(elmnt.id + "header")) {
+  /* if present, the header is where you move the DIV from:*/
+  document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+ } else {
+  elmnt.onmousedown = dragMouseDown;
+ }
 
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
+ function dragMouseDown(e) {
+  e = e || window.event;
+  e.preventDefault();
+  // get the mouse cursor position at startup:
+  pos3 = e.clientX;
+  pos4 = e.clientY;
+  document.onmouseup = closeDragElement;
+  // call a function whenever the cursor moves:
+  document.onmousemove = elementDrag;
+ }
 
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
+ function elementDrag(e) {
+  e = e || window.event;
+  e.preventDefault();
+  // calculate the new cursor position:
+  pos1 = pos3 - e.clientX;
+  pos2 = pos4 - e.clientY;
+  pos3 = e.clientX;
+  pos4 = e.clientY;
+  // set the element's new position:
+  elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+  elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+ }
 
-  function closeDragElement() {
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
+ function closeDragElement() {
+  document.onmouseup = null;
+  document.onmousemove = null;
+ }
 }
 </script>
 </html>
