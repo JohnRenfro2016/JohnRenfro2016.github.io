@@ -116,6 +116,8 @@ menuWidth=300
 pcBox=new AGEBox("blue", "#1111AA", "#FFF", characterBoxWidth, characterBoxHeight)
 pcMenu=new AGEBox("blue", "#1111AA", "#FFF", menuWidth)
 
+alert(this.targeted)
+
 function _ref()
 {
 boxContents="<img src="+this.miniature+">"
@@ -141,7 +143,7 @@ menuContents+="<input type=button onclick='addRollPrompt("+this.index+")' value=
 
 menuContents+="<input onclick='askInit("+this.index+")' type=button value='Roll this initiative?'>"
 menuContents+="<lable>initMod</lable><input maxlength=3 onchange='characters["+this.index+"].setInitBonus(this.value/1)' type=input size=3 value="+this.initBonus+">"
-menuContents+="<lable>Name</lable><input maxlength=25 onchange='characters["+this.index+"].setName(this.value)' type=input size=25 value="+this.name+">"
+menuContents+="<lable>Name</lable><input maxlength=25 onchange='characters["+this.index+"].setName(this.value)' type=input size=25 value='"+this.name+"'>"
 menuContents+="<lable>HD/lvl</lable><input maxlength=2 onchange='characters["+this.index+"].setHd(this.value)' type=input size=2 value="+this.hd+">"
 menuContents+="<lable>AC</lable><input maxlength=2 onchange='characters["+this.index+"].setAC(this.value)' type=input size=2 value="+this.ac+">"
 menuContents+="<lable>curHP</lable><input maxlength=3 onchange='characters["+this.index+"].setCurHp(this.value)' type=input size=3 value="+this.curHp+">"
@@ -158,7 +160,6 @@ function askInit(x){initRoll=characters[x].rollInit();characters[x].setInit(init
 function deleteRollPrompt(x, i){characters[x].deleteRoll(i)}
 function rollInitiatives(){for(i=0; i<characters.length; i++){initRoll=characters[i].rollInit();characters[i].setInit(initRoll)}}
 function saveAll(){globalSave="";for(var i=0; i<characters.length; i++){globalSave+=characters[i].getSaveText()+"<br><br>"};showSavePrompt("all characters", globalSave)}
-function _setTarget(x){this.target=this.index;target=this.target}
 function showSavePrompt(name, toSave){toSave="<table><tr><td>Copy the code below into defaults.js to save "+name+"<hr>"+toSave+"<hr><input type=button onclick='savePane.hide()' value=Close></td></tr></table>";savePane.setContents(toSave);savePane.show()}
 function toggleMenu(x){if (characters[x].menuShown){characters[x].hideMenu()}else{characters[x].showMenu()}}
 
@@ -185,6 +186,7 @@ function _setMaxHp(x){this.maxHp=x;this.refresh()}
 function _setMiniature(x){this.miniature=x;this.refresh()}
 function _setName(x){this.name=x;this.refresh()}
 function _setStyle(att, style){eval("document.getElementById(this.elementId).style."+att+"=\""+style+"\"")}
+function _setTarget(x){this.targeted=this.index;targeted=this.targeted}
 function _setX(x){this.x=x;this.putAt(x, this.y)}
 function _setY(y){this.y=y;this.putAt(this.x, y)}
 function _show(){document.getElementById(this.elementId).style.visibility="visible"}
@@ -193,7 +195,7 @@ function _showMenu(){this.menu.show();this.menuShown=true}
 function _updateXY(){this.x=document.getElementById(this.box.elementId).style.left;this.y=document.getElementById(this.box.elementId).style.top}
 
 function makeRoll(x,i)
-{toReturn=characters[x].name+" rolled "+characters[x].rollNames[i]+" versus "+characters[target].name+"\nResult ";
+{toReturn=characters[x].name+" rolled "+characters[x].rollNames[i]+" versus "+characters[targeted].name+"\nResult ";
 toReturn+=rollDForm(characters[x].rolls[i]);alert(toReturn)}
 
 function add(character)
@@ -267,6 +269,7 @@ function Character(name)
 this.ac=0
 this.addRoll=_addRoll
 this.boxWrapper=pcBox
+this.maxHp=0
 this.curHp=this.maxHp
 this.damage=0
 this.deleteRoll=_deleteRoll
@@ -279,7 +282,6 @@ this.hd=0
 this.index=null
 this.init="Unrolled"
 this.initBonus=0
-this.maxHp=0
 this.menuShown=false
 this.menuWrapper=pcMenu
 this.miniature='monster.png'
