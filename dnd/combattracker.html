@@ -10,24 +10,23 @@ tr:nth-child(even){background-color: #d3d3d3;}
 
 #footer
 {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+bottom: 0;
+left: 0;
+position: fixed;
+width: 100%;
 }
 
-#myDiv {
-  position: absolute;
-  z-index: 9;
-  background-color: #f1f1f1;
-  text-align: center;
-  border: 1px solid #d3d3d3;
+#myDiv
+{
+background-color: #f1f1f1;
+position: absolute;
+z-index: 9;
 }
 
 </style>
 
-<script src="wz_dragdrop.js">
-</script>
+<script src="wz_dragdrop.js"></script>
+
 <script>
 
 AGEVersion=0.1
@@ -42,7 +41,6 @@ function AGEElement() {
 	this.x=0
 	this.y=0
 	this.contents=""
-
 	this.hide=_hide
 	this.putAt=_putAt
 	this.refresh=_refresh
@@ -51,7 +49,6 @@ function AGEElement() {
 	this.setX=_setX
 	this.setY=_setY
 	this.show=_show
-
 	newDiv=document.createElement('div')
 	newDiv.setAttribute('id', this.elementId)
 	parent=document.getElementById("topDiv")
@@ -93,109 +90,41 @@ function AGEBox(color, code, textColorCode, width, height) {
 //Regular expression for something in the form XdY+/-Z, with X and +/-Z optional
 diceRegex=/[0-9]{0,}[d|D][0-9]{1,}([+|-][0-9]{1,}){0,1}/
 
-function d(sides) {
-	return Math.ceil(Math.random()*sides)
+function d(sides){return Math.ceil(Math.random()*sides)}
+function XdY(dice, sides){results=0;for(i=0; i<dice; i++){results+=d(sides)}return results}
+function dFormParse(toCheck){match=toCheck.match(diceRegex);if(match!=null){return match[0]}else{return null}}
+function rollDForm(dForm){dForm=dForm.toLowerCase();dIndex=dForm.indexOf("d");signIndex=dForm.indexOf("+");
+sign=true;positive=true;
+if(signIndex==-1){positive=false;signIndex=dForm.indexOf("-")};
+if(signIndex==-1){signIndex=dForm.length;sign=false};
+dice=0;
+sides=0;
+addOn=0;
+if (dIndex==0){dice=1}else{dice=dForm.substring(0,dIndex)};
+sides=dForm.substring(dIndex+1,signIndex);
+if(sign){addOn=dForm.substring(signIndex+1);
+if(!positive){addOn*=-1	};
 }
-
-function XdY(dice, sides) {
-	results=0
-	for (i=0; i<dice; i++) {
-		results+=d(sides)
-	}
-	return results
-}
-
-function dFormParse(toCheck) {
-	match=toCheck.match(diceRegex)
-	if (match!=null) {
-		return match[0]
-	} else {
-		return null
-	}
-}
-
-function rollDForm(dForm) {
-	dForm=dForm.toLowerCase()
-	dIndex=dForm.indexOf("d")
-	signIndex=dForm.indexOf("+")
-	sign=true
-	positive=true
-	if (signIndex==-1) {
-		positive=false
-		signIndex=dForm.indexOf("-")
-	}
-	if (signIndex==-1) {
-		signIndex=dForm.length
-		sign=false
-	}
-	dice=0
-	sides=0
-	addOn=0
-
-	if (dIndex==0) {
-		dice=1
-	} else {
-		dice=dForm.substring(0,dIndex)
-	}
-	sides=dForm.substring(dIndex+1,signIndex)
-	if (sign) {
-		addOn=dForm.substring(signIndex+1)
-		if (!positive) {
-			addOn*=-1
-		}
-	}
-	result=XdY(dice, sides)+(addOn/1)
-	return result
+result=XdY(dice, sides)+(addOn/1);
+return result;
 }
 
 PC="pc"
-NPC="npc"
 
 characters=new Array()
-
-mainMenuWrapper=new AGEBox("white", "#ffffff", "#000000")
-
-mainMenu=new AGEElement
-mainMenu.putAt(0,0)
-
-mainMenuContents="<div id='myDiv'><table><tr><td><input type=button value='Roll all initiatives' onclick='rollInitiatives()'>"
-mainMenuContents+="<input type=button value='Save all characters and creatures?' onclick='saveAll()'><br>"
-mainMenuContents+="<input type=button value='Create a new character or creature?' onclick='newCharacter(PC)'></td></tr></table></div>"
-mainMenu.setContents(mainMenuContents)
-
-mainMenu.show()
-
 
 savePaneBox=new AGEBox("white", "#FFFFFF", "#000000")
 
 savePane=new AGEElement()
 savePane.setStyle("zIndex", "100")
 savePane.putAt(100,100)
-//savePane.setTopWrapper(savePaneBox.topWrapper)
-//savePane.setBottomWrapper(""+savePaneBox.bottomWrapper)
-
-function saveAll() {
-	globalSave=""
-	for (var i=0; i<characters.length; i++) {
-		globalSave+=characters[i].getSaveText()+"<br><br>"
-	}
-	showSavePrompt("all characters", globalSave)
-}
-
-function showSavePrompt(name, toSave) {
-	toSave="<table><tr><td>Copy the code below into defaults.js to save "+name+"<hr>"+toSave+"<hr><input type=button onclick='savePane.hide()' value=Close></td></tr></table>"
-	savePane.setContents(toSave)
-	savePane.show()
-}
 
 characterBoxWidth=150
 characterBoxHeight="*"
 menuWidth=300
 
 pcBox=new AGEBox("blue", "#1111AA", "#FFF", characterBoxWidth, characterBoxHeight)
-npcBox=new AGEBox("red", "#AA1111", "#FFF", characterBoxWidth, characterBoxHeight)
 pcMenu=new AGEBox("blue", "#1111AA", "#FFF", menuWidth)
-npcMenu=new AGEBox("red", "#AA1111", "#FFF", menuWidth)
 
 function addRollPrompt(x) {
 	rollName=prompt("What kind of roll would you like to give "+characters[x].name+"?")
@@ -283,6 +212,8 @@ function askInit(x){initRoll=characters[x].rollInit();characters[x].setInit(init
 function deleteRollPrompt(x, i){characters[x].deleteRoll(i)}
 function makeRoll(x,i){toReturn="Rolled "+characters[x].rollNames[i]+" for "+characters[x].name+"\n  Result: ";toReturn+=rollDForm(characters[x].rolls[i]);alert(toReturn);this.refresh()}
 function rollInitiatives(){for(i=0; i<characters.length; i++){initRoll=characters[i].rollInit();characters[i].setInit(initRoll)}}
+function saveAll(){globalSave="";for(var i=0; i<characters.length; i++){globalSave+=characters[i].getSaveText()+"<br><br>"};showSavePrompt("all characters", globalSave)}
+function showSavePrompt(name, toSave){toSave="<table><tr><td>Copy the code below into defaults.js to save "+name+"<hr>"+toSave+"<hr><input type=button onclick='savePane.hide()' value=Close></td></tr></table>";savePane.setContents(toSave);savePane.show()}
 function toggleMenu(x){if (characters[x].menuShown){characters[x].hideMenu()}else{characters[x].showMenu()}}
 
 function _addRoll(name, roll){x=this.rolls.length;this.rolls[x]=roll;this.rollNames[x]=name;this.refresh()}
@@ -317,7 +248,7 @@ function _updateXY(){this.x=document.getElementById(this.box.elementId).style.le
 
 function _getSaveText(){this.updateXY();varName="pc";varName+=Math.ceil(Math.random()*10000)
   toSave="\/\/"+this.name+"<br>"
-  toSave+=varName+"=new Character('"+this.name+"', '"+this.type+"')<br>"
+  toSave+=varName+"=new Character('"+this.name+"')<br>"
 if (!isNaN(this.init)){toSave+=varName+".setInit("+this.init+")<br>"}
 	toSave+=varName+".setInitBonus("+this.initBonus+")<br>"
 	toSave+=varName+".setHd("+this.hd+")<br>"
@@ -338,8 +269,8 @@ if (!isNaN(this.init)){toSave+=varName+".setInit("+this.init+")<br>"}
 	return toSave
 }
 
-function Character(name, type)
- {
+function Character(name)
+{
 this.ac=0
 this.addRoll=_addRoll
 this.boxWrapper=pcBox
@@ -379,7 +310,6 @@ this.setMiniature=_setMiniature
 this.setName=_setName
 this.show=_showBox
 this.showMenu=_showMenu
-this.type=type
 this.updateXY=_updateXY
 this.x=0
 this.y=0
@@ -390,11 +320,11 @@ this.menu=new AGEElement()
 this.refresh()
 }
 
-function newCharacter(type){
-	response=prompt("What is the new "+type+"'s name?")
+function newCharacter(){
+	response=prompt("What is the new name?")
 	if (response!=null) {
 		x=characters.length
-		newChar=new Character(response, type)
+		newChar=new Character(response)
 		newChar.setIndex(x)
 		newChar.refresh()
 		newChar.show()
@@ -406,14 +336,23 @@ function newCharacter(type){
 </script>
 <script src="defaults.js"></script>
 
-</head><body><table><tr><td>
+</head>
+
+<body>
+
+<table><tr><td>
+<div id='myDiv'><table><tr><td><input type=button value='Roll all initiatives' onclick='rollInitiatives()'>
+<input type=button value='Save all characters and creatures?' onclick='saveAll()'>
+<input type=button value='Create a new character or creature?' onclick='newCharacter(PC)'>
 <a href="https://archive.org/details/tsr02100addplayershandbook/mode/1up" target=_blank>The Players Handbook</a>
 <a href="https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/mode/1up" target=_blank>The Dungeon Masters Guide</a>Attack Matrixes on Page 75-76
 <a href="https://archive.org/details/tsr02009addmonstermanual/mode/2up" target=_blank>The Monster Manual</a>
 <a href="https://archive.org/details/tsr09045addthesecretofbonehill" target=_blank>Dungeon Module 1 The Secret of Bone Hill</a>
-<a href="https://www.gmbinder.com/share/-LAYmTPaah5wk8iHKw2a" target=_blank>Dungeon Module 1 The Secret of Bone Hill 4th Edition Tiles</a></td></tr></table>
+<a href="https://www.gmbinder.com/share/-LAYmTPaah5wk8iHKw2a" target=_blank>Dungeon Module 1 The Secret of Bone Hill 4th Edition Tiles</a>
+</td></tr></table></div>
 
 </body>
+
 <script>
 
 dragElement(document.getElementById("myDiv"));
