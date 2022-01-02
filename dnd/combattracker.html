@@ -141,10 +141,10 @@ if (this.rolls.length==0){menuContents+="&nbsp;&nbsp;&nbsp;&nbsp;<i>None listed<
 } else {
 for (var i=0; i<this.rolls.length; i++)
 {
-menuContents+="<input type=button onclick='makeRoll("+this.index+", "+i+")' value='Roll?'>"
+menuContents+="<input type=button onclick='makeRoll("+this.index+", "+i+")' value='Target then Roll?'>"
 menuContents+="<input maxLength=50 onChange='characters[" + this.index + "].rollNames[" + i + "]=this.value' size=25 type='text' value='" + this.rollNames[i] + "'>";
 menuContents+="<input maxLength='8' onChange='characters[" + this.index + "].rolls[" + i + "]=this.value' size='8' type='text' value='" + this.rolls[i] + "'>";
-menuContents+="<input type=button onclick='deleteRollPrompt("+this.index+", "+i+")' value='X'>&nbsp;&nbsp;&nbsp;"
+menuContents+="<input type=button onclick='deleteRollPrompt("+this.index+", "+i+")' value='X'>&nbsp;&nbsp;"
 }
 }
 menuContents+="<input type=button onclick='addRollPrompt("+this.index+")' value='Add a custom roll?'>"
@@ -369,7 +369,7 @@ ADD_DHTML(newChar.box.elementId)
 <input type=button value='Create a new character or creature?' onclick='newCharacter(PC)'>
 <input type=button value='Target then clone a creature?' onclick='cloneCreature()'>
 <a href="https://archive.org/details/tsr02100addplayershandbook/mode/1up" target=_blank>The Players Handbook</a>&nbsp;&nbsp;&nbsp;
-<a href="https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/mode/1up" target=_blank>The Dungeon Masters Guide</a> Attack Matrixes on Page 75-76&nbsp;&nbsp;&nbsp;
+<a href="https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/mode/1up" target=_blank>The Dungeon Masters Guide</a> Attack Matrixes on Page 75-76 Saving Throws on Page 80&nbsp;&nbsp;&nbsp;
 <a href="https://archive.org/details/tsr02009addmonstermanual/mode/2up" target=_blank>The Monster Manual</a>&nbsp;&nbsp;&nbsp;
 <a href="https://archive.org/details/tsr09045addthesecretofbonehill" target=_blank>Dungeon Module 1 The Secret of Bone Hill</a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.gmbinder.com/share/-LAYmTPaah5wk8iHKw2a" target=_blank>Dungeon Module 1 The Secret of Bone Hill 4th Edition Tiles</a>
