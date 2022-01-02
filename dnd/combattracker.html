@@ -8,11 +8,19 @@ body{background: url(Map.jpg) no-repeat}
 tr:nth-child(odd){background-color: #f1f1f1;}
 tr:nth-child(even){background-color: #d3d3d3;}
 
-#footer
+#header
 {
 bottom: 0;
 left: 0;
 position: fixed;
+width: 100%;
+}
+
+#footer
+{
+left: 0;
+position: fixed;
+top: 0;
 width: 100%;
 }
 
@@ -116,8 +124,6 @@ menuWidth=300
 pcBox=new AGEBox("blue", "#1111AA", "#FFF", characterBoxWidth, characterBoxHeight)
 pcMenu=new AGEBox("blue", "#1111AA", "#FFF", menuWidth)
 
-alert(this.targeted)
-
 function _ref()
 {
 boxContents="<img src="+this.miniature+">"
@@ -136,7 +142,7 @@ if (this.rolls.length==0){menuContents+="&nbsp;&nbsp;&nbsp;&nbsp;<i>None listed<
 for (var i=0; i<this.rolls.length; i++)
 {
 menuContents+="<input type=button onclick='makeRoll("+this.index+", "+i+")' value='Roll?'> "+this.rollNames[i]+": "+this.rolls[i]+""
-menuContents+="<input type=button onclick='deleteRollPrompt("+this.index+", "+i+")' value='X'>"
+menuContents+="<input type=button onclick='deleteRollPrompt("+this.index+", "+i+")' value='X'>&nbsp;&nbsp;&nbsp;"
 }
 }
 menuContents+="<input type=button onclick='addRollPrompt("+this.index+")' value='Add a custom roll?'>"
@@ -151,8 +157,8 @@ menuContents+="<lable>MaxHP</lable><input maxlength=3 onchange='characters["+thi
 menuContents+="<lable>Damage?</lable><input maxlength=3 onchange='characters["+this.index+"].setDamage(this.value/1)' type=input size=3 value="+this.damage+">"
 menuContents+="<lable>Heal?</lable><input maxlength=3 onchange='characters["+this.index+"].setHealing(this.value/1)' type=input size=3 value="+this.healing+">"
 menuContents+="<lable>Miniature</lable><input maxlength=25 onchange='characters["+this.index+"].setMiniature(this.value)' type=input size=25 value="+this.miniature+">"
-menuContents+="<input onclick='removeChar("+this.index+")' type=button value='Delete this character?'></td></tr></div>"
-
+menuContents+=this.toReturn+"<input onclick='removeChar("+this.index+")' type=button value='Delete this character?'>"
+menuContents+="</td></tr></div>"
 this.menu.setContents(menuContents)
 }
 
@@ -187,6 +193,7 @@ function _setMiniature(x){this.miniature=x;this.refresh()}
 function _setName(x){this.name=x;this.refresh()}
 function _setStyle(att, style){eval("document.getElementById(this.elementId).style."+att+"=\""+style+"\"")}
 function _setTarget(x){this.targeted=this.index;targeted=this.targeted}
+function _setToReturn(x){this.toReturn=x;this.refresh()}
 function _setX(x){this.x=x;this.putAt(x, this.y)}
 function _setY(y){this.y=y;this.putAt(this.x, y)}
 function _show(){document.getElementById(this.elementId).style.visibility="visible"}
@@ -195,8 +202,8 @@ function _showMenu(){this.menu.show();this.menuShown=true}
 function _updateXY(){this.x=document.getElementById(this.box.elementId).style.left;this.y=document.getElementById(this.box.elementId).style.top}
 
 function makeRoll(x,i)
-{toReturn=characters[x].name+" rolled "+characters[x].rollNames[i]+" versus "+characters[targeted].name+"\nResult ";
-toReturn+=rollDForm(characters[x].rolls[i]);alert(toReturn)}
+{characters[x].toReturn=characters[x].name+" rolled "+characters[x].rollNames[i]+" versus "+characters[targeted].name+"\nResult ";
+characters[x].toReturn+=rollDForm(characters[x].rolls[i]);characters[x].setToReturn(characters[x].toReturn)}
 
 function add(character)
 {
@@ -304,8 +311,10 @@ this.setMaxHp=_setMaxHp
 this.setMiniature=_setMiniature
 this.setName=_setName
 this.setTarget=_setTarget
+this.setToReturn=_setToReturn
 this.show=_showBox
 this.showMenu=_showMenu
+this.toReturn=' Roll results.'
 this.updateXY=_updateXY
 this.x=0
 this.y=0
@@ -314,6 +323,20 @@ this.box=new AGEElement()
 this.menu=new AGEElement()
 
 this.refresh()
+}
+
+function cloneCreature()
+{
+newCharacter();
+characters[x].setAC(characters[targeted].ac)
+characters[x].setCurHp(characters[targeted].curHp)
+characters[x].setHd(characters[targeted].hd)
+characters[x].setMaxHp(characters[targeted].maxHp)
+characters[x].setMiniature(characters[targeted].miniature)
+for(var i = x; i < characters.length; i++)
+{for(var j=0; j<characters[targeted].rolls.length; j++)
+{characters[i].addRoll(characters[targeted].rollNames[j], characters[targeted].rolls[j])}
+}
 }
 
 function newCharacter()
@@ -339,13 +362,14 @@ ADD_DHTML(newChar.box.elementId)
 <body>
 
 <table><tr><td>
-<div id='myDiv'><table><tr><td><input type=button value='Roll all initiatives' onclick='rollInitiatives()'>
+<div id='header'><table><tr><td><input type=button value='Roll all initiatives' onclick='rollInitiatives()'>
 <input type=button value='Save all characters and creatures?' onclick='saveAll()'>
 <input type=button value='Create a new character or creature?' onclick='newCharacter(PC)'>
-<a href="https://archive.org/details/tsr02100addplayershandbook/mode/1up" target=_blank>The Players Handbook</a>
-<a href="https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/mode/1up" target=_blank>The Dungeon Masters Guide</a>Attack Matrixes on Page 75-76
-<a href="https://archive.org/details/tsr02009addmonstermanual/mode/2up" target=_blank>The Monster Manual</a>
-<a href="https://archive.org/details/tsr09045addthesecretofbonehill" target=_blank>Dungeon Module 1 The Secret of Bone Hill</a>
+<input type=button value='Target then clone a creature?' onclick='cloneCreature()'>
+<a href="https://archive.org/details/tsr02100addplayershandbook/mode/1up" target=_blank>The Players Handbook</a>&nbsp;&nbsp;&nbsp;
+<a href="https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/mode/1up" target=_blank>The Dungeon Masters Guide</a> Attack Matrixes on Page 75-76&nbsp;&nbsp;&nbsp;
+<a href="https://archive.org/details/tsr02009addmonstermanual/mode/2up" target=_blank>The Monster Manual</a>&nbsp;&nbsp;&nbsp;
+<a href="https://archive.org/details/tsr09045addthesecretofbonehill" target=_blank>Dungeon Module 1 The Secret of Bone Hill</a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.gmbinder.com/share/-LAYmTPaah5wk8iHKw2a" target=_blank>Dungeon Module 1 The Secret of Bone Hill 4th Edition Tiles</a>
 </td></tr></table></div>
 
