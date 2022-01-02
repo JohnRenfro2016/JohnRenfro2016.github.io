@@ -8,12 +8,9 @@ body{background: url(Map.jpg) no-repeat}
 tr:nth-child(odd){background-color: #f1f1f1;}
 tr:nth-child(even){background-color: #d3d3d3;}
 
-#header
+#boxStyle
 {
-bottom: 0;
-left: 0;
-position: fixed;
-width: 100%;
+font-size: 9px;
 }
 
 #footer
@@ -21,6 +18,14 @@ width: 100%;
 left: 0;
 position: fixed;
 top: 0;
+width: 100%;
+}
+
+#header
+{
+bottom: 0;
+left: 0;
+position: fixed;
 width: 100%;
 }
 
@@ -127,7 +132,7 @@ pcMenu=new AGEBox("blue", "#1111AA", "#FFF", menuWidth)
 function _ref()
 {
 boxContents="<img src="+this.miniature+">"
-boxContents+="<table><tr><td>"+this.name+"<input type=button onClick='toggleMenu("+this.index+")' value=Menu>"
+boxContents+="<table id='boxStyle'><tr><td>"+this.name+"<input type=button onClick='toggleMenu("+this.index+")' value=Menu>"
 boxContents+="</td></tr><tr><td>HP: "+this.curHp+"/"+this.maxHp
 boxContents+="</td></tr><tr><td>AC: "+this.ac
 boxContents+="</td></tr><tr><td>Init: "+this.init
