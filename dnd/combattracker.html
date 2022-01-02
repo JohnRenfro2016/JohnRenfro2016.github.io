@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Advanced Dungeons & Dragons 1st Edition Encounter Manager (Asmor, Ren, Zorn)</title>
 <style>
@@ -141,7 +141,9 @@ if (this.rolls.length==0){menuContents+="&nbsp;&nbsp;&nbsp;&nbsp;<i>None listed<
 } else {
 for (var i=0; i<this.rolls.length; i++)
 {
-menuContents+="<input type=button onclick='makeRoll("+this.index+", "+i+")' value='Roll?'> "+this.rollNames[i]+": "+this.rolls[i]+""
+menuContents+="<input type=button onclick='makeRoll("+this.index+", "+i+")' value='Roll?'>"
+menuContents+="<input maxLength=50 onChange='characters[" + this.index + "].rollNames[" + i + "]=this.value' size=25 type='text' value='" + this.rollNames[i] + "'>";
+menuContents+="<input maxLength='8' onChange='characters[" + this.index + "].rolls[" + i + "]=this.value' size='8' type='text' value='" + this.rolls[i] + "'>";
 menuContents+="<input type=button onclick='deleteRollPrompt("+this.index+", "+i+")' value='X'>&nbsp;&nbsp;&nbsp;"
 }
 }
