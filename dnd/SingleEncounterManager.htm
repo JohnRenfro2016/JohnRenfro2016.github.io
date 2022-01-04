@@ -6425,12 +6425,19 @@ function _ref()
 {
   boxContents = "<img src='" + this.figure + "'><br>";
   boxContents += "<table><tr><td><table><tr><td>" + this.name
-  boxContents += "</td></tr><tr><td>Target?<input id='targeted" + this.index + "' name='targeted' onClick='target=" + this.index + "' type='radio'>"
+  boxContents += "</td></tr><tr><td>Target?<input id='targeted" + this.index + "' name='targeted' onClick='targeted=" + this.index + "' type='radio'>"
   boxContents += "HP:" + this.curHp + "</td></tr>";
   boxContents += "</td></tr><tr><td><input type='button' onClick='toggleMenu(" + this.index + ")'value='Show stats?'></td></tr>";
   boxContents += "</td></tr><tr><td>Initiative " + this.init + "</td></tr></table>";
   this.box.setContents(boxContents);
-  menuContents = "<table class=noBackgroundTableStyle><tr><td><table><tr><td>Show ";
+  menuContents = "</td></tr></table></td><td><table><tr><td><h2>Combat Results:</h2>";
+  menuContents += "</td></tr><tr><td><input type='button' value='Roll (Init)iative?'onClick='askInit(" + this.index + ")'> bonus:<input maxLength=4 onChange='characters[" + this.index + "].setInitBonus(this.value)'size=4 type='text' value=" + this.initBonus + ">/" + this.curIni;
+  menuContents += "</td></tr><tr><td><lable>Spell Ability:</lable><select onChange='characters[" + this.index + "].setSpellAbility(this.value)'><option>" + this.spellAbility + "<option>int<option>wis<option>cha</select>" + this.spellAbilityNumber;
+  menuContents += "</td></tr><tr><td><lable>Level (Pro)ficiency bonus:</lable><input maxLength=4 onChange='characters[" + this.index + "].setPro(this.value)'size=4 type='text' value='" + this.pro + "'>";
+  menuContents += "</td></tr><tr><td><lable>Spell (Focus)bonus:</lable><input maxLength=2 onChange='characters[" + this.index + "].setSpellFocus(this.value)' size=2 type='text' value=" + this.spellFocus + ">";
+  menuContents += "</td></tr><tr><td><lable>(Sit)uation mod:</lable><input maxLength=4 onChange='characters[" + this.index + "].setSit(this.value)'size=4 type='text' value=" + this.sit + ">";
+  menuContents += "</td></tr><tr><td>" + this.combatLog;
+  menuContents += "</td></tr></table><p><table class=noBackgroundTableStyle><tr><td><table><tr><td>Show ";
   menuContents += "<input class=tabstyle onClick='toggleTab5(" + this.index + ")' type='button' value=' Abilities?'>";
   menuContents += "<input class=tabstyle onClick='toggleTab6(" + this.index + ")' type='button' value=' Actions?'>";
   menuContents += "<input class=tabstyle onClick='toggleTab2(" + this.index + ")' type='button' value=' Background or Equipment?'>";
@@ -6461,13 +6468,7 @@ function _ref()
   menuContents += "</td></tr><tr><td>Traits:<br><textArea cols='35' rows='5' onChange='characters[" + this.index + "].setTrait(this.value)'placeHolder='Gender, Age, Color, Height, Personality, Weight'>" + this.trait + "</textarea>";
   menuContents += "</td></tr><tr><td>Alignment:<br><select onChange='characters[" + this.index + "].setAlignment(this.value)'><option>" + this.alignment + "<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
   menuContents += "</td></tr><tr><td><input type='button' value='Delete this character?'onClick='removeChar(" + this.index + ")'>";
-  menuContents += "</td></tr></table></td><td><table><tr><td colspan='2'><h2>Combat Results:</h2>";
-  menuContents += "</td></tr><tr><td colspan='2' nowrap><input type='button' value='Roll (Init)iative?'onClick='askInit(" + this.index + ")'> bonus:<input maxLength=4 onChange='characters[" + this.index + "].setInitBonus(this.value)'size=4 type='text' value=" + this.initBonus + ">/" + this.curIni;
-  menuContents += "</td></tr><tr><td colspan='2'>Spell Ability:<select onChange='characters[" + this.index + "].setSpellAbility(this.value)'><option>" + this.spellAbility + "<option>int<option>wis<option>cha</select>" + this.spellAbilityNumber;
-  menuContents += "</td></tr><tr><td colspan='2'>Level (Pro)ficiency bonus:<input maxLength=4 onChange='characters[" + this.index + "].setPro(this.value)'size=4 type='text' value='" + this.pro + "'>";
-  menuContents += "</td></tr><tr><td colspan='2'>Spell (Focus)bonus:<input maxLength=2 onChange='characters[" + this.index + "].setSpellFocus(this.value)' size=2 type='text' value=" + this.spellFocus + ">";
-  menuContents += "</td></tr><tr><td colspan='2'>(Sit)uation mod:<input maxLength=4 onChange='characters[" + this.index + "].setSit(this.value)'size=4 type='text' value=" + this.sit + ">";
-  menuContents += "</td></tr><tr><td>" + this.combatLog;
+
   menuContents += "</td></tr></table></td><td><span id=toggled5" + this.index + " style='display:" + this.toggled5 + "'>";
   menuContents += "<table><tr><td><h2>Abilities:</h2>";
   menuContents += "</td></tr><tr><td><input onClick='abi=1;abiMod=characters[" + this.index + "].strMod;skillMod=characters[" + this.index + "].strPro;abiRoll(" + this.index + ")'value='Roll (str)ength?' type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setStr(this.value)'size=2 type='text' value=" + this.str + ">/" + this.curStr + " mod:" + this.strMod + "+<select onChange='characters[" + this.index + "].setStrPro(this.value)'><option>" + this.strPro + "<option><option>pro<option>exp</select><input onClick='abi=10;abiMod=characters[" + this.index + "].strMod;skillMod=characters[" + this.index + "].athletics;abiRoll(" + this.index + ")'value='Roll Athletics(str)?'type='button'>+<select onChange='characters[" + this.index + "].setAthletics(this.value)'><option>" + this.athletics + "<option><option>pro<option>exp</select><br>Size:<select onChange='characters[" + this.index + "].setSize(this.value)'><option>" + this.size + "<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select><br>Carrying Capacity:" + this.carryingCapacity + "lbs<br>Drag, Lift, Push:" + this.dragLiftPush + "lbs<br>High Jump:" + this.highJump + "ft<br>Long Jump:" + this.longJump + "ft";
@@ -9738,7 +9739,7 @@ naturalRoll2 = naturalRoll;
 roll2 = roll;
 rollTotal1 = naturalRoll1 + parseInt(roll1) + parseInt(abiMod) + parseInt(skillMod) + parseInt(characters[x].sit);
 rollTotal2 = naturalRoll2 + parseInt(roll2) + parseInt(abiMod) + parseInt(skillMod) + parseInt(characters[x].sit);
-log1 = "<table><tr><td colspan='2'>" + characters[x].name + " " + characters[x].rollNames[i] + "</td></tr><tr><td><h3>attack 1</h3>" + characters[x].rolls[i] + "<br>(" + naturalRoll1 + roll1 + ")<br>" + abiMod + " " + abi + "<br>" + skillMod + " pro<br>" + characters[x].sit + " sit<br>=" + rollTotal1 + "</td><td><h3>attack 2</h3>" + characters[x].rolls[i] + "<br>(" + naturalRoll2 + roll2 + ")<br>" + abiMod + " " + abi + "<br>" + skillMod + " pro<br>" + characters[x].sit + " sit<br>=" + rollTotal2 + "</td></tr><tr><td colspan='2'><h3>vs</h3>" + characters[targeted].name + " AC:" + characters[targeted].curAc;
+log1 = "<table><tr><td>" + characters[x].name + " " + characters[x].rollNames[i] + " versus " + characters[targeted].name + " AC:" + characters[targeted].curAc+"</td><td><h3>attack 1</h3>" + characters[x].rolls[i] + "<br>(" + naturalRoll1 + roll1 + ")<br>" + abiMod + " " + abi + "<br>" + skillMod + " pro<br>" + characters[x].sit + " sit<br>=" + rollTotal1 + "</td><td><h3>attack 2</h3>" + characters[x].rolls[i] + "<br>(" + naturalRoll2 + roll2 + ")<br>" + abiMod + " " + abi + "<br>" + skillMod + " pro<br>" + characters[x].sit + " sit<br>=" + rollTotal2 + "</td>"
   }
   abi = '';
   abiMod = '+0';
