@@ -5669,11 +5669,11 @@ varName ="";
 varName ="pc";
 varName +=Math.ceil(Math.random() * 10000);
 toSave ="\/\/" + this.name + "<br>";
-toSave +=varName + "=new Character('" + this.name + "','" + this.type + "')<br>";
+toSave +=varName + "=new Character('" + this.name + "','" + this.type + "')<br><table>";
 for(var i =0; i < this.rolls.length; i++)
-{toSave +=varName + ".addRoll('" + this.rollNames[i] + "','" + this.rolls[i] + "','" + this.rollNames2[i] + "','" + this.rolls2[i] + "')<br>";
+{toSave +="<tr draggable='true' ondragstart='start()' ondragover='dragover()'><td>"+varName + ".addRoll('" + this.rollNames[i] + "','" + this.rolls[i] + "','" + this.rollNames2[i] + "','" + this.rolls2[i] + "')</td></tr>";
 }
-toSave +=varName + ".putAt(\'" + this.x + "\',\'" + this.y + "\' )<br>";
+toSave +="</table>"+varName + ".putAt(\'" + this.x + "\',\'" + this.y + "\' )<br>";
 toSave +=varName + ".setClass('" + this.class + "')<br>";
 toSave +=varName + ".setLevel('" + this.level + "')<br>";
 toSave +=varName + ".setRace('" + this.race + "')<br>";
@@ -5895,7 +5895,7 @@ menuContents +="][8th: " + this.maxEighthSlot + "<input onClick='characters[" + 
 menuContents +="][9th: " + this.maxNinthSlot + "<input onClick='characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].curNinthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurNinthSlot(this.value)' size=2 type='text' value=" + this.curNinthSlot + ">";
 menuContents +="]&nbsp;<input onClick='characters[" + this.index + "].setCurFirstSlot(characters[" + this.index + "].maxFirstSlot);characters[" + this.index + "].setCurSecondSlot(characters[" + this.index + "].maxSecondSlot);characters[" + this.index + "].setCurThirdSlot(characters[" + this.index + "].maxThirdSlot);characters[" + this.index + "].setCurFourthSlot(characters[" + this.index + "].maxFourthSlot);characters[" + this.index + "].setCurFifthSlot(characters[" + this.index + "].maxFifthSlot);characters[" + this.index + "].setCurSixthSlot(characters[" + this.index + "].maxSixthSlot);characters[" + this.index + "].setCurSeventhSlot(characters[" + this.index + "].maxSeventhSlot);characters[" + this.index + "].setCurEighthSlot(characters[" + this.index + "].maxEighthSlot);characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].maxNinthSlot)' type='button' value='Take an 8hrs rest?'>";
 }
-menuContents +="</td></tr><tr><td><h3>Actions:</h3>Target a piece on the map before you roll.</td></tr><tr><td><input maxLength=200 onChange='characters[" + this.index + "].setRollName1(this.value)'placeHolder='attackRollToHitName+Ability+pro SpellSlot RangeInFeet'size=38 type='text' value='" + this.rollName1 + "'>"
+menuContents +="</td></tr><tr><td><h3>Actions:</h3>Target a piece on the map before you roll. When saving this character, you can reorder the Rolls in the save pane. Just drag and drop.</td></tr><tr><td><input maxLength=200 onChange='characters[" + this.index + "].setRollName1(this.value)'placeHolder='attackRollToHitName+Ability+pro SpellSlot RangeInFeet'size=38 type='text' value='" + this.rollName1 + "'>"
 menuContents +="&nbsp;<input maxLength='8' onChange='characters[" + this.index + "].setRoll1(this.value)'placeHolder='XdY+Z'size='8' type='text' value=" + this.roll1 + ">"
 menuContents +=" <input maxLength=200 onChange='characters[" + this.index + "].setRollName2(this.value)'placeHolder='damageType+Ability and damageConditions' size=38 type='text' value='" + this.rollName2 + "'>"
 menuContents +="&nbsp;<input maxLength='8' onChange='characters[" + this.index + "].setRoll2(this.value)'placeHolder='XdY+Z'size='8' type='text' value=" + this.roll2 + ">"
@@ -8930,6 +8930,21 @@ for(i =0; i < dice; i++)
 {results +=d(sides);
 }
 return results;
+}
+
+var row;
+function start(){
+  row = event.target;
+}
+function dragover(){
+  var e = event;
+  e.preventDefault();
+
+  let children= Array.from(e.target.parentNode.parentNode.children);
+  if(children.indexOf(e.target.parentNode)>children.indexOf(row))
+    e.target.parentNode.after(row);
+  else
+    e.target.parentNode.before(row);
 }
  </script>
  <script src="Characters.js"></script>
