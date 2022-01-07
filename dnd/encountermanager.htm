@@ -27,7 +27,6 @@ height: auto;
 line-height: 18px;
 text-shadow: .5px .5px .5px #8b0000, .5px .5px .5px #CD0000;
 vertical-align: top;
-//white-space: nowrap;
 }
 
 button,
@@ -425,19 +424,11 @@ for(var i =x; i< characters.length; i++)
 }
 }
 }
-$(function()
-{$("#accordion").accordion(
-{active: false,
- collapsible: true,
- heightStyle: "content"
-})
-});
-</script><b id='spells'>
+
+</script>
+
 Target the character to receive these spells first.
-</b>
-<div id="accordion">
-Weapons
-<div>
+
 <script>
  t1 ="a,b,c,damageDice"
 
@@ -4249,7 +4240,7 @@ Weapons
 }
  s1 ="<input onClick='",
  s2 ="()' type='button' value='",
- s3 ="'/></p>"
+ s3 ="'/>&nbsp;&nbsp;"
  s4 =document.write.bind(document)
  s4(s1 + 'Club' + s2 + 'Club' + s3)
  s4(s1 + 'Dagger' + s2 + 'Dagger' + s3)
@@ -5986,7 +5977,7 @@ if(this.class.match(/Warlock/))
 {menuContents +="Cantrips Known : "+this.cantripsKnown+", Spells Known : "+this.spellsKnown+", Spell Slots : "+this.spellSlots+", Slot Level : "+this.slotLevel+", Invocations Known : "+this.invocationsKnown+"<p>"
 }
 
-if(this.class.match(/Cleric|Wizard/))
+if(this.class.match(/Druid|Cleric|Wizard/))
 {menuContents +="Cantrips Known : "+this.cantripsKnown+"<p>"
 }
 
@@ -5998,7 +5989,7 @@ if(this.class.match(/Cleric/))
 {menuContents +="Channel Divinity Slot : " + this.maxChannelDivinitySlot + "<input onClick='characters[" + this.index + "].setCurChannelDivinitySlot(characters[" + this.index + "].curChannelDivinitySlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurChannelDivnitySlot(this.value)' size=2 type='text' value=" + this.curChannelDivinitySlot + ">";
 }
 
-if(this.class.match(/Cleric|Sorcerer|Warlock|Wizard/))
+if(this.class.match(/Cleric|Druid|Sorcerer|Warlock|Wizard/))
 {
 menuContents +="Spell Slots[1st: " + this.maxFirstSlot + "<input onClick='characters[" + this.index + "].setCurFirstSlot(characters[" + this.index + "].curFirstSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurFirstSlot(this.value)' size=2 type='text' value=" + this.curFirstSlot + ">";
 menuContents +="][2nd: " + this.maxSecondSlot + "<input onClick='characters[" + this.index + "].setCurSecondSlot(characters[" + this.index + "].curSecondSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurSecondSlot(this.value)' size=2 type='text' value=" + this.curSecondSlot + ">";
@@ -6040,12 +6031,12 @@ menuContents +="</td></tr><tr><td>Flaws :<textArea cols='25' rows='3' onChange='
 menuContents +="</td></tr><tr><td>Ideals :<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setIdeals(this.value)'>" + this.ideals + "</textArea>";
 menuContents +="</td></tr><tr><td>Feats:<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setFeats(this.value)'>" + this.feats + "</textArea>";
 
-menuContents +="</td></tr></table></td><td><span id=toggled4" + this.index + " style='display : " + this.toggled4 + "'><table><tr><td>Class:<select onChange='characters[" + this.index + "].setClass(this.value)'><option>" + this.class + "<option>Artificer, Alchemist</option><option>Artificer, Gunsmith</option><option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Dreams<option>Druid, Land<option>Druid, Moon<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Phantom<option>Rogue, Thief<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock, Great Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
+menuContents +="</td></tr></table></td><td><span id=toggled4" + this.index + " style='display : " + this.toggled4 + "'><table><tr><td>Class:<select onChange='characters[" + this.index + "].setClass(this.value)'><option>" + this.class + "<option>Artificer, Alchemist</option><option>Artificer, Gunsmith</option><option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Desert<option>Druid, Dreams<option>Druid, Land<option>Druid, Moon<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Phantom<option>Rogue, Thief<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock, Great Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
 menuContents +="</td></tr><tr><td><input onChange='characters[" + this.index + "].setClass(this.value)' placeHolder='other class' size='25' type='text'>";
 menuContents +="</td></tr><tr><td>Challenge Rating(CR)or Level(lvl):<input maxLength=3 onChange='characters[" + this.index + "].setLevel(this.value)' size=3 type='text' value=" + this.level + ">";
 menuContents +="</td></tr><tr><td>Feature Notes:<textArea cols='30' rows='3' onChange='characters[" + this.index + "].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>" + this.featureNotes + "</textarea>";
 menuContents +="</td></tr><tr><td>Experience Points(XP) :<input maxLength='8' onChange='characters[" + this.index + "].setExperience(this.value)'size='8' type='text' value='" + this.experience + "'>";
-menuContents +="</td></tr><tr><td>Class Features:Target the character to receive the spells here. Make notes in Feature Notes above<color='red'>" + this.features + "</color>";
+menuContents +="</td></tr><tr><td>Class Features:Target the character or creature to receive the weapons or spells here. Make notes in Feature Notes above<color='red'>" + this.features + "</color>";
 menuContents +="</td></tr></table></span></td></tr></table>"
 this.menu.setContents(menuContents);
 }
@@ -6522,9 +6513,9 @@ b ='@6th.LAND S STRIDE ignore difficult terrain and magical plants, save at adv 
 c ="";
 dx ="";
 }
- if(this.class.match(/Moon/))
- {a ='@2nd.CIRCLE of the Moon</td></tr><tr><td>@2nd.COMBAT WILD SHAPE wild as a bonus, 1 slot heal 1d8</td></tr><tr><td>@2nd.CIRCLE FORMS wild shape CRlvl/3';
-b ='@6th.PRIMAL STRIKE wild attacks are magical</td></tr><tr><td>@10th.ELEMENTAL WILD SHAPE 2 wild shape uses, become elemental</td></tr><tr><td>@14th.THOUSAND FORMS Alter Self at will';
+ if(this.class.match(/Desert/))
+ {a ="@2nd.CIRCLE of the Desert</td></tr><tr><td>@2nd <b onClick='Blur()'>Blur</b>, <b onClick='Silence()'>Silence</b><td></tr><tr><td>@2nd.CIRCLE FORMS wild shape CRlvl/3</td></tr><tr><td>@3rd <b onClick='CreateFoodWater()'>Create Food and Water</b>, <b onClick='ProtectionFromEnergy()'>Protection from Energy</b></td></tr><tr><td>@4th <b onClick='Blight()'>Blight</b>, <b onClick='HallucinatoryTerrain()'>Hallucinatory Terrain</b></td></tr><tr><td>@5th <b onClick='InsectPlague()'>Insect Plague</b>, <b onClick='WallOfStone()'>Wall of Stone</b>";
+b ="@6th.PRIMAL STRIKE wild attacks are magical</td></tr><tr><td>@10th.ELEMENTAL WILD SHAPE 2 wild shape uses, become elemental</td></tr><tr><td>@14th.THOUSAND FORMS Alter Self at will";
 c ="";
 dx ="";
 }
@@ -6533,6 +6524,12 @@ dx ="";
 b ="@6th(Hearth of Moonlight and Shadow)during rest 30ft radius sphere for party to rest in, Stealth+5, Perception+5, light in the sphere is not visible outside";
 c ="@10th(Hidden Paths)bonus teleport 60ft 1act also teleport 1ally within 30ft of you";
 dx ="@14th(Walker in Dreams)after short rest cast<b onClick='Dream()'>Dream</b> or<b onClick='Scrying()'>Scrying</b> or<b onClick='TeleportationCircle()'>Teleportation Circle</b> recharge long rest";
+}
+ if(this.class.match(/Moon/))
+ {a ='@2nd.CIRCLE of the Moon</td></tr><tr><td>@2nd.COMBAT WILD SHAPE wild as a bonus, 1 slot heal 1d8</td></tr><tr><td>@2nd.CIRCLE FORMS wild shape CRlvl/3';
+b ='@6th.PRIMAL STRIKE wild attacks are magical</td></tr><tr><td>@10th.ELEMENTAL WILD SHAPE 2 wild shape uses, become elemental</td></tr><tr><td>@14th.THOUSAND FORMS Alter Self at will';
+c ="";
+dx ="";
 }
  if(this.class.match(/Shepherd/))
  {a ="@2nd(Speech of the Woods)speak and write the Sylvan language, beasts know your speech and you know their sounds and convey what they have seen in the past</td></tr><tr><td>@2nd(Spirit Totem)60ft bonus move 60ft a spirit in 30ft aura 1min(Bear Spirit)temp hp 5+druid level to allies in aura and str at adv(Hawk Spirit)use reaction to let 1ally in aura attack at adv and all in aura Perception at adv(Unicorn Spirit)detect creatures in aura and heal+your druid level";
@@ -7605,7 +7602,7 @@ this.setCurKiPointSlot(0);
 }
 }
 
-if(this.class.match(/Warlock/))
+if(this.class.match(/Druid|Warlock/))
 {if(this.level.match(/[0-3]/)){this.setCantripsKnown(2)}
 if(this.level.match(/[4-9]/)){this.setCantripsKnown(3)}
 if(this.level.match(/1[0-9]|20/)){this.setCantripsKnown(4)}
