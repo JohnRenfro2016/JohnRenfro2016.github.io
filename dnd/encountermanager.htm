@@ -13,10 +13,6 @@
 
 <head>
 <style>
-body,
-html,
-table {margin: left;
-}
 
 body,
 table,
@@ -29,9 +25,9 @@ font-style: normal;
 font-weight: 200;
 height: auto;
 line-height: 18px;
-text-align: left;
 text-shadow: .5px .5px .5px #8b0000, .5px .5px .5px #CD0000;
 vertical-align: top;
+white-space: nowrap;
 }
 
 button,
@@ -48,7 +44,6 @@ font-style: normal;
 font-weight: 200;
 height: auto;
 line-height: 18px;
-text-align: left;
 text-shadow: .5px .5px .5px #8b0000, .5px .5px .5px #CD0000;
 vertical-align: top;
 }
@@ -98,6 +93,97 @@ font-size: 125%;
 <tr>
 <td><img src='Encounter1.jpg'></td>
 </tr>
+<tr><td>
+This crib sheet below is taken directly from <a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a> where you can generate characters for any level or class.
+<pre>
+
+PLAYING THE GAME
+
+• The Dungeon Master (DM) describes a scene and players take turns describing their characters' responses.
+
+• For ability checks, saving throws, and attack rolls, roll 1d20 + one ability modifier + proficiency bonus (if proficient in task). The higher the total, the better the effort. The DM tracks minimum totals needed for successful results.
+
+• For initiative rolls, roll 1d20 + Initiative (Dex) modifier. Higher totals act before lower totals in the same 6-second round.
+
+• During a turn, a character or creature may do 1 movement, 1 action and up to 1 bonus action. Between turns, do up to 1 reaction.
+
+• Advantage: Roll two d20s and use the higher result. Disadvantage: Roll two d20s and use the lower result.
+
+• On attack rolls only, a "natural 20" is always a critical hit, while a "natural 1" is always a miss.
+
+• Saving throws are rolled as needed at any time due to attacks, spells, or hazzards.
+
+• A character may die if failing three death saves while at 0 hit points, gaining 6 levels of exhaustion, or suffering certain deadly spells and hazzards.
+
+• Specific traits, features, spells, and magic items may create exceptions to any rules.
+
+ACTIONS (1 per turn)
+
+• Attack: Roll to hit, melee or ranged. Some classes and creatures make extra attacks at higher levels with this action.
+
+• Cast Spell: If casting time 1 action.
+
+• Dash: Double Speed this turn.
+
+• Disengage: Avoiding all opportunity attacks while moving; "defensive retreat."
+
+• Dodge: Give attackers disadvantage.
+
+• Escape: Try to break free from grapple.
+
+• Grapple: Special melee attack.
+
+• Help: Give an ally advantage on one ability check or attack roll.
+
+• Hide: Stealth allowed only if unobserved.
+
+• Ready: Plan to take action as reaction when trigger occurs.
+
+• Search: Perception or Investigation check.
+
+• Shove: Special melee attack.
+
+• Stabilze: DC 10 Medicine check to aid 0 h.p. dying creature; automatic success if using healer's kit.
+
+• Use Object: Pick a lock, activate magical item, cover a hooded lantern, etc.
+
+• Use Potion: Drink or administer.
+
+• Use Shield: Equip or drop a shield.
+
+BONUS ACTIONS (up to 1 per turn)
+
+• Offhand Attack: If doing Attack as action, may make one attack this turn if light weapon in other hand.
+
+• Cast Spell: If casting time 1 bonus action.
+
+MOVEMENTS (limited by Speed)
+
+• Move: Distance equal to Speed.
+
+• Crawl, Climb, Swim, Squeeze, Move Across Difficult Terrain or Move While Grappling: "Half speed," uses up 10 ft. of Speed per 5 ft. distance.
+
+• Drop Prone: No cost to Speed.
+
+• Stand Up: From Prone position/condition, costs half Speed that turn.
+
+• Take Cover: At end of move, half cover gives +2 to Armor Class and Dexterity saving throws; three-quarter cover gives +5 AC and Dex saves.
+
+REACTIONS (1 between turns)
+
+• Cast Spell: If casting time 1 reaction.
+
+• Opportunity Attack: May make one attack if enemy moves out of reach.
+
+• Readied Action: After trigger occurs, else action wasted.
+
+FREE ACTIONS
+
+• Concentration (Maintain A Spell): Ends if caster starts another concentration spell, or the caster is incapacitated, stunned, unconscious, or killed. If caster takes damage, a Constitution saving throw is needed to avoid immediately ending spell. DC is equal to 10 or half damage taken, whichever is greater. Each hit needs a separate saving throw check.
+
+• Interacting With An Object: Generally part of another Movement or Action. Examples: Draw one weapon, drop a held object, or open an unlocked door.
+</pre>
+</td></tr>
 </table>
 </td>
 <td>
@@ -130,6 +216,9 @@ font-size: 125%;
 </tr>
 <tr>
 <td><a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a> Ignore the sign-in.</td>
+</tr>
+<tr>
+<td><a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a></td>
 </tr>
 <tr>
 <td><a href='#spells'>Spells</a></td>
@@ -5312,7 +5401,7 @@ characterBoxHeight ="*";
 characters =new Array();
 currentElementId =0;
 PC ="PC";
-menuWidth =800;
+menuWidth =200;
 pcBox =new AGEBox();
 pcMenu =new AGEBox();
 savePaneBox =new AGEBox();
@@ -5818,21 +5907,19 @@ menuContents +="</td><td>Spell Ability:<select onChange='characters[" + this.ind
 menuContents +="</td><td>Level(Pro)ficiency bonus:<input maxLength=4 onChange='characters[" + this.index + "].setPro(this.value)'size=4 type='text' value='" + this.pro + "'>";
 menuContents +="</td><td>(Sit)uation mod:<input maxLength=4 onChange='characters[" + this.index + "].setSit(this.value)'size=4 type='text' value=" + this.sit + ">";
 menuContents +="</td></tr></table></td><td><table><tr><td>" + this.combatLog;
-
 menuContents +="<table><tr><td><table><tr><td>Show ";
 menuContents +="<input class=tabstyle onClick='toggleTab5(" + this.index + ")' type='button' value=' Abilities?'>";
 menuContents +="<input class=tabstyle onClick='toggleTab6(" + this.index + ")' type='button' value=' Actions?'>";
-menuContents +="<input class=tabstyle onClick='toggleTab2(" + this.index + ")' type='button' value=' Race, Background or Equipment?'>";
+menuContents +="<input class=tabstyle onClick='toggleTab2(" + this.index + ")' type='button' value=' Background?'>";
 menuContents +="<input class=tabstyle onClick='toggleTab4(" + this.index + ")' type='button' value=' Class?'>";
 menuContents +="</td></tr><tr><td><input type='button' onClick='characters[" + this.index + "].save()'value='Save this character?'>";
-menuContents +="</td></tr><tr><td>Name :<input class=name maxLength=50 onChange='characters[" + this.index + "].setName(this.value)' placeHolder='Name'size=20 type='text' value='" + this.name + "'>";
+menuContents +="</td></tr><tr><td>Name :<br><input class=name maxLength=50 onChange='characters[" + this.index + "].setName(this.value)' placeHolder='Name'size=20 type='text' value='" + this.name + "'>";
 menuContents +="</td></tr><tr><td>Size:<select onChange='characters[" + this.index + "].setSize(this.value)'><option>" + this.size + "<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>"
-
 menuContents +="</td></tr><tr><td>Armor Class(AC) :<input maxLength=2 onChange='characters[" + this.index + "].setAC(this.value)'size=2 type='text' value=" + this.ac + ">/" + this.curAc;
 menuContents +="</td></tr><tr><td><select onChange='characters[" + this.index + "].setArmor(this.value)'><option>" + this.armor + "<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth at disadv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth at disadv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth at disadv<option>Ring AC14 Stealth at disadv<option>Chain Mail AC16 Stealth at disadv str13<option>Splint AC17 Stealth at disadv str15<option>Plate AC18 Stealth at disadv str15</select>";
-menuContents +="<input onChange='characters[" + this.index + "].setArmor(this.value)' placeHolder='other armor or magical armor' size='25' type='text'>";
+menuContents +="</td></tr><tr><td><input onChange='characters[" + this.index + "].setArmor(this.value)' placeHolder='other armor or magical armor' size='25' type='text'>";
 menuContents +="</td></tr><tr><td><select onChange='characters[" + this.index + "].setShield(this.value)'><option>" + this.shield + "<option>No Shield AC+0<option>Shield AC+2</select>";
-menuContents +="<input onChange='characters[" + this.index + "].setShield(this.value)' placeHolder='other shield or magical shield' size='25' type='text'>";
+menuContents +="</td></tr><tr><td><input onChange='characters[" + this.index + "].setShield(this.value)' placeHolder='other shield or magical shield' size='25' type='text'>";
 menuContents +="</td></tr><tr><td>Resistance(dmg /2) :<input onChange='characters[" + this.index + "].setResistance(this.value)' size='25' value='" + this.resistance + "'>";
 menuContents +="</td></tr><tr><td>Immunity(dmg 0) :<input onChange='characters[" + this.index + "].setImmunity(this.value)' size='25' value='" + this.immunity + "'>";
 menuContents +="</td></tr><tr><td>Vulnerability(dmg x2) :<input onChange='characters[" + this.index + "].setVulnerability(this.value)' size='25' value='" + this.vulnerability + "'>";
@@ -5840,22 +5927,48 @@ menuContents +="</td></tr><tr><td>Hit Points(HP) :<input maxLength=4 onChange='c
 menuContents +="/<input maxLength=4 onChange='characters[" + this.index + "].setCurHp(this.value)' size=4 type='text' value=" + this.curHp + "> Temp HP : " + this.tempHp + "";
 menuContents +="</td></tr><tr><td>Hit Dice(HD):(<input maxLength=10 onChange='characters[" + this.index + "].setHitDice(this.value)' placeHolder='XdY+Z' size=10 type='text' value='" + this.hitDice + "'>)";
 menuContents +="</td></tr><tr><td>Take damage?<input maxLength=4 onChange='characters[" + this.index + "].setdamage(this.value)'size=4 type='text'>";
-menuContents +="Heal up?<input maxLength=4 onChange='characters[" + this.index + "].setHealing(this.value)'size=4 type='text'>";
-menuContents +="</td></tr><tr><td>Damage Conditions :<textArea cols='25' rows=2 onChange='characters[" + this.index + "].setDamageConditions(this.value)'placeHolder='temp hp+10, ac-1, str+1, ini+3, blinded'>" + this.damageConditions + "</textArea>";
+menuContents +="</td></tr><tr><td>Heal up?<input maxLength=4 onChange='characters[" + this.index + "].setHealing(this.value)'size=4 type='text'>";
+menuContents +="</td></tr><tr><td>Damage Conditions :<br><textArea cols='25' rows=2 onChange='characters[" + this.index + "].setDamageConditions(this.value)'placeHolder='temp hp+10, ac-1, str+1, ini+3, blinded'>" + this.damageConditions + "</textArea>";
 menuContents +="</td></tr><tr><td>Speed :<input onChange='characters[" + this.index + "].setSpeed(this.value)' size='25' type='text' value='" + this.speed + "'>";
 menuContents +="</td></tr><tr><td>Senses :<input onChange='characters[" + this.index + "].setSenses(this.value)' size='25' type='text' value='" + this.senses + "'>";
+menuContents +="</td></tr><tr><td><h3>Race:</h3><select onChange='characters[" + this.index + "].setRace(this.value)'><option>" + this.race + "<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Halfling, Lightfoot<option>Halfling, Stout<option>Human<option>Orc, Half<option>Tiefling</select>";
+menuContents +="</td></tr><tr><td><input onChange='characters[" + this.index + "].setRace(this.value)' placeHolder='other race' size='25' type='text'>";
+menuContents +="</td></tr><tr><td>Traits :<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setTrait(this.value)'placeHolder='Gender, Age, Color, Height, Personality, Weight'>" + this.trait + "</textarea>";
+menuContents +="</td></tr><tr><td>Alignment:<select onChange='characters[" + this.index + "].setAlignment(this.value)'><option>" + this.alignment + "<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
+menuContents +="</td></tr><tr><td><h3>Equipment:</h3><textArea cols='25' rows='3' onChange='characters[" + this.index + "].setEquipment(this.value)'>" + this.equipment + "</textArea>";
 menuContents +="</td></tr><tr><td>Miniature File :<input onChange='characters[" + this.index + "].setFigure(this.value)'placeHolder='*.png'size='25' type='text' value='" + this.figure + "'>";
-
 menuContents +="</td></tr><tr><td><input type='button' value='Delete this character?'onClick='removeChar(" + this.index + ")'>";
-
 menuContents +="</td></tr></table></td><td><span id=toggled5" + this.index + " style='display : " + this.toggled5 + "'>";
 menuContents +="<table><tr><td><h3>Abilities:</h3>";
-menuContents +="</td></tr><tr><td><input onClick='abi=1;abiMod=characters[" + this.index + "].strMod;skillMod=characters[" + this.index + "].strPro;abiRoll(" + this.index + ")'value='Roll(str)ength?' type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setStr(this.value)'size=2 type='text' value=" + this.str + ">/" + this.curStr + " mod : " + this.strMod + "+<select onChange='characters[" + this.index + "].setStrPro(this.value)'><option>" + this.strPro + "<option><option>pro<option>exp</select><input onClick='abi=10;abiMod=characters[" + this.index + "].strMod;skillMod=characters[" + this.index + "].athletics;abiRoll(" + this.index + ")'value='Roll Athletics(str)?'type='button'>+<select onChange='characters[" + this.index + "].setAthletics(this.value)'><option>" + this.athletics + "<option><option>pro<option>exp</select> Carrying Capacity : " + this.carryingCapacity + "lbs Drag, Lift, Push : " + this.dragLiftPush + "lbs High Jump : " + this.highJump + "ft Long Jump : " + this.longJump + "ft";
-menuContents +="</td></tr><tr><td><input onClick='abi=2;abiMod=characters[" + this.index + "].dexMod;skillMod=characters[" + this.index + "].dexPro;abiRoll(" + this.index + ")'value='Roll(dex)terity?' type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setDex(this.value)'size=2 type='text' value=" + this.dex + ">/" + this.curDex + " mod : " + this.dexMod + "+<select onChange='characters[" + this.index + "].setDexPro(this.value)'><option>" + this.dexPro + "<option><option>pro<option>exp</select><input onClick='abi=7;abiMod=characters[" + this.index + "].dexMod;skillMod=characters[" + this.index + "].acrobatics;abiRoll(" + this.index + ")'value='Roll Acrobatics(dex)?'type='button'>+<select onChange='characters[" + this.index + "].setAcrobatics(this.value)'><option>" + this.acrobatics + "<option><option>pro<option>exp</select><input onClick='abi=22;abiMod=characters[" + this.index + "].dexMod;skillMod=characters[" + this.index + "].sleight;abiRoll(" + this.index + ")'value='Roll Sleight of Hand(dex)?'type='button'>+<select onChange='characters[" + this.index + "].setSleight(this.value)'><option>" + this.sleight + "<option><option>pro<option>exp</select><input onClick='abi=23;abiMod=characters[" + this.index + "].dexMod;skillMod=characters[" + this.index + "].stealth;abiRoll(" + this.index + ")'value='Roll Stealth(dex)?'type='button'>+<select onChange='characters[" + this.index + "].setStealth(this.value)'><option>" + this.stealth + "<option><option>pro<option>exp</select>";
-menuContents +="</td></tr><tr><td ><input onClick='abi=3;abiMod=characters[" + this.index + "].conMod;skillMod=characters[" + this.index + "].conPro;abiRoll(" + this.index + ")'value='Roll(con)stitution?'type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setCon(this.value)'size=2 type='text' value=" + this.con + ">/" + this.curCon + " mod : " + this.conMod + "+<select onChange='characters[" + this.index + "].setConPro(this.value)'><option>" + this.conPro + "<option><option>pro<option>exp</select> Hold Breath : " +(parseInt(this.conMod) + 1) + "min Suffocate : " + parseInt(this.conMod) + "min";
-menuContents +="</td></tr><tr><td><input onClick='abi=4;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].intPro;abiRoll(" + this.index + ")'value='Roll(int)elligence?'type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setInt(this.value)'size=2 type='text' value=" + this.inte + ">/" + this.curInt + " mod : " + this.intMod + "+<select onChange='characters[" + this.index + "].setIntPro(this.value)'><option>" + this.intPro + "<option><option>pro<option>exp</select><input onClick='abi=9;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].arcana;abiRoll(" + this.index + ")'value='Roll Arcana(int)?'type='button'>+<select onChange='characters[" + this.index + "].setArcana(this.value)'><option>" + this.arcana + "<option><option>pro<option>exp</select><input onClick='abi=12;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].History;abiRoll(" + this.index + ")'value='Roll History(int)?'type='button'>+<select onChange='characters[" + this.index + "].setHistory(this.value)'><option>" + this.history + "<option><option>pro<option>exp</select><input onClick='abi=15;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].investigation;abiRoll(" + this.index + ")'value='Roll Investigation(int)?'type='button'>+<select onChange='characters[" + this.index + "].setInvestigation(this.value)'><option>" + this.investigation + "<option><option>pro<option>exp</select><input onClick='abi=17;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].nature;abiRoll(" + this.index + ")'value='Roll Nature(int)?'type='button'>+<select onChange='characters[" + this.index + "].setNature(this.value)'><option>" + this.nature + "<option><option>pro<option>exp</select><input onClick='abi=21;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].religion;abiRoll(" + this.index + ")'value='Roll Religion(int)?'type='button'>+<select onChange='characters[" + this.index + "].setReligion(this.value)'><option>" + this.religion + "<option><option>pro<option>exp</select>";
-menuContents +="</td></tr><tr><td><input onClick='abi=5;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].wisPro;abiRoll(" + this.index + ")'value='Roll(wis)dom?'type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setWis(this.value)'size=2 type='text' value=" + this.wis + ">/" + this.curWis + " mod : " + this.wisMod + "+<select onChange='characters[" + this.index + "].setWisPro(this.value)'><option>" + this.wisPro + "<option><option>pro<option>exp</select><input onClick='abi=8;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].animal;abiRoll(" + this.index + ")'value='Roll Animal Handling(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setAnimal(this.value)'><option>" + this.animal + "<option><option>pro<option>exp</select><input onClick='abi=13;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].insight;abiRoll(" + this.index + ")'value='Roll Insight(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setInsight(this.value)'><option>" + this.insight + "<option><option>pro<option>exp</select><input onClick='abi=16;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].medicine;abiRoll(" + this.index + ")'value='Roll Medicine(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setMedicine(this.value)'><option>" + this.medicine + "<option><option>pro<option>exp</select><input onClick='abi=18;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].perception;abiRoll(" + this.index + ")'value='Roll Perception(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setPerception(this.value)'><option>" + this.perception + "<option><option>pro<option>exp</select><input onClick='abi=24;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].survival;abiRoll(" + this.index + ")'value='Roll Survival(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setSurvival(this.value)'><option>" + this.survival + "<option><option>pro<option>exp</select> ";
-menuContents +="</td></tr><tr><td><input onClick='abi=6;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].chaPro;abiRoll(" + this.index + ")'value='Roll(cha)risma?'type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setCha(this.value)'size=2 type='text' value=" + this.cha + ">/" + this.curCha + " mod : " + this.chaMod + "+<select onChange='characters[" + this.index + "].setChaPro(this.value)'><option>" + this.chaPro + "<option><option>pro<option>exp</select><input onClick='abi=11;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].deception;abiRoll(" + this.index + ")'value='Roll Deception(cha)?'type='button'>+<select onChange='characters[" + this.index + "].setDeception(this.value)'><option>" + this.deception + "<option><option>pro<option>exp</select><input onClick='abi=14;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].intimidation;abiRoll(" + this.index + ")'value='Roll Intimidation(cha)?'type='button'>+<select onChange='characters[" + this.index + "].setIntimidation(this.value)'><option>" + this.intimidation + "<option><option>pro<option>exp</select><input onClick='abi=19;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].performance;abiRoll(" + this.index + ")'value='Roll Performance(cha)?'type='button'>+<select onChange='characters[" + this.index + "].setPerformance(this.value)'><option>" + this.performance + "<option><option>pro<option>exp</select><input onClick='abi=20;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].persuasion;abiRoll(" + this.index + ")'value='Roll Persuasion(cha)?'type='button'>+<select onChange='characters[" + this.index + "].setPersuasion(this.value)'><option>" + this.persuasion + "<option><option>pro<option>exp</select>";
+menuContents +="</td></tr><tr><td><input onClick='abi=1;abiMod=characters[" + this.index + "].strMod;skillMod=characters[" + this.index + "].strPro;abiRoll(" + this.index + ")'value='Roll(str)ength?' type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setStr(this.value)'size=2 type='text' value=" + this.str + ">/" + this.curStr + " mod : " + this.strMod + "+<select onChange='characters[" + this.index + "].setStrPro(this.value)'><option>" + this.strPro + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=10;abiMod=characters[" + this.index + "].strMod;skillMod=characters[" + this.index + "].athletics;abiRoll(" + this.index + ")'value='Roll Athletics(str)?'type='button'>+<select onChange='characters[" + this.index + "].setAthletics(this.value)'><option>" + this.athletics + "<option><option>pro<option>exp</select>";
+menuContents +="</td></tr><tr><td>Carrying Capacity : " + this.carryingCapacity + "lbs";
+menuContents +="</td></tr><tr><td>Drag, Lift, Push : " + this.dragLiftPush + "lbs";
+menuContents +="</td></tr><tr><td>High Jump : " + this.highJump + "ft Long Jump : " + this.longJump + "ft";
+menuContents +="</td></tr><tr><td><input onClick='abi=2;abiMod=characters[" + this.index + "].dexMod;skillMod=characters[" + this.index + "].dexPro;abiRoll(" + this.index + ")'value='Roll(dex)terity?' type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setDex(this.value)'size=2 type='text' value=" + this.dex + ">/" + this.curDex + " mod : " + this.dexMod + "+<select onChange='characters[" + this.index + "].setDexPro(this.value)'><option>" + this.dexPro + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=7;abiMod=characters[" + this.index + "].dexMod;skillMod=characters[" + this.index + "].acrobatics;abiRoll(" + this.index + ")'value='Roll Acrobatics(dex)?'type='button'>+<select onChange='characters[" + this.index + "].setAcrobatics(this.value)'><option>" + this.acrobatics + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=22;abiMod=characters[" + this.index + "].dexMod;skillMod=characters[" + this.index + "].sleight;abiRoll(" + this.index + ")'value='Roll Sleight of Hand(dex)?'type='button'>+<select onChange='characters[" + this.index + "].setSleight(this.value)'><option>" + this.sleight + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=23;abiMod=characters[" + this.index + "].dexMod;skillMod=characters[" + this.index + "].stealth;abiRoll(" + this.index + ")'value='Roll Stealth(dex)?'type='button'>+<select onChange='characters[" + this.index + "].setStealth(this.value)'><option>" + this.stealth + "<option><option>pro<option>exp</select>";
+menuContents +="</td></tr><tr><td ><input onClick='abi=3;abiMod=characters[" + this.index + "].conMod;skillMod=characters[" + this.index + "].conPro;abiRoll(" + this.index + ")'value='Roll(con)stitution?'type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setCon(this.value)'size=2 type='text' value=" + this.con + ">/" + this.curCon + " mod : " + this.conMod + "+<select onChange='characters[" + this.index + "].setConPro(this.value)'><option>" + this.conPro + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td>Hold Breath : " +(parseInt(this.conMod) + 1) + "min"
+menuContents +="</td></tr><tr><td>Suffocate : " + parseInt(this.conMod) + "min";
+menuContents +="</td></tr><tr><td><input onClick='abi=4;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].intPro;abiRoll(" + this.index + ")'value='Roll(int)elligence?'type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setInt(this.value)'size=2 type='text' value=" + this.inte + ">/" + this.curInt + " mod : " + this.intMod + "+<select onChange='characters[" + this.index + "].setIntPro(this.value)'><option>" + this.intPro + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=9;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].arcana;abiRoll(" + this.index + ")'value='Roll Arcana(int)?'type='button'>+<select onChange='characters[" + this.index + "].setArcana(this.value)'><option>" + this.arcana + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=12;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].History;abiRoll(" + this.index + ")'value='Roll History(int)?'type='button'>+<select onChange='characters[" + this.index + "].setHistory(this.value)'><option>" + this.history + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=15;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].investigation;abiRoll(" + this.index + ")'value='Roll Investigation(int)?'type='button'>+<select onChange='characters[" + this.index + "].setInvestigation(this.value)'><option>" + this.investigation + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=17;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].nature;abiRoll(" + this.index + ")'value='Roll Nature(int)?'type='button'>+<select onChange='characters[" + this.index + "].setNature(this.value)'><option>" + this.nature + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=21;abiMod=characters[" + this.index + "].intMod;skillMod=characters[" + this.index + "].religion;abiRoll(" + this.index + ")'value='Roll Religion(int)?'type='button'>+<select onChange='characters[" + this.index + "].setReligion(this.value)'><option>" + this.religion + "<option><option>pro<option>exp</select>";
+menuContents +="</td></tr><tr><td><input onClick='abi=5;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].wisPro;abiRoll(" + this.index + ")'value='Roll(wis)dom?'type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setWis(this.value)'size=2 type='text' value=" + this.wis + ">/" + this.curWis + " mod : " + this.wisMod + "+<select onChange='characters[" + this.index + "].setWisPro(this.value)'><option>" + this.wisPro + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=8;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].animal;abiRoll(" + this.index + ")'value='Roll Animal Handling(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setAnimal(this.value)'><option>" + this.animal + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=13;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].insight;abiRoll(" + this.index + ")'value='Roll Insight(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setInsight(this.value)'><option>" + this.insight + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=16;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].medicine;abiRoll(" + this.index + ")'value='Roll Medicine(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setMedicine(this.value)'><option>" + this.medicine + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=18;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].perception;abiRoll(" + this.index + ")'value='Roll Perception(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setPerception(this.value)'><option>" + this.perception + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=24;abiMod=characters[" + this.index + "].wisMod;skillMod=characters[" + this.index + "].survival;abiRoll(" + this.index + ")'value='Roll Survival(wis)?'type='button'>+<select onChange='characters[" + this.index + "].setSurvival(this.value)'><option>" + this.survival + "<option><option>pro<option>exp</select> ";
+menuContents +="</td></tr><tr><td><input onClick='abi=6;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].chaPro;abiRoll(" + this.index + ")'value='Roll(cha)risma?'type='button'>score:<input maxLength=2 onChange='characters[" + this.index + "].setCha(this.value)'size=2 type='text' value=" + this.cha + ">/" + this.curCha + " mod : " + this.chaMod + "+<select onChange='characters[" + this.index + "].setChaPro(this.value)'><option>" + this.chaPro + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=11;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].deception;abiRoll(" + this.index + ")'value='Roll Deception(cha)?'type='button'>+<select onChange='characters[" + this.index + "].setDeception(this.value)'><option>" + this.deception + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=14;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].intimidation;abiRoll(" + this.index + ")'value='Roll Intimidation(cha)?'type='button'>+<select onChange='characters[" + this.index + "].setIntimidation(this.value)'><option>" + this.intimidation + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=19;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].performance;abiRoll(" + this.index + ")'value='Roll Performance(cha)?'type='button'>+<select onChange='characters[" + this.index + "].setPerformance(this.value)'><option>" + this.performance + "<option><option>pro<option>exp</select>"
+menuContents +="</td></tr><tr><td><input onClick='abi=20;abiMod=characters[" + this.index + "].chaMod;skillMod=characters[" + this.index + "].persuasion;abiRoll(" + this.index + ")'value='Roll Persuasion(cha)?'type='button'>+<select onChange='characters[" + this.index + "].setPersuasion(this.value)'><option>" + this.persuasion + "<option><option>pro<option>exp</select>";
 menuContents +="</td></tr><tr><td>Racial Abilility Increases :<input onChange='characters[" + this.index + "].setAbility(this.value)' size='25' value='" + this.ability + "'>";
 menuContents +="</td></tr><tr><td>Racial Proficiencies :<input onChange='characters[" + this.index + "].setProficienciesRace(this.value)' size='25' value='" + this.proficienciesRace + "'>";
 menuContents +="</td></tr><tr><td>Background Proficiencies :<input onChange='characters[" + this.index + "].setBackT(this.value)' size='25' value='" + this.backT + "'>";
@@ -5897,9 +6010,9 @@ menuContents +="][8th: " + this.maxEighthSlot + "<input onClick='characters[" + 
 menuContents +="][9th: " + this.maxNinthSlot + "<input onClick='characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].curNinthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurNinthSlot(this.value)' size=2 type='text' value=" + this.curNinthSlot + ">";
 menuContents +="]&nbsp;<input onClick='characters[" + this.index + "].setCurFirstSlot(characters[" + this.index + "].maxFirstSlot);characters[" + this.index + "].setCurSecondSlot(characters[" + this.index + "].maxSecondSlot);characters[" + this.index + "].setCurThirdSlot(characters[" + this.index + "].maxThirdSlot);characters[" + this.index + "].setCurFourthSlot(characters[" + this.index + "].maxFourthSlot);characters[" + this.index + "].setCurFifthSlot(characters[" + this.index + "].maxFifthSlot);characters[" + this.index + "].setCurSixthSlot(characters[" + this.index + "].maxSixthSlot);characters[" + this.index + "].setCurSeventhSlot(characters[" + this.index + "].maxSeventhSlot);characters[" + this.index + "].setCurEighthSlot(characters[" + this.index + "].maxEighthSlot);characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].maxNinthSlot)' type='button' value='Take an 8hrs rest?'>";
 }
-menuContents +="</td></tr><tr><td><h3>Actions:</h3>Target a piece on the map before you roll. When saving this character, you can reorder the Rolls in the save pane. Just drag and drop.</td></tr><tr><td><input maxLength=200 onChange='characters[" + this.index + "].setRollName1(this.value)'placeHolder='attackRollToHitName+Ability+pro SpellSlot RangeInFeet'size=38 type='text' value='" + this.rollName1 + "'>"
+menuContents +="</td></tr><tr><td><h3>Actions:</h3>Target a piece on the map before you roll. When saving this character, you can reorder the Rolls in the save pane. Just drag and drop.</td></tr><tr><td nowrap><input maxLength=200 onChange='characters[" + this.index + "].setRollName1(this.value)'placeHolder='attackRollToHitName+Ability+pro SpellSlot RangeInFeet'size='25' type='text' value='" + this.rollName1 + "'>"
 menuContents +="&nbsp;<input maxLength='8' onChange='characters[" + this.index + "].setRoll1(this.value)'placeHolder='XdY+Z'size='8' type='text' value=" + this.roll1 + ">"
-menuContents +="<input maxLength=200 onChange='characters[" + this.index + "].setRollName2(this.value)'placeHolder='damageType+Ability and damageConditions' size=38 type='text' value='" + this.rollName2 + "'>"
+menuContents +="<input maxLength=200 onChange='characters[" + this.index + "].setRollName2(this.value)'placeHolder='damageType+Ability and damageConditions' size='25' type='text' value='" + this.rollName2 + "'>"
 menuContents +="&nbsp;<input maxLength='8' onChange='characters[" + this.index + "].setRoll2(this.value)'placeHolder='XdY+Z'size='8' type='text' value=" + this.roll2 + ">"
 menuContents +="&nbsp;<input maxLength='8' onClick='addRollPrompt(" + this.index + ")'size='8' type='button' value='Add this Roll?'>";
 if(this.rolls.length ===0)
@@ -5908,24 +6021,18 @@ if(this.rolls.length ===0)
 else
 {for(var i =0; i< this.rolls.length; i++)
  {menuContents +="</td></tr><tr><td><input type='button' onClick='makeRoll(" + this.index + "," + i + ")'value='Roll?'>"
-menuContents +="&nbsp;<input maxLength=220 onChange='characters[" + this.index + "].rollNames[" + i + "]=this.value' size=42 type='text' value='" + this.rollNames[i] + "'>";
+menuContents +="&nbsp;<input maxLength=220 onChange='characters[" + this.index + "].rollNames[" + i + "]=this.value' size='25' type='text' value='" + this.rollNames[i] + "'>";
 menuContents +="&nbsp;<input maxLength='8' onChange='characters[" + this.index + "].rolls[" + i + "]=this.value' size='8' type='text' value='" + this.rolls[i] + "'>";
-menuContents +="<input maxLength=220 onChange='characters[" + this.index + "].rollNames2[" + i + "]=this.value' size=48 type='text' value='" + this.rollNames2[i] + "'>";
+menuContents +="<input maxLength=220 onChange='characters[" + this.index + "].rollNames2[" + i + "]=this.value' size='25' type='text' value='" + this.rollNames2[i] + "'>";
 menuContents +="&nbsp;<input maxLength='8' onChange='characters[" + this.index + "].rolls2[" + i + "]=this.value' size='8' type='text' value='" + this.rolls2[i] + "'>";
 menuContents +="&nbsp;<input type='button' onClick='deleteRollPrompt(" + this.index + "," + i + ")'value='X'>";
 }
 }
-menuContents +="</td></tr></table></td><td><span id=toggled2" + this.index + " style='display : " + this.toggled2 + "'><table><tr><td><h3>Equipment:</h3>"
-menuContents +="<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setEquipment(this.value)'>" + this.equipment + "</textArea>";
-
-menuContents +="</td></tr><tr><td><h3>Race:</h3><select onChange='characters[" + this.index + "].setRace(this.value)'><option>" + this.race + "<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Halfling, Lightfoot<option>Halfling, Stout<option>Human<option>Orc, Half<option>Tiefling</select>";
-menuContents +="<input onChange='characters[" + this.index + "].setRace(this.value)' placeHolder='other race' size='25' type='text'>";
-
-menuContents +="</td></tr><tr><td>Traits :<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setTrait(this.value)'placeHolder='Gender, Age, Color, Height, Personality, Weight'>" + this.trait + "</textarea>";
-menuContents +="</td></tr><tr><td>Alignment:<select onChange='characters[" + this.index + "].setAlignment(this.value)'><option>" + this.alignment + "<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
+menuContents +="</td></tr></table>"
+menuContents +="</td><td><span id=toggled2" + this.index + " style='display : " + this.toggled2 + "'><table><tr><td>"
 
 menuContents +="<tr><td><h3>Background:</h3><select onChange='characters[" + this.index + "].setBackground(this.value)'><option>" + this.background + "<option>Acolyte<option>Charlatan<option>City Investigator<option>City Watch<option>Cloistered Scholar<option>Courtier<option>Criminal, Blackmailer<option>Criminal, Burglar<option>Criminal, Enforcer<option>Criminal, Fence<option>Criminal, Highway Robber<option>Criminal, HiredKiller<option>Criminal, Pickpocket<option>Criminal, Smuggler<option>Entertainer, Actor<option>Entertainer, Dancer<option>Entertainer, Fire-Eater<option>Entertainer, Gladiator<option>Entertainer, Instrumentalist<option>Entertainer, Jester<option>Entertainer, Juggler<option>Entertainer, Poet<option>Entertainer, Singer<option>Entertainer, Storyteller<option>Entertainer, Tumbler<option>Faction Agent<option>Folk Hero, Farmer<option>Guild, Alchemist<option>Guild, Brewer<option>Guild, Calligrapher<option>Guild, Carpenter<option>Guild, Cartographer<option>Guild, Cobbler<option>Guild, Cook<option>Guild Crafter<option>Guild, Glassblower<option>Guild, Jeweler<option>Guild, Leatherworker<option>Guild, Mason<option>Guild, Painter<option>Guild, Potter<option>Guild, Smith<option>Guild, Tinker<option>Guild, Weaver<option>Guild, or Woodcarver<option>Hermit<option>Noble, Knight<option>Noble, Retainer<option>Outlander, Bounty Hunter<option>Outlander, Exile<option>Outlander, Forester<option>Outlander, Guide<option>Outlander, Homesteader<option>Outlander, Hunter-Gatherer<option>Outlander, Pilgrim<option>Outlander, Trapper<option>Outlander, Tribal Marauder<option>Outlander, Tribal Nomad<option>Sage, Alchemist<option>Sage, Astronomer<option>Sage, Discredited Academic<option>Sage, Librarian<option>Sage, Professor<option>Sage, Researcher<option>Sage, Scribe<option>Sage, Wizard Apprentice<option>Sailor, Cartographer<option>Sailor, Pirate<option>Soldier, Cavalry<option>Soldier, Healer<option>Soldier, Infantry<option>Soldier, Officer<option>Soldier, Quartermaster<option>Soldier, Scout<option>Urchin</select>";
-menuContents +="<input onChange='characters[" + this.index + "].setBackground(this.value)' placeHolder='other background' size='25' type='text'>";
+menuContents +="</td></tr><tr><td><input onChange='characters[" + this.index + "].setBackground(this.value)' placeHolder='other background' size='25' type='text'>";
 menuContents +="</td></tr><tr><td>Background Features :<input onChange='characters[" + this.index + "].setBackF(this.value)' size='25' type='text' value='" + this.backF + "'>";
 menuContents +="</td></tr><tr><td>Bonds :<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setBonds(this.value)'>" + this.bonds + "</textArea>";
 menuContents +="</td></tr><tr><td>Flaws :<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setFlaws(this.value)'>" + this.flaws + "</textArea>";
@@ -5933,7 +6040,7 @@ menuContents +="</td></tr><tr><td>Ideals :<textArea cols='25' rows='3' onChange=
 menuContents +="</td></tr><tr><td>Feats:<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setFeats(this.value)'>" + this.feats + "</textArea>";
 
 menuContents +="</td></tr></table></td><td><span id=toggled4" + this.index + " style='display : " + this.toggled4 + "'><table><tr><td><h3>Class:</h3><select onChange='characters[" + this.index + "].setClass(this.value)'><option>" + this.class + "<option>Artificer, Alchemist</option><option>Artificer, Gunsmith</option><option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Dreams<option>Druid, Land<option>Druid, Moon<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Thief<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock, Great Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
-menuContents +="<input onChange='characters[" + this.index + "].setClass(this.value)' placeHolder='other class' size='25' type='text'>";
+menuContents +="</td></tr><tr><td><input onChange='characters[" + this.index + "].setClass(this.value)' placeHolder='other class' size='25' type='text'>";
 menuContents +="</td></tr><tr><td>Challenge Rating(CR)or Level(lvl):<input maxLength=3 onChange='characters[" + this.index + "].setLevel(this.value)' size=3 type='text' value=" + this.level + ">";
 menuContents +="</td></tr><tr><td><h3>Feature Notes:</h3><textArea cols='30' rows='3' onChange='characters[" + this.index + "].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>" + this.featureNotes + "</textarea>";
 menuContents +="</td></tr><tr><td>Experience Points(XP) :<input maxLength='8' onChange='characters[" + this.index + "].setExperience(this.value)'size='8' type='text' value='" + this.experience + "'>";
@@ -6455,7 +6562,7 @@ c ='@10th.ELDRITCH STRIKE on weapon hit, target saves at disadv vs your next spe
 dx ='@15th.ARCANE CHARGE use action surge then teleport 30ft</td></tr><tr><td>Relentless</td></tr><tr><td>@(15th 1/1)roll init with 0SD is 1SD';
 e ='@18th.IMPROVED WAR MAGIC cast spell, make bonus weapon attack';
 }
- this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)(Archery)ranged attack+2 or(Defense)while armored, AC+1 or(Dueling)1h melee dmg+2 or(Great Weapon Fighting)2h reroll on 1 or 2 or(Protection)with shield, adjacent allies attacked at disadv or(Two Weapon Fighting)secondary damage+abiMod</td></tr><tr><td>@1st(Second Wind) @1st 1/1 short rest, bonus, heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surge) @2nd 1/1 @17th 2/2</td></tr><tr><td>@3rd(Martial Archetype) ' + a + '</td></tr><tr><td>@4th(Ability Score Improvement) @4th @6th @8th @12th @14th @16th @19th</td></tr><tr><td>@5th(Extra Attack) @5th 2 @10th 3 @20th 4</td></tr><tr><td>' + b + '</td></tr><tr><td>@9th(Indomitable) re-roll failed save, recharge long rest @9th 1 @13th 2 @17th 3</td></tr><tr><td>' + c + '</td></tr><tr><td>' + dx + '</td></tr><tr><td>' + e + '');
+ this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)<br>(Archery)ranged attack+2<br>or(Defense)while armored, AC+1<br>or(Dueling)1h melee dmg+2<br>or(Great Weapon Fighting)2h reroll on 1 or 2<br>or(Protection)with shield, adjacent allies attacked at disadv<br>or(Two Weapon Fighting)secondary damage+abiMod</td></tr><tr><td>@1st(Second Wind)@1st 1/1 short rest, bonus, heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surge)@2nd 1/1 @17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)' + a + '</td></tr><tr><td>@4th(Ability Score Improvement)@4th @6th @8th @12th @14th @16th @19th</td></tr><tr><td>@5th(Extra Attack)@5th 2, @10th 3, @20th 4</td></tr><tr><td>' + b + '</td></tr><tr><td>@9th(Indomitable) re-roll failed save, recharge long rest @9th 1, @13th 2, @17th 3</td></tr><tr><td>' + c + '</td></tr><tr><td>' + dx + '</td></tr><tr><td>' + e + '');
  this.setEquipment('chain mail or leather.longbow.20 arrows.martial weapon and shield or 2 martial weapons.light crossbow 20 bolts or 2 handaxes.dungeoneer pack or explorer pack');
  this.setHitDice(this.level + 'd10+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('all armor, shields, simple weapons, martial weapons');
@@ -6616,10 +6723,10 @@ c ='@13th(Versatile Trickster)bonus, 30ft attack at adv target';
 dx ='@17th(Spell Thief)(1/1)react, spell dc vs your spell dc or negate and steal spell cast with your slots for 8hrss';
 }
  if(this.class.match(/Assassin/))
- {a ='@3rd(Bonus Proficiencies)Disguise Poisoner Kit+pro</td></tr><tr><td>@3rdASSASSINATE 1st attack lower init targets at adv and crit';
-b ='@9th.INFILTRATION EXPERT 7 days, 25gp, pose as wealthy merchant, etc'
-c ='@13th.IMPOSTER 3hr study, copy speech, writing behavior roll Deception to avoid detection';
-dx ='@17th.DEATH STRIKE surprised target lower init, con save or dam x 2';
+ {a ='@3rd(BONUS PROFICIENCIES)Disguise Poisoner Kit+pro</td></tr><tr><td>@3rd(ASSASSINATE)1st attack lower init targets at adv and crit';
+b ='@9th(INFILTRATION EXPERT)7 days, 25gp, pose as wealthy merchant, etc'
+c ='@13th(IMPOSTER)3hr study, copy speech, writing behavior roll Deception to avoid detection';
+dx ='@17th(DEATH STRIKE)surprised target lower init, con save or crit dam x 2';
 }
  if(this.class.match(/Mastermind/))
  {a ='@3rdMASTER OF INTRIGUE Disguise Forgery Kit and 1 from Cards, Darts, Dice, or Dragonchess+pro, 2 languages no accent</td></tr><tr><td>@3rdMASTER OF TACTICS Help action as bonus target 30ft';
@@ -6639,7 +6746,7 @@ b ="@9th(Supreme Sneak)when move half, Stealth at adv";
 c ="@13th(Use Magic Device)use any class item";
 dx ="@17th(Thief s Reflexes)1st turn at init, 2nd(turn at init-10 1st round";
 }
- this.setFeatures('</td></tr><tr><td>@1st(Expertise) Thieves Tools+exp and 1 skill+exp or 2 skills+exp @6th 2 more skills+exp</td></tr><tr><td>@1st(Sneak Attack)1/turn when attacking at adv or ally adjacent to target extra damage @1st +1d6 @3rd +2d6 @5th +3d6 @7th +4d6 @8th +5d6</td></tr><tr><td>@1st(Thieves Cant)gestures</td></tr><tr><td>@2nd(Cunning Action)action as bonus Dash, Disengage, or Hide after attack, under half cover, Stealth vs Perception or target can not attack</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th(Ability Score Improvement) @4th @4th @6th @8th @12th @16th @19th</td></tr><tr><td>@5th(Uncanny Dodge)react for half damage</td></tr><tr><td>@7th(Evasion)dex save for half is no damage</td></tr><tr><td>' + b + '</td></tr><tr><td>@11th(Reliable Talent)abi+pro roll of 9 or less is 10</td></tr><tr><td>' + c + '</td></tr><tr><td>@14th(Blindsense)know location of invisibles 10ft</td></tr><tr><td>@15th(Slippery Mind)wis+pro</td></tr><tr><td>' + dx + '</td></tr><tr><td>@18th(Elusive)not attacked at adv less incapacitated</td></tr><tr><td>@20th(Stroke of Luck)recharge short rest, roll failure is success');
+ this.setFeatures('</td></tr><tr><td>@1st(Expertise)Thieves Tools+exp and 1 skill+exp or 2 skills+exp @6th 2 more skills+exp</td></tr><tr><td>@1st(Sneak Attack)1/turn when attacking at adv or ally adjacent to target extra damage @1st +1d6 @3rd +2d6 @5th +3d6 @7th +4d6 @8th +5d6</td></tr><tr><td>@1st(Thieves Cant)gestures</td></tr><tr><td>@2nd(Cunning Action)action as bonus Dash, Disengage, or Hide after attack, under half cover, Stealth vs Perception or target can not attack</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th(Ability Score Improvement)@4th @6th @8th @12th @16th @19th</td></tr><tr><td>@5th(Uncanny Dodge)1 reaction per turn for half damage</td></tr><tr><td>@7th(Evasion)when attacked, dex save for half is no damage</td></tr><tr><td>' + b + '</td></tr><tr><td>@11th(Reliable Talent)abi+pro roll of 9 or less is 10</td></tr><tr><td>' + c + '</td></tr><tr><td>@14th(Blindsense)know location of invisibles 10ft</td></tr><tr><td>@15th(Slippery Mind)wis+pro</td></tr><tr><td>' + dx + '</td></tr><tr><td>@18th(Elusive)not attacked at adv less incapacitated</td></tr><tr><td>@20th(Stroke of Luck)recharge short rest, roll failure is success');
  this.setEquipment('rapier or shortsword.shortbow 20 arrows or shortsword.burglar pack or dungeoneer pack or explorer pack.leather armor.2 daggers.thieves tools');
  this.setHitDice(this.level + 'd8+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('daggers, darts, light crossbows, quarterstaffs, and slings');
@@ -8858,7 +8965,7 @@ if(characters[x].rollNames2[i].match(/heal/))
  characters[x].setCombatLog(log1 + log + log2);
 }
 else
-{log2 ="</td><td>" + characters[x].rollNames2[i] + "<input onClick='characters[targeted].setDamageConditions(characters[targeted].damageConditions+theCondition);checkTheTarget()' type='button' value='Assign this damage condition?'></td><td><h3>Damage 1</h3>" + characters[x].rolls2[i] + "(" + naturalRoll1 + roll1 + ") " + abiMod + " " + abi + " " + characters[x].sit + " sit =" + rollTotal1 + "<input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal1);checkTheTarget()' type='button' value=damage?><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal1/2))));checkTheTarget()' type='button' value='Half damage?'></td><td><h3>Damage 2</h3>" + characters[x].rolls2[i] + "(" + naturalRoll2 + roll2 + ") +0 no abi mod " + characters[x].sit + " sit =" + rollTotal2 + "<input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal2);checkTheTarget()' type='button' value=damage?><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal2/2))));checkTheTarget()' type='button' value='Half damage?'></td></tr></table>";
+{log2 ="</td><td>" + characters[x].rollNames2[i] + "<input onClick='characters[targeted].setDamageConditions(characters[targeted].damageConditions+theCondition);checkTheTarget()' type='button' value='Assign this damage condition?'></td><td><h3>Damage 1</h3>" + characters[x].rolls2[i] + "(" + naturalRoll1 + roll1 + ") " + abiMod + " " + abi + " " + characters[x].sit + " sit =" + rollTotal1 + "<input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal1);checkTheTarget()' type='button' value=Damage?><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal1/2))));checkTheTarget()' type='button' value='Half damage?'></td><td><h3>Damage 2</h3>" + characters[x].rolls2[i] + "(" + naturalRoll2 + roll2 + ") +0 no abi mod " + characters[x].sit + " sit =" + rollTotal2 + "<input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal2);checkTheTarget()' type='button' value=Damage?><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal2/2))));checkTheTarget()' type='button' value='Half damage?'></td></tr></table>";
  characters[x].setCombatLog(log1 + log + log2);
 }
 document.getElementById('targeted' + [targeted]).checked ='checked';
@@ -8912,7 +9019,7 @@ showSavePrompt("all characters", globalSave);
 }
 
 function showSavePrompt(name, toSave)
-{toSave ="<table><tr><td>Copy the code below into Characters.js to save " + name + ". You can permanently reorder the addRolls here by cutting and pasting the rows.<hr>" + toSave + "<hr><input type='button' onClick='savePane.hide()'value=Close></td></tr></table>";
+{toSave ="<table><tr><td>Save " + name + ". When saving this character, you can reorder the addRoll rows in the save pane. Just drag and drop. Then cut and paste the code below this line into the Characters.js file.<hr>" + toSave + "<hr><input type='button' onClick='savePane.hide()'value=Close></td></tr></table>";
 savePane.setContents(toSave);
 savePane.show();
 }
