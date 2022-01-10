@@ -1,7 +1,7 @@
 //Sephek Kaltro
 pc6056=new Character('Sephek Kaltro','PC')
 pc6056.addRoll('2nd(Misty Step)teleport 30ft bonus self','0d0+0','3/3 times per day','0d0+0')
-pc6056.addRoll('Cold Regeneration Heal','0d0+0','start of each turn unless 0hp and fire dmg','0d0+5')
+pc6056.addRoll('Cold Regeneration Heal','0d0+0','heal start of each turn unless 0hp and fire dmg','0d0+5')
 pc6056.addRoll('2 attacks total 1 handed Ice Longsword ','1d20+5','slashing','1d8+3')
 pc6056.addRoll('2 handed Ice Longsword ','0d0+0','cold dmg','2d4+0')
 pc6056.addRoll('Ice Dagger 20/60ft','1d20+5','cold dmg','1d4+3')
