@@ -810,7 +810,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function BladeWard()
- {a='Cantrip(Blade Ward self 10/10 turns',
+ {a='Cantrip(Blade Ward)self 10/10 turns',
  b='0d0+0',
  c='resist bludg slash pierc till t e o y n turn',
  damageDice='0d0+0',
@@ -1394,7 +1394,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function Levitate()
- {a='2nd(Levitate)1 target)DC8+' + characters[targeted].spellAbility + '+pro vsCon or obj up to 500lbs rise vertically up to 20ft move move up/down 20ft 60ft concentration 10min',
+ {a='2nd(Levitate)1 target)DC8+' + characters[targeted].spellAbility + '+pro vsCon or obj up to 500lbs rise vertically up to 20ft move up/down 20ft 60ft concentration 10min',
  b='0d0+0',
  c='',
  damageDice='0d0+0',
@@ -1450,7 +1450,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function MageHand()
- {a='Cantrip(Mage Hand 30ft 10/10 turns',
+ {a='Cantrip(Mage Hand)30ft 10/10 turns',
  b='0d0+0',
  c='open, stow, retrieve, pour, carry up to 10lbs',
  damageDice='0d0+0',
@@ -1482,7 +1482,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function Message()
- {a='Cantrip(Message 120ft 10/10 turns 1 target hears Silence dispels',
+ {a='Cantrip(Message)120ft 10/10 turns 1 target hears Silence dispels',
  b='0d0+0',
  c='',
  damageDice='0d0+0',
@@ -1818,7 +1818,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function Sleep()
- {a='1st(Sleep 90ft 10/10 turns',
+ {a='1st(Sleep)90ft 10/10 turns',
  b='0d0+0',
  c='20ft radius 5d8+2d8/slot lowest hp targets sleep til slapped or damage undead immune',
  damageDice='0d0+0',
@@ -1930,7 +1930,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function TrueStrike()
- {a='Cantrip(True Strike 30ft concentration 10/10 turns your next turn 1st attac at adv',
+ {a='Cantrip(True Strike)30ft concentration 10/10 turns your next turn 1st attac at adv',
  b='0d0+0',
  c='',
  damageDice='0d0+0',
@@ -3266,7 +3266,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function PlaneShift()
- {a='7th(Plane Shift)+cha+pro You+8 allies teleport to a different plane; or roll a spell attack to teleport 1 enemy to a random plane touch m',
+ {a='7th(Plane Shift)DC8+cha+pro vsCon You+8 allies teleport to a different plane; or roll a spell attack to teleport 1 enemy to a random plane touch m',
  b='1d20+0',
  c='teleported',
  damageDice='0d0+0',
@@ -5284,6 +5284,9 @@ if(alignment=stats.match(/(lawful good|lawful neutral|lawful evil|chaotic good|c
 if(ac=stats.match(/Armor\sClass\s(\d{1,2})([\s\S]*?)(Hit Points )/))
 {characters[targeted].setAC(ac[1])
 }
+if(armortype=stats.match(/mage\sarmor/))
+{characters[targeted].setArmor('Mage Armor AC13+dex')
+};
 if(armortype=stats.match(/natural armor/))
 {characters[targeted].setArmor('Natural Armor')
 };
@@ -5308,10 +5311,13 @@ if(armortype=stats.match(/scale/))
 if(armortype=stats.match(/breastplate/))
 {characters[targeted].setArmor('Breastplate AC14+dex max 2')
 };
+if(armortype=stats.match(/plate/))
+{characters[targeted].setArmor('Plate AC18 Stealth at disadv str15')
+};
 if(armortype=stats.match(/half\splate/))
 {characters[targeted].setArmor('Half Plate AC15+dex max 2 Stealth at disadv')
 };
-if(armortype=stats.match(/ring/))
+if(armortype=stats.match(/ring\smail/))
 {characters[targeted].setArmor('Ring AC14 Stealth at disadv')
 };
 if(armortype=stats.match(/chain\smail/))
@@ -5320,24 +5326,22 @@ if(armortype=stats.match(/chain\smail/))
 if(armortype=stats.match(/splint/))
 {characters[targeted].setArmor('Splint AC17 Stealth at disadv')
 };
-if(armortype=stats.match(/plate/))
-{characters[targeted].setArmor('Plate AC18 Stealth at disadv str15')
-};
 if(armortype=stats.match(/Unarmored\sDefense/))
 {characters[targeted].setArmor('Unarmored Defense AC10+dex+wis')
 };
-if(shieldtype=stats.match(/, shield/))
+characters[targeted].setShield('No Shield AC+0');
+if(shieldtype=stats.match(/\,\sshield/))
 {characters[targeted].setShield('Shield AC+2')
 };
 if(hp=stats.match(/(Hit Points )(\d{1,3})([\s\S]*?)(Speed )/))
 {characters[targeted].setMaxHp(hp[2])
 };
+characters[targeted].setHitDice();
 if(rip=stats.match(/Hit\sPoints[\s\S]*?\(([\s\S]*)\)/i))
 {characters[targeted].setHitDice(rip[1]);
  characters[targeted].setClass('Creature')
 };
-
-if(rip=stats.match(/speed\s([\s\S]*)str/i))
+if(rip=stats.match(/Speed\s([\s\S]*?ft)/i))
 {characters[targeted].setSpeed(rip[1])}
 if(str=stats.match(/(\d{1,2})\s\(\+|(\d{1,2})\s\(\-|(\d{1,2})\s\(\–/g))
 {characters[targeted].setStr(parseInt(str[0]));
@@ -5366,7 +5370,7 @@ if(senses=stats.match(/Senses\s([\s\S]*?Perception\s\d{1,2})/))
 {characters[targeted].setSenses(senses[1])
 }
 if(languages=stats.match(/(Languages )([\s\S]*?)(Challenge )/))
-{characters[targeted].setLanguages(languages[2])
+{characters[targeted].setBackL(languages[2])
 }
 if(level=stats.match(/Challenge\s(\d\/\d)/))
 {characters[targeted].setLevel(level[1])
@@ -5379,22 +5383,6 @@ if(xp=stats.match(/Challenge[\s\S]*\(([\s\S]*)\sXP/))
 }
 if(features=stats.match(/\sXP\)([\s\S]*?)ACTIONS/i))
 {characters[targeted].setFeatures(features[1])
-}
-if(damageroll=stats.match(/(Bite|Dagger|Morningstar)([\s\S]*)(\+\d{1,2})\sto\shit([\s\S]*)\(([\s\S]*)\)([\s\S]*)\./i))
-{characters[targeted].setRollName1(damageroll[1]+damageroll[2]+damageroll[4]);
- characters[targeted].setRoll1('1d20' + damageroll[3])
- characters[targeted].setRollName2(damageroll[6]);
- damageroll[4]=damageroll[4].replace(/\s/g, '');
- characters[targeted].setRoll2(damageroll[5]);
- addRollPrompt(targeted);
-}
-if(damageroll=stats.match(/(Claw)([\s\S]*)(\+\d{1,2})\sto\shit([\s\S]*)\(([\s\S]*)\)([\s\S]*)\./i))
-{characters[targeted].setRollName1(damageroll[1]+damageroll[2]+damageroll[4]);
- characters[targeted].setRoll1('1d20' + damageroll[3])
- characters[targeted].setRollName2(damageroll[6]);
- damageroll[4]=damageroll[4].replace(/\s/g, '');
- characters[targeted].setRoll2(damageroll[5]);
- addRollPrompt(targeted);
 }
 if(savingThrows=stats.match(/Str\s\+(\d{1,2})/))
 {if(parseInt(savingThrows[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].strMod)))
@@ -5448,16 +5436,19 @@ if(nameit=stats.match(/^Skills\s([\s\S]*?)\n/))
 {characters[targeted].setName(nameit[1])
 }
 if(skills=stats.match(/Skills\s([\s\S]*?)(Senses|Condition\sI|Damage\sI|Damage\sR|Damage\sV)/))
-{characters[targeted].setSkills(skills[1])
+{characters[targeted].setBackS(skills[1])
 };
+characters[targeted].setAthletics('');
 if(skills=stats.match(/Athletics\s\+(\d{1,2})/))
-{if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].dexMod)))
+{
+if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].dexMod)))
  {characters[targeted].setAthletics('exp')
 }
  else
  {characters[targeted].setAthletics('pro')
 }
 };
+characters[targeted].setAcrobatics('');
 if(skills=stats.match(/Acrobatics\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].dexMod)))
  {characters[targeted].setAcrobatics('exp')
@@ -5466,6 +5457,7 @@ if(skills=stats.match(/Acrobatics\s\+(\d{1,2})/))
  {characters[targeted].setAcrobatics('pro')
 }
 };
+characters[targeted].setSleight('');
 if(skills=stats.match(/Sleight\sof\sHand\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].dexMod)))
  {characters[targeted].setSleight('exp')
@@ -5474,6 +5466,7 @@ if(skills=stats.match(/Sleight\sof\sHand\s\+(\d{1,2})/))
  {characters[targeted].setSleight('pro')
 }
 };
+characters[targeted].setStealth('');
 if(skills=stats.match(/Stealth\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].dexMod)))
  {characters[targeted].setStealth('exp')
@@ -5482,6 +5475,7 @@ if(skills=stats.match(/Stealth\s\+(\d{1,2})/))
  {characters[targeted].setStealth('pro')
 }
 };
+characters[targeted].setArcana('');
 if(skills=stats.match(/Arcana\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].intMod)))
  {characters[targeted].setArcana('exp')
@@ -5490,6 +5484,7 @@ if(skills=stats.match(/Arcana\s\+(\d{1,2})/))
  {characters[targeted].setArcana('pro')
 }
 };
+characters[targeted].setHistory('');
 if(skills=stats.match(/History\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].intMod)))
  {characters[targeted].setHistory('exp')
@@ -5498,6 +5493,7 @@ if(skills=stats.match(/History\s\+(\d{1,2})/))
  {characters[targeted].setHistory('pro')
 }
 };
+characters[targeted].setInvestigation('');
 if(skills=stats.match(/Investigation\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].intMod)))
  {characters[targeted].setInvestigation('exp')
@@ -5506,6 +5502,7 @@ if(skills=stats.match(/Investigation\s\+(\d{1,2})/))
  {characters[targeted].setInvestigation('pro')
 }
 };
+characters[targeted].setNature('');
 if(skills=stats.match(/Nature\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].intMod)))
  {characters[targeted].setNature('exp')
@@ -5514,6 +5511,7 @@ if(skills=stats.match(/Nature\s\+(\d{1,2})/))
  {characters[targeted].setNature('pro')
 }
 };
+characters[targeted].setReligion('');
 if(skills=stats.match(/Religion\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].intMod)))
  {characters[targeted].setReligion('exp')
@@ -5522,6 +5520,7 @@ if(skills=stats.match(/Religion\s\+(\d{1,2})/))
  {characters[targeted].setReligion('pro')
 }
 };
+characters[targeted].setAnimal('');
 if(skills=stats.match(/Animal\sHandling\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].wisMod)))
  {characters[targeted].setAnimal('exp')
@@ -5530,6 +5529,7 @@ if(skills=stats.match(/Animal\sHandling\s\+(\d{1,2})/))
  {characters[targeted].setAnimal('pro')
 }
 };
+characters[targeted].setInsight('')
 if(skills=stats.match(/Insight\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].wisMod)))
  {characters[targeted].setInsight('exp')
@@ -5538,6 +5538,7 @@ if(skills=stats.match(/Insight\s\+(\d{1,2})/))
  {characters[targeted].setInsight('pro')
 }
 };
+characters[targeted].setMedicine('')
 if(skills=stats.match(/Medicine\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].wisMod)))
  {characters[targeted].setMedicine('exp')
@@ -5546,6 +5547,7 @@ if(skills=stats.match(/Medicine\s\+(\d{1,2})/))
  {characters[targeted].setMedicine('pro')
 }
 };
+characters[targeted].setPerception('');
 if(skills=stats.match(/Perception\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].wisMod)))
  {characters[targeted].setPerception('exp')
@@ -5554,6 +5556,7 @@ if(skills=stats.match(/Perception\s\+(\d{1,2})/))
  {characters[targeted].setPerception('pro')
 }
 };
+characters[targeted].setSurvival('');
 if(skills=stats.match(/Survival\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].wisMod)))
  {characters[targeted].setSurvival('exp')
@@ -5562,6 +5565,7 @@ if(skills=stats.match(/Survival\s\+(\d{1,2})/))
  {characters[targeted].setSurvival('pro')
 }
 };
+characters[targeted].setDeception('');
 if(skills=stats.match(/Deception\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].chaMod)))
  {characters[targeted].setDeception('exp')
@@ -5570,6 +5574,7 @@ if(skills=stats.match(/Deception\s\+(\d{1,2})/))
  {characters[targeted].setDeception('pro')
 }
 };
+characters[targeted].setIntimidation('');
 if(skills=stats.match(/Intimidation\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].chaMod)))
  {characters[targeted].setIntimidation('exp')
@@ -5578,6 +5583,7 @@ if(skills=stats.match(/Intimidation\s\+(\d{1,2})/))
  {characters[targeted].setIntimidation('pro')
 }
 };
+characters[targeted].setPerformance('');
 if(skills=stats.match(/Performance\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].chaMod)))
  {characters[targeted].setPerformance('exp')
@@ -5586,6 +5592,7 @@ if(skills=stats.match(/Performance\s\+(\d{1,2})/))
  {characters[targeted].setPerformance('pro')
 }
 };
+characters[targeted].setPersuasion('');
 if(skills=stats.match(/Persuasion\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].chaMod)))
  {characters[targeted].setPersuasion('exp')
@@ -5714,7 +5721,7 @@ if(this.menuShown)
 {toSave+=varName + ".showMenu( )<br>";
 }
 toSave+="add(" + varName + ")<br>";
-toSave+="\/\/End of " + this.name + "</td></tr></table>";
+toSave+="\/\/End of " + this.name + "";
 return toSave;
 }
 
@@ -5785,7 +5792,7 @@ menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "]
 menuContents+="</td></tr><tr><td>Traits :<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setTrait(this.value)'placeHolder='Gender, Age, Color, Height, Personality, Weight'>" + this.trait + "</textarea>";
 menuContents+="</td></tr><tr><td>Miniature File :<input onChange='characters[" + this.index + "].setFigure(this.value)'placeHolder='*.png'size='25' type='text' value='" + this.figure + "'>";
 menuContents+="</td></tr></table></td><td><table><tr><td>Armor Class(AC) :<input maxLength=2 onChange='characters[" + this.index + "].setAC(this.value)'size=2 type='text' value=" + this.ac + ">/" + this.curAc;
-menuContents+="</td></tr><tr><td><select onChange='characters[" + this.index + "].setArmor(this.value)'><option>" + this.armor + "<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth at disadv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth at disadv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth at disadv<option>Ring AC14 Stealth at disadv<option>Chain Mail AC16 Stealth at disadv str13<option>Splint AC17 Stealth at disadv str15<option>Plate AC18 Stealth at disadv str15<option>Unarmored Defense AC10+dex+wis</select>";
+menuContents+="</td></tr><tr><td><select onChange='characters[" + this.index + "].setArmor(this.value)'><option>" + this.armor + "<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth at disadv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth at disadv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth at disadv<option>Ring AC14 Stealth at disadv<option>Chain Mail AC16 Stealth at disadv str13<option>Splint AC17 Stealth at disadv str15<option>Plate AC18 Stealth at disadv str15<option>Unarmored Defense AC10+dex+wis</select>";
 menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setArmor(this.value)' placeHolder='other armor or magical armor' size='25' type='text'>";
 menuContents+="</td></tr><tr><td><select onChange='characters[" + this.index + "].setShield(this.value)'><option>" + this.shield + "<option>No Shield AC+0<option>Shield AC+2</select>";
 menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setShield(this.value)' placeHolder='other shield or magical shield' size='25' type='text'>";
@@ -5944,32 +5951,32 @@ this.refresh();
 function _setAlignment(x)
 {this.alignment=x;
 this.setAlignmentDescription(x);
-if(this.alignment.match(/Chaotic Evil/))
+if(this.alignment.match(/Chaotic Evil/i))
 {this.setAlignmentDescription("I violently follow my greed, hatred, or bloodlust, promoting my own freedom and control over others.")
 }
-if(this.alignment.match(/Chaotic Good/))
+if(this.alignment.match(/Chaotic Good/i))
 {this.setAlignmentDescription("I follow my conscience regardless of others\' expectations. Freedom and compassion matter more than rules.")
 }
-if(this.alignment.match(/Chaotic Neutral/))
+if(this.alignment.match(/Chaotic Neutral/i))
 {this.setAlignmentDescription("I follow my shifting whims with little concern about rules or later consequences.")
 }
-if(this.alignment.match(/Lawful Evil/))
+if(this.alignment.match(/Lawful Evil/i))
 {this.setAlignmentDescription("I take what I want up to the maximum allowed by law or loyalty, promoting order and control over others.")
 }
-if(this.alignment.match(/Lawful Good/))
+if(this.alignment.match(/Lawful Good/i))
 {this.setAlignmentDescription("I do what\'s right as expected by society to promote order and compassion for all.")
 }
-if(this.alignment.match(/Lawful Neutral/))
+if(this.alignment.match(/Lawful Neutral/i))
 {this.setAlignmentDescription("I obey laws, traditions or my own strict code to promote order and society above all else.")
 }
-if(this.alignment.match(/Neutral/))
-{this.setAlignmentDescription("I will help others, but avoid serious personal risks or loyalties that don\'t benefit me.")
-}
-if(this.alignment.match(/Neutral Evil/))
+if(this.alignment.match(/Neutral Evil/i))
 {this.setAlignmentDescription("I lack compassion and do whatever I want, promoting control over others above all else.")
 }
-if(this.alignment.match(/Neutral Good/))
+if(this.alignment.match(/Neutral Good/i))
 {this.setAlignmentDescription("I help others according to their needs and promote compassion above all else.")
+}
+if(this.alignment.match(/Neutral/i))
+{this.setAlignmentDescription("I will help others, but avoid serious personal risks or loyalties that don\'t benefit me.")
 }
 this.refresh();
 }
@@ -6154,8 +6161,6 @@ this.refresh();
 
 function _setClass(x)
 {this.class=x;
-if(this.class.match(/Creature/)){this.setHitDice(this.hitDice)}
-
 if(this.class.match(/Witch/))
 {this.setEquipment('whip and blowgun.or light crossbow 20/20 bolts.or simple weapon.component pouch.or a totem.scholar s pack.or dungeoneer s pack.leather armor.any simple weapon.dagger');
  if(this.class.match(/White Magic/))
@@ -6815,6 +6820,8 @@ if(this.class.match(/Wizard/))
  this.setSkills('2 from Arcana, History, Insight, Investigation, Medicine, or Religion');
  this.setSpellAbility('int');
 }
+
+if(this.class.match(/Creature/)){this.setHitDice()}
 
 this.refresh();
 }
@@ -8936,7 +8943,7 @@ showSavePrompt("all characters", globalSave);
 }
 
 function showSavePrompt(name, toSave)
-{toSave="<table><tr><td>Save " + name + ". When saving this character, you can reorder the addRoll rows in the save pane. Just drag and drop. Then cut and paste the code below this line into the Characters.js file.<hr>" + toSave + "<hr><input type='button' onClick='savePane.hide()'value=Close></td></tr><tr><td>";
+{toSave="<table><tr><td>Save " + name + ". When saving this character, you can reorder the addRoll rows in the save pane. Just drag and drop. Then cut and paste the code below this line into the Characters.js file.<hr>" + toSave + "<hr><input type='button' onClick='savePane.hide()'value=Close></td></tr></table>";
 savePane.setContents(toSave);
 savePane.show();
 }
