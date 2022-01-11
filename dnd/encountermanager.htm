@@ -5849,38 +5849,39 @@ menuContents+="</td></tr><tr><td>Background Languages :<input onChange='characte
 menuContents+="</td></tr></table></td><td><table><tr><td>Class Proficiencies :<input onChange='characters[" + this.index + "].setProficiencies(this.value)' size='25' value='" + this.proficiencies + "'>";
 menuContents+="</td></tr><tr><td>Class Skills :<input onChange='characters[" + this.index + "].setSkills(this.value)' size='25' value='" + this.skills + "'>";
 menuContents+="</td></tr><tr><td>Class Saving Throws :<input onChange='characters[" + this.index + "].setSaving(this.value)' size='25' value='" + this.saving + "'>";
-menuContents+="</td></tr></table></td></tr></table></span><span id=toggled6" + this.index + " style='display : " + this.toggled6 + "'><table><tr><td>";
+menuContents+="</td></tr></table></td></tr></table></span><span id=toggled6" + this.index + " style='display : " + this.toggled6 + "'><table><tr><td><table><tr><td>";
 
 if(this.class.match(/Warlock/))
-{menuContents+="Cantrips Known : "+this.cantripsKnown+", Spells Known : "+this.spellsKnown+", Spell Slots : "+this.spellSlots+", Slot Level : "+this.slotLevel+", Invocations Known : "+this.invocationsKnown+"<p>"
+{menuContents+="Cantrips Known : "+this.cantripsKnown+", Spells Known : "+this.spellsKnown+", Spell Slots : "+this.spellSlots+", Slot Level : "+this.slotLevel+", Invocations Known : "+this.invocationsKnown+"</td>"
 }
 
-if(this.class.match(/Druid|Cleric|Wizard/))
-{menuContents+="Cantrips Known : "+this.cantripsKnown+"<p>"
+if(this.class.match(/Cleric|Druid|Wizard/))
+{menuContents+="Cantrips Known : "+this.cantripsKnown;
 }
 
 if(this.class.match(/Monk/))
-{menuContents+="Ki Point Slot : " + this.maxKiPointSlot + "<input onClick='characters[" + this.index + "].setCurKiPointSlot(characters[" + this.index + "].curKiPointSlot-1)' type='button' value="+this.maxKiPointSlot+"><input maxLength=2 onChange='characters[" + this.index + "].setCurKiPointSlot(this.value)' size=2 type='text' value=" + this.curKiPointSlot + ">";
+{menuContents+="</td><td>Ki Points : " + this.maxKiPointSlot + "<input onClick='characters[" + this.index + "].setCurKiPointSlot(characters[" + this.index + "].curKiPointSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurKiPointSlot(this.value)' size=2 type='text' value=" + this.curKiPointSlot + "></td></tr></table></td></tr><tr><td>";
 }
 
 if(this.class.match(/Cleric/))
-{menuContents+="Channel Divinity Slot : " + this.maxChannelDivinitySlot + "<input onClick='characters[" + this.index + "].setCurChannelDivinitySlot(characters[" + this.index + "].curChannelDivinitySlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurChannelDivnitySlot(this.value)' size=2 type='text' value=" + this.curChannelDivinitySlot + ">";
+{
+menuContents+="</td><td>Channel Divinity : " + this.maxChannelDivinitySlot + "<input onClick='characters[" + this.index + "].setCurChannelDivinitySlot(characters[" + this.index + "].curChannelDivinitySlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurChannelDivinitySlot(this.value)' size=2 type='text' value=" + this.curChannelDivinitySlot + ">";
 }
 
-if(this.class.match(/Cleric|Druid|Sorcerer|Warlock|Wizard/))
+if(this.class.match(/(Cleric|Druid|Sorcerer|Warlock|Wizard)/))
 {
-menuContents+="Spell Slots[1st: " + this.maxFirstSlot + "<input onClick='characters[" + this.index + "].setCurFirstSlot(characters[" + this.index + "].curFirstSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurFirstSlot(this.value)' size=2 type='text' value=" + this.curFirstSlot + ">";
-menuContents+="][2nd: " + this.maxSecondSlot + "<input onClick='characters[" + this.index + "].setCurSecondSlot(characters[" + this.index + "].curSecondSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurSecondSlot(this.value)' size=2 type='text' value=" + this.curSecondSlot + ">";
-menuContents+="][3rd: " + this.maxThirdSlot + "<input onClick='characters[" + this.index + "].setCurThirdSlot(characters[" + this.index + "].curThirdSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurThirdSlot(this.value)' size=2 type='text' value=" + this.curThirdSlot + ">";
-menuContents+="][4th: " + this.maxFourthSlot + "<input onClick='characters[" + this.index + "].setCurFourthSlot(characters[" + this.index + "].curFourthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurFourthSlot(this.value)' size=2 type='text' value=" + this.curFourthSlot + ">";
-menuContents+="][5th: " + this.maxFifthSlot + "<input onClick='characters[" + this.index + "].setCurFifthSlot(characters[" + this.index + "].curFifthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurFifthSlot(this.value)' size=2 type='text' value=" + this.curFifthSlot + ">";
-menuContents+="] [6th: " + this.maxSixthSlot + "<input onClick='characters[" + this.index + "].setCurSixthSlot(characters[" + this.index + "].curSixthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurSixthSlot(this.value)' size=2 type='text' value=" + this.curSixthSlot + ">";
-menuContents+="][7th: " + this.maxSeventhSlot + "<input onClick='characters[" + this.index + "].setCurSeventhSlot(characters[" + this.index + "].curSeventhSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurSeventhSlot(this.value)' size=2 type='text' value=" + this.curSeventhSlot + ">";
-menuContents+="][8th: " + this.maxEighthSlot + "<input onClick='characters[" + this.index + "].setCurEighthSlot(characters[" + this.index + "].curEighthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurEighthSlot(this.value)' size=2 type='text' value=" + this.curEighthSlot + ">";
-menuContents+="][9th: " + this.maxNinthSlot + "<input onClick='characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].curNinthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurNinthSlot(this.value)' size=2 type='text' value=" + this.curNinthSlot + ">";
-menuContents+="]&nbsp;<input onClick='characters[" + this.index + "].setCurFirstSlot(characters[" + this.index + "].maxFirstSlot);characters[" + this.index + "].setCurSecondSlot(characters[" + this.index + "].maxSecondSlot);characters[" + this.index + "].setCurThirdSlot(characters[" + this.index + "].maxThirdSlot);characters[" + this.index + "].setCurFourthSlot(characters[" + this.index + "].maxFourthSlot);characters[" + this.index + "].setCurFifthSlot(characters[" + this.index + "].maxFifthSlot);characters[" + this.index + "].setCurSixthSlot(characters[" + this.index + "].maxSixthSlot);characters[" + this.index + "].setCurSeventhSlot(characters[" + this.index + "].maxSeventhSlot);characters[" + this.index + "].setCurEighthSlot(characters[" + this.index + "].maxEighthSlot);characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].maxNinthSlot)' type='button' value='Take an 8hrs rest?'>";
+menuContents+="<td>Spell Slots[1st: " + this.maxFirstSlot + "<input onClick='characters[" + this.index + "].setCurFirstSlot(characters[" + this.index + "].curFirstSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurFirstSlot(this.value)' size=2 type='text' value=" + this.curFirstSlot + ">";
+menuContents+="]</td><td>[2nd: " + this.maxSecondSlot + "<input onClick='characters[" + this.index + "].setCurSecondSlot(characters[" + this.index + "].curSecondSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurSecondSlot(this.value)' size=2 type='text' value=" + this.curSecondSlot + ">";
+menuContents+="]</td><td>[3rd: " + this.maxThirdSlot + "<input onClick='characters[" + this.index + "].setCurThirdSlot(characters[" + this.index + "].curThirdSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurThirdSlot(this.value)' size=2 type='text' value=" + this.curThirdSlot + ">";
+menuContents+="]</td><td>[4th: " + this.maxFourthSlot + "<input onClick='characters[" + this.index + "].setCurFourthSlot(characters[" + this.index + "].curFourthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurFourthSlot(this.value)' size=2 type='text' value=" + this.curFourthSlot + ">";
+menuContents+="]</td><td>[5th: " + this.maxFifthSlot + "<input onClick='characters[" + this.index + "].setCurFifthSlot(characters[" + this.index + "].curFifthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurFifthSlot(this.value)' size=2 type='text' value=" + this.curFifthSlot + ">";
+menuContents+="]</td><td>[6th: " + this.maxSixthSlot + "<input onClick='characters[" + this.index + "].setCurSixthSlot(characters[" + this.index + "].curSixthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurSixthSlot(this.value)' size=2 type='text' value=" + this.curSixthSlot + ">";
+menuContents+="]</td><td>[7th: " + this.maxSeventhSlot + "<input onClick='characters[" + this.index + "].setCurSeventhSlot(characters[" + this.index + "].curSeventhSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurSeventhSlot(this.value)' size=2 type='text' value=" + this.curSeventhSlot + ">";
+menuContents+="]</td><td>[8th: " + this.maxEighthSlot + "<input onClick='characters[" + this.index + "].setCurEighthSlot(characters[" + this.index + "].curEighthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurEighthSlot(this.value)' size=2 type='text' value=" + this.curEighthSlot + ">";
+menuContents+="]</td><td>[9th: " + this.maxNinthSlot + "<input onClick='characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].curNinthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurNinthSlot(this.value)' size=2 type='text' value=" + this.curNinthSlot + ">";
+menuContents+="]&nbsp;<input onClick='characters[" + this.index + "].setCurFirstSlot(characters[" + this.index + "].maxFirstSlot);characters[" + this.index + "].setCurSecondSlot(characters[" + this.index + "].maxSecondSlot);characters[" + this.index + "].setCurThirdSlot(characters[" + this.index + "].maxThirdSlot);characters[" + this.index + "].setCurFourthSlot(characters[" + this.index + "].maxFourthSlot);characters[" + this.index + "].setCurFifthSlot(characters[" + this.index + "].maxFifthSlot);characters[" + this.index + "].setCurSixthSlot(characters[" + this.index + "].maxSixthSlot);characters[" + this.index + "].setCurSeventhSlot(characters[" + this.index + "].maxSeventhSlot);characters[" + this.index + "].setCurEighthSlot(characters[" + this.index + "].maxEighthSlot);characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].maxNinthSlot)' type='button' value='Take an 8hrs rest?'></td></tr></table></td></tr></table></td></tr><tr><td><table><tr><td>";
 }
-menuContents+="</td></tr><tr><td><h3>Actions</h3></td><td><input maxLength=200 onChange='characters[" + this.index + "].setRollName1(this.value)'placeHolder='attackRollToHitName+Ability+pro SpellSlot RangeInFeet'size='25' type='text' value='" + this.rollName1 + "'>"
+menuContents+="<h3>Actions</h3></td><td><input maxLength=200 onChange='characters[" + this.index + "].setRollName1(this.value)'placeHolder='attackRollToHitName+Ability+pro SpellSlot RangeInFeet'size='25' type='text' value='" + this.rollName1 + "'>"
 menuContents+="</td><td><input maxLength='8' onChange='characters[" + this.index + "].setRoll1(this.value)'placeHolder='XdY+Z'size='8' type='text' value=" + this.roll1 + ">"
 menuContents+="</td><td><input maxLength=200 onChange='characters[" + this.index + "].setRollName2(this.value)'placeHolder='damageType+Ability and damageConditions' size='25' type='text' value='" + this.rollName2 + "'>"
 menuContents+="</td><td><input maxLength='8' onChange='characters[" + this.index + "].setRoll2(this.value)'placeHolder='XdY+Z'size='8' type='text' value=" + this.roll2 + ">"
@@ -5899,7 +5900,7 @@ menuContents+="</td><td><input type='button' onClick='deleteRollPrompt(" + this.
 }
 }
 
-menuContents+="</td></tr></table></span><span id=toggled2" + this.index + " style='display : " + this.toggled2 + "'>";
+menuContents+="</td></tr></table></td></tr></table></span><span id=toggled2" + this.index + " style='display : " + this.toggled2 + "'>";
 
 menuContents+="<table><tr><td><a href='https://tetra-cube.com/dnd/dnd-char-gen.html' target='_blank'>Tetra-Cube.Com's Random Personality Generator</a>";
 
@@ -7486,7 +7487,7 @@ this.setCurKiPointSlot(0);
 }
 }
 
-if(this.class.match(/Druid|Warlock/))
+if(this.class.match(/Cleric|Druid|Warlock/))
 {if(this.level.match(/[0-3]/)){this.setCantripsKnown(2)}
 if(this.level.match(/[4-9]/)){this.setCantripsKnown(3)}
 if(this.level.match(/1[0-9]|20/)){this.setCantripsKnown(4)}
@@ -8551,6 +8552,8 @@ this.investigation='';
 this.languages='';
 this.level=0;
 this.longJump=0;
+this.maxChannelDivinitySlot=0;
+this.maxKiPointSlot=0;
 this.maxHp=0;
 this.medicine='';
 this.menu=new AGEElement();
