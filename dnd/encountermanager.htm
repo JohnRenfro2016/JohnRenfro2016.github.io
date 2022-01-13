@@ -5283,13 +5283,13 @@ function setStats()
 if(size=stats.match(/(Tiny|Small|Medium|Large|Huge|Gargantuan)/))
 {characters[targeted].setSize(size[1])
 }
-if(race=stats.match(/(aberration|beast|elemental|fiend|giant|humanoid|human|monstrosity|undead)([\s\S]*?\))/i))
-{characters[targeted].setRace(race[1]+race[2])
+if(race=stats.match(/(aberration|beast|construct|elemental|fiend|giant|humanoid|human|monstrosity|undead)/i))
+{characters[targeted].setRace(race[1])
 }
 if(alignment=stats.match(/(neutral)/))
 {characters[targeted].setAlignment(alignment[1])
 }
-if(alignment=stats.match(/(lawful good|lawful neutral|lawful evil|chaotic good|chaotic neutral|chaotic evil|neutral evil|unaligned)/))
+if(alignment=stats.match(/(lawful good|lawful neutral|lawful evil|chaotic good|chaotic neutral|chaotic evil|neutral evil|unaligned)/i))
 {characters[targeted].setAlignment(alignment[1])
 }
 if(ac=stats.match(/Armor\sClass\s(\d{1,2})([\s\S]*?)(Hit Points )/))
@@ -5349,12 +5349,10 @@ else
 characters[targeted].setShield('No Shield AC+0');
 }
 if(hp=stats.match(/(Hit Points )(\d{1,3})([\s\S]*?)(Speed )/))
-{characters[targeted].setMaxHp(hp[2])
-};
-characters[targeted].setHitDice();
-if(rip=stats.match(/Hit\sPoints[\s\S]*?\(([\s\S]*)\)/i))
-{characters[targeted].setHitDice(rip[1]);
- characters[targeted].setClass('Creature')
+{
+characters[targeted].setMaxHp(hp[2]);
+characters[targeted].setClass('Creature');
+characters[targeted].setHitDice(hp[3]);
 };
 if(rip=stats.match(/Speed\s([\s\S]*?ft)/i))
 {characters[targeted].setSpeed(rip[1])}
@@ -5366,14 +5364,14 @@ if(str=stats.match(/(\d{1,2})\s\(\+|(\d{1,2})\s\(\-|(\d{1,2})\s\(\–/g))
  characters[targeted].setWis(parseInt(str[4]));
  characters[targeted].setCha(parseInt(str[5]));
 }
-if(resist=stats.match(/Resistances([\s\S]*?)(Senses|Condition\s|Damage\s)/))
+if(resist=stats.match(/Resistances|Resistance([\s\S]*?)(Senses|Condition\s|Damage\s)/))
 {characters[targeted].setResistance(resist[1])
 }
-if(immune=stats.match(/Immunities\s([\s\S]*?)Senses/))
-{characters[targeted].setImmunity(immune[1])
+if(conditionimmune=stats.match(/Damage\sImmunities\s([\s\S]*?)Condition|Senses/))
+{characters[targeted].setImmunity(conditionimmune[1])
 }
-if(immune=stats.match(/Immunities\s([\s\S]*?)(?:Condition\sImmunities)([\s\S]*?)Senses/))
-{characters[targeted].setImmunity(immune[1] + "," + immune[2])
+if(damageimmune=stats.match(/Condition\sImmunities\s([\s\S]*?)Senses/))
+{characters[targeted].setDamageConditions('immune to '+damageimmune[1])
 }
 if(vulnerable=stats.match(/Vulnerabilities\s([\s\S]*?)(?:Senses|Condition\s|Damage\s)/))
 {characters[targeted].setVulnerability(vulnerable[1])
@@ -5844,15 +5842,15 @@ menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "]
 menuContents+="</td></tr><tr><td><select onChange='characters[" + this.index + "].setShield(this.value)'><option>" + this.shield + "<option>No Shield AC+0<option>Shield AC+2</select>";
 menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setShield(this.value)' placeHolder='other shield or magical defense' size='25' type='text'>";
 menuContents+="</td></tr><tr><td>Resistance(dmg /2) :<input onChange='characters[" + this.index + "].setResistance(this.value)' size='25' value='" + this.resistance + "'>";
-menuContents+="</td></tr><tr><td>Immunity(dmg 0) :<input onChange='characters[" + this.index + "].setImmunity(this.value)' size='25' value='" + this.immunity + "'>";
+menuContents+="</td></tr><tr><td>Damage Immunity(dmg 0) :<input onChange='characters[" + this.index + "].setImmunity(this.value)' size='25' value='" + this.immunity + "'>";
 menuContents+="</td></tr><tr><td>Vulnerability(dmg x2) :<input onChange='characters[" + this.index + "].setVulnerability(this.value)' size='25' value='" + this.vulnerability + "'>";
 menuContents+="</td></tr><tr><td><input type='button' onClick='characters[" + this.index + "].save()'value='Save this character?'>";
 menuContents+="</td></tr></table></td><td><table><tr><td>Hit Points(HP) :<input maxLength=4 onChange='characters[" + this.index + "].setMaxHp(this.value)' size=4 type='text' value=" + this.maxHp + ">";
 menuContents+="/<input maxLength=4 onChange='characters[" + this.index + "].setCurHp(this.value)' size=4 type='text' value=" + this.curHp + "> Temp HP : " + this.tempHp + "";
-menuContents+="</td></tr><tr><td>Hit Dice(HD):(<input maxLength=10 onChange='characters[" + this.index + "].setHitDice(this.value)' placeHolder='XdY+Z' size=10 type='text' value='" + this.hitDice + "'>)";
+menuContents+="</td></tr><tr><td>Hit Dice(HD):<input maxLength=10 onChange='characters[" + this.index + "].setHitDice(this.value)' placeHolder='XdY+Z' size=10 type='text' value='" + this.hitDice + "'>";
 menuContents+="</td></tr><tr><td>Take damage?<input maxLength=4 onChange='characters[" + this.index + "].setdamage(this.value)'size=4 type='text'>";
 menuContents+="</td></tr><tr><td>Heal up?<input maxLength=4 onChange='characters[" + this.index + "].setHealing(this.value)'size=4 type='text'>";
-menuContents+="</td></tr><tr><td>Damage Conditions :</td></tr><tr><td><textArea cols='25' rows=2 onChange='characters[" + this.index + "].setDamageConditions(this.value)'placeHolder='temp hp+10, ac-1, str+1, ini+3, blinded'>" + this.damageConditions + "</textArea>"
+menuContents+="</td></tr><tr><td>Damage Conditions :<br>example temp hp+20 ac+5 str-4 ini+10 blinded<br></td></tr><tr><td><textArea cols='25' rows=2 onChange='characters[" + this.index + "].setDamageConditions(this.value)'placeHolder='temp hp+10, ac-1, str+1, ini+3, blinded'>" + this.damageConditions + "</textArea>"
 menuContents+="</td></tr><tr><td><input type='button' value='Delete this character?'onClick='removeChar(" + this.index + ")'>";
 menuContents+="</td></tr></table>";
 
@@ -6869,8 +6867,6 @@ if(this.class.match(/Wizard/))
  this.setSpellAbility('int');
 }
 
-if(this.class.match(/Creature/)){this.setHitDice()}
-
 this.refresh();
 }
 
@@ -6894,8 +6890,7 @@ this.refresh();
 }
 
 function _setCurAc(x)
-{this.curA
-c=x;
+{this.curAc=x;
 this.refresh();
 }
 
@@ -7011,7 +7006,8 @@ else
 {this.setCurInt(parseInt(this.inte));
 }
 if(changedHp=this.damageConditions.match(/(hp)(\+\d{1,3}|\-\d{1,3})/i))
-{this.setTempHp(parseInt(changedHp[2]));
+{
+this.setTempHp(parseInt(changedHp[2]));
 }
 else
 {this.setTempHp(parseInt(0));
@@ -7109,7 +7105,8 @@ this.refresh();
 }
 
 function _setHitDice(x)
-{this.hitDice=x;
+{
+this.hitDice=x;
 this.refresh(x);
 }
 
@@ -7922,7 +7919,10 @@ this.setMaxFifthSlot('2');
 this.setCurFifthSlot('2');
 }
 }
-var A=0
+var a=0
+if(this.class!='Creature')
+{
+
 if(this.class.match(/Sorcerer|Wizard/))
 {a=6
 }
@@ -7936,6 +7936,9 @@ if(this.class.match(/Barbarian/))
 {var a=12;
 }
 this.setHitDice(this.level + 'd' + a + '+' +(parseInt(this.level) * parseInt(this.conMod)));
+
+}
+
 this.refresh();
 }
 
