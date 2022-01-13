@@ -75,58 +75,70 @@ h3 {color: #260e0e;
 
 <body>
 
-<table class='draggable'>
-<tr>
-<td>
+<table class='draggable'><tr><td>
 <font color='white'><img src='Miniatures/Monster.png'>On phones, put me on a character to drag!</font>
-</td>
-</tr>
-</table>
-<table>
-<tr>
-</td>
-<td>To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
-</td>
-<td><input type='button' value='Roll all initiatives?' onClick='rollInitiatives()' /></td>
-<td><input type='button' value='Save all characters?' onClick='saveAll()' /></td>
-<td><input type='button' value='Target then Clone a character?' onClick='cloneIt(type)' /></td>
-<td><input type='button' value='Create a new character?' onClick='newCharacter(PC)' /></td>
-<td><a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
-</td>
-<td><a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a></td>
-</td></tr><tr>
-<td><a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
-<td><input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?' /><b id='d20result'></b></td>
-<td><input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?' /><b id='d12result'></b></td>
-<td><input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?' /><b id='d10result'></b></td>
-<td><input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?' /><b id='d8result'></b></td>
-<td><input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?' /><b id='d6result'></b></td>
-<td><input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?' /><b id='d4result'></b></td>
-</tr><tr><td><input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollOneDisplay'></b></td>
-<td><input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollTwoDisplay'></b></td>
-<td><input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollThreeDisplay'></b></td>
-<td><input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollFourDisplay'></b></td>
-<td><input onMouseOut="rollFive=parseInt(rollDForm(this.value));document.getElementById('rollFiveDisplay').innerHTML='('+naturalRoll+roll+')='+rollFive" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollFiveDisplay'></b></td>
-<td><input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollSixDisplay'></b></td>
-</tr>
-</table>
+</td></tr></table>
 <br>
-<table>
-<tr>
-<td>
-<img src='Map.png'>
-</td>
-</tr>
+<table><tr><td>
+<table><tr><td>
+To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
+</td></tr><tr><td>
+<input type='button' value='Roll all initiatives?' onClick='rollInitiatives()' />
+</td></tr><tr><td>
+<input type='button' value='Save all characters?' onClick='saveAll()' />
+</td></tr><tr><td>
+<input type='button' value='Target then Clone a character?' onClick='cloneIt(type)' />
+</td></tr><tr><td>
+<input type='button' value='Create a new character?' onClick='newCharacter(PC)' />
+</td></tr><tr><td>
+<a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
+</td></tr><tr><td>
+<a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a>
+</td></tr><tr><td>
+Generate characters fast!
+<a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
+</td></tr><tr><td>
+This is a single encounter from the adventure
+<a href='https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up' target='_blank'>Dungeon Module L1 The Secret of Bone Hill</a>
+</td></tr><tr><td>
+The adventure uses Dungeons & Dragons 5th Edition rules and Classic Modules Today conversions.
+<a href='https://www.thriftbooks.com/series/dungeons--dragons-5th-edition/83478/' target='_blank'>Thrift Books D&D 5E</a>
+</td></tr><tr><td>
+<input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?' /><b id='d20result'></b></td>
+</td></tr><tr><td>
+<input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?' /><b id='d12result'></b></td>
+</td></tr><tr><td>
+<input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?' /><b id='d10result'></b></td>
+</td></tr><tr><td>
+<input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?' /><b id='d8result'></b></td>
+</td></tr><tr><td>
+<input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?' /><b id='d6result'></b></td>
+</td></tr><tr><td>
+<input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?' /><b id='d4result'></b></td>
+</td></tr><tr><td>
+<input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollOneDisplay'></b></td>
+</td></tr><tr><td>
+<input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollTwoDisplay'></b></td>
+</td></tr><tr><td>
+<input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollThreeDisplay'></b></td>
+</td></tr><tr><td>
+<input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollFourDisplay'></b></td>
+</td></tr><tr><td>
+<input onMouseOut="rollFive=parseInt(rollDForm(this.value));document.getElementById('rollFiveDisplay').innerHTML='('+naturalRoll+roll+')='+rollFive" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollFiveDisplay'></b></td>
+</td></tr><tr><td>
+<input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollSixDisplay'></b></td>
+</td></tr><tr><td>
+Target then paste stats.<br>
+<textArea cols='30' rows='20' onChange='stats=this.value;setStats()' /></textarea><b id='statsDisplay'></b>
+</td></tr></table>
 
-<tr>
-<td>
-Target the newly Created character to import these cut and pasted stats from the Monster Manual. This sometimes works.<br/>
-<textArea cols='45' rows='10' onChange='stats=this.value;setStats()' /></textarea><b id='statsDisplay'></b>
-</div>
-</td>
-</tr>
-<tr>
-<td>
+</td><td>
+
+<table><tr><td>
+<img src='Map.png'>
+</td></tr></table>
+</td></tr></table>
+
 <script>
 
 function rollDForm(dForm)
@@ -1080,8 +1092,8 @@ for(var i=x; i< characters.length; i++)
  getAction(t1)
 }
 
- function Druidcraft()
- {a='Cantrip(Druidcraft)predict weather, expedite small plant growth, snuff light, harmless sensory effect 3ft s',
+ function DruidCraft()
+ {a='Cantrip(DruidCraft)predict weather, expedite small plant growth, snuff light, harmless sensory effect 3ft s',
  b='0d0+0',
  c='',
  damageDice='0d0+0',
@@ -4442,7 +4454,7 @@ for(var i=x; i< characters.length; i++)
  s4(s1 + 'MassHeal' + s2 + 'Mass Heal' + s3)
  s4(s1 + 'TrueResurrection' + s2 + 'True Resurrection' + s3)
  s4('</td></tr></table></td><td><table><tr><td><h3>Druid Spells</h3>Cantrips@1st(2) @4th(3) @(10th 4)')
- s4(s1 + 'Druidcraft' + s2 + 'Druidcraft' + s3)
+ s4(s1 + 'DruidCraft' + s2 + 'DruidCraft' + s3)
  s4(s1 + 'Guidance' + s2 + 'Guidance' + s3)
  s4(s1 + 'Mending' + s2 + 'Mending' + s3)
  s4(s1 + 'PoisonSpray' + s2 + 'Poison Spray' + s3)
@@ -5271,7 +5283,7 @@ function setStats()
 if(size=stats.match(/(Tiny|Small|Medium|Large|Huge|Gargantuan)/))
 {characters[targeted].setSize(size[1])
 }
-if(race=stats.match(/(aberration|beast|elemental|fiend|giant|humanoid|monstrosity|undead)([\s\S]*?\))/))
+if(race=stats.match(/(aberration|beast|elemental|fiend|giant|humanoid|human|monstrosity|undead)([\s\S]*?\))/i))
 {characters[targeted].setRace(race[1]+race[2])
 }
 if(alignment=stats.match(/(neutral)/))
@@ -5328,10 +5340,14 @@ if(armortype=stats.match(/splint/))
 if(armortype=stats.match(/Unarmored\sDefense/))
 {characters[targeted].setArmor('Unarmored Defense AC10+dex+wis')
 };
+if(shieldtype=stats.match(/Armor\sClass[\s\S]*shield[\s\S]*STR/i))
+{
+characters[targeted].setShield('Shield AC+2')
+}
+else
+{
 characters[targeted].setShield('No Shield AC+0');
-if(shieldtype=stats.match(/\,\sshield/))
-{characters[targeted].setShield('Shield AC+2')
-};
+}
 if(hp=stats.match(/(Hit Points )(\d{1,3})([\s\S]*?)(Speed )/))
 {characters[targeted].setMaxHp(hp[2])
 };
@@ -5596,10 +5612,42 @@ if(skills=stats.match(/Persuasion\s\+(\d{1,2})/))
 {if(parseInt(skills[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].chaMod)))
  {characters[targeted].setPersuasion('exp')
 }
- else
- {characters[targeted].setPersuasion('pro')
+else
+{
+characters[targeted].setPersuasion('pro')
 }
-}}
+}
+
+if(weapon=stats.match(/dagger/i)){this.Dagger()}
+if(weapon=stats.match(/quarterstaff/i)){this.OneHandedQuarterstaff();this.TwoHandedQuarterstaff()}
+
+if(spell=stats.match(/druid\scraft/i)){this.DruidCraft()}
+if(spell=stats.match(/light\s|light\,/i)){this.Light()}
+if(spell=stats.match(/mend/i)){this.Mending()}
+if(spell=stats.match(/produce\sflame/i)){this.ProduceFlame()}
+if(spell=stats.match(/shillelagh/i)){this.Shillelagh()}
+if(spell=stats.match(/shocking\sgrasp/i)){this.ShockingGrasp()}
+
+if(spell=stats.match(/animal\sfriendship/i)){this.AnimalFriendship()}
+if(spell=stats.match(/cure\swounds/i)){this.CureWounds()}
+if(spell=stats.match(/detect\smagic/i)){this.DetectMagic()}
+if(spell=stats.match(/disguise\sself/i)){this.DisguiseSelf()}
+if(spell=stats.match(/entangle/i)){this.Entangle()}
+if(spell=stats.match(/mage\sarmor/i)){this.MageArmor()}
+if(spell=stats.match(/shield\s|shield\,/i)){this.Shield()}
+if(spell=stats.match(/sleep/i)){this.Sleep()}
+if(spell=stats.match(/thunderwave/i)){this.Thunderwave()}
+
+if(spell=stats.match(/flame\sblade/i)){this.FlameBlade()}
+if(spell=stats.match(/lesser\srestoration/i)){this.LesserRestoration()}
+if(spell=stats.match(/moonbeam/i)){this.Moonbeam()}
+
+if(spell=stats.match(/call\slightning/i)){this.CallLightning()}
+if(spell=stats.match(/dispel\smagic/i)){this.DispelMagic()}
+
+if(spell=stats.match(/ice\sstorm/i)){this.IceStorm()}
+
+}
 function _addRoll(name, roll, name2, roll2)
 {x=this.rolls.length;
 this.rolls[x]=roll;
@@ -5665,7 +5713,7 @@ toSave+=varName + ".setHistory('" + this.history + "')<br>";
 toSave+=varName + ".setHitDice('" + this.hitDice + "')<br>";
 toSave+=varName + ".setIdeals('" + this.ideals + "')<br>";
 if(!isNaN(this.init))
-{toSave+=varName + ".setInit(" + this.init + "')<br>";
+{toSave+=varName + ".setInit(" + this.init + ")<br>";
 }
 toSave+=varName + ".setImmunity('" + this.immunity + "')<br>";
 toSave+=varName + ".setInitBonus('" + this.initBonus + "')<br>";
@@ -5720,7 +5768,7 @@ if(this.menuShown)
 {toSave+=varName + ".showMenu( )<br>";
 }
 toSave+="add(" + varName + ")<br>";
-toSave+="\/\/End of " + this.name + "";
+toSave+="\/\/End of " + this.name + "<br>";
 return toSave;
 }
 
@@ -5792,9 +5840,9 @@ menuContents+="</td></tr><tr><td>Traits :<textArea cols='25' rows='3' onChange='
 menuContents+="</td></tr><tr><td>Miniature File :<input onChange='characters[" + this.index + "].setFigure(this.value)'placeHolder='*.png'size='25' type='text' value='" + this.figure + "'>";
 menuContents+="</td></tr></table></td><td><table><tr><td>Armor Class(AC) :<input maxLength=2 onChange='characters[" + this.index + "].setAC(this.value)'size=2 type='text' value=" + this.ac + ">/" + this.curAc;
 menuContents+="</td></tr><tr><td><select onChange='characters[" + this.index + "].setArmor(this.value)'><option>" + this.armor + "<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth at disadv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth at disadv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth at disadv<option>Ring AC14 Stealth at disadv<option>Chain Mail AC16 Stealth at disadv str13<option>Splint AC17 Stealth at disadv str15<option>Plate AC18 Stealth at disadv str15<option>Unarmored Defense AC10+dex+wis</select>";
-menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setArmor(this.value)' placeHolder='other armor or magical armor' size='25' type='text'>";
+menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setArmor(this.value)' placeHolder='other armor or magical defense' size='25' type='text'>";
 menuContents+="</td></tr><tr><td><select onChange='characters[" + this.index + "].setShield(this.value)'><option>" + this.shield + "<option>No Shield AC+0<option>Shield AC+2</select>";
-menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setShield(this.value)' placeHolder='other shield or magical shield' size='25' type='text'>";
+menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setShield(this.value)' placeHolder='other shield or magical defense' size='25' type='text'>";
 menuContents+="</td></tr><tr><td>Resistance(dmg /2) :<input onChange='characters[" + this.index + "].setResistance(this.value)' size='25' value='" + this.resistance + "'>";
 menuContents+="</td></tr><tr><td>Immunity(dmg 0) :<input onChange='characters[" + this.index + "].setImmunity(this.value)' size='25' value='" + this.immunity + "'>";
 menuContents+="</td></tr><tr><td>Vulnerability(dmg x2) :<input onChange='characters[" + this.index + "].setVulnerability(this.value)' size='25' value='" + this.vulnerability + "'>";
@@ -6434,7 +6482,7 @@ dx="@14th(Faithful Summons)at 0hp you automatically conjure a CR2 or lower anima
 }
 if(this.class.match(/Fighter/))
 {if(this.class.match(/Archer/))
- {a='(Arcane Archer)</td></tr><tr><td>(Arcane Shot)Arcana+pro or Nature+pro and Prestidigitation or Druidcraft recharge shots after short rest @3rd 2 options @7th 3 options @10th 4 options @15th 5 options @18th 6 options(Arcane Shot Options)(Banishing Arrow)DC8+int+pro vsCha or hit target is banished to a harmless Feywild place uteoynt @18th the target takes 2d6 force dmg(Beguiling Arrow)+2d6 psychic damage and ally 30ft charms the target DC8+yourInt+pro vsWis tteoynt or ally attacks target(Enfeebling Arrow)+2d6 necro damage and DC8+int+pro vsCon or target does half damage tteoynt @18th+4d6 necro dmg(Grasping Arrow)+2d6 poison dmg, speed-10ft+2d6 slashing moving 1ft or more 1act to remove brambles Athletics vs your DC8+int+pro or 1min @18th +4d6 poison dmg(Piercing Arrow)DC8+int+pro vsDex or targets take invisible arrow dmg+1d6 dmg @18th+2d6dmg(Seeking Arrow)1 target seen in past 1min, DC8+int+pro vsDex for half damage arrow+1d6force and target location is still unknown @18th+2d6(Shadow Arrow)+2d6psychic damage and DC8+int+pro vsWis or blinded 5ft utsoynt @18th+4d6psychic';
+ {a='(Arcane Archer)</td></tr><tr><td>(Arcane Shot)Arcana+pro or Nature+pro and Prestidigitation or DruidCraft recharge shots after short rest @3rd 2 options @7th 3 options @10th 4 options @15th 5 options @18th 6 options(Arcane Shot Options)(Banishing Arrow)DC8+int+pro vsCha or hit target is banished to a harmless Feywild place uteoynt @18th the target takes 2d6 force dmg(Beguiling Arrow)+2d6 psychic damage and ally 30ft charms the target DC8+yourInt+pro vsWis tteoynt or ally attacks target(Enfeebling Arrow)+2d6 necro damage and DC8+int+pro vsCon or target does half damage tteoynt @18th+4d6 necro dmg(Grasping Arrow)+2d6 poison dmg, speed-10ft+2d6 slashing moving 1ft or more 1act to remove brambles Athletics vs your DC8+int+pro or 1min @18th +4d6 poison dmg(Piercing Arrow)DC8+int+pro vsDex or targets take invisible arrow dmg+1d6 dmg @18th+2d6dmg(Seeking Arrow)1 target seen in past 1min, DC8+int+pro vsDex for half damage arrow+1d6force and target location is still unknown @18th+2d6(Shadow Arrow)+2d6psychic damage and DC8+int+pro vsWis or blinded 5ft utsoynt @18th+4d6psychic';
 b='@7th(Curving Shot)bonus reroll attack against another target within 60ft</td></tr><tr><td>@7th(Magic Arrow)arrow becomes magical to defeat non-magical resistance and immunity';
 c='';
 dx='@15th(EverReady Shot)if no shots, regain 1 arcane shot';
