@@ -5364,10 +5364,10 @@ if(str=stats.match(/(\d{1,2})\s\(\+|(\d{1,2})\s\(\-|(\d{1,2})\s\(\–/g))
  characters[targeted].setWis(parseInt(str[4]));
  characters[targeted].setCha(parseInt(str[5]));
 }
-if(resist=stats.match(/Resistances|Resistance([\s\S]*?)(Senses|Condition\s|Damage\s)/))
+if(resist=stats.match(/Resistances|Resistance([\s\S]*?)(Senses|Condition\s|Damage\sImmunities)/))
 {characters[targeted].setResistance(resist[1])
 }
-if(conditionimmune=stats.match(/Damage\sImmunities\s([\s\S]*?)Condition|Senses/))
+if(conditionimmune=stats.match(/Damage\sImmunities\s([\s\S]*?)Damage\sResistance|Condition|Senses/))
 {characters[targeted].setImmunity(conditionimmune[1])
 }
 if(damageimmune=stats.match(/Condition\sImmunities\s([\s\S]*?)Senses/))
@@ -5617,6 +5617,7 @@ characters[targeted].setPersuasion('pro')
 }
 
 if(weapon=stats.match(/dagger/i)){this.Dagger()}
+if(weapon=stats.match(/morningstar/i)){this.Morningstar()}
 if(weapon=stats.match(/quarterstaff/i)){this.OneHandedQuarterstaff();this.TwoHandedQuarterstaff()}
 
 if(spell=stats.match(/druid\scraft/i)){this.DruidCraft()}
@@ -5625,8 +5626,10 @@ if(spell=stats.match(/mend/i)){this.Mending()}
 if(spell=stats.match(/produce\sflame/i)){this.ProduceFlame()}
 if(spell=stats.match(/shillelagh/i)){this.Shillelagh()}
 if(spell=stats.match(/shocking\sgrasp/i)){this.ShockingGrasp()}
+if(spell=stats.match(/thaumaturgy/i)){this.Thaumaturgy()}
 
 if(spell=stats.match(/animal\sfriendship/i)){this.AnimalFriendship()}
+if(spell=stats.match(/command/i)){this.Command()}
 if(spell=stats.match(/cure\swounds/i)){this.CureWounds()}
 if(spell=stats.match(/detect\smagic/i)){this.DetectMagic()}
 if(spell=stats.match(/disguise\sself/i)){this.DisguiseSelf()}
@@ -5636,9 +5639,11 @@ if(spell=stats.match(/shield\s|shield\,/i)){this.Shield()}
 if(spell=stats.match(/sleep/i)){this.Sleep()}
 if(spell=stats.match(/thunderwave/i)){this.Thunderwave()}
 
+if(spell=stats.match(/augury/i)){this.Augury()}
 if(spell=stats.match(/flame\sblade/i)){this.FlameBlade()}
 if(spell=stats.match(/lesser\srestoration/i)){this.LesserRestoration()}
 if(spell=stats.match(/moonbeam/i)){this.Moonbeam()}
+if(spell=stats.match(/silence/i)){this.Silence()}
 
 if(spell=stats.match(/call\slightning/i)){this.CallLightning()}
 if(spell=stats.match(/dispel\smagic/i)){this.DispelMagic()}
@@ -8875,6 +8880,187 @@ saveMod=characters[targeted].chaMod
 if(characters[targeted].chaPro==='pro'){savePro=characters[targeted].pro;saveProName="pro"}
 else if(characters[targeted].chaPro==='exp'){savePro=characters[targeted].pro*2;saveProName="exp"}
 }
+
+ if(characters[x].rollNames[i].match(/vsAthletics/gi))
+ {
+modName="str"
+saveMod=characters[targeted].strMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].athletics==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].athletics==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsAcrobatics/gi))
+ {
+modName="dex"
+saveMod=characters[targeted].dexMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].acrobatics==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].acrobatics==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsSleightOfHand/gi))
+ {
+modName="dex"
+saveMod=characters[targeted].dexMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].sleight==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].sleight==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsStealth/gi))
+ {
+modName="dex"
+saveMod=characters[targeted].dexMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].stealth==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].stealth==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsArcana/gi))
+ {
+modName="int"
+saveMod=characters[targeted].intMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].arcana==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].arcana==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsHistory/gi))
+ {
+modName="int"
+saveMod=characters[targeted].intMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].history==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].history==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsInvestigation/gi))
+ {
+modName="int"
+saveMod=characters[targeted].intMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].investigation==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].investigation==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsNature/gi))
+ {
+modName="int"
+saveMod=characters[targeted].intMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].nature==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].nature==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsReligion/gi))
+ {
+modName="int"
+saveMod=characters[targeted].intMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].religion==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].religion==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsAnimal/gi))
+ {
+modName="wis"
+saveMod=characters[targeted].wisMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].animal==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].animal==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsInsight/gi))
+ {
+modName="wis"
+saveMod=characters[targeted].wisMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].insight==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].insight==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsMedicine/gi))
+ {
+modName="wis"
+saveMod=characters[targeted].wisMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].medicine==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].medicine==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsPerception/gi))
+ {
+modName="wis"
+saveMod=characters[targeted].wisMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].perception==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].perception==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsSurvival/gi))
+ {
+modName="wis"
+saveMod=characters[targeted].wisMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].survival==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].survival==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsDeception/gi))
+ {
+modName="cha"
+saveMod=characters[targeted].chaMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].deception==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].deception==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsIntimidation/gi))
+ {
+modName="cha"
+saveMod=characters[targeted].chaMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].intimidation==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].intimidation==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsPerformance/gi))
+ {
+modName="cha"
+saveMod=characters[targeted].chaMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].performance==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].performance==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
+ if(characters[x].rollNames[i].match(/vsPersuasion/gi))
+ {
+modName="cha"
+saveMod=characters[targeted].chaMod;
+savePro=0;
+saveProName="no proficiency";
+if(characters[targeted].persuasion==='pro'){savePro=characters[targeted].pro/1;saveProName="pro"}
+else if(characters[targeted].persuasion==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
+}
+
 else{savePro="0";saveProName="no proficiency"}
 if(savePro > -1){savePro="+" + savePro;}
 
