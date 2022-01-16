@@ -2037,7 +2037,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function SpiritualWeapon()
- {a='2nd(Spiritual Weapon)+wis+pro move weapon 20ft and bonus attack 60ft 10/10 turns(10/10)turns',
+ {a='2nd(Spiritual Weapon)+wis+pro move weapon 20ft and bonus attack 60ft (10/10)turns',
  b='1d20+0',
  c='force+1d8/slot',
  damageDice='0d0+0',
@@ -2621,9 +2621,9 @@ for(var i=x; i< characters.length; i++)
 }
 
  function PhantasmalKiller()
- {a='4th(Phantasmal Killer 1 target)DC8+' + characters[targeted].spellAbility + '+pro vsWis 120ft concentration 10/10 turns',
+ {a='4th(Phantasmal Killer)1 target DC8+' + characters[targeted].spellAbility + '+pro vsWis, 120ft, concentration, 10/10 turns',
  b='0d0+0',
- c='frightened and psychic+10d/slot;save at the end of each of its turns or more psychic damage',
+ c='frightened+psychic+4d10+1d10/slot',
  damageDice='4d10+0',
  getAction(t1)
 }
@@ -5620,35 +5620,59 @@ if(weapon=stats.match(/dagger/i)){this.Dagger()}
 if(weapon=stats.match(/morningstar/i)){this.Morningstar()}
 if(weapon=stats.match(/quarterstaff/i)){this.OneHandedQuarterstaff();this.TwoHandedQuarterstaff()}
 
+if(spell=stats.match(/dancing\slights/i)){this.DancingLights()}
 if(spell=stats.match(/druid\scraft/i)){this.DruidCraft()}
+if(spell=stats.match(/friends/i)){this.Friends()}
 if(spell=stats.match(/light\s|light\,/i)){this.Light()}
+if(spell=stats.match(/mage\shand/i)){this.MageHand()}
 if(spell=stats.match(/mend/i)){this.Mending()}
+if(spell=stats.match(/message/i)){this.Message()}
+if(spell=stats.match(/minor\sillusion/i)){this.MinorIllusion()}
+if(spell=stats.match(/poison\sspray/i)){this.PoisonSpray()}
 if(spell=stats.match(/produce\sflame/i)){this.ProduceFlame()}
 if(spell=stats.match(/shillelagh/i)){this.Shillelagh()}
 if(spell=stats.match(/shocking\sgrasp/i)){this.ShockingGrasp()}
 if(spell=stats.match(/thaumaturgy/i)){this.Thaumaturgy()}
 
 if(spell=stats.match(/animal\sfriendship/i)){this.AnimalFriendship()}
+if(spell=stats.match(/charm\sperson/i)){this.CharmPerson()}
+if(spell=stats.match(/color\sspray/i)){this.ColorSpray()}
 if(spell=stats.match(/command/i)){this.Command()}
 if(spell=stats.match(/cure\swounds/i)){this.CureWounds()}
 if(spell=stats.match(/detect\smagic/i)){this.DetectMagic()}
 if(spell=stats.match(/disguise\sself/i)){this.DisguiseSelf()}
 if(spell=stats.match(/entangle/i)){this.Entangle()}
 if(spell=stats.match(/mage\sarmor/i)){this.MageArmor()}
+if(spell=stats.match(/magic\smissile/i)){this.MagicMissile()}
 if(spell=stats.match(/shield\s|shield\,/i)){this.Shield()}
 if(spell=stats.match(/sleep/i)){this.Sleep()}
 if(spell=stats.match(/thunderwave/i)){this.Thunderwave()}
 
 if(spell=stats.match(/augury/i)){this.Augury()}
 if(spell=stats.match(/flame\sblade/i)){this.FlameBlade()}
+if(spell=stats.match(/hold\sperson/i)){this.HoldPerson()}
+if(spell=stats.match(/invisibility/i)){this.Invisibility()}
 if(spell=stats.match(/lesser\srestoration/i)){this.LesserRestoration()}
+if(spell=stats.match(/mirror\simage/i)){this.MirrorImage()}
 if(spell=stats.match(/moonbeam/i)){this.Moonbeam()}
+if(spell=stats.match(/phantasmal\sforce/i)){this.PhantasmalForce()}
 if(spell=stats.match(/silence/i)){this.Silence()}
+if(spell=stats.match(/suggestion/i)){this.Suggestion()}
 
 if(spell=stats.match(/call\slightning/i)){this.CallLightning()}
 if(spell=stats.match(/dispel\smagic/i)){this.DispelMagic()}
+if(spell=stats.match(/fireball/i)){this.Fireball()}
+if(spell=stats.match(/haste/i)){this.Haste()}
+if(spell=stats.match(/major\simage/i)){this.MajorImage()}
+if(spell=stats.match(/phantom\ssteed/i)){this.PhantomSteed()}
 
+if(spell=stats.match(/tongues/i)){this.Tongues()}
+if(spell=stats.match(/dominate\sbeast/i)){this.DominateBeast()}
 if(spell=stats.match(/ice\sstorm/i)){this.IceStorm()}
+if(spell=stats.match(/phantasmal\skiller/i)){this.PhantasmalKiller()}
+if(spell=stats.match(/stoneskin/i)){this.Stoneskin()}
+
+if(spell=stats.match(/hold\smonster/i)){this.HoldMonster()}
 
 }
 function _addRoll(name, roll, name2, roll2)
@@ -5837,7 +5861,7 @@ menuContents+="Name : <input class=name maxLength=50 onChange='characters[" + th
 menuContents+="</td></tr><tr><td>Size:<select onChange='characters[" + this.index + "].setSize(this.value)'><option>" + this.size + "<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>"
 menuContents+="</td></tr><tr><td>Speed :<input onChange='characters[" + this.index + "].setSpeed(this.value)' size='25' type='text' value='" + this.speed + "'>";
 menuContents+="</td></tr><tr><td>Senses :<input onChange='characters[" + this.index + "].setSenses(this.value)' size='25' type='text' value='" + this.senses + "'>";
-menuContents+="</td></tr><tr><td>Race:<select onChange='characters[" + this.index + "].setRace(this.value)'><option>" + this.race + "<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Halfling, Lightfoot<option>Halfling, Stout<option>Human<option>Orc, Half<option>Tiefling</select>";
+menuContents+="</td></tr><tr><td>Race:<select onChange='characters[" + this.index + "].setRace(this.value)'><option>" + this.race + "<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Halfling, Lightfoot<option>Halfling, Stout<option>Human<option>Orc, Half<option>Satyr<option>Tiefling</select>";
 menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setRace(this.value)' placeHolder='other race' size='25' type='text'>";
 menuContents+="</td></tr><tr><td>Traits :<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setTrait(this.value)'placeHolder='Gender, Age, Color, Height, Personality, Weight'>" + this.trait + "</textarea>";
 menuContents+="</td></tr><tr><td>Miniature File :<input onChange='characters[" + this.index + "].setFigure(this.value)'placeHolder='*.png'size='25' type='text' value='" + this.figure + "'>";
@@ -7999,7 +8023,7 @@ if(this.race.match(/Aasimar/))
  this.setSenses('Darkvision 60ft');
  this.setSize('Medium 5x5ft');
  this.setSpeed('30ft');
- this.setTrait('60-160yrs old');
+ this.setTrait('age 60-160yrs, Humanoid, hair color red, blonde, brown, black, or silver, eye color pale white, gold, gray, or topaz, skin color pale-dark brown, emerald, gold, silver, male height 150–220 cm, female height 140–210 cm, male weight 56.2–127 kg, female weight 40.4–111 kg,  homeland Prime Material, Plane, or Celestial Planes');
  if(this.race.match(/Protector/))
  {this.setAbility('wis+1,cha+2');
 this.setProficienciesRace('Healing Hands:1/1 long rest,heal self or ally lvl in hp,Light cha,Radiant Soul:@3rd fly 30ft 1min,deal your lvl extra radiant dmg 1 target each turn,1/1 long rest');
@@ -8177,6 +8201,17 @@ if(this.race.match(/Orc,\sHalf/))
  this.setSize('Medium 5x5ft');
  this.setSpeed('30ft');
  this.setTrait('(Relentless Endurance)(1/1)long rest, 0hp is 1hp,(Menacing)Intimidation+pro,(Savage attacks)crit damage+1d, 1-75 years old, 6+feet tall');
+}
+if(this.race.match(/Satyr/))
+{this.setAbility('dex+1, cha+2');
+ this.setDamageConditions('immune to Charm Person');
+ this.setLanguages('Common, Sylvan');
+ this.setProficienciesRace('Ram 1d4+str+pro, Mirthful Leaps long jump+1d8 feet, Performance+pro, Persuasion+pro, Musical Instrument+pro, @1st Vicious Mockery+cha @3rd Entangle+cha, @5th Suggestion+cha 1/1 long rest resets');
+ this.setResistance('resists magic at advantage');
+ this.setSenses('Darkvision 60ft');
+ this.setSize('Medium 5x5ft');
+ this.setSpeed('35ft');
+ this.setTrait(15+rollDForm('1d75+0')+' or 1-90 years old,'+(3+rollDForm('1d2+0'))+ 'ft or 4-5 feet tall, '+(100+rollDForm('1d50+0'))+'lbs or 100-150lbs');
 }
 if(this.race.match(/Tiefling/))
 {this.setAbility('int+1, cha+2');
