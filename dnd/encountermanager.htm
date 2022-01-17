@@ -15,14 +15,6 @@
 
 <style>
 
-body,
-table
-{
-background: #86857e url('Miniatures/Panel.png');
-background-blend-mode: multiply;
-background-color: rgba(200,100,0,.5);
-}
-
 tr:nth-child(even) {background: rgba(0, 0, 0, 0.1)}
 tr:nth-child(odd) {background: rgba(0, 0, 0, 0.2)}
 
@@ -69,6 +61,29 @@ h2 {color: #b90404;
 }
 
 h3 {color: #260e0e;
+}
+
+body,
+div,
+table,
+tr,
+td,
+button,
+legend,
+button:hover,
+button:active,
+input,
+option,
+radio,
+select,
+textarea
+{
+background: #86857e url('Miniatures/Panel.png');
+background-blend-mode: multiply;
+background-color: rgba(200,100,0,.5);
+minWidth: 100%;
+maxWidth: 100%;
+resize: none;
 }
 
 </style>
@@ -428,15 +443,7 @@ for(var i=x; i< characters.length; i++)
  getAction(t1)
 }
 
- function UnarmedStrike()
- {a='Unarmed Strike+str+pro',
- b='1d20+0',
- c='bludgeoning+str',
- damageDice='0d0+1',
- getAction(t1)
-}
-
- function TwoHandedLightCrossbow()
+function TwoHandedLightCrossbow()
  {a='2 Handed Crossbow+dex+pro 80/320ft',
  b='1d20+0',
  c='piercing+dex',
@@ -452,8 +459,8 @@ for(var i=x; i< characters.length; i++)
  getAction(t1)
 }
 
- function TwoHandedShortbow()
- {a='2 Handed Shortbow+dex+pro 80/320ft',
+ function Shortbow()
+ {a='Shortbow+dex+pro 80/320ft',
  b='1d20+0',
  c='piercing+dex',
  damageDice='1d6+0',
@@ -492,8 +499,8 @@ for(var i=x; i< characters.length; i++)
  getAction(t1)
 }
 
- function TwoHandedGlaive()
- {a='2 Handed Glaive+str+pro reach 10ft',
+ function Glaive()
+ {a='2 Handed Glaive+str+pro  10ft',
  b='1d20+0',
  c='slashing+str',
  damageDice='1d10+0',
@@ -517,7 +524,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function TwoHandedHalberd()
- {a='2 Handed Halberd+str+pro reach 10ft',
+ {a='2 Handed Halberd+str+pro  10ft',
  b='1d20+0',
  c='slashing+str',
  damageDice='1d10+0',
@@ -525,7 +532,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function Lance()
- {a='2 Handed Lance+str+pro reach 10ft',
+ {a='2 Handed Lance+str+pro  10ft',
  b='1d20+0',
  c='piercing+str',
  damageDice='1d12+0',
@@ -565,10 +572,62 @@ for(var i=x; i< characters.length; i++)
 }
 
  function TwoHandedPike()
- {a='Pike+str+pro reach 10ft',
+ {a='Pike+str+pro  10ft',
  b='1d20+0',
  c='piercing+str',
  damageDice='1d10+0',
+ getAction(t1)
+}
+
+ function UnarmedStrike()
+ {a='Unarmed Strike 5ft',
+ b='1d20+0',
+ c='bludgeoning+dex',
+ damageDice='1d8+0',
+ getAction(t1)
+}
+ function Disarmed()
+ {a='(Disarmed)1 item, DC8+dex+pro vsStr',
+ b='1d0+0',
+ c='drops 1 item',
+ damageDice='0d0+0',
+ getAction(t1)
+}
+ function KnockedProne()
+ {a='(Knock Prone)DC8+dex+pro vsDex @disadv if held with 2 hands or large',
+ b='1d0+0',
+ c='movement halved, 5ft attacks @adv, ranged attacks @disadv, 1 action to stand',
+ damageDice='0d0+0',
+ getAction(t1)
+}
+ function Stunned()
+ {a='(Stun)DC8+dex+pro vsCon',
+ b='0d0+0',
+ c='stunned, attacked @adv, str and dex saves @disadv, miss 1 turn, DM rule no crit dmg',
+ damageDice='0d0+0',
+ getAction(t1)
+}
+ function DeflectMissile()
+ {a='(Deflect Missile)damage from ranged weapon is reduced',
+ b='0d0+0',
+ c='heal+dex, if damage is reduced to 0, the missile is caught',
+ damageDice='1d10+0',
+ getAction(t1)
+}
+
+ function SongOfRest()
+ {a='(Song of Rest)everyone heals during short 4hr or long 8hr rest',
+ b='0d0+0',
+ c='heal',
+ damageDice='1d6+0',
+ getAction(t1)
+}
+
+ function Taunt()
+ {a='(Taunt)2/2 per long 8hr rest, 1 target, 30ft, DC8+cha+pro vsCha',
+ b='0d0+0',
+ c='all rolls @disadv till start of bard s next turn',
+ damageDice='0d0+0',
  getAction(t1)
 }
 
@@ -668,7 +727,7 @@ for(var i=x; i< characters.length; i++)
  getAction(t1)
 }
 
- function TwoHandedLongbow()
+ function Longbow()
  {a='2 Handed Longbow+dex+pro 150/600ft',
  b='1d20+0',
  c='piercing+dex',
@@ -691,14 +750,6 @@ for(var i=x; i< characters.length; i++)
 </table>
 
 <script>
-
- function SongOfRest()
- {a='Song of Rest',
- b='0d0+0',
- c='during rest, all who hear heal',
- damageDice='1d6+0',
- getAction(t1)
-}
 
  function Abate()
  {a='(Abate)DC8+' + characters[targeted].spellAbility + '+pro vsWis 30ft 1 target',
@@ -757,7 +808,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function AnimalMessenger()
- {a='1st(Animal Messenger)30ft m',
+ {a='2nd(Animal Messenger)30ft',
  b='0d0+0',
  c='tiny beast delivers 25 word message up to 25mi flyer 50mi 24+48hrs/slot',
  damageDice='0d0+0',
@@ -901,7 +952,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function ChillTouch()
- {a='Cantrip(Chill Touch+' + characters[targeted].spellAbility + '+pro touch',
+ {a='Cantrip(Chill Touch)+' + characters[targeted].spellAbility + '+pro touch',
  b='1d20+0',
  c='necro+1d8@5,11,17th lvl',
  damageDice='1d8+0',
@@ -933,9 +984,9 @@ for(var i=x; i< characters.length; i++)
 }
 
  function Command()
- {a='1st(Command)60ft 10/10 turns 1 target+1/slot DC8+' + characters[targeted].spellAbility + '+pro vsWis or obeys Approach, Drop, Flee, Grovel, Halt',
+ {a='1st(Command)60ft 10/10 turns 1 target+1/slot DC8+' + characters[targeted].spellAbility + '+pro vsWis',
  b='0d0+0',
- c='',
+ c='target obeys Approach, Drop, Flee, Grovel, or Halt',
  damageDice='0d0+0',
  getAction(t1)
 }
@@ -1309,7 +1360,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function Heroism()
- {a='Heroism)1st(1 target+1/slot touch concentration 1min',
+ {a='1st(Heroism)1 target+1/slot touch concentration 1min',
  b='0d0+0',
  c='immune fear gains your spell abi mod temp hp each turn concentration 1min 10/10',
  damageDice='0d0+0',
@@ -2421,7 +2472,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function WaterWalk()
- {a='3rd(Water Walk 10 willing Creatures can move across any liquid for the duration; rise to surface if underwater 30ft 1hr',
+ {a='3rd(Water Walk)10 willing Creatures can move across any liquid for the duration; rise to surface if underwater 30ft 1hr',
  b='0d0+0',
  c='you or ally knows any spoken language for the duration',
  damageDice='0d0+0',
@@ -2439,7 +2490,7 @@ for(var i=x; i< characters.length; i++)
  function Confusion()
  {a='4th(Confusion 90ft concentration 10/10 turns 10ft radius targets)DC8+' + characters[targeted].spellAbility + '+pro vsWis',
  b='0d0+0',
- c='d10 1 moves d8 direction no actions, 2-6 no movement no actions, 7-8 melee attack random in reach or no actions, 9-10 normal actions and movement',
+ c='d10 1 moves d8 direction no actions, 2-6 no movement no actions, 7-8 melee attack random in  or no actions, 9-10 normal actions and movement',
  damageDice='0d0+0',
  getAction(t1)
 }
@@ -2549,7 +2600,7 @@ for(var i=x; i< characters.length; i++)
 }
 
  function GraspingVine()
- {a='4th(Grasping Vine)Conjure vine with 30ft reach bonus direct)DC8+' + characters[targeted].spellAbility + '+pro vsDex or 1 target pulled 20ft to vine concentration 10/10 turns',
+ {a='4th(Grasping Vine)Conjure vine with 30ft  bonus direct)DC8+' + characters[targeted].spellAbility + '+pro vsDex or 1 target pulled 20ft to vine concentration 10/10 turns',
  b='0d0+0',
  c='',
  damageDice='0d0+0',
@@ -4130,12 +4181,12 @@ for(var i=x; i< characters.length; i++)
  s4(s1 + 'Mace' + s2 + 'Mace' + s3)
  s4(s1 + 'OneHandedQuarterstaff' + s2 + '1 Handed Quarterstaff' + s3)
  s4(s1 + 'TwoHandedQuarterstaff' + s2 + '2 Handed Quarterstaff' + s3)
- s4(s1 + 'TwoHandedShortbow()' + s2 + '2 Handed Shortbow' + s3)
+ s4(s1 + 'Shortbow()' + s2 + '2 Handed Shortbow' + s3)
  s4(s1 + 'Sling' + s2 + 'Sling' + s3)
  s4(s1 + 'OneHandedBattleaxe' + s2 + '1 Handed Battleaxe' + s3)
  s4(s1 + 'TwoHandedBattleaxe' + s2 + '2 Handed Battleaxe' + s3)
  s4(s1 + 'Flail' + s2 + 'Flail' + s3)
- s4(s1 + 'TwoHandedGlaive' + s2 + '2 Handed Glaive' + s3)
+ s4(s1 + 'Glaive' + s2 + '2 Handed Glaive' + s3)
  s4(s1 + 'TwoHandedGreataxe' + s2 + '2 Handed Greataxe' + s3)
  s4(s1 + 'TwoHandedGreatsword' + s2 + '2 Handed Greatsword' + s3)
  s4(s1 + 'TwoHandedHalberd' + s2 + '2 Handed Halberd' + s3)
@@ -4157,7 +4208,7 @@ for(var i=x; i< characters.length; i++)
  s4(s1 + 'Blowgun' + s2 + 'Blowgun' + s3)
  s4(s1 + 'OneHandedCrossbow' + s2 + '1 Handed Crossbow' + s3)
  s4(s1 + 'HeavyTwoHandedCrossbow' + s2 + 'Heavy 2 Handed Crossbow' + s3)
- s4(s1 + 'TwoHandedLongbow' + s2 + '2 Handed Longbow' + s3)
+ s4(s1 + 'LongBow' + s2 + '2 Handed Longbow' + s3)
  s4(s1 + 'Net' + s2 + 'Net' + s3)
  s4('</td></tr></table></td><td><table><tr><td><h3>Arcane Trickster Spells</h3>Cantrips@3rd Class Level 3 Cantrips Known @10th Class Level 4 Cantrips Known')
  s4(s1 + 'AcidSplash' + s2 + 'Acid Splash' + s3)
@@ -5277,7 +5328,9 @@ savePane.setStyle("zIndex", "100");
 savePane.putAt(100, 100);
 
 function setStats()
-{if(rip=stats.match(/^([\s\S]*)(Tiny|Small|Medium|Large|Huge|Gargantuan)/))
+{
+
+if(rip=stats.match(/^([\s\S]*)(Tiny|Small|Medium|Large|Huge|Gargantuan)/))
 {characters[targeted].setName(rip[1])}
 
 if(size=stats.match(/(Tiny|Small|Medium|Large|Huge|Gargantuan)/))
@@ -5354,7 +5407,7 @@ characters[targeted].setMaxHp(hp[2]);
 characters[targeted].setClass('Creature');
 characters[targeted].setHitDice(hp[3]);
 };
-if(rip=stats.match(/Speed\s([\s\S]*?ft)/i))
+if(rip=stats.match(/Speed\s([\s\S]*?)STR/i))
 {characters[targeted].setSpeed(rip[1])}
 if(str=stats.match(/(\d{1,2})\s\(\+|(\d{1,2})\s\(\-|(\d{1,2})\s\(\–/g))
 {characters[targeted].setStr(parseInt(str[0]));
@@ -5364,11 +5417,12 @@ if(str=stats.match(/(\d{1,2})\s\(\+|(\d{1,2})\s\(\-|(\d{1,2})\s\(\–/g))
  characters[targeted].setWis(parseInt(str[4]));
  characters[targeted].setCha(parseInt(str[5]));
 }
-if(resist=stats.match(/Resistances|Resistance([\s\S]*?)(Senses|Condition\s|Damage\sImmunities)/))
-{characters[targeted].setResistance(resist[1])
+if(resist=stats.match(/(Resistances|Resistance)([\s\S]*?)(Senses|Condition\s|Damage\sImmunities)/))
+{characters[targeted].setResistance(resist[2])
 }
-if(conditionimmune=stats.match(/Damage\sImmunities\s([\s\S]*?)Damage\sResistance|Condition|Senses/))
-{characters[targeted].setImmunity(conditionimmune[1])
+characters[targeted].setImmunity('');
+if(immune=stats.match(/(Damage\sImmunities)([\s\S]*?)(Damage\sResistance|Damage\sCondition|Condition\sImmuniti|Senses)/))
+{characters[targeted].setImmunity(immune[2])
 }
 if(damageimmune=stats.match(/Condition\sImmunities\s([\s\S]*?)Senses/))
 {characters[targeted].setDamageConditions('immune to '+damageimmune[1])
@@ -5394,9 +5448,13 @@ if(level=stats.match(/Challenge\s(\d{1,2})(?!\/)/))
 if(xp=stats.match(/Challenge[\s\S]*\(([\s\S]*)\sXP/))
 {characters[targeted].setExperience(xp[1])
 }
+if(casting=stats.match(/spellcasting[\s\S]*?(cha|int|wis)/i))
+{characters[targeted].setSpellAbility(casting[1])
+}
 if(features=stats.match(/\sXP\)([\s\S]*?)ACTIONS/i))
 {characters[targeted].setFeatures(features[1])
 }
+characters[targeted].setStrPro('');
 if(savingThrows=stats.match(/Str\s\+(\d{1,2})/))
 {if(parseInt(savingThrows[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].strMod)))
  {characters[targeted].setStrPro('exp')
@@ -5405,6 +5463,7 @@ if(savingThrows=stats.match(/Str\s\+(\d{1,2})/))
  {characters[targeted].setStrPro('pro')
 }
 };
+characters[targeted].setDexPro('');
 if(savingThrows=stats.match(/Dex\s\+(\d{1,2})/))
 {if(parseInt(savingThrows[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].dexMod)))
  {characters[targeted].setDexPro('exp')
@@ -5413,6 +5472,7 @@ if(savingThrows=stats.match(/Dex\s\+(\d{1,2})/))
  {characters[targeted].setDexPro('pro')
 }
 };
+characters[targeted].setConPro('');
 if(savingThrows=stats.match(/Con\s\+(\d{1,2})/))
 {if(parseInt(savingThrows[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].conMod)))
  {characters[targeted].setConPro('exp')
@@ -5421,6 +5481,7 @@ if(savingThrows=stats.match(/Con\s\+(\d{1,2})/))
  {characters[targeted].setConPro('pro')
 }
 };
+characters[targeted].setIntPro('');
 if(savingThrows=stats.match(/Int\s\+(\d{1,2})/))
 {if(parseInt(savingThrows[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].intMod)))
  {characters[targeted].setIntPro('exp')
@@ -5429,6 +5490,7 @@ if(savingThrows=stats.match(/Int\s\+(\d{1,2})/))
  {characters[targeted].setIntPro('pro')
 }
 };
+characters[targeted].setWisPro('');
 if(savingThrows=stats.match(/Wis\s\+(\d{1,2})/))
 {if(parseInt(savingThrows[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].wisMod)))
  {characters[targeted].setWisPro('exp')
@@ -5437,6 +5499,7 @@ if(savingThrows=stats.match(/Wis\s\+(\d{1,2})/))
  {characters[targeted].setWisPro('pro')
 }
 };
+characters[targeted].setChaPro('');
 if(savingThrows=stats.match(/Cha\s\+(\d{1,2})/))
 {if(parseInt(savingThrows[1]) >(parseInt(characters[targeted].pro) + parseInt(characters[targeted].chaMod)))
  {characters[targeted].setChaPro('exp')
@@ -5616,39 +5679,71 @@ characters[targeted].setPersuasion('pro')
 }
 }
 
+//Bard Class Features
+if(rip=stats.match(/song\sof\srest/i)){this.SongOfRest();}
+if(rip=stats.match(/taunt/i)){this.Taunt();}
+
+//Monk Class Features
+if(weapon=stats.match(/deflect\smissile/i)){this.DeflectMissile();}
+if(weapon=stats.match(/unarmed\sstrike/i)){this.UnarmedStrike();this.Disarmed();this.KnockedProne();this.Stunned()}
+
+//Weapons
 if(weapon=stats.match(/dagger/i)){this.Dagger()}
+if(weapon=stats.match(/dart/i)){this.Dart()}
+if(weapon=stats.match(/glaive/i)){this.Glaive()}
+if(weapon=stats.match(/longbow/i)){this.Longbow()}
 if(weapon=stats.match(/morningstar/i)){this.Morningstar()}
 if(weapon=stats.match(/quarterstaff/i)){this.OneHandedQuarterstaff();this.TwoHandedQuarterstaff()}
+if(weapon=stats.match(/shortsword/i)){this.Shortsword()}
+if(weapon=stats.match(/shortbow/i)){this.Shortbow()}
 
+//Cantrips
+if(spell=stats.match(/chill\stouch/i)){this.ChillTouch()}
 if(spell=stats.match(/dancing\slights/i)){this.DancingLights()}
-if(spell=stats.match(/druid\scraft/i)){this.DruidCraft()}
+if(spell=stats.match(/druid\scraft|druidcraft/i)){this.DruidCraft()}
+if(spell=stats.match(/eldritch\sblast/i)){this.EldritchBlast()}
 if(spell=stats.match(/friends/i)){this.Friends()}
+if(spell=stats.match(/guidance/i)){this.Guidance()}
 if(spell=stats.match(/light\s|light\,/i)){this.Light()}
 if(spell=stats.match(/mage\shand/i)){this.MageHand()}
-if(spell=stats.match(/mend/i)){this.Mending()}
+if(spell=stats.match(/mending/i)){this.Mending()}
 if(spell=stats.match(/message/i)){this.Message()}
 if(spell=stats.match(/minor\sillusion/i)){this.MinorIllusion()}
 if(spell=stats.match(/poison\sspray/i)){this.PoisonSpray()}
+if(spell=stats.match(/prestidigitation/i)){this.Prestidigitation()}
 if(spell=stats.match(/produce\sflame/i)){this.ProduceFlame()}
 if(spell=stats.match(/shillelagh/i)){this.Shillelagh()}
 if(spell=stats.match(/shocking\sgrasp/i)){this.ShockingGrasp()}
 if(spell=stats.match(/thaumaturgy/i)){this.Thaumaturgy()}
-
+if(spell=stats.match(/vicious\smockery/i)){this.ViciousMockery()}
+//1st Level Spells
 if(spell=stats.match(/animal\sfriendship/i)){this.AnimalFriendship()}
 if(spell=stats.match(/charm\sperson/i)){this.CharmPerson()}
+if(spell=stats.match(/create\sor\sdestroy\swater/i)){this.CreateDestroyWater()}
 if(spell=stats.match(/color\sspray/i)){this.ColorSpray()}
 if(spell=stats.match(/command/i)){this.Command()}
 if(spell=stats.match(/cure\swounds/i)){this.CureWounds()}
 if(spell=stats.match(/detect\smagic/i)){this.DetectMagic()}
 if(spell=stats.match(/disguise\sself/i)){this.DisguiseSelf()}
 if(spell=stats.match(/entangle/i)){this.Entangle()}
+if(spell=stats.match(/faerie\sfire/i)){this.FaerieFire()}
+if(spell=stats.match(/healing\sword/i)){this.HealingWord()}
+if(spell=stats.match(/heroism/i)){this.Heroism()}
 if(spell=stats.match(/mage\sarmor/i)){this.MageArmor()}
 if(spell=stats.match(/magic\smissile/i)){this.MagicMissile()}
+if(spell=stats.match(/protection\sfrom\sevil\sand\sgood/i)){this.ProtectionFromEvilOrGood()}
 if(spell=stats.match(/shield\s|shield\,/i)){this.Shield()}
 if(spell=stats.match(/sleep/i)){this.Sleep()}
+if(spell=stats.match(/speak\swith\sanimals/i)){this.SpeakWithAnimals()}
+if(spell=stats.match(/thunderous\ssmite/i)){this.ThunderousSmite()}
 if(spell=stats.match(/thunderwave/i)){this.Thunderwave()}
-
+//2nd Level Spells
+if(spell=stats.match(/animal\smessenger/i)){this.AnimalMessenger()}
 if(spell=stats.match(/augury/i)){this.Augury()}
+if(spell=stats.match(/beast\ssense/i)){this.BeastSense()}
+if(spell=stats.match(/branding\ssmite/i)){this.BrandingSmite()}
+if(spell=stats.match(/darkness/i)){this.Darkness()}
+if(spell=stats.match(/find\ssteed/i)){this.FindSteed()}
 if(spell=stats.match(/flame\sblade/i)){this.FlameBlade()}
 if(spell=stats.match(/hold\sperson/i)){this.HoldPerson()}
 if(spell=stats.match(/invisibility/i)){this.Invisibility()}
@@ -5656,23 +5751,37 @@ if(spell=stats.match(/lesser\srestoration/i)){this.LesserRestoration()}
 if(spell=stats.match(/mirror\simage/i)){this.MirrorImage()}
 if(spell=stats.match(/moonbeam/i)){this.Moonbeam()}
 if(spell=stats.match(/phantasmal\sforce/i)){this.PhantasmalForce()}
+if(spell=stats.match(/shatter/i)){this.Shatter()}
 if(spell=stats.match(/silence/i)){this.Silence()}
 if(spell=stats.match(/suggestion/i)){this.Suggestion()}
-
+//3rd Level Spells
+if(spell=stats.match(/blinding\ssmite/i)){this.BlindingSmite()}
 if(spell=stats.match(/call\slightning/i)){this.CallLightning()}
+if(spell=stats.match(/conjure\sanimals/i)){this.ConjureAnimals()}
 if(spell=stats.match(/dispel\smagic/i)){this.DispelMagic()}
 if(spell=stats.match(/fireball/i)){this.Fireball()}
 if(spell=stats.match(/haste/i)){this.Haste()}
 if(spell=stats.match(/major\simage/i)){this.MajorImage()}
+if(spell=stats.match(/meld\sinto\sstone/i)){this.MeldIntoStone()}
 if(spell=stats.match(/phantom\ssteed/i)){this.PhantomSteed()}
-
-if(spell=stats.match(/tongues/i)){this.Tongues()}
+if(spell=stats.match(/water\sbreathing/i)){this.WaterBreathing()}
+if(spell=stats.match(/water\swalk/i)){this.WaterWalk()}
+//4th Level Spells
+if(spell=stats.match(/control\swater/i)){this.ControlWater()}
 if(spell=stats.match(/dominate\sbeast/i)){this.DominateBeast()}
+if(spell=stats.match(/evard/i)){this.EvardsBlackTentacles()}
 if(spell=stats.match(/ice\sstorm/i)){this.IceStorm()}
+if(spell=stats.match(/locate\screature/i)){this.LocateCreature()}
 if(spell=stats.match(/phantasmal\skiller/i)){this.PhantasmalKiller()}
 if(spell=stats.match(/stoneskin/i)){this.Stoneskin()}
-
+if(spell=stats.match(/tongues/i)){this.Tongues()}
+if(spell=stats.match(/wall\sof\sfire/i)){this.WallOfFire()}
+//5th Level Spells
+if(spell=stats.match(/commune\swith\snature/i)){this.CommuneWithNature()}
 if(spell=stats.match(/hold\smonster/i)){this.HoldMonster()}
+if(spell=stats.match(/mass\scure\swounds/i)){this.MassCureWounds()}
+if(spell=stats.match(/tree\sstride/i)){this.TreeStride()}
+//6th Level Spells
 
 }
 function _addRoll(name, roll, name2, roll2)
@@ -5861,7 +5970,7 @@ menuContents+="Name : <input class=name maxLength=50 onChange='characters[" + th
 menuContents+="</td></tr><tr><td>Size:<select onChange='characters[" + this.index + "].setSize(this.value)'><option>" + this.size + "<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>"
 menuContents+="</td></tr><tr><td>Speed :<input onChange='characters[" + this.index + "].setSpeed(this.value)' size='25' type='text' value='" + this.speed + "'>";
 menuContents+="</td></tr><tr><td>Senses :<input onChange='characters[" + this.index + "].setSenses(this.value)' size='25' type='text' value='" + this.senses + "'>";
-menuContents+="</td></tr><tr><td>Race:<select onChange='characters[" + this.index + "].setRace(this.value)'><option>" + this.race + "<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Halfling, Lightfoot<option>Halfling, Stout<option>Human<option>Orc, Half<option>Satyr<option>Tiefling</select>";
+menuContents+="</td></tr><tr><td>Race:<select onChange='characters[" + this.index + "].setRace(this.value)'><option>" + this.race + "<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Halfling, Lightfoot<option>Halfling, Stout<option>Human<option>Orc, Half<option>Satyr<option>Tiefling</select>";
 menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setRace(this.value)' placeHolder='other race' size='25' type='text'>";
 menuContents+="</td></tr><tr><td>Traits :<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setTrait(this.value)'placeHolder='Gender, Age, Color, Height, Personality, Weight'>" + this.trait + "</textarea>";
 menuContents+="</td></tr><tr><td>Miniature File :<input onChange='characters[" + this.index + "].setFigure(this.value)'placeHolder='*.png'size='25' type='text' value='" + this.figure + "'>";
@@ -5993,8 +6102,7 @@ menuContents+="</td></tr></table></span><span id=toggled4" + this.index + " styl
 menuContents+="</td></tr><tr><td><input onChange='characters[" + this.index + "].setClass(this.value)' placeHolder='other class' size='25' type='text'>";
 menuContents+="</td></tr><tr><td>Challenge Rating(CR)or Level(lvl):<input maxLength=3 onChange='characters[" + this.index + "].setLevel(this.value)' size=3 type='text' value=" + this.level + ">";
 menuContents+="</td></tr><tr><td>Feature Notes:<textArea cols='30' rows='3' onChange='characters[" + this.index + "].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>" + this.featureNotes + "</textarea>";
-menuContents+="</td></tr><tr><td>Experience Points(XP) :<input maxLength='8' onChange='characters[" + this.index + "].setExperience(this.value)'size='8' type='text' value='" + this.experience + "'>";
-menuContents+="</td></tr><tr><td><h3>Class Features:</h3>Target the character or creature to receive the weapons or spells here. Make notes in Feature Notes above<color='red'>" + this.features + "</color>";
+menuContents+="</td></tr><tr><td>Experience Points(XP) :<input maxLength='8' onChange='characters[" + this.index + "].setExperience(this.value)'size='8' type='text' value='" + this.experience + "'></td></tr><tr><td>" + this.features + "</color>";
 menuContents+="</td></tr></table></span>"
 this.menu.setContents(menuContents);
 }
@@ -6026,6 +6134,10 @@ this.refresh();
 function _setAlignment(x)
 {this.alignment=x;
 this.setAlignmentDescription(x);
+
+if(this.alignment.match(/Neutral/i))
+{this.setAlignmentDescription("I will help others, but avoid serious personal risks or loyalties that don\'t benefit me.")
+}
 if(this.alignment.match(/Chaotic Evil/i))
 {this.setAlignmentDescription("I violently follow my greed, hatred, or bloodlust, promoting my own freedom and control over others.")
 }
@@ -6049,9 +6161,6 @@ if(this.alignment.match(/Neutral Evil/i))
 }
 if(this.alignment.match(/Neutral Good/i))
 {this.setAlignmentDescription("I help others according to their needs and promote compassion above all else.")
-}
-if(this.alignment.match(/Neutral/i))
-{this.setAlignmentDescription("I will help others, but avoid serious personal risks or loyalties that don\'t benefit me.")
 }
 this.refresh();
 }
@@ -6465,7 +6574,7 @@ dx="@17th(Avatar of Battle)resist bludg, slash, pierc nonmagical weapon";
 }
 if(this.class.match(/Druid/))
 {if(this.class.match(/Land/))
- {a='@2nd.CIRCLE of the Land</td></tr><tr><td>@2nd.BONUS CANTRIP learn 1 druid cantrip</td></tr><tr><td>@2nd.NATURAL RECOVERY short rest recover half slots</td></tr><tr><td>@3rdCIRCLE SPELLS when you reach these levels you know these spells at no additional cost. ARCTIC @3rd Hold Person @3rd Spike Growth @5th Sleet Storm @5th Slow @7th Freedom of Movement @7th Ice Storm @9th Commune with Nature @9th Cone of Cold</td></tr><tr><td> COAST @3rd Mirror Image @3rd Misty Step @5th Water Breathing @5th Water Walk @7th Control Water @7th Freedom of Movement @9th Conjure Elemental @9th Scrying</td></tr><tr><td> DESERT @3rd Blur @3rd Silence @5th Create Food and Water @5th Protection from Energy @7th Blight @7th Hallucinatory Terrain @9th Insect Plague @9th Wall of Stone</td></tr><tr><td> Forest @3rd Barkskin @3rd Spider Climb @5th Call Lightning @5th Plant Growth @7th Divination @7th Freedom of Movement @9th Commune with Nature @9th Tree Stride</td></tr><tr><td> GRASSLAND @3rd Invisibility @3rd Pass without Trace @5th Daylight @5th Haste @7th Divination @7th Freedom of Movement @9th Dream @9th Insect Plague</td></tr><tr><td> MOUNTAIN @3rd Spider Climb @3rd Spike Growth @5th Lightning Bolt @5th Meld into Stone @7th Stone Shape @7th Stoneskin @9th Passwall @9th Wall of Stone</td></tr><tr><td> SWAMP @3rd Darkness @3rd Melf s Acid Arrow @5th Water Walk @5th Stinking Cloud @7th Freedom of Movement @7th Locate Creature @9th Insect Plague @9th Scrying</td></tr><tr><td> UNDERDARK @3rd Spider Climb @3rd Web @5th Gaseous Form @5th Stinking Cloud @7th Greater Invisibility @7th Stone Shape @9th Cloudkill @9th Insect Plague';
+ {a='@2nd.CIRCLE of the Land</td></tr><tr><td>@2nd.BONUS CANTRIP learn 1 druid cantrip</td></tr><tr><td>@2nd.NATURAL RECOVERY short rest recover half slots</td></tr><tr><td>@3rdCIRCLE SPELLS when you  these levels you know these spells at no additional cost. ARCTIC @3rd Hold Person @3rd Spike Growth @5th Sleet Storm @5th Slow @7th Freedom of Movement @7th Ice Storm @9th Commune with Nature @9th Cone of Cold</td></tr><tr><td> COAST @3rd Mirror Image @3rd Misty Step @5th Water Breathing @5th Water Walk @7th Control Water @7th Freedom of Movement @9th Conjure Elemental @9th Scrying</td></tr><tr><td> DESERT @3rd Blur @3rd Silence @5th Create Food and Water @5th Protection from Energy @7th Blight @7th Hallucinatory Terrain @9th Insect Plague @9th Wall of Stone</td></tr><tr><td> Forest @3rd Barkskin @3rd Spider Climb @5th Call Lightning @5th Plant Growth @7th Divination @7th Freedom of Movement @9th Commune with Nature @9th Tree Stride</td></tr><tr><td> GRASSLAND @3rd Invisibility @3rd Pass without Trace @5th Daylight @5th Haste @7th Divination @7th Freedom of Movement @9th Dream @9th Insect Plague</td></tr><tr><td> MOUNTAIN @3rd Spider Climb @3rd Spike Growth @5th Lightning Bolt @5th Meld into Stone @7th Stone Shape @7th Stoneskin @9th Passwall @9th Wall of Stone</td></tr><tr><td> SWAMP @3rd Darkness @3rd Melf s Acid Arrow @5th Water Walk @5th Stinking Cloud @7th Freedom of Movement @7th Locate Creature @9th Insect Plague @9th Scrying</td></tr><tr><td> UNDERDARK @3rd Spider Climb @3rd Web @5th Gaseous Form @5th Stinking Cloud @7th Greater Invisibility @7th Stone Shape @9th Cloudkill @9th Insect Plague';
 b='@6th.LAND S STRIDE ignore difficult terrain and magical plants, save at adv vs magical plants</td></tr><tr><td>@10th.NATURE S WARD immune elemental fey charm or fear, immune poison and disease</td></tr><tr><td>@14th.NATURE S SANCTUARY wis save or beast or plant attacks your ally instead of you';
 c="";
 dx="";
@@ -6516,7 +6625,7 @@ dx='@15th(EverReady Shot)if no shots, regain 1 arcane shot';
 e='';
 }
  if(this.class.match(/Battle/))
- {a='Battle Master</td></tr><tr><td>@3rd(Superiority Dice Value) @3rd d8 @10th d10 @18th d12</td></tr><tr><td>(Restoried Superiority Dice Per Rest) @3rd 4/4 @7th 5/5 @15th 6/6</td></tr><tr><td>(Known Maneuvers)using str or dex @3rd 3 @7th 5 @10th 7 @15th 9</td></tr><tr><td>(Commander Strike)1SD, forgo attack, ally reacts dam+SD(Disarming Attack)1SD, dam+SD, str save or drops item(Distractive Strike)1SD, dam+SD, next ally attack at adv on target(Evasive Footwork)1SD, when moving, AC+SD(Feinting Attack)1SD, bonus, same turn next attack at adv, dam+SD(Goading Attack)1SD, dam+SD, wis save or attacks allies at disadv other than you(Lunging Attack)1SD, reach+5ft, dam+SD(Maneuvering Attack)1SD, dam+SD, allies move half not opportunity attacked.(Menacing Attack)1SD, dam+SD, wis save or frightened end your next turn(Parry)1SD, when hit, your dam-SD-dexMod(Precision Attack)1SD, attack+SD(Pushing Attack)1SD, dam+SD, Large 10x10ft or less str save or pushed 15ft(Rally)1SD, bonus ally temp hp+SD+chaMod(Riposte)1SD, when missed, react melee attack, dam+SD(Sweeping Attack)1SD, on hit, adjacent target dam is SD(Trip Attack)1SD, on hit, Large 10x10ft or less str save or prone, dam+SD</td></tr><tr><td>@3rd(Student of War)1 Artisans Tools+pro';
+ {a='Battle Master</td></tr><tr><td>@3rd(Superiority Dice Value) @3rd d8 @10th d10 @18th d12</td></tr><tr><td>(Restoried Superiority Dice Per Rest) @3rd 4/4 @7th 5/5 @15th 6/6</td></tr><tr><td>(Known Maneuvers)using str or dex @3rd 3 @7th 5 @10th 7 @15th 9</td></tr><tr><td><h3>Maneuvers</h3>(Commander Strike)1SD, forgo attack, ally reacts dam+SD<br>(Disarming Attack)1SD, dam+SD, str save or drops item<br>(Distractive Strike)1SD, dam+SD, next ally attack at adv on target(<br>Evasive Footwork)1SD, when moving, AC+SD<br>(Feinting Attack)1SD, bonus, same turn next attack at adv, dam+SD<br>(Goading Attack)1SD, dam+SD, wis save or attacks allies at disadv other than you<br>(Lunging Attack)1SD, +5ft, dam+SD<br>(Maneuvering Attack)1SD, dam+SD, allies move half not opportunity attacked.<br>(Menacing Attack)1SD, dam+SD, wis save or frightened end your next turn<br>(Parry)1SD, when hit, your dam-SD-dexMod<br>(Precision Attack)1SD, attack+SD<br>(Pushing Attack)1SD, dam+SD, Large 10x10ft or less str save or pushed 15ft<br>(Rally)1SD, bonus ally temp hp+SD+chaMod<br>(Riposte)1SD, when missed, react melee attack, dam+SD<br>(Sweeping Attack)1SD, on hit, adjacent target dam is SD<br>(Trip Attack)1SD, on hit, Large 10x10ft or less str save or prone, dam+SD</td></tr><tr><td>@3rd(Student of War)1 Artisans Tools+pro';
 b='@7th(Know Your Enemy)observe 1min, DM tells 2 stats of target';
 c='';
 dx='@15th(Relentless) @15th 1/1.roll init with 0SD is 1SD';
@@ -7384,7 +7493,7 @@ naturalRoll2=naturalRoll;
 roll2=roll;
 rollTotal1=naturalRoll1 + parseInt(roll1) + parseInt(abiMod) + parseInt(skillMod) + parseInt(characters[x].sit);
 rollTotal2=naturalRoll2 + parseInt(roll2) + parseInt(abiMod) + parseInt(skillMod) + parseInt(characters[x].sit);
-log="<table><tr><td><table><tr><td>" + characters[x].name + "</td></tr></table></td><td><table><tr><td>Ability or Skill Saving Throw Roll 1</td></tr><tr><td>1d20+0</td></tr><tr><td>(" + naturalRoll1 + roll1 + ")</td></tr><tr><td>" + abiMod + " " + abi + " ability modifier</td></tr><tr><td>" + skillMod + " proficiency modifier</td></tr><tr><td>" + characters[x].sit + " situation modifier</td></tr><tr><td> = " + rollTotal1 + "</td></tr></table></td><td><table><tr><td>Ability or Skill Saving Throw Roll 2</td></tr><tr><td>1d20+0</td></tr><tr><td>(" + naturalRoll2 + roll2 + ")</td></tr><tr><td>" + abiMod + " " + abi + " ability modifier</td></tr><tr><td>" + skillMod + " proficiency modifier</td></tr><tr><td>" + characters[x].sit + " situation modifier</td></tr><tr><td> = " + rollTotal2 + "</td></tr></table>";
+log="<table><tr><td><table><tr><td>" + characters[x].name + "</td></tr></table></td><td><table><tr><td>Ability or Skill Saving Throw Roll 1</td></tr><tr><td>1d20+0</td></tr><tr><td>(" + naturalRoll1 + roll1 + ")</td></tr><tr><td>" + abiMod + " " + abi + " modifier</td></tr><tr><td>" + skillMod + " proficiency modifier</td></tr><tr><td>" + characters[x].sit + " situation modifier</td></tr><tr><td> = " + rollTotal1 + "</td></tr></table></td><td><table><tr><td>Ability or Skill Saving Throw Roll 2</td></tr><tr><td>1d20+0</td></tr><tr><td>(" + naturalRoll2 + roll2 + ")</td></tr><tr><td>" + abiMod + " " + abi + " modifier</td></tr><tr><td>" + skillMod + " proficiency modifier</td></tr><tr><td>" + characters[x].sit + " situation modifier</td></tr><tr><td> = " + rollTotal2 + "</td></tr></table>";
 characters[x].setCombatLog(log);
 }
 
@@ -8121,12 +8230,23 @@ if(this.race.match(/Elf,\sMoon/))
  this.setSpeed('30ft');
  this.setTrait('1-750 years old, 5-6 feet tall');
 }
+if(this.race.match(/Elf,\sShadow/))
+{this.setAbility('dex+2, con+1');
+ this.setImmunity('Sleep');
+ this.setLanguages('Common, Elvish, and 1 language');
+ this.setProficienciesRace('longbows, longswords, shortbows, shortswords');
+ this.setResistance('@3rd resist all dmg when teleporting 1rnd 30ft bonus act 1/1 long rest, innecrotic, (Fae Ancestry)save vs charm at adv');
+ this.setSenses('Darkvision 60ft,(Keen Senses)Perception+pro,(Trance)alert to danger during long and short rests');
+ this.setSize('Medium 5x5ft');
+ this.setSpeed('30ft');
+ this.setTrait('100-750 yrs old('+(100+parseInt(rollDForm('1d650+0')))+'yrs old), 4ft 8in tall+2d8('+(4.8+(parseInt(rollDForm('2d8+0'))/12)).toFixed(2)+'ft), 90lbs+1d4('+(parseInt(90)+parseInt(rollDForm('1d4+0')))+'lbs)');
+}
 if(this.race.match(/Elf,\sWood/))
 {this.setAbility('dex+2, int+1');
  this.setImmunity('Sleep');
  this.setLanguages('Common, Elvish');
  this.setProficienciesRace('longbows, longswords, shortbows, and shortswords');
- this.setResistance('(Fae Ancestry)save vs charm at adv');
+ this.setResistance('necrotic dmg, (Fae Ancestry)save vs charm at adv');
  this.setSenses('Darkvision 60ft,(Keen Senses)Perception+pro,(Trance)alert to danger during long and short rests');
  this.setSize('Medium 5x5ft');
  this.setSpeed('35 feet');
