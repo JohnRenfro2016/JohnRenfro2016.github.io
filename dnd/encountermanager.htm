@@ -250,6 +250,7 @@ characters[x].setEquipment(characters[targeted].equipment);
 characters[x].setExperience(characters[targeted].experience);
 characters[x].setFeats(characters[targeted].feats);
 characters[x].setFeatures(characters[targeted].features);
+characters[x].setactionNotes(characters[targeted].actionNotes);
 characters[x].setFeatureNotes(characters[targeted].featureNotes);
 characters[x].setFigure(characters[targeted].figure);
 characters[x].setFlaws(characters[targeted].flaws);
@@ -441,8 +442,8 @@ for(var i=x; i< characters.length; i++)
  getAction(t1)
 }
 
-function TwoHandedLightCrossbow()
- {a='2 Handed Crossbow+dex+pro 80/320ft',
+function LightCrossbow()
+ {a='Light Crossbow+dex+pro 80/320ft',
  b='1d20+0',
  c='piercing+dex',
  damageDice='1d8+0',
@@ -513,7 +514,7 @@ function TwoHandedLightCrossbow()
  getAction(t1)
 }
 
- function TwoHandedGreatsword()
+ function Greatsword()
  {a='2 Handed Greatsword+str+pro',
  b='1d20+0',
  c='slashing+str',
@@ -4186,7 +4187,7 @@ function TwoHandedLightCrossbow()
  s4(s1 + 'Flail' + s2 + 'Flail' + s3)
  s4(s1 + 'Glaive' + s2 + '2 Handed Glaive' + s3)
  s4(s1 + 'TwoHandedGreataxe' + s2 + '2 Handed Greataxe' + s3)
- s4(s1 + 'TwoHandedGreatsword' + s2 + '2 Handed Greatsword' + s3)
+ s4(s1 + 'Greatsword' + s2 + '2 Handed Greatsword' + s3)
  s4(s1 + 'TwoHandedHalberd' + s2 + '2 Handed Halberd' + s3)
  s4(s1 + 'Lance' + s2 + '2 Handed Lance' + s3)
  s4(s1 + 'OneHandedLongsword' + s2 + '1 Handed Longsword' + s3)
@@ -5213,7 +5214,7 @@ s4('</td></tr></table></td><td><table><tr><td><h3>Ranger Spells</h3>1st Level')
  s4(s1 + 'TimeStop' + s2 + 'Time Stop' + s3)
  s4(s1 + 'TruePolymorph' + s2 + 'TruePolymorph' + s3)
  s4(s1 + 'Weird' + s2 + 'Weird' + s3)
- s4(s1 + 'Wish' + s2 + 'Wish' + s3)
+ s4(s1 + 'Wish' + s2 + 'Wish' + s3)+
  s4('</td></tr></table>')
  s4("</td></tr></table>")
 </script>
@@ -5431,8 +5432,8 @@ if(xp=stats.match(/Challenge[\s\S]*\(([\s\S]*)\sXP/))
 if(casting=stats.match(/spellcasting[\s\S]*?(cha|int|wis)/i))
 {characters[targeted].setSpellAbility(casting[1])
 }
-if(features=stats.match(/\sXP\)([\s\S]*?)ACTIONS/i))
-{characters[targeted].setFeatures(features[1])
+if(actnotes=stats.match(/XP\)([\s\S].*)ACTIONS/i))
+{characters[targeted].setActionNotes(actnotes[1])
 }
 characters[targeted].setStrPro('');
 if(savingThrows=stats.match(/Str\s\+(\d{1,2})/))
@@ -5671,6 +5672,8 @@ if(weapon=stats.match(/unarmed\sstrike/i)){this.UnarmedStrike();this.Disarmed();
 if(weapon=stats.match(/dagger/i)){this.Dagger()}
 if(weapon=stats.match(/dart/i)){this.Dart()}
 if(weapon=stats.match(/glaive/i)){this.Glaive()}
+if(weapon=stats.match(/greatsword/i)){this.Greatsword()}
+if(weapon=stats.match(/light\scrossbow/i)){this.LightCrossbow()}
 if(weapon=stats.match(/longbow/i)){this.Longbow()}
 if(weapon=stats.match(/morningstar/i)){this.Morningstar()}
 if(weapon=stats.match(/quarterstaff/i)){this.OneHandedQuarterstaff();this.TwoHandedQuarterstaff()}
@@ -5822,6 +5825,7 @@ toSave+=varName + ".setDexPro('" + this.dexPro + "')<br>";
 toSave+=varName + ".setEquipment('" + this.equipment + "')<br>";
 toSave+=varName + ".setExperience('" + this.experience + "')<br>";
 toSave+=varName + ".setFeats('" + this.feats + "')<br>";
+toSave+=varName + ".setActionNotes('" + this.actionNotes + "')<br>";
 toSave+=varName + ".setFeatureNotes('" + this.featureNotes + "')<br>";
 toSave+=varName + ".setFigure('" + this.figure + "')<br>";
 toSave+=varName + ".setFlaws('" + this.flaws + "')<br>";
@@ -6056,7 +6060,9 @@ menuContents+="</td><td>8th: " + this.maxEighthSlot + "<input onClick='character
 menuContents+="</td><td>9th: " + this.maxNinthSlot + "<input onClick='characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].curNinthSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurNinthSlot(this.value)' size=2 type='text' value=" + this.curNinthSlot + ">";
 menuContents+="]&nbsp;<input onClick='characters[" + this.index + "].setCurFirstSlot(characters[" + this.index + "].maxFirstSlot);characters[" + this.index + "].setCurSecondSlot(characters[" + this.index + "].maxSecondSlot);characters[" + this.index + "].setCurThirdSlot(characters[" + this.index + "].maxThirdSlot);characters[" + this.index + "].setCurFourthSlot(characters[" + this.index + "].maxFourthSlot);characters[" + this.index + "].setCurFifthSlot(characters[" + this.index + "].maxFifthSlot);characters[" + this.index + "].setCurSixthSlot(characters[" + this.index + "].maxSixthSlot);characters[" + this.index + "].setCurSeventhSlot(characters[" + this.index + "].maxSeventhSlot);characters[" + this.index + "].setCurEighthSlot(characters[" + this.index + "].maxEighthSlot);characters[" + this.index + "].setCurNinthSlot(characters[" + this.index + "].maxNinthSlot)' type='button' value='Take an 8hrs rest?'></td></tr></table></td></tr><tr><td><table><tr><td>";
 }
-menuContents+="<h3>Actions</h3></td><td><input maxLength=200 onChange='characters[" + this.index + "].setRollName1(this.value)'placeHolder='attackRollToHitName+Ability+pro SpellSlot RangeInFeet'size='25' type='text' value='" + this.rollName1 + "'>"
+menuContents+="<h3>Actions</h3>"
+menuContents+="<input maxLength='200' onChange='characters[" + this.index + "].setActionNotes(this.value)'placeHolder='Multiattacks and creature features'size='25' type='text' value='" + this.actionNotes + "'>"
+menuContents+="</td><td><input maxLength=200 onChange='characters[" + this.index + "].setRollName1(this.value)'placeHolder='attackRollToHitName+Ability+pro SpellSlot RangeInFeet'size='25' type='text' value='" + this.rollName1 + "'>"
 menuContents+="</td><td><input maxLength='8' onChange='characters[" + this.index + "].setRoll1(this.value)'placeHolder='XdY+Z'size='8' type='text' value=" + this.roll1 + ">"
 menuContents+="</td><td><input maxLength=200 onChange='characters[" + this.index + "].setRollName2(this.value)'placeHolder='damageType+Ability and damageConditions' size='25' type='text' value='" + this.rollName2 + "'>"
 menuContents+="</td><td><input maxLength='8' onChange='characters[" + this.index + "].setRoll2(this.value)'placeHolder='XdY+Z'size='8' type='text' value=" + this.roll2 + ">"
@@ -7212,6 +7218,13 @@ function _setFeatureNotes(x)
 {this.featureNotes=x;
 this.featureNotes=this.featureNotes.replace(/\'|\s+/g, ' ');
 this.featureNotes=this.featureNotes.replace(/\./g, '\.\r');
+this.refresh();
+}
+
+function _setActionNotes(x)
+{this.actionNotes=x;
+this.actionNotes=this.actionNotes.replace(/\'|\s+/g, ' ');
+this.actionNotes=this.actionNotes.replace(/\./g, '\.\r');
 this.refresh();
 }
 
@@ -8864,6 +8877,7 @@ this.experience='';
 this.extraRolls=new Array(0);
 this.feats='';
 this.features='';
+this.actionNotes='';
 this.featureNotes='';
 this.figure='Miniatures/Monster.png';
 this.flaws='';
@@ -8986,6 +9000,7 @@ this.setEquipment=_setEquipment;
 this.setExperience=_setExperience;
 this.setFeats=_setFeats;
 this.setFeatures=_setFeatures;
+this.setActionNotes=_setActionNotes;
 this.setFeatureNotes=_setFeatureNotes;
 this.setFigure=_setFigure;
 this.setFlaws=_setFlaws;
