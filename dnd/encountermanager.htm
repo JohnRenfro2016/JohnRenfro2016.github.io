@@ -250,7 +250,7 @@ characters[x].setEquipment(characters[targeted].equipment);
 characters[x].setExperience(characters[targeted].experience);
 characters[x].setFeats(characters[targeted].feats);
 characters[x].setFeatures(characters[targeted].features);
-characters[x].setactionNotes(characters[targeted].actionNotes);
+characters[x].setActionNotes(characters[targeted].actionNotes);
 characters[x].setFeatureNotes(characters[targeted].featureNotes);
 characters[x].setFigure(characters[targeted].figure);
 characters[x].setFlaws(characters[targeted].flaws);
@@ -5427,10 +5427,13 @@ if(level=stats.match(/Challenge\s(\d{1,2})(?!\/)/))
 {characters[targeted].setLevel(level[1])
 }
 if(xp=stats.match(/Challenge[\s\S]*\(([\s\S]*)\sXP/))
-{characters[targeted].setExperience(xp[1])
+{
+characters[targeted].setExperience(xp[1])
 }
+
 if(casting=stats.match(/spellcasting[\s\S]*?(cha|int|wis)/i))
-{characters[targeted].setSpellAbility(casting[1])
+{
+characters[targeted].setSpellAbility(casting[1].toLowerCase());
 }
 if(actnotes=stats.match(/XP\)([\s\S].*)ACTIONS/i))
 {characters[targeted].setActionNotes(actnotes[1])
@@ -5679,7 +5682,6 @@ if(weapon=stats.match(/morningstar/i)){this.Morningstar()}
 if(weapon=stats.match(/quarterstaff/i)){this.OneHandedQuarterstaff();this.TwoHandedQuarterstaff()}
 if(weapon=stats.match(/shortsword/i)){this.Shortsword()}
 if(weapon=stats.match(/shortbow/i)){this.Shortbow()}
-
 //Cantrips
 if(spell=stats.match(/chill\stouch/i)){this.ChillTouch()}
 if(spell=stats.match(/dancing\slights/i)){this.DancingLights()}
@@ -5695,6 +5697,7 @@ if(spell=stats.match(/minor\sillusion/i)){this.MinorIllusion()}
 if(spell=stats.match(/poison\sspray/i)){this.PoisonSpray()}
 if(spell=stats.match(/prestidigitation/i)){this.Prestidigitation()}
 if(spell=stats.match(/produce\sflame/i)){this.ProduceFlame()}
+if(spell=stats.match(/sacred\sflame/i)){this.SacredFlame()}
 if(spell=stats.match(/shillelagh/i)){this.Shillelagh()}
 if(spell=stats.match(/shocking\sgrasp/i)){this.ShockingGrasp()}
 if(spell=stats.match(/thaumaturgy/i)){this.Thaumaturgy()}
