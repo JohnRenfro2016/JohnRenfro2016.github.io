@@ -81,8 +81,6 @@ textarea
 background: #86857e url('Miniatures/Panel.png');
 background-blend-mode: multiply;
 background-color: rgba(200,100,0,.5);
-minWidth: 100%;
-maxWidth: 100%;
 resize: none;
 }
 
@@ -5890,6 +5888,7 @@ toSave+=varName + ".setWis(" + this.wis + ")<br>";
 toSave+=varName + ".setWisPro('" + this.wisPro + "')<br>";
 toSave+=varName + ".setCurKiPointSlot(" + this.curKiPointSlot + ")<br>";
 toSave+=varName + ".setCurChannelDivinitySlot(" + this.curChannelDivinitySlot + ")<br>";
+toSave+=varName + ".setCurSuperiorityDiceSlot(" + this.curSuperiorityDiceSlot + ")<br>";
 toSave+=varName + ".setCurFirstSlot(" + this.curFirstSlot + ")<br>";
 toSave+=varName + ".setCurSecondSlot(" + this.curSecondSlot + ")<br>";
 toSave+=varName + ".setCurThirdSlot(" + this.curThirdSlot + ")<br>";
@@ -6034,16 +6033,27 @@ menuContents+="</td></tr><tr><td>Class Skills :<input onChange='characters[" + t
 menuContents+="</td></tr><tr><td>Class Saving Throws :<input onChange='characters[" + this.index + "].setSaving(this.value)' size='25' value='" + this.saving + "'>";
 menuContents+="</td></tr></table></td></tr></table></span><span id=toggled6" + this.index + " style='display : " + this.toggled6 + "'><table><tr><td><table><tr><td>";
 
-if(this.class.match(/Warlock/))
-{menuContents+="Cantrips Known : "+this.cantripsKnown+", Spells Known : "+this.spellsKnown+", Spell Slots : "+this.spellSlots+", Slot Level : "+this.slotLevel+", Invocations Known : "+this.invocationsKnown+"</td>"
+if(this.class.match(/Bard|Cleric|Druid|Eldritch|Sorcerer|Trickster|Warlock|Wizard/))
+{menuContents+="Cantrips Known : "+this.cantripsKnown+"</td>";
+menuContents+="<td>Spells Known : "+this.spellsKnown+"</td>";
 }
 
-if(this.class.match(/Cleric|Druid|Wizard/))
-{menuContents+="Cantrips Known : "+this.cantripsKnown;
+if(this.class.match(/Ranger/))
+{menuContents+="Spells Known : "+this.spellsKnown+"</td>";
+}
+
+if(this.class.match(/Warlock/))
+{menuContents+="<td><h3>Spell Slots :</h3> "+this.spellSlots+"</td>"
+menuContents+="<td>Slot Level : "+this.slotLevel+"</td>"
+menuContents+="<td>Invocations Known : "+this.invocationsKnown+"</td>"
 }
 
 if(this.class.match(/Monk/))
 {menuContents+="</td><td>Ki Points : " + this.maxKiPointSlot + "<input onClick='characters[" + this.index + "].setCurKiPointSlot(characters[" + this.index + "].curKiPointSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurKiPointSlot(this.value)' size=2 type='text' value=" + this.curKiPointSlot + "></td></tr></table></td></tr><tr><td>";
+}
+
+if(this.class.match(/Battle/))
+{menuContents+="</td><td>Superiority Dice : " + this.maxSuperiorityDiceSlot + "<input onClick='characters[" + this.index + "].setCurSuperiorityDiceSlot(characters[" + this.index + "].curSuperiorityDiceSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurSuperiorityDiceSlot(this.value)' size=2 type='text' value=" + this.curSuperiorityDiceSlot + "></td></tr></table></td></tr><tr><td>";
 }
 
 if(this.class.match(/Cleric/))
@@ -6051,7 +6061,7 @@ if(this.class.match(/Cleric/))
 menuContents+="</td><td>Channel Divinity : " + this.maxChannelDivinitySlot + "<input onClick='characters[" + this.index + "].setCurChannelDivinitySlot(characters[" + this.index + "].curChannelDivinitySlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurChannelDivinitySlot(this.value)' size=2 type='text' value=" + this.curChannelDivinitySlot + ">";
 }
 
-if(this.class.match(/(Cleric|Druid|Sorcerer|Warlock|Wizard)/))
+if(this.class.match(/(Bard|Cleric|Druid|Eldritch|Paladin|Ranger|Sorcerer|Trickster|Warlock|Wizard)/))
 {
 menuContents+="<td>Spell Slots 1st: " + this.maxFirstSlot + "<input onClick='characters[" + this.index + "].setCurFirstSlot(characters[" + this.index + "].curFirstSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurFirstSlot(this.value)' size=2 type='text' value=" + this.curFirstSlot + ">";
 menuContents+="</td><td>2nd: " + this.maxSecondSlot + "<input onClick='characters[" + this.index + "].setCurSecondSlot(characters[" + this.index + "].curSecondSlot-1)' type='button' value=&darr;><input maxLength=2 onChange='characters[" + this.index + "].setCurSecondSlot(this.value)' size=2 type='text' value=" + this.curSecondSlot + ">";
@@ -6359,7 +6369,7 @@ b='@6th(Voodoo Doll)60ft, 10/10 turns, target the doll, the target takes 1/2 dmg
 c='@10th(Share Pain)1/1, short rest recharge, target a being to take your dmg on a failed cha Save';
 dx='@14th(Disrupt Life)1 action, 1 spell slot, 20ft radius you target con save for half damage or 1d10 necrotic per spell slot+your chaMod';
 }
- this.setFeatures("</td></tr><tr><td>@1st(Spellcasting) @1st(Hexes)2 Cantrips, and opt to replace 1 hex for another when leveling up<b onClick='FalseLife()'>False Life</b><b onClick='InflictWounds()'>Inflict Wounds</b></td></tr><tr><td>@1st(Witch s Curse)(Hideous)save vs your fright spells at disadv, 1 target Wis Save or frightened utteoint or(Hollow)when target is reduced to 0HP, you gain temp HP witch lvl+chaMod or(Possessed)learn +1 1st level witch spell, 4th, 8th, 12th, and 16th which do not count against your known spells</td></tr><tr><td>@2nd(Cackle)1 bonus action, 60ft, spell time+1 round</td></tr><tr><td>@2nd(Familiar)1 bonus action, your familiar can reaction attack or cast</td></tr><tr><td>" + a + "</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>" + b + "</td></tr><tr><td>@7th(Improved Familiar)your familiar concentrates your spell</td></tr><tr><td>@9th(Cauldron)Alchemy Points @9th 3 @12th 4 @15th 5 @18th 6 1AP 1 potion of Animal Friendship, or Healing, or Poison @13th 2AP 1 potion Heroism and Mind Reading, Philters of Love 24hr potency</td></tr><tr><td>@11th(Grand Hex)@11th 1 @15th 2 @18th 3<b onClick='Abate()'>Abate</b><b onClick='BeckonFamiliar()'>Beckon Familiar</b><b onClick='Bleeding()'>Bleeding</b><b onClick='CharmPerson()'>Charm</b><b onClick='Cripple()'>Cripple</b><b onClick='DireFamiliar()'>Dire Familiar</b><b onClick='Discord()'>Discord</b><b onClick='DisguiseSelf()'>Disguise</b><b onClick='Disorient()'>Disorient</b><b onClick='Duplicity()'>Duplicity</b><b onClick='Fear()'>Evil Eye</b><b onClick='Fortune()'>Fortune</b><b onClick='GoUnseen()'>Go Unseen</b><b onClick='Hesitate()'>Hesitate</b><b onClick='Mire()'>Mire</b><b onClick='Misfortune()'>Misfortune</b><b onClick='Nails()'>Nails</b><b onClick='Obfuscate()'>Obfuscate</b><b onClick='Pestilence()'>Pestilence</b><b onClick='Ruin()'>Ruin</b><b onClick='Slumber()'>Slumber</b><b onClick='Telepathy()'>Telepathy</b><b onClick='Tremors()'>Tremors</b><b onClick='Ward()'>Ward</b>(Grand Hexes)<b onClick='Coven()'>Coven</b><b onClick='DualHex()'>Dual Hex</b><b onClick='InsidiousHex()'>Insidious Hex</b><b onClick='IntoAToad()'>IntoAToad</b><b onClick='RemoteHex()'>Remote Hex</b><b onClick='SlowDeath()'>Slow Death</b><b onClick='WeaveOfFate()'>Weave of Fate</b><b onClick='WitchsBroom()'>Witch s Broom</b><b onClick='WitchsHut()'>Witch s Hut</b></td></tr><tr><td>" + c + "</td></tr><tr><td>" + d + "</td></tr><tr><td>@20th(Hex Master)targets save vs your hexes at disadv");
+ this.setFeatures("</td></tr><tr><td>@1st(Spellcasting) @1st(Hexes)2 Cantrips, and opt to replace 1 hex for another when leveling up<b onClick='FalseLife()'>False Life</b>, <b onClick='InflictWounds()'>Inflict Wounds</b></td></tr><tr><td>@1st(Witch s Curse)(Hideous)save vs your fright spells at disadv, 1 target Wis Save or frightened utteoint or(Hollow)when target is reduced to 0HP, you gain temp HP witch lvl+chaMod or(Possessed)learn +1 1st level witch spell, 4th, 8th, 12th, and 16th which do not count against your known spells</td></tr><tr><td>@2nd(Cackle)1 bonus action, 60ft, spell time+1 round</td></tr><tr><td>@2nd(Familiar)1 bonus action, your familiar can reaction attack or cast</td></tr><tr><td>" + a + "</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>" + b + "</td></tr><tr><td>@7th(Improved Familiar)your familiar concentrates your spell</td></tr><tr><td>@9th(Cauldron)Alchemy Points @9th 3 @12th 4 @15th 5 @18th 6 1AP 1 potion of Animal Friendship, or Healing, or Poison @13th 2AP 1 potion Heroism and Mind Reading, Philters of Love 24hr potency</td></tr><tr><td>@11th(Grand Hex)@11th 1 @15th 2 @18th 3<b onClick='Abate()'>Abate</b><b onClick='BeckonFamiliar()'>Beckon Familiar</b><b onClick='Bleeding()'>Bleeding</b><b onClick='CharmPerson()'>Charm</b><b onClick='Cripple()'>Cripple</b><b onClick='DireFamiliar()'>Dire Familiar</b><b onClick='Discord()'>Discord</b><b onClick='DisguiseSelf()'>Disguise</b><b onClick='Disorient()'>Disorient</b><b onClick='Duplicity()'>Duplicity</b><b onClick='Fear()'>Evil Eye</b><b onClick='Fortune()'>Fortune</b><b onClick='GoUnseen()'>Go Unseen</b><b onClick='Hesitate()'>Hesitate</b><b onClick='Mire()'>Mire</b><b onClick='Misfortune()'>Misfortune</b><b onClick='Nails()'>Nails</b><b onClick='Obfuscate()'>Obfuscate</b><b onClick='Pestilence()'>Pestilence</b><b onClick='Ruin()'>Ruin</b><b onClick='Slumber()'>Slumber</b><b onClick='Telepathy()'>Telepathy</b><b onClick='Tremors()'>Tremors</b><b onClick='Ward()'>Ward</b>(Grand Hexes)<b onClick='Coven()'>Coven</b><b onClick='DualHex()'>Dual Hex</b><b onClick='InsidiousHex()'>Insidious Hex</b><b onClick='IntoAToad()'>IntoAToad</b><b onClick='RemoteHex()'>Remote Hex</b><b onClick='SlowDeath()'>Slow Death</b><b onClick='WeaveOfFate()'>Weave of Fate</b><b onClick='WitchsBroom()'>Witch s Broom</b><b onClick='WitchsHut()'>Witch s Hut</b></td></tr><tr><td>" + c + "</td></tr><tr><td>" + d + "</td></tr><tr><td>@20th(Hex Master)targets save vs your hexes at disadv");
  this.setHitDice(this.level + 'd8+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('light armor, simple weapons, blowguns, shortswords, whips');
  this.setSaving('wis+pro, cha+pro');
@@ -6499,9 +6509,9 @@ c="@5th(Arcana Domain Spells)<b onClick='DispelMagic()'>Dispel Magic</b><b onCli
 dx="@17th(Arcane Mastery) choose one 6th,one 7th,one 8th,one 9th level wizard spells to your domain spell list";
 }
  if(this.class.match(/Death/))
- {a="@1st(Death Domain Spells)<b onClick='FalseLife()'>False Life</b><b onClick='RayOfSickness()'>Ray of Sickness</b></td></tr><tr><td>@1st(Bonus Proficiencies) martial weapons</td></tr><tr><td>@1st(Reaper) learn 1 necromancy cantrip from any class list and target 2 adjacent</td></tr><tr><td>@2nd(Channel Divinity Touch of Death) melee atk+5+1/2class lvl necro dmg";
-b="@3rd(Death Domain Spells)<b onClick='BlindnessDeafness()'>Blindness Deafness</b><b onClick='RayOfEnfeeblement()'>Ray of Enfeeblement</b>";
-c="@5th(Death Domain Spells)<b onClick='AnimateDead()'>Animate Dead</b><b onClick='VampiricTouch()'>Vampiric Touch</b></td></tr><tr><td>@6th(Inescapable Destruction) your necrotic atks ignore resistance</td></tr><tr><td>@7th(Death Domain Spells)<b onClick='Blight()'>Blight</b><b onClick='DeathWard()'>Death Ward</b></td></tr><tr><td>@8th(Divine Strike) @8th melee atk+1d8 necrotic dmg @14th melee atk+2d8 necrotic dmg</td></tr><tr><td>@9th(Death Domain Spells)<b onClick='AntilifeShell()'>Antilife Shell</b><b onClick='Cloudkill()'>Cloudkill</b>";
+ {a="@1st(Death Domain Spells)<b onClick='FalseLife()'>False Life</b>, <b onClick='RayOfSickness()'>Ray of Sickness</b></td></tr><tr><td>@1st(Bonus Proficiencies) martial weapons</td></tr><tr><td>@1st(Reaper) learn 1 necromancy cantrip from any class list and target 2 adjacent</td></tr><tr><td>@2nd(Channel Divinity Touch of Death) melee atk+5+1/2class lvl necro dmg";
+b="@3rd(Death Domain Spells)<b onClick='BlindnessDeafness()'>Blindness Deafness</b>, <b onClick='RayOfEnfeeblement()'>Ray of Enfeeblement</b>";
+c="@5th(Death Domain Spells)<b onClick='AnimateDead()'>Animate Dead</b>, <b onClick='VampiricTouch()'>Vampiric Touch</b></td></tr><tr><td>@6th(Inescapable Destruction) your necrotic atks ignore resistance</td></tr><tr><td>@7th(Death Domain Spells)<b onClick='Blight()'>Blight</b>, <b onClick='DeathWard()'>Death Ward</b></td></tr><tr><td>@8th(Divine Strike) @8th melee atk+1d8 necrotic dmg @14th melee atk+2d8 necrotic dmg</td></tr><tr><td>@9th(Death Domain Spells)<b onClick='AntilifeShell()'>Antilife Shell</b>, <b onClick='Cloudkill()'>Cloudkill</b>";
 dx="@17th(Improved Reaper) 1st thru 5th necro spells can target 2 adjacent";
 }
  if(this.class.match(/Forge/))
@@ -7519,13 +7529,13 @@ function _setLanguages(x)
 this.refresh();
 }
 
-function _setCurKiPointSlot(x)
-{this.curKiPointSlot=x;
+function _setCurSuperiorityDiceSlot(x)
+{this.curSuperiorityDiceSlot=x;
 this.refresh();
 }
 
-function _setMaxKiPointSlot(x)
-{this.maxKiPointSlot=x;
+function _setMaxSuperiorityDiceSlot(x)
+{this.maxSuperiorityDiceSlot=x;
 this.refresh();
 }
 
@@ -7657,6 +7667,22 @@ this.setCurChannelDivinitySlot('3');
 }
 }
 
+if(this.class.match(/Battle/))
+{
+if(this.level.match(/[0-6]/)){
+this.setMaxSuperiorityDiceSlot(4);
+this.setCurSuperiorityDiceSlot(4);
+}
+if(this.level.match(/[7-9]|1[0-4]/)){
+this.setMaxSuperiorityDiceSlot(5);
+this.setCurSuperiorityDiceSlot(5);
+}
+if(this.level.match(/1[5-9]|20/)){
+this.setMaxSuperiorityDiceSlot(6);
+this.setCurSuperiorityDiceSlot(6);
+}
+}
+
 if(this.class.match(/Monk/))
 {
 if(this.level.match(/[2-9]|1[0-9]|20/)){
@@ -7669,7 +7695,72 @@ this.setCurKiPointSlot(0);
 }
 }
 
-if(this.class.match(/Cleric|Druid|Warlock/))
+if(this.class.match(/Ranger/))
+{
+if(this.level.match(/0|1/)){this.setSpellsKnown(0)}
+if(this.level.match(/2/)){this.setSpellsKnown(2)}
+if(this.level.match(/[3-4]/)){this.setSpellsKnown(3)}
+if(this.level.match(/[5-6]/)){this.setSpellsKnown(4)}
+if(this.level.match(/[7-8]/)){this.setSpellsKnown(5)}
+if(this.level.match(/9|10/)){this.setSpellsKnown(6)}
+if(this.level.match(/1[1-2]/)){this.setSpellsKnown(7)}
+if(this.level.match(/1[3-4]/)){this.setSpellsKnown(8)}
+if(this.level.match(/1[5-6]/)){this.setSpellsKnown(9)}
+if(this.level.match(/1[7-8]/)){this.setSpellsKnown(10)}
+if(this.level.match(/19|20/)){this.setSpellsKnown(11)}
+}
+
+if(this.class.match(/Arcane/))
+{if(this.level.match(/[0-2]/)){this.setCantripsKnown(0)}
+if(this.level.match(/[3-9]/)){this.setCantripsKnown(3)}
+if(this.level.match(/1[0-9]|20/)){this.setCantripsKnown(4)}
+
+if(this.level.match(/[0-2]/)){this.setSpellsKnown(0)}
+if(this.level.match(/3/)){this.setSpellsKnown(3)}
+if(this.level.match(/[4-6]/)){this.setSpellsKnown(4)}
+if(this.level.match(/7]/)){this.setSpellsKnown(5)}
+if(this.level.match(/[8-9]/)){this.setSpellsKnown(6)}
+if(this.level.match(/10/)){this.setSpellsKnown(7)}
+if(this.level.match(/1[1-2]/)){this.setSpellsKnown(8)}
+if(this.level.match(/13/)){this.setSpellsKnown(9)}
+if(this.level.match(/1[4-5]/)){this.setSpellsKnown(10)}
+if(this.level.match(/1[6-8]/)){this.setSpellsKnown(11)}
+if(this.level.match(/19/)){this.setSpellsKnown(12)}
+if(this.level.match(/20/)){this.setSpellsKnown(13)}
+}
+
+if(this.class.match(/Eldritch/))
+{if(this.level.match(/[0-2]/)){this.setCantripsKnown(0)}
+if(this.level.match(/[3-9]/)){this.setCantripsKnown(2)}
+if(this.level.match(/1[0-9]|20/)){this.setCantripsKnown(3)}
+
+if(this.level.match(/[0-2]/)){this.setSpellsKnown(0)}
+if(this.level.match(/3/)){this.setSpellsKnown(3)}
+if(this.level.match(/[4-6]/)){this.setSpellsKnown(4)}
+if(this.level.match(/7/)){this.setSpellsKnown(5)}
+if(this.level.match(/[8-9]/)){this.setSpellsKnown(6)}
+if(this.level.match(/10/)){this.setSpellsKnown(7)}
+if(this.level.match(/1[1-2]/)){this.setSpellsKnown(8)}
+if(this.level.match(/13/)){this.setSpellsKnown(9)}
+if(this.level.match(/1[4-5]/)){this.setSpellsKnown(10)}
+if(this.level.match(/1[6-8]/)){this.setSpellsKnown(11)}
+if(this.level.match(/19/)){this.setSpellsKnown(12)}
+if(this.level.match(/20/)){this.setSpellsKnown(13)}
+}
+
+if(this.class.match(/Sorcerer/))
+{if(this.level.match(/[0-3]/)){this.setCantripsKnown(4)}
+if(this.level.match(/[4-9]/)){this.setCantripsKnown(5)}
+if(this.level.match(/1[0-9]|20/)){this.setCantripsKnown(6)}
+
+if(this.level.match(/[0-9]|1[0-1]/)){this.setSpellsKnown((this.level/1 + 1))}
+if(this.level.match(/12/)){this.setSpellsKnown(12)}
+if(this.level.match(/1[3-4]/)){this.setSpellsKnown(13)}
+if(this.level.match(/1[5-6]/)){this.setSpellsKnown(14)}
+if(this.level.match(/1[7-9]|20/)){this.setSpellsKnown(15)}
+}
+
+if(this.class.match(/Bard|Cleric|Druid|Warlock/))
 {if(this.level.match(/[0-3]/)){this.setCantripsKnown(2)}
 if(this.level.match(/[4-9]/)){this.setCantripsKnown(3)}
 if(this.level.match(/1[0-9]|20/)){this.setCantripsKnown(4)}
@@ -7710,11 +7801,39 @@ if(this.level.match(/1[5-7]/)){this.setInvocationsKnown(7)}
 if(this.level.match(/1[8-9]|20/)){this.setInvocationsKnown(8)}
 }
 
+if(this.class.match(/Druid/))
+{
+this.setSpellsKnown((this.level/1+this.wisMod/1));
+}
+
+if(this.class.match(/Bard/))
+{
+if(this.level.match(/[0-1]/)){this.setSpellsKnown(4)}
+if(this.level.match(/2/)){this.setSpellsKnown(5)}
+if(this.level.match(/3/)){this.setSpellsKnown(6)}
+if(this.level.match(/4/)){this.setSpellsKnown(7)}
+if(this.level.match(/5/)){this.setSpellsKnown(8)}
+if(this.level.match(/6/)){this.setSpellsKnown(9)}
+if(this.level.match(/7/)){this.setSpellsKnown(10)}
+if(this.level.match(/8/)){this.setSpellsKnown(11)}
+if(this.level.match(/9/)){this.setSpellsKnown(12)}
+if(this.level.match(/10/)){this.setSpellsKnown(14)}
+if(this.level.match(/1|[1-2]/)){this.setSpellsKnown(15)}
+if(this.level.match(/13/)){this.setSpellsKnown(16)}
+if(this.level.match(/14/)){this.setSpellsKnown(18)}
+if(this.level.match(/1[5-6]/)){this.setSpellsKnown(19)}
+if(this.level.match(/17]/)){this.setSpellsKnown(20)}
+if(this.level.match(/1[8-9]|20/)){this.setSpellsKnown(22)}
+}
+
 if(this.class.match(/Cleric|Wizard/))
 {if(this.level.match(/[0-3]/)){this.setCantripsKnown(3)}
 if(this.level.match(/[4-9]/)){this.setCantripsKnown(4)}
 if(this.level.match(/1[0-9]|20/)){this.setCantripsKnown(5)}
 }
+
+if(this.class.match(/Wizard/))
+{this.setSpellsKnown((4 + (this.level * 2)))}
 
 if(this.level.match(/[0-4]/)){this.setPro('+2')}
 if(this.level.match(/[5-8]/)){this.setPro('+3')}
@@ -7826,11 +7945,11 @@ this.setCurEighthSlot('0');
  {this.setMaxEighthSlot('1');
 this.setCurEighthSlot('1');
 }
- if(this.level.match(/[0-9]|1[0-7]/))
+ if(this.level.match(/[0-9]|1[0-6]/))
  {this.setMaxNinthSlot('0');
 this.setCurNinthSlot('0');
 }
- if(this.level.match(/1[8-9]|20/))
+ if(this.level.match(/1[7-9]|20/))
  {this.setMaxNinthSlot('1');
 this.setCurNinthSlot('1');
 }
@@ -7997,10 +8116,10 @@ this.setMaxFifthSlot('0');
 this.setCurFifthSlot('0');
 }
  if(this.level.match(/2/))
- {this.setMaxFirstSlot('0');
-this.setCurFirstSlot('0');
-this.setMaxSecondSlot('2');
-this.setCurSecondSlot('2');
+ {this.setMaxFirstSlot('2');
+this.setCurFirstSlot('2');
+this.setMaxSecondSlot('0');
+this.setCurSecondSlot('0');
 this.setMaxThirdSlot('0');
 this.setCurThirdSlot('0');
 this.setMaxFourthSlot('0');
@@ -8055,6 +8174,30 @@ this.setMaxFourthSlot('0');
 this.setCurFourthSlot('0');
 this.setMaxFifthSlot('2');
 this.setCurFifthSlot('2');
+}
+ if(this.level.match(/1[1-6]/))
+ {this.setMaxFirstSlot('0');
+this.setCurFirstSlot('0');
+this.setMaxSecondSlot('0');
+this.setCurSecondSlot('0');
+this.setMaxThirdSlot('0');
+this.setCurThirdSlot('0');
+this.setMaxFourthSlot('0');
+this.setCurFourthSlot('0');
+this.setMaxFifthSlot('3');
+this.setCurFifthSlot('3');
+}
+ if(this.level.match(/1[7-9]|20/))
+ {this.setMaxFirstSlot('0');
+this.setCurFirstSlot('0');
+this.setMaxSecondSlot('0');
+this.setCurSecondSlot('0');
+this.setMaxThirdSlot('0');
+this.setCurThirdSlot('0');
+this.setMaxFourthSlot('0');
+this.setCurFourthSlot('0');
+this.setMaxFifthSlot('4');
+this.setCurFifthSlot('4');
 }
 }
 var a=0
@@ -8900,6 +9043,8 @@ this.setRollName2=_setRollName2;
 this.setSaving=_setSaving;
 this.setSenses=_setSenses;
 this.setShield=_setShield;
+this.setCurSuperiorityDiceSlot=_setCurSuperiorityDiceSlot;
+this.setMaxSuperiorityDiceSlot=_setMaxSuperiorityDiceSlot;
 this.setCurKiPointSlot=_setCurKiPointSlot;
 this.setMaxKiPointSlot=_setMaxKiPointSlot;
 this.setCurChannelDivinitySlot=_setCurChannelDivinitySlot;
