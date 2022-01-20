@@ -5991,7 +5991,7 @@ menuContents+="</td><td>Size:<select onChange='characters[" + this.index + "].se
 menuContents+="</td><td rowspan='3'>Traits :<textArea cols='25' rows='3' onChange='characters[" + this.index + "].setTrait(this.value)'placeHolder='Gender, Age, Color, Height, Personality, Weight'>" + this.trait + "</textarea>";
 menuContents+="</td></tr><tr><td>Speed :<input onChange='characters[" + this.index + "].setSpeed(this.value)' size='25' type='text' value='" + this.speed + "'>";
 menuContents+="</td><td>Senses :<input onChange='characters[" + this.index + "].setSenses(this.value)' size='25' type='text' value='" + this.senses + "'>";
-menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td>Race:<select onChange='characters[" + this.index + "].setRace(this.value)'><option>" + this.race + "<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Orc, Half<option>Satyr<option>Tiefling</select>";
+menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td>Race:<select onChange='characters[" + this.index + "].setRace(this.value)'><option>" + this.race + "<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tiefling<option>Yuan-Ti</select>";
 menuContents+="</td><td><input onChange='characters[" + this.index + "].setRace(this.value)' placeHolder='other race' size='25' type='ptext'>";
 menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td rowspan='2'>Armor Class(AC) :<input maxLength=2 onChange='characters[" + this.index + "].setAC(this.value)'size=2 type='text' value=" + this.ac + ">/" + this.curAc;
 menuContents+="</td><td><select onChange='characters[" + this.index + "].setArmor(this.value)'><option>" + this.armor + "<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth at disadv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth at disadv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth at disadv<option>Ring AC14 Stealth at disadv<option>Chain Mail AC16 Stealth at disadv str13<option>Splint AC17 Stealth at disadv str15<option>Plate AC18 Stealth at disadv str15<option>Unarmored Defense AC10+dex+wis</select>";
@@ -6402,7 +6402,7 @@ b='@6th(Voodoo Doll)60ft, 10/10 turns, target the doll, the target takes 1/2 dmg
 c='@10th(Share Pain)1/1, short rest recharge, target a being to take your dmg on a failed cha Save';
 dx='@14th(Disrupt Life)1 action, 1 spell slot, 20ft radius you target con save for half damage or 1d10 necrotic per spell slot+your chaMod';
 }
- this.setFeatures("</td></tr><tr><td>@1st(Spellcasting) @1st(Hexes)2 Cantrips, and opt to replace 1 hex for another when leveling up<b onClick='FalseLife()'>False Life</b>, <b onClick='InflictWounds()'>Inflict Wounds</b></td></tr><tr><td>@1st(Witch s Curse)(Hideous)save vs your fright spells at disadv, 1 target Wis Save or frightened utteoint or(Hollow)when target is reduced to 0HP, you gain temp HP witch lvl+chaMod or(Possessed)learn +1 1st level witch spell, 4th, 8th, 12th, and 16th which do not count against your known spells</td></tr><tr><td>@2nd(Cackle)1 bonus action, 60ft, spell time+1 round</td></tr><tr><td>@2nd(Familiar)1 bonus action, your familiar can reaction attack or cast</td></tr><tr><td>" + a + "</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>" + b + "</td></tr><tr><td>@7th(Improved Familiar)your familiar concentrates your spell</td></tr><tr><td>@9th(Cauldron)Alchemy Points @9th 3 @12th 4 @15th 5 @18th 6 1AP 1 potion of Animal Friendship, or Healing, or Poison @13th 2AP 1 potion Heroism and Mind Reading, Philters of Love 24hr potency</td></tr><tr><td>@11th(Grand Hex)@11th 1 @15th 2 @18th 3<b onClick='Abate()'>Abate</b><b onClick='BeckonFamiliar()'>Beckon Familiar</b><b onClick='Bleeding()'>Bleeding</b><b onClick='CharmPerson()'>Charm</b><b onClick='Cripple()'>Cripple</b><b onClick='DireFamiliar()'>Dire Familiar</b><b onClick='Discord()'>Discord</b><b onClick='DisguiseSelf()'>Disguise</b><b onClick='Disorient()'>Disorient</b><b onClick='Duplicity()'>Duplicity</b><b onClick='Fear()'>Evil Eye</b><b onClick='Fortune()'>Fortune</b><b onClick='GoUnseen()'>Go Unseen</b><b onClick='Hesitate()'>Hesitate</b><b onClick='Mire()'>Mire</b><b onClick='Misfortune()'>Misfortune</b><b onClick='Nails()'>Nails</b><b onClick='Obfuscate()'>Obfuscate</b><b onClick='Pestilence()'>Pestilence</b><b onClick='Ruin()'>Ruin</b><b onClick='Slumber()'>Slumber</b><b onClick='Telepathy()'>Telepathy</b><b onClick='Tremors()'>Tremors</b><b onClick='Ward()'>Ward</b>(Grand Hexes)<b onClick='Coven()'>Coven</b><b onClick='DualHex()'>Dual Hex</b><b onClick='InsidiousHex()'>Insidious Hex</b><b onClick='IntoAToad()'>IntoAToad</b><b onClick='RemoteHex()'>Remote Hex</b><b onClick='SlowDeath()'>Slow Death</b><b onClick='WeaveOfFate()'>Weave of Fate</b><b onClick='WitchsBroom()'>Witch s Broom</b><b onClick='WitchsHut()'>Witch s Hut</b></td></tr><tr><td>" + c + "</td></tr><tr><td>" + d + "</td></tr><tr><td>@20th(Hex Master)targets save vs your hexes at disadv");
+ this.setFeatures("</td></tr><tr><td>@1st(Spellcasting) @1st(Hexes)2 Cantrips, and opt to replace 1 hex for another when leveling up<b onClick='FalseLife()'>False Life</b>, <b onClick='InflictWounds()'>Inflict Wounds</b></td></tr><tr><td>@1st(Witch s Curse)(Hideous)save vs your fright spells at disadv, 1 target Wis Save or frightened utteoint or(Hollow)when target is reduced to 0HP, you gain temp HP witch lvl+chaMod or(Possessed)learn +1 1st level witch spell, 4th, 8th, 12th, and 16th which do not count against your known spells</td></tr><tr><td>@2nd(Cackle)1 bonus action, 60ft, spell time+1 round</td></tr><tr><td>@2nd(Familiar)1 bonus action, your familiar can reaction attack or cast</td></tr><tr><td>" + a + "</td></tr><tr><td>@4th(Ability Score Improvement) @4th @8th @12th @16th @19th</td></tr><tr><td>" + b + "</td></tr><tr><td>@7th(Improved Familiar)your familiar concentrates your spell</td></tr><tr><td>@9th(Cauldron)Alchemy Points @9th 3 @12th 4 @15th 5 @18th 6 1AP 1 potion of Animal Friendship, or Healing, or Poison @13th 2AP 1 potion Heroism and Mind Reading, Philters of Love 24hr potency</td></tr><tr><td>@11th(Grand Hex)@11th 1 @15th 2 @18th 3<b onClick='Abate()'>Abate</b><b onClick='BeckonFamiliar()'>Beckon Familiar</b><b onClick='Bleeding()'>Bleeding</b><b onClick='CharmPerson()'>Charm</b><b onClick='Cripple()'>Cripple</b><b onClick='DireFamiliar()'>Dire Familiar</b><b onClick='Discord()'>Discord</b><b onClick='DisguiseSelf()'>Disguise</b><b onClick='Disorient()'>Disorient</b><b onClick='Duplicity()'>Duplicity</b><b onClick='Fear()'>Evil Eye</b><b onClick='Fortune()'>Fortune</b><b onClick='GoUnseen()'>Go Unseen</b><b onClick='Hesitate()'>Hesitate</b><b onClick='Mire()'>Mire</b><b onClick='Misfortune()'>Misfortune</b><b onClick='Nails()'>Nails</b><b onClick='Obfuscate()'>Obfuscate</b><b onClick='Pestilence()'>Pestilence</b><b onClick='Ruin()'>Ruin</b><b onClick='Slumber()'>Slumber</b><b onClick='Telepathy()'>Telepathy</b><b onClick='Tremors()'>Tremors</b><b onClick='Ward()'>Ward</b>(Grand Hexes)<b onClick='Coven()'>Coven</b><b onClick='DualHex()'>Dual Hex</b><b onClick='InsidiousHex()'>Insidious Hex</b><b onClick='IntoAToad()'>IntoAToad</b><b onClick='RemoteHex()'>Remote Hex</b><b onClick='SlowDeath()'>Slow Death</b><b onClick='WeaveOfFate()'>Weave of Fate</b><b onClick='WitchsBroom()'>Witch s Broom</b><b onClick='WitchsHut()'>Witch s Hut</b></td></tr><tr><td>" + c + "</td></tr><tr><td>" + d + "</td></tr><tr><td>@20th(Hex Master)targets save vs your hexes at disadv");
  this.setHitDice(this.level + 'd8+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('light armor, simple weapons, blowguns, shortswords, whips');
  this.setSaving('wis+pro, cha+pro');
@@ -6431,7 +6431,7 @@ c="@9th(<b onClick='BlastWave()'>Blast Wave</b>)";
 dx="@14th(<b onClick='PiercingRound()'>Piercing Round</b>)";
 e="@17th(<b onClick='ExplosiveRound()'>Explosive Round</b>)";
 }
- this.setFeatures("</td></tr><tr><td>@1st(Artificer Specialist)(Magic Item Analysis)<b onClick='DetectMagic()'>Detect Magic</b><b onClick='Identify()'>Identify</b> no material component needed " + a + "</td></tr><tr><td>@2nd(Tool Expertise)class tools+exp(Wonderous Invetion)bag of holding or cap of water breathing or driftglobe or goggles of night or sending stones</td></tr><tr><td>@3rd(Spellcasting) " + b + "</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b>(Infuse Magic)infuse wis mod objects with your spells for up to 8hrs or triggered 1act</td></tr><tr><td>@5th(Super Attunement)attune to 4 magic objects(Wondrous Invention)alchemy jug or helm of comprehending languages or lantern of revealing or ring of swimming or robe of useful items or rope of climbing or wand of magic detection or wand of secrets</td></tr><tr><td>@6th(Mechanical Servant)CR2 or lower beast that is a construct, immune charm poison, darkvision 60ft, understands your language</td></tr><tr><td>@8th<b><b>Ability Score Improvement</b></b></td></tr><tr><td>" + c + "</td></tr><tr><td>@10th(Wonderous Invention)bag of beans or chime of opening or decanter of endless water or eyes of minute seeing or folding boat or slippers of spider climbing</td></tr><tr><td>@12th<b><b>Ability Score Improvement</b></b></td></tr><tr><td>" + d + "</td></tr><tr><td>@15th(Superior Attunement)attune to 5 magic objects(Wonderous Invention)</td></tr><tr><td>@16th<b><b>Ability Score Improvement</b></b></td></tr><tr><td>" + e + "</td></tr><tr><td>@18th<b><b>Ability Score Improvement</b></b></td></tr><tr><td>@20th(Soul of Artifice)attune to 6 items +1/item to saving throws(Wonderous Invention)eyes of the eagle or gem of brightness or gloves of missile snaring or gloves of swimming and climbing or ring of jumping or ring of mind shielding or wings of flying");
+ this.setFeatures("</td></tr><tr><td>@1st(Artificer Specialist)(Magic Item Analysis)<b onClick='DetectMagic()'>Detect Magic</b><b onClick='Identify()'>Identify</b> no material component needed " + a + "</td></tr><tr><td>@2nd(Tool Expertise)class tools+exp(Wonderous Invetion)bag of holding or cap of water breathing or driftglobe or goggles of night or sending stones</td></tr><tr><td>@3rd(Spellcasting) " + b + "</td></tr><tr><td>@4th(Ability Score Improvement)(Infuse Magic)infuse wis mod objects with your spells for up to 8hrs or triggered 1act</td></tr><tr><td>@5th(Super Attunement)attune to 4 magic objects(Wondrous Invention)alchemy jug or helm of comprehending languages or lantern of revealing or ring of swimming or robe of useful items or rope of climbing or wand of magic detection or wand of secrets</td></tr><tr><td>@6th(Mechanical Servant)CR2 or lower beast that is a construct, immune charm poison, darkvision 60ft, understands your language</td></tr><tr><td>@8th(Ability Score Improvement)</td></tr><tr><td>" + c + "</td></tr><tr><td>@10th(Wonderous Invention)bag of beans or chime of opening or decanter of endless water or eyes of minute seeing or folding boat or slippers of spider climbing</td></tr><tr><td>@12th(Ability Score Improvement)</td></tr><tr><td>" + d + "</td></tr><tr><td>@15th(Superior Attunement)attune to 5 magic objects(Wonderous Invention)</td></tr><tr><td>@16th(Ability Score Improvement)</td></tr><tr><td>" + e + "</td></tr><tr><td>@18th(Ability Score Improvement)</td></tr><tr><td>@20th(Soul of Artifice)attune to 6 items +1/item to saving throws(Wonderous Invention)eyes of the eagle or gem of brightness or gloves of missile snaring or gloves of swimming and climbing or ring of jumping or ring of mind shielding or wings of flying");
  this.setHitDice(this.level + 'd8+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('light and medium armor, simple weapons');
  this.setSaving('con+pro, int+pro');
@@ -6477,7 +6477,7 @@ b='@6th(Fanatical Focus)during rage 1/1 reroll failed save';
 c='@10th(Zealous Presence)bonus 10 allies in 60ft radius rolls at adv utsoynt';
 dx='@14th(Rage Beyond Death)during rage 0hp not unconscious and do not die until rage ends with 0hp';
 }
- this.setFeatures('</td></tr><tr><td>@1st(Rage)while unarmored, enter rage as bonus, str at adv, damage+rage damage, resist bludg, pierc, slash, lasts til taking no damage and not attacking</td></tr><tr><td>(Rage Damage) @1st(+2) @9th(+3) @16th +4)</td></tr><tr><td>@1st(Unarmored Defense)C10+dexMod+conMod</td></tr><tr><td>@2nd(Danger Sense)dex save at adv vs seen traps spells</td></tr><tr><td>@2nd(Reckless Attack)str melee attack at adv, attacked at adv</td></tr><tr><td>' + a + '</td></tr><tr><td><b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>@5th(Fast Movement)unarmored,speed+10ft</td></tr><tr><td>' + b + '</td></tr><tr><td>@7th(Feral Instinct)init at adv,act normally surprised</td></tr><tr><td>@9th(Brutal Critical)damage+ @9th(1d) @(13th 2d) @(17th 3d)</td></tr><tr><td>' + c + '</td></tr><tr><td>@11th(Relentless Rage)(1/1)0 hp DC10 con save 1 hp,DC+5 each use before long rest</td></tr><tr><td>' + dx + '</td></tr><tr><td>@15th(Persistent Rage)</td></tr><tr><td>@18th(Indomitable Might)higher of str roll or str score</td></tr><tr><td>@20th(Primal Champion)str+4(max24), con+4(max24)');
+ this.setFeatures('</td></tr><tr><td>@1st(Rage)while unarmored, enter rage as bonus, str at adv, damage+rage damage, resist bludg, pierc, slash, lasts til taking no damage and not attacking</td></tr><tr><td>(Rage Damage) @1st(+2) @9th(+3) @16th +4)</td></tr><tr><td>@1st(Unarmored Defense)C10+dexMod+conMod</td></tr><tr><td>@2nd(Danger Sense)dex save at adv vs seen traps spells</td></tr><tr><td>@2nd(Reckless Attack)str melee attack at adv, attacked at adv</td></tr><tr><td>' + a + '</td></tr><tr><td>(Ability Score Improvement) @4th @8th @12th @16th @19th</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>@5th(Fast Movement)unarmored,speed+10ft</td></tr><tr><td>' + b + '</td></tr><tr><td>@7th(Feral Instinct)init at adv,act normally surprised</td></tr><tr><td>@9th(Brutal Critical)damage+ @9th(1d) @(13th 2d) @(17th 3d)</td></tr><tr><td>' + c + '</td></tr><tr><td>@11th(Relentless Rage)(1/1)0 hp DC10 con save 1 hp,DC+5 each use before long rest</td></tr><tr><td>' + dx + '</td></tr><tr><td>@15th(Persistent Rage)</td></tr><tr><td>@18th(Indomitable Might)higher of str roll or str score</td></tr><tr><td>@20th(Primal Champion)str+4(max24), con+4(max24)');
  this.setHitDice(this.level + 'd12+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('light armor, medium armor, shields, and all weapons');
  this.setSaving('str+pro, con+pro');
@@ -6521,7 +6521,7 @@ c='@14th.BATTLE MAGIC cast,bonus weapon attack';
 b='@6th(Mantle of Whispers)a target dies within 30ft, you assume its form 1hr target Insight versus your Deception+5 to see disguise, recharge after short rest';
 c='@14th(Shadow Lore)1act ion, 1target DC8+cha+pro vsWis or charmed and will do reasonable requests because target thinks you know its secret, 8hrs or until it or its ally attacked, recharge after long rest';
 }
- this.setFeatures('</td></tr><tr><td>@1st(Bardic Inspiration)1 or chaMod @1st(d6) @5th(d8) @(10th d10) @(15th d12)ally ads 1 BI to their roll</td></tr><tr><td>@2nd(Jack of All Trades)non pro abi checks+half pro</td></tr><tr><td>@2nd(Song of Rest)during rest,heal allies who hear @2nd(d6) @9th(d8) @(13th d10) @(17th d12</td></tr><tr><td>@3rd(Expertise)2 skills+pro are+exp @3rd(2) @(10th 2 more)</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>@5th(Font of Inspiration)regain bardic inspiration during a short rest</td></tr><tr><td>@6th(Countercharm)act 30ft save vs charm fear</td></tr><tr><td>' + b + '</td></tr><tr><td>@10th(Magical Secrets)learn 2 spells any class at your lvl @(10th 2) @14th 2 more)</td></tr><tr><td>' + c + '</td></tr><tr><td>@20th(Superior Inspiration)at 0 Bardic Inspiration gain 1 each encounter');
+ this.setFeatures('</td></tr><tr><td>@1st(Bardic Inspiration)1 or chaMod @1st(d6) @5th(d8) @(10th d10) @(15th d12)ally ads 1 BI to their roll</td></tr><tr><td>@2nd(Jack of All Trades)non pro abi checks+half pro</td></tr><tr><td>@2nd(Song of Rest)during rest,heal allies who hear @2nd(d6) @9th(d8) @(13th d10) @(17th d12</td></tr><tr><td>@3rd(Expertise)2 skills+pro are+exp @3rd(2) @(10th 2 more)</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th@4th(Ability Score Improvement) @4th @8th @12th @16th @19th</td></tr><tr><td>@5th(Font of Inspiration)regain bardic inspiration during a short rest</td></tr><tr><td>@6th(Countercharm)act 30ft save vs charm fear</td></tr><tr><td>' + b + '</td></tr><tr><td>@10th(Magical Secrets)learn 2 spells any class at your lvl @(10th 2) @14th 2 more)</td></tr><tr><td>' + c + '</td></tr><tr><td>@20th(Superior Inspiration)at 0 Bardic Inspiration gain 1 each encounter');
  this.setHitDice(this.level + 'd8+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('light armor, simple weapons, hand crossbows, longswords, rapiers, and shortswords');
  this.setSaving('dex+pro, cha+pro');
@@ -6601,7 +6601,7 @@ b="@3rd<b onClick='MagicWeapon()'>Magic Weapon</b><b onClick='SpiritualWeapon()'
 c="@5th<b onClick='CrusadersMantle()'>Crusader s Mantle</b><b onClick='SpiritGuardians()'>Spirit Guardians</b></td></tr><tr><td>@6th(War God s Blessing)1CD ally 30ft attack+10</td></tr><tr><td>@7th<b onClick='FreedomOfMovement()'>Freedom of Movement</b><b onClick='Stoneskin()'>Stoneskin</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon damage+1d8 same damage type @14th+2d8</td></tr><tr><td>@9th<b onClick='FlameStrike()'>Flame Strike</b><b onClick='HoldMonster()'>Hold Monster</b>";
 dx="@17th(Avatar of Battle)resist bludg, slash, pierc nonmagical weapon";
 }
- this.setFeatures('</td></tr><tr><td>' + a + '<b>@2nd Turn Undead</b>1CD, 30ft radi., DC vsWis or frightened, @disadv while cleric is in sight, dash away, 10/10 turns</td></tr><tr><td>' + b + '</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>@5th <b>Destroy Undead</b> instead of dashing, the undead are destroyed @5th CR1/2 @8th CR1, CR1/2 @11th CR2, CR1, CR1/2 @14th CR3, CR2, CR1, CR1/2  @17th CR4, CR3, CR2, CR1, CR1/2</td></tr><tr><td>' + c + '</td></tr><tr><td>@10th<b>Divine Intervention</b> d100 roll your lvl or lower, divine helps</td></tr><tr><td>' + dx + ' @20th auto success');
+ this.setFeatures('</td></tr><tr><td>' + a + '<b>@2nd Turn Undead</b>1CD, 30ft radi., DC vsWis or frightened, @disadv while cleric is in sight, dash away, 10/10 turns</td></tr><tr><td>' + b + '</td></tr><tr><td>@4th(Ability Score Improvement) @4th @8th @12th @16th @19th</td></tr><tr><td>@5th <b>Destroy Undead</b> instead of dashing, the undead are destroyed @5th CR1/2 @8th CR1, CR1/2 @11th CR2, CR1, CR1/2 @14th CR3, CR2, CR1, CR1/2  @17th CR4, CR3, CR2, CR1, CR1/2</td></tr><tr><td>' + c + '</td></tr><tr><td>@10th<b>Divine Intervention</b> d100 roll your lvl or lower, divine helps</td></tr><tr><td>' + dx + ' @20th auto success');
  this.setEquipment('mace or warhammer.scale mail or leather armor or chain mail.light crossbow 20 bolts or simple weapon.priest pack or explorer pack.shield.holy symbol');
  this.setHitDice(this.level + 'd8+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('light armor, medium armor, shields, simple weapons');
@@ -6645,7 +6645,7 @@ dx="";
 b="@6th(Mighty Summoner)all summoned creatures HP+2 x your druid level, creature s attacks become magical";
 dx="@14th(Faithful Summons)at 0hp you automatically conjure a CR2 or lower animal at 9th slot level within 20ft no concentration 1hr, recharge long rest";
 }
- this.setFeatures('</td></tr><tr><td>1st(Druidic Language)</td></tr><tr><td>@2nd(Wild Shape)(2/2)short rest, at 0hp revert to your original current hp @2nd(CR1/4)no flying swimming @4th(CR1/2)no flying @8th(CR1)</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>' + b + '</td></tr><tr><td>' + c + '</td></tr><tr><td>' + dx + '</td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10</td></tr><tr><td>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape');
+ this.setFeatures('</td></tr><tr><td>1st(Druidic Language)</td></tr><tr><td>@2nd(Wild Shape)(2/2)short rest, at 0hp revert to your original current hp @2nd(CR1/4)no flying swimming @4th(CR1/2)no flying @8th(CR1)</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th(Ability Score Improvement) @4th @8th @12th @16th @19th</td></tr><tr><td>' + b + '</td></tr><tr><td>' + c + '</td></tr><tr><td>' + dx + '</td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10</td></tr><tr><td>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape');
  this.setEquipment('wooden shield or simple weapon.sciitar or simple melee weapon.leather armor.explorer pack.Druidic focus');
  this.setHitDice(this.level + 'd8+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('light non-metal armor, medium non-metal armor, non-metal shields, clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears, an herbalism kit');
@@ -6702,7 +6702,7 @@ c='@10th.ELDRITCH STRIKE on weapon hit, target saves at disadv vs your next spel
 dx='@15th.ARCANE CHARGE use action surge then teleport 30ft</td></tr><tr><td>Relentless</td></tr><tr><td>@(15th 1/1)roll init with 0SD is 1SD';
 e='@18th.IMPROVED WAR MAGIC cast spell, make bonus weapon attack';
 }
- this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)</td></tr><tr><td>(Archery)ranged attack+2</td></tr><tr><td>or(Defense)while armored, AC+1</td></tr><tr><td>or(Dueling)1h melee dmg+2</td></tr><tr><td>or(Great Weapon Fighting)2h reroll on 1 or 2</td></tr><tr><td>or(Protection)with shield, adjacent allies attacked at disadv</td></tr><tr><td>or(Two Weapon Fighting)secondary damage+abiMod</td></tr><tr><td>@1st(Second Wind)@1st 1/1 short rest, bonus, heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surge)@2nd 1/1 @17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)' + a + '</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b>@4th @6th @8th @12th @14th @16th @19th</td></tr><tr><td>@5th(Extra Attack)@5th 2, @10th 3, @20th 4</td></tr><tr><td>' + b + '</td></tr><tr><td>@9th(Indomitable) re-roll failed save, recharge long rest @9th 1, @13th 2, @17th 3</td></tr><tr><td>' + c + '</td></tr><tr><td>' + dx + '</td></tr><tr><td>' + e + '');
+ this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)</td></tr><tr><td>(Archery)ranged attack+2</td></tr><tr><td>or(Defense)while armored, AC+1</td></tr><tr><td>or(Dueling)1h melee dmg+2</td></tr><tr><td>or(Great Weapon Fighting)2h reroll on 1 or 2</td></tr><tr><td>or(Protection)with shield, adjacent allies attacked at disadv</td></tr><tr><td>or(Two Weapon Fighting)secondary damage+abiMod</td></tr><tr><td>@1st(Second Wind)@1st 1/1 short rest, bonus, heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surge)@2nd 1/1 @17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)' + a + '</td></tr><tr><td>@4th(Ability Score Improvement)@4th @6th @8th @12th @14th @16th @19th</td></tr><tr><td>@5th(Extra Attack)@5th 2, @10th 3, @20th 4</td></tr><tr><td>' + b + '</td></tr><tr><td>@9th(Indomitable) re-roll failed save, recharge long rest @9th 1, @13th 2, @17th 3</td></tr><tr><td>' + c + '</td></tr><tr><td>' + dx + '</td></tr><tr><td>' + e + '');
  this.setEquipment('chain mail or leather.longbow.20 arrows.martial weapon and shield or 2 martial weapons.light crossbow 20 bolts or 2 handaxes.dungeoneer pack or explorer pack');
  this.setHitDice(this.level + 'd10+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('all armor, shields, simple weapons, martial weapons');
@@ -6815,7 +6815,7 @@ c='@7th.RELENTLESS AVENGER while opportunity attacking, move half speed, immune 
 dx="@13th[x]Banishment @13th<b onClick='DimensionDoor()'>Dimension Door</b>";
 e='@15th.SOUL OF VENGEANCE while Vow of Enmity, react melee attack</td></tr><tr><td>@17th[x]Hold Monster @17th[x]Scrying</td></tr><tr><td>@20th.AVENGING ANGEL(1/1)1hr , fly at speed 60ft, 30ft radius aura wis save or frightened attacked at adv';
 }
- this.setFeatures('</td></tr><tr><td>@1st(Divine Sense) 60ft aura detect celestial, fiend, undead, Hallow spell desecrated consecrated places or objects, til teoynt,(1+chaMod/1+chaMod)long rest</td></tr><tr><td>@1st(Lay on Hands) touch less undead and constructs heal from a pool of 5xLvl points(6/6)long rest, 5 pool points/cure 1 disease or neutralize 1 poison</td></tr><tr><td>@2nd(Fighting Style)(Defense)while armored AC+1 or(Dueling)1h weapon damage+2 or(Great Weapon Fighting)re-roll damage on 1 or 2 or(Protection)with shield adjacent allies attacked at disadv</td></tr><tr><td>@2nd(Divine Smite) after melee hit spend 1 slot damage+2d8 radia+1d8/slot max 5d8 +1d8 if fiend or undead @(11th +1d8radiant)</td></tr><tr><td>@3rd(Divine Health) immune disease</td></tr><tr><td>@3rd <h3>Channel Divinity</h3>(1/1)short rest</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>' + b + '</td></tr><tr><td>@6th(Aura of Protection)you and allies save+chaMod @6th 10ft @18th 30ft</td></tr><tr><td>' + c + '</td></tr><tr><td>@10th(Aura of Courage) you and allies immune fright @10th 10ft @18th 30ft</td></tr><tr><td>' + dx + '</td></tr><tr><td>@14th(Cleansing Touch)1 or chaMod/1 or chaMod long rest end 1 spell on you or ally</td></tr><tr><td>' + e);
+ this.setFeatures('</td></tr><tr><td>@1st(Divine Sense) 60ft aura detect celestial, fiend, undead, Hallow spell desecrated consecrated places or objects, til teoynt,(1+chaMod/1+chaMod)long rest</td></tr><tr><td>@1st(Lay on Hands) touch less undead and constructs heal from a pool of 5xLvl points(6/6)long rest, 5 pool points/cure 1 disease or neutralize 1 poison</td></tr><tr><td>@2nd(Fighting Style)(Defense)while armored AC+1 or(Dueling)1h weapon damage+2 or(Great Weapon Fighting)re-roll damage on 1 or 2 or(Protection)with shield adjacent allies attacked at disadv</td></tr><tr><td>@2nd(Divine Smite) after melee hit spend 1 slot damage+2d8 radia+1d8/slot max 5d8 +1d8 if fiend or undead @(11th +1d8radiant)</td></tr><tr><td>@3rd(Divine Health) immune disease</td></tr><tr><td>@3rd <h3>Channel Divinity</h3>(1/1)short rest</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th(Ability Score Improvement) @4th @8th @12th @16th @19th</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>' + b + '</td></tr><tr><td>@6th(Aura of Protection)you and allies save+chaMod @6th 10ft @18th 30ft</td></tr><tr><td>' + c + '</td></tr><tr><td>@10th(Aura of Courage) you and allies immune fright @10th 10ft @18th 30ft</td></tr><tr><td>' + dx + '</td></tr><tr><td>@14th(Cleansing Touch)1 or chaMod/1 or chaMod long rest end 1 spell on you or ally</td></tr><tr><td>' + e);
  this.setEquipment('martial weapon and shield or 2 martial weapons.5/5 javelins or simple melee weapon.priest pack or explorer pack.chain mail.holy symbol');
  this.setHitDice(this.level + 'd10+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('all armor, shields, and all weapons');
@@ -6830,25 +6830,31 @@ e='@15th.SOUL OF VENGEANCE while Vow of Enmity, react melee attack</td></tr><tr>
  this.setSpellAbility('cha');
 }
 if(this.class.match(/Beast/))
-{a='@3rdRANGER S COMPANION CR1/4 medium or less hawk, mastiff, panther, ac+ranger pro, attacks+ranger pro, damage+ranger pro, saves, skill checks+ranger pro, hp max is beast s or your lvl x 4, command as bonus on your turn protects incapacitated you';
- b='@7th.EXCEPTIONAL TRAINING bonus command Companion to Dash, Disengage, Dodge or Help';
- c='@11th.BESTIAL FURY Companion makes 2 attacks';
- D='@15th.SHARE SPELLS 30ft self spells also affect Companion'
+{a='@3rd(Ranger\'s Companion)CR1/4 medium or less hawk, mastiff, panther, ac+ranger pro, attacks+ranger pro, dmg+ranger pro, saves, skill checks+ranger pro, hp max is beast\'s or your lvl x 4, command as bonus on your turn protects incapacitated you';
+ b='@7th(Exceptional Training)bonus command Companion to Dash, Disengage, Dodge or Help';
+ c='@11th(Beastial Fury)Companion makes 2 attacks';
+ dx='@15th(Share Spells)30ft self spells also affect Companion'
 }
 if(this.class.match(/Ranger/))
-{if(this.class.match(/Hunter/))
- {a='@3rdHUNTER S PREY choose one. COLOSSUS SLAYER 1/turn hp less max+1d8dam. GIANT KILLER visible large+melee attacks you, react attack. HORDE BREAKER 1/turn melee attack, bonus attack adjacent';
-b='@7th.DEFENSIVE TACTICS choose one. ESCAPE THE HORDE opp attacked at disadv. MULTIATTACK when hit, ac+4 vs attacker. STEEL WILL save at adv vs fear';
-c='@11thVOLLEY range attack all 10ft @11th.WHIRLWIND ATTACK melee attack all adjacent';
-dx='@15th.SUPERIOR HUNTER S DEFENSE choose one. EVASION dex save for half is no damage. STAND AGAINST THE TIDE when missed,react,target same attacks target. UNCANNY DODGE react take half dam'
+{
+if(this.class.match(/Fey\sWanderer/))
+ {a='@3rd <b onClick=CharmPerson()>Charm Person</b><br>(Feywild Gifts)pg. 58 of Tasha<br>(Otherworldly Glamour)cha check+wis<br>Deception+pro<br>or Performance+Pro<br>or Persuasion+pro';
+b='@7th';
+dx='@15th';
 }
- if(this.class.match(/Monster Slayer/))
- {a="@3rd(Monster Slayer Magic)<b onClick='ProtectionFromEvilOrGood()'>Protection from Evil or Good</b></td></tr><tr><td>@3rd(Hunter s Sense)1act , 60ft, 1target, learn immunities, resistances, vulnerabilities, race unless hidden from divination magic</td></tr><tr><td>@3rd(Slayer s Prey)bonus, 1target, 60ft, your 1st attack each turn extra 1d6 dmg";
-b="@5th(Monster Slayer Magic)<b onClick='ZoneOfTruth()'>Zone of Truth</b></td></tr><tr><td>@7th(Supernatural Defense) you save+1d6 versus your Slayer s Prey@9th(Monster Slayer Magic)<b onClick='MagicCircle()'>Magic Circle</b></td></tr><tr><td>";
-c="@11th(Magic-User s Nemesis)thwart spell or thwart teleport within 60ft DC8+your spell ability+pro vsWis, recharge short rest";
-dx="@13th(Monster Slayer Magic)<b onClick='Banishment()'>Banishment</b></td></tr><tr><td>@15th(Slayer s Counter)1react, Slayer s Prey forces your saving throw, make attack before making saving throw, a hit is also a save success"
+if(this.class.match(/Hunter/))
+ {a='@3rd(Hunter\'s Prey)choose one.<br>(Colossus Slayer)1/turn hp less max+1d8dmg.<br>(Giant Killer)visible large+melee attacks you, react attack.<br>(Horde Breaker)1/turn melee attack, bonus attack adjacent';
+b='@7th(Defensive Tactics)choose one.<br>(Escape the Horde)opp attacked at disadv.<br> (Multiattack)when hit, ac+4 vs attacker.<br>(Steel Will)save at adv vs fear';
+c='@11th(Volley)range attack all 10ft<br>@11th(Whirlwind Attack)melee attack all adjacent';
+dx='@15th(Superior Hunter\'s Defense)choose one.<br>(Evasion)dex save for half is no dmg. <br>(Stand Against the Tide)when missed,react,target same attacks target.<br>(Uncanny Dodge)react take half dmg'
 }
- this.setFeatures('</td></tr><tr><td>@1st(Favored Enemy) Survival at adv to track, Intelligence at adv to know, speak the language @1st 1 enemy @6th 1 more enemy @14th 1 more enemy</td></tr><tr><td>@1st(Natural Explorer) ignore difficult terrain, always alert, alone sealth normal pace, forage x 2, know number, size, time of tracked @1st 1 terrain @6th 1 more terrain @10th 1 more terrain</td></tr><tr><td>@2nd(Fighting Style)(Archery)ranged+2 or(Defense)armored,AC+1 or(Dueling)1h dam+2 or(Two-weapon Fighting)secondary+abiMod</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>' + b + '</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty,save at adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act , 1slot, 10/10 turns , know beings in area 1mi, favored terrain 6mi</td></tr><tr><td>@10th(Hide in Plain Sight)10/10 turns camo, unmoving,stealth+10</td></tr><tr><td>' + c + '</td></tr><tr><td>@14th(Vanish)Hide as bonus, not nonmagically tracked</td></tr><tr><td>' + dx + '</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no advantage vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dam+wisMod');
+ if(this.class.match(/Monster\sSlayer/))
+ {a="@3rd(Monster Slayer Magic)<br><b onClick='ProtectionFromEvilOrGood()'>Protection from Evil or Good</b><br>@3rd(Hunter\'s Sense)1act , 60ft, 1target, learn immunities, resistances, vulnerabilities, race unless hidden from divination magic<br>@3rd(Slayer\'s Prey)bonus, 1target, 60ft, your 1st atk/turn extra 1d6 dmg";
+b="@5th(Monster Slayer Magic)<b onClick='ZoneOfTruth()'>Zone of Truth</b><br>@7th(Supernatural Defense)you save+1d6 versus your Slayer s Prey<br>@9th(Monster Slayer Magic)<b onClick='MagicCircle()'>Magic Circle</b></td></tr><tr><td>";
+c="@11th(Magic-User\'s Nemesis)thwart spell or thwart teleport within 60ft DC8+your spell ability+pro vsWis, recharge short rest";
+dx="@13th(Monster Slayer Magic)<b onClick='Banishment()'>Banishment</b><br>>@15th(Slayer\'s Counter)1react, Slayer s Prey forces your saving throw, make atk before making saving throw, a hit is also a save success"
+}
+ this.setFeatures('</td></tr><tr><td>@1st(Favored Enemy)Survival @adv to track, Intelligence @adv to speak enemy language<br>@1st 1 enemy<br>@6th 2 enemies<br>@14th 3 enemies<p>or (Favored Foe)your lvl pro/lvl pro per short rest, hit 1 target marked 1min concentration<br>@1st +1d4dmg<br>@6th +1d6dmg<br>@14th +1d8dmg</td></tr><tr><td>@1st(Natural Explorer)ignore difficult terrain, always alert, alone Stealth normal pace, forage x 2, know number, size, time of tracked enemy<br>@1st 1 terrain type<br>@6th 2 terrain types<br>@10th 3terrain types<p>or @1st(Deft Explorer)<br>@1st(Canny)1 skill+pro becomes skill+exp, speak, read, write +2 languages<br>@6th(Roving)climb, swim=walk speed+5ft<br> @10th(Tireless)1 act, temp hp 1d8+wis, level pro/level pro per short rest</td></tr><tr><td>@2nd(Fighting Style)<br>(Archery)ranged+2<br>or(Defense)armored AC+1<br>or(Blind Fighting)blindsight 10ft unless target total cover<br>or(Druidic Warrior)2 Druid Cantrips+wis+pro<br>or(Dueling)1h dmg+2<br>or(Thrown Weapon Fighting)draw and atk, ranged+2dmg<br>or(Two-Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th(Ability Score Improvement)abi+1 and another abi+1 or abi+2<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>' + b + '</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty,save at adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act , 1slot, 10/10 turns , know beings in area 1mi, favored terrain 6mi<p>@10th(Hide in Plain Sight)10/10 turns camo, unmoving,stealth+10<br>or(Nature\'s Veil)bonus act, invisible until start next turn lvl pro/lvl pro long rest</td></tr><tr><td>' + c + '</td></tr><tr><td>@14th(Vanish)Hide as bonus, not nonmagically tracked</td></tr><tr><td>' + dx + '</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no advantage vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dam+wisMod');
  this.setEquipment('scale mail or leather armor.2 shortswords or 2 simple melee weapons.dungeoneer pack or explorer pack.longbow 20 arrows');
  this.setHitDice(this.level + 'd10+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('light armor, medium armor, shields, all weapons');
@@ -6905,7 +6911,7 @@ b="@9th(Supreme Sneak)when move half, Stealth at adv";
 c="@13th(Use Magic Device)use any class item";
 dx="@17th(Thief s Reflexes)1st turn at init, 2nd(turn at init-10 1st round";
 }
- this.setFeatures('</td></tr><tr><td>@1st(Expertise)Thieves Tools+exp and 1 skill+exp or 2 skills+exp @6th 2 more skills+exp<p>@1st(Sneak Attack)1/turn when attacking at adv or ally adjacent to target extra damage @1st +1d6 @3rd +2d6 @5th +3d6 @7th +4d6 @8th +5d6<p>@1st(Thieves Cant)gestures</td></tr><tr><td>@2nd(Cunning Action)action as bonus Dash, Disengage, or Hide after attack, under half cover, Stealth vs Perception or target can not attack</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b>@4th @6th @8th @12th @16th @19th</td></tr><tr><td>@5th(Uncanny Dodge)1 reaction per turn for half damage</td></tr><tr><td>@7th(Evasion)when attacked, dex save for half is no damage</td></tr><tr><td>' + b + '</td></tr><tr><td>@11th(Reliable Talent)abi+pro roll of 9 or less is 10</td></tr><tr><td>' + c + '</td></tr><tr><td>@14th(Blindsense)know location of invisibles 10ft</td></tr><tr><td>@15th(Slippery Mind)wis+pro</td></tr><tr><td>' + dx + '</td></tr><tr><td>@18th(Elusive)not attacked at adv less incapacitated</td></tr><tr><td>@20th(Stroke of Luck)recharge short rest, roll failure is success');
+ this.setFeatures('</td></tr><tr><td>@1st(Expertise)Thieves Tools+exp and 1 skill+exp or 2 skills+exp @6th 2 more skills+exp<p>@1st(Sneak Attack)1/turn when attacking at adv or ally adjacent to target extra damage @1st +1d6 @3rd +2d6 @5th +3d6 @7th +4d6 @8th +5d6<p>@1st(Thieves Cant)gestures</td></tr><tr><td>@2nd(Cunning Action)action as bonus Dash, Disengage, or Hide after attack, under half cover, Stealth vs Perception or target can not attack</td></tr><tr><td>' + a + '</td></tr><tr><td>@4th(Ability Score Improvement)@4th @6th @8th @12th @16th @19th</td></tr><tr><td>@5th(Uncanny Dodge)1 reaction per turn for half damage</td></tr><tr><td>@7th(Evasion)when attacked, dex save for half is no damage</td></tr><tr><td>' + b + '</td></tr><tr><td>@11th(Reliable Talent)abi+pro roll of 9 or less is 10</td></tr><tr><td>' + c + '</td></tr><tr><td>@14th(Blindsense)know location of invisibles 10ft</td></tr><tr><td>@15th(Slippery Mind)wis+pro</td></tr><tr><td>' + dx + '</td></tr><tr><td>@18th(Elusive)not attacked at adv less incapacitated</td></tr><tr><td>@20th(Stroke of Luck)recharge short rest, roll failure is success');
  this.setEquipment('rapier or shortsword.shortbow 20 arrows or shortsword.burglar pack or dungeoneer pack or explorer pack.leather armor.2 daggers.thieves tools');
  this.setHitDice(this.level + 'd8+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('daggers, darts, light crossbows, quarterstaffs, and slings');
@@ -6944,7 +6950,7 @@ b='@6th.HEART OF THE STORM resist lightning thunder/when casting lightning or th
 c='@14th.STORM S FURY melee attackd, react your lvl in lightning damage and str save vs spell dc or pushed up to 20ft';
 dx='@18th.WIND SOUL(1/1)long rest/immune lightning and thunder/ fly 60ft/reduce fly 30ft and 3+chaMod allies can fly 30ft';
 }
- this.setFeatures('</td></tr><tr><td>' + a + '</td></tr><tr><td>@2nd(Font of Magic)exchange spell slots and Sorcery Points</td></tr><tr><td>@2nd(Spell Points) @1st 0 @2nd 2 @3rd 3 @4th 4 @5th 5 @6th 6 @7th 7 @8th 8 @9th 9 @10th 10 @11th 11 @12th12 @13th 13 @14th 14 @15th 15 @16th 16 @17th 17 @18th 18 @19th 19 @20th 20</td></tr><tr><td>@3rd(Metamagic) @3rd 2 @10th 3 @17th 4(Careful Spell)1SP, select chaMod targets in spell area to be immune(Distant Spell)1SP, range x 2, touch is 30ft(Empowered Spell)1SP, discard damage and reroll damage chaMod times, in addition to other Metamagic(Extend Spell)1SP, duration x 2, max 24 hrs(Heightened Spell)3SP, target rolls 1st save at disadv(Quickened Spell)1SP, 1 act is 1 bonus cast(Subtile Spell)1SP, no verbal somatic cast needed(Twinned Spell)SP is spell lvl, non self spell, target another</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>' + b + '</td></tr><tr><td>' + c + '</td></tr><tr><td>' + dx + '</td></tr><tr><td>@20th(Sorcerous Restoration)0SP is 4SP, recharge short rest');
+ this.setFeatures('</td></tr><tr><td>' + a + '</td></tr><tr><td>@2nd(Font of Magic)exchange spell slots and Sorcery Points</td></tr><tr><td>@2nd(Spell Points) @1st 0 @2nd 2 @3rd 3 @4th 4 @5th 5 @6th 6 @7th 7 @8th 8 @9th 9 @10th 10 @11th 11 @12th12 @13th 13 @14th 14 @15th 15 @16th 16 @17th 17 @18th 18 @19th 19 @20th 20</td></tr><tr><td>@3rd(Metamagic) @3rd 2 @10th 3 @17th 4(Careful Spell)1SP, select chaMod targets in spell area to be immune(Distant Spell)1SP, range x 2, touch is 30ft(Empowered Spell)1SP, discard damage and reroll damage chaMod times, in addition to other Metamagic(Extend Spell)1SP, duration x 2, max 24 hrs(Heightened Spell)3SP, target rolls 1st save at disadv(Quickened Spell)1SP, 1 act is 1 bonus cast(Subtile Spell)1SP, no verbal somatic cast needed(Twinned Spell)SP is spell lvl, non self spell, target another</td></tr><tr><td>@4th(Ability Score Improvement) @4th @8th @12th @16th @19th</td></tr><tr><td>' + b + '</td></tr><tr><td>' + c + '</td></tr><tr><td>' + dx + '</td></tr><tr><td>@20th(Sorcerous Restoration)0SP is 4SP, recharge short rest');
  this.setEquipment('light crossbow 20 bolts or arcane focus.dungeoneer pack or explorer pack.2 daggers');
  this.setHitDice(this.level + 'd6+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('Draconic, daggers, darts, light crossbows, quarterstaffs, and slings');
@@ -7046,7 +7052,7 @@ if(this.class.match(/Transmuter/))
  b='@6th(Transmuter s Stone)you or ally that carries it, Darkvision 60ft or speed+10ft or con+pro or resist acid,cold,fire,lightning,thunder</td></tr><tr><td>@10th(Shapechanger)learn Polymorph no slot cost self CR1 or lower(1/1)</td></tr><tr><td>@14th(Master Tansmuter)act Transmuter Stone destroyed(Major Transformation)5ft cube objects or(Panacea)remove all curses,disease,poisons,restore hp of 1 ally or(Restore Life)Raise Dead at no slot cost on 1 ally or(Restore Youth)apparent age is reduced by 3d10 years min 13 of 1 ally'
 }
 if(this.class.match(/Wizard/))
-{this.setFeatures("</td></tr><tr><td>1st(Arcane Recovery) 1/1 recharge after short rest, recover 1/2lvl rnd up in 6th lvl or fewer slots</td></tr><tr><td>" + a + "</td></tr><tr><td>@4th<b><b>Ability Score Improvement</b></b> @4th @8th @12th @16th @19th</td></tr><tr><td>" + b + "</td></tr><tr><td>@18th(Spell Mastery)cast a known 1st and 2nd(lvl spell at no 1st cost, 8hrs change the know spells</td></tr><tr><td>@20th(Signature Spells)cast 2 known 3rd lvl spells at no 3rd cost");
+{this.setFeatures("</td></tr><tr><td>1st(Arcane Recovery) 1/1 recharge after short rest, recover 1/2lvl rnd up in 6th lvl or fewer slots</td></tr><tr><td>" + a + "</td></tr><tr><td>@4th(Ability Score Improvement) @4th @8th @12th @16th @19th</td></tr><tr><td>" + b + "</td></tr><tr><td>@18th(Spell Mastery)cast a known 1st and 2nd(lvl spell at no 1st cost, 8hrs change the know spells</td></tr><tr><td>@20th(Signature Spells)cast 2 known 3rd lvl spells at no 3rd cost");
  this.setEquipment('quarterstaff or dagger.component pouch or arcane focus.scholar pack or explorer pack.spellbook');
  this.setHitDice(this.level + 'd6+' +(parseInt(this.level) * parseInt(this.conMod)));
  this.setProficiencies('daggers, darts, light crossbows, quarterstaffs, and slings');
@@ -7267,7 +7273,8 @@ this.refresh(x);
 
 function _setFeatures(x)
 {this.features=x;
-this.features=this.features.replace(/\'|\s+/g, ' ');
+this.features=this.features.replace(/\'/g, '\'');
+this.features=this.features.replace(/\s+/g, ' ');
 this.features=this.features.replace(/\./g, '\.\r');
 this.refresh();
 }
@@ -8397,6 +8404,20 @@ this.setProficienciesRace('Healing Hands:1/1 long rest,heal self or ally lvl in 
 this.setProficienciesRace('Healing Hands:1/1 long rest,heal self or ally lvl in hp,Light cha,Necrotic Shroud:@3rd targets 10ft radius cha vsCha or frightened uteoynt, deal extra necrotic dmg to 1 target per turn,1min or 1 bonus end 1/1 long rest');
 }
 }
+
+if(this.race.match(/Bugbear/))
+{this.setAbility('str+2, dex+1');
+ this.setActionNotes('(Long-Limbed)melee atk+5ft, (Suprise Attack)1/1 1 target 1st turn+2d6dmg');
+ this.setAlignment('Chaotic Evil');
+ this.setLanguages('Common, Goblin');
+ this.setProficienciesRace('Stealth+pro');
+ this.setResistance('');
+ this.setSenses('Darkvision 60ft');
+ this.setSize('Medium 5x5ft');
+ this.setSpeed('30 feet');
+ this.setTrait('16-80 yrs old('+(16+parseInt(rollDForm('1d64+0')))+'yrs old), 6ft tall+2d12in('+(6.0+(parseInt(rollDForm('2d12+0'))/12)).toFixed(2)+'ft), 200lbs+2d6('+(parseInt(200)+parseInt(rollDForm('2d6+0')))+'lbs)');
+}
+
 if(this.race.match(/Dragonborn/))
 {this.setAbility('str+2, cha+1');
  this.setLanguages('Common, Draconic');
@@ -8533,6 +8554,19 @@ if(this.race.match(/Gnome,\sRock/))
  this.setSpeed('25 feet');
  this.setTrait('1-500 years old, 40 lbs., 3 feet tall');
 }
+if(this.race.match(/Goblin/))
+{
+ this.setAbility('dex+2, con+1');
+ this.setActionNotes('(Fury of the Small)1/1 4hr rest 1 target deal extra your lvl dmg, (Nimble Escape)Disengage or Hide as bonus act 1/turn');
+ this.setAlignment('Neutral Evil');
+ this.setLanguages('Common, Goblin');
+ this.setProficienciesRace('');
+ this.setResistance('');
+ this.setSenses('Darkvision 60ft');
+ this.setSize('Small 5x5ft');
+ this.setSpeed('30 feet');
+ this.setTrait('8-60 yrs old('+(8+parseInt(rollDForm('1d52+0')))+'yrs old), 3ft 5in tall+2d4('+(3.5+(parseInt(rollDForm('2d4+0'))/12)).toFixed(2)+'ft), 35lbs+1d4('+(parseInt(35)+parseInt(rollDForm('1d4+0')))+'lbs)');
+}
 if(this.race.match(/Halfling,\sLightfoot/))
 {this.setAbility('dex+2, cha+1');
  this.setLanguages('Common, Halfling');
@@ -8554,14 +8588,17 @@ if(this.race.match(/Halfling,\sStout/))
  this.setTrait('(Nimbleness)can move through larger being space ,(Lucky)re-roll on a natural 1, 1-250 years old, 40 lbs., 3 feet tall');
 }
 if(this.race.match(/Hobgoblin/))
-{this.setAbility('con+2, int+1');
+{
+ this.setAbility('con+2, int+1');
+ this.setActionNotes('(Saving Face)bonus act, reroll number of allies till success 1/1, ');
+ this.setAlignment('Lawful Evil');
  this.setLanguages('Common, Goblin');
- this.setProficienciesRace('(Saving Face)bonus act, reroll number of allies till success 1/1, 2 weapons, light armor');
+ this.setProficienciesRace('2 weapons, light armor');
  this.setResistance('');
  this.setSenses('Darkvision 60ft');
  this.setSize('Medium 5x5ft');
  this.setSpeed('30 feet');
- this.setTrait('Lawful Evil, 15-100 yrs old('+(15+parseInt(rollDForm('1d100+0')))+'yrs old), 4ft 8in tall+2d10('+(4.8+(parseInt(rollDForm('2d10+0'))/12)).toFixed(2)+'ft), 110lbs+2d4('+(parseInt(110)+parseInt(rollDForm('2d4+0')))+'lbs)');
+ this.setTrait('15-100 yrs old('+(15+parseInt(rollDForm('1d100+0')))+'yrs old), 4ft 8in tall+2d10('+(4.8+(parseInt(rollDForm('2d10+0'))/12)).toFixed(2)+'ft), 110lbs+2d4('+(parseInt(110)+parseInt(rollDForm('2d4+0')))+'lbs)');
 }
 if(this.race.match(/Human/))
 {this.setAbility('abi+1 and abi+1');
@@ -8572,6 +8609,32 @@ if(this.race.match(/Human/))
  this.setSize('Medium 5x5ft');
  this.setSpeed('30ft');
  this.setTrait('1-100 years old, 100-180 lbs., 5-6 feet tall');
+}
+if(this.race.match(/Kobold/))
+{
+ this.setAbility('str+2, dex+2');
+ this.setActionNotes('(Grovel Cower and Beg)10ft 1 act 1/1 short rest allies atk @adv till end of your next turn, (Pack Tactics)woke ally 5ft you atk @adv');
+ this.setAlignment('Lawful');
+ this.setLanguages('Common, Draconic');
+ this.setProficienciesRace('');
+ this.setResistance('');
+ this.setSenses('Darkvision 60ft');
+ this.setSize('Small 5x5ft');
+ this.setSpeed('30 feet');
+ this.setTrait('6-120 yrs old('+(6+parseInt(rollDForm('1d114+0')))+'yrs old), 2ft 1in tall+2d4('+(2.1+(parseInt(rollDForm('2d4+0'))/12)).toFixed(2)+'ft), 25lbs+1d4('+(parseInt(25)+parseInt(rollDForm('1d4+0')))+'lbs)');
+}
+if(this.race.match(/Orc/))
+{
+ this.setAbility('str+2, con+1');
+ this.setActionNotes('(Aggressive)bonus act extra move toward enemy');
+ this.setAlignment('Chaotic Evil');
+ this.setLanguages('Common, Orc');
+ this.setProficienciesRace('Intimidation+pro');
+ this.setResistance('');
+ this.setSenses('Darkvision 60ft');
+ this.setSize('Medium 5x5ft');
+ this.setSpeed('30 feet');
+ this.setTrait('12-50 yrs old('+(12+parseInt(rollDForm('1d38+0')))+'yrs old), 5ft 4in tall+2d8('+(5.4+(parseInt(rollDForm('2d8+0'))/12)).toFixed(2)+'ft), 175lbs+2d6('+(parseInt(175)+parseInt(rollDForm('2d6+0')))+'lbs)');
 }
 if(this.race.match(/Orc,\sHalf/))
 {this.setAbility('str+2, con+1');
@@ -8603,6 +8666,24 @@ if(this.race.match(/Tiefling/))
  this.setSize('Medium 5x5ft');
  this.setSpeed('30ft');
  this.setTrait('1-70 years old, 5-6 feet tall');
+}
+if(this.race.match(/Yuan-Ti/))
+{
+ this.setAbility('int+1, cha+2');
+ this.setActionNotes('(Innate Spellcasting)Animal Friendship(snakes), Poison Spray unlimited, @3rd Suggestion(snakes)');
+ AnimalFriendship();
+ PoisonSpray();
+ this.setAlignment('Neutral Evil');
+ this.setDamageConditions('immune to poison');
+ this.setImmunity('poison')
+ this.setLanguages('Abyssal, Common, Draconic');
+ this.setProficienciesRace('');
+ this.setResistance('save vs magic @adv');
+ this.setSenses('Darkvision 60ft');
+ this.setSize('Medium 5x5ft');
+ this.setSpeed('30ft');
+ this.setSpellAbility('cha');
+ this.setTrait('15-80 yrs old('+(15+parseInt(rollDForm('1d65+0')))+'yrs old), 4ft 8in tall+2d10('+(4.8+(parseInt(rollDForm('2d10+0'))/12)).toFixed(2)+'ft), 110lbs+2d4('+(parseInt(110)+parseInt(rollDForm('2d4+0')))+'lbs)');
 }
 this.refresh();
 }
