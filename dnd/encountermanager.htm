@@ -75,7 +75,9 @@ margin: 1px;
 outline: 1px solid transparent;
 padding: 1px;
 text-decoration: #c63;
-vertical-align: top;}
+vertical-align: top;
+white-space: nowrap;
+}
 
 table{background-color: #e5d3b3}
 tr{background-color: #d2b48c}
@@ -2666,6 +2668,7 @@ if(spell=stats.match(/chill\stouch/i)){this.ChillTouch()}
 if(spell=stats.match(/dancing\slights/i)){this.DancingLights()}
 if(spell=stats.match(/druid\scraft|druidcraft/i)){this.DruidCraft()}
 if(spell=stats.match(/eldritch\sblast/i)){this.EldritchBlast()}
+if(spell=stats.match(/fire\sbolt/i)){this.FireBolt()}
 if(spell=stats.match(/friends/i)){this.Friends()}
 if(spell=stats.match(/guidance/i)){this.Guidance()}
 if(spell=stats.match(/light\s|light\,/i)){this.Light()}
@@ -2694,9 +2697,11 @@ if(spell=stats.match(/detect\smagic/i)){this.DetectMagic()}
 if(spell=stats.match(/disguise\sself/i)){this.DisguiseSelf()}
 if(spell=stats.match(/entangle/i)){this.Entangle()}
 if(spell=stats.match(/faerie\sfire/i)){this.FaerieFire()}
+if(spell=stats.match(/fog\scloud/i)){this.FogCloud()}
 if(spell=stats.match(/healing\sword/i)){this.HealingWord()}
 if(spell=stats.match(/heroism/i)){this.Heroism()}
 if(spell=stats.match(/hex/i)){this.Hex()}
+if(spell=stats.match(/longstrider/i)){this.Longstrider()}
 if(spell=stats.match(/mage\sarmor/i)){this.MageArmor()}
 if(spell=stats.match(/magic\smissile/i)){this.MagicMissile()}
 if(spell=stats.match(/protection\sfrom\sevil\sand\sgood/i)){this.ProtectionFromEvilOrGood()}
@@ -2706,6 +2711,7 @@ if(spell=stats.match(/speak\swith\sanimals/i)){this.SpeakWithAnimals()}
 if(spell=stats.match(/thunderous\ssmite/i)){this.ThunderousSmite()}
 if(spell=stats.match(/thunderwave/i)){this.Thunderwave()}
 //2nd lvl Spells
+if(spell=stats.match(/alter\sself/i)){this.AlterSelf()}
 if(spell=stats.match(/animal\smessenger/i)){this.AnimalMessenger()}
 if(spell=stats.match(/augury/i)){this.Augury()}
 if(spell=stats.match(/beast\ssense/i)){this.BeastSense()}
@@ -2723,6 +2729,7 @@ if(spell=stats.match(/moonbeam/i)){this.Moonbeam()}
 if(spell=stats.match(/phantasmal\sforce/i)){this.PhantasmalForce()}
 if(spell=stats.match(/shatter/i)){this.Shatter()}
 if(spell=stats.match(/silence/i)){this.Silence()}
+if(spell=stats.match(/spider\sclimb/i)){this.SpiderClimb()}
 if(spell=stats.match(/suggestion/i)){this.Suggestion()}
 //3rd lvl Spells
 if(spell=stats.match(/blinding\ssmite/i)){this.BlindingSmite()}
@@ -3007,7 +3014,7 @@ menuContents+="</td><td><input maxLength=200 onChange='characters["+this.index+"
 menuContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll1(this.value)'placeHolder='XdY+Z'size='8' type='text' value="+this.roll1+">"
 menuContents+="</td><td><input maxLength=200 onChange='characters["+this.index+"].setRollName2(this.value)'placeHolder=' dmgType+Ability and dmgConditions' size='25' type='text' value='"+this.rollName2+"'>"
 menuContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll2(this.value)'placeHolder='XdY+Z'size='8' type='text' value="+this.roll2+">"
-menuContents+="</td><td><input maxLength='8' onClick='addRollPrompt("+this.index+")'size='8' type='button' value='Addthis roll?'>";
+menuContents+="</td><td><input maxLength='8' onClick='addRollPrompt("+this.index+")'size='8' type='button' value='Add this roll?'>";
 if(this.rolls.length===0){menuContents+="</td></tr><tr><td><i>No custom rolls listed.</i>";}
 else{for(var i=0; i<this.rolls.length; i++){menuContents+="</td></tr><tr><td><input type='button' onClick='makeRoll("+this.index+","+i+")'value='Roll?'>"
 menuContents+="</td><td><input maxLength=220 onChange='characters["+this.index+"].rollNames["+i+"]=this.value' size='25' type='text' value='"+this.rollNames[i]+"'>";
@@ -3065,7 +3072,7 @@ if(this.alignment.match(/Chaotic Good/i)){this.setAlignmentDescription("I follow
 }
 if(this.alignment.match(/Chaotic Neutral/i)){this.setAlignmentDescription("I follow my shifting whims with little concern about rules or later consequences.")
 }
-if(this.alignment.match(/Lawful Evil/i)){this.setAlignmentDescription("I take wh@I want up to the maximum allowed by law or loyalty, promoting order and control over others.")
+if(this.alignment.match(/Lawful Evil/i)){this.setAlignmentDescription("I take whatI want up to the maximum allowed by law or loyalty, promoting order and control over others.")
 }
 if(this.alignment.match(/Lawful Good/i)){this.setAlignmentDescription("I do what\'s right as expected by society to promote order and compassion for all.")
 }
@@ -4110,6 +4117,7 @@ this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
 this.setSpeed('25 feet');
 this.setTrait('(Dwarven Toughness)when lvling up, hp+1hp, 1-350 years old, 150 lbs., 4-5 feet tall');}
+
 if(this.race.match(/Dwarf,\sMountain/)){this.setAbility('str+2, con+2');
 this.setLanguages('Common, Dwarvish');
 this.setProficienciesRace('light armor, medium armor, battleaxes, handaxes, light hammers, and warhammers, smith or brewer or mason Tools,(Stonecunning)History+exp re the details of stone work age and construction');
@@ -4117,7 +4125,8 @@ this.setResistance('(Dwarven Resilience)resist poison 1/2 dmg save vs poison @Ad
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
 this.setSpeed('25 feet');
-this.setTrait('1-350 years old, 150 lbs., 4-5 feet tall');}
+this.setTrait("50-350 yrs old("+(50+parseInt(rollDForm('1d300+0')))+"yrs old), 4ft 0in tall+2d4("+(4.0+(parseInt(rollDForm('2d4+0'))/12)).toFixed(1).replace('.', 'ft ')+"in tall, 115lbs+2d6("+(parseInt(115)+parseInt(rollDForm('2d6+0')))+"lbs)");}
+
 if(this.race.match(/Dwarf,\sGray/)){this.setAbility('str+1');
 this.setLanguages('Common, Dwarvish, Undercommon');
 this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or brewer or Mason Tools,(Stonecunning)History+exp re the details of stone work age and construction, @3rd(Enlarge/Reduce)only Enlarge on self 1/1 long 8hr rest, @5th(Invisibility)no components needed/in dim light 1/1 long 8hr rest');
@@ -5035,9 +5044,9 @@ roll2=roll;
 rollTotal1=naturalRoll1+parseInt(roll1)+ parseInt(abiMod)+ parseInt(characters[x].sit);
 rollTotal2=naturalRoll2+parseInt(roll2)+ parseInt(characters[x].sit);
 theCondition=characters[x].rollNames2[i];
-if(characters[x].rollNames2[i].match(/heal/)){log2="</td></tr><tr><td colspan='6'>"+characters[x].name+" "+characters[x].rollNames2[i]+"<input onClick='characters[targeted].setDamageConditions(characters[targeted]. dmgConditions+theCondition);checkTheTarget()' type='button' value='Assign this dmg condition?'></td></tr><tr><td colspan='6'>Healing 1:"+characters[x].rolls2[i]+"=natural"+naturalRoll1+roll1+abiMod+abi+skillMod+"pro"+characters[x].sit+"sit="+rollTotal1+" <input onClick='characters[targeted].setCurHp(characters[targeted].curHp+rollTotal1);checkTheTarget()' type='button' value=Heal?></td></tr><tr><td colspan='6'>Healing 2:"+characters[x].rolls2[i]+"=natural"+naturalRoll2+roll2+abiMod+abi+skillMod+"pro"+characters[x].sit+"sit="+rollTotal2+" <input onClick='characters[targeted].setCurHp(characters[targeted].curHp+rollTotal2);checkTheTarget()' type='button' value=Heal?>";
+if(characters[x].rollNames2[i].match(/heal/)){log2="</td></tr><tr><td colspan='6'>"+characters[x].name+" "+characters[x].rollNames2[i]+"<input onClick='characters[targeted].setDamageConditions(characters[targeted]. dmgConditions+theCondition);checkTheTarget()' type='button' value='Assign this dmg condition?'></td></tr><tr><td colspan='6'>Healing 1:"+characters[x].rolls2[i]+"=natural"+naturalRoll1+roll1+abiMod+abi+skillMod+"pro="+rollTotal1+" <input onClick='characters[targeted].setCurHp(characters[targeted].curHp+rollTotal1);checkTheTarget()' type='button' value=Heal?></td></tr><tr><td colspan='6'>Healing 2:"+characters[x].rolls2[i]+"=natural"+naturalRoll2+roll2+abiMod+abi+skillMod+"pro="+rollTotal2+" <input onClick='characters[targeted].setCurHp(characters[targeted].curHp+rollTotal2);checkTheTarget()' type='button' value=Heal?>";
 characters[x].setCombatLog(log1+log+log2);}
-else{log2="</td></tr><tr><td colspan='6'>"+characters[x].rollNames2[i]+" <input onClick='characters[targeted].setDamageConditions(characters[targeted]. dmgConditions+theCondition);checkTheTarget()' type='button' value='Assign this dmg condition?'></td></tr><tr><td colspan='6'>Damage 1:"+characters[x].rolls2[i]+"=natural"+naturalRoll1+roll1+abiMod+abi+characters[x].sit+"sit="+rollTotal1+" <input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal1);checkTheTarget()' type='button' value=Damage?> <input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal1/2))));checkTheTarget()' type='button' value='Half dmg?'></td></tr><tr><td colspan='6'>Damage 2:"+characters[x].rolls2[i]+"=natural"+naturalRoll2+roll2+"+0abi"+characters[x].sit+"sit="+rollTotal2+"<input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal2);checkTheTarget()' type='button' value=Damage?> <input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal2/2))));checkTheTarget()' type='button' value='Half dmg?'></td></tr>";
+else{log2="</td></tr><tr><td colspan='6'>"+characters[x].rollNames2[i]+" <input onClick='characters[targeted].setDamageConditions(characters[targeted]. dmgConditions+theCondition);checkTheTarget()' type='button' value='Assign this dmg condition?'></td></tr><tr><td colspan='6'>Damage 1:"+characters[x].rolls2[i]+"=natural"+naturalRoll1+roll1+abiMod+abi+"="+rollTotal1+" <input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal1);checkTheTarget()' type='button' value=Damage?> <input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal1/2))));checkTheTarget()' type='button' value='Half dmg?'></td></tr><tr><td colspan='6'>Damage 2:"+characters[x].rolls2[i]+"=natural"+naturalRoll2+roll2+"+0abi="+rollTotal2+"<input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal2);checkTheTarget()' type='button' value=Damage?> <input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal2/2))));checkTheTarget()' type='button' value='Half dmg?'></td></tr>";
 characters[x].setCombatLog(log1+log+log2);}
 document.getElementById('targeted'+[targeted]).checked='checked';}
 
@@ -5051,7 +5060,7 @@ characters[x].menu.hide();
 characters.splice(x, 1);}
 }
 
-function newCharacter(type){response=prompt("Wh@is the new "+type+"'s name?");
+function newCharacter(type){response=prompt("whatis the new "+type+"'s name?");
 if(response !=null){x=characters.length;
 newChar=new Character(response, type);
 newChar.setIndex(x);
