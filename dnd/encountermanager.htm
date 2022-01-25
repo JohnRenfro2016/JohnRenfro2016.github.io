@@ -76,7 +76,6 @@ outline: 1px solid transparent;
 padding: 1px;
 text-decoration: #c63;
 vertical-align: top;
-white-space: nowrap;
 }
 
 table{background-color: #e5d3b3}
@@ -119,7 +118,7 @@ Generate characters fast!
 <a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
 </td></tr><tr><td>
 This is a single encounter from the adventure
-<a href='https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up' target='_blank'>Dungeon Module L1 The Secret of Bone Hill</a>
+<a href='https://archive.org/details/tsr09043bx1theisleofdread/page/n33/mode/1up' target='_blank'>Dungeon Module X1 The Isle of Dread</a>
 </td></tr><tr><td>
 The adventure uses Dungeons & Dragons 5th Edition rules and Classic Modules Today conversions.
 <a href='https://www.thriftbooks.com/series/dungeons--dragons-5th-edition/83478/' target='_blank'>Thrift Books D&D 5E</a>
@@ -2372,6 +2371,60 @@ savePane.setStyle("zIndex", "100");
 savePane.putAt(100, 100);
 
 function setStats(){
+
+if(rip=stats.match(/(Bite)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/))
+{
+characters[targeted].setRollName1(rip[1]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[4]);
+characters[targeted].setRoll2(rip[3].replace(/\s/,''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/(Claw)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/))
+{
+characters[targeted].setRollName1(rip[1]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[4]);
+characters[targeted].setRoll2(rip[3].replace(/\s/,''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/(Hoof)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/))
+{
+characters[targeted].setRollName1(rip[1]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[4]);
+characters[targeted].setRoll2(rip[3].replace(/\s/,''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/(Horn)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/))
+{
+characters[targeted].setRollName1(rip[1]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[4]);
+characters[targeted].setRoll2(rip[3].replace(/\s/,''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/(Slam)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/))
+{
+characters[targeted].setRollName1(rip[1]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[4]);
+characters[targeted].setRoll2(rip[3].replace(/\s/,''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/(Longbow)\.\sRanged[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/))
+{
+characters[targeted].setRollName1(rip[1]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[4]);
+characters[targeted].setRoll2(rip[3].replace(/\s/g,''));
+addRollPrompt(targeted);
+}
 
 if(rip=stats.match(/^([\s\S]*?)CLASS[\s\S]*?LEVEL([\s\S]*?)(\d{1,2})\s([\s\S]*?)EXPERIENCE\sPOINTS([\s\S]*?)PLAYER NAME[\s\S]*?HERITAGE([\s\S]*?)BACKGROUND([\s\S]*?)CAMPAIGN[\s\S]*?STR[\s\S]*?\d{1}\s(\d{1,2})\sDEX[\s\S]*?\d{1}\s(\d{1,2})\sCON[\s\S]*?\d{1}\s(\d{1,2})\sINT[\s\S]*?\d{1}\s(\d{1,2})\sWIS[\s\S]*?\d{1}\s(\d{1,2})\sCHA[\s\S]*?\d{1}\s(\d{1,2})/)){
 characters[targeted].setLvl(rip[3]);
