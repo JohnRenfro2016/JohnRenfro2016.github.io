@@ -22,13 +22,13 @@ a.btn:link,
 a.btn:hover,
 a.btn:visited
 {
-text-decoration: #987554;}
+text-decoration:#987554;}
 
-a:active{color: #460000}
-a:link{color: #380000}
-a:hover{color: #f60}
-a:selected{color: #f60}
-a:visited{color: #380000}
+a:active{color:#460000}
+a:link{color:#380000}
+a:hover{color:#f60}
+a:selected{color:#f60}
+a:visited{color:#380000}
 
 button,
 input,
@@ -37,68 +37,70 @@ radio,
 select,
 textarea
 {
-background-color: inherit;
-border: 1px;
-border-color: #987554;
-border-style: solid;
-border-radius: 4px;
-font-size: 10px;
-margin: 1px;
-outline: 1px solid transparent;
-padding: 1px;
-text-align: justify;
-text-decoration: #c63;
-vertical-align: top;}
+background-color:inherit;
+border:1px;
+border-color:#987554;
+border-style:solid;
+border-radius:4px;
+font-size:10px;
+margin:1px;
+outline:1px solid transparent;
+padding:1px;
+text-align:justify;
+text-decoration:#c63;
+vertical-align:top;}
 
 #dragDiv
 {
-height: 100px;
-width: 100px;}
+height:100px;
+width:100px;}
 
-h1{color: #460000;}
+h1{color:#460000;}
 
-h2{color: #380000;}
+h2{color:#380000;}
 
-h3{color: #2a0000;}
+h3{color:#2a0000;}
 
 table,
 tr,
 td
 {
-background-color: inherit;
-border: 1px;
-border-color: #987554;
-border-style: solid;
-border-radius: 4px;
-font-size: 10px;
-margin: 1px;
-outline: 1px solid transparent;
-padding: 1px;
-text-decoration: #c63;
-vertical-align: top;
+background-color:inherit;
+border:1px;
+border-color:#987554;
+border-style:solid;
+font-size:10px;
+margin:1px;
+outline:1px solid transparent;
+padding:1px;
+text-decoration:#c63;
+vertical-align:top;
 }
 
-table{background-color: #e5d3b3}
-tr{background-color: #d2b48c}
-td{background-color: #b99976}
+table{background-color:#e5d3b3}
+tr{background-color:#d2b48c}
+td
+{
+background-color:#b99976;
+max-width:300px;
+white-space:line-break;
+}
 
-tr:nth-child(even){background: rgba(0, 0, 0, 0.1)}
-tr:nth-child(odd){background: rgba(0, 0, 0, 0.2)}
+tr:nth-child(even){background:rgba(0, 0, 0, 0.1)}
+tr:nth-child(odd){background:rgba(0, 0, 0, 0.2)}
 
-td:nth-child(even){background: rgba(0, 0, 0, 0.1)}
-td:nth-child(odd){background: rgba(0, 0, 0, 0.2)}
+td:nth-child(even){background:rgba(0, 0, 0, 0.1)}
+td:nth-child(odd){background:rgba(0, 0, 0, 0.2)}
 
 </style>
 
 <body>
 
-Dungeon Master's Notes: I discourage you from allowing automatic damage. It means low hit point creatures and characters automatically die without having a roll. Instead, allow the target to roll a saving throw for 0 damage and on a failure get half damage.
-
 <table class='draggable'><tr><td>
 <font color='white'><img src='Miniatures/Monster.png'>On phones, put me on a character to drag!</font>
 </td></tr></table>
 <br>
-<table><tr><td>
+<table><tr><td></td><td>
 <table><tr><td>
 To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
 </td></tr><tr><td>
@@ -148,13 +150,13 @@ The adventure uses Dungeons & Dragons 5th Edition rules and Classic Modules Toda
 <input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollSixDisplay'></b></td>
 </td></tr><tr><td>
 Target then paste stats. <br>
-<textArea cols='30' rows='20' onChange='stats=this.value;setStats()' /></textarea><b id='statsDisplay'></b>
+<textArea cols='40' rows='20' onChange='stats=this.value;setStats()' /></textarea><b id='statsDisplay'></b>
 </td></tr></table>
 
 </td><td>
 
 <table><tr><td>
-<img src='Map.png' width=8000>
+<img src='Map.png' width='8000'>
 </td></tr></table>
 </td></tr></table>
 
@@ -176,7 +178,7 @@ if(dIndex===0){dice=1;}
 else{dice=dForm.substring(0, dIndex);}
 sides=dForm.substring(dIndex+1, signIndex);
 if(sign){addOn=dForm.substring(signIndex+1);
-if(!positive){addOn *=-1;}
+if(!positive){addOn*=-1;}
 }
 naturalRoll=XdY(dice, sides);
 roll=(addOn / 1);
@@ -185,7 +187,7 @@ if(roll > -1){roll="+"+roll
 }
 return naturalRoll, roll, result;}
 
-function d(sides){return Math.ceil(Math.random()* sides);}
+function d(sides){return Math.ceil(Math.random()*sides);}
 
 function deleteRollPrompt(x, i){characters[x].deleteRoll(i);}
 
@@ -295,7 +297,7 @@ function Club(){a='Club+str+pro',b='1d20+0',c='bludg+str',dmgDice='1d4+0',getAct
 
 function Dagger(){a='Dagger+dex+pro 20/60ft',b='1d20+0',c='pierc+dex',dmgDice='1d4+0',getAction(t1)}
 
-function DreadfulAspect(){a='(Dreadful Aspect)costs 1CD, 1 act, 30ft chosen targets DC8+wis+pro vsWis',b='0d0+0',c='frightened of paladin for 1min, wisSave if ends turn 30ft+ of paladin',dmgDice='0d0+0',getAction(t1)}
+function DreadfulAspect(){a='(Dreadful Aspect)costs 1CD, 1 act, 30ft chosen targets DC8+wis+pro vsWis',b='0d0+0',c='frightened of paladin for 1min, wisSave if ends turn 30ft+of paladin',dmgDice='0d0+0',getAction(t1)}
 
 function Falchion(){a='Falchion+str+pro',b='1d20+0',c='slash+str',dmgDice='2d4+0',getAction(t1)}
 
@@ -404,7 +406,7 @@ function Augury(){a='2nd(Augury)Omen about specific course of action you plan to
 
 function Alarm(){a='1st(Alarm)10/10 turns ritual 30ft 8hrss 20ft cube point designate who does not set off mental or 10sec 60ft radius audible waking alarm',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function AlterSelf(){a='2nd(Alter Self)self concentration 1hr',b='0d0+0',c='change options as bonus gills, webbing, breathe underwater, swim speed is walk speed *or change height, weight, face, voice, hair, color, race but not size or number of limbs *or atk+1 with claws, fangs, spines, horns and deal 1d6 bludg slash, pierc',dmgDice='0d0+0',getAction(t1)}
+function AlterSelf(){a='2nd(Alter Self)self concentration 1hr',b='0d0+0',c='change options as bonus gills, webbing, breathe underwater, swim speed is walk speed*or change height, weight, face, voice, hair, color, race but not size or number of limbs*or atk+1 with claws, fangs, spines, horns and deal 1d6 bludg slash, pierc',dmgDice='0d0+0',getAction(t1)}
 
 function AnimalFriendship(){a='1st(Animal Friendship)1+1/slot beast Int4+)DC8+'+characters[targeted].spellAbility+'+pro vsWis 30ft 24hrs',b='0d0+0',c='charmed',dmgDice='0d0+0',getAction(t1)}
 
@@ -466,7 +468,7 @@ function CrownOfMadness(){a='2nd(Crown of Madness)DC8+'+characters[targeted].spe
 
 function CreateDestroyWater(){a='1st(Create/Destroy Water)Create/destroy 10+2/slot lvl gal of water in open container; or Create rain/destroy fog in 30+5/slot lvlft cube 30ft P 229',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function CureWounds(){a='1st(Cure Wounds)touch',b='0d0+0',c='heal 1d8+spellAbiMod+1d8/slot',dmgDice='1d8+0',getAction(t1)}
+function CureWounds(){a='1st(Cure Wounds)touch',b='0d0+0',c='heal 1d8+spellAbiMod+1d8/higher slot',dmgDice='1d8+0',getAction(t1)}
 
 function DancingLights(){a='Cantrip(Dancing Lights)concentration 1min',b='0d0+0',c='4 20ft linked 2.5x2.5ft or 1 5x5ft torch 10ft dim light radius bonus move lights 60ft within 120ft',dmgDice='0d0+0',getAction(t1)}
 
@@ -500,7 +502,7 @@ function EarthTremor(){a='1st(Earth Tremor)Evocation 1act 10ft x 10ft instant DC
 
 function EnhanceAbility(){a='2nd(Enhance Ability)1+1/slot lvl targets adv. on checks with 1 stat; choosing Str, Dex, Con gives secondary benefits touch concentration 1hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function EnlargeReduce(){a='2nd(Enlarge/Reduce)30ft concentration 10/10 turns unwilling target)DC8+'+characters[targeted].spellAbility+'+pro vsCon *Enlarge size x 2 weight x 8 str @Adv+1d4 weapon dmg *or Reduce size/2 weight/8 str @DisAdv -1d4 weapon dmg',b='0d0+0',c='',dmgDice='1d4+0',getAction(t1)}
+function EnlargeReduce(){a='2nd(Enlarge/Reduce)30ft concentration 10/10 turns unwilling target)DC8+'+characters[targeted].spellAbility+'+pro vsCon*Enlarge size x 2 weight x 8 str @Adv+1d4 weapon dmg*or Reduce size/2 weight/8 str @DisAdv -1d4 weapon dmg',b='0d0+0',c='',dmgDice='1d4+0',getAction(t1)}
 
 function Entangle(){a='1st(Entangle)difficult terrain and 20ft sq area)DC8+'+characters[targeted].spellAbility+'+pro vsDex or restrained save ateo/target turn 90ft concentration 1min',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
@@ -568,7 +570,7 @@ function Jump(){a='1st(Jump)touch 10/10 turns',b='0d0+0',c='you or ally jump dis
 
 function Knock(){a='2nd(Knock)60ft',b='0d0+0',c='300ft loud knock sound as magical and nonmagical locks are unlocked',dmgDice='0d0+0',getAction(t1)}
 
-function LesserRestoration(){a='2nd(Lesser Restoration)1 target cured of 1 disease, or 1 condition: blinded, deafened, paralyzed, or poisoned touch',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function LesserRestoration(){a='2nd(Lesser Restoration)1 target cured of 1 disease, or 1 condition:blinded, deafened, paralyzed, or poisoned touch',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function Levitate(){a='2nd(Levitate)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsCon or obj up to 500lbs rise vertically up to 20ft move up/down 20ft 60ft concentration 10min',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
@@ -606,7 +608,7 @@ function MelfsAcidArrow(){a='2nd(Melf s Acid Arrow)90ft'+characters[targeted].sp
 
 function Mire(){a='(Mire)1act, 30ft, ground becomes swamp difficult terrain 1/2 speed, you move without penalty',b='0d0+0',c='fire+1d10/slot',dmgDice='2d10+0',getAction(t1)}
 
-function MirrorImage(){a='2nd(Mirror Image)self 10/10 turns 3 clones d20 6+ 1 clone AC10+dex destroyed 8+ another clone 10; the last clone blindsight truesight immune',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function MirrorImage(){a='2nd(Mirror Image)self 10/10 turns 3 clones d20 6+1 clone AC10+dex destroyed 8+another clone 10; the last clone blindsight truesight immune',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function Misfortune(){a='(Misfortune)1act, 1 target, 60ft, DC8+'+characters[targeted].spellAbility+'+pro vsWis',b='1d6+0',c='ability checks and saving throws-1d6 uteo '+characters[x].name+' s nt',dmgDice='0d0+0',getAction(t1)}
 
@@ -616,7 +618,7 @@ function Moonbeam(){a='2nd(Moonbeam)5ft radius 40ft high dim light area moveable
 
 function Nails(){a='(Nails)1 atk and 1 bonus atk, unarmed strikes+1d4 magical dmg',b='0d0+0',c='',dmgDice='1d4+0',getAction(t1)}
 
-function NystulsMagicAura(){a='2nd(Nystul s Magic Aura)touch 24hrs recast 30days til dispelled',b='0d0+0',c='False Aura object or being magic appears nonmagic vs versa change school appearance *or Mask being appears as different alignment or racial type',dmgDice='0d0+0',getAction(t1)}
+function NystulsMagicAura(){a='2nd(Nystul s Magic Aura)touch 24hrs recast 30days til dispelled',b='0d0+0',c='False Aura object or being magic appears nonmagic vs versa change school appearance*or Mask being appears as different alignment or racial type',dmgDice='0d0+0',getAction(t1)}
 
 function Obfuscate(){a='(Obfuscate)1act, 20ft radius sphere cloud, self',b='0d0+0',c='obscured terrain uteoynt or 10mi>wind',dmgDice='0d0+0',getAction(t1)}
 
@@ -624,7 +626,7 @@ function Pestilence(){a='(Pestilence)1act, 5ft radius sphere poison cloud around
 
 function PassWithoutTrace(){a='2nd(Pass without Trace)Any within 30ft radius+10 Dex(Stealth)checks, leave no tracks, can t be tracked by nonmagical means self concentration 1hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function PhantasmalForce(){a='2nd(Phantasmal Force)60ft concentration 10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsInt or Create 10ft cube illusory being',b='0d0+0',c='*False Aura object or being magic appears nonmagic vs versa change school appearance *or Mask being appears as different alignment or racial type',dmgDice='0d0+0',getAction(t1)}
+function PhantasmalForce(){a='2nd(Phantasmal Force)60ft concentration 10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsInt or Create 10ft cube illusory being',b='0d0+0',c='*False Aura object or being magic appears nonmagic vs versa change school appearance*or Mask being appears as different alignment or racial type',dmgDice='0d0+0',getAction(t1)}
 
 function piercRound(){a='(pierc Round)DC8+'+characters[targeted].spellAbility+'+pro vsDex for half, 2h, 1act,5x30ft line',b='0d0+0',c='lightning+dex, 6d6@19th',dmgDice='4d6+0',getAction(t1)}
 
@@ -692,7 +694,7 @@ function Telepathy(){a='1 any language knowning target, 60ft',b='0d0+0',c='commu
 
 function TensorsFloatingDisk(){a='1st(Tenser s Floating Disk)ritual 30ft 1hr',b='0d0+0',c='3ft diame 1in thick floats 3ft above holds 500lbs follows within 20ft of you',dmgDice='0d0+0',getAction(t1)}
 
-function Thaumaturgy(){a='Cantrip(Thaumaturgy)30ft up to 10/10 turns cast 3 times for 3 of the effects below *voice x 3 loud *or flames brighten dim change color *or harmless ground tremors *or Create sound *or unlocked door window open or shut',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function Thaumaturgy(){a='Cantrip(Thaumaturgy)30ft up to 10/10 turns cast 3 times for 3 of the effects below*voice x 3 loud*or flames brighten dim change color*or harmless ground tremors*or Create sound*or unlocked door window open or shut',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function ThornWhip(){a='Cantrip(Thorn Whip)atk+'+characters[targeted].spellAbility+'+pro 30ft m',b='1d20+0',c='pierc+1d6@5,11,17 and target pulled 10ft to you',dmgDice='1d6+0',getAction(t1)}
 
@@ -724,7 +726,7 @@ function FindTraps(){a='2nd(Find Traps)Sense presence of any trap within line of
 
 function FlameBlade(){a='2nd(Flame Blade)Summon a fiery blade 10ft light 1 bonus self concentration 10min melee atk+'+characters[targeted].spellAbility+'+pro',b='0d0+0',c='fire+1d6/slot',dmgDice='3d6+0',getAction(t1)}
 
-function PrayerOfHealing(){a='2nd(Prayer of Healing)6 Creatures heal 2d8+1d8 per slot lvl'+characters[targeted].spellAbility+'hp 10min 30ft',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function PrayerOfHealing(){a='2nd(Prayer of Healing)6 targets, 10min, 30ft',b='0d0+0',c='heal '+characters[targeted].spellAbility+' 1d8 per slot',dmgDice='2d8+0',getAction(t1)}
 
 function ProtectionFromPoison(){a='2nd(Protection from Poison)touch 1 target 1hr',b='0d0+0',c='cured of 1 poison, resists poison dmg, saves vs poison @Adv',dmgDice='0d0+0',getAction(t1)}
 
@@ -736,9 +738,9 @@ function WardingBond(){a='2nd(Warding Bond)1 target+1 AC,+1 saves, resistance al
 
 function AnimateDead(){a='3rd(Animate Dead)10/10 turns 10ft Create 1 medium or 1 small skeleton or zombie+2/slot 60ft bonus command',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function BestowCurse(){a='3rd(Bestow Curse touch concentration 10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsWis or',b='0d0+0',c='*1 abi @DisAdv or *atks you @DisAdv or * vsWis or no actions/turn or *weapon dmg+1d8necro',dmgDice='1d8+0',getAction(t1)}
+function BestowCurse(){a='3rd(Bestow Curse touch concentration 10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsWis or',b='0d0+0',c='*1 abi @DisAdv or*atks you @DisAdv or*vsWis or no actions/turn or*weapon dmg+1d8necro',dmgDice='1d8+0',getAction(t1)}
 
-function Blink(){a='3rd(Blink)self 10/10 turns roll d20 11+ enter the Ethereal Plane ateoet and reappear 10ft @the start of each turn',b='1d20+0',c='',dmgDice='0d0+0',getAction(t1)}
+function Blink(){a='3rd(Blink)self 10/10 turns roll d20 11+enter the Ethereal Plane ateoet and reappear 10ft @the start of each turn',b='1d20+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function CallLightning(){a='3rd(Call Lightning)60ft radius 10 ft tall cloud 100ft above 1 target)DC8+'+characters[targeted].spellAbility+'+pro vsDex for half 120ft concentration 10min',b='0d0+0',c='lightning+1d10/slot',dmgDice='3d10+0',getAction(t1)}
 
@@ -760,7 +762,7 @@ function Fly(){a='3rd(Fly)touch self or ally+1/slot concentration 10min',b='0d0+
 
 function GaseousForm(){a='3rd(Gaseous Form)touch concentration 1hr self or ally and gear',b='0d0+0',c='fly speed 10ft resists nonmagic',dmgDice='0d0+0',getAction(t1)}
 
-function GlyphOfWarding(){a='3rd(Glyph of Warding)1hr touch til dispelled or triggered on 10ft diame of stationary object',b='0d0+0',c='*Explosive Runes 20ft radius 5d8+1d8/slot acid, cold, fire, lightning or thunder *Spell Glyph triggers a 3rd lvl+1/slot or lower spell you know',dmgDice='5d8+0',getAction(t1)}
+function GlyphOfWarding(){a='3rd(Glyph of Warding)1hr touch til dispelled or triggered on 10ft diame of stationary object',b='0d0+0',c='*Explosive Runes 20ft radius 5d8+1d8/slot acid, cold, fire, lightning or thunder*Spell Glyph triggers a 3rd lvl+1/slot or lower spell you know',dmgDice='5d8+0',getAction(t1)}
 
 function Haste(){a='3rd(Haste)30ft concentration 10/10 turns',b='0d0+0',c='you or ally speed x 2 AC+2 dex @Adv+1 Dash, Disengage, Hide or Use Object action spell ends no actions or movement till after its next turn',dmgDice='0d0+0',getAction(t1)}
 
@@ -782,13 +784,13 @@ function ProtectionFromEnergy(){a='3rd(Protection from Energy)touch self or 1 al
 
 function RemoveCurse(){a='3rd(Remove Curse)touch self or 1 ally or 1 object',b='0d0+0',c='curses on the being end, cursed attunement to an object ends',dmgDice='0d0+0',getAction(t1)}
 
-function Sending(){a='3rd(Sending unlim range 10/10 turns',b='0d0+0',c='25 word telepathic message to an int1+ ally that knows it is you and replies 5 percent message does not arrive on alternate plane',dmgDice='0d0+0',getAction(t1)}
+function Sending(){a='3rd(Sending unlim range 10/10 turns',b='0d0+0',c='25 word telepathic message to an int1+ally that knows it is you and replies 5 percent message does not arrive on alternate plane',dmgDice='0d0+0',getAction(t1)}
 
 function SleetStorm(){a='3rd(Sleet Storm)150ft concentration 10/10 turns 40ft radius 20ft tall cylinder)DC8+'+characters[targeted].spellAbility+'+pro vsDex',b='0d0+0',c='enter or start turn obscured difficult terrain, flames doused, prone, concentration ntration vs spell DC',dmgDice='0d0+0',getAction(t1)}
 
-function Slow(){a='3rd(Slow)120ft concentration 10/10 turns 6 targets 40ft cube)DC8+'+characters[targeted].spellAbility+'+pro vsWis',b='1d20+0',c='ac-2, dex-4, no reacts, 1 act or 1 atk, or 1 bonus, d20 11+ caster spell works on next turn or spell wasted vsWis eoiturn',dmgDice='0d0+0',getAction(t1)}
+function Slow(){a='3rd(Slow)120ft concentration 10/10 turns 6 targets 40ft cube)DC8+'+characters[targeted].spellAbility+'+pro vsWis',b='1d20+0',c='ac-2, dex-4, no reacts, 1 act or 1 atk, or 1 bonus, d20 11+caster spell works on next turn or spell wasted vsWis eoiturn',dmgDice='0d0+0',getAction(t1)}
 
-function SpeakWithDead(){a='3rd(Speak with Dead)1 corpse with mouth answers 5 questions with knowledge it had in life; can cast on same every 10 days 10ft 10min',b='0d0+0',c='25 word telepathic message to an int1+ ally that knows it is you and replies 5 percent message does not arrive on alternate plane',dmgDice='0d0+0',getAction(t1)}
+function SpeakWithDead(){a='3rd(Speak with Dead)1 corpse with mouth answers 5 questions with knowledge it had in life; can cast on same every 10 days 10ft 10min',b='0d0+0',c='25 word telepathic message to an int1+ally that knows it is you and replies 5 percent message does not arrive on alternate plane',dmgDice='0d0+0',getAction(t1)}
 
 function SpeakWithPlants(){a='3rd(Speak with Plants)ask about last 24hrs events turn difficult plant terrain to normal or vice versa 30ft radius 10min',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
@@ -838,7 +840,7 @@ function CreateFoodWater(){a='3rd(Create Food/Water)Create 45 pounds of food and
 
 function ConjureMinorElementals(){a='4th(Conjure Minor Elementals)10/10 turns 90ft , concentration 1hr',b='0d0+0',c='1 CR2 or 2 CR1 or 4 CR1/2 or 8 CR1/4 x2@6thSlot x3@8th Slot',dmgDice='0d0+0',getAction(t1)}
 
-function ControlWater(){a='4th(Control Water)300ft concentration 10min 100ft cube of water rise 20ft',b='0d0+0',c='huge or less swept boats 25 percent capsize *or Part Water Create trench *or Redirect Flow *or Whirlpool 50ft sq x 25ft deep pulled down spell vs Athletics to escape or bludg entering or starting turn',dmgDice='2d8+0',getAction(t1)}
+function ControlWater(){a='4th(Control Water)300ft concentration 10min 100ft cube of water rise 20ft',b='0d0+0',c='huge or less swept boats 25 percent capsize*or Part Water Create trench*or Redirect Flow*or Whirlpool 50ft sq x 25ft deep pulled down spell vs Athletics to escape or bludg entering or starting turn',dmgDice='2d8+0',getAction(t1)}
 
 function GreaterInvisibility(){a='4th(Greater Invisibility touch 1 target concentration 10/10 turns',b='0d0+0',c='the target and its items are invisible and atks @Adv, atked @DisAdv',dmgDice='0d0+0',getAction(t1)}
 
@@ -922,7 +924,7 @@ function DominatePerson(){a='5th(Dominate Person)1 humanoid DC8+'+characters[tar
 
 function Dream(){a='5th(Dream You or ally enters a target s dreams, manifesting as a messenger with whom it can communicate 10/10 turns Special 8hrs',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function Geas(){a='5th(Geas)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsWis or charmed; it must obeys commands or 5d10 psych dmg; SL7: 1 year, SL9: til disp. 10/10 turns 60ft 30 days P244',b='0d0+0',c='',dmgDice='5d10+0',getAction(t1)}
+function Geas(){a='5th(Geas)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsWis or charmed; it must obeys commands or 5d10 psych dmg; SL7:1 year, SL9:til disp. 10/10 turns 60ft 30 days P244',b='0d0+0',c='',dmgDice='5d10+0',getAction(t1)}
 
 function GreaterRestoration(){a='5th(Greater Restoration Reduce exhaustion or end charm, petrify, curse, st@or max hp reduction(100gp cons.)touch',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
@@ -934,9 +936,9 @@ function MassCureWounds(){a='5th(Mass Cure Wounds)30ft radius 6 allies heal',b='
 
 function Mislead(){a='5th(Mislead)You invisible and illusionary duplicate of you; move it; bns a switch between its senses and yours Self S concentration 1hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function ModifyMemory(){a='5th(Modify Memory)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsWis or charmed, alter 1 memory of last(SL6: 7, SL7: 30, SL8: 365)day; SL:9 any memory 30ft concentration 10/10 turns P261',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function ModifyMemory(){a='5th(Modify Memory)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsWis or charmed, alter 1 memory of last(SL6:7, SL7:30, SL8:365)day; SL:9 any memory 30ft concentration 10/10 turns P261',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function PlanarBinding(){a='5th(Planar Binding)1 celestial/elem/fey/fiend save or bound; SL6: 10, SL7: 30, SL8: 180, SL9: 366 days(1000gp cons.)Cha 1hr 60ft 24hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function PlanarBinding(){a='5th(Planar Binding)1 celestial/elem/fey/fiend save or bound; SL6:10, SL7:30, SL8:180, SL9:366 days(1000gp cons.)Cha 1hr 60ft 24hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function RaiseDead(){a='5th(Raise Dead Restores a Creature s body that has died in the last 10 days to life with 1 hp;(500gp cons.)1hr touch ',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
@@ -972,7 +974,7 @@ function ChainLightning(){a='6th(Chain Lightning)Lightning bolt 1 target and 3+1
 
 function CompelledDuel(){a='1st(Compelled Duel)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsWis or atk @DisAdv targets other than you save if you move more than 30ft away bonus 30ft concentration 10/10 turns',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function CrusadersMantle(){a='3rd(Crusader s Mantle)',b='0d0+0',c='10/10 turns weapon+ xtra dmg for you and allies within a 30ft radi',dmgDice='3d8+0',getAction(t1)}
+function CrusadersMantle(){a='3rd(Crusader s Mantle)',b='0d0+0',c='10/10 turns weapon+xtra dmg for you and allies within a 30ft radi',dmgDice='3d8+0',getAction(t1)}
 
 function CircleOfPower(){a='5th(Circle of Power)all in 30ft radius v',b='0d0+0',c='save for 0hp when saving for half concentration 10min',dmgDice='0d0+0',getAction(t1)}
 
@@ -992,11 +994,11 @@ function Eyebite(){a='6th(Eyebite)1 target/rnd within 60ft)DC8+'+characters[targ
 
 function FindThePath(){a='6th(Find the Path Know the shortest route to a location you are familiar with and are on the same plane with(100gp)Div 10/10 turns Self concentration 1 day ',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function FleshToStone(){a='6th(Flesh to Stone)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsCon or restrained; save @end of turn, 3 consecutive fail: petrified, 3 consecutive succes: free 60ft concentration 10/10 turns P 243',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function FleshToStone(){a='6th(Flesh to Stone)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsCon or restrained; save @end of turn, 3 consecutive fail:petrified, 3 consecutive succes:free 60ft concentration 10/10 turns P 243',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function GuardsAndWards(){a='6th(Guards and Wards)Protect an area with an assortment of effects including fog, web, illusions and locks(10gp)10min touch 24hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function MassSuggestion(){a='6th(Mass Suggestion)12 targets save or follow stated course of action; SL7: 10 day; SL8: 30 days; SL9: 366 days;)DC8+'+characters[targeted].spellAbility+'+pro vsWis 60ft 24hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function MassSuggestion(){a='6th(Mass Suggestion)12 targets save or follow stated course of action; SL7:10 day; SL8:30 days; SL9:366 days;)DC8+'+characters[targeted].spellAbility+'+pro vsWis 60ft 24hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function MoveEarth(){a='6th(Move Earth)Every 10min of concentration ntration, gradually reshape 40 cu ft of dirt, sand, or clay; 120ft concentration 2hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
@@ -1020,7 +1022,7 @@ function Harm(){a='6th(Harm 1 target 14d6 Necrotic dmg, reduce max hp by same; n
 
 function Heal(){a='6th(Heal)60ft 1 target',b='0d0+0',c='heals 70+10/slot lvl hp and is cured of blindness, deafness, and all diseases',dmgDice='0d0+70',getAction(t1)}
 
-function HeroesFeast(){a='6th(Heroes Feast You+12 targets; 1h to consume; for 24h: disease/poison immune,+2d10 max hp,(1000gp cons.)10min 30ft',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function HeroesFeast(){a='6th(Heroes Feast You+12 targets; 1h to consume; for 24h:disease/poison immune,+2d10 max hp,(1000gp cons.)10min 30ft',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function PlanarAlly(){a='6th(Planar Ally Otherwordly entity sends celestial, elemental or fiend to a location near you; 10min 60ft P265',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
@@ -1076,7 +1078,7 @@ function AnimalShapes(){a='8th(Animal Shapes)Any willing Creatures transform int
 
 function Demiplane(){a='8th(Demiplane)Create door to a demiplane of 30ft cubebe; when spell ends, Creatures inside remain trapped 60ft 1hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function DominateMonster(){a='8th(Dominate Monster)1 target save or charmed, follows telepathic commands, for complete control; SL9: conc, 8h)DC8+'+characters[targeted].spellAbility+'+pro vsWis 60ft concentration 1hr ',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function DominateMonster(){a='8th(Dominate Monster)1 target save or charmed, follows telepathic commands, for complete control; SL9:conc, 8h)DC8+'+characters[targeted].spellAbility+'+pro vsWis 60ft concentration 1hr ',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function Feeblemind(){a='8th(Feeblemind)1 target 4d6 psych dmg and)DC8+'+characters[targeted].spellAbility+'+pro vsInt or Int and Cha become 1; xtra save every 30 days to end spell 150ft ',b='0d0+0',c='',dmgDice='4d6+0',getAction(t1)}
 
@@ -1160,7 +1162,7 @@ function Skywrite(){a='2nd(Skywrite)transmutation 1act range sight concentration
 
 function DrawmijsInstantSummons(){a='6th(Drawmij s Instant Summons)Link object to a sapphire 1000gp crush gem to summon the unattended object or learn of wielder 10/10 turns touch Till dispelled',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function FleshToStone(){a='6th(Flesh to Stone)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsCon or restrained; save @end of turn, 3 consecutive fail: petrified, 3 consecutive succes: free 60ft concentration 10/10 turns P 243',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function FleshToStone(){a='6th(Flesh to Stone)1 target)DC8+'+characters[targeted].spellAbility+'+pro vsCon or restrained; save @end of turn, 3 consecutive fail:petrified, 3 consecutive succes:free 60ft concentration 10/10 turns P 243',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function GlobeOfInvulnerability(){a='6th(Globe of Invulnerability)spells less than(6+1/slot lvl)cast outside area cannot effect inside area 10ft radius concentration 10/10 turns',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
@@ -1174,7 +1176,7 @@ function InvestitureOfWind(){a='6th Investiture of Wind)Ranged wea atks dis. vs.
 
 function MagicJar(){a='6th Magic Jar)Transport your soul into container from which you can attempt to possess humanoids;(500gp)10/10 turns Self Till dispelled P 257',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function MassSuggestion(){a='6th Mass Suggestion)12 targets save or follow stated course of action; SL7: 10 day; SL8: 30 days; SL9: 366 days; DC8+'+characters[targeted].spellAbility+'+pro vsWis 60ft 24hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function MassSuggestion(){a='6th Mass Suggestion)12 targets save or follow stated course of action; SL7:10 day; SL8:30 days; SL9:366 days; DC8+'+characters[targeted].spellAbility+'+pro vsWis 60ft 24hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function OtilukesFreezingSphere(){a='6th Oti. Freezing Sphere)60ft radius all 10d6+1d6/slot lvl Cold dmg; save halves; freezes water; can save up to 10/10 turns before using DC8+'+characters[targeted].spellAbility+'+pro vsDex 300ft P 263',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
@@ -1198,11 +1200,11 @@ function Shapechange(){a='9th Shapechange)Take form of Creature with CR of CL or
 
 function Weird(){a='9th(Weird)30ft radius all save or frightened for duration; xtra save @end of each round or 4d10 psych dmg DC8+'+characters[targeted].spellAbility+'+pro vsWis 120ft concentration 10/10 turns',b='0d0+0',c='psychic',dmgDice='4d10+0',getAction(t1)}
 
-function Puppet(){a='1st(Puppet)1act, 120 feet, S, instantaneous, 1 target,)DC8+'+characters[targeted].spellAbility+'+pro vsCon',b='0d0+0',c='target drops everything and runs max speed in direction caster chooses',dmgDice='0d0+0',getAction(t1)}
+function Puppet(){a='1st(Puppet)1act, 120ft, S, instantaneous, 1 target,)DC8+'+characters[targeted].spellAbility+'+pro vsCon',b='0d0+0',c='target drops everything and runs max speed in direction caster chooses',dmgDice='0d0+0',getAction(t1)}
 
 function GlobeOfInvulnerability(){a='6th(Globe of Invulnerability)SL less than(6+1/slot lvl)cast outside area cannot effect inside area; casting with a higher spell slot does not help 10ft radius concentration 10/10 turns P 245',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
-function MassSuggestion(){a='6th(Mass Suggestion)12 targets save or follow stated course of action; SL7: 10 day; SL8: 30 days; SL9: 366 days;)DC8+'+characters[targeted].spellAbility+'+pro vsWis 60ft 24hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function MassSuggestion(){a='6th(Mass Suggestion)12 targets save or follow stated course of action; SL7:10 day; SL8:30 days; SL9:366 days;)DC8+'+characters[targeted].spellAbility+'+pro vsWis 60ft 24hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 
 function Disintegrate(){a='6th(Disintegrate)1 target save or 10d6+3d6 per slot lvl 40 Force dmg; or up to 10ft cube nonmagical object is destroyed)DC8+'+characters[targeted].spellAbility+'+pro vsDex 60ft P 233',b='0d0+0',c='',dmgDice='10d6+0',getAction(t1)}
 
@@ -1234,13 +1236,13 @@ function AuraOfLife(){a='4th(Aura of Life)',b='0d0+0',c='resist heals all 0hp wi
 
 function StaggeringSmite(){a='4th(Staggering Smite)DC8+'+characters[targeted].spellAbility+'+pro vsWis',b='0d0+0',c='psych+roll @DisAdv+no reacts til eoynt',dmgDice='4d6+0',getAction(t1)}
 
-function DestructiveSmite(){a='5th(Destructive Smite)DC8+'+characters[targeted].spellAbility+'+pro vsvsCon for half 30ft radius v',b='0d0+0',c='5d6 thunder dmg+ 5d6 radiant or necrotic dmg+knocked prone',dmgDice='10d6+0',getAction(t1)}
+function DestructiveSmite(){a='5th(Destructive Smite)DC8+'+characters[targeted].spellAbility+'+pro vsvsCon for half 30ft radius v',b='0d0+0',c='5d6 thunder dmg+5d6 radiant or necrotic dmg+knocked prone',dmgDice='10d6+0',getAction(t1)}
 
 function RaiseDead(){a='5th(Raise Dead)Restores a Creature s body that has died in the last 10 days to life with 1 hp costs 500gp, 1hr, touch ',b='0d0+0',c='heal',dmgDice='0d0+1',getAction(t1)}
 
 function HailOfThorns(){a='1st(Hail of Thorns)DC8+'+characters[targeted].spellAbility+'+pro vsDex for half next ranged weapon atk, all within 5ft of target bonus self concentration 10/10 turns',b='0d0+0',c='pierc+1d10/slot',dmgDice='1d10+0',getAction(t1)}
 
-function HuntersMark(){a='1st(Hunter s Mark)Perception/Survival @Adv vs target slot3 8hrs slot5 24hrs bonus 90ft concentration 1hr',b='0d0+0',c='weapon+ xtra 1d6 transfer mark after target dies',dmgDice='1d6+0',getAction(t1)}
+function HuntersMark(){a='1st(Hunter s Mark)Perception/Survival @Adv vs target slot3 8hrs slot5 24hrs bonus 90ft concentration 1hr',b='0d0+0',c='weapon+xtra 1d6 transfer mark after target dies',dmgDice='1d6+0',getAction(t1)}
 
 function SmokeStick(){a='(Smoke Stick)1act, 30ft 10ft rad',b='0d0+0',c='blocks vision and darkvision 1min, recharge 1min',dmgDice='0d0+0',getAction(t1)}
 
@@ -2348,21 +2350,21 @@ else{characters[x].setToggled6("none");
 document.getElementById('toggled6'+x).style.display=characters[x].toggled6;}
 }
 $(".draggable").draggable(
-{snap: ".map",
-grid: [50, 50],
-snapMode: 'inner',
-snapTolerance: 50,
-scroll: 'true',
-refreshPositions: true,
-stack: 'div',
-stackOption: 'both',
+{snap:".map",
+grid:[50, 50],
+snapMode:'inner',
+snapTolerance:50,
+scroll:'true',
+refreshPositions:true,
+stack:'div',
+stackOption:'both',
 });
 characterBoxWidth=100;
 characterBoxHeight="*";
 characters=new Array();
 currentElementId=0;
 PC="PC";
-menuWidth=0;
+menuWidth=80;
 pcBox=new AGEBox();
 pcMenu=new AGEBox();
 savePaneBox=new AGEBox();
@@ -2515,7 +2517,7 @@ characters[targeted].setImmunity('');
 if(immune=stats.match(/(Damage\sImmunities)([\s\S]*?)(Damage\sResistance|Damage\sCondition|Condition\sImmuniti|Senses)/)){characters[targeted].setImmunity(immune[2])}
 else{characters[targeted].setImmunity('')}
 
-if( dmgimmune=stats.match(/Condition\sImmunities\s([\s\S]*?)Senses/)){characters[targeted].setDamageConditions('immune to '+ dmgimmune[1])}
+if( dmgimmune=stats.match(/Condition\sImmunities\s([\s\S]*?)Senses/)){characters[targeted].setDamageConditions('immune to '+dmgimmune[1])}
 else{characters[targeted].setDamageConditions('')}
 
 if(vulnerable=stats.match(/Vulnerabilities\s([\s\S]*?)(?:Senses|Condition\s|Damage\s)/)){characters[targeted].setVulnerability(vulnerable[1])}
@@ -2540,37 +2542,37 @@ characters[targeted].setSpellAbility(casting[1].toLowerCase());}
 if(actnotes=stats.match(/XP\)([\s\S].*)ACTIONS/i)){characters[targeted].setActionNotes(actnotes[1])
 }
 characters[targeted].setStrPro('');
-if(savingThrows=stats.match(/Str\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].strMod))){characters[targeted].setStrPro('exp')
+if(savingThrows=stats.match(/Str\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].strMod))){characters[targeted].setStrPro('exp')
 }
  else{characters[targeted].setStrPro('pro')
 }
 };
 characters[targeted].setDexPro('');
-if(savingThrows=stats.match(/Dex\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].dexMod))){characters[targeted].setDexPro('exp')
+if(savingThrows=stats.match(/Dex\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].dexMod))){characters[targeted].setDexPro('exp')
 }
  else{characters[targeted].setDexPro('pro')
 }
 };
 characters[targeted].setConPro('');
-if(savingThrows=stats.match(/Con\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].conMod))){characters[targeted].setConPro('exp')
+if(savingThrows=stats.match(/Con\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].conMod))){characters[targeted].setConPro('exp')
 }
  else{characters[targeted].setConPro('pro')
 }
 };
 characters[targeted].setIntPro('');
-if(savingThrows=stats.match(/Int\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].intMod))){characters[targeted].setIntPro('exp')
+if(savingThrows=stats.match(/Int\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].intMod))){characters[targeted].setIntPro('exp')
 }
  else{characters[targeted].setIntPro('pro')
 }
 };
 characters[targeted].setWisPro('');
-if(savingThrows=stats.match(/Wis\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].wisMod))){characters[targeted].setWisPro('exp')
+if(savingThrows=stats.match(/Wis\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].wisMod))){characters[targeted].setWisPro('exp')
 }
  else{characters[targeted].setWisPro('pro')
 }
 };
 characters[targeted].setChaPro('');
-if(savingThrows=stats.match(/Cha\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].chaMod))){characters[targeted].setChaPro('exp')
+if(savingThrows=stats.match(/Cha\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].chaMod))){characters[targeted].setChaPro('exp')
 }
  else{characters[targeted].setChaPro('pro')
 }
@@ -2581,109 +2583,109 @@ if(skills=stats.match(/Skills\s([\s\S]*?)(Senses|Condition\sI|Damage\sI|Damage\s
 };
 characters[targeted].setAthletics('');
 if(skills=stats.match(/Athletics\s\+(\d{1,2})/)){
-if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].dexMod))){characters[targeted].setAthletics('exp')
+if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].dexMod))){characters[targeted].setAthletics('exp')
 }
  else{characters[targeted].setAthletics('pro')
 }
 };
 characters[targeted].setAcrobatics('');
-if(skills=stats.match(/Acrobatics\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].dexMod))){characters[targeted].setAcrobatics('exp')
+if(skills=stats.match(/Acrobatics\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].dexMod))){characters[targeted].setAcrobatics('exp')
 }
  else{characters[targeted].setAcrobatics('pro')
 }
 };
 characters[targeted].setSleight('');
-if(skills=stats.match(/Sleight\sof\sHand\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].dexMod))){characters[targeted].setSleight('exp')
+if(skills=stats.match(/Sleight\sof\sHand\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].dexMod))){characters[targeted].setSleight('exp')
 }
  else{characters[targeted].setSleight('pro')
 }
 };
 characters[targeted].setStealth('');
-if(skills=stats.match(/Stealth\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].dexMod))){characters[targeted].setStealth('exp')
+if(skills=stats.match(/Stealth\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].dexMod))){characters[targeted].setStealth('exp')
 }
  else{characters[targeted].setStealth('pro')
 }
 };
 characters[targeted].setArcana('');
-if(skills=stats.match(/Arcana\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].intMod))){characters[targeted].setArcana('exp')
+if(skills=stats.match(/Arcana\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].intMod))){characters[targeted].setArcana('exp')
 }
  else{characters[targeted].setArcana('pro')
 }
 };
 characters[targeted].setHistory('');
-if(skills=stats.match(/History\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].intMod))){characters[targeted].setHistory('exp')
+if(skills=stats.match(/History\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].intMod))){characters[targeted].setHistory('exp')
 }
  else{characters[targeted].setHistory('pro')
 }
 };
 characters[targeted].setInvestigation('');
-if(skills=stats.match(/Investigation\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].intMod))){characters[targeted].setInvestigation('exp')
+if(skills=stats.match(/Investigation\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].intMod))){characters[targeted].setInvestigation('exp')
 }
  else{characters[targeted].setInvestigation('pro')
 }
 };
 characters[targeted].setNature('');
-if(skills=stats.match(/Nature\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].intMod))){characters[targeted].setNature('exp')
+if(skills=stats.match(/Nature\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].intMod))){characters[targeted].setNature('exp')
 }
  else{characters[targeted].setNature('pro')
 }
 };
 characters[targeted].setReligion('');
-if(skills=stats.match(/Religion\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].intMod))){characters[targeted].setReligion('exp')
+if(skills=stats.match(/Religion\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].intMod))){characters[targeted].setReligion('exp')
 }
  else{characters[targeted].setReligion('pro')
 }
 };
 characters[targeted].setAnimal('');
-if(skills=stats.match(/Animal\sHandling\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].wisMod))){characters[targeted].setAnimal('exp')
+if(skills=stats.match(/Animal\sHandling\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].wisMod))){characters[targeted].setAnimal('exp')
 }
  else{characters[targeted].setAnimal('pro')
 }
 };
 characters[targeted].setInsight('')
-if(skills=stats.match(/Insight\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].wisMod))){characters[targeted].setInsight('exp')
+if(skills=stats.match(/Insight\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].wisMod))){characters[targeted].setInsight('exp')
 }
  else{characters[targeted].setInsight('pro')
 }
 };
 characters[targeted].setMedicine('')
-if(skills=stats.match(/Medicine\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].wisMod))){characters[targeted].setMedicine('exp')
+if(skills=stats.match(/Medicine\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].wisMod))){characters[targeted].setMedicine('exp')
 }
  else{characters[targeted].setMedicine('pro')
 }
 };
 characters[targeted].setPerception('');
-if(skills=stats.match(/Perception\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].wisMod))){characters[targeted].setPerception('exp')
+if(skills=stats.match(/Perception\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].wisMod))){characters[targeted].setPerception('exp')
 }
  else{characters[targeted].setPerception('pro')
 }
 };
 characters[targeted].setSurvival('');
-if(skills=stats.match(/Survival\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].wisMod))){characters[targeted].setSurvival('exp')
+if(skills=stats.match(/Survival\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].wisMod))){characters[targeted].setSurvival('exp')
 }
  else{characters[targeted].setSurvival('pro')
 }
 };
 characters[targeted].setDeception('');
-if(skills=stats.match(/Deception\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].chaMod))){characters[targeted].setDeception('exp')
+if(skills=stats.match(/Deception\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].chaMod))){characters[targeted].setDeception('exp')
 }
  else{characters[targeted].setDeception('pro')
 }
 };
 characters[targeted].setIntimidation('');
-if(skills=stats.match(/Intimidation\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].chaMod))){characters[targeted].setIntimidation('exp')
+if(skills=stats.match(/Intimidation\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].chaMod))){characters[targeted].setIntimidation('exp')
 }
  else{characters[targeted].setIntimidation('pro')
 }
 };
 characters[targeted].setPerformance('');
-if(skills=stats.match(/Performance\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].chaMod))){characters[targeted].setPerformance('exp')
+if(skills=stats.match(/Performance\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].chaMod))){characters[targeted].setPerformance('exp')
 }
  else{characters[targeted].setPerformance('pro')
 }
 };
 characters[targeted].setPersuasion('');
-if(skills=stats.match(/Persuasion\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+ parseInt(characters[targeted].chaMod))){characters[targeted].setPersuasion('exp')
+if(skills=stats.match(/Persuasion\s\+(\d{1,2})/)){if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].chaMod))){characters[targeted].setPersuasion('exp')
 }
 else{
 characters[targeted].setPersuasion('pro')
@@ -2717,6 +2719,7 @@ if(weapon=stats.match(/morningstar/i)){this.Morningstar()}
 if(weapon=stats.match(/quarterstaff/i)){this.Quarterstaff()}
 if(weapon=stats.match(/shortsword/i)){this.Shortsword()}
 if(weapon=stats.match(/shortbow/i)){this.Shortbow()}
+if(weapon=stats.match(/spear/i)){this.Spear()}
 //Cantrips
 if(spell=stats.match(/chill\stouch/i)){this.ChillTouch()}
 if(spell=stats.match(/dancing\slights/i)){this.DancingLights()}
@@ -2862,7 +2865,7 @@ checkTheTarget();}
 function _getSaveText(){this.updateXY();
 varName="";
 varName="pc";
-varName+=Math.ceil(Math.random()* 10000);
+varName+=Math.ceil(Math.random()*10000);
 toSave="\/\/"+this.name+"<br>";
 toSave+=varName+"=new Character('"+this.name+"','"+this.type+"')<br>";
 for(var i=0; i<this.rolls.length; i++){toSave+="<tr draggable='true' ondragstart='start()' ondragover='dragover()'><td>"+varName+".addRoll('"+this.rollNames[i]+"','"+this.rolls[i]+"','"+this.rollNames2[i]+"','"+this.rolls2[i]+"')</td></tr>";}
@@ -2961,7 +2964,7 @@ document.getElementById(this.elementId).style.left=x;}
 function _putCharAt(x, y){this.x=x;
 this.y=y;
 numX=x.substring(0, x.length - 2);
-menuX=(numX / 1+characterBoxWidth)+ "px";
+menuX=(numX / 1+characterBoxWidth)+"px";
 this.box.putAt(x, y);
 this.menu.putAt(menuX, y);}
 $("input[name='id_radioname']").on('change',function(e){var value=$("input[name='id_radioname']:checked").val();
@@ -2970,145 +2973,143 @@ location.reload();})
 
 function _ref(){boxContents="<img src='"+this.figure+"'> ";
 boxContents+="<table><tr><td>"+this.name;
-boxContents+="</td></tr><tr><td>HP:"+this.curHp+"/"+this.maxHp;
+boxContents+="</td></tr><tr><td>HP:"+this.maxHp+"/"+this.curHp;
 boxContents+="</td></tr><tr><td>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
 boxContents+="</td></tr><tr><td><input type='button' onClick='toggleMenu("+this.index+")' value='Show stats?'>";
 boxContents+="</td></tr><tr><td>Initiative:"+this.init;
 boxContents+="</td></tr></table>"
 this.box.setContents(boxContents);
 
-menuContents="<table><tr><td><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+")'>"
-menuContents+="</td><td colspan='2'>Initiative bonus:<input maxLength=4 onChange='characters["+this.index+"].setInitBonus(this.value)'size=4 type='text' value="+this.initBonus+">/"+this.curIni;
-menuContents+="</td><td>Spell Ability:<select onChange='characters["+this.index+"].setSpellAbility(this.value)'><option>"+this.spellAbility+"<option>int<option>wis<option>cha</select>"+this.spellAbilityNumber;
-menuContents+="</td><td>lvl (Pro)ficiency:<input maxLength=4 onChange='characters["+this.index+"].setPro(this.value)'size=4 type='text' value='"+this.pro+"'>";
-menuContents+="</td><td>(Sit)uation modifier:<input maxLength=4 onChange='characters["+this.index+"].setSit(this.value)'size=4 type='text' value="+this.sit+">";
+menuContents="<table><tr><td>"+this.combatLog;
 
-menuContents+="</td></tr><tr><td colspan='6'>"+this.combatLog;
-
+menuContents+="</td></tr></table><br><table><tr><td><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+")'>"
+menuContents+="<br>Ini bonus:<input maxLength='3' onChange='characters["+this.index+"].setInitBonus(this.value)'size='3' type='text' value="+this.initBonus+">/"+this.curIni;
+menuContents+="</td><td>Spell (Abi)lity:<select onChange='characters["+this.index+"].setSpellAbility(this.value)'><option>"+this.spellAbility+"<option>int<option>wis<option>cha</select>"+this.spellAbilityNumber;
+menuContents+="</td><td>Lvl (Pro)ficiency:<input maxLength='3' onChange='characters["+this.index+"].setPro(this.value)'size='3' type='text' value='"+this.pro+"'>";
+menuContents+="</td><td>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value)'size='3' type='text' value="+this.sit+">";
+menuContents+="</td><td><input type='button' onClick='characters["+this.index+"].save()'value='Save this character?'>";
+menuContents+="</td><td><input type='button' value='Delete this character?'onClick='removeChar("+this.index+")'>";
 menuContents+="</td></tr><tr><td><h3>Show</h3>"
-menuContents+="</td><td><input onClick='toggleTab1("+this.index+")' type='button' value='Name AC HP?'>";
+menuContents+="</td><td><input onClick='toggleTab1("+this.index+")' type='button' value='AC, HP?'>";
 menuContents+="</td><td><input onClick='toggleTab5("+this.index+")' type='button' value=' Abilities?'>";
 menuContents+="</td><td><input onClick='toggleTab6("+this.index+")' type='button' value=' Actions?'>";
-menuContents+="</td><td><input onClick='toggleTab2("+this.index+")' type='button' value=' Background?'>";
+menuContents+="</td><td><input onClick='toggleTab2("+this.index+")' type='button' value=' Name, Race, Background?'>";
 menuContents+="</td><td><input onClick='toggleTab4("+this.index+")' type='button' value=' Class?'>";
 
 menuContents+="</td></tr></table><span id=toggled1"+this.index+" style='display:"+this.toggled1+"'>";
 
-menuContents+="<table><tr><td><table><tr><td>Name:<input class=name maxLength=50 onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size=20 type='text' value='"+this.name+"'>";
-menuContents+="</td><td>Size:<select onChange='characters["+this.index+"].setSize(this.value)'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>"
-menuContents+="</td><td rowspan='3'>Traits :<textArea cols='25' rows='3' onChange='characters["+this.index+"].setTrait(this.value)'placeHolder='Gender, Age, Color, Height, Weight'>"+this.trait+"</textarea>";
-menuContents+="</td></tr><tr><td>Speed :<input onChange='characters["+this.index+"].setSpeed(this.value)' size='25' type='text' value='"+this.speed+"'>";
-menuContents+="</td><td>Senses :<input onChange='characters["+this.index+"].setSenses(this.value)' size='25' type='text' value='"+this.senses+"'>";
-menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td>Race:<select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tiefling<option>Tiefling, Mephistopheles<option>Yuan-Ti</select>";
-menuContents+="</td><td><input onChange='characters["+this.index+"].setRace(this.value)' placeHolder='other race' size='25' type='ptext'>";
-menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td rowspan='2'>Armor Class(AC):<input maxLength=2 onChange='characters["+this.index+"].setAC(this.value)'size=2 type='text' value="+this.ac+">/"+this.curAc;
-menuContents+="</td><td><select onChange='characters["+this.index+"].setArmor(this.value)'><option>"+this.armor+"<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth @DisAdv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth @DisAdv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth @DisAdv<option>Ring AC14 Stealth @DisAdv<option>Chain Mail AC16 Stealth @DisAdv str13<option>Splint AC17 Stealth @DisAdv str15<option>Plate AC18 Stealth @DisAdv str15<option>Unarmored Defense AC10+dex+wis</select>";
-menuContents+="</td><td><input onChange='characters["+this.index+"].setArmor(this.value)' placeHolder='other armor or magical defense' size='25' type='text'>";
-menuContents+="</td></tr><tr><td><select onChange='characters["+this.index+"].setShield(this.value)'><option>"+this.shield+"<option>No Shield AC+0<option>Shield AC+2</select>";
-menuContents+="</td><td><input onChange='characters["+this.index+"].setShield(this.value)' placeHolder='other shield or magical defense' size='25' type='text'>";
-menuContents+="</td></tr><tr><td>Resistance:<input onChange='characters["+this.index+"].setResistance(this.value)' size='25' value='"+this.resistance+"'>";
-menuContents+="</td><td>Damage Immunity:<input onChange='characters["+this.index+"].setImmunity(this.value)' size='25' value='"+this.immunity+"'>";
-menuContents+="</td><td>Vulnerability:<input onChange='characters["+this.index+"].setVulnerability(this.value)' size='25' value='"+this.vulnerability+"'>";
-menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td>Hit Points(HP):<input maxLength=4 onChange='characters["+this.index+"].setMaxHp(this.value)' size=4 type='text' value="+this.maxHp+">";
-menuContents+="/<input maxLength=4 onChange='characters["+this.index+"].setCurHp(this.value)' size=4 type='text' value="+this.curHp+"> Temp HP:"+this.tempHp+"";
-menuContents+="</td><td>Take dmg?<input maxLength=4 onChange='characters["+this.index+"].setDmg(this.value)'size=4 type='text'>";
-menuContents+="</td><td>Heal up?<input maxLength=4 onChange='characters["+this.index+"].setHealing(this.value)'size=4 type='text'>";
-menuContents+="</td></tr><tr><td>Hit Dice(HD):<input maxLength=10 onChange='characters["+this.index+"].setHitDice(this.value)' placeHolder='XdY+Z' size=10 type='text' value='"+this.hitDice+"'>";
-menuContents+="</td><td colspan='2'>Damage Conditions : <textArea cols='45' rows=2 onChange='characters["+this.index+"].setDamageConditions(this.value)'placeHolder='temp hp+10, ac-1, str+1, ini+3, blinded'>"+this. dmgConditions+"</textArea>"
-menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td>Miniature File :<input onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='25' type='text' value='"+this.figure+"'>";
-menuContents+="</td><td><input type='button' onClick='characters["+this.index+"].save()'value='Savethis character?'>";
-menuContents+="</td><td><input type='button' value='Delete this character?'onClick='removeChar("+this.index+")'>";
+menuContents+="</td><td><table width='850px'><tr><td>Size:<select onChange='characters["+this.index+"].setSize(this.value)'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>"
+menuContents+="</td><td>Speed:<input maxLength='20' onChange='characters["+this.index+"].setSpeed(this.value)' size='20' type='text' value='"+this.speed+"'>";
+menuContents+="</td><td>Senses:<input maxLength='20' onChange='characters["+this.index+"].setSenses(this.value)' size='20' type='text' value='"+this.senses+"'>";
+menuContents+="</td></tr><tr><td>Armor Class(AC):<input maxLength='2' onChange='characters["+this.index+"].setAC(this.value)'size=2 type='text' value="+this.ac+">/"+this.curAc;
+menuContents+="</td><td><select onChange='characters["+this.index+"].setArmor(this.value)'><option>"+this.armor+"<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth @DisAdv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth @DisAdv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth @DisAdv<option>Ring AC14 Stealth @DisAdv<option>Chain Mail AC16 Stealth @DisAdv str13<option>Splint AC17 Stealth @DisAdv str15<option>Plate AC18 Stealth @DisAdv str15<option>Unarmored Defense AC10+dex+con<option>Unarmored Defense AC10+dex+wis</select>";
+menuContents+="<br><input maxLength='20' onChange='characters["+this.index+"].setArmor(this.value)' placeHolder='other armor or magical defense' size='20' type='text'>";
+menuContents+="</td><td><select onChange='characters["+this.index+"].setShield(this.value)'><option>"+this.shield+"<option>No Shield AC+0<option>Shield AC+2</select>";
+menuContents+="<br><input maxLength='20' onChange='characters["+this.index+"].setShield(this.value)' placeHolder='other shield or magical defense' size='20' type='text'>";
+menuContents+="</td></tr><tr><td>Resistance(1/2dmg):<input maxLength='20' onChange='characters["+this.index+"].setResistance(this.value)' size='20' value='"+this.resistance+"'>";
+menuContents+="</td><td>Damage Immunity(0dmg):<input maxLength='20' onChange='characters["+this.index+"].setImmunity(this.value)' size='20' value='"+this.immunity+"'>";
+menuContents+="</td><td>Vulnerability(2Xdmg):<input maxLength='20' onChange='characters["+this.index+"].setVulnerability(this.value)' size='20' value='"+this.vulnerability+"'>";
+menuContents+="</td></tr><tr><td>Hit Points(HP):<input maxLength='3' onChange='characters["+this.index+"].setMaxHp(this.value)' size='3' type='text' value="+this.maxHp+">";
+menuContents+="/<input maxLength='3' onChange='characters["+this.index+"].setCurHp(this.value)' size='3' type='text' value="+this.curHp+"><br>Temp HP:"+this.tempHp+"";
+menuContents+="</td><td>Take dmg?<input maxLength='4' onChange='characters["+this.index+"].setDmg(this.value)'size='4' type='text'>";
+menuContents+="</td><td>Heal up?<input maxLength='4' onChange='characters["+this.index+"].setHealing(this.value)'size='4' type='text'>";
+menuContents+="</td></tr><tr><td>Hit Dice(HD):<input maxLength='10' onChange='characters["+this.index+"].setHitDice(this.value)' placeHolder='XdY+Z' size=10 type='text' value='"+this.hitDice+"'>";
+menuContents+="</td><td colspan='2'>Damage Conditions:<textArea cols='40' rows=2 onChange='characters["+this.index+"].setDamageConditions(this.value)'placeHolder='temp hp+10, ac-1, str+1, ini+3, blinded'>"+this. dmgConditions+"</textArea>"
+menuContents+="</td></tr><tr><td>Miniature File:<input maxLength='20' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='20' type='text' value='"+this.figure+"'>";
 
 menuContents+="</td></tr></table></td></tr></table></span><span id=toggled5"+this.index+" style='display:"+this.toggled5+"'>";
 
-menuContents+="<table><tr><td><table><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'>score:<input maxLength=2 onChange='characters["+this.index+"].setStr(this.value)'size=2 type='text' value="+this.str+">/"+this.curStr+" mod:"+this.strMod+"+<select onChange='characters["+this.index+"].setStrPro(this.value)'><option>"+this.strPro+"<option><option>pro<option>exp</select>"
+menuContents+="<table width='850px'><tr><td><table><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'>score:<input maxLength='2' onChange='characters["+this.index+"].setStr(this.value)'size=2 type='text' value="+this.str+">/"+this.curStr+" mod:"+this.strMod+"+<select onChange='characters["+this.index+"].setStrPro(this.value)'><option>"+this.strPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=10;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].athletics;abiRoll("+this.index+")'value='Roll Athletics(str)?'type='button'>+<select onChange='characters["+this.index+"].setAthletics(this.value)'><option>"+this.athletics+"<option><option>pro<option>exp</select>";
 menuContents+="</td></tr><tr><td>Carrying Capacity:"+this.carryingCapacity+"lbs";
 menuContents+="</td></tr><tr><td>Drag, Lift, Push:"+this.dragLiftPush+"lbs";
 menuContents+="</td></tr><tr><td>High Jump:"+this.highJump+"ft"
 menuContents+="</td></tr><tr><td>Long Jump:"+this.longJump+"ft";
-menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'>score:<input maxLength=2 onChange='characters["+this.index+"].setDex(this.value)'size=2 type='text' value="+this.dex+">/"+this.curDex+" mod:"+this.dexMod+"+<select onChange='characters["+this.index+"].setDexPro(this.value)'><option>"+this.dexPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'>score:<input maxLength='2' onChange='characters["+this.index+"].setDex(this.value)'size=2 type='text' value="+this.dex+">/"+this.curDex+" mod:"+this.dexMod+"+<select onChange='characters["+this.index+"].setDexPro(this.value)'><option>"+this.dexPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=7;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].acrobatics;abiRoll("+this.index+")'value='Roll Acrobatics(dex)?'type='button'>+<select onChange='characters["+this.index+"].setAcrobatics(this.value)'><option>"+this.acrobatics+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=22;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].sleight;abiRoll("+this.index+")'value='Roll Sleight of Hand(dex)?'type='button'>+<select onChange='characters["+this.index+"].setSleight(this.value)'><option>"+this.sleight+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=23;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].stealth;abiRoll("+this.index+")'value='Roll Stealth(dex)?'type='button'>+<select onChange='characters["+this.index+"].setStealth(this.value)'><option>"+this.stealth+"<option><option>pro<option>exp</select>";
-menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'>score:<input maxLength=2 onChange='characters["+this.index+"].setCon(this.value)'size=2 type='text' value="+this.con+">/"+this.curCon+" mod:"+this.conMod+"+<select onChange='characters["+this.index+"].setConPro(this.value)'><option>"+this.conPro+"<option><option>pro<option>exp</select>"
-menuContents+="</td></tr><tr><td>Hold Breath:"+(parseInt(this.conMod)+ 1)+ "min"
-menuContents+="</td></tr><tr><td>Suffocate:"+parseInt(this.conMod)+ "min";
+menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'>score:<input maxLength='2' onChange='characters["+this.index+"].setCon(this.value)'size=2 type='text' value="+this.con+">/"+this.curCon+" mod:"+this.conMod+"+<select onChange='characters["+this.index+"].setConPro(this.value)'><option>"+this.conPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr><tr><td>Hold Breath:"+(parseInt(this.conMod)+1)+"min"
+menuContents+="</td></tr><tr><td>Suffocate:"+parseInt(this.conMod)+"min";
 
-menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'>score:<input maxLength=2 onChange='characters["+this.index+"].setInt(this.value)'size=2 type='text' value="+this.inte+">/"+this.curInt+" mod:"+this.intMod+"+<select onChange='characters["+this.index+"].setIntPro(this.value)'><option>"+this.intPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'>score:<input maxLength='2' onChange='characters["+this.index+"].setInt(this.value)'size=2 type='text' value="+this.inte+">/"+this.curInt+" mod:"+this.intMod+"+<select onChange='characters["+this.index+"].setIntPro(this.value)'><option>"+this.intPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=9;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].arcana;abiRoll("+this.index+")'value='Roll Arcana(int)?'type='button'>+<select onChange='characters["+this.index+"].setArcana(this.value)'><option>"+this.arcana+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=12;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].History;abiRoll("+this.index+")'value='Roll History(int)?'type='button'>+<select onChange='characters["+this.index+"].setHistory(this.value)'><option>"+this.history+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=15;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].investigation;abiRoll("+this.index+")'value='Roll Investigation(int)?'type='button'>+<select onChange='characters["+this.index+"].setInvestigation(this.value)'><option>"+this.investigation+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=17;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].nature;abiRoll("+this.index+")'value='Roll Nature(int)?'type='button'>+<select onChange='characters["+this.index+"].setNature(this.value)'><option>"+this.nature+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=21;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].religion;abiRoll("+this.index+")'value='Roll Religion(int)?'type='button'>+<select onChange='characters["+this.index+"].setReligion(this.value)'><option>"+this.religion+"<option><option>pro<option>exp</select>";
 
-menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'>score:<input maxLength=2 onChange='characters["+this.index+"].setWis(this.value)'size=2 type='text' value="+this.wis+">/"+this.curWis+" mod:"+this.wisMod+"+<select onChange='characters["+this.index+"].setWisPro(this.value)'><option>"+this.wisPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'>score:<input maxLength='2' onChange='characters["+this.index+"].setWis(this.value)'size=2 type='text' value="+this.wis+">/"+this.curWis+" mod:"+this.wisMod+"+<select onChange='characters["+this.index+"].setWisPro(this.value)'><option>"+this.wisPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=8;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].animal;abiRoll("+this.index+")'value='Roll Animal Handling(wis)?'type='button'>+<select onChange='characters["+this.index+"].setAnimal(this.value)'><option>"+this.animal+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=13;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].insight;abiRoll("+this.index+")'value='Roll Insight(wis)?'type='button'>+<select onChange='characters["+this.index+"].setInsight(this.value)'><option>"+this.insight+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=16;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].medicine;abiRoll("+this.index+")'value='Roll Medicine(wis)?'type='button'>+<select onChange='characters["+this.index+"].setMedicine(this.value)'><option>"+this.medicine+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=18;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].perception;abiRoll("+this.index+")'value='Roll Perception(wis)?'type='button'>+<select onChange='characters["+this.index+"].setPerception(this.value)'><option>"+this.perception+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=24;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].survival;abiRoll("+this.index+")'value='Roll Survival(wis)?'type='button'>+<select onChange='characters["+this.index+"].setSurvival(this.value)'><option>"+this.survival+"<option><option>pro<option>exp</select> ";
-menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'>score:<input maxLength=2 onChange='characters["+this.index+"].setCha(this.value)'size=2 type='text' value="+this.cha+">/"+this.curCha+" mod:"+this.chaMod+"+<select onChange='characters["+this.index+"].setChaPro(this.value)'><option>"+this.chaPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'>score:<input maxLength='2' onChange='characters["+this.index+"].setCha(this.value)'size=2 type='text' value="+this.cha+">/"+this.curCha+" mod:"+this.chaMod+"+<select onChange='characters["+this.index+"].setChaPro(this.value)'><option>"+this.chaPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=11;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].deception;abiRoll("+this.index+")'value='Roll Deception(cha)?'type='button'>+<select onChange='characters["+this.index+"].setDeception(this.value)'><option>"+this.deception+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=14;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].intimidation;abiRoll("+this.index+")'value='Roll Intimidation(cha)?'type='button'>+<select onChange='characters["+this.index+"].setIntimidation(this.value)'><option>"+this.intimidation+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=19;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].performance;abiRoll("+this.index+")'value='Roll Performance(cha)?'type='button'>+<select onChange='characters["+this.index+"].setPerformance(this.value)'><option>"+this.performance+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=20;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].persuasion;abiRoll("+this.index+")'value='Roll Persuasion(cha)?'type='button'>+<select onChange='characters["+this.index+"].setPersuasion(this.value)'><option>"+this.persuasion+"<option><option>pro<option>exp</select>";
 menuContents+="</td></tr></table>"
 
-menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td><table><tr><td>Racial Abilility Increases :<input onChange='characters["+this.index+"].setAbility(this.value)' size='25' value='"+this.ability+"'>";
-menuContents+="</td></tr><tr><td>Racial Proficiencies :<input onChange='characters["+this.index+"].setProficienciesRace(this.value)' size='25' value='"+this.proficienciesRace+"'>";
-menuContents+="</td></tr><tr><td>Racial Languages :<input onChange='characters["+this.index+"].setLanguages(this.value)' size='25' type='text' value='"+this.languages+"'>";
-menuContents+="</td></tr></table></td><td><table><tr><td>Background Proficiencies :<input onChange='characters["+this.index+"].setBackT(this.value)' size='25' value='"+this.backT+"'>";
-menuContents+="</td></tr><tr><td>Background Skills :<input onChange='characters["+this.index+"].setBackS(this.value)' size='25' value='"+this.backS+"'>";
-menuContents+="</td></tr><tr><td>Background Languages :<input onChange='characters["+this.index+"].setBackL(this.value)' size='25' value='"+this.backL+"'>";
-menuContents+="</td></tr></table></td><td><table><tr><td>Class Proficiencies :<input onChange='characters["+this.index+"].setProficiencies(this.value)' size='25' value='"+this.proficiencies+"'>";
-menuContents+="</td></tr><tr><td>Class Skills :<input onChange='characters["+this.index+"].setSkills(this.value)' size='25' value='"+this.skills+"'>";
-menuContents+="</td></tr><tr><td>Class Saving Throws :<input onChange='characters["+this.index+"].setSaving(this.value)' size='25' value='"+this.saving+"'>";
+menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td><table><tr><td>Racial Abilility Increases:<input maxLength=' ' onChange='characters["+this.index+"].setAbility(this.value)' size='20' value='"+this.ability+"'>";
+menuContents+="</td></tr><tr><td>Racial Proficiencies:<input maxLength=' ' onChange='characters["+this.index+"].setProficienciesRace(this.value)' size='20' value='"+this.proficienciesRace+"'>";
+menuContents+="</td></tr><tr><td>Racial Languages:<input maxLength=' ' onChange='characters["+this.index+"].setLanguages(this.value)' size='20' type='text' value='"+this.languages+"'>";
+menuContents+="</td></tr></table></td><td><table><tr><td>Background Proficiencies:<input maxLength=' ' onChange='characters["+this.index+"].setBackT(this.value)' size='20' value='"+this.backT+"'>";
+menuContents+="</td></tr><tr><td>Background Skills:<input maxLength=' ' onChange='characters["+this.index+"].setBackS(this.value)' size='20' value='"+this.backS+"'>";
+menuContents+="</td></tr><tr><td>Background Languages:<input maxLength=' ' onChange='characters["+this.index+"].setBackL(this.value)' size='20' value='"+this.backL+"'>";
+menuContents+="</td></tr></table></td><td><table><tr><td>Class Proficiencies:<input maxLength=' ' onChange='characters["+this.index+"].setProficiencies(this.value)' size='20' value='"+this.proficiencies+"'>";
+menuContents+="</td></tr><tr><td>Class Skills:<input maxLength=' ' onChange='characters["+this.index+"].setSkills(this.value)' size='20' value='"+this.skills+"'>";
+menuContents+="</td></tr><tr><td>Class Saving Throws:<input maxLength=' ' onChange='characters["+this.index+"].setSaving(this.value)' size='20' value='"+this.saving+"'>";
 
-menuContents+="</td></tr></table></td></tr></table></td></tr></table></span><span id=toggled6"+this.index+" style='display:"+this.toggled6+"'><table><tr><td>";
+menuContents+="</td></tr></table></td></tr></table></span><span id=toggled6"+this.index+" style='display:"+this.toggled6+"'><table><tr>";
 
-menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td colspan='6'><input maxLength='100' onChange='characters["+this.index+"].setActionNotes(this.value)' placeHolder='Multiatks and creature features' size='100' type='text' value='"+this.actionNotes+"'>"
-menuContents+="</td></tr><tr><td><h3>Actions</h3>"
-menuContents+="</td><td><input maxLength=200 onChange='characters["+this.index+"].setRollName1(this.value)'placeHolder='atkRollToHitName+Ability+pro SpellSlot RangeInFeet'size='25' type='text' value='"+this.rollName1+"'>"
+menuContents+="<td colspan='6'><input maxLength='90' onChange='characters["+this.index+"].setActionNotes(this.value)' placeHolder='Multiatks and creature features' size='90' type='text' value='"+this.actionNotes+"'>"
+menuContents+="</td></tr><tr><td><h3>Actions, Slots</h3>"
+menuContents+="</td><td><input maxLength='20' onChange='characters["+this.index+"].setRollName1(this.value)'placeHolder='atkRollToHitName+Ability+pro SpellSlot RangeInFeet'size='20' type='text' value='"+this.rollName1+"'>"
 menuContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll1(this.value)'placeHolder='XdY+Z'size='8' type='text' value="+this.roll1+">"
-menuContents+="</td><td><input maxLength=200 onChange='characters["+this.index+"].setRollName2(this.value)'placeHolder=' dmgType+Ability and dmgConditions' size='25' type='text' value='"+this.rollName2+"'>"
+menuContents+="</td><td><input maxLength='20' onChange='characters["+this.index+"].setRollName2(this.value)'placeHolder=' dmgType+Ability and dmgConditions' size='20' type='text' value='"+this.rollName2+"'>"
 menuContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll2(this.value)'placeHolder='XdY+Z'size='8' type='text' value="+this.roll2+">"
 menuContents+="</td><td><input maxLength='8' onClick='addRollPrompt("+this.index+")'size='8' type='button' value='Add this roll?'>";
 if(this.rolls.length===0){menuContents+="</td></tr><tr><td><i>No custom rolls listed.</i>";}
 else{for(var i=0; i<this.rolls.length; i++){menuContents+="</td></tr><tr><td><input type='button' onClick='makeRoll("+this.index+","+i+")'value='Roll?'>"
-menuContents+="</td><td><input maxLength=220 onChange='characters["+this.index+"].rollNames["+i+"]=this.value' size='25' type='text' value='"+this.rollNames[i]+"'>";
+menuContents+="</td><td><input maxLength='20' onChange='characters["+this.index+"].rollNames["+i+"]=this.value' size='20' type='text' value='"+this.rollNames[i]+"'>";
 menuContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].rolls["+i+"]=this.value' size='8' type='text' value='"+this.rolls[i]+"'>";
-menuContents+="</td><td><input maxLength=220 onChange='characters["+this.index+"].rollNames2["+i+"]=this.value' size='25' type='text' value='"+this.rollNames2[i]+"'>";
+menuContents+="</td><td><input maxLength='20' onChange='characters["+this.index+"].rollNames2["+i+"]=this.value' size='20' type='text' value='"+this.rollNames2[i]+"'>";
 menuContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].rolls2["+i+"]=this.value' size='8' type='text' value='"+this.rolls2[i]+"'>";
 menuContents+="</td><td><input type='button' onClick='deleteRollPrompt("+this.index+","+i+")'value='Delete this roll?'>";}
 }
 
 menuContents+="</td></tr></table></span><span id=toggled2"+this.index+" style='display:"+this.toggled2+"'>";
 
-menuContents+="<table><tr><td><a href='https://tetra-cube.com/dnd/dnd-char-gen.html' target='_blank'>Tetra-Cube.Com's Random Personality Generator</a>";
-
+menuContents+="<table><tr><td>Name:<input class=name maxLength='40' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value='"+this.name+"'>";
+menuContents+="</td></tr><tr><td>Traits:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setTrait(this.value)'placeHolder='Gender, Age, Color, Height, Weight'>"+this.trait+"</textarea>";
+menuContents+="</td></tr><tr><td>Race:<select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tiefling<option>Tiefling, Mephistopheles<option>Yuan-Ti</select>";
+menuContents+="<br><input maxLength=' ' onChange='characters["+this.index+"].setRace(this.value)' placeHolder='other race' size='20' type='ptext'>";
+menuContents+="</td></tr><tr><td><a href='https://tetra-cube.com/dnd/dnd-char-gen.html' target='_blank'>Tetra-Cube.Com's Random Personality Generator</a>";
 menuContents+="</td></tr><tr><td>Background:<select onChange='characters["+this.index+"].setBackground(this.value)'><option>"+this.background+"<option>Acolyte<option>Charlatan<option>City Investigator<option>City Watch<option>Cloistered Scholar<option>Courtier<option>Criminal, Blackmailer<option>Criminal, Burglar<option>Criminal, Enforcer<option>Criminal, Fence<option>Criminal, Highway Robber<option>Criminal, Hired Killer<option>Criminal, Pickpocket<option>Criminal, Smuggler<option>Criminal, Spy<option>Entertainer, Actor<option>Entertainer, Dancer<option>Entertainer, Fire-Eater<option>Entertainer, Gladiator<option>Entertainer, Instrumentalist<option>Entertainer, Jester<option>Entertainer, Juggler<option>Entertainer, Poet<option>Entertainer, Singer<option>Entertainer, Storyteller<option>Entertainer, Tumbler<option>Faction Agent<option>Folk Hero, Farmer<option>Guild, Alchemist<option>Guild, Brewer<option>Guild, Calligrapher<option>Guild, Carpenter<option>Guild, Cartographer<option>Guild, Cobbler<option>Guild, Cook<option>Guild Crafter<option>Guild, Glassblower<option>Guild, Jeweler<option>Guild, Leatherworker<option>Guild, Mason<option>Guild, Painter<option>Guild, Potter<option>Guild, Smith<option>Guild, Tinker<option>Guild, Weaver<option>Guild, or Woodcarver<option>Hermit<option>Noble, Knight<option>Noble, Retainer<option>Outlander, Bounty Hunter<option>Outlander, Exile<option>Outlander, Forester<option>Outlander, Guide<option>Outlander, Homesteader<option>Outlander, Hunter-Gatherer<option>Outlander, Pilgrim<option>Outlander, Trapper<option>Outlander, Tribal Marauder<option>Outlander, Tribal Nomad<option>Sage, Alchemist<option>Sage, Astronomer<option>Sage, Discredited Academic<option>Sage, Librarian<option>Sage, Professor<option>Sage, Researcher<option>Sage, Scribe<option>Sage, Wizard Apprentice<option>Sailor, Cartographer<option>Sailor, Pirate<option>Soldier, Cavalry<option>Soldier, Healer<option>Soldier, Infantry<option>Soldier, Officer<option>Soldier, Quartermaster<option>Soldier, Scout<option>Urchin</select>";
-menuContents+="</td></tr><tr><td><input onChange='characters["+this.index+"].setBackground(this.value)' placeHolder='other background' size='25' type='text'>";
-menuContents+="</td></tr><tr><td>Background Features :<input onChange='characters["+this.index+"].setBackF(this.value)' size='25' type='text' value='"+this.backF+"'>";
-menuContents+="</td></tr><tr><td>Bonds :<textArea cols='25' rows='3' onChange='characters["+this.index+"].setBonds(this.value)'>"+this.bonds+"</textArea>";
-menuContents+="</td></tr><tr><td>Flaws :<textArea cols='25' rows='3' onChange='characters["+this.index+"].setFlaws(this.value)'>"+this.flaws+"</textArea>";
-menuContents+="</td></tr><tr><td>Ideals :<textArea cols='25' rows='3' onChange='characters["+this.index+"].setIdeals(this.value)'>"+this.ideals+"</textArea>";
-menuContents+="</td></tr><tr><td>Feats:<textArea cols='25' rows='3' onChange='characters["+this.index+"].setFeats(this.value)'>"+this.feats+"</textArea>";
+menuContents+="<br><input maxLength=' ' onChange='characters["+this.index+"].setBackground(this.value)' placeHolder='other background' size='20' type='text'>";
+menuContents+="</td></tr><tr><td>Background Features:<input maxLength=' ' onChange='characters["+this.index+"].setBackF(this.value)' size='20' type='text' value='"+this.backF+"'>";
+menuContents+="</td></tr><tr><td>Bonds:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setBonds(this.value)'>"+this.bonds+"</textArea>";
+menuContents+="</td></tr><tr><td>Flaws:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setFlaws(this.value)'>"+this.flaws+"</textArea>";
+menuContents+="</td></tr><tr><td>Ideals:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setIdeals(this.value)'>"+this.ideals+"</textArea>";
+menuContents+="</td></tr><tr><td>Feats:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setFeats(this.value)'>"+this.feats+"</textArea>";
 menuContents+="</td></tr><tr><td>Alignment:<select onChange='characters["+this.index+"].setAlignment(this.value)'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
 menuContents+="</td></tr><tr><td>"+this.alignmentDescription;
-menuContents+="</td></tr><tr><td>Equipment:<textArea cols='25' rows='3' onChange='characters["+this.index+"].setEquipment(this.value)'>"+this.equipment+"</textArea>";
+menuContents+="</td></tr><tr><td>Equipment:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setEquipment(this.value)'>"+this.equipment+"</textArea>";
 
 menuContents+="</td></tr></table></span><span id=toggled4"+this.index+" style='display:"+this.toggled4+"'><table><tr><td>Class:<select onChange='characters["+this.index+"].setClass(this.value)'><option>"+this.class+"<option>Artificer, Alchemist</option><option>Artificer, Gunsmith</option><option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Bear Totem Warrior<option>Barbarian, Eagle Totem Warrior<option>Barbarian, Wolf Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Arctic<option>Druid, Coast<option>Druid, Desert<option>Druid, Forest<option>Druid, Grassland<option>Druid, Moon<option>Druid, Mountain<option>Druid, Swamp<option>Druid, Underdark<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Oathbreaker<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Fey Wanderer<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Ranger, Swarmkeeper<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Phantom<option>Rogue, Thief<option>Rogue, Scout<option>Rogue, Soulknife<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock, Gre@Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
-menuContents+="</td></tr><tr><td><input onChange='characters["+this.index+"].setClass(this.value)' placeHolder='other class' size='25' type='text'>";
+menuContents+="</td></tr><tr><td><input maxLength=' ' onChange='characters["+this.index+"].setClass(this.value)' placeHolder='other class' size='20' type='text'>";
 menuContents+="</td></tr><tr><td>Challenge Rating(CR)or lvl( lvl):<input maxLength=3 onChange='characters["+this.index+"].setLvl(this.value)' size=3 type='text' value="+this.lvl+">";
-menuContents+="</td></tr><tr><td>Feature Notes:<textArea cols='30' rows='3' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
-menuContents+="</td></tr><tr><td>Experience Points(XP):<input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value)'size='8' type='text' value='"+this.experience+"'></td></tr><tr><td>"+this.features+"</color>";
+menuContents+="</td></tr><tr><td>Feature Notes:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
+menuContents+="</td></tr><tr><td>Experience Points(XP):<input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value)'size='8' type='text' value='"+this.experience+"'>"+this.features+"";
 menuContents+="</td></tr></table></span>"
 this.menu.setContents(menuContents);}
 
 function _refresh(){document.getElementById(this.elementId).innerHTML=this.contents;}
 
-function _rollInit(){return d(20)+ parseInt(this.curIni)+ parseInt(this.sit);}
+function _rollInit(){return d(20)+parseInt(this.curIni)+parseInt(this.sit);}
 
 function _save(){toSave=this.getSaveText();
 showSavePrompt(this.name, toSave);}
@@ -3272,7 +3273,7 @@ b='@6th(Voodoo Doll)60ft, 10/10 turns, target the doll, the target takes 1/2 dmg
 c='@10th(Share Pain)1/1, s rest recharge, target a being to take your dmg on a failed cha Save';
 dx='@14th(Disrupt Life)1act, 1 spell slot, 20ft radius you target vsCon for half dmg or 1d10 necrotic per spell slot+your chaMod';}
 this.setFeatures("</td></tr><tr><td>@1st(Spellcasting)@1st(Hexes)2 Cantrips, and opt to replace 1 hex for another when lvling up<b onClick='FalseLife()'>False Life</b>, <b onClick='InflictWounds()'>Inflict Wounds</b></td></tr><tr><td>@1st(Witch s Curse)(Hideous)save vs your fright spells @DisAdv, 1 target vsWis or frightened utteoint or(Hollow)when target is reduced to 0HP, you gain temp HP witch lvl+chaMod or(Possessed)learn+1 1st lvl witch spell, 4th, 8th, 12th, and 16th which do not count against your known spells</td></tr><tr><td>@2nd(Cackle)1 bonus action, 60ft, spell time+1 round</td></tr><tr><td>@2nd(Familiar)1 bonus action, your familiar can react atk or cast</td></tr><tr><td>"+a+"</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>"+b+"</td></tr><tr><td>@7th(Improved Familiar)your familiar concentrates your spell</td></tr><tr><td>@9th(Cauldron)Alchemy Points @9th 3 @12th 4 @15th 5 @18th 6 1AP 1 potion of Animal Friendship, or Healing, or Poison @13th 2AP 1 potion Heroism and Mind Reading, Philters of Love 24hr potency</td></tr><tr><td>@11th(Grand Hex)@11th 1 @15th 2 @18th 3<b onClick='Abate()'>Abate</b><b onClick='BeckonFamiliar()'>Beckon Familiar</b><b onClick='Bleeding()'>Bleeding</b><b onClick='CharmPerson()'>Charm</b><b onClick='Cripple()'>Cripple</b><b onClick='DireFamiliar()'>Dire Familiar</b><b onClick='Discord()'>Discord</b><b onClick='DisguiseSelf()'>Disguise</b><b onClick='Disorient()'>Disorient</b><b onClick='Duplicity()'>Duplicity</b><b onClick='Fear()'>Evil Eye</b><b onClick='Fortune()'>Fortune</b><b onClick='GoUnseen()'>Go Unseen</b><b onClick='Hesitate()'>Hesitate</b><b onClick='Mire()'>Mire</b><b onClick='Misfortune()'>Misfortune</b><b onClick='Nails()'>Nails</b><b onClick='Obfuscate()'>Obfuscate</b><b onClick='Pestilence()'>Pestilence</b><b onClick='Ruin()'>Ruin</b><b onClick='Slumber()'>Slumber</b><b onClick='Telepathy()'>Telepathy</b><b onClick='Tremors()'>Tremors</b><b onClick='Ward()'>Ward</b>(Grand Hexes)<b onClick='Coven()'>Coven</b><b onClick='DualHex()'>Dual Hex</b><b onClick='InsidiousHex()'>Insidious Hex</b><b onClick='IntoAToad()'>IntoAToad</b><b onClick='RemoteHex()'>Remote Hex</b><b onClick='SlowDeath()'>Slow Death</b><b onClick='WeaveOfFate()'>Weave of Fate</b><b onClick='WitchsBroom()'>Witch s Broom</b><b onClick='WitchsHut()'>Witch s Hut</b></td></tr><tr><td>"+c+"</td></tr><tr><td>"+d+"</td></tr><tr><td>@20th(Hex Master)targets save vs your hexes @DisAdv");
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simple weapons, blowguns, shortswords, whips');
 this.setSaving('wis+pro, cha+pro');
 this.setStrPro('');
@@ -3295,7 +3296,7 @@ c="@9th(<b onClick='BlastWave()'>Blast Wave</b>)";
 dx="@14th(<b onClick='piercRound()'>pierc Round</b>)";
 e="@17th(<b onClick='ExplosiveRound()'>Explosive Round</b>)";}
 this.setFeatures("</td></tr><tr><td>@1st(Artificer Specialist)(Magic Item Analysis)<b onClick='DetectMagic()'>Detect Magic</b><b onClick='Identify()'>Identify</b> no material component needed "+a+"</td></tr><tr><td>@2nd(Tool Expertise)class tools+exp(Wonderous Invetion)bag of holding or cap of water breathing or driftglobe or goggles of night or sending stones</td></tr><tr><td>@3rd(Spellcasting)"+b+"</td></tr><tr><td>(Ability Score Improvement)(Infuse Magic)infuse wis mod objects with your spells for up to 8hrs or triggered 1act</td></tr><tr><td>@5th(Super Attunement)attune to 4 magic objects(Wondrous Invention)alchemy jug or helm of comprehending languages or lantern of revealing or ring of swimming or robe of useful items or rope of climbing or wand of magic detection or wand of secrets</td></tr><tr><td>@6th(Mechanical Servant)CR2 or lower beast that is a construct, immune charm poison, darkvision 60ft, understands your language</td></tr><tr><td>@8th(Ability Score Improvement)</td></tr><tr><td>"+c+"</td></tr><tr><td>@10th(Wonderous Invention)bag of beans or chime of opening or decanter of endless water or eyes of minute seeing or folding bo@or slippers of spider climbing</td></tr><tr><td>@12th(Ability Score Improvement)</td></tr><tr><td>"+d+"</td></tr><tr><td>@15th(Superior Attunement)attune to 5 magic objects(Wonderous Invention)</td></tr><tr><td>@16th(Ability Score Improvement)</td></tr><tr><td>"+e+"</td></tr><tr><td>@18th(Ability Score Improvement)</td></tr><tr><td>@20th(Soul of Artifice)attune to 6 items+1/item to saving throws(Wonderous Invention)eyes of the eagle or gem of brightness or gloves of missile snaring or gloves of swimming and climbing or ring of jumping or ring of mind shielding or wings of flying");
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light and medium armor, simple weapons');
 this.setSaving('con+pro, int+pro');
 this.setStrPro('');
@@ -3336,9 +3337,9 @@ if(this.class.match(/Zealot/)){a='@3rd(Primal Path)of the(Zealot)</td></tr><tr><
 b='@6th(Fanatical Focus)during rage 1/1 reroll failed save';
 c='@10th(Zealous Presence)bonus 10 allies in 60ft radius rolls @Adv ttso your next turn';
 dx='@14th(Rage Beyond Death)during rage 0hp not unconscious and do not die until rage ends with 0hp';}
-this.setFeatures('</td></tr><tr><td>(Rage)while unarmored, enter rage as bonus, str @Adv, dmg+rage dmg, resist bludg, pierc, slash, lasts til taking no dmg and not atking<br>@1st 2/2<br>@3rd 3/3<br>@6th 4/4<br>@12th 5/5<br>@17th 6/6<p>(Rage Dmg)<br>@1st(+2)<br>@9th(+3)<br>@16th(+4)<p>@1st(Unarmored Defense)AC10+dex+con</td></tr><tr><td>@2nd(Danger Sense)vsDex @Adv vs seen trap spells<p>@2nd(Reckless Attack)str melee atk @Adv, atked @Adv</td></tr><tr><td>'+a+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1 or 1 feat<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>@5th(Extra Attack)<p>@5th(Fast Movement)unarmored,speed+10ft</td></tr><tr><td>'+b+'</td></tr><tr><td>@7th(Feral Instinct)init @Adv, act normally surprised</td></tr><tr><td>(Brutal Critical)dmg<br> @9th(+1d)<br>@13th+2d<br>@17th+3d<br></td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Relentless Rage) 1/1 0 hp DC10 vsCon 1 hp,DC+5 each use before l rest</td></tr><tr><td>'+dx+'</td></tr><tr><td>@15th(Persistent Rage)</td></tr><tr><td>@18th(Indomitable Might)higher of str roll or str score</td></tr><tr><td>@20th(Primal Champion)str+4(max24), con+4(max24)');
-this.setFeatureNotes("(Rages) 1/1 (Rage Dmg)dmg+2")
-this.setHitDice(this.lvl+'d12+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setFeatures('</td></tr><tr><td>(Rage)while unarmored, enter rage as bonus, str @Adv, dmg+rage dmg, resist bludg, pierc, slash, lasts til taking no dmg and not atking<br>@1st 2/2<br>@3rd 3/3<br>@6th 4/4<br>@12th 5/5<br>@17th 6/6<br>recover rages after a long 8hr rest<p>(Rage Dmg)<br>@1st(+2)<br>@9th(+3)<br>@16th(+4)<p>@1st(Unarmored Defense)AC10+dex+con</td></tr><tr><td>@2nd(Danger Sense)vsDex @Adv vs seen trap spells<p>@2nd(Reckless Attack)str melee atk @Adv, atked @Adv</td></tr><tr><td>'+a+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1 or 1 feat<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>@5th(Extra Attack)<p>@5th(Fast Movement)unarmored,speed+10ft</td></tr><tr><td>'+b+'</td></tr><tr><td>@7th(Feral Instinct)init @Adv, act normally surprised</td></tr><tr><td>(Brutal Critical)dmg<br> @9th(+1d)<br>@13th+2d<br>@17th+3d<br></td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Relentless Rage) 1/1 0 hp DC10 vsCon 1 hp,DC+5 each use before l rest</td></tr><tr><td>'+dx+'</td></tr><tr><td>@15th(Persistent Rage)</td></tr><tr><td>@18th(Indomitable Might)higher of str roll or str score</td></tr><tr><td>@20th(Primal Champion)str+4(max24), con+4(max24)');
+this.setActionNotes("(Rages) 2/2 (Rage Dmg)dmg+2")
+this.setHitDice(this.lvl+'d12+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, and all weapons');
 this.setSaving('str+pro, con+pro');
 this.setStrPro('pro');
@@ -3368,7 +3369,7 @@ if(this.class.match(/Whispers/)){a='@3rd(Bardic College)of(Whispers)</td></tr><t
 b='@6th(Mantle of Whispers)a target dies within 30ft, you assume its form 1hr target Insight versus your Deception+5 to see disguise, recharge after s rest';
 c='@14th(Shadow Lore)1act ion, 1target DC8+cha+pro vsWis or charmed and will do reasonable requests because target thinks you know its secret, 8hrs or until it or its ally atked, recharge after l rest';}
 this.setFeatures('</td></tr><tr><td>Cantrips Known:<br>@1st 2<br>@4th 3<br>@10th 4<br></td></tr><tr><td>Spells Known:<br>@1st 4<br>@2nd 5<br>@3rd 6<br>@4th 7<br>@5th 8<br>@6th 9<br>@7th 10<br>@8th 11<br>@9th 12</td></tr><tr><td>@1st(Bardic Inspiration)1 or chaMod @1st(d6)@5th(d8)@(10th d10)@(15th d12)ally ads 1 BI to their roll</td></tr><tr><td>@2nd(Jack of All Trades)non pro abi checks+half pro</td></tr><tr><td>@2nd(Song of Rest)during rest,heal allies who hear @2nd(d6)@9th(d8)@(13th d10)@(17th d12</td></tr><tr><td>@3rd(Expertise)2 skills+pro are+exp @3rd(2)@(10th 2 more)</td></tr><tr><td>'+a+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>@5th(Font of Inspiration)regain bardic inspiration during a s rest</td></tr><tr><td>@6th(Countercharm)act 30ft save vs charm fear</td></tr><tr><td>'+b+'</td></tr><tr><td>@10th(Magical Secrets)learn 2 spells any class @your lvl<br>@10th 2<br>@14th 2 more</td></tr><tr><td>'+c+'</td></tr><tr><td>@20th(Superior Inspiration)@0 Bardic Inspiration gain 1 each encounter');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simple weapons, hand crossbows, longswords, rapiers, and shortswords');
 this.setSaving('dex+pro, cha+pro');
 this.setStrPro('');
@@ -3425,7 +3426,7 @@ c="@5th<b onClick='CrusadersMantle()'>Crusader s Mantle</b><b onClick='SpiritGua
 dx="@17th(Avatar of Battle)resist bludg, slash, pierc nonmagical weapon";}
 this.setFeatures('(Cleric)<p>Cantrips Known<br>@1st 3<br>@4th 4<br>@10th 5<p>1st Lvl Slots<br>@1st 2<br>@2nd 3<br>@3rd 4<p>2nd Lvl Slots<br>@3rd 2<br>@4th 3<p>3rd Lvl Slots<br>@5th 2<br>@6th 3</td></tr><tr><td>@2nd(Channel Divinity)<br>@2nd 1/1<br>@5th 2/2<br>@@18th 3/3<p>(Turn Undead)1CD, 30ft radi., vsWis or frightened, @DisAdv while cleric is in sight, dash away, 10/10 turns<p>'+a+'</td></tr><tr><td>'+b+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>(Destroy Undead)instead of dashing, the undead are destroyed<br>@5th CR1/2<br>@8th CR1-1/2<br>@11th CR2-1/2<br>@14th CR3-1/2<br>@17th CR4-1/2</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Divine Intervention)d100 roll your lvl or lower, divine helps</td></tr><tr><td>'+dx+' @20th auto success');
 this.setEquipment('mace or warhammer.scale mail or leather armor or chain mail.light crossbow 20 bolts or simple weapon.priest pack or explorer pack.shield.holy symbol');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, simple weapons');
 this.setSaving('wis+pro, cha+pro');
 this.setStrPro('');
@@ -3476,7 +3477,7 @@ dx="@9th<br><b onClick='CloudKill()'>Cloud Kill</b><br><b onClick='InsectPlague(
 if(this.class.match(/Arctic|Coast|Desert|Forest|Grassland|Mountain|Swamp|Underdark/)){
 this.setFeatures('@1st(Druidic Language)</td></tr><tr><td>@2nd(Wild Shape)2/2 s rest, for lvl hours/2, no spell casting inthis form, @0hp revert to your original current hp<br>@2nd(CR1/4)no flying swimming<br>@4th(CR1/2)no flying<br>@8th(CR1)</td></tr><tr><td>@2nd(Circle of the Land)<p>(Bonus Cantrip)<p>(Natural Recovery)regain half lvl spell slot lvls after s rest</td></tr><tr><td>'+a+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>@6th(Land\'s Stride)ignore difficult terrain, pass plants without dmg, ignore slowed, immune to Entangle</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@10th(Nature\'s Ward)immune to charmed, frightened, poisoned, diseased</td></tr><tr><td>@14th(Nature\'s Sanctury)vsWis atking target must atk another</td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10<p>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape');}
 this.setEquipment('wooden shield or simple weapon.sciitar or simple melee weapon.leather armor.explorer pack.Druidic focus');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light non-metal armor, medium non-metal armor, non-metal shields, clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears, an herbalism kit');
 this.setSaving('int+pro, wis+pro');
 this.setStrPro('');
@@ -3517,9 +3518,9 @@ b='@7th.WAR MAGIC cast cantrip, bonus weapon atk';
 c='@10th.ELDRITCH STRIKE on weapon hit, target saves @DisAdv vs your next spell';
 dx='@15th.ARCANE CHARGE use action surge then teleport 30ft</td></tr><tr><td>Relentless</td></tr><tr><td>@(15th 1/1)roll init with 0SD is 1SD';
 e='@18th.IMPROVED WAR MAGIC cast spell, make bonus weapon atk';}
-this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)<br>(Archery)ranged atk+2<br>or(Defense)while armored, AC+1<br>or(Dueling)1h melee dmg+2<br>or(Gre@Weapon Fighting)2h reroll on 1 or 2<br>or(Protection)with shield, adjacent allies atked @DisAdv<br>or(Two Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>@1st(Second Wind)1/1 s rest, bonus, heal 1d10+ lvl</td></tr><tr><td>@2nd(Action Surge)<br>@2nd 1/1<br>@17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)<br>'+a+'</td></tr><tr><td>(Ability Score Improvement)<br>@4th<br>@6th<br>@8th<br>@12th<br>@14th<br>@16th<br>@19th</td></tr><tr><td>(Extra Attack)<br>@5th 2<br> @10th 3<br> @20th 4</td></tr><tr><td>'+b+'</td></tr><tr><td>(Indomitable)re-roll failed save, l rest<br>@9th 1<br>@13th 2<br> @17th 3</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>'+e+'');
+this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)<br>(Archery)ranged atk+2<br>or(Defense)while armored, AC+1<br>or(Dueling)1h melee dmg+2<br>or(Gre@Weapon Fighting)2h reroll on 1 or 2<br>or(Protection)with shield, adjacent allies atked @DisAdv<br>or(Two Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>@1st(Second Wind)1/1 s rest, bonus, heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surge)<br>@2nd 1/1<br>@17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)<br>'+a+'</td></tr><tr><td>(Ability Score Improvement)<br>@4th<br>@6th<br>@8th<br>@12th<br>@14th<br>@16th<br>@19th</td></tr><tr><td>(Extra Attack)<br>@5th 2<br> @10th 3<br> @20th 4</td></tr><tr><td>'+b+'</td></tr><tr><td>(Indomitable)re-roll failed save, l rest<br>@9th 1<br>@13th 2<br> @17th 3</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>'+e+'');
 this.setEquipment('chain mail or leather.Longbow.20 arrows.martial weapon and shield or 2 martial weapons.light crossbow 20 bolts or 2 handaxes.dungeoneer pack or explorer pack');
-this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('all armor, shields, simple weapons, martial weapons');
 this.setSaving('str+pro, con+pro');
 this.setStrPro('pro');
@@ -3538,7 +3539,7 @@ b='@6th(Extort Truth)target is hit twice, spend 2 Ki Points, the target knows it
 c='@11th(Preternatural Counter)atker misses you, you use your react to atk';
 dx='@17th(Debilitating Barrage)hit target with 3 or more atks, spend 3 ki points, target atks @DisAdv uteoynt and vsCon or vulnerable to a dmg type of your choice 1min, unless resistant or immune which is revealed when you choose';}
 if(this.class.match(/Drunken/)){a='(Drunken Master)</td></tr><tr><td>@3rd(Bonus Proficiencies)Performance+pro and Brewer s Supplies+pro</td></tr><tr><td>@3rd(Drunken Technique)Flurry of Blows then bonus Disengage, walk speed+10ft tteoyct';
-b='@6th(Tipsy Sway)(Leap to Your Feet)prone spend 5ft not half movement speed(Redirect Attack)1 Ki react target hits its ally';
+b='@6th(Tipsy Sway)(Leap to Yourft)prone spend 5ft not half movement speed(Redirect Attack)1 Ki react target hits its ally';
 c='@11th(Drunkard s Luck)2 ki remove disadv from your roll';
 dx='@17th(Intoxicated Frenzy)make 5 Flurry of Blow atks each to a different target';}
 if(this.class.match(/Kensei/)){a='(Kensei)Caligraphy+pro or Painting+pro</td></tr><tr><td>@3rd(Path of the Kensei)choose 2, 1 melee weapon+pro and one ranged weapon+pro as kensei monk weapons, but not heavy or special weapons<br>@6th one more weapon<br>@11th one more weapon<br>@17th one more weapon<br>(Agile Parry)unarmed strike as part of the atk with a kensei monk weapon gives you AC+2(Kensei s Shot)bonus, kensei ranged weapon+1d4 dmg uteoyt';
@@ -3559,7 +3560,7 @@ c='@11th.CLOAK OF SHADOWS 1act , in dim or darkness, invisible';
 dx='@17th.OPPORTUNIST when adjacent target hit by ally, react 1 melee atk';}
 this.setFeatures('</td></tr><tr><td>@1st(Unarmored Defense)unarmored no shield, AC10+dexMod+wisMod<p>(Martial Arts Damage Dice)unnarmed+bonus unarmed or simple weapon+bonus unarmed+dexMod or strMod weapon dam or 1d4 dam<br>@1st 1d4<br>@5th 1d6<br>@11th 1d8<br>@17th 1d10</td></tr><tr><td>@2nd(Ki Powers)save vs DC8+wis+pro<p>(Ki Points)1 per Monk Level, are recovered after a short 4 hour rest<p>(Flurry of Blows)1Ki, 1 more bonus narmed<p>(Patient Defense)1Ki, Dodge is bonus<p>(Step of the Wind)1Ki, Disengage or Dash as bonus, jumpft x 2<p>@(Unarmored Movement)when unarmored no shield<br>@2nd +10ft<br>@6th+15ft<br>@9th move across walls and water without falling<br>@10th +20ft<br>@14th +25ft<br> @18th +30ft</td></tr><tr><td>@3rd(Monastic Tradition)Way of the'+a+'<p>(Deflect Missiles)react, ranged hit dmg-1d10+dexMod, @0 dam catch and bonus ranged 20/60ft atk+pro</td></tr><tr><td>@4th(Slow Fall)fall dmg-5 x lvl<p>(Ability Score Improvement)<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>@5th Extra Attack</td></tr><tr><td>@5th(Stunning Strike)1Ki, vsCon or stunned tteo your next turn</td></tr><tr><td>@6th(Ki-Empowered Strikes)unarmed is magical</td></tr><tr><td>'+b+'</td></tr><tr><td>@7th(Evasion)dex for half is no dmg</td></tr><tr><td>@7th(Stillness of Mind)1act , self, end 1 charm or fear</td></tr><tr><td>@10th(Purity of Body)immune disease poison</td></tr><tr><td>'+c+'</td></tr><tr><td>@13th(Tongue of the Sun and Moon)understand all languages, targets understand yours</td></tr><tr><td>@14th(Diamond Soul)all saves+pro, 1Ki reroll 1 save</td></tr><tr><td>@15th(Timeless Body)immune magical aging, no age penalties, no need food water</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Empty Body)4Ki invisible 10/10 turns , resist all but force, 8Ki Astral Projection you and 1 ally</td></tr><tr><td>@20th(Perfect Self)roll init 0Ki is 4Ki');
 this.setEquipment('shortsword or simple weapon.dungeoneer pack or explorer pack.10/10 darts');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('simple weapons, shortswords');
 this.setSaving('str+pro, dex+pro');
 this.setStrPro('pro');
@@ -3580,7 +3581,7 @@ b='';
 c='@7th(Aura of Conquest)';
 dx='';
 e='@15th(Scornful Rebuke)</td></tr><tr><td>18th(Aura of Conquest)</td></tr><tr><td>@20th(Invincible Conqueror)';}
-if(this.class.match(/Crown/)){a="@3rd(Channel Divinity: Champion Challenge)1CD,chosen targets within 30ft save vsWis or targets must stay within 30ft of you @3rd(Channel Divinity: Turn the Tide)1CD,1bonus,hearing allies with half or fewer HP within 30ft heal 1d6+chaMod</td></tr><tr><td>@3rd(Oath of the Crown Spells)<b onClick='Command()'>Command</b><b onClick='CompelledDuel()'>Compelled Duel</b>";
+if(this.class.match(/Crown/)){a="@3rd(Channel Divinity:Champion Challenge)1CD,chosen targets within 30ft save vsWis or targets must stay within 30ft of you @3rd(Channel Divinity:Turn the Tide)1CD,1bonus,hearing allies with half or fewer HP within 30ft heal 1d6+chaMod</td></tr><tr><td>@3rd(Oath of the Crown Spells)<b onClick='Command()'>Command</b><b onClick='CompelledDuel()'>Compelled Duel</b>";
 b="@5th(Oath of the Crown Spells)<b onClick='WardingBond()'>Warding Bond</b><b onClick='ZoneOfTruth()'>Zone of Truth</b>";
 c="@7th(Divine Allegiance)1 react,you take the dmg an adjacent ally would take";
 dx="@13th(Oath of the Crown Spells)<b onClick='Banishment()'>Banishment</b><b onClick='GuardianOfFaith()'>Guardian of Faith</b>";
@@ -3602,7 +3603,7 @@ dx="@13th[x]Banishment @13th<b onClick='DimensionDoor()'>Dimension Door</b>";
 e='@15th.SOUL OF VENGEANCE while Vow of Enmity, react melee atk</td></tr><tr><td>@17th[x]Hold Monster @17th[x]Scrying</td></tr><tr><td>@20th.AVENGING ANGEL 1/1 1hr , fly @speed 60ft, 30ft radius aura vsWis or frightened atked @Adv';}
 this.setFeatures('</td></tr><tr><td>@1st(Divine Sense)60ft aura detect celestial, fiend, undead, Hallow spell desecrated consecrated places or objects, til teoynt,(1+chaMod/1+chaMod)l rest</td></tr><tr><td>@1st(Lay on Hands)touch less undead and constructs heal from a pool of 5x lvl points(6/6)l rest, 5 pool points/cure 1 disease or neutralize 1 poison</td></tr><tr><td>@2nd(Fighting Style)<br>(Defense)while armored AC+1<br>or(Dueling)1h weapon dmg+2<br>or(Great Weapon Fighting)re-roll dmg on 1 or 2<br>or(Protection)with shield adjacent allies atked @DisAdv</td></tr><tr><td>@2nd(Divine Smite)after melee hit spend 1 slot dmg+2d8 radia+1d8/slot max 5d8+1d8 if fiend or undead @(11th+1d8radiant)</td></tr><tr><td>@3rd(Divine Health)immune disease</td></tr><tr><td>@3rd (Channel Divinity)1/1 s rest</td></tr><tr><td>'+a+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>(Extra Attack)</td></tr><tr><td>'+b+'</td></tr><tr><td>@6th(Aura of Protection)you and allies save+chaMod @6th 10ft @18th 30ft</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Aura of Courage)you and allies immune fright @10th 10ft @18th 30ft</td></tr><tr><td>'+dx+'</td></tr><tr><td>@14th(Cleansing Touch)1 or chaMod/1 or chaMod l rest end 1 spell on you or ally</td></tr><tr><td>'+e);
 this.setEquipment('martial weapon and shield or 2 martial weapons.5/5 javelins or simple melee weapon.priest pack or explorer pack.chain mail.holy symbol');
-this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('all armor, shields, and all weapons');
 this.setSaving('wis+pro, cha+pro');
 this.setStrPro('');
@@ -3640,7 +3641,7 @@ dx="@15th(Swarming Dispersal)1 react resist all dmg and 30ft teleport to open sp
 }
 this.setFeatures('</td></tr><tr><td>@1st(Favored Enemy)Survival @Adv to track, Intelligence @Adv to speak enemy language<br>@1st 1 enemy<br>@6th 2 enemies<br>@14th 3 enemies<p>or (Favored Foe)your lvl pro/ lvl pro per s rest, hit 1 target marked 1min concentration<br>@1st+1d4 dmg<br>@6th+1d6 dmg<br>@14th+1d8 dmg</td></tr><tr><td>@1st(Natural Explorer)ignore difficult terrain, always alert, alone Stealth normal pace, forage x 2, know number, size, time of tracked enemy<br>@1st 1 terrain type<br>@6th 2 terrain types<br>@10th 3terrain types<p>or @1st(Deft Explorer)<br>@1st(Canny)1 skill+pro becomes skill+exp, speak, read, write+2 languages<br>@6th(Roving)climb, swim=walk speed+5ft<br> @10th(Tireless)1 act, temp hp 1d8+wis, lvl pro/lvl pro per s rest</td></tr><tr><td>@2nd(Fighting Style)<br>(Archery)ranged+2<br>or(Defense)armored AC+1<br>or(Blind Fighting)blindsight 10ft unless target total cover<br>or(Druidic Warrior)2 Druid Cantrips+wis+pro<br>or(Dueling)1h dmg+2<br>or(Thrown Weapon Fighting)draw and atk, ranged+2 dmg<br>or(Two-Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>'+a+'<p>(Primal Awareness)xtra Ranger spells<br>@3rd <b onClick=SpeakWithAnimals()>Speak with Animals</b><br>@5th <b onClick=BeastSense()>Beast Sense</b><br>@9th <b onClick=SpeakWithPlants()>Speak with Plants</b><br>@13th <b onClick=LocateCreature()>Locate Creature</b><br>@17th <b onClick=CommuneWithNature()>Commune with Nature</b></td></tr><tr><td>(Ability Score Improvement)abi+1 and another abi+1 or abi+2<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th<p>@4th(Martial Versatility)replace your fighting style with another</td></tr><tr><td>(Extra Attack)</td></tr><tr><td>'+b+'</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty,save @Adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act , 1slot, 10/10 turns , know beings in area 1mi, favored terrain 6mi<p>@10th(Hide in Plain Sight)10/10 turns camo, unmoving,stealth+10<br>or(Nature\'s Veil)bonus act, invisible until start next turn lvl pro/ lvl pro l rest</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Vanish)Hide as bonus, not nonmagically tracked</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no advantage vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dmg+wisMod');
 this.setEquipment('scale mail or leather armor.2 shortswords or 2 simple melee weapons.dungeoneer pack or explorer pack.Longbow 20 arrows');
-this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, all weapons');
 this.setSaving('str+pro, dex+pro');
 this.setStrPro('pro');
@@ -3671,7 +3672,7 @@ if(this.class.match(/Scout/)){a='@3rd(Skirmisher)enemy ends turn 5ft from you, r
 b='@9th(Superior Mobility)speed+10ft walk climb swim';
 c='@13th(Ambush Master)init roll @Adv, atk @Adv 1st rnd 1st target';
 dx='@17th(Sudden Strike)xtra atk bonus act each turn';}
-if(this.class.match(/Soulknife/)){a='@3rd(Psionic Power)d6 Psionic Energy Dice 2* lvl pro/2* lvl pro l rest<br>@3rd d6<br>@5th d8<br>@11th d10<br>@17 d12<p>(Psi-Bolstered Knack)failed skill-pro or tool-pro roll+1 PsiEnergyDie, if success expend the PEDie<p>(Psychic Whispers)1act, telepathy with lvl pro number of speaking allies you can see for expended PEDie hours and up to 1 mile<p>(Psychic Blades)1d6+abi psychic dmg, 1d4 secondary psychic dmg';
+if(this.class.match(/Soulknife/)){a='@3rd(Psionic Power)d6 Psionic Energy Dice 2*lvl pro/2*lvl pro l rest<br>@3rd d6<br>@5th d8<br>@11th d10<br>@17 d12<p>(Psi-Bolstered Knack)failed skill-pro or tool-pro roll+1 PsiEnergyDie, if success expend the PEDie<p>(Psychic Whispers)1act, telepathy with lvl pro number of speaking allies you can see for expended PEDie hours and up to 1 mile<p>(Psychic Blades)1d6+abi psychic dmg, 1d4 secondary psychic dmg';
 b='@9th(Homing Strikes)psychic blade failed atk roll+PEDie, expend die on a hit<p>(Psychic Teleportation)bonus act, throw blade 10xPEDie ft to unoccupied space and teleport there';
 c='@13th(Psychic Veil)1act, invisible 1hr until if you dmg or force save on target';
 dx='@17th(Rend Mind)DC8+dex+pro vsWis or stunned 1min repe@save @end of each turn, using again costs 3PEDice before rest';}
@@ -3685,7 +3686,7 @@ c="@13th(Use Magic Device)use any class item";
 dx="@17th(Thief s Reflexes)1st turn @init, 2nd(turn @init-10 1st round";}
 this.setFeatures('</td></tr><tr><td>@1st(Expertise)Thieves Tools+exp and 1 skill+exp or 2 skills+exp<br>@6th 2 more skills+exp<p>@1st(Sneak Attack)1/turn when atking @Adv or ally adjacent to target xtra dmg<br>@1st+1d6<br>@3rd+2d6<br>@5th+3d6<br>@7th+4d6<br>@8th+5d6<p>@1st(Thieves Cant)gestures</td></tr><tr><td>@2nd(Cunning Action)action as bonus Dash, Disengage, or Hide after atk, under half cover, Stealth vs Perception or target can not atk</td></tr><tr><td>'+a+'<p>@3rd(Steady Aim)1bonus, no movement atk@Adv after 0 movement till next turn</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1 or 1 feat<br>@4th @6th @8th @12th @16th @19th</td></tr><tr><td>@5th(Uncanny Dodge)1 react per turn for half dmg</td></tr><tr><td>@7th(Evasion)when atked, vsDex for half is no dmg</td></tr><tr><td>'+b+'</td></tr><tr><td>@11th(Reliable Talent)abi+pro roll of 9 or less is 10</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Blindsense)know location of invisibles 10ft</td></tr><tr><td>@15th(Slippery Mind)wis+pro</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Elusive)not atked @Adv less incapacitated</td></tr><tr><td>@20th(Stroke of Luck)recharge s rest, roll failure is success');
 this.setEquipment('rapier or shortsword.shortbow 20 arrows or shortsword.burglar pack or dungeoneer pack or explorer pack.leather armor.2 daggers.thieves tools');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('daggers, darts, light crossbows, quarterstaffs, and slings');
 this.setSaving('con+pro, cha+pro');
 this.setStrPro('');
@@ -3714,7 +3715,7 @@ c='@14th(Storm\'s Fury)melee atkd, react your lvl in lightning dmg and vsStr or 
 dx='@18th(Wind Soul)1/1 l rest, immune lightning and thunder, fly 60ft, reduce fly 30ft and 3+cha allies can fly 30ft';}
 this.setFeatures('Sorcerer'+a+'</td></tr><tr><td>@2nd(Font of Magic)exchange spell slots and Sorcery Points<p>@2nd(Spell Points) your lvl/your lvl</td></tr><tr><td>(Metamagic)<br>@3rd 2<br>@10th 3<br> @17th 4<br>(Careful Spell)1SP, select chaMod targets in spell area to be immune<br>(Distant Spell)1SP, range x 2, touch is 30ft<br>(Empowered Spell)1SP, discard dmg and reroll dmg chaMod times, in addition to other Metamagic<br>(Extend Spell)1SP, duration x 2, max 24 hrs(Heightened Spell)3SP, target rolls 1st save @DisAdv<br>(Quickened Spell)1SP, 1 act is 1 bonus cast<br>(Subtile Spell)1SP, no verbal somatic cast needed<br>(Twinned Spell)SP is spell lvl, non self spell, target another</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Sorcerous Restoration)0SP is 4SP, recharge s rest');
 this.setEquipment('light crossbow 20 bolts or arcane focus.dungeoneer pack or explorer pack.2 daggers');
-this.setHitDice(this.lvl+'d6+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d6+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('Draconic, daggers, darts, light crossbows, quarterstaffs, and slings');
 this.setSaving('con+pro, cha+pro');
 this.setStrPro('');
@@ -3730,7 +3731,7 @@ if(this.class.match(/Warlock/)){if(this.class.match(/Archfey/)){a="@1st<b onClic
 b='@6th lvlMISTY ESCAPE 1/1 s rest, take dam, react teleport 60ft invisible til start your next turn or you atk';
 c='@10th lvlBEGUILING DEFENSE immune charm, react vsWis or charm charmers 10/10 turns or dmgd';
 dx='@14th lvlDARK DELIRIUM 1/1 s rest, 60ft, vsWis charmed or frightened con 10/10 turns or dmgd';}
-if(this.class.match(/Fiend/)){a="@1st<b onClick='BurningHands()'>Burning Hands</b>,<b onClick='Command()'>Command</b></td></tr><tr><td>@2nd<b onClick='BlindnessDeafness()'>BlindnessDeafness</b>,<b onClick='ScorchingRay()'>Scorching Ray</b></td></tr><tr><td>@3rd<b onClick='Fireball()'>Fireball</b>,<b onClick='StinkingCloud()'>Stinking Cloud</b></td></tr><tr><td>@4th<b onClick='FireShield()'>Fire Shield</b> ,<b onClick='WallOfFire()'>Wall of Fire</b></td></tr><tr><td>@5th<b onClick='FlameStrike()'>Flame Strike</b>,<b onClick='Hallow()'>Hallow</b><p>@1st(Dark One s Blessing)kill target gain temp hp+chaMod+ lvl";
+if(this.class.match(/Fiend/)){a="@1st<b onClick='BurningHands()'>Burning Hands</b>,<b onClick='Command()'>Command</b></td></tr><tr><td>@2nd<b onClick='BlindnessDeafness()'>BlindnessDeafness</b>,<b onClick='ScorchingRay()'>Scorching Ray</b></td></tr><tr><td>@3rd<b onClick='Fireball()'>Fireball</b>,<b onClick='StinkingCloud()'>Stinking Cloud</b></td></tr><tr><td>@4th<b onClick='FireShield()'>Fire Shield</b> ,<b onClick='WallOfFire()'>Wall of Fire</b></td></tr><tr><td>@5th<b onClick='FlameStrike()'>Flame Strike</b>,<b onClick='Hallow()'>Hallow</b><p>@1st(Dark One s Blessing)kill target gain temp hp+chaMod+lvl";
 b='@6th lvlDARK ONE S OWN LUCK 1/1 l rest, abi check or save+1d10';
 c='@10th lvlFIENDISH RESILIENCE 1/1 resist 1 dmg type till next l rest';
 dx='@14th lvlHURL THROUGH HELL 1/1 l rest, on hit, teleport non-fiend target through lower planes and back 10d10 psychic';}
@@ -3740,15 +3741,15 @@ c='@10th lvlTHOUGHT SHIELD immune telepathy @will, resist psychic, atker takes s
 dx='@14th lvlCREATE THRALL incapacitated humanoid telepathically charmed til Remove Curse';}
 if(this.class.match(/Hexblade/)){a="@1st<b onClick='Shield()'>Shield</b>,<b onClick='WrathfulSmite()'>Wrathful Smite</b></td></tr><tr><td>@2nd<b onClick='Blur()'>Blur</b>,<b onClick='BrandingSmite()'>Branding Smite</b></td></tr><tr><td>@3rd<b onClick='Blink()'>Blink</b>,<b onClick='ElementalWeapon()'>Elemental Weapon</b></td></tr><tr><td>@4th<b onClick='PhantasmalKiller()'>Phantasmal Killer</b>,<b onClick='StaggeringSmite()'>Staggering Smite</b></td></tr><tr><td>@5th<b onClick='BanishingSmite()'>Banishing Smite</b>,<b onClick='ConeOfCold()'>Cone of Cold</b><p>HEXBLADE S CURSE 1bonus,1target,30ft,1min, dmg+pro,crit on 19-20,target dies you heal your lvl+cha,1/1s rest<p>HEX WARRIOR pro @medium armor, shields, martial weapons, 1h weapon and pact weapons atk+cha dmg+cha";
 b="@6th lvlACCURSED SPECTER your target dies becomes Specter with temp hp 1/2 your lvl, atks+your cha uteoy next l rest";
-c='@10th lvlARMOR OF HEXES atker hits you, roll d6 4+ atker misses';
+c='@10th lvlARMOR OF HEXES atker hits you, roll d6 4+atker misses';
 dx='@14th lvlMASTER OF HEXES you transfer the curse to another target, you do not gain hp from new target deaths';}
 if(this.class.match(/Undying/)){a="@1st<b onClick='FalseLife()'>False Life</b>,<b onClick='RayOfSickness()'> Ray of Sickness</b></td></tr><tr><td>@2nd<b onClick='BlindnessDeafness()'>BlindnessDeafness</b>,<b onClick='Silence()'>Silence</b></td></tr><tr><td>@3rd<b onClick='FeignDeath()'>Feign Death</b>,<b onClick='SpeakWithDead()'>Speak with Dead</b></td></tr><tr><td>@4th<b onClick='AuraOfLife()'>Aura of Life</b></td></tr><tr><td>,<b onClick='DeathWard()'>Death Ward</b></td></tr><tr><td>@5th<b onClick='Contagion()'>Contagion</b>,<b onClick='LegendLore()'>Legend Lore</b><p>@1st AMONG THE DEAD Spare the Dying/save @Adv vs disease/undead vsWis vs spell dc on fail atk another target, on success charmed";
 b='@6th lvlDEFY DEATH 1/1 l rest, heal 1d8+conMod on success death save or stabilizing with Spare the Dying';
 c='@10th lvlUNDYING NATURE do not need air, food, water or sleep unless long or s rest/age 1yr for every 10yrs/immune magically aged';
-dx='@14th lvlINDESTRUCTABLE LIFE 1/1 s rest/bonus heal 1d8+ lvl/reattach your severed body parts';}
+dx='@14th lvlINDESTRUCTABLE LIFE 1/1 s rest/bonus heal 1d8+lvl/reattach your severed body parts';}
 this.setFeatures('</td></tr><tr><td>@1st lvlPACT MAGIC spellMod is chaMod<p>EXPANDED SPELLS</td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd lvlELDRITCH INVOCATION AGONIZING BLAST must have Eldritch Blast, dmg+chaMod<p>ARMOR OF SHADOWS Mage Armor no slot cost<p>@9th ASCENDANT STEP Levitate @will, no slot cost<p>BEAST SPEECH Speak with Animals @will, no slot cost<p>BEGUILING INFLUENCE Deception Persuasion+pro<p>@7th BEWITCHING WHISPERS Compulsion, slot cost, 1/1 l rest<p>BOOK OF ANCIENT SECRETS must have Pact of the Tome, 2 1st lvl spells of any class as rituals, add adventure rituals 2hrs 50gp<p>@15th CHAINS OF CARCERI 1/1 l rest, Hold Monster @will, no slot cost or components(Devil s Sight)120ft see in magical nonmagical darkness @7th(Dreadful Word)1/1 l rest, Confusion, slot cost<p>ELDRITCH SIGHT Detect magic @will, no slot cost<p>ELDRITCH SPEAR must have Eldritch Blast, range 300ft<p>EYES OF THE RUNE KEEPER read all writing<p>FIENDISH VIGOR False Life @will, no slot cost<p>GAZE OF TWO MINDS see through ally till tteo your next turn<p>@12th LIFEDRINKER must have Pact of the Blade, dmg+chaMod necrotic<p>MASK OF MANY FACES<b onClick=DisguiseSelf()>Disguise Self</b> @will, no slot cost<p>@15th MASTER OF MYRIAD FORMS Alter Self @will, no slot cost<p>@9th MINIONS OF CHAOS 1/1 l rest, Conjure Elemental, slot cost<p>@5th MIRE THE MIND 1/1 l rest, Slow, slot cost<p>MISTY VISIONS Silent Image @will, no slot cost, no material component<p>@5th ONE WITH SHADOWS in dim or darkness, 1act, invisible til move, act, react<p>@9th OTHERWORLDLY LEAP jump @will, no slot cost, no material component<p>REPELLING BLAST must have Eldritch Blast, on hit push target up to 10ft<p>@7th SCULPTOR OF FLESH 1/1 l rest, Polymorph, 1 slot<p>@5th SIGN OF ILL OMEN 1/1 l rest, Bestow Curse<p>THIEF OF FIVE FATES 1/1 l rest, Bane<p>@5th THIRSTING BLADE must have Pact of the Blade, 1 more atk<p>@15th VISIONS OF DISTANT REALMS Arcane Eye @will, no slot cost<p>VOICE OF THE CHAIN MASTER must have Pact of the Chain, telepathy with familiar, sense and speak through familiar<p>@9th WHISPERS OF THE GRAVE Speak with Dead @will, no slot cost<p>@15th WITCH SIGHT see true form of shapechanger of illusion or transmutation 30ft</td></tr><tr><td>@3rd lvlPACT BOON<p>PACT OF THE CHAIN Find Familiar as ritual, imp, pseudodragon, quasit, sprite, or normal familiar, familiar atks as its react<p>or PACT OF THE BLADE weapon becomes magical, summon dismiss weapon as bonus<p> or PACT OF THE TOMB 3 any class xtra cantrips, 1hr to replace book</td></tr><tr><td>@4th lvl<b>Ability Score Improvement</b> one abi+2, or abi+1 another abi+1 @4th, @8th, @12th, @16th, @19th</td></tr><tr><td>'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th lvl MYSTIC ARCANUM 1 new 6th lvl Warlock spell without slot cost, after slot cost) 1/1 , @13th 7th lvl 1/1 , @15th 8th lvl 1/1 , @17th 9th lvl 1/1 </td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th lvlELDRITCH MASTER 1/1 l rest, takes 1min restore all slots</td></tr><tr><td>');
 this.setEquipment('light crossbow 20 bolts or simple weapon.component pouch or arcane focus.scholar pack or dungeoneer pack.leather armor.simple weapon.2 daggers');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simple weapons');
 this.setSaving('wis+pro, cha+pro');
 this.setStrPro('');
@@ -3788,7 +3789,7 @@ b='@6th(Transmuter s Stone)you or ally that carries it, Darkvision 60ft or speed
 }
 if(this.class.match(/Wizard/)){this.setFeatures("</td></tr><tr><td>1st(Arcane Recovery)1/1 recharge after s rest, recover 1/2 lvl rnd up in 6th lvl or fewer slots</td></tr><tr><td>"+a+"</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1<br>@4th<br>@8th<br>@12th<br>@16th<br>@19th</td></tr><tr><td>"+b+"</td></tr><tr><td>@18th(Spell Mastery)cast a known 1st and 2nd lvl spell @no 1st cost, 8hrs change the know spells</td></tr><tr><td>@20th(Signature Spells)cast 2 known 3rd lvl spells @no 3rd cost");
 this.setEquipment('quarterstaff or dagger.component pouch or arcane focus.scholar pack or explorer pack.spellbook');
-this.setHitDice(this.lvl+'d6+'+(parseInt(this.lvl)* parseInt(this.conMod)));
+this.setHitDice(this.lvl+'d6+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('daggers, darts, light crossbows, quarterstaffs, and slings');
 this.setSaving('int+pro, wis+pro');
 this.setStrPro('');
@@ -3843,26 +3844,26 @@ this.refresh();}
 function _setCurStr(x){this.curStr=x;
 calcMod(x);
 this.strMod=mod;
-if(this.size.match(/Tiny/)){this.carryingCapacity=((this.curStr / 1)* 15)/ 2;
-this.dragLiftPush=((this.curStr / 1)* 30)/ 2;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)/ 2);
+if(this.size.match(/Tiny/)){this.carryingCapacity=((this.curStr / 1)*15)/ 2;
+this.dragLiftPush=((this.curStr / 1)*30)/ 2;
+this.highJump=Math.floor(((this.strMod / 1)+3)/ 2);
 this.longJump=Math.floor((this.curStr / 1)/ 2);}
-if(this.size.match(/Small|Medium/)){this.carryingCapacity=(this.curStr / 1)* 15;
-this.dragLiftPush=(this.curStr / 1)* 30;
-this.highJump=Math.floor((this.strMod / 1)+ 3);
+if(this.size.match(/Small|Medium/)){this.carryingCapacity=(this.curStr / 1)*15;
+this.dragLiftPush=(this.curStr / 1)*30;
+this.highJump=Math.floor((this.strMod / 1)+3);
 this.longJump=Math.floor(this.curStr / 1);}
-if(this.size.match(/Large/)){this.carryingCapacity=((this.curStr / 1)* 15)* 2;
-this.dragLiftPush=((this.curStr / 1)* 30)* 2;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)* 2);
-this.longJump=Math.floor((this.curStr / 1)* 2);}
-if(this.size.match(/Huge/)){this.carryingCapacity=((this.curStr / 1)* 15)* 4;
-this.dragLiftPush=((this.curStr / 1)* 30)* 4;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)* 4);
-this.longJump=Math.floor((this.curStr / 1)* 4);}
-if(this.size.match(/Gargantuan/)){this.carryingCapacity=((this.curStr / 1)* 15)* 6;
-this.dragLiftPush=((this.curStr / 1)* 30)* 6;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)* 6);
-this.longJump=Math.floor((this.curStr / 1)* 6);}
+if(this.size.match(/Large/)){this.carryingCapacity=((this.curStr / 1)*15)*2;
+this.dragLiftPush=((this.curStr / 1)*30)*2;
+this.highJump=Math.floor(((this.strMod / 1)+3)*2);
+this.longJump=Math.floor((this.curStr / 1)*2);}
+if(this.size.match(/Huge/)){this.carryingCapacity=((this.curStr / 1)*15)*4;
+this.dragLiftPush=((this.curStr / 1)*30)*4;
+this.highJump=Math.floor(((this.strMod / 1)+3)*4);
+this.longJump=Math.floor((this.curStr / 1)*4);}
+if(this.size.match(/Gargantuan/)){this.carryingCapacity=((this.curStr / 1)*15)*6;
+this.dragLiftPush=((this.curStr / 1)*30)*6;
+this.highJump=Math.floor(((this.strMod / 1)+3)*6);
+this.longJump=Math.floor((this.curStr / 1)*6);}
 this.refresh();}
 
 function _setCurWis(x){this.curWis=x;
@@ -3875,24 +3876,24 @@ if(this.curHp< -this.maxHp){this.curHp=-this.maxHp;}
 this.refresh();}
 
 function _setDamageConditions(x){this. dmgConditions=x;
-if(changedStr=this. dmgConditions.match(/(str)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurStr(parseInt(this.str)+ parseInt(changedStr[2]));}
+if(changedStr=this. dmgConditions.match(/(str)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurStr(parseInt(this.str)+parseInt(changedStr[2]));}
 else{this.setCurStr(parseInt(this.str));}
-if(changedDex=this. dmgConditions.match(/(dex)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurDex(parseInt(this.dex)+ parseInt(changedDex[2]));}
+if(changedDex=this. dmgConditions.match(/(dex)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurDex(parseInt(this.dex)+parseInt(changedDex[2]));}
 else{this.setCurDex(parseInt(this.dex));}
-if(changedCon=this. dmgConditions.match(/(con)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurCon(parseInt(this.con)+ parseInt(changedCon[2]));}
+if(changedCon=this. dmgConditions.match(/(con)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurCon(parseInt(this.con)+parseInt(changedCon[2]));}
 else{this.setCurCon(parseInt(this.con));}
-if(changedInt=this. dmgConditions.match(/(int)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurInt(parseInt(this.inte)+ parseInt(changedInt[2]));}
+if(changedInt=this. dmgConditions.match(/(int)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurInt(parseInt(this.inte)+parseInt(changedInt[2]));}
 else{this.setCurInt(parseInt(this.inte));}
 if(changedHp=this. dmgConditions.match(/(hp)(\+\d{1,3}|\-\d{1,3})/i)){
 this.setTempHp(parseInt(changedHp[2]));}
 else{this.setTempHp(parseInt(0));}
-if(changedWis=this. dmgConditions.match(/(wis)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurWis(parseInt(this.wis)+ parseInt(changedWis[2]));}
+if(changedWis=this. dmgConditions.match(/(wis)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurWis(parseInt(this.wis)+parseInt(changedWis[2]));}
 else{this.setCurWis(parseInt(this.wis));}
-if(changedCha=this. dmgConditions.match(/(cha)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurCha(parseInt(this.cha)+ parseInt(changedCha[2]));}
+if(changedCha=this. dmgConditions.match(/(cha)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurCha(parseInt(this.cha)+parseInt(changedCha[2]));}
 else{this.setCurCha(parseInt(this.cha));}
-if(changedAc=this. dmgConditions.match(/(ac)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurAc(parseInt(this.ac)+ parseInt(changedAc[2]));}
+if(changedAc=this. dmgConditions.match(/(ac)(\+\d{1,2}|\-\d{1,2})/i)){this.setCurAc(parseInt(this.ac)+parseInt(changedAc[2]));}
 else{this.setCurAc(parseInt(this.ac));}
-if(changedIni=this. dmgConditions.match(/(ini)(\+\d{1,2}|\-\d{1,2})/i)){newIni=parseInt(this.initBonus)+ parseInt(changedIni[2]);
+if(changedIni=this. dmgConditions.match(/(ini)(\+\d{1,2}|\-\d{1,2})/i)){newIni=parseInt(this.initBonus)+parseInt(changedIni[2]);
 if(newIni > -1){newIni="+"+newIni;}
 this.setCurIni(newIni);}
 else{this.setCurIni(this.initBonus);}
@@ -4059,45 +4060,144 @@ this.refresh(x);}
 function _setSurvival(x){this.survival=x;
 this.refresh(x);}
 
-function abiRoll(x){if(abi===1){abi='str';}
-if(abi===2){abi='dex';}
-if(abi===3){abi='con';}
-if(abi===4){abi='int';}
-if(abi===5){abi='wis';}
-if(abi===6){abi='cha';}
-if(abi===7){abi='Acrobatics(dex)';}
-if(abi===8){abi='Animal Handling(wis)';}
-if(abi===9){abi='Arcana(Int)';}
-if(abi===10){abi='Athletics(str)';}
-if(abi===11){abi='Deception(cha)';}
-if(abi===12){abi='History(Int)';}
-if(abi===13){abi='Insight(wis)';}
-if(abi===14){abi='Intimidation(cha)';}
-if(abi===15){abi='Investigation(Int)';}
-if(abi===16){abi='Medicine(wis)';}
-if(abi===17){abi='Nature(Int)';}
-if(abi===18){abi='Perception(wis)';}
-if(abi===19){abi='Performance(cha)';}
-if(abi===20){abi='Persuasion(cha)';}
-if(abi===21){abi='Religion(Int)';}
-if(abi===22){abi='Sleight of Hand(dex)';}
-if(abi===23){abi='Stealth(dex)';}
-if(abi===24){abi='Survival(wis)';}
-if(skillMod==='pro'){skillMod=characters[x].pro;}
-else if(skillMod==='exp'){skillMod=parseInt(characters[x].pro * 2);
-if(skillMod > -1){skillMod="+"+skillMod;}
+function abiRoll(x)
+{
+
+skillMod='+0';skillModName="no pro";
+
+if(abi===1){abi='str';abiMod=characters[x].strMod;
+if(characters[x].strPro==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].strPro==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
 }
-else{skillMod='+0';}
-roll1=parseInt(rollDForm('1d20+0'));
-roll1=roll;
-naturalRoll1=naturalRoll;
-roll2=parseInt(rollDForm('1d20+0'));
-naturalRoll2=naturalRoll;
-roll2=roll;
-rollTotal1=naturalRoll1+parseInt(roll1)+ parseInt(abiMod)+ parseInt(skillMod)+ parseInt(characters[x].sit);
-rollTotal2=naturalRoll2+parseInt(roll2)+ parseInt(abiMod)+ parseInt(skillMod)+ parseInt(characters[x].sit);
-log="</td></tr><tr><td colspan='6'>"+characters[x].name+"</td></tr><tr><td colspan='6'>Ability or Skill Saving Throw Roll 1:1d20+0=natural"+naturalRoll1+roll1+abiMod+abi+skillMod+"pro"+characters[x].sit+"sit="+rollTotal1+"</td></tr><tr><td colspan='6'>Ability or Skill Saving Throw Roll 2:1d20+0=natural"+naturalRoll2+roll2+abiMod+abi+skillMod+"pro"+characters[x].sit+"sit="+rollTotal2+"</td></tr>";
-characters[x].setCombatLog(log);}
+
+if(abi===2){abi='dex';abiMod=characters[x].dexMod;
+if(characters[x].dexPro==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].dexPro==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===3){abi='con';abiMod=characters[x].conMod;
+if(characters[x].conPro==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].conPro==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===4){abi='int';abiMod=characters[x].intMod;
+if(characters[x].intPro==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].intPro==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+if(abi===5){abi='wis';abiMod=characters[x].wisMod;
+if(characters[x].wisPro==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].wisPro==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===6){abi='cha';abiMod=characters[x].chaMod;
+if(characters[x].chaPro==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].chaPro==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===7){abi='Acrobatics(dex)';abiMod=characters[x].dexMod;
+if(characters[x].acrobatics==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].acrobatics==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===8){abi='Animal Handling(wis)';abiMod=characters[x].wisMod;
+if(characters[x].animal==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].animal==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===9){abi='Arcana(Int)';abiMod=characters[x].intMod;
+if(characters[x].arcana==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].arcana==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===10){abi='Athletics(str)';abiMod=characters[x].strMod;
+if(characters[x].athletics==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].athletics==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===11){abi='Deception(cha)';abiMod=characters[x].chaMod;
+if(characters[x].deception==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].deception==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===12){abi='History(Int)';abiMod=characters[x].intMod;
+if(characters[x].history==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].history==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===13){abi='Insight(wis)';abiMod=characters[x].wisMod;
+if(characters[x].insight==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].insight==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===14){abi='Intimidation(cha)';abiMod=characters[x].chaMod;
+if(characters[x].intimidation==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].intimidation==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===15){abi='Investigation(Int)';abiMod=characters[x].intMod;
+if(characters[x].investigation==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].investigation==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===16){abi='Medicine(wis)';abiMod=characters[x].wisMod;
+if(characters[x].medicine==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].medicine==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===17){abi='Nature(Int)';abiMod=characters[x].intMod;
+if(characters[x].nature==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].nature==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===18){abi='Perception(wis)';abiMod=characters[x].wisMod;
+if(characters[x].perception==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].perception==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===19){abi='Performance(cha)';abiMod=characters[x].chaMod;
+if(characters[x].performance==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].performance==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===20){abi='Persuasion(cha)';abiMod=characters[x].chaMod;
+if(characters[x].persuasion==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].persuasion==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===21){abi='Religion(Int)';abiMod=characters[x].intMod;
+if(characters[x].religion==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].religion==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===22){abi='Sleight of Hand(dex)';abiMod=characters[x].dexMod;
+if(characters[x].sleight==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].sleight==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===23){abi='Stealth(dex)';abiMod=characters[x].dexMod;
+if(characters[x].stealth==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].stealth==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+if(abi===24){abi='Survival(wis)';abiMod=characters[x].wisMod;
+if(characters[x].survival==='pro'){skillMod=characters[x].pro;skillModName="pro"}
+else if(characters[x].survival==='exp'){skillMod='+'+characters[x].pro*2;skillModName="exp"}
+}
+
+D20Roll1=parseInt(rollDForm('1d20+0'));
+D20NaturalRoll1=naturalRoll;
+D20RollModifier1=roll;
+D20Roll2=parseInt(rollDForm('1d20+0'));
+D20NaturalRoll2=naturalRoll;
+D20RollModifier2=roll;
+
+abilityCheckRollTotal1=D20Roll1+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
+
+abilityCheckRollTotal2=D20Roll2+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
+
+AbiCheckLog=characters[x].name+"</td><td>Ability or Skill Check or Saving Throw 1<br>1d20+0<br>="+D20NaturalRoll1+" natural<br>"+D20RollModifier1+"<br>="+D20Roll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal1+"</td><td>Ability or Skill Check or Saving Throw 2<br>1d20+0<br>="+D20NaturalRoll2+" natural<br>"+D20RollModifier2+"<br>="+D20Roll2+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal2;
+characters[x].setCombatLog(AbiCheckLog);
+}
 
 function _setInt(x){this.inte=x;
 this.curInt=x;
@@ -4161,7 +4261,7 @@ this.setProficienciesRace('Stealth+pro');
 this.setResistance('');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
-this.setSpeed('30 feet');
+this.setSpeed('30ft');
 this.setTrait('16-80 yrs old('+(16+parseInt(rollDForm('1d64+0')))+'yrs old), 6ft tall+2d12in('+(6.0+(parseInt(rollDForm('2d12+0'))/12)).toFixed(1)+'in), 200lbs+2d6('+(parseInt(200)+parseInt(rollDForm('2d6+0')))+'lbs)');}
 
 if(this.race.match(/Dragonborn/)){this.setAbility('str+2, cha+1');
@@ -4178,8 +4278,8 @@ this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or
 this.setResistance('(Dwarven Resilience)resist poison 1/2 dmg save vs poison @Adv');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
-this.setSpeed('25 feet');
-this.setTrait('(Dwarven Toughness)when lvling up, hp+1hp, 1-350 years old, 150 lbs., 4-5 feet tall');}
+this.setSpeed('25ft');
+this.setTrait('(Dwarven Toughness)when lvling up, hp+1hp, 1-350 years old, 150 lbs., 4-5fttall');}
 
 if(this.race.match(/Dwarf,\sMountain/)){this.setAbility('str+2, con+2');
 this.setLanguages('Common, Dwarvish');
@@ -4187,7 +4287,7 @@ this.setProficienciesRace('light armor, medium armor, battleaxes, handaxes, ligh
 this.setResistance('(Dwarven Resilience)resist poison 1/2 dmg save vs poison @Adv');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
-this.setSpeed('25 feet');
+this.setSpeed('25ft');
 this.setTrait("50-350 yrs old("+(50+parseInt(rollDForm('1d300+0')))+"yrs old), 4ft 0in tall+2d4("+(4.0+(parseInt(rollDForm('2d4+0'))/12)).toFixed(1).replace('.', 'ft ')+"in tall, 115lbs+2d6("+(parseInt(115)+parseInt(rollDForm('2d6+0')))+"lbs)");}
 
 if(this.race.match(/Dwarf,\sGray/)){this.setAbility('str+1');
@@ -4196,8 +4296,8 @@ this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or
 this.setResistance('(Duergar Resilience)save @Adv vs illusion, charm, paralysis');
 this.setSenses('Darkvision 120ft');
 this.setSize('Medium 5x5ft');
-this.setSpeed('25 feet');
-this.setTrait('(Sunlight Sensitivity)atks and Perception @DisAdv in sunlight, 150 lbs., 4-5 feet tall');}
+this.setSpeed('25ft');
+this.setTrait('(Sunlight Sensitivity)atks and Perception @DisAdv in sunlight, 150 lbs., 4-5fttall');}
 if(this.race.match(/Elf,\sDark/)){this.setAbility('dex+2, cha+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish');
@@ -4206,7 +4306,7 @@ this.setResistance('(Fae Ancestry)save vs charm @Adv');
 this.setSenses('Darkvision 120ft,(Keen Senses)Perception+pro,(Trance)alert to danger during long and s rests');
 this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
-this.setTrait('(Sunlight Sensitivity)atks and Perception @DisAdv in sunlight, 1-750 years old, 5-6 feet tall');}
+this.setTrait('(Sunlight Sensitivity)atks and Perception @DisAdv in sunlight, 1-750 years old, 5-6fttall');}
 if(this.race.match(/Elf,\sHalf/)){this.setAbility('cha+2, abi+1 and abi+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish, and 1 language');
@@ -4215,7 +4315,7 @@ this.setResistance('(Fae Ancestry)save vs charm @Adv');
 this.setSenses('Darkvision 60ft,(Keen Senses)Perception+pro,(Trance)alert to danger during long and s rests');
 this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
-this.setTrait('1-180 years old, 5-6 feet tall');}
+this.setTrait('1-180 years old, 5-6fttall');}
 if(this.race.match(/Elf,\sHigh/)){this.setAbility('dex+2, int+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish, and 1 language');
@@ -4224,7 +4324,7 @@ this.setResistance('(Fae Ancestry)save vs charm @Adv');
 this.setSenses('Darkvision 60ft,(Keen Senses)Perception+pro,(Trance)alert to danger during long and s rests');
 this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
-this.setTrait('1-750 years old, 5-6 feet tall');}
+this.setTrait('1-750 years old, 5-6fttall');}
 if(this.race.match(/Elf,\sMoon/)){this.setAbility('dex+2, int+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish, and 1 language');
@@ -4233,7 +4333,7 @@ this.setResistance('(Fae Ancestry)save vs charm @Adv');
 this.setSenses('Darkvision 60ft,(Keen Senses)Perception+pro,(Trance)alert to danger during long and s rests');
 this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
-this.setTrait('1-750 years old, 5-6 feet tall');}
+this.setTrait('1-750 years old, 5-6fttall');}
 if(this.race.match(/Elf,\sShadow/)){this.setAbility('dex+2, con+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish, and 1 language');
@@ -4250,7 +4350,7 @@ this.setProficienciesRace('Longbows, longswords, shortbows, and shortswords');
 this.setResistance('necrotic dmg, (Fae Ancestry)save vs charm @Adv');
 this.setSenses('Darkvision 60ft,(Keen Senses)Perception+pro,(Trance)alert to danger during long and s rests');
 this.setSize('Medium 5x5ft');
-this.setSpeed('35 feet');
+this.setSpeed('35ft');
 this.setFeatureNotes("Mask of the Wild)try to hide even under light cover");
 this.setTrait("100-750 yrs old("+(100+parseInt(rollDForm('1d650+0')))+"yrs old), 4ft 6in tall+2d10("+(4.6+(parseInt(rollDForm('2d10+0'))/12)).toFixed(1).replace('.', 'ft ')+"in tall, 100lbs+1d4("+(parseInt(100)+parseInt(rollDForm('1d4+0')))+"lbs)");}
 
@@ -4262,7 +4362,7 @@ this.setProficienciesRace('');
 this.setResistance('');
 this.setSenses("passive Perception "+((10+(this.wisMod/1)+(this.wisPro/1))));
 this.setSize('Medium 5x5ft');
-this.setSpeed('30 feet');
+this.setSpeed('30ft');
 this.setFeatureNotes("(Firbolg Magic) wis Detect Magic, Disguise Self 1/1 s rest, (Hidden Step)bonus, invisible utso your next turn, (Powerful Build), (Speech of Beast and Leaf)vsCha to influence them");
 this.setTrait("30-500yrs old("+(30+parseInt(rollDForm('1d470+0')))+"yrs old), 6ft2in tall+2d12("+(6.2+(parseInt(rollDForm('2d12+0'))/12)).toFixed(1).replace('.','ft')+"in tall, 175lbs+2d6("+(parseInt(175)+parseInt(rollDForm('2d6+0')))+"lbs)");}
 
@@ -4272,24 +4372,24 @@ this.setProficienciesRace('Natural Illusionist(Minor Illusion(Int))');
 this.setResistance('(Gnome Cunning)save vs magic @Adv');
 this.setSenses('Darkvision 120ft');
 this.setSize('Small 5x5ft');
-this.setSpeed('25 feet');
-this.setTrait('(Stone Camouflage)Stealth @Adv in rocky terrain, 1-500 years old, 40 lbs., 3 feet tall');}
+this.setSpeed('25ft');
+this.setTrait('(Stone Camouflage)Stealth @Adv in rocky terrain, 1-500 years old, 40 lbs., 3fttall');}
 if(this.race.match(/Gnome,\sForest/)){this.setAbility('dex+1, int+2');
 this.setLanguages('Common, Gnomish');
 this.setProficienciesRace('Natural Illusionist(Minor Illusion(Int))');
 this.setResistance('(Gnome Cunning)save vs magic @Adv');
 this.setSenses('Darkvision 60ft');
 this.setSize('Small 5x5ft');
-this.setSpeed('25 feet');
-this.setTrait('(Speak with Small Beasts), 1-500 years old, 40 lbs., 3 feet tall');}
+this.setSpeed('25ft');
+this.setTrait('(Speak with Small Beasts), 1-500 years old, 40 lbs., 3fttall');}
 if(this.race.match(/Gnome,\sRock/)){this.setAbility('int+2, con+1');
 this.setLanguages('Common, Gnomish');
 this.setProficienciesRace('(Artifcer s Lore)History+exp regarding alchemical and magic items(Tinker)Tinker Tools+pro 1hr 10gp 1 toy AC5 1hp Clockwork Toy Fire Starter Music Box');
 this.setResistance('(Gnome Cunning)save vs magic @Adv');
 this.setSenses('Darkvision 60ft');
 this.setSize('Small 5x5ft');
-this.setSpeed('25 feet');
-this.setTrait('1-500 years old, 40 lbs., 3 feet tall');}
+this.setSpeed('25ft');
+this.setTrait('1-500 years old, 40 lbs., 3fttall');}
 if(this.race.match(/Goblin/)){
 this.setAbility('dex+2, con+1');
 this.setActionNotes('(Fury of the Small)1/1 4hr rest 1 target deal xtra your lvl dmg, (Nimble Escape)Disengage or Hide as bonus act 1/turn');
@@ -4299,7 +4399,7 @@ this.setProficienciesRace('');
 this.setResistance('');
 this.setSenses('Darkvision 60ft');
 this.setSize('Small 5x5ft');
-this.setSpeed('30 feet');
+this.setSpeed('30ft');
 this.setTrait('8-60 yrs old('+(8+parseInt(rollDForm('1d52+0')))+'yrs old), 3ft 5in tall+2d4('+(3.5+(parseInt(rollDForm('2d4+0'))/12)).toFixed(1)+'in), 35lbs+1d4('+(parseInt(35)+parseInt(rollDForm('1d4+0')))+'lbs)');}
 if(this.race.match(/Halfling,\sLightfoot/)){this.setAbility('dex+2, cha+1');
 this.setLanguages('Common, Halfling');
@@ -4307,16 +4407,16 @@ this.setProficienciesRace('');
 this.setResistance('(Brave)save vs fear @Adv');
 this.setSenses('');
 this.setSize('Small 5x5ft');
-this.setSpeed('25 feet');
-this.setTrait('(Naturally Stealthy)can try to hide behind larger being,(Nimbleness)can move through larger being space,(Lucky)re-roll on a natural 1, 1-250 years old, 40 lbs., 3 feet tall');}
+this.setSpeed('25ft');
+this.setTrait('(Naturally Stealthy)can try to hide behind larger being,(Nimbleness)can move through larger being space,(Lucky)re-roll on a natural 1, 1-250 years old, 40 lbs., 3fttall');}
 if(this.race.match(/Halfling,\sStout/)){this.setAbility('dex+2, con+1');
 this.setLanguages('Common, Halfling');
 this.setProficienciesRace('');
 this.setResistance('(Stout Resilience)resist Poison, save vs poison @Adv,(Brave)save vs fear @Adv');
 this.setSenses('');
 this.setSize('Small 5x5ft');
-this.setSpeed('25 feet');
-this.setTrait('(Nimbleness)can move through larger being space ,(Lucky)re-roll on a natural 1, 1-250 years old, 40 lbs., 3 feet tall');}
+this.setSpeed('25ft');
+this.setTrait('(Nimbleness)can move through larger being space ,(Lucky)re-roll on a natural 1, 1-250 years old, 40 lbs., 3fttall');}
 if(this.race.match(/Hobgoblin/)){
 this.setAbility('con+2, int+1');
 this.setActionNotes('(Saving Face)bonus act, reroll number of allies till success 1/1, ');
@@ -4326,7 +4426,7 @@ this.setProficienciesRace('2 weapons, light armor');
 this.setResistance('');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
-this.setSpeed('30 feet');
+this.setSpeed('30ft');
 this.setTrait('15-100 yrs old('+(15+parseInt(rollDForm('1d100+0')))+'yrs old), 4ft 8in tall+2d10('+(4.8+(parseInt(rollDForm('2d10+0'))/12)).toFixed(1)+'in), 110lbs+2d4('+(parseInt(110)+parseInt(rollDForm('2d4+0')))+'lbs)');}
 if(this.race.match(/Human/)){this.setAbility('abi+1 and abi+1');
 this.setLanguages('Common, and 1 language');
@@ -4345,7 +4445,7 @@ this.setProficienciesRace('');
 this.setResistance('');
 this.setSenses('Darkvision 60ft');
 this.setSize('Small 5x5ft');
-this.setSpeed('30 feet');
+this.setSpeed('30ft');
 this.setTrait('6-120 yrs old('+(6+parseInt(rollDForm('1d114+0')))+'yrs old), 2ft 1in tall+2d4('+(2.1+(parseInt(rollDForm('2d4+0'))/12)).toFixed(1)+'in), 25lbs+1d4('+(parseInt(25)+parseInt(rollDForm('1d4+0')))+'lbs)');}
 if(this.race.match(/Orc/)){
 this.setAbility('str+2, con+1');
@@ -4356,7 +4456,7 @@ this.setProficienciesRace('Intimidation+pro');
 this.setResistance('');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
-this.setSpeed('30 feet');
+this.setSpeed('30ft');
 this.setTrait('12-50 yrs old('+(12+parseInt(rollDForm('1d38+0')))+'yrs old), 5ft 4in tall+2d8('+(5.4+(parseInt(rollDForm('2d8+0'))/12)).toFixed(1)+'in), 175lbs+2d6('+(parseInt(175)+parseInt(rollDForm('2d6+0')))+'lbs)');}
 if(this.race.match(/Orc,\sHalf/)){this.setAbility('str+2, con+1');
 this.setLanguages('Common, Orc');
@@ -4369,12 +4469,12 @@ this.setTrait('(Relentless Endurance) 1/1 l rest, 0hp is 1hp,(Menacing)Intimidat
 if(this.race.match(/Satyr/)){this.setAbility('dex+1, cha+2');
 this.setDamageConditions('immune to Charm Person');
 this.setLanguages('Common, Sylvan');
-this.setProficienciesRace('Ram 1d4+str+pro, Mirthful Leaps long jump+1d8 feet, Performance+pro, Persuasion+pro, Musical Instrument+pro, @1st Vicious Mockery+cha @3rd Entangle+cha, @5th Suggestion+cha 1/1 l rest resets');
+this.setProficienciesRace('Ram 1d4+str+pro, Mirthful Leaps long jump+1d8ft, Performance+pro, Persuasion+pro, Musical Instrument+pro, @1st Vicious Mockery+cha @3rd Entangle+cha, @5th Suggestion+cha 1/1 l rest resets');
 this.setResistance('resists magic @Adv');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
 this.setSpeed('35ft');
-this.setTrait(15+rollDForm('1d75+0')+' or 1-90 years old,'+(3+rollDForm('1d2+0'))+ 'ft or 4-5 feet tall, '+(100+rollDForm('1d50+0'))+'lbs or 100-150lbs');}
+this.setTrait(15+rollDForm('1d75+0')+' or 1-90 years old,'+(3+rollDForm('1d2+0'))+'ft or 4-5fttall, '+(100+rollDForm('1d50+0'))+'lbs or 100-150lbs');}
 
 if(this.race.match(/Tiefling,\sMephistopheles/))
 {this.setAbility('int+1, cha+2');
@@ -4458,26 +4558,26 @@ if(this.sit===''){this.sit='+0';}
 this.refresh();}
 
 function _setSize(x){this.size=x;
-if(this.size.match(/Tiny/)){this.carryingCapacity=((this.curStr / 1)* 15)/ 2;
-this.dragLiftPush=((this.curStr / 1)* 30)/ 2;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)/ 2);
+if(this.size.match(/Tiny/)){this.carryingCapacity=((this.curStr / 1)*15)/ 2;
+this.dragLiftPush=((this.curStr / 1)*30)/ 2;
+this.highJump=Math.floor(((this.strMod / 1)+3)/ 2);
 this.longJump=Math.floor((this.curStr / 1)/ 2);}
-if(this.size.match(/Small|Medium/)){this.carryingCapacity=(this.curStr / 1)* 15;
-this.dragLiftPush=(this.curStr / 1)* 30;
-this.highJump=Math.floor((this.strMod / 1)+ 3);
+if(this.size.match(/Small|Medium/)){this.carryingCapacity=(this.curStr / 1)*15;
+this.dragLiftPush=(this.curStr / 1)*30;
+this.highJump=Math.floor((this.strMod / 1)+3);
 this.longJump=Math.floor(this.curStr / 1);}
-if(this.size.match(/Large/)){this.carryingCapacity=((this.curStr / 1)* 15)* 2;
-this.dragLiftPush=((this.curStr / 1)* 30)* 2;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)* 2);
-this.longJump=Math.floor((this.curStr / 1)* 2);}
-if(this.size.match(/Huge/)){this.carryingCapacity=((this.curStr / 1)* 15)* 4;
-this.dragLiftPush=((this.curStr / 1)* 30)* 4;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)* 4);
-this.longJump=Math.floor((this.curStr / 1)* 4);}
-if(this.size.match(/Gargantuan/)){this.carryingCapacity=((this.curStr / 1)* 15)* 6;
-this.dragLiftPush=((this.curStr / 1)* 30)* 6;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)* 6);
-this.longJump=Math.floor((this.curStr / 1)* 6);}
+if(this.size.match(/Large/)){this.carryingCapacity=((this.curStr / 1)*15)*2;
+this.dragLiftPush=((this.curStr / 1)*30)*2;
+this.highJump=Math.floor(((this.strMod / 1)+3)*2);
+this.longJump=Math.floor((this.curStr / 1)*2);}
+if(this.size.match(/Huge/)){this.carryingCapacity=((this.curStr / 1)*15)*4;
+this.dragLiftPush=((this.curStr / 1)*30)*4;
+this.highJump=Math.floor(((this.strMod / 1)+3)*4);
+this.longJump=Math.floor((this.curStr / 1)*4);}
+if(this.size.match(/Gargantuan/)){this.carryingCapacity=((this.curStr / 1)*15)*6;
+this.dragLiftPush=((this.curStr / 1)*30)*6;
+this.highJump=Math.floor(((this.strMod / 1)+3)*6);
+this.longJump=Math.floor((this.curStr / 1)*6);}
 this.refresh();}
 
 function _setSkills(x){this.skills=x;
@@ -4487,26 +4587,26 @@ function _setStr(x){this.str=x;
 this.curStr=x;
 calcMod(x);
 this.strMod=mod;
-if(this.size.match(/Tiny/)){this.carryingCapacity=((this.curStr / 1)* 15)/ 2;
-this.dragLiftPush=((this.curStr / 1)* 30)/ 2;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)/ 2);
+if(this.size.match(/Tiny/)){this.carryingCapacity=((this.curStr / 1)*15)/ 2;
+this.dragLiftPush=((this.curStr / 1)*30)/ 2;
+this.highJump=Math.floor(((this.strMod / 1)+3)/ 2);
 this.longJump=Math.floor((this.curStr / 1)/ 2);}
-if(this.size.match(/Small|Medium/)){this.carryingCapacity=(this.curStr / 1)* 15;
-this.dragLiftPush=(this.curStr / 1)* 30;
-this.highJump=Math.floor((this.strMod / 1)+ 3);
+if(this.size.match(/Small|Medium/)){this.carryingCapacity=(this.curStr / 1)*15;
+this.dragLiftPush=(this.curStr / 1)*30;
+this.highJump=Math.floor((this.strMod / 1)+3);
 this.longJump=Math.floor(this.curStr / 1);}
-if(this.size.match(/Large/)){this.carryingCapacity=((this.curStr / 1)* 15)* 2;
-this.dragLiftPush=((this.curStr / 1)* 30)* 2;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)* 2);
-this.longJump=Math.floor((this.curStr / 1)* 2);}
-if(this.size.match(/Huge/)){this.carryingCapacity=((this.curStr / 1)* 15)* 4;
-this.dragLiftPush=((this.curStr / 1)* 30)* 4;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)* 4);
-this.longJump=Math.floor((this.curStr / 1)* 4);}
-if(this.size.match(/Gargantuan/)){this.carryingCapacity=((this.curStr / 1)* 15)* 6;
-this.dragLiftPush=((this.curStr / 1)* 30)* 6;
-this.highJump=Math.floor(((this.strMod / 1)+ 3)* 6);
-this.longJump=Math.floor((this.curStr / 1)* 6);}
+if(this.size.match(/Large/)){this.carryingCapacity=((this.curStr / 1)*15)*2;
+this.dragLiftPush=((this.curStr / 1)*30)*2;
+this.highJump=Math.floor(((this.strMod / 1)+3)*2);
+this.longJump=Math.floor((this.curStr / 1)*2);}
+if(this.size.match(/Huge/)){this.carryingCapacity=((this.curStr / 1)*15)*4;
+this.dragLiftPush=((this.curStr / 1)*30)*4;
+this.highJump=Math.floor(((this.strMod / 1)+3)*4);
+this.longJump=Math.floor((this.curStr / 1)*4);}
+if(this.size.match(/Gargantuan/)){this.carryingCapacity=((this.curStr / 1)*15)*6;
+this.dragLiftPush=((this.curStr / 1)*30)*6;
+this.highJump=Math.floor(((this.strMod / 1)+3)*6);
+this.longJump=Math.floor((this.curStr / 1)*6);}
 this.refresh();}
 
 function _setStyle(att, style){eval("document.getElementById(this.elementId).style."+att+"=\""+style+"\"");}
@@ -4853,9 +4953,35 @@ this.setCurInt=_setCurInt;
 this.setCurStr=_setCurStr;
 this.setCurWis=_setCurWis;
 this.setTempHp=_setTempHp;
-this.refresh();}
+this.refresh();
+}
 
-function makeRoll(x, i){abi='abi';
+function makeRoll(x, i)
+{
+
+dmgRoll1=rollDForm(characters[x].rolls2[i])
+dmgNaturalRoll1=naturalRoll;
+dmgModifier1=roll;
+
+dmgRoll2=rollDForm(characters[x].rolls2[i])
+dmgNaturalRoll2=naturalRoll;
+dmgModifier2=roll;
+
+//Healing Rolls
+
+if(characters[x].rollNames2[i].match(/heal/))
+{
+
+healingRollTotal1=dmgRoll1+parseInt(characters[x].spellAbilityNumber);
+
+healingRollTotal2=dmgRoll2+parseInt(characters[x].spellAbilityNumber);
+
+healRollLog=characters[x].name+"<br>"+characters[x].rollNames2[i]+"<p>is healing<p>"+characters[targeted].name+"<br><input onClick='characters[targeted].setDamageConditions(characters[targeted]. dmgConditions+theCondition);checkTheTarget()' type='button' value='Assign this condition?'></td><td>Healing 1<br>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll1+" natural<br>"+dmgModifier1+"<br>="+dmgRoll1+"<br>"+characters[x].spellAbilityNumber+" spell abi<br>="+healingRollTotal1+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp+healingRollTotal1);checkTheTarget()' type='button' value=Heal?></td><td>Healing 2<br>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll2+" natural<br>"+dmgModifier2+"<br>="+dmgRoll2+"<br>"+characters[x].spellAbilityNumber+" spell abi<br>="+healingRollTotal2+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp+healingRollTotal2);checkTheTarget()' type='button' value=Heal?>";
+characters[x].setCombatLog(healRollLog);
+}
+else
+{
+abi='abi';
 abiMod='+0';
 if(characters[x].rollNames[i].match(/\+str/)){abi='str';
 abiMod=characters[x].strMod;}
@@ -4869,28 +4995,53 @@ if(characters[x].rollNames[i].match(/\+wis/)){abi='wis';
 abiMod=characters[x].wisMod;}
 if(characters[x].rollNames[i].match(/\+cha/)){abi='cha';
 abiMod=characters[x].chaMod;}
-skillMod='+0';
-if(characters[x].rollNames[i].match(/\+pro/)){skillMod=characters[x].pro;}
-if(characters[x].rollNames[i].match(/\+exp/)){skillMod=parseInt(characters[x].pro)* 2;
-if(skillMod > -1){skillMod="+"+skillMod
-}
-}
-if(characters[x].rollNames[i].match(/DC\d{1,2}/gi)){roll1=8;
-dcTotal=roll1+abiMod / 1+characters[x].pro / 1 ;
-log1=characters[x].name+" "+characters[x].rollNames[i]+" <p>DC8"+abiMod+abi+characters[x].pro+"pro="+dcTotal+"</td></tr><tr><td colspan='6'> versus ";
 
- if(characters[x].rollNames[i].match(/vsStr/gi)){modName="str"
+skillMod='+0';
+skillModName='no pro'
+if(characters[x].rollNames[i].match(/\+pro/)){skillMod=characters[x].pro;skillModName='pro'}
+if(characters[x].rollNames[i].match(/\+exp/))
+{skillMod=parseInt(characters[x].pro)*2;
+if(skillMod > -1){skillMod='+'+skillMod}
+skillModName='exp';
+}
+
+//Dmg Rolls
+
+dmgRoll1=parseInt(rollDForm(characters[x].rolls2[i]));
+dmgNaturalRoll1=naturalRoll;
+dmgRollModifier1=roll;
+
+dmgRoll1=parseInt(rollDForm(characters[x].rolls2[i]));
+dmgNaturalRoll2=naturalRoll;
+dmgRollModifier2=roll;
+
+dmgRollTotal1=dmgRoll1+parseInt(abiMod);
+dmgRollTotal2=dmgRoll2;
+
+dmgRollLog="</td><td>"+characters[x].rollNames2[i]+"<br><input onClick='characters[targeted].setDamageConditions(characters[targeted]. dmgConditions+theCondition);checkTheTarget()' type='button' value='Assign this dmg condition?'></td><td>Dmg 1<br>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll1+" natural<br>"+dmgRollModifier1+"<br>="+dmgRoll1+"<br>"+abiMod+" "+abi+"<br>="+dmgRollTotal1+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp-dmgRollTotal1);checkTheTarget()' type='button' value=Dmg?><br><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(dmgRollTotal1/2))));checkTheTarget()' type='button' value='1/2 Dmg?'></td><td>Dmg 2<br>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll2+" natural<br>"+dmgRollModifier2+"<br>="+dmgRoll2+"<br>+0  no abi 2nd dmg<br>="+dmgRollTotal2+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp-dmgRollTotal1);checkTheTarget()' type='button' value=Dmg?><br><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(dmgRollTotal1/2))));checkTheTarget()' type='button' value='1/2 Dmg?'>";
+
+//DC Save Rolls
+
+if(characters[x].rollNames[i].match(/DC\d{1,2}/gi))
+{
+roll1=8;
+dcTotal=roll1+abiMod / 1+characters[x].pro / 1 ;
+DCSaveLog=characters[x].name+"<br>"+characters[x].rollNames[i]+"<p>DC8<br>"+abiMod+" "+abi+"<br>"+characters[x].pro+" pro<br>="+dcTotal+"<p>vs<p>";
+
+if(characters[x].rollNames[i].match(/vsStr/gi)){modName="str"
 saveMod=characters[targeted].strMod
 if(characters[targeted].strPro==='pro'){savePro=characters[targeted].pro;saveProName="pro"}
 else if(characters[targeted].strPro==='exp'){savePro=characters[targeted].pro*2;saveProName="exp"}
 
 }
- if(characters[x].rollNames[i].match(/vsDex/gi)){modName="dex"
+
+if(characters[x].rollNames[i].match(/vsDex/gi)){modName="dex"
 saveMod=characters[targeted].dexMod
 if(characters[targeted].dexPro==='pro'){savePro=characters[targeted].pro;saveProName="pro"}
 else if(characters[targeted].dexPro==='exp'){savePro=characters[targeted].pro*2;saveProName="exp"}
 }
- if(characters[x].rollNames[i].match(/vsCon/gi)){modName="con"
+
+if(characters[x].rollNames[i].match(/vsCon/gi)){modName="con"
 saveMod=characters[targeted].conMod
 if(characters[targeted].conPro==='pro'){savePro=characters[targeted].pro;saveProName="pro"}
 else if(characters[targeted].conPro==='exp'){savePro=characters[targeted].pro*2;saveProName="exp"}
@@ -5064,7 +5215,7 @@ if(characters[targeted].performance==='pro'){savePro=characters[targeted].pro/1;
 else if(characters[targeted].performance==='exp'){savePro=characters[targeted].pro/1*2;saveProName="exp"}
 }
 
- if(characters[x].rollNames[i].match(/vsPersuasion/gi)){
+if(characters[x].rollNames[i].match(/vsPersuasion/gi)){
 modName="cha"
 saveMod=characters[targeted].chaMod;
 savePro=0;
@@ -5076,55 +5227,49 @@ else if(characters[targeted].persuasion==='exp'){savePro=characters[targeted].pr
 else{savePro="0";saveProName="pro"}
 if(savePro > -1){savePro="+"+savePro;}
 
-roll1=parseInt(rollDForm('1d20+0'));
-roll1=roll;
-naturalRoll1=naturalRoll;
-roll2=parseInt(rollDForm('1d20+0'));
-naturalRoll2=naturalRoll;
-roll2=roll;
-rollTotal1=naturalRoll1+parseInt(roll1)+ parseInt(saveMod)+ parseInt(savePro)+ parseInt(characters[x].sit);
-rollTotal2=naturalRoll2+parseInt(roll2)+ parseInt(saveMod)+ parseInt(savePro)+ parseInt(characters[x].sit);
-log=characters[targeted].name+"</td></tr><tr><td colspan='6'>Saving Throw 1:1d20+0=natural"+naturalRoll1+roll1+saveMod+modName+savePro+saveProName+characters[x].sit+"sit="+rollTotal1+"</td></tr><tr><td colspan='6'>Saving Throw 2:1d20+0=natural"+naturalRoll2+roll2+saveMod+modName+savePro+saveProName+characters[x].sit+"sit="+rollTotal2+"</td></tr>";
-characters[x].setCombatLog(log);}
-else{log='';
-roll1=parseInt(rollDForm(characters[x].rolls[i]));
-naturalRoll1=naturalRoll;
-roll1=roll;
-roll2=parseInt(rollDForm(characters[x].rolls[i]));
-naturalRoll2=naturalRoll;
-roll2=roll;
-rollTotal1=naturalRoll1+parseInt(roll1)+ parseInt(abiMod)+ parseInt(skillMod)+ parseInt(characters[x].sit);
-rollTotal2=naturalRoll2+parseInt(roll2)+ parseInt(abiMod)+ parseInt(skillMod)+ parseInt(characters[x].sit);
-log1=characters[x].name+" "+characters[x].rollNames[i]+"</td></tr><tr><td colspan='6'>versus "+characters[targeted].name+" AC:"+characters[targeted].curAc+"</td></tr><tr><td colspan='6'>Attack 1:"+characters[x].rolls[i]+"=natural"+naturalRoll1+roll1+""+abiMod+abi+skillMod+"pro"+characters[x].sit+"sit="+rollTotal1+"</td></tr><tr><td colspan='6'>Attack 2:"+characters[x].rolls[i]+"=natural"+naturalRoll2+roll2+""+abiMod+abi+skillMod+"pro"+characters[x].sit+"sit="+rollTotal2+"</td></tr>";}
-abi='abi';
-abiMod='+0';
-if(characters[x].rollNames2[i].match(/\+str/)){abi='str';
-abiMod=characters[x].strMod;}
-if(characters[x].rollNames2[i].match(/\+dex/)){abi='dex';
-abiMod=characters[x].dexMod;}
-if(characters[x].rollNames2[i].match(/\+con/)){abi='con';
-abiMod=characters[x].conMod;}
-if(characters[x].rollNames2[i].match(/\+int/)){abi='int';
-abiMod=characters[x].intMod;}
-if(characters[x].rollNames2[i].match(/\+wis/)){abi='wis';
-abiMod=characters[x].wisMod;}
-if(characters[x].rollNames2[i].match(/\+cha/)){abi='cha';
-abiMod=characters[x].chaMod;}
-skillMod='+0';
-roll1=parseInt(rollDForm(characters[x].rolls2[i]));
-naturalRoll1=naturalRoll;
-roll1=roll;
-roll2=parseInt(rollDForm(characters[x].rolls2[i]));
-naturalRoll2=naturalRoll;
-roll2=roll;
-rollTotal1=naturalRoll1+parseInt(roll1)+ parseInt(abiMod)+ parseInt(characters[x].sit);
-rollTotal2=naturalRoll2+parseInt(roll2)+ parseInt(characters[x].sit);
-theCondition=characters[x].rollNames2[i];
-if(characters[x].rollNames2[i].match(/heal/)){log2="</td></tr><tr><td colspan='6'>"+characters[x].name+" "+characters[x].rollNames2[i]+"<input onClick='characters[targeted].setDamageConditions(characters[targeted]. dmgConditions+theCondition);checkTheTarget()' type='button' value='Assign this dmg condition?'></td></tr><tr><td colspan='6'>Healing 1:"+characters[x].rolls2[i]+"=natural"+naturalRoll1+roll1+abiMod+abi+skillMod+"pro="+rollTotal1+" <input onClick='characters[targeted].setCurHp(characters[targeted].curHp+rollTotal1);checkTheTarget()' type='button' value=Heal?></td></tr><tr><td colspan='6'>Healing 2:"+characters[x].rolls2[i]+"=natural"+naturalRoll2+roll2+abiMod+abi+skillMod+"pro="+rollTotal2+" <input onClick='characters[targeted].setCurHp(characters[targeted].curHp+rollTotal2);checkTheTarget()' type='button' value=Heal?>";
-characters[x].setCombatLog(log1+log+log2);}
-else{log2="</td></tr><tr><td colspan='6'>"+characters[x].rollNames2[i]+" <input onClick='characters[targeted].setDamageConditions(characters[targeted]. dmgConditions+theCondition);checkTheTarget()' type='button' value='Assign this dmg condition?'></td></tr><tr><td colspan='6'>Damage 1:"+characters[x].rolls2[i]+"=natural"+naturalRoll1+roll1+abiMod+abi+"="+rollTotal1+" <input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal1);checkTheTarget()' type='button' value=Damage?> <input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal1/2))));checkTheTarget()' type='button' value='Half dmg?'></td></tr><tr><td colspan='6'>Damage 2:"+characters[x].rolls2[i]+"=natural"+naturalRoll2+roll2+"+0abi="+rollTotal2+"<input onClick='characters[targeted].setCurHp(characters[targeted].curHp-rollTotal2);checkTheTarget()' type='button' value=Damage?> <input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(rollTotal2/2))));checkTheTarget()' type='button' value='Half dmg?'></td></tr>";
-characters[x].setCombatLog(log1+log+log2);}
-document.getElementById('targeted'+[targeted]).checked='checked';}
+D20Roll1=parseInt(rollDForm('1d20+0'));
+D20NaturalRoll1=naturalRoll;
+D20RollModifier1=roll;
+D20Roll2=parseInt(rollDForm('1d20+0'));
+D20NaturalRoll2=naturalRoll;
+D20RollModifier2=roll;
+
+savingRollTotal1=D20Roll1+parseInt(saveMod)+parseInt(savePro)+parseInt(characters[x].sit);
+
+savingRollTotal2=D20Roll2+parseInt(saveMod)+parseInt(savePro)+parseInt(characters[x].sit);
+
+savingThrowLog=characters[targeted].name+"</td><td>Saving Throw 1<br>1d20+0<br>="+D20NaturalRoll1+" natural<br>"+D20RollModifier1+"<br>="+D20Roll1+"<br>"+saveMod+" "+modName+"<br>"+savePro+" "+saveProName+"<br>"+characters[x].sit+" sit<br>="+savingRollTotal1+"</td><td>Saving Throw 2<br>1d20+0<br>="+D20NaturalRoll2+" natural<br>"+D20RollModifier2+"<br>="+D20Roll2+"<br>"+saveMod+" "+modName+"<br>"+savePro+" "+saveProName+"<br>"+characters[x].sit+" sit<br>="+savingRollTotal2;
+
+characters[x].setCombatLog(DCSaveLog+savingThrowLog+dmgRollLog);
+
+}
+else
+{
+
+//Attack Rolls
+
+atkRoll1=parseInt(rollDForm(characters[x].rolls[i]));
+atkNaturalRoll1=naturalRoll;
+atkRollModifier1=roll;
+atkRoll2=parseInt(rollDForm(characters[x].rolls[i]));
+atkNaturalRoll2=naturalRoll;
+atkRollModifier2=roll;
+
+atkRollTotal1=atkRoll1+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
+
+atkRollTotal2=atkRoll2+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
+
+atkRollLog=characters[x].name+"<br>"+characters[x].rollNames[i]+"<p>vs<p>"+characters[targeted].name+"<br>AC:"+characters[targeted].curAc+"</td><td>Atk 1<br>"+characters[x].rolls[i]+"<br>="+atkNaturalRoll1+"  natural<br>"+atkRollModifier1+"<br>="+atkRoll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+atkRollTotal1+"</td><td>Atk 2<br>"+characters[x].rolls[i]+"<br>="+atkNaturalRoll2+" natural<br>"+atkRollModifier2+"<br>="+atkRoll2+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+atkRollTotal2;
+
+characters[x].setCombatLog(atkRollLog+dmgRollLog);
+
+}
+
+}
+
+document.getElementById('targeted'+[targeted]).checked='checked';
+
+}
 
 function checkTheTarget(){document.getElementById('targeted'+[targeted]).checked='checked';}
 
@@ -5153,7 +5298,7 @@ characters[i].setInit(initRoll);}
 }
 
 function saveAll(){globalSave="";
-for(var i=0; i< characters.length; i++){globalSave+=characters[i].getSaveText()+ " "
+for(var i=0; i< characters.length; i++){globalSave+=characters[i].getSaveText()+" "
 }
 showSavePrompt("all characters", globalSave);}
 
