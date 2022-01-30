@@ -3827,7 +3827,7 @@ newDiv.style.position="absolute";
 newDiv.style.top=this.y;
 newDiv.style.left=this.x;
 document.body.appendChild(newDiv);
-newDiv.innerHTML="<div>";this.hide()}
+newDiv.innerHTML="<div class='DraggableDiv' id='DraggableDiv2'>";this.hide()}
 function askInit(x){initRoll=characters[x].rollInit();
 characters[x].setInit(initRoll)}
 function calcMod(x){mod=Math.floor((x - 10)/ 2);
