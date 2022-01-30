@@ -6,12 +6,13 @@
 <meta name="keywords" content="DnD,Dungeons and Dragons,D&D,Dungeons & Dragons,Fantasy RPG,tabletop roleplaying game,TTRPG">
 <title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game JavaScript Manager 2022(Asmor,Zorn,Ren)</title>
 <script src="Scripts/WZDragdrop.js"></script>
-//<script src="Scripts/jquery-3.6.0.min.js"></script>
-//<script src="Scripts/jquery-ui.1.13.1"></script>
-//<script src="Scripts/TouchPunch.js"></script>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" ></script>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+
+<script src="Scripts/jquery.ui.touch-punch.js"></script>
+
+<script>$('#widget').draggable();</script>
 
 <style>
 
@@ -163,15 +164,9 @@ input[type="radio"]:focus {
   outline-offset: max(2px, 0.15em);
 }
 
-#draggable { width: 100px; height: 100px; padding: 0.5em; }
-
 </style>
 
 <script>
-
-  $( function() {
-    $( "#draggable" ).draggable();
-  } );
 
 function rollDForm(dForm){dForm=dForm.toLowerCase();
 dIndex=dForm.indexOf("d");
@@ -3981,7 +3976,10 @@ else
 
 <body>
 
-<table id='draggable' class='ui-widget-content'><tr><td>Drag me!</td></tr></table>
+<div id='widget'>
+<table><tr><td>Drag me!</td></tr></table>
+</div>
+
 <br>
 <table><tr><td>
 <table><tr><td>
