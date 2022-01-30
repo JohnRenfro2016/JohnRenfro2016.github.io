@@ -2266,7 +2266,7 @@ characters[targeted].setHitDice(rip[8])}
 if(rip=stats.match(/^(.*)$/m)){characters[targeted].setName(rip[1])}
 
 if(size=stats.match(/(Tiny|Small|Medium|Large|Huge|Gargantuan)/)){characters[targeted].setSize(size[1])}
-if(race=stats.match(/(aberration|beast|construct|elemental|fey|fiend|giant|humanoid|human|monstrosity|undead)/i)){characters[targeted].setRace(race[1])}
+if(race=stats.match(/(aberration|beast|construct|elemental|fey|fiend|giant|human|monstrosity|undead|human)/i)){characters[targeted].setRace(race[1])}
 if(alignment=stats.match(/(neutral)/)){characters[targeted].setAlignment(alignment[1])}
 if(alignment=stats.match(/(lawful good|lawful neutral|lawful evil|chaotic good|chaotic neutral|chaotic evil|neutral evil|unaligned)/i)){characters[targeted].setAlignment(alignment[1])}
 if(ac=stats.match(/Armor\sClass\s(\d{1,2})([\s\S]*?)(Hit Points )/)){characters[targeted].setAC(ac[1])}
@@ -2582,8 +2582,10 @@ if(spell=stats.match(/powerwordstun/i)){this.PowerWordStun()}
 
 if(rip=stats.match(/XP\)([\s\S]*)$/))
 {
-characters[targeted].setFeatures(rip[1].replace(/\./g,'<br>'))
-};
+characters[targeted].setFeatureNotes(rip[1].replace(/\./g,'\.\n'))
+}
+
+checkTheTarget();
 
 }
 
@@ -3282,19 +3284,19 @@ this.setCurIni(newIni)}
 else{this.setCurIni(this.initBonus)}
 this.refresh()}
 function _setDex(x){this.dex=x;this.curDex=x;calcMod(x);this.dexMod=mod;this.initBonus=mod;this.curIni=mod;this.refresh()}
-function _setEquipment(x){this.equipment=x;this.equipment=this.equipment.replace(/\'/g,'');this.equipment=this.equipment.replace(/\./g,'\.\r');this.refresh()}
+function _setEquipment(x){this.equipment=x;this.equipment=this.equipment.replace(/\'/g,' ');this.equipment=this.equipment.replace(/\./g,'\.\n');this.refresh()}
 function _setExperience(x){this.experience=x;this.refresh(x)}
 function _setFeats(x){this.feats=x;this.feats=this.feats.replace(/\'/g,'');this.refresh(x)}
-function _setFeatures(x){this.features=x;this.features=this.features.replace(/\'/g,'\'');this.features=this.features.replace(/\s+/g,' ');this.features=this.features.replace(/\./g,'\.\r');this.refresh()}
-function _setFeatureNotes(x){this.featureNotes=x;this.featureNotes=this.featureNotes.replace(/\'|\s+/g,' ');this.featureNotes=this.featureNotes.replace(/\./g,'\.\r');this.refresh()}
-function _setActionNotes(x){this.actionNotes=x;this.actionNotes=this.actionNotes.replace(/\'|\s+/g,' ');this.actionNotes=this.actionNotes.replace(/\./g,'\.\r');this.refresh()}
+function _setFeatures(x){this.features=x;this.features=this.features.replace(/\'/g,'\'');this.features=this.features.replace(/\s+/g,' ');this.features=this.features.replace(/\./g,'\.\n');this.refresh()}
+function _setFeatureNotes(x){this.featureNotes=x;this.featureNotes=this.featureNotes.replace(/\'|\s+/g,' ');this.featureNotes=this.featureNotes.replace(/\./g,'\.\n');this.refresh()}
+function _setActionNotes(x){this.actionNotes=x;this.actionNotes=this.actionNotes.replace(/\'|\s+/g,' ');this.actionNotes=this.actionNotes.replace(/\./g,'\.\n');this.refresh()}
 function _setFigure(x){this.figure=x;this.refresh(x)}
-function _setFlaws(x){this.flaws=x;this.flaws=this.flaws.replace(/\'/g,'');this.refresh(x)}
+function _setFlaws(x){this.flaws=x;this.flaws=this.flaws.replace(/\'/g,' ');this.refresh(x)}
 function _setHealing(x){this.curHp=(x / 1+this.curHp);
 if(this.curHp >this.maxHp){this.curHp=this.maxHp}
 this.refresh()}
 function _setHitDice(x){this.hitDice=x;this.refresh(x)}
-function _setIdeals(x){this.ideals=x;this.ideals=this.ideals.replace(/\'/g,'');this.refresh(x)}
+function _setIdeals(x){this.ideals=x;this.ideals=this.ideals.replace(/\'/g,' ');this.refresh(x)}
 function _setImmunity(x){this.immunity=x;this.refresh(x)}
 function _setInit(x){this.init=x;this.refresh(x)}
 function _setIndex(x){this.index=x}
