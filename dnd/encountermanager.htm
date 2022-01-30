@@ -3588,7 +3588,7 @@ characters[x].show();
 SET_DHTML(character.box.elementId)}
 function addRollPrompt(x){result1=dFormParse(characters[x].roll1);
 result2=dFormParse(characters[x].roll2);
-characters[x].addRoll(characters[x].rollName1,result1,characters[x].rollName2,result2)}
+characters[x].addRoll(characters[x].rollName1,result1,characters[x].rollName2,result2);checkTheTarget(characters[targeted])}
 function AGEBox(color,code,textColorCode,width,height){this.borderX=10;this.borderY=10;this.code=code;this.textColorCode=textColorCode}
 function AGEElement(){this.elementId="AGE"+currentElementId;
 currentElementId++;this.x=0;this.y=0;this.contents="";this.hide=_hide;this.putAt=_putAt;this.refresh=_refresh;this.setContents=_setContents;this.setStyle=_setStyle;this.setX=_setX;this.setY=_setY;this.show=_show;
