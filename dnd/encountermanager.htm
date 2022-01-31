@@ -88,9 +88,9 @@ td:nth-child(odd){background:rgba(0,0,0,0.2)}
 }
 
 body {
-  left: 100px;
-  margin: 20px;
-  top: 100px;
+  left: 10px;
+  margin: 10px;
+  top: 10px;
 }
 
 form {
@@ -172,11 +172,18 @@ input[type="radio"]:focus {
   <script>$('#widget').draggable();</script>
 
 <body>
-<div id='widget' class='ui-widget-content'>Phone Drag!<div id='draggable' class='ui-widget-content'>Drag!</div></div>
-
-<table><tr><td><img src='Map.png' width='3000'></td></tr></table>
+<div id='widget' class='ui-widget-content'>Phone Drag!</div><div id='draggable' class='ui-widget-content'>Drag!</div>
 
 <table><tr><td>
+<table><tr><td>
+<input type='button' value='Roll all initiatives?' onClick='rollInitiatives()' />
+</td></tr><tr><td>
+<input type='button' value='Save all characters?' onClick='saveAll()' />
+</td></tr><tr><td>
+<input type='button' value='Target then Clone a character?' onClick='cloneIt(type)' />
+</td></tr><tr><td>
+<input type='button' value='Create a new character?' onClick='newCharacter(PC)' />
+</td></tr><tr><td>
 <a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
 </td></tr><tr><td>
 <a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a>
@@ -197,14 +204,6 @@ To save your characters,play off-line. <a href="dnd.zip">dnd.zip</a>
 </td></tr><tr><td>
 <input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?' /><b id='d4result'></b>
 </td></tr><tr><td>
-<input type='button' value='Roll all initiatives?' onClick='rollInitiatives()' />
-</td></tr><tr><td>
-<input type='button' value='Save all characters?' onClick='saveAll()' />
-</td></tr><tr><td>
-<input type='button' value='Target then Clone a character?' onClick='cloneIt(type)' />
-</td></tr><tr><td>
-<input type='button' value='Create a new character?' onClick='newCharacter(PC)' />
-</td></tr><tr><td>
 <input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollOneDisplay'></b>
 </td></tr><tr><td>
 <input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollTwoDisplay'></b>
@@ -217,8 +216,12 @@ To save your characters,play off-line. <a href="dnd.zip">dnd.zip</a>
 </td></tr><tr><td>
 <input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollSixDisplay'></b>
 </td></tr><tr><td>
-Target then paste stats. <br>
+Target then paste stats.<br>
 <textArea cols='30' rows='30' onChange='stats=this.value;setStats()' /></textarea><b id='statsDisplay'></b>
+</td></tr></table>
+</td><td>
+<table><tr><td>
+<img src='Map.png' width='3000'>
 </td></tr></table>
 
 </body>
@@ -949,8 +952,8 @@ function
  s2="()' type='button' value='",
  s3="'/></td><td>"
 s4=document.write.bind(document)
-s4("<table><tr><td>Target the piece to receive these weapons or spells first.</td></tr></table>")
-s4("<table><tr><td><h3>Weapons</h3></td><td>")
+s4("<table><tr><td>Target the piece to receive these weapons or spells first.")
+s4("</td><td><h3>Weapons</h3></td><td>")
 s4(s1+'Club'+s2+'Club'+s3)
 s4(s1+'Dagger'+s2+'Dagger'+s3)
 s4(s1+'Dart'+s2+'Dart'+s3)
