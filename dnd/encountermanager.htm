@@ -18,13 +18,66 @@
 <script src="https://aegasiagroup.com/wp-content/themes/Avada/js/DragDropTouch.js"></script>
 
 <script>
+var price = 20, math = '', items = [], state = 'outside';
+$(function() {
+    function calcPrice(math) {
+        var value = 0;
+        price = 20;
+
+    console.log("Item array: " + items);
+        $.each( items, function( key, value ) {
+        price+= $(".draggable[data-item='" + value + "']").data('price');
+  });
+
+    $("#test2").html(price)
+}
+
 $(".draggable").draggable({
     containment: "#container",
     scroll: false
 });
+
+ $("#droppable").droppable({
+        drop: function(e, u) {
+        if(u.draggable.data('state') == 'outside') {
+            items.push(u.draggable.data('item'));
+            u.draggable.data('state', 'inside');
+            calcPrice('add');
+        }
+  },
+   out: function(e, u) {
+     if(u.draggable.data('state') == 'inside') {
+       u.draggable.data('state', 'outside');
+       var myIndex = $.inArray(u.draggable.data('item'), items);
+       items.splice(myIndex, 1);
+       price = $("#droppable").text();
+       calcPrice('remove');
+     }
+   }
+ });
+ });
 </script>
 
 <style>
+
+#container {
+    width: 500px;
+    height: 350px;
+    background: #ccc;
+}
+
+#droppable {
+    height: 100px;
+    width: 100%;;
+    background: #ff0000;
+}
+
+.draggable {
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    z-index: 101;
+}
 
 a:active,
 a:link,
