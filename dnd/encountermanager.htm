@@ -8,7 +8,7 @@
 <script src="Scripts/WZDragdrop.js"></script>
 <script type="text/javascript" src="Scripts/jquery.js"></script>
 <script type="text/javascript" src="Scripts/jquery-ui.js"></script>
-//<script type="text/javascript" src="Scripts/jquery-touch-punch.js"></script>
+D
 <script type="text/javascript" src="Scripts/draggable-div-with-touch.js"></script>
 <script>
 (function ($) {
@@ -242,8 +242,8 @@
 
 #DraggableDiv2 {
     cursor: move;
-    top: 40%;
-    left: 25%;
+    top: 100px;
+    left: 100px;
 }
 
 a:active,
@@ -389,6 +389,59 @@ input[type="radio"]:focus {
 }
 
 </style>
+
+<body>
+
+<table><tr><td><img src='Map.png' width='3000'></td></tr></table>
+
+<b class='DraggableDiv' id='DraggableDiv2'>Drag me.
+<table><tr><td>
+<a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
+</td></tr><tr><td>
+<a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a>
+</td></tr><tr><td>
+<a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
+</td></tr><tr><td>
+To save your characters,play off-line. <a href="dnd.zip">dnd.zip</a>
+</td></tr><tr><td>
+<input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?' /><b id='d20result'></b>
+</td></tr><tr><td>
+<input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?' /><b id='d12result'></b>
+</td></tr><tr><td>
+<input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?' /><b id='d10result'></b>
+</td></tr><tr><td>
+<input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?' /><b id='d8result'></b>
+</td></tr><tr><td>
+<input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?' /><b id='d6result'></b>
+</td></tr><tr><td>
+<input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?' /><b id='d4result'></b>
+</td></tr><tr><td>
+<input type='button' value='Roll all initiatives?' onClick='rollInitiatives()' />
+</td></tr><tr><td>
+<input type='button' value='Save all characters?' onClick='saveAll()' />
+</td></tr><tr><td>
+<input type='button' value='Target then Clone a character?' onClick='cloneIt(type)' />
+</td></tr><tr><td>
+<input type='button' value='Create a new character?' onClick='newCharacter(PC)' />
+</td></tr><tr><td>
+<input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollOneDisplay'></b>
+</td></tr><tr><td>
+<input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollTwoDisplay'></b>
+</td></tr><tr><td>
+<input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollThreeDisplay'></b>
+</td></tr><tr><td>
+<input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollFourDisplay'></b>
+</td></tr><tr><td>
+<input onMouseOut="rollFive=parseInt(rollDForm(this.value));document.getElementById('rollFiveDisplay').innerHTML='('+naturalRoll+roll+')='+rollFive" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollFiveDisplay'></b>
+</td></tr><tr><td>
+<input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollSixDisplay'></b>
+</td></tr><tr><td>
+Target then paste stats. <br>
+<textArea cols='30' rows='30' onChange='stats=this.value;setStats()' /></textarea><b id='statsDisplay'></b>
+</td></tr></table>
+</b>
+
+</body>
 
 <script>
 
@@ -3827,13 +3880,14 @@ newDiv.style.position="absolute";
 newDiv.style.top=this.y;
 newDiv.style.left=this.x;
 document.body.appendChild(newDiv);
-newDiv.innerHTML="<div class='DraggableDiv' id='DraggableDiv2'>";this.hide()}
+newDiv.innerHTML="<div id='DraggableDiv2'>";this.hide()}
 function askInit(x){initRoll=characters[x].rollInit();
 characters[x].setInit(initRoll)}
 function calcMod(x){mod=Math.floor((x - 10)/ 2);
 if(mod > -1){mod="+"+mod}
 return mod}
-function Character(name,type){this.abi=0;this.ability='';this.ac=0;this.acrobatics='';this.addRoll=_addRoll;this.alignment='Unaligned';this.alignmentDescription='';this.animal='';this.arcana='';this.armor='No Armor AC10+dex';this.athletics='';this.background='';this.backF='';this.backL='';this.backS='';this.backT='';this.bonds='';this.box=new AGEElement();this.carryingCapacity=0;this.cha=0;this.chaMod='+0';this.chaPro='';this.class='';this.combatLog="";this.con=0;this.conMod='+0';this.conPro='';this.curAc=0;this.curCha=0;this.curCon=0;this.curDex=0;this.curHp=0;this.curIni='+0';this.curInt=0;this.curStr=0;this.curWis=0;this. dmgConditions='';this.deception='';this.deleteRoll=_deleteRoll;this.dex=0;this.dexMod='+0';this.dexPro='';this.dragLiftPush=0;this.equipment='';this.experience='';this.xtraRolls=new Array(0);this.feats='';this.features='';this.actionNotes='';this.featureNotes='';this.figure='Miniatures/Monster.png';this.flaws='';this.getSaveText=_getSaveText;this.hide=_hide;this.hideMenu=_hideMenu;this.highJump=0;this.history='';this.hitDice='';this.ideals='';this.immunity='';this.index=null;this.init="Unrolled";this.initBonus='+0';this.insight='';this.inte=0;this.intimidation='';this.intMod='+0';this.intPro='';this.investigation='';this.languages='';this.lvl=0;this.longJump=0;this.rageDamage=0;this.maxHp=0;this.medicine='';this.menu=new AGEElement();this.menuShown=false;this.name=name;this.nature='';this.perception='';this.performance='';this.persuasion='';this.pro='+0';this.proficiencies='';this.proficienciesRace='';this.putAt=_putCharAt;this.race='';this.refresh=_ref;this.religion='';this.results="";this.roll1='';this.roll2='';this.rollInit=_rollInit;this.rollStuff='';this.rollName1='';this.rollName2='';this.rollNames=new Array();this.rollNames2=new Array();this.rolls=new Array();this.rolls2=new Array();this.resistance='';this.save=_save;this.saving='';this.senses='';this.shield='No Shield AC+0';this.show=_showBox;this.showMenu=_showMenu;this.sit='+0';this.size='';this.skills='';this.sleight='';this.speed='';this.spellAbility='';this.spellAbilityNumber='+0';this.stealth='';this.str=0;this.strMod='+0';this.strPro='';this.survival='';this.tempHp=0;this.toggled1="none";this.toggled2="none";this.toggled3="none";this.toggled4="none";this.toggled5="none";this.toggled6="block";this.trait='';this.type=type;this.updateXY=_updateXY;this.vulnerability='';this.wis=0;this.wisMod='+0';this.wisPro='';this.x=0;this.y=0;this.setAbility=_setAbility;this.setAC=_setAC;this.setAcrobatics=_setAcrobatics;this.setAlignment=_setAlignment;this.setAlignmentDescription=_setAlignmentDescription;this.setAnimal=_setAnimal;this.setArcana=_setArcana;this.setArmor=_setArmor;this.setAthletics=_setAthletics;this.setBackground=_setBackground;this.setBackF=_setBackF;this.setBackL=_setBackL;this.setBackS=_setBackS;this.setBackT=_setBackT;this.setBonds=_setBonds;this.setCha=_setCha;this.setChaPro=_setChaPro;this.setClass=_setClass;this.setCombatLog=_setCombatLog;this.setCon=_setCon;this.setConPro=_setConPro;this.setDmg=_setDmg;this.setDamageConditions=_setDamageConditions;this.setDeception=_setDeception;this.setDex=_setDex;this.setDexPro=_setDexPro;this.setEquipment=_setEquipment;this.setExperience=_setExperience;this.setFeats=_setFeats;this.setFeatures=_setFeatures;this.setActionNotes=_setActionNotes;this.setFeatureNotes=_setFeatureNotes;this.setFigure=_setFigure;this.setFlaws=_setFlaws;this.setHealing=_setHealing;this.setHistory=_setHistory;this.setHitDice=_setHitDice;this.setIdeals=_setIdeals;this.setImmunity=_setImmunity;this.setIndex=_setIndex;this.setInit=_setInit;this.setInitBonus=_setInitBonus;this.setInsight=_setInsight;this.setInt=_setInt;this.setIntPro=_setIntPro;this.setIntimidation=_setIntimidation;this.setInvestigation=_setInvestigation;this.setLanguages=_setLanguages;this.setLvl=_setLvl;this.setMaxHp=_setMaxHp;this.setMedicine=_setMedicine;this.setName=_setName;this.setNature=_setNature;this.setPerception=_setPerception;this.setPerformance=_setPerformance;this.setPersuasion=_setPersuasion;this.setPro=_setPro;this.setProficiencies=_setProficiencies;this.setProficienciesRace=_setProficienciesRace;this.setRace=_setRace;this.setReligion=_setReligion;this.setResistance=_setResistance;this.setResults=_setResults;this.setRoll1=_setRoll1;this.setRoll2=_setRoll2;this.setRollName1=_setRollName1;this.setRollName2=_setRollName2;this.setSaving=_setSaving;this.setSenses=_setSenses;this.setShield=_setShield;this.setSit=_setSit;this.setSize=_setSize;this.setSkills=_setSkills;this.setSleight=_setSleight;this.setSpeed=_setSpeed;this.setSpellAbility=_setSpellAbility;this.setSpellAbilityNumber=_setSpellAbilityNumber;this.setStealth=_setStealth;this.setStr=_setStr;this.setStrPro=_setStrPro;this.setSurvival=_setSurvival;this.setToggled1=_setToggled1;this.setToggled2=_setToggled2;this.setToggled3=_setToggled3;this.setToggled4=_setToggled4;this.setToggled5=_setToggled5;this.setToggled6=_setToggled6;this.setTrait=_setTrait;this.setVulnerability=_setVulnerability;this.setWis=_setWis;this.setWisPro=_setWisPro;this.setCurAc=_setCurAc;this.setCurCha=_setCurCha;this.setCurCon=_setCurCon;this.setCurDex=_setCurDex;this.setCurHp=_setCurHp;this.setCurIni=_setCurIni;this.setCurInt=_setCurInt;this.setCurStr=_setCurStr;this.setCurWis=_setCurWis;this.setTempHp=_setTempHp;this.refresh();}
+function Character(name,type){this.abi=0;this.ability='';this.ac=0;this.acrobatics='';this.addRoll=_addRoll;this.alignment='Unaligned';this.alignmentDescription='';this.animal='';this.arcana='';this.armor='No Armor AC10+dex';this.athletics='';this.background='';this.backF='';this.backL='';this.backS='';this.backT='';this.bonds='';this.box=new AGEElement();this.carryingCapacity=0;this.cha=0;this.chaMod='+0';this.chaPro='';this.class='';this.combatLog="";this.con=0;this.conMod='+0';this.conPro='';this.curAc=0;this.curCha=0;this.curCon=0;this.curDex=0;this.curHp=0;this.curIni='+0';this.curInt=0;this.curStr=0;this.curWis=0;this. dmgConditions='';this.deception='';this.deleteRoll=_deleteRoll;this.dex=0;this.dexMod='+0';this.dexPro='';this.dragLiftPush=0;this.equipment='';this.experience='';this.xtraRolls=new Array(0);this.feats='';this.features='';this.actionNotes='';this.featureNotes='';this.figure='Miniatures/Monster.png';this.flaws='';this.getSaveText=_getSaveText;this.hide=_hide;this.hideMenu=_hideMenu;this.highJump=0;this.history='';this.hitDice='';this.ideals='';this.immunity='';this.index=null;this.init="Unrolled";this.initBonus='+0';this.insight='';this.inte=0;this.intimidation='';this.intMod='+0';this.intPro='';this.investigation='';this.languages='';this.lvl=0;this.longJump=0;this.rageDamage=0;this.maxHp=0;this.medicine='';this.menu=new AGEElement();this.menuShown=false;this.name=name;this.nature='';this.perception='';this.performance='';this.persuasion='';this.pro='+0';this.proficiencies='';this.proficienciesRace='';this.putAt=_putCharAt;this.race='';this.refresh=_ref;this.religion='';this.results="";this.roll1='';this.roll2='';this.rollInit=_rollInit;this.rollStuff='';this.rollName1='';this.rollName2='';this.rollNames=new Array();this.rollNames2=new Array();this.rolls=new Array();this.rolls2=new Array();this.resistance='';this.save=_save;this.saving='';this.senses='';this.shield='No Shield AC+0';this.show=_showBox;this.showMenu=_showMenu;this.sit='+0';this.size='';this.skills='';this.sleight='';this.speed='';this.spellAbility='';this.spellAbilityNumber='+0';this.stealth='';this.str=0;this.strMod='+0';this.strPro='';this.survival='';this.tempHp=0;this.toggled1="none";this.toggled2="none";this.toggled3="none";this.toggled4="none";this.toggled5="none";this.toggled6="block";this.trait='';this.type=type;this.updateXY=_updateXY;this.vulnerability='';this.wis=0;this.wisMod='+0';this.wisPro='';this.x=0;this.y=0;this.setAbility=_setAbility;this.setAC=_setAC;this.setAcrobatics=_setAcrobatics;this.setAlignment=_setAlignment;this.setAlignmentDescription=_setAlignmentDescription;this.setAnimal=_setAnimal;this.setArcana=_setArcana;this.setArmor=_setArmor;this.setAthletics=_setAthletics;this.setBackground=_setBackground;this.setBackF=_setBackF;this.setBackL=_setBackL;this.setBackS=_setBackS;this.setBackT=_setBackT;this.setBonds=_setBonds;this.setCha=_setCha;this.setChaPro=_setChaPro;this.setClass=_setClass;this.setCombatLog=_setCombatLog;this.setCon=_setCon;this.setConPro=_setConPro;this.setDmg=_setDmg;this.setDamageConditions=_setDamageConditions;this.setDeception=_setDeception;this.setDex=_setDex;this.setDexPro=_setDexPro;this.setEquipment=_setEquipment;this.setExperience=_setExperience;this.setFeats=_setFeats;this.setFeatures=_setFeatures;this.setActionNotes=_setActionNotes;
+this.setFeatureNotes=_setFeatureNotes;this.setFigure=_setFigure;this.setFlaws=_setFlaws;this.setHealing=_setHealing;this.setHistory=_setHistory;this.setHitDice=_setHitDice;this.setIdeals=_setIdeals;this.setImmunity=_setImmunity;this.setIndex=_setIndex;this.setInit=_setInit;this.setInitBonus=_setInitBonus;this.setInsight=_setInsight;this.setInt=_setInt;this.setIntPro=_setIntPro;this.setIntimidation=_setIntimidation;this.setInvestigation=_setInvestigation;this.setLanguages=_setLanguages;this.setLvl=_setLvl;this.setMaxHp=_setMaxHp;this.setMedicine=_setMedicine;this.setName=_setName;this.setNature=_setNature;this.setPerception=_setPerception;this.setPerformance=_setPerformance;this.setPersuasion=_setPersuasion;this.setPro=_setPro;this.setProficiencies=_setProficiencies;this.setProficienciesRace=_setProficienciesRace;this.setRace=_setRace;this.setReligion=_setReligion;this.setResistance=_setResistance;this.setResults=_setResults;this.setRoll1=_setRoll1;this.setRoll2=_setRoll2;this.setRollName1=_setRollName1;this.setRollName2=_setRollName2;this.setSaving=_setSaving;this.setSenses=_setSenses;this.setShield=_setShield;this.setSit=_setSit;this.setSize=_setSize;this.setSkills=_setSkills;this.setSleight=_setSleight;this.setSpeed=_setSpeed;this.setSpellAbility=_setSpellAbility;this.setSpellAbilityNumber=_setSpellAbilityNumber;this.setStealth=_setStealth;this.setStr=_setStr;this.setStrPro=_setStrPro;this.setSurvival=_setSurvival;this.setToggled1=_setToggled1;this.setToggled2=_setToggled2;this.setToggled3=_setToggled3;this.setToggled4=_setToggled4;this.setToggled5=_setToggled5;this.setToggled6=_setToggled6;this.setTrait=_setTrait;this.setVulnerability=_setVulnerability;this.setWis=_setWis;this.setWisPro=_setWisPro;this.setCurAc=_setCurAc;this.setCurCha=_setCurCha;this.setCurCon=_setCurCon;this.setCurDex=_setCurDex;this.setCurHp=_setCurHp;this.setCurIni=_setCurIni;this.setCurInt=_setCurInt;this.setCurStr=_setCurStr;this.setCurWis=_setCurWis;this.setTempHp=_setTempHp;this.refresh();}
 function makeRoll(x,i)
 {
 
@@ -4197,67 +4251,9 @@ else
 </script>
 
 <script src="Characters.js"></script>
-
-<body>
-<br>
-<table><tr><td>
-<table class='DraggableDiv' id='DraggableDiv2'><tr><td>
-To save your characters,play off-line. <a href="dnd.zip">dnd.zip</a>
-</td></tr><tr><td>
-<input type='button' value='Roll all initiatives?' onClick='rollInitiatives()' />
-</td></tr><tr><td>
-<input type='button' value='Save all characters?' onClick='saveAll()' />
-</td></tr><tr><td>
-<input type='button' value='Target then Clone a character?' onClick='cloneIt(type)' />
-</td></tr><tr><td>
-<input type='button' value='Create a new character?' onClick='newCharacter(PC)' />
-</td></tr><tr><td>
-<a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
-</td></tr><tr><td>
-<a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a>
-</td></tr><tr><td>
-<a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
-</td></tr><tr><td>
-This is a single encounter.<br>
-<a href='https://archive.org/details/tsr09043bx1theisleofdread/page/n33/mode/1up' target='_blank'>Dungeon Module X1 The Isle of Dread</a>
-</td></tr><tr><td>
-<input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?' /><b id='d20result'></b>
-</td></tr><tr><td>
-<input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?' /><b id='d12result'></b>
-</td></tr><tr><td>
-<input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?' /><b id='d10result'></b>
-</td></tr><tr><td>
-<input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?' /><b id='d8result'></b>
-</td></tr><tr><td>
-<input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?' /><b id='d6result'></b>
-</td></tr><tr><td>
-<input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?' /><b id='d4result'></b>
-</td></tr><tr><td>
-<input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollOneDisplay'></b>
-</td></tr><tr><td>
-<input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollTwoDisplay'></b>
-</td></tr><tr><td>
-<input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollThreeDisplay'></b>
-</td></tr><tr><td>
-<input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollFourDisplay'></b>
-</td></tr><tr><td>
-<input onMouseOut="rollFive=parseInt(rollDForm(this.value));document.getElementById('rollFiveDisplay').innerHTML='('+naturalRoll+roll+')='+rollFive" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollFiveDisplay'></b>
-</td></tr><tr><td>
-<input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text' /><b id='rollSixDisplay'></b>
-</td></tr><tr><td>
-Target then paste stats. <br>
-<textArea cols='30' rows='30' onChange='stats=this.value;setStats()' /></textarea><b id='statsDisplay'></b>
-</td></tr></table>
-</td><td>
-<table><tr><td>
-<img src='Map.png' width='3000'>
-</td></tr></table>
-</td></tr></table>
-
 <script>
     $('.DraggableDiv').draggableTouch();
 </script>
-</body>
 
 </head>
 
