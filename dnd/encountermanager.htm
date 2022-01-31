@@ -191,7 +191,7 @@ D
     };
 
 
-    //VDWWD: separate function to keep the element withing the viewport and apply the corrected css
+    //VDWWD: separate function to keep the element within the viewport and apply the corrected css
     function setCss($element, top, left) {
         //check if the element does not exceed the viewport at the top of bottom
         if (top < margin) {
@@ -217,11 +217,12 @@ D
 </script>
 
 <style>
+
 .DraggableDiv {
     /* to allow the draggable div's to scroll with the content make the position absolute */
     position: fixed;
-    top: 30%;
-    left: 20%;
+    top: 100px;
+    left: 100px;
     width: 250px;
     border: 1px solid #000000;
     background: #beccf3;
@@ -318,7 +319,9 @@ td:nth-child(odd){background:rgba(0,0,0,0.2)}
 }
 
 body {
-  margin: 0;
+  left: 100px;
+  margin: 20px;
+  top: 100px;
 }
 
 form {
@@ -1170,7 +1173,7 @@ function
  s3="'/></td><td>"
 s4=document.write.bind(document)
 s4("<table><tr><td>Target the piece to receive these weapons or spells first.</td></tr></table>")
-s4("<table><tr><td><h3>Weapons</h3></td><td>")
+s4("<table class='DraggableDiv' id='DraggableDiv2'><tr><td><h3>Weapons</h3></td><td>")
 s4(s1+'Club'+s2+'Club'+s3)
 s4(s1+'Dagger'+s2+'Dagger'+s3)
 s4(s1+'Dart'+s2+'Dart'+s3)
@@ -3880,7 +3883,7 @@ newDiv.style.position="absolute";
 newDiv.style.top=this.y;
 newDiv.style.left=this.x;
 document.body.appendChild(newDiv);
-newDiv.innerHTML="<div id='DraggableDiv2'>";this.hide()}
+newDiv.innerHTML="<div class='DraggableDiv' id='DraggableDiv2'>";this.hide()}
 function askInit(x){initRoll=characters[x].rollInit();
 characters[x].setInit(initRoll)}
 function calcMod(x){mod=Math.floor((x - 10)/ 2);
