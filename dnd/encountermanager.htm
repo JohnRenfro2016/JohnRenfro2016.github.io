@@ -3093,7 +3093,7 @@ menuContents+="</td></tr><tr><td>Challenge Rating(CR)or Level(lvl):<br><input ma
 menuContents+="</td></tr><tr><td>Feature Notes:<br><textArea cols='40' rows='3' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases,etc.'>"+this.featureNotes+"</textarea>";
 menuContents+="</td></tr><tr><td>Experience Points(XP):<br><input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value)'size='8' type='text' value='"+this.experience+"'></td></tr><tr><td>"+this.features+"";
 menuContents+="</td></tr></table></span>"
-this.menu.setContents(menuContents);
+this.menu.setContents("<b class=DraggableDiv id=DraggableDiv2>"+menuContents+"</b>");
 }
 function _refresh(){document.getElementById(this.elementId).innerHTML=this.contents;}
 function _rollInit(){return d(20)+parseInt(this.curIni)+parseInt(this.sit)}
@@ -3883,7 +3883,7 @@ newDiv.style.position="absolute";
 newDiv.style.top=this.y;
 newDiv.style.left=this.x;
 document.body.appendChild(newDiv);
-newDiv.innerHTML="<div class='DraggableDiv' id='DraggableDiv2'>";this.hide()}
+newDiv.innerHTML="<div>";this.hide()}
 function askInit(x){initRoll=characters[x].rollInit();
 characters[x].setInit(initRoll)}
 function calcMod(x){mod=Math.floor((x - 10)/ 2);
