@@ -8,7 +8,6 @@
 <script src="Scripts/WZDragdrop.js"></script>
 <script src="Scripts/jquery-3.6.0.js"></script>
 <script src="Scripts/jquery-ui-1.13.1.js"></script>
-<script src="Scripts/gridstack.js"></script>
 
 <style>
 
@@ -159,7 +158,15 @@ input[type="radio"]:focus {
 </style>
 
 <body>
+        <div class="draggable" style="position:absolute; top:50px; left:10px; width:20px; height:20px; background:#f00;"></div>
 
+        <div>
+            <button id="enable">Enable</button>
+            <button id="disable">Disable</button>
+        </div>
+
+        <div id="console"></div>
+<p>
 <table><tr><td>
 <table><tr><td>
 <input type='button' value='Roll all initiatives?' onClick='rollInitiatives()' />
@@ -207,10 +214,8 @@ Target then paste stats.<br>
 </td></tr></table>
 </td><td>
 <table><tr><td>
-<img class='map' src='Map.png' width='3000'>
+<img src='Map.png' width='3000'>
 </td></tr></table>
-
-</body>
 
 <script>
 
@@ -2739,13 +2744,13 @@ menuX=(numX / 1+characterBoxWidth)+"px";this.box.putAt(x,y);this.menu.putAt(menu
 $("input[name='id_radioname']").on('change',function(e){var value=$("input[name='id_radioname']:checked").val();
 localStorage.setItem('option',value);
 location.reload()})
-function _ref(){boxContents="<img src='"+this.figure+"'> ";
+function _ref(){boxContents="<table class='draggable'><tr><td>Drag this on phones.<br><img src='"+this.figure+"'> ";
 boxContents+="<table><tr><td>"+this.name;
 boxContents+="</td></tr><tr><td>HP:"+this.maxHp+"/"+this.curHp;
 boxContents+="</td></tr><tr><td>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
 boxContents+="</td></tr><tr><td><input type='button' onClick='toggleMenu("+this.index+")' value='Show stats?'>";
 boxContents+="</td></tr><tr><td>Initiative:"+this.init;
-boxContents+="</td></tr></table>"
+boxContents+="</td></tr></table></td></tr></table>"
 this.box.setContents(boxContents);
 menuContents="<table><tr><td>"+this.combatLog;
 menuContents+="</td></tr></table><br><table><tr><td><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
@@ -4022,5 +4027,44 @@ else
 <script src="Characters.js"></script>
 
 </head>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="Scripts/jquery.draggableTouch.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#enable").click(function() {
+                    $(".draggable").draggableTouch();
+                });
+                $("#enable-transform").click(function() {
+                    $(".draggable").draggableTouch({useTransform:true});
+                });
+                $("#disable").click(function() {
+                    $(".draggable").draggableTouch("disable");
+                });
+
+                $(".draggable").bind("dragstart", function(e, pos) {
+                    console.log("dragstart:", this, pos.left + "," + pos.top);
+                }).bind("dragend", function(e, pos) {
+                    console.log("dragend:", this, pos.left + "," + pos.top);
+                });
+            });
+
+            // if this is a touch device, we assume we don't have a visible console and use
+            // a crappy homemade one :)
+            if ("ontouchstart" in document.documentElement) {
+                window.console = {
+                    log: function(a, b, c) {
+                        if (a && b && c)
+                            $("<div>" + a + " " + b + " " + c + "</div>").appendTo($("#console"));
+                        else if (a && b)
+                            $("<div>" + a + " " + b + "</div>").appendTo($("#console"));
+                        else if (a)
+                            $("<div>" + a + "</div>").appendTo($("#console"));
+                    }
+                };
+            }
+        </script>
+
+</body>
 
 </html>
