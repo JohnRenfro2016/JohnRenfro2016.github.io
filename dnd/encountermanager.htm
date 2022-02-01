@@ -11,6 +11,8 @@
 
 <style>
 
+div{z-index:1}
+
 a:active,
 a:link,
 a:hover,
@@ -161,8 +163,8 @@ input[type="radio"]:focus {
         <table class="draggable" style="position:absolute; top:50px; left:10px; width:50px; height:50px; z-index:3"><tr><td>Drag</td></tr></table>
 
         <div>
-            <button id="enable">Enable</button>
-            <button id="disable">Disable</button>
+            <button id="enable">Enable drag for touch devices.</button>
+            <button id="disable">Disable drag for touch devices.</button>
         </div>
 
 <p>
@@ -2751,7 +2753,8 @@ boxContents+="</td></tr><tr><td><input type='button' onClick='toggleMenu("+this.
 boxContents+="</td></tr><tr><td>Initiative:"+this.init;
 boxContents+="</td></tr></table>"
 this.box.setContents(boxContents);
-menuContents="<table><tr><td>"+this.combatLog;
+menuContents="<table><tr><td>"+this.name+"'s Character Sheet</td></tr></table>";
+menuContents+="<table><tr><td>"+this.combatLog;
 menuContents+="</td></tr></table><br><table><tr><td><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
 menuContents+="<br>Ini bonus:<br><input maxLength='3' onChange='characters["+this.index+"].setInitBonus(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.initBonus+">/"+this.curIni;
 menuContents+="</td><td>Spell (Abi)lity:<br><select onChange='characters["+this.index+"].setSpellAbility(this.value);checkTheTarget("+this.index+")'><option>"+this.spellAbility+"<option>int<option>wis<option>cha</select>"+this.spellAbilityNumber;
