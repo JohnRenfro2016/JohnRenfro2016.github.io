@@ -158,7 +158,7 @@ input[type="radio"]:focus {
 </style>
 
 <body>
-        <div class="draggable" style="position:absolute; top:50px; left:10px; width:20px; height:20px; background:#f00;"></div>
+        <table class="draggable" style="position:absolute; top:50px; left:10px; width:200px; height:20px; z-index:2"><tr><td>Drag</td></tr></table>
 
         <div>
             <button id="enable">Enable</button>
@@ -2744,13 +2744,13 @@ menuX=(numX / 1+characterBoxWidth)+"px";this.box.putAt(x,y);this.menu.putAt(menu
 $("input[name='id_radioname']").on('change',function(e){var value=$("input[name='id_radioname']:checked").val();
 localStorage.setItem('option',value);
 location.reload()})
-function _ref(){boxContents="<table class='draggable'><tr><td>Drag this on phones.<br><img src='"+this.figure+"'> ";
-boxContents+="<table><tr><td>"+this.name;
+function _ref(){boxContents="<table class='draggable'><tr><td><img src='"+this.figure+"'> ";
+boxContents+="</td></tr><tr><td>"+this.name;
 boxContents+="</td></tr><tr><td>HP:"+this.maxHp+"/"+this.curHp;
 boxContents+="</td></tr><tr><td>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
 boxContents+="</td></tr><tr><td><input type='button' onClick='toggleMenu("+this.index+")' value='Show stats?'>";
 boxContents+="</td></tr><tr><td>Initiative:"+this.init;
-boxContents+="</td></tr></table></td></tr></table>"
+boxContents+="</td></tr></table>"
 this.box.setContents(boxContents);
 menuContents="<table><tr><td>"+this.combatLog;
 menuContents+="</td></tr></table><br><table><tr><td><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
