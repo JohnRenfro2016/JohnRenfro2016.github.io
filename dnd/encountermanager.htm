@@ -11,29 +11,20 @@
 
 <style>
 
-div{background:rgba(0,0,0,0.1);z-index:0}
-
-a:active,
-a:link,
-a:hover,
-a:selected,
-a:visited,
-h1,
-h2,
-h3
+@font-face
 {
-text-decoration:#464101}
+font-family: MyKidsHandwritten;
+src: url("Miniatures/MyKidsHandwritten.ttf");
+}
 
-a:active,
-a:link,
-h1{color:#3a1f0d}
 
-a:hover,
-a:selected,
-h2{color:#572f13}
-
-a:visited,
-h3{color:#743f1a}
+div
+{
+background:rgba(0,0,0,0.1);
+height:100px;
+width:100px;
+z-index:0
+}
 
 table,
 tr,
@@ -50,23 +41,21 @@ border:1px;
 border-color:#333b2f;
 border-style:solid;
 border-radius:4px;
-font-size:10px;
+font-family: 'MyKidsHandwritten';
+font-size:22px;
 margin:1px;
 outline:1px solid transparent;
 padding:1px;
 text-align:justify;
 text-decoration:#22271f;
+text-decoration-thickness:2px;
 vertical-align:top;
 z-index:1;
 }
 
-table{background-color:#e5d3b3}
-
-tr{background-color:#d2b48c}
-
-td
+table
 {
-background-color:#914f21;
+background-image:url("Miniatures/Panel.png");
 }
 
 tr:nth-child(even){background:rgba(0,0,0,0.1)}
@@ -75,88 +64,14 @@ tr:nth-child(odd){background:rgba(0,0,0,0.2)}
 td:nth-child(even){background:rgba(0,0,0,0.1)}
 td:nth-child(odd){background:rgba(0,0,0,0.2)}
 
-:root {
-  --form-control-color: #464101;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-body {
-  left: 10px;
-  margin: 10px;
-  top: 10px;
-}
-
-form {
-  display: grid;
-  place-content: center;
-  min-height: 100vh;
-}
-
-.form-control {
-  font-family: system-ui, sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-  line-height: 1.1;
-  display: grid;
-  grid-template-columns: 1em auto;
-  gap: 0.5em;
-}
-
-.form-control + .form-control {
-  margin-top: 1em;
-}
-
-.form-control:focus-within {
-  color: var(--form-control-color);
-}
-
-input[type="radio"] {
-  /* Add if not using autoprefixer */
-  -webkit-appearance: none;
-  /* Remove most all native input styles */
-  appearance: none;
-  /* For iOS < 15 */
-  background-color: var(--form-background);
-  /* Not removed via appearance */
-  margin: 0;
-
-  font: inherit;
-  color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid currentColor;
-  border-radius: 50%;
-  transform: translateY(-0.075em);
-
-  display: grid;
-  place-content: center;
-}
-
-input[type="radio"]::before {
-  content: "";
-  width: 0.65em;
-  height: 0.65em;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--form-control-color);
-  /* Windows High Contrast Mode */
-  background-color: CanvasText;
-}
-
-input[type="radio"]:checked::before {
-  transform: scale(1);
-}
-
-input[type="radio"]:focus {
-  outline: max(2px, 0.15em) solid currentColor;
-  outline-offset: max(2px, 0.15em);
-}
+a:active{color:#f13a37}
+a:link{color:#8e060f}
+a:hover{color:#c4141b}
+a:selected{color:#b92429}
+a:visited{color:#fb8684}
+h1{color:#871604}
+h2{color:#5c0904}
+h3{color:#6c0b04}
 
 </style>
 
@@ -215,7 +130,7 @@ Target then paste stats.<br>
 </td></tr></table>
 </td><td>
 <table><tr><td>
-<img src='Map.png' width='3000'>
+<img src='Miniatures/Map.png' width='3000'>
 </td></tr></table>
 
 <script>
@@ -2762,7 +2677,7 @@ menuContents+="</td><td>Lvl (Pro)ficiency:<br><input maxLength='3' onChange='cha
 menuContents+="</td><td>(Sit)uation (Mod)ifier:<br><input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
 menuContents+="</td><td><input type='button' onClick='characters["+this.index+"].save();checkTheTarget("+this.index+")'value='Save this character?'>";
 menuContents+="</td><td><input type='button' value='Delete this character?'onClick='removeChar("+this.index+");checkTheTarget("+this.index+")'>";
-menuContents+="</td></tr><tr><td><h3>Show</h3>"
+menuContents+="</td></tr><tr><td><h2>Show</h2>"
 menuContents+="</td><td><input onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='AC,HP?'>";
 menuContents+="</td><td><input onClick='toggleTab5("+this.index+");checkTheTarget("+this.index+")' type='button' value=' Abilities?'>";
 menuContents+="</td><td><input onClick='toggleTab6("+this.index+");checkTheTarget("+this.index+")' type='button' value=' Actions?'>";
@@ -2787,32 +2702,32 @@ menuContents+="</td><td>Heal up?<input maxLength='3' onChange='characters["+this
 menuContents+="</td></tr><tr><td>Hit Dice(HD):<br><input maxLength='10' onChange='characters["+this.index+"].setHitDice(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z' size=10 type='text' value='"+this.hitDice+"'>";
 menuContents+="</td><td colspan='2'>Damage Conditions:<br><textArea cols='40' rows=2 onChange='characters["+this.index+"].setDamageConditions(this.value);checkTheTarget("+this.index+")'placeHolder='temp hp+10,ac-1,str+1,ini+3,blinded'>"+this. dmgConditions+"</textArea>"
 menuContents+="</td></tr></table></td></tr></table></span><span id=toggled5"+this.index+" style='display:"+this.toggled5+"'>";
-menuContents+="<table><tr><td><table><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'>score:<br><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/"+this.curStr+" mod:"+this.strMod+"+<select onChange='characters["+this.index+"].setStrPro(this.value);checkTheTarget("+this.index+")'><option>"+this.strPro+"<option><option>pro<option>exp</select>"
+menuContents+="<table width='700px'><tr><td><table><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'><br><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/"+this.curStr+" mod:"+this.strMod+"+<select onChange='characters["+this.index+"].setStrPro(this.value);checkTheTarget("+this.index+")'><option>"+this.strPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=10;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].athletics;abiRoll("+this.index+")'value='Roll Athletics(str)?'type='button'>+<select onChange='characters["+this.index+"].setAthletics(this.value);checkTheTarget("+this.index+")'><option>"+this.athletics+"<option><option>pro<option>exp</select>";
 menuContents+="</td></tr><tr><td>Carrying Capacity:"+this.carryingCapacity+"lbs";
 menuContents+="</td></tr><tr><td>Drag,Lift,Push:"+this.dragLiftPush+"lbs";
 menuContents+="</td></tr><tr><td>High Jump:"+this.highJump+"ft"
 menuContents+="</td></tr><tr><td>Long Jump:"+this.longJump+"ft";
-menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'>score:<br><input maxLength='2' onChange='characters["+this.index+"].setDex(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.dex+">/"+this.curDex+" mod:"+this.dexMod+"+<select onChange='characters["+this.index+"].setDexPro(this.value);checkTheTarget("+this.index+")'><option>"+this.dexPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'><br><input maxLength='2' onChange='characters["+this.index+"].setDex(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.dex+">/"+this.curDex+" mod:"+this.dexMod+"+<select onChange='characters["+this.index+"].setDexPro(this.value);checkTheTarget("+this.index+")'><option>"+this.dexPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=7;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].acrobatics;abiRoll("+this.index+")'value='Roll Acrobatics(dex)?'type='button'>+<select onChange='characters["+this.index+"].setAcrobatics(this.value);checkTheTarget("+this.index+")'><option>"+this.acrobatics+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=22;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].sleight;abiRoll("+this.index+")'value='Roll Sleight of Hand(dex)?'type='button'>+<select onChange='characters["+this.index+"].setSleight(this.value);checkTheTarget("+this.index+")'><option>"+this.sleight+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=23;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].stealth;abiRoll("+this.index+")'value='Roll Stealth(dex)?'type='button'>+<select onChange='characters["+this.index+"].setStealth(this.value);checkTheTarget("+this.index+")'><option>"+this.stealth+"<option><option>pro<option>exp</select>";
-menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'>score:<br><input maxLength='2' onChange='characters["+this.index+"].setCon(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.con+">/"+this.curCon+" mod:"+this.conMod+"+<select onChange='characters["+this.index+"].setConPro(this.value);checkTheTarget("+this.index+")'><option>"+this.conPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'><br><input maxLength='2' onChange='characters["+this.index+"].setCon(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.con+">/"+this.curCon+" mod:"+this.conMod+"+<select onChange='characters["+this.index+"].setConPro(this.value);checkTheTarget("+this.index+")'><option>"+this.conPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td>Hold Breath:"+(parseInt(this.conMod)+1)+"min"
 menuContents+="</td></tr><tr><td>Suffocate:"+parseInt(this.conMod)+"min";
-menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'>score:<br><input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/"+this.curInt+" mod:"+this.intMod+"+<select onChange='characters["+this.index+"].setIntPro(this.value);checkTheTarget("+this.index+")'><option>"+this.intPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr></table></td></tr><tr><td><table><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'><br><input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/"+this.curInt+" mod:"+this.intMod+"+<select onChange='characters["+this.index+"].setIntPro(this.value);checkTheTarget("+this.index+")'><option>"+this.intPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=9;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].arcana;abiRoll("+this.index+")'value='Roll Arcana(int)?'type='button'>+<select onChange='characters["+this.index+"].setArcana(this.value);checkTheTarget("+this.index+")'><option>"+this.arcana+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=12;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].History;abiRoll("+this.index+")'value='Roll History(int)?'type='button'>+<select onChange='characters["+this.index+"].setHistory(this.value);checkTheTarget("+this.index+")'><option>"+this.history+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=15;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].investigation;abiRoll("+this.index+")'value='Roll Investigation(int)?'type='button'>+<select onChange='characters["+this.index+"].setInvestigation(this.value);checkTheTarget("+this.index+")'><option>"+this.investigation+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=17;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].nature;abiRoll("+this.index+")'value='Roll Nature(int)?'type='button'>+<select onChange='characters["+this.index+"].setNature(this.value);checkTheTarget("+this.index+")';checkTheTarget("+this.index+")><option>"+this.nature+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=21;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].religion;abiRoll("+this.index+")'value='Roll Religion(int)?'type='button'>+<select onChange='characters["+this.index+"].setReligion(this.value);checkTheTarget("+this.index+")'><option>"+this.religion+"<option><option>pro<option>exp</select>";
-menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'>score:<br><input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/"+this.curWis+" mod:"+this.wisMod+"+<select onChange='characters["+this.index+"].setWisPro(this.value);checkTheTarget("+this.index+")'><option>"+this.wisPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'><br><input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/"+this.curWis+" mod:"+this.wisMod+"+<select onChange='characters["+this.index+"].setWisPro(this.value);checkTheTarget("+this.index+")'><option>"+this.wisPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=8;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].animal;abiRoll("+this.index+")'value='Roll Animal Handling(wis)?'type='button'>+<select onChange='characters["+this.index+"].setAnimal(this.value);checkTheTarget("+this.index+")'><option>"+this.animal+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=13;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].insight;abiRoll("+this.index+")'value='Roll Insight(wis)?'type='button'>+<select onChange='characters["+this.index+"].setInsight(this.value);checkTheTarget("+this.index+")'><option>"+this.insight+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=16;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].medicine;abiRoll("+this.index+")'value='Roll Medicine(wis)?'type='button'>+<select onChange='characters["+this.index+"].setMedicine(this.value);checkTheTarget("+this.index+")'><option>"+this.medicine+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=18;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].perception;abiRoll("+this.index+")'value='Roll Perception(wis)?'type='button'>+<select onChange='characters["+this.index+"].setPerception(this.value);checkTheTarget("+this.index+")'><option>"+this.perception+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=24;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].survival;abiRoll("+this.index+")'value='Roll Survival(wis)?'type='button'>+<select onChange='characters["+this.index+"].setSurvival(this.value);checkTheTarget("+this.index+")'><option>"+this.survival+"<option><option>pro<option>exp</select> ";
-menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'>score:<br><input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/"+this.curCha+" mod:"+this.chaMod+"+<select onChange='characters["+this.index+"].setChaPro(this.value);checkTheTarget("+this.index+")'><option>"+this.chaPro+"<option><option>pro<option>exp</select>"
+menuContents+="</td></tr></table></td><td><table><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'><br><input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/"+this.curCha+" mod:"+this.chaMod+"+<select onChange='characters["+this.index+"].setChaPro(this.value);checkTheTarget("+this.index+")'><option>"+this.chaPro+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=11;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].deception;abiRoll("+this.index+")'value='Roll Deception(cha)?'type='button'>+<select onChange='characters["+this.index+"].setDeception(this.value);checkTheTarget("+this.index+")'><option>"+this.deception+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=14;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].intimidation;abiRoll("+this.index+")'value='Roll Intimidation(cha)?'type='button'>+<select onChange='characters["+this.index+"].setIntimidation(this.value);checkTheTarget("+this.index+")'><option>"+this.intimidation+"<option><option>pro<option>exp</select>"
 menuContents+="</td></tr><tr><td><input onClick='abi=19;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].performance;abiRoll("+this.index+")'value='Roll Performance(cha)?'type='button'>+<select onChange='characters["+this.index+"].setPerformance(this.value);checkTheTarget("+this.index+")'><option>"+this.performance+"<option><option>pro<option>exp</select>"
