@@ -165,7 +165,6 @@ input[type="radio"]:focus {
             <button id="disable">Disable</button>
         </div>
 
-        <div id="console"></div>
 <p>
 <table><tr><td>
 <table><tr><td>
@@ -2744,14 +2743,14 @@ menuX=(numX / 1+characterBoxWidth)+"px";this.box.putAt(x,y);this.menu.putAt(menu
 $("input[name='id_radioname']").on('change',function(e){var value=$("input[name='id_radioname']:checked").val();
 localStorage.setItem('option',value);
 location.reload()})
-function _ref(){boxContents="<table class='draggable'><tr><td><img src='"+this.figure+"'> ";
+function _ref(){boxContents="<table><tr><td><img src='"+this.figure+"'> ";
 boxContents+="</td></tr><tr><td>"+this.name;
 boxContents+="</td></tr><tr><td>HP:"+this.maxHp+"/"+this.curHp;
 boxContents+="</td></tr><tr><td>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
 boxContents+="</td></tr><tr><td><input type='button' onClick='toggleMenu("+this.index+")' value='Show stats?'>";
 boxContents+="</td></tr><tr><td>Initiative:"+this.init;
 boxContents+="</td></tr></table>"
-this.box.setContents(boxContents);
+this.box.setContents('<table class=draggable><tr><td>Drag</td></tr></table>' +boxContents);
 menuContents="<table><tr><td>"+this.combatLog;
 menuContents+="</td></tr></table><br><table><tr><td><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
 menuContents+="<br>Ini bonus:<br><input maxLength='3' onChange='characters["+this.index+"].setInitBonus(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.initBonus+">/"+this.curIni;
