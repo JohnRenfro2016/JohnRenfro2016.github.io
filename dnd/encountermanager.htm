@@ -17,13 +17,14 @@ font-family: MyKidsHandwritten;
 src: url("Miniatures/MyKidsHandwritten.ttf");
 }
 
+body{z-index:0;}
 
 div
 {
 background:rgba(0,0,0,0.1);
 height:100px;
 width:100px;
-z-index:1;
+z-index:1
 }
 
 table,
@@ -79,8 +80,10 @@ td{width:250px}
 
 <body>
 
-<div class='DraggableDiv'>Drag</div>
+            <button id="enable">Enable drag for touch devices to move the pieces on the map.</button>
+            <button id="disable">Disable drag for touch devices for other game operations.</button>
 
+<p>
 <table><tr><td>
 <table><tr><td>
 <input type='button' value='Roll all initiatives?' onClick='rollInitiatives()' />
@@ -2662,7 +2665,7 @@ menuX=(numX / 1+characterBoxWidth)+"px";this.box.putAt(x,y);this.menu.putAt(menu
 $("input[name='id_radioname']").on('change',function(e){var value=$("input[name='id_radioname']:checked").val();
 localStorage.setItem('option',value);
 location.reload()})
-function _ref(){boxContents="<table><tr><td><img src='"+this.figure+"'> ";
+function _ref(){boxContents="<div class='draggable'>Drag</div><table><tr><td><img src='"+this.figure+"'> ";
 boxContents+="</td></tr><tr><td>"+this.name;
 boxContents+="</td></tr><tr><td>HP:"+this.maxHp+"/"+this.curHp;
 boxContents+="</td></tr><tr><td>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
@@ -3574,8 +3577,8 @@ function AGEElement(){this.elementId="AGE"+currentElementId;
 currentElementId++;this.x=0;this.y=0;this.contents="";this.hide=_hide;this.putAt=_putAt;this.refresh=_refresh;this.setContents=_setContents;this.setStyle=_setStyle;this.setX=_setX;this.setY=_setY;this.show=_show;
 var newDiv=document.createElement('div');
 newDiv.setAttribute('id',this.elementId);
-//newDiv.className="ui-widget-content";
-newDiv.className="DraggableDiv";
+newDiv.className="ui-widget-content";
+//newDiv.className="draggable";
 newDiv.style.position="absolute";
 newDiv.style.top=this.y;
 newDiv.style.left=this.x;
@@ -3954,15 +3957,28 @@ else
 
 </head>
 
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-<script src="Scripts/draggable-div-with-touch.js" /></script>
-<script>
-$('.DraggableDiv').draggableTouch()
-.on("dragstart", function(event, pos)
-{console.log("drag started on:", this, "at position:", pos);})
-.on("dragend", function(event, pos)
-{console.log("drag ended on:", this, "at position:", pos);});
-</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="Scripts/jquery.draggableTouch.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#enable").click(function() {
+                    $(".draggable").draggableTouch();
+                });
+                $("#enable-transform").click(function() {
+                    $(".draggable").draggableTouch({useTransform:true});
+                });
+                $("#disable").click(function() {
+                    $(".draggable").draggableTouch("disable");
+                });
+
+                $(".draggable").bind("dragstart", function(e, pos) {
+                    console.log("dragstart:", this, pos.left + "," + pos.top);
+                }).bind("dragend", function(e, pos) {
+                    console.log("dragend:", this, pos.left + "," + pos.top);
+                });
+            });
+
+        </script>
 
 </body>
 
