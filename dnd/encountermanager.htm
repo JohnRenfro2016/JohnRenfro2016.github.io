@@ -75,10 +75,6 @@ h3{color:#6c0b04}
 
 <body>
 
- <button id="enable">Enable drag for touch devices to move the pieces on the map.</button>
- <button id="disable">Disable drag for touch devices for other game operations.</button>
-
-<p>
 <table><tr><td>
 <table><tr><td>
 <input type='button' value='Roll all initiatives?' onClick='rollInitiatives()' />
@@ -3946,27 +3942,6 @@ else
 <script src="Characters.js"></script>
 
 </head>
-
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
- <script src="Scripts/jquery.draggableTouch.js"></script>
- <script>
- $(document).ready(function() {
- $("#enable").click(function() {
- $(".draggable").draggableTouch({stack:"AGEBox"});
- });
-
- $("#disable").click(function() {
- $(".draggable").draggableTouch("disable");
- });
-
- $(".draggable").bind("dragstart", function(e, pos) {
- console.log("dragstart:", this, pos.left + "," + pos.top);
-
- }).bind("dragend", function(e, pos) {
- console.log("dragend:", this, pos.left + "," + pos.top);
- });
- });
- </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 <script src="Scripts/draggable-div-with-touch.js" /></script>
