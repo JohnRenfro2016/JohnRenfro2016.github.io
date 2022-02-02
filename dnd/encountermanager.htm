@@ -3963,7 +3963,7 @@ else
         <script>
             $(document).ready(function() {
                 $("#enable").click(function() {
-                    $(".draggable").draggableTouch({stack:"div"});
+                    $(".draggable").draggableTouch({appendTo:"body",z-index:20000});
                 });
                 $("#enable-transform").click(function() {
                     $(".draggable").draggableTouch({useTransform:true});
