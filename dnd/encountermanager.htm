@@ -4,7 +4,7 @@
 <meta content="utf-8" http-equiv="encoding">
 <meta name="description" content="2017 Dungeons & Dragons 5th Edition Tabletop Roleplaying Game Manager">
 <meta name="keywords" content="DnD,Dungeons and Dragons,D&D,Dungeons & Dragons,Fantasy RPG,tabletop roleplaying game,TTRPG">
-<title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game JavaScript Manager 2022(Asmor,Zorn,Ren)</title>
+<title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game JavaScript Manager 2022(Wizards of the Coast,Asmor,Zorn,Ren,Vanderwaal Webdesign)</title>
 <script src="Scripts/WZDragdrop.js"></script>
 <script src="Scripts/jquery-3.6.0.js"></script>
 <script src="Scripts/jquery-ui-1.13.1.js"></script>
@@ -48,12 +48,6 @@ z-index:2;
 table
 {
 background-image:url("Miniatures/Panel.png");
-}
-
-td
-{
-width:25px;
-white-space:nowrap;
 }
 
 tr:nth-child(even){background:rgba(0,0,0,0.1)}
@@ -122,7 +116,7 @@ Target then paste stats.
 </td></tr></table>
 </td><td>
 <table><tr><td>
-<img src='Miniatures/Map.png' width='3000'>
+<img src='Maps/Map.png' width='7000'>
 </td></tr></table>
 
 <script>
@@ -2562,87 +2556,87 @@ function _getSaveText(){this.updateXY();
 varName="";
 varName="pc";
 varName+=Math.ceil(Math.random()*10000);
-toSave="\/\/"+this.name+"";
-toSave+=varName+"=new Character('"+this.name+"','"+this.type+"')";
-for(var i=0; i<this.rolls.length; i++){toSave+="<tr><td>"+varName+".addRoll('"+this.rollNames[i]+"','"+this.rolls[i]+"','"+this.rollNames2[i]+"','"+this.rolls2[i]+"')</td></tr>"}
-toSave+="<tr><td>"+varName+".putAt(\'"+this.x+"\',\'"+this.y+"\' )";
-toSave+=varName+".setClass('"+this.class+"')";
-toSave+=varName+".setLvl('"+this.lvl+"')";
-toSave+=varName+".setRace('"+this.race+"')";
-toSave+=varName+".setBackground('"+this.background+"')";
-toSave+=varName+".setAbility('"+this.ability+"')";
-toSave+=varName+".setAC("+this.ac+")";
-toSave+=varName+".setAcrobatics('"+this.acrobatics+"')";
-toSave+=varName+".setAlignment('"+this.alignment+"')";
-toSave+=varName+".setAnimal('"+this.animal+"')";
-toSave+=varName+".setArmor('"+this.armor+"')";
-toSave+=varName+".setArcana('"+this.arcana+"')";
-toSave+=varName+".setAthletics('"+this.athletics+"')";
-toSave+=varName+".setBackF('"+this.backF+"')";
-toSave+=varName+".setBackL('"+this.backL+"')";
-toSave+=varName+".setBackS('"+this.backS+"')";
-toSave+=varName+".setBackT('"+this.backT+"')";
-toSave+=varName+".setBonds('"+this.bonds+"')";
-toSave+=varName+".setCha("+this.cha+")";
-toSave+=varName+".setChaPro('"+this.chaPro+"')";
-toSave+=varName+".setCon("+this.con+")";
-toSave+=varName+".setConPro('"+this.conPro+"')";
-toSave+=varName+".setCurHp("+this.curHp+")";
-toSave+=varName+".setDeception('"+this.deception+"')";
-toSave+=varName+".setDex("+this.dex+")";
-toSave+=varName+".setDexPro('"+this.dexPro+"')";
-toSave+=varName+".setEquipment('"+this.equipment+"')";
-toSave+=varName+".setExperience('"+this.experience+"')";
-toSave+=varName+".setFeats('"+this.feats+"')";
-toSave+=varName+".setActionNotes('"+this.actionNotes+"')";
-toSave+=varName+".setFeatureNotes('"+this.featureNotes+"')";
-toSave+=varName+".setFigure('"+this.figure+"')";
-toSave+=varName+".setFlaws('"+this.flaws+"')";
-toSave+=varName+".setHistory('"+this.history+"')";
-toSave+=varName+".setHitDice('"+this.hitDice+"')";
-toSave+=varName+".setIdeals('"+this.ideals+"')";
-if(!isNaN(this.init)){toSave+=varName+".setInit("+this.init+")"}
-toSave+=varName+".setImmunity('"+this.immunity+"')";
-toSave+=varName+".setInitBonus('"+this.initBonus+"')";
-toSave+=varName+".setInsight('"+this.insight+"')";
-toSave+=varName+".setInt("+this.inte+")";
-toSave+=varName+".setIntimidation('"+this.intimidation+"')";
-toSave+=varName+".setIntPro('"+this.intPro+"')";
-toSave+=varName+".setInvestigation('"+this.investigation+"')";
-toSave+=varName+".setLanguages('"+this.languages+"')";
-toSave+=varName+".setMaxHp("+this.maxHp+")";
-toSave+=varName+".setCurHp("+this.curHp+")";
-toSave+=varName+".setMedicine('"+this.medicine+"')";
-toSave+=varName+".setNature('"+this.nature+"')";
-toSave+=varName+".setPerception('"+this.perception+"')";
-toSave+=varName+".setPerformance('"+this.performance+"')";
-toSave+=varName+".setPersuasion('"+this.persuasion+"')";
-toSave+=varName+".setPro('"+this.pro+"')";
-toSave+=varName+".setProficiencies('"+this.proficiencies+"')";
-toSave+=varName+".setProficienciesRace('"+this.proficienciesRace+"')";
-toSave+=varName+".setReligion('"+this.religion+"')";
-toSave+=varName+".setResistance('"+this.resistance+"')";
-toSave+=varName+".setSaving('"+this.saving+"')";
-toSave+=varName+".setSenses('"+this.senses+"')";
-toSave+=varName+".setShield('"+this.shield+"')";
-toSave+=varName+".setSize('"+this.size+"')";
-toSave+=varName+".setSleight('"+this.sleight+"')";
-toSave+=varName+".setSkills('"+this.skills+"')";
-toSave+=varName+".setSpeed('"+this.speed+"')";
-toSave+=varName+".setSpellAbility('"+this.spellAbility+"')";
-toSave+=varName+".setSpellAbilityNumber('"+this.spellAbilityNumber+"')";
-toSave+=varName+".setStealth('"+this.stealth+"')";
-toSave+=varName+".setStr("+this.str+")";
-toSave+=varName+".setStrPro('"+this.strPro+"')";
-toSave+=varName+".setSurvival('"+this.survival+"')";
-toSave+=varName+".setTrait('"+this.trait+"')";
-toSave+=varName+".setVulnerability('"+this.vulnerability+"')";
-toSave+=varName+".setWis("+this.wis+")";
-toSave+=varName+".setWisPro('"+this.wisPro+"')";
-toSave+=varName+".setDamageConditions('"+this. dmgConditions+"')";
+toSave="\/\/"+this.name+"<br>";
+toSave+=varName+"=new Character('"+this.name+"','"+this.type+"')<br>";
+for(var i=0; i<this.rolls.length; i++){toSave+=varName+".addRoll('"+this.rollNames[i]+"','"+this.rolls[i]+"','"+this.rollNames2[i]+"','"+this.rolls2[i]+"')<br>"}
+toSave+=varName+".putAt(\'"+this.x+"\',\'"+this.y+"\' )<br>";
+toSave+=varName+".setClass('"+this.class+"')<br>";
+toSave+=varName+".setLvl('"+this.lvl+"')<br>";
+toSave+=varName+".setRace('"+this.race+"')<br>";
+toSave+=varName+".setBackground('"+this.background+"')<br>";
+toSave+=varName+".setAbility('"+this.ability+"')<br>";
+toSave+=varName+".setAC("+this.ac+")<br>";
+toSave+=varName+".setAcrobatics('"+this.acrobatics+"')<br>";
+toSave+=varName+".setAlignment('"+this.alignment+"')<br>";
+toSave+=varName+".setAnimal('"+this.animal+"')<br>";
+toSave+=varName+".setArmor('"+this.armor+"')<br>";
+toSave+=varName+".setArcana('"+this.arcana+"')<br>";
+toSave+=varName+".setAthletics('"+this.athletics+"')<br>";
+toSave+=varName+".setBackF('"+this.backF+"')<br>";
+toSave+=varName+".setBackL('"+this.backL+"')<br>";
+toSave+=varName+".setBackS('"+this.backS+"')<br>";
+toSave+=varName+".setBackT('"+this.backT+"')<br>";
+toSave+=varName+".setBonds('"+this.bonds+"')<br>";
+toSave+=varName+".setCha("+this.cha+")<br>";
+toSave+=varName+".setChaPro('"+this.chaPro+"')<br>";
+toSave+=varName+".setCon("+this.con+")<br>";
+toSave+=varName+".setConPro('"+this.conPro+"')<br>";
+toSave+=varName+".setCurHp("+this.curHp+")<br>";
+toSave+=varName+".setDeception('"+this.deception+"')<br>";
+toSave+=varName+".setDex("+this.dex+")<br>";
+toSave+=varName+".setDexPro('"+this.dexPro+"')<br>";
+toSave+=varName+".setEquipment('"+this.equipment+"')<br>";
+toSave+=varName+".setExperience('"+this.experience+"')<br>";
+toSave+=varName+".setFeats('"+this.feats+"')<br>";
+toSave+=varName+".setActionNotes('"+this.actionNotes+"')<br>";
+toSave+=varName+".setFeatureNotes('"+this.featureNotes+"')<br>";
+toSave+=varName+".setFigure('"+this.figure+"')<br>";
+toSave+=varName+".setFlaws('"+this.flaws+"')<br>";
+toSave+=varName+".setHistory('"+this.history+"')<br>";
+toSave+=varName+".setHitDice('"+this.hitDice+"')<br>";
+toSave+=varName+".setIdeals('"+this.ideals+"')<br>";
+if(!isNaN(this.init)){toSave+=varName+".setInit("+this.init+")<br>"}
+toSave+=varName+".setImmunity('"+this.immunity+"')<br>";
+toSave+=varName+".setInitBonus('"+this.initBonus+"')<br>";
+toSave+=varName+".setInsight('"+this.insight+"')<br>";
+toSave+=varName+".setInt("+this.inte+")<br>";
+toSave+=varName+".setIntimidation('"+this.intimidation+"')<br>";
+toSave+=varName+".setIntPro('"+this.intPro+"')<br>";
+toSave+=varName+".setInvestigation('"+this.investigation+"')<br>";
+toSave+=varName+".setLanguages('"+this.languages+"')<br>";
+toSave+=varName+".setMaxHp("+this.maxHp+")<br>";
+toSave+=varName+".setCurHp("+this.curHp+")<br>";
+toSave+=varName+".setMedicine('"+this.medicine+"')<br>";
+toSave+=varName+".setNature('"+this.nature+"')<br>";
+toSave+=varName+".setPerception('"+this.perception+"')<br>";
+toSave+=varName+".setPerformance('"+this.performance+"')<br>";
+toSave+=varName+".setPersuasion('"+this.persuasion+"')<br>";
+toSave+=varName+".setPro('"+this.pro+"')<br>";
+toSave+=varName+".setProficiencies('"+this.proficiencies+"')<br>";
+toSave+=varName+".setProficienciesRace('"+this.proficienciesRace+"')<br>";
+toSave+=varName+".setReligion('"+this.religion+"')<br>";
+toSave+=varName+".setResistance('"+this.resistance+"')<br>";
+toSave+=varName+".setSaving('"+this.saving+"')<br>";
+toSave+=varName+".setSenses('"+this.senses+"')<br>";
+toSave+=varName+".setShield('"+this.shield+"')<br>";
+toSave+=varName+".setSize('"+this.size+"')<br>";
+toSave+=varName+".setSleight('"+this.sleight+"')<br>";
+toSave+=varName+".setSkills('"+this.skills+"')<br>";
+toSave+=varName+".setSpeed('"+this.speed+"')<br>";
+toSave+=varName+".setSpellAbility('"+this.spellAbility+"')<br>";
+toSave+=varName+".setSpellAbilityNumber('"+this.spellAbilityNumber+"')<br>";
+toSave+=varName+".setStealth('"+this.stealth+"')<br>";
+toSave+=varName+".setStr("+this.str+")<br>";
+toSave+=varName+".setStrPro('"+this.strPro+"')<br>";
+toSave+=varName+".setSurvival('"+this.survival+"')<br>";
+toSave+=varName+".setTrait('"+this.trait+"')<br>";
+toSave+=varName+".setVulnerability('"+this.vulnerability+"')<br>";
+toSave+=varName+".setWis("+this.wis+")<br>";
+toSave+=varName+".setWisPro('"+this.wisPro+"')<br>";
+toSave+=varName+".setDamageConditions('"+this. dmgConditions+"')<br>";
 if(this.menuShown){toSave+=varName+".showMenu( )"}
-toSave+="add("+varName+")";
-toSave+="\/\/End of "+this.name+"";
+toSave+="add("+varName+")<br>";
+toSave+="\/\/End of "+this.name+"<br>";
 return toSave}
 function _hide(){document.getElementById(this.elementId).style.visibility="hidden"}
 function _hideBox(){this.box.hide()}
@@ -2657,8 +2651,8 @@ $("input[name='id_radioname']").on('change',function(e){var value=$("input[name=
 localStorage.setItem('option',value);
 location.reload()})
 function _ref(){boxContents="<img src='"+this.figure+"'> ";
-+this.name;
-boxContents+="<table><tr><td>HP:"+this.maxHp+"/"+this.curHp;
+boxContents+="<table><tr><td>"+this.name;
+boxContents+="</td></tr><tr><td>HP:"+this.maxHp+"/"+this.curHp;
 boxContents+="</td></tr><tr><td>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
 boxContents+="</td></tr><tr><td>Init:"+this.init;
 boxContents+="</td></tr><tr><td><input onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
@@ -3917,7 +3911,7 @@ function saveAll(){globalSave="";
 for(var i=0; i< characters.length; i++){globalSave+=characters[i].getSaveText()+" "
 }
 showSavePrompt("all characters",globalSave)}
-function showSavePrompt(name,toSave){toSave="<table><tr><td>Cut and paste below and above the lines into the Characters.js file.<hr>"+toSave+"<hr><input type='button' onClick='savePane.hide()'value=Close></td></tr></table>";
+function showSavePrompt(name,toSave){toSave="<table width='200px'><tr><td>Cut and paste below and above the lines into the Characters.js file.<hr></td></tr><tr><td>"+toSave+"</td></tr><tr><td><hr><input type='button' onClick='savePane.hide()'value=Close></td></tr></table>";
 savePane.setContents(toSave);
 savePane.show()}
 function toggleMenu(x){if(characters[x].menuShown){characters[x].hideMenu()}
