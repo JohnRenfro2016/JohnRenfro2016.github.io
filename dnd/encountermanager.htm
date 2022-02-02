@@ -3567,7 +3567,7 @@ currentElementId++;this.x=0;this.y=0;this.contents="";this.hide=_hide;this.putAt
 var newDiv=document.createElement('div');
 newDiv.setAttribute('id',this.elementId);
 //newDiv.className="ui-widget-content";
-newDiv.className="draggable";
+newDiv.className="DraggableDiv";
 newDiv.style.position="absolute";
 newDiv.style.top=this.y;
 newDiv.style.left=this.x;
@@ -3966,8 +3966,17 @@ else
  console.log("dragend:", this, pos.left + "," + pos.top);
  });
  });
-
  </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="Scripts/draggable-div-with-touch.js" /></script>
+<script>
+$('.DraggableDiv').draggableTouch()
+.on("dragstart", function(event, pos)
+{console.log("drag started on:", this, "at position:", pos);})
+.on("dragend", function(event, pos)
+{console.log("drag ended on:", this, "at position:", pos);});
+</script>
 
 </body>
 
