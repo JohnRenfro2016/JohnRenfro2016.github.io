@@ -3562,7 +3562,9 @@ newDiv.style.position="absolute";
 newDiv.style.top=this.y;
 newDiv.style.left=this.x;
 document.body.appendChild(newDiv);
-newDiv.innerHTML="<div>";this.hide()}
+newDiv.innerHTML="<div>";this.hide();
+$('.DraggableDiv').draggableTouch()
+}
 function askInit(x){initRoll=characters[x].rollInit();
 characters[x].setInit(initRoll)}
 function calcMod(x){mod=Math.floor((x - 10)/ 2);
