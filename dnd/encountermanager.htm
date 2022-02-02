@@ -4,10 +4,22 @@
 <meta content="utf-8" http-equiv="encoding">
 <meta name="description" content="2017 Dungeons & Dragons 5th Edition Tabletop Roleplaying Game Manager">
 <meta name="keywords" content="DnD,Dungeons and Dragons,D&D,Dungeons & Dragons,Fantasy RPG,tabletop roleplaying game,TTRPG">
-<title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game JavaScript Manager 2022(Wizards of the Coast,Asmor,Zorn,Ren,Vanderwaal Webdesign)</title>
+<title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game Single Encounter Manager 2022(Wizards of the Coast,Asmor,Zorn,Ren,Vanderwaal Webdesign)</title>
 <script src="Scripts/WZDragdrop.js"></script>
-<script src="Scripts/jquery-3.6.0.js"></script>
+//<script src="Scripts/jquery-3.6.0.js"></script>
 <script src="Scripts/jquery-ui-1.13.1.js"></script>
+//<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="Scripts/draggable-div-with-touch.js" /></script>
+<script>
+
+$('.DraggableDiv').draggableTouch()
+.on("dragstart", function(event, pos)
+{console.log("drag started on:", this, "at position:", pos);})
+.on("dragend", function(event, pos)
+{console.log("drag ended on:", this, "at position:", pos);});
+
+</script>
+</head>
 <style>
 @font-face
 {
@@ -112,6 +124,40 @@ Target then paste stats.
 <img src='Maps/Map.png' width='7000'>
 </td></tr></table>
 <script>
+function AGEBox(color,code,textColorCode,width,height)
+{
+this.borderX=10;
+this.borderY=10;
+this.code=code;
+this.textColorCode=textColorCode;
+}
+function AGEElement()
+{
+this.elementId="AGE"+currentElementId;
+currentElementId++;
+this.x=0;
+this.y=0;
+this.contents="";
+this.hide=_hide;
+this.putAt=_putAt;
+this.refresh=_refresh;
+this.setContents=_setContents;
+this.setStyle=_setStyle;
+this.setX=_setX;
+this.setY=_setY;
+this.show=_show;
+var newDiv=document.createElement('div');
+newDiv.setAttribute('id',this.elementId);
+//newDiv.className="ui-widget-content";
+newDiv.className="DraggableDiv";
+newDiv.style.position="absolute";
+newDiv.style.top=this.y;
+newDiv.style.left=this.x;
+document.body.appendChild(newDiv);
+newDiv.innerHTML="<div>";
+this.hide();
+$('.DraggableDiv').draggableTouch()
+}
 function rollDForm(dForm){dForm=dForm.toLowerCase();
 dIndex=dForm.indexOf("d");
 signIndex=dForm.indexOf("+");
@@ -6435,42 +6481,7 @@ if(children.indexOf(e.target.parentNode)>children.indexOf(row))
 else
  e.target.parentNode.before(row)
 }
-function AGEBox(color,code,textColorCode,width,height)
-{
-this.borderX=10;
-this.borderY=10;
-this.code=code;
-this.textColorCode=textColorCode;
-}
-function AGEElement()
-{
-this.elementId="AGE"+currentElementId;
-currentElementId++;this.x=0;this.y=0;this.contents="";this.hide=_hide;this.putAt=_putAt;this.refresh=_refresh;this.setContents=_setContents;this.setStyle=_setStyle;
-this.setX=_setX;
-this.setY=_setY;
-this.show=_show;
-var newDiv=document.createElement('div');
-newDiv.setAttribute('id',this.elementId);
-//newDiv.className="ui-widget-content";
-newDiv.className="DraggableDiv";
-newDiv.style.position="absolute";
-newDiv.style.top=this.y;
-newDiv.style.left=this.x;
-document.body.appendChild(newDiv);
-newDiv.innerHTML="<div>";this.hide();
-//$('.DraggableDiv').draggableTouch()
-}
 </script>
 <script src="Characters.js"></script>
-</head>
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-<script src="Scripts/draggable-div-with-touch.js" /></script>
-<script>
-$('.DraggableDiv').draggableTouch()
-.on("dragstart", function(event, pos)
-{console.log("drag started on:", this, "at position:", pos);})
-.on("dragend", function(event, pos)
-{console.log("drag ended on:", this, "at position:", pos);});
-</script>
 </body>
 </html>
