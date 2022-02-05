@@ -983,7 +983,7 @@ function ShadowBlade()
 {
 a='2nd(Shadow Blade)+cha+pro, 1min, illusion, bonus, concen, shadow weapon with finesse, light, and thrown',
 b='1d20+0',
-c='psychic+1d8@3rdSlot, @5thSlot, 7thSlot',
+c='psychic+1d8,@3rdSlot, @5thSlot, 7thSlot',
 dmgDice='2d8+0',
 getAction(t1)
 }
@@ -1239,7 +1239,7 @@ function AlchemicalAcid()
 {
 a='(Alchemical Acid)DC8+'+characters[targeted].spellAbility+'+pro vsDex 30ft 1tgt',
 b='0d0+0',
-c='acid+dex, 2d6@3rd, 3d6@5th, 4d6@7th, 5d6@9th, 6d6@11th, 7d6@13th, 8d6@15th, 9d6@17th, 10d6@19th',
+c='acid+dex, 2d6,@3rd, 3d6@5th, 4d6@7th, 5d6@9th, 6d6@11th, 7d6@13th, 8d6@15th, 9d6@17th, 10d6@19th',
 dmgDice='1d6+0',
 getAction(t1)
 }
@@ -1311,7 +1311,7 @@ function HealingDraught()
 {
 a='(Healing Draught)1tgt',
 b='0d0+0',
-c='heal 1 time then/long rest, 2d8@3rd, 3d8@5th, 4d8@7th, 5d8@9th, 6d8@11th, 7d8@13th, 8d8@15th, 9d8@17th, 10d8@19th',
+c='heal 1 time then/long rest, 2d8,@3rd, 3d8@5th, 4d8@7th, 5d8@9th, 6d8@11th, 7d8@13th, 8d8@15th, 9d8@17th, 10d8@19th',
 dmgDice='1d8+0',
 getAction(t1)
 }
@@ -2463,7 +2463,7 @@ function MagicWeapon()
 {
 a='2nd(Magic Weapon)bonus touch concen, 1hr',
 b='0d0+0',
-c='weapon becomes+1/+1 more@4th/+1 more@6th atk and dmg magical',
+c='weapon becomes+1/+1 more@4th/+1 more,@6th atk and dmg magical',
 dmgDice='0d0+0',
 getAction(t1)
 }
@@ -3407,7 +3407,7 @@ function ConjureMinorElementals()
 {
 a='4th(Conjure Minor Elementals)10/10 turns 90ft, concen, 1hr',
 b='0d0+0',
-c='1 CR2 or 2 CR1 or 4 CR1/2 or 8 CR1/4 x2@6thSlot x3@8th Slot',
+c='1 CR2 or 2 CR1 or 4 CR1/2 or 8 CR1/4 x2,@6thSlot x3,@8th Slot',
 dmgDice='0d0+0',
 getAction(t1)
 }
@@ -4941,7 +4941,7 @@ function MagicWeapon()
 {
 a='2nd(Magic Weapon)bonus touch concen, 1hr',
 b='0d0+0',
-c='weapon becomes+1/+1 more@4th/+1 more@6th atk and dmg magical',
+c='weapon becomes+1/+1 more@4th/+1 more,@6th atk and dmg magical',
 dmgDice='0d0+0',
 getAction(t1)
 }
@@ -7219,7 +7219,7 @@ boxContents+="</td></tr><tr><td>Ideals:<textArea cols='40' rows='3' onChange='ch
 boxContents+="</td></tr><tr><td>Feats:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setFeats(this.value)'>"+this.feats+"</textArea>";
 boxContents+="</td></tr><tr><td>Equipment:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setEquipment(this.value)'>"+this.equipment+"</textArea>";
 boxContents+="</td></tr></table></span><span id=toggled6"+this.index+" style='display:"+this.toggled6+"'>";
-boxContents+="<table><tr><td>Class:<select onChange='characters["+this.index+"].setClass(this.value)'><option>"+this.class+"<option>Artificer, Alchemist</option><option>Artificer, Gunsmith</option><option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Bear Totem Warrior<option>Barbarian, Eagle Totem Warrior<option>Barbarian, Wolf Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Arctic<option>Druid, Coast<option>Druid, Desert<option>Druid, Forest<option>Druid, Grassland<option>Druid, Moon<option>Druid, Mountain<option>Druid, Swamp<option>Druid, Underdark<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Oathbreaker<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Fey Wanderer<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Ranger, Swarmkeeper<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Phantom<option>Rogue, Thief<option>Rogue, Scout<option>Rogue, Soulknife<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Shadow Magic<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock, Great Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
+boxContents+="<table><tr><td>Class:<select onChange='characters["+this.index+"].setClass(this.value)'><option>"+this.class+"<option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Bear Totem Warrior<option>Barbarian, Eagle Totem Warrior<option>Barbarian, Wolf Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Arctic<option>Druid, Coast<option>Druid, Desert<option>Druid, Forest<option>Druid, Grassland<option>Druid, Moon<option>Druid, Mountain<option>Druid, Swamp<option>Druid, Underdark<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Oathbreaker<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Fey Wanderer<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Ranger, Swarmkeeper<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Phantom<option>Rogue, Thief<option>Rogue, Scout<option>Rogue, Soulknife<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Shadow Magic<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock, Great Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
 boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].setClass(this.value)' placeHolder='other class' size='40' type='text'>";
 
 boxContents+="</td></tr><tr><td>Feature Notes:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
@@ -7411,17 +7411,17 @@ this.refresh()
 }
 function _setClass(x){this.class=x;
 if(this.class.match(/Witch/)){this.setEquipment('whip and blowgun.or light crossbow 20/20 bolts.or simple weapon.component pouch.or a totem.scholar s pack.or dungeoneer s pack.leather armor.any simple weapon.dagger');
-if(this.class.match(/White Magic/)){a="@2nd(Spells)<b onClick='Bless()'>Bless</b><b onClick='CureWounds()'>Cure Wounds</b></td></tr><tr><td>@3rd(Remedy)1/1, short rest recharge, 1act, 60ft, heal 1d10+your witch lvl</td></tr><tr><td>@3rd(Hex Spells)<b onClick='LesserRestoration()'>Lesser Restoration</b><b onClick='SpiritualWeapon()'>Spiritual Weapon</b></td></tr><tr><td>@4th(Hex Spells)<b onClick='DeathWard()'>Death Ward</b><b onClick='GuardianOfFaith()'>Guardian of Faith</b></td></tr><tr><td>@5th(Hex Spells)<b onClick='Hallow()'>Hallow</b><b onClick='RaiseDead()'>Raise Dead</b>";
-b='@6th(Talisman of Protection)1 @a time, a being AC+2 with no shield, save+1d4';
+if(this.class.match(/White Magic/)){a="@2nd(Spells)<b onClick='Bless()'>Bless</b>, <b onClick='CureWounds()'>Cure Wounds</b></td></tr><tr><td>@3rd(Remedy)1/1, short rest recharge, 1act, 60ft, heal 1d10+your witch lvl</td></tr><tr><td>@3rd(Hex Spells)<b onClick='LesserRestoration()'>Lesser Restoration</b>, <b onClick='SpiritualWeapon()'>Spiritual Weapon</b></td></tr><tr><td>@4th(Hex Spells)<b onClick='DeathWard()'>Death Ward</b>, <b onClick='GuardianOfFaith()'>Guardian of Faith</b></td></tr><tr><td>@5th(Hex Spells)<b onClick='Hallow()'>Hallow</b>, <b onClick='RaiseDead()'>Raise Dead</b>";
+b=',@6th(Talisman of Protection)1 @a time, a being AC+2 with no shield, save+1d4';
 c='@10th(Benevolent Surge)1 react, you, or your familiar, or your ally takes dmg, regain 1d10+chaMod HP, 1/1 short rest recharge';
 dx='@14th(Witch s Gift)when healed by you, a being gains AC+3 utteo your nt'
 }
-if(this.class.match(/Black Magic/)){a="@2nd(Hex Spells)<b onClick='GentleRepose()'>Gentle Repose</b><b onClick='MagicWeapon()'>Magic Weapon</b></td></tr><tr><td>@3rd(Agony)60ft, conSave or concen, @DisAdv, atboit roll a die, on odd number, target atks @DisAdv</td></tr><tr><td>@3rd(Hex Spells)<b onClick='AnimateDead()'>Animate Dead</b><b onClick='VampiricTouch()'>Vampiric Touch</b></td></tr><tr><td>@4th(Hex Spells)<b onClick='Blight()'>Blight</b><b onClick='DeathWard()'>Death Ward</b></td></tr><tr><td>@5th(Hex Spells)<b onClick='Cloudkill()'>Cloudkill</b><b onClick='Contagion()'>Contagion</b>";
-b='@6th(Voodoo Doll)60ft, 10/10 turns, target the doll, tgt takes 1/2 dmg, target saves @DisAdv if you have tgt s har or its item attached to the doll';
+if(this.class.match(/Black Magic/)){a="@2nd(Hex Spells)<b onClick='GentleRepose()'>Gentle Repose</b>, <b onClick='MagicWeapon()'>Magic Weapon</b></td></tr><tr><td>@3rd(Agony)60ft, conSave or concen, @DisAdv, atboit roll a die, on odd number, target atks @DisAdv</td></tr><tr><td>@3rd(Hex Spells)<b onClick='AnimateDead()'>Animate Dead</b>, <b onClick='VampiricTouch()'>Vampiric Touch</b></td></tr><tr><td>@4th(Hex Spells)<b onClick='Blight()'>Blight</b>, <b onClick='DeathWard()'>Death Ward</b></td></tr><tr><td>@5th(Hex Spells)<b onClick='Cloudkill()'>Cloudkill</b>, <b onClick='Contagion()'>Contagion</b>";
+b=',@6th(Voodoo Doll)60ft, 10/10 turns, target the doll, tgt takes 1/2 dmg, target saves @DisAdv if you have tgt s har or its item attached to the doll';
 c='@10th(Share Pain)1/1, short rest recharge, target a being to take your dmg on a failed cha Save';
 dx='@14th(Disrupt Life)1act, 1 spell slot, 20ft radius you target vsCon for half dmg or 1d10 necrotic per spell slot+your chaMod'
 }
-this.setFeatures("</td></tr><tr><td>@1st(Spellcasting)@1st(Hexes)2 Cantrips, and opt to replace 1 hex for another when lvling up<b onClick='FalseLife()'>False Life</b>, <b onClick='InflictWounds()'>Inflict Wounds</b></td></tr><tr><td>@1st(Witch s Curse)(Hideous)save vs your fright spells @DisAdv, 1tgt vsWis or frightened utteoint or(Hollow)when target is reduced to 0HP, you gain temp HP witch lvl+chaMod or(Possessed)learn+1 1st lvl witch spell, 4th, 8th, 12th, and 16th which do not count against your known spells</td></tr><tr><td>@2nd(Cackle)bonus, 60ft, spell time+1 round</td></tr><tr><td>@2nd(Familiar)bonus, your familiar can react atk or cast</td></tr><tr><td>"+a+"</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th@8th@12th@16th@19th</td></tr><tr><td>"+b+"</td></tr><tr><td>@7th(Improved Familiar)your familiar concen, trates your spell</td></tr><tr><td>@9th(Cauldron)Alchemy Points @9th 3 @12th 4 @15th 5 @18th 6 1AP 1 potion of Animal Friendship, or Healing, or Poison @13th 2AP 1 potion Heroism and Mind Reading, Philters of Love 24hr potency</td></tr><tr><td>@11th(Grand Hex)@11th 1 @15th 2 @18th 3<b onClick='Abate()'>Abate</b><b onClick='BeckonFamiliar()'>Beckon Familiar</b><b onClick='Bleeding()'>Bleeding</b><b onClick='CharmPerson()'>Charm</b><b onClick='Cripple()'>Cripple</b><b onClick='DireFamiliar()'>Dire Familiar</b><b onClick='Discord()'>Discord</b><b onClick='DisguiseSelf()'>Disguise</b><b onClick='Disorient()'>Disorient</b><b onClick='Duplicity()'>Duplicity</b><b onClick='Fear()'>Evil Eye</b><b onClick='Fortune()'>Fortune</b><b onClick='GoUnseen()'>Go Unseen</b><b onClick='Hesitate()'>Hesitate</b><b onClick='Mire()'>Mire</b><b onClick='Misfortune()'>Misfortune</b><b onClick='Nails()'>Nails</b><b onClick='Obfuscate()'>Obfuscate</b><b onClick='Pestilence()'>Pestilence</b><b onClick='Ruin()'>Ruin</b><b onClick='Slumber()'>Slumber</b><b onClick='Telepathy()'>Telepathy</b><b onClick='Tremors()'>Tremors</b><b onClick='Ward()'>Ward</b>(Grand Hexes)<b onClick='Coven()'>Coven</b><b onClick='DualHex()'>Dual Hex</b><b onClick='InsidiousHex()'>Insidious Hex</b><b onClick='IntoAToad()'>IntoAToad</b><b onClick='RemoteHex()'>Remote Hex</b><b onClick='SlowDeath()'>Slow Death</b><b onClick='WeaveOfFate()'>Weave of Fate</b><b onClick='WitchsBroom()'>Witch s Broom</b><b onClick='WitchsHut()'>Witch s Hut</b></td></tr><tr><td>"+c+"</td></tr><tr><td>"+d+"</td></tr><tr><td>@20th(Hex Master)targets save vs your hexes @DisAdv");
+this.setFeatures("</td></tr><tr><td>@1st(Spellcasting)@1st(Hexes)2 Cantrips, and opt to replace 1 hex for another when lvling up<b onClick='FalseLife()'>False Life</b>, <b onClick='InflictWounds()'>Inflict Wounds</b></td></tr><tr><td>@1st(Witch s Curse)(Hideous)save vs your fright spells @DisAdv, 1tgt vsWis or frightened utteoint or(Hollow)when target is reduced to 0HP, you gain temp HP witch lvl+chaMod or(Possessed)learn+1 1st lvl witch spell, 4th, 8th, 12th, and 16th which do not count against your known spells</td></tr><tr><td>@2nd(Cackle)bonus, 60ft, spell time+1 round</td></tr><tr><td>@2nd(Familiar)bonus, your familiar can react atk or cast</td></tr><tr><td>"+a+"</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>"+b+"</td></tr><tr><td>@7th(Improved Familiar)your familiar concen, trates your spell</td></tr><tr><td>@9th(Cauldron)Alchemy Points @9th 3 @12th 4 @15th 5 @18th 6 1AP 1 potion of Animal Friendship, or Healing, or Poison @13th 2AP 1 potion Heroism and Mind Reading, Philters of Love 24hr potency</td></tr><tr><td>@11th(Grand Hex)@11th 1 @15th 2 @18th 3<b onClick='Abate()'>Abate</b>, <b onClick='BeckonFamiliar()'>Beckon Familiar</b>, <b onClick='Bleeding()'>Bleeding</b>, <b onClick='CharmPerson()'>Charm</b>, <b onClick='Cripple()'>Cripple</b>, <b onClick='DireFamiliar()'>Dire Familiar</b>, <b onClick='Discord()'>Discord</b>, <b onClick='DisguiseSelf()'>Disguise</b>, <b onClick='Disorient()'>Disorient</b>, <b onClick='Duplicity()'>Duplicity</b>, <b onClick='Fear()'>Evil Eye</b>, <b onClick='Fortune()'>Fortune</b>, <b onClick='GoUnseen()'>Go Unseen</b>, <b onClick='Hesitate()'>Hesitate</b>, <b onClick='Mire()'>Mire</b>, <b onClick='Misfortune()'>Misfortune</b>, <b onClick='Nails()'>Nails</b>, <b onClick='Obfuscate()'>Obfuscate</b>, <b onClick='Pestilence()'>Pestilence</b>, <b onClick='Ruin()'>Ruin</b>, <b onClick='Slumber()'>Slumber</b>, <b onClick='Telepathy()'>Telepathy</b>, <b onClick='Tremors()'>Tremors</b>, <b onClick='Ward()'>Ward</b>(Grand Hexes)<b onClick='Coven()'>Coven</b>, <b onClick='DualHex()'>Dual Hex</b>, <b onClick='InsidiousHex()'>Insidious Hex</b>, <b onClick='IntoAToad()'>IntoAToad</b>, <b onClick='RemoteHex()'>Remote Hex</b>, <b onClick='SlowDeath()'>Slow Death</b>, <b onClick='WeaveOfFate()'>Weave of Fate</b>, <b onClick='WitchsBroom()'>Witch s Broom</b>, <b onClick='WitchsHut()'>Witch s Hut</b></td></tr><tr><td>"+c+"</td></tr><tr><td>"+d+"</td></tr><tr><td>@20th(Hex Master)targets save vs your hexes @DisAdv");
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simple weapons, blowguns, shortswords, whips');
 this.setSaving('wis+pro, cha+pro');
@@ -7434,76 +7434,51 @@ this.setChaPro('pro');
 this.setSkills('2 from Arcana, Deception, Insight, Intimidation, Persuasion, Nature, Religion');
 this.setSpellAbility('cha')
 }
-if(this.class.match(/Artificer/)){this.setEquipment('(a)a handaxe and a light hammer.or(b)any two simple weapons.A light crossbow and 20 bolts.(a)scale mail.or(b)studded leather armor.Thieves tools and a dungeoneer s pack');
-if(this.class.match(/Alchemist/)){a="(Alchemist s Satchel)(Alchemical Formula)(<b onClick='AlchemicalAcid()'>Alchemical Acid</b>)";
-b="(Alchemical Formula)(<b onClick='AlchemicalFire()'>Alchemical Fire</b>)or(<b onClick='HealingDraught()'>Healing Draught</b>)or(<b onClick='SmokeStick()'>Smoke Stick</b>)or(<b onClick='SwiftStepDraught()'>Swift Step Draught</b>)or(<b onClick='TanglefootBag()'>Tanglefoot Bag</b>)or(<b onClick='Thunderstone()'>Thunderstone</b>)";
-c="@9th(Alchemical Formula)(<b onClick='AlchemicalFire()'>Alchemical Fire</b>)or(<b onClick='HealingDraught()'>Healing Draught</b>)or(<b onClick='SmokeStick()'>Smoke Stick</b>)or(<b onClick='SwiftStepDraught()'>Swift Step Draught</b>)or(<b onClick='TanglefootBag()'>Tanglefoot Bag</b>)or(<b onClick='Thunderstone()'>Thunderstone</b>)";
-dx="@14th(Alchemical Formula)(<b onClick='AlchemicalFire()'>Alchemical Fire</b>)or(<b onClick='HealingDraught()'>Healing Draught</b>)or(<b onClick='SmokeStick()'>Smoke Stick</b>)or(<b onClick='SwiftStepDraught()'>Swift Step Draught</b>)or(<b onClick='TanglefootBag()'>Tanglefoot Bag</b>)or(<b onClick='Thunderstone()'>Thunderstone</b>)";
-e="@17th(Alchemical Formula)(<b onClick='AlchemicalFire()'>Alchemical Fire</b>)or(<b onClick='HealingDraught()'>Healing Draught</b>)or(<b onClick='SmokeStick()'>Smoke Stick</b>)or(<b onClick='SwiftStepDraught()'>Swift Step Draught</b>)or(<b onClick='TanglefootBag()'>Tanglefoot Bag</b>)or(<b onClick='Thunderstone()'>Thunderstone</b>)"
-}
-if(this.class.match(/Gunsmith/)){a="(Master Smith)Smith s Tools+pro page 187 PHB<b onClick='Mending()'>Mending</b>(<b onClick='ThunderCannon()>Thunder Cannon</b>)3 8hr days+100gp to make(Arcane Magazine)40 rnds/long rest, 10 rnds/s rest";
-b="(<b onClick='ThunderMonger()'>Thunder Monger</b>)";
-c="@9th(<b onClick='BlastWave()'>Blast Wave</b>)";
-dx="@14th(<b onClick='piercRound()'>pierc Round</b>)";
-e="@17th(<b onClick='ExplosiveRound()'>Explosive Round</b>)"
-}
-this.setFeatures("</td></tr><tr><td>@1st(Artificer Specialist)(Magic Item Analysis)<b onClick='DetectMagic()'>Detect Magic</b><b onClick='Identify()'>Identify</b> no material component needed "+a+"</td></tr><tr><td>@2nd(Tool Expertise)class tools+exp(Wonderous Invetion)bag of holding or cap of water breathing or driftglobe or goggles of night or sending stones</td></tr><tr><td>@3rd(Spellcasting)"+b+"</td></tr><tr><td>(Ability Score Improvement)(Infuse Magic)infuse wis mod objects with your spells for up to 8hrs or triggered 1act</td></tr><tr><td>@5th(Super Attunement)attune to 4 magic objects(Wondrous Invention)alchemy jug or helm of comprehending languages or lantern of revealing or ring of swimming or robe of useful items or rope of climbing or wand of magic detection or wand of secrets</td></tr><tr><td>@6th(Mechanical Servant)CR2 or lower beast that is a construct, immune charm poison, darkvision 60ft, understands your language</td></tr><tr><td>@8th(Ability Score Improvement)</td></tr><tr><td>"+c+"</td></tr><tr><td>@10th(Wonderous Invention)bag of beans or chime of opening or decanter of endless water or eyes of minute seeing or folding bo@or slippers of spider climbing</td></tr><tr><td>@12th(Ability Score Improvement)</td></tr><tr><td>"+d+"</td></tr><tr><td>@15th(Superior Attunement)attune to 5 magic objects(Wonderous Invention)</td></tr><tr><td>@16th(Ability Score Improvement)</td></tr><tr><td>"+e+"</td></tr><tr><td>@18th(Ability Score Improvement)</td></tr><tr><td>@20th(Soul of Artifice)attune to 6 items+1/item to saving throws(Wonderous Invention)eyes of the eagle or gem of brightness or gloves of missile snaring or gloves of swimming and climbing or ring of jumping or ring of mind shielding or wings of flying");
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
-this.setProficiencies('light and medium armor, simple weapons');
-this.setSaving('con+pro, int+pro');
-this.setStrPro('');
-this.setDexPro('');
-this.setConPro('pro');
-this.setIntPro('pro');
-this.setWisPro('');
-this.setChaPro('');
-this.setSkills('3 from Arcana, Deception, History, Investigation, Medicine, Nature, Religion, Sleight of Hand');
-this.setSpellAbility('int')
-}
+
 if(this.class.match(/Barbarian/)){this.setEquipment('greataxe or martial melee weapon.2 handaxes or simple weapon.explorer pack.4/4 javelins');
 if(this.class.match(/Ancestral/)){
-a='@3rd(Primal Path)of the(Ancestral Guardian)</td></tr><tr><td>@3rd(Ancestral Protectors)during rage your target atks your allies @DisAdv and allies have resistance 1/2 dmg';
-b='@6th(Spirit Shield)during rage use your react to reduce 1 ally s dmg by 2d6 within 30ft, 3d6 @10th, 4d6 @14th';
+a=',@3rd(Primal Path)of the(Ancestral Guardian)<p>,@3rd(Ancestral Protectors)during rage your target atks your allies @DisAdv and allies have resistance 1/2 dmg';
+b=',@6th(Spirit Shield)during rage use your react to reduce 1 ally s dmg by 2d6 within 30ft, 3d6 @10th, 4d6 @14th';
 c='@10th(Consult the Spirits)cast Augury or Clairvoyance then short rest with wisdom spell ability';
 dx='@14th(Vengeful Ancestors)as with Spirit Shield only the atkers take dmg equal to your 1 ally s dmg reduction'
 }
 if(this.class.match(/Berserker/)){
-a='@3rd(Primal Path)of the Berserker</td></tr><tr><td>@3rd(Frenzy)while raging, 1 bonus atk';
-b='@6th(Mindless Rage)while raging, immune charm fear';
+a=',@3rd(Primal Path)of the (Berserker)<p>,@3rd(Frenzy)while raging, 1 bonus atk';
+b=',@6th(Mindless Rage)while raging, immune charm fear';
 c='@10th(Intimidating Prescence)30ft, vsWis vs your DC8cha+pro, or target frightened, tteo your nt';
 dx='@14th(Retaliation)when hit, react melee atk'
 }
 if(this.class.match(/Bear\sTotem/)){
-a='@3rd(Primal Path) of the Bear Totem Warrior<p>@3rd(Spirit Seeker)<b onClick=BeastSense()>Beast Sense</b> as a ritual. <b onClick=SpeakWithAnimals()>Speak with Animals</b> as a ritual<p>@3rd(Totem Spirit)BEAR raging, resist all dmg but psychic';
-b='@6th(Aspect of the Beast)BEAR carry and lift x 2, str @Adv';
+a=',@3rd(Primal Path) of the (Bear Totem Warrior)<p>,@3rd(Spirit Seeker)<b onClick=BeastSense()>Beast Sense</b> as a ritual. <b onClick=SpeakWithAnimals()>Speak with Animals</b> as a ritual<p>,@3rd(Totem Spirit)BEAR raging, resist all dmg but psychic';
+b=',@6th(Aspect of the Beast)BEAR carry and lift x 2, str @Adv';
 c='@10th(Spirit Walker)<b onClick=CommuneWithNature()>Commune with Nature</b> as a ritual';
 dx='@14th(Totemic Attunement)BEAR raging, target atks @DisAdv other than you'
 }
 if(this.class.match(/Eagle\sTotem/)){
-a='@3rd(Primal Path) of the Eagle Totem Warrior<p>@3rd(Spirit Seeker)<b onClick=BeastSense()>Beast Sense</b> as a ritual. <b onClick=SpeakWithAnimals()>Speak with Animals</b> as a ritual<p>@3rd(Totem Spirit)EAGLE raging, opp atked @DisAdv, Dash as bonus';
-b='@6th(Aspect of the Beast)EAGLE see 1mi, details 100ft, no Perception @DisAdv vs dim light';
+a=',@3rd(Primal Path) of the (Eagle Totem Warrior)<p>,@3rd(Spirit Seeker)<b onClick=BeastSense()>Beast Sense</b> as a ritual. <b onClick=SpeakWithAnimals()>Speak with Animals</b> as a ritual<p>,@3rd(Totem Spirit)EAGLE raging, opp atked @DisAdv, Dash as bonus';
+b=',@6th(Aspect of the Beast)EAGLE see 1mi, details 100ft, no Perception @DisAdv vs dim light';
 c='@10th(Spirit Walker)<b onClick=CommuneWithNature()>Commune with Nature</b> as a ritual';
 dx='@14th(Totemic Attunement)EAGLE raging, fly speed is walk speed drop after each turn'
 }
 if(this.class.match(/Wolf\sTotem/)){
-a='@3rd(Primal Path) of the Wolf Totem Warrior<p>@3rd(Spirit Seeker)<b onClick=BeastSense()>Beast Sense</b> as a ritual. <b onClick=SpeakWithAnimals()>Speak with Animals</b> as a ritual<p>@3rd(Totem Spirit)WOLF adjacent allies atk @Adv';
-b='@6th(Aspect of the Beast)WOLF track @fast pace, Stealth @normal pace';
+a=',@3rd(Primal Path) of the (Wolf Totem Warrior)<p>,@3rd(Spirit Seeker)<b onClick=BeastSense()>Beast Sense</b> as a ritual. <b onClick=SpeakWithAnimals()>Speak with Animals</b> as a ritual<p>,@3rd(Totem Spirit)WOLF adjacent allies atk @Adv';
+b=',@6th(Aspect of the Beast)WOLF track @fast pace, Stealth @normal pace';
 c='@10th(Spirit Walker)<b onClick=CommuneWithNature()>Commune with Nature</b> as a ritual';
 dx='@14th(Totemic Attunement)WOLF raging, on hit, knock prone as bonus'
 }
 if(this.class.match(/Storm Herald/)){
-a='@3rd(Primal Path)of the(Storm Herald)</td></tr><tr><td>@3rd(Storm Aura)10ft radius storm from self but not through total cover, during rage.(Desert)do 2 fire dmg in the 10ft radius as bonus, 3 dmg @5th, 4 dmg @10th, 5 dmg @15th, 6 dmg @20th(Sea)target 1 within 10ft DC8+con+pro vsDex 1d6 lightning or save for half, 2d6 dmg @10th, 3d6 @15th, 4d6 @20th(Tundra)2 allies in 10ft aura gain 2temp hp, 3temp hp @5th, 4temp hp @10th, 5temp hp @15th, 6temp hp @20th';
-b='@6th(Storm Soul)(Desert)resist 1/2 dmg from fire and no extreme he@suffering.(Sea)resist 1/2 dmg from lightning, breathe underwater, swim speed 30ft.(Tundra)resist 1/2 cold dmg, no extreme cold suffering, 5ft cubebe of water to ice melts 1min';
+a=',@3rd(Primal Path)of the (Storm Herald)<p>,@3rd(Storm Aura)10ft radius storm from self but not through total cover, during rage.(Desert)do 2 fire dmg in the 10ft radius as bonus, 3 dmg @5th, 4 dmg @10th, 5 dmg @15th, 6 dmg @20th(Sea)target 1 within 10ft DC8+con+pro vsDex 1d6 lightning or save for half, 2d6 dmg @10th, 3d6 @15th, 4d6 @20th(Tundra)2 allies in 10ft aura gain 2temp hp, 3temp hp @5th, 4temp hp @10th, 5temp hp @15th, 6temp hp @20th';
+b=',@6th(Storm Soul)(Desert)resist 1/2 dmg from fire and no extreme he@suffering.(Sea)resist 1/2 dmg from lightning, breathe underwater, swim speed 30ft.(Tundra)resist 1/2 cold dmg, no extreme cold suffering, 5ft cubebe of water to ice melts 1min';
 c='@10th(Shielding Storm)as with Storm Soul only allies within the aura also have the resistance';
 dx='@14th(Raging Storm)(Desert)atker in your aura hits you and you use your react to DC8+con+pro vsvsDex or take 1/2 your lvl fire dmg.(Sea)atker in your aura hits you and you use your react to DC8+con+pro vsStr or atker knocked prone.(Tundra)DC8+con+pro vsStr or atker speed 0 until tsoynt'
 }
 if(this.class.match(/Zealot/)){
-a='@3rd(Primal Path)of the(Zealot)</td></tr><tr><td>@3rd(Divine Fury)during rage deal xtra 1d6+1/2 your lvl necrotic or radiant dmg</td></tr><tr><td>@3rd(Warrior of the Gods)caster does not need material components to raise you from the dead';
-b='@6th(Fanatical Focus)during rage 1/1 reroll failed save';
+a=',@3rd(Primal Path)of the(Zealot)</td></tr><tr><td>@3rd(Divine Fury)during rage deal xtra 1d6+1/2 your lvl necrotic or radiant dmg<p>,@3rd(Warrior of the Gods)caster does not need material components to raise you from the dead';
+b=',@6th(Fanatical Focus)during rage 1/1 reroll failed save';
 c='@10th(Zealous Presence)bonus 10 allies in 60ft radius rolls @Adv ttso your next turn';
 dx='@14th(Rage Beyond Death)during rage 0hp not unconscious and do not die until rage ends with 0hp'
 }
-this.setFeatures('</td></tr><tr><td>(Rage)while unarmored, enter rage as bonus, str @Adv, dmg+rage dmg, resist bludg, pierc, slash, lasts til taking no dmg and not atking@1st 2/2@3rd 3/3@6th 4/4@12th 5/5@17th 6/6recover rages /long rest<p>(Rage Dmg)@1st(+2)@9th(+3)@16th(+4)<p>@1st(Unarmored Defense)AC10+dex+con</td></tr><tr><td>@2nd(Danger Sense)vsDex @Adv vs seen trap spells<p>@2nd(Reckless Attack)str melee atk @Adv, atked @Adv</td></tr><tr><td>'+a+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1 or 1 feat@4th@8th@12th@16th@19th</td></tr><tr><td>@5th(Extra Attack)<p>@5th(Fast Movement)unarmored, speed+10ft</td></tr><tr><td>'+b+'</td></tr><tr><td>@7th(Feral Instinct)init @Adv, act normally surprised</td></tr><tr><td>(Brutal Critical)dmg @9th +1d@13th +2d@17th +3d</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Relentless Rage)1/1 0 hp DC10 vsCon 1 hp, DC+5 each use before/long rest</td></tr><tr><td>'+dx+'</td></tr><tr><td>@15th(Persistent Rage)</td></tr><tr><td>@18th(Indomitable Might)higher of str roll or str score</td></tr><tr><td>@20th(Primal Champion)str+4(max24), con+4(max24)');
+this.setFeatures('</td></tr><tr><td>(Rage)while unarmored, enter rage as bonus, str @Adv, dmg+rage dmg, resist bludg, pierc, slash, lasts til taking no dmg and not atking@1st 2/2,@3rd 3/3,,@6th 4/4,@12th 5/5,@17th 6/6recover rages /long rest<p>(Rage Dmg)@1st(+2),@9th(+3),@16th(+4)<p>@1st(Unarmored Defense)AC10+dex+con</td></tr><tr><td>@2nd(Danger Sense)vsDex @Adv vs seen trap spells<p>,@2nd(Reckless Attack)str melee atk @Adv, atked @Adv</td></tr><tr><td>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1 or 1 feat@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Extra Attack)<p>@5th(Fast Movement)unarmored, speed+10ft</td></tr><tr><td>'+b+'</td></tr><tr><td>@7th(Feral Instinct)init @Adv, act normally surprised</td></tr><tr><td>@9th(Brutal Critical)dmg @9th +1d,@13th +2d,@17th +3d</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Relentless Rage)1/1 0 hp DC10 vsCon 1 hp, DC+5 each use before/long rest</td></tr><tr><td>'+dx+'</td></tr><tr><td>@15th(Persistent Rage)</td></tr><tr><td>@18th(Indomitable Might)higher of str roll or str score</td></tr><tr><td>@20th(Primal Champion)str+4(max24), con+4(max24)');
 this.setActionNotes("(Rages) 2/2 (Rage Dmg)dmg+2")
 this.setHitDice(this.lvl+'d12+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, and all weapons');
@@ -7518,36 +7493,36 @@ this.setSkills('2 from Animal Handling, Athletics, Intimidation, Nature, Percept
 }
 if(this.class.match(/Bard/)){this.setEquipment('rapier or longsword or simple weapon.diplom@pack or entertainer pack.lute or musical instrument.leather armor.dagger');
 if(this.class.match(/Glamour/)){
-a='@3rd(Bardic College)of(Glamour)</td></tr><tr><td>@3rd(Mantle of Inspiration)costs 1BI, bonus, 1 to your cha mod targets within 60ft radius gain 5temp hp and react to move speed without opp atks, 8temp hp @5th, 11temp hp @10th, and 14temp hp @15th</td></tr><tr><td>3rd(Enthralling Performance)1min 60ft radius of 1 to your cha mod of targets DC8+cha+pro vs vsWis or become charmed, effect ends 1hr or if you harm targets or its allies';
-b='@6th(Mantle of Majesty)bonus cast Command without expending slot, concen, ntration, cast Command each round for 1min';
+a=',@3rd(Bardic College)of(Glamour)</td></tr><tr><td>@3rd(Mantle of Inspiration)costs 1BI, bonus, 1 to your cha mod targets within 60ft radius gain 5temp hp and react to move speed without opp atks, 8temp hp @5th, 11temp hp @10th, and 14temp hp @15th</td></tr><tr><td>3rd(Enthralling Performance)1min 60ft radius of 1 to your cha mod of targets DC8+cha+pro vs vsWis or become charmed, effect ends 1hr or if you harm targets or its allies';
+b=',@6th(Mantle of Majesty)bonus cast Command without expending slot, concen, ntration, cast Command each round for 1min';
 c='@14th(Unbreakable Majesty)1min all new atkers must DC8+cha+pro vsCha save or must atk your ally, but save @DisAdv vs your spells next turn'
 }
 if(this.class.match(/Lore/)){
-a='@3rd(Bardic College)of Lore</td></tr><tr><td>@3rd(Bonus Proficiencies)3 skills+pro</td></tr><tr><td>@3rdCUTTING WORDS 1BI, react, 60ft, target roll-BI';
-b='@6th.ADDITIONAL MAGICAL SECRETS 2 any class spells';
+a=',@3rd(Bardic College)of (Lore)</td></tr><tr><td>@3rd(Bonus Proficiencies)3 skills+pro</td></tr><tr><td>@3rdCUTTING WORDS 1BI, react, 60ft, target roll-BI';
+b=',@6th.ADDITIONAL MAGICAL SECRETS 2 any class spells';
 c='@14th.PEERLESS SKILL 1BD, abi check+BI'
 }
 if(this.class.match(/Satire/)){
-a='@3rd((Bardic College)of Satire)</td></tr><tr><td>@3rd(Bonus Proficiencies)Sleight of Hand+pro.Thieves Tools+pro.1 additional skill+pro</td></tr><tr><td>@3rd(Tumbling Fool)1 turn.Dash and Disengage.climb speed is walking speed.half dmg from falling';
-b='@6th(Fool s Insight)Detect Thoughts your chaMod/chaMod times then take an 8hr rest to recharge, if target saves, it suffers a socal gaffe';
+a=',@3rd(Bardic College)of (Satire)</td></tr><tr><td>@3rd(Bonus Proficiencies)Sleight of Hand+pro.Thieves Tools+pro.1 additional skill+pro</td></tr><tr><td>@3rd(Tumbling Fool)1 turn.Dash and Disengage.climb speed is walking speed.half dmg from falling';
+b=',@6th(Fool s Insight)Detect Thoughts your chaMod/chaMod times then take an 8hr rest to recharge, if target saves, it suffers a socal gaffe';
 c='@14th(Fool s Luck)add 1BD to your failed save throw, but DM appliesthis 1BD result to your future success roll and you must describe your gaffe'
 }
 if(this.class.match(/Swords/)){
-a='@3rd(Bardic College)of(Swords)</td></tr><tr><td>@3rd(Bonus Proficiencies)medium armor, scimitar and proficient weapon is spell focus</td></tr><tr><td>@3rd(Fighting Style)(Dueling)+2 dmg from 1 weapon with no other weapon or(Two-weapon Fighting)2nd(atk add abi mod to dmg</td></tr><tr><td>3rd(Blade Flourish)speed+10ft during atk, on hit use 1 fourish per turn.(Defensive Flourish)expend 1 Bardic Inspiration point and add the roll to xtra dmg and add roll to your AC ttso your next turn.(slash Flourish)expend 1 Bardic Inspiration point and dmg adjacent targets.(Mobile Flourish)expend 1 Bardic Inspiration point and add it to target dmg then push target 5ft+BI roll, use react to be adjacent to target again';
-b='@6th(Extra Attack)';
+a=',@3rd(Bardic College)of(Swords)</td></tr><tr><td>@3rd(Bonus Proficiencies)medium armor, scimitar and proficient weapon is spell focus</td></tr><tr><td>@3rd(Fighting Style)(Dueling)+2 dmg from 1 weapon with no other weapon or(Two-weapon Fighting)2nd(atk add abi mod to dmg</td></tr><tr><td>3rd(Blade Flourish)speed+10ft during atk, on hit use 1 fourish per turn.(Defensive Flourish)expend 1 Bardic Inspiration point and add the roll to xtra dmg and add roll to your AC ttso your next turn.(slash Flourish)expend 1 Bardic Inspiration point and dmg adjacent targets.(Mobile Flourish)expend 1 Bardic Inspiration point and add it to target dmg then push target 5ft+BI roll, use react to be adjacent to target again';
+b=',@6th(Extra Attack)';
 c='@14th(Master s Flourish)option to roll a free d6 instead of BI roll for flourishes'
 }
 if(this.class.match(/Valor/)){
-a='@3rd(Bardic College)of Valor</td></tr><tr><td>@3rd(Bonus Proficiencies)Medium armor, shields, martial weapons</td></tr><tr><td>@3rdCOMB@INSPIRATION 1BI, react, ally roll+BI or react AC+BI';
-b='@6th.Extra Attack';
-c='@14th.BATTLE MAGIC cast, bonus weapon atk'
+a=',@3rd(Bardic College)of (Valor)</td></tr><tr><td>@3rd(Bonus Proficiencies)Medium armor, shields, martial weapons</td></tr><tr><td>@3rd(Combat Inspiration)1BI, react, ally roll+BI or react AC+BI';
+b=',@6th.Extra Attack';
+c='@14th(Battle Magic)cast, bonus weapon atk'
 }
 if(this.class.match(/Whispers/)){
-a='@3rd(Bardic College)of(Whispers)</td></tr><tr><td>@3rd(Psychic Blades)expend 1 Bardic Inspiration point and do xtra 2d6 psychic dmg 1/rnd, @5th 3d6, @10th 5d6, @15th 8d6</td></tr><tr><td>@3rd(Words of Terror)1min DC8+cha+pro vsWis or frightend of you or other 1hr or until atked or its ally atked';
-b='@6th(Mantle of Whispers)a target dies within 30ft, you assume its form 1hr target Insight versus your Deception+5 to see disguise, recharge after short rest';
+a=',@3rd(Bardic College)of(Whispers)</td></tr><tr><td>@3rd(Psychic Blades)expend 1 Bardic Inspiration point and do xtra 2d6 psychic dmg 1/rnd, @5th 3d6, @10th 5d6, @15th 8d6</td></tr><tr><td>@3rd(Words of Terror)1min DC8+cha+pro vsWis or frightend of you or other 1hr or until atked or its ally atked';
+b=',@6th(Mantle of Whispers)a target dies within 30ft, you assume its form 1hr target Insight versus your Deception+5 to see disguise, recharge after short rest';
 c='@14th(Shadow Lore)1act ion, 1tgt DC8+cha+pro vsWis or charmed and will do reasonable requests because target thinks you know its secret, 8hrs or until it or its ally atked, recharge after/long rest'
 }
-this.setFeatures('</td></tr><tr><td>Cantrips Known:@1st 2@4th 3@10th 4</td></tr><tr><td>Spells Known:@1st 4@2nd 5@3rd 6@4th 7@5th 8@6th 9@7th 10@8th 11@9th 12</td></tr><tr><td>@1st(Bardic Inspiration)1 or chaMod @1st(d6)@5th(d8)@(10th d10)@(15th d12)ally ads 1 BI to their roll</td></tr><tr><td>@2nd(Jack of All Trades)non pro abi checks+half pro</td></tr><tr><td>@2nd(Song of Rest)during rest, heal allies who hear @2nd(d6)@9th(d8)@(13th d10)@(17th d12</td></tr><tr><td>@3rd(Expertise)2 skills+pro are+exp @3rd(2)@(10th 2 more)</td></tr><tr><td>'+a+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th@8th@12th@16th@19th</td></tr><tr><td>@5th(Font of Inspiration)regain bardic inspiration during a short rest</td></tr><tr><td>@6th(Countercharm)act 30ft save vs charm fear</td></tr><tr><td>'+b+'</td></tr><tr><td>@10th(Magical Secrets)learn 2 spells any class @your lvl@10th 2@14th 2 more</td></tr><tr><td>'+c+'</td></tr><tr><td>@20th(Superior Inspiration)@0 Bardic Inspiration gain 1 each encounter');
+this.setFeatures('</td></tr><tr><td>Cantrips Known:@1st(2),@4th(3),@10th(4)</td></tr><tr><td>Spells Known:@1st(4),@2nd(5),@3rd(6),@4th(7),@5th(8),,@6th(9),@7th(10),,@8th(11),@9th(12),@10th(14),@11(15),@13th(16)@14th(18),@15th(19),@17th(20),@18th(22)</td></tr><tr><td>@1st(Bardic Inspiration)1 or chaMod @1st(d6),@5th(d8),@(10th d10),@(15th d12)ally ads 1 BI to their roll</td></tr><tr><td>@2nd(Jack of All Trades)non pro abi checks+half pro</td></tr><tr><td>@2nd(Song of Rest)during rest, heal allies who hear ,@2nd(d6),@9th(d8),@13th(d10),@17th(d12)</td></tr><tr><td>@3rd(Expertise)2 skills+pro are+exp ,@3rd(2),@10th(2 more)</td></tr><tr><td>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Font of Inspiration)regain bardic inspiration during a short rest</td></tr><tr><td>@6th(Countercharm)act 30ft save vs charm fear</td></tr><tr><td>'+b+'</td></tr><tr><td>@10th(Magical Secrets)learn 2 spells any class @your lvl@10th(2),@14th(2 more)</td></tr><tr><td>'+c+'</td></tr><tr><td>@20th(Superior Inspiration)@0 Bardic Inspiration gain 1 each encounter');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simple weapons, hand crossbows, longswords, rapiers, and shortswords');
 this.setSaving('dex+pro, cha+pro');
@@ -7560,52 +7535,56 @@ this.setChaPro('pro');
 this.setSkills('any 3 skills');
 this.setSpellAbility('cha')
 }
-if(this.class.match(/Cleric/)){if(this.class.match(/Arcana/)){a="@1st(Arcana Domain)xtra spells<b onClick='DetectMagic()'>Detect Magic</b><b onClick='MagicMissile()'>Magic Missile</b><p>(Bonus Proficiencies)Arcana+pro2 Cantrips from the Wizard list</td></tr><tr><td>@2nd(Channel Divinity)<p>(Arcane Abjuration)1CD 1act 1 celestial, elemental, fey, or fiend within 30ft must save or be turned for 1 min or until dmgd, must dash away, no reacts@5th, you banish the 1/2CR being for 1min@8th 1CR@11th 2CR@14th 3CR@17th 4CR<p>";
-b="@3rd xtra spells<b onClick='MagicWeapon()'>Magic Weapon</b><b onClick='NystulsMagicAura()'>Nystul s Magic Aura</b>";
-c="@5th xtra spells<b onClick='DispelMagic()'>Dispel Magic</b><b onClick='MagicCircle()'>Magic Circle</b></td></tr><tr><td>@6th(Spell Breaker)when healing ally, end one spell on the ally of the same spell lvl as your healing spell slot or lower</td></tr><tr><td>7th xtra spells<b onClick='ArcaneEye()'>Arcane Eye</b><b onClick='LeomundsSecretChest()'>Leomund s Secret Chest</b></td></tr><tr><td>@8th(Potent Spellcasting)your cantrip dmg+wisMod</td></tr><tr><td>@9th xtra spells<b onClick='PlanarBinding()'>Planar Binding</b><b onClick='TeleportationCircle()'>Teleportation Circle</b>";
+if(this.class.match(/Cleric/))
+
+{if(this.class.match(/Arcana/))
+{a="@1st(Arcana Domain)(Extra Spells)<b onClick='DetectMagic()'>Detect Magic</b>, <b onClick='MagicMissile()'>Magic Missile</b><p>(Bonus Proficiencies)Arcana+pro2 Cantrips from the Wizard list</td></tr><tr><td>@2nd(Channel Divinity)<p>(Arcane Abjuration)1CD 1act 1 celestial, elemental, fey, or fiend within 30ft must save or be turned for 1 min or until dmgd, must dash away, no reacts@5th, you banish the 1/2CR being for 1min,@8th 1CR@11th 2CR@14th 3CR@17th 4CR<p>";
+b="@3rd (Extra Spells)<b onClick='MagicWeapon()'>Magic Weapon</b>, <b onClick='NystulsMagicAura()'>Nystul s Magic Aura</b>";
+c="@5th (Extra Spells)<b onClick='DispelMagic()'>Dispel Magic</b>, <b onClick='MagicCircle()'>Magic Circle</b></td></tr><tr><td>@6th(Spell Breaker)when healing ally, end one spell on the ally of the same spell lvl as your healing spell slot or lower</td></tr><tr><td>7th (Extra Spells)<b onClick='ArcaneEye()'>Arcane Eye</b>, <b onClick='LeomundsSecretChest()'>Leomund s Secret Chest</b></td></tr><tr><td>@8th(Potent Spellcasting)your cantrip dmg+wisMod</td></tr><tr><td>@9th (Extra Spells)<b onClick='PlanarBinding()'>Planar Binding</b>, <b onClick='TeleportationCircle()'>Teleportation Circle</b>";
 dx="@17th(Arcane Mastery)choose one 6th, one 7th, one 8th, one 9th lvl wizard spells to your domain spell list"
 }
-if(this.class.match(/Death/)){a="@1st(Death Domain Spells)<b onClick='FalseLife()'>False Life</b>, <b onClick='RayOfSickness()'>Ray of Sickness</b></td></tr><tr><td>@1st(Bonus Proficiencies)martial weapons</td></tr><tr><td>@1st(Reaper)learn 1 necrom cantrip from any class list and target 2 adjacent</td></tr><tr><td>@2nd(Channel Divinity Touch of Death)melee atk+5+1/2class lvl necro dmg";
+if(this.class.match(/Death/))
+{a="@1st(Death Domain Spells)<b onClick='FalseLife()'>False Life</b>, <b onClick='RayOfSickness()'>Ray of Sickness</b></td></tr><tr><td>@1st(Bonus Proficiencies)martial weapons</td></tr><tr><td>@1st(Reaper)learn 1 necrom cantrip from any class list and target 2 adjacent</td></tr><tr><td>@2nd(Channel Divinity Touch of Death)melee atk+5+1/2class lvl necro dmg";
 b="@3rd(Death Domain Spells)<b onClick='BlindnessDeafness()'>Blindness Deafness</b>, <b onClick='RayOfEnfeeblement()'>Ray of Enfeeblement</b>";
-c="@5th(Death Domain Spells)<b onClick='AnimateDead()'>Animate Dead</b>, <b onClick='VampiricTouch()'>Vampiric Touch</b></td></tr><tr><td>@6th(Inescapable Destruction)your necrotic atks ignore resistance</td></tr><tr><td>@7th(Death Domain Spells)<b onClick='Blight()'>Blight</b>, <b onClick='DeathWard()'>Death Ward</b></td></tr><tr><td>@8th(Divine Strike)@8th melee atk+1d8 necrotic dmg @14th melee atk+2d8 necrotic dmg</td></tr><tr><td>@9th(Death Domain Spells)<b onClick='AntilifeShell()'>Antilife Shell</b>, <b onClick='Cloudkill()'>Cloudkill</b>";
+c="@5th(Death Domain Spells)<b onClick='AnimateDead()'>Animate Dead</b>, <b onClick='VampiricTouch()'>Vampiric Touch</b></td></tr><tr><td>@6th(Inescapable Destruction)your necrotic atks ignore resistance</td></tr><tr><td>@7th(Death Domain Spells)<b onClick='Blight()'>Blight</b>, <b onClick='DeathWard()'>Death Ward</b></td></tr><tr><td>@8th(Divine Strike),@8th melee atk+1d8 necrotic dmg @14th melee atk+2d8 necrotic dmg</td></tr><tr><td>@9th(Death Domain Spells)<b onClick='AntilifeShell()'>Antilife Shell</b>, <b onClick='Cloudkill()'>Cloudkill</b>";
 dx="@17th(Improved Reaper)1st thru 5th necro spells can target 2 adjacent"
 }
-if(this.class.match(/Forge/)){a="@1st(Forge Domain Spells)<b onClick='Identify()'>Identify</b><b onClick='SearingSmite()'>Searing Smite</b></td></tr><tr><td>@1st(Bonus Proficiencies)heavy armor smith s tools</td></tr><tr><td>@1st(Blessings of the Forge)turn 1 weapon or 1 armor into a+1 magical item permanently/long rest</td></tr><tr><td>@2nd(Artisan s Blessing)1CD 1hr ritual construct 1 weapon or 1 suit of armor or 10 ammo or tools, must be metal and under 100gp";
-b="@3rd(Forge Domain Spells)<b onClick='HeatMetal()'>He@Metal</b><b onClick='MagicWeapon()'>Magic Weapon</b>";
-c="@5th(Forge Domain Spells)<b onClick='ElementalWeapon()'>Elemental weapon</b><b onClick='ProtectionFromEnergy()'>Protection from Energy</b></td></tr><tr><td>@6th(Soul of the Forge)resistance fire dmg heavy armor AC+1</td></tr><tr><td>7th(Forge Domain Spells)<b onClick='Fabricate()'>Fabricate</b><b onClick='WallOfFire()'>Wall of Fire</b></td></tr><tr><td>@8th(Divine Strike)xtra 1d8 fire dmg @14th 2d8</td></tr><tr><td>@9th(Forge Domain Spells)<b onClick='AnimateObject()'>Animate Object</b><b onClick='Creation()'>Creation</b>";
+if(this.class.match(/Forge/)){a="@1st(Forge Domain)(Extra Spells)<b onClick='Identify()'>Identify</b>, <b onClick='SearingSmite()'>Searing Smite</b></td></tr><tr><td>@1st(Bonus Proficiencies)heavy armor smith s tools</td></tr><tr><td>@1st(Blessings of the Forge)turn 1 weapon or 1 armor into a+1 magical item permanently/long rest</td></tr><tr><td>@2nd(Artisan s Blessing)1CD 1hr ritual construct 1 weapon or 1 suit of armor or 10 ammo or tools, must be metal and under 100gp";
+b="@3rd(Forge Domain)(Extra Spells)<b onClick='HeatMetal()'>He@Metal</b>, <b onClick='MagicWeapon()'>Magic Weapon</b>";
+c="@5th(Forge Domain)(Extra Spells)<b onClick='ElementalWeapon()'>Elemental weapon</b>, <b onClick='ProtectionFromEnergy()'>Protection from Energy</b></td></tr><tr><td>@6th(Soul of the Forge)resistance fire dmg heavy armor AC+1</td></tr><tr><td>7th(Forge Domain)(Extra Spells)<b onClick='Fabricate()'>Fabricate</b>, <b onClick='WallOfFire()'>Wall of Fire</b></td></tr><tr><td>@8th(Divine Strike)xtra 1d8 fire dmg @14th 2d8</td></tr><tr><td>@9th(Forge Domain)(Extra Spells)<b onClick='AnimateObject()'>Animate Object</b>, <b onClick='Creation()'>Creation</b>";
 dx="@17th(Saint of Forge and Fire)immune fire dmg heavy armor resist bludg, pierc, slash from non-magical weapons"
 }
-if(this.class.match(/Grave/)){a="@1st1(Grave Domain Spells)<b onClick='Bane()'>Bane</b><b onClick='FalseLife()'>False Life</b></td></tr><tr><td>@1st(Circle of Mortality)restore 0hp allies with max dice number</td></tr><tr><td>@1st(Eyes of the Grave)detect undead 60ft radius utteo your nt 1 to wis mod times/long rest</td></tr><tr><td>@2nd(Path to the Grave)1CD 1act ion 30ft 1tgt vulnerable dmg utteo your nt";
-b="@3rd(Grave Domain Spells)<b onClick='GentleRepose()'>Gentle Repose</b><b onClick='RayOfEnfeeblement()'>Ray of Enfeeblement</b>";
-c="@5th(Grave Domain Spells)<b onClick='Revivify()'>Revivify</b><b onClick='VampiricTouch()'>Vampiric Touch</b></td></tr><tr><td>@6th(Sentinel @Death s Door)1ally 30ft turn crit hit into normal hit and no crit effects 1 to wis mod times/long rest</td></tr><tr><td>@8th(Potent Spellcasting)cantrip dmg+wis mod</td></tr><tr><td>@9th(Grave Domain Spells)<b onClick='AntilifeShell()'>Antilife Shell</b><b onClick='RaiseDead()'>Raise Dead</b>";
+if(this.class.match(/Grave/)){a="@1st1(Grave Domain Spells)<b onClick='Bane()'>Bane</b>, <b onClick='FalseLife()'>False Life</b></td></tr><tr><td>@1st(Circle of Mortality)restore 0hp allies with max dice number</td></tr><tr><td>@1st(Eyes of the Grave)detect undead 60ft radius utteo your nt 1 to wis mod times/long rest</td></tr><tr><td>@2nd(Path to the Grave)1CD 1act ion 30ft 1tgt vulnerable dmg utteo your nt";
+b="@3rd(Grave Domain Spells)<b onClick='GentleRepose()'>Gentle Repose</b>, <b onClick='RayOfEnfeeblement()'>Ray of Enfeeblement</b>";
+c="@5th(Grave Domain Spells)<b onClick='Revivify()'>Revivify</b>, <b onClick='VampiricTouch()'>Vampiric Touch</b></td></tr><tr><td>@6th(Sentinel @Death s Door)1ally 30ft turn crit hit into normal hit and no crit effects 1 to wis mod times/long rest</td></tr><tr><td>@8th(Potent Spellcasting)cantrip dmg+wis mod</td></tr><tr><td>@9th(Grave Domain Spells)<b onClick='AntilifeShell()'>Antilife Shell</b>, <b onClick='RaiseDead()'>Raise Dead</b>";
 dx="@17th(Keeper of Souls)1tgt dies 60ft, you transfer tgt s hitdice to heal ally recharge ttsoynt"
 }
 if(this.class.match(/Knowledge/)){
-a='@1st.BLESSINGS OF KNOWLEDGE 2 languages, 2 skills+pro from Arcana, History, Nature or Religion</td></tr><tr><td>@1st[x]Command @1st[x]Identify</td></tr><tr><td>@2nd.KNOWLEDGE OF THE AGES 1CD, 1act, 60ft vsWis or read surface thoughts and Suggestion 1min';
-b='@3rd[x]Augury @3rd[x]Suggestion';
+a='@1st(Blessings of Knowledge)2 languages, 2 skills+pro from Arcana, History, Nature or Religion</td></tr><tr><td>@1st<b onClick=Command()>Command</b> @1st<b onClick=Identify()>Identify</b></td></tr><tr><td>@2nd(Knowledge of the Ages)1CD, 1act, 60ft vsWis or read surface thoughts and Suggestion 1min';
+b=',@3rd[x]Augury ,@3rd[x]Suggestion';
 c='@5th[x]Nondetection @5th[x]Speak with Dead</td></tr><tr><td>@6th.READ THOUGHTS 1/1 1CD, 1act, 60ft, vsWis or read surface thoughts, 10/10 turns, Suggestion, no slot cost no save</td></tr><tr><td>@7th[x]Arcane Eye @7th[x]Confusion</td></tr><tr><td>@8th.POTENT SPELL CASTING cantrip dmg+wisMod</td></tr><tr><td>@9th[x]Legend Lore @9th<b onClick=Scrying()>Scrying</b>';
 dx='@17th.VISIONS OF THE PAST 1/1/long rest, touch, wisScore is min, info on recent events'
 }
 if(this.class.match(/Life/)){
-a='@1st(Bonus Proficiency)heavy armor<p>(Disciple of Life)healing prayers get+2+spell lvl<p>(Extra Spells)<b onClick=Bless()>Bless</b><b onClick=CureWounds()>Cure Wounds</b></td></tr><tr><td>@2nd (Preserve Life)1CD, 1act, 30ft, heal 5x lvl allies max half maxhp, less undead and constructs<p>';
-b="@3rd(Extra Spells)<b onClick='LesserRestoration()'>Lesser Restoration</b><b onClick=SpiritualWeapon()>Spiritual Weapon</b></td></tr>";
-c="@5th(Extra Spells)<b onClick='BeaconOfHope()'>Beacon of Hope</b><b onClick=Revivify()>Revivify</b></td></tr><tr><td>@6th(Blessed Healer)when healing, you heal yourself 2+spell lvl</td></tr><tr><td>@7th(Extra Spells)<b onClick='DeathWard()'>Death Ward</b><b onClick='GuardianOfFaith()'>Guardian of Faith</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 radiant @14th+2d8)</td></tr><tr><td>@9th(Extra Spells)<b onClick=MassCureWounds()>Mass Cure Wounds</b>@9th<b onClick=RaiseDead()>Raise Dead</b>";
+a='@1st(Bonus Proficiency)heavy armor<p>(Disciple of Life)healing prayers get+2+spell lvl<p>(Extra Spells)<b onClick=Bless()>Bless</b>, <b onClick=CureWounds()>Cure Wounds</b></td></tr><tr><td>@2nd (Preserve Life)1CD, 1act, 30ft, heal 5x lvl allies max half maxhp, less undead and constructs<p>';
+b="@3rd(Extra Spells)<b onClick='LesserRestoration()'>Lesser Restoration</b>, <b onClick=SpiritualWeapon()>Spiritual Weapon</b></td></tr>";
+c="@5th(Extra Spells)<b onClick='BeaconOfHope()'>Beacon of Hope</b>, <b onClick=Revivify()>Revivify</b></td></tr><tr><td>@6th(Blessed Healer)when healing, you heal yourself 2+spell lvl</td></tr><tr><td>@7th(Extra Spells)<b onClick='DeathWard()'>Death Ward</b>, <b onClick='GuardianOfFaith()'>Guardian of Faith</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 radiant @14th+2d8)</td></tr><tr><td>@9th(Extra Spells)<b onClick=MassCureWounds()>Mass Cure Wounds</b>@9th<b onClick=RaiseDead()>Raise Dead</b>";
 dx='@17th(Supreme Healing)heal max roll'
 }
 if(this.class.match(/Light/)){
 a='@1st.BONUS CANTRIP Light, if know, other cantrip</td></tr><tr><td>@1st(Warding Flare)(wisMod/wisMod)/long rest, when atked, 30ft, react atked @DisAdv</td></tr><tr><td>@1st[x]Burning Hands</td></tr><tr><td>@1st[x]Faerie Fire</td></tr><tr><td>@2nd.RADIANCE OF THE DAWN 1CD 30ft Darkness dispelled DC8wis+pro vsCon for half less full cover radiant 2d10+c lvl';
-b='@3rd[x]Flaming Sphere @3rd[x]Scorching Ray';
+b=',@3rd[x]Flaming Sphere ,@3rd[x]Scorching Ray';
 c="@5th[x]Daylight @5th<b onClick='Fireball()'>Fireball</b></td></tr><tr><td>@6th.IMPROVED FLARE use for allies</td></tr><tr><td>@7th<b onClick='GuardianOfFaith()'>Guardian of Faith</b> @7th[x]Wall of Fire</td></tr><tr><td>@8th.POTENT SPELLCASTING cantrip dmg+wisMod</td></tr><tr><td>@9th<b onClick=FlameStrike()>Flame Strike</b> @9th<b onClick=Scrying()>Scrying</b>";
 dx='@17th.CORONA OF LIGHT 1act, 10/10 turns, 60ft rad+30ft dim light save @DisAdv vs fire radiant'
 }
 if(this.class.match(/Nature/)){
 a='@1st.ACOLYTE OF NATURE 1 cantrip, 2 skills+pro from Animal Handling, Nature, Survival</td></tr><tr><td>@1st(Bonus Proficiency)heavy armor</td></tr><tr><td>@1st[x]Animal Friendship @1st[x]Speak with Animals</td></tr><tr><td>@2nd.CHARM ANIMALS AND PLANTS 1CD, 30ft vsWis charmed 10/10 turns or dmgd';
-b='@3rd[x]Barkskin @3rd[x]Spike Growth</td></tr><tr><td>@5th[x]Plant Growth';
+b=',@3rd[x]Barkskin ,@3rd[x]Spike Growth</td></tr><tr><td>@5th[x]Plant Growth';
 c='@5th[x]Wind Wall</td></tr><tr><td>@6th.DAMPEN ELEMENTS you or ally 30ft rad, react, resist acid, cold, lighting or thunder</td></tr><tr><td>@7th[x]Dominate Beast @7th[x]Grasping Vine</td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 cold, fire or lightning.(@14th)+2d8</td></tr><tr><td>@9th[x]Insect Plague @9th[x]Tree Stride';
 dx='@17th.MASTER OF NATURE bonus command the charmed animals and plants'
 }
 if(this.class.match(/Tempest/)){a="Detect Magic</td></tr><tr><td>@1st<b onClick='FogCloud()'>Fog Cloud</b> @1st<b onClick='Thunderwave()'>Thunderwave</b></td></tr><tr><td>@2nd(Destructive Wrath)1CD, deal max thunder dmg";
-b="@3rd<b onClick='GustOfWind()'>Gust of Wind</b> @3rd<b onClick='Shatter()'>Shatter</b>";
+b="@3rd<b onClick='GustOfWind()'>Gust of Wind</b> ,@3rd<b onClick='Shatter()'>Shatter</b>";
 c='@5th[x]Call Lightning @5th[x]Sleet Storm</td></tr><tr><td>@6th.THUNDERBOLT STRIKE when lightning dmg, option to push large or less 10ft</td></tr><tr><td>@7th[x]Control Water @7th[x]Ice Storm</td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8thunder.(@14th)+2d8</td></tr><tr><td>@9th[x]Destructive Wave @9th[x]Insect Plague';
 dx='@17th.STORMBORN fly speed is walk speed'
 }
@@ -7614,13 +7593,13 @@ b="@3rd<b onClick='MirrorImage()'>Mirror Image</b>, <b onClick='PassWithoutTrace
 c="<p><b onClick='Blink()'>Blink</b>, <b onClick='DispelMagic()'>Dispel Magic</b></td></tr><tr><td>@6th(Cloak of Shadows)1CD invisible till t e o y n turn or atk or cast</td></tr><tr><td>@7th<b onClick='DimensionDoor()'>Dimension Door</b>, <b onClick='Polymorph()'>Polymorph</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8poision.(@14th)+2d8</td></tr><tr><td>@9th<b onClick='DominatePerson()'>Dominate Person</b>, <b onClick='ModifyMemory()'>Modify Memory</b>";
 dx='@17th(Improved Duplicity)move 4 clones 30ft/turn max 120ft</td></tr><tr><td>'
 }
-if(this.class.match(/War/)){a="@1st(Bonus Proficiencies)martial weapons heavy armor</td></tr><tr><td>@1st(War Priest)when atking 1 bonus atk</td></tr><tr><td>@1st<b onClick='DivineFavor()'>Divine Favor</b><b onClick='ShieldOfFaith()'>Shield of Faith</b></td></tr><tr><td>2nd(Guided Strike)1CD atk+10";
-b="@3rd<b onClick='MagicWeapon()'>Magic Weapon</b><b onClick='SpiritualWeapon()'>Spiritual Weapon</b>";
-c="@5th<b onClick='CrusadersMantle()'>Crusader s Mantle</b><b onClick='SpiritGuardians()'>Spirit Guardians</b></td></tr><tr><td>@6th(War God s Blessing)1CD ally 30ft atk+10</td></tr><tr><td>@7th<b onClick='FreedomOfMovement()'>Freedom of Movement</b><b onClick='Stoneskin()'>Stoneskin</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 same dmg type @14th+2d8</td></tr><tr><td>@9th<b onClick='FlameStrike()'>Flame Strike</b><b onClick='HoldMonster()'>Hold Monster</b>";
+if(this.class.match(/War/)){a="@1st(Bonus Proficiencies)martial weapons heavy armor</td></tr><tr><td>@1st(War Priest)when atking 1 bonus atk</td></tr><tr><td>@1st<b onClick='DivineFavor()'>Divine Favor</b>, <b onClick='ShieldOfFaith()'>Shield of Faith</b></td></tr><tr><td>2nd(Guided Strike)1CD atk+10";
+b="@3rd<b onClick='MagicWeapon()'>Magic Weapon</b>, <b onClick='SpiritualWeapon()'>Spiritual Weapon</b>";
+c="@5th<b onClick='CrusadersMantle()'>Crusader s Mantle</b>, <b onClick='SpiritGuardians()'>Spirit Guardians</b></td></tr><tr><td>@6th(War God s Blessing)1CD ally 30ft atk+10</td></tr><tr><td>@7th<b onClick='FreedomOfMovement()'>Freedom of Movement</b>, <b onClick='Stoneskin()'>Stoneskin</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 same dmg type @14th+2d8</td></tr><tr><td>@9th<b onClick='FlameStrike()'>Flame Strike</b>, <b onClick='HoldMonster()'>Hold Monster</b>";
 dx="@17th(Avatar of Battle)resist bludg, slash, pierc nonmagical weapon"
 }
-this.setFeatures('<p>(Cleric)<p>Cantrips Known@1st 3@4th 4@10th 5<p>Spells Known: wis mod+lvl<p>1st Lvl Slots@1st 2@2nd 3@3rd 4<p>2nd Lvl Slots@3rd 2@4th 3<p>3rd Lvl Slots@5th 2@6th 3<p>4th Lvl Slots@7th 1@8th 2@9th 3@9th 3<p>5th Lvl Slots@9th 1@10th 2@18th 3<p>6th Lvl Slots@11th 1@19th 2<p>7th Lvl Slots@13th 1@20th 2<p>8th Lvl Slots@15th 1<p>9th Lvl Slots@17th 1</td></tr><tr><td>'+a+'(Channel Divinity)@2nd 1/1@5th 2/2@18th 3/3<p>(Turn Undead)1CD, 30ft radius, vsWis or frightened, @DisAdv while cleric is in sight, dash away, 10/10 turns</td></tr><tr><td>'+b+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th@8th@12th@16th@19th</td></tr><tr><td>(Destroy Undead)instead of dashing, the undead are destroyed@5th CR1/2@8th CR1-1/2@11th CR2-1/2@14th CR3-1/2@17th CR4-1/2</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Divine Intervention)d100 roll your lvl or lower, divine helps</td></tr><tr><td>'+dx+' @20th auto success');
-this.setActionNotes('1st Lvl Slots 2/2');
+this.setFeatures('<br>(Cleric)<br>Cantrips Known:@1st 3,@4th 4,@10th 5<br>Spells Known:wis mod+lvl<br>1st Slots:@1st 2,@2nd 3,@3rd 4<br>2nd Slots:@3rd 2,@4th 3<br>3rd Slots:@5th 2,@6th 3<br>4th Slots:@7th 1,@8th 2,@9th 3<br>5th Slots:@9th 1,@10th 2,@18th 3<br>6th Slots:@11th 1,@19th 2<br>7th Slots:@13th 1,@20th 2<br>8th Slots:@15th 1<br>9th Slots:@17th 1</td></tr><tr><td><p>@2nd(Channel Divinity),@2nd 1/1@5th 2/2@18th 3/3</td></tr><tr><td>@2nd(Turn Undead)1CD, 30ft radius, vsWis or frightened, @DisAdv while cleric is in sight, dash away, 10/10 turns'+a+'</td></tr><tr><td>'+b+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>(Destroy Undead)instead of dashing, the undead are destroyed@5th CR1/2,@8th CR1-1/2,@11th CR2-1/2,@14th CR3-1/2,@17th CR4-1/2,</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Divine Intervention)d100 roll your lvl or lower, divine helps</td></tr><tr><td>'+dx+' @20th auto success');
+this.setActionNotes('1st Slots 2/2');
 this.setEquipment('mace or warhammer.scale mail or leather armor or chain mail.light crossbow 20 bolts or simple weapon.priest pack or explorer pack.shield.holy symbol');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, simple weapons');
@@ -7635,49 +7614,49 @@ this.setSkills('2 from History, Insight, Medicine, Persuasion, or Religion');
 this.setSpellAbility('wis')
 }
 if(this.class.match(/Druid/)){
-if(this.class.match(/Arctic/)){a="@3rd(Circle of the Arctic)xtra spells<b onClick=HoldPerson()>Hold Person</b><b onClick=SpikeGrowth()>Spike Growth</b>";
-b="@5th<b onClick=SleetStorm()>Sleet Storm</b><b onClick=Slow()>Slow</b>";
-c="@7th<b onClick=FreedomOfMovement()>Freedom of Movement</b><b onClick=IceStorm()>Ice Storm</b>";
-dx="@9th<b onClick=CommuneWithNature()>Commune with Nature</b><b onClick=ConeOfCold()>Cone of Cold</b>"
+if(this.class.match(/Arctic/)){a="@3rd(Circle of the Arctic)(Extra Spells)<b onClick=HoldPerson()>Hold Person</b>, <b onClick=SpikeGrowth()>Spike Growth</b>";
+b="@5th<b onClick=SleetStorm()>Sleet Storm</b>, <b onClick=Slow()>Slow</b>";
+c="@7th<b onClick=FreedomOfMovement()>Freedom of Movement</b>, <b onClick=IceStorm()>Ice Storm</b>";
+dx="@9th<b onClick=CommuneWithNature()>Commune with Nature</b>, <b onClick=ConeOfCold()>Cone of Cold</b>"
 }
-if(this.class.match(/Coast/)){a="@3rd(Circle of the Coast)xtra spells<b onClick=MirrorImage()>Mirror Image</b><b onClick=MistyStep()>Misty Step</b>";
-b="@5th<b onClick=WaterBreathing()>Water Breathing</b><b onClick=WaterWalk()>Water Walk</b>";
-c="@7th<b onClick=ControlWater()>Control Water</b><b onClick=FreedomOfMovement()>Freedom of Movement</b>";
-dx="@9th<b onClick=ConjureElemental()>Conjure Elemental</b><b onClick=Scrying()>Scrying</b>"
+if(this.class.match(/Coast/)){a="@3rd(Circle of the Coast)(Extra Spells)<b onClick=MirrorImage()>Mirror Image</b>, <b onClick=MistyStep()>Misty Step</b>";
+b="@5th<b onClick=WaterBreathing()>Water Breathing</b>, <b onClick=WaterWalk()>Water Walk</b>";
+c="@7th<b onClick=ControlWater()>Control Water</b>, <b onClick=FreedomOfMovement()>Freedom of Movement</b>";
+dx="@9th<b onClick=ConjureElemental()>Conjure Elemental</b>, <b onClick=Scrying()>Scrying</b>"
 }
-if(this.class.match(/Desert/)){a="@3rd(Circle of the Desert)xtra spells<b onClick='Blur()'>Blur</b><b onClick='Silence()'>Silence</b>"
-b="@5th<b onClick='CreateFoodWater()'>Create Food and Water</b><b onClick='ProtectionFromEnergy()'>Protection from Energy</b>";
-c="@7th<b onClick='Blight()'>Blight</b><b onClick='HallucinatoryTerrain()'>Hallucinatory Terrain</b>";
-dx="@9th<b onClick='InsectPlague()'>Insect Plague</b><b onClick='WallOfStone()'>Wall of Stone</b>"
+if(this.class.match(/Desert/)){a="@3rd(Circle of the Desert)(Extra Spells)<b onClick='Blur()'>Blur</b>, <b onClick='Silence()'>Silence</b>"
+b="@5th<b onClick='CreateFoodWater()'>Create Food and Water</b>, <b onClick='ProtectionFromEnergy()'>Protection from Energy</b>";
+c="@7th<b onClick='Blight()'>Blight</b>, <b onClick='HallucinatoryTerrain()'>Hallucinatory Terrain</b>";
+dx="@9th<b onClick='InsectPlague()'>Insect Plague</b>, <b onClick='WallOfStone()'>Wall of Stone</b>"
 }
-if(this.class.match(/Forest/)){a="@3rd(Circle of the Forest)xtra spells<b onClick='Barkskin()'>Barkskin</b><b onClick='SpiderClimb()'>Spider Climb</b>";
-b="@5th<b onClick='CallLightning()'>Call Lightning</b><b onClick='PlantGrowth()'>Plant Growth</b>";
-c="@7th<b onClick='Divination()'>Divination</b><b onClick='FreedomOfMovement()'>Freedom of Movement</b>";
-dx="@9th<b onClick='CommuneWithNature()'>Commune with Nature</b><b onClick='TreeStride()'>Tree Stride</b>"
+if(this.class.match(/Forest/)){a="@3rd(Circle of the Forest)(Extra Spells)<b onClick='Barkskin()'>Barkskin</b>, <b onClick='SpiderClimb()'>Spider Climb</b>";
+b="@5th<b onClick='CallLightning()'>Call Lightning</b>, <b onClick='PlantGrowth()'>Plant Growth</b>";
+c="@7th<b onClick='Divination()'>Divination</b>, <b onClick='FreedomOfMovement()'>Freedom of Movement</b>";
+dx="@9th<b onClick='CommuneWithNature()'>Commune with Nature</b>, <b onClick='TreeStride()'>Tree Stride</b>"
 }
-if(this.class.match(/Grassland/)){a="3rd(Circle of Grasslands)xtra spells<b onClick='Invisibility()'>Invisibility</b><b onClick='PassWithoutTrace()'>Pass without Trace</b>";
-b="@5th<b onClick='Daylight()'>Daylight</b><b onClick='Haste()'>Haste</b>";
-c="@7th<b onClick='Divination()'>Divination</b><b onClick='FreedomOfMovement()'>Freedom of Movement</b>";
-dx="@9th<b onClick='Dream()'>Dream</b><b onClick='InsectPlague()'>InsectPlague</b>"
+if(this.class.match(/Grassland/)){a="3rd(Circle of Grasslands)(Extra Spells)<b onClick='Invisibility()'>Invisibility</b>, <b onClick='PassWithoutTrace()'>Pass without Trace</b>";
+b="@5th<b onClick='Daylight()'>Daylight</b>, <b onClick='Haste()'>Haste</b>";
+c="@7th<b onClick='Divination()'>Divination</b>, <b onClick='FreedomOfMovement()'>Freedom of Movement</b>";
+dx="@9th<b onClick='Dream()'>Dream</b>, <b onClick='InsectPlague()'>InsectPlague</b>"
 }
-if(this.class.match(/Moon/)){this.setFeatures('@1st(Druidic Language)</td></tr><tr><td>@2nd(Comb@Wild Shape)bonus heal 1d8/spell slot, bonus 2/2 short rest, for lvl hours/2, no spell casting inthis form, @0hp revert to your original current hp @2nd(CR1)@6th(CR your lvl/3)</td></tr><tr><td></td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th@8th@12th@16th@19th</td></tr><tr><td>@6th(Primal Strike)beast form atks are magical</td></tr><tr><td>@10th(Elemental Wild Shape)costs 2 wild shape points, transform into an Air, Fire, Water or Earth Elemental</td></tr><tr><td>@14th(Thousand Forms)<b onClick=AlterSelf()>Alter Self</b></td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10<p>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape')
+if(this.class.match(/Moon/)){this.setFeatures('@1st(Druidic Language)</td></tr><tr><td>@2nd(Comb@Wild Shape)bonus heal 1d8/spell slot, bonus 2/2 short rest, for lvl hours/2, no spell casting inthis form, @0hp revert to your original current hp ,@2nd(CR1),@6th(CR your lvl/3)</td></tr><tr><td></td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>@6th(Primal Strike)beast form atks are magical</td></tr><tr><td>@10th(Elemental Wild Shape)costs 2 wild shape points, transform into an Air, Fire, Water or Earth Elemental</td></tr><tr><td>@14th(Thousand Forms)<b onClick=AlterSelf()>Alter Self</b></td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10<p>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape')
 }
-if(this.class.match(/Mountain/)){a="@2nd(Circle of the Mountains)xtra spells<b onClick='SpiderClimb()'>Spider Climb</b><b onClick='SpikeGrowth()'>Spike Growth</b>";
-b="@5th<b onClick='LightningBolt()'>LightningBolt</b><b onClick='MeldIntoStone()'>Meld into Stone</b>";
-c="@7th<b onClick='StoneShape()'>Stone Shape</b><b onClick='StoneSkin()'>Stone Skin</b>";
-dx="@9th<b onClick='Passwall()'>Passwall</b><b onClick='WallOfStone()'>Wall of Stone</b>"
+if(this.class.match(/Mountain/)){a="@2nd(Circle of the Mountains)(Extra Spells)<b onClick='SpiderClimb()'>Spider Climb</b>, <b onClick='SpikeGrowth()'>Spike Growth</b>";
+b="@5th<b onClick='LightningBolt()'>LightningBolt</b>, <b onClick='MeldIntoStone()'>Meld into Stone</b>";
+c="@7th<b onClick='StoneShape()'>Stone Shape</b>, <b onClick='StoneSkin()'>Stone Skin</b>";
+dx="@9th<b onClick='Passwall()'>Passwall</b>, <b onClick='WallOfStone()'>Wall of Stone</b>"
 }
-if(this.class.match(/Swamp/)){a="@3rd(Circle of Swamps)<b onClick='Darkness()'>Darkness</b><b onClick='MelfsAcidArrow()'>Melf\'s Acid Arrow";
-b="@5th<b onClick='WaterWalk()'>Walter Walk</b><b onClick='StinkingCloud()'>Stinking Cloud</b>";
-c="@7th<b onClick='FreedomOfMovement()'>Freeedom of Movement</b><b onClick='LocateCreature()'>Locate Creature</b>";
-dx="@9th<b onClick='InsectPlague()'>Insect Plague</b><b onClick='Scrying()'>Scrying</b>"
+if(this.class.match(/Swamp/)){a="@3rd(Circle of Swamps)<b onClick='Darkness()'>Darkness</b>, <b onClick='MelfsAcidArrow()'>Melf\'s Acid Arrow";
+b="@5th<b onClick='WaterWalk()'>Walter Walk</b>, <b onClick='StinkingCloud()'>Stinking Cloud</b>";
+c="@7th<b onClick='FreedomOfMovement()'>Freeedom of Movement</b>, <b onClick='LocateCreature()'>Locate Creature</b>";
+dx="@9th<b onClick='InsectPlague()'>Insect Plague</b>, <b onClick='Scrying()'>Scrying</b>"
 }
-if(this.class.match(/Underdark/)){a="@3rd(Circle of the Underdark)<b onClick='SpiderClimb()'>Spider Climb</b><b onClick='Web()'>Web";
-b="@5th<b onClick='GaseousForm()'>Gaseous Form</b><b onClick='StinkingCloud()'>Stinking Cloud</b>";
-c="@7th<b onClick='GreaterInvisibility()'>Greater Invisibility</b><b onClick='StoneShape()'>Stone Shape</b>";
-dx="@9th<b onClick='CloudKill()'>Cloud Kill</b><b onClick='InsectPlague()'>Insect Plague</b>"
+if(this.class.match(/Underdark/)){a="@3rd(Circle of the Underdark)<b onClick='SpiderClimb()'>Spider Climb</b>, <b onClick='Web()'>Web";
+b="@5th<b onClick='GaseousForm()'>Gaseous Form</b>, <b onClick='StinkingCloud()'>Stinking Cloud</b>";
+c="@7th<b onClick='GreaterInvisibility()'>Greater Invisibility</b>, <b onClick='StoneShape()'>Stone Shape</b>";
+dx="@9th<b onClick='CloudKill()'>Cloud Kill</b>, <b onClick='InsectPlague()'>Insect Plague</b>"
 }
-if(this.class.match(/Arctic|Coast|Desert|Forest|Grassland|Mountain|Swamp|Underdark/)){this.setFeatures('@1st(Druidic Language)</td></tr><tr><td>@2nd(Wild Shape)2/2 short rest, for lvl hours/2, no spell casting inthis form, @0hp revert to your original current hp@2nd(CR1/4)no flying swimming@4th(CR1/2)no flying@8th(CR1)</td></tr><tr><td>@2nd(Circle of the Land)<p>(Bonus Cantrip)<p>(Natural Recovery)regain half lvl spell slot lvls after short rest</td></tr><tr><td>'+a+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th@8th@12th@16th@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>@6th(Land\'s Stride)ignore difficult terrain, pass plants without dmg, ignore slowed, immune to Entangle</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@10th(Nature\'s Ward)immune to charmed, frightened, poisoned, diseased</td></tr><tr><td>@14th(Nature\'s Sanctury)vsWis atking target must atk another</td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10<p>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape')
+if(this.class.match(/Arctic|Coast|Desert|Forest|Grassland|Mountain|Swamp|Underdark/)){this.setFeatures('@1st(Druidic Language)</td></tr><tr><td>@2nd(Wild Shape)2/2 short rest, for lvl hours/2, no spell casting inthis form, @0hp revert to your original current hp,@2nd(CR1/4)no flying swimming@4th(CR1/2)no flying,@8th(CR1)</td></tr><tr><td>@2nd(Circle of the Land)<p>(Bonus Cantrip)<p>(Natural Recovery)regain half lvl spell slot lvls after short rest</td></tr><tr><td>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>@6th(Land\'s Stride)ignore difficult terrain, pass plants without dmg, ignore slowed, immune to Entangle</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@10th(Nature\'s Ward)immune to charmed, frightened, poisoned, diseased</td></tr><tr><td>@14th(Nature\'s Sanctury)vsWis atking target must atk another</td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10<p>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape')
 }
 this.setEquipment('wooden shield or simple weapon.sciitar or simple melee weapon.leather armor.explorer pack.Druidic focus');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
@@ -7693,14 +7672,14 @@ this.setSkills('2 from Arcana, Animal Handling, Insight, Medicine, Nature, Perce
 this.setSpellAbility('wis')
 }
 if(this.class.match(/Fighter/)){if(this.class.match(/Archer/)){
-a='(Arcane Archer)<p>(Arcane Shot)Arcana+pro or Nature+pro and Prestidigitation or DruidCraft recharge shots after short rest@3rd 2 options@7th 3 options@10th 4 options@15th 5 options@18th 6 options<p>(Arcane Shot Options)(Banishing Arrow)DC8+int+pro vsCha or hit target is banished to a harmless Feywild place utteo your nt@18th tgt takes 2d6 force dmg(Beguiling Arrow)+2d6 psychic dmg and ally 30ft charms tgt DC8+yourInt+pro vsWis ttteo your nt or ally atks target(Enfeebling Arrow)+2d6 necro dmg and DC8+int+pro vsCon or target does half dmg ttteo your nt @18th+4d6 necro dmg(Grasping Arrow)+2d6 poison dmg, speed-10ft+2d6 slash moving 1ft or more 1act to remove brambles Athletics vs your DC8+int+pro or 1min@18th+4d6 poison dmg(pierc Arrow)DC8+int+pro vsDex or targets take invisible arrow dmg+1d6 dmg @18th+2d6 dmg(Seeking Arrow)1tgt seen in past 1min, DC8+int+pro vsDex for half dmg arrow+1d6force and target location is still unknown@18th+2d6(Shadow Arrow)+2d6psychic dmg and DC8+int+pro vsWis or blinded 5ft ttso your next turn@18th+4d6psychic';
+a='(Arcane Archer)<p>(Arcane Shot)Arcana+pro or Nature+pro and Prestidigitation or DruidCraft recharge shots after short rest,@3rd 2 options@7th 3 options@10th 4 options@15th 5 options@18th 6 options<p>(Arcane Shot Options)(Banishing Arrow)DC8+int+pro vsCha or hit target is banished to a harmless Feywild place utteo your nt@18th tgt takes 2d6 force dmg(Beguiling Arrow)+2d6 psychic dmg and ally 30ft charms tgt DC8+yourInt+pro vsWis ttteo your nt or ally atks target(Enfeebling Arrow)+2d6 necro dmg and DC8+int+pro vsCon or target does half dmg ttteo your nt @18th+4d6 necro dmg(Grasping Arrow)+2d6 poison dmg, speed-10ft+2d6 slash moving 1ft or more 1act to remove brambles Athletics vs your DC8+int+pro or 1min@18th+4d6 poison dmg(pierc Arrow)DC8+int+pro vsDex or targets take invisible arrow dmg+1d6 dmg @18th+2d6 dmg(Seeking Arrow)1tgt seen in past 1min, DC8+int+pro vsDex for half dmg arrow+1d6force and target location is still unknown@18th+2d6(Shadow Arrow)+2d6psychic dmg and DC8+int+pro vsWis or blinded 5ft ttso your next turn@18th+4d6psychic';
 b='@7th(Curving Shot)bonus reroll atk against another target within 60ft<p>@7th(Magic Arrow)arrow becomes magical to defe@non-magical resistance and immunity';
 c='';
 dx='@15th(EverReady Shot)if no shots, regain 1 arcane shot';
 e=''
 }
 if(this.class.match(/Battle/)){
-a='Battle Master<p>(Superiority Die Value)@3rd d8@10th d10@18th d12<p>(# of Superiority Dice)/long rest@3rd 4/4@7th 5/5@15th 6/6<p>(Known Maneuvers)using str or dex@3rd 3@7th 5@10th 7@15th 9<p><h3>Maneuvers</h3>(Commander Strike)1SD, forgo atk, ally reacts dmg+SD(Disarming Attack)1SD, dmg+SD, vsStr or drops item(Distractive Strike)1SD, dmg+SD, next ally atk @Adv on target(Evasiveftwork)1SD, when moving, AC+SD(Feinting Attack)1SD, bonus, same turn next atk @Adv, dmg+SD(Goading Attack)1SD, dmg+SD, vsWis or atks allies @DisAdv other than you(Lunging Attack)1SD, +5ft, dmg+SD(Maneuvering Attack)1SD, dmg+SD, allies move half not opp atked. (Menacing Attack)1SD, dmg+SD, vsWis or frightened tteo your nt(Parry)1SD, when hit, your dam-SD-dexMod(Precision Attack)1SD, atk+SD(Pushing Attack)1SD, dmg+SD, Large 10x10ft or less vsStr or pushed 15ft(Rally)1SD, bonus ally temp hp+SD+chaMod(Riposte)1SD, when missed, react melee atk, dmg+SD(Sweeping Attack)1SD, on hit, adjacent target dmg is SD(Trip Attack)1SD, on hit, Large 10x10ft or less vsStr or prone, dmg+SD<p>@3rd(Student of War)1 Artisans Tools+pro';
+a='(Battle Master)<p>(Superiority Die Value)@3rd d8,@10th d10,@18th d12<p>(# of Superiority Dice)/long rest,@3rd 4/4,@7th 5/5,@15th 6/6<p>(Known Maneuvers)using str or dex,@3rd 3,@7th 5,@10th 7,@15th 9<p>(Maneuvers)<p>(Commander Strike)1SD, forgo atk, ally reacts dmg+SD<p>(Disarming Attack)1SD, dmg+SD, vsStr or drops item<p>(Distractive Strike)1SD, dmg+SD, next ally atk @Adv on target<p>(Evasive Footwork)1SD, when moving, AC+SD<p>(Feinting Attack)1SD, bonus, same turn next atk @Adv, dmg+SD<p>(Goading Attack)1SD, dmg+SD, vsWis or atks allies @DisAdv other than you<p>(Lunging Attack)1SD, +5ft, dmg+SD<p>(Maneuvering Attack)1SD, dmg+SD, allies move half not opp atked.<p>(Menacing Attack)1SD, dmg+SD, vsWis or frightened tteo your nt<p>(Parry)1SD, when hit, your dam-SD-dexMod<p>(Precision Attack)1SD, atk+SD<p>(Pushing Attack)1SD, dmg+SD, Large 10x10ft or less vsStr or pushed 15ft<p>(Rally)1SD, bonus ally temp hp+SD+chaMod<p>(Riposte)1SD, when missed, react melee atk, dmg+SD<p>(Sweeping Attack)1SD, on hit, adjacent target dmg is SD<p>(Trip Attack)1SD, on hit, Large 10x10ft or less vsStr or prone, dmg+SD</td></tr><tr><td>@3rd(Student of War)Artisans Tools+pro';
 b='@7th(Know Your Enemy)observe 1min, DM tells 2 stats of target';
 c='';
 dx='@15th(Relentless)@15th 1/1, roll init with 0SD is 1SD';
@@ -7714,7 +7693,7 @@ dx='@15th(Ferocious Charger)charge and hit target from @least 10ft and DC8+str+p
 e='@18th(Vigilant Defender)use a react on each target turn to make an opp atk'
 }
 if(this.class.match(/Samurai/)){
-a='(Samurai)</td></tr><tr><td>@3rd (Bonus Proficiency) 1 from History, Insight, Performance, Persuasion, or 1 Language</td></tr><tr><td>(Fighting Spirit)bonus atk @Adv tteoyt 3/encounter/long rest and @3rd 5 temp hp @10th 10 temp hp @15th 15 temp';
+a='(Samurai)</td></tr><tr><td>@3rd (Bonus Proficiency) 1 from History, Insight, Performance, Persuasion, or 1 Language</td></tr><tr><td>(Fighting Spirit)bonus atk @Adv tteoyt 3/encounter/long rest and ,@3rd 5 temp hp @10th 10 temp hp @15th 15 temp';
 b='@7th(Elegant Courtier)Persuasion+cha+wis+pro and wis+pro, or int+pro or cha+pro';
 c='@10th(Tireless Spirit)if none, regain 1 Fighting Spirit';
 dx='@15th(Rapid Strike)exchange atk @Adv for a second normal atk';
@@ -7734,7 +7713,8 @@ c='@10th.ELDRITCH STRIKE on weapon hit, target saves @DisAdv vs your next spell'
 dx='@15th.ARCANE CHARGE use action surge then teleport 30ft</td></tr><tr><td>Relentless</td></tr><tr><td>@(15th 1/1)roll init with 0SD is 1SD';
 e='@18th.IMPROVED WAR MAGIC cast spell, make bonus weapon atk'
 }
-this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)(Archery)ranged atk+2or(Defense)while armored, AC+1or(Dueling)melee dmg+2or(Great Weapon Fighting)reroll on 1 or 2or(Protection)with shield, adjacent allies atked @DisAdvor(Two Weapon Fighting)secondary dmg+abiMod<p>@(Second Wind)1/1 short rest, bonus, heal 1d10+lvl</td></tr><tr><td>(Action Surge)@2nd 1/1@17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)'+a+'</td></tr><tr><td>(Ability Score Improvement)@4th@6th@8th@12th@14th@16th@19th</td></tr><tr><td>(Extra Attacks)@5th 2@10th 3@20th 4</td></tr><tr><td>'+b+'</td></tr><tr><td>(Indomitable)re-roll failed save/long rest@9th 1@13th 2 @17th 3</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>'+e+'');
+this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)<br>(Archery)ranged atk+2or(Defense)while armored, AC+1<br>or(Dueling)melee dmg+2<br>or(Great Weapon Fighting)reroll on 1 or 2<br>or(Protection)with shield, adjacent allies atked @DisAdv<br>or(Two Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>@2nd(Second Wind)1/1 short rest, bonus, heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surge)@2nd 1/1,@17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)@4th,@6th,@8th@12th@14th@16th@19th</td></tr><tr><td>@5th(Extra Attacks)@5th 2,@10th 3,@20th 4</td></tr><tr><td>'+b+'</td></tr><tr><td>@9th(Indomitable)re-roll failed save/long rest@9th 1,@13th 2,@17th 3</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>'+e+'');
+this.setActionNotes("(Fighting Style)(?),(Second Wind)0/0,(Action Surge)0/0,(Extra Atks)0,(Indomitable)0/0(Relentless)0/0");
 this.setEquipment('chain mail or leather.Longbow.20 arrows.martial weapon and shield or 2 martial weapons.light crossbow 20 bolts or 2 handaxes.dungeoneer pack or explorer pack');
 this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('all armor, shields, simple weapons, martial weapons');
@@ -7748,48 +7728,48 @@ this.setChaPro('');
 this.setSkills('2 from Acrobatics, Animal Handling, Insight, Intimidation, Perception, or Survival')
 }
 if(this.class.match(/Monk/)){if(this.class.match(/Elements/)){
-a='Four Elements</td></tr><tr><td>@3rdDISCIPLE Of THE ELEMENTS when learning a new one, you can swap 1 you know with a new one @6th(1 more)@(11th 1 more)@(17th 1 more)</td></tr><tr><td>Monk lvl cost.5th-8th 3ki.9th-12th 4ki.13th-16th 5ki.17th-20th 6ki</td></tr><tr><td>@3rd ELEMENTAL ATTUNEMENT shower of sparks, puff of air or light or snuff torch, or chill or warm 1lb objects or mist, fire, earth 1ft cube shaped into crude form @3rd FANGS OF THE FIRE SNAKE 1Ki, unarmed ranged 10ft fire dmg+1d10/1Ki @3rd FIST OF UNBROKEN AIR 1act, 2Ki, 30ft, vsStr for half 3d10bludge+1d10/1Ki and not pushed 20ft prone @3rd RUSH OF THE GALE SPIRITS 2Ki Gust of Wind @3rd SHAPE OF THE FLOWING RIVER 1Ki ice to water or water to ice 30x120ft @3rd SWEEPING CINDER STRIKE 2Ki Burning Hands @3rd WATER WHIP 1act @Ki 30ft vsDex for half 3d10bludge+1d10/1Ki and not prone or pulled 25ft';
-b='@6th CLENCH OF THE NORTH WIND 6Ki Cone of Cold @6th GONG OF THE SUMMIT 3Ki Shatter @11th ETERNAL MOUNTAIN DEFENSE 5Ki, self, Stoneskin';
+a='Four Elements</td></tr><tr><td>@3rdDISCIPLE Of THE ELEMENTS when learning a new one, you can swap 1 you know with a new one ,@6th(1 more)@(11th 1 more)@(17th 1 more)</td></tr><tr><td>Monk lvl cost.5th-8th 3ki.9th-12th 4ki.13th-16th 5ki.17th-20th 6ki</td></tr><tr><td>@3rd ELEMENTAL ATTUNEMENT shower of sparks, puff of air or light or snuff torch, or chill or warm 1lb objects or mist, fire, earth 1ft cube shaped into crude form ,@3rd FANGS OF THE FIRE SNAKE 1Ki, unarmed ranged 10ft fire dmg+1d10/1Ki ,@3rd FIST OF UNBROKEN AIR 1act, 2Ki, 30ft, vsStr for half 3d10bludge+1d10/1Ki and not pushed 20ft prone ,@3rd RUSH OF THE GALE SPIRITS 2Ki Gust of Wind ,@3rd SHAPE OF THE FLOWING RIVER 1Ki ice to water or water to ice 30x120ft ,@3rd SWEEPING CINDER STRIKE 2Ki Burning Hands ,@3rd WATER WHIP 1act @Ki 30ft vsDex for half 3d10bludge+1d10/1Ki and not prone or pulled 25ft';
+b=',@6th CLENCH OF THE NORTH WIND 6Ki Cone of Cold ,@6th GONG OF THE SUMMIT 3Ki Shatter @11th ETERNAL MOUNTAIN DEFENSE 5Ki, self, Stoneskin';
 c='@11th FLAMES OF THE PHOENIX 4Ki Fireball @11th MIST STANCE 4Ki, self, Gaseous Form @11th RIDE THE WIND 4Ki, self, Fly';
 dx='@17th BREATH OF WINTER 6Ki Cone of Cold @17th RIVER OF HUNGRY FLAME 5Ki Wall of Fire @17th WAVE OF ROLLING EARTH 6Ki Wall of Stone'
 }
 if(this.class.match(/Cobalt/)){
-a='(Cobalt Soul)</td></tr><tr><td>@3rd(Mystical Erudition)target is hit, spend 1 Ki Point, vsCon or you learn tgt type or ac or senses or highest or lowest save modifier or vulnerabilities or resistance or immunities @6th learn 2 aspects @11th 3 @17th 4';
-b='@6th(Extort Truth)target is hit twice, spend 2 Ki Points, tgt knows it can not lie for 1min</td></tr><tr><td>@6th(Mind of Mercury)take a number int mod of reacts per trigger @cost of 1 Ki Point after the first react, spend 1 Ki Point, Investigation @Adv';
+a='(Cobalt Soul)</td></tr><tr><td>@3rd(Mystical Erudition)target is hit, spend 1 Ki Point, vsCon or you learn tgt type or ac or senses or highest or lowest save modifier or vulnerabilities or resistance or immunities ,@6th learn 2 aspects @11th 3 @17th 4';
+b=',@6th(Extort Truth)target is hit twice, spend 2 Ki Points, tgt knows it can not lie for 1min</td></tr><tr><td>@6th(Mind of Mercury)take a number int mod of reacts per trigger @cost of 1 Ki Point after the first react, spend 1 Ki Point, Investigation @Adv';
 c='@11th(Preternatural Counter)atker misses you, you use your react to atk';
 dx='@17th(Debilitating Barrage)hit target with 3 or more atks, spend 3 ki points, target atks @DisAdv utteo your nt and vsCon or vulnerable to a dmg type of your choice 1min, unless resistant or immune which is revealed when you choose'
 }
 if(this.class.match(/Drunken/)){
 a='(Drunken Master)</td></tr><tr><td>@3rd(Bonus Proficiencies)Performance+pro and Brewer s Supplies+pro</td></tr><tr><td>@3rd(Drunken Technique)Flurry of Blows then bonus Disengage, walk speed+10ft tteoyct';
-b='@6th(Tipsy Sway)(Leap to Yourft)prone spend 5ft not half movement speed(Redirect Attack)1 Ki react target hits its ally';
+b=',@6th(Tipsy Sway)(Leap to Yourft)prone spend 5ft not half movement speed(Redirect Attack)1 Ki react target hits its ally';
 c='@11th(Drunkard s Luck)2 ki remove disadv from your roll';
 dx='@17th(Intoxicated Frenzy)make 5 Flurry of Blow atks each to a different target'
 }
 if(this.class.match(/Kensei/)){
-a='(Kensei)Caligraphy+pro or Painting+pro</td></tr><tr><td>@3rd(Path of the Kensei)choose 2, 1 melee weapon+pro and one ranged weapon+pro as kensei monk weapons, but not heavy or special weapons@6th one more weapon@11th one more weapon@17th one more weapon(Agile Parry)unarmed strike as part of the atk with a kensei monk weapon gives you AC+2(Kensei s Shot)bonus, kensei ranged weapon+1d4 dmg uteoyt';
-b='@6th(One with the Blade)1Ki kensei weapon becomes(Magic)al versus immunity and resistance to non-magical weapons(Deft Strike)1Ki kensei weapon does+xtra Martial Arts die dmg 1/turn';
+a='(Kensei)Caligraphy+pro or Painting+pro</td></tr><tr><td>@3rd(Path of the Kensei)choose 2, 1 melee weapon+pro and one ranged weapon+pro as kensei monk weapons, but not heavy or special weapons,@6th one more weapon@11th one more weapon@17th one more weapon(Agile Parry)unarmed strike as part of the atk with a kensei monk weapon gives you AC+2(Kensei s Shot)bonus, kensei ranged weapon+1d4 dmg uteoyt';
+b=',@6th(One with the Blade)1Ki kensei weapon becomes(Magic)al versus immunity and resistance to non-magical weapons(Deft Strike)1Ki kensei weapon does+xtra Martial Arts die dmg 1/turn';
 c='@11th(Sharpen the Blade)atk and dmg rolls+xtra 1 to 3Ki';
 dx='@17th(Unerring Accuracy)miss with kensei weapon and reroll 1/turn'
 }
 if(this.class.match(/Sun Soul/)){
-a='@3rd(Radiant Sun Bolt)+dex+pro 30ft 1d4 radiant dmg, increases with Martial Arts dice, 1Ki bonus atk';
-b='@6th(Searing Arc Strike)2Ki Burning Hands spell as bonus, spend more Ki to increase slot lvl of Burning Hands, max Ki spent is 1/2 your monk lvl';
+a=',@3rd(Radiant Sun Bolt)+dex+pro 30ft 1d4 radiant dmg, increases with Martial Arts dice, 1Ki bonus atk';
+b=',@6th(Searing Arc Strike)2Ki Burning Hands spell as bonus, spend more Ki to increase slot lvl of Burning Hands, max Ki spent is 1/2 your monk lvl';
 c='@11th(Searing Sunburst)150ft, targets in 20ft radius DC8+dex+pro vsCon or 2d6 radiant dmg, total cover targets auto save, spend Ki to increase dmg+2d6 to a maximum spent 3Ki';
 dx='@17th(Sun Shield)30ft aura of light or extinquish light, if hit, react deal 5+wismod radiant dmg'
 }
 if(this.class.match(/Open/)){
 a='Open Hand</td></tr><tr><td>@3rdOPEN HAND TECHNIQUE on hit, vsDex or prone or vsStr or pushed 15ft or no reacts tteo your nt';
-b='@6th.WHOLENESS OF BODY 1/1/long rest, 1act, heal 3 x lvl';
+b=',@6th.WHOLENESS OF BODY 1/1/long rest, 1act, heal 3 x lvl';
 c='@11th.TRANQUILITY 1/1/long rest, Sanctuary';
 dx='@17th.QUIVERING PALM on unarmed hit, 3Ki, after days are lvl, vsCon for 10d10 necrotic or 0hp, or end harmlessly'
 }
 if(this.class.match(/Shadow/)){
 a='Shadow</td></tr><tr><td>@3rdSHADOW ARTS 2Ki Darkness or Darkvision or Pass without Trace or Silence, learn Minor Illusion';
-b='@6th.SHADOW STEP on 1st melee atk, in dim light or darkness, teleport 60ft';
+b=',@6th.SHADOW STEP on 1st melee atk, in dim light or darkness, teleport 60ft';
 c='@11th.CLOAK OF SHADOWS 1act, in dim or darkness, invisible';
 dx='@17th.OPPORTUNIST when adjacent target hit by ally, react 1 melee atk'
 }
-this.setFeatures('</td></tr><tr><td>@1st(Unarmored Defense)unarmored no shield, AC10+dexMod+wisMod<p>(Martial Arts Damage Dice)unnarmed+bonus unarmed or simple weapon+bonus unarmed+dexMod or strMod weapon dam or 1d4 dam@1st 1d4@5th 1d6@11th 1d8@17th 1d10</td></tr><tr><td>@2nd(Ki Powers)save vs DC8+wis+pro<p>(Ki Points)1 per Monk Level, are recovered after a short 4 hour rest<p>(Flurry of Blows)1Ki, 1 more bonus narmed<p>(Patient Defense)1Ki, Dodge is bonus<p>(Step of the Wind)1Ki, Disengage or Dash as bonus, jumpft x 2<p>@(Unarmored Movement)when unarmored no shield@2nd +10ft@6th+15ft@9th move across walls and water without falling@10th +20ft@14th +25ft @18th +30ft</td></tr><tr><td>@3rd(Monastic Tradition)Way of the'+a+'<p>(Deflect Missiles)react, ranged hit dmg-1d10+dexMod, @0 dam catch and bonus ranged 20/60ft atk+pro</td></tr><tr><td>@4th(Slow Fall)fall dmg-5 x lvl<p>(Ability Score Improvement)@4th@8th@12th@16th@19th</td></tr><tr><td>@5th Extra Attack</td></tr><tr><td>@5th(Stunning Strike)1Ki, vsCon or stunned tteo your nt</td></tr><tr><td>@6th(Ki-Empowered Strikes)unarmed is magical</td></tr><tr><td>'+b+'</td></tr><tr><td>@7th(Evasion)dex for half is no dmg</td></tr><tr><td>@7th(Stillness of Mind)1act, self, end 1 charm or fear</td></tr><tr><td>@10th(Purity of Body)immune disease poison</td></tr><tr><td>'+c+'</td></tr><tr><td>@13th(Tongue of the Sun and Moon)understand all languages, targets understand yours</td></tr><tr><td>@14th(Diamond Soul)all saves+pro, 1Ki reroll 1 save</td></tr><tr><td>@15th(Timeless Body)immune magical aging, no age penalties, no need food water</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Empty Body)4Ki invisible 10/10 turns, resist all but force, 8Ki Astral Projection you and 1 ally</td></tr><tr><td>@20th(Perfect Self)roll init 0Ki is 4Ki');
+this.setFeatures('</td></tr><tr><td>@1st(Unarmored Defense)unarmored no shield, AC10+dexMod+wisMod<p>(Martial Arts Damage Dice)unnarmed+bonus unarmed or simple weapon+bonus unarmed+dexMod or strMod weapon dam or 1d4 dam@1st 1d4@5th 1d6@11th 1d8@17th 1d10</td></tr><tr><td>@2nd(Ki Powers)save vs DC8+wis+pro<p>(Ki Points)1 per Monk Level, are recovered after a short 4 hour rest<p>(Flurry of Blows)1Ki, 1 more bonus narmed<p>(Patient Defense)1Ki, Dodge is bonus<p>(Step of the Wind)1Ki, Disengage or Dash as bonus, jumpft x 2<p>@(Unarmored Movement)when unarmored no shield,@2nd +10ft,@6th+15ft@9th move across walls and water without falling@10th +20ft@14th +25ft @18th +30ft</td></tr><tr><td>@3rd(Monastic Tradition)Way of the'+a+'<p>(Deflect Missiles)react, ranged hit dmg-1d10+dexMod, @0 dam catch and bonus ranged 20/60ft atk+pro</td></tr><tr><td>@4th(Slow Fall)fall dmg-5 x lvl<p>@4th(Ability Score Improvement)@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th Extra Attack</td></tr><tr><td>@5th(Stunning Strike)1Ki, vsCon or stunned tteo your nt</td></tr><tr><td>@6th(Ki-Empowered Strikes)unarmed is magical</td></tr><tr><td>'+b+'</td></tr><tr><td>@7th(Evasion)dex for half is no dmg</td></tr><tr><td>@7th(Stillness of Mind)1act, self, end 1 charm or fear</td></tr><tr><td>@10th(Purity of Body)immune disease poison</td></tr><tr><td>'+c+'</td></tr><tr><td>@13th(Tongue of the Sun and Moon)understand all languages, targets understand yours</td></tr><tr><td>@14th(Diamond Soul)all saves+pro, 1Ki reroll 1 save</td></tr><tr><td>@15th(Timeless Body)immune magical aging, no age penalties, no need food water</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Empty Body)4Ki invisible 10/10 turns, resist all but force, 8Ki Astral Projection you and 1 ally</td></tr><tr><td>@20th(Perfect Self)roll init 0Ki is 4Ki');
 this.setEquipment('shortsword or simple weapon.dungeoneer pack or explorer pack.10/10 darts');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('simple weapons, shortswords');
@@ -7804,7 +7784,7 @@ this.setSkills('2 from Acrobatics, Athletics, History, Insight, Religion, or Ste
 this.setSpellAbility('wis')
 }
 if(this.class.match(/Paladin/)){if(this.class.match(/Ancients/)){
-a='@3rd(Nature\'s Wrath) 1CD, 1act, 10ft, str or vsDex end of each of its turns or restrained</td></tr><tr><td>@3rdTURN THE FAITHLESS 1CD, fey or fiend 30ft vsWis or Dash true form revealed</td></tr><tr><td>@3rd<b onClick=EnsnaringStrike()>Ensnaring Strike</b> @3rd[x]Speak with Animals';
+a=',@3rd(Nature\'s Wrath) 1CD, 1act, 10ft, str or vsDex end of each of its turns or restrained</td></tr><tr><td>@3rdTURN THE FAITHLESS 1CD, fey or fiend 30ft vsWis or Dash true form revealed</td></tr><tr><td>@3rd<b onClick=EnsnaringStrike()>Ensnaring Strike</b> ,@3rd[x]Speak with Animals';
 b='@5th[x]Moonbeam @5th<b onClick=MistyStep()>Misty Step</b>';
 c='@7th.AURA OF WARDING 10ft you and allies resist spell dam @7th(10ft)@(18th 30ft)</td></tr><tr><td>@9th[x]Plant Growth @9th<b onClick=ProtectionFromEnergy()>Protection from Energy</b>';
 dx='@13th[x]Ice Storm @13th[x]Stoneskin';
@@ -7816,32 +7796,32 @@ c='@7th(Aura of Conquest)';
 dx='';
 e='@15th(Scornful Rebuke)</td></tr><tr><td>18th(Aura of Conquest)</td></tr><tr><td>@20th(Invincible Conqueror)'
 }
-if(this.class.match(/Crown/)){a="@3rd(Channel Divinity:Champion Challenge)1CD, chosen targets within 30ft save vsWis or targets must stay within 30ft of you @3rd(Channel Divinity:Turn the Tide)1CD, bonus, hearing allies with half or fewer HP within 30ft heal 1d6+chaMod</td></tr><tr><td>@3rd(Oath of the Crown Spells)<b onClick='Command()'>Command</b><b onClick='CompelledDuel()'>Compelled Duel</b>";
-b="@5th(Oath of the Crown Spells)<b onClick='WardingBond()'>Warding Bond</b><b onClick='ZoneOfTruth()'>Zone of Truth</b>";
+if(this.class.match(/Crown/)){a="@3rd(Channel Divinity:Champion Challenge)1CD, chosen targets within 30ft save vsWis or targets must stay within 30ft of you ,@3rd(Channel Divinity:Turn the Tide)1CD, bonus, hearing allies with half or fewer HP within 30ft heal 1d6+chaMod</td></tr><tr><td>@3rd(Oath of the Crown Spells)<b onClick='Command()'>Command</b>, <b onClick='CompelledDuel()'>Compelled Duel</b>";
+b="@5th(Oath of the Crown Spells)<b onClick='WardingBond()'>Warding Bond</b>, <b onClick='ZoneOfTruth()'>Zone of Truth</b>";
 c="@7th(Divine Allegiance)1 react, you take the dmg an adjacent ally would take";
-dx="@13th(Oath of the Crown Spells)<b onClick='Banishment()'>Banishment</b><b onClick='GuardianOfFaith()'>Guardian of Faith</b>";
-e="@15th(Unyielding Spirit)save vs Paralysis or Stun @Adv</td></tr><tr><td>@17th(Oath of the Crown Spells)<b onClick='CircleOfPower()'>Circle of Power</b><b onClick='Geas()'>Geas</b></td></tr><tr><td>@20th(Exalted Champion)1act, resist bludgeon, pierc, slash dmg from non-magical weapons, allies within 30ft save vs Death @Adv, you and allies within 30ft vsWis @Adv, recharge on/long rest"
+dx="@13th(Oath of the Crown Spells)<b onClick='Banishment()'>Banishment</b>, <b onClick='GuardianOfFaith()'>Guardian of Faith</b>";
+e="@15th(Unyielding Spirit)save vs Paralysis or Stun @Adv</td></tr><tr><td>@17th(Oath of the Crown Spells)<b onClick='CircleOfPower()'>Circle of Power</b>, <b onClick='Geas()'>Geas</b></td></tr><tr><td>@20th(Exalted Champion)1act, resist bludgeon, pierc, slash dmg from non-magical weapons, allies within 30ft save vs Death @Adv, you and allies within 30ft vsWis @Adv, recharge on/long rest"
 }
-if(this.class.match(/Devotion/)){a="@3rdSACRED weapon 1act, 1CD, 10/10 turns, magical atk+chaMod, light 20ft rad+dim light 20ft rad</td></tr><tr><td>@3rd(Turn the Unholy)1CD, 30ft undead vsWis or Dash 30ft away no reacts, 10/10 turns or dmgd</td></tr><tr><td>@3rd[x]Protection from Evil and Good @3rd<b onClick='Sanctuary()'>Sanctuary</b>";
+if(this.class.match(/Devotion/)){a="@3rdSACRED weapon 1act, 1CD, 10/10 turns, magical atk+chaMod, light 20ft rad+dim light 20ft rad</td></tr><tr><td>@3rd(Turn the Unholy)1CD, 30ft undead vsWis or Dash 30ft away no reacts, 10/10 turns or dmgd</td></tr><tr><td>@3rd[x]Protection from Evil and Good ,@3rd<b onClick='Sanctuary()'>Sanctuary</b>";
 b="@5th<b onClick='LesserRestoration()'>Lesser Restoration</b> @5th[x]Zone of Truth";
 c="@7th.AURA OF DEVOTION @(10th 10ft)@(18th 30ft)</td></tr><tr><td>@9th<b onClick='BeaconOfHope()'>Beacon of Hope</b> @9th[x]Dispel Magic";
 dx="@13th<b onClick=FreedomOfMovement()>Freedom of Movement</b>@13th<b onClick='GuardianOfFaith()'>Guardian of Faith</b>";
 e='@15th.PURITY OF SPIRIT permanent Protection from Evil and Good</td></tr><tr><td>@17th[x]Commune @17th<b onClick=FlameStrike()>Flame Strike</b></td></tr><tr><td>@20th.HOLY NIMBUS 1/1/long rest, 30ft radius light+30ft radius dim light targets take 10 dam if starting turn in light save @Adv vs fiend and undead spells)'
 }
 if(this.class.match(/Oathbreaker/)){a="@3rd CD Option:<b onClick='ControlUndead()>Control Undead</b> or CD Option:<b onClick='DreadfulAspect()'>Dreadful Aspect</b>xtra Spell:<b onClick='HellishRebuke()'>Hellish Rebuke</b>xtra Spell:<b onClick='InflictWounds()'>Inflict Wounds</b>";
-b="@5th <b onClick='CrownOfMadness()'>Crown of Madness</b><b onClick='Darkness()'>Darkness</b></td></tr><tr><td>@7th(Aura of Hate)allies 10ft melee wpn dmg+paladin cha, @18th 30ft";
-c="@9th <b onClick='AnimateDead()'>Animate Dead</b><b onClick='BestowCurse()'>Bestow Curse</b>";
-dx="@13th <b onClick='Blight()'>Blight</b><b onClick='Confusion()'>Confusion</b></td></tr><tr><td>@15th(Supernatural Resistance)resist bludg, pierc, slash dmg from non-magical wpns";
-e="@17th <b onClick='Contagion()'>Contagion</b><b onClick='DominatePerson()'>Dominate Person</b></td></tr><tr><td>@20th(Dread Lord)1 min, gloom reduces light 30ft radius, targets in gloom take 4d10 psychic dmg if frightened, sighted targets atk @DisAdv, paladin shadows atk as bonus act 3d10+cha dmg"
+b="@5th <b onClick='CrownOfMadness()'>Crown of Madness</b>, <b onClick='Darkness()'>Darkness</b></td></tr><tr><td>@7th(Aura of Hate)allies 10ft melee wpn dmg+paladin cha, @18th 30ft";
+c="@9th <b onClick='AnimateDead()'>Animate Dead</b>, <b onClick='BestowCurse()'>Bestow Curse</b>";
+dx="@13th <b onClick='Blight()'>Blight</b>, <b onClick='Confusion()'>Confusion</b></td></tr><tr><td>@15th(Supernatural Resistance)resist bludg, pierc, slash dmg from non-magical wpns";
+e="@17th <b onClick='Contagion()'>Contagion</b>, <b onClick='DominatePerson()'>Dominate Person</b></td></tr><tr><td>@20th(Dread Lord)1 min, gloom reduces light 30ft radius, targets in gloom take 4d10 psychic dmg if frightened, sighted targets atk @DisAdv, paladin shadows atk as bonus act 3d10+cha dmg"
 }
 if(this.class.match(/Vengence/)){
-a='(Abjure Enemy)1act, 1CD, 60ft vsWis for half speed or frightened speed 0, fiends and undead @DisAdv<p>(Vow of Enmity)bonus, 1tgt, 10ft, 1CD, atk @Adv, 10/10 turns<p>(Extra Spells)<b onClick=Bane()>Bane</b><b onClick=HuntersMark()>Hunter\'s Mark</b>';
+a='(Abjure Enemy)1act, 1CD, 60ft vsWis for half speed or frightened speed 0, fiends and undead @DisAdv<p>(Vow of Enmity)bonus, 1tgt, 10ft, 1CD, atk @Adv, 10/10 turns<p>(Extra Spells)<b onClick=Bane()>Bane</b>, <b onClick=HuntersMark()>Hunter\'s Mark</b>';
 b='(Extra Spells)<b onClick=HoldPerson()>Hold Person</b> <b onClick=MistyStep()>Misty Step</b>';
 c='@7th(Relentless Avenger)while opp atking, move half speed, immune opp atked</td></tr><tr><td>@9th(Extra Spells)<b onClick=Haste()>Haste</b> <b onClick=ProtectionFromEnergy()>Protection from Energy</b>';
-dx="@13th(Extra Spells)<b onClick=Banishment()>Banishment</b><b onClick='DimensionDoor()'>Dimension Door</b>";
+dx="@13th(Extra Spells)<b onClick=Banishment()>Banishment</b>, <b onClick='DimensionDoor()'>Dimension Door</b>";
 e='@15th(Soul of Vengence)while Vow of Enmity, react melee atk</td></tr><tr><td>@17th(Extra Spells)<b onClick=HoldMonster()>Hold Monster</b> <b onClick=Scrying()>Scrying</b></td></tr><tr><td>@20th(Avenging Angel)1/1 1hr, fly @speed 60ft, 30ft radius aura vsWis or frightened atked @Adv'
 }
-this.setFeatures('</td></tr><tr><td>(Paladin)<p>Cantrips Known: 0<p>Spells Known: all Paladin Spells<p>1st Lvl Slots@2nd 2@3rd 3@5th 4<p>2nd Lvl Slots@5th 2@7th 3<p>3rd Lvl Slots@9th 2@11th 3<p>4th Lvl Slots@13th 1@15th 2@17th 3<p>5th Lvl Slots@17th 1@19th 2<p>@1st(Divine Sense)60ft aura detect celestial, fiend, undead, Hallow spell desecrated consecrated places or objects, tteo your nt(1+chaMod/1+chaMod)/long rest<p>(Lay on Hands)touch less undead and constructs heal from a pool of 5x lvl points(6/6)/long rest, 5 pool points/cure 1 disease or neutralize 1 poison</td></tr><tr><td>@2nd(Fighting Style)(Defense)while armored AC+1or(Dueling)weapon dmg+2or(Great Weapon Fighting)re-roll dmg on 1 or 2or(Protection)with shield adjacent allies atked @DisAdv<p>(Divine Smite)after melee hit spend 1 slot dmg+2d8 radia+1d8/slot max 5d8+1d8 if fiend or undead@(11th+1d8 radiant)</td></tr><tr><td>@3rd(Divine Health)immune disease<p>(Channel Divinity)1/1 short rest<p>'+a+'</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th@8th@12th@16th@19th</td></tr><tr><td>@5th(Extra Attack)<p>'+b+'</td></tr><tr><td>(Aura of Protection)5ft, you and allies save+chaMod@6th 10ft@18th 30ft</td></tr><tr><td>'+c+'</td></tr><tr><td>(Aura of Courage)you and allies immune fright@10th 10ft@18th 30ft</td></tr><tr><td>'+dx+'</td></tr><tr><td>@14th(Cleansing Touch)1 or chaMod/1 or chaMod/long rest end 1 spell on you or ally</td></tr><tr><td>'+e);
+this.setFeatures('</td></tr><tr><td>(Paladin)<p>Cantrips Known: 0<p>Spells Known: all Paladin Spells<br>1st Slots,@2nd 2,@3rd 3@5th 4<br>2nd Slots:@5th 2@7th 3<br>3rd Slots:@9th 2@11th 3<br>4th Slots:@13th 1@15th 2@17th 3<p>5th Slots:@17th 1@19th 2<p>@1st(Divine Sense)60ft aura detect celestial, fiend, undead, Hallow spell desecrated consecrated places or objects, tteo your nt(1+chaMod/1+chaMod)/long rest<p>(Lay on Hands)touch less undead and constructs heal from a pool of 5x lvl points(6/6)/long rest, 5 pool points/cure 1 disease or neutralize 1 poison</td></tr><tr><td>@2nd(Fighting Style)(Defense)while armored AC+1or(Dueling)weapon dmg+2or(Great Weapon Fighting)re-roll dmg on 1 or 2or(Protection)with shield adjacent allies atked @DisAdv<p>(Divine Smite)after melee hit spend 1 slot dmg+2d8 radia+1d8/slot max 5d8+1d8 if fiend or undead@(11th+1d8 radiant)</td></tr><tr><td>@3rd(Divine Health)immune disease<p>(Channel Divinity)1/1 short rest<p>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Extra Attack)<p>'+b+'</td></tr><tr><td>(Aura of Protection)5ft, you and allies save+chaMod,@6th 10ft@18th 30ft</td></tr><tr><td>'+c+'</td></tr><tr><td>(Aura of Courage)you and allies immune fright@10th 10ft@18th 30ft</td></tr><tr><td>'+dx+'</td></tr><tr><td>@14th(Cleansing Touch)1 or chaMod/1 or chaMod/long rest end 1 spell on you or ally</td></tr><tr><td>'+e);
 this.setEquipment('martial weapon and shield or 2 martial weapons.5/5 javelins or simple melee weapon.priest pack or explorer pack.chain mail.holy symbol');
 this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('all armor, shields, and all weapons');
@@ -7856,35 +7836,35 @@ this.setSkills('2 from Athletics, Insight, Intimidation, Medicine, Persuasion, o
 this.setSpellAbility('cha')
 }
 if(this.class.match(/Beast/)){
-a='@3rd(Ranger\'s Companion)CR1/4 medium or less hawk, mastiff, panther, ac+ranger pro, atks+ranger pro, dmg+ranger pro, saves, skill checks+ranger pro, hp max is beast\'s or your lvl x 4, command as bonus on your turn protects incapacitated you';
+a=',@3rd(Ranger\'s Companion)CR1/4 medium or less hawk, mastiff, panther, ac+ranger pro, atks+ranger pro, dmg+ranger pro, saves, skill checks+ranger pro, hp max is beast\'s or your lvl x 4, command as bonus on your turn protects incapacitated you';
 b='@7th(Exceptional Training)bonus command Companion to Dash, Disengage, Dodge or Help';
 c='@11th(Beastial Fury)Companion makes 2 atks';
 dx='@15th(Share Spells)30ft self spells also affect Companion'
 }
 if(this.class.match(/Ranger/)){
 if(this.class.match(/Fey\sWanderer/)){
-a='@3rd <b onClick=CharmPerson()>Charm Person</b>(Feywild Gifts)pg. 58 of Tasha(Otherworldly Glamour)cha check+wisDeception+proor Performance+Proor Persuasion+pro';
+a=',@3rd <b onClick=CharmPerson()>Charm Person</b>(Feywild Gifts)pg. 58 of Tasha(Otherworldly Glamour)cha check+wisDeception+proor Performance+Proor Persuasion+pro';
 b='@7th(Beguiling Twist)save @Adv vs charmed or frightened, 120ft DC8+abi+pro vsWis or target charmed or frightened 1min new save @end of each turn';
 c='@11th(Fey Reinforcements)<b onClick=SummonFey()>Summon Fey</b> 1/1/long rest, no spell slot cost';
 dx='@15th(Misty Wanderer)<b onClick=MistyStep()>Misty Step</b> you and 1tgt 5ft wis mod/wismod/long rest, teleport to any occupied space on the encounter map'
 }
 if(this.class.match(/Hunter/)){
-a='@3rd(Hunter\'s Prey)choose one. (Colossus Slayer)1/turn hp less max+1d8 dmg. (Giant Killer)visible large+melee atks you, react atk. (Horde Breaker)1/turn melee atk, bonus atk adjacent';
+a=',@3rd(Hunter\'s Prey)choose one. (Colossus Slayer)1/turn hp less max+1d8 dmg. (Giant Killer)visible large+melee atks you, react atk. (Horde Breaker)1/turn melee atk, bonus atk adjacent';
 b='@7th(Defensive Tactics)choose one. (Escape the Horde)opp atked @DisAdv. (Multiatk)when hit, ac+4 vs atker. (Steel Will)save @Adv vs fear';
 c='@11th(Volley)range atk all 10ft@11th(Whirlwind Attack)melee atk all adjacent';
 dx='@15th(Superior Hunter\'s Defense)choose one. (Evasion)vsDex for half is no dmg. (Stand Against the Tide)when missed, react, target same atks target. (Uncanny Dodge)react take half dmg'
 }
-if(this.class.match(/Monster\sSlayer/)){a="@3rd(Monster Slayer Magic)<b onClick='ProtectionFromEvilOrGood()'>Protection from Evil or Good</b>@3rd(Hunter\'s Sense)1act, 60ft, 1tgt, learn immunities, resistances, vulnerabilities, race unless hidden from divination magic@3rd(Slayer\'s Prey)bonus, 1tgt, 60ft, your 1st atk/turn xtra 1d6 dmg";
+if(this.class.match(/Monster\sSlayer/)){a="@3rd(Monster Slayer Magic)<b onClick='ProtectionFromEvilOrGood()'>Protection from Evil or Good</b>,@3rd(Hunter\'s Sense)1act, 60ft, 1tgt, learn immunities, resistances, vulnerabilities, race unless hidden from divination magic,@3rd(Slayer\'s Prey)bonus, 1tgt, 60ft, your 1st atk/turn xtra 1d6 dmg";
 b="@5th(Monster Slayer Magic)<b onClick='ZoneOfTruth()'>Zone of Truth</b>@7th(Supernatural Defense)you save+1d6 versus your Slayer s Prey@9th(Monster Slayer Magic)<b onClick='MagicCircle()'>Magic Circle</b></td></tr><tr><td>";
 c="@11th(Magic-User\'s Nemesis)thwart spell or thwart teleport within 60ft DC8+your spell ability+pro vsWis, recharge short rest";
 dx="@13th(Monster Slayer Magic)<b onClick='Banishment()'>Banishment</b>>@15th(Slayer\'s Counter)1react, Slayer s Prey forces your saving throw, make atk before making saving throw, a hit is also a save success"
 }
-if(this.class.match(/Swarmkeeper/)){a="@3rd(Gathered Swarm)+1d6 pierc, or vsStr target moved 15ft, or you are moved 5ft@3rd(Swarmkeeper Magic)<b onClick=MageHand()>Mage Hand</b> in swarm spirt form@3rd <b onClick=FaerieFire()>Faerie Fire</b>@5th <b onClick=Web()>Web</b>@9th <b onClick=GaseousForm()>Gaseous Form</b>@13th <b onClick=ArcaneEye()>Arcane Eye</b>@17th <b onClick=InsectPlague()>Insect Plague</b>";
+if(this.class.match(/Swarmkeeper/)){a="@3rd(Gathered Swarm)+1d6 pierc, or vsStr target moved 15ft, or you are moved 5ft,@3rd(Swarmkeeper Magic)<b onClick=MageHand()>Mage Hand</b> in swarm spirt form,@3rd <b onClick=FaerieFire()>Faerie Fire</b>@5th <b onClick=Web()>Web</b>@9th <b onClick=GaseousForm()>Gaseous Form</b>@13th <b onClick=ArcaneEye()>Arcane Eye</b>@17th <b onClick=InsectPlague()>Insect Plague</b>";
 b="@7th(Writhing Tide)flying speed 10ft, hover 1min or incapacitated lvl pro/ lvl pro/long rest";
 c="@11th(Mighty Swarm)+1d8 dmg, or move 15ft and knock prone, or you move 5ft under half cover";
 dx="@15th(Swarming Dispersal)1 react resist all dmg and 30ft teleport to open space"
 }
-this.setFeatures('</td></tr><tr><td>@1st(Favored Enemy)Survival @Adv to track, Intelligence @Adv to speak enemy language@1st 1 enemy@6th 2 enemies@14th 3 enemies<p>or (Favored Foe)your lvl pro/ lvl pro per short rest, hit 1tgt marked 1min concen, @1st+1d4 dmg@6th+1d6 dmg@14th+1d8 dmg</td></tr><tr><td>@1st(Natural Explorer)ignore difficult terrain, always alert, alone Stealth normal pace, forage x 2, know number, size, time of tracked enemy@1st 1 terrain type@6th 2 terrain types@10th 3terrain types<p>or @1st(Deft Explorer)@1st(Canny)1 skill+pro becomes skill+exp, speak, read, write+2 languages@6th(Roving)climb, swim=walk speed+5ft @10th(Tireless)1 act, temp hp 1d8+wis, lvl pro/lvl pro per short rest</td></tr><tr><td>@2nd(Fighting Style)(Archery)ranged+2or(Defense)armored AC+1or(Blind Fighting)blindsight 10ft unless target total coveror(Druidic Warrior)2 Druid Cantrips+wis+proor(Dueling)dmg+2or(Thrown Weapon Fighting)draw and atk, ranged+2 dmgor(Two-Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>'+a+'<p>(Primal Awareness)xtra Ranger spells@3rd <b onClick=SpeakWithAnimals()>Speak with Animals</b>@5th <b onClick=BeastSense()>Beast Sense</b>@9th <b onClick=SpeakWithPlants()>Speak with Plants</b>@13th <b onClick=LocateCreature()>Locate Creature</b>@17th <b onClick=CommuneWithNature()>Commune with Nature</b></td></tr><tr><td>(Ability Score Improvement)abi+1 and another abi+1 or abi+2@4th@8th@12th@16th@19th<p>@4th(Martial Versatility)replace your fighting style with another</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>'+b+'</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty, save @Adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act, 1slot, 10/10 turns, know beings in area 1mi, favored terrain 6mi<p>@10th(Hide in Plain Sight)10/10 turns camo, unmoving, stealth+10or(Nature\'s Veil)bonus act, invisible until start next turn lvl pro/ lvl pro/long rest</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Vanish)Hide as bonus, not nonmagically tracked</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no @Adv vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dmg+wisMod');
+this.setFeatures('</td></tr><tr><td>@1st(Favored Enemy)Survival @Adv to track, Intelligence @Adv to speak enemy language@1st 1 enemy,@6th 2 enemies@14th 3 enemies<p>or (Favored Foe)your lvl pro/ lvl pro per short rest, hit 1tgt marked 1min concen, @1st+1d4 dmg,@6th+1d6 dmg@14th+1d8 dmg</td></tr><tr><td>@1st(Natural Explorer)ignore difficult terrain, always alert, alone Stealth normal pace, forage x 2, know number, size, time of tracked enemy@1st 1 terrain type,@6th 2 terrain types@10th 3terrain types<p>or @1st(Deft Explorer)@1st(Canny)1 skill+pro becomes skill+exp, speak, read, write+2 languages,@6th(Roving)climb, swim=walk speed+5ft @10th(Tireless)1 act, temp hp 1d8+wis, lvl pro/lvl pro per short rest</td></tr><tr><td>@2nd(Fighting Style)(Archery)ranged+2or(Defense)armored AC+1or(Blind Fighting)blindsight 10ft unless target total coveror(Druidic Warrior)2 Druid Cantrips+wis+proor(Dueling)dmg+2or(Thrown Weapon Fighting)draw and atk, ranged+2 dmgor(Two-Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>'+a+'<p>(Primal Awareness)xtra Ranger spells,@3rd <b onClick=SpeakWithAnimals()>Speak with Animals</b>@5th <b onClick=BeastSense()>Beast Sense</b>@9th <b onClick=SpeakWithPlants()>Speak with Plants</b>@13th <b onClick=LocateCreature()>Locate Creature</b>@17th <b onClick=CommuneWithNature()>Commune with Nature</b></td></tr><tr><td>@4th(Ability Score Improvement)abi+1 and another abi+1 or abi+2@4th,,@8th,@12th,@16th,@19th<p>@4th(Martial Versatility)replace your fighting style with another</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>'+b+'</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty, save @Adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act, 1slot, 10/10 turns, know beings in area 1mi, favored terrain 6mi<p>@10th(Hide in Plain Sight)10/10 turns camo, unmoving, stealth+10or(Nature\'s Veil)bonus act, invisible until start next turn lvl pro/ lvl pro/long rest</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Vanish)Hide as bonus, not nonmagically tracked</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no @Adv vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dmg+wisMod');
 this.setEquipment('scale mail or leather armor.2 shortswords or 2 simple melee weapons.dungeoneer pack or explorer pack.Longbow 20 arrows');
 this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, all weapons');
@@ -7899,52 +7879,52 @@ this.setSkills('2 from Animal Handling, Athletics, Insight, Investigation, Natur
 this.setSpellAbility('wis')
 }
 if(this.class.match(/Rogue/)){if(this.class.match(/Arcane/)){
-a='@3rd(Mage Hand Legerdemain)30ft stow retreive object or pick locks or disarm traps';
+a=',@3rd(Mage Hand Legerdemain)30ft stow retreive object or pick locks or disarm traps';
 b='@9th(Magical Ambush)when hidden, target saves @DisAdv vs your spell';
 c='@13th(Versatile Trickster)bonus, 30ft atk @Adv target';
 dx='@17th(Spell Thief)1/1 react, spell vs your spell dc or negate and steal spell cast with your slots for 8hrss'
 }
 if(this.class.match(/Assassin/)){
-a='@3rd(BONUS PROFICIENCIES)Disguise Poisoner Kit+pro</td></tr><tr><td>@3rd(ASSASSINATE)1st atk lower init targets @Adv and crit';
-b='@9th(INFILTRATION EXPERT)7 days, 25gp, pose as wealthy merchant, etc'
-c='@13th(IMPOSTER)3hr study, copy speech, writing behavior roll Deception to avoid detection';
-dx='@17th(DEATH STRIKE)surprised target lower init, vsCon or crit dam x 2'
+a=',@3rd(Bonus Proficiencies)Disguise Poisoner Kit+pro<p>,@3rd(Assassinate)1st atk lower init targets @Adv and crit';
+b='@9th(Infiltration Expert)7 days, 25gp, pose as wealthy merchant, etc'
+c='@13th(Imposter)3hr study, copy speech, writing behavior roll Deception to avoid detection';
+dx='@17th(Death Strike)surprised target lower init, vsCon or crit dam x 2'
 }
 if(this.class.match(/Mastermind/)){
-a='@3rdMASTER OF INTRIGUE Disguise Forgery Kit and 1 from Cards, Darts, Dice, or Dragonchess+pro, 2 languages no accent</td></tr><tr><td>@3rdMASTER OF TACTICS Help action as bonus target 30ft';
-b='@9th.INSIGHTFUL MANIPULATOR 1min, DM tells superior, equal, inferior 2 stats of target';
-c='@13th.MISDIRECTION when melee atked, react, target atks another adjacent target';
-dx='@17th.SOUL OF DECEIT immune telepathy and truth magic, Deception vs Insight to plant false info'
+a=',@3rd(Master of Intrigue)Disguise Forgery Kit and 1 from Cards, Darts, Dice, or Dragonchess+pro, 2 languages no accent</td></tr><tr><td>@3rdMASTER OF TACTICS Help action as bonus target 30ft';
+b='@9th(Insightful Manipulator)1min, DM tells superior, equal, inferior 2 stats of target';
+c='@13th(Misdirection)when melee atked, react, target atks another adjacent target';
+dx='@17th(Soul of Deceit)immune telepathy and truth magic, Deception vs Insight to plant false info'
 }
-if(this.class.match(/Phantom/)){a="@3rd(Whispers of the Dead)any skill+pro or tools+pro 1 time per short 4 hour rest</td></tr><tr><td>@3rd(Wails from the Grave)sneak atk dmg target a second enemy within 30ft, roll half sneak atk dice for necrotic dmg, use your lvl pro times, recharge after long 8 hour rest";
+if(this.class.match(/Phantom/)){a="@3rd(Whispers of the Dead)any skill+pro or tools+pro 1 time per short 4 hour rest<p>,@3rd(Wails from the Grave)sneak atk dmg target a second enemy within 30ft, roll half sneak atk dice for necrotic dmg, use your lvl pro times, recharge after long 8 hour rest";
 b="@9th(Tokens of the Departed)react when enemy dies 30ft from you, create your lvl pro in soul trinkets, expend a soul trinket to adv vs death save throw and vsCons, or expend to use Wails from the Grave @no cost, or as action expend one and the spirit will answer truthfully or not truthfully one question ";
 c="@13th(Ghost Walk)bonus act become a spectre, hover and atk rolls are @DisAdv against you, fly speed 10ft, move through people and objects but take 1d10 force dmg if inside @end or turn, 10 min or end as bonus action/long rest ";
 dx="@17th(Death Knell)deal necrotic to both sneak atk enemy and adjacent enemy within 30ft, after/long rest, 1 soul trinket appears"
 }
 if(this.class.match(/Scout/)){
-a='@3rd(Skirmisher)enemy ends turn 5ft from you, react move 1/2 speed no opp atk<p>@3rd(Survivalist)Nature+exp, Survival+sexp';
+a=',@3rd(Skirmisher)enemy ends turn 5ft from you, react move 1/2 speed no opp atk<p>,@3rd(Survivalist)Nature+exp, Survival+sexp';
 b='@9th(Superior Mobility)speed+10ft walk climb swim';
 c='@13th(Ambush Master)init roll @Adv, atk @Adv 1st rnd 1st target';
 dx='@17th(Sudden Strike)xtra atk bonus act each turn'
 }
 if(this.class.match(/Soulknife/)){
-a='@3rd(Psionic Power)d6 Psionic Energy Dice 2*lvl pro/2*lvl pro/long rest@3rd d6@5th d8@11th d10@17 d12<p>(Psi-Bolstered Knack)failed skill-pro or tool-pro roll+1 PsiEnergyDie, if success expend the PEDie<p>(Psychic Whispers)1act, telepathy with lvl pro number of speaking allies you can see for expended PEDie hours and up to 1 mile<p>(Psychic Blades)1d6+abi psychic dmg, 1d4 secondary psychic dmg';
+a=',@3rd(Psionic Power)d6 Psionic Energy Dice 2*lvl pro/2*lvl pro/long rest,@3rd d6@5th d8@11th d10@17 d12<p>(Psi-Bolstered Knack)failed skill-pro or tool-pro roll+1 PsiEnergyDie, if success expend the PEDie<p>(Psychic Whispers)1act, telepathy with lvl pro number of speaking allies you can see for expended PEDie hours and up to 1 mile<p>(Psychic Blades)1d6+abi psychic dmg, 1d4 secondary psychic dmg';
 b='@9th(Homing Strikes)psychic blade failed atk roll+PEDie, expend die on a hit<p>(Psychic Teleportation)bonus act, throw blade 10xPEDieft to unoccupied space and teleport there';
 c='@13th(Psychic Veil)1act, invisible 1hr until if you dmg or force save on target';
 dx='@17th(Rend Mind)DC8+dex+pro vsWis or stunned 1min repe@save @end of each turn, using again costs 3PEDice before rest'
 }
 if(this.class.match(/Swashbuckler/)){
-a='@3rdFANCYftWORK Disengage as bonus even after 2 atks no opp atks by target</td></tr><tr><td>@3rdRAKISH AUDACITY init+chaMod no adv required if target has no adjacent allies';
-b='@9th.PANACHE Persuasion vs Insight of same language target/target atks @DisAdv unless you or target is charmed does not atk 10/10 turns unless atkd';
-c='@13th.ELEGANT MANEUVER bonus Acrobatics or Athletics @Adv';
-dx='@17th.MASTER DUELIST 1/1 short rest reroll atk @Adv if fail'
+a=',@3rd(Fancy Footwork)Disengage as bonus even after 2 atks no opp atks by target<p>,@3rd(Rakish Audacity)init+chaMod no adv required if target has no adjacent allies';
+b='@9th(Panache)Persuasion vs Insight of same language target/target atks @DisAdv unless you or target is charmed does not atk 10/10 turns unless atkd';
+c='@13th(Elegant Maneuver)bonus Acrobatics or Athletics @Adv';
+dx='@17th(Master Duelist)1/1 short rest reroll atk @Adv if fail'
 }
-if(this.class.match(/Thief/)){a="@3rd(Fast Hands)spend Cunning Action to Sleight or Thieves Tools to disarm trap, open lock, or use object</td></tr><tr><td>@3rd(Second Story Work)climb @normal speed, jumpft+dexMod";
+if(this.class.match(/Thief/)){a="@3rd(Fast Hands)spend Cunning Action to Sleight or Thieves Tools to disarm trap, open lock, or use object<p>,@3rd(Second Story Work)climb @normal speed, jumpft+dexMod";
 b="@9th(Supreme Sneak)when move half, Stealth @Adv";
 c="@13th(Use Magic Device)use any class item";
 dx="@17th(Thief s Reflexes)1st turn @init, 2nd(turn @init-10 1st round"
 }
-this.setFeatures('</td></tr><tr><td>@1st(Expertise)Thieves Tools+exp and 1 skill+exp or 2 skills+exp@6th 2 more skills+exp<p>(Sneak Attack)1/turn when atking @Adv or ally adjacent to target xtra dmg@1st+1d6@3rd+2d6@5th+3d6@7th+4d6@8th+5d6<p>(Thieves Cant)gestures</td></tr><tr><td>@2nd(Cunning Action)action as bonus Dash, Disengage, or Hide after atk, under half cover, Stealth vs Perception or target can not atk</td></tr><tr><td>'+a+'<p>@3rd(Steady Aim)bonus, no movement atk@Adv after 0 movement till next turn</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1 or 1 feat@4th@6th@8th@12th@16th@19th</td></tr><tr><td>@5th(Uncanny Dodge)1 react per turn for half dmg</td></tr><tr><td>@7th(Evasion)when atked, vsDex for half is no dmg</td></tr><tr><td>'+b+'</td></tr><tr><td>@11th(Reliable Talent)abi+pro roll of 9 or less is 10</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Blindsense)know location of invisibles 10ft</td></tr><tr><td>@15th(Slippery Mind)wis+pro</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Elusive)not atked @Adv less incapacitated</td></tr><tr><td>@20th(Stroke of Luck)recharge short rest, roll failure is success');
+this.setFeatures('</td></tr><tr><td>@1st(Expertise)Thieves Tools+exp and 1 skill+exp or 2 skills+exp,@6th 2 more skills+exp<p>(Sneak Attack)1/turn when atking @Adv or ally adjacent to target xtra dmg@1st+1d6,@3rd+2d6@5th+3d6@7th+4d6,@8th+5d6<p>(Thieves Cant)gestures</td></tr><tr><td>@2nd(Cunning Action)action as bonus Dash, Disengage, or Hide after atk, under half cover, Stealth vs Perception or target can not atk</td></tr><tr><td>'+a+'<p>,@3rd(Steady Aim)bonus, no movement atk@Adv after 0 movement till next turn</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1 or 1 feat@4th,@6th,@8th@12th@16th@19th</td></tr><tr><td>@5th(Uncanny Dodge)1 react per turn for half dmg</td></tr><tr><td>@7th(Evasion)when atked, vsDex for half is no dmg</td></tr><tr><td>'+b+'</td></tr><tr><td>@11th(Reliable Talent)abi+pro roll of 9 or less is 10</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Blindsense)know location of invisibles 10ft</td></tr><tr><td>@15th(Slippery Mind)wis+pro</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Elusive)not atked @Adv less incapacitated</td></tr><tr><td>@20th(Stroke of Luck)recharge short rest, roll failure is success');
 this.setEquipment('rapier or shortsword.shortbow 20 arrows or shortsword.burglar pack or dungeoneer pack or explorer pack.leather armor.2 daggers.thieves tools');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('daggers, darts, light crossbows, quarterstaffs, and slings');
@@ -7960,36 +7940,36 @@ this.setSpellAbility('int')
 }
 if(this.class.match(/Sorcerer/)){if(this.class.match(/Draconic/)){
 a='@1st.DRAGON ANCESTOR speak Draconic cha+exp speaking to dragons. Black(Acid). Blue(Lightning). Brass(Fire). Bronze(Lightning). Copper(Acid). Gold(Fire). Green(Poison). Red(Fire). Silver(Cold). White(Cold)</td></tr><tr><td>@1st.DRACONIC RESILIENCE+1hp/ lvl-up, ac13+dexMod';
-b='@6th.ELEMENTAL AFFINITY dragon ancestry dmg+chaMod, 1SP resistthis dam 1hr';
+b=',@6th.ELEMENTAL AFFINITY dragon ancestry dmg+chaMod, 1SP resistthis dam 1hr';
 c='@14th.DRAGON WINGS fly speed is walk speed, summon dismiss wings as bonus';
 dx='@18th.DRACONIC PRESENCE 5SP, 60ft, con 10/10 turns, vsWis or charmed or frightened'
 }
 if(this.class.match(/Sorcerer, Fire/)){
 a='@1st(Flame Affinity)bonus light or douse small flame 30ft<b onClick=ProduceFlame>Produce Flame</b>(Heart of Fire)change your spell dmg to fire dmgresist fire';
-b='@6th(Heart of Battle)+1d6fire 1SP up to proMod/re-roll fire dmg on 1';
+b=',@6th(Heart of Battle)+1d6fire 1SP up to proMod/re-roll fire dmg on 1';
 c='@14th(Spontaneous Combustion)chaMod/chaMod/long rest, on being hit, 1 react melee atkr takes 2d6+chaMod fire dmg';
 dx='@18th(Ignited Spirit)1/1/long rest, 30ft, chaMod rnds you and allies save @Adv vs spells/+1d8 xtra dmg'
 }
 if(this.class.match(/Sorcerer, Shadow\sMagic/)){
-a='@1st(Eyes of the Dark)Darkvision 120ft@3rd <b onClick=Darkness()>Darkness</b>expend 1 spell slot or 2 sorcery points to also see through the darkness<p>(Strength of the Grave)DC5+dmgd vsCha to drop to 1hp less radiant dmg or crit, 1/1 long rest';
-b='@6th(Hound of Ill Omen)bonus, 3 sorcery points, atks only 1tgt, 120ft, shadow dire wolf, medium, hp+half sorcery lvl, through anything as difficult terrain, 5 force dmg if ends turn in object, start turn tgt not hidden from hound, tgt vs your spells @DisAdv';
+a='@1st(Eyes of the Dark)Darkvision 120ft,@3rd <b onClick=Darkness()>Darkness</b>expend 1 spell slot or 2 sorcery points to also see through the darkness<p>(Strength of the Grave)DC5+dmgd vsCha to drop to 1hp less radiant dmg or crit, 1/1 long rest';
+b=',@6th(Hound of Ill Omen)bonus, 3 sorcery points, atks only 1tgt, 120ft, shadow dire wolf, medium, hp+half sorcery lvl, through anything as difficult terrain, 5 force dmg if ends turn in object, start turn tgt not hidden from hound, tgt vs your spells @DisAdv';
 c='@14th(Shadow Walk)bonus, teleport 120ft in shadows';
 dx='@18th(Umbral Form)6 sorcery points, bonus, shadow form resist dmg less force, radiant, move through creatures, objects difficult terrain, 5 force dmg if ending your turn in object, 1min'
 }
 if(this.class.match(/Wild/)){
 a='@1st(Sorcerous Origins)Wild Magic</td></tr><tr><td>@1st(Wild Surge)Players Handbook pg104</td></tr><tr><td>@1st(Tides of Chaos)roll @Adv/long rest';
-b='@6th(Bend Luck)2SP, react, +or -1d4 on any ally or target roll';
+b=',@6th(Bend Luck)2SP, react, +or -1d4 on any ally or target roll';
 c='@14th(Controlled Chaos)roll twice on wild surge table and choose 1 result';
 dx='@18th(Spell Bombardment)1/turn roll again on any max roll and add to the dmg'
 }
 if(this.class.match(/Sorcerer, Storm/)){
 a='(Storm Sorcery)<p>@1st(Wind Speaker)you know the Primordial language<p>(Tempestuous Magic)fly up to 10ft not opp atkd';
-b='@6th(Heart of the Storm)resist lightning thunder/when casting lightning or thunder, 10ft radius half your lvl dmg<p>(Storm Guide)1act, 20ft radius, stop rain, direct wind 100ft radius uteo your next turn';
+b=',@6th(Heart of the Storm)resist lightning thunder/when casting lightning or thunder, 10ft radius half your lvl dmg<p>(Storm Guide)1act, 20ft radius, stop rain, direct wind 100ft radius uteo your next turn';
 c='@14th(Storm\'s Fury)melee atkd, react your lvl in lightning dmg and vsStr or pushed up to 20ft';
 dx='@18th(Wind Soul)1/1/long rest, immune lightning and thunder, fly 60ft, reduce fly 30ft and 3+cha allies can fly 30ft'
 }
-this.setFeatures('</td></tr><tr><td>(Sorcerer)<p>Sorcery Points@2nd 2+1 Sorcerery Point/lvl<p>Cantrips Known@1st 4@4th 5@10th 6<p>Spells Known@1st 2lvl+1<p>1st Lvl Slots@1st 2@2nd 3@3rd 4<p>2nd Lvl Slots@3rd 2@4th 3<p>3rd Lvl Slots@5th 2@6th 3<p>4th Lvl Slots@7th 1@8th 2@9th 3<p>5th Lvl Slots@9th 1@10th 2@18th 3<p>6th Lvl Slots@11th 1@19th 2<p>7th Lvl Slots@13th 1@20th 2<p>8th Lvl Slots@15th 1<p>9th Lvl Slots@17th 1<p>'+a+'</td></tr><tr><td>@2nd(Font of Magic)exchange spell slots and Sorcery Points<p>@2nd(Spell Points) your lvl/your lvl</td></tr><tr><td>(Metamagic)@3rd 2@10th 3 @17th 4(Careful Spell)1SP, select chaMod targets in spell area to be immune(Distant Spell)1SP, range x 2, touch is 30ft(Empowered Spell)1SP, discard dmg and reroll dmg chaMod times, in addition to other Metamagic(Extend Spell)1SP, duration x 2, max 24 hrs(Heightened Spell)3SP, target rolls 1st save @DisAdv(Quickened Spell)1SP, 1 act is 1 bonus cast(Subtile Spell)1SP, no verbal somatic cast needed(Twinned Spell)SP is spell lvl, non self spell, target another</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th@8th@12th@16th@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Sorcerous Restoration)0SP is 4SP, recharge short rest');
-this.setActionNotes('(Sorcrery Points)@2nd lvl+1/lvl+1, (1st Slot)0/0, (2nd Slot)0/0, (3rd Slot)0/0, (4th Slot)0/0, (5th Slot)0/0, (6th Slot)0/0, (7th Slot)0/0, (8th Slot)0/0, (9th Slot)0/0');
+this.setFeatures('</td></tr><tr><td>(Sorcerer)<p>Sorcery Points,@2nd 2+1 Sorcerery Point/lvl<p>Cantrips Known@1st 4@4th 5@10th 6<p>Spells Known@1st 2lvl+1<br>1st Slots:@1st 2,@2nd 3,@3rd 4<br>2nd Slots,@3rd 2@4th 3<br>3rd Slots:@5th 2,@6th 3<br>4th Slots:@7th 1,@8th 2@9th 3<p>5th Slots:@9th 1@10th 2@18th 3<p>6th Slots:@11th 1@19th 2<p>7th Slots:@13th 1@20th 2<p>8th Slots:@15th 1<p>9th Slots:@17th 1<p>'+a+'</td></tr><tr><td>@2nd(Font of Magic)exchange spell slots and Sorcery Points<p>,@2nd(Spell Points) your lvl/your lvl</td></tr><tr><td>(Metamagic),@3rd 2@10th 3 @17th 4(Careful Spell)1SP, select chaMod targets in spell area to be immune(Distant Spell)1SP, range x 2, touch is 30ft(Empowered Spell)1SP, discard dmg and reroll dmg chaMod times, in addition to other Metamagic(Extend Spell)1SP, duration x 2, max 24 hrs(Heightened Spell)3SP, target rolls 1st save @DisAdv(Quickened Spell)1SP, 1 act is 1 bonus cast(Subtile Spell)1SP, no verbal somatic cast needed(Twinned Spell)SP is spell lvl, non self spell, target another</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Sorcerous Restoration)0SP is 4SP, recharge short rest');
+this.setActionNotes('(Sorcrery Points),@2nd lvl+1/lvl+1, (1st Slot)0/0, (2nd Slot)0/0, (3rd Slot)0/0, (4th Slot)0/0, (5th Slot)0/0, (6th Slot)0/0, (7th Slot)0/0, (8th Slot)0/0, (9th Slot)0/0');
 this.setEquipment('light crossbow 20 bolts or arcane focus.dungeoneer pack or explorer pack.2 daggers');
 this.setHitDice(this.lvl+'d6+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('Draconic, daggers, darts, light crossbows, quarterstaffs, and slings');
@@ -8003,32 +7983,32 @@ this.setChaPro('pro');
 this.setSkills('2 from Arcana, Deception, Insight, Intimidation, Persuasion, or Religion');
 this.setSpellAbility('cha')
 }
-if(this.class.match(/Warlock/)){if(this.class.match(/Archfey/)){a="@1st(Extra Spells)<b onClick='FaerieFire()'>Faerie Fire</b><b onClick='Sleep()'>Sleep</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='CalmEmotions()'>Calm Emotions</b><b onClick='PhantasmalForce()'>Phantasmal Force</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Blink()'>Blink</b><b onClick='PlantGrowth()'>Plant Growth</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='DominateBeast()'>Dominate Beast</b><b onClick='GreaterInvisibility()'>Greater Invisibility</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='DominatePerson()'>Dominate Person</b><b onClick='Seeming()'>Seeming</b><p>(Fey Presence)10ft radius vsWis or charmed or frightened tteo your nt";
-b='@6th(Misty Escape)1/1 short rest, take dam, react teleport 60ft invisible til start your next turn or you atk';
+if(this.class.match(/Warlock/)){if(this.class.match(/Archfey/)){a="@1st(Extra Spells)<b onClick='FaerieFire()'>Faerie Fire</b>, <b onClick='Sleep()'>Sleep</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='CalmEmotions()'>Calm Emotions</b>, <b onClick='PhantasmalForce()'>Phantasmal Force</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Blink()'>Blink</b>, <b onClick='PlantGrowth()'>Plant Growth</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='DominateBeast()'>Dominate Beast</b>, <b onClick='GreaterInvisibility()'>Greater Invisibility</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='DominatePerson()'>Dominate Person</b>, <b onClick='Seeming()'>Seeming</b><p>(Fey Presence)10ft radius vsWis or charmed or frightened tteo your nt";
+b=',@6th(Misty Escape)1/1 short rest, take dam, react teleport 60ft invisible til start your next turn or you atk';
 c='@10th(Beguiling Defense)immune charm, react vsWis or charm charmers 10/10 turns or dmgd';
 dx='@14th(Dark Delirium)1/1 short rest, 60ft, vsWis charmed or frightened con 10/10 turns or dmgd'
 }
-if(this.class.match(/Fiend/)){a="@1st(Extra Spells)<b onClick='BurningHands()'>Burning Hands</b><b onClick='Command()'>Command</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='BlindnessDeafness()'>BlindnessDeafness</b><b onClick='ScorchingRay()'>Scorching Ray</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Fireball()'>Fireball</b><b onClick='StinkingCloud()'>Stinking Cloud</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='FireShield()'>Fire Shield</b><b onClick='WallOfFire()'>Wall of Fire</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='FlameStrike()'>Flame Strike</b><b onClick='Hallow()'>Hallow</b><p>@1st(Dark One\'s Blessing)kill target gain temp hp+chaMod+lvl";
-b='@6th(Dark One\'s Own Luck)1/1/long rest, abi check or save+1d10';
+if(this.class.match(/Fiend/)){a="@1st(Extra Spells)<b onClick='BurningHands()'>Burning Hands</b>, <b onClick='Command()'>Command</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='BlindnessDeafness()'>BlindnessDeafness</b>, <b onClick='ScorchingRay()'>Scorching Ray</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Fireball()'>Fireball</b>, <b onClick='StinkingCloud()'>Stinking Cloud</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='FireShield()'>Fire Shield</b>, <b onClick='WallOfFire()'>Wall of Fire</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='FlameStrike()'>Flame Strike</b>, <b onClick='Hallow()'>Hallow</b><p>@1st(Dark One\'s Blessing)kill target gain temp hp+chaMod+lvl";
+b=',@6th(Dark One\'s Own Luck)1/1/long rest, abi check or save+1d10';
 c='@10th(Fiendish Resilience)1/1 resist 1 dmg type till next/long rest';
 dx='@14th(Hurl through Hell)1/1/long rest, on hit, teleport non-fiend target through lower planes and back 10d10 psychic'
 }
-if(this.class.match(/Great/)){a="@1st(Extra Spells)<b onClick='DissonantWhispers()'>Dissonant Whispers</b><b onClick='TashasHideousLaughter()'>Tasha\'s Hideous Laughter</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='DetectThoughts()'>Detect Thoughts</b><b onClick='PhantasmalForce()'>Phantasmal Force</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Clairvoyance()'>Clairvoyance</b><b onClick='Sending()'>Sending</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='DominateBeast()'>Dominate Beast</b>@4th<b onClick='EvardsBlackTentacles()'>Evard\'s Black Tentacles</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='DominatePerson()'>Dominate Person</b><b onClick='Telekinesis()'>Telekinesis<p>@1st(Awakened Mind)telepathy with language knowing targets 30ft";
-b='@6th(Entropic Ward)1/1 short rest, react you atked @DisAdv, next atk your target @Adv';
+if(this.class.match(/Great/)){a="@1st(Extra Spells)<b onClick='DissonantWhispers()'>Dissonant Whispers</b>, <b onClick='TashasHideousLaughter()'>Tasha\'s Hideous Laughter</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='DetectThoughts()'>Detect Thoughts</b>, <b onClick='PhantasmalForce()'>Phantasmal Force</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Clairvoyance()'>Clairvoyance</b>, <b onClick='Sending()'>Sending</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='DominateBeast()'>Dominate Beast</b>@4th<b onClick='EvardsBlackTentacles()'>Evard\'s Black Tentacles</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='DominatePerson()'>Dominate Person</b>, <b onClick='Telekinesis()'>Telekinesis<p>@1st(Awakened Mind)telepathy with language knowing targets 30ft";
+b=',@6th(Entropic Ward)1/1 short rest, react you atked @DisAdv, next atk your target @Adv';
 c='@10th(Thought Shield)immune telepathy @will, resist psychic, atker takes same psychic dam';
 dx='@14th(Create Thrall)incapacitated humanoid telepathically charmed til Remove Curse'
 }
-if(this.class.match(/Hexblade/)){a="@1st(Extra Spells)<b onClick='Shield()'>Shield</b><b onClick='WrathfulSmite()'>Wrathful Smite</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='Blur()'>Blur</b><b onClick='BrandingSmite()'>Branding Smite</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Blink()'>Blink</b><b onClick='ElementalWeapon()'>Elemental Weapon</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>Phantasmal Killer</b><b onClick='StaggeringSmite()'>Staggering Smite</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='BanishingSmite()'>Banishing Smite</b><b onClick='ConeOfCold()'>Cone of Cold</b><p>(Hexblade\'s Curse)bonus, 1tgt, 30ft, 1min, dmg+pro, crit on 19-20, target dies you heal your lvl+cha, 1/1s rest<p>(Hex Warrior)medium armor+pro, shields+pro, martial weapons+pro, weapon and pact weapons atk+cha dmg+cha";
-b="@6th(Accursed Specter)your target dies becomes Specter with temp hp 1/2 your lvl, atks+your cha uteoy next/long rest";
+if(this.class.match(/Hexblade/)){a="@1st(Extra Spells)<b onClick='Shield()'>Shield</b>, <b onClick='WrathfulSmite()'>Wrathful Smite</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='Blur()'>Blur</b>, <b onClick='BrandingSmite()'>Branding Smite</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Blink()'>Blink</b>, <b onClick='ElementalWeapon()'>Elemental Weapon</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>Phantasmal Killer</b>, <b onClick='StaggeringSmite()'>Staggering Smite</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='BanishingSmite()'>Banishing Smite</b>, <b onClick='ConeOfCold()'>Cone of Cold</b><p>(Hexblade\'s Curse)bonus, 1tgt, 30ft, 1min, dmg+pro, crit on 19-20, target dies you heal your lvl+cha, 1/1s rest<p>(Hex Warrior)medium armor+pro, shields+pro, martial weapons+pro, weapon and pact weapons atk+cha dmg+cha";
+b=",@6th(Accursed Specter)your target dies becomes Specter with temp hp 1/2 your lvl, atks+your cha uteoy next/long rest";
 c='@10th(Armor of Hexes)atker hits you, roll d6 4+atker misses';
 dx='@14th(Master of Hexes)you transfer the curse to another target, you do not gain hp from new target deaths'
 }
-if(this.class.match(/Undying/)){a="@1st(Extra Spells)<b onClick='FalseLife()'>False Life</b><b onClick='RayOfSickness()'> Ray of Sickness</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='BlindnessDeafness()'>BlindnessDeafness</b><b onClick='Silence()'>Silence</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='FeignDeath()'>Feign Death</b><b onClick='SpeakWithDead()'>Speak with Dead</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='AuraOfLife()'>Aura of Life</b><b onClick='DeathWard()'>Death Ward</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Contagion()'>Contagion</b><b onClick='LegendLore()'>Legend Lore</b><p>@1st(Among The Dead)Spare the Dying/save @Adv vs disease/undead vsWis vs spell dc on fail atk another target, on success charmed";
-b='@6th(Defy Death)1/1/long rest, heal 1d8+conMod on success death save or stabilizing with Spare the Dying';
+if(this.class.match(/Undying/)){a="@1st(Extra Spells)<b onClick='FalseLife()'>False Life</b>, <b onClick='RayOfSickness()'> Ray of Sickness</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='BlindnessDeafness()'>BlindnessDeafness</b>, <b onClick='Silence()'>Silence</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='FeignDeath()'>Feign Death</b>, <b onClick='SpeakWithDead()'>Speak with Dead</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='AuraOfLife()'>Aura of Life</b>, <b onClick='DeathWard()'>Death Ward</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Contagion()'>Contagion</b>, <b onClick='LegendLore()'>Legend Lore</b><p>@1st(Among The Dead)Spare the Dying/save @Adv vs disease/undead vsWis vs spell dc on fail atk another target, on success charmed";
+b=',@6th(Defy Death)1/1/long rest, heal 1d8+conMod on success death save or stabilizing with Spare the Dying';
 c='@10th(Undying Nature)do not need air, food, water or sleep unless long or short rest/age 1yr for every 10yrs/immune magically aged';
 dx='@14th(Indestructable Life)1/1 short rest/bonus heal 1d8+lvl/reattach your severed body parts'
 }
-this.setFeatures('</td></tr><tr><td>@1st(Pact Magic)spellMod is chaMod<p>Cantrips Known@1st 2@4th 3@10th 4<p>Spells Known@1st 2@2nd 3@3rd 4@4th 5@5th 6@6th 7@7th 8@8th 9@9th 10@11th 11@13th 12@15th 13@17th 14@19th 15<p>Slot Lvl(Warlocks always cast all spells at this Slot Lvl)@1st 1st@2nd 2nd@4th 3rd@7th 4th@9th 5th<p>Warlock Invocations Known@2nd 2@5th 3@7th 4@9th 5@12th 6@15th 7@18th 8<p>(Expanded Spell List)<p>Cantrips<b onClick=BoomingBlade()>BoomingBlade</b><b onClick=GreenFlameBlade()>GreenFlameBlade</b><b onClick=LightningLure()>LightningLure</b><b onClick=MindSliver()>MindSliver</b><b onClick=SwordBurst()>SwordBurst</b><p>3rd Lvl Spells<b onClick=IntellectFortress()>IntellectFortress</b><b onClick=SpiritShroud()>SpiritShroud</b><b onClick=SummonFey()>SummonFey</b><b onClick=SummonShadowspawn()>SummonShadowspawn</b><b onClick=SummonUndead()>SummonUndead</b><p>4th Lvl Spells<b onClick=SummonAberration()>SummonAberration</b><p>5th Lvl Spells<b onClick=Mislead()>Mislead</b><b onClick=PlanarBinding()>PlanarBinding</b><b onClick=TeleportationCircle()>TeleportationCircle</b><p>6th Lvl Spells<b onClick=SummonFiend()>SummonFiend</b><b onClick=TashasOtherworldlyGuise()>TashasOtherworldlyGuise</b><p>7th Lvl Spells<b onClick=DreamOfTheBlueVeil()>DreamOfTheBlueVeil</b><p>9th Lvl Spells<b onClick=BladeOfDisaster()>BladeOfDisaster</b><b onClick=Gate()>Gate</b><b onClick=Weird()>Weird</b></td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Eldritch Invocations)INVOCATION AGONIZING BLAST must have Eldritch Blast, dmg+chaMod<p>ARMOR OF SHADOWS Mage Armor no slot cost<p>@9th ASCENDANT STEP Levitate @will, no slot cost<p>BEAST SPEECH Speak with Animals @will, no slot cost<p>BEGUILING INFLUENCE Deception Persuasion+pro<p>@7th BEWITCHING WHISPERS Compulsion, slot cost, 1/1/long rest<p>BOOK OF ANCIENT SECRETS must have Pact of the Tome, 2 1st lvl spells of any class as rituals, add adventure rituals 2hrs 50gp<p>@15th CHAINS OF CARCERI 1/1/long rest, Hold Monster @will, no slot cost or components(Devil s Sight)120ft see in magical nonmagical darkness @7th(Dreadful Word)1/1/long rest, Confusion, slot cost<p>ELDRITCH SIGHT Detect magic @will, no slot cost<p>ELDRITCH SPEAR must have Eldritch Blast, range 300ft<p>EYES OF THE RUNE KEEPER read all writing<p>FIENDISH VIGOR False Life @will, no slot cost<p>GAZE OF TWO MINDS see through ally till tteo your nt<p>@12th LIFEDRINKER must have Pact of the Blade, dmg+chaMod necrotic<p>MASK OF MANY FACES <b onClick=DisguiseSelf()>Disguise Self</b> @will, no slot cost<p>@15th MASTER OF MYRIAD FORMS Alter Self @will, no slot cost<p>@9th MINIONS OF CHAOS 1/1/long rest, Conjure Elemental, slot cost<p>@5th MIRE THE MIND 1/1/long rest, Slow, slot cost<p>MISTY VISIONS Silent Image @will, no slot cost, no material component<p>@5th ONE WITH SHADOWS in dim or darkness, 1act, invisible til move, act, react<p>@9th OTHERWORLDLY LEAP jump @will, no slot cost, no material component<p>REPELLING BLAST must have Eldritch Blast, on hit push target up to 10ft<p>@7th SCULPTOR OF FLESH 1/1/long rest, Polymorph, 1 slot<p>@5th SIGN OF ILL OMEN 1/1/long rest, Bestow Curse<p>THIEF OF FIVE FATES 1/1/long rest, Bane<p>@5th THIRSTING BLADE must have Pact of the Blade, 1 more atk<p>@15th VISIONS OF DISTANT REALMS Arcane Eye @will, no slot cost<p>VOICE OF THE CHAIN MASTER must have Pact of the Chain, telepathy with familiar, sense and speak through familiar<p>@9th WHISPERS OF THE GRAVE Speak with Dead @will, no slot cost<p>@15th WITCH SIGHT see true form of shapechanger of illusion or transmu 30ft</td></tr><tr><td>@3rd(Pact Boon)<p>@3rd(Pact of the Chain)Find Familiar as ritual, imp, pseudodragon, quasit, sprite, or normal familiar, familiar atks as its reactfamiliar fly or swim at 40ftbonus, familiar magical atks with your spellAbi+DCfamiliar takes your resistance dmg<p>(Pact of the Talisman)abi check+1d4 proLvl/proLvl/long rest, 1hr ritual to replace the talisman@12th(Bond of the Talisman)ally wears your talisman, you can teleport to your ally, lvl pro/lvl pro/long restor (Eldritch Mind)vsCon @Adv to maintain concen@7th(Protection of the Talisman)ally wears your talisman, +1d4 to save throw, lvlPro/lvlPro/long restor @7th(Rebuke of the Talisman)react, atkr 30ft takes lvlPro psychic dmg and pushed 10ft<p>or @3rd(Pact of the Blade)weapon becomes magical, summon dismiss weapon as bonus<p>or @3rd(Pact of the Tomb)3 any class xtra cantrips, 1hr to replace book@5th(Far Scribe)lvl pro of allies write name in book, Sending Spell send and receive messages, 1min@9th(Gift of the Protectors)lvl pro of allies write name in book, 0hp becomes 1hp less take 2xMaxHP+CurHP, 1/long rest</td></tr><tr><td>(Ability Score Improvement)1 abi+2, or abi+1 another abi+1@4th@8th@12th@16th@19th <p>(Eldritch Versatility)during abi increase, exchange 1 cantrip, exchange pact boon feature, @12th exchange 1 Mystic Arcanum spell</td></tr><tr><td>@5th(Undying Servitude) <b onClick=AnimateDead()>AnimateDead</b> no spell slot/long rest'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Mystic Arcanum)1 new 6th lvl Warlock spell without slot cost, after slot cost)1/1, @13th 7th lvl 1/1, @15th 8th lvl 1/1, @17th 9th lvl 1/1 </td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Eldritch Master)1/1/long rest, takes 1min restore all slots</td></tr>');
+this.setFeatures('</td></tr><tr><td>@1st(Pact Magic)spellMod is chaMod<p>Cantrips Known@1st 2@4th 3@10th 4<p>Spells Known@1st 2,@2nd 3,@3rd 4@4th 5@5th 6,@6th 7@7th 8,@8th 9@9th 10@11th 11@13th 12@15th 13@17th 14@19th 15<p>Slot Lvl(Warlocks always cast all spells at this Slot Lvl)@1st 1st,@2nd 2nd@4th 3rd@7th 4th@9th 5th<p>Warlock Invocations Known,@2nd 2@5th 3@7th 4@9th 5@12th 6@15th 7@18th 8<p>(Expanded Spell List)<p>Cantrips<b onClick=BoomingBlade()>BoomingBlade</b>, <b onClick=GreenFlameBlade()>GreenFlameBlade</b>, <b onClick=LightningLure()>LightningLure</b>, <b onClick=MindSliver()>MindSliver</b>, <b onClick=SwordBurst()>SwordBurst</b><br>3rd Lvl Spells<b onClick=IntellectFortress()>IntellectFortress</b>, <b onClick=SpiritShroud()>SpiritShroud</b>, <b onClick=SummonFey()>SummonFey</b>, <b onClick=SummonShadowspawn()>SummonShadowspawn</b>, <b onClick=SummonUndead()>SummonUndead</b><br>4th Lvl Spells<b onClick=SummonAberration()>SummonAberration</b><p>5th Lvl Spells<b onClick=Mislead()>Mislead</b>, <b onClick=PlanarBinding()>PlanarBinding</b>, <b onClick=TeleportationCircle()>TeleportationCircle</b><p>6th Lvl Spells<b onClick=SummonFiend()>SummonFiend</b>, <b onClick=TashasOtherworldlyGuise()>TashasOtherworldlyGuise</b><p>7th Lvl Spells<b onClick=DreamOfTheBlueVeil()>DreamOfTheBlueVeil</b><p>9th Lvl Spells<b onClick=BladeOfDisaster()>BladeOfDisaster</b>, <b onClick=Gate()>Gate</b>, <b onClick=Weird()>Weird</b></td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Eldritch Invocations)INVOCATION AGONIZING BLAST must have Eldritch Blast, dmg+chaMod<p>ARMOR OF SHADOWS Mage Armor no slot cost<p>@9th ASCENDANT STEP Levitate @will, no slot cost<p>BEAST SPEECH Speak with Animals @will, no slot cost<p>BEGUILING INFLUENCE Deception Persuasion+pro<p>@7th BEWITCHING WHISPERS Compulsion, slot cost, 1/1/long rest<p>BOOK OF ANCIENT SECRETS must have Pact of the Tome, 2 1st lvl spells of any class as rituals, add adventure rituals 2hrs 50gp<p>@15th CHAINS OF CARCERI 1/1/long rest, Hold Monster @will, no slot cost or components(Devil s Sight)120ft see in magical nonmagical darkness @7th(Dreadful Word)1/1/long rest, Confusion, slot cost<p>ELDRITCH SIGHT Detect magic @will, no slot cost<p>ELDRITCH SPEAR must have Eldritch Blast, range 300ft<p>EYES OF THE RUNE KEEPER read all writing<p>FIENDISH VIGOR False Life @will, no slot cost<p>GAZE OF TWO MINDS see through ally till tteo your nt<p>@12th LIFEDRINKER must have Pact of the Blade, dmg+chaMod necrotic<p>MASK OF MANY FACES <b onClick=DisguiseSelf()>Disguise Self</b> @will, no slot cost<p>@15th MASTER OF MYRIAD FORMS Alter Self @will, no slot cost<p>@9th MINIONS OF CHAOS 1/1/long rest, Conjure Elemental, slot cost<p>@5th MIRE THE MIND 1/1/long rest, Slow, slot cost<p>MISTY VISIONS Silent Image @will, no slot cost, no material component<p>@5th ONE WITH SHADOWS in dim or darkness, 1act, invisible til move, act, react<p>@9th OTHERWORLDLY LEAP jump @will, no slot cost, no material component<p>REPELLING BLAST must have Eldritch Blast, on hit push target up to 10ft<p>@7th SCULPTOR OF FLESH 1/1/long rest, Polymorph, 1 slot<p>@5th SIGN OF ILL OMEN 1/1/long rest, Bestow Curse<p>THIEF OF FIVE FATES 1/1/long rest, Bane<p>@5th THIRSTING BLADE must have Pact of the Blade, 1 more atk<p>@15th VISIONS OF DISTANT REALMS Arcane Eye @will, no slot cost<p>VOICE OF THE CHAIN MASTER must have Pact of the Chain, telepathy with familiar, sense and speak through familiar<p>@9th WHISPERS OF THE GRAVE Speak with Dead @will, no slot cost<p>@15th WITCH SIGHT see true form of shapechanger of illusion or transmu 30ft</td></tr><tr><td>@3rd(Pact Boon)<p>,@3rd(Pact of the Chain)Find Familiar as ritual, imp, pseudodragon, quasit, sprite, or normal familiar, familiar atks as its reactfamiliar fly or swim at 40ftbonus, familiar magical atks with your spellAbi+DCfamiliar takes your resistance dmg<p>(Pact of the Talisman)abi check+1d4 proLvl/proLvl/long rest, 1hr ritual to replace the talisman@12th(Bond of the Talisman)ally wears your talisman, you can teleport to your ally, lvl pro/lvl pro/long restor (Eldritch Mind)vsCon @Adv to maintain concen@7th(Protection of the Talisman)ally wears your talisman, +1d4 to save throw, lvlPro/lvlPro/long restor @7th(Rebuke of the Talisman)react, atkr 30ft takes lvlPro psychic dmg and pushed 10ft<p>or ,@3rd(Pact of the Blade)weapon becomes magical, summon dismiss weapon as bonus<p>or ,@3rd(Pact of the Tomb)3 any class xtra cantrips, 1hr to replace book@5th(Far Scribe)lvl pro of allies write name in book, Sending Spell send and receive messages, 1min@9th(Gift of the Protectors)lvl pro of allies write name in book, 0hp becomes 1hp less take 2xMaxHP+CurHP, 1/long rest</td></tr><tr><td>@4th(Ability Score Improvement)1 abi+2, or abi+1 another abi+1@4th,,@8th,@12th,@16th,@19th <p>(Eldritch Versatility)during abi increase, exchange 1 cantrip, exchange pact boon feature, @12th exchange 1 Mystic Arcanum spell</td></tr><tr><td>@5th(Undying Servitude) <b onClick=AnimateDead()>AnimateDead</b> no spell slot/long rest'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Mystic Arcanum)1 new 6th lvl Warlock spell without slot cost, after slot cost)1/1, @13th 7th lvl 1/1, @15th 8th lvl 1/1, @17th 9th lvl 1/1 </td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Eldritch Master)1/1/long rest, takes 1min restore all slots</td></tr>');
 this.setEquipment('light crossbow 20 bolts or simple weapon.component pouch or arcane focus.scholar pack or dungeoneer pack.leather armor.simple weapon.2 daggers');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simple weapons');
@@ -8043,44 +8023,44 @@ this.setSkills('2 from Arcana, Deception, History, Intimidation, Investigation, 
 this.setSpellAbility('cha')
 }A='No Features';
 if(this.class.match(/Abjurer/)){
-a='@2nd(Abjuration Savant)gold, time 1/2 copying abjuration spells</td></tr><tr><td>@2nd(Arcane Ward)when casting abjuration, self ward hp 2 x lvl+intMod, cast another abjuration, ward heals 2 x spell lvl';
-b='@6th(Projected Ward)ward ranged 30ft for an ally</td></tr><tr><td>@10th(Improved Abjuration)abjuration spell ability checks+pro</td></tr><tr><td>@14th(Spell Resistance)save @Adv vs spells, resist spell dmg'
+a=',@2nd(Abjuration Savant)gold, time 1/2 copying abjuration spells</td></tr><tr><td>@2nd(Arcane Ward)when casting abjuration, self ward hp 2 x lvl+intMod, cast another abjuration, ward heals 2 x spell lvl';
+b=',@6th(Projected Ward)ward ranged 30ft for an ally</td></tr><tr><td>@10th(Improved Abjuration)abjuration spell ability checks+pro</td></tr><tr><td>@14th(Spell Resistance)save @Adv vs spells, resist spell dmg'
 }
 if(this.class.match(/Bladesinger/)){a="@2nd(Bladesinging)light armor+pro, melee weapon+pro, Performance+pro</td></tr><tr><td>@2nd(Bladesong)while no heavy or medium armor or shield or weapon, bonus, 10/10 turns, AC+intMod, Speed+10ft, Dex and Acrobatics @Adv, concen, save con+intMod";
-b='@6th(Extra Attack)atk twice when you take an atk action</td></tr><tr><td>@10th(Song of Defense)during your Bladesong, heal 5x1 spell slot lvl when expending the slot</td></tr><tr><td>@14th(Song of Victory)during your Bladesong, melee weapon+intMod dmg'
+b=',@6th(Extra Attack)atk twice when you take an atk action</td></tr><tr><td>@10th(Song of Defense)during your Bladesong, heal 5x1 spell slot lvl when expending the slot</td></tr><tr><td>@14th(Song of Victory)during your Bladesong, melee weapon+intMod dmg'
 }
 if(this.class.match(/Conjurer/)){
-a='@2nd(Conjuration Savant)gold and time is halved copying conju spells</td></tr><tr><td>@2nd(Minor Conjuration)1 10lb 3ft cubebed object within 10ft till 1hr or dmgd';
+a=',@2nd(Conjuration Savant)gold and time is halved copying conju spells</td></tr><tr><td>@2nd(Minor Conjuration)1 10lb 3ft cubebed object within 10ft till 1hr or dmgd';
 b='6th(Benign Transportation)teleport 30ft or swap space with ally 1/1 </td></tr><tr><td>@10th(Focused Conjuration)concen, ntration not broken casting conju spell</td></tr><tr><td>@14th(Durable Summons)summoned or constructs have 30 temp hp'
 }
 if(this.class.match(/Diviner/)){
-a='@2nd(Divination Savant) gold and time is halved copying divination spells</td></tr><tr><td>@2nd(Portent)1/1 roll 2 d20 and use in place of any ally or target roll';
-b='@6th(Expert Divination) regain a slot lower than the conju spell lvl you cast</td></tr><tr><td>@10th(The Third Eye)1/1 act Darkvision or Ethreal Sight or Greater Comprehension or See Invisibility</td></tr><tr><td>@14th(Greater Portent) roll 3 d20s for your Portent'
+a=',@2nd(Divination Savant) gold and time is halved copying divination spells</td></tr><tr><td>@2nd(Portent)1/1 roll 2 d20 and use in place of any ally or target roll';
+b=',@6th(Expert Divination) regain a slot lower than the conju spell lvl you cast</td></tr><tr><td>@10th(The Third Eye)1/1 act Darkvision or Ethreal Sight or Greater Comprehension or See Invisibility</td></tr><tr><td>@14th(Greater Portent) roll 3 d20s for your Portent'
 }
 if(this.class.match(/Enchanter/)){
-a='@2nd(Enchantment Savant)gold and time is halved copying encha spells</td></tr><tr><td>@2nd(Hypnotic Gaze)1/1 5ft vsWis charmed speed 0 incapacitated dazed';
-b='@6th(Instinctive Charm)atked @30ft, react, target vsWis or atks target ally</td></tr><tr><td>@10th(Split Enchantment)cast encha on 2 targets</td></tr><tr><td>@14th(Alter Memories)vsInt or no memories of charm 1+chaMod hours'
+a=',@2nd(Enchantment Savant)gold and time is halved copying encha spells</td></tr><tr><td>@2nd(Hypnotic Gaze)1/1 5ft vsWis charmed speed 0 incapacitated dazed';
+b=',@6th(Instinctive Charm)atked @30ft, react, target vsWis or atks target ally</td></tr><tr><td>@10th(Split Enchantment)cast encha on 2 targets</td></tr><tr><td>@14th(Alter Memories)vsInt or no memories of charm 1+chaMod hours'
 }
 if(this.class.match(/Evoker/)){
-a='@2nd(Evocation Savant)gold and time is halved copying evoca spells</td></tr><tr><td>@2nd(Sculpt Spells)cast evoca, 1 ally+1/spell lvl auto or save for half is save for 0 hp in the spell area';
-b='@6th(Potent Cantrip)cantrips are save for half dmg</td></tr><tr><td>@10th(Empowered Evocation)evoca spells+int dmg</td></tr><tr><td>@14th(Overchannel)1/1 5th lvl spells but not cantrips or lower do max dmg, take 2d12 necrotic if you castthis again before a/long rest, +1d12 necrotic each time'
+a=',@2nd(Evocation Savant)gold and time is halved copying evoca spells</td></tr><tr><td>@2nd(Sculpt Spells)cast evoca, 1 ally+1/spell lvl auto or save for half is save for 0 hp in the spell area';
+b=',@6th(Potent Cantrip)cantrips are save for half dmg</td></tr><tr><td>@10th(Empowered Evocation)evoca spells+int dmg</td></tr><tr><td>@14th(Overchannel)1/1 5th lvl spells but not cantrips or lower do max dmg, take 2d12 necrotic if you castthis again before a/long rest, +1d12 necrotic each time'
 }
 if(this.class.match(/Illusionist/)){
-a='@2nd(Illusion Savant)gold and time is halved copying illusion spells</td></tr><tr><td>@2nd(Improved Minor Illusion)if learned, learn 1 cantrip, Create image and sound';
-b='@6th(Malleable Illusions)you can change 10/10 turns or longer illusions</td></tr><tr><td>@10th(Illusory Self)react, atker hits clone which ends and misses you 1/1 </td></tr><tr><td>@14th(Illusory Reality)the illusionary object remains real for 1min'
+a=',@2nd(Illusion Savant)gold and time is halved copying illusion spells</td></tr><tr><td>@2nd(Improved Minor Illusion)if learned, learn 1 cantrip, Create image and sound';
+b=',@6th(Malleable Illusions)you can change 10/10 turns or longer illusions</td></tr><tr><td>@10th(Illusory Self)react, atker hits clone which ends and misses you 1/1 </td></tr><tr><td>@14th(Illusory Reality)the illusionary object remains real for 1min'
 }
 if(this.class.match(/Necromancer/)){
 a='2nd(Necromancy Savant) gold and time is halved copying necrom spells</td></tr><tr><td>@2nd(Grim Harvest)cast and kill, heal 2 x spell lvl, 3 x if Necromantic spell';
-b='@6th(Undead Thralls)learn Animate Dead+1 undead hp+your lvl, dmg+your pro</td></tr><tr><td>@10th(Injured to Undeath)resist necrotic, hp max never reduced</td></tr><tr><td>@14th(Command Undead)1 undead 60ft cha save or obeys, undead int 8+save @Adv reroll/hr'
+b=',@6th(Undead Thralls)learn Animate Dead+1 undead hp+your lvl, dmg+your pro</td></tr><tr><td>@10th(Injured to Undeath)resist necrotic, hp max never reduced</td></tr><tr><td>@14th(Command Undead)1 undead 60ft cha save or obeys, undead int 8+save @Adv reroll/hr'
 }
-if(this.class.match(/Theurgist/)){a="@2nd(Divine Inspiration)Choose a Cleric Domain and deity</td></tr><tr><td>@2nd(Arcane Initiate)when gaining a Wizard lvl, you can opt to replace a new learned Wizard spell for a Cleric Domain spell of the same spell lvl, other Wizards can not copy your Cleric Domain spells into their spell books</td></tr><tr><td>@2nd(Channel Arcana)@2nd 1/1 @6th 2/2 @18th 3/3 sort rest recharge(Divine Arcana)bonus, say prayer spell atk+2 or DC+2(Channel Divinity)";
-b="@6th(Arcane Acolyte)you gain the Cleric Domain 1st lvl benefits except weapon and armor proficiencies</td></tr><tr><td>@10th(Arcane Priest)you gain your Cleric Domain 6th lvl benefits</td></tr><tr><td>@14th(Arcane High Priest)you gain your Cleric Domain 17th lvl benefits"
+if(this.class.match(/Theurgist/)){a="@2nd(Divine Inspiration)Choose a Cleric Domain and deity</td></tr><tr><td>@2nd(Arcane Initiate)when gaining a Wizard lvl, you can opt to replace a new learned Wizard spell for a Cleric Domain spell of the same spell lvl, other Wizards can not copy your Cleric Domain spells into their spell books</td></tr><tr><td>@2nd(Channel Arcana),@2nd 1/1 ,@6th 2/2 @18th 3/3 sort rest recharge(Divine Arcana)bonus, say prayer spell atk+2 or DC+2(Channel Divinity)";
+b=",@6th(Arcane Acolyte)you gain the Cleric Domain 1st lvl benefits except weapon and armor proficiencies</td></tr><tr><td>@10th(Arcane Priest)you gain your Cleric Domain 6th lvl benefits</td></tr><tr><td>@14th(Arcane High Priest)you gain your Cleric Domain 17th lvl benefits"
 }
 if(this.class.match(/Transmuter/)){
-a='@2nd(Transmutation Savant)gold and time is halved copying transmu spells</td></tr><tr><td>@2nd(Minor Achemy)transmute 1ft cube of objects 1hr';
-b='@6th(Transmuter s Stone)you or ally that carries it, Darkvision 60ft or speed+10ft or con+pro or resist acid, cold, fire, lightning, thunder</td></tr><tr><td>@10th(Shapechanger)learn Polymorph no slot cost self CR1 or lower 1/1 </td></tr><tr><td>@14th(Master Tansmuter)act Transmuter Stone destroyed(Major Transformation)5ft cube objectsor(Panacea)remove all curses, disease, poisons, restore hp of 1 allyor(Restore Life)Raise Dead @no slot cost on 1 allyor(Restore Youth)apparent age is reduced by 3d10 years min 13 of 1 ally'
+a=',@2nd(Transmutation Savant)gold and time is halved copying transmu spells</td></tr><tr><td>@2nd(Minor Achemy)transmute 1ft cube of objects 1hr';
+b=',@6th(Transmuter s Stone)you or ally that carries it, Darkvision 60ft or speed+10ft or con+pro or resist acid, cold, fire, lightning, thunder</td></tr><tr><td>@10th(Shapechanger)learn Polymorph no slot cost self CR1 or lower 1/1 </td></tr><tr><td>@14th(Master Tansmuter)act Transmuter Stone destroyed(Major Transformation)5ft cube objectsor(Panacea)remove all curses, disease, poisons, restore hp of 1 allyor(Restore Life)Raise Dead @no slot cost on 1 allyor(Restore Youth)apparent age is reduced by 3d10 years min 13 of 1 ally'
 }
-if(this.class.match(/Wizard/)){this.setFeatures("</td></tr><tr><td>(Cantrips Known)@1st 3@4th 4@10th 5<p>(Spells Known)intMod+1 and +2 spells every lvl-up<p>1st Lvl Slots@1st 2@2nd 3@3rd 4@10th 5<p>2nd Level Slots@3rd 2@4th 3<p>3rd Lvl Slots@5th 2@6th 3<p>4th Lvl Slots@7th 1@8th 2@9th 3<p>5th Lvl Slots@9th 1@10th 2@18th 3<p>6th Lvl Slots@11th 119th 2<p>7th Lvl Slots@13th 1@20th 2<p>8th Lvl Slots@15th 1<p>9th Lvl Slots@17th 1<p>(Arcane Recovery)1/1 recharge after short rest, recover 1/2 lvl rnd up in 6th lvl or fewer slots<p>(Expanded List of Available Spells)<p>Cantrips<b onClick=BoomingBlade()>BoomingBlade</b><b onClick=GreenFlameBlade()>GreenFlameBlade</b><b onClick=LightningLure()>LightningLure</b><b onClick=MindSliver()>MindSliver</b><b onClick=SwordBurst()>SwordBurst</b><p>1st Lvl Spells<b onClick=TashasCausticBrew()>TashasCausticBrew</b><p>2nd Lvl Spells<b onClick=Augury()>Augury</b><b onClick=EnhanceAbility()>EnhanceAbility</b><b onClick=TashasMindWhip()>TashasMindWhip</b><p>3rd Lvl Spells<b onClick=IntellectFortress()>IntellectFortress</b><b onClick=SpeakWithDead()>SpeakWithDead</b><b onClick=SpiritShroud()>SpiritShroud</b><b onClick=SummonFey()>SummonFey</b><b onClick=SummonShadowspawn()>SummonShadowspawn</b><b onClick=SummonUndead()>SummonUndead</b><p>4th Lvl Spells<b onClick=Divination()>Divination</b><b onClick=SummonAberration()>SummonAberration</b><b onClick=SummonConstruct()>SummonConstruct</b><b onClick=SummonElemental()>SummonElemental</b><p>6th Lvl Spells<b onClick=SummonFiend()>SummonFiend</b><b onClick=TashasOtherworldlyGuise()>TashasOtherworldlyGuise</b><p>7th Lvl Spells<b onClick=DreamOfTheBlueVeil()>DreamOfTheBlueVeil</b><p>9th Lvl Spells<b onClick=BladeOfDisaster()>BladeOfDisaster</b></td></tr><tr><td>"+a+"</td></tr><tr><td>(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th@8th@12th@16th@19th</td></tr><tr><td>"+b+"</td></tr><tr><td>@18th(Spell Mastery)cast a known 1st and 2nd lvl spell @no 1st cost, 8hrs change the know spells</td></tr><tr><td>@20th(Signature Spells)cast 2 known 3rd lvl spells @no 3rd cost");
+if(this.class.match(/Wizard/)){this.setFeatures("</td></tr><tr><td>(Cantrips Known)@1st 3@4th 4@10th 5<p>(Spells Known)intMod+1 and +2 spells every lvl-up<br>1st Slots:@1st 2,@2nd 3,@3rd 4@10th 5<p>2nd Level Slots,@3rd 2@4th 3<br>3rd Slots:@5th 2,@6th 3<br>4th Slots:@7th 1,@8th 2@9th 3<p>5th Slots:@9th 1@10th 2@18th 3<p>6th Slots:@11th 119th 2<p>7th Slots:@13th 1@20th 2<p>8th Slots:@15th 1<p>9th Slots:@17th 1<p>(Arcane Recovery)1/1 recharge after short rest, recover 1/2 lvl rnd up in 6th lvl or fewer slots<p>(Expanded List of Available Spells)<p>Cantrips<b onClick=BoomingBlade()>BoomingBlade</b>, <b onClick=GreenFlameBlade()>GreenFlameBlade</b>, <b onClick=LightningLure()>LightningLure</b>, <b onClick=MindSliver()>MindSliver</b>, <b onClick=SwordBurst()>SwordBurst</b><br>1st Lvl Spells<b onClick=TashasCausticBrew()>TashasCausticBrew</b><br>2nd Lvl Spells<b onClick=Augury()>Augury</b>, <b onClick=EnhanceAbility()>EnhanceAbility</b>, <b onClick=TashasMindWhip()>TashasMindWhip</b><br>3rd Lvl Spells<b onClick=IntellectFortress()>IntellectFortress</b>, <b onClick=SpeakWithDead()>SpeakWithDead</b>, <b onClick=SpiritShroud()>SpiritShroud</b>, <b onClick=SummonFey()>SummonFey</b>, <b onClick=SummonShadowspawn()>SummonShadowspawn</b>, <b onClick=SummonUndead()>SummonUndead</b><br>4th Lvl Spells<b onClick=Divination()>Divination</b>, <b onClick=SummonAberration()>SummonAberration</b>, <b onClick=SummonConstruct()>SummonConstruct</b>, <b onClick=SummonElemental()>SummonElemental</b><p>6th Lvl Spells<b onClick=SummonFiend()>SummonFiend</b>, <b onClick=TashasOtherworldlyGuise()>TashasOtherworldlyGuise</b><p>7th Lvl Spells<b onClick=DreamOfTheBlueVeil()>DreamOfTheBlueVeil</b><p>9th Lvl Spells<b onClick=BladeOfDisaster()>BladeOfDisaster</b></td></tr><tr><td>"+a+"</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,,@8th,@12th,@16th,@19th</td></tr><tr><td>"+b+"</td></tr><tr><td>@18th(Spell Mastery)cast a known 1st and 2nd lvl spell @no 1st cost, 8hrs change the know spells</td></tr><tr><td>@20th(Signature Spells)cast 2 known 3rd lvl spells @no 3rd cost");
 this.setEquipment('quarterstaff or dagger.component pouch or arcane focus.scholar pack or explorer pack.spellbook');
 this.setHitDice(this.lvl+'d6+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('daggers, darts, light crossbows, quarterstaffs, and slings');
@@ -8559,13 +8539,13 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('age 60-160yrs, Humanoid, hair color red, blonde, brown, black, or silver, eye color pale white, gold, gray, or topaz, skin color pale-dark brown, emerald, gold, silver, male height 150–220 cm, female height 140–210 cm, male weight 56.2–127 kg, female weight 40.4–111 kg, homeland Prime Material, Plane, or Celestial Planes');
 if(this.race.match(/Protector/)){this.setAbility('wis+1, cha+2');
-this.setProficienciesRace('Healing Hands:1/1/long rest, heal self or ally lvl in hp, Light cha, Radiant Soul:@3rd fly 30ft 1min, deal your lvl xtra radiant dmg 1tgt each turn, 1/1/long rest')
+this.setProficienciesRace('Healing Hands:1/1/long rest, heal self or ally lvl in hp, Light cha, Radiant Soul:,@3rd fly 30ft 1min, deal your lvl xtra radiant dmg 1tgt each turn, 1/1/long rest')
 }
 if(this.race.match(/Scourge/)){this.setAbility('con+1, cha+2');
-this.setProficienciesRace('Healing Hands:1/1/long rest, heal self or ally lvl in hp, Light cha, Radiant Consumption:@3rd lvl, 1act, 1min or bonus act end, 10ft rad bright light and 10ft dim light chosen targets take your lvl radiant dmg each turn')
+this.setProficienciesRace('Healing Hands:1/1/long rest, heal self or ally lvl in hp, Light cha, Radiant Consumption:,@3rd lvl, 1act, 1min or bonus act end, 10ft rad bright light and 10ft dim light chosen targets take your lvl radiant dmg each turn')
 }
 if(this.race.match(/Fallen/)){this.setAbility('str+1, cha+2');
-this.setProficienciesRace('Healing Hands:1/1/long rest, heal self or ally lvl in hp, Light cha, Necrotic Shroud:@3rd targets 10ft radius cha vsCha or frightened utteo your nt, deal xtra necrotic dmg to 1tgt per turn, 1min or 1 bonus end 1/1/long rest')
+this.setProficienciesRace('Healing Hands:1/1/long rest, heal self or ally lvl in hp, Light cha, Necrotic Shroud:,@3rd targets 10ft radius cha vsCha or frightened utteo your nt, deal xtra necrotic dmg to 1tgt per turn, 1min or 1 bonus end 1/1/long rest')
 }
 }
 if(this.race.match(/Bugbear/)){this.setAbility('str+2, dex+1');
@@ -8586,7 +8566,7 @@ this.setResistance('Acid');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
-this.setTrait('(Breath weapon)(Black)1d6 Acid 5x30ft line Dex for half(Blue)Lightning 5x30ft line Dex for half(Brass)Fire 5x30ft line Dex for half(Bronze)Lightning 5x30ft line Dex for half(Copper)Acid 5x30ft line Dex for half(Gold)Fire 15ft cone Dex for half(Green)Poison 15ft cone Con for half(Red)Fire 15ft cone Dex for half(Silver)Cold 15ft cone Con for half(White)Cold 15ft cone Con for half+1d6@6th, 11th, 16th lvl, 1-80 years old, 250 lbs., 6+feet tall')
+this.setTrait('(Breath weapon)(Black)1d6 Acid 5x30ft line Dex for half(Blue)Lightning 5x30ft line Dex for half(Brass)Fire 5x30ft line Dex for half(Bronze)Lightning 5x30ft line Dex for half(Copper)Acid 5x30ft line Dex for half(Gold)Fire 15ft cone Dex for half(Green)Poison 15ft cone Con for half(Red)Fire 15ft cone Dex for half(Silver)Cold 15ft cone Con for half(White)Cold 15ft cone Con for half+1d6,@6th, 11th, 16th lvl, 1-80 years old, 250 lbs., 6+feet tall')
 }
 if(this.race.match(/Dwarf, \sHill/)){this.setAbility('con+2, wis+1');
 this.setLanguages('Common, Dwarvish');
@@ -8608,7 +8588,7 @@ this.setTrait("50-350 yrs old("+(50+parseInt(rollDForm('1d300+0')))+"yrs old), 4
 }
 if(this.race.match(/Dwarf, \sGray/)){this.setAbility('str+1');
 this.setLanguages('Common, Dwarvish, Undercommon');
-this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or brewer or Mason Tools, (Stonecunning)History+exp re the details of stone work age and construction, @3rd(Enlarge/Reduce)only Enlarge on self 1/1/long rest, @5th(Invisibility)no components needed/in dim light 1/1/long rest');
+this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or brewer or Mason Tools, (Stonecunning)History+exp re the details of stone work age and construction, ,@3rd(Enlarge/Reduce)only Enlarge on self 1/1/long rest, @5th(Invisibility)no components needed/in dim light 1/1/long rest');
 this.setResistance('(Duergar Resilience)save @Adv vs illusion, charm, paralysis');
 this.setSenses('Darkvision 120ft');
 this.setSize('Medium 5x5ft');
@@ -8618,7 +8598,7 @@ this.setTrait('(Sunlight Sensitivity)atks and Perception @DisAdv in sunlight, 15
 if(this.race.match(/Elf, \sDark/)){this.setAbility('dex+2, cha+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish');
-this.setProficienciesRace('Dancing Lights(cha), @3rd Faerie Fire(cha), @5th Darkness(cha)1/1/long rest, rapiers, and shortswords');
+this.setProficienciesRace('Dancing Lights(cha), ,@3rd Faerie Fire(cha), @5th Darkness(cha)1/1/long rest, rapiers, and shortswords');
 this.setResistance('(Fae Ancestry)save vs charm @Adv');
 this.setSenses('Darkvision 120ft, (Keen Senses)Perception+pro, (Trance)alert to danger during long and short rests');
 this.setSize('Medium 5x5ft');
@@ -8659,7 +8639,7 @@ if(this.race.match(/Elf, \sShadow/)){this.setAbility('dex+2, con+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish, and 1 language');
 this.setProficienciesRace('Longbows, longswords, shortbows, shortswords');
-this.setResistance('@3rd resist all dmg when teleporting 1rnd 30ft bonus act 1/1/long rest, innecrotic, (Fae Ancestry)save vs charm @Adv');
+this.setResistance(',@3rd resist all dmg when teleporting 1rnd 30ft bonus act 1/1/long rest, innecrotic, (Fae Ancestry)save vs charm @Adv');
 this.setSenses('Darkvision 60ft, (Keen Senses)Perception+pro, (Trance)alert to danger during long and short rests');
 this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
@@ -8798,7 +8778,7 @@ this.setTrait('(Relentless Endurance)1/1/long rest, 0hp is 1hp, (Menacing)Intimi
 if(this.race.match(/Satyr/)){this.setAbility('dex+1, cha+2');
 this.setDamageConditions('immune to Charm Person');
 this.setLanguages('Common, Sylvan');
-this.setProficienciesRace('Ram 1d4+str+pro, Mirthful Leaps long jump+1d8ft, Performance+pro, Persuasion+pro, Musical Instrument+pro, @1st Vicious Mockery+cha @3rd Entangle+cha, @5th Suggestion+cha 1/1/long rest resets');
+this.setProficienciesRace('Ram 1d4+str+pro, Mirthful Leaps long jump+1d8ft, Performance+pro, Persuasion+pro, Musical Instrument+pro, @1st Vicious Mockery+cha ,@3rd Entangle+cha, @5th Suggestion+cha 1/1/long rest resets');
 this.setResistance('resists magic @Adv');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
@@ -8819,57 +8799,57 @@ this.setTrait("15-100yrs old("+(15+rollDForm('1d85+0'))+'yrs old), 4ft10in+2d10i
 if(this.race.match(/Asmodeus/))
 {
 this.setAbility('int+1, cha+2');
-this.setFeatures('@1st(Infernal Legacy)<b onClick=Thaumaturgy()>Thaumaturgy</b>, @3rd <b onClick=HellishRebuke()>HellishRebuke</b>1/1 long rest, @5th <b onClick=Darkness()>Darkness</b>1/1 long rest, cha spell ability)'+this.features);
+this.setFeatures('@1st(Infernal Legacy)<b onClick=Thaumaturgy()>Thaumaturgy</b>, ,@3rd <b onClick=HellishRebuke()>HellishRebuke</b>1/1 long rest, @5th <b onClick=Darkness()>Darkness</b>1/1 long rest, cha spell ability)'+this.features);
 }
 
 if(this.race.match(/Baalzebul/))
 {
 this.setAbility('int+1, cha+2');
-this.setFeatures('@1st(Legacy of Maladomini)<b onClick=Thaumaturgy()>Thaumaturgy</b>, @3rd <b onClick=RayOfSickness()>RayOfSickness</b>1/1 long rest, @5th <b onClick=CrownOfMadness()>CrownOfMadness</b>1/1 long rest, cha spell ability)'+this.features);
+this.setFeatures('@1st(Legacy of Maladomini)<b onClick=Thaumaturgy()>Thaumaturgy</b>, ,@3rd <b onClick=RayOfSickness()>RayOfSickness</b>1/1 long rest, @5th <b onClick=CrownOfMadness()>CrownOfMadness</b>1/1 long rest, cha spell ability)'+this.features);
 }
 
 if(this.race.match(/Dispater/))
 {
 this.setAbility('dex+1, cha+2');
-this.setFeatures('@1st(Legacy of Dis)<b onClick=Thaumaturgy()>Thaumaturgy</b>, @3rd <b onClick=DisguiseSelf()>DisguiseSelf</b>1/1 long rest, @5th <b onClick=DetectThoughts()>DetectThoughts</b>1/1 long rest, cha spell ability)'+this.features);
+this.setFeatures('@1st(Legacy of Dis)<b onClick=Thaumaturgy()>Thaumaturgy</b>, ,@3rd <b onClick=DisguiseSelf()>DisguiseSelf</b>1/1 long rest, @5th <b onClick=DetectThoughts()>DetectThoughts</b>1/1 long rest, cha spell ability)'+this.features);
 }
 
 if(this.race.match(/Fierna/))
 {
 this.setAbility('wis+1, cha+2');
-this.setFeatures('@1st(Legacy of Phlegethos)<b onClick=Friends()>Friends</b>, @3rd <b onClick=CharmPerson()>CharmPerson</b>1/1 long rest, @5th <b onClick=Suggestion()>Suggestion</b>1/1 long rest, cha spell ability)'+this.features);
+this.setFeatures('@1st(Legacy of Phlegethos)<b onClick=Friends()>Friends</b>, ,@3rd <b onClick=CharmPerson()>CharmPerson</b>1/1 long rest, @5th <b onClick=Suggestion()>Suggestion</b>1/1 long rest, cha spell ability)'+this.features);
 }
 
 if(this.race.match(/Glasya/))
 {
 this.setAbility('dex+1, cha+2');
-this.setFeatures('@1st(Legacy of Malbolge)<b onClick=MinorIllusion()>MinorIllusion</b>, @3rd <b onClick=DisguiseSelf()>DisguiseSelf</b>1/1 long rest, @5th <b onClick=Invisibility()>Invisibility</b>1/1 long rest, cha spell ability)'+this.features);
+this.setFeatures('@1st(Legacy of Malbolge)<b onClick=MinorIllusion()>MinorIllusion</b>, ,@3rd <b onClick=DisguiseSelf()>DisguiseSelf</b>1/1 long rest, @5th <b onClick=Invisibility()>Invisibility</b>1/1 long rest, cha spell ability)'+this.features);
 }
 
 if(this.race.match(/Levistus/))
 {
 this.setAbility('con+1, cha+2');
-this.setFeatures('(Legacy of Stygia)@1st <b onClick=RayOfFrost()>RayOfFrost</b>, @3rd <b onClick=ArmorOfAgathys()>ArmorOfAgathys</b>, @5th <b onClick=Darkness()>Darkness</b>1/1 long rest, cha spell ability)'+this.features);
+this.setFeatures('(Legacy of Stygia)@1st <b onClick=RayOfFrost()>RayOfFrost</b>, ,@3rd <b onClick=ArmorOfAgathys()>ArmorOfAgathys</b>, @5th <b onClick=Darkness()>Darkness</b>1/1 long rest, cha spell ability)'+this.features);
 }
 
 if(this.race.match(/Mammon/))
 {
 this.setAbility('int+1, cha+2');
-this.setFeatures('@1st(Legacy of Minauros) <b onClick=MageHand()>MageHand</b>, @3rd <b onClick=TensersFloatingDisk()>TensersFloatingDisk</b>, @5th <b onClick=ArcaneLock()>ArcaneLock</b>1/1 long rest, cha spell ability)'+this.features);
+this.setFeatures('@1st(Legacy of Minauros) <b onClick=MageHand()>MageHand</b>, ,@3rd <b onClick=TensersFloatingDisk()>TensersFloatingDisk</b>, @5th <b onClick=ArcaneLock()>ArcaneLock</b>1/1 long rest, cha spell ability)'+this.features);
 }
 
 if(this.race.match(/Mephistopheles/))
 {
 this.setAbility('int+1, cha+2');
 this.setLanguages('Common, Infernal');
-this.setFeatures('Mage Hand, @3rd Burning Hands, @5th Flame Blade 1/1 short rest');
-this.setFeatures('@1st(Legacy of Cania) <b onClick=MageHand()>MageHand</b>, @3rd <b onClick=BurningHand()>BurningHand</b>1/1 long rest, @5th <b onClick=FlameBlade()>FlameBlade</b>1/1 long rest, cha spell ability)'+this.features);
+this.setFeatures('Mage Hand, ,@3rd Burning Hands, @5th Flame Blade 1/1 short rest');
+this.setFeatures('@1st(Legacy of Cania) <b onClick=MageHand()>MageHand</b>, ,@3rd <b onClick=BurningHand()>BurningHand</b>1/1 long rest, @5th <b onClick=FlameBlade()>FlameBlade</b>1/1 long rest, cha spell ability)'+this.features);
 }
 
 if(this.race.match(/Zariel/))
 {
 this.setAbility('str+1, cha+2');
-this.setFeatures('@1st <b onClick=Thaumaturgy()>Thaumaturgy</b>, @3rd <b onClick=SearingSmite()>SearingSmite</b>, @5th <b onClick=BrandingSmite()>BrandingSmite</b>1/1 long rest, cha spell ability)'+this.features);
+this.setFeatures('@1st <b onClick=Thaumaturgy()>Thaumaturgy</b>, ,@3rd <b onClick=SearingSmite()>SearingSmite</b>, @5th <b onClick=BrandingSmite()>BrandingSmite</b>1/1 long rest, cha spell ability)'+this.features);
 }
 
 if(this.race.match(/Tiefling/))
@@ -8884,7 +8864,7 @@ this.setTrait("15-100yrs old("+(15+rollDForm('1d85+0'))+'yrs old), 4.9+2d8('+(4.
 }
 
 if(this.race.match(/Yuan-Ti/)){this.setAbility('int+1, cha+2');
-this.setActionNotes('(Innate Spellcasting)Animal Friendship(snakes), Poison Spray unlimited, @3rd Suggestion(snakes)');AnimalFriendship();PoisonSpray();
+this.setActionNotes('(Innate Spellcasting)Animal Friendship(snakes), Poison Spray unlimited, ,@3rd Suggestion(snakes)');AnimalFriendship();PoisonSpray();
 this.setAlignment('Neutral Evil');
 this.setDamageConditions('immune to poison');
 this.setImmunity('poison')
