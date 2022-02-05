@@ -5052,7 +5052,7 @@ function
 {characters[targeted].setRollName1(a),
  characters[targeted].setRoll1(b),
  characters[targeted].setRollName2(c),
- characters[targeted].setRoll2( dmgDice),
+ characters[targeted].setRoll2(dmgDice),
  addRollPrompt(targeted)
 } s1="<input onClick='",
  s2="()' type='button' value='",
@@ -6973,7 +6973,8 @@ characters[targeted].setFeatureNotes(rip[1].replace(/\./g, '\.\n'))
 }
 checkTheTarget();
 }
-function _addRoll(name, roll, name2, roll2){x=this.rolls.length;
+function _addRoll(name, roll, name2, roll2)
+{x=this.rolls.length;
 this.rolls[x]=roll;
 this.rollNames[x]=name;
 x=this.rolls2.length;
@@ -9052,9 +9053,11 @@ characters[x].refresh();
 characters[x].show();
 SET_DHTML(character.box.elementId)
 }
-function addRollPrompt(x){result1=dFormParse(characters[x].roll1);
-result2=dFormParse(characters[x].roll2);
-characters[x].addRoll(characters[x].rollName1, result1, characters[x].rollName2, result2);checkTheTarget(characters[targeted])
+function addRollPrompt(x)
+{
+characters[x].addRoll(characters[x].rollName1,dFormParse(characters[x].roll1),characters[x].rollName2,dFormParse(characters[x].roll2));
+
+checkTheTarget(characters[targeted]);
 }
 function askInit(x){initRoll=characters[x].rollInit();
 characters[x].setInit(initRoll)
@@ -9609,7 +9612,7 @@ characters[x]=newChar;
 ADD_DHTML(newChar.box.elementId)
 }
 }//Regular expression for something in the form XdY+/-Z, with X and+/-Z optional
-diceRegex=/[0-9]{0, }[d|D][0-9]{1, }([+|-][0-9]{1, }){0, 1}/
+diceRegex=/[0-9]{0,}[d|D][0-9]{1,}([+|-][0-9]{1,}){0,1}/
 function rollInitiatives()
 {for(i=0; i< characters.length; i++){initRoll=characters[i].rollInit();
 characters[i].setInit(initRoll)
