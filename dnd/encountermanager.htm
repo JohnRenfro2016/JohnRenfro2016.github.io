@@ -65,8 +65,8 @@ border-radius:4px;
 font-family: 'MyKidsHandwritten';
 font-size:75%;
 margin:1px;
-max-width:75px;
-min-width:50px;
+max-width:50px;
+min-width:25px;
 word-wrap: normal;
 outline:1px solid transparent;
 padding:1px;
@@ -104,6 +104,59 @@ a:active{color:#f13a37
 }h2{color:#5c0904
 }h3{color:#6c0b04
 }
+
+.MapSelection
+{
+  height:800px;
+  width:800px;
+  object-fit: none;
+  object-position: 41% 53%;
+}
+
+.die20
+{
+  height: 100px;
+  width: 100px;
+  object-fit: none;
+  object-position: 50% 50%;
+}
+
+.die12
+{
+  height: 100px;
+  width: 100px;
+  object-fit: none;
+  object-position: 35% 95%;
+}
+
+.die10
+{
+  height: 100px;
+  width: 100px;
+  object-fit: none;
+  object-position: 85% 50%;
+}
+.die8
+{
+  height: 100px;
+  width: 100px;
+  object-fit: none;
+  object-position: 15% 50%;
+}
+.die6
+{
+  height: 100px;
+  width: 100px;
+  object-fit: none;
+  object-position: 70% 7%;
+}
+.die4
+{
+  height: 100px;
+  width: 100px;
+  object-fit: none;
+  object-position: 75% 95%;
+}
 </style>
 <body>
 <table><tr><td>
@@ -124,16 +177,22 @@ a:active{color:#f13a37
 </td></tr><tr><td>
 To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
 </td></tr><tr><td>
+<img class='die20' src='Decorations/DiceSprite.jpeg'>
 <input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?'><b id='d20result'></b>
 </td></tr><tr><td>
+<img class='die12' src='Decorations/DiceSprite.jpeg'>
 <input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?'><b id='d12result'></b>
 </td></tr><tr><td>
+<img class='die10' src='Decorations/DiceSprite.jpeg'>
 <input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?'><b id='d10result'></b>
 </td></tr><tr><td>
+<img class='die8' src='Decorations/DiceSprite.jpeg'>
 <input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?'><b id='d8result'></b>
 </td></tr><tr><td>
+<img class='die6' src='Decorations/DiceSprite.jpeg'>
 <input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?'><b id='d6result'></b>
 </td></tr><tr><td>
+<img class='die4' src='Decorations/DiceSprite.jpeg'>
 <input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
 </td></tr><tr><td>
 <input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollOneDisplay'></b>
@@ -153,7 +212,7 @@ tgt then paste stats.
 </td></tr></table>
 </td><td>
 <table><tr><td>
-<img src='Maps/Map.png' width='7000'>
+<img class='MapSelection' src='Maps/Map.png'>
 </td></tr></table>
 <script>
 function AGEBox(color, code, textColorCode)
@@ -7113,17 +7172,18 @@ localStorage.setItem('option', value);
 location.reload()})
 function _ref()
 {
-boxContents="<table><tr><td class='piece' colspan='2'>"+this.name;
-boxContents+="</td></tr><tr><td class='piece'>Ini:"+this.init;
-boxContents+="</td><td class='piece'>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
-boxContents+="</td></tr><tr><td colspan='2'><img src='"+this.figure+"'>";
-boxContents+="</td></tr><tr><td class='piece'>HP:"+this.maxHp+"/"+this.curHp;
-boxContents+="</td><td class='piece'>tmp hp:"+this.tempHp;
-boxContents+="</td></tr><tr><td class='piece'>dmg?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setDmg(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
-boxContents+="</td><td class='piece'>heal?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setHealing(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
-boxContents+="</td></tr><tr><td class='piece' colspan='2'><input class='piece' onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
+boxContents="<img src='"+this.figure+"'>";
+boxContents+="<table><tr><td class='piece'>"+this.name;
+boxContents+="<br>Ini:"+this.init;
+boxContents+="<br>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
+
+boxContents+="<br>HP:"+this.curHp;
+boxContents+="<br><input class='piece' onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
 boxContents+="</td></tr></table><span id=toggled1"+this.index+" style='display:"+this.toggled1+"'>"
-boxContents+="<table><tr><td><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
+boxContents+="<table><tr><td>tmp hp:"+this.tempHp;
+boxContents+="</td><td>dmg?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setDmg(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
+boxContents+="</td><td>heal?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setHealing(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
+boxContents+="</td><td><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
 boxContents+="</td><td>Ini bonus:<input maxLength='3' onChange='characters["+this.index+"].setInitBonus(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.initBonus+">/"+this.curIni;
 boxContents+="</td><td>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
 boxContents+="</td><td><input type='button' onClick='characters["+this.index+"].save();checkTheTarget("+this.index+")'value='Save this character?'>";
