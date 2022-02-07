@@ -54,10 +54,7 @@ text-decoration-thickness:2px;
 vertical-align:top;
 z-index:2;
 }
-table
-{
-background-image:url("Decorations/Panel.png");
-}
+
 .piece
 {
 background-color:inherit;
@@ -68,6 +65,9 @@ border-radius:4px;
 font-family: 'MyKidsHandwritten';
 font-size:75%;
 margin:1px;
+max-width:75px;
+min-width:50px;
+word-wrap: normal;
 outline:1px solid transparent;
 padding:1px;
 text-decoration:#22271f;
@@ -75,10 +75,20 @@ text-decoration-thickness:2px;
 vertical-align:top;
 z-index:2;
 }
-td
+
+table
 {
-width:42px;
+background-image:url("Decorations/Panel.png");
 }
+
+td,
+tr
+{
+max-width:300px;
+min-width:140px;
+word-wrap: normal;
+}
+
 tr:nth-child(even){background:rgba(0, 0, 0, 0.1)
 }tr:nth-child(odd){background:rgba(0, 0, 0, 0.2)
 }
@@ -146,7 +156,7 @@ tgt then paste stats.
 <img src='Maps/Map.png' width='7000'>
 </td></tr></table>
 <script>
-function AGEBox(color, code, textColorCode, width, height)
+function AGEBox(color, code, textColorCode)
 {
 this.borderX=10;
 this.borderY=10;
@@ -357,7 +367,7 @@ getAction(t1)
 }
 function MindSliver()
 {
-a='Mind Sliver, 0, encha, 1act, The tgt must succeed on an vsInt or take 1d6 psychic dmg and substract -1d4 on it\'s next saving throw',
+a='Mind Sliver, 0, encha, 1act, The tgt must succeed on an vsInt or take 1d6 psychic dmg and substract -1d4 on it s next saving throw',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -453,7 +463,7 @@ getAction(t1)
 }
 function TashasCausticBrew()
 {
-a='Tasha\'s Caustic Brew, 1, evoca, 1act, concen, tgts in a 30ft long 5ft wide line vsDex or take 2d4 acid dmg each turn (+2d4/lvl).',
+a='Tasha s Caustic Brew, 1, evoca, 1act, concen, tgts in a 30ft long 5ft wide line vsDex or take 2d4 acid dmg each turn (+2d4/lvl).',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -461,7 +471,7 @@ getAction(t1)
 }
 function TashasMindWhip()
 {
-a='Tasha\'s Mind Whip, 2, encha, 1act, tgt must succeed on an vsInt or take 3d6 psychic dmg and choose to move or take an action next turn (+1 creature/lvl).',
+a='Tasha s Mind Whip, 2, encha, 1act, tgt must succeed on an vsInt or take 3d6 psychic dmg and choose to move or take an action next turn (+1 creature/lvl).',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -469,7 +479,7 @@ getAction(t1)
 }
 function TashasOtherworldlyGuise()
 {
-a='Tasha\'s Otherworldly Guise, 6, transmu, bonus, concen, Immune to fire/poison or radiant/necrotic damage, 40ft flying speed, +2 AC bonus, weapons are magical, 2 attacks.',
+a='Tasha s Otherworldly Guise, 6, transmu, bonus, concen, Immune to fire/poison or radiant/necrotic damage, 40ft flying speed, +2 AC bonus, weapons are magical, 2 attacks.',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -477,7 +487,7 @@ getAction(t1)
 }
 function AbiDalzimsHorridWilting()
 {
-a='Abi-Dalzim\'s Horrid Wilting, 8, necrom, 1act, tgts in a 30ft cube vsCon or take 12d8 necrotic dmg. Plants wither and die.',
+a='Abi-Dalzim s Horrid Wilting, 8, necrom, 1act, tgts in a 30ft cube vsCon or take 12d8 necrotic dmg. Plants wither and die.',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -493,7 +503,7 @@ getAction(t1)
 }
 function AganazzarsScorcher()
 {
-a='Aganazzar\'s Scorcher, 2, evoca, 1act, tgts on a 30ft long, 5ft wide line vsDex or taker 3d8 fire dmg',
+a='Aganazzar s Scorcher, 2, evoca, 1act, tgts on a 30ft long, 5ft wide line vsDex or taker 3d8 fire dmg',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -621,7 +631,7 @@ getAction(t1)
 }
 function DragonsBreath()
 {
-a='Dragon\'s Breath, 2, transmu, bonus, concen, Spew a 15ft cone that deals 3d6 acid, cold, fire, lightning, or poison dmg in case of failed vsDex',
+a='Dragon s Breath, 2, transmu, bonus, concen, Spew a 15ft-cone that deals 3d6 acid, cold, fire, lightning, or poison dmg in case of failed vsDex',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -805,7 +815,7 @@ getAction(t1)
 }
 function InvestitureOfIce()
 {
-a='Investiture of Ice, 6, transmu, 1act, concen, tgts in a 15ft cone vsCon or take 4d6 cold dmg. Immunity and resistance to caster.',
+a='Investiture of Ice, 6, transmu, 1act, concen, tgts in a 15ft-cone vsCon or take 4d6 cold dmg. Immunity and resistance to caster.',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -869,7 +879,7 @@ getAction(t1)
 }
 function MassPolymorph()
 {
-a='Mass Polymorph, 9, transmu, 1act, concen, Transform up to 10 creatures into new beast forms whose CR/level are equal to or less than tgt\'s CR/level.',
+a='Mass Polymorph, 9, transmu, 1act, concen, Transform up to 10 creatures into new beast forms whose CR/level are equal to or less than tgt s CR/level.',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -877,7 +887,7 @@ getAction(t1)
 }
 function MaximilliansEarthenGrasp()
 {
-a='Maximilian\'s Earthen Grasp, 2, transmu, 1act, concen, The tgt vsStr or take 2d6 bludg dmg and be restrained.',
+a='Maximilian s Earthen Grasp, 2, transmu, 1act, concen, The tgt vsStr or take 2d6 bludg dmg and be restrained.',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -885,7 +895,7 @@ getAction(t1)
 }
 function MelfsMinuteMeteors()
 {
-a='Melf\'s Minute Meteors, 3, evoca, 1act, concen, tgts within 5ft vsDex or take 2d6 fire dmg for each of the 6 meteors (+2 meteors/lvl).',
+a='Melf s Minute Meteors, 3, evoca, 1act, concen, tgts within 5ft vsDex or take 2d6 fire dmg for each of the 6 meteors (+2 meteors/lvl).',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -1037,7 +1047,7 @@ getAction(t1)
 }
 function Snilloc()
 {
-a='Snilloc\'s Snowball Swarm, 2, evoca, 1act, tgts in a 5ft-radi sphere vsDex or take 3d6 cold dmg',
+a='Snilloc s Snowball Swarm, 2, evoca, 1act, tgts in a 5ft-radi sphere vsDex or take 3d6 cold dmg',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -1101,7 +1111,7 @@ getAction(t1)
 }
 function TensersTransformation()
 {
-a='Tenser\'s Transformation, 6, transmu, 1act, concen, The caster gains 50 hp, @Adv to attack rolls, an xtra 2d12 force damage, martial proficiencies and two attacks per round.',
+a='Tenser s Transformation, 6, transmu, 1act, concen, The caster gains 50 hp, @Adv to attack rolls, an xtra 2d12 force damage, martial proficiencies and two attacks per round.',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -1229,7 +1239,7 @@ getAction(t1)
 }
 function ZephyrStrike()
 {
-a='Zephyr Strike, 1, transmu, 1act bonus, concen, The caster\'s movement (+30ft) doesn\'t provoque OA and he gets @Adv to one attack roll that deals an xtra 1d8 force.',
+a='Zephyr Strike, 1, transmu, 1act bonus, concen, The caster s movement (+30ft) doesn\'t provoque OA and he gets @Adv to one attack roll that deals an xtra 1d8 force.',
 b='0d0+0',
 c='',
 dmgDice='1d6+0',
@@ -1765,7 +1775,7 @@ getAction(t1)
 }
 function BlastWave()
 {
-a='(Blast Wave)DC8+'+characters[targeted].spellAbility+'+pro vsStr, 2h, 150/500ft, 15ft cone, 1act',
+a='(Blast Wave)DC8+'+characters[targeted].spellAbility+'+pro vsStr, 2h, 150/500ft, 15ft-cone, 1act',
 b='1d20+0',
 c='force+dex and pushed 10ft 3d6@13th, 4d6@17th',
 dmgDice='2d6+0',
@@ -1805,7 +1815,7 @@ getAction(t1)
 }
 function BurningHands()
 {
-a='1st(Burning Hands)DC8+'+characters[targeted].spellAbility+'+pro vsDex for half self 15ft cone',
+a='1st(Burning Hands)DC8+'+characters[targeted].spellAbility+'+pro vsDex for half self 15ft-cone',
 b='0d0+0',
 c='fire+1d6/slot',
 dmgDice='3d6+0',
@@ -1861,7 +1871,7 @@ getAction(t1)
 }
 function ColorSpray()
 {
-a='1st(Color Spray)self 15ft cone, 10/10 turns',
+a='1st(Color Spray)self 15ft-cone, 10/10 turns',
 b='0d0+0',
 c='6d10 lowest current hp targets are blinded',
 dmgDice='6d10+0',
@@ -1885,7 +1895,7 @@ getAction(t1)
 }
 function ConjureBarrage()
 {
-a='3rd(Conjure Barrage)Throw weapon or ammo; copies rain down)DC8+'+characters[targeted].spellAbility+'+pro vsDex halves conj 60ft cone m',
+a='3rd(Conjure Barrage)Throw weapon or ammo; copies rain down)DC8+'+characters[targeted].spellAbility+'+pro vsDex halves conj 60ft-cone m',
 b='0d0+0',
 c='weapon type',
 dmgDice='3d6+0',
@@ -3061,7 +3071,7 @@ getAction(t1)
 }
 function Fear()
 {
-a='3rd(Fear self 30ft cone concen, 10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsWis',
+a='3rd(Fear self 30ft-cone concen, 10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsWis',
 b='0d0+0',
 c='drop items, frightened, Dash till out of your sight vsWis each turn',
 dmgDice='0d0+0',
@@ -3653,7 +3663,7 @@ getAction(t1)
 }
 function ConeOfCold()
 {
-a='5th(Cone of Cold)8d8+1d8/slot lvl Cold dmg;)DC8+'+characters[targeted].spellAbility+'+pro vsCon halves; targets killed become frozen statues til thawed 60ft cone P 224',
+a='5th(Cone of Cold)8d8+1d8/slot lvl Cold dmg;)DC8+'+characters[targeted].spellAbility+'+pro vsCon halves; targets killed become frozen statues til thawed 60ft-cone P 224',
 b='0d0+0',
 c='',
 dmgDice='8d8+0',
@@ -4403,7 +4413,7 @@ getAction(t1)
 }
 function PrismaticSpray()
 {
-a='7th(Prismatic Spray)All random effect, :either 10d6 dmg, restrained, or blinded; save halves/negates)DC8+'+characters[targeted].spellAbility+'+pro vsDex 60ft cone',
+a='7th(Prismatic Spray)All random effect, :either 10d6 dmg, restrained, or blinded; save halves/negates)DC8+'+characters[targeted].spellAbility+'+pro vsDex 60ft-cone',
 b='0d0+0',
 c='',
 dmgDice='10d6+0',
@@ -4715,7 +4725,7 @@ getAction(t1)
 }
 function InvestitureOfIce()
 {
-a='6th Investiture of Ice)Cold immune; Fire resist.; 10ft-radi dif. ter.; 15ft cone 4d6 Cold dmg, half speed, save halves Con Self concen, 10min E 19',
+a='6th Investiture of Ice)Cold immune; Fire resist.; 10ft-radi dif. ter.; 15ft-cone 4d6 Cold dmg, half speed, save halves Con Self concen, 10min E 19',
 b='0d0+0',
 c='',
 dmgDice='4d6+0',
@@ -6269,12 +6279,12 @@ else
 document.getElementById('toggled6'+x).style.display=characters[x].toggled6
 }
 }
-characterBoxWidth=100;
+characterBoxWidth=500;
 characterBoxHeight="*";
 characters=new Array();
 currentElementId=0;
 PC="PC";
-menuWidth=50;
+menuWidth=500;
 pcBox=new AGEBox();
 pcMenu=new AGEBox();
 savePaneBox=new AGEBox();
@@ -7116,18 +7126,18 @@ boxContents+="</td></tr></table><span id=toggled1"+this.index+" style='display:"
 boxContents+="<table><tr><td><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
 boxContents+="</td><td>Ini bonus:<input maxLength='3' onChange='characters["+this.index+"].setInitBonus(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.initBonus+">/"+this.curIni;
 boxContents+="</td><td>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
-boxContents+="</td><td><input onClick='toggleTab2("+this.index+");checkTheTarget("+this.index+")' type='button' value='AC, HP?'>";
+boxContents+="</td><td><input type='button' onClick='characters["+this.index+"].save();checkTheTarget("+this.index+")'value='Save this character?'>";
+boxContents+="</td><td><input type='button' value='Delete this character?'onClick='removeChar("+this.index+");checkTheTarget("+this.index+")'>";
+boxContents+="</td></tr><tr><td><input onClick='toggleTab2("+this.index+");checkTheTarget("+this.index+")' type='button' value='AC, HP?'>";
 boxContents+="</td><td><input onClick='toggleTab3("+this.index+");checkTheTarget("+this.index+")' type='button' value=' Abilities?'>";
 boxContents+="</td><td><input onClick='toggleTab4("+this.index+");checkTheTarget("+this.index+")' type='button' value=' Actions?'>";
 boxContents+="</td><td><input onClick='toggleTab5("+this.index+");checkTheTarget("+this.index+")' type='button' value='Background?'>";
 boxContents+="</td><td><input onClick='toggleTab6("+this.index+");checkTheTarget("+this.index+")' type='button' value=' Class?'>";
-boxContents+="</td><td><input type='button' onClick='characters["+this.index+"].save();checkTheTarget("+this.index+")'value='Save this character?'>";
-boxContents+="</td><td><input type='button' value='Delete this character?'onClick='removeChar("+this.index+");checkTheTarget("+this.index+")'>";
-boxContents+="</td></tr></table><table width='800px'><tr><td>"+this.combatLog;
+boxContents+="</td></tr></table><table><tr><td>"+this.combatLog;
 boxContents+="</td></tr></table><span id=toggled2"+this.index+" style='display:"+this.toggled2+"'>";
 boxContents+="<table><tr><td>Name:<input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value='"+this.name+"'>";
 boxContents+="</td></tr><tr><td>Size:<select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
-boxContents+="</td></tr><tr><td>Race:<select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tabaxi<option>Tiefling, Asmodeus<option>Tiefling, Baazebul<option>Tiefling, Dispater<option>Tiefling, Fierna<option>Tiefling, Glasya<option>Tiefling, Levistus<option>Tiefling, Mammon<option>Tiefling, Mephistopheles<option>Tiefling, Zariel<option>Yuan-Ti</select>";
+boxContents+="</td></tr><tr><td>Race:<select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn,Black<option>Dragonborn,Blue<option>Dragonborn,Brass<option>Dragonborn,Bronze<option>Dragonborn,Gold<option>Dragonborn,Green<option>Dragonborn,Red<option>Dragonborn,Silver<option>Dragonborn,White<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kenku<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tabaxi<option>Tiefling, Asmodeus<option>Tiefling, Baazebul<option>Tiefling, Dispater<option>Tiefling, Fierna<option>Tiefling, Glasya<option>Tiefling, Levistus<option>Tiefling, Mammon<option>Tiefling, Mephistopheles<option>Tiefling, Zariel<option>Yuan-Ti</select>";
 boxContents+="</td></tr><tr><td>or<input maxLength='200' onChange='characters["+this.index+"].setRace(this.value)' placeHolder='other race' size='40' type='ptext'>";
 boxContents+="</td></tr><tr><td>Alignment:<select onChange='characters["+this.index+"].setAlignment(this.value)'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
 boxContents+="</td></tr><tr><td>"+this.alignmentDescription;
@@ -7183,7 +7193,6 @@ boxContents+="</td></tr><tr><td><input onClick='abi=14;abiMod=characters["+this.
 boxContents+="</td></tr><tr><td><input onClick='abi=19;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].performance;abiRoll("+this.index+")'value='Roll Performance(cha)?'type='button'>+<select onChange='characters["+this.index+"].setPerformance(this.value);checkTheTarget("+this.index+")'><option>"+this.performance+"<option><option>pro<option>exp</select>"
 boxContents+="</td></tr><tr><td><input onClick='abi=20;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].persuasion;abiRoll("+this.index+")'value='Roll Persuasion(cha)?'type='button'>+<select onChange='characters["+this.index+"].setPersuasion(this.value);checkTheTarget("+this.index+")'><option>"+this.persuasion+"<option><option>pro<option>exp</select>";
 boxContents+="</td></tr><tr><td>Racial Abilility Increases:<input maxLength='200' onChange='characters["+this.index+"].setAbility(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.ability+"'>";
-boxContents+="</td></tr><tr><td>Racial Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setProficienciesRace(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.proficienciesRace+"'>";
 boxContents+="</td></tr><tr><td>Background Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setBackT(this.value)' size='40' value='"+this.backT+"'>";
 boxContents+="</td></tr><tr><td>Background Skills:<input maxLength='200' onChange='characters["+this.index+"].setBackS(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.backS+"'>";
 boxContents+="</td></tr><tr><td>Class Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setProficiencies(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.proficiencies+"'>";
@@ -7191,6 +7200,7 @@ boxContents+="</td></tr><tr><td>Class Skills:<input maxLength='200' onChange='ch
 boxContents+="</td></tr><tr><td>Class Saving Throws:<input maxLength='200' onChange='characters["+this.index+"].setSaving(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.saving+"'>";
 boxContents+="</td></tr></table></span><span id=toggled4"+this.index+" style='display:"+this.toggled4+"'>";
 boxContents+="<table><tr><td colspan='6'>ACTIONS<input maxLength='400' onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")' placeHolder='Multiatks and tgt features' size='120' type='text' value='"+this.actionNotes+"'>"
+boxContents+="</td></tr><tr><td colspan='6'>Racial Proficiencies:<input maxLength='400' onChange='characters["+this.index+"].setProficienciesRace(this.value);checkTheTarget("+this.index+")' size='120' value='"+this.proficienciesRace+"'>";
 boxContents+="</td></tr><tr><td>Make a new roll?</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName1(this.value);checkTheTarget("+this.index+")'placeHolder='atkRollToHitName+Ability+pro SpellSlot RangeInFeet'size='40' type='text' value='"+this.rollName1+"'>"
 boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll1(this.value);checkTheTarget("+this.index+")'placeHolder='XdY+Z'size='8' type='text' value="+this.roll1+">"
 boxContents+="</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName2(this.value);checkTheTarget("+this.index+")'placeHolder=' dmgType+Ability and dmgConditions' size='40' type='text' value='"+this.rollName2+"'>"
@@ -7220,7 +7230,7 @@ boxContents+="</td></tr><tr><td>Ideals:<textArea cols='40' rows='3' onChange='ch
 boxContents+="</td></tr><tr><td>Feats:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setFeats(this.value)'>"+this.feats+"</textArea>";
 boxContents+="</td></tr><tr><td>Equipment:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setEquipment(this.value)'>"+this.equipment+"</textArea>";
 boxContents+="</td></tr></table></span><span id=toggled6"+this.index+" style='display:"+this.toggled6+"'>";
-boxContents+="<table><tr><td>Class:<select onChange='characters["+this.index+"].setClass(this.value)'><option>"+this.class+"<option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Bear Totem Warrior<option>Barbarian, Eagle Totem Warrior<option>Barbarian, Wolf Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Arctic<option>Druid, Coast<option>Druid, Desert<option>Druid, Forest<option>Druid, Grassland<option>Druid, Moon<option>Druid, Mountain<option>Druid, Swamp<option>Druid, Underdark<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Oathbreaker<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Fey Wanderer<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Ranger, Swarmkeeper<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Phantom<option>Rogue, Thief<option>Rogue, Scout<option>Rogue, Soulknife<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Shadow Magic<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock, Great Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
+boxContents+="<table><tr><td>Class:<select onChange='characters["+this.index+"].setClass(this.value)'><option>"+this.class+"<option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Bear Totem Warrior<option>Barbarian, Eagle Totem Warrior<option>Barbarian, Wolf Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Arctic<option>Druid, Coast<option>Druid, Desert<option>Druid, Forest<option>Druid, Grassland<option>Druid, Moon<option>Druid, Mountain<option>Druid, Swamp<option>Druid, Underdark<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Oathbreaker<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Fey Wanderer<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Ranger, Swarmkeeper<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Phantom<option>Rogue, Thief<option>Rogue, Scout<option>Rogue, Soulknife<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Shadow Magic<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock,GenieOfAir<option>Warlock,GenieOfEarth<option>Warlock,GenieOfFire<option>Warlock,GenieOfWater<option>Warlock, Great Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
 boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].setClass(this.value)' placeHolder='other class' size='40' type='text'>";
 
 boxContents+="</td></tr><tr><td>Feature Notes:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
@@ -7257,7 +7267,7 @@ if(this.alignment.match(/Chaotic Neutral/i)){this.setAlignmentDescription("I fol
 }
 if(this.alignment.match(/Lawful Evil/i)){this.setAlignmentDescription("I take what I want up to the maximum allowed by law or loyalty, promoting order and control over others.")
 }
-if(this.alignment.match(/Lawful Good/i)){this.setAlignmentDescription("I do what\'s right as expected by society to promote order and compassion for all.")
+if(this.alignment.match(/Lawful Good/i)){this.setAlignmentDescription("I do what s right as expected by society to promote order and compassion for all.")
 }
 if(this.alignment.match(/Lawful Neutral/i)){this.setAlignmentDescription("I obey laws, traditions or my own strict code to promote order and society above all else.")
 }
@@ -7647,7 +7657,7 @@ b="@5th<b onClick='LightningBolt()'>LightningBolt</b>, <b onClick='MeldIntoStone
 c="@7th<b onClick='StoneShape()'>Stone Shape</b>, <b onClick='StoneSkin()'>Stone Skin</b>";
 dx="@9th<b onClick='Passwall()'>Passwall</b>, <b onClick='WallOfStone()'>Wall of Stone</b>"
 }
-if(this.class.match(/Swamp/)){a="@3rd(Circle of Swamps)<b onClick='Darkness()'>Darkness</b>, <b onClick='MelfsAcidArrow()'>Melf\'s Acid Arrow";
+if(this.class.match(/Swamp/)){a="@3rd(Circle of Swamps)<b onClick='Darkness()'>Darkness</b>, <b onClick='MelfsAcidArrow()'>Melf s Acid Arrow";
 b="@5th<b onClick='WaterWalk()'>Walter Walk</b>, <b onClick='StinkingCloud()'>Stinking Cloud</b>";
 c="@7th<b onClick='FreedomOfMovement()'>Freeedom of Movement</b>, <b onClick='LocateCreature()'>Locate Creature</b>";
 dx="@9th<b onClick='InsectPlague()'>Insect Plague</b>, <b onClick='Scrying()'>Scrying</b>"
@@ -7657,7 +7667,7 @@ b="@5th<b onClick='GaseousForm()'>Gaseous Form</b>, <b onClick='StinkingCloud()'
 c="@7th<b onClick='GreaterInvisibility()'>Greater Invisibility</b>, <b onClick='StoneShape()'>Stone Shape</b>";
 dx="@9th<b onClick='CloudKill()'>Cloud Kill</b>, <b onClick='InsectPlague()'>Insect Plague</b>"
 }
-if(this.class.match(/Arctic|Coast|Desert|Forest|Grassland|Mountain|Swamp|Underdark/)){this.setFeatures('@1st(Druidic Language)</td></tr><tr><td>@2nd(Wild Shape)2/2 short rest, for lvl hours/2, no spell casting inthis form, @0hp revert to your original current hp,@2nd(CR1/4)no flying swimming@4th(CR1/2)no flying,@8th(CR1)</td></tr><tr><td>@2nd(Circle of the Land)<p>(Bonus Cantrip)<p>(Natural Recovery)regain half lvl spell slot lvls after short rest</td></tr><tr><td>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>@6th(Land\'s Stride)ignore difficult terrain, pass plants without dmg, ignore slowed, immune to Entangle</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@10th(Nature\'s Ward)immune to charmed, frightened, poisoned, diseased</td></tr><tr><td>@14th(Nature\'s Sanctury)vsWis atking tgt must atk another</td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10<p>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape')
+if(this.class.match(/Arctic|Coast|Desert|Forest|Grassland|Mountain|Swamp|Underdark/)){this.setFeatures('@1st(Druidic Language)</td></tr><tr><td>@2nd(Wild Shape)2/2 short rest, for lvl hours/2, no spell casting inthis form, @0hp revert to your original current hp,@2nd(CR1/4)no flying swimming@4th(CR1/2)no flying,@8th(CR1)</td></tr><tr><td>@2nd(Circle of the Land)<p>(Bonus Cantrip)<p>(Natural Recovery)regain half lvl spell slot lvls after short rest</td></tr><tr><td>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>@6th(Land s Stride)ignore difficult terrain, pass plants without dmg, ignore slowed, immune to Entangle</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@10th(Nature s Ward)immune to charmed, frightened, poisoned, diseased</td></tr><tr><td>@14th(Nature s Sanctury)vsWis atking tgt must atk another</td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10<p>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape')
 }
 this.setEquipment('wooden shield or simple weapon.sciitar or simple melee weapon.leather armor.explorer pack.Druidic focus');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
@@ -7785,7 +7795,7 @@ this.setSkills('2 from Acrobatics, Athletics, History, Insight, Religion, or Ste
 this.setSpellAbility('wis')
 }
 if(this.class.match(/Paladin/)){if(this.class.match(/Ancients/)){
-a='@3rd(Nature\'s Wrath) 1CD, 1act, 10ft, str or vsDex end of each of its turns or restrained</td></tr><tr><td>@3rdTURN THE FAITHLESS 1CD, fey or fiend 30ft vsWis or Dash true form revealed</td></tr><tr><td>@3rd<b onClick=EnsnaringStrike()>Ensnaring Strike</b> ,@3rd[x]Speak with Animals';
+a='@3rd(Nature s Wrath) 1CD, 1act, 10ft, str or vsDex end of each of its turns or restrained</td></tr><tr><td>@3rdTURN THE FAITHLESS 1CD, fey or fiend 30ft vsWis or Dash true form revealed</td></tr><tr><td>@3rd<b onClick=EnsnaringStrike()>Ensnaring Strike</b> ,@3rd[x]Speak with Animals';
 b='@5th[x]Moonbeam @5th<b onClick=MistyStep()>Misty Step</b>';
 c='@7th.AURA OF WARDING 10ft you and allies resist spell dam @7th(10ft)@(18th 30ft)</td></tr><tr><td>@9th[x]Plant Growth @9th<b onClick=ProtectionFromEnergy()>Protection from Energy</b>';
 dx="@13th<b onClick=IceStorm()'>IceStorm</b> @13th[x]Stoneskin";
@@ -7816,7 +7826,7 @@ dx="@13th <b onClick='Blight()'>Blight</b>, <b onClick='Confusion()'>Confusion</
 e="@17th <b onClick='Contagion()'>Contagion</b>, <b onClick='DominatePerson()'>Dominate Person</b></td></tr><tr><td>@20th(Dread Lord)1 min, gloom reduces light 30ft-radi, targets in gloom take 4d10 psychic dmg if frightened, sighted targets atk@DisAdv, paladin shadows atk as bonus 3d10+cha dmg"
 }
 if(this.class.match(/Vengence/)){
-a='@3rd(Oath of Vengence)</td></tr><tr><td>@3rd(Abjure Enemy)1act, 1CD, 60ft vsWis for half speed or frightened speed 0, fiends and undead @DisAdv</td></tr><tr><td>@3rd(Vow of Enmity)bonus, 1tgt, 10ft, 1CD, atk@Adv, 10/10 turns</td></tr><tr><td>@3rd(Extra Spells)<b onClick=Bane()>Bane</b>, <b onClick=HuntersMark()>Hunter\'s Mark</b>';
+a='@3rd(Oath of Vengence)</td></tr><tr><td>@3rd(Abjure Enemy)1act, 1CD, 60ft vsWis for half speed or frightened speed 0, fiends and undead @DisAdv</td></tr><tr><td>@3rd(Vow of Enmity)bonus, 1tgt, 10ft, 1CD, atk@Adv, 10/10 turns</td></tr><tr><td>@3rd(Extra Spells)<b onClick=Bane()>Bane</b>, <b onClick=HuntersMark()>Hunter s Mark</b>';
 b='@5th(Extra Spells)<b onClick=HoldPerson()>Hold Person</b> <b onClick=MistyStep()>Misty Step</b>';
 c='@7th(Relentless Avenger)while opp atking, move half speed, immune opp atkd</td></tr><tr><td>@9th(Extra Spells)<b onClick=Haste()>Haste</b> <b onClick=ProtectionFromEnergy()>Protection from Energy</b>';
 dx="@13th(Extra Spells)<b onClick=Banishment()>Banishment</b>, <b onClick='DimensionDoor()'>Dimension Door</b>";
@@ -7837,7 +7847,7 @@ this.setSkills('2 from Athletics, Insight, Intimidation, Medicine, Persuasion, o
 this.setSpellAbility('cha')
 }
 if(this.class.match(/Beast/)){
-a='@3rd(Ranger\'s Companion)CR1/4 medium or less hawk, mastiff, panther, ac+ranger pro, atks+ranger pro, dmg+ranger pro, saves, skill checks+ranger pro, hp max is beast\'s or your lvl x 4, command as bonus on your turn protects incapacitated you';
+a='@3rd(Ranger s Companion)CR1/4 medium or less hawk, mastiff, panther, ac+ranger pro, atks+ranger pro, dmg+ranger pro, saves, skill checks+ranger pro, hp max is beast s or your lvl x 4, command as bonus on your turn protects incapacitated you';
 b='@7th(Exceptional Training)bonus command Companion to Dash, Disengage, Dodge or Help';
 c='@11th(Beastial Fury)Companion makes 2 atks';
 dx='@15th(Share Spells)30ft self spells also affect Companion'
@@ -7850,22 +7860,22 @@ c='@11th(Fey Reinforcements)<b onClick=SummonFey()>Summon Fey</b> 1/1/long rest,
 dx='@15th(Misty Wanderer)<b onClick=MistyStep()>Misty Step</b> you and 1tgt 5ft wis mod/wismod/long rest, teleport to any occupied space on the encounter map'
 }
 if(this.class.match(/Hunter/)){
-a='@3rd(Hunter\'s Prey)choose one. (Colossus Slayer)1/turn hp less max+1d8 dmg. (Giant Killer)visible large+melee atks you, react atk. (Horde Breaker)1/turn melee atk, bonus atk adjacent';
+a='@3rd(Hunter s Prey)choose one. (Colossus Slayer)1/turn hp less max+1d8 dmg. (Giant Killer)visible large+melee atks you, react atk. (Horde Breaker)1/turn melee atk, bonus atk adjacent';
 b='@7th(Defensive Tactics)choose one. (Escape the Horde)opp atkd @DisAdv. (Multiatk)when hit, ac+4 vs atker. (Steel Will)save @Adv vs fear';
 c='@11th(Volley)range atk all 10ft@11th(Whirlwind Attack)melee atk all adjacent';
-dx='@15th(Superior Hunter\'s Defense)choose one. (Evasion)vsDex for half is no dmg. (Stand Against the Tide)when missed, react, tgt same atks target. (Uncanny Dodge)react take half dmg'
+dx='@15th(Superior Hunter s Defense)choose one. (Evasion)vsDex for half is no dmg. (Stand Against the Tide)when missed, react, tgt same atks target. (Uncanny Dodge)react take half dmg'
 }
-if(this.class.match(/Monster\sSlayer/)){a="@3rd(Monster Slayer Magic)<b onClick='ProtectionFromEvilOrGood()'>Protection from Evil or Good</b>,@3rd(Hunter\'s Sense)1act, 60ft, 1tgt, learn immunities, resistances, vulnerabilities, race unless hidden from divination magic,@3rd(Slayer\'s Prey)bonus, 1tgt, 60ft, your 1st atk/turn xtra 1d6 dmg";
+if(this.class.match(/Monster\sSlayer/)){a="@3rd(Monster Slayer Magic)<b onClick='ProtectionFromEvilOrGood()'>Protection from Evil or Good</b>,@3rd(Hunter s Sense)1act, 60ft, 1tgt, learn immunities, resistances, vulnerabilities, race unless hidden from divination magic,@3rd(Slayer s Prey)bonus, 1tgt, 60ft, your 1st atk/turn xtra 1d6 dmg";
 b="@5th(Monster Slayer Magic)<b onClick='ZoneOfTruth()'>Zone of Truth</b>@7th(Supernatural Defense)you save+1d6 versus your Slayer s Prey@9th(Monster Slayer Magic)<b onClick='MagicCircle()'>Magic Circle</b></td></tr><tr><td>";
-c="@11th(Magic-User\'s Nemesis)thwart spell or thwart teleport within 60ft DC8+your spell ability+pro vsWis, recharge short rest";
-dx="@13th(Monster Slayer Magic)<b onClick='Banishment()'>Banishment</b>>@15th(Slayer\'s Counter)1react, Slayer s Prey forces your saving throw, make atk before making saving throw, a hit is also a save success"
+c="@11th(Magic-User s Nemesis)thwart spell or thwart teleport within 60ft DC8+your spell ability+pro vsWis, recharge short rest";
+dx="@13th(Monster Slayer Magic)<b onClick='Banishment()'>Banishment</b>>@15th(Slayer s Counter)1react, Slayer s Prey forces your saving throw, make atk before making saving throw, a hit is also a save success"
 }
 if(this.class.match(/Swarmkeeper/)){a="@3rd(Gathered Swarm)+1d6 pierc, or vsStr tgt moved 15ft, or you are moved 5ft,@3rd(Swarmkeeper Magic)<b onClick=MageHand()>Mage Hand</b> in swarm spirt form,@3rd <b onClick=FaerieFire()>Faerie Fire</b>@5th <b onClick=Web()>Web</b>@9th <b onClick=GaseousForm()>Gaseous Form</b>@13th <b onClick=ArcaneEye()>Arcane Eye</b>@17th <b onClick=InsectPlague()>Insect Plague</b>";
 b="@7th(Writhing Tide)flying speed 10ft, hover 1min or incapacitated lvl pro/ lvl pro/long rest";
 c="@11th(Mighty Swarm)+1d8 dmg, or move 15ft and knock prone, or you move 5ft under half cover";
 dx="@15th(Swarming Dispersal)1 react resist all dmg and 30ft teleport to open space"
 }
-this.setFeatures('</td></tr><tr><td>@1st(Favored Enemy)Survival @Adv to track, Intelligence @Adv to speak enemy language@1st 1 enemy,@6th 2 enemies@14th 3 enemies<p>or (Favored Foe)your lvl pro/ lvl pro per short rest, hit 1tgt marked 1min concen, @1st+1d4 dmg,@6th+1d6 dmg@14th+1d8 dmg</td></tr><tr><td>@1st(Natural Explorer)ignore difficult terrain, always alert, alone Stealth normal pace, forage x 2, know number, size, time of tracked enemy@1st 1 terrain type,@6th 2 terrain types@10th 3terrain types<p>or @1st(Deft Explorer)@1st(Canny)1 skill+pro becomes skill+exp, speak, read, write+2 languages,@6th(Roving)climb, swim=walk speed+5ft @10th(Tireless)1 act, temp hp 1d8+wis, lvl pro/lvl pro per short rest</td></tr><tr><td>@2nd(Fighting Style)(Archery)ranged+2or(Defense)armored AC+1or(Blind Fighting)blindsight 10ft unless tgt total coveror(Druidic Warrior)2 Druid Cantrips+wis+proor(Dueling)dmg+2or(Thrown Weapon Fighting)draw and atk, ranged+2 dmgor(Two-Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>'+a+'<p>(Primal Awareness)xtra Ranger spells,@3rd <b onClick=SpeakWithAnimals()>Speak with Animals</b>@5th <b onClick=BeastSense()>Beast Sense</b>@9th <b onClick=SpeakWithPlants()>Speak with Plants</b>@13th <b onClick=LocateCreature()>Locate Creature</b>@17th <b onClick=CommuneWithNature()>Commune with Nature</b></td></tr><tr><td>@4th(Ability Score Improvement)abi+1 and another abi+1 or abi+2@4th,@8th,@12th,@16th,@19th<p>@4th(Martial Versatility)replace your fighting style with another</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>'+b+'</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty, save @Adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act, 1slot, 10/10 turns, know beings in area 1mi, favored terrain 6mi<p>@10th(Hide in Plain Sight)10/10 turns camo, unmoving, stealth+10or(Nature\'s Veil)bonus , invisible until start next turn lvl pro/ lvl pro/long rest</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Vanish)Hide as bonus, not nonmagically tracked</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no @Adv vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dmg+wisMod');
+this.setFeatures('</td></tr><tr><td>@1st(Favored Enemy)Survival @Adv to track, Intelligence @Adv to speak enemy language@1st 1 enemy,@6th 2 enemies@14th 3 enemies<p>or (Favored Foe)your lvl pro/ lvl pro per short rest, hit 1tgt marked 1min concen, @1st+1d4 dmg,@6th+1d6 dmg@14th+1d8 dmg</td></tr><tr><td>@1st(Natural Explorer)ignore difficult terrain, always alert, alone Stealth normal pace, forage x 2, know number, size, time of tracked enemy@1st 1 terrain type,@6th 2 terrain types@10th 3terrain types<p>or @1st(Deft Explorer)@1st(Canny)1 skill+pro becomes skill+exp, speak, read, write+2 languages,@6th(Roving)climb, swim=walk speed+5ft @10th(Tireless)1 act, temp hp 1d8+wis, lvl pro/lvl pro per short rest</td></tr><tr><td>@2nd(Fighting Style)(Archery)ranged+2or(Defense)armored AC+1or(Blind Fighting)blindsight 10ft unless tgt total coveror(Druidic Warrior)2 Druid Cantrips+wis+proor(Dueling)dmg+2or(Thrown Weapon Fighting)draw and atk, ranged+2 dmgor(Two-Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>'+a+'<p>(Primal Awareness)xtra Ranger spells,@3rd <b onClick=SpeakWithAnimals()>Speak with Animals</b>@5th <b onClick=BeastSense()>Beast Sense</b>@9th <b onClick=SpeakWithPlants()>Speak with Plants</b>@13th <b onClick=LocateCreature()>Locate Creature</b>@17th <b onClick=CommuneWithNature()>Commune with Nature</b></td></tr><tr><td>@4th(Ability Score Improvement)abi+1 and another abi+1 or abi+2@4th,@8th,@12th,@16th,@19th<p>@4th(Martial Versatility)replace your fighting style with another</td></tr><tr><td>@5th(Extra Attack)</td></tr><tr><td>'+b+'</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty, save @Adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act, 1slot, 10/10 turns, know beings in area 1mi, favored terrain 6mi<p>@10th(Hide in Plain Sight)10/10 turns camo, unmoving, stealth+10or(Nature s Veil)bonus , invisible until start next turn lvl pro/ lvl pro/long rest</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Vanish)Hide as bonus, not nonmagically tracked</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no @Adv vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dmg+wisMod');
 this.setEquipment('scale mail or leather armor.2 shortswords or 2 simple melee weapons.dungeoneer pack or explorer pack.Longbow 20 arrows');
 this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, all weapons');
@@ -7966,7 +7976,7 @@ dx='@18th(Spell Bombardment)1/turn roll again on any max roll and add to the dmg
 if(this.class.match(/Sorcerer, Storm/)){
 a='(Storm Sorcery)<p>@1st(Wind Speaker)you know the Primordial language<p>(Tempestuous Magic)fly up to 10ft not opp atkd';
 b='@6th(Heart of the Storm)resist lightning thunder/when casting lightning or thunder, 10ft-radi half your lvl dmg<p>(Storm Guide)1act, 20ft-radi, stop rain, direct wind 100ft-radi uteo your next turn';
-c='@14th(Storm\'s Fury)melee atkd, react your lvl in lightning dmg and vsStr or pushed up to 20ft';
+c='@14th(Storm s Fury)melee atkd, react your lvl in lightning dmg and vsStr or pushed up to 20ft';
 dx='@18th(Wind Soul)1/1/long rest, immune lightning and thunder, fly 60ft, reduce fly 30ft and 3+cha allies can fly 30ft'
 }
 this.setFeatures('</td></tr><tr><td>(Sorcerer)<p>Sorcery Points,@2nd 2+1 Sorcerery Point/lvl<p>Cantrips Known@1st 4@4th 5@10th 6<p>Spells Known@1st 2lvl+1<br>1st Slots:@1st 2,@2nd 3,@3rd 4<br>2nd Slots:@3rd 2@4th 3<br>3rd Slots:@5th 2,@6th 3<br>4th Slots:@7th 1,@8th 2@9th 3<p>5th Slots:@9th 1@10th 2@18th 3<p>6th Slots:@11th 1@19th 2<p>7th Slots:@13th 1@20th 2<p>8th Slots:@15th 1<p>9th Slots:@17th 1<p>'+a+'</td></tr><tr><td>@2nd(Font of Magic)exchange spell slots and Sorcery Points<p>@2nd(Spell Points) your lvl/your lvl</td></tr><tr><td>(Metamagic),@3rd 2@10th 3 @17th 4(Careful Spell)1SP, select chaMod targets in spell area to be immune(Distant Spell)1SP, range x 2, touch is 30ft(Empowered Spell)1SP, discard dmg and reroll dmg chaMod times, in addition to other Metamagic(Extend Spell)1SP, duration x 2, max 24 hrs(Heightened Spell)3SP, tgt rolls 1st save @DisAdv(Quickened Spell)1SP, 1 act is 1 bonus cast(Subtile Spell)1SP, no verbal somatic cast needed(Twinned Spell)SP is spell lvl, non self spell, tgt another</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Sorcerous Restoration)0SP is 4SP, recharge short rest');
@@ -7989,17 +7999,42 @@ b='@6th(Misty Escape)1/1 short rest, take dam, react teleport 60ft invisible til
 c='@10th(Beguiling Defense)immune charm, react vsWis or charm charmers 10/10 turns or dmgd';
 dx='@14th(Dark Delirium)1/1 short rest, 60ft, vsWis charmed or frightened con 10/10 turns or dmgd'
 }
-if(this.class.match(/Fiend/)){a="@1st(Extra Spells)<b onClick='BurningHands()'>Burning Hands</b>, <b onClick='Command()'>Command</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='BlindnessDeafness()'>BlindnessDeafness</b>, <b onClick='ScorchingRay()'>Scorching Ray</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Fireball()'>Fireball</b>, <b onClick='StinkingCloud()'>Stinking Cloud</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='FireShield()'>Fire Shield</b>, <b onClick='WallOfFire()'>Wall of Fire</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='FlameStrike()'>Flame Strike</b>, <b onClick='Hallow()'>Hallow</b><p>@1st(Dark One\'s Blessing)kill tgt gain temp hp+chaMod+lvl";
-b='@6th(Dark One\'s Own Luck)1/1/long rest, abi check or save+1d10';
+if(this.class.match(/Fiend/)){a="@1st(Extra Spells)<b onClick='BurningHands()'>Burning Hands</b>, <b onClick='Command()'>Command</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='BlindnessDeafness()'>BlindnessDeafness</b>, <b onClick='ScorchingRay()'>Scorching Ray</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Fireball()'>Fireball</b>, <b onClick='StinkingCloud()'>Stinking Cloud</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='FireShield()'>Fire Shield</b>, <b onClick='WallOfFire()'>Wall of Fire</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='FlameStrike()'>Flame Strike</b>, <b onClick='Hallow()'>Hallow</b><p>@1st(Dark One s Blessing)kill tgt gain temp hp+chaMod+lvl";
+b='@6th(Dark One s Own Luck)1/1/long rest, abi check or save+1d10';
 c='@10th(Fiendish Resilience)1/1 resist 1 dmg type till next/long rest';
 dx='@14th(Hurl through Hell)1/1/long rest, on hit, teleport non-fiend tgt through lower planes and back 10d10 psychic'
 }
-if(this.class.match(/Great/)){a="@1st(Extra Spells)<b onClick='DissonantWhispers()'>Dissonant Whispers</b>, <b onClick='TashasHideousLaughter()'>Tasha\'s Hideous Laughter</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='DetectThoughts()'>Detect Thoughts</b>, <b onClick='PhantasmalForce()'>Phantasmal Force</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Clairvoyance()'>Clairvoyance</b>, <b onClick='Sending()'>Sending</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='DominateBeast()'>Dominate Beast</b>@4th<b onClick='EvardsBlackTentacles()'>Evard\'s Black Tentacles</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='DominatePerson()'>Dominate Person</b>, <b onClick='Telekinesis()'>Telekinesis<p>@1st(Awakened Mind)telepathy with language knowing targets 30ft";
+
+if(this.class.match(/GenieOfAir/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilGood()'>DetectEvilGood</b>, <b onClick='Thunderwave()'>Thunderwave</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='GustOfWind()'>GustOfWind</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodWater()'>CreateFoodWater</b>, <b onClick='WindWalk()'>WindWalk</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='GreaterInvisibility()'>GreaterInvisibility</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='Seeming()'>Seeming</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
+b='@6th(Elemental Gift)resist thunder dmg,bonus,fly or hover 30ft,10min,lvlPro/lvlPro/long rest';
+c='@10th(Sanctuary Vessel)30ft,5 allies can enter vessel,in 10min is short rest+lvlPro HP heal to HitDice heal';
+dx='@14th(Limited Wish)act,effect of any class 6th lvl spell or lower,1d4 long rests'
+}
+
+if(this.class.match(/GenieOfEarth/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilGood()'>DetectEvilGood</b>, <b onClick='Sanctuary()'>Sanctuary</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='SpikeGrowth()'>SpikeGrowth</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodWater()'>CreateFoodWater</b>, <b onClick='MeldIntoStone()'>MeldIntoStone</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='StoneShape()'>StoneShape</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='WallOfStone()'>WallOfStone</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
+b='@6th(Elemental Gift)resist bludgeoning dmg,bonus,fly or hover 30ft,10min,lvlPro/lvlPro/long rest';
+c='@10th(Sanctuary Vessel)30ft,5 allies can enter vessel,in 10min is short rest+lvlPro HP heal to HitDice heal';
+dx='@14th(Limited Wish)act,effect of any class 6th lvl spell or lower,1d4 long rests'
+}
+
+if(this.class.match(/GenieOfFire/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilGood()'>DetectEvilGood</b>, <b onClick='BurningHands()'>BurningHands</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='ScorchingRay()'>ScorchingRay</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodWater()'>CreateFoodWater</b>, <b onClick='Fireball()'>Fireball</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='FireShield()'>FireShield</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='FlameStrike()'>FlameStrike</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
+b='@6th(Elemental Gift)resist fire dmg,bonus,fly or hover 30ft,10min,lvlPro/lvlPro/long rest';
+c='@10th(Sanctuary Vessel)30ft,5 allies can enter vessel,in 10min is short rest+lvlPro HP heal to HitDice heal';
+dx='@14th(Limited Wish)act,effect of any class 6th lvl spell or lower,1d4 long rests'
+}
+
+if(this.class.match(/GenieOfWater/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilGood()'>DetectEvilGood</b>, <b onClick='FogCloud()'>FogCloud</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='Blur()'>Blur</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodWater()'>CreateFoodWater</b>, <b onClick='SleetStorm()'>SleetStorm</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='ControlWater()'>ControlWater</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='ConeOfCold()'>ConeOfCold</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
+b='@6th(Elemental Gift)resist cold dmg,bonus,fly or hover 30ft,10min,lvlPro/lvlPro/long rest';
+c='@10th(Sanctuary Vessel)30ft,5 allies can enter vessel,in 10min is short rest+lvlPro HP heal to HitDice heal';
+dx='@14th(Limited Wish)act,effect of any class 6th lvl spell or lower,1d4 long rests'
+}
+
+if(this.class.match(/Great/)){a="@1st(Extra Spells)<b onClick='DissonantWhispers()'>Dissonant Whispers</b>, <b onClick='TashasHideousLaughter()'>Tasha s Hideous Laughter</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='DetectThoughts()'>Detect Thoughts</b>, <b onClick='PhantasmalForce()'>Phantasmal Force</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Clairvoyance()'>Clairvoyance</b>, <b onClick='Sending()'>Sending</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='DominateBeast()'>Dominate Beast</b>@4th<b onClick='EvardsBlackTentacles()'>Evard s Black Tentacles</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='DominatePerson()'>Dominate Person</b>, <b onClick='Telekinesis()'>Telekinesis<p>@1st(Awakened Mind)telepathy with language knowing targets 30ft";
 b='@6th(Entropic Ward)1/1 short rest, react you atkd @DisAdv, next atk your tgt @Adv';
 c='@10th(Thought Shield)immune telepathy @will, resist psychic, atker takes same psychic dam';
 dx='@14th(Create Thrall)incapacitated humanoid telepathically charmed til Remove Curse'
 }
-if(this.class.match(/Hexblade/)){a="@1st(Extra Spells)<b onClick='Shield()'>Shield</b>, <b onClick='WrathfulSmite()'>Wrathful Smite</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='Blur()'>Blur</b>, <b onClick='BrandingSmite()'>Branding Smite</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Blink()'>Blink</b>, <b onClick='ElementalWeapon()'>Elemental Weapon</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>Phantasmal Killer</b>, <b onClick='StaggeringSmite()'>Staggering Smite</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='BanishingSmite()'>Banishing Smite</b>, <b onClick='ConeOfCold()'>Cone of Cold</b><p>(Hexblade\'s Curse)bonus, 1tgt, 30ft, 1min, dmg+pro, crit on 19-20, tgt dies you heal your lvl+cha, 1/1s rest<p>(Hex Warrior)medium armor+pro, shields+pro, martial weapons+pro, weapon and pact weapons atk+cha dmg+cha";
+if(this.class.match(/Hexblade/)){a="@1st(Extra Spells)<b onClick='Shield()'>Shield</b>, <b onClick='WrathfulSmite()'>Wrathful Smite</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='Blur()'>Blur</b>, <b onClick='BrandingSmite()'>Branding Smite</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Blink()'>Blink</b>, <b onClick='ElementalWeapon()'>Elemental Weapon</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>Phantasmal Killer</b>, <b onClick='StaggeringSmite()'>Staggering Smite</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='BanishingSmite()'>Banishing Smite</b>, <b onClick='ConeOfCold()'>Cone of Cold</b><p>(Hexblade s Curse)bonus, 1tgt, 30ft, 1min, dmg+pro, crit on 19-20, tgt dies you heal your lvl+cha, 1/1s rest<p>(Hex Warrior)medium armor+pro, shields+pro, martial weapons+pro, weapon and pact weapons atk+cha dmg+cha";
 b=",@6th(Accursed Specter)your tgt dies becomes Specter with temp hp 1/2 your lvl, atks+your cha uteoy next/long rest";
 c='@10th(Armor of Hexes)atker hits you, roll d6 4+atker misses';
 dx='@14th(Master of Hexes)you transfer the curse to another target, you do not gain hp from new tgt deaths'
@@ -8009,7 +8044,7 @@ b='@6th(Defy Death)1/1/long rest, heal 1d8+conMod on success death save or stabi
 c='@10th(Undying Nature)do not need air, food, water or sleep unless long or short rest/age 1yr for every 10yrs/immune magically aged';
 dx='@14th(Indestructable Life)1/1 short rest/bonus heal 1d8+lvl/reattach your severed body parts'
 }
-this.setFeatures('</td></tr><tr><td>@1st(Pact Magic)spellMod is chaMod<p>Cantrips Known@1st 2@4th 3@10th 4<p>Spells Known@1st 2,@2nd 3,@3rd 4@4th 5@5th 6,@6th 7@7th 8,@8th 9@9th 10@11th 11@13th 12@15th 13@17th 14@19th 15<p>Slot Lvl(Warlocks always cast all spells at this Slot Lvl)@1st 1st,@2nd 2nd@4th 3rd@7th 4th@9th 5th<p>Warlock Invocations Known,@2nd 2@5th 3@7th 4@9th 5@12th 6@15th 7@18th 8<p>(Expanded Spell List)<p>Cantrips<b onClick=BoomingBlade()>BoomingBlade</b>, <b onClick=GreenFlameBlade()>GreenFlameBlade</b>, <b onClick=LightningLure()>LightningLure</b>, <b onClick=MindSliver()>MindSliver</b>, <b onClick=SwordBurst()>SwordBurst</b><br>3rd Lvl Spells<b onClick=IntellectFortress()>IntellectFortress</b>, <b onClick=SpiritShroud()>SpiritShroud</b>, <b onClick=SummonFey()>SummonFey</b>, <b onClick=SummonShadowspawn()>SummonShadowspawn</b>, <b onClick=SummonUndead()>SummonUndead</b><br>4th Lvl Spells<b onClick=SummonAberration()>SummonAberration</b><p>5th Lvl Spells<b onClick=Mislead()>Mislead</b>, <b onClick=PlanarBinding()>PlanarBinding</b>, <b onClick=TeleportationCircle()>TeleportationCircle</b><p>6th Lvl Spells<b onClick=SummonFiend()>SummonFiend</b>, <b onClick=TashasOtherworldlyGuise()>TashasOtherworldlyGuise</b><p>7th Lvl Spells<b onClick=DreamOfTheBlueVeil()>DreamOfTheBlueVeil</b><p>9th Lvl Spells<b onClick=BladeOfDisaster()>BladeOfDisaster</b>, <b onClick=Gate()>Gate</b>, <b onClick=Weird()>Weird</b></td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Eldritch Invocations)INVOCATION AGONIZING BLAST must have Eldritch Blast, dmg+chaMod<p>ARMOR OF SHADOWS Mage Armor no slot cost<p>@9th ASCENDANT STEP Levitate @will, no slot cost<p>BEAST SPEECH Speak with Animals @will, no slot cost<p>BEGUILING INFLUENCE Deception Persuasion+pro<p>@7th BEWITCHING WHISPERS Compulsion, slot cost, 1/1/long rest<p>BOOK OF ANCIENT SECRETS must have Pact of the Tome, 2 1st lvl spells of any class as rituals, add adventure rituals 2hrs 50gp<p>@15th CHAINS OF CARCERI 1/1/long rest, Hold Monster @will, no slot cost or components(Devil s Sight)120ft see in magical nonmagical darkness @7th(Dreadful Word)1/1/long rest, Confusion, slot cost<p>ELDRITCH SIGHT Detect magic @will, no slot cost<p>ELDRITCH SPEAR must have Eldritch Blast, range 300ft<p>EYES OF THE RUNE KEEPER read all writing<p>FIENDISH VIGOR False Life @will, no slot cost<p>GAZE OF TWO MINDS see through ally till tteo your nt<p>@12th LIFEDRINKER must have Pact of the Blade, dmg+chaMod necrotic<p>MASK OF MANY FACES <b onClick=DisguiseSelf()>Disguise Self</b> @will, no slot cost<p>@15th MASTER OF MYRIAD FORMS Alter Self @will, no slot cost<p>@9th MINIONS OF CHAOS 1/1/long rest, Conjure Elemental, slot cost<p>@5th MIRE THE MIND 1/1/long rest, Slow, slot cost<p>MISTY VISIONS Silent Image @will, no slot cost, no material component<p>@5th ONE WITH SHADOWS in dim or darkness, 1act, invisible til move, act, react<p>@9th OTHERWORLDLY LEAP jump @will, no slot cost, no material component<p>REPELLING BLAST must have Eldritch Blast, on hit push tgt up to 10ft<p>@7th SCULPTOR OF FLESH 1/1/long rest, Polymorph, 1 slot<p>@5th SIGN OF ILL OMEN 1/1/long rest, Bestow Curse<p>THIEF OF FIVE FATES 1/1/long rest, Bane<p>@5th THIRSTING BLADE must have Pact of the Blade, 1 more atk<p>@15th VISIONS OF DISTANT REALMS Arcane Eye @will, no slot cost<p>VOICE OF THE CHAIN MASTER must have Pact of the Chain, telepathy with familiar, sense and speak through familiar<p>@9th WHISPERS OF THE GRAVE Speak with Dead @will, no slot cost<p>@15th WITCH SIGHT see true form of shapechanger of illusion or transmu 30ft</td></tr><tr><td>@3rd(Pact Boon)</td></tr><tr><td>@3rd(Pact of the Chain)Find Familiar as ritual, imp, pseudodragon, quasit, sprite, or normal familiar, familiar atks as its reactfamiliar fly or swim at 40ftbonus, familiar magical atks with your spellAbi+DCfamiliar takes your resistance dmg<p>(Pact of the Talisman)abi check+1d4 proLvl/proLvl/long rest, 1hr ritual to replace the talisman@12th(Bond of the Talisman)ally wears your talisman, you can teleport to your ally, lvl pro/lvl pro/long restor (Eldritch Mind)vsCon @Adv to maintain concen@7th(Protection of the Talisman)ally wears your talisman, +1d4 to save throw, lvlPro/lvlPro/long restor @7th(Rebuke of the Talisman)react, atkr 30ft takes lvlPro psychic dmg and pushed 10ft<p>or ,@3rd(Pact of the Blade)weapon becomes magical, summon dismiss weapon as bonus<p>or ,@3rd(Pact of the Tomb)3 any class xtra cantrips, 1hr to replace book@5th(Far Scribe)lvl pro of allies write name in book, Sending Spell send and receive messages, 1min@9th(Gift of the Protectors)lvl pro of allies write name in book, 0hp becomes 1hp less take 2xMaxHP+CurHP, 1/long rest</td></tr><tr><td>@4th(Ability Score Improvement)1 abi+2, or abi+1 another abi+1@4th,@8th,@12th,@16th,@19th <p>(Eldritch Versatility)during abi increase, exchange 1 cantrip, exchange pact boon feature, @12th exchange 1 Mystic Arcanum spell</td></tr><tr><td>@5th(Undying Servitude) <b onClick=AnimateDead()>AnimateDead</b> no spell slot/long rest'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Mystic Arcanum)1 new 6th lvl Warlock spell without slot cost, after slot cost)1/1, @13th 7th lvl 1/1, @15th 8th lvl 1/1, @17th 9th lvl 1/1 </td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Eldritch Master)1/1/long rest, takes 1min restore all slots</td></tr>');
+this.setFeatures('</td></tr><tr><td>@1st(Pact Magic)spellMod is chaMod<p>Cantrips Known@1st 2,@4th 3,@10th 4<p>Spells Known@1st 2,@2nd 3,@3rd 4,@4th 5,@5th 6,@6th 7,@7th 8,@8th 9,@9th 10,@11th 11,@13th 12,@15th 13,@17th 14,@19th 15<p>Slot Lvl(Warlocks always cast all spells at this Slot Lvl)@1st 1st,@2nd 2nd,@4th 3rd,@7th 4th,@9th 5th<p>Warlock Invocations Known,@2nd 2@5th 3@7th 4@9th 5@12th 6@15th 7@18th 8<p>(Expanded Spell List)<p>Cantrips<b onClick=BoomingBlade()>BoomingBlade</b>, <b onClick=GreenFlameBlade()>GreenFlameBlade</b>, <b onClick=LightningLure()>LightningLure</b>, <b onClick=MindSliver()>MindSliver</b>, <b onClick=SwordBurst()>SwordBurst</b><br>3rd Lvl Spells<b onClick=IntellectFortress()>IntellectFortress</b>, <b onClick=SpiritShroud()>SpiritShroud</b>, <b onClick=SummonFey()>SummonFey</b>, <b onClick=SummonShadowspawn()>SummonShadowspawn</b>, <b onClick=SummonUndead()>SummonUndead</b><br>4th Lvl Spells<b onClick=SummonAberration()>SummonAberration</b><p>5th Lvl Spells<b onClick=Mislead()>Mislead</b>, <b onClick=PlanarBinding()>PlanarBinding</b>, <b onClick=TeleportationCircle()>TeleportationCircle</b><p>6th Lvl Spells<b onClick=SummonFiend()>SummonFiend</b>, <b onClick=TashasOtherworldlyGuise()>TashasOtherworldlyGuise</b><p>7th Lvl Spells<b onClick=DreamOfTheBlueVeil()>DreamOfTheBlueVeil</b><p>9th Lvl Spells<b onClick=BladeOfDisaster()>BladeOfDisaster</b>, <b onClick=Gate()>Gate</b>, <b onClick=Weird()>Weird</b></td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Eldritch Invocations)INVOCATION AGONIZING BLAST must have Eldritch Blast, dmg+chaMod<p>ARMOR OF SHADOWS Mage Armor no slot cost<p>@9th ASCENDANT STEP Levitate @will, no slot cost<p>BEAST SPEECH Speak with Animals @will, no slot cost<p>BEGUILING INFLUENCE Deception Persuasion+pro<p>@7th BEWITCHING WHISPERS Compulsion, slot cost, 1/1/long rest<p>BOOK OF ANCIENT SECRETS must have Pact of the Tome, 2 1st lvl spells of any class as rituals, add adventure rituals 2hrs 50gp<p>@15th CHAINS OF CARCERI 1/1/long rest, Hold Monster @will, no slot cost or components(Devil s Sight)120ft see in magical nonmagical darkness @7th(Dreadful Word)1/1/long rest, Confusion, slot cost<p>ELDRITCH SIGHT Detect magic @will, no slot cost<p>ELDRITCH SPEAR must have Eldritch Blast, range 300ft<p>EYES OF THE RUNE KEEPER read all writing<p>FIENDISH VIGOR False Life @will, no slot cost<p>GAZE OF TWO MINDS see through ally till tteo your nt<p>@12th LIFEDRINKER must have Pact of the Blade, dmg+chaMod necrotic<p>MASK OF MANY FACES <b onClick=DisguiseSelf()>Disguise Self</b> @will, no slot cost<p>@15th MASTER OF MYRIAD FORMS Alter Self @will, no slot cost<p>@9th MINIONS OF CHAOS 1/1/long rest, Conjure Elemental, slot cost<p>@5th MIRE THE MIND 1/1/long rest, Slow, slot cost<p>MISTY VISIONS Silent Image @will, no slot cost, no material component<p>@5th ONE WITH SHADOWS in dim or darkness, 1act, invisible til move, act, react<p>@9th OTHERWORLDLY LEAP jump @will, no slot cost, no material component<p>REPELLING BLAST must have Eldritch Blast, on hit push tgt up to 10ft<p>@7th SCULPTOR OF FLESH 1/1/long rest, Polymorph, 1 slot<p>@5th SIGN OF ILL OMEN 1/1/long rest, Bestow Curse<p>THIEF OF FIVE FATES 1/1/long rest, Bane<p>@5th THIRSTING BLADE must have Pact of the Blade, 1 more atk<p>@15th VISIONS OF DISTANT REALMS Arcane Eye @will, no slot cost<p>VOICE OF THE CHAIN MASTER must have Pact of the Chain, telepathy with familiar, sense and speak through familiar<p>@9th WHISPERS OF THE GRAVE Speak with Dead @will, no slot cost<p>@15th WITCH SIGHT see true form of shapechanger of illusion or transmu 30ft</td></tr><tr><td>@3rd(Pact Boon)</td></tr><tr><td>@3rd(Pact of the Chain)Find Familiar as ritual, imp, pseudodragon, quasit, sprite, or normal familiar, familiar atks as its reactfamiliar fly or swim at 40ftbonus, familiar magical atks with your spellAbi+DCfamiliar takes your resistance dmg<p>(Pact of the Talisman)abi check+1d4 proLvl/proLvl/long rest, 1hr ritual to replace the talisman@12th(Bond of the Talisman)ally wears your talisman, you can teleport to your ally, lvl pro/lvl pro/long restor (Eldritch Mind)vsCon @Adv to maintain concen@7th(Protection of the Talisman)ally wears your talisman, +1d4 to save throw, lvlPro/lvlPro/long restor @7th(Rebuke of the Talisman)react, atkr 30ft takes lvlPro psychic dmg and pushed 10ft<p>or ,@3rd(Pact of the Blade)weapon becomes magical, summon dismiss weapon as bonus<p>or ,@3rd(Pact of the Tomb)3 any class xtra cantrips, 1hr to replace book@5th(Far Scribe)lvl pro of allies write name in book, Sending Spell send and receive messages, 1min@9th(Gift of the Protectors)lvl pro of allies write name in book, 0hp becomes 1hp less take 2xMaxHP+CurHP, 1/long rest</td></tr><tr><td>@4th(Ability Score Improvement)1 abi+2, or abi+1 another abi+1@4th,@8th,@12th,@16th,@19th <p>(Eldritch Versatility)during abi increase, exchange 1 cantrip, exchange pact boon feature, @12th exchange 1 Mystic Arcanum spell</td></tr><tr><td>@5th(Undying Servitude) <b onClick=AnimateDead()>AnimateDead</b> no spell slot/long rest'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Mystic Arcanum)1 new 6th lvl Warlock spell without slot cost, after slot cost)1/1, @13th 7th lvl 1/1, @15th 8th lvl 1/1, @17th 9th lvl 1/1 </td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Eldritch Master)1/1/long rest, takes 1min restore all slots</td></tr>');
 this.setEquipment('light crossbow 20 bolts or simple weapon.component pouch or arcane focus.scholar pack or dungeoneer pack.leather armor.simple weapon.2 daggers');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simple weapons');
@@ -8488,7 +8523,7 @@ D20NaturalRoll2=naturalRoll;
 D20RollModifier2=roll;
 abilityCheckRollTotal1=D20Roll1+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
 abilityCheckRollTotal2=D20Roll2+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
-AbiCheckLog=characters[x].name+"\'s<br>Ability Check<br>or Skill Check<br>or Saving Throw</td><td><h3>Roll 1</h3>1d20+0<br>="+D20NaturalRoll1+" natural<br>"+D20RollModifier1+" modifier<br>="+D20Roll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal1+"</td><td><h3>Roll 2</h3>1d20+0<br>="+D20NaturalRoll2+" natural<br>"+D20RollModifier2+" modifier<br>="+D20Roll2+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal2;
+AbiCheckLog=characters[x].name+" s<br>Ability Check<br>or Skill Check<br>or Saving Throw</td><td><h3>Roll 1</h3>1d20+0<br>="+D20NaturalRoll1+" natural<br>"+D20RollModifier1+" modifier<br>="+D20Roll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal1+"</td><td><h3>Roll 2</h3>1d20+0<br>="+D20NaturalRoll2+" natural<br>"+D20RollModifier2+" modifier<br>="+D20Roll2+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal2;
 characters[x].setCombatLog(AbiCheckLog);
 }
 function _setInt(x){this.inte=x;
@@ -8560,16 +8595,57 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('16-80 yrs old('+(16+parseInt(rollDForm('1d64+0')))+'yrs old), 6ft tall+2d12in('+(6.0+(parseInt(rollDForm('2d12+0'))/12)).toFixed(1).replace('.', 'ft ')+'in), 200lbs+2d6('+(parseInt(200)+parseInt(rollDForm('2d6+0')))+'lbs)')
 }
-if(this.race.match(/Dragonborn/)){this.setAbility('str+2, cha+1');
+if(this.race.match(/Dragonborn/))
+{
+this.setAbility('str+2, cha+1');
 this.setLanguages('Common, Draconic');
-this.setProficienciesRace('');
 this.setResistance('Acid');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
-this.setTrait('(Breath weapon)(Black)1d6 Acid 5x30ft line Dex for half(Blue)Lightning 5x30ft line Dex for half(Brass)Fire 5x30ft line Dex for half(Bronze)Lightning 5x30ft line Dex for half(Copper)Acid 5x30ft line Dex for half(Gold)Fire 15ft cone Dex for half(Green)Poison 15ft cone Con for half(Red)Fire 15ft cone Dex for half(Silver)Cold 15ft cone Con for half(White)Cold 15ft cone Con for half+1d6,@6th, 11th, 16th lvl, 1-80 years old, 250 lbs., 6+feet tall')
+if(this.race.match(/Dragonborn,Black/))
+{
+this.setProficienciesRace('(Breath weapon)(Black)1d6 Acid 5x30ft line vsDex for half')
 }
-if(this.race.match(/Dwarf, \sHill/)){this.setAbility('con+2, wis+1');
+if(this.race.match(/Dragonborn,Blue/))
+{
+this.setProficienciesRace('(Breath weapon)(Blue)Lightning 5x30ft line vsDex for half')
+}
+if(this.race.match(/Dragonborn,Brass/))
+{
+this.setProficienciesRace('(Breath weapon)(Brass)Fire 5x30ft line vsDex for half(Bronze)Lightning 5x30ft line vsDex for half')
+}
+if(this.race.match(/Dragonborn,Bronze/))
+{
+this.setProficienciesRace('(Breath weapon)(Bronze)Lightning 5x30ft line vsDex for half')
+}
+if(this.race.match(/Dragonborn,Copper/))
+{
+this.setProficienciesRace('(Breath weapon)(Copper)Acid 5x30ft line vsDex for half')
+}
+if(this.race.match(/Dragonborn,Gold/))
+{
+this.setProficienciesRace('(Breath weapon)(Gold)Fire 15ft-cone vsDex for half')
+}
+if(this.race.match(/Dragonborn,Green/))
+{
+this.setProficienciesRace('(Breath weapon)(Green)Poison 15ft-cone vsCon for half')
+}
+if(this.race.match(/Dragonborn,Red/))
+{
+this.setProficienciesRace('(Breath weapon)(Red)Fire 15ft-cone vsDex for half(Silver)Cold 15ft-cone vsCon for half')
+}
+if(this.race.match(/Dragonborn,Silver/))
+{
+this.setProficienciesRace('(Breath weapon)(Silver)Cold 15ft-cone vsCon for half')
+}
+if(this.race.match(/Dragonborn,White/))
+{
+this.setProficienciesRace('(Breath weapon)(White)Cold 15ft-cone vsCon for half+1d6,@6th, 11th, 16th lvl, 1-80 years old, 250 lbs., 6+feet tall')
+}
+}
+
+if(this.race.match(/Dwarf,\sHill/)){this.setAbility('con+2, wis+1');
 this.setLanguages('Common, Dwarvish');
 this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or brewer or Mason Tools, (Stonecunning)History+exp re the details of stone work age and construction');
 this.setResistance('(Dwarven Resilience)resist poison 1/2 dmg save vs poison @Adv');
@@ -8578,7 +8654,7 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('25ft');
 this.setTrait('(Dwarven Toughness)when lvling up, hp+1hp, 1-350 years old, 150 lbs., 4-5fttall')
 }
-if(this.race.match(/Dwarf, \sMountain/)){this.setAbility('str+2, con+2');
+if(this.race.match(/Dwarf,\sMountain/)){this.setAbility('str+2, con+2');
 this.setLanguages('Common, Dwarvish');
 this.setProficienciesRace('light armor, medium armor, battleaxes, handaxes, light hammers, and warhammers, smith or brewer or mason Tools, (Stonecunning)History+exp re the details of stone work age and construction');
 this.setResistance('(Dwarven Resilience)resist poison 1/2 dmg save vs poison @Adv');
@@ -8587,16 +8663,16 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('25ft');
 this.setTrait("50-350 yrs old("+(50+parseInt(rollDForm('1d300+0')))+"yrs old), 4ft 0in tall+2d4("+(4.0+(parseInt(rollDForm('2d4+0'))/12)).toFixed(1).replace('.', 'ft ')+"in tall, 115lbs+2d6("+(parseInt(115)+parseInt(rollDForm('2d6+0')))+"lbs)")
 }
-if(this.race.match(/Dwarf, \sGray/)){this.setAbility('str+1');
+if(this.race.match(/Dwarf,\sGray/)){this.setAbility('str+1');
 this.setLanguages('Common, Dwarvish, Undercommon');
 this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or brewer or Mason Tools, (Stonecunning)History+exp re the details of stone work age and construction, ,@3rd(Enlarge/Reduce)only Enlarge on self 1/1/long rest, @5th(Invisibility)no components needed/in dim light 1/1/long rest');
 this.setResistance('(Duergar Resilience)save @Adv vs illusion, charm, paralysis');
 this.setSenses('Darkvision 120ft');
 this.setSize('Medium 5x5ft');
 this.setSpeed('25ft');
-this.setTrait('(Sunlight Sensitivity)atks and Perception @DisAdv in sunlight, 150 lbs., 4-5fttall')
+this.setVulnerability('(Sunlight Sensitivity)atks and Perception @DisAdv in sunlight, 150 lbs., 4.5fttall')
 }
-if(this.race.match(/Elf, \sDark/)){this.setAbility('dex+2, cha+1');
+if(this.race.match(/Elf,\sDark/)){this.setAbility('dex+2, cha+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish');
 this.setProficienciesRace('Dancing Lights(cha), ,@3rd Faerie Fire(cha), @5th Darkness(cha)1/1/long rest, rapiers, and shortswords');
@@ -8606,7 +8682,7 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('(Sunlight Sensitivity)atks and Perception @DisAdv in sunlight, 1-750 years old, 5-6fttall')
 }
-if(this.race.match(/Elf, \sHalf/)){this.setAbility('cha+2, abi+1 and abi+1');
+if(this.race.match(/Elf,\sHalf/)){this.setAbility('cha+2, abi+1 and abi+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish, and 1 language');
 this.setProficienciesRace('2 skills+pro');
@@ -8616,7 +8692,7 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('1-180 years old, 5-6fttall')
 }
-if(this.race.match(/Elf, \sHigh/)){this.setAbility('dex+2, int+1');
+if(this.race.match(/Elf,\sHigh/)){this.setAbility('dex+2, int+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish, and 1 language');
 this.setProficienciesRace('1 Wizard Cantrip(Int), Longbows, longswords, shortbows, and shortswords');
@@ -8626,7 +8702,7 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('1-750 years old, 5-6fttall')
 }
-if(this.race.match(/Elf, \sMoon/)){this.setAbility('dex+2, int+1');
+if(this.race.match(/Elf,\sMoon/)){this.setAbility('dex+2, int+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish, and 1 language');
 this.setProficienciesRace('Longbows, longswords, shortbows, shortswords');
@@ -8636,7 +8712,7 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('1-750 years old, 5-6fttall')
 }
-if(this.race.match(/Elf, \sShadow/)){this.setAbility('dex+2, con+1');
+if(this.race.match(/Elf,\sShadow/)){this.setAbility('dex+2, con+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish, and 1 language');
 this.setProficienciesRace('Longbows, longswords, shortbows, shortswords');
@@ -8646,7 +8722,7 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('100-750 yrs old('+(100+parseInt(rollDForm('1d650+0')))+'yrs old), 4ft 8in tall+2d8('+(4.8+(parseInt(rollDForm('2d8+0'))/12)).toFixed(1).replace('.', 'ft ')+'in), 90lbs+1d4('+(parseInt(90)+parseInt(rollDForm('1d4+0')))+'lbs)')
 }
-if(this.race.match(/Elf, \sWood/)){this.setAbility('dex+2, int+1');
+if(this.race.match(/Elf,\sWood/)){this.setAbility('dex+2, int+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish');
 this.setProficienciesRace('Longbows, longswords, shortbows, and shortswords');
@@ -8669,7 +8745,7 @@ this.setSpeed('30ft');
 this.setFeatureNotes("(Firbolg Magic) wis Detect Magic, Disguise Self 1/1 short rest, (Hidden Step)bonus, invisible utso your next turn, (Powerful Build), (Speech of Beast and Leaf)vsCha to influence them");
 this.setTrait("30-500yrs old("+(30+parseInt(rollDForm('1d470+0')))+"yrs old), 6ft2in tall+2d12("+(6.2+(parseInt(rollDForm('2d12+0'))/12)).toFixed(1).replace('.', 'ft')+"in tall, 175lbs+2d6("+(parseInt(175)+parseInt(rollDForm('2d6+0')))+"lbs)")
 }
-if(this.race.match(/Gnome, \sDeep/)){this.setAbility('dex+1');
+if(this.race.match(/Gnome,\sDeep/)){this.setAbility('dex+1');
 this.setLanguages('Common, Gnomish, Undercommon');
 this.setProficienciesRace('Natural Illusionist(Minor Illusion(Int))');
 this.setResistance('(Gnome Cunning)save vs magic @Adv');
@@ -8678,7 +8754,7 @@ this.setSize('Small 5x5ft');
 this.setSpeed('25ft');
 this.setTrait('(Stone Camouflage)Stealth @Adv in rocky terrain, 1-500 years old, 40 lbs., 3fttall')
 }
-if(this.race.match(/Gnome, \sForest/)){this.setAbility('dex+1, int+2');
+if(this.race.match(/Gnome,\sForest/)){this.setAbility('dex+1, int+2');
 this.setLanguages('Common, Gnomish');
 this.setProficienciesRace('Natural Illusionist(Minor Illusion(Int))');
 this.setResistance('(Gnome Cunning)save vs magic @Adv');
@@ -8687,7 +8763,7 @@ this.setSize('Small 5x5ft');
 this.setSpeed('25ft');
 this.setTrait('(Speak with Small Beasts), 1-500 years old, 40 lbs., 3fttall')
 }
-if(this.race.match(/Gnome, \sRock/)){this.setAbility('int+2, con+1');
+if(this.race.match(/Gnome,\sRock/)){this.setAbility('int+2, con+1');
 this.setLanguages('Common, Gnomish');
 this.setProficienciesRace('(Artifcer s Lore)History+exp regarding alchemical and magic items(Tinker)Tinker Tools+pro 1hr 10gp 1 toy AC5 1hp Clockwork Toy Fire Starter Music Box');
 this.setResistance('(Gnome Cunning)save vs magic @Adv');
@@ -8707,7 +8783,7 @@ this.setSize('Small 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('8-60 yrs old('+(8+parseInt(rollDForm('1d52+0')))+'yrs old), 3ft 5in tall+2d4('+(3.5+(parseInt(rollDForm('2d4+0'))/12)).toFixed(1).replace('.', 'ft ')+'in), 35lbs+1d4('+(parseInt(35)+parseInt(rollDForm('1d4+0')))+'lbs)')
 }
-if(this.race.match(/Halfling, \sLightfoot/)){this.setAbility('dex+2, cha+1');
+if(this.race.match(/Halfling,\sLightfoot/)){this.setAbility('dex+2, cha+1');
 this.setLanguages('Common, Halfling');
 this.setProficienciesRace('');
 this.setResistance('(Brave)save vs fear @Adv');
@@ -8716,7 +8792,7 @@ this.setSize('Small 5x5ft');
 this.setSpeed('25ft');
 this.setTrait('(Naturally Stealthy)can try to hide behind larger being, (Nimbleness)can move through larger being space, (Lucky)re-roll on a natural 1, 1-250 years old, 40 lbs., 3fttall')
 }
-if(this.race.match(/Halfling, \sStout/)){this.setAbility('dex+2, con+1');
+if(this.race.match(/Halfling,\sStout/)){this.setAbility('dex+2, con+1');
 this.setLanguages('Common, Halfling');
 this.setProficienciesRace('');
 this.setResistance('(Stout Resilience)resist Poison, save vs poison @Adv, (Brave)save vs fear @Adv');
@@ -8745,6 +8821,20 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait("15-80 yrs old("+(15+parseInt(rollDForm('1d65+0')))+"yrs old), 4ft 8in tall+2d10("+(4.8+(parseInt(rollDForm('2d10+0'))/12)).toFixed(1).replace('.', 'ft ')+"in tall, 110lbs+2d4("+(parseInt(110)+parseInt(rollDForm('2d4+0')))+"lbs)")
 }
+if(this.race.match(/Kenku/))
+{
+this.setAbility('dex+2, wis+1');
+this.setActionNotes('(Expert Forgery)duplicate items@Adv,(Mimicry)imitate sounds,Deception+cha vsWis ');
+this.setAlignment('Chaotic');
+this.setLanguages('read,write Auran,mimic languages');
+this.setProficienciesRace('2 from Acrobatics, Deception, Stealth or Slight of Hand');
+this.setResistance('');
+this.setSenses('Darkvision 60ft');
+this.setSize('Medium 5x5ft');
+this.setSpeed('30ft');
+this.setTrait('12-60 yrs old('+(12+parseInt(rollDForm('1d48+0')))+'yrs old), 4ft4in tall+2d8('+(4.4+(parseInt(rollDForm('2d8+0'))/12)).toFixed(1).replace('.', 'ft ')+'in), 50lbs+1d6('+(parseInt(50)+parseInt(rollDForm('1d6+0')))+'lbs)')
+}
+
 if(this.race.match(/Kobold/)){this.setAbility('str+2, dex+2');
 this.setActionNotes('(Grovel Cower and Beg)10ft 1 act 1/1 short rest allies atk@Adv till end of your next turn, (Pack Tactics)woke ally 5ft you atk@Adv');
 this.setAlignment('Lawful');
@@ -8767,7 +8857,7 @@ this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('12-50 yrs old('+(12+parseInt(rollDForm('1d38+0')))+'yrs old), 5ft 4in tall+2d8('+(5.4+(parseInt(rollDForm('2d8+0'))/12)).toFixed(1).replace('.', 'ft ')+'in), 175lbs+2d6('+(parseInt(175)+parseInt(rollDForm('2d6+0')))+'lbs)')
 }
-if(this.race.match(/Orc, \sHalf/)){this.setAbility('str+2, con+1');
+if(this.race.match(/Orc,\sHalf/)){this.setAbility('str+2, con+1');
 this.setLanguages('Common, Orc');
 this.setProficienciesRace('Intimidation+pro');
 this.setResistance('');
@@ -9623,7 +9713,7 @@ function saveAll()
 for(var i=0; i< characters.length; i++){globalSave+=characters[i].getSaveText()+" "
 }showSavePrompt("all characters", globalSave)
 }
-function showSavePrompt(name, toSave){toSave="<table width='200px'><tr><td>Cut and paste below and above the lines into the Characters.js file.<hr></td></tr><tr><td>"+toSave+"</td></tr><tr><td><hr><input type='button' onClick='savePane.hide()'value=Close></td></tr></table>";
+function showSavePrompt(name, toSave){toSave="<table><tr><td>Cut and paste below and above the lines into the Characters.js file.<hr></td></tr><tr><td>"+toSave+"</td></tr><tr><td><hr><input type='button' onClick='savePane.hide()'value=Close></td></tr></table>";
 savePane.setContents(toSave);
 savePane.show()
 }
