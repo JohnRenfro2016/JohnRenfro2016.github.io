@@ -48,10 +48,12 @@ font-family: 'MyKidsHandwritten';
 font-size:18px;
 margin:1px;
 outline:1px solid transparent;
+overflow-wrap:anywhere;
 padding:1px;
 text-decoration:#22271f;
 text-decoration-thickness:2px;
 vertical-align:top;
+word-break:break-word;
 z-index:2;
 }
 
@@ -67,7 +69,6 @@ font-size:75%;
 margin:1px;
 max-width:50px;
 min-width:25px;
-word-wrap: normal;
 outline:1px solid transparent;
 padding:1px;
 text-decoration:#22271f;
@@ -209,6 +210,17 @@ To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
 </td></tr><tr><td>
 <input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollSixDisplay'></b>
 </td></tr><tr><td>
+Random Skills:<br><span id='displayRandomSkills'></span>
+</td></tr><tr><td>
+</td></tr><tr><td>
+Random Languages:<br><span id='displayRandomLanguages'></span>
+</td></tr><tr><td>
+Random Musical Instruments:<br><span id='displayRandomMusicalInstruments'></span>
+</td></tr><tr><td>
+Random Tools:<br><span id='displayRandomTools'></span>
+</td></tr><tr><td>
+Random Gambling Sets:<span id='displayRandomGamblingSets'></span>
+</td></tr><tr><td>
 tgt then paste stats.
 <textArea cols='30' rows='30' onChange='stats=this.value;setStats()'></textarea><b id='statsDisplay'></b>
 </td></tr></table>
@@ -217,6 +229,51 @@ tgt then paste stats.
 <img class='MapSelection' src='Maps/Map.png'>
 </td></tr></table>
 <script>
+
+const shuffleSkillsArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+skillsArray=["Acrobatics(Dex)","AnimalHandling(Wis)","Arcana(Int)","Athletics(Str)","Deception(Cha)","History(Int)","Insight(Wis)","Intimidation(Cha)","Investigation(Int)","Medicine(Wis)","Nature(Int)","Perception(Wis)","Performance(Cha)","Persuasion(Cha)","Religion(Int)","SleightOfHand(Dex)","Stealth(Dex)","Survival(Wis)"];
+shuffleSkillsArray(skillsArray);
+document.getElementById("displayRandomSkills").innerHTML=(skillsArray);
+
+const shuffleLanguagesArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+languagesArray=["Common","Dwarvish","Elvish","Giant","Gnomish","Goblin","Halfling","Orc","Abyssal","Celestial","DeepSpeech","Draconic","Infernal","Primordial","Sylvan","Undercommon"];
+shuffleLanguagesArray(languagesArray);
+document.getElementById("displayRandomLanguages").innerHTML =(languagesArray);
+
+const shuffleToolsArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+toolsArray=["AlchemistSupplies","BrewerSupplies","CalligrapherSupplies","ThievesTools","CarpenterTools","CartographerTools","CobblerTools","CookUtensils","DisguiseKit","ForgeryKit","GlassblowerTools","HerbalismKit","JewelerTools","LeatherworkerTools","MasonTools","NavigatorTools","PainterSupplies","PotterTools","SmithTools","TinkerTools","WeaverTools","WoodcarverTools"];
+shuffleToolsArray(toolsArray)
+document.getElementById("displayRandomTools").innerHTML=(toolsArray);
+
+const shuffleMusicalInstrumentsArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+musicalInstrumentsArray=["Bagpipes","Drum","Dulcimer","Flute","Lute","Lyre","Horn","PanFlute","Shawm","Viol"];
+shuffleMusicalInstrumentsArray(musicalInstrumentsArray);
+document.getElementById("displayRandomMusicalInstruments").innerHTML =(musicalInstrumentsArray);
+
+const gamblingSetsArray = (arr) => arr.sort(() => 0.5 - Math.random());
+
+document.getElementById("displayRandomGamblingSets").innerHTML =(gamblingSetsArray(["DragonDiceSet","PlayingCardSet"]));
+
 function AGEBox(color, code, textColorCode)
 {
 this.borderX=10;
