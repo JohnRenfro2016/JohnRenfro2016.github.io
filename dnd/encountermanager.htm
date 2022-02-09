@@ -5,7 +5,7 @@
 <meta name="description" content="2017 Dungeons & Dragons 5th Edition Tabletop Roleplaying Game Manager">
 <meta name="keywords" content="DnD, Dungeons and Dragons, D&D, Dungeons & Dragons, Fantasy RPG, tabletop roleplaying game, TTRPG">
 <title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game Single Encounter Manager 2022(Wizards of the Coast, Asmor, Zorn, Ren, Vanderwaal Webdesign)</title>
-//<script src="Scripts/WZDragdrop.js"></script>
+<script src="Scripts/WZDragdrop.js"></script>
 //<script src="Scripts/jquery-3.6.0.js"></script>
 <script src="Scripts/jquery-ui-1.13.1.js"></script>
 <script src="Scripts/draggable-div-with-touch.js"></script>
@@ -3214,9 +3214,9 @@ getAction(t1)
 }
 function BestowCurse()
 {
-a='3rd(Bestow Curse touch conce,10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsWis or',
+a='3rd(Bestow Curse)touch conce,10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsWis or tgt no action this turn or',
 b='0d0+0',
-c='*1 abi @DisAdv or*atks you @DisAdv or*vsWis or no actions/turn or*weapon dmg+1d8necro',
+c='1tgt abi @DisAdv,or tgt atks you @DisAdv,or wpn dmg+1d8 necro to tgt,4thSlot or higher,10min,9thSlot till Dispelled',
 dmgDice='1d8+0',
 getAction(t1)
 }
@@ -3238,7 +3238,7 @@ getAction(t1)
 }
 function Clairvoyance()
 {
-a='3rd(Clairvoyance)10min 1mi conce,10min',
+a='3rd(Clairvoyance)1mi conce,10min',
 b='0d0+0',
 c='invisible sensor toggle see or hear in familiar location or behind a door, around a corner, in a grove of trees See Invisibility detects it',
 dmgDice='0d0+0',
@@ -3270,7 +3270,7 @@ getAction(t1)
 }
 function Fear()
 {
-a='3rd(Fear self 30ft-cone conce,10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsWis',
+a='3rd(Fear)self,30ft-cone,conce,10/10 turns)DC8+'+characters[targeted].spellAbility+'+pro vsWis',
 b='0d0+0',
 c='drop items, frightened, Dash till out of your sight vsWis each turn',
 dmgDice='0d0+0',
@@ -3294,7 +3294,7 @@ getAction(t1)
 }
 function Fly()
 {
-a='3rd(Fly)touch self or ally+1/slot conce,10min',
+a='3rd(Fly)touch,self or ally+1/slot conce,10min',
 b='0d0+0',
 c='fly speed 60ft',
 dmgDice='0d0+0',
@@ -3334,7 +3334,7 @@ getAction(t1)
 }
 function HypnoticPattern()
 {
-a='3rd(Hypnotic Pattern 120ft s, m conce,10/10 turns 30ft-cube tgts who see)DC8+'+characters[targeted].spellAbility+'+pro vsWis',
+a='3rd(Hypnotic Pattern)120ft s, m conce,10/10 turns 30ft-cube tgts who see)DC8+'+characters[targeted].spellAbility+'+pro vsWis',
 b='0d0+0',
 c='charmed speed 0 til slapped or dmg',
 dmgDice='0d0+0',
@@ -3358,7 +3358,7 @@ getAction(t1)
 }
 function Nondetection()
 {
-a='3rd(Nondetection touch 8hrs',
+a='3rd(Nondetection)touch 8hrs',
 b='0d0+0',
 c='up to 10ft-cube being is hidden from divination magic',
 dmgDice='0d0+0',
@@ -3366,7 +3366,7 @@ getAction(t1)
 }
 function PhantomSteed()
 {
-a='3rd(Phantom Steed ritual 10/10 turns 30ft 1hr a horseline being is summoned for you and an ally to ride speed 100ft 10mi/hr 13mi/hr @fast pace',
+a='3rd(Phantom Steed)ritual 10/10 turns 30ft 1hr a horseline being is summoned for you and an ally to ride speed 100ft 10mi/hr 13mi/hr @fast pace',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
@@ -3398,9 +3398,9 @@ getAction(t1)
 }
 function Sending()
 {
-a='3rd(Sending unlim range 10/10 turns',
+a='3rd(Sending)1act,unlim range,1knownTgt,10/10 turns',
 b='0d0+0',
-c='25 word telepathic message to an int1+ally that knows it is you and replies 5 percent message does not arrive on alternate plane',
+c='25 word telepathic message to an int1+ally that knows it is you and replies 5% message does not arrive on alternate plane',
 dmgDice='0d0+0',
 getAction(t1)
 }
@@ -3424,7 +3424,7 @@ function SpeakWithDead()
 {
 a='3rd(Speak with Dead)1 corpse with mouth answers 5 questions with knowledge it had in life; can cast on same every 10 days 10ft 10min',
 b='0d0+0',
-c='25 word telepathic message to an int1+ally that knows it is you and replies 5 percent message does not arrive on alternate plane',
+c='25 word telepathic message to an int1+ally that knows it is you and replies 5 % message does not arrive on alternate plane',
 dmgDice='0d0+0',
 getAction(t1)
 }
@@ -3502,7 +3502,7 @@ getAction(t1)
 }
 function BladeBarrier()
 {
-a='6th(Blade Barrier 100×20×5ft(l×w×h)wall or 30 radius 20x5ft(w×h)ring; 6d10 slash dmg; save halves; 3/4 cover Dex 90ft conce,10min P 218',
+a='6th(Blade Barrier)100×20×5ft(l×w×h)wall or 30 radius 20x5ft(w×h)ring; 6d10 slash dmg; save halves; 3/4 cover Dex 90ft conce,10min P 218',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
@@ -3590,7 +3590,7 @@ getAction(t1)
 }
 function Confusion()
 {
-a='4th(Confusion 90ft conce,10/10 turns 10ft-radi tgts)DC8+'+characters[targeted].spellAbility+'+pro vsWis',
+a='4th(Confusion)90ft conce,10/10 turns 10ft-radi tgts)DC8+'+characters[targeted].spellAbility+'+pro vsWis',
 b='0d0+0',
 c='d10 1 moves d8 direction no actions, 2-6 no movement no actions, 7-8 melee atk random in or no actions, 9-10 normal actions and movement',
 dmgDice='0d0+0',
@@ -3624,13 +3624,13 @@ function ControlWater()
 {
 a='4th(Control Water)300ft conce,10min 100ft-cube of water rise 20ft',
 b='0d0+0',
-c='huge or less swept boats 25 percent capsize*or Part Water Create trench*or Redirect Flow*or Whirlpool 50ft sq x 25ft deep pulled down spell vs Athletics to escape or bludg entering or starting turn',
+c='huge or less swept boats 25 % capsize*or Part Water Create trench*or Redirect Flow*or Whirlpool 50ft sq x 25ft deep pulled down spell vs Athletics to escape or bludg entering or starting turn',
 dmgDice='2d8+0',
 getAction(t1)
 }
 function GreaterInvisibility()
 {
-a='4th(Greater Invisibility touch 1tgt conce,10/10 turns',
+a='4th(Greater Invisibility)touch 1tgt conce,10/10 turns',
 b='0d0+0',
 c='tgt and its items are invisible and atks @Adv, atkd @DisAdv',
 dmgDice='0d0+0',
@@ -3638,7 +3638,7 @@ getAction(t1)
 }
 function DimensionDoor()
 {
-a='4th(Dimension Door)Teleport yourself and 1 ally within 5ft, up to 500ft to a place you can see, specify, or describe 500ft P 233',
+a='4th(Dimension Door)Teleport yourself and 1 ally,5-500ft,to a place you can see, specify, or describe',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
@@ -5621,7 +5621,7 @@ s4(s1+'AnimateDead'+s2+'Animate Dead'+s3)
 s4(s1+'AuraOfVitality'+s2+'Aura of Vitality'+s3)
 s4(s1+'BanishingSmite'+s2+'Banishing Smite'+s3)
 s4(s1+'BeaconOfHope'+s2+'Beacon of Hope'+s3)
-s4(s1+'BestowCurse'+s2+'Clairvoyance'+s3)
+s4(s1+'BestowCurse'+s2+'BestowCurse'+s3)
 s4(s1+'BlindingSmite'+s2+'Blinding Smite'+s3)
 s4(s1+'Blink'+s2+'Blink'+s3)
 s4(s1+'CallLightning'+s2+'Call Lightning'+s3)
@@ -5670,6 +5670,7 @@ s4(s1+'WaterBreathing'+s2+'Water Breathing'+s3)
 s4(s1+'WaterWalk'+s2+'Water Walk'+s3)
 
 s4('</td><td><h3>4th lvl Spells</h3>')
+s4(s1+'ArcaneEye'+s2+'Arcane Eye'+s3)
 s4(s1+'AuraOfLife'+s2+'Aura of Life'+s3)
 s4(s1+'Banishment'+s2+'Banishment'+s3)
 s4(s1+'BestowCurse'+s2+'Bestow Curse'+s3)
@@ -5684,11 +5685,14 @@ s4(s1+'ConjureVolley'+s2+'Conjure Volley'+s3)
 s4(s1+'ControlWater'+s2+'Control Water'+s3)
 s4(s1+'DeathWard'+s2+'Death Ward'+s3)
 s4(s1+'DestructiveSmite'+s2+'Destructive Smite'+s3)
+s4(s1+'DimensionDoor'+s2+'Dimension Door(Sorc,Warl,Wiza)'+s3)
 s4(s1+'DispelEvilOrGood'+s2+'Dispel Evil or Good'+s3)
 s4(s1+'DispelMagic'+s2+'Dispel Magic'+s3)
 s4(s1+'Divination'+s2+'Divination'+s3)
-s4(s1+'DimensionDoor'+s2+'Dimension Door'+s3)
 s4(s1+'DominateBeast'+s2+'Dominate Beast'+s3)
+s4(s1+'ElementalBane'+s2+'Elemental Bane'+s3)
+s4(s1+'EvardsBlackTentacles'+s2+'Evard s Black Tentacles'+s3)
+s4(s1+'Fabricate'+s2+'Fabricate'+s3)
 s4(s1+'Fear'+s2+'Fear'+s3)
 s4(s1+'FeignDeath'+s2+'Feign Death'+s3)
 s4(s1+'FireShield'+s2+'Fire Shield'+s3)
@@ -5702,9 +5706,12 @@ s4(s1+'GuardianOfFaith'+s2+'Guardian of Faith'+s3)
 s4(s1+'HallucinatoryTerrain'+s2+'Hallucinatory Terrain'+s3)
 s4(s1+'HypnoticPattern'+s2+'Hypnotic Pattern'+s3)
 s4(s1+'IceStorm'+s2+'Ice Storm'+s3)
+s4(s1+'LeomundsSecretChest'+s2+'Leomund s Secret Chest'+s3)
 s4(s1+'LeomundsTinyHut'+s2+'Leomund s Tiny Hut'+s3)
 s4(s1+'LocateCreature'+s2+'Locate Creature'+s3)
 s4(s1+'MajorImage'+s2+'Major Image'+s3)
+s4(s1+'MorFaithfulHound'+s2+'Mor. Faithful Hound'+s3)
+s4(s1+'MorPrivateSanctum'+s2+'Mor. Private Sanctum'+s3)
 s4(s1+'OtelukesResilientSphere'+s2+'Otiluke s Resilient Sphere'+s3)
 s4(s1+'PhantasmalKiller'+s2+'Phantasmal Killer'+s3)
 s4(s1+'PlantGrowth'+s2+'Plant Growth'+s3)
@@ -5717,116 +5724,75 @@ s4(s1+'StaggeringSmite'+s2+'Staggering Smite'+s3)
 s4(s1+'StinkingCloud'+s2+'Stinking Cloud'+s3)
 s4(s1+'StoneShape'+s2+'Stone Shape'+s3)
 s4(s1+'Stoneskin'+s2+'Stoneskin'+s3)
+s4(s1+'StormSphere'+s2+'Storm Sphere'+s3)
 s4(s1+'SwiftQuiver'+s2+'Swift Quiver'+s3)
 s4(s1+'Tongues'+s2+'Tongues'+s3)
 s4(s1+'TreeStride'+s2+'Tree Stride'+s3)
-s4(s1+'WallOfFire'+s2+'Wall of Fire'+s3)
-s4(s1+'ArcaneEye'+s2+'Arcane Eye'+s3)
-s4(s1+'Blight'+s2+'Blight'+s3)
-s4(s1+'Confusion'+s2+'Confusion'+s3)
-s4(s1+'ConjureMinorElementals'+s2+'Conjure Minor Elementals'+s3)
-s4(s1+'ControlWater'+s2+'Control Water'+s3)
-s4(s1+'ElementalBane'+s2+'Elemental Bane'+s3)
-s4(s1+'EvardsBlackTentacles'+s2+'Evard s Black Tentacles'+s3)
-s4(s1+'Fabricate'+s2+'Fabricate'+s3)
-s4(s1+'FireShield'+s2+'Fire Shield'+s3)
-s4(s1+'GreaterInvisibility'+s2+'Greater Invisibility'+s3)
-s4(s1+'HallucinatoryTerrain'+s2+'Hallucinatory Terrain'+s3)
-s4(s1+'LeomundsSecretChest'+s2+'Leomund s Secret Chest'+s3)
-s4(s1+'LocateCreature'+s2+'Locate Creature'+s3)
-s4(s1+'MorFaithfulHound'+s2+'Mor. Faithful Hound'+s3)
-s4(s1+'MorPrivateSanctum'+s2+'Mor. Private Sanctum'+s3)
-s4(s1+'OtilukesResilientSphere'+s2+'Otiluke s Resilient Sphere'+s3)
-s4(s1+'PhantasmalKiller'+s2+'Phantasmal Killer'+s3)
-s4(s1+'Polymorph'+s2+'Polymorph'+s3)
-s4(s1+'StoneShape'+s2+'Stone Shape'+s3)
-s4(s1+'Stoneskin'+s2+'Stoneskin'+s3)
-s4(s1+'StormSphere'+s2+'Storm Sphere'+s3)
 s4(s1+'VitriolicSphere'+s2+'Vitriolic Sphere'+s3)
 s4(s1+'WallOfFire'+s2+'Wall of Fire'+s3)
 s4(s1+'WaterySphere'+s2+'Watery Sphere'+s3)
-s4(s1+'Confusion'+s2+'Confusion'+s3)
-s4(s1+'DominateBeast'+s2+'Dominate Beast'+s3)
-s4(s1+'IceStorm'+s2+'Ice Storm'+s3)
-s4(s1+'Polymorph'+s2+'Polymorph'+s3)
-s4(s1+'Stoneskin'+s2+'Stoneskin'+s3)
-s4(s1+'DimensionDoor'+s2+'Dimension Door'+s3)
-s4(s1+'HallucinatoryTerrain'+s2+'Hallucinatory Terrain'+s3)
 
 s4('</td><td><h3>5th lvl Spells</h3>')
-s4(s1+'ContactOtherPlane'+s2+'Contact Other Plane'+s3)
-s4(s1+'HoldMonster'+s2+'Hold Monster'+s3)
 s4(s1+'AnimateObjects'+s2+'Animate Objects'+s3)
+s4(s1+'AntilifeShell'+s2+'Antilife Shell'+s3)
 s4(s1+'Awaken'+s2+'Awaken'+s3)
+s4(s1+'BigbysHand'+s2+'BigbysHand'+s3)
+s4(s1+'CircleOfPower'+s2+'Circle of Power'+s3)
+s4(s1+'Cloudkill'+s2+'Cloudkill'+s3)
+s4(s1+'Commune'+s2+'Commune'+s3)
+s4(s1+'CommuneWithNature'+s2+'Commune with Nature'+s3)
+s4(s1+'ConeOfCold'+s2+'Cone of Cold'+s3)
+s4(s1+'ConjureElemental'+s2+'Conjure Elemental'+s3)
+s4(s1+'ContactOtherPlane'+s2+'Contact Other Plane'+s3)
+s4(s1+'Contagion'+s2+'Contagion'+s3)
+s4(s1+'ControlWinds'+s2+'Control Winds'+s3)
+s4(s1+'Creation'+s2+'Creation'+s3)
+s4(s1+'DispelEvilOrGood'+s2+'Dispel Evil or Good'+s3)
+s4(s1+'DominatePerson'+s2+'Dominate Person'+s3)
+s4(s1+'Dream'+s2+'Dream'+s3)
 s4(s1+'Geas'+s2+'Geas'+s3)
 s4(s1+'GreaterRestoration'+s2+'Greater Restoration'+s3)
+s4(s1+'Hallow'+s2+'Hallow'+s3)
+s4(s1+'HoldMonster'+s2+'Hold Monster'+s3)
+s4(s1+'Immolation'+s2+'Immolation'+s3)
+s4(s1+'InsectPlague'+s2+'Insect Plague'+s3)
 s4(s1+'LegendLore'+s2+'Legend Lore'+s3)
 s4(s1+'MassCureWounds'+s2+'Mass Cure Wounds'+s3)
 s4(s1+'Mislead'+s2+'Mislead'+s3)
 s4(s1+'ModifyMemory'+s2+'Modify Memory'+s3)
-s4(s1+'PlanarBinding'+s2+'Planar Binding'+s3)
-s4(s1+'RaiseDead'+s2+'Raise Dead'+s3)
-s4(s1+'Scrying'+s2+'Scrying'+s3)
-s4(s1+'Seeming'+s2+'Seeming'+s3)
-s4(s1+'TeleportationCircle'+s2+'Teleportation Circle'+s3)
-s4(s1+'Commune'+s2+'Commune'+s3)
-s4(s1+'Contagion'+s2+'Contagion'+s3)
-s4(s1+'DispelEvilOrGood'+s2+'Dispel Evil or Good'+s3)
-s4(s1+'Geas'+s2+'Geas'+s3)
-s4(s1+'GreaterRestoration'+s2+'Greater Restoration'+s3)
-s4(s1+'Hallow'+s2+'Hallow'+s3)
-s4(s1+'InsectPlague'+s2+'Insect Plague'+s3)
-s4(s1+'LegendLore'+s2+'Legend Lore'+s3)
-s4(s1+'PlanarBinding'+s2+'Planar Binding'+s3)
-s4(s1+'RaiseDead'+s2+'Raise Dead'+s3)
-s4(s1+'AntilifeShell'+s2+'Antilife Shell'+s3)
-s4(s1+'CommuneWithNature'+s2+'Commune with Nature'+s3)
-s4(s1+'ConjureElemental'+s2+'Conjure Elemental'+s3)
-s4(s1+'GreaterRestoration'+s2+'Greater Restoration'+s3)
-s4(s1+'InsectPlague'+s2+'Mass Cure Wounds'+s3)
-s4(s1+'PlanarBinding'+s2+'Planar Binding'+s3)
-s4(s1+'Reincarnate'+s2+'Reincarnate'+s3)
-s4(s1+'TreeStride'+s2+'Tree Stride'+s3)
-s4(s1+'CircleOfPower'+s2+'Circle of Power'+s3)
-s4(s1+'Cloudkill'+s2+'Cloudkill'+s3)
-s4(s1+'ConeOfCold'+s2+'Cone of Cold'+s3)
-s4(s1+'Creation'+s2+'Creation'+s3)
-s4(s1+'DominatePerson'+s2+'Dominate Person'+s3)
-s4(s1+'InsectPlague'+s2+'Insect Plague'+s3)
-s4(s1+'Seeming'+s2+'Seeming'+s3)
-s4(s1+'Telekinesis'+s2+'Telekinesis'+s3)
-s4(s1+'Teleportation Circle'+s2+'Teleportation Circle'+s3)
-s4(s1+'BigbysHand'+s2+'BigbysHand'+s3)
-s4(s1+'ConeOfCold'+s2+'Cone of Cold'+s3)
-s4(s1+'ControlWinds'+s2+'Control Winds'+s3)
-s4(s1+'Dream'+s2+'Dream'+s3)
-s4(s1+'Immolation'+s2+'Immolation'+s3)
-s4(s1+'LegendLore'+s2+'Legend Lore'+s3)
-s4(s1+'Mislead'+s2+'Mislead'+s3)
-s4(s1+'ModifyMemory'+s2+'Modify Memory'+s3)
 s4(s1+'Passwall'+s2+'Passwall'+s3)
 s4(s1+'PlanarBinding'+s2+'Planar Binding'+s3)
+s4(s1+'RaiseDead'+s2+'Raise Dead'+s3)
 s4(s1+'RarysTelepathicBond'+s2+'Rary s Telepathic Bond'+s3)
+s4(s1+'Reincarnate'+s2+'Reincarnate'+s3)
 s4(s1+'Scrying'+s2+'Scrying'+s3)
 s4(s1+'Seeming'+s2+'Seeming'+s3)
 s4(s1+'Telekinesis'+s2+'Telekinesis'+s3)
 s4(s1+'TeleportationCircle'+s2+'Teleportation Circle'+s3)
 s4(s1+'TransmuteRock'+s2+'TransmuteRock'+s3)
+s4(s1+'TreeStride'+s2+'Tree Stride'+s3)
 s4(s1+'WallOfForce'+s2+'Wall of Force'+s3)
 s4(s1+'WallOfStone'+s2+'Wall of Stone'+s3)
 
 s4('</td><td><h3>6th lvl Spells</h3>')
 s4(s1+'ArcaneGate'+s2+'ArcaneGate'+s3)
+s4(s1+'BladeBarrier'+s2+'Blade Barrier'+s3)
 s4(s1+'ChainLightning'+s2+'Chain Lightning'+s3)
 s4(s1+'CircleOfDeath'+s2+'Circle of Death'+s3)
+s4(s1+'ConjureFey'+s2+'Conjure Fey'+s3)
 s4(s1+'Contingency'+s2+'Contingency'+s3)
 s4(s1+'CreateUndead'+s2+'Create Undead'+s3)
 s4(s1+'Disintegrate'+s2+'Disintegrate'+s3)
 s4(s1+'DrawmijsInstantSummons'+s2+'Dramij s Instant Summons'+s3)
 s4(s1+'Eyebite'+s2+'Eyebite'+s3)
+s4(s1+'FindThePath'+s2+'Find the Path'+s3)
 s4(s1+'FleshToStone'+s2+'Flesh to Stone'+s3)
+s4(s1+'Forbiddance'+s2+'Forbiddance'+s3)
 s4(s1+'GlobeOfInvulnerability'+s2+'Globe of Invulnerability'+s3)
 s4(s1+'GuardsAndWards'+s2+'Guards and Wards'+s3)
+s4(s1+'Heal'+s2+'Heal'+s3)
+s4(s1+'Harm'+s2+'Harm'+s3)
+s4(s1+'HeroesFeast'+s2+'Heroes Feast'+s3)
 s4(s1+'InvestitureOfFlame'+s2+'Investiture of Flame'+s3)
 s4(s1+'InvestitureOfIce'+s2+'Investiture of Ice'+s3)
 s4(s1+'InvestitureOfStone'+s2+'Investiture of Stone'+s3)
@@ -5836,95 +5802,76 @@ s4(s1+'MassSuggestion'+s2+'Mass Suggestion'+s3)
 s4(s1+'MoveEarth'+s2+'Move Earth'+s3)
 s4(s1+'OtilukesFreezingSphere'+s2+'Otiluke s Freezing Sphere'+s3)
 s4(s1+'OttosIrreDance'+s2+'Otto s Irre. Dance'+s3)
+s4(s1+'PlanarAlly'+s2+'Planar Ally'+s3)
 s4(s1+'ProgrammedIllusion'+s2+'Programmed Illusion'+s3)
 s4(s1+'Sunbeam'+s2+'Sunbeam'+s3)
+s4(s1+'TransportViaPlants'+s2+'Transport via Plants'+s3)
 s4(s1+'TrueSeeing'+s2+'TrueSeeing'+s3)
 s4(s1+'WallOfIce'+s2+'Wall of Ice'+s3)
-s4(s1+'ConjureFey'+s2+'Conjure Fey'+s3)
-s4(s1+'FindThePath'+s2+'Find the Path'+s3)
-s4(s1+'Heal'+s2+'Heal'+s3)
-s4(s1+'MoveEarth'+s2+'Move Earth'+s3)
-s4(s1+'TransportViaPlants'+s2+'Transport via Plants'+s3)
 s4(s1+'WallOfThorns'+s2+'Wall of Thorns'+s3)
 s4(s1+'WindWalk'+s2+'Wind Walk'+s3)
-s4(s1+'Eyebite'+s2+'Eyebite'+s3)
-s4(s1+'ProgrammedIllusion'+s2+'Programmed Illusion'+s3)
-s4(s1+'BladeBarrier'+s2+'Blade Barrier'+s3)
-s4(s1+'CreateUndead'+s2+'Create Undead'+s3)
-s4(s1+'Forbiddance'+s2+'Forbiddance'+s3)
-s4(s1+'Harm'+s2+'Harm'+s3)
-s4(s1+'HeroesFeast'+s2+'Heroes Feast'+s3)
-s4(s1+'PlanarAlly'+s2+'Planar Ally'+s3)
 s4(s1+'WordOfRecall'+s2+'Word of Recall'+s3)
-s4(s1+'GlobeOfInvulnerability'+s2+'Globe of Invulnerability'+s3)
-s4(s1+'MoveEarth'+s2+'Move Earth'+s3)
 
 s4('</td><td><h3>7th lvl Spells</h3>')
-s4(s1+'ConjCelestial'+s2+'Divine Word'+s3)
-s4(s1+'FireStorm'+s2+'Fire Storm'+s3)
-s4(s1+'PlaneShift'+s2+'Plane Shift'+s3)
-s4(s1+'Regenerate'+s2+'Regenerate'+s3)
+s4(s1+'DelayedBlastFireball'+s2+'Delayed Blast Fireball'+s3)
+s4(s1+'DivineWord'+s2+'Divine Word'+s3)
 s4(s1+'Etherealness'+s2+'Etherealness'+s3)
+s4(s1+'FingerOfDeath'+s2+'Finger of Death'+s3)
+s4(s1+'FireStorm'+s2+'Fire Storm'+s3)
 s4(s1+'Forcecage'+s2+'Forcecage'+s3)
 s4(s1+'MirageArcane'+s2+'Mirage Arcane'+s3)
-s4(s1+'MorMagniMansion'+s2+'Mor. Magni. Mansion'+s3)
+s4(s1+'PlaneShift'+s2+'Plane Shift'+s3)
+s4(s1+'PrismaticSpray'+s2+'Prismatic Spray'+s3)
+s4(s1+'ProjectImage'+s2+'Project Image'+s3)
+s4(s1+'Regenerate'+s2+'Regenerate'+s3)
 s4(s1+'Resurrection'+s2+'Resurrection'+s3)
+s4(s1+'ReverseGravity'+s2+'Reverse Gravity'+s3)
+s4(s1+'MorMagniMansion'+s2+'Mor. Magni. Mansion'+s3)
+s4(s1+'MorSword'+s2+'Mor. Sword'+s3)
 s4(s1+'Symbol'+s2+'Symbol'+s3)
 s4(s1+'Teleport'+s2+'Teleport'+s3)
 s4(s1+'Whirlwind'+s2+'Whirlwind'+s3)
-s4(s1+'ReverseGravity'+s2+'Reverse Gravity'+s3)
-s4(s1+'DelayedBlastFireball'+s2+'Delayed Blast Fireball'+s3)
-s4(s1+'FingerOfDeath'+s2+'Finger of Death'+s3)
-s4(s1+'PrismaticSpray'+s2+'Prismatic Spray'+s3)
-s4(s1+'Teleport'+s2+'Teleport'+s3)
-s4(s1+'DelayedBlastFireball'+s2+'Delayed Blast Fireball'+s3)
-s4(s1+'MorMagMansion'+s2+'Mor. Mag. Mansion'+s3)
-s4(s1+'MorSword'+s2+'Mor. Sword'+s3)
-s4(s1+'ProjectImage'+s2+'Project Image'+s3)
 
 s4('</td><td><h3>8th lvl Spells</h3>')
+s4(s1+'AbiDsHorridWilting'+s2+'Abi-D s Horrid Wilting'+s3)
+s4(s1+'AntimagicField'+s2+'Antimagic Field'+s3)
+s4(s1+'AntipathySympathy'+s2+'Antipathy Sympathy'+s3)
+s4(s1+'AnimalShapes'+s2+'Animal Shapes'+s3)
+s4(s1+'Clone'+s2+'Clone'+s3)
+s4(s1+'ControlWeather'+s2+'Control Weather'+s3)
+s4(s1+'Demiplane'+s2+'Demiplane'+s3)
 s4(s1+'DominateMonster'+s2+'Dominate Monster'+s3)
 s4(s1+'Earthquake'+s2+'Earthquake'+s3)
-s4(s1+'PowerwordStun'+s2+'Power Word Stun'+s3)
-s4(s1+'Sunburst'+s2+'Sunburst'+s3)
 s4(s1+'Feeblemind'+s2+'Feeblemind'+s3)
 s4(s1+'Glibness'+s2+'Glibness'+s3)
-s4(s1+'MindBlank'+s2+'Mind Blank'+s3)
-s4(s1+'PowerWordStun'+s2+'Power Word Stun'+s3)
-s4(s1+'AntimagicField'+s2+'Antimagic Field'+s3)
-s4(s1+'ControlWeather'+s2+'Control Weather'+s3)
 s4(s1+'HolyAura'+s2+'Holy Aura'+s3)
-s4(s1+'AnimalShapes'+s2+'Animal Shapes'+s3)
-s4(s1+'PrismaticSpray'+s2+'Prismatic Spray'+s3)
-s4(s1+'ControlWeather'+s2+'Control Weather'+s3)
-s4(s1+'Tsunami'+s2+'Tsunami'+s3)
-s4(s1+'Demiplane'+s2+'Demiplane'+s3)
-s4(s1+'AbiDsHorridWilting'+s2+'Abi-D s Horrid Wilting'+s3)
-s4(s1+'AntipathySympathy'+s2+'Antipathy Sympathy'+s3)
-s4(s1+'Clone'+s2+'Clone'+s3)
 s4(s1+'IncendiaryCloud'+s2+'IncendiaryCloud'+s3)
 s4(s1+'Maze'+s2+'Maze'+s3)
+s4(s1+'MindBlank'+s2+'Mind Blank'+s3)
+s4(s1+'PowerwordStun'+s2+'Power Word Stun'+s3)
+s4(s1+'PrismaticSpray'+s2+'Prismatic Spray'+s3)
+s4(s1+'Sunburst'+s2+'Sunburst'+s3)
 s4(s1+'Telepathy'+s2+'Telepathy'+s3)
+s4(s1+'Tsunami'+s2+'Tsunami'+s3)
 
 s4('</td><td><h3>9th lvl Spells</h3>')
-s4(s1+'Gate'+s2+'Gate'+s3)
-s4(s1+'MeteorSwarm'+s2+'Meteor Swarm'+s3)
-s4(s1+'Wish'+s2+'Wish'+s3)
-s4(s1+'Foresight'+s2+'Foresight'+s3)
-s4(s1+'Shapechange'+s2+'Shapechange'+s3)
-s4(s1+'StormOfVengeance'+s2+'Storm of Vengeance'+s3)
 s4(s1+'AstralProjection'+s2+'Astral Projection'+s3)
+s4(s1+'Foresight'+s2+'Foresight'+s3)
+s4(s1+'Gate'+s2+'Gate'+s3)
 s4(s1+'Imprisonment'+s2+'Imprisonment'+s3)
-s4(s1+'Polymorph'+s2+'Polymorph'+s3)
 s4(s1+'MassHeal'+s2+'Mass Heal'+s3)
-s4(s1+'TrueResurrection'+s2+'True Resurrection'+s3)
-s4(s1+'AstralProjectio'+s2+'Astral Projection'+s3)
-s4(s1+'PrismaticWall'+s2+'Prismatic Wall'+s3)
-s4(s1+'TimeStop'+s2+'Time Stop'+s3)
-s4(s1+'TruePolymorph'+s2+'TruePolymorph'+s3)
-s4(s1+'Weird'+s2+'Weird'+s3)
+s4(s1+'MeteorSwarm'+s2+'Meteor Swarm'+s3)
+s4(s1+'Polymorph'+s2+'Polymorph'+s3)
 s4(s1+'PowerWordHeal'+s2+'Power Word Heal'+s3)
 s4(s1+'PowerWordKill'+s2+'True Polymorph'+s3)
+s4(s1+'PrismaticWall'+s2+'Prismatic Wall'+s3)
+s4(s1+'Shapechange'+s2+'Shapechange'+s3)
+s4(s1+'StormOfVengeance'+s2+'Storm of Vengeance'+s3)
+s4(s1+'TimeStop'+s2+'Time Stop'+s3)
+s4(s1+'TruePolymorph'+s2+'TruePolymorph'+s3)
+s4(s1+'TrueResurrection'+s2+'True Resurrection'+s3)
+s4(s1+'Weird'+s2+'Weird'+s3)
+s4(s1+'Wish'+s2+'Wish'+s3)
 
 s4('</tr></td></table>')
 function toggleTab1(x){if(characters[x].toggled1.match(/none/)){characters[x].setToggled1("block");
@@ -6471,6 +6418,7 @@ if(rip=stats.match(/animal\sfriendship/i)){this.AnimalFriendship()}
 if(rip=stats.match(/bane/i)){this.Bane()}
 if(rip=stats.match(/charm\sperson/i)){this.CharmPerson()}
 if(rip=stats.match(/create\sor\sdestroy\swater/i)){this.CreateDestroyWater()}
+if(rip=stats.match(/inflict\swounds/i)){this.InflictWounds()}
 if(rip=stats.match(/color\sspray/i)){this.ColorSpray()}
 if(rip=stats.match(/command/i)){this.Command()}
 if(rip=stats.match(/cure\swounds/i)){this.CureWounds()}
@@ -6510,12 +6458,14 @@ if(rip=stats.match(/lesser\srestoration/i)){this.LesserRestoration()}
 if(rip=stats.match(/mirror\simage/i)){this.MirrorImage()}
 if(rip=stats.match(/moonbeam/i)){this.Moonbeam()}
 if(rip=stats.match(/phantasmal\sforce/i)){this.PhantasmalForce()}
+if(rip=stats.match(/sending/i)){this.Sending()}
 if(rip=stats.match(/shatter/i)){this.Shatter()}
 if(rip=stats.match(/silence/i)){this.Silence()}
 if(rip=stats.match(/spider\sclimb/i)){this.SpiderClimb()}
 if(rip=stats.match(/spiritual\sweapon/i)){this.SpiritualWeapon()}
 if(rip=stats.match(/suggestion/i)){this.Suggestion()}
 //3rd lvl Spells
+if(rip=stats.match(/bestow\scurse/i)){this.BestowCurse()}
 if(rip=stats.match(/blinding\ssmite/i)){this.BlindingSmite()}
 if(rip=stats.match(/call\slightning/i)){this.Clairvoyance()}
 if(rip=stats.match(/clairvoyance/i)){this.Heroism()}
@@ -6528,6 +6478,7 @@ if(rip=stats.match(/lightning\sbolt/i)){this.LightningBolt()}
 if(rip=stats.match(/major\simage/i)){this.MajorImage()}
 if(rip=stats.match(/meld\sinto\sstone/i)){this.MeldIntoStone()}
 if(rip=stats.match(/phantom\ssteed/i)){this.PhantomSteed()}
+if(rip=stats.match(/speak\swith\sdead/i)){this.SpeakWithDead()}
 if(rip=stats.match(/tongues/i)){this.Tongues()}
 if(rip=stats.match(/water\sbreathing/i)){this.WaterBreathing()}
 if(rip=stats.match(/water\swalk/i)){this.WaterWalk()}
@@ -6537,8 +6488,10 @@ if(rip=stats.match(/conjure\sminor\selementals/i)){this.ConjureMinorElementals()
 if(rip=stats.match(/control\swater/i)){this.ControlWater()}
 if(rip=stats.match(/shield\s|shield\, /i)){this.Shield()}
 if(rip=stats.match(/dimension\sdoor/i)){this.DimensionDoor()}
+if(rip=stats.match(/divination/i)){this.Divination()}
 if(rip=stats.match(/dominate\sbeast/i)){this.DominateBeast()}
 if(rip=stats.match(/evard/i)){this.EvardsBlackTentacles()}
+if(rip=stats.match(/freedom\sof\smovement/i)){this.FreedomOfMovement()}
 if(rip=stats.match(/greater\sinvisibility/i)){this.GreaterInvisibility()}
 if(rip=stats.match(/ice\sstorm/i)){this.IceStorm()}
 if(rip=stats.match(/locate\screature/i)){this.LocateCreature()}
@@ -6550,6 +6503,7 @@ if(rip=stats.match(/wall\sof\sfire/i)){this.WallOfFire()}
 //5th lvl Spells
 if(rip=stats.match(/commune\swith\snature/i)){this.CommuneWithNature()}
 if(rip=stats.match(/dominate\sperson/i)){this.DominatePerson()}
+if(rip=stats.match(/flame\sstrike/i)){this.FlameStrike()}
 if(rip=stats.match(/hold\smonster/i)){this.HoldMonster()}
 if(rip=stats.match(/legend\slore/i)){this.LegendLore()}
 if(rip=stats.match(/mass\scure\swounds/i)){this.MassCureWounds()}
