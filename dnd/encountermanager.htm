@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 <meta content="text/html" charset="utf-8" http-equiv="content-type">
 <meta content="utf-8" http-equiv="encoding">
-<meta name="description" content="2017 Dungeons & Dragons 5th Edition Tabletop Roleplaying Game Manager">
+<meta name="description" content="2022 Dungeons & Dragons 5th Edition Tabletop Roleplaying Game Manager">
 <meta name="keywords" content="DnD, Dungeons and Dragons, D&D, Dungeons & Dragons, Fantasy RPG, tabletop roleplaying game, TTRPG">
 <title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game Single Encounter Manager 2022(Wizards of the Coast, Asmor, Zorn, Ren, Vanderwaal Webdesign)</title>
 <script src="Scripts/WZDragdrop.js"></script>
@@ -12,23 +13,18 @@
 <script>
 
 $('.DraggableDiv').draggableTouch()
-.on("dragstart", function(event, pos)
-{console.log("drag started on:", this, "at position:", pos);})
-.on("dragend", function(event, pos)
-{console.log("drag ended on:", this, "at position:", pos);});
 
 </script>
 </head>
+
 <style>
+
 @font-face
 {
 font-family: MyKidsHandwritten;
 src: url("Decorations/MyKidsHandwritten.ttf");
 }
-body
-{
-z-index:0;
-}
+
 table,
 tr,
 td,
@@ -108,8 +104,7 @@ a:active{color:#f13a37
 
 .MapSelection
 {
- height:800px;
- width:800px;
+ width:3000px;
  object-fit: none;
  object-position: 41% 53%;
 }
@@ -169,55 +164,53 @@ background-color:#f8ecdd;
 <body>
 
 <table><tr><td>
-<table><tr><td>
 <input type='button' value='Roll all initiatives?' onClick='rollInitiatives()'>
-</td></tr><tr><td>
+</td><td>
 <input type='button' value='Save all characters?' onClick='saveAll()'>
-</td></tr><tr><td>
+</td><td>
 <input type='button' value='tgt then Clone a character?' onClick='cloneIt(type)'>
-</td></tr><tr><td>
+</td><td>
 <input type='button' value='Create a new character?' onClick='newCharacter(PC)'>
-</td></tr><tr><td>
+</td><td>
 <a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
-</td></tr><tr><td>
+</td><td>
 <a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a>
 </td></tr><tr><td>
 <a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
-</td></tr><tr><td>
+</td><td>
 To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
-</td></tr><tr><td>
-<img class='die20' src='Decorations/DiceSprite.jpeg'>
-<input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?'><b id='d20result'></b>
-</td></tr><tr><td>
-<img class='die12' src='Decorations/DiceSprite.jpeg'>
-<input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?'><b id='d12result'></b>
-</td></tr><tr><td>
-<img class='die10' src='Decorations/DiceSprite.jpeg'>
-<input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?'><b id='d10result'></b>
-</td></tr><tr><td>
-<img class='die8' src='Decorations/DiceSprite.jpeg'>
-<input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?'><b id='d8result'></b>
-</td></tr><tr><td>
-<img class='die6' src='Decorations/DiceSprite.jpeg'>
-<input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?'><b id='d6result'></b>
-</td></tr><tr><td>
-<img class='die4' src='Decorations/DiceSprite.jpeg'>
-<input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
-</td></tr><tr><td>
+</td><td>
 <input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollOneDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 <input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollTwoDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 <input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollThreeDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 <input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFourDisplay'></b>
 </td></tr><tr><td>
-<input onMouseOut="rollFive=parseInt(rollDForm(this.value));document.getElementById('rollFiveDisplay').innerHTML='('+naturalRoll+roll+')='+rollFive" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFiveDisplay'></b>
+<img class='die20' src='Decorations/DiceSprite.jpeg'><br>
+<input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?'><b id='d20result'></b>
+
+</td><td rowSpan='12'>
+<img class='MapSelection' src='Maps/Map.png'>
+
 </td></tr><tr><td>
-<input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollSixDisplay'></b>
+<img class='die12' src='Decorations/DiceSprite.jpeg'><br>
+<input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?'><b id='d12result'></b>
+</td></tr><tr><td>
+<img class='die10' src='Decorations/DiceSprite.jpeg'><br>
+<input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?'><b id='d10result'></b>
+</td></tr><tr><td>
+<img class='die8' src='Decorations/DiceSprite.jpeg'><br>
+<input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?'><b id='d8result'></b>
+</td></tr><tr><td>
+<img class='die6' src='Decorations/DiceSprite.jpeg'><br>
+<input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?'><b id='d6result'></b>
+</td></tr><tr><td>
+<img class='die4' src='Decorations/DiceSprite.jpeg'><br>
+<input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
 </td></tr><tr><td>
 Random Skills:<br><span id='displayRandomSkills'></span>
-</td></tr><tr><td>
 </td></tr><tr><td>
 Random Languages:<br><span id='displayRandomLanguages'></span>
 </td></tr><tr><td>
@@ -230,10 +223,7 @@ Random Gambling Sets:<span id='displayRandomGamblingSets'></span>
 tgt then paste stats.
 <textArea cols='30' rows='30' onChange='stats=this.value;setStats()'></textarea><b id='statsDisplay'></b>
 </td></tr></table>
-</td><td>
-<table><tr><td>
-<img class='MapSelection' src='Maps/Map.png'>
-</td></tr></table>
+
 <script>
 
 const shuffleSkillsArray = (array) => {
@@ -365,7 +355,7 @@ newChar.show();
 characters[x]=newChar;
 ADD_DHTML(newChar.box.elementId);
 
-characters[x].setName(characters[targeted].name);
+characters[x].setName(characters[targeted].name+" "+[x]);
 characters[x].setClass(characters[targeted].class);
 characters[x].setLvl(characters[targeted].lvl);
 characters[x].setRace(characters[targeted].race);
@@ -5274,11 +5264,11 @@ addRollPrompt(targeted)
 
 s1="<input onClick='",
 s2="()' type='button' value='",
-s3="'/><br>"
+s3="'/></td><td>"
 s4=document.write.bind(document)
 
-s4("<table><tr><td>tgt the piece to receive these wpns or spells first")
-s4("<h3>Simple Melee Weapons</h3>")
+s4("<table><tr><td>tgt the piece to receive these wpns or spells first</td><td>")
+s4("<h3>Simple Melee Weapons</h3></td><td>")
 s4(s1+'Club'+s2+'Club'+s3)
 s4(s1+'Dagger'+s2+'Dagger'+s3)
 s4(s1+'Greatclub'+s2+'Greatclub'+s3)
@@ -5289,12 +5279,12 @@ s4(s1+'Mace'+s2+'Mace'+s3)
 s4(s1+'Quarterstaff'+s2+'Quarterstaff'+s3)
 s4(s1+'Sickle'+s2+'Sickle'+s3)
 s4(s1+'Spear'+s2+'Spear'+s3)
-s4("<h3>Simple Ranged Weapons</h3>")
+s4("<h3>Simple Ranged Weapons</h3></td><td>")
 s4(s1+'Dart'+s2+'Dart'+s3)
 s4(s1+'LightCrossbow'+s2+'LightCrossbow'+s3)
 s4(s1+'Shortbow()'+s2+'Shortbow'+s3)
 s4(s1+'Sling'+s2+'Sling'+s3)
-s4("<h3>Martial Melee Weapons</h3>")
+s4("<h3>Martial Melee Weapons</h3></td><td>")
 s4(s1+'Battleaxe'+s2+'Battleaxe'+s3)
 s4(s1+'Falchion'+s2+'Falchion'+s3)
 s4(s1+'Flail'+s2+'Flail'+s3)
@@ -5314,14 +5304,14 @@ s4(s1+'Trident'+s2+'Trident'+s3)
 s4(s1+'Warhammer'+s2+'Warhammer'+s3)
 s4(s1+'WarPick'+s2+'War Pick'+s3)
 s4(s1+'Whip'+s2+'Whip'+s3)
-s4("<h3>Martial Ranged Weapons</h3>")
+s4("<h3>Martial Ranged Weapons</h3></td><td>")
 s4(s1+'Blowgun'+s2+'Blowgun'+s3)
 s4(s1+'HandCrossbow'+s2+'Hand Crossbow'+s3)
 s4(s1+'HeavyCrossbow'+s2+'Heavy Crossbow'+s3)
 s4(s1+'Longbow'+s2+'Longbow'+s3)
 s4(s1+'Net'+s2+'Net'+s3)
 
-s4("</td><td><h3>New Spells</h3>")
+s4("</td></tr><tr><td><h3>New Spells</h3></td><td>")
 s4(s1+'BladeOfDisaster'+s2+'BladeOfDisaster'+s3)
 s4(s1+'DreamOfTheBlueVeil'+s2+'DreamOfTheBlueVeil'+s3)
 s4(s1+'GreenFlameBlade'+s2+'GreenFlameBlade'+s3)
@@ -5345,9 +5335,7 @@ s4(s1+'TashasOtherworldlyGuise'+s2+'TashasOtherworldlyGuise'+s3)
 s4(s1+'AbiDalzimsHorridWilting'+s2+'AbiDalzimsHorridWilting'+s3)
 s4(s1+'AganazzarsScorcher'+s2+'AganazzarsScorcher'+s3)
 s4(s1+'BonesOfEarth'+s2+'BonesOfEarth'+s3)
-
 s4(s1+'Catnap'+s2+'Catnap'+s3)
-
 s4(s1+'ChaosBolt'+s2+'ChaosBolt'+s3)
 s4(s1+'CharmMonster'+s2+'CharmMonster'+s3)
 s4(s1+'ControlWinds'+s2+'ControlWinds'+s3)
@@ -5424,9 +5412,7 @@ s4(s1+'Whirlwind'+s2+'Whirlwind'+s3)
 s4(s1+'WrathOfNature'+s2+'WrathOfNature'+s3)
 s4(s1+'ZephyrStrike'+s2+'ZephyrStrike'+s3)
 
-s4('</td><td><h3>Class Actions</h3>')
-
-s4('<h3>Cleric Actions</h3>')
+s4('</td></tr><tr><td><h3>Cleric Actions</h3>')
 s4(s1+'PreserveLife'+s2+'Preserve Life'+s3)
 s4(s1+'TurnUndead'+s2+'Turn Undead'+s3)
 
@@ -5434,7 +5420,7 @@ s4('<h3>Paladin Actions</h3>')
 s4(s1+'DivineSmite'+s2+'Divine Smite'+s3)
 s4(s1+'LayOnHands'+s2+'Lay On Hands'+s3)
 
-s4('</td><td><h3>Cantrips</h3>')
+s4('</td></tr><tr><td><h3>Cantrips</h3>')
 s4(s1+'AcidSplash'+s2+'Acid Splash'+s3)
 s4(s1+'BladeWard'+s2+'Blade Ward'+s3)
 s4(s1+'BoomingBlade'+s2+'BoomingBlade'+s3)
@@ -5482,7 +5468,7 @@ s4(s1+'TrueStrike'+s2+'True Strike'+s3)
 s4(s1+'ViciousMockery'+s2+'Vicious Mockery'+s3)
 s4(s1+'WordOfRadiance'+s2+'WordOfRadiance'+s3)
 
-s4('</td><td><h3>1st lvl Spells</h3>')
+s4('</td></tr><tr><td><h3>1st lvl Spells</h3>')
 s4(s1+'AbsorbElements'+s2+'AbsorbElements'+s3)
 s4(s1+'AcidStream'+s2+'AcidStream'+s3)
 s4(s1+'Alarm'+s2+'Alarm'+s3)
@@ -5561,7 +5547,7 @@ s4(s1+'UnseenServant'+s2+'Unseen Servant'+s3)
 s4(s1+'WitchBolt'+s2+'Witch Bolt'+s3)
 s4(s1+'WrathfulSmite'+s2+'Wrathful Smite'+s3)
 
-s4('</td><td><h3>2nd lvl Spells</h3>')
+s4('</td></tr><tr><td><h3>2nd lvl Spells</h3>')
 s4(s1+'Aid'+s2+'Aid'+s3)
 s4(s1+'AlterSelf'+s2+'Alter Self'+s3)
 s4(s1+'AnimalMessenger'+s2+'Animal Messenger'+s3)
@@ -5622,7 +5608,7 @@ s4(s1+'WardingWind'+s2+'Warding Wind'+s3)
 s4(s1+'Web'+s2+'Web'+s3)
 s4(s1+'ZoneOfTruth'+s2+'Zone of Truth'+s3)
 
-s4('</td><td><h3>3rd lvl Spells</h3>')
+s4('</td></tr><tr><td><h3>3rd lvl Spells</h3>')
 s4(s1+'AnimateDead'+s2+'Animate Dead'+s3)
 s4(s1+'AuraOfVitality'+s2+'Aura of Vitality'+s3)
 s4(s1+'BanishingSmite'+s2+'Banishing Smite'+s3)
@@ -5675,7 +5661,7 @@ s4(s1+'VampiricTouch'+s2+'Vampiric Touch'+s3)
 s4(s1+'WaterBreathing'+s2+'Water Breathing'+s3)
 s4(s1+'WaterWalk'+s2+'Water Walk'+s3)
 
-s4('</td><td><h3>4th lvl Spells</h3>')
+s4('</td></tr><tr><td><h3>4th lvl Spells</h3>')
 s4(s1+'ArcaneEye'+s2+'Arcane Eye'+s3)
 s4(s1+'AuraOfLife'+s2+'Aura of Life'+s3)
 s4(s1+'Banishment'+s2+'Banishment'+s3)
@@ -5691,7 +5677,7 @@ s4(s1+'ConjureVolley'+s2+'Conjure Volley'+s3)
 s4(s1+'ControlWater'+s2+'Control Water'+s3)
 s4(s1+'DeathWard'+s2+'Death Ward'+s3)
 s4(s1+'DestructiveSmite'+s2+'Destructive Smite'+s3)
-s4(s1+'DimensionDoor'+s2+'Dimension Door(Sorc,Warl,Wiza)'+s3)
+s4(s1+'DimensionDoor'+s2+'Dimension Door'+s3)
 s4(s1+'DispelEvilOrGood'+s2+'Dispel Evil or Good'+s3)
 s4(s1+'DispelMagic'+s2+'Dispel Magic'+s3)
 s4(s1+'Divination'+s2+'Divination'+s3)
@@ -5738,7 +5724,7 @@ s4(s1+'VitriolicSphere'+s2+'Vitriolic Sphere'+s3)
 s4(s1+'WallOfFire'+s2+'Wall of Fire'+s3)
 s4(s1+'WaterySphere'+s2+'Watery Sphere'+s3)
 
-s4('</td><td><h3>5th lvl Spells</h3>')
+s4('</td></tr><tr><td><h3>5th lvl Spells</h3>')
 s4(s1+'AnimateObjects'+s2+'Animate Objects'+s3)
 s4(s1+'AntilifeShell'+s2+'Antilife Shell'+s3)
 s4(s1+'Awaken'+s2+'Awaken'+s3)
@@ -5780,7 +5766,7 @@ s4(s1+'TreeStride'+s2+'Tree Stride'+s3)
 s4(s1+'WallOfForce'+s2+'Wall of Force'+s3)
 s4(s1+'WallOfStone'+s2+'Wall of Stone'+s3)
 
-s4('</td><td><h3>6th lvl Spells</h3>')
+s4('</td></tr><tr><td><h3>6th lvl Spells</h3>')
 s4(s1+'ArcaneGate'+s2+'ArcaneGate'+s3)
 s4(s1+'BladeBarrier'+s2+'Blade Barrier'+s3)
 s4(s1+'ChainLightning'+s2+'Chain Lightning'+s3)
@@ -5818,7 +5804,7 @@ s4(s1+'WallOfThorns'+s2+'Wall of Thorns'+s3)
 s4(s1+'WindWalk'+s2+'Wind Walk'+s3)
 s4(s1+'WordOfRecall'+s2+'Word of Recall'+s3)
 
-s4('</td><td><h3>7th lvl Spells</h3>')
+s4('</td></tr><tr><td><h3>7th lvl Spells</h3>')
 s4(s1+'DelayedBlastFireball'+s2+'Delayed Blast Fireball'+s3)
 s4(s1+'DivineWord'+s2+'Divine Word'+s3)
 s4(s1+'Etherealness'+s2+'Etherealness'+s3)
@@ -5838,7 +5824,7 @@ s4(s1+'Symbol'+s2+'Symbol'+s3)
 s4(s1+'Teleport'+s2+'Teleport'+s3)
 s4(s1+'Whirlwind'+s2+'Whirlwind'+s3)
 
-s4('</td><td><h3>8th lvl Spells</h3>')
+s4('</td></tr><tr><td><h3>8th lvl Spells</h3>')
 s4(s1+'AbiDsHorridWilting'+s2+'Abi-D s Horrid Wilting'+s3)
 s4(s1+'AntimagicField'+s2+'Antimagic Field'+s3)
 s4(s1+'AntipathySympathy'+s2+'Antipathy Sympathy'+s3)
@@ -5860,7 +5846,7 @@ s4(s1+'Sunburst'+s2+'Sunburst'+s3)
 s4(s1+'Telepathy'+s2+'Telepathy'+s3)
 s4(s1+'Tsunami'+s2+'Tsunami'+s3)
 
-s4('</td><td><h3>9th lvl Spells</h3>')
+s4('</td></tr><tr><td><h3>9th lvl Spells</h3>')
 s4(s1+'AstralProjection'+s2+'Astral Projection'+s3)
 s4(s1+'Foresight'+s2+'Foresight'+s3)
 s4(s1+'Gate'+s2+'Gate'+s3)
@@ -6691,13 +6677,13 @@ boxContents+="</td><td><input onClick='toggleTab6("+this.index+");checkTheTarget
 boxContents+="</td></tr></table><table><tr><td>"+this.combatLog;
 boxContents+="</td></tr></table><span id=toggled2"+this.index+" style='display:"+this.toggled2+"'>";
 
-boxContents+="<table><tr><td>Armor Class(AC):<input maxLength='2' onChange='characters["+this.index+"].setAC(this.value);checkTheTarget("+this.index+")' size='2' type='text' value="+this.ac+">/"+this.curAc;
-boxContents+="</td><td><select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth @DisAdv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth @DisAdv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth @DisAdv<option>Ring AC14 Stealth @DisAdv<option>Chain Mail AC16 Stealth @DisAdv str13<option>Splint AC17 Stealth @DisAdv str15<option>Plate AC18 Stealth @DisAdv str15<option>Unarmored Defense AC10+dex+con<option>Unarmored Defense AC10+dex+wis</select>";
+boxContents+="<table><tr><td><select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth @DisAdv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth @DisAdv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth @DisAdv<option>Ring AC14 Stealth @DisAdv<option>Chain Mail AC16 Stealth @DisAdv str13<option>Splint AC17 Stealth @DisAdv str15<option>Plate AC18 Stealth @DisAdv str15<option>Unarmored Defense AC10+dex+con<option>Unarmored Defense AC10+dex+wis</select>";
 boxContents+="</td><td>or<input maxLength='200' onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")' placeHolder='other armor or magical defense' size='40' type='text'>";
 boxContents+="</td></tr><tr><td><select onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")'><option>"+this.shield+"<option>No Shield AC+0<option>Shield AC+2</select>";
 boxContents+="</td><td>or<input maxLength='200' onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")' placeHolder='other shield or magical defense' size='40' type='text'>";
-boxContents+="</td><tr><tr><td>Resistance:(1/2dmg)<input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.resistance+"'>";
-boxContents+="</td><td>Immunity:(0dmg)<input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value)' size='40' value='"+this.immunity+"'>";
+boxContents+="</td></tr><tr><td>Armor Class(AC):<input maxLength='2' onChange='characters["+this.index+"].setAC(this.value);checkTheTarget("+this.index+")' size='2' type='text' value="+this.ac+">/"+this.curAc;
+boxContents+="</td><td>Resistance:(1/2dmg)<input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.resistance+"'>";
+boxContents+="</td></tr><tr><td>Immunity:(0dmg)<input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value)' size='40' value='"+this.immunity+"'>";
 boxContents+="</td><td>Vulnerability:(2Xdmg)<input maxLength='200' onChange='characters["+this.index+"].setVulnerability(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.vulnerability+"'>";
 boxContents+="</td></tr><tr><td>Hit Points(HP):<input maxLength='3' onChange='characters["+this.index+"].setMaxHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.maxHp+">";
 boxContents+="/<input maxLength='3' onChange='characters["+this.index+"].setCurHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.curHp+">";
@@ -6760,7 +6746,8 @@ boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"]
 boxContents+="</td><td><input type='button' onClick='deleteRollPrompt("+this.index+", "+i+")'value='Delete this roll?'>"
 }
 }boxContents+="</td></tr></table></span><span id=toggled5"+this.index+" style='display:"+this.toggled5+"'>";
-boxContents+="<table><tr><td>Name:<input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value='"+this.name+"'>";
+boxContents+="<table><tr><td>Miniature File:<input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='40' type='text' value='"+this.figure+"'>";
+boxContents+="<br>Name:<input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value='"+this.name+"'>";
 boxContents+="</td><td>Size:<select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
 boxContents+="</td><td>Alignment:<select onChange='characters["+this.index+"].setAlignment(this.value)'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
 boxContents+="</td><td>"+this.alignmentDescription;
@@ -6780,7 +6767,6 @@ boxContents+="</td></tr><tr><td>Feats:<textArea cols='40' rows='3' onChange='cha
 boxContents+="</td><td>Equipment:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setEquipment(this.value)'>"+this.equipment+"</textArea>";
 boxContents+="</td><td><input type='button' onClick='characters["+this.index+"].save();checkTheTarget("+this.index+")'value='Save this character?'>";
 boxContents+="</td><td><input type='button' value='Delete this character?'onClick='removeChar("+this.index+");checkTheTarget("+this.index+")'>";
-boxContents+="</td><td>Miniature File:<input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='40' type='text' value='"+this.figure+"'>";
 boxContents+="</td></tr></table></span><span id=toggled6"+this.index+" style='display:"+this.toggled6+"'>";
 boxContents+="<table><tr><td>Class:<select onChange='characters["+this.index+"].setClass(this.value)'><option>"+this.class+"<option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Bear Totem Warrior<option>Barbarian, Eagle Totem Warrior<option>Barbarian, Wolf Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Arctic<option>Druid, Coast<option>Druid, Desert<option>Druid, Forest<option>Druid, Grassland<option>Druid, Moon<option>Druid, Mountain<option>Druid, Swamp<option>Druid, Underdark<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Oathbreaker<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Fey Wanderer<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Ranger, Swarmkeeper<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Phantom<option>Rogue, Thief<option>Rogue, Scout<option>Rogue, Soulknife<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Shadow Magic<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock,GenieOfAir<option>Warlock,GenieOfEarth<option>Warlock,GenieOfFire<option>Warlock,GenieOfWater<option>Warlock, Great Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
 boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].setClass(this.value)' placeHolder='other class' size='40' type='text'>";
