@@ -48,7 +48,7 @@ overflow-wrap:anywhere;
 padding:1px;
 text-decoration:#22271f;
 text-decoration-thickness:2px;
-vertical-align:top;
+vertical-align:center;
 word-break:break-word;
 z-index:2;
 }
@@ -724,6 +724,16 @@ c='',
 dmgDice='1d6+0',
 getAction(t1)
 }
+
+function ConjureCelestial()
+{
+a='@7th(ConjureCelestial)1min,90ft,unoccupied space,conce,1hr duration',
+b='0d0+0',
+c='Summon CR4> Celestial,obeys within its alignment,@9thSlot CR5',
+dmgDice='1d6+0',
+getAction(t1)
+}
+
 function ControlFlames()
 {
 a='Cantrip(Control Flames)1act,Control nonmagical fires to expand, extinguish, enlarge, shape simple forms, etc.',
@@ -1240,6 +1250,16 @@ c='',
 dmgDice='1d6+0',
 getAction(t1)
 }
+
+function SpiritGuardians()
+{
+a='@3rd(Spirit Guardians)1act,self,15ft-radi,conce,10min,DC8+'+characters[targeted].spellAbility+'+pro vsWis',
+b='0d0+0',
+c='your spirit guardians halve the spd of enemies,15ft save vsWis for 1/2 radiant or necrotic dmg',
+dmgDice='3d8+0',
+getAction(t1)
+}
+
 function SteelWind()
 {
 a='5th(Steel Wind Strike)1act,If the spell atk hits, deals 6d10 force dmg to 5 creatures, then the caster teleports.',
@@ -1976,11 +1996,12 @@ c='when tgt takes dmg+1d8 uteo '+characters[x].name+'s nt',
 dmgDice='1d8+0',
 getAction(t1)
 }
+
 function Bless()
 {
-a='1st(Bless)3 tgts, 30ft, conce,10/10 turns',
+a='1st(Bless)3tgts,30ft,conce',
 b='0d0+0',
-c='(Blessed)atk or save+1d4',
+c='Blessed,atk or save+1d4,10/10turns',
 dmgDice='1d4+0',
 getAction(t1)
 }
@@ -2112,7 +2133,7 @@ c='tgt melee atks your choice or acts normally vsWis ateoet',
 dmgDice='0d0+0',
 getAction(t1)
 }
-function CreateDestroyWater()
+function CreateOrDestroyWater()
 {
 a='1st(Create/Destroy Water)Create/destroy 10+2/slot lvl gal of water in open container; or Create rain/destroy fog in 30+5/slot lvlft-cube 30ft P 229',
 b='0d0+0',
@@ -2162,7 +2183,7 @@ dmgDice='0d0+0',
 getAction(t1)
 }
 
-function DetectEvilGood()
+function DetectEvilAndGood()
 {
 a='1st(Detect Evil/Good)Know if aberration, celestial, elemental, fey, fiend, undead, and des-/consecrated area within 30ft Div Self conce,10min P 231',
 b='0d0+0',
@@ -2178,7 +2199,7 @@ c='sense magic 30ft radi, see magic aura around object or being, know school',
 dmgDice='0d0+0',
 getAction(t1)
 }
-function DetectPoisonDisease()
+function DetectPoisonAndDisease()
 {
 a='1st(Detect Poison and Disease)Know presence, location, and type of poisons, poisonous Creatures, and diseases within 30ft Self conce,10min P 231',
 b='0d0+0',
@@ -2802,7 +2823,7 @@ c='fire+1d8@5, 11, 17',
 dmgDice='1d8+0',
 getAction(t1)
 }
-function ProtectionFromEvilOrGood()
+function ProtectionFromEvilAndGood()
 {
 a='1st(Protection from Evil or Good)abjur',
 b='0d0+0',
@@ -3602,7 +3623,7 @@ c='',
 dmgDice='0d0+0',
 getAction(t1)
 }
-function CreateFoodWater()
+function CreateFoodAndWater()
 {
 a='3rd(Create Food/Water)Create 45 pounds of food and 30 gallons of water; enough for 15 humanoids or 5 steeds for 24h 30ft',
 b='0d0+0',
@@ -5493,11 +5514,11 @@ s4(s1+'ColorSpray'+s2+'(1st)Color Spray(Sor,Wiz)'+s3)
 s4(s1+'Command'+s2+'(1st)Command(Cle,Pal,War)'+s3)
 s4(s1+'CompelledDuel'+s2+'(1st)Compelled Duel(Pal)'+s3)
 s4(s1+'ComprehendLanguages'+s2+'(1st)Comprehend Languages(Bar,Cle,Sor,War,Wiz)'+s3)
-s4(s1+'CreateDestroyWater'+s2+'(1st)Create/Destroy Water(Cle,Dru)'+s3)
+s4(s1+'CreateOrDestroyWater'+s2+'(1st)CreateOrDestroyWater(Cle,Dru)'+s3)
 s4(s1+'CureWounds'+s2+'(1st)Cure Wounds(Bar,Cle,Dru,Pal,Ran)'+s3)
-s4(s1+'DetectEvilGood'+s2+'(1st)Detect Evil/Good(Cle,Pal)'+s3)
+s4(s1+'DetectEvilAndGood'+s2+'(1st)Detect EvilAndGood(Cle,Pal)'+s3)
 s4(s1+'DetectMagic'+s2+'(1st)Detect Magic(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
-s4(s1+'DetectPoisonDisease'+s2+'(1st)Detect Poison Disease(Cle,Dru,Pal,Ran)'+s3)
+s4(s1+'DetectPoisonAndDisease'+s2+'(1st)Detect Poison Disease(Cle,Dru,Pal,Ran)'+s3)
 s4(s1+'DisguiseSelf'+s2+'(1st)Disguise Self(Bar,Cle,Pal,Sor,Wiz)'+s3)
 s4(s1+'DissonantWhispers'+s2+'(1st)Dissonant Whispers(Bar,War)'+s3)
 s4(s1+'DivineFavor'+s2+'(1st)Divine Favor(Cle,Pal)'+s3)
@@ -5531,7 +5552,7 @@ s4(s1+'Jump'+s2+'(1st)Jump(Dru,Ran,Sor,Wiz)'+s3)
 s4(s1+'Longstrider'+s2+'(1st)Longstrider(Bar,Cle,Dru,Ran,Wiz)'+s3)
 s4(s1+'MageArmor'+s2+'(1st)Mage Armor(Sor,Wiz)'+s3)
 s4(s1+'MagicMissile'+s2+'(1st)Magic Missile(Sor,Wiz)'+s3)
-s4(s1+'ProtectionFromEvilOrGood'+s2+'(1st)Protection from Evil or Good(Cle,Pal,War,Wiz)'+s3)
+s4(s1+'ProtectionFromEvilAndGood'+s2+'(1st)Protection from Evil or Good(Cle,Pal,War,Wiz)'+s3)
 s4(s1+'PurifyFoodAndDrink'+s2+'(1st)PurifyFoodAndDrink(Cle,Dru,Pal)'+s3)
 s4(s1+'Puppet'+s2+'(1st)Puppet(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
 s4(s1+'RayOfSickness'+s2+'(1st)Ray of Sickness(Cle,Sor,Wiz)'+s3)
@@ -5624,7 +5645,7 @@ s4(s1+'Clairvoyance'+s2+'(3rd)Clairvoyance(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
 s4(s1+'ConjureAnimals'+s2+'(3rd)ConjureAnimals(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
 s4(s1+'ConjureBarrage'+s2+'(3rd)Conjure Barrage(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
 s4(s1+'Counterspell'+s2+'(3rd)Counterspell(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
-s4(s1+'CreateFoodWater'+s2+'(3rd)Create Food/Water(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
+s4(s1+'CreateFoodAndWater'+s2+'(3rd)Create Food/Water(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
 s4(s1+'CrusadersMantle'+s2+'(3rd)Crusader s Mantle(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
 s4(s1+'Daylight'+s2+'(3rd)Daylight(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
 s4(s1+'DispelMagic'+s2+'(3rd)Dispel Magic(Bar,Cle,Dru,Pal,Ran,Sor,War,Wiz)'+s3)
@@ -6417,7 +6438,7 @@ if(rip=stats.match(/alarm/i)){this.Alarm()}
 if(rip=stats.match(/animal\sfriendship/i)){this.AnimalFriendship()}
 if(rip=stats.match(/bane/i)){this.Bane()}
 if(rip=stats.match(/charm\sperson/i)){this.CharmPerson()}
-if(rip=stats.match(/create\sor\sdestroy\swater/i)){this.CreateDestroyWater()}
+if(rip=stats.match(/create\sor\sdestroy\swater/i)){this.CreateOrDestroyWater()}
 if(rip=stats.match(/ensnaring\sstrike/i)){this.EnsnaringStrike()}
 if(rip=stats.match(/inflict\swounds/i)){this.InflictWounds()}
 if(rip=stats.match(/color\sspray/i)){this.ColorSpray()}
@@ -6435,7 +6456,7 @@ if(rip=stats.match(/identify/i)){this.Identify()}
 if(rip=stats.match(/longstrider/i)){this.Longstrider()}
 if(rip=stats.match(/mage\sarmor/i)){this.MageArmor()}
 if(rip=stats.match(/magic\smissile/i)){this.MagicMissile()}
-if(rip=stats.match(/protection\sfrom\sevil\sand\sgood/i)){this.ProtectionFromEvilOrGood()}
+if(rip=stats.match(/protection\sfrom\sevil\sand\sgood/i)){this.ProtectionFromEvilAndGood()}
 if(rip=stats.match(/shadow\sblade\, /i)){this.ShadowBlade()}
 if(rip=stats.match(/shield\, /i)){this.Shield()}
 if(rip=stats.match(/sleep/i)){this.Sleep()}
@@ -6768,7 +6789,7 @@ boxContents+="</td></tr><tr><td>7th Spell Lvl Slots: "+this.maxSlot7+"<input onC
 boxContents+="</td><td>8th Spell Lvl Slots: "+this.maxSlot8+"<input onClick='this.value="+(this.curSlot8-1)+";characters["+this.index+"].setCurSlot8(this.value);checkTheTarget("+this.index+")' type='button' value='Spend?'>"+this.curSlot8;
 
 boxContents+="</td><td>9th Spell Lvl Slots: "+this.maxSlot9+"<input onClick='this.value="+(this.curSlot9-1)+";characters["+this.index+"].setCurSlot9(this.value);checkTheTarget("+this.index+")' type='button' value='Spend?'>"+this.curSlot9;
-boxContents+="</td></tr><tr><td><img src='Decorations/GameTokens.png' width='50px'>";
+boxContents+="</td></tr><tr><td colSpan='3'><img src='Decorations/GameTokens.png' width='50px'>";
 boxContents+="Rest to earn back your spent game token slots.<input onClick='characters["+this.index+"].setCurSlot1("+this.maxSlot1+");characters["+this.index+"].setCurSlot2("+this.maxSlot2+");characters["+this.index+"].setCurSlot3("+this.maxSlot3+");characters["+this.index+"].setCurSlot4("+this.maxSlot4+");characters["+this.index+"].setCurSlot5("+this.maxSlot5+");characters["+this.index+"].setCurSlot6("+this.maxSlot6+");characters["+this.index+"].setCurSlot7("+this.maxSlot7+");characters["+this.index+"].setCurSlot8("+this.maxSlot8+");characters["+this.index+"].setCurSlot9("+this.maxSlot9+");checkTheTarget("+this.index+")' type='button' value='Take a rest?'>";
 
 boxContents+="</td></tr></table><table><tr><td>Make a new roll?</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName1(this.value);checkTheTarget("+this.index+")'placeHolder='atkRollToHitName+Ability+pro SpellSlot RangeInFeet'size='40' type='text' value='"+this.rollName1+"'>"
@@ -7142,8 +7163,9 @@ b='@3rd[x]Augury ,@3rd[x]Suggestion';
 c='@5th[x]Nondetection @5th[x]Speak with Dead</td></tr><tr><td>@6th.READ THOUGHTS 1/1 1CD, 1act,60ft, vsWis or read surface thoughts, 10/10 turns, Suggestion, no slot cost no save</td></tr><tr><td>@7th[x]Arcane Eye @7th[x]Confusion</td></tr><tr><td>@8th.POTENT SPELL CASTING cantrip dmg+wisMod</td></tr><tr><td>@9th[x]Legend Lore @9th<b onClick=Scrying()>Scrying</b>';
 dx='@17th.VISIONS OF THE PAST 1/1/long rest, touch, wisScore is min, info on recent events'
 }
-if(this.class.match(/Life/)){
-a='@1st(Bonus Proficiency)heavy armor</td></tr><tr><td>@1st(Disciple of Life)healing prayers get+2+spell lvl</td></tr><tr><td>@1st(Extra Spells)<b onClick=Bless()>Bless</b>, <b onClick=CureWounds()>Cure Wounds</b></td></tr><tr><td>@2nd(Preserve Life)1CD, 1act,30ft, heal 5x lvl allies max half maxhp, less undead and constructs<p>';
+if(this.class.match(/Cleric\,\sLife/)){
+a="@1st(Bonus Proficiency)heavy armor</td></tr><tr><td>@1st(Disciple of Life)healing prayers get+2+spell lvl</td></tr><tr><td>@1st(Extra Spells)<b onClick=Bless()>Bless</b>, <b onClick=CureWounds()>Cure Wounds</b></td></tr><tr><td>@2nd(Preserve Life)1CD, 1act,30ft, heal 5x lvl allies max half maxhp, less undead and constructs";
+
 b="@3rd(Extra Spells)<b onClick='LesserRestoration()'>Lesser Restoration</b>, <b onClick=SpiritualWeapon()>Spiritual Weapon</b></td></tr>";
 c="@5th(Extra Spells)<b onClick='BeaconOfHope()'>Beacon of Hope</b>, <b onClick=Revivify()>Revivify</b></td></tr><tr><td>@6th(Blessed Healer)when healing, you heal yourself 2+spell lvl</td></tr><tr><td>@7th(Extra Spells)<b onClick='DeathWard()'>Death Ward</b>, <b onClick='GuardianOfFaith()'>Guardian of Faith</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 radiant @14th+2d8)</td></tr><tr><td>@9th(Extra Spells)<b onClick=MassCureWounds()>Mass Cure Wounds</b>,<b onClick=RaiseDead()>Raise Dead</b>";
 dx='@17th(Supreme Healing)heal max roll'
@@ -7175,7 +7197,124 @@ b="@3rd<b onClick='MagicWeapon()'>Magic Weapon</b>, <b onClick='SpiritualWeapon(
 c="@5th<b onClick='CrusadersMantle()'>Crusader s Mantle</b>, <b onClick='SpiritGuardians()'>Spirit Guardians</b></td></tr><tr><td>@6th(War God s Blessing)1CD ally 30ft atk+10</td></tr><tr><td>@7th<b onClick='FreedomOfMovement()'>Freedom of Movement</b>, <b onClick='Stoneskin()'>Stoneskin</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 same dmg type @14th+2d8</td></tr><tr><td>@9th<b onClick='FlameStrike()'>Flame Strike</b>, <b onClick='HoldMonster()'>Hold Monster</b>";
 dx="@17th(Avatar of Battle)resist bludg, slash, pierc nonmagical weapon"
 }
-this.setFeatures('<p>Cantrips Known:@1st(3),@4th(4),@10th(5)<br>Spells Known:(wis+lvl)<br>1stSlot:@1st(2/2),@2nd(3/3),@3rd(4/4)<br>2ndSlot:@3rd(2/2),@4th(3/3)<br>3rdSlot:@5th(2/2),@6th(3/3<br>4thSlot:@7th(1/1),@8th(2/2),@9th(3/3)<br>5thSlot:@9th 1,@10th 2,@18th 3<br>6thSlot:@11th 1,@19th 2<br>7thSlot:@13th 1,@20th 2<br>8thSlot:@15th 1<br>9thSlot:@17th 1</td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Channel Divinity),@2nd 1/1@5th 2/2@18th 3/3</td></tr><tr><td>@2nd(Turn Undead)1CD, 30ft-radi, vsWis or frightened, @DisAdv while cleric is in sight, dash away, 10/10 turns</td></tr><tr><td>'+b+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Destroy Undead)instead of dashing, the undead are destroyed@5th CR1/2,@8th CR1-1/2,@11th CR2-1/2,@14th CR3-1/2,@17th CR4-1/2,</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Divine Intervention)d100 roll your lvl or lower, divine helps</td></tr><tr><td>'+dx+' @20th auto success');
+
+ClericSpells="<h3>Cantrips Known:@1st(3),@4th(4),@10th(5)</h3>"
+ClericSpells+="<b onClick=Guidance()>Guidance</b>,"
+ClericSpells+="<b onClick=Resistance()>Resistance</b>,"
+ClericSpells+="<b onClick=SacredFlame()>SacredFlame</b>,"
+ClericSpells+="<b onClick=SpareTheDying()>SpareTheDying</b>,"
+ClericSpells+="<b onClick=Thaumaturgy()>Thaumaturgy</b>,"
+ClericSpells+="<b onClick=Light()>Light</b>,"
+ClericSpells+="<b onClick=Mending()>Mending</b>"
+ClericSpells+="<h3>1stSlot:@1st(2/2),@2nd(3/3),@3rd(4/4)</h3>"
+ClericSpells+="<b onClick=Bane()>Bane</b>,"
+ClericSpells+="<b onClick=Bless()>Bless</b>,"
+ClericSpells+="<b onClick=Command()>Command</b>,"
+ClericSpells+="<b onClick=CreateorDestroyWater()>CreateorDestroyWater</b>,"
+ClericSpells+="<b onClick=CureWounds()>CureWounds</b>,"
+ClericSpells+="<b onClick=DetectEvilAndGood()>DetectEvilAndGood</b>,"
+ClericSpells+="<b onClick=DetectMagic()>DetectMagic</b>,"
+ClericSpells+="<b onClick=DetectPoisonAndDisease()>DetectPoisonAndDisease</b>,"
+ClericSpells+="<b onClick=GuidingBolt()>GuidingBolt</b>,"
+ClericSpells+="<b onClick=HealingWord()>HealingWord</b>,"
+ClericSpells+="<b onClick=InflictWounds()>InflictWounds</b>,"
+ClericSpells+="<b onClick=ProtectionFromEvilAndGood()>ProtectionFromEvilAndGood</b>,"
+ClericSpells+="<b onClick=PurifyFoodAndDrink()>PurifyFoodAndDrink</b>,"
+ClericSpells+="<b onClick=Sanctuary()>Sanctuary</b>,"
+ClericSpells+="<b onClick=ShieldOfFaith()>ShieldOfFaith</b>"
+ClericSpells+="<h3>2ndSlot:@3rd(2/2),@4th(3/3)</h3>"
+ClericSpells+="<b onClick=Aid()>Aid</b>,"
+ClericSpells+="<b onClick=Augury()>Augury</b>,"
+ClericSpells+="<b onClick=BlindnessDeafness()>BlindnessDeafness</b>,"
+ClericSpells+="<b onClick=CalmEmotions()>CalmEmotions</b>,"
+ClericSpells+="<b onClick=ContinualFlame()>ContinualFlame</b>,"
+ClericSpells+="<b onClick=EnhanceAbility()>EnhanceAbility</b>,"
+ClericSpells+="<b onClick=FindTraps()>FindTraps</b>,"
+ClericSpells+="<b onClick=GentleRepose()>GentleRepose</b>,"
+ClericSpells+="<b onClick=HoldPerson()>HoldPerson</b>,"
+ClericSpells+="<b onClick=LesserRestoration()>LesserRestoration</b>,"
+ClericSpells+="<b onClick=LocateObject()>LocateObject</b>,"
+ClericSpells+="<b onClick=PrayerOfHealing()>PrayerOfHealing</b>,"
+ClericSpells+="<b onClick=ProtectionFromPoison()>ProtectionFromPoison</b>,"
+ClericSpells+="<b onClick=Silence()>Silence</b>,"
+ClericSpells+="<b onClick=SpiritualWeapon()>SpiritualWeapon</b>,"
+ClericSpells+="<b onClick=WardingBond()>WardingBond</b>,"
+ClericSpells+="<b onClick=ZoneOfTruth()>ZoneOfTruth</b>"
+ClericSpells+="<h3>3rdSlot:@5th(2/2),@6th(3/3)</h3>"
+ClericSpells+="<b onClick=AnimateDead()>AnimateDead</b>,"
+ClericSpells+="<b onClick=BeaconOfHope()>BeaconOfHope</b>,"
+ClericSpells+="<b onClick=BestowCurse()>BestowCurse</b>,"
+ClericSpells+="<b onClick=Clairvoyance()>Clairvoyance</b>,"
+ClericSpells+="<b onClick=CreateFoodAndWater()>CreateFoodAndWater</b>,"
+ClericSpells+="<b onClick=Daylight()>Daylight</b>,"
+ClericSpells+="<b onClick=DispelMagic()>DispelMagic</b>,"
+ClericSpells+="<b onClick=GlyphOfWarding()>GlyphOfWarding</b>,"
+ClericSpells+="<b onClick=MagicCircle()>MagicCircle</b>,"
+ClericSpells+="<b onClick=MassHealingWord()>MassHealingWord</b>,"
+ClericSpells+="<b onClick=MeldIntoStone()>MeldIntoStone</b>,"
+ClericSpells+="<b onClick=ProtectionFromEnergy()>ProtectionFromEnergy</b>,"
+ClericSpells+="<b onClick=RemoveCurse()>RemoveCurse</b>,"
+ClericSpells+="<b onClick=Revivify()>Revivify</b>,"
+ClericSpells+="<b onClick=Sending()>Sending</b>,"
+ClericSpells+="<b onClick=SpeakWithDead()>SpeakWithDead</b>,"
+ClericSpells+="<b onClick=SpiritGuardians()>SpiritGuardians</b>,"
+ClericSpells+="<b onClick=Tongues()>Tongues</b>,"
+ClericSpells+="<b onClick=WaterWalk()>WaterWalk</b>"
+ClericSpells+="<h3>4thSlot:@7th(1/1),@8th(2/2),@9th(3/3)</h3>"
+ClericSpells+="<b onClick=Banishment()>Banishment</b>,"
+ClericSpells+="<b onClick=ControlWater()>ControlWater</b>,"
+ClericSpells+="<b onClick=DeathWard()>DeathWard</b>,"
+ClericSpells+="<b onClick=Divination()>Divination</b>,"
+ClericSpells+="<b onClick=FreedomOfMovement()>FreedomOfMovement</b>,"
+ClericSpells+="<b onClick=GuardianOfFaith()>GuardianOfFaith</b>,"
+ClericSpells+="<b onClick=LocateCreature()>LocateCreature</b>,"
+ClericSpells+="<b onClick=StoneShape()>StoneShape</b>"
+ClericSpells+="<h3>5thSlot:@9th(1/1),@10th(2/2),@18th(3/3)</h3>"
+ClericSpells+="<b onClick=Commune()>Commune</b>,"
+ClericSpells+="<b onClick=Contagion()>Contagion</b>,"
+ClericSpells+="<b onClick=DispelEvilAndGood()>DispelEvilAndGood</b>,"
+ClericSpells+="<b onClick=FlameStrike()>FlameStrike</b>,"
+ClericSpells+="<b onClick=Geas()>Geas</b>,"
+ClericSpells+="<b onClick=GreaterRestoration()>GreaterRestoration</b>,"
+ClericSpells+="<b onClick=Hallow()>Hallow</b>,"
+ClericSpells+="<b onClick=InsectPlague()>InsectPlague</b>,"
+ClericSpells+="<b onClick=LegendLore()>LegendLore</b>,"
+ClericSpells+="<b onClick=MassCureWounds()>MassCureWounds</b>,"
+ClericSpells+="<b onClick=PlanarBinding()>PlanarBinding</b>,"
+ClericSpells+="<b onClick=RaiseDead()>RaiseDead</b>,"
+ClericSpells+="<b onClick=Scrying()>Scrying</b>"
+ClericSpells+="<h3>6thSlot:@11th(1/1),@19th(2/2)</h3>"
+ClericSpells+="<b onClick=BladeBarrier()>BladeBarrier</b>,"
+ClericSpells+="<b onClick=CreateUndead()>CreateUndead</b>,"
+ClericSpells+="<b onClick=FindThePath()>FindThePath</b>,"
+ClericSpells+="<b onClick=Forbiddance()>Forbiddance</b>,"
+ClericSpells+="<b onClick=Harm()>Harm</b>,"
+ClericSpells+="<b onClick=Heal()>Heal</b>,"
+ClericSpells+="<b onClick=HeroesFeast()>HeroesFeast</b>,"
+ClericSpells+="<b onClick=PlanarAlly()>PlanarAlly</b>,"
+ClericSpells+="<b onClick=TrueSeeing()>TrueSeeing</b>,"
+ClericSpells+="<b onClick=WordOfRecall()>WordOfRecall</b>"
+ClericSpells+="<h3>7thSlot:@13th(1/1),@20th(2/2)</h3>"
+ClericSpells+="<b onClick=ConjureCelestial()>ConjureCelestial</b>,"
+ClericSpells+="<b onClick=DivineWord()>DivineWord</b>,"
+ClericSpells+="<b onClick=Etherealness()>Etherealness</b>,"
+ClericSpells+="<b onClick=FireStorm()>FireStorm</b>,"
+ClericSpells+="<b onClick=PlaneShift()>PlaneShift</b>,"
+ClericSpells+="<b onClick=Regenerate()>Regenerate</b>,"
+ClericSpells+="<b onClick=Resurrection()>Resurrection</b>,"
+ClericSpells+="<b onClick=Symbol()>Symbol</b>"
+ClericSpells+="<h3>8thSlot:@15th(1/1)</h3>"
+ClericSpells+="<b onClick=AntimagicField()>AntimagicField</b>,"
+ClericSpells+="<b onClick=ControlWeather()>ControlWeather</b>,"
+ClericSpells+="<b onClick=Earthquake()>Earthquake</b>,"
+ClericSpells+="<b onClick=HolyAura()>HolyAura</b>"
+ClericSpells+="<h3>9thSlot:@17th(1/1)</h3>"
+ClericSpells+="<b onClick=AstralProjection()>AstralProjection</b>,"
+ClericSpells+="<b onClick=Gate()>Gate</b>,"
+ClericSpells+="<b onClick=MassHeal()>MassHeal</b>,"
+ClericSpells+="<b onClick=TrueResurrection()>TrueResurrection</b>"
+
+this.setFeatures('<h3>Spells Known:<br>'+this.wisMod+' wis<br>+'+this.lvl+' lvl<br>='+(parseInt(this.wisMod)+parseInt(this.lvl))+'</h3>Notice that the spells known are fewer than the slots you\'re awarded for prepared spells. Therefore, ignore spells known.<p>(Extra Spells)do not count against spells known, nor do they cost a spell slot, so mark them as no cost. Any known spells not prepared for an encounter can be cast in a ritual.(DMRule)</td></tr><tr><td>'+ClericSpells+'</td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Channel Divinity),@2nd 1/1@5th 2/2@18th 3/3</td></tr><tr><td>@2nd(Turn Undead)1CD, 30ft-radi, vsWis or frightened, @DisAdv while cleric is in sight, dash away, 10/10 turns</td></tr><tr><td>'+b+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Destroy Undead)instead of dashing, the undead are destroyed@5th CR1/2,@8th CR1-1/2,@11th CR2-1/2,@14th CR3-1/2,@17th CR4-1/2,</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Divine Intervention)d100 roll your lvl or lower, divine helps</td></tr><tr><td>'+dx+' @20th auto success');
 this.setActionNotes('1st Slots 2/2');
 this.setEquipment('mace or warhammer.scale mail or leather armor or chain mail.light crossbow 20 bolts or simple weapon.priest pack or explorer pack.shield.holy symbol');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
@@ -7202,7 +7341,7 @@ c="@7th<b onClick=ControlWater()>Control Water</b>, <b onClick=FreedomOfMovement
 dx="@9th<b onClick=ConjureElemental()>Conjure Elemental</b>, <b onClick=Scrying()>Scrying</b>"
 }
 if(this.class.match(/Desert/)){a="@3rd(Circle of the Desert)(Extra Spells)<b onClick='Blur()'>Blur</b>, <b onClick='Silence()'>Silence</b>"
-b="@5th<b onClick='CreateFoodWater()'>Create Food and Water</b>, <b onClick='ProtectionFromEnergy()'>Protection from Energy</b>";
+b="@5th<b onClick='CreateFoodAndWater()'>Create Food and Water</b>, <b onClick='ProtectionFromEnergy()'>Protection from Energy</b>";
 c="@7th<b onClick='Blight()'>Blight</b>, <b onClick='HallucinatoryTerrain()'>Hallucinatory Terrain</b>";
 dx="@9th<b onClick='InsectPlague()'>Insect Plague</b>, <b onClick='WallOfStone()'>Wall of Stone</b>"
 }
@@ -7378,7 +7517,7 @@ c="@7th(Divine Allegiance)1 react, you take the dmg an adjac ally would take";
 dx="@13th(Oath of the Crown Spells)<b onClick='Banishment()'>Banishment</b>, <b onClick='GuardianOfFaith()'>Guardian of Faith</b>";
 e="@15th(Unyielding Spirit)save vs Paralysis or Stun @Adv</td></tr><tr><td>@17th(Oath of the Crown Spells)<b onClick='CircleOfPower()'>Circle of Power</b>, <b onClick='Geas()'>Geas</b></td></tr><tr><td>@20th(Exalted Champion)1act,resist bludgeon, pierc, slash dmg from non-magicalwpns, allies within 30ft save vs Death @Adv, you and allies within 30ft vsWis @Adv, recharge on/long rest"
 }
-if(this.class.match(/Devotion/)){a="@3rd(Sacred Weapon)1act,1CD, 10/10 turns, magical atk+chaMod, light 20ft rad+dim light 20ft rad</td></tr><tr><td>@3rd(Turn the Unholy)1CD, 30ft undead vsWis or Dash 30ft away no reacts, 10/10 turns or dmgd</td></tr><tr><td>@3rd<b onClick='ProtectionFromEvilOrGood()'>Protection from Evil and Good</b> ,@3rd<b onClick='Sanctuary()'>Sanctuary</b>";
+if(this.class.match(/Devotion/)){a="@3rd(Sacred Weapon)1act,1CD, 10/10 turns, magical atk+chaMod, light 20ft rad+dim light 20ft rad</td></tr><tr><td>@3rd(Turn the Unholy)1CD, 30ft undead vsWis or Dash 30ft away no reacts, 10/10 turns or dmgd</td></tr><tr><td>@3rd<b onClick='ProtectionFromEvilAndGood()'>Protection from Evil and Good</b> ,@3rd<b onClick='Sanctuary()'>Sanctuary</b>";
 b="@5th<b onClick='LesserRestoration()'>Lesser Restoration</b> @5th<b onClick=ZoneOfTruth()'>ZoneOfTruth</b>";
 c="@7th(Aura of Devotion)@10th 10ft,@18th 30ft</td></tr><tr><td>@9th<b onClick='BeaconOfHope()'>Beacon of Hope</b> @9th<b onClick='DispelMagic()'>DispelMagic</b>";
 dx="@13th<b onClick=FreedomOfMovement()>Freedom of Movement</b>@13th<b onClick='GuardianOfFaith()'>Guardian of Faith</b>";
@@ -7430,7 +7569,7 @@ b='@7th(Defensive Tactics)choose one. (Escape the Horde)opp atkd @DisAdv. (Multi
 c='@11th(Volley)range atk all 10ft@11th(Whirlwind atk)melee atk all adjac';
 dx='@15th(Superior Hunter s Defense)choose one. (Evasion)vsDex 1/2dmg,is no dmg. (Stand Against the Tide)when missed, react, tgt same atks target. (Uncanny Dodge)react take half dmg'
 }
-if(this.class.match(/Monster\sSlayer/)){a="@3rd(Monster Slayer Magic)<b onClick='ProtectionFromEvilOrGood()'>Protection from Evil or Good</b>,@3rd(Hunter s Sense)1act,60ft, 1tgt, learn immunities, resistances, vulnerabilities, race unless hidden from divination magic,@3rd(Slayer s Prey)bonus,1tgt, 60ft, your 1st atk/turn xtra 1d6 dmg";
+if(this.class.match(/Monster\sSlayer/)){a="@3rd(Monster Slayer Magic)<b onClick='ProtectionFromEvilAndGood()'>Protection from Evil or Good</b>,@3rd(Hunter s Sense)1act,60ft, 1tgt, learn immunities, resistances, vulnerabilities, race unless hidden from divination magic,@3rd(Slayer s Prey)bonus,1tgt, 60ft, your 1st atk/turn xtra 1d6 dmg";
 b="@5th(Monster Slayer Magic)<b onClick='ZoneOfTruth()'>Zone of Truth</b>@7th(Supernatural Defense)you save+1d6 versus your Slayer s Prey@9th(Monster Slayer Magic)<b onClick='MagicCircle()'>Magic Circle</b></td></tr><tr><td>";
 c="@11th(Magic-User s Nemesis)thwart spell or thwart teleport within 60ft DC8+your spell ability+pro vsWis, recharge short rest";
 dx="@13th(Monster Slayer Magic)<b onClick='Banishment()'>Banishment</b>>@15th(Slayer s Counter)1react, Slayer s Prey forces your saving throw, make atk before making saving throw, a hit is also a save success"
@@ -7570,25 +7709,25 @@ c='@10th(Fiendish Resilience)1/1 resist 1 dmg type till next/long rest';
 dx='@14th(Hurl through Hell)1/1/long rest, on hit, teleport non-fiend tgt through lower planes and back 10d10 psychic'
 }
 
-if(this.class.match(/GenieOfAir/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilGood()'>DetectEvilGood</b>, <b onClick='Thunderwave()'>Thunderwave</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='GustOfWind()'>GustOfWind</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodWater()'>CreateFoodWater</b>, <b onClick='WindWalk()'>WindWalk</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='GreaterInvisibility()'>GreaterInvisibility</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='Seeming()'>Seeming</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
+if(this.class.match(/GenieOfAir/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilAndGood()'>DetectEvilAndGood</b>, <b onClick='Thunderwave()'>Thunderwave</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='GustOfWind()'>GustOfWind</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodAndWater()'>CreateFoodAndWater</b>, <b onClick='WindWalk()'>WindWalk</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='GreaterInvisibility()'>GreaterInvisibility</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='Seeming()'>Seeming</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
 b='@6th(Elemental Gift)resist thunder dmg,bonus,fly or hover 30ft,10min,lvlPro/lvlPro/long rest';
 c='@10th(Sanctuary Vessel)30ft,5 allies can enter vessel,in 10min is short rest+lvlPro HP heal to HitDice heal';
 dx='@14th(Limited Wish)act,effect of any class 6th lvl spell or lower,1d4 long rests'
 }
 
-if(this.class.match(/GenieOfEarth/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilGood()'>DetectEvilGood</b>, <b onClick='Sanctuary()'>Sanctuary</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='SpikeGrowth()'>SpikeGrowth</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodWater()'>CreateFoodWater</b>, <b onClick='MeldIntoStone()'>MeldIntoStone</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='StoneShape()'>StoneShape</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='WallOfStone()'>WallOfStone</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
+if(this.class.match(/GenieOfEarth/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilAndGood()'>DetectEvilAndGood</b>, <b onClick='Sanctuary()'>Sanctuary</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='SpikeGrowth()'>SpikeGrowth</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodAndWater()'>CreateFoodAndWater</b>, <b onClick='MeldIntoStone()'>MeldIntoStone</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='StoneShape()'>StoneShape</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='WallOfStone()'>WallOfStone</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
 b='@6th(Elemental Gift)resist bludgeoning dmg,bonus,fly or hover 30ft,10min,lvlPro/lvlPro/long rest';
 c='@10th(Sanctuary Vessel)30ft,5 allies can enter vessel,in 10min is short rest+lvlPro HP heal to HitDice heal';
 dx='@14th(Limited Wish)act,effect of any class 6th lvl spell or lower,1d4 long rests'
 }
 
-if(this.class.match(/GenieOfFire/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilGood()'>DetectEvilGood</b>, <b onClick='BurningHands()'>BurningHands</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='ScorchingRay()'>ScorchingRay</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodWater()'>CreateFoodWater</b>, <b onClick='Fireball()'>Fireball</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='FireShield()'>FireShield</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='FlameStrike()'>FlameStrike</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
+if(this.class.match(/GenieOfFire/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilAndGood()'>DetectEvilAndGood</b>, <b onClick='BurningHands()'>BurningHands</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='ScorchingRay()'>ScorchingRay</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodAndWater()'>CreateFoodAndWater</b>, <b onClick='Fireball()'>Fireball</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='FireShield()'>FireShield</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='FlameStrike()'>FlameStrike</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
 b='@6th(Elemental Gift)resist fire dmg,bonus,fly or hover 30ft,10min,lvlPro/lvlPro/long rest';
 c='@10th(Sanctuary Vessel)30ft,5 allies can enter vessel,in 10min is short rest+lvlPro HP heal to HitDice heal';
 dx='@14th(Limited Wish)act,effect of any class 6th lvl spell or lower,1d4 long rests'
 }
 
-if(this.class.match(/GenieOfWater/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilGood()'>DetectEvilGood</b>, <b onClick='FogCloud()'>FogCloud</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='Blur()'>Blur</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodWater()'>CreateFoodWater</b>, <b onClick='SleetStorm()'>SleetStorm</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='ControlWater()'>ControlWater</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='ConeOfCold()'>ConeOfCold</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
+if(this.class.match(/GenieOfWater/)){a="@1st(Genie s Vessel)vessel AC is spellDC,vessel HP is lvl+lvlPro, spell focus object(Bottled Respite)act,vanish in 20ft-rad-cyl 20ft-h dimension in vessel and hear outside,store equipment treasure,2XlvlPro hrs,enter 1/1 long rest(Genies Wrath)1/turn,+lvlPro cold dmg</td></tr><tr><td>@1st(Extra Spells)<b onClick='DetectEvilAndGood()'>DetectEvilAndGood</b>, <b onClick='FogCloud()'>FogCloud</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='PhantasmalForce()'>PhantasmalForce</b>, <b onClick='Blur()'>Blur</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='CreateFoodAndWater()'>CreateFoodAndWater</b>, <b onClick='SleetStorm()'>SleetStorm</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='PhantasmalKiller()'>PhantasmalKiller</b>, <b onClick='ControlWater()'>ControlWater</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='Create()'>Create</b>, <b onClick='ConeOfCold()'>ConeOfCold</b></td></tr><tr><td>@9th(Extra Spells)<b onClick='Wish()'>Wish</b>";
 b='@6th(Elemental Gift)resist cold dmg,bonus,fly or hover 30ft,10min,lvlPro/lvlPro/long rest';
 c='@10th(Sanctuary Vessel)30ft,5 allies can enter vessel,in 10min is short rest+lvlPro HP heal to HitDice heal';
 dx='@14th(Limited Wish)act,effect of any class 6th lvl spell or lower,1d4 long rests'
