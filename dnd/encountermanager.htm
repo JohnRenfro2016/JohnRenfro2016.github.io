@@ -7066,7 +7066,49 @@ b="@7th(Writhing Tide)flying speed 10ft, hover 1min or incapacitated lvl pro/ lv
 c="@11th(Mighty Swarm)+1d8 dmg, or move 15ft and knock prone, or you move 5ft under half cover";
 dx="@15th(Swarming Dispersal)1 react resist all dmg and 30ft teleport to open space"
 }
-this.setFeatures('</td></tr><tr><td>Cantrips Known:none<p>Spells Known:@2nd 2,@3rd 3,@5th 4,@7th 5,@9th 6,@11th 7,@13th 8,@15th 9,@17th 10,@19th 11<p>1stSlot:@2nd 2/2,@3rd 3/3,@5th 4/4<br>2ndSlot:@5th 2/2,@7th 3/3<br>3rdSlot:@9th 2/2,@11th 3/3<br>4thSlot:@13th 1/1,@15th 2/2<br>@5thSlot@17th 1/1<p>@1st(Favored Enemy)Survival @Adv to track, Intelligence @Adv to speak enemy language@1st 1 enemy,@6th 2 enemies@14th 3 enemies<p>or (Favored Foe)your lvl pro/ lvl pro per short rest, hit 1tgt marked 1min conce,@1st+1d4 dmg,@6th+1d6 dmg@14th+1d8 dmg</td></tr><tr><td>@1st(Natural Explorer)ignore difficult terrain, always alert, alone Stealth normal pace, forage x 2, know number, size, time of tracked enemy@1st 1 terrain type,@6th 2 terrain types@10th 3terrain types<p>or @1st(Deft Explorer)@1st(Canny)1 skill+pro becomes skill+exp, speak, read, write+2 languages,@6th(Roving)climb, swim=walk speed+5ft @10th(Tireless)1 act, temp hp 1d8+wis, lvl pro/lvl pro per short rest</td></tr><tr><td>@2nd(Fighting Style)(Archery)ranged+2or(Defense)armored AC+1or(Blind Fighting)blindsight 10ft unless tgt total coveror(Druidic Warrior)2 Druid Cantrips+wis+proor(Dueling)dmg+2or(Thrown Weapon Fighting)draw and atk, ranged+2 dmgor(Two-Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>'+a+'<p>(Primal Awareness)xtra Ranger spells,@3rd <b onClick=SpeakWithAnimals()>Speak with Animals</b>@5th <b onClick=BeastSense()>Beast Sense</b>@9th <b onClick=SpeakWithPlants()>Speak with Plants</b>@13th <b onClick=LocateCreature()>Locate Creature</b>@17th <b onClick=CommuneWithNature()>Commune with Nature</b></td></tr><tr><td>@4th(Ability Score Improvement)abi+1 and another abi+1 or abi+2@4th,@8th,@12th,@16th,@19th<p>@4th(Martial Versatility)replace your fighting style with another</td></tr><tr><td>@5th(Extra atk)</td></tr><tr><td>'+b+'</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty, save @Adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act,1slot, 10/10turns, know beings in area 1mi, favored terrain 6mi<p>@10th(Hide in Plain Sight)10/10turns camo, unmoving, stealth+10or(Nature s Veil)bonus , invisible until start next turn lvl pro/ lvl pro/long rest</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Vanish)Hide as bonus,not nonmagically tracked</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no @Adv vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dmg+wisMod');
+RangerSpells="<h3>1stSlot:@2nd(2/2)@3rd(3/3)@5th(4/4)</h3>"
+RangerSpells+="<b onClick=Alarm()>Alarm</b>,"
+RangerSpells+="<b onClick=AnimalFriendship()>AnimalFriendship</b>,"
+RangerSpells+="<b onClick=CureWounds()>CureWounds</b>,"
+RangerSpells+="<b onClick=DetectMagic()>DetectMagic</b>,"
+RangerSpells+="<b onClick=DetectPoisonAndDisease()>DetectPoisonAndDisease</b>,"
+RangerSpells+="<b onClick=FogCloud()>FogCloud</b>,"
+RangerSpells+="<b onClick=Goodberry()>Goodberry</b>,"
+RangerSpells+="<b onClick=HuntersMark()>HuntersMark</b>,"
+RangerSpells+="<b onClick=Jump()>Jump</b>,"
+RangerSpells+="<b onClick=Longstrider()>Longstrider</b>,"
+RangerSpells+="<b onClick=SpeakWithAnimals()>SpeakWithAnimals</b>"
+RangerSpells+="<h3>2ndSlot:@5th(2/2),@7th(3/3)</h3>"
+RangerSpells+="<b onClick=AnimalMessenger()>AnimalMessenger</b>,"
+RangerSpells+="<b onClick=Barkskin()>Barkskin</b>,"
+RangerSpells+="<b onClick=Darkvision()>Darkvision</b>,"
+RangerSpells+="<b onClick=FindTraps()>FindTraps</b>,"
+RangerSpells+="<b onClick=LesserRestoration()>LesserRestoration</b>,"
+RangerSpells+="<b onClick=LocateAnimalsOrPlants()>LocateAnimalsOrPlants</b>,"
+RangerSpells+="<b onClick=LocateObject()>LocateObject</b>,"
+RangerSpells+="<b onClick=PassWithoutTrace()>PassWithoutTrace</b>,"
+RangerSpells+="<b onClick=ProtectionFromPoison()>ProtectionFromPoison</b>,"
+RangerSpells+="<b onClick=Silence()>Silence</b>,"
+RangerSpells+="<b onClick=SpikeGrowth()>SpikeGrowth</b>"
+RangerSpells+="<h3>3rdSlot:@9th(2/2),@11th(3/3)</h3>"
+RangerSpells+="<b onClick=ConjureAnimals()>ConjureAnimals</b>,"
+RangerSpells+="<b onClick=Daylight()>Daylight</b>,"
+RangerSpells+="<b onClick=Nondetection()>Nondetection</b>,"
+RangerSpells+="<b onClick=PlantGrowth()>PlantGrowth</b>,"
+RangerSpells+="<b onClick=ProtectionfromEnergy()>ProtectionfromEnergy</b>,"
+RangerSpells+="<b onClick=SpeakWithPlants()>SpeakWithPlants</b>,"
+RangerSpells+="<b onClick=WaterBreathing()>WaterBreathing</b>,"
+RangerSpells+="<b onClick=WaterWalk()>WaterWalk</b>,"
+RangerSpells+="<b onClick=WindWall()>WindWall</b>"
+RangerSpells+="<h3>4thSlot:@13th(1/1),@15th(2/2)</h3>"
+RangerSpells+="<b onClick=ConjureWoodlandBeings()>ConjureWoodlandBeings</b>,"
+RangerSpells+="<b onClick=FreedomOfMovement()>FreedomOfMovement</b>,"
+RangerSpells+="<b onClick=LocateCreature()>LocateCreature</b>,"
+RangerSpells+="<b onClick=Stoneskin()>Stoneskin</b>"
+RangerSpells+="<h3>@5thSlot@17th(1/1)</h3>"
+RangerSpells+="<b onClick=CommuneWithNature()>CommuneWithNature</b>,"
+RangerSpells+="<b onClick=TreeStride()>TreeStride</b>"
+this.setFeatures('</td></tr><tr><td>Cantrips Known:none<p>Spells Known:@2nd 2,@3rd 3,@5th 4,@7th 5,@9th 6,@11th 7,@13th 8,@15th 9,@17th 10,@19th 11</td></tr><tr><td>'+RangerSpells+'</td></tr><tr><td>@1st(Favored Enemy)Survival @Adv to track, Intelligence @Adv to speak enemy language@1st 1 enemy,@6th 2 enemies@14th 3 enemies<p>or (Favored Foe)your lvl pro/ lvl pro per short rest, hit 1tgt marked 1min conce,@1st+1d4 dmg,@6th+1d6 dmg@14th+1d8 dmg</td></tr><tr><td>@1st(Natural Explorer)ignore difficult terrain, always alert, alone Stealth normal pace, forage x 2, know number, size, time of tracked enemy@1st 1 terrain type,@6th 2 terrain types@10th 3terrain types<p>or @1st(Deft Explorer)@1st(Canny)1 skill+pro becomes skill+exp, speak, read, write+2 languages,@6th(Roving)climb, swim=walk speed+5ft @10th(Tireless)1 act, temp hp 1d8+wis, lvl pro/lvl pro per short rest</td></tr><tr><td>@2nd(Fighting Style)(Archery)ranged+2or(Defense)armored AC+1or(Blind Fighting)blindsight 10ft unless tgt total coveror(Druidic Warrior)2 Druid Cantrips+wis+proor(Dueling)dmg+2or(Thrown Weapon Fighting)draw and atk, ranged+2 dmgor(Two-Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>'+a+'<p>(Primal Awareness)xtra Ranger spells,@3rd <b onClick=SpeakWithAnimals()>Speak with Animals</b>@5th <b onClick=BeastSense()>Beast Sense</b>@9th <b onClick=SpeakWithPlants()>Speak with Plants</b>@13th <b onClick=LocateCreature()>Locate Creature</b>@17th <b onClick=CommuneWithNature()>Commune with Nature</b></td></tr><tr><td>@4th(Ability Score Improvement)abi+1 and another abi+1 or abi+2@4th,@8th,@12th,@16th,@19th<p>@4th(Martial Versatility)replace your fighting style with another</td></tr><tr><td>@5th(Extra atk)</td></tr><tr><td>'+b+'</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty, save @Adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act,1slot, 10/10turns, know beings in area 1mi, favored terrain 6mi<p>@10th(Hide in Plain Sight)10/10turns camo, unmoving, stealth+10or(Nature s Veil)bonus , invisible until start next turn lvl pro/ lvl pro/long rest</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Vanish)Hide as bonus,not nonmagically tracked</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no @Adv vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dmg+wisMod');
 this.setEquipment('scale mail or leather armor.2 shortswords or 2 simple meleewpns.dungeoneer pack or explorer pack.Longbow 20 arrows');
 this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, all wpns');
@@ -7168,7 +7210,137 @@ b='@6th(Heart of the Storm)resist lightning thunder/when casting lightning or th
 c='@14th(Storm s Fury)melee atkd, react your lvl in lightning dmg and vsStr or pushed up to 20ft';
 dx='@18th(Wind Soul)1/1/long rest, immune lightning and thunder, fly 60ft, reduce fly 30ft and 3+cha allies can fly 30ft'
 }
-this.setFeatures('</td></tr><tr><td>(Sorcerer)<p>Sorcery Points,@2nd 2+1 Sorcerery Point/lvl<p>Cantrips Known@1st 4@4th 5@10th 6<p>Spells Known@1st 2lvl+1<br>1stSlot:@1st 2,@2nd 3,@3rd 4<br>2ndSlot:@3rd 2@4th 3<br>3rdSlot:@5th 2,@6th 3<br>4thSlot:@7th 1,@8th 2@9th 3<br>5thSlot:@9th 1@10th 2@18th 3<br>6thSlot:@11th 1@19th 2<br>7thSlot:@13th 1@20th 2<br>8thSlot:@15th 1<br>9thSlot:@17th 1<p>'+a+'</td></tr><tr><td>@2nd(Font of Magic)exchange spell slots and Sorcery Points<p>@2nd(Spell Points) your lvl/your lvl</td></tr><tr><td>(Metamagic),@3rd 2@10th 3 @17th 4(Careful Spell)1SP, select chaMod tgts in spell area to be immune(Distant Spell)1SP, range x 2, touch is 30ft(Empowered Spell)1SP, discard dmg and reroll dmg chaMod times, in addition to other Metamagic(Extend Spell)1SP, duration x 2, max 24 hrs(Heightened Spell)3SP, tgt rolls 1st save @DisAdv(Quickened Spell)1SP, 1 act is 1 bonus cast(Subtile Spell)1SP, no verbal somatic cast needed(Twinned Spell)SP is spell lvl, non self spell, tgt another</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Sorcerous Restoration)0SP is 4SP, recharge short rest');
+SorcererSpells="<h3>Cantrips Known:@1st(4),@4th(5),@10th(6)</h3>"
+SorcererSpells+="<b onClick=AcidSplash()>AcidSplash</b>,"
+SorcererSpells+="<b onClick=ChillTouch()>ChillTouch</b>,"
+SorcererSpells+="<b onClick=DancingLights()>DancingLights</b>,"
+SorcererSpells+="<b onClick=FireBolt()>FireBolt</b>,"
+SorcererSpells+="<b onClick=Light()>Light</b>,"
+SorcererSpells+="<b onClick=MageHand()>MageHand</b>,"
+SorcererSpells+="<b onClick=Mending()>Mending</b>,"
+SorcererSpells+="<b onClick=Message()>Message</b>,"
+SorcererSpells+="<b onClick=MinorIllusion()>MinorIllusion</b>,"
+SorcererSpells+="<b onClick=PoisonSpray()>PoisonSpray</b>,"
+SorcererSpells+="<b onClick=Prestidigitation()>Prestidigitation</b>,"
+SorcererSpells+="<b onClick=RayOfFrost()>RayOfFrost</b>,"
+SorcererSpells+="<b onClick=ShockingGrasp()>ShockingGrasp</b>,"
+SorcererSpells+="<b onClick=TrueStrike()>TrueStrike</b>"
+SorcererSpells+="<h3>1stSlot:@1st(2/2),@2nd(3/3),@3rd(4/4)</h3>"
+SorcererSpells+="<b onClick=BurningHands()>BurningHands</b>,"
+SorcererSpells+="<b onClick=CharmPerson()>CharmPerson</b>,"
+SorcererSpells+="<b onClick=ColorSpray()>ColorSpray</b>,"
+SorcererSpells+="<b onClick=ComprehendLanguages()>ComprehendLanguages</b>,"
+SorcererSpells+="<b onClick=DetectMagic()>DetectMagic</b>,"
+SorcererSpells+="<b onClick=DisguiseSelf()>DisguiseSelf</b>,"
+SorcererSpells+="<b onClick=ExpeditiousRetreat()>ExpeditiousRetreat</b>,"
+SorcererSpells+="<b onClick=FalseLife()>FalseLife</b>,"
+SorcererSpells+="<b onClick=FeatherFall()>FeatherFall</b>,"
+SorcererSpells+="<b onClick=FogCloud()>FogCloud</b>,"
+SorcererSpells+="<b onClick=Jump()>Jump</b>,"
+SorcererSpells+="<b onClick=MageArmor()>MageArmor</b>,"
+SorcererSpells+="<b onClick=MagicMissile()>MagicMissile</b>,"
+SorcererSpells+="<b onClick=Shield()>Shield</b>,"
+SorcererSpells+="<b onClick=SilentImage()>SilentImage</b>,"
+SorcererSpells+="<b onClick=Sleep()>Sleep</b>,"
+SorcererSpells+="<b onClick=Thunderwave()>Thunderwave</b>"
+SorcererSpells+="<h3>2ndSlot:@3rd(2/2),@4th(3/3)</h3>"
+SorcererSpells+="<b onClick=AlterSelf()>AlterSelf</b>,"
+SorcererSpells+="<b onClick=BlindnessDeafness()>BlindnessDeafness</b>,"
+SorcererSpells+="<b onClick=Blur()>Blur</b>,"
+SorcererSpells+="<b onClick=Darkness()>Darkness</b>,"
+SorcererSpells+="<b onClick=Darkvision()>Darkvision</b>,"
+SorcererSpells+="<b onClick=DetectThoughts()>DetectThoughts</b>,"
+SorcererSpells+="<b onClick=EnhanceAbility()>EnhanceAbility</b>,"
+SorcererSpells+="<b onClick=Enlarge/Reduce()>Enlarge/Reduce</b>,"
+SorcererSpells+="<b onClick=GustOfWind()>GustOfWind</b>,"
+SorcererSpells+="<b onClick=HoldPerson()>HoldPerson</b>,"
+SorcererSpells+="<b onClick=Invisibility()>Invisibility</b>,"
+SorcererSpells+="<b onClick=Knock()>Knock</b>,"
+SorcererSpells+="<b onClick=Levitate()>Levitate</b>,"
+SorcererSpells+="<b onClick=MirrorImage()>MirrorImage</b>,"
+SorcererSpells+="<b onClick=MistyStep()>MistyStep</b>,"
+SorcererSpells+="<b onClick=ScorchingRay()>ScorchingRay</b>,"
+SorcererSpells+="<b onClick=SeeInvisibility()>SeeInvisibility</b>,"
+SorcererSpells+="<b onClick=Shatter()>Shatter</b>,"
+SorcererSpells+="<b onClick=SpiderClimb()>SpiderClimb</b>,"
+SorcererSpells+="<b onClick=Suggestion()>Suggestion</b>,"
+SorcererSpells+="<b onClick=Web()>Web</b>,"
+SorcererSpells+="<b onClick=Blink()>Blink</b>"
+SorcererSpells+="<h3>3rdSlot:@5th(2/2),@6th(3/3)</h3>"
+SorcererSpells+="<b onClick=Clairvoyance()>Clairvoyance</b>,"
+SorcererSpells+="<b onClick=Counterspell()>Counterspell</b>,"
+SorcererSpells+="<b onClick=Daylight()>Daylight</b>,"
+SorcererSpells+="<b onClick=DispelMagic()>DispelMagic</b>,"
+SorcererSpells+="<b onClick=Fear()>Fear</b>,"
+SorcererSpells+="<b onClick=Fireball()>Fireball</b>,"
+SorcererSpells+="<b onClick=Fly()>Fly</b>,"
+SorcererSpells+="<b onClick=GaseousForm()>GaseousForm</b>,"
+SorcererSpells+="<b onClick=Haste()>Haste</b>,"
+SorcererSpells+="<b onClick=HypnoticPattern()>HypnoticPattern</b>,"
+SorcererSpells+="<b onClick=LightningBolt()>LightningBolt</b>,"
+SorcererSpells+="<b onClick=MajorImage()>MajorImage</b>,"
+SorcererSpells+="<b onClick=ProtectionFromEnergy()>ProtectionFromEnergy</b>,"
+SorcererSpells+="<b onClick=SleetStorm()>SleetStorm</b>,"
+SorcererSpells+="<b onClick=Slow()>Slow</b>,"
+SorcererSpells+="<b onClick=StinkingCloud()>StinkingCloud</b>,"
+SorcererSpells+="<b onClick=Tongues()>Tongues</b>,"
+SorcererSpells+="<b onClick=WaterBreathing()>WaterBreathing</b>,"
+SorcererSpells+="<b onClick=WaterWalk()>WaterWalk</b>"
+SorcererSpells+="<h3>4thSlot:@7th(1/1),@8th(2/2)@9th(3/3)</h3>"
+SorcererSpells+="<b onClick=Banishment()>Banishment</b>,"
+SorcererSpells+="<b onClick=Blight()>Blight</b>,"
+SorcererSpells+="<b onClick=Confusion()>Confusion</b>,"
+SorcererSpells+="<b onClick=DimensionDoor()>DimensionDoor</b>,"
+SorcererSpells+="<b onClick=DominateBeast()>DominateBeast</b>,"
+SorcererSpells+="<b onClick=GreaterInvisibility()>GreaterInvisibility</b>,"
+SorcererSpells+="<b onClick=IceStorm()>IceStorm</b>,"
+SorcererSpells+="<b onClick=Polymorph()>Polymorph</b>,"
+SorcererSpells+="<b onClick=Stoneskin()>Stoneskin</b>,"
+SorcererSpells+="<b onClick=WallOfFire()>WallOfFire</b>"
+SorcererSpells+="<h3>5thSlot:@9th(1/1),@10th(2/2),@18th(3/3)</h3>"
+SorcererSpells+="<b onClick=AnimateObjects()>AnimateObjects</b>,"
+SorcererSpells+="<b onClick=Cloudkill()>Cloudkill</b>,"
+SorcererSpells+="<b onClick=ConeOfCold()>ConeOfCold</b>,"
+SorcererSpells+="<b onClick=Creation()>Creation</b>,"
+SorcererSpells+="<b onClick=DominatePerson()>DominatePerson</b>,"
+SorcererSpells+="<b onClick=HoldMonster()>HoldMonster</b>,"
+SorcererSpells+="<b onClick=InsectPlague()>InsectPlague</b>,"
+SorcererSpells+="<b onClick=Seeming()>Seeming</b>,"
+SorcererSpells+="<b onClick=Telekinesis()>Telekinesis</b>,"
+SorcererSpells+="<b onClick=TeleportationCircle()>TeleportationCircle</b>,"
+SorcererSpells+="<b onClick=WallOfStone()>WallOfStone</b>"
+SorcererSpells+="<h3>6thSlot:@11th(1/1),@19th(2/2)</h3>"
+SorcererSpells+="<b onClick=ChainLightning()>ChainLightning</b>,"
+SorcererSpells+="<b onClick=CircleOfDeath()>CircleOfDeath</b>,"
+SorcererSpells+="<b onClick=Disintegrate()>Disintegrate</b>,"
+SorcererSpells+="<b onClick=Eyebite()>Eyebite</b>,"
+SorcererSpells+="<b onClick=GlobeOfInvulnerability()>GlobeOfInvulnerability</b>,"
+SorcererSpells+="<b onClick=MassSuggestion()>MassSuggestion</b>,"
+SorcererSpells+="<b onClick=MoveEarth()>MoveEarth</b>,"
+SorcererSpells+="<b onClick=Sunbeam()>Sunbeam</b>,"
+SorcererSpells+="<b onClick=TrueSeeing()>TrueSeeing</b>"
+SorcererSpells+="<h3>7thSlot:@13th(1/1)@20th(2/2)</h3>"
+SorcererSpells+="<b onClick=DelayedBlastFireball()>DelayedBlastFireball</b>,"
+SorcererSpells+="<b onClick=Etherealness()>Etherealness</b>,"
+SorcererSpells+="<b onClick=FingerOfDeath()>FingerOfDeath</b>,"
+SorcererSpells+="<b onClick=FireStorm()>FireStorm</b>,"
+SorcererSpells+="<b onClick=PlaneShift()>PlaneShift</b>,"
+SorcererSpells+="<b onClick=PrismaticSpray()>PrismaticSpray</b>,"
+SorcererSpells+="<b onClick=ReverseGravity()>ReverseGravity</b>,"
+SorcererSpells+="<b onClick=Teleport()>Teleport</b>"
+SorcererSpells+="<h3>8thSlot:@15th(1/1)</h3>"
+SorcererSpells+="<b onClick=DominateMonster()>DominateMonster</b>,"
+SorcererSpells+="<b onClick=Earthquake()>Earthquake</b>,"
+SorcererSpells+="<b onClick=IncendiaryCloud()>IncendiaryCloud</b>,"
+SorcererSpells+="<b onClick=PowerWordStun()>PowerWordStun</b>,"
+SorcererSpells+="<b onClick=Sunburst()>Sunburst</b>"
+SorcererSpells+="<h3>9thSlot:@17th(1/1)</h3>"
+SorcererSpells+="<b onClick=Gate()>Gate</b>,"
+SorcererSpells+="<b onClick=MeteorSwarm()>MeteorSwarm</b>,"
+SorcererSpells+="<b onClick=PowerWordKill()>PowerWordKill</b>,"
+SorcererSpells+="<b onClick=TimeStop()>TimeStop</b>,"
+SorcererSpells+="<b onClick=Wish()>Wish</b>"
+this.setFeatures('</td></tr><tr><td>(Sorcerer)<p>Sorcery Points,@2nd 2+1 Sorcerery Point/lvl<p><p>Spells Known@1st 2lvl+1</td></tr><tr><td>'+SorcererSpells+'</td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Font of Magic)exchange spell slots and Sorcery Points<p>@2nd(Spell Points) your lvl/your lvl</td></tr><tr><td>(Metamagic),@3rd 2@10th 3 @17th 4(Careful Spell)1SP, select chaMod tgts in spell area to be immune(Distant Spell)1SP, range x 2, touch is 30ft(Empowered Spell)1SP, discard dmg and reroll dmg chaMod times, in addition to other Metamagic(Extend Spell)1SP, duration x 2, max 24 hrs(Heightened Spell)3SP, tgt rolls 1st save @DisAdv(Quickened Spell)1SP, 1 act is 1 bonus cast(Subtile Spell)1SP, no verbal somatic cast needed(Twinned Spell)SP is spell lvl, non self spell, tgt another</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Sorcerous Restoration)0SP is 4SP, recharge short rest');
 this.setActionNotes('(Sorcrery Points),@2nd lvl+1/lvl+1, (1st Slot)0/0, (2nd Slot)0/0, (3rd Slot)0/0, (4th Slot)0/0, (5th Slot)0/0, (6th Slot)0/0, (7th Slot)0/0, (8th Slot)0/0, (9th Slot)0/0');
 this.setEquipment('light crossbow 20 bolts or arcane focus.dungeoneer pack or explorer pack.2 daggers');
 this.setHitDice(this.lvl+'d6+'+(parseInt(this.lvl)*parseInt(this.conMod)));
@@ -7232,7 +7404,81 @@ b='@6th(Defy Death)1/1/long rest, heal 1d8+conMod on success death save or stabi
 c='@10th(Undying Nature)do not need air, food, water or sleep unless long or short rest/age 1yr for every 10yrs/immune magically aged';
 dx='@14th(Indestructable Life)1/1 short rest/bonus heal 1d8+lvl/reattach your severed body parts'
 }
-this.setFeatures('</td></tr><tr><td>@1st(Pact Magic)spellMod is chaMod<p>Cantrips Known@1st 2,@4th 3,@10th 4<p>Spells Known@1st 2,@2nd 3,@3rd 4,@4th 5,@5th 6,@6th 7,@7th 8,@8th 9,@9th 10,@11th 11,@13th 12,@15th 13,@17th 14,@19th 15<p>Slot Lvl(Warlocks always cast all spells at this Slot Lvl)@1st 1st,@2nd 2nd,@4th 3rd,@7th 4th,@9th 5th<p>Warlock Invocations Known,@2nd 2@5th 3@7th 4@9th 5@12th 6@15th 7@18th 8<p>(Expanded Spell List)<p>Cantrips<b onClick=BoomingBlade()>BoomingBlade</b>, <b onClick=GreenFlameBlade()>GreenFlameBlade</b>, <b onClick=LightningLure()>LightningLure</b>, <b onClick=MindSliver()>MindSliver</b>, <b onClick=SwordBurst()>SwordBurst</b><br>3rd Lvl Spells<b onClick=IntellectFortress()>IntellectFortress</b>, <b onClick=SpiritShroud()>SpiritShroud</b>, <b onClick=SummonFey()>SummonFey</b>, <b onClick=SummonShadowspawn()>SummonShadowspawn</b>, <b onClick=SummonUndead()>SummonUndead</b><br>4th Lvl Spells<b onClick=SummonAberration()>SummonAberration</b><p>5th Lvl Spells<b onClick=Mislead()>Mislead</b>, <b onClick=PlanarBinding()>PlanarBinding</b>, <b onClick=TeleportationCircle()>TeleportationCircle</b><p>6th Lvl Spells<b onClick=SummonFiend()>SummonFiend</b>, <b onClick=TashasOtherworldlyGuise()>TashasOtherworldlyGuise</b><p>7th Lvl Spells<b onClick=DreamOfTheBlueVeil()>DreamOfTheBlueVeil</b><p>9th Lvl Spells<b onClick=BladeOfDisaster()>BladeOfDisaster</b>, <b onClick=Gate()>Gate</b>, <b onClick=Weird()>Weird</b></td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Eldritch Invocations)INVOCATION AGONIZING BLAST must have Eldritch Blast, dmg+chaMod<p>ARMOR OF SHADOWS Mage Armor no slot cost<p>@9th ASCENDANT STEP Levitate @will, no slot cost<p>BEAST SPEECH Speak with Animals @will, no slot cost<p>BEGUILING INFLUENCE Deception Persuasion+pro<p>@7th BEWITCHING WHISPERS Compulsion, slot cost, 1/1/long rest<p>BOOK OF ANCIENT SECRETS must have Pact of the Tome, 2 1st lvl spells of any class as rituals, add adventure rituals 2hrs 50gp<p>@15th CHAINS OF CARCERI 1/1/long rest, Hold Monster @will, no slot cost or components(Devil s Sight)120ft see in magical nonmagical darkness @7th(Dreadful Word)1/1/long rest, Confusion, slot cost<p>ELDRITCH SIGHT Detect magic @will, no slot cost<p>ELDRITCH SPEAR must have Eldritch Blast, range 300ft<p>EYES OF THE RUNE KEEPER read all writing<p>FIENDISH VIGOR False Life @will, no slot cost<p>GAZE OF TWO MINDS see through ally till tteo your nt<p>@12th LIFEDRINKER must have Pact of the Blade, dmg+chaMod necrotic<p>MASK OF MANY FACES <b onClick=DisguiseSelf()>Disguise Self</b> @will, no slot cost<p>@15th MASTER OF MYRIAD FORMS Alter Self @will, no slot cost<p>@9th MINIONS OF CHAOS 1/1/long rest, Conjure Elemental, slot cost<p>@5th MIRE THE MIND 1/1/long rest, Slow, slot cost<p>MISTY VISIONS Silent Image @will, no slot cost, no material component<p>@5th ONE WITH SHADOWS in dim or darkness, 1act,invisible til move, act, react<p>@9th OTHERWORLDLY LEAP jump @will, no slot cost, no material component<p>REPELLING BLAST must have Eldritch Blast, on hit push tgt up to 10ft<p>@7th SCULPTOR OF FLESH 1/1/long rest, Polymorph, 1 slot<p>@5th SIGN OF ILL OMEN 1/1/long rest, Bestow Curse<p>THIEF OF FIVE FATES 1/1/long rest, Bane<p>@5th THIRSTING BLADE must have Pact of the Blade, 1 more atk<p>@15th VISIONS OF DISTANT REALMS Arcane Eye @will, no slot cost<p>VOICE OF THE CHAIN MASTER must have Pact of the Chain, telepathy with familiar, sense and speak through familiar<p>@9th WHISPERS OF THE GRAVE Speak with Dead @will, no slot cost<p>@15th WITCH SIGHT see true form of shapechanger of illusion or transmu 30ft</td></tr><tr><td>@3rd(Pact Boon)</td></tr><tr><td>@3rd(Pact of the Chain)Find Familiar as ritual, imp, pseudodragon, quasit, sprite, or normal familiar, familiar atks as its reactfamiliar fly or swim at 40ftbonus,familiar magical atks with your spellAbi+DCfamiliar takes your resistance dmg<p>(Pact of the Talisman)abi check+1d4 proLvl/proLvl/long rest, 1hr ritual to replace the talisman@12th(Bond of the Talisman)ally wears your talisman, you can teleport to your ally, lvl pro/lvl pro/long restor (Eldritch Mind)vsCon @Adv to maintain concen@7th(Protection of the Talisman)ally wears your talisman, +1d4 to save throw, lvlPro/lvlPro/long restor @7th(Rebuke of the Talisman)react, atkr 30ft takes lvlPro psychic dmg and pushed 10ft<p>or ,@3rd(Pact of the Blade)weapon becomes magical, summon dismiss weapon as bonus<p>or ,@3rd(Pact of the Tomb)3 any class xtra cantrips, 1hr to replace book@5th(Far Scribe)lvl pro of allies write name in book, Sending Spell send and receive messages, 1min@9th(Gift of the Protectors)lvl pro of allies write name in book, 0hp becomes 1hp less take 2xMaxHP+CurHP, 1/long rest</td></tr><tr><td>@4th(Ability Score Improvement)1 abi+2, or abi+1 another abi+1@4th,@8th,@12th,@16th,@19th <p>(Eldritch Versatility)during abi increase, exchange 1 cantrip, exchange pact boon feature, @12th exchange 1 Mystic Arcanum spell</td></tr><tr><td>@5th(Undying Servitude) <b onClick=AnimateDead()>AnimateDead</b> no spell slot/long rest'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Mystic Arcanum)1 new 6th lvl Warlock spell without slot cost, after slot cost)1/1, @13th 7th lvl 1/1, @15th 8th lvl 1/1, @17th 9th lvl 1/1 </td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Eldritch Master)1/1/long rest, takes 1min restore all slots</td></tr>');
+WarlockSpells="<h3>Cantrips Known:@1st(2/2),@4th(3/3),@10th(4/4)</h3>"
+WarlockSpells+="<b onClick=EldritchBlast()>EldritchBlast</b>,"
+WarlockSpells+="<b onClick=ChillTouch()>ChillTouch</b>,"
+WarlockSpells+="<b onClick=MageHand()>MageHand</b>,"
+WarlockSpells+="<b onClick=MinorIllusion()>MinorIllusion</b>,"
+WarlockSpells+="<b onClick=PoisonSpray()>PoisonSpray</b>,"
+WarlockSpells+="<b onClick=Prestidigitation()>Prestidigitation</b>,"
+WarlockSpells+="<b onClick=TrueStrike()>TrueStrike</b>"
+WarlockSpells+="<h3>1st Level Spells</h3>"
+WarlockSpells+="<b onClick=CharmPerson()>CharmPerson</b>,"
+WarlockSpells+="<b onClick=ComprehendLanguages()>ComprehendLanguages</b>,"
+WarlockSpells+="<b onClick=ExpeditiousRetreat()>ExpeditiousRetreat</b>,"
+WarlockSpells+="<b onClick=HellishRebuke()>HellishRebuke</b>,"
+WarlockSpells+="<b onClick=IllusoryScript()>IllusoryScript</b>,"
+WarlockSpells+="<b onClick=ProtectionFromEvilAndGood()>ProtectionFromEvilAndGood</b>,"
+WarlockSpells+="<b onClick=UnseenServant()>UnseenServant</b>"
+WarlockSpells+="<h3>2nd Level Spells</h3>"
+WarlockSpells+="<b onClick=Darkness()>Darkness</b>,"
+WarlockSpells+="<b onClick=Enthrall()>Enthrall</b>,"
+WarlockSpells+="<b onClick=HoldPerson()>HoldPerson</b>,"
+WarlockSpells+="<b onClick=Invisibility()>Invisibility</b>,"
+WarlockSpells+="<b onClick=MirrorImage()>MirrorImage</b>,"
+WarlockSpells+="<b onClick=MistyStep()>MistyStep</b>,"
+WarlockSpells+="<b onClick=RayOfEnfeeblement()>RayOfEnfeeblement</b>,"
+WarlockSpells+="<b onClick=Shatter()>Shatter</b>,"
+WarlockSpells+="<b onClick=SpiderClimb()>SpiderClimb</b>,"
+WarlockSpells+="<b onClick=Suggestion()>Suggestion</b>"
+WarlockSpells+="<h3>3rd Level Spells</h3>"
+WarlockSpells+="<b onClick=Counterspell()>Counterspell</b>,"
+WarlockSpells+="<b onClick=DispelMagic()>DispelMagic</b>,"
+WarlockSpells+="<b onClick=Fear()>Fear</b>,"
+WarlockSpells+="<b onClick=Fly()>Fly</b>,"
+WarlockSpells+="<b onClick=GaseousForm()>GaseousForm</b>,"
+WarlockSpells+="<b onClick=HypnoticPattern()>HypnoticPattern</b>,"
+WarlockSpells+="<b onClick=MagicCircle()>MagicCircle</b>,"
+WarlockSpells+="<b onClick=MajorImage()>MajorImage</b>,"
+WarlockSpells+="<b onClick=RemoveCurse()>RemoveCurse</b>,"
+WarlockSpells+="<b onClick=Tongues()>Tongues</b>,"
+WarlockSpells+="<b onClick=VampiricTouch()>VampiricTouch</b>"
+WarlockSpells+="<h3>4th Level Spells</h3>"
+WarlockSpells+="<b onClick=Banishment()>Banishment</b>,"
+WarlockSpells+="<b onClick=Blight()>Blight</b>,"
+WarlockSpells+="<b onClick=DimensionDoor()>DimensionDoor</b>,"
+WarlockSpells+="<b onClick=HallucinatoryTerrain()>HallucinatoryTerrain</b>"
+WarlockSpells+="<h3>5th Level Spells</h3>"
+WarlockSpells+="<b onClick=ContactOtherPlane()>ContactOtherPlane</b>,"
+WarlockSpells+="<b onClick=Dream()>Dream</b>,"
+WarlockSpells+="<b onClick=HoldMonster()>HoldMonster</b>,"
+WarlockSpells+="<b onClick=Scrying()>Scrying</b>"
+WarlockSpells+="<h3>6th Level Spells</h3>"
+WarlockSpells+="<b onClick=CircleOfDeath()>CircleOfDeath</b>,"
+WarlockSpells+="<b onClick=ConjureFey()>ConjureFey</b>,"
+WarlockSpells+="<b onClick=CreateUndead()>CreateUndead</b>,"
+WarlockSpells+="<b onClick=Eyebite()>Eyebite</b>,"
+WarlockSpells+="<b onClick=FleshToStone()>FleshToStone</b>,"
+WarlockSpells+="<b onClick=MassSuggestion()>MassSuggestion</b>,"
+WarlockSpells+="<b onClick=TrueSeeing()>TrueSeeing</b>"
+WarlockSpells+="<h3>7th Level Spells</h3>"
+WarlockSpells+="<b onClick=Etherealness()>Etherealness</b>,"
+WarlockSpells+="<b onClick=FingerOfDeath()>FingerOfDeath</b>,"
+WarlockSpells+="<b onClick=Forcecage()>Forcecage</b>,"
+WarlockSpells+="<b onClick=PlaneShift()>PlaneShift</b>"
+WarlockSpells+="<h3>8th Level Spells</h3>"
+WarlockSpells+="<b onClick=Demiplane()>Demiplane</b>,"
+WarlockSpells+="<b onClick=DominateMonster()>DominateMonster</b>,"
+WarlockSpells+="<b onClick=Feeblemind()>Feeblemind</b>,"
+WarlockSpells+="<b onClick=Glibness()>Glibness</b>,"
+WarlockSpells+="<b onClick=PowerWordStun()>PowerWordStun</b>"
+WarlockSpells+="<h3>9th Level Spells</h3>"
+WarlockSpells+="<b onClick=AstralProjection()>AstralProjection</b>,"
+WarlockSpells+="<b onClick=Foresight()>Foresight</b>,"
+WarlockSpells+="<b onClick=Imprisonment()>Imprisonment</b>,"
+WarlockSpells+="<b onClick=PowerWordKill()>PowerWordKill</b>,"
+WarlockSpells+="<b onClick=TruePolymorph()>TruePolymorph</b>,"
+this.setFeatures('</td></tr><tr><td>@1st(Pact Magic)spellMod is chaMod<p><p>Spells Known@1st(2)@2nd(3)@3rd(4)@4th(5)@5th(6),@6th(7),@7th (8),@8th(9),@9th(10),@11th(11),@13th(12),@15th(13),@17th(14),@19th (15)<p>Slot Lvl(Warlocks always cast all spells at this Slot Lvl)@1st (1st Slot),@2nd(2nd Slot),@4th(3rd Slot),@7th(4th Slot),@9th(5th Slot)</td></tr><tr><td>'+WarlockSpells+'</td></tr><tr><td>Warlock Invocations Known,@2nd 2@5th 3@7th 4@9th 5@12th 6@15th 7@18th 8<p>(Expanded Spell List)<p>Cantrips<b onClick=BoomingBlade()>BoomingBlade</b>, <b onClick=GreenFlameBlade()>GreenFlameBlade</b>, <b onClick=LightningLure()>LightningLure</b>, <b onClick=MindSliver()>MindSliver</b>, <b onClick=SwordBurst()>SwordBurst</b><br>3rd Lvl Spells<b onClick=IntellectFortress()>IntellectFortress</b>, <b onClick=SpiritShroud()>SpiritShroud</b>, <b onClick=SummonFey()>SummonFey</b>, <b onClick=SummonShadowspawn()>SummonShadowspawn</b>, <b onClick=SummonUndead()>SummonUndead</b><br>4th Lvl Spells<b onClick=SummonAberration()>SummonAberration</b><p>5th Lvl Spells<b onClick=Mislead()>Mislead</b>, <b onClick=PlanarBinding()>PlanarBinding</b>, <b onClick=TeleportationCircle()>TeleportationCircle</b><p>6th Lvl Spells<b onClick=SummonFiend()>SummonFiend</b>, <b onClick=TashasOtherworldlyGuise()>TashasOtherworldlyGuise</b><p>7th Lvl Spells<b onClick=DreamOfTheBlueVeil()>DreamOfTheBlueVeil</b><p>9th Lvl Spells<b onClick=BladeOfDisaster()>BladeOfDisaster</b>, <b onClick=Gate()>Gate</b>, <b onClick=Weird()>Weird</b></td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Eldritch Invocations)INVOCATION AGONIZING BLAST must have Eldritch Blast, dmg+chaMod<p>ARMOR OF SHADOWS Mage Armor no slot cost<p>@9th ASCENDANT STEP Levitate @will, no slot cost<p>BEAST SPEECH Speak with Animals @will, no slot cost<p>BEGUILING INFLUENCE Deception Persuasion+pro<p>@7th BEWITCHING WHISPERS Compulsion, slot cost, 1/1/long rest<p>BOOK OF ANCIENT SECRETS must have Pact of the Tome, 2 1st lvl spells of any class as rituals, add adventure rituals 2hrs 50gp<p>@15th CHAINS OF CARCERI 1/1/long rest, Hold Monster @will, no slot cost or components(Devil s Sight)120ft see in magical nonmagical darkness @7th(Dreadful Word)1/1/long rest, Confusion, slot cost<p>ELDRITCH SIGHT Detect magic @will, no slot cost<p>ELDRITCH SPEAR must have Eldritch Blast, range 300ft<p>EYES OF THE RUNE KEEPER read all writing<p>FIENDISH VIGOR False Life @will, no slot cost<p>GAZE OF TWO MINDS see through ally till tteo your nt<p>@12th LIFEDRINKER must have Pact of the Blade, dmg+chaMod necrotic<p>MASK OF MANY FACES <b onClick=DisguiseSelf()>Disguise Self</b> @will, no slot cost<p>@15th MASTER OF MYRIAD FORMS Alter Self @will, no slot cost<p>@9th MINIONS OF CHAOS 1/1/long rest, Conjure Elemental, slot cost<p>@5th MIRE THE MIND 1/1/long rest, Slow, slot cost<p>MISTY VISIONS Silent Image @will, no slot cost, no material component<p>@5th ONE WITH SHADOWS in dim or darkness, 1act,invisible til move, act, react<p>@9th OTHERWORLDLY LEAP jump @will, no slot cost, no material component<p>REPELLING BLAST must have Eldritch Blast, on hit push tgt up to 10ft<p>@7th SCULPTOR OF FLESH 1/1/long rest, Polymorph, 1 slot<p>@5th SIGN OF ILL OMEN 1/1/long rest, Bestow Curse<p>THIEF OF FIVE FATES 1/1/long rest, Bane<p>@5th THIRSTING BLADE must have Pact of the Blade, 1 more atk<p>@15th VISIONS OF DISTANT REALMS Arcane Eye @will, no slot cost<p>VOICE OF THE CHAIN MASTER must have Pact of the Chain, telepathy with familiar, sense and speak through familiar<p>@9th WHISPERS OF THE GRAVE Speak with Dead @will, no slot cost<p>@15th WITCH SIGHT see true form of shapechanger of illusion or transmu 30ft</td></tr><tr><td>@3rd(Pact Boon)</td></tr><tr><td>@3rd(Pact of the Chain)Find Familiar as ritual, imp, pseudodragon, quasit, sprite, or normal familiar, familiar atks as its reactfamiliar fly or swim at 40ftbonus,familiar magical atks with your spellAbi+DCfamiliar takes your resistance dmg<p>(Pact of the Talisman)abi check+1d4 proLvl/proLvl/long rest, 1hr ritual to replace the talisman@12th(Bond of the Talisman)ally wears your talisman, you can teleport to your ally, lvl pro/lvl pro/long restor (Eldritch Mind)vsCon @Adv to maintain concen@7th(Protection of the Talisman)ally wears your talisman, +1d4 to save throw, lvlPro/lvlPro/long restor @7th(Rebuke of the Talisman)react, atkr 30ft takes lvlPro psychic dmg and pushed 10ft<p>or ,@3rd(Pact of the Blade)weapon becomes magical, summon dismiss weapon as bonus<p>or ,@3rd(Pact of the Tomb)3 any class xtra cantrips, 1hr to replace book@5th(Far Scribe)lvl pro of allies write name in book, Sending Spell send and receive messages, 1min@9th(Gift of the Protectors)lvl pro of allies write name in book, 0hp becomes 1hp less take 2xMaxHP+CurHP, 1/long rest</td></tr><tr><td>@4th(Ability Score Improvement)1 abi+2, or abi+1 another abi+1@4th,@8th,@12th,@16th,@19th <p>(Eldritch Versatility)during abi increase, exchange 1 cantrip, exchange pact boon feature, @12th exchange 1 Mystic Arcanum spell</td></tr><tr><td>@5th(Undying Servitude) <b onClick=AnimateDead()>AnimateDead</b> no spell slot/long rest'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Mystic Arcanum)1 new 6th lvl Warlock spell without slot cost, after slot cost)1/1, @13th 7th lvl 1/1, @15th 8th lvl 1/1, @17th 9th lvl 1/1 </td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Eldritch Master)1/1/long rest, takes 1min restore all slots</td></tr>');
 this.setEquipment('light crossbow 20 bolts or simple weapon.component pouch or arcane focus.scholar pack or dungeoneer pack.leather armor.simple weapon.2 daggers');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simplewpns');
@@ -9016,7 +9262,28 @@ if(this.lvl.match(/2[1-4]/)){this.setPro('+7')}
 if(this.lvl.match(/2[5-8]/)){this.setPro('+8')}
 if(this.lvl.match(/29|30/)){this.setPro('+9')}
 
-if(this.class.match(/Cleric/))
+if(this.class.match(/Arcane|Eldritch/))
+{
+if(this.lvl.match(/[0-2]/)){this.setMaxSlot1(0)};
+if(this.lvl.match(/3/)){this.setMaxSlot1(2)};
+if(this.lvl.match(/[4-6]/)){this.setMaxSlot1(3)};
+if(this.lvl.match(/[7-9]|1[0-9]|20/)){this.setMaxSlot1(4)};
+if(this.lvl.match(/[0-6]/)){this.setMaxSlot2(0)};
+if(this.lvl.match(/[7-9]/)){this.setMaxSlot2(2)};
+if(this.lvl.match(/1[0-9]|20/)){this.setMaxSlot2(3)};
+if(this.lvl.match(/[0-9]|1[0-2]/)){this.setMaxSlot3(0)};
+if(this.lvl.match(/1[3-5]/)){this.setMaxSlot3(2)};
+if(this.lvl.match(/1[6-9]|20/)){this.setMaxSlot3(3)};
+if(this.lvl.match(/[0-9]|1[0-8]/)){this.setMaxSlot4(0)};
+if(this.lvl.match(/19|20/)){this.setMaxSlot4(1)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot5(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot6(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot7(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot8(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot9(0)};
+}
+
+if(this.class.match(/Bard|Cleric|Druid|Sorcerer|Wizard/))
 {
 if(this.lvl.match(/0/)){this.setMaxSlot1(0)};
 if(this.lvl.match(/1/)){this.setMaxSlot1(2)};
@@ -9047,6 +9314,58 @@ if(this.lvl.match(/1[5-9]|20/)){this.setMaxSlot8(1)};
 if(this.lvl.match(/[0-9]|1[0-6]/)){this.setMaxSlot9(0)};
 if(this.lvl.match(/1[7-9]|20/)){this.setMaxSlot9(1)};
 }
+
+if(this.class.match(/Paladin|Ranger/))
+{
+if(this.lvl.match(/[0-1]/)){this.setMaxSlot1(0)};
+if(this.lvl.match(/2/)){this.setMaxSlot1(2)};
+if(this.lvl.match(/3/)){this.setMaxSlot1(3)};
+if(this.lvl.match(/[4-9]|1[0-9]|20/)){this.setMaxSlot1(4)};
+if(this.lvl.match(/[0-4]/)){this.setMaxSlot2(0)};
+if(this.lvl.match(/[5-6]/)){this.setMaxSlot2(2)};
+if(this.lvl.match(/[7-9]|1[0-9]|20/)){this.setMaxSlot2(3)};
+if(this.lvl.match(/[0-8]/)){this.setMaxSlot3(0)};
+if(this.lvl.match(/9|10/)){this.setMaxSlot3(2)};
+if(this.lvl.match(/1[1-9]|20/)){this.setMaxSlot3(3)};
+if(this.lvl.match(/[0-9]|1[0-2]/)){this.setMaxSlot4(0)};
+if(this.lvl.match(/1[3-4]/)){this.setMaxSlot4(1)};
+if(this.lvl.match(/1[5-6]/)){this.setMaxSlot4(2)};
+if(this.lvl.match(/1[7-9]|20/)){this.setMaxSlot4(3)};
+if(this.lvl.match(/[0-9]|1[0-6]/)){this.setMaxSlot5(0)};
+if(this.lvl.match(/1[7-8]/)){this.setMaxSlot5(1)};
+if(this.lvl.match(/19|20/)){this.setMaxSlot5(2)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot6(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot7(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot8(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot9(0)};
+}
+
+if(this.class.match(/Warlock/))
+{
+if(this.lvl.match(/0/)){this.setMaxSlot1(0)};
+if(this.lvl.match(/1/)){this.setMaxSlot1(1)};
+if(this.lvl.match(/2/)){this.setMaxSlot1(2)};
+if(this.lvl.match(/[3-9]|1[0-9]|20/)){this.setMaxSlot1(0)};
+if(this.lvl.match(/[0-2]/)){this.setMaxSlot2(0)};
+if(this.lvl.match(/[3-4]/)){this.setMaxSlot2(2)};
+if(this.lvl.match(/[5-9]|1[0-9]|20/)){this.setMaxSlot2(0)};
+if(this.lvl.match(/[0-5]/)){this.setMaxSlot3(0)};
+if(this.lvl.match(/[6-7]/)){this.setMaxSlot3(3)};
+if(this.lvl.match(/[8-9]|1[0-9]|20/)){this.setMaxSlot3(0)};
+if(this.lvl.match(/[0-2]/)){this.setMaxSlot4(0)};
+if(this.lvl.match(/[7-8]/)){this.setMaxSlot4(4)};
+if(this.lvl.match(/9|1[0-9]|20/)){this.setMaxSlot4(0)};
+if(this.lvl.match(/[0-8]/)){this.setMaxSlot5(0)};
+if(this.lvl.match(/9|1[0-1]/)){this.setMaxSlot5(5)};
+if(this.lvl.match(/1[2-4]/)){this.setMaxSlot5(6)};
+if(this.lvl.match(/1[5-7]/)){this.setMaxSlot5(7)};
+if(this.lvl.match(/1[8-9]|20/)){this.setMaxSlot5(8)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot6(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot7(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot8(0)};
+if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot9(0)};
+}
+
 this.refresh()}
 
 </script>
