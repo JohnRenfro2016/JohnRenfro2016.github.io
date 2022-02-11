@@ -6,7 +6,7 @@
 <meta name="description" content="2022 Dungeons & Dragons 5th Edition Tabletop Roleplaying Game Manager">
 <meta name="keywords" content="DnD, Dungeons and Dragons, D&D, Dungeons & Dragons, Fantasy RPG, tabletop roleplaying game, TTRPG">
 <title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game Single Encounter Manager 2022(Wizards of the Coast, Asmor, Zorn, Ren, Vanderwaal Webdesign)</title>
-<script src="Scripts/WZDragdrop.js"></script>
+//<script src="Scripts/WZDragdrop.js"></script>
 //<script src="Scripts/jquery-3.6.0.js"></script>
 <script src="Scripts/jquery-ui-1.13.1.js"></script>
 <script src="Scripts/draggable-div-with-touch.js"></script>
@@ -1360,6 +1360,15 @@ b='1d20+0',
 c='slash+str',
 dmgDice='2d4+0',
 getAction(t1)}
+
+function FloatingDisk()
+{
+a='1st(FloatingDisk)30ft,unoccupied space,1hr,3ft-diam 1in-thick,float 3ft-h,flows you,carries 500lbs',
+b='1d20+0',
+c='slash+str',
+dmgDice='2d4+0',
+getAction(t1)}
+
 function Greatclub()
 {
 a='Greatclub+str+pro',
@@ -2051,7 +2060,7 @@ dmgDice='0d0+0',
 getAction(t1)}
 function EnlargeReduce()
 {
-a='2nd(Enlarge/Reduce)30ft conce,10/10turns unwilling target)DC8+'+characters[targeted].spellAbility+'+pro vsCon*Enlarge size x 2 weight x 8 str @Adv+1d4 weapon dmg*or Reduce size/2 weight/8 str @DisAdv -1d4 weapon dmg',
+a='2nd(EnlargeReduce)30ft conce,10/10turns unwilling target)DC8+'+characters[targeted].spellAbility+'+pro vsCon*Enlarge size x 2 weight x 8 str @Adv+1d4 weapon dmg*or Reduce size/2 weight/8 str @DisAdv -1d4 weapon dmg',
 b='0d0+0',
 c='',
 dmgDice='1d4+0',
@@ -3344,7 +3353,7 @@ b='0d0+0',
 c='',
 dmgDice='0d0+0',
 getAction(t1)}
-function MorFaithfulHound()
+function FaithfulHound()
 {
 a='4th(Mor. Faithful Hound)Invisible, immobile dog melee atks as spell atk+'+characters[targeted].spellAbility+'+pro for 4d8 pierc dmg; sees invisible/ethereal; 30ft 8hrs ',
 b='1d20+0',
@@ -3925,7 +3934,7 @@ b='0d0+0',
 c='',
 dmgDice='0d0+0',
 getAction(t1)}
-function MorMagniMansion()
+function MagnificentMansion()
 {
 a='7th(Mor. Magni. Mansion)Create xtradimensional mansion with rooms, food and servants to serve 100 people;(15gp)10/10turns 300ft 24hrs ',
 b='0d0+0',
@@ -5911,7 +5920,7 @@ BardSpells+="<b onClick=FaerieFire()>FaerieFire</b>,"
 BardSpells+="<b onClick=FeatherFall()>FeatherFall</b>,"
 BardSpells+="<b onClick=HealingWord()>HealingWord</b>,"
 BardSpells+="<b onClick=Heroism()>Heroism</b>,"
-BardSpells+="<b onClick=HideousLaughter()>HideousLaughter</b>,"
+BardSpells+="<b onClick=TashasHideousLaughter()>TashasHideousLaughter</b>,"
 BardSpells+="<b onClick=Identify()>Identify</b>,"
 BardSpells+="<b onClick=IllusoryScript()>IllusoryScript</b>,"
 BardSpells+="<b onClick=Longstrider()>Longstrider</b>,"
@@ -5954,7 +5963,7 @@ BardSpells+="<b onClick=Sending()>Sending</b>,"
 BardSpells+="<b onClick=SpeakWithDead()>SpeakWithDead</b>,"
 BardSpells+="<b onClick=SpeakWithPlants()>SpeakWithPlants</b>,"
 BardSpells+="<b onClick=StinkingCloud()>StinkingCloud</b>,"
-BardSpells+="<b onClick=TinyHut()>TinyHut</b>,"
+BardSpells+="<b onClick=LeomundsTinyHut()>LeomundsTinyHut</b>,"
 BardSpells+="<b onClick=Tongues()>Tongues</b>"
 BardSpells+="<h3>4thSlot:@7th(1/1),@8th(2/2),@9th(3/3)</h3>"
 BardSpells+="<b onClick=Compulsion()>Compulsion</b>,"
@@ -6799,7 +6808,7 @@ SorcererSpells+="<b onClick=Darkness()>Darkness</b>,"
 SorcererSpells+="<b onClick=Darkvision()>Darkvision</b>,"
 SorcererSpells+="<b onClick=DetectThoughts()>DetectThoughts</b>,"
 SorcererSpells+="<b onClick=EnhanceAbility()>EnhanceAbility</b>,"
-SorcererSpells+="<b onClick=Enlarge/Reduce()>Enlarge/Reduce</b>,"
+SorcererSpells+="<b onClick=EnlargeReduce()>EnlargeReduce</b>,"
 SorcererSpells+="<b onClick=GustOfWind()>GustOfWind</b>,"
 SorcererSpells+="<b onClick=HoldPerson()>HoldPerson</b>,"
 SorcererSpells+="<b onClick=Invisibility()>Invisibility</b>,"
@@ -6937,7 +6946,7 @@ c='@10th(Sanctuary Vessel)30ft,5 allies can enter vessel,in 10min is short rest+
 dx='@14th(Limited Wish)act,effect of any class 6th lvl spell or lower,1d4 long rests'
 }
 
-if(this.class.match(/Great/)){a="@1st(Extra Spells)<b onClick='DissonantWhispers()'>Dissonant Whispers</b>, <b onClick='TashasHideousLaughter()'>Tasha s Hideous Laughter</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='DetectThoughts()'>Detect Thoughts</b>, <b onClick='PhantasmalForce()'>Phantasmal Force</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Clairvoyance()'>Clairvoyance</b>, <b onClick='Sending()'>Sending</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='DominateBeast()'>Dominate Beast</b>@4th<b onClick='EvardsBlackTentacles()'>Evard s Black Tentacles</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='DominatePerson()'>Dominate Person</b>, <b onClick='Telekinesis()'>Telekinesis<p>@1st(Awakened Mind)telepathy with language knowing tgts 30ft";
+if(this.class.match(/Great/)){a="@1st(Extra Spells)<b onClick='DissonantWhispers()'>Dissonant Whispers</b>, <b onClick='TashasHideousLaughter()'>TashasHideousLaughter</b></td></tr><tr><td>@2nd(Extra Spells)<b onClick='DetectThoughts()'>Detect Thoughts</b>, <b onClick='PhantasmalForce()'>Phantasmal Force</b></td></tr><tr><td>@3rd(Extra Spells)<b onClick='Clairvoyance()'>Clairvoyance</b>, <b onClick='Sending()'>Sending</b></td></tr><tr><td>@4th(Extra Spells)<b onClick='DominateBeast()'>Dominate Beast</b>@4th<b onClick='EvardsBlackTentacles()'>Evard s Black Tentacles</b></td></tr><tr><td>@5th(Extra Spells)<b onClick='DominatePerson()'>Dominate Person</b>, <b onClick='Telekinesis()'>Telekinesis<p>@1st(Awakened Mind)telepathy with language knowing tgts 30ft";
 b='@6th(Entropic Ward)1/1 short rest, react you atkd @DisAdv, next atk your tgt @Adv';
 c='@10th(Thought Shield)immune telepathy @will, resist psychic, atker takes same psychic dam';
 dx='@14th(Create Thrall)incapacitated humanoid telepathically charmed til Remove Curse'
@@ -7107,7 +7116,7 @@ WizardSpells+="<b onClick=FindFamiliar()>FindFamiliar</b>,"
 WizardSpells+="<b onClick=FloatingDisk()>FloatingDisk</b>,"
 WizardSpells+="<b onClick=FogCloud()>FogCloud</b>,"
 WizardSpells+="<b onClick=Grease()>Grease</b>,"
-WizardSpells+="<b onClick=HideousLaughter()>HideousLaughter</b>,"
+WizardSpells+="<b onClick=TashasHideousLaughter()>TashasHideousLaughter</b>,"
 WizardSpells+="<b onClick=Identify()>Identify</b>,"
 WizardSpells+="<b onClick=IllusoryScript()>IllusoryScript</b>,"
 WizardSpells+="<b onClick=Jump()>Jump</b>,"
@@ -7121,17 +7130,16 @@ WizardSpells+="<b onClick=Sleep()>Sleep</b>,"
 WizardSpells+="<b onClick=Thunderwave()>Thunderwave</b>,"
 WizardSpells+="<b onClick=UnseenServant()>UnseenServant</b>"
 WizardSpells+="<h3>2ndSlot:@3rd(2/2),@4th(3/3)</h3>"
-WizardSpells+="<b onClick=AcidArrow()>AcidArrow</b>,"
+WizardSpells+="<b onClick=MelfsAcidArrow()>MelfsAcidArrow</b>,"
 WizardSpells+="<b onClick=AlterSelf()>AlterSelf</b>,"
 WizardSpells+="<b onClick=ArcaneLock()>ArcaneLock</b>,"
-WizardSpells+="<b onClick=Arcanist'sMagicAura()>Arcanist'sMagicAura</b>,"
-WizardSpells+="<b onClick=Blindness/Deafness()>Blindness/Deafness</b>,"
+WizardSpells+="<b onClick=BlindnessDeafness()>BlindnessDeafness</b>,"
 WizardSpells+="<b onClick=Blur()>Blur</b>,"
 WizardSpells+="<b onClick=ContinualFlame()>ContinualFlame</b>,"
 WizardSpells+="<b onClick=Darkness()>Darkness</b>,"
 WizardSpells+="<b onClick=Darkvision()>Darkvision</b>,"
 WizardSpells+="<b onClick=DetectThoughts()>DetectThoughts</b>,"
-WizardSpells+="<b onClick=Enlarge/Reduce()>Enlarge/Reduce</b>,"
+WizardSpells+="<b onClick=EnlargeReduce()>EnlargeReduce</b>,"
 WizardSpells+="<b onClick=FlamingSphere()>FlamingSphere</b>,"
 WizardSpells+="<b onClick=GentleRepose()>GentleRepose</b>,"
 WizardSpells+="<b onClick=GustOfWind()>GustOfWind</b>,"
@@ -7177,7 +7185,7 @@ WizardSpells+="<b onClick=Sending()>Sending</b>,"
 WizardSpells+="<b onClick=SleetStorm()>SleetStorm</b>,"
 WizardSpells+="<b onClick=Slow()>Slow</b>,"
 WizardSpells+="<b onClick=StinkingCloud()>StinkingCloud</b>,"
-WizardSpells+="<b onClick=TinyHut()>TinyHut</b>,"
+WizardSpells+="<b onClick=LeomundsTinyHut()>LeomundsTinyHut</b>,"
 WizardSpells+="<b onClick=Tongues()>Tongues</b>,"
 WizardSpells+="<b onClick=VampiricTouch()>VampiricTouch</b>,"
 WizardSpells+="<b onClick=WaterBreathing()>WaterBreathing</b>"
@@ -7400,7 +7408,7 @@ this.curIni=mod;
 this.refresh()}
 function _setEquipment(x){this.equipment=x;
 this.equipment=this.equipment.replace(/\'/g, ' ');
-this.equipment=this.equipment.replace(/\./g, '\.\n');
+this.equipment=this.equipment.replace(/\./g, '\n');
 this.refresh()}
 function _setExperience(x){this.experience=x;
 this.refresh(x)}
@@ -7756,7 +7764,7 @@ this.setSpeed('25ft');
 this.setTrait("50-350 yrs old("+(50+parseInt(rollDForm('1d300+0')))+"yrs old), 4ft 0in tall+2d4("+(4.0+(parseInt(rollDForm('2d4+0'))/12)).toFixed(1).replace('.', 'ft ')+"in tall, 115lbs+2d6("+(parseInt(115)+parseInt(rollDForm('2d6+0')))+"lbs)")}
 if(this.race.match(/Dwarf,\sGray/)){this.setAbility('str+1');
 this.setLanguages('Common, Dwarvish, Undercommon');
-this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or brewer or Mason Tools, (Stonecunning)History+exp re the details of stone work age and construction, ,@3rd(Enlarge/Reduce)only Enlarge on self 1/1/long rest, @5th(Invisibility)no components needed/in dim light 1/1/long rest');
+this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or brewer or Mason Tools, (Stonecunning)History+exp re the details of stone work age and construction, ,@3rd(EnlargeReduce)only Enlarge on self 1/1/long rest, @5th(Invisibility)no components needed/in dim light 1/1/long rest');
 this.setResistance('(Duergar Resilience)save @Adv vs illusion, charm, paralysis');
 this.setSenses('Darkvision 120ft');
 this.setSize('Medium 5x5ft');
