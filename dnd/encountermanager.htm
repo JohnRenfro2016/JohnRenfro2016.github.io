@@ -25,6 +25,10 @@ font-family: MyKidsHandwritten;
 src: url("Decorations/MyKidsHandwritten.ttf");
 }
 
+body
+{background-color:#013220;
+}
+
 table,
 tr,
 td,
@@ -101,8 +105,6 @@ a:active{color:#f13a37
 .MapSelection
 {
  width:3000px;
- object-fit: none;
- object-position: 41% 53%;
 }
 
 .die20
@@ -168,49 +170,49 @@ background-color:#f8ecdd;
 </td><td>
 <input type='button' value='Create a new character?' onClick='newCharacter(PC)'>
 </td><td>
-<a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
+<a href="http://asmor.com/5e/spellbook/">Asmor's Spellbook</a>
+</td><td>
+<a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
 </td><td>
 <a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a>
-</td></tr><tr><td>
-<a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
-<br>
-<a href="http://asmor.com/5e/spellbook/">Amor's Spellbook</a>
+</td><td>
+<a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
 </td><td>
 To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
-</td><td>
-<input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollOneDisplay'></b>
-</td><td>
-<input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollTwoDisplay'></b>
-</td><td>
-<input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollThreeDisplay'></b>
-</td><td>
-<input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFourDisplay'></b>
 </td></tr><tr><td>
+<input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollOneDisplay'></b>
+<br>
+<input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollTwoDisplay'></b>
+<br>
+<input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollThreeDisplay'></b>
+<br>
+<input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFourDisplay'></b>
+</td><td>
 <img class='die20' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?'><b id='d20result'></b>
-
-</td><td rowSpan='12'>
-<img class='MapSelection' src='Maps/Map.png'>
-
-</td></tr><tr><td>
+</td><td>
 <img class='die12' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?'><b id='d12result'></b>
-</td></tr><tr><td>
+</td><td>
 <img class='die10' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?'><b id='d10result'></b>
-</td></tr><tr><td>
+</td><td>
 <img class='die8' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?'><b id='d8result'></b>
-</td></tr><tr><td>
+</td><td>
 <img class='die6' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?'><b id='d6result'></b>
-</td></tr><tr><td>
+</td><td>
 <img class='die4' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
-</td></tr><tr><td>
-tgt then paste stats.
-<textArea cols='30' rows='30' onChange='stats=this.value;setStats()'></textarea><b id='statsDisplay'></b>
-</td></tr><tr><td>
+</td><td colSpan='2'>
+tgt then paste stats
+<textArea cols='40' rows='4' onChange='stats=this.value;setStats()'></textarea><b id='statsDisplay'></b>
+</td></tr></table>
+<br>
+<img class='MapSelection' src='Maps/Map.png'>
+<br>
+<table><tr><td>
 Random Skills:<br><span id='displayRandomSkills'></span>
 </td></tr><tr><td>
 Random Languages:<br><span id='displayRandomLanguages'></span>
@@ -351,7 +353,6 @@ ADD_DHTML(newChar.box.elementId);
 
 characters[x].setName(characters[targeted].name+" "+[x]);
 characters[x].setClass(characters[targeted].class);
-characters[x].setLvl(characters[targeted].lvl);
 characters[x].setRace(characters[targeted].race);
 characters[x].setBackground(characters[targeted].background);
 characters[x].setAbility(characters[targeted].ability);
@@ -425,6 +426,7 @@ characters[x].setVulnerability(characters[targeted].vulnerability);
 characters[x].setWis(characters[targeted].wis);
 characters[x].setWisPro(characters[targeted].wisPro);
 characters[x].setDamageConditions(characters[targeted]. dmgConditions);
+characters[x].setLvl(characters[targeted].lvl);
 for(var i=x; i< characters.length; i++){for(var j=0; j< characters[targeted].rolls.length; j++){characters[i].addRoll(characters[targeted].rollNames[j], characters[targeted].rolls[j], characters[targeted].rollNames2[j], characters[targeted].rolls2[j])}
 }
 }
@@ -2543,9 +2545,9 @@ dmgDice='0d0+0',
 getAction(t1)}
 function RayOfFrost()
 {
-a='Cantrip(Ray of Frost+'+characters[targeted].spellAbility+'+pro 60ft',
+a='Cantrip(RayOfFrost)+'+characters[targeted].spellAbility+'+pro,60ft',
 b='1d20+0',
-c='cold+1d8@5, 11, 17th lvl and tgt speed-10ft',
+c='cold+1d8,@5th,@11th,@17th,tgt speed-10ft',
 dmgDice='1d8+0',
 getAction(t1)}
 function RayOfSickness()
@@ -2816,9 +2818,9 @@ dmgDice='1d12+0',
 getAction(t1)}
 function Web()
 {
-a='2nd(Web)DC8cha+proDC8+'+characters[targeted].spellAbility+'+pro vsDex 60ft conce,1hr 20cuft',
+a='2nd(Web)DC8+'+characters[targeted].spellAbility+'+pro vsDex,60ft conce,1hr,20ft-cube',
 b='0d0+0',
-c='difficult terrain, restrained, str to escape, fire 10/10turns',
+c='difficult terrain,restrained,vsStr to escape,vulnerable to fire,10/10turns',
 dmgDice='2d4+0',
 getAction(t1)}
 function ZoneOfTruth()
@@ -4682,11 +4684,10 @@ addRollPrompt(targeted)}
 
 s1="<input onClick='",
 s2="()' type='button' value='",
-s3="'/></td><td>"
+s3="'/></td></tr><tr><td>"
 s4=document.write.bind(document)
 
-s4("<table><tr><td>tgt the piece to receive these wpns or spells first</td><td>")
-s4("</td></tr><tr><td>")
+s4("<table><tr><td>tgt the piece to receive these wpns or spells first</td></tr><tr><td>")
 s4(s1+'Club'+s2+'(simple melee wpn)Club'+s3)
 s4(s1+'Dagger'+s2+'(simple melee wpn)Dagger'+s3)
 s4(s1+'Greatclub'+s2+'(simple melee wpn)Greatclub'+s3)
@@ -4697,12 +4698,10 @@ s4(s1+'Mace'+s2+'(simple melee wpn)Mace'+s3)
 s4(s1+'Quarterstaff'+s2+'(simple melee wpn)Quarterstaff'+s3)
 s4(s1+'Sickle'+s2+'(simple melee wpn)Sickle'+s3)
 s4(s1+'Spear'+s2+'(simple melee wpn)Spear'+s3)
-s4("</td></tr><tr><td>")
 s4(s1+'Dart'+s2+'(simple rngd wpn)Dart'+s3)
 s4(s1+'LightCrossbow'+s2+'(simple rngd wpn)LightCrossbow'+s3)
 s4(s1+'Shortbow()'+s2+'(simple rngd wpn)Shortbow'+s3)
 s4(s1+'Sling'+s2+'(simple rngd wpn)Sling'+s3)
-s4("</td></tr><tr><td>")
 s4(s1+'Battleaxe'+s2+'(martial melee wpn)Battleaxe'+s3)
 s4(s1+'Falchion'+s2+'(martial melee wpn)Falchion'+s3)
 s4(s1+'Flail'+s2+'(martial melee wpn)Flail'+s3)
@@ -4722,14 +4721,11 @@ s4(s1+'Trident'+s2+'(martial melee wpn)Trident'+s3)
 s4(s1+'Warhammer'+s2+'(martial melee wpn)Warhammer'+s3)
 s4(s1+'WarPick'+s2+'(martial melee wpn)War Pick'+s3)
 s4(s1+'Whip'+s2+'(martial melee wpn)Whip'+s3)
-s4("</td></tr><tr><td>")
 s4(s1+'Blowgun'+s2+'(martial rngd wpn)Blowgun'+s3)
 s4(s1+'HandCrossbow'+s2+'(martial rngd wpn)Hand Crossbow'+s3)
 s4(s1+'HeavyCrossbow'+s2+'(martial rngd wpn)Heavy Crossbow'+s3)
 s4(s1+'Longbow'+s2+'(martial rngd wpn)Longbow'+s3)
 s4(s1+'Net'+s2+'(martial rngd wpn)Net'+s3)
-
-s4("</td></tr><tr><td>")
 s4(s1+'BladeOfDisaster'+s2+'BladeOfDisaster'+s3)
 s4(s1+'DreamOfTheBlueVeil'+s2+'DreamOfTheBlueVeil'+s3)
 s4(s1+'GreenFlameBlade'+s2+'GreenFlameBlade'+s3)
@@ -4830,7 +4826,7 @@ s4(s1+'Whirlwind'+s2+'Whirlwind'+s3)
 s4(s1+'WrathOfNature'+s2+'WrathOfNature'+s3)
 s4(s1+'ZephyrStrike'+s2+'ZephyrStrike'+s3)
 
-s4('</tr></td></table>')
+s4('</td></tr></table>')
 function toggleTab1(x){if(characters[x].toggled1.match(/none/)){characters[x].setToggled1("block");
 document.getElementById('toggled1'+x).style.display=characters[x].toggled1
 }
@@ -5257,6 +5253,7 @@ if(rip=stats.match(/charm\sperson/i)){this.CharmPerson()}
 if(rip=stats.match(/create\sor\sdestroy\swater/i)){this.CreateOrDestroyWater()}
 if(rip=stats.match(/ensnaring\sstrike/i)){this.EnsnaringStrike()}
 if(rip=stats.match(/inflict\swounds/i)){this.InflictWounds()}
+if(rip=stats.match(/longstrider/i)){this.Longstrider()}
 if(rip=stats.match(/color\sspray/i)){this.ColorSpray()}
 if(rip=stats.match(/command/i)){this.Command()}
 if(rip=stats.match(/cure\swounds/i)){this.CureWounds()}
@@ -6426,7 +6423,7 @@ dx='@15th(Rapid Strike)exchange atk@Adv for a second normal atk';
 e='@18th(Strength before Death)@0hp, react take xtra turn/long rest'
 }
 if(this.class.match(/Champion/)){
-a='Champion</td></tr><tr><td>@3rdIMPROVED CRITICAL crit on 19 or 20';
+a='Champion</td></tr><tr><td>@3rd(Improved Critical)2Xdmg on nat 19 or 20';
 b='@7th(Remarkable Athlete)+half pro to non-pro str, dex, con, long jumpft+strMod';
 c='@10th(Additional Fighting Style)1';
 dx='@15th(Superior Critical)crit on natural 18, 19 or 20';
