@@ -180,6 +180,37 @@ background-color:#f8ecdd;
 </td><td>
 To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
 </td></tr><tr><td>
+Encounter Notes,XP totals(not saved after shift reload of webpage):
+<input type='field' size='40'>
+</td><td>
+Condition Durations:
+<input type='field' size='40'>10/<input id='1stDuration' type='field' size='2' value='10'>turns.
+<script>
+function reduceByOne(){document.getElementById('1stDuration').value=(document.getElementById('1stDuration').value-1)}
+</script>
+<input type='button' onclick='reduceByOne()' value='end turn?'>
+</td><td>
+Condition Durations:
+<input type='field' size='40'>10/<input id='2ndDuration' type='field' size='2' value='10'>turns.
+<script>
+function reduceByOne2(){document.getElementById('2ndDuration').value=(document.getElementById('2ndDuration').value-1)}
+</script>
+<input type='button' onclick='reduceByOne2()' value='end turn?'>
+</td><td>
+Condition Durations:
+<input type='field' size='40'>10/<input id='3rdDuration' type='field' size='2' value='10'>turns.
+<script>
+function reduceByOne3(){document.getElementById('3rdDuration').value=(document.getElementById('3rdDuration').value-1)}
+</script>
+<input type='button' onclick='reduceByOne3()' value='end turn?'>
+</td><td>
+Condition Durations:
+<input type='field' size='40'>10/<input id='4thDuration' type='field' size='2' value='10'>turns.
+<script>
+function reduceByOne4(){document.getElementById('4thDuration').value=(document.getElementById('4thDuration').value-1)}
+</script>
+<input type='button' onclick='reduceByOne4()' value='end turn?'>
+</td></tr><tr><td>
 <input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollOneDisplay'></b>
 <br>
 <input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollTwoDisplay'></b>
@@ -2685,9 +2716,9 @@ dmgDice='0d0+0',
 getAction(t1)}
 function Sleep()
 {
-a='1st(Sleep)90ft 10/10turns',
+a='1st(Sleep)1act,90ft-dist,20ft-radi,10/10turns',
 b='0d0+0',
-c='20ft-radi 5d8+2d8/slot lowest hp tgts sleep til slapped or dmg undead immune',
+c='5d8+2d8/slot lowest hp tgts sleep til slapped or dmg(auto crit hit) less undead and immune charmed',
 dmgDice='0d0+0',
 getAction(t1)}
 function Slumber()
