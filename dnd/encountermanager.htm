@@ -485,7 +485,7 @@ dmgDice='0d0+0',
 getAction(t1)}
 function GreenFlameBlade()
 {
-a='Cantrip(Green-Flame Blade)1act, equal to abiMod to another adjac tgt (damage/lvl) within 5ft.',
+a='Cantrip(GreenFlame Blade)1act, equal to abiMod to another adjac tgt (damage/lvl) within 5ft.',
 b='1d20+0',
 c='fire,spellAbi dmg another tgt,@5th +1d8,@11th +2d8,@17th +3d8 to both tgts',
 dmgDice='1d8+0',
@@ -3386,7 +3386,7 @@ b='0d0+0',
 c='',
 dmgDice='0d0+0',
 getAction(t1)}
-function FaithfulHound()
+function MordenkainensFaithfulHound()
 {
 a='4th(Mor. Faithful Hound)Invisible, immobile dog melee atks as spell atk+'+characters[targeted].spellAbility+'+pro for 4d8 pierc dmg; sees invisible/ethereal; 30ft 8hrs ',
 b='1d20+0',
@@ -3899,42 +3899,42 @@ dmgDice='0d0+0',
 getAction(t1)}
 function Harm()
 {
-a='6th(Harm 1tgt 14d6 Necrotic dmg, reduce max hp by same; not<1 hp; save halves and no max hp reduce Con 60ft ',
+a='6th(Harm)1tgt,60ft,reduce max hp by same dmg; not<1 hp; save halves and no max hp reduction,DC8+'+characters[targeted].spellAbility+'+pro vsCon halves dmg',
 b='0d0+0',
-c='',
-dmgDice='0d0+0',
+c='necrotic',
+dmgDice='14d6+0',
 getAction(t1)}
 function Heal()
 {
 a='6th(Heal)60ft 1tgt',
 b='0d0+0',
-c='heals 70+10/slot lvl hp and is cured of blindness, deafness, and all diseases',
+c='heal 70+10/slot lvl hp and is cured of blindness, deafness, and all diseases',
 dmgDice='0d0+70',
 getAction(t1)}
 function HeroesFeast()
 {
-a='6th(Heroes Feast You+12 tgts; to consume; for 24h:disease/poison immune, +2d10 max hp, (1000gp cons.)10min 30ft',
+a='6th(Heroes Feast)you+12 tgts; to consume; for 24h:disease/poison immune, +2d10 max hp, (1000gp cons)10min,30ft',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
 getAction(t1)}
 function PlanarAlly()
 {
-a='6th(Planar Ally Otherwordly entity sends celestial, elemental or fiend to a location near you; 10min 60ft P265',
+a='6th(Planar Ally)otherwordly entity sends celestial, elemental or fiend to a location near you; 10min 60ft P265',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
 getAction(t1)}
 function TrueSeeing()
 {
-a='6th(True Seeing 1 ally gains truesight 120ft; see through illusions, hidden doors, ethereal plane(25gp cons.)Div touch, M 1hr P284',
+a='6th(True Seeing)1 ally gains truesight 120ft; see through illusions, hidden doors, ethereal plane(25gp cons.)Div touch, M 1hr P284',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
 getAction(t1)}
 function WordOfRecall()
 {
-a='6th(Word of Recall You+5 ally teleport to sanctuary of your deity, designated as such by castingthis spell there 5ft P289',
+a='6th(Word of Recall)You+5 ally teleport to sanctuary of your deity, designated as such by casting this spell there 5ft P289',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
@@ -3967,16 +3967,16 @@ b='0d0+0',
 c='',
 dmgDice='0d0+0',
 getAction(t1)}
-function MagnificentMansion()
+function MordenkainensMagnificentMansion()
 {
-a='7th(Mor. Magni. Mansion)Create xtradimensional mansion with rooms, food and servants to serve 100 people;(15gp)10/10turns 300ft 24hrs ',
+a='7th(Mordenkainens Magnificent Mansion)Create xtradimensional mansion with rooms, food and servants to serve 100 people;(15gp)10/10turns 300ft 24hrs ',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
 getAction(t1)}
-function MorSword()
+function MordenkainensSword()
 {
-a='7th(Mor. Sword)Hovering sword makes melee spell atks for 3d10 Force dmg; bns a to move 20ft and/or atk 60ft conce,10/10turns ',
+a='7th(Mordenkainens Sword)Hovering sword makes melee spell atks for 3d10 Force dmg; bns a to move 20ft and/or atk 60ft conce,10/10turns ',
 b='1d20+0',
 c='force',
 dmgDice='3d10+0',
@@ -4039,7 +4039,7 @@ dmgDice='0d0+0',
 getAction(t1)}
 function Symbol()
 {
-a='7th(Symbol Inscribe a glyph to activate for chosen effect on set trigger;(1000gp cons.)10/10turns touch Till triggered P280',
+a='7th(Symbol)Inscribe a glyph to activate for chosen effect on set trigger;(1000gp cons.)10/10turns touch Till triggered P280',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
@@ -4484,7 +4484,7 @@ dmgDice='10d8+0',
 getAction(t1)}
 function AntipathySympathy()
 {
-a='8th Antipathy/Sympathy)Object or area up to 200ft-cube attracts or repels specific type of intelligent tgts; save DC8+'+characters[targeted].spellAbility+'+pro vsWis 1hr 60ft 10 days',
+a='8th AntipathySympathy)Object or area up to 200ft-cube attracts or repels specific type of intelligent tgts; save DC8+'+characters[targeted].spellAbility+'+pro vsWis 1hr 60ft 10 days',
 b='0d0+0',
 c='',
 dmgDice='0d0+0',
@@ -5225,175 +5225,485 @@ if(weapon=stats.match(/scimitar/i)){this.Scimitar()}
 if(weapon=stats.match(/shortsword/i)){this.Shortsword()}
 if(weapon=stats.match(/shortbow/i)){this.Shortbow()}
 if(weapon=stats.match(/spear/i)){this.Spear()}
-//Cantrips
-if(rip=stats.match(/acid\ssplash/i)){this.AcidSplash()}
-if(rip=stats.match(/blade\sward/i)){this.BladeWard()}
-if(rip=stats.match(/booming\sblade/i)){this.ViciousMockery()}
-if(rip=stats.match(/chill\stouch/i)){this.ChillTouch()}
-if(rip=stats.match(/control\sflames/i)){this.ControlFlames()}
-if(rip=stats.match(/create\sbonfire/i)){this.CreateBonfire()}
-if(rip=stats.match(/chill\stouch/i)){this.ChillTouch()}
-if(rip=stats.match(/control\sflames/i)){this.ControlFlames()}
-if(rip=stats.match(/create\sbonfire/i)){this.CreateBonfire()}
-if(rip=stats.match(/dancing\slights/i)){this.DancingLights()}
-if(rip=stats.match(/decompose/i)){this.Decompose()}
-if(rip=stats.match(/druid\scraft|druidcraft/i)){this.DruidCraft()}
-if(rip=stats.match(/eldritch\sblast/i)){this.EldritchBlast()}
-if(rip=stats.match(/fire\sbolt/i)){this.FireBolt()}
-if(rip=stats.match(/frostbite/i)){this.Frostbite()}
-if(rip=stats.match(/friends/i)){this.Friends()}
-if(rip=stats.match(/green\sflame\sblade/i)){this.GreenFlameBlade()}
-if(rip=stats.match(/guidance/i)){this.Guidance()}
-if(rip=stats.match(/gust/i)){this.Gust()}
-if(rip=stats.match(/hand\sof\sradiance/i)){this.HandOfRadiance()}
-if(rip=stats.match(/infestation/i)){this.Infestation()}
-if(rip=stats.match(/light\s|light\, /i)){this.Light()}
-if(rip=stats.match(/lightning\slure/i)){this.LightningLure()}
-if(rip=stats.match(/mage\shand/i)){this.MageHand()}
-if(rip=stats.match(/magic\sstone/i)){this.MagicStone()}
-if(rip=stats.match(/mending/i)){this.Mending()}
-if(rip=stats.match(/message/i)){this.Message()}
-if(rip=stats.match(/mind\ssliver/i)){this.MindSliver()}
-if(rip=stats.match(/minor\sillusion/i)){this.MinorIllusion()}
-if(rip=stats.match(/mold\searth/i)){this.MoldEarth()}
-if(rip=stats.match(/poison\sspray/i)){this.PoisonSpray()}
-if(rip=stats.match(/prestidigitation/i)){this.Prestidigitation()}
-if(rip=stats.match(/produce\sflame/i)){this.ProduceFlame()}
-if(rip=stats.match(/ray\sof\sfrost/i)){this.RayOfFrost()}
-if(rip=stats.match(/resistance/i)){this.Resistance()}
-if(rip=stats.match(/sacred\sflame/i)){this.SacredFlame()}
-if(rip=stats.match(/sapping\ssting/i)){this.SappingSting()}
-if(rip=stats.match(/shape\swater/i)){this.ShapeWater()}
-if(rip=stats.match(/shillelagh/i)){this.Shillelagh()}
-if(rip=stats.match(/shocking\sgrasp/i)){this.ShockingGrasp()}
-if(rip=stats.match(/spare\sthe\sdying/i)){this.SpareTheDying()}
-if(rip=stats.match(/sword\sburst/i)){this.SwordBurst()}
-if(rip=stats.match(/thaumaturgy/i)){this.Thaumaturgy()}
-if(rip=stats.match(/thorn\swhip/i)){this.ThornWhip()}
-if(rip=stats.match(/thunder\sclap/i)){this.ThunderClap()}
-if(rip=stats.match(/toll\sthe\sdead/i)){this.TollTheDead()}
-if(rip=stats.match(/true\sstrike/i)){this.TrueStrike()}
-if(rip=stats.match(/vicious\smockery/i)){this.ViciousMockery()}
-if(rip=stats.match(/word\sof\sradiance/i)){this.WordOfRadiance()}
-//1st lvl Spells
-if(rip=stats.match(/acid\sstream/i)){this.AcidStream()}
-if(rip=stats.match(/alarm/i)){this.Alarm()}
-if(rip=stats.match(/animal\sfriendship/i)){this.AnimalFriendship()}
-if(rip=stats.match(/bane/i)){this.Bane()}
-if(rip=stats.match(/charm\sperson/i)){this.CharmPerson()}
-if(rip=stats.match(/create\sor\sdestroy\swater/i)){this.CreateOrDestroyWater()}
-if(rip=stats.match(/ensnaring\sstrike/i)){this.EnsnaringStrike()}
-if(rip=stats.match(/inflict\swounds/i)){this.InflictWounds()}
-if(rip=stats.match(/longstrider/i)){this.Longstrider()}
-if(rip=stats.match(/color\sspray/i)){this.ColorSpray()}
-if(rip=stats.match(/command/i)){this.Command()}
-if(rip=stats.match(/cure\swounds/i)){this.CureWounds()}
-if(rip=stats.match(/detect\smagic/i)){this.DetectMagic()}
-if(rip=stats.match(/disguise\sself/i)){this.DisguiseSelf()}
-if(rip=stats.match(/entangle/i)){this.Entangle()}
-if(rip=stats.match(/faerie\sfire/i)){this.FaerieFire()}
-if(rip=stats.match(/fog\scloud/i)){this.FogCloud()}
-if(rip=stats.match(/healing\sword/i)){this.HealingWord()}
-if(rip=stats.match(/heroism/i)){this.Heroism()}
-if(rip=stats.match(/hex/i)){this.Hex()}
-if(rip=stats.match(/identify/i)){this.Identify()}
-if(rip=stats.match(/longstrider/i)){this.Longstrider()}
-if(rip=stats.match(/mage\sarmor/i)){this.MageArmor()}
-if(rip=stats.match(/magic\smissile/i)){this.MagicMissile()}
-if(rip=stats.match(/protection\sfrom\sevil\sand\sgood/i)){this.ProtectionFromEvilAndGood()}
-if(rip=stats.match(/shadow\sblade\, /i)){this.ShadowBlade()}
-if(rip=stats.match(/shield\, /i)){this.Shield()}
-if(rip=stats.match(/sleep/i)){this.Sleep()}
-if(rip=stats.match(/speak\swith\sanimals/i)){this.SpeakWithAnimals()}
-if(rip=stats.match(/thunderous\ssmite/i)){this.ThunderousSmite()}
-if(rip=stats.match(/thunderwave/i)){this.Thunderwave()}
-//2nd lvl Spells
-if(rip=stats.match(/alter\sself/i)){this.AlterSelf()}
-if(rip=stats.match(/animal\smessenger/i)){this.AnimalMessenger()}
-if(rip=stats.match(/augury/i)){this.Augury()}
-if(rip=stats.match(/beast\ssense/i)){this.BeastSense()}
-if(rip=stats.match(/branding\ssmite/i)){this.BrandingSmite()}
-if(rip=stats.match(/charm\sperson/i)){this.CharmPerson()}
-if(rip=stats.match(/crown\sof\smadness/i)){this.CrownOfMadness()}
-if(rip=stats.match(/darkness/i)){this.Darkness()}
-if(rip=stats.match(/enhancs\sability/i)){this.EnhanceAbility()}
-if(rip=stats.match(/find\ssteed/i)){this.FindSteed()}
-if(rip=stats.match(/flame\sblade/i)){this.FlameBlade()}
-if(rip=stats.match(/hold\sperson/i)){this.HoldPerson()}
-if(rip=stats.match(/invisibility/i)){this.Invisibility()}
-if(rip=stats.match(/lesser\srestoration/i)){this.LesserRestoration()}
-if(rip=stats.match(/mirror\simage/i)){this.MirrorImage()}
-if(rip=stats.match(/moonbeam/i)){this.Moonbeam()}
-if(rip=stats.match(/pass\swithout\strace/i)){this.PassWithoutTrace()}
-if(rip=stats.match(/phantasmal\sforce/i)){this.PhantasmalForce()}
-if(rip=stats.match(/sending/i)){this.Sending()}
-if(rip=stats.match(/shatter/i)){this.Shatter()}
-if(rip=stats.match(/silence/i)){this.Silence()}
-if(rip=stats.match(/spider\sclimb/i)){this.SpiderClimb()}
-if(rip=stats.match(/spiritual\sweapon/i)){this.SpiritualWeapon()}
-if(rip=stats.match(/suggestion/i)){this.Suggestion()}
-//3rd lvl Spells
-if(rip=stats.match(/bestow\scurse/i)){this.BestowCurse()}
-if(rip=stats.match(/blinding\ssmite/i)){this.BlindingSmite()}
-if(rip=stats.match(/call\slightning/i)){this.Clairvoyance()}
-if(rip=stats.match(/clairvoyance/i)){this.Heroism()}
-if(rip=stats.match(/conjure\sanimals/i)){this.ConjureAnimals()}
-if(rip=stats.match(/dispel\smagic/i)){this.DispelMagic()}
-if(rip=stats.match(/fireball/i)){this.Fireball()}
-if(rip=stats.match(/fly/i)){this.Fly()}
-if(rip=stats.match(/haste/i)){this.Haste()}
-if(rip=stats.match(/lightning\sbolt/i)){this.LightningBolt()}
-if(rip=stats.match(/major\simage/i)){this.MajorImage()}
-if(rip=stats.match(/meld\sinto\sstone/i)){this.MeldIntoStone()}
-if(rip=stats.match(/phantom\ssteed/i)){this.PhantomSteed()}
-if(rip=stats.match(/speak\swith\sdead/i)){this.SpeakWithDead()}
-if(rip=stats.match(/tongues/i)){this.Tongues()}
-if(rip=stats.match(/water\sbreathing/i)){this.WaterBreathing()}
-if(rip=stats.match(/water\swalk/i)){this.WaterWalk()}
-//4th lvl Spells
-if(rip=stats.match(/confusion/i)){this.Confusion()}
-if(rip=stats.match(/conjure\sminor\selementals/i)){this.ConjureMinorElementals()}
-if(rip=stats.match(/control\swater/i)){this.ControlWater()}
-if(rip=stats.match(/shield\s|shield\, /i)){this.Shield()}
-if(rip=stats.match(/dimension\sdoor/i)){this.DimensionDoor()}
-if(rip=stats.match(/divination/i)){this.Divination()}
-if(rip=stats.match(/dominate\sbeast/i)){this.DominateBeast()}
-if(rip=stats.match(/evard/i)){this.EvardsBlackTentacles()}
-if(rip=stats.match(/freedom\sof\smovement/i)){this.FreedomOfMovement()}
-if(rip=stats.match(/greater\sinvisibility/i)){this.GreaterInvisibility()}
-if(rip=stats.match(/ice\sstorm/i)){this.IceStorm()}
-if(rip=stats.match(/locate\screature/i)){this.LocateCreature()}
-if(rip=stats.match(/phantasmal\skiller/i)){this.PhantasmalKiller()}
-if(rip=stats.match(/polymorph/i)){this.Polymorph()}
-if(rip=stats.match(/stoneskin/i)){this.Stoneskin()}
-if(rip=stats.match(/tongues/i)){this.Tongues()}
-if(rip=stats.match(/wall\sof\sfire/i)){this.WallOfFire()}
-//5th lvl Spells
-if(rip=stats.match(/commune\swith\snature/i)){this.CommuneWithNature()}
-if(rip=stats.match(/dominate\sperson/i)){this.DominatePerson()}
-if(rip=stats.match(/flame\sstrike/i)){this.FlameStrike()}
-if(rip=stats.match(/hold\smonster/i)){this.HoldMonster()}
-if(rip=stats.match(/legend\slore/i)){this.LegendLore()}
-if(rip=stats.match(/mass\scure\swounds/i)){this.MassCureWounds()}
-if(rip=stats.match(/modify\smemory/i)){this.ModifyMemory()}
-if(rip=stats.match(/tree\sstride/i)){this.TreeStride()}
-//6th lvl Spells
-if(rip=stats.match(/chain\slightning/i)){this.ChainLightning()}
-if(rip=stats.match(/disintegrate/i)){this.Disintegrate()}
-if(rip=stats.match(/flesh\sto\sstone/i)){this.FleshToStone()}
-if(rip=stats.match(/globe\sof\sinvulnerability/i)){this.GlobeOfInvulnerability()}
-if(rip=stats.match(/heal/i)){this.Heal()}
-if(rip=stats.match(/mass\ssuggestion/i)){this.MassSuggestion()}
-if(rip=stats.match(/programmed\sillusion/i)){this.ProgrammedIllusion()}
-//7th lvl Spells
-if(rip=stats.match(/etherealness/i)){this.Etherealness()}
-if(rip=stats.match(/forcecage/i)){this.Forcecage()}
-if(rip=stats.match(/resurrection/i)){this.Resurrection()}
-if(rip=stats.match(/teleport/i)){this.Teleport()}
-//8th Lvl Spells
-if(rip=stats.match(/feeblemind/i)){this.Feeblemind()}
-if(rip=stats.match(/glibness/i)){this.Glibness()}
-if(rip=stats.match(/powerwordstun/i)){this.PowerWordStun()}
+if(rip=stats.match(/Abi-Dalzim\'s\sHorrid\sWilting/i)){this.Abi-DalzimsHorridWilting()};
+if(rip=stats.match(/Absorb\sElements/i)){this.AbsorbElements()};
+if(rip=stats.match(/Acid\sSplash/i)){this.AcidSplash()};
+if(rip=stats.match(/Aganazzar\'s\sScorcher/i)){this.AganazzarsScorcher()};
+if(rip=stats.match(/Aid/i)){this.Aid()};
+if(rip=stats.match(/Alarm/i)){this.Alarm()};
+if(rip=stats.match(/Alter\sSelf/i)){this.AlterSelf()};
+if(rip=stats.match(/Animal\sFriendship/i)){this.AnimalFriendship()};
+if(rip=stats.match(/Animal\sMessenger/i)){this.AnimalMessenger()};
+if(rip=stats.match(/Animal\sShapes/i)){this.AnimalShapes()};
+if(rip=stats.match(/Animate\sDead/i)){this.AnimateDead()};
+if(rip=stats.match(/Animate\sObjects/i)){this.AnimateObjects()};
+if(rip=stats.match(/Antilife\sShell/i)){this.AntilifeShell()};
+if(rip=stats.match(/Antimagic\sField/i)){this.AntimagicField()};
+if(rip=stats.match(/AntipathySympathy/i)){this.AntipathySympathy()};
+if(rip=stats.match(/Arcane\sEye/i)){this.ArcaneEye()};
+if(rip=stats.match(/Arcane\sGate/i)){this.ArcaneGate()};
+if(rip=stats.match(/Arcane\sLock/i)){this.ArcaneLock()};
+if(rip=stats.match(/Arcane\sWeapon/i)){this.ArcaneWeapon()};
+if(rip=stats.match(/Armor\sOf\sAgathys/i)){this.ArmorOfAgathys()};
+if(rip=stats.match(/Arms\sOf\sHadar/i)){this.ArmsOfHadar()};
+if(rip=stats.match(/Astral\sProjection/i)){this.AstralProjection()};
+if(rip=stats.match(/Augury/i)){this.Augury()};
+if(rip=stats.match(/Aura\sOf\sLife/i)){this.AuraOfLife()};
+if(rip=stats.match(/Aura\sOf\sPurity/i)){this.AuraOfPurity()};
+if(rip=stats.match(/Aura\sOf\sVitality/i)){this.AuraOfVitality()};
+if(rip=stats.match(/Awaken/i)){this.Awaken()};
+if(rip=stats.match(/Bane/i)){this.Bane()};
+if(rip=stats.match(/Banishing\sSmite/i)){this.BanishingSmite()};
+if(rip=stats.match(/Banishment/i)){this.Banishment()};
+if(rip=stats.match(/Barkskin/i)){this.Barkskin()};
+if(rip=stats.match(/Beacon\sOf\sHope/i)){this.BeaconOfHope()};
+if(rip=stats.match(/Beast\sBond/i)){this.BeastBond()};
+if(rip=stats.match(/Beast\sSense/i)){this.BeastSense()};
+if(rip=stats.match(/Bestow\sCurse/i)){this.BestowCurse()};
+if(rip=stats.match(/Bigby\'s\sHand/i)){this.BigbysHand()};
+if(rip=stats.match(/Blade\sBarrier/i)){this.BladeBarrier()};
+if(rip=stats.match(/Blade\sOf\sDisaster/i)){this.BladeOfDisaster()};
+if(rip=stats.match(/Blade\sWard/i)){this.BladeWard()};
+if(rip=stats.match(/Bless/i)){this.Bless()};
+if(rip=stats.match(/Blight/i)){this.Blight()};
+if(rip=stats.match(/Blinding\sSmite/i)){this.BlindingSmite()};
+if(rip=stats.match(/BlindnessDeafness/i)){this.BlindnessDeafness()};
+if(rip=stats.match(/Blink/i)){this.Blink()};
+if(rip=stats.match(/Blur/i)){this.Blur()};
+if(rip=stats.match(/Bones\sOf\sThe\sEarth/i)){this.BonesOfTheEarth()};
+if(rip=stats.match(/Booming\sBlade/i)){this.BoomingBlade()};
+if(rip=stats.match(/Branding\sSmite/i)){this.BrandingSmite()};
+if(rip=stats.match(/Burning\sHands/i)){this.BurningHands()};
+if(rip=stats.match(/Call\sLightning/i)){this.CallLightning()};
+if(rip=stats.match(/Calm\sEmotions/i)){this.CalmEmotions()};
+if(rip=stats.match(/Catapult/i)){this.Catapult()};
+if(rip=stats.match(/Catnap/i)){this.Catnap()};
+if(rip=stats.match(/Cause\sFear/i)){this.CauseFear()};
+if(rip=stats.match(/Ceremony/i)){this.Ceremony()};
+if(rip=stats.match(/Chain\sLightning/i)){this.ChainLightning()};
+if(rip=stats.match(/Chaos\sBolt/i)){this.ChaosBolt()};
+if(rip=stats.match(/Charm\sMonster/i)){this.CharmMonster()};
+if(rip=stats.match(/Charm\sPerson/i)){this.CharmPerson()};
+if(rip=stats.match(/Chill\sTouch/i)){this.ChillTouch()};
+if(rip=stats.match(/Chromatic\sOrb/i)){this.ChromaticOrb()};
+if(rip=stats.match(/Circle\sOf\sDeath/i)){this.CircleOfDeath()};
+if(rip=stats.match(/Circle\sOf\sPower/i)){this.CircleOfPower()};
+if(rip=stats.match(/Clairvoyance/i)){this.Clairvoyance()};
+if(rip=stats.match(/Clone/i)){this.Clone()};
+if(rip=stats.match(/Cloud\sOf\sDaggers/i)){this.CloudOfDaggers()};
+if(rip=stats.match(/Cloudkill/i)){this.Cloudkill()};
+if(rip=stats.match(/Color\sSpray/i)){this.ColorSpray()};
+if(rip=stats.match(/Command/i)){this.Command()};
+if(rip=stats.match(/Commune/i)){this.Commune()};
+if(rip=stats.match(/Commune\sWith\sNature/i)){this.CommuneWithNature()};
+if(rip=stats.match(/Compelled\sDuel/i)){this.CompelledDuel()};
+if(rip=stats.match(/Comprehend\sLanguages/i)){this.ComprehendLanguages()};
+if(rip=stats.match(/Compulsion/i)){this.Compulsion()};
+if(rip=stats.match(/Cone\sOf\sCold/i)){this.ConeOfCold()};
+if(rip=stats.match(/Confusion/i)){this.Confusion()};
+if(rip=stats.match(/Conjure\sAnimals/i)){this.ConjureAnimals()};
+if(rip=stats.match(/Conjure\sBarrage/i)){this.ConjureBarrage()};
+if(rip=stats.match(/Conjure\sCelestial/i)){this.ConjureCelestial()};
+if(rip=stats.match(/Conjure\sElemental/i)){this.ConjureElemental()};
+if(rip=stats.match(/Conjure\sFey/i)){this.ConjureFey()};
+if(rip=stats.match(/Conjure\sMinor\sElementals/i)){this.ConjureMinorElementals()};
+if(rip=stats.match(/Conjure\sVolley/i)){this.ConjureVolley()};
+if(rip=stats.match(/Conjure\sWoodland\sBeings/i)){this.ConjureWoodlandBeings()};
+if(rip=stats.match(/Contact\sOther\sPlane/i)){this.ContactOtherPlane()};
+if(rip=stats.match(/Contagion/i)){this.Contagion()};
+if(rip=stats.match(/Contingency/i)){this.Contingency()};
+if(rip=stats.match(/Continual\sFlame/i)){this.ContinualFlame()};
+if(rip=stats.match(/Control\sFlames/i)){this.ControlFlames()};
+if(rip=stats.match(/Control\sWater/i)){this.ControlWater()};
+if(rip=stats.match(/Control\sWeather/i)){this.ControlWeather()};
+if(rip=stats.match(/Control\sWinds/i)){this.ControlWinds()};
+if(rip=stats.match(/Cordon\sOf\sArrows/i)){this.CordonOfArrows()};
+if(rip=stats.match(/Counterspell/i)){this.Counterspell()};
+if(rip=stats.match(/Create\sBonfire/i)){this.CreateBonfire()};
+if(rip=stats.match(/Create\sFood\sAnd\sWater/i)){this.CreateFoodAndWater()};
+if(rip=stats.match(/Create\sHomunculus/i)){this.CreateHomunculus()};
+if(rip=stats.match(/Create\sor\sDestroy\sWater/i)){this.CreateorDestroyWater()};
+if(rip=stats.match(/Create\sUndead/i)){this.CreateUndead()};
+if(rip=stats.match(/Creation/i)){this.Creation()};
+if(rip=stats.match(/Crown\sOf\sMadness/i)){this.CrownOfMadness()};
+if(rip=stats.match(/Crown\sOf\sStars/i)){this.CrownOfStars()};
+if(rip=stats.match(/Crusader\'s\sMantle/i)){this.CrusadersMantle()};
+if(rip=stats.match(/Cure\sWounds/i)){this.CureWounds()};
+if(rip=stats.match(/Dancing\sLights/i)){this.DancingLights()};
+if(rip=stats.match(/Danse\sMacabre/i)){this.DanseMacabre()};
+if(rip=stats.match(/Darkness/i)){this.Darkness()};
+if(rip=stats.match(/Darkvision/i)){this.Darkvision()};
+if(rip=stats.match(/Dawn/i)){this.Dawn()};
+if(rip=stats.match(/Daylight/i)){this.Daylight()};
+if(rip=stats.match(/Death\sWard/i)){this.DeathWard()};
+if(rip=stats.match(/Delayed\sBlast\sFireball/i)){this.DelayedBlastFireball()};
+if(rip=stats.match(/Demiplane/i)){this.Demiplane()};
+if(rip=stats.match(/Destructive\sWave/i)){this.DestructiveWave()};
+if(rip=stats.match(/Detect\sEvil\sAnd\sGood/i)){this.DetectEvilAndGood()};
+if(rip=stats.match(/Detect\sMagic/i)){this.DetectMagic()};
+if(rip=stats.match(/Detect\sPoison\sAnd\sDisease/i)){this.DetectPoisonAndDisease()};
+if(rip=stats.match(/Detect\sThoughts/i)){this.DetectThoughts()};
+if(rip=stats.match(/Dimension\sDoor/i)){this.DimensionDoor()};
+if(rip=stats.match(/Disguise\sSelf/i)){this.DisguiseSelf()};
+if(rip=stats.match(/Disintegrate/i)){this.Disintegrate()};
+if(rip=stats.match(/Dispel\sEvil\sAnd\sGood/i)){this.DispelEvilAndGood()};
+if(rip=stats.match(/Dispel\sMagic/i)){this.DispelMagic()};
+if(rip=stats.match(/Dissonant\sWhispers/i)){this.DissonantWhispers()};
+if(rip=stats.match(/Divination/i)){this.Divination()};
+if(rip=stats.match(/Divine\sFavor/i)){this.DivineFavor()};
+if(rip=stats.match(/Divine\sWord/i)){this.DivineWord()};
+if(rip=stats.match(/Dominate\sBeast/i)){this.DominateBeast()};
+if(rip=stats.match(/Dominate\sMonster/i)){this.DominateMonster()};
+if(rip=stats.match(/Dominate\sPerson/i)){this.DominatePerson()};
+if(rip=stats.match(/Dragon\'s\sBreath/i)){this.DragonsBreath()};
+if(rip=stats.match(/Drawmij\'s\sInstant\sSummons/i)){this.DrawmijsInstantSummons()};
+if(rip=stats.match(/Dream/i)){this.Dream()};
+if(rip=stats.match(/Dream\sOf\sThe\sBlue\sVeil/i)){this.DreamOfTheBlueVeil()};
+if(rip=stats.match(/Druid\sGrove/i)){this.DruidGrove()};
+if(rip=stats.match(/Druidcraft/i)){this.Druidcraft()};
+if(rip=stats.match(/Dust\sDevil/i)){this.DustDevil()};
+if(rip=stats.match(/Earth\sTremor/i)){this.EarthTremor()};
+if(rip=stats.match(/Earthbind/i)){this.Earthbind()};
+if(rip=stats.match(/Earthquake/i)){this.Earthquake()};
+if(rip=stats.match(/Eldritch\sBlast/i)){this.EldritchBlast()};
+if(rip=stats.match(/Elemental\sBane/i)){this.ElementalBane()};
+if(rip=stats.match(/Elemental\sWeapon/i)){this.ElementalWeapon()};
+if(rip=stats.match(/Enemies\sAbound/i)){this.EnemiesAbound()};
+if(rip=stats.match(/Enervation/i)){this.Enervation()};
+if(rip=stats.match(/Enhance\sAbility/i)){this.EnhanceAbility()};
+if(rip=stats.match(/EnlargeReduce/i)){this.EnlargeReduce()};
+if(rip=stats.match(/Ensnaring\sStrike/i)){this.EnsnaringStrike()};
+if(rip=stats.match(/Entangle/i)){this.Entangle()};
+if(rip=stats.match(/Enthrall/i)){this.Enthrall()};
+if(rip=stats.match(/Erupting\sEarth/i)){this.EruptingEarth()};
+if(rip=stats.match(/Etherealness/i)){this.Etherealness()};
+if(rip=stats.match(/Evard\'s\sBlack\sTentacles/i)){this.EvardsBlackTentacles()};
+if(rip=stats.match(/Expeditious\sRetreat/i)){this.ExpeditiousRetreat()};
+if(rip=stats.match(/Eyebite/i)){this.Eyebite()};
+if(rip=stats.match(/Fabricate/i)){this.Fabricate()};
+if(rip=stats.match(/Faerie\sFire/i)){this.FaerieFire()};
+if(rip=stats.match(/False\sLife/i)){this.FalseLife()};
+if(rip=stats.match(/Far\sStep/i)){this.FarStep()};
+if(rip=stats.match(/Fear/i)){this.Fear()};
+if(rip=stats.match(/Feather\sFall/i)){this.FeatherFall()};
+if(rip=stats.match(/Feeblemind/i)){this.Feeblemind()};
+if(rip=stats.match(/Feign\sDeath/i)){this.FeignDeath()};
+if(rip=stats.match(/Find\sFamiliar/i)){this.FindFamiliar()};
+if(rip=stats.match(/Find\sGreater\sSteed/i)){this.FindGreaterSteed()};
+if(rip=stats.match(/Find\sSteed/i)){this.FindSteed()};
+if(rip=stats.match(/Find\sThe\sPath/i)){this.FindThePath()};
+if(rip=stats.match(/Find\sTraps/i)){this.FindTraps()};
+if(rip=stats.match(/Finger\sOf\sDeath/i)){this.FingerOfDeath()};
+if(rip=stats.match(/Fire\sBolt/i)){this.FireBolt()};
+if(rip=stats.match(/Fire\sShield/i)){this.FireShield()};
+if(rip=stats.match(/Fire\sStorm/i)){this.FireStorm()};
+if(rip=stats.match(/Fireball/i)){this.Fireball()};
+if(rip=stats.match(/Flame\sArrows/i)){this.FlameArrows()};
+if(rip=stats.match(/Flame\sBlade/i)){this.FlameBlade()};
+if(rip=stats.match(/Flame\sStrike/i)){this.FlameStrike()};
+if(rip=stats.match(/Flaming\sSphere/i)){this.FlamingSphere()};
+if(rip=stats.match(/Flesh\sto\sStone/i)){this.FleshtoStone()};
+if(rip=stats.match(/Fly/i)){this.Fly()};
+if(rip=stats.match(/Fog\sCloud/i)){this.FogCloud()};
+if(rip=stats.match(/Forbiddance/i)){this.Forbiddance()};
+if(rip=stats.match(/Forcecage/i)){this.Forcecage()};
+if(rip=stats.match(/Foresight/i)){this.Foresight()};
+if(rip=stats.match(/Freedom\sOf\sMovement/i)){this.FreedomOfMovement()};
+if(rip=stats.match(/Friends/i)){this.Friends()};
+if(rip=stats.match(/Frostbite/i)){this.Frostbite()};
+if(rip=stats.match(/Gaseous\sForm/i)){this.GaseousForm()};
+if(rip=stats.match(/Gate/i)){this.Gate()};
+if(rip=stats.match(/Geas/i)){this.Geas()};
+if(rip=stats.match(/Gentle\sRepose/i)){this.GentleRepose()};
+if(rip=stats.match(/Giant\sInsect/i)){this.GiantInsect()};
+if(rip=stats.match(/Glibness/i)){this.Glibness()};
+if(rip=stats.match(/Globe\sOf\sInvulnerability/i)){this.GlobeOfInvulnerability()};
+if(rip=stats.match(/Glyph\sOf\sWarding/i)){this.GlyphOfWarding()};
+if(rip=stats.match(/Goodberry/i)){this.Goodberry()};
+if(rip=stats.match(/Grasping\sVine/i)){this.GraspingVine()};
+if(rip=stats.match(/Grease/i)){this.Grease()};
+if(rip=stats.match(/Greater\sInvisibility/i)){this.GreaterInvisibility()};
+if(rip=stats.match(/Greater\sRestoration/i)){this.GreaterRestoration()};
+if(rip=stats.match(/GreenFlame\sBlade/i)){this.GreenFlameBlade()};
+if(rip=stats.match(/Guardian\sOf\sFaith/i)){this.GuardianOfFaith()};
+if(rip=stats.match(/Guardian\sOf\sNature/i)){this.GuardianOfNature()};
+if(rip=stats.match(/Guards\sAnd\sWards/i)){this.GuardsAndWards()};
+if(rip=stats.match(/Guidance/i)){this.Guidance()};
+if(rip=stats.match(/Guiding\sBolt/i)){this.GuidingBolt()};
+if(rip=stats.match(/Gust/i)){this.Gust()};
+if(rip=stats.match(/Gust\sOf\sWind/i)){this.GustOfWind()};
+if(rip=stats.match(/Hail\sOf\sThorns/i)){this.HailOfThorns()};
+if(rip=stats.match(/Hallow/i)){this.Hallow()};
+if(rip=stats.match(/Hallucinatory\sTerrain/i)){this.HallucinatoryTerrain()};
+if(rip=stats.match(/Harm/i)){this.Harm()};
+if(rip=stats.match(/Haste/i)){this.Haste()};
+if(rip=stats.match(/Heal/i)){this.Heal()};
+if(rip=stats.match(/Healing\sSpirit/i)){this.HealingSpirit()};
+if(rip=stats.match(/Healing\sWord/i)){this.HealingWord()};
+if(rip=stats.match(/Heat\sMetal/i)){this.HeatMetal()};
+if(rip=stats.match(/Hellish\sRebuke/i)){this.HellishRebuke()};
+if(rip=stats.match(/Heroes\'\sFeast/i)){this.HeroesFeast()};
+if(rip=stats.match(/Heroism/i)){this.Heroism()};
+if(rip=stats.match(/Hex/i)){this.Hex()};
+if(rip=stats.match(/Hold\sMonster/i)){this.HoldMonster()};
+if(rip=stats.match(/Hold\sPerson/i)){this.HoldPerson()};
+if(rip=stats.match(/Holy\sAura/i)){this.HolyAura()};
+if(rip=stats.match(/Holy\sWeapon/i)){this.HolyWeapon()};
+if(rip=stats.match(/Hunger\sOf\sHadar/i)){this.HungerOfHadar()};
+if(rip=stats.match(/Hunter\'s\sMark/i)){this.HuntersMark()};
+if(rip=stats.match(/Hypnotic\sPattern/i)){this.HypnoticPattern()};
+if(rip=stats.match(/Ice\sKnife/i)){this.IceKnife()};
+if(rip=stats.match(/Ice\sStorm/i)){this.IceStorm()};
+if(rip=stats.match(/Identify/i)){this.Identify()};
+if(rip=stats.match(/Illusory\sDragon/i)){this.IllusoryDragon()};
+if(rip=stats.match(/Illusory\sScript/i)){this.IllusoryScript()};
+if(rip=stats.match(/Immolation/i)){this.Immolation()};
+if(rip=stats.match(/Imprisonment/i)){this.Imprisonment()};
+if(rip=stats.match(/Incendiary\sCloud/i)){this.IncendiaryCloud()};
+if(rip=stats.match(/Infernal\sCalling/i)){this.InfernalCalling()};
+if(rip=stats.match(/Infestation/i)){this.Infestation()};
+if(rip=stats.match(/Inflict\sWounds/i)){this.InflictWounds()};
+if(rip=stats.match(/Insect\sPlague/i)){this.InsectPlague()};
+if(rip=stats.match(/Intellect\sFortress/i)){this.IntellectFortress()};
+if(rip=stats.match(/Investiture\sOf\sFlame/i)){this.InvestitureOfFlame()};
+if(rip=stats.match(/Investiture\sOf\sIce/i)){this.InvestitureOfIce()};
+if(rip=stats.match(/Investiture\sOf\sStone/i)){this.InvestitureOfStone()};
+if(rip=stats.match(/Investiture\sOf\sWind/i)){this.InvestitureOfWind()};
+if(rip=stats.match(/Invisibility/i)){this.Invisibility()};
+if(rip=stats.match(/Invulnerability/i)){this.Invulnerability()};
+if(rip=stats.match(/Jump/i)){this.Jump()};
+if(rip=stats.match(/Knock/i)){this.Knock()};
+if(rip=stats.match(/Legend\sLore/i)){this.LegendLore()};
+if(rip=stats.match(/Leomund\'s\sSecret\sChest/i)){this.LeomundsSecretChest()};
+if(rip=stats.match(/Leomund\'s\sTiny\sHut/i)){this.LeomundsTinyHut()};
+if(rip=stats.match(/Lesser\sRestoration/i)){this.LesserRestoration()};
+if(rip=stats.match(/Levitate/i)){this.Levitate()};
+if(rip=stats.match(/Life\sTransference/i)){this.LifeTransference()};
+if(rip=stats.match(/Light/i)){this.Light()};
+if(rip=stats.match(/Lightning\sArrow/i)){this.LightningArrow()};
+if(rip=stats.match(/Lightning\sBolt/i)){this.LightningBolt()};
+if(rip=stats.match(/Lightning\sLure/i)){this.LightningLure()};
+if(rip=stats.match(/Locate\sAnimals\sor\sPlants/i)){this.LocateAnimalsorPlants()};
+if(rip=stats.match(/Locate\sCreature/i)){this.LocateCreature()};
+if(rip=stats.match(/Locate\sObject/i)){this.LocateObject()};
+if(rip=stats.match(/Longstrider/i)){this.Longstrider()};
+if(rip=stats.match(/Maddening\sDarkness/i)){this.MaddeningDarkness()};
+if(rip=stats.match(/Maelstrom/i)){this.Maelstrom()};
+if(rip=stats.match(/Mage\sArmor/i)){this.MageArmor()};
+if(rip=stats.match(/Mage\sHand/i)){this.MageHand()};
+if(rip=stats.match(/Magic\sCircle/i)){this.MagicCircle()};
+if(rip=stats.match(/Magic\sJar/i)){this.MagicJar()};
+if(rip=stats.match(/Magic\sMissile/i)){this.MagicMissile()};
+if(rip=stats.match(/Magic\sMouth/i)){this.MagicMouth()};
+if(rip=stats.match(/Magic\sStone/i)){this.MagicStone()};
+if(rip=stats.match(/Magic\sWeapon/i)){this.MagicWeapon()};
+if(rip=stats.match(/Major\sImage/i)){this.MajorImage()};
+if(rip=stats.match(/Mass\sCure\sWounds/i)){this.MassCureWounds()};
+if(rip=stats.match(/Mass\sHeal/i)){this.MassHeal()};
+if(rip=stats.match(/Mass\sHealing\sWord/i)){this.MassHealingWord()};
+if(rip=stats.match(/Mass\sPolymorph/i)){this.MassPolymorph()};
+if(rip=stats.match(/Mass\sSuggestion/i)){this.MassSuggestion()};
+if(rip=stats.match(/Maximilian\'s\sEarthen\sGrasp/i)){this.MaximiliansEarthenGrasp()};
+if(rip=stats.match(/Maze/i)){this.Maze()};
+if(rip=stats.match(/Meld\sInto\sStone/i)){this.MeldIntoStone()};
+if(rip=stats.match(/Melf\'s\sAcid\sArrow/i)){this.MelfsAcidArrow()};
+if(rip=stats.match(/Melf\'s\sMinute\sMeteors/i)){this.MelfsMinuteMeteors()};
+if(rip=stats.match(/Mending/i)){this.Mending()};
+if(rip=stats.match(/Mental\sPrison/i)){this.MentalPrison()};
+if(rip=stats.match(/Message/i)){this.Message()};
+if(rip=stats.match(/Meteor\sSwarm/i)){this.MeteorSwarm()};
+if(rip=stats.match(/Mighty\sFortress/i)){this.MightyFortress()};
+if(rip=stats.match(/Mind\sBlank/i)){this.MindBlank()};
+if(rip=stats.match(/Mind\sSliver/i)){this.MindSliver()};
+if(rip=stats.match(/Mind\sSpike/i)){this.MindSpike()};
+if(rip=stats.match(/Minor\sIllusion/i)){this.MinorIllusion()};
+if(rip=stats.match(/Mirage\sArcane/i)){this.MirageArcane()};
+if(rip=stats.match(/Mirror\sImage/i)){this.MirrorImage()};
+if(rip=stats.match(/Mislead/i)){this.Mislead()};
+if(rip=stats.match(/Misty\sStep/i)){this.MistyStep()};
+if(rip=stats.match(/Modify\sMemory/i)){this.ModifyMemory()};
+if(rip=stats.match(/Mold\sEarth/i)){this.MoldEarth()};
+if(rip=stats.match(/Moonbeam/i)){this.Moonbeam()};
+if(rip=stats.match(/Mordenkainen\'s\sFaithful\sHound/i)){this.MordenkainensMordenkainensFaithfulHound()};
+if(rip=stats.match(/Mordenkainen\'s\sMagnificent\sMansion/i)){this.MordenkainensMordenkainensMagnificentMansion()};
+if(rip=stats.match(/Mordenkainen\'s\sPrivate\sSanctuary/i)){this.MordenkainensPrivateSanctuary()};
+if(rip=stats.match(/Mordenkainen\'s\sSword/i)){this.MordenkainensSword()};
+if(rip=stats.match(/Move\sEarth/i)){this.MoveEarth()};
+if(rip=stats.match(/Negative\sEnergy\sFlood/i)){this.NegativeEnergyFlood()};
+if(rip=stats.match(/Nondetection/i)){this.Nondetection()};
+if(rip=stats.match(/Nystul\'s\sMagic\sAura/i)){this.NystulsMagicAura()};
+if(rip=stats.match(/Otiluke\'s\sFreezing\sSphere/i)){this.OtilukesFreezingSphere()};
+if(rip=stats.match(/Otiluke\'s\sResilient\sSphere/i)){this.OtilukesResilientSphere()};
+if(rip=stats.match(/Otto\'s\sIrresistible\sDance/i)){this.OttosIrresistibleDance()};
+if(rip=stats.match(/Pass\swithout\sTrace/i)){this.PasswithoutTrace()};
+if(rip=stats.match(/Passwall/i)){this.Passwall()};
+if(rip=stats.match(/Phantasmal\sForce/i)){this.PhantasmalForce()};
+if(rip=stats.match(/Phantasmal\sKiller/i)){this.PhantasmalKiller()};
+if(rip=stats.match(/Phantom\sSteed/i)){this.PhantomSteed()};
+if(rip=stats.match(/Planar\sAlly/i)){this.PlanarAlly()};
+if(rip=stats.match(/Planar\sBinding/i)){this.PlanarBinding()};
+if(rip=stats.match(/Plane\sShift/i)){this.PlaneShift()};
+if(rip=stats.match(/Plant\sGrowth/i)){this.PlantGrowth()};
+if(rip=stats.match(/Poison\sSpray/i)){this.PoisonSpray()};
+if(rip=stats.match(/Polymorph/i)){this.Polymorph()};
+if(rip=stats.match(/Power\sWord\sHeal/i)){this.PowerWordHeal()};
+if(rip=stats.match(/Power\sWord\sKill/i)){this.PowerWordKill()};
+if(rip=stats.match(/Power\sWord\sPain/i)){this.PowerWordPain()};
+if(rip=stats.match(/Power\sWord\sStun/i)){this.PowerWordStun()};
+if(rip=stats.match(/Prayer\sOf\sHealing/i)){this.PrayerOfHealing()};
+if(rip=stats.match(/Prestidigitation/i)){this.Prestidigitation()};
+if(rip=stats.match(/Primal\sSavagery/i)){this.PrimalSavagery()};
+if(rip=stats.match(/Primordial\sWard/i)){this.PrimordialWard()};
+if(rip=stats.match(/Prismatic\sSpray/i)){this.PrismaticSpray()};
+if(rip=stats.match(/Prismatic\sWall/i)){this.PrismaticWall()};
+if(rip=stats.match(/Produce\sFlame/i)){this.ProduceFlame()};
+if(rip=stats.match(/Programmed\sIllusion/i)){this.ProgrammedIllusion()};
+if(rip=stats.match(/Project\sImage/i)){this.ProjectImage()};
+if(rip=stats.match(/Protection\sFrom\sEnergy/i)){this.ProtectionFromEnergy()};
+if(rip=stats.match(/Protection\sFrom\sEvil\sAnd\sGood/i)){this.ProtectionFromEvilAndGood()};
+if(rip=stats.match(/Protection\sFrom\sPoison/i)){this.ProtectionFromPoison()};
+if(rip=stats.match(/Psychic\sScream/i)){this.PsychicScream()};
+if(rip=stats.match(/Purify\sFood\sAnd\sDrink/i)){this.PurifyFoodAndDrink()};
+if(rip=stats.match(/Pyrotechnics/i)){this.Pyrotechnics()};
+if(rip=stats.match(/Raise\sDead/i)){this.RaiseDead()};
+if(rip=stats.match(/Rary\'s\sTelepathic\sBond/i)){this.RarysTelepathicBond()};
+if(rip=stats.match(/Ray\sOf\sEnfeeblement/i)){this.RayOfEnfeeblement()};
+if(rip=stats.match(/Ray\sOf\sFrost/i)){this.RayOfFrost()};
+if(rip=stats.match(/Ray\sOf\sSickness/i)){this.RayOfSickness()};
+if(rip=stats.match(/Regenerate/i)){this.Regenerate()};
+if(rip=stats.match(/Reincarnate/i)){this.Reincarnate()};
+if(rip=stats.match(/Remove\sCurse/i)){this.RemoveCurse()};
+if(rip=stats.match(/Resistance/i)){this.Resistance()};
+if(rip=stats.match(/Resurrection/i)){this.Resurrection()};
+if(rip=stats.match(/Reverse\sGravity/i)){this.ReverseGravity()};
+if(rip=stats.match(/Revivify/i)){this.Revivify()};
+if(rip=stats.match(/Rope\sTrick/i)){this.RopeTrick()};
+if(rip=stats.match(/Sacred\sFlame/i)){this.SacredFlame()};
+if(rip=stats.match(/Sanctuary/i)){this.Sanctuary()};
+if(rip=stats.match(/Scatter/i)){this.Scatter()};
+if(rip=stats.match(/Scorching\sRay/i)){this.ScorchingRay()};
+if(rip=stats.match(/Scrying/i)){this.Scrying()};
+if(rip=stats.match(/Searing\sSmite/i)){this.SearingSmite()};
+if(rip=stats.match(/See\sInvisibility/i)){this.SeeInvisibility()};
+if(rip=stats.match(/Seeming/i)){this.Seeming()};
+if(rip=stats.match(/Sending/i)){this.Sending()};
+if(rip=stats.match(/Sequester/i)){this.Sequester()};
+if(rip=stats.match(/Shadow\sBlade/i)){this.ShadowBlade()};
+if(rip=stats.match(/Shadow\sOf\sMoil/i)){this.ShadowOfMoil()};
+if(rip=stats.match(/Shape\sWater/i)){this.ShapeWater()};
+if(rip=stats.match(/Shapechange/i)){this.Shapechange()};
+if(rip=stats.match(/Shatter/i)){this.Shatter()};
+if(rip=stats.match(/Shield/i)){this.Shield()};
+if(rip=stats.match(/Shield\sOf\sFaith/i)){this.ShieldOfFaith()};
+if(rip=stats.match(/Shillelagh/i)){this.Shillelagh()};
+if(rip=stats.match(/Shocking\sGrasp/i)){this.ShockingGrasp()};
+if(rip=stats.match(/Sickening\sRadiance/i)){this.SickeningRadiance()};
+if(rip=stats.match(/Silence/i)){this.Silence()};
+if(rip=stats.match(/Silent\sImage/i)){this.SilentImage()};
+if(rip=stats.match(/Simulacrum/i)){this.Simulacrum()};
+if(rip=stats.match(/Skill\sEmpowerment/i)){this.SkillEmpowerment()};
+if(rip=stats.match(/Skywrite/i)){this.Skywrite()};
+if(rip=stats.match(/Sleep/i)){this.Sleep()};
+if(rip=stats.match(/Sleet\sStorm/i)){this.SleetStorm()};
+if(rip=stats.match(/Slow/i)){this.Slow()};
+if(rip=stats.match(/Snare/i)){this.Snare()};
+if(rip=stats.match(/Snilloc\'s\sSnowball\sSwarm/i)){this.SnillocsSnowballSwarm()};
+if(rip=stats.match(/Soul\sCage/i)){this.SoulCage()};
+if(rip=stats.match(/Spare\sThe\sDying/i)){this.SpareTheDying()};
+if(rip=stats.match(/Speak\sWith\sAnimals/i)){this.SpeakWithAnimals()};
+if(rip=stats.match(/Speak\sWith\sDead/i)){this.SpeakWithDead()};
+if(rip=stats.match(/Speak\sWith\sPlants/i)){this.SpeakWithPlants()};
+if(rip=stats.match(/Spider\sClimb/i)){this.SpiderClimb()};
+if(rip=stats.match(/Spike\sGrowth/i)){this.SpikeGrowth()};
+if(rip=stats.match(/Spirit\sGuardians/i)){this.SpiritGuardians()};
+if(rip=stats.match(/Spirit\sShroud/i)){this.SpiritShroud()};
+if(rip=stats.match(/Spiritual\sWeapon/i)){this.SpiritualWeapon()};
+if(rip=stats.match(/Staggering\sSmite/i)){this.StaggeringSmite()};
+if(rip=stats.match(/Steel\sWind\sStrike/i)){this.SteelWindStrike()};
+if(rip=stats.match(/Stinking\sCloud/i)){this.StinkingCloud()};
+if(rip=stats.match(/Stone\sShape/i)){this.StoneShape()};
+if(rip=stats.match(/Stoneskin/i)){this.Stoneskin()};
+if(rip=stats.match(/Storm\sOf\sVengeance/i)){this.StormOfVengeance()};
+if(rip=stats.match(/Storm\sSphere/i)){this.StormSphere()};
+if(rip=stats.match(/Suggestion/i)){this.Suggestion()};
+if(rip=stats.match(/Summon\sAberration/i)){this.SummonAberration()};
+if(rip=stats.match(/Summon\sBeast/i)){this.SummonBeast()};
+if(rip=stats.match(/Summon\sCelestial/i)){this.SummonCelestial()};
+if(rip=stats.match(/Summon\sConstruct/i)){this.SummonConstruct()};
+if(rip=stats.match(/Summon\sElemental/i)){this.SummonElemental()};
+if(rip=stats.match(/Summon\sFey/i)){this.SummonFey()};
+if(rip=stats.match(/Summon\sFiend/i)){this.SummonFiend()};
+if(rip=stats.match(/Summon\sGreater\sDemon/i)){this.SummonGreaterDemon()};
+if(rip=stats.match(/Summon\sLesser\sDemons/i)){this.SummonLesserDemons()};
+if(rip=stats.match(/Summon\sShadowspawn/i)){this.SummonShadowspawn()};
+if(rip=stats.match(/Summon\sUndead/i)){this.SummonUndead()};
+if(rip=stats.match(/Sunbeam/i)){this.Sunbeam()};
+if(rip=stats.match(/Sunburst/i)){this.Sunburst()};
+if(rip=stats.match(/Swift\sQuiver/i)){this.SwiftQuiver()};
+if(rip=stats.match(/Sword\sBurst/i)){this.SwordBurst()};
+if(rip=stats.match(/Symbol/i)){this.Symbol()};
+if(rip=stats.match(/Synaptic\sStatic/i)){this.SynapticStatic()};
+if(rip=stats.match(/Tasha\'s\sCaustic\sBrew/i)){this.TashasCausticBrew()};
+if(rip=stats.match(/Tasha\'s\sHideous\sLaughter/i)){this.TashasHideousLaughter()};
+if(rip=stats.match(/Tasha\'s\sMind\sWhip/i)){this.TashasMindWhip()};
+if(rip=stats.match(/Tasha\'s\sOtherworldly\sGuise/i)){this.TashasOtherworldlyGuise()};
+if(rip=stats.match(/Telekinesis/i)){this.Telekinesis()};
+if(rip=stats.match(/Telepathy/i)){this.Telepathy()};
+if(rip=stats.match(/Teleport/i)){this.Teleport()};
+if(rip=stats.match(/Teleportation\sCircle/i)){this.TeleportationCircle()};
+if(rip=stats.match(/Temple\sOf\sThe\sGods/i)){this.TempleOfTheGods()};
+if(rip=stats.match(/Tenser\'s\sFloating\sDisk/i)){this.TensersFloatingDisk()};
+if(rip=stats.match(/Tenser\'s\sTransformation/i)){this.TensersTransformation()};
+if(rip=stats.match(/Thaumaturgy/i)){this.Thaumaturgy()};
+if(rip=stats.match(/Thorn\sWhip/i)){this.ThornWhip()};
+if(rip=stats.match(/Thunder\sStep/i)){this.ThunderStep()};
+if(rip=stats.match(/Thunderclap/i)){this.Thunderclap()};
+if(rip=stats.match(/Thunderous\sSmite/i)){this.ThunderousSmite()};
+if(rip=stats.match(/Thunderwave/i)){this.Thunderwave()};
+if(rip=stats.match(/Tidal\sWave/i)){this.TidalWave()};
+if(rip=stats.match(/Time\sStop/i)){this.TimeStop()};
+if(rip=stats.match(/Tiny\sServant/i)){this.TinyServant()};
+if(rip=stats.match(/Toll\sThe\sDead/i)){this.TollTheDead()};
+if(rip=stats.match(/Tongues/i)){this.Tongues()};
+if(rip=stats.match(/Transmute\sRock/i)){this.TransmuteRock()};
+if(rip=stats.match(/Transport\svia\sPlants/i)){this.TransportviaPlants()};
+if(rip=stats.match(/Tree\sStride/i)){this.TreeStride()};
+if(rip=stats.match(/True\sPolymorph/i)){this.TruePolymorph()};
+if(rip=stats.match(/True\sResurrection/i)){this.TrueResurrection()};
+if(rip=stats.match(/True\sSeeing/i)){this.TrueSeeing()};
+if(rip=stats.match(/True\sStrike/i)){this.TrueStrike()};
+if(rip=stats.match(/Tsunami/i)){this.Tsunami()};
+if(rip=stats.match(/Unseen\sServant/i)){this.UnseenServant()};
+if(rip=stats.match(/Vampiric\sTouch/i)){this.VampiricTouch()};
+if(rip=stats.match(/Vicious\sMockery/i)){this.ViciousMockery()};
+if(rip=stats.match(/Vitriolic\sSphere/i)){this.VitriolicSphere()};
+if(rip=stats.match(/Wall\sOf\sFire/i)){this.WallOfFire()};
+if(rip=stats.match(/Wall\sOf\sForce/i)){this.WallOfForce()};
+if(rip=stats.match(/Wall\sOf\sIce/i)){this.WallOfIce()};
+if(rip=stats.match(/Wall\sOf\sLight/i)){this.WallOfLight()};
+if(rip=stats.match(/Wall\sOf\sSand/i)){this.WallOfSand()};
+if(rip=stats.match(/Wall\sOf\sStone/i)){this.WallOfStone()};
+if(rip=stats.match(/Wall\sOf\sThorns/i)){this.WallOfThorns()};
+if(rip=stats.match(/Wall\sOf\sWater/i)){this.WallOfWater()};
+if(rip=stats.match(/Warding\sBond/i)){this.WardingBond()};
+if(rip=stats.match(/Warding\sWind/i)){this.WardingWind()};
+if(rip=stats.match(/Water\sBreathing/i)){this.WaterBreathing()};
+if(rip=stats.match(/Water\sWalk/i)){this.WaterWalk()};
+if(rip=stats.match(/Watery\sSphere/i)){this.WaterySphere()};
+if(rip=stats.match(/Web/i)){this.Web()};
+if(rip=stats.match(/Weird/i)){this.Weird()};
+if(rip=stats.match(/Whirlwind/i)){this.Whirlwind()};
+if(rip=stats.match(/Wind\sWalk/i)){this.WindWalk()};
+if(rip=stats.match(/Wind\sWall/i)){this.WindWall()};
+if(rip=stats.match(/Wish/i)){this.Wish()};
+if(rip=stats.match(/Witch\sBolt/i)){this.WitchBolt()};
+if(rip=stats.match(/Word\sOf\sRadiance/i)){this.WordOfRadiance()};
+if(rip=stats.match(/Word\sOf\sRecall/i)){this.WordOfRecall()};
+if(rip=stats.match(/Wrath\sOf\sNature/i)){this.WrathOfNature()};
+if(rip=stats.match(/Wrathful\sSmite/i)){this.WrathfulSmite()};
+if(rip=stats.match(/Zephyr\sStrike/i)){ZephyrStrike()};
+if(rip=stats.match(/Zone\sOf\sTruth/i)){ZoneOfTruth()};
+
 if(rip=stats.match(/XP\)([\s\S]*)$/))
 {
 characters[targeted].setFeatureNotes(rip[1].replace(/\./g, '\.\n'))}
@@ -6031,7 +6341,7 @@ BardSpells+="<h3>7thSlot:@13th(1/1),@20th(2/2)</h3>"
 BardSpells+="<b onClick=ArcaneSword()>ArcaneSword</b>,"
 BardSpells+="<b onClick=Etherealness()>Etherealness</b>,"
 BardSpells+="<b onClick=Forcecage()>Forcecage</b>,"
-BardSpells+="<b onClick=MagnificentMansion()>MagnificentMansion</b>,"
+BardSpells+="<b onClick=MordenkainensMagnificentMansion()>MordenkainensMagnificentMansion</b>,"
 BardSpells+="<b onClick=MirageArcane()>MirageArcane</b>,"
 BardSpells+="<b onClick=ProjectImage()>ProjectImage</b>,"
 BardSpells+="<b onClick=Regenerate()>Regenerate</b>,"
@@ -6388,7 +6698,7 @@ DruidSpells+="<h3>6thSlot:@11th(1/1),@19th(2/2)</h3>"
 DruidSpells+="<b onClick=ConjureFey()>ConjureFey</b>,"
 DruidSpells+="<b onClick=FindThePath()>FindThePath</b>,"
 DruidSpells+="<b onClick=Heal()>Heal</b>,"
-DruidSpells+="<b onClick=Heroes'Feast()>Heroes'Feast</b>,"
+DruidSpells+="<b onClick=HeroesFeast()>HeroesFeast</b>,"
 DruidSpells+="<b onClick=MoveEarth()>MoveEarth</b>,"
 DruidSpells+="<b onClick=Sunbeam()>Sunbeam</b>,"
 DruidSpells+="<b onClick=TransportviaPlants()>TransportviaPlants</b>,"
@@ -6402,7 +6712,7 @@ DruidSpells+="<b onClick=Regenerate()>Regenerate</b>,"
 DruidSpells+="<b onClick=ReverseGravity()>ReverseGravity</b>"
 DruidSpells+="<h3>8thSlot:@15th(1/1)</h3>"
 DruidSpells+="<b onClick=AnimalShapes()>AnimalShapes</b>,"
-DruidSpells+="<b onClick=Antipathy/Sympathy()>Antipathy/Sympathy</b>,"
+DruidSpells+="<b onClick=AntipathySympathy()>AntipathySympathy</b>,"
 DruidSpells+="<b onClick=ControlWeather()>ControlWeather</b>,"
 DruidSpells+="<b onClick=Earthquake()>Earthquake</b>,"
 DruidSpells+="<b onClick=Feeblemind()>Feeblemind</b>,"
@@ -7227,7 +7537,7 @@ WizardSpells+="<b onClick=ConjureMinorElementals()>ConjureMinorElementals</b>,"
 WizardSpells+="<b onClick=ControlWater()>ControlWater</b>,"
 WizardSpells+="<b onClick=DimensionDoor()>DimensionDoor</b>,"
 WizardSpells+="<b onClick=Fabricate()>Fabricate</b>,"
-WizardSpells+="<b onClick=FaithfulHound()>FaithfulHound</b>,"
+WizardSpells+="<b onClick=MordenkainensFaithfulHound()>MordenkainensFaithfulHound</b>,"
 WizardSpells+="<b onClick=FireShield()>FireShield</b>,"
 WizardSpells+="<b onClick=GreaterInvisibility()>GreaterInvisibility</b>,"
 WizardSpells+="<b onClick=HallucinatoryTerrain()>HallucinatoryTerrain</b>,"
@@ -7291,7 +7601,7 @@ WizardSpells+="<b onClick=DelayedBlastFireball()>DelayedBlastFireball</b>,"
 WizardSpells+="<b onClick=Etherealness()>Etherealness</b>,"
 WizardSpells+="<b onClick=FingerOfDeath()>FingerOfDeath</b>,"
 WizardSpells+="<b onClick=Forcecage()>Forcecage</b>,"
-WizardSpells+="<b onClick=MagnificentMansion()>MagnificentMansion</b>,"
+WizardSpells+="<b onClick=MordenkainensMagnificentMansion()>MordenkainensMagnificentMansion</b>,"
 WizardSpells+="<b onClick=MirageArcane()>MirageArcane</b>,"
 WizardSpells+="<b onClick=PlaneShift()>PlaneShift</b>,"
 WizardSpells+="<b onClick=PrismaticSpray()>PrismaticSpray</b>,"
@@ -7303,7 +7613,7 @@ WizardSpells+="<b onClick=Symbol()>Symbol</b>,"
 WizardSpells+="<b onClick=Teleport()>Teleport</b>"
 WizardSpells+="<h3>8thSlot:@15th(1/1)</h3>"
 WizardSpells+="<b onClick=AntimagicField()>AntimagicField</b>,"
-WizardSpells+="<b onClick=Antipathy/Sympathy()>Antipathy/Sympathy</b>,"
+WizardSpells+="<b onClick=AntipathySympathy()>AntipathySympathy</b>,"
 WizardSpells+="<b onClick=Clone()>Clone</b>,"
 WizardSpells+="<b onClick=ControlWeather()>ControlWeather</b>,"
 WizardSpells+="<b onClick=Demiplane()>Demiplane</b>,"
