@@ -6,7 +6,7 @@
 <meta name="description" content="2022 Dungeons & Dragons 5th Edition Tabletop Roleplaying Game Manager">
 <meta name="keywords" content="DnD, Dungeons and Dragons, D&D, Dungeons & Dragons, Fantasy RPG, tabletop roleplaying game, TTRPG">
 <title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game Single Encounter Manager 2022(Wizards of the Coast, Asmor, Zorn, Ren, Vanderwaal Webdesign)</title>
-//<script src="Scripts/WZDragdrop.js"></script>
+<script src="Scripts/WZDragdrop.js"></script>
 //<script src="Scripts/jquery-3.6.0.js"></script>
 <script src="Scripts/jquery-ui-1.13.1.js"></script>
 <script src="Scripts/draggable-div-with-touch.js"></script>
@@ -26,7 +26,9 @@ src: url("Decorations/MyKidsHandwritten.ttf");
 }
 
 body
-{background-color:#013220;
+{
+background-color:#013220;
+z-index:0;
 }
 
 table,
@@ -54,7 +56,6 @@ text-decoration:#22271f;
 text-decoration-thickness:2px;
 vertical-align:center;
 word-break:break-word;
-z-index:2;
 }
 
 .piece
@@ -74,7 +75,7 @@ padding:1px;
 text-decoration:#22271f;
 text-decoration-thickness:2px;
 vertical-align:top;
-z-index:2;
+z-index:1;
 }
 
 table
@@ -104,7 +105,7 @@ a:active{color:#f13a37
 
 .MapSelection
 {
- width:3000px;
+ width:1900px;
 }
 
 .die20
@@ -243,8 +244,7 @@ To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
 </td><td>
 <img class='die4' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
-</td></tr></table>
-<br>
+</td></tr><tr><td>
 <img class='MapSelection' src='Maps/Map.png'>
 <br>
 <table><tr><td>
