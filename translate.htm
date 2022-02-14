@@ -1,0 +1,27 @@
+<html>
+<script>
+function translate()
+{
+a=translation
+.replace('私','(I,me)wahtahshee私(noun)')
+.replace('スーパ','(a supermarket)sue-pahスーパ(noun)')
+.replace('事故','(an accident)jee事koe故(noun)')
+.replace('選手','(an athlete)sehn選shue手(noun)')
+.replace('(noun)は','(noun)(as for)wahは(postposition)<p>')
+.replace('(noun)に','(noun)(to a place)neeに(postposition)<p>')
+.replace('(noun)が','(noun)(the actor)gahが(postposition)<p>(verb)')
+.replace('(verb)あ','(there was)ahあ(verb base)')
+.replace('行','(go)ee行(verb base)')
+.replace('(verb base)きます','keemahsきます(verb suffix)(present or future tense)(formal)<p>')
+.replace('った','ttahった(verb suffix)(past tense)<p>')
+.replace('です','(am,are,is)dehsです(formal)<p>')
+
+document.getElementById('translationDisplay').innerHTML=a;
+}
+</script>
+<body>
+<textArea cols='40' rows='8' onChange='translation=this.value;translate(translation)'></textarea>
+<p>
+<b id='translationDisplay'></b>
+</body>
+</html>
