@@ -54,7 +54,7 @@ overflow-wrap:anywhere;
 padding:1px;
 text-decoration:#22271f;
 text-decoration-thickness:2px;
-vertical-align:center;
+vertical-align:top;
 word-break:break-word;
 }
 
@@ -86,8 +86,7 @@ background-image:url("Decorations/Panel.png");
 td,
 tr
 {
-max-width:300px;
-min-width:50px;
+min-width:40px;
 word-wrap: normal;
 }
 
@@ -106,7 +105,7 @@ a:active{color:#f13a37
 .MapSelection
 {
  height:auto;
- width:1900px;
+ width:900px;
 }
 
 .die20
@@ -114,7 +113,7 @@ a:active{color:#f13a37
  height: 100px;
  width: 100px;
  object-fit: none;
- object-position: 50% 50%;
+ object-position: 98% 100%;
 }
 
 .die12
@@ -122,7 +121,7 @@ a:active{color:#f13a37
  height: 100px;
  width: 100px;
  object-fit: none;
- object-position: 35% 95%;
+ object-position: 72% 100%;
 }
 
 .die10
@@ -130,28 +129,28 @@ a:active{color:#f13a37
  height: 100px;
  width: 100px;
  object-fit: none;
- object-position: 85% 50%;
+ object-position: 98% 100%;
 }
 .die8
 {
  height: 100px;
  width: 100px;
  object-fit: none;
- object-position: 15% 50%;
+ object-position: 48% 100%;
 }
 .die6
 {
  height: 100px;
  width: 100px;
  object-fit: none;
- object-position: 70% 7%;
+ object-position: 25% 100%;
 }
 .die4
 {
  height: 100px;
  width: 100px;
  object-fit: none;
- object-position: 75% 95%;
+ object-position: 0% 100%;
 }
 
 mark
@@ -163,92 +162,82 @@ background-color:#f8ecdd;
 
 <body>
 
-<table><tr><td>
+<table width='900px'><tr><td rowSpan='30'><img class='MapSelection' src='Maps/Map.png'>
+</td><td>
 <input type='button' value='Roll all initiatives?' onClick='rollInitiatives()'>
-</td><td>
+</td></tr><tr><td>
 <input type='button' value='Save all characters?' onClick='saveAll()'>
-</td><td>
+</td></tr><tr><td>
 <input type='button' value='tgt then Clone a character?' onClick='cloneIt(type)'>
-</td><td>
+</td></tr><tr><td>
 <input type='button' value='Create a new character?' onClick='newCharacter(PC)'>
-</td><td>
-<a href="http://asmor.com/5e/spellbook/">Asmor's Spellbook</a>
-</td><td>
-<a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
-</td><td>
-<a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a>
-</td><td rowSpan='3'>
+</td></tr><tr><td>
 tgt then paste stats
-<textArea cols='40' rows='8' onChange='stats=this.value;setStats()'></textarea><b id='statsDisplay'></b>
+<textArea cols='40' rows='5' onChange='stats=this.value;setStats()'></textarea><b id='statsDisplay'></b>
+</td></tr><tr><td>
+To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
 </td></tr><tr><td>
 Encounter Notes,XP totals(not saved after shift reload of webpage):
-<input type='field' size='40'>
-</td><td>
+<textArea cols='40' rows='4'></textarea>
+</td></tr><tr><td>
 Condition Durations:
-<input type='field' size='40'>10/<input id='1stDuration' type='field' size='2' value='10'>turns.
+<input type='field' size='40'><br>10/<input id='1stDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne(){document.getElementById('1stDuration').value=(document.getElementById('1stDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne()' value='end turn?'>
-</td><td>
+</td></tr><tr><td>
 Condition Durations:
-<input type='field' size='40'>10/<input id='2ndDuration' type='field' size='2' value='10'>turns.
+<input type='field' size='40'><br>10/<input id='2ndDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne2(){document.getElementById('2ndDuration').value=(document.getElementById('2ndDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne2()' value='end turn?'>
-</td><td>
+</td></tr><tr><td>
 Condition Durations:
-<input type='field' size='40'>10/<input id='3rdDuration' type='field' size='2' value='10'>turns.
+<input type='field' size='40'><br>10/<input id='3rdDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne3(){document.getElementById('3rdDuration').value=(document.getElementById('3rdDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne3()' value='end turn?'>
-</td><td>
+</td></tr><tr><td>
 Condition Durations:
-<input type='field' size='40'>10/<input id='4thDuration' type='field' size='2' value='10'>turns.
+<input type='field' size='40'><br>10/<input id='4thDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne4(){document.getElementById('4thDuration').value=(document.getElementById('4thDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne4()' value='end turn?'>
-</td><td>
-<a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
-</td><td>
-To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
 </td></tr><tr><td>
 <input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollOneDisplay'></b>
-<br>
+</td></tr><tr><td>
 <input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollTwoDisplay'></b>
-<br>
+</td></tr><tr><td>
 <input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollThreeDisplay'></b>
-<br>
+</td></tr><tr><td>
 <input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFourDisplay'></b>
-<br>
+</td></tr><tr><td>
 <input onMouseOut="rollFive=parseInt(rollDForm(this.value));document.getElementById('rollFiveDisplay').innerHTML='('+naturalRoll+roll+')='+rollFive" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFiveDisplay'></b>
-<br>
+</td></tr><tr><td>
 <input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollSixDisplay'></b>
-</td><td>
+</td></tr><tr><td>
 <img class='die20' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?'><b id='d20result'></b>
-</td><td>
+</td></tr><tr><td>
 <img class='die12' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?'><b id='d12result'></b>
-</td><td>
+</td></tr><tr><td>
 <img class='die10' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?'><b id='d10result'></b>
-</td><td>
+</td></tr><tr><td>
 <img class='die8' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?'><b id='d8result'></b>
-</td><td>
+</td></tr><tr><td>
 <img class='die6' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?'><b id='d6result'></b>
-</td><td>
+</td></tr><tr><td>
 <img class='die4' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
-</td></tr></table><br>
-<img class='MapSelection' src='Maps/Map.png'>
-<br>
-<table><tr><td>
+</td></tr><tr><td>
 Random Skills:<br><span id='displayRandomSkills'></span>
 </td></tr><tr><td>
 Random Languages:<br><span id='displayRandomLanguages'></span>
@@ -4775,131 +4764,32 @@ s4(s1+'Dart'+s2+'(simple rngd wpn)Dart'+s3)
 s4(s1+'LightCrossbow'+s2+'(simple rngd wpn)LightCrossbow'+s3)
 s4(s1+'Shortbow()'+s2+'(simple rngd wpn)Shortbow'+s3)
 s4(s1+'Sling'+s2+'(simple rngd wpn)Sling'+s3)
-s4(s1+'Battleaxe'+s2+'(martial melee wpn)Battleaxe'+s3)
-s4(s1+'Falchion'+s2+'(martial melee wpn)Falchion'+s3)
-s4(s1+'Flail'+s2+'(martial melee wpn)Flail'+s3)
-s4(s1+'Glaive'+s2+'(martial melee wpn)Glaive'+s3)
-s4(s1+'Greataxe'+s2+'(martial melee wpn)Greataxe'+s3)
-s4(s1+'Greatsword'+s2+'(martial melee wpn)Greatsword'+s3)
-s4(s1+'Halberd'+s2+'(martial melee wpn)Halberd'+s3)
-s4(s1+'Lance'+s2+'(martial melee wpn)Lance'+s3)
-s4(s1+'Longsword'+s2+'(martial melee wpn)Longsword'+s3)
-s4(s1+'Maul'+s2+'(martial melee wpn)Maul'+s3)
-s4(s1+'Morningstar'+s2+'(martial melee wpn)Morningstar'+s3)
-s4(s1+'Pike'+s2+'(martial melee wpn)Pike'+s3)
-s4(s1+'Rapier'+s2+'(martial melee wpn)Rapier'+s3)
-s4(s1+'Scimitar'+s2+'(martial melee wpn)Scimitar'+s3)
-s4(s1+'Shortsword'+s2+'(martial melee wpn)Shortsword'+s3)
-s4(s1+'Trident'+s2+'(martial melee wpn)Trident'+s3)
-s4(s1+'Warhammer'+s2+'(martial melee wpn)Warhammer'+s3)
-s4(s1+'WarPick'+s2+'(martial melee wpn)War Pick'+s3)
-s4(s1+'Whip'+s2+'(martial melee wpn)Whip'+s3)
-s4(s1+'Blowgun'+s2+'(martial rngd wpn)Blowgun'+s3)
-s4(s1+'HandCrossbow'+s2+'(martial rngd wpn)Hand Crossbow'+s3)
-s4(s1+'HeavyCrossbow'+s2+'(martial rngd wpn)Heavy Crossbow'+s3)
-s4(s1+'Longbow'+s2+'(martial rngd wpn)Longbow'+s3)
-s4(s1+'Net'+s2+'(martial rngd wpn)Net'+s3)
-s4(s1+'BladeOfDisaster'+s2+'BladeOfDisaster'+s3)
-s4(s1+'DreamOfTheBlueVeil'+s2+'DreamOfTheBlueVeil'+s3)
-s4(s1+'GreenFlameBlade'+s2+'GreenFlameBlade'+s3)
-s4(s1+'IntellectFortress'+s2+'IntellectFortress'+s3)
-s4(s1+'LightningLure'+s2+'LightningLure'+s3)
-s4(s1+'MindSliver'+s2+'MindSliver'+s3)
-s4(s1+'SpiritShroud'+s2+'SpiritShroud'+s3)
-s4(s1+'SummonAberration'+s2+'SummonAberration'+s3)
-s4(s1+'SummonBeast'+s2+'SummonBeast'+s3)
-s4(s1+'SummonCelestial'+s2+'SummonCelestial'+s3)
-s4(s1+'SummonConstruct'+s2+'SummonConstruct'+s3)
-s4(s1+'SummonElemental'+s2+'SummonElemental'+s3)
-s4(s1+'SummonFey'+s2+'SummonFey'+s3)
-s4(s1+'SummonFiend'+s2+'SummonFiend'+s3)
-s4(s1+'SummonShadowspawn'+s2+'SummonShadowspawn'+s3)
-s4(s1+'SummonUndead'+s2+'SummonUndead'+s3)
-s4(s1+'SwordBurst'+s2+'SwordBurst'+s3)
-s4(s1+'TashasCausticBrew'+s2+'TashasCausticBrew'+s3)
-s4(s1+'TashasMindWhip'+s2+'TashasMindWhip'+s3)
-s4(s1+'TashasOtherworldlyGuise'+s2+'TashasOtherworldlyGuise'+s3)
-s4(s1+'AbiDalzimsHorridWilting'+s2+'AbiDalzimsHorridWilting'+s3)
-s4(s1+'AganazzarsScorcher'+s2+'AganazzarsScorcher'+s3)
-s4(s1+'BonesOfEarth'+s2+'BonesOfEarth'+s3)
-s4(s1+'Catnap'+s2+'Catnap'+s3)
-s4(s1+'ChaosBolt'+s2+'ChaosBolt'+s3)
-s4(s1+'CharmMonster'+s2+'CharmMonster'+s3)
-s4(s1+'ControlWinds'+s2+'ControlWinds'+s3)
-s4(s1+'CreateHomunculus'+s2+'CreateHomunculus'+s3)
-s4(s1+'CrownOfStars'+s2+'CrownOfStars'+s3)
-s4(s1+'DanseMacbre'+s2+'DanseMacbre'+s3)
-s4(s1+'Dawn'+s2+'Dawn'+s3)
-s4(s1+'DragonsBreath'+s2+'DragonsBreath'+s3)
-s4(s1+'DruGrove'+s2+'DruGrove'+s3)
-s4(s1+'DustDevil'+s2+'DustDevil'+s3)
-s4(s1+'EarthTremor'+s2+'EarthTremor'+s3)
-s4(s1+'Earthbind'+s2+'Earthbind'+s3)
-s4(s1+'ElementalBane'+s2+'ElementalBane'+s3)
-s4(s1+'EnemiesAbound'+s2+'EnemiesAbound'+s3)
-s4(s1+'Enervation'+s2+'Enervation'+s3)
-s4(s1+'EruptingEarth'+s2+'EruptingEarth'+s3)
-s4(s1+'FarStep'+s2+'FarStep'+s3)
-s4(s1+'FindGreaterSteed'+s2+'FindGreaterSteed'+s3)
-s4(s1+'FlameArrows'+s2+'FlameArrows'+s3)
-s4(s1+'GuardianOfNature'+s2+'GuardianOfNature'+s3)
-s4(s1+'HealingSpirit'+s2+'HealingSpirit'+s3)
-s4(s1+'HolyWeapon'+s2+'HolyWeapon'+s3)
-s4(s1+'IceKnife'+s2+'IceKnife'+s3)
-s4(s1+'IllusoryDragon'+s2+'IllusoryDragon'+s3)
-s4(s1+'Immolation'+s2+'Immolation'+s3)
-s4(s1+'InfernalCalling'+s2+'InfernalCalling'+s3)
-s4(s1+'InvestitureOfFlame'+s2+'InvestitureOfFlame'+s3)
-s4(s1+'InvestitureOfIce'+s2+'InvestitureOfIce'+s3)
-s4(s1+'InvestitureOfStone'+s2+'InvestitureOfStone'+s3)
-s4(s1+'InvestitureOfWind'+s2+'InvestitureOfWind'+s3)
-s4(s1+'Invulnerability'+s2+'Invulnerability'+s3)
-s4(s1+'LifeTransference'+s2+'LifeTransference'+s3)
-s4(s1+'MaddeningDarkness'+s2+'MaddeningDarkness'+s3)
-s4(s1+'Maelstrom'+s2+'Maelstrom'+s3)
-s4(s1+'MassPolymorph'+s2+'MassPolymorph'+s3)
-s4(s1+'MaximilliansEarthenGrasp'+s2+'MaximilliansEarthenGrasp'+s3)
-s4(s1+'MelfsMinuteMeteors'+s2+'MelfsMinuteMeteors'+s3)
-s4(s1+'MentalPrison'+s2+'MentalPrison'+s3)
-s4(s1+'MightyFortress'+s2+'MightyFortress'+s3)
-s4(s1+'MindSpike'+s2+'MindSpike'+s3)
-s4(s1+'NegativeEnergyFlood'+s2+'NegativeEnergyFlood'+s3)
-s4(s1+'PowerWordPain'+s2+'PowerWordPain'+s3)
-s4(s1+'PrimordialWard'+s2+'PrimordialWard'+s3)
-s4(s1+'PsychicScream'+s2+'PsychicScream'+s3)
-s4(s1+'Pyrotechnics'+s2+'Pyrotechnics'+s3)
-s4(s1+'Scatter'+s2+'Scatter'+s3)
-s4(s1+'ShadowBlade'+s2+'ShadowBlade'+s3)
-s4(s1+'ShadowOfMoil'+s2+'ShadowOfMoil'+s3)
-s4(s1+'SickeningRadiance'+s2+'SickeningRadiance'+s3)
-s4(s1+'SkillEmpowerment'+s2+'SkillEmpowerment'+s3)
-s4(s1+'Skywrite'+s2+'Skywrite'+s3)
-s4(s1+'Snare'+s2+'Snare'+s3)
-s4(s1+'Snilloc'+s2+'Snilloc'+s3)
-s4(s1+'SoulCage'+s2+'SoulCage'+s3)
-s4(s1+'SteelWind'+s2+'SteelWind'+s3)
-s4(s1+'StormSphere'+s2+'StormSphere'+s3)
-s4(s1+'SummonGreaterDemon'+s2+'SummonGreaterDemon'+s3)
-s4(s1+'SummonLesserDemons'+s2+'SummonLesserDemons'+s3)
-s4(s1+'SynapticStatic'+s2+'SynapticStatic'+s3)
-s4(s1+'TempleOfTheGods'+s2+'TempleOfTheGods'+s3)
-s4(s1+'TensersTransformation'+s2+'TensersTransformation'+s3)
-s4(s1+'ThunderStep'+s2+'ThunderStep'+s3)
-s4(s1+'ThunderClap'+s2+'ThunderClap'+s3)
-s4(s1+'TidalWave'+s2+'TidalWave'+s3)
-s4(s1+'TinyServant'+s2+'TinyServant'+s3)
-s4(s1+'TransmuteRock'+s2+'TransmuteRock'+s3)
-s4(s1+'VitriolicSphere'+s2+'VitriolicSphere'+s3)
-s4(s1+'WallOfLight'+s2+'WallOfLight'+s3)
-s4(s1+'WallOfSand'+s2+'WallOfSand'+s3)
-s4(s1+'WallOfWater'+s2+'WallOfWater'+s3)
-s4(s1+'WardingWind'+s2+'WardingWind'+s3)
-s4(s1+'WaterySphere'+s2+'WaterySphere'+s3)
-s4(s1+'Whirlwind'+s2+'Whirlwind'+s3)
-s4(s1+'WrathOfNature'+s2+'WrathOfNature'+s3)
-s4(s1+'ZephyrStrike'+s2+'ZephyrStrike'+s3)
-
+s4(s1+'Battleaxe'+s2+'(melee wpn)Battleaxe'+s3)
+s4(s1+'Falchion'+s2+'(melee wpn)Falchion'+s3)
+s4(s1+'Flail'+s2+'(melee wpn)Flail'+s3)
+s4(s1+'Glaive'+s2+'(melee wpn)Glaive'+s3)
+s4(s1+'Greataxe'+s2+'(melee wpn)Greataxe'+s3)
+s4(s1+'Greatsword'+s2+'(melee wpn)Greatsword'+s3)
+s4(s1+'Halberd'+s2+'(melee wpn)Halberd'+s3)
+s4(s1+'Lance'+s2+'(melee wpn)Lance'+s3)
+s4(s1+'Longsword'+s2+'(melee wpn)Longsword'+s3)
+s4(s1+'Maul'+s2+'(melee wpn)Maul'+s3)
+s4(s1+'Morningstar'+s2+'(melee wpn)Morningstar'+s3)
+s4(s1+'Pike'+s2+'(melee wpn)Pike'+s3)
+s4(s1+'Rapier'+s2+'(melee wpn)Rapier'+s3)
+s4(s1+'Scimitar'+s2+'(melee wpn)Scimitar'+s3)
+s4(s1+'Shortsword'+s2+'(melee wpn)Shortsword'+s3)
+s4(s1+'Trident'+s2+'(melee wpn)Trident'+s3)
+s4(s1+'Warhammer'+s2+'(melee wpn)Warhammer'+s3)
+s4(s1+'WarPick'+s2+'(melee wpn)War Pick'+s3)
+s4(s1+'Whip'+s2+'(melee wpn)Whip'+s3)
+s4(s1+'Blowgun'+s2+'(rngd wpn)Blowgun'+s3)
+s4(s1+'HandCrossbow'+s2+'(rngd wpn)Hand Crossbow'+s3)
+s4(s1+'HeavyCrossbow'+s2+'(rngd wpn)Heavy Crossbow'+s3)
+s4(s1+'Longbow'+s2+'(rngd wpn)Longbow'+s3)
+s4(s1+'Net'+s2+'(rngd wpn)Net'+s3)
 s4('</td></tr></table>')
+
 function toggleTab1(x){if(characters[x].toggled1.match(/none/)){characters[x].setToggled1("block");
 document.getElementById('toggled1'+x).style.display=characters[x].toggled1
 }
@@ -10670,6 +10560,5 @@ this.refresh()}
 </td><td>11
 </td><td>5
 </td></tr></table>
-
 </body>
 </html>
