@@ -3079,7 +3079,7 @@ c='@10th(Additional Fighting Style)1';
 dx='@15th(Superior Critical)crit on natural 18, 19 or 20';
 e='@18th(Survivor)@half hp not 0hp, utso each turn heal 5+conMod'
 }
-EldritchKnightSpells="<h3>Cantrips:@3rd(2),@10th(3),@</h3>";
+EldritchKnightSpells="<h3>Cantrips:@3rd(2),@10th(3)</h3>";
 EldritchKnightSpells+="<b onClick=AcidSplash()>AcidSplash<b>,";
 EldritchKnightSpells+="<b onClick=BladeWard()>BladeWard<b>,";
 EldritchKnightSpells+="<b onClick=BoomingBlade()>BoomingBlade<b>,";
@@ -3197,10 +3197,10 @@ this.setIntPro('');
 this.setWisPro('');
 this.setChaPro('');
 this.setSkills('2 from Acrobatics, Animal Handling, Insight, Intimidation, Perception, or Survival')}
-if(this.class.match(/Monk/)){if(this.class.match(/Elements/)){a='Four Elements</td></tr><tr><td>@3rdDISCIPLE Of THE ELEMENTS when learning a new one, you can swap 1 you know with a new one ,@6th(1 more)@(11th 1 more)@(17th 1 more)</td></tr><tr><td>Monk lvl cost.5th-8th 3ki.9th-12th 4ki.13th-16th 5ki.17th-20th 6ki</td></tr><tr><td>@3rd ELEMENTAL ATTUNEMENT shower of sparks, puff of air or light or snuff torch, or chill or warm 1lb objects or mist, fire, earth 1ft-cube shaped into crude form ,@3rd FANGS OF THE FIRE SNAKE 1Ki, unarmed ranged 10ft fire dmg+1d10/1Ki ,@3rd FIST OF UNBROKEN AIR 1act,2Ki, 30ftDC8+'+characters[targeted].spellAbility+'+pro vsStr 1/2dmg,3d10bludge+1d10/1Ki and not pushed 20ft prone ,@3rd RUSH OF THE GALE SPIRITS 2Ki Gust of Wind ,@3rd SHAPE OF THE FLOWING RIVER 1Ki ice to water or water to ice 30x120ft ,@3rd SWEEPING CINDER STRIKE 2Ki Burning Hands ,@3rd WATER WHIP 1act @Ki 30ftDC8+'+characters[targeted].spellAbility+'+pro vsDex 1/2dmg,3d10bludge+1d10/1Ki and not prone or pulled 25ft';
-b='@6th CLENCH OF THE NORTH WIND 6Ki Cone of Cold ,@6th GONG OF THE SUMMIT 3Ki Shatter @11th ETERNAL MOUNTAIN DEFENSE 5Ki, self, Stoneskin';
-c='@11th FLAMES OF THE PHOENIX 4Ki Fireball @11th MIST STANCE 4Ki, self, Gaseous Form @11th RIDE THE WIND 4Ki, self, Fly';
-dx='@17th BREATH OF WINTER 6Ki Cone of Cold @17th RIVER OF HUNGRY FLAME 5Ki Wall of Fire @17th WAVE OF ROLLING EARTH 6Ki Wall of Stone'
+if(this.class.match(/Monk/)){if(this.class.match(/Elements/)){a='Four Elements</td></tr><tr><td>@3rd(Disciple Of The Elements)when learning a new one, you can swap 1 you know with a new one ,@6th(1 more)@(11th 1 more)@(17th 1 more)</td></tr><tr><td>Monk lvl cost.5th-8th 3ki.9th-12th 4ki.13th-16th 5ki.17th-20th 6ki</td></tr><tr><td>@3rd Elemental Attunement shower of sparks, puff of air or light or snuff torch, or chill or warm 1lb objects or mist, fire, earth 1ft-cube shaped into crude form ,@3rd Fangs Of The Fire Snake 1Ki, unarmed ranged 10ft fire dmg+1d10/1Ki ,@3rd Fist Of Unbroken Air 1act,2Ki, 30ftDC8+'+characters[targeted].spellAbility+'+pro vsStr 1/2dmg,3d10bludge+1d10/1Ki and not pushed 20ft prone ,@3rd RUSH OF THE GALE SPIRITS 2Ki Gust of Wind ,@3rd Shape Of The Flowing River 1Ki ice to water or water to ice 30x120ft ,@3rd Sweeping Cinder Strike 2Ki Burning Hands ,@3rd WATER WHIP 1act @Ki 30ftDC8+'+characters[targeted].spellAbility+'+pro vsDex 1/2dmg,3d10bludge+1d10/1Ki and not prone or pulled 25ft';
+b='@6th(Clench Of The North Wind)6Ki Cone of Cold ,@6th(Gong Of The Summit)3Ki Shatter @11th Eternal Mountain Defense 5Ki, self, Stoneskin';
+c='@11th(Flames Of The Phoenix)4Ki Fireball @11th Mist Stance 4Ki, self, Gaseous Form @11th Ride The Wind 4Ki, self, Fly';
+dx='@17th(Breath Of Winter)6Ki Cone of Cold @17th(River Of Hungry Flame)5Ki Wall of Fire @17th(Wave Of Rolling Earth)6Ki Wall of Stone'
 }
 if(this.class.match(/Cobalt/)){a='(Cobalt Soul)</td></tr><tr><td>@3rd(Mystical Erudition)tgt is hit, spend 1 Ki Point, vsCon or you learn tgt type or ac or senses or highest or lowest save modifier or vulnerabilities or resistance or immunities ,@6th learn 2 aspects @11th 3 @17th 4';
 b='@6th(Extort Truth)tgt is hit twice, spend 2 Ki Points, tgt knows it can not lie for 1min</td></tr><tr><td>@6th(Mind of Mercury)take a number int mod of reacts per trigger @cost of 1 Ki Point after the first react, spend 1 Ki Point, Investigation@Adv';
@@ -3247,9 +3247,9 @@ this.setSkills('2 from Acrobatics, Athletics, History, Insight, Religion, or Ste
 this.setSpellAbility('wis')}
 if(this.class.match(/Paladin/)){if(this.class.match(/Ancients/)){a='@3rd(Nature s Wrath) 1CD, 1act,10ft, str orDC8+'+characters[targeted].spellAbility+'+pro vsDex end of each of its turns or restrained</td></tr><tr><td>@3rdTURN THE FAITHLESS 1CD, fey or fiend 30ft vsWis or Dash true form revealed</td></tr><tr><td>@3rd<b onClick=EnsnaringStrike()>Ensnaring Strike</b> ,@3rd[x]Speak with Animals';
 b='@5th[x]Moonbeam @5th<b onClick=MistyStep()>Misty Step</b>';
-c='@7th.AURA OF WARDING 10ft you and allies resist spell dam @7th(10ft)@(18th 30ft)</td></tr><tr><td>@9th[x]Plant Growth @9th<b onClick=ProtectionFromEnergy()>Protection from Energy</b>';
+c='@7th.Aura Of Warding 10ft you and allies resist spell dam @7th(10ft)@(18th 30ft)</td></tr><tr><td>@9th[x]Plant Growth @9th<b onClick=ProtectionFromEnergy()>Protection from Energy</b>';
 dx="@13th<b onClick=IceStorm()'>IceStorm</b> @13th[x]Stoneskin";
-e="@15th.UNDYING SENTINEL 1/1/long rest, 0hp is 1hp, no aging penalties, immune magical aging</td></tr><tr><td>@17th <b onClick=CommuneWithNature()>Commune with Nature</b> @17th<b onClick=TreeStride()'>TreeStride</b></td></tr><tr><td>@20th.ELDER CHAMPION 1/1/long rest, 10/10turns, heal 10hp/turn, spells 1act is bonus,10ft tgts save @DisAdv vs your paladin spells and channel divinity";
+e="@15th.Undying Sentinel 1/1/long rest, 0hp is 1hp, no aging penalties, immune magical aging</td></tr><tr><td>@17th <b onClick=CommuneWithNature()>Commune with Nature</b> @17th<b onClick=TreeStride()'>TreeStride</b></td></tr><tr><td>@20th.ELDER CHAMPION 1/1/long rest, 10/10turns, heal 10hp/turn, spells 1act is bonus,10ft tgts save @DisAdv vs your paladin spells and channel divinity";
 }
 if(this.class.match(/Conquest/)){a="@3rd(Oath Spells)</td></tr><tr><td>@3rd(Channel Divinity)";
 b='';
