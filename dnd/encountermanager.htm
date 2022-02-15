@@ -104,7 +104,7 @@ a:active{color:#f13a37
 
 .MapSelection
 {
- width:3000px;
+ width:1000px;
 }
 
 .die20
@@ -1710,7 +1710,7 @@ if(rip=stats.match(/Aid/i)){this.Aid()};
 if(rip=stats.match(/Alter\sSelf/i)){this.AlterSelf()};
 if(rip=stats.match(/Animal\sMessenger/i)){this.AnimalMessenger()};
 if(rip=stats.match(/Arcane\sLock/i)){this.ArcaneLock()};
-if(rip=stats.match(/Augury\s/i)){this.Augury()};
+if(rip=stats.match(/Augury/i)){this.Augury()};
 if(rip=stats.match(/Barkskin/i)){this.Barkskin()};
 if(rip=stats.match(/Beast\sSense/i)){this.BeastSense()};
 if(rip=stats.match(/Blindness\sDeafness/i)){this.BlindnessDeafness()};
@@ -2723,19 +2723,19 @@ b="@3rd(Extra Spells)<b onClick='LesserRestoration()'>Lesser Restoration</b>, <b
 c="@5th(Extra Spells)<b onClick='BeaconOfHope()'>Beacon of Hope</b>, <b onClick=Revivify()>Revivify</b></td></tr><tr><td>@6th(Blessed Healer)when healing, you heal yourself 2+spell lvl</td></tr><tr><td>@7th(Extra Spells)<b onClick='DeathWard()'>Death Ward</b>, <b onClick='GuardianOfFaith()'>Guardian of Faith</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 radiant @14th+2d8)</td></tr><tr><td>@9th(Extra Spells)<b onClick=MassCureWounds()>Mass Cure Wounds</b>,<b onClick=RaiseDead()>Raise Dead</b>";
 dx='@17th(Supreme Healing)heal max roll'
 }
-if(this.class.match(/Light/)){a='@1st.BONUS CANTRIP Light, if know, other cantrip</td></tr><tr><td>@1st(Warding Flare)(wisMod/wisMod)/long rest, when atkd, 30ft, react atkd @DisAdv</td></tr><tr><td>@1st[x]Burning Hands</td></tr><tr><td>@1st[x]Faerie Fire</td></tr><tr><td>@2nd.RADIANCE OF THE DAWN 1CD 30ft Darkness dispelled DC8wis+pro vsCon 1/2dmg,less full cover radiant 2d10+c lvl';
+if(this.class.match(/Light/)){a='@1st(Bonus Cantrip)Light, if know, other cantrip</td></tr><tr><td>@1st(Warding Flare)(wisMod/wisMod)/long rest, when atkd, 30ft, react atkd @DisAdv</td></tr><tr><td>@1st[x]Burning Hands</td></tr><tr><td>@1st[x]Faerie Fire</td></tr><tr><td>@2nd(Radiance Of The Dawn)1CD 30ft Darkness dispelled DC8wis+pro vsCon 1/2dmg,less full cover radiant 2d10+c lvl';
 b='@3rd[x]Flaming Sphere ,@3rd[x]Scorching Ray';
-c="@5th[x]Daylight @5th<b onClick='Fireball()'>Fireball</b></td></tr><tr><td>@6th.IMPROVED FLARE use for allies</td></tr><tr><td>@7th<b onClick='GuardianOfFaith()'>Guardian of Faith</b> @7th[x]Wall of Fire</td></tr><tr><td>@8th.POTENT SPELLCASTING cantrip dmg+wisMod</td></tr><tr><td>@9th<b onClick=FlameStrike()>Flame Strike</b> @9th<b onClick=Scrying()>Scrying</b>";
-dx='@17th.CORONA OF LIGHT 1act,10/10turns, 60ft rad+30ft dim light save @DisAdv vs fire radiant'
+c="@5th[x]Daylight @5th<b onClick='Fireball()'>Fireball</b></td></tr><tr><td>@6th(Improved Flare)use for allies</td></tr><tr><td>@7th<b onClick='GuardianOfFaith()'>Guardian of Faith</b> @7th[x]Wall of Fire</td></tr><tr><td>@8th(Potent Spellcasting)cantrip dmg+wisMod</td></tr><tr><td>@9th<b onClick=FlameStrike()>Flame Strike</b> @9th<b onClick=Scrying()>Scrying</b>";
+dx='@17th(Corona Of Light)1act,10/10turns, 60ft rad+30ft dim light save @DisAdv vs fire radiant'
 }
-if(this.class.match(/Nature/)){a='@1st.ACOLYTE OF NATURE 1 cantrip, 2 skills+pro from Animal Handling, Nature, Survival</td></tr><tr><td>@1st(Bonus Proficiency)heavy armor</td></tr><tr><td>@1st[x]Animal Friendship @1st[x]Speak with Animals</td></tr><tr><td>@2nd.CHARM ANIMALS AND PLANTS 1CD, 30ft vsWis charmed 10/10turns or dmgd';
+if(this.class.match(/Nature/)){a='@1st(Acolyte Of Nature)1 cantrip, 2 skills+pro from Animal Handling, Nature, Survival</td></tr><tr><td>@1st(Bonus Proficiency)heavy armor</td></tr><tr><td>@1st[x]Animal Friendship @1st[x]Speak with Animals</td></tr><tr><td>@2nd.CHARM ANIMALS AND PLANTS 1CD, 30ft vsWis charmed 10/10turns or dmgd';
 b='@3rd[x]Barkskin ,@3rd[x]Spike Growth</td></tr><tr><td>@5th[x]Plant Growth';
-c="@5th[x]Wind Wall</td></tr><tr><td>@6th.DAMPEN ELEMENTS you or ally 30ft rad, react, resist acid, cold, lighting or thunder</td></tr><tr><td>@7th[x]Dominate Beast @7th[x]Grasping Vine</td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 cold, fire or lightning.(@14th)+2d8</td></tr><tr><td>@9th[x]Insect Plague @9th<b onClick=TreeStride()'>TreeStride</b>";
+c="@5th[x]Wind Wall</td></tr><tr><td>@6th(Dampen Elements)you or ally 30ft rad, react, resist acid, cold, lighting or thunder</td></tr><tr><td>@7th[x]Dominate Beast @7th[x]Grasping Vine</td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8 cold, fire or lightning.(@14th)+2d8</td></tr><tr><td>@9th[x]Insect Plague @9th<b onClick=TreeStride()'>TreeStride</b>";
 dx='@17th.MASTER OF NATURE bonus command the charmed animals and plants'
 }
 if(this.class.match(/Tempest/)){a="Detect Magic</td></tr><tr><td>@1st<b onClick='FogCloud()'>Fog Cloud</b> @1st<b onClick='Thunderwave()'>Thunderwave</b></td></tr><tr><td>@2nd(Destructive Wrath)1CD, deal max thunder dmg";
 b="@3rd<b onClick='GustOfWind()'>Gust of Wind</b> ,@3rd<b onClick='Shatter()'>Shatter</b>";
-c="@5th[x]Call Lightning @5th[x]Sleet Storm</td></tr><tr><td>@6th.THUNDERBOLT STRIKE when lightning dmg, option to push large or less 10ft</td></tr><tr><td>@7th[x]Control Water @7th<b onClick=IceStorm()'>IceStorm</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8thunder.(@14th)+2d8</td></tr><tr><td>@9th[x]Destructive Wave @9th[x]Insect Plague";
+c="@5th[x]Call Lightning @5th[x]Sleet Storm</td></tr><tr><td>@6th(Thunderbolt Strike)when lightning dmg, option to push large or less 10ft</td></tr><tr><td>@7th[x]Control Water @7th<b onClick=IceStorm()'>IceStorm</b></td></tr><tr><td>@8th(Divine Strike)1/turn weapon dmg+1d8thunder.(@14th)+2d8</td></tr><tr><td>@9th[x]Destructive Wave @9th[x]Insect Plague";
 dx='@17th.STORMBORN fly speed is walk speed'
 }
 if(this.class.match(/Trickery/)){a="@1st(Blessings of the Trickster)ally stealth@Adv 1hr<p><b onClick='CharmPerson()'>Charm Person</b>, <b onClick='DisguiseSelf()'>Disguise Self</b></td></tr><tr><td>@2nd(Invoke Duplicity)1CD conce,10/10turns bonus move 30ft atk@Adv";
@@ -2866,7 +2866,7 @@ ClericSpells+="<b onClick=MassHeal()>MassHeal</b>,"
 ClericSpells+="<b onClick=TrueResurrection()>TrueResurrection</b>"
 
 this.setFeatures('<h3>Spells Known:wis+lvl</h3></td></tr><tr><td>'+ClericSpells+'</td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Channel Divinity),@2nd(1/1)@5th(2/2)@18th(3/3)</td></tr><tr><td>@2nd(Turn Undead)1CD, 30ft-radi, vsWis or frightened, @DisAdv while cleric is in sight, dash away, 10/10turns</td></tr><tr><td>'+b+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Destroy Undead)1CD,@5th CR1/2,@8th CR1-1/2,@11th CR2-1/2,@14th CR3-1/2,@17th CR4-1/2</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Divine Intervention)d100 roll your lvl or lower,divine helps</td></tr><tr><td>'+dx+' @20th auto success');
-this.setActionNotes('1st Slots 2/2');
+this.setActionNotes('Channel Divinity:0/0');
 this.setEquipment('mace or warhammer.scale mail or leather armor or chain mail.light crossbow 20 bolts or simple weapon.priest pack or explorer pack.shield.holy symbol');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, simplewpns');
@@ -3079,11 +3079,110 @@ c='@10th(Additional Fighting Style)1';
 dx='@15th(Superior Critical)crit on natural 18, 19 or 20';
 e='@18th(Survivor)@half hp not 0hp, utso each turn heal 5+conMod'
 }
-if(this.class.match(/Knight/)){a='Eldritch Knight</td></tr><tr><td>@3rdweapon BOND ignore disarm, bonus summon, 2 bonds ok';
-b='@7th.WAR MAGIC cast cantrip, bonus weapon atk';
-c='@10th.ELDRITCH STRIKE on weapon hit, tgt saves @DisAdv vs your next spell';
-dx='@15th.ARCANE CHARGE use action surge then teleport 30ft</td></tr><tr><td>Relentless</td></tr><tr><td>@(15th 1/1)roll init with 0SD is 1SD';
-e='@18th.IMPROVED WAR MAGIC cast spell, make bonus weapon atk'
+EldritchKnightSpells="<h3>Cantrips:@3rd(2),@10th(3),@</h3>";
+EldritchKnightSpells+="<b onClick=AcidSplash()>AcidSplash<b>,";
+EldritchKnightSpells+="<b onClick=BladeWard()>BladeWard<b>,";
+EldritchKnightSpells+="<b onClick=BoomingBlade()>BoomingBlade<b>,";
+EldritchKnightSpells+="<b onClick=ChillTouch()>ChillTouch<b>,";
+EldritchKnightSpells+="<b onClick=ControlFlames()>ControlFlames<b>,";
+EldritchKnightSpells+="<b onClick=CreateBonfire()>CreateBonfire<b>,";
+EldritchKnightSpells+="<b onClick=DancingLights()>DancingLights<b>,";
+EldritchKnightSpells+="<b onClick=EncodeThoughts()>EncodeThoughts<b>,";
+EldritchKnightSpells+="<b onClick=FireBolt()>FireBolt<b>,";
+EldritchKnightSpells+="<b onClick=Friends()>Friends<b>,";
+EldritchKnightSpells+="<b onClick=Frostbite()>Frostbite<b>,";
+EldritchKnightSpells+="<b onClick=GreenFlameBlade()>GreenFlameBlade<b>,";
+EldritchKnightSpells+="<b onClick=Gust()>Gust<b>,";
+EldritchKnightSpells+="<b onClick=Infestation()>Infestation<b>,";
+EldritchKnightSpells+="<b onClick=Light()>Light<b>,";
+EldritchKnightSpells+="<b onClick=LightningLure()>LightningLure<b>,";
+EldritchKnightSpells+="<b onClick=MageHAnd()>MageHAnd<b>,";
+EldritchKnightSpells+="<b onClick=Mending()>Mending<b>,";
+EldritchKnightSpells+="<b onClick=Message()>Message<b>,";
+EldritchKnightSpells+="<b onClick=MindSliver()>MindSliver<b>,";
+EldritchKnightSpells+="<b onClick=MinorIllusion()>MinorIllusion<b>,";
+EldritchKnightSpells+="<b onClick=MoldEarth()>MoldEarth<b>,";
+EldritchKnightSpells+="<b onClick=OnOff(UA)()>OnOff(UA)<b>,";
+EldritchKnightSpells+="<b onClick=PoisonSpray()>PoisonSpray<b>,";
+EldritchKnightSpells+="<b onClick=Prestidigitation()>Prestidigitation<b>,";
+EldritchKnightSpells+="<b onClick=RayOfFrost()>RayOfFrost<b>,";
+EldritchKnightSpells+="<b onClick=SappingSting()>SappingSting<b>,";
+EldritchKnightSpells+="<b onClick=ShapeWater()>ShapeWater<b>,";
+EldritchKnightSpells+="<b onClick=ShockingGrasp()>ShockingGrasp<b>,";
+EldritchKnightSpells+="<b onClick=SwordBurst()>SwordBurst<b>,";
+EldritchKnightSpells+="<b onClick=Thunderclap()>Thunderclap<b>,";
+EldritchKnightSpells+="<b onClick=TolltheDead()>TolltheDead<b>,";
+EldritchKnightSpells+="<b onClick=TrueStrike()>TrueStrike<b>";
+EldritchKnightSpells+="<h3>1st Slot:@3rd(2),@4th(3),@7th(4)</h3>,";
+EldritchKnightSpells+="<b onClick=AbsorbElements()>AbsorbElements<b>,";
+EldritchKnightSpells+="<b onClick=AcidStream(UA)()>AcidStream(UA)<b>,";
+EldritchKnightSpells+="<b onClick=Alarm()>Alarm<b>,";
+EldritchKnightSpells+="<b onClick=BurningHAnds()>BurningHAnds<b>,";
+EldritchKnightSpells+="<b onClick=ChromaticOrb()>ChromaticOrb<b>,";
+EldritchKnightSpells+="<b onClick=EarthTremor()>EarthTremor<b>,";
+EldritchKnightSpells+="<b onClick=FrostFingers()>FrostFingers<b>,";
+EldritchKnightSpells+="<b onClick=JimsMagicMissile()>JimsMagicMissile<b>,";
+EldritchKnightSpells+="<b onClick=MageArmor()>MageArmor<b>,";
+EldritchKnightSpells+="<b onClick=MagicMissile()>MagicMissile<b>,";
+EldritchKnightSpells+="<b onClick=ProtectionFromEvilAndGood()>ProtectionFromEvilAndGood<b>,";
+EldritchKnightSpells+="<b onClick=Shield()>Shield<b>,";
+EldritchKnightSpells+="<b onClick=Snare()>Snare<b>,";
+EldritchKnightSpells+="<b onClick=TashasCausticBrew()>TashasCausticBrew<b>,";
+EldritchKnightSpells+="<b onClick=Thunderwave()>Thunderwave<b>,";
+EldritchKnightSpells+="<b onClick=WitchBolt()>WitchBolt<b>";
+EldritchKnightSpells+="<h3>2nd Slot:@7th(2),@10th(3)</h3>,";
+EldritchKnightSpells+="<b onClick=AganazzarsScorcher()>AganazzarsScorcher<b>,";
+EldritchKnightSpells+="<b onClick=ArcaneLock()>ArcaneLock<b>,";
+EldritchKnightSpells+="<b onClick=ContinualFlame()>ContinualFlame<b>,";
+EldritchKnightSpells+="<b onClick=Darkness()>Darkness<b>,";
+EldritchKnightSpells+="<b onClick=DigitalPhantom(UA)()>DigitalPhantom(UA)<b>,";
+EldritchKnightSpells+="<b onClick=GustOfWind()>GustOfWind<b>,";
+EldritchKnightSpells+="<b onClick=IcingdeathsFrost(UA)()>IcingdeathsFrost(UA)<b>,";
+EldritchKnightSpells+="<b onClick=MelfsAcidArrow()>MelfsAcidArrow<b>,";
+EldritchKnightSpells+="<b onClick=MentalBarrier(UA)()>MentalBarrier(UA)<b>,";
+EldritchKnightSpells+="<b onClick=RimesBindingIce()>RimesBindingIce<b>,";
+EldritchKnightSpells+="<b onClick=ScorchingRay()>ScorchingRay<b>,";
+EldritchKnightSpells+="<b onClick=Shatter()>Shatter<b>,";
+EldritchKnightSpells+="<b onClick=SnillocsSnowballStorm()>SnillocsSnowballStorm<b>,";
+EldritchKnightSpells+="<b onClick=ThoughtShield(UA)()>ThoughtShield(UA)<b>,";
+EldritchKnightSpells+="<b onClick=WardingWind()>WardingWind<b>,";
+EldritchKnightSpells+="<h3>3rd Slot:@13th(2),@16th(3)</h3>";
+EldritchKnightSpells+="<b onClick=Counterspell()>Counterspell<b>,";
+EldritchKnightSpells+="<b onClick=DispelMagic()>DispelMagic<b>,";
+EldritchKnightSpells+="<b onClick=Fireball()>Fireball<b>,";
+EldritchKnightSpells+="<b onClick=GlyphOfWarding()>GlyphOfWarding<b>,";
+EldritchKnightSpells+="<b onClick=IntellectFortress()>IntellectFortress<b>,";
+EldritchKnightSpells+="<b onClick=LeomundsTinyHut()>LeomundsTinyHut<b>,";
+EldritchKnightSpells+="<b onClick=LightningBolt()>LightningBolt<b>,";
+EldritchKnightSpells+="<b onClick=MagicCircle()>MagicCircle<b>,";
+EldritchKnightSpells+="<b onClick=MelfsMinuteMeteors()>MelfsMinuteMeteors<b>,";
+EldritchKnightSpells+="<b onClick=Nondetection()>Nondetection<b>,";
+EldritchKnightSpells+="<b onClick=ProtectionFromBallistics(UA)()>ProtectionFromBallistics(UA)<b>,";
+EldritchKnightSpells+="<b onClick=ProtectionFromEnergy()>ProtectionFromEnergy<b>,";
+EldritchKnightSpells+="<b onClick=PsionicBlast(UA)()>PsionicBlast(UA)<b>,";
+EldritchKnightSpells+="<b onClick=PulseWave()>PulseWave<b>,";
+EldritchKnightSpells+="<b onClick=RemoveCurse()>RemoveCurse<b>,";
+EldritchKnightSpells+="<b onClick=Sending()>Sending<b>,";
+EldritchKnightSpells+="<b onClick=WallOfSand()>WallOfSand<b>,";
+EldritchKnightSpells+="<b onClick=WallOfWater()>WallOfWater<b>,";
+EldritchKnightSpells+="<h3>4th Slot:@19th(1)</h3>";
+EldritchKnightSpells+="<b onClick=Banishment()>Banishment<b>,";
+EldritchKnightSpells+="<b onClick=FireShield()>FireShield<b>,";
+EldritchKnightSpells+="<b onClick=GravitySinkhole()>GravitySinkhole<b>,";
+EldritchKnightSpells+="<b onClick=IceStorm()>IceStorm<b>,";
+EldritchKnightSpells+="<b onClick=MordenkainensPrivateSanctum()>MordenkainensPrivateSanctum<b>,";
+EldritchKnightSpells+="<b onClick=OtilukesResilientSphere()>OtilukesResilientSphere<b>,";
+EldritchKnightSpells+="<b onClick=SickeningRadiance()>SickeningRadiance<b>,";
+EldritchKnightSpells+="<b onClick=Stoneskin()>Stoneskin<b>,";
+EldritchKnightSpells+="<b onClick=StormSphere()>StormSphere<b>,";
+EldritchKnightSpells+="<b onClick=VitriolicSphere()>VitriolicSphere<b>,";
+EldritchKnightSpells+="<b onClick=WallOfFire()>WallOfFire<b>,";
+EldritchKnightSpells+="<b onClick=WidogastsWebOfFire(HB)()>WidogastsWebOfFire(HB)<b>,";
+if(this.class.match(/Knight/)){a='Eldritch Knight</td></tr><tr><td>'+EldritchKnightSpells+'</td></tr><tr><td>@3rd(Weapon Bond)ignore disarm, bonus summon, 2 bonds ok';
+b='@7th(War Magic)cast cantrip, bonus weapon atk';
+c='@10th(Eldritch Strike)on weapon hit, tgt saves @DisAdv vs your next spell';
+dx='@15th(Arcane Charge)use action surge then teleport 30ft</td></tr><tr><td>Relentless</td></tr><tr><td>@(15th 1/1)roll init with 0SD is 1SD';
+e='@18th(Improved War Magic)cast spell, make bonus weapon atk'
 }
 this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)<br>(Archery)ranged atk+2or(Defense)while armored, AC+1<br>or(Dueling)melee dmg+2<br>or(Great Weapon Fighting)reroll on 1 or 2<br>or(Protection)with shield, adjac allies atkd @DisAdv<br>or(Two Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>@2nd(Second Wind)1/1 short rest, bonus,heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surges)@2nd 1/1,@17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)@4th,@6th,@8th@12th@14th@16th@19th</td></tr><tr><td>@5th(Extra atks)@5th 2,@10th 3,@20th 4</td></tr><tr><td>'+b+'</td></tr><tr><td>@9th(Indomitable)re-roll failed save/long rest@9th 1,@13th 2,@17th 3</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>'+e+'');
 this.setActionNotes("(Fighting Style)(?),(Second Wind)0/0,(Action Surges)0/0,(Extra Atks)0,(Indomitable)0/0(Relentless)0/0");
@@ -4404,6 +4503,7 @@ this.setResistance('Acid');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
+this.setTrait('15-80 yrs old('+(15+parseInt(rollDForm('1d65+0')))+'yrs old), 5ft6in tall+2d8in('+(5.6+(parseInt(rollDForm('2d8+0'))/12)).toFixed(1).replace('.', 'ft ')+'in), 175lbs+2d6('+(parseInt(175)+parseInt(rollDForm('2d6+0')))+'lbs)');
 if(this.race.match(/Dragonborn,Black/))
 {
 this.setProficienciesRace('(Breath weapon)(Black)1d6 Acid 5x30ft-lineDC8+'+characters[targeted].spellAbility+'+pro vsDex for half')}
@@ -4433,7 +4533,7 @@ if(this.race.match(/Dragonborn,Silver/))
 this.setProficienciesRace('(Breath weapon)(Silver)Cold 15ft-cone vsCon for half')}
 if(this.race.match(/Dragonborn,White/))
 {
-this.setProficienciesRace('(Breath weapon)(White)Cold 15ft-cone vsCon for half+1d6,@6th, 11th, 16th lvl, 1-80 years old, 250 lbs., 6+feet tall')}
+this.setProficienciesRace('(Breath weapon)(White)Cold 15ft-cone vsCon for half+1d6,@6th, 11th, 16th lvl')}
 }
 
 if(this.race.match(/Dwarf,\sHill/)){this.setAbility('con+2, wis+1');
