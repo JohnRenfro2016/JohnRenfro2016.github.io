@@ -1,6 +1,12 @@
- <html>
-
- <style>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta content="text/html" charset="utf-8" http-equiv="content-type">
+<meta content="utf-8" http-equiv="encoding">
+<meta name="description" content="Japanese Language Parser for English Native Learners">
+<meta name="keywords" content="Japanese Language, Grammar, Parsing, Kanji, Japan, Foreign Language, Study Material">
+<title>(JALPEN)The Japanese Language Parser for English Natives</title>
+<style>
 
 body
 {background-color:#000000;
@@ -29,6 +35,7 @@ overflow-wrap:anywhere;
 padding:1px;
 text-decoration:#22271f;
 text-decoration-thickness:2px;
+v-align:top;
 vertical-align:center;
 word-break:break-word;
 z-index:2;
@@ -38,7 +45,7 @@ td,
 tr
 {
 max-width:300px;
-min-width:50px;
+min-width:300px;
 word-wrap: normal;
 }
 
@@ -57,17 +64,6 @@ a:active{color:#f13a37
 </style>
 
 <script>
-
-var translations= { 'en' :
-{'title' : 'Title', 'content' : 'Content of the document...'},
-'fr' :
-{'title' : 'Titre', 'content' : 'Contenu du document'}
-};
-function doTranslate(language)
-{for(id in translations[language])
-{document.getElementById(id).innerHTML = translations[language][id];
-}
-}
 
 function translateA()
 {
@@ -933,9 +929,9 @@ a=translation
 .replace(/(?!X)(婚)(?!X)(約)/g,'<p>X$1X$2、こんや,betrothal(n)')
 .replace(/(?!X)(婦)(?!X)(人)/g,'<p>X$1X$2、ふじん,lady(n)')
 .replace(/(?!X)(子)(?!X)(供)/g,'<p>X$1X$2、こども,kid(n)')
-.replace(/(?!X)(子)(?!X)(孫)/g,'<p>X$1X$2、しそn,offspring(n)')
+.replace(/(?!X)(子)(?!X)(孫)/g,'<p>X$1X$2、しそん,offspring(n)')
 .replace(/(?!X)(字)(?!X)(引)/g,'<p>X$1X$2、じBえき,dictionary(n)')
-.replace(/(?!X)(存)(?!X)(在)/g,'<p>X$1X$2、そnざい,being(n)')
+.replace(/(?!X)(存)(?!X)(在)/g,'<p>X$1X$2、そんざい,being(n)')
 .replace(/(?!X)(季)(?!X)(節)/g,'<p>X$1X$2、きせつ,season(n)')
 .replace(/(?!X)(孤)(?!X)(独)/g,'<p>X$1X$2、こど,lonely(n)')
 .replace(/(?!X)(学)(?!X)(会)/g,'<p>X$1X$2、がんっかい,academic aっしociation,acad(n)')
@@ -1029,7 +1025,7 @@ a=translation
 .replace(/(?!X)(専)(?!X)(用)/g,'<p>X$1X$2、せんよう,exclusive use,private use(n)')
 .replace(/(?!X)(専)(?!X)(門)/g,'<p>X$1X$2、せんもん,specialty(n)')
 .replace(/(?!X)(将)(?!X)(来)/g,'<p>X$1X$2、しょうり,in the future(n)')
-.replace(/(?!X)(尊)(?!X)(敬)/g,'<p>X$1X$2、そnけい,esteem,honor(n)')
+.replace(/(?!X)(尊)(?!X)(敬)/g,'<p>X$1X$2、そんけい,esteem,honor(n)')
 .replace(/(?!X)(導)(?!X)(入)/g,'<p>X$1X$2、ど-にゅう,introduction(n)')
 .replace(/(?!X)(小)(?!X)(便)/g,'<p>X$1X$2、しょうべん,pee(n)')
 .replace(/(?!X)(小)(?!X)(包)/g,'<p>X$1X$2、こづつみ,package(n)')
@@ -1316,7 +1312,7 @@ a=translation
 .replace(/(?!X)(採)(?!X)(点)/g,'<p>X$1X$2、さいてん,grading(n)')
 .replace(/(?!X)(採)(?!X)(用)/g,'<p>X$1X$2、さいよう,employment(n)')
 .replace(/(?!X)(採)(?!X)(算)/g,'<p>X$1X$2、さいさん,profit(n)')
-.replace(/(?!X)(接)(?!X)(種)/g,'<p>X$1X$2、せっしゅう,inoculation(n)')
+.replace(/(?!X)(接)(?!X)(種)/g,'<p>X$1X$2、せっしゅ,inoculation(n)')
 .replace(/(?!X)(接)(?!X)(続)/g,'<p>X$1X$2、せつぞ,joining(n)')
 .replace(/(?!X)(接)(?!X)(近)/g,'<p>X$1X$2、せっきん,proximity(n)')
 .replace(/(?!X)(推)(?!X)(測)/g,'<p>X$1X$2、すいそ,guess(n)')
@@ -1329,7 +1325,8 @@ a=translation
 .replace(/(?!X)(提)(?!X)(案)/g,'<p>X$1X$2、ていあん,proposal(n)')
 .replace(/(?!X)(握)(?!X)(手)/g,'<p>X$1X$2、あくしゅう,handshaking(n)')
 .replace(/(?!X)(援)(?!X)(助)/g,'<p>X$1X$2、えんじょ,assistance(n)')
-.replace(/(?!X)(損)(?!X)(害)/g,'<p>X$1X$2、そnがい,harm(n)')
+.replace(/(?!X)(損)(?!X)(害)/g,'<p>X$1X$2、そんがい,harm(n)')
+.replace(/(?!X)(陽)(?!X)(性)/g,'<p>X$1X$2、ようせい,positive diagnosis(n)')
 .replace(/(?!X)(搭)(?!X)(載)/g,'<p>X$1X$2、とうさい,equipping(n)')
 .replace(/(?!X)(摩)(?!X)(擦)/g,'<p>X$1X$2、まさつ,rubbing(n)')
 .replace(/(?!X)(撮)(?!X)(影)/g,'<p>X$1X$2、さつえい,Shoot(n)')
@@ -2456,7 +2453,7 @@ a=translation
 .replace(/(?!X)(辞)(?!X)(典)/g,'<p>X$1X$2、じてん,dictionary(n)')
 .replace(/(?!X)(辞)(?!X)(書)/g,'<p>X$1X$2、じしょ,dictionary(n)')
 .replace(/(?!X)(農)(?!X)(家)/g,'<p>X$1X$2、のうか,farmhouse(n)')
-.replace(/(?!X)(農)(?!X)(村)/g,'<p>X$1X$2、のうそn,farm village(n)')
+.replace(/(?!X)(農)(?!X)(村)/g,'<p>X$1X$2、のうそん,farm village(n)')
 .replace(/(?!X)(農)(?!X)(業)/g,'<p>X$1X$2、のうぎょう,agriculture(n)')
 .replace(/(?!X)(農)(?!X)(民)/g,'<p>X$1X$2、のうみn,farmers(n)')
 .replace(/(?!X)(近)(?!X)(代)/g,'<p>X$1X$2、きんだい,modern times(n)')
@@ -5801,20 +5798,15 @@ document.getElementById('translationDisplay3').innerHTML=d;
 </script>
 
 <body>
-<h3>possible dictionary Form in the future</h3>
-<a href="javascript:doTranslate('en')">English</a>
-<a  href="javascript:doTranslate('fr')">French</a>
-<h2 id="title">Title</h2>
-<p id="content">Content</p>
 
 <h3>Cut and Paste the Japanese Text</h3>
 <textArea cols='40' rows='8' onChange='translation=this.value;translateC(translation)'>
 </textArea>
 <p>
-<table><tr><td>
+<table><tr valign=top><td>
 <h3>Two Kanji Test</h3>
 <b id='translationDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 <h3>Single Kanji and Verb Test</h3>
 <b id='translationDisplay3'></b>
 </td></tr></table>
