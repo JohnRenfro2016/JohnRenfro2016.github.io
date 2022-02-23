@@ -239,7 +239,7 @@ function reduceByOne4(){document.getElementById('4thDuration').value=(document.g
 <input type='button' onclick='reduceByOne4()' value='end turn?'>
 </td></tr><tr><td>
 <h3>Paste Stats</h3>
-<textArea cols='40' rows='8' onChange='stats=this.value;setStats()' placeHolder='Target a piece then paste statistics from FastCharacter.Com or from statistics in the standard 5th Edition format.'></textarea><b id='statsDisplay'></b>
+<textArea cols='40' rows='8' onChange='stats=this.value;setStats()' placeHolder='Create a new character then target it to receive the pasted statistics from FastCharacter.Com or from statistics in the standard 5th Edition format.'></textarea><b id='statsDisplay'></b>
 </td><td>
 <h3>Encounter Notes</h3>
 <textArea cols='40' placeHolder='Keep notes on experience point awards, treasure to be divided, etc. This does not save when you hold down the shift key and reload the page. Save your characters and creatures after allocating XP and treasure on each character sheet first before reloading.' rows='8'></textarea>
@@ -1080,7 +1080,7 @@ s2="()' type='button' value='",
 s3="'/></td><td>"
 s4=document.write.bind(document)
 
-s4("<table><tr><td>tgt the piece to receive these wpns or spells first</td><td>")
+s4("<table><tr><td>Target the character or creature to receive these weapons or spells first</td><td>")
 s4(s1+'Club'+s2+'(simple melee wpn)Club'+s3)
 s4(s1+'Dagger'+s2+'(simple melee wpn)Dagger'+s3)
 s4(s1+'Greatclub'+s2+'(simple melee wpn)Greatclub'+s3)
