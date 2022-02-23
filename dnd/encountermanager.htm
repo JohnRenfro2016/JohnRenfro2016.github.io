@@ -106,45 +106,45 @@ a:active{color:#f13a37
 
 .die20
 {
- height: 150px;
- width: 150px;
+ height: 100px;
+ width: 100px;
  object-fit: none;
  object-position: 97% 50%;
 }
 
 .die12
 {
- height:150px;
- width: 150px;
+ height:100px;
+ width: 100px;
  object-fit: none;
  object-position: 73% 50%;
 }
 
 .die10
 {
- height: 150px;
- width: 150px;
+ height: 100px;
+ width: 100px;
  object-fit: none;
  object-position: 97% 50%;
 }
 .die8
 {
- height: 150px;
- width: 150px;
+ height: 100px;
+ width: 100px;
  object-fit: none;
  object-position: 47% 50%;
 }
 .die6
 {
- height: 150px;
- width: 150px;
+ height: 100px;
+ width: 100px;
  object-fit: none;
  object-position: 25% 50%;
 }
 .die4
 {
- height: 150px;
- width: 150px;
+ height: 100px;
+ width: 100px;
  object-fit: none;
  object-position: 3% 50%;
 }
@@ -167,92 +167,91 @@ background-color:#f8ecdd;
 </td><td>
 <input type='button' value='Create a new character?' onClick='newCharacter(PC)'>
 </td><td>
+To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
+</td><td>
+<a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
+</td><td>
 <a href="http://asmor.com/5e/spellbook/">Asmor's Spellbook</a>
 </td><td>
 <a href='https://fastcharacter.com' target='_blank'>FastCharacter.Com</a>
 </td><td>
 <a href='https://www.kassoon.com/dnd/5e' target='_blank'>Kasson's D&D Tools</a>
-</td><td rowSpan='3'>
-tgt then paste stats
-<textArea cols='40' rows='8' onChange='stats=this.value;setStats()'></textarea><b id='statsDisplay'></b>
+</td></tr></table>
+<br>
+<table><tr><td>
+<input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollOneDisplay'></b>
+</td><td rowSpan='12'>
+<img class='MapSelection' src='Maps/Map.png'>
 </td></tr><tr><td>
-Encounter Notes,XP totals(not saved after shift reload of webpage):
-<input type='field' size='40'>
+<input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollTwoDisplay'></b>
+</td></tr><tr><td>
+<input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollThreeDisplay'></b>
+</td></tr><tr><td>
+<input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFourDisplay'></b>
+</td></tr><tr><td>
+<input onMouseOut="rollFive=parseInt(rollDForm(this.value));document.getElementById('rollFiveDisplay').innerHTML='('+naturalRoll+roll+')='+rollFive" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFiveDisplay'></b>
+</td></tr><tr><td>
+<input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollSixDisplay'></b>
+</td></tr><tr><td>
+<img class='die20' src='Decorations/DiceSprite.jpeg'>
+<input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?'><b id='d20result'></b>
+</td></tr><tr><td>
+<img class='die12' src='Decorations/DiceSprite.jpeg'>
+<input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?'><b id='d12result'></b>
+</td></tr><tr><td>
+<img class='die10' src='Decorations/DiceSprite.jpeg'>
+<input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?'><b id='d10result'></b>
+</td></tr><tr><td>
+<img class='die8' src='Decorations/DiceSprite.jpeg'>
+<input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?'><b id='d8result'></b>
+</td></tr><tr><td>
+<img class='die6' src='Decorations/DiceSprite.jpeg'>
+<input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?'><b id='d6result'></b>
+</td></tr><tr><td>
+<img class='die4' src='Decorations/DiceSprite.jpeg'>
+<input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
+</td></tr></table>
+<table><tr><td>
+<h3>Condition Durations:(not saved after shift reload)</h3>
 </td><td>
-Condition Durations:
 <input type='field' size='40'>10/<input id='1stDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne(){document.getElementById('1stDuration').value=(document.getElementById('1stDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne()' value='end turn?'>
 </td><td>
-Condition Durations:
 <input type='field' size='40'>10/<input id='2ndDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne2(){document.getElementById('2ndDuration').value=(document.getElementById('2ndDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne2()' value='end turn?'>
 </td><td>
-Condition Durations:
 <input type='field' size='40'>10/<input id='3rdDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne3(){document.getElementById('3rdDuration').value=(document.getElementById('3rdDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne3()' value='end turn?'>
-</td><td>
-Condition Durations:
+</td>><td>
 <input type='field' size='40'>10/<input id='4thDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne4(){document.getElementById('4thDuration').value=(document.getElementById('4thDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne4()' value='end turn?'>
-</td><td>
-<a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
-</td><td>
-To save your characters, play off-line. <a href="dnd.zip">dnd.zip</a>
 </td></tr><tr><td>
-<input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollOneDisplay'></b>
-<br>
-<input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollTwoDisplay'></b>
-<br>
-<input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollThreeDisplay'></b>
-<br>
-<input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFourDisplay'></b>
-<br>
-<input onMouseOut="rollFive=parseInt(rollDForm(this.value));document.getElementById('rollFiveDisplay').innerHTML='('+naturalRoll+roll+')='+rollFive" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFiveDisplay'></b>
-<br>
-<input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollSixDisplay'></b>
+<h3>Paste Stats</h3>
+<textArea cols='40' rows='8' onChange='stats=this.value;setStats()' placeHolder='Target a piece then paste statistics from FastCharacter.Com or from statistics in the standard 5th Edition format.'></textarea><b id='statsDisplay'></b>
 </td><td>
-<img class='die20' src='Decorations/DiceSprite.jpeg'><br>
-<input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?'><b id='d20result'></b>
+<h3>Encounter Notes</h3>
+<textArea cols='40' placeHolder='Keep notes on experience point awards, treasure to be divided, etc. This does not save when you hold down the shift key and reload the page. Save your characters and creatures after allocating XP and treasure on each character sheet first before reloading.' rows='8'></textarea>
 </td><td>
-<img class='die12' src='Decorations/DiceSprite.jpeg'><br>
-<input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?'><b id='d12result'></b>
-</td><td>
-<img class='die10' src='Decorations/DiceSprite.jpeg'><br>
-<input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?'><b id='d10result'></b>
-</td><td>
-<img class='die8' src='Decorations/DiceSprite.jpeg'><br>
-<input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?'><b id='d8result'></b>
-</td><td>
-<img class='die6' src='Decorations/DiceSprite.jpeg'><br>
-<input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?'><b id='d6result'></b>
-</td><td>
-<img class='die4' src='Decorations/DiceSprite.jpeg'><br>
-<input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
-</td></tr></table>
-<br>
-<img class='MapSelection' src='Maps/Map.png'>
-<br>
-<table><tr><td>
 Random Skills:<br><span id='displayRandomSkills'></span>
-</td></tr><tr><td>
+<p>
 Random Languages:<br><span id='displayRandomLanguages'></span>
-</td></tr><tr><td>
+</td><td>
 Random Musical Instruments:<br><span id='displayRandomMusicalInstruments'></span>
-</td></tr><tr><td>
+<p>
 Random Tools:<br><span id='displayRandomTools'></span>
-</td></tr><tr><td>
+</td><td>
 Random Gambling Sets:<span id='displayRandomGamblingSets'></span>
 </td></tr></table>
 
@@ -1078,10 +1077,10 @@ addRollPrompt(targeted)}
 
 s1="<input onClick='",
 s2="()' type='button' value='",
-s3="'/></td></tr><tr><td>"
+s3="'/></td><td>"
 s4=document.write.bind(document)
 
-s4("<table><tr><td>tgt the piece to receive these wpns or spells first</td></tr><tr><td>")
+s4("<table><tr><td>tgt the piece to receive these wpns or spells first</td><td>")
 s4(s1+'Club'+s2+'(simple melee wpn)Club'+s3)
 s4(s1+'Dagger'+s2+'(simple melee wpn)Dagger'+s3)
 s4(s1+'Greatclub'+s2+'(simple melee wpn)Greatclub'+s3)
