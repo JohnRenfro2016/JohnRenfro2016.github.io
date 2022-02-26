@@ -231,7 +231,7 @@ function reduceByOne2(){document.getElementById('2ndDuration').value=(document.g
 function reduceByOne3(){document.getElementById('3rdDuration').value=(document.getElementById('3rdDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne3()' value='end turn?'>
-</td>><td>
+</td><td>
 <input type='field' size='40'>10/<input id='4thDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne4(){document.getElementById('4thDuration').value=(document.getElementById('4thDuration').value-1)}
@@ -1357,48 +1357,25 @@ if(str=stats.match(/Stealth\s\(Dex\)\s\*\*/)){characters[targeted].setStealth('e
 characters[targeted].setSurvival('');
 if(str=stats.match(/Survival\s\(Wis\)\s\*/)){characters[targeted].setSurvival('pro')}
 if(str=stats.match(/Survival\s\(Wis\)\s\*\*/)){characters[targeted].setSurvival('exp')}
-if(rip=stats.match(/(Bite)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){
-characters[targeted].setRollName1(rip[1]);
+
+if(rip=stats.match(/(Multiattack[\s\S]*?\.)[\r\n]/)){characters[targeted].setActionNotes(rip[0])}
+
+if(rip=stats.match(/(Claw)\.\sMelee\sWeapon\sAttack:\s([\s\S]*?)\sto\shit,\s([\s\S]*?)Hit:[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)damage.[\r\n]/)){
+characters[targeted].setRollName1(rip[1]+' '+rip[3]);
 characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
+characters[targeted].setRollName2(rip[5]);
+characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
 addRollPrompt(targeted);
 }
-if(rip=stats.match(/(Claw)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){
-characters[targeted].setRollName1(rip[1]);
+
+if(rip=stats.match(/(Mandibles)\.\sMelee\sWeapon\sAttack:\s([\s\S]*?)\sto\shit,\s([\s\S]*?)Hit:[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)damage.[\r\n]/)){
+characters[targeted].setRollName1(rip[1]+' '+rip[3]);
 characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
+characters[targeted].setRollName2(rip[5]);
+characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
 addRollPrompt(targeted);
 }
-if(rip=stats.match(/(Hoof)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){
-characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
-addRollPrompt(targeted);
-}
-if(rip=stats.match(/(Horn)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){
-characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
-addRollPrompt(targeted);
-}
-if(rip=stats.match(/(Slam)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){
-characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
-addRollPrompt(targeted);
-}
-if(rip=stats.match(/(Longbow)\.\sRanged[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){
-characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/g, ''));
-addRollPrompt(targeted);
-}
+
 if(rip=stats.match(/^([\s\S]*?)CLASS[\s\S]*?LEVEL([\s\S]*?)(\d{1,2})\s([\s\S]*?)EXPERIENCE\sPOINTS([\s\S]*?)PLAYER NAME[\s\S]*?HERITAGE([\s\S]*?)BACKGROUND([\s\S]*?)CAMPAIGN[\s\S]*?STR[\s\S]*?\d{1}\s(\d{1,2})\sDEX[\s\S]*?\d{1}\s(\d{1,2})\sCON[\s\S]*?\d{1}\s(\d{1,2})\sINT[\s\S]*?\d{1}\s(\d{1,2})\sWIS[\s\S]*?\d{1}\s(\d{1,2})\sCHA[\s\S]*?\d{1}\s(\d{1,2})/)){
 characters[targeted].setLvl(rip[3]);
 characters[targeted].setClass(rip[2]+""+rip[4]);
@@ -2049,7 +2026,7 @@ if(rip=stats.match(/True\sResurrection/i)){this.TrueResurrection()};
 if(rip=stats.match(/Weird/i)){this.Weird()};
 if(rip=stats.match(/Wish/i)){this.Wish()};
 
-if(rip=stats.match(/XP\)([\s\S]*)$/))
+if(rip=stats.match(/XP\)([\s\S]*?)ACTIONS/))
 {
 characters[targeted].setFeatureNotes(rip[1].replace(/\./g, '\.\n'))}
 checkTheTarget();
@@ -2261,6 +2238,7 @@ boxContents+="</td><td>Feature Notes:<textArea cols='40' rows='2' onChange='char
 boxContents+="</td></tr><tr><td>Racial Proficiencies:<input maxLength='400' onChange='characters["+this.index+"].setProficienciesRace(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.proficienciesRace+"'>";
 boxContents+="</td><td>Background Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setBackT(this.value)' size='40' value='"+this.backT+"'>";
 boxContents+="</td><td>Class Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setProficiencies(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.proficiencies+"'>";
+
 if(this.class.match(/Arcane\sTrickster|Bard|Cleric|Druid|Eldritch|Paladin|Ranger|Sorcerer|Warlock|Wizard/))
 {
 boxContents+="</td></tr><tr><td>1st Spell Lvl Slots: "+this.maxSlot1+"<input onClick='this.value="+(this.curSlot1-1)+";characters["+this.index+"].setCurSlot1(this.value);checkTheTarget("+this.index+")' type='button' value='Spend?'>"+this.curSlot1;
@@ -2273,8 +2251,8 @@ boxContents+="</td></tr><tr><td>7th Spell Lvl Slots: "+this.maxSlot7+"<input onC
 boxContents+="</td><td>8th Spell Lvl Slots: "+this.maxSlot8+"<input onClick='this.value="+(this.curSlot8-1)+";characters["+this.index+"].setCurSlot8(this.value);checkTheTarget("+this.index+")' type='button' value='Spend?'>"+this.curSlot8;
 boxContents+="</td><td>9th Spell Lvl Slots: "+this.maxSlot9+"<input onClick='this.value="+(this.curSlot9-1)+";characters["+this.index+"].setCurSlot9(this.value);checkTheTarget("+this.index+")' type='button' value='Spend?'>"+this.curSlot9;
 boxContents+="</td></tr><tr><td colSpan='3'><img src='Decorations/GameTokens.png' width='50px'>";
+boxContents+="</td><td colSpan='2'>Rest to earn back your spent game token slots.<input onClick='characters["+this.index+"].setCurSlot1("+this.maxSlot1+");characters["+this.index+"].setCurSlot2("+this.maxSlot2+");characters["+this.index+"].setCurSlot3("+this.maxSlot3+");characters["+this.index+"].setCurSlot4("+this.maxSlot4+");characters["+this.index+"].setCurSlot5("+this.maxSlot5+");characters["+this.index+"].setCurSlot6("+this.maxSlot6+");characters["+this.index+"].setCurSlot7("+this.maxSlot7+");characters["+this.index+"].setCurSlot8("+this.maxSlot8+");characters["+this.index+"].setCurSlot9("+this.maxSlot9+");checkTheTarget("+this.index+")' type='button' value='Take a rest?'>";
 }
-boxContents+="Rest to earn back your spent game token slots.<input onClick='characters["+this.index+"].setCurSlot1("+this.maxSlot1+");characters["+this.index+"].setCurSlot2("+this.maxSlot2+");characters["+this.index+"].setCurSlot3("+this.maxSlot3+");characters["+this.index+"].setCurSlot4("+this.maxSlot4+");characters["+this.index+"].setCurSlot5("+this.maxSlot5+");characters["+this.index+"].setCurSlot6("+this.maxSlot6+");characters["+this.index+"].setCurSlot7("+this.maxSlot7+");characters["+this.index+"].setCurSlot8("+this.maxSlot8+");characters["+this.index+"].setCurSlot9("+this.maxSlot9+");checkTheTarget("+this.index+")' type='button' value='Take a rest?'>";
 boxContents+="</td></tr></table><table><tr><td>Make a new roll?</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName1(this.value);checkTheTarget("+this.index+")'placeHolder='atkRollToHitName+Ability+pro SpellSlot RangeInFeet'size='40' type='text' value='"+this.rollName1+"'>"
 boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll1(this.value);checkTheTarget("+this.index+")'placeHolder='XdY+Z'size='8' type='text' value="+this.roll1+">"
 boxContents+="</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName2(this.value);checkTheTarget("+this.index+")'placeHolder=' dmgType+Ability and dmgConditions' size='40' type='text' value='"+this.rollName2+"'>"
