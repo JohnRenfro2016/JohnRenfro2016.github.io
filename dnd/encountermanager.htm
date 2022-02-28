@@ -1359,6 +1359,14 @@ if(str=stats.match(/Survival\s\(Wis\)\s\*\*/)){characters[targeted].setSurvival(
 
 if(rip=stats.match(/(Multiattack[\s\S]*?\.)[\r\n]/)){characters[targeted].setActionNotes(rip[0])}
 
+if(rip=stats.match(/(DC\s\d{1,2})\s(Strength|Dexterity|Constitution|Wisdom|Charisma)\ssaving\sthrow/)){
+characters[targeted].setRollName1(rip[1]+'read to convert to DC8+abi+pro vs'+rip[2]);
+characters[targeted].setRoll1('0d0+0');
+characters[targeted].setRollName2('read and summarize the dmg conditions');
+characters[targeted].setRoll2('0d0+0');
+addRollPrompt(targeted);
+}
+
 if(rip=stats.match(/(Bite)\.\sMelee\sWeapon\sAttack:\s([\s\S]*?)\sto\shit,\s([\s\S]*?)Hit:[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)damage.[\r\n]/)){
 characters[targeted].setRollName1(rip[1]+' '+rip[3]);
 characters[targeted].setRoll1('1d20'+rip[2]);
