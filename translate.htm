@@ -557,8 +557,10 @@ a=translation
 .replace(/(労力)/g,'<p>$1,rouryo,work(n)')
 .replace(/(効力)/g,'<p>$1,kouryo,validity(n)')
 .replace(/(効果)/g,'<p>$1,kouka,result(n)')
+.replace(/(豪華)/g,'<p>$1,gouka,extravagant(n)')
 .replace(/(効率)/g,'<p>$1,kouritsu,efficiency(n)')
 .replace(/(勇敢)/g,'<p>$1,yuukan,heroic(n)')
+.replace(/(実写)/g,'<p>$1,jissya,live action(n)')
 .replace(/(勇気)/g,'<p>$1,yuuki,nerve(n)')
 .replace(/(勉強)/g,'<p>$1,benkyou,study(n)')
 .replace(/(動作)/g,'<p>$1,dousa,actions(n)')
@@ -1157,6 +1159,12 @@ a=translation
 .replace(/(当番)/g,'<p>$1,touban,being on duty,person on d(n)')
 .replace(/(当選)/g,'<p>$1,tousen,election to office(n)')
 .replace(/(形式)/g,'<p>$1,keishiki,model(n)')
+.replace(/(主演)/g,'<p>$1,syuen,starring(n)')
+.replace(/(錬成)/g,'<p>$1,rensei,training(n)')
+.replace(/(完結)/g,'<p>$1,kanketsu,conclusion(n)')
+.replace(/(参戦)/g,'<p>$1,sansen,participation in war(n)')
+.replace(/(続編)/g,'<p>$1,zokuhen,sequel(n)')
+.replace(/(予告)/g,'<p>$1,yokoku,trailer(n)')
 .replace(/(形成)/g,'<p>$1,keisei,formation(n)')
 .replace(/(影響)/g,'<p>$1,eikyou,effect(n)')
 .replace(/(役人)/g,'<p>$1,yakunin,government official(n)')
@@ -2115,6 +2123,7 @@ a=translation
 .replace(/(精算)/g,'<p>$1,seisan,settlement of accounts,ad(n)')
 .replace(/(系列)/g,'<p>$1,keiretsu,affiliation(n)')
 .replace(/(系統)/g,'<p>$1,keitou,lineage(n)')
+.replace(/(前編)/g,'<p>$1,zenpen,prequel(n)')
 .replace(/(約束)/g,'<p>$1,yakuso,vow(n)')
 .replace(/(紅茶)/g,'<p>$1,koucya,black tea(n)')
 .replace(/(紅葉)/g,'<p>$1,kouyou,autumn leaves,crimson fol(n)')
@@ -3295,13 +3304,13 @@ document.getElementById('translationDisplay').innerHTML=a;
 </script>
 
 <body>
-新型コロナウイルスワクチンの５～１１歳への接種が３月から本格化するのを前に、自分の子供に接種させるかの判断で保護者が揺れている。保育所や学校でオミクロン株の感染が拡大する中、積極的な接種で安心感を得ようとする人もいれば、副反応の懸念から慎重姿勢の人も少なくない。現場の医師は科学的根拠のある情報をもとに決めることが重要と指摘する。
+実写映画「鋼の錬金術師」完結編2部作、豪華キャスト発表　山田涼介続投、スカー役・新田真剣佑ら参戦映画実写映画「鋼の錬金術師」の続編が、完結編として2部作で連続公開されることが決定した。主演・山田涼介をはじめ本田翼、ディーン・フジオカ、蓮佛美沙子、本郷奏多ら前作キャストが続投するほか、新田真剣佑、黒島結菜、渡邊圭祐、山田裕貴、舘ひろし、内野聖陽らが新たに参戦。前編「鋼の錬金術師　完結編　復讐者スカー」が5月20日、後編「鋼の錬金術師　完結編　最後の錬成」が6月24日に公開される。あわせて、予告編とビジュアル2種もお披露目された。
 <h3>Cut and Paste the Japanese Text</h3>
 <textArea cols='40' rows='8' onChange='translation=this.value;translateA(translation)'>
 </textArea>
 <p>
 <table><tr valign=top><td>
-<h3>a test of two kanji nouns and 1 kanji verbs(you decide the best definition from the context using the key word)</h3>
+<h3>a test of two kanji common nouns and 1 kanji verbs while focusing on grammar</h3>
 <b id='translationDisplay'></b>
 </td></tr></table>
 <p>
