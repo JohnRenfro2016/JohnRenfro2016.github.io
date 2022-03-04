@@ -1416,6 +1416,14 @@ characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
 addRollPrompt(targeted);
 }
 
+if(rip=stats.match(/(Net)\.\sRanged\sWeapon\sAttack:\s([\s\S]*?)\sto\shit,\s([\s\S]*?)Hit:[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)damage.[\r\n]/)){
+characters[targeted].setRollName1(rip[1]+' '+rip[3]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[5]);
+characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
+addRollPrompt(targeted);
+}
+
 if(rip=stats.match(/(Rock)\.\sRanged\sWeapon\sAttack:\s([\s\S]*?)\sto\shit,\s([\s\S]*?)Hit:[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)damage.[\r\n]/)){
 characters[targeted].setRollName1(rip[1]+' '+rip[3]);
 characters[targeted].setRoll1('1d20'+rip[2]);
@@ -2252,15 +2260,13 @@ boxContents+="</td></tr><tr><td><input type='button' value='Delete this characte
 boxContents+="</td></table></td><td><table><tr><td>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
 boxContents+="</td><td>Spell (Abi)lity:<select onChange='characters["+this.index+"].setSpellAbility(this.value);checkTheTarget("+this.index+")'><option>"+this.spellAbility+"<option>int<option>wis<option>cha</select>"+this.spellAbilityNumber;
 boxContents+="</td><td>Level (Pro)ficiency:"+this.pro;
-boxContents+="</td><td><input onClick='toggleTab2("+this.index+");checkTheTarget("+this.index+")' type='button' value='Combat Results?'>";
 boxContents+="</td><td><input onClick='toggleTab3("+this.index+");checkTheTarget("+this.index+")' type='button' value='Abilities?'>";
 boxContents+="</td><td><input onClick='toggleTab4("+this.index+");checkTheTarget("+this.index+")' type='button' value='Actions?'>";
 boxContents+="</td><td><input onClick='toggleTab5("+this.index+");checkTheTarget("+this.index+")' type='button' value='Background?'>";
 boxContents+="</td><td><input onClick='toggleTab6("+this.index+");checkTheTarget("+this.index+")' type='button' value='Class?'>";
-
+boxContents+="</td><td><input onClick='toggleTab2("+this.index+");checkTheTarget("+this.index+")' type='button' value='Combat Results?'>";
 boxContents+="</td></tr></table></span><span id=toggled2"+this.index+" style='display:"+this.toggled2+"'>";
 boxContents+="<table><tr><td>"+this.combatLog;
-
 boxContents+="</td></tr></table></span><span id=toggled4"+this.index+" style='display:"+this.toggled4+"'>";
 boxContents+="<table><tr><td>ACTIONS<textArea cols='40' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiatks and SpellSlots'>"+this.actionNotes+"</textArea>"
 boxContents+="</td><td>Feature Notes:<textArea cols='40' rows='2' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
