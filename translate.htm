@@ -6069,20 +6069,26 @@ RuV=translation
 .replace(/(黙)(ら|り|る|れ|ろ|っ)/g,'<p>$1、だま、become silent, shut one\'s mouth,$2')
 
 .replace(/-v\)(う|く|す|む|ぶ|ぬ|る)/g,'-v)<br>doing, to do(noun form)<p>')
-.replace(/(え|け|せ|め|べ|ね|れ)/g,'<br>$1、can do')
+.replace(/-v\)(え|け|せ|め|べ|ね|れ)/g,'-v)can do')
 
 .replace(/adj\)(い)/g,'adj)<br>$1、(informal)<p>')
 .replace(/-v\)(わ|)れ/g,'-v)<br>$1れ、be done(-v)')
 .replace(/-v\)(ば)/g,'-v)<br>$1、if done(-v)')
 .replace(/-v\)てい/g,'-v)<br>てい、is doing(-v)')
 
+.replace(/<p>(でしょう)/g,'<br>、$1,may do, might do(formal)<p>')
+.replace(/<p>(だろう)/g,'<br>、$1,may do, might do(informal)<p>')
+
 .replace(/(わ|か|さ|ま|ば|な|ら)(なかった)/g,'<br>$2、did not do(informal)<p>')
 .replace(/(い|き|し|み|び|に|り)(ました)/g,'<br>$2、did(formal)<p>')
 .replace(/(い|き|し|み|び|に|り)(ません)/g,'<br>$2、not do, will not do(formal)<p>')
 .replace(/(い|き|し|み|び|に|り)(ます)/g,'<br>$2、do, will do(formal)<p>')
 .replace(/(わ|か|さ|ま|ば|な|ら)(ない)/g,'<br>$2、not do(informal)<p>')
+.replace(/(い|き|し|み|び|に|り)(ましょう)/g,'<br>$2、let us do(formal)<p>')
+.replace(/(お|こ|そ|も|ぼ|の|ろ)(う)/g,'<br>$2、let us do(informal)<p>')
 .replace(/conjugation-v\)る/g,'-v)<br>る、do, will do(informal)<p>')
 .replace(/conjugation-v\)(い|)た/g,'-v)<br>た、did(informal)<p>')
+.replace(/(んだ|いた)/g,'<br>$1、did(informal)<p>')
 
 }
 
