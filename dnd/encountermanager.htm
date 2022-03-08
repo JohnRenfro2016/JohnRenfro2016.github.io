@@ -1384,6 +1384,14 @@ characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
 addRollPrompt(targeted);
 }
 
+if(rip=stats.match(/(.+DC.+)(Strength|Dexterity|Wisdom|Constitution)\ssaving\sthrow(.[\s\S]+)\((.+)\)/)){
+characters[targeted].setRollName1('DC8+abi+pro or '+rip[1]+' vs'+rip[2]);
+characters[targeted].setRoll1('1d0+0');
+characters[targeted].setRollName2(rip[3]);
+characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
+addRollPrompt(targeted);
+}
+
 if(rip=stats.match(/^([\s\S]*?)CLASS[\s\S]*?LEVEL([\s\S]*?)(\d{1,2})\s([\s\S]*?)EXPERIENCE\sPOINTS([\s\S]*?)PLAYER NAME[\s\S]*?HERITAGE([\s\S]*?)BACKGROUND([\s\S]*?)CAMPAIGN[\s\S]*?STR[\s\S]*?\d{1}\s(\d{1,2})\sDEX[\s\S]*?\d{1}\s(\d{1,2})\sCON[\s\S]*?\d{1}\s(\d{1,2})\sINT[\s\S]*?\d{1}\s(\d{1,2})\sWIS[\s\S]*?\d{1}\s(\d{1,2})\sCHA[\s\S]*?\d{1}\s(\d{1,2})/)){
 characters[targeted].setLvl(rip[3]);
 characters[targeted].setClass(rip[2]+""+rip[4]);
