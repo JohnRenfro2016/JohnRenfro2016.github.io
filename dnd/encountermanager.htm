@@ -1284,6 +1284,73 @@ savePane.putAt(100, 100);
 
 function setStats(){
 
+if(rip=stats.match(/^(.+)/)){characters[targeted].setName(rip[1])}
+if(size=stats.match(/(Tiny)/)){characters[targeted].setSize(size[1]+' 2.5x2.5ft')}
+if(size=stats.match(/(Small|Medium)/)){characters[targeted].setSize(size[1]+' 5x5ft')}
+if(size=stats.match(/(Large)/)){characters[targeted].setSize(size[1]+' 10x10ft')}
+if(size=stats.match(/(Huge)/)){characters[targeted].setSize(size[1]+' 15x15ft')}
+if(size=stats.match(/(Gargantuan)/)){characters[targeted].setSize(size[1]+' 20x20ft+')}
+if(race=stats.match(/(aberration|beast|construct|elemental|fey|fiend|giant|humanoid|monstrosity|plant|undead|human)\,/i)){characters[targeted].setRace(race[1])}
+if(alignment=stats.match(/(lawful\sgood|lawful\sneutral|lawful\sevil|chaotic\sgood|chaotic\sneutral|chaotic\sevil|neutral\sevil|unaligned).+/i)){characters[targeted].setAlignment(alignment[1])}
+if(ac=stats.match(/Armor\sClass\s(\d{1,2}).+?/)){characters[targeted].setAC(ac[1])}
+if(armortype=stats.match(/mage\sarmor/)){characters[targeted].setArmor('Mage Armor AC13+dex')};
+if(armortype=stats.match(/natural armor/)){characters[targeted].setArmor('Natural Armor')};
+if(armortype=stats.match(/leather/)){characters[targeted].setArmor('Leather AC11+dex')};
+if(armortype=stats.match(/padded/)){characters[targeted].setArmor('Padded AC11+dex Stealth @DisAdv')};
+if(armortype=stats.match(/studded/)){characters[targeted].setArmor('Studded AC12+dex')};
+if(armortype=stats.match(/hide/)){characters[targeted].setArmor('Hide AC12+dex max 2')};
+if(armortype=stats.match(/chain\sshirt/)){characters[targeted].setArmor('Chain Shirt AC13+dex max 2')};
+if(armortype=stats.match(/scale/)){characters[targeted].setArmor('Scale AC14+dex max 2 Stealth @DisAdv')};
+if(armortype=stats.match(/breastplate/)){characters[targeted].setArmor('Breastplate AC14+dex max 2')};
+if(armortype=stats.match(/plate/)){characters[targeted].setArmor('Plate AC18 Stealth @DisAdv str15')};
+if(armortype=stats.match(/half\splate/)){characters[targeted].setArmor('Half Plate AC15+dex max 2 Stealth @DisAdv')};
+if(armortype=stats.match(/ring\smail/)){characters[targeted].setArmor('Ring AC14 Stealth @DisAdv')};
+if(armortype=stats.match(/chain\smail/)){characters[targeted].setArmor('Chain Mail AC16 Stealth @DisAdv')};
+if(armortype=stats.match(/splint/)){characters[targeted].setArmor('Splint AC17 Stealth @DisAdv')};
+if(armortype=stats.match(/Unarmored\sDefense/)){characters[targeted].setArmor('Unarmored Defense AC10+dex+wis')};
+if(shieldtype=stats.match(/Armor\sClass.+?shield.+?/i)){
+characters[targeted].setShield('Shield AC+2')}
+else{characters[targeted].setShield('No Shield AC+0')}
+if(hp=stats.match(/Hit\sPoints.+?(\d{1,3}).+\((.+)\)/))
+{
+characters[targeted].setMaxHp(hp[1]);
+characters[targeted].setHitDice(hp[2].replace(/\s/g,''));
+};
+if(resist=stats.match(/(Resistances|Resistance)([\s\S]*?)(Senses|Condition\s|Damage\sImmunities|Damage\sVulnerabilities)/)){characters[targeted].setResistance(resist[2])}
+else
+{characters[targeted].setResistance('')}
+characters[targeted].setImmunity('');
+if(immune=stats.match(/Damage\sImmunities(.+)/)){characters[targeted].setImmunity(immune[1])}
+else
+{characters[targeted].setImmunity('')}
+if(dmgimmune=stats.match(/Condition\sImmunities(.+)/)){characters[targeted].setDamageConditions('immune to '+dmgimmune[1])}
+else
+{characters[targeted].setDamageConditions('')}
+if(vulnerable=stats.match(/Vulnerabilities(.+)/)){characters[targeted].setVulnerability(vulnerable[1])}
+else
+{characters[targeted].setVulnerability('')}
+if(rip=stats.match(/Speed\s(.+)/)){characters[targeted].setSpeed(rip[1])}
+if(str=stats.match(/(\d{1,2})\s\(\+|(\d{1,2})\s\(\-|(\d{1,2})\s\(\–/g))
+{
+characters[targeted].setStr(parseInt(str[0]));
+characters[targeted].setDex(parseInt(str[1]));
+characters[targeted].setCon(parseInt(str[2]));
+characters[targeted].setInt(parseInt(str[3]));
+characters[targeted].setWis(parseInt(str[4]));
+characters[targeted].setCha(parseInt(str[5]))
+}
+if(saves=stats.match(/Throws(.+)/)){characters[targeted].setSaving(saves[1])}
+if(senses=stats.match(/Senses(.+)/)){characters[targeted].setSenses(senses[1])}
+if(languages=stats.match(/Languages(.+)/)){characters[targeted].setLanguages(languages[1])}
+if(rip=stats.match(/Challenge\s(.+?)\((.+?)\)/))
+{
+characters[targeted].setLvl(rip[1]);
+characters[targeted].setExperience(rip[2]);
+}
+if(skills=stats.match(/Skills(.+)/)){characters[targeted].setBackS(skills[1])};
+if(rip=stats.match(/(Multiattack[\s\S]*?.+)/)){characters[targeted].setActionNotes(rip[0])}
+if(actnotes=stats.match(/XP\)([\s\S].*)ACTIONS/i)){characters[targeted].setActionNotes(actnotes[1])}
+
 characters[targeted].setStrPro('');
 if(str=stats.match(/Strength\sSaves\s\*/)){characters[targeted].setStrPro('pro')}
 if(str=stats.match(/Strength\sSaves\s\*\*/)){characters[targeted].setStrPro('exp')}
@@ -1358,9 +1425,7 @@ characters[targeted].setSurvival('');
 if(str=stats.match(/Survival\s\(Wis\)\s\*/)){characters[targeted].setSurvival('pro')}
 if(str=stats.match(/Survival\s\(Wis\)\s\*\*/)){characters[targeted].setSurvival('exp')}
 
-if(rip=stats.match(/(Multiattack[\s\S]*?\.)[\r\n]/)){characters[targeted].setActionNotes(rip[0])}
-
-if(rip=stats.match(/(.+Melee.+Attack:)(.+)to\shit\,\s(.+[\r\n].+)\((.+)\)(.+)/)){
+if(rip=stats.match(/(.+Melee.+?Attack):\s(.+)to\shit\,\s([\s\S]+?)\((.+)\)(.+)/)){
 characters[targeted].setRollName1(rip[1]+' '+rip[3]);
 characters[targeted].setRoll1('1d20'+rip[2].replace(/\s/g, ''));
 characters[targeted].setRollName2(rip[5]);
@@ -1368,7 +1433,7 @@ characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
 addRollPrompt(targeted);
 }
 
-if(rip=stats.match(/damage\.[\r\n](.+Melee.+Attack:)(.+)to\shit\,\s(.+[\r\n].+)\((.+)\)(.+)/)){
+if(rip=stats.match(/damage\.[\r\n](.+Melee.+?Attack):\s(.+)to\shit\,\s([\s\S]+?)\((.+)\)(.+)/)){
 characters[targeted].setRollName1(rip[1]+' '+rip[3]);
 characters[targeted].setRoll1('1d20'+rip[2].replace(/\s/g, ''));
 characters[targeted].setRollName2(rip[5]);
@@ -1376,7 +1441,7 @@ characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
 addRollPrompt(targeted);
 }
 
-if(rip=stats.match(/(.+Ranged.+Attack:)(.+)to\shit\,\s(.+[\r\n].+)\((.+)\)(.+)/)){
+if(rip=stats.match(/(.+Ranged.+?Attack):\s(.+)to\shit\,\s([\s\S]+?)\((.+)\)(.+)/)){
 characters[targeted].setRollName1(rip[1]+' '+rip[3]);
 characters[targeted].setRoll1('1d20'+rip[2].replace(/\s/g, ''));
 characters[targeted].setRollName2(rip[5]);
@@ -1384,9 +1449,9 @@ characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
 addRollPrompt(targeted);
 }
 
-if(rip=stats.match(/(.+DC.+)(Strength|Dexterity|Wisdom|Constitution)\ssaving\sthrow(.[\s\S]+)\((.+)\)/)){
+if(rip=stats.match(/(.+?)(Strength|Dexterity|Wisdom|Constitution)\ssaving\sthrow([\s\S]+)/)){
 characters[targeted].setRollName1('DC8+abi+pro or '+rip[1]+' vs'+rip[2]);
-characters[targeted].setRoll1('1d0+0');
+characters[targeted].setRoll1('0d0+0');
 characters[targeted].setRollName2(rip[3]);
 characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
 addRollPrompt(targeted);
@@ -1415,77 +1480,9 @@ characters[targeted].setMaxHp(rip[7]);
 characters[targeted].setCurHp(rip[7]);
 characters[targeted].setHitDice(rip[8])}
 
-if(rip=stats.match(/AC:/)){
-stats=stats.replace(/\r\n/g,'*')
-characters[targeted].setAC(rip[1])}
-
-if(rip=stats.match(/Hit\sPoints:\s([\s\S]*?)\(/)){characters[targeted].setCurHp(rip[1])}
-
-if(rip=stats.match(/^(.*)$/m)){characters[targeted].setName(rip[1])}
-if(size=stats.match(/(Tiny)/)){characters[targeted].setSize(size[1]+' 2.5x2.5ft')}
-if(size=stats.match(/(Small|Medium)/)){characters[targeted].setSize(size[1]+' 5x5ft')}
-if(size=stats.match(/(Large)/)){characters[targeted].setSize(size[1]+' 10x10ft')}
-if(size=stats.match(/(Huge)/)){characters[targeted].setSize(size[1]+' 15x15ft')}
-if(size=stats.match(/(Gargantuan)/)){characters[targeted].setSize(size[1]+' 20x20ft+')}
-if(race=stats.match(/(aberration|beast|construct|elemental|fey|fiend|giant|humanoid|monstrosity|plant|undead|human)/i)){characters[targeted].setRace(race[1])}
-if(alignment=stats.match(/(neutral)/)){characters[targeted].setAlignment(alignment[1])}
-if(alignment=stats.match(/(lawful good|lawful neutral|lawful evil|chaotic good|chaotic neutral|chaotic evil|neutral evil|unaligned)/i)){characters[targeted].setAlignment(alignment[1])}
-if(ac=stats.match(/Armor\sClass\s(\d{1,2})([\s\S]*?)(Hit Points )/)){characters[targeted].setAC(ac[1])}
-if(armortype=stats.match(/mage\sarmor/)){characters[targeted].setArmor('Mage Armor AC13+dex')};
-if(armortype=stats.match(/natural armor/)){characters[targeted].setArmor('Natural Armor')};
-if(armortype=stats.match(/leather/)){characters[targeted].setArmor('Leather AC11+dex')};
-if(armortype=stats.match(/padded/)){characters[targeted].setArmor('Padded AC11+dex Stealth @DisAdv')};
-if(armortype=stats.match(/studded/)){characters[targeted].setArmor('Studded AC12+dex')};
-if(armortype=stats.match(/hide/)){characters[targeted].setArmor('Hide AC12+dex max 2')};
-if(armortype=stats.match(/chain\sshirt/)){characters[targeted].setArmor('Chain Shirt AC13+dex max 2')};
-if(armortype=stats.match(/scale/)){characters[targeted].setArmor('Scale AC14+dex max 2 Stealth @DisAdv')};
-if(armortype=stats.match(/breastplate/)){characters[targeted].setArmor('Breastplate AC14+dex max 2')};
-if(armortype=stats.match(/plate/)){characters[targeted].setArmor('Plate AC18 Stealth @DisAdv str15')};
-if(armortype=stats.match(/half\splate/)){characters[targeted].setArmor('Half Plate AC15+dex max 2 Stealth @DisAdv')};
-if(armortype=stats.match(/ring\smail/)){characters[targeted].setArmor('Ring AC14 Stealth @DisAdv')};
-if(armortype=stats.match(/chain\smail/)){characters[targeted].setArmor('Chain Mail AC16 Stealth @DisAdv')};
-if(armortype=stats.match(/splint/)){characters[targeted].setArmor('Splint AC17 Stealth @DisAdv')};
-if(armortype=stats.match(/Unarmored\sDefense/)){characters[targeted].setArmor('Unarmored Defense AC10+dex+wis')};
-if(shieldtype=stats.match(/Armor\sClass[\s\S]*shield[\s\S]*STR/i)){
-characters[targeted].setShield('Shield AC+2')}
-else
-{
-characters[targeted].setShield('No Shield AC+0')}
-if(hp=stats.match(/(Hit Points )(\d{1,3})\s\(([\s\S]*?)\)/))
-{
-characters[targeted].setMaxHp(hp[2]);
-characters[targeted].setHitDice(hp[3].replace(/\s/g,''));
-};
-if(rip=stats.match(/Speed\s([\s\S]*?)XX/)){characters[targeted].setSpeed(rip[1])}
-if(str=stats.match(/(\d{1,2})\s\(\+|(\d{1,2})\s\(\-|(\d{1,2})\s\(\–/g)){characters[targeted].setStr(parseInt(str[0]));
-characters[targeted].setDex(parseInt(str[1]));
-characters[targeted].setCon(parseInt(str[2]));
-characters[targeted].setInt(parseInt(str[3]));
-characters[targeted].setWis(parseInt(str[4]));
-characters[targeted].setCha(parseInt(str[5]))}
-if(resist=stats.match(/(Resistances|Resistance)([\s\S]*?)(Senses|Condition\s|Damage\sImmunities|Damage\sVulnerabilities)/)){characters[targeted].setResistance(resist[2])}
-else
-{characters[targeted].setResistance('')}
-characters[targeted].setImmunity('');
-if(immune=stats.match(/(Damage\sImmunities)([\s\S]*?)(Damage\sResistance|Damage\sCondition|Condition\sImmuniti|Senses)/)){characters[targeted].setImmunity(immune[2])}
-else
-{characters[targeted].setImmunity('')}
-if( dmgimmune=stats.match(/Condition\sImmunities\s([\s\S]*?)Senses/)){characters[targeted].setDamageConditions('immune to '+dmgimmune[1])}
-else
-{characters[targeted].setDamageConditions('')}
-if(vulnerable=stats.match(/Vulnerabilities\s([\s\S]*?)(?:Senses|Condition\s|Damage\s)/)){characters[targeted].setVulnerability(vulnerable[1])}
-else
-{characters[targeted].setVulnerability('')}
-if(saves=stats.match(/(Throws )([\s\S]*?)(Skills)/)){characters[targeted].setSaving(saves[2])}
-if(senses=stats.match(/Senses\s([\s\S]*?Perception\s\d{1,2})/)){characters[targeted].setSenses(senses[1])}
-if(languages=stats.match(/(Languages )([\s\S]*?)(Challenge )/)){characters[targeted].setLanguages(languages[2])}
-if(rip=stats.match(/Challenge\s(\d\/\d)/)){characters[targeted].setLvl(rip[1])}
-if(lvl=stats.match(/Challenge\s(\d{1,2})(?!\/)/)){characters[targeted].setLvl(lvl[1])}
-if(xp=stats.match(/Challenge[\s\S]*\(([\s\S]*)\sXP/)){
-characters[targeted].setExperience(xp[1])}
 if(casting=stats.match(/spellcasting[\s\S]*?(cha|int|wis)/i)){
 characters[targeted].setSpellAbility(casting[1].toLowerCase())}
-if(actnotes=stats.match(/XP\)([\s\S].*)ACTIONS/i)){characters[targeted].setActionNotes(actnotes[1])}
+
 if(savingThrows=stats.match(/Str\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].strMod))){characters[targeted].setStrPro('exp')}
 else
 {characters[targeted].setStrPro('pro')}};
@@ -1505,7 +1502,6 @@ if(savingThrows=stats.match(/Cha\s\+(\d{1,2})/)){if(parseInt(savingThrows[1])>(p
 else
 {characters[targeted].setChaPro('pro')}};
 if(nameit=stats.match(/^Skills\s([\s\S]*?)\n/)){characters[targeted].setName(nameit[1])}
-if(skills=stats.match(/Skills\s([\s\S]*?)(Senses|Condition\sI|Damage\sI|Damage\sR|Damage\sV)/)){characters[targeted].setBackS(skills[1])};
 if(skills=stats.match(/Athletics\s\+(\d{1,2})/)){
 if(parseInt(skills[1])>(parseInt(characters[targeted].pro)+parseInt(characters[targeted].dexMod))){characters[targeted].setAthletics('exp')}
 else
@@ -1588,7 +1584,6 @@ if(rip=stats.match(/GreenFlame\sBlade/i)){this.GreenFlameBlade()};
 if(rip=stats.match(/Guidance/i)){this.Guidance()};
 if(rip=stats.match(/Gust\s/i)){this.Gust()};
 if(rip=stats.match(/Infestation/i)){this.Infestation()};
-if(rip=stats.match(/Light/i)){this.Light()};
 if(rip=stats.match(/Lightning\sLure/i)){this.LightningLure()};
 if(rip=stats.match(/Mage\sHand/i)){this.MageHand()};
 if(rip=stats.match(/Magic\sStone/i)){this.MagicStone()};
@@ -1704,7 +1699,6 @@ if(rip=stats.match(/Continual\sFlame/i)){this.ContinualFlame()};
 if(rip=stats.match(/Cordon\sOf\sArrows/i)){this.CordonOfArrows()};
 if(rip=stats.match(/Crown\sOf\sMadness/i)){this.CrownOfMadness()};
 if(rip=stats.match(/Darkness/i)){this.Darkness()};
-if(rip=stats.match(/Darkvision/i)){this.Darkvision()};
 if(rip=stats.match(/Detect\sThoughts/i)){this.DetectThoughts()};
 if(rip=stats.match(/Dragon\'s\sBreath/i)){this.DragonsBreath()};
 if(rip=stats.match(/Dust\sDevil/i)){this.DustDevil()};
@@ -1941,7 +1935,6 @@ if(rip=stats.match(/Flesh\sTo\sStone/i)){this.FleshToStone()};
 if(rip=stats.match(/Forbiddance/i)){this.Forbiddance()};
 if(rip=stats.match(/Globe\sOf\sInvulnerability/i)){this.GlobeOfInvulnerability()};
 if(rip=stats.match(/Guards\sAnd\sWards/i)){this.GuardsAndWards()};
-if(rip=stats.match(/Harm/i)){this.Harm()};
 if(rip=stats.match(/Heal/i)){this.Heal()};
 if(rip=stats.match(/Heroes’\sFeast/i)){this.HeroesFeast()};
 if(rip=stats.match(/Investiture\sOf\sFlame/i)){this.InvestitureOfFlame()};
