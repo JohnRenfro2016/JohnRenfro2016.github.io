@@ -6051,7 +6051,7 @@ a=a.replace(/( прибегатьприбегнут)/gi,'to run to,resort to<p> 
 a=a.replace(/( прибегатьприбежат)/gi,'$1,to run up, come running<p> ')
 a=a.replace(/( прибиватьприбит)/gi,'to nail, fix )\(to\)<p> ')
 a=a.replace(/( прибиратьприбрат)/gi,'to tidy up,) take over, pocket<p> ')
-a=a.replace(/( приближатьсяприблизитьс)/gi,'to approach,draw near<p> ')
+a=a.replace(/( приближаться|приблизитьс)/gi,'to approach,draw near<p> ')
 a=a.replace(/( приближени)/gi,'$1,approach<p> ')
 a=a.replace(/( приблизительн)/gi,'$1,approximately<p> ')
 a=a.replace(/( прибор )/gi,'$1,piece of apparatus, gadget, instrument<p> ')
@@ -9187,7 +9187,7 @@ a=a.replace(/( эра )/gi,'$1,era<p> ')
 a=a.replace(/( эстетическ)/gi,'$1,aesthetic<p> ')
 a=a.replace(/( эстрада )/gi,'$1,stage<p> ')
 a=a.replace(/( эстрадн)/gi,'$1,stage )<p> ')
-a=a.replace(/( эт)/gi,'$1,this, that, it<p> ')
+a=a.replace(/( это )/gi,'$1,this, that, it<p> ')
 a=a.replace(/( этаж )/gi,'$1,floor, storey<p> ')
 a=a.replace(/( этажерка )/gi,'$1,bookcase<p> ')
 a=a.replace(/( этак )/gi,'$1,this way, thus,approximately )<p> ')
@@ -9270,6 +9270,29 @@ a=a.replace(/(ый )/gi,'$1,masculine singular<p> ')
 a=a.replace(/(ая )/gi,'$1,feminine singular<p> ')
 a=a.replace(/(ое )/gi,'$1,neutral singular<p> ')
 a=a.replace(/(ые )/gi,'$1,plural<p> ')
+
+a=a.replace(/( говор)/gi,'$1,speak<br>verb')
+a=a.replace(/( гуля)/gi,'$1,walk<br>verb')
+a=a.replace(/( зна)/gi,'$1,know<br>verb')
+a=a.replace(/( работа)/gi,'$1,work<br>verb')
+a=a.replace(/( смотр)/gi,'$1,watch<br>verb')
+a=a.replace(/( уч)/gi,'$1,learn<br>verb')
+a=a.replace(/( чита)/gi,'$1,read<br>verb')
+
+a=a.replace(/verb(ат|ят|ут|ют)/gi,'$1,They do<p> ')
+a=a.replace(/verb(им|ем|ём)/gi,'$1,We do<p> ')
+a=a.replace(/verb(ит(?!е)|ет(?!е)|ёт(?!е))/gi,'$1,He or she does<p> ')
+a=a.replace(/verb(ите|ете|ёте)/gi,'$1,You all do<p> ')
+a=a.replace(/verb(ишь|ешь|ёшь)/gi,'$1,You do<p> ')
+a=a.replace(/verb(л)(?!а|и|о)/gi,'$1,He did<p> ')
+a=a.replace(/verb(ла)/gi,'$1,She did<p> ')
+a=a.replace(/verb(ли)/gi,'$1,They did<p> ')
+a=a.replace(/verb(ло)/gi,'$1,It did<p> ')
+a=a.replace(/verb(ть)/gi,'$1,to do<p> ')
+a=a.replace(/verb(у(?!т|щий)|ю(?!т|щий))/gi,'$1,I do<p> ')
+a=a.replace(/verb(чь)/gi,'$1,to do<p> ')
+a=a.replace(/verb(ющий)/gi,'$1,One did<p> ')
+
 }
 
 function translate()
@@ -9286,7 +9309,71 @@ document.getElementById('translationDisplay').innerHTML=a;
 <body>
 
 <h1>The Russian to English Rozeta</h1>
- новая новый новое новые
+ читаю
+
+ читаешь
+
+ читает
+
+ читаем
+
+ читаете
+
+ читают
+
+
+ гуляю
+
+ гуляешь
+
+ гуляет
+
+ гуляем
+
+ гуляете
+
+ гуляют
+
+
+
+
+ говорю
+
+ говоришь
+
+ говорит
+
+ говорим
+
+ говорите
+
+ говорят
+
+
+ смотрю
+
+ смотришь
+
+ смотрит
+
+ смотрим
+
+ смотрите
+
+ смотрят
+
+
+ учу
+
+ учишь
+
+ учит
+
+ учим
+
+ учите
+
+ учат
 <p>
 <h3>Cut and paste the above text into the box bellow.</h3>
 <br>
