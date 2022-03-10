@@ -3839,7 +3839,6 @@ a=a.replace(/( мяч )/gi,'$1,ball )\(for games\)<p> ')
 a=a.replace(/( мёд )/gi,'$1,honey<p> ')
 a=a.replace(/( мёрзнутьза)/gi,'$1,to freeze<p> ')
 a=a.replace(/( мёртв)/gi,'$1,dead<p> ')
-a=a.replace(/( н)/gi,'$1,but<p> ')
 a=a.replace(/( на )/gi,'$1, on<p> ')
 a=a.replace(/( набат )/gi,'$1,alarm bell<p> ')
 a=a.replace(/( набережна)/gi,'$1,embankment,sea-front<p> ')
@@ -4358,7 +4357,6 @@ a=a.replace(/( ничтоничег)\(ag\)/gi,'$1,nothing<p> ')
 a=a.replace(/( ничут)/gi,'$1,not in the least )<p> ')
 a=a.replace(/( нищ)/gi,'$1,destitute,beggar<p> ')
 a=a.replace(/( нищета )/gi,'$1,poverty<p> ')
-a=a.replace(/( нов)/gi,'$1,new<p> ')
 a=a.replace(/( новатор )/gi,'$1,innovator<p> ')
 a=a.replace(/( новеньк)/gi,'$1,brand-new, nice and new<p> ')
 a=a.replace(/( новизна )/gi,'$1,novelty, newness<p> ')
@@ -9267,6 +9265,11 @@ a=a.replace(/( ёж )/gi,'$1,hedgehog<p> ')
 a=a.replace(/( ёлка )/gi,'$1,fir tree<p> ')
 a=a.replace(/( ёмкост)/gi,'$1,capacity<p> ')
 a=a.replace(/( секретар )/gi,'$1,secretary<p> ')
+a=a.replace(/( нов)/gi,'$1,new<br>')
+a=a.replace(/(ый )/gi,'$1,masculine singular<p> ')
+a=a.replace(/(ая )/gi,'$1,feminine singular<p> ')
+a=a.replace(/(ое )/gi,'$1,neutral singular<p> ')
+a=a.replace(/(ые )/gi,'$1,plural<p> ')
 }
 
 function translate()
@@ -9283,7 +9286,7 @@ document.getElementById('translationDisplay').innerHTML=a;
 <body>
 
 <h1>The Russian to English Rozeta</h1>
-Как рассказал изданию глава организации Олег Павлов, перечень будет расширяться в зависимости от новых заявлений иностранного бизнеса. Сейчас в него внесены такие компании, как Volkswagen, Apple, IKEA, Microsoft, IBM, Shell, McDonald's, Porsche, Toyota, H&M и др. "К работе над этим списком будут также подключены правоохранительные органы, Минпромторг и Роспотребнадзор, каждый в части своей компетенции. Безусловно, список является открытым. Как только появляются компании, которые заявляют об уходе без предоставления гарантий российским потребителям, они туда вносятся. Соответственно, в их отношении будут применяться административные, уголовные и судебные процедуры", - рассказал Павлов газете.
+ новая новый новое новые
 <p>
 <h3>Cut and paste the above text into the box bellow.</h3>
 <br>
