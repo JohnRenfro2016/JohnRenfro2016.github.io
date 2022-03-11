@@ -1284,6 +1284,8 @@ savePane.putAt(100, 100);
 
 function setStats(){
 
+stats=stats.replace(/\'/,"")
+
 if(rip=stats.match(/^(.+)/)){characters[targeted].setName(rip[1])}
 if(size=stats.match(/(Tiny)/)){characters[targeted].setSize(size[1]+' 2.5x2.5ft')}
 if(size=stats.match(/(Small|Medium)/)){characters[targeted].setSize(size[1]+' 5x5ft')}
@@ -1469,7 +1471,7 @@ characters[targeted].setCon(rip[10]);
 characters[targeted].setInt(rip[11]);
 characters[targeted].setWis(rip[12]);
 characters[targeted].setCha(rip[13])}
-if(rip=stats.match(/Saving\sThrows:\s([\s\S]*?)Skills:\s([\s\S]*?)Languages:\s([\s\S]*?)ARMOR\sCLASS\s\(AC\)([\s\S]*?)Armor\sWorn([\s\S]*?)INITIATIVE[\s\S]*?SPEED([\s\S]*?)HIT POINTS([\s\S]*?)HIT\sDICE([\s\S]*?)DEATH\sSAVES/)){
+if(rip=stats.match(/Saving\sThrows:\s([\s\S]*?)Skills:\s([\s\S]*?)Languages:\s([\s\S]*?)ARMOR\sCLASS\s\(AC\)([\s\S]*?)Armor\sWorn:\s([\s\S]*?)INITIATIVE[\s\S]*?SPEED([\s\S]*?)HIT POINTS([\s\S]*?)HIT\sDICE([\s\S]*?)DEATH\sSAVES/)){
 characters[targeted].setSaving(rip[1]);
 characters[targeted].setSkills(rip[2]);
 characters[targeted].setLanguages(rip[3]);
@@ -1596,7 +1598,6 @@ if(rip=stats.match(/Prestidigitation/i)){this.Prestidigitation()};
 if(rip=stats.match(/Primal\sSavagery/i)){this.PrimalSavagery()};
 if(rip=stats.match(/Produce\sFlame/i)){this.ProduceFlame()};
 if(rip=stats.match(/Ray\sOf\sFrost/i)){this.RayOfFrost()};
-if(rip=stats.match(/Resistance/i)){this.Resistance()};
 if(rip=stats.match(/Sacred\sFlame/i)){this.SacredFlame()};
 if(rip=stats.match(/Shape\sWater/i)){this.ShapeWater()};
 if(rip=stats.match(/Shillelagh/i)){this.Shillelagh()};
@@ -1775,7 +1776,6 @@ if(rip=stats.match(/Fear\s/i)){this.Fear()};
 if(rip=stats.match(/Feign\sDeath/i)){this.FeignDeath()};
 if(rip=stats.match(/Fireball/i)){this.Fireball()};
 if(rip=stats.match(/Flame\sArrows/i)){this.FlameArrows()};
-if(rip=stats.match(/Fly/i)){this.Fly()};
 if(rip=stats.match(/Gaseous\sForm/i)){this.GaseousForm()};
 if(rip=stats.match(/Glyph\sOf\sWarding/i)){this.GlyphOfWarding()};
 if(rip=stats.match(/Haste/i)){this.Haste()};
@@ -2170,7 +2170,16 @@ boxContents+="<br>Target?<input id='targeted"+this.index+"' name='targeted' onCl
 boxContents+="<br>HP:"+this.maxHp+"/"+this.curHp;
 boxContents+="<br><input class='piece' onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
 boxContents+="</td></tr></table><span id=toggled1"+this.index+" style='display:"+this.toggled1+"'>"
-boxContents+="<table><tr><td><table><tr><td>Name:<input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value='"+this.name+"'>";
+boxContents+="<table><tr><td>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
+boxContents+="</td><td>Spell (Abi)lity:<select onChange='characters["+this.index+"].setSpellAbility(this.value);checkTheTarget("+this.index+")'><option>"+this.spellAbility+"<option>int<option>wis<option>cha</select>"+this.spellAbilityNumber;
+boxContents+="</td><td>Level (Pro)ficiency:"+this.pro;
+boxContents+="</td><td><input onClick='toggleTab2("+this.index+");checkTheTarget("+this.index+")' type='button' value='Name, AC, HP?'>";
+boxContents+="</td><td><input onClick='toggleTab3("+this.index+");checkTheTarget("+this.index+")' type='button' value='Abilities?'>";
+boxContents+="</td><td><input onClick='toggleTab4("+this.index+");checkTheTarget("+this.index+")' type='button' value='Actions?'>";
+boxContents+="</td><td><input onClick='toggleTab5("+this.index+");checkTheTarget("+this.index+")' type='button' value='Background?'>";
+boxContents+="</td><td><input onClick='toggleTab6("+this.index+");checkTheTarget("+this.index+")' type='button' value='Class?'>";
+boxContents+="</td></tr></table></td></tr><tr><td><table><tr><td></span><span id=toggled2"+this.index+" style='display:"+this.toggled2+"'>";
+boxContents+="<table><tr><td>Name:<input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value='"+this.name+"'>";
 boxContents+="</td></tr><tr><td>Size:<select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
 boxContents+="</td></tr><tr><td>Alignment:<select onChange='characters["+this.index+"].setAlignment(this.value)'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
 boxContents+="<br>"+this.alignmentDescription;
@@ -2199,18 +2208,9 @@ boxContents+="</td></tr><tr><td>Challenge Rating(CR) or Level(lvl):<input maxLen
 boxContents+="</td></tr><tr><td>Experience Points(XP):<input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value)'size='8' type='text' value='"+this.experience+"'>";
 boxContents+="</td></tr><tr><td><input type='button' onClick='characters["+this.index+"].save();checkTheTarget("+this.index+")'value='Save this character?'>";
 boxContents+="</td></tr><tr><td><input type='button' value='Delete this character?'onClick='removeChar("+this.index+");checkTheTarget("+this.index+")'>";
-boxContents+="</td></table></td><td><table><tr><td>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
-boxContents+="</td><td>Spell (Abi)lity:<select onChange='characters["+this.index+"].setSpellAbility(this.value);checkTheTarget("+this.index+")'><option>"+this.spellAbility+"<option>int<option>wis<option>cha</select>"+this.spellAbilityNumber;
-boxContents+="</td><td>Level (Pro)ficiency:"+this.pro;
-boxContents+="</td><td><input onClick='toggleTab3("+this.index+");checkTheTarget("+this.index+")' type='button' value='Abilities?'>";
-boxContents+="</td><td><input onClick='toggleTab4("+this.index+");checkTheTarget("+this.index+")' type='button' value='Actions?'>";
-boxContents+="</td><td><input onClick='toggleTab5("+this.index+");checkTheTarget("+this.index+")' type='button' value='Background?'>";
-boxContents+="</td><td><input onClick='toggleTab6("+this.index+");checkTheTarget("+this.index+")' type='button' value='Class?'>";
-boxContents+="</td><td><input onClick='toggleTab2("+this.index+");checkTheTarget("+this.index+")' type='button' value='Combat Results?'>";
-boxContents+="</td></tr></table></span><span id=toggled2"+this.index+" style='display:"+this.toggled2+"'>";
+boxContents+="</td></tr></table></td><td></span><span id=toggled4"+this.index+" style='display:"+this.toggled4+"'>";
 boxContents+="<table><tr><td>"+this.combatLog;
-boxContents+="</td></tr></table></span><span id=toggled4"+this.index+" style='display:"+this.toggled4+"'>";
-boxContents+="<table><tr><td>ACTIONS<textArea cols='40' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiatks and SpellSlots'>"+this.actionNotes+"</textArea>"
+boxContents+="</td></tr></table><br><table><tr><td>ACTIONS<textArea cols='40' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiatks and SpellSlots'>"+this.actionNotes+"</textArea>"
 boxContents+="</td><td>Feature Notes:<textArea cols='40' rows='2' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
 boxContents+="</td><td>Rest to earn back your spent game token slots.<input onClick='characters["+this.index+"].setCurSlot1("+this.maxSlot1+");characters["+this.index+"].setCurSlot2("+this.maxSlot2+");characters["+this.index+"].setCurSlot3("+this.maxSlot3+");characters["+this.index+"].setCurSlot4("+this.maxSlot4+");characters["+this.index+"].setCurSlot5("+this.maxSlot5+");characters["+this.index+"].setCurSlot6("+this.maxSlot6+");characters["+this.index+"].setCurSlot7("+this.maxSlot7+");characters["+this.index+"].setCurSlot8("+this.maxSlot8+");characters["+this.index+"].setCurSlot9("+this.maxSlot9+");checkTheTarget("+this.index+")' type='button' value='Take a rest?'>";
 boxContents+="<img src='Decorations/GameTokens.png' width='50px'>";
@@ -2248,7 +2248,7 @@ boxContents+="</td><td><input type='button' onClick='deleteRollPrompt("+this.ind
 }
 
 boxContents+="</td></tr></table></td><td></span><span id=toggled3"+this.index+" style='display:"+this.toggled3+"'>";
-boxContents+="<table><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/<mark>"+this.curStr+"</mark> mod:"+this.strMod+"+<select onChange='characters["+this.index+"].setStrPro(this.value);checkTheTarget("+this.index+")'><option>"+this.strPro+"<option><option>pro<option>exp</select>"
+boxContents+="<table><tr><td>"+this.combatLog2+"</td></tr></table><br><table><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/<mark>"+this.curStr+"</mark> mod:"+this.strMod+"+<select onChange='characters["+this.index+"].setStrPro(this.value);checkTheTarget("+this.index+")'><option>"+this.strPro+"<option><option>pro<option>exp</select>"
 boxContents+="</td></tr><tr><td><input onClick='abi=10;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].athletics;abiRoll("+this.index+")'value='Roll Athletics(str)?'type='button'>+<select onChange='characters["+this.index+"].setAthletics(this.value);checkTheTarget("+this.index+")'><option>"+this.athletics+"<option><option>pro<option>exp</select>";
 boxContents+="</td></tr><tr><td>Carrying Capacity:"+this.carryingCapacity+"lbs";
 boxContents+="</td></tr><tr><td>Drag, Lift, Push:"+this.dragLiftPush+"lbs";
@@ -4085,6 +4085,8 @@ this.setSpellAbility('int')}
 this.refresh()}
 function _setCombatLog(x){this.combatLog=x;
 this.refresh()}
+function _setCombatLog2(x){this.combatLog2=x;
+this.refresh()}
 function _setCon(x){this.con=x;
 this.curCon=x;calcMod(x);
 this.conMod=mod;
@@ -4421,7 +4423,7 @@ D20RollModifier2=roll;
 abilityCheckRollTotal1=D20Roll1+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
 abilityCheckRollTotal2=D20Roll2+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
 AbiCheckLog=characters[x].name+" s<br>Ability Check<br>or Skill Check<br>or Saving Throw</td><td><h3>Roll 1</h3>1d20+0<br>="+D20NaturalRoll1+" natural<br>"+D20RollModifier1+" modifier<br>="+D20Roll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal1+"</td><td><h3>Roll 2</h3>1d20+0<br>="+D20NaturalRoll2+" natural<br>"+D20RollModifier2+" modifier<br>="+D20Roll2+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal2;
-characters[x].setCombatLog(AbiCheckLog);
+characters[x].setCombatLog2(AbiCheckLog);
 }
 function _setInt(x){this.inte=x;
 this.curInt=x;calcMod(x);
@@ -4976,6 +4978,7 @@ this.chaMod='+0';
 this.chaPro='';
 this.class='';
 this.combatLog="";
+this.combatLog2="";
 this.con=0;
 this.conMod='+0';
 this.conPro='';
@@ -5073,7 +5076,7 @@ this.strPro='';
 this.survival='';
 this.tempHp=0;
 this.toggled1="none";
-this.toggled2="block";
+this.toggled2="none";
 this.toggled3="none";
 this.toggled4="block";
 this.toggled5="none";
@@ -5106,6 +5109,7 @@ this.setCha=_setCha;
 this.setChaPro=_setChaPro;
 this.setClass=_setClass;
 this.setCombatLog=_setCombatLog;
+this.setCombatLog2=_setCombatLog2;
 this.setCon=_setCon;
 this.setConPro=_setConPro;
 this.setDmg=_setDmg;
