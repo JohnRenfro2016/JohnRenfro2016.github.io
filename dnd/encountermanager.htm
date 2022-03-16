@@ -2104,8 +2104,7 @@ boxContents+="</td></tr></table></td><td></span><span id=toggled4"+this.index+" 
 boxContents+="<table><tr><td>"
 boxContents+="</td></tr><tr><td>Damage Conditions: (temp hp+10, ac-1, str+1, ini+3, blinded)<textArea cols='30' rows=2 onChange='characters["+this.index+"].setDamageConditions(this.value);checkTheTarget("+this.index+")'placeHolder=''>"+this.dmgConditions+"</textArea>"
 boxContents+="</td></tr></table><table><tr><td>"+this.combatLog;
-boxContents+="</td></tr></table><table><tr><td>NO OF ATTACKS: <textArea cols='30' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiatks and SpellSlots'>"+this.actionNotes+"</textArea>"
-boxContents+="</td></tr><tr><td>SPECIAL ATTACKS: <textArea cols='30' rows='2' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
+boxContents+="</td></tr></table><table><tr><td>"
 if(this.class.match(/Arcane\sTrickster|Bard|Cleric|Druid|Eldritch|Paladin|Ranger|Sorcerer|Warlock|Wizard/)){
 boxContents+="</td></tr><tr><td>1st Spell Lvl Slots: "+this.maxSlot1+"<input onClick='this.value="+(this.curSlot1-1)+";characters["+this.index+"].setCurSlot1(this.value);checkTheTarget("+this.index+")' type='button' value='Spend?'>"+this.curSlot1;
 boxContents+="</td><td>2nd Spell Lvl Slots: "+this.maxSlot2+"<input onClick='this.value="+(this.curSlot2-1)+";characters["+this.index+"].setCurSlot2(this.value);checkTheTarget("+this.index+")' type='button' value='Spend?'>"+this.curSlot2;
@@ -2145,7 +2144,7 @@ boxContents+="</td></tr><tr><td>Background: <select onChange='characters["+this.
 boxContents+="<br><input maxLength='200' onChange='characters["+this.index+"].setBackground(this.value)' placeHolder='other background' size='30' type='text'>";
 boxContents+="</td></tr><tr><td>Background Languages: <input maxLength='200' onChange='characters["+this.index+"].setBackL(this.value);checkTheTarget("+this.index+")' size='30' value='"+this.backL+"'>";
 boxContents+="</td></tr><tr><td>Background Features: <input maxLength='200' onChange='characters["+this.index+"].setBackF(this.value)' size='30' type='text' value='"+this.backF+"'>";
-boxContents+="</td></tr><tr><td>Bonds: <textArea cols='30' rows='3' onChange='characters["+this.index+"].setBonds(this.value)'>"+this.bonds+"</textArea>";
+boxContents+="</td></tr><tr><td>Equipment: <textArea cols='30' rows='3' onChange='characters["+this.index+"].setEquipment(this.value)'>"+this.equipment+"</textArea>";
 boxContents+="</td></tr><tr><td>Flaws: <textArea cols='30' rows='3' onChange='characters["+this.index+"].setFlaws(this.value)'>"+this.flaws+"</textArea>";
 boxContents+="</td></tr><tr><td>Ideals: <textArea cols='30' rows='3' onChange='characters["+this.index+"].setIdeals(this.value)'>"+this.ideals+"</textArea>";
 boxContents+="</td></tr><tr><td>Feats: <textArea cols='30' rows='3' onChange='characters["+this.index+"].setFeats(this.value)'>"+this.feats+"</textArea>";
