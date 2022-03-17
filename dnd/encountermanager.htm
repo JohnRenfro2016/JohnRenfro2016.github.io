@@ -5947,16 +5947,16 @@ dmgRollModifier1=roll;
 dmgRoll2=parseInt(rollDForm(characters[x].rolls2[i]));
 dmgNaturalRoll2=naturalRoll;
 dmgRollModifier2=roll;
-dmgRollTotal1=dmgRoll1+parseInt(abiMod);
+dmgRollTotal1=dmgRoll1;
 dmgRollTotal2=dmgRoll2+parseInt(abiMod);
 dmgRollTotal3=dmgRoll2;
 theDamageConditions=characters[x].dmgConditions+characters[x].rollNames2[i];
-dmgRollLog="</td><td>"+characters[targeted].name+"<br>has resistances: "+characters[targeted].resistance+"<br>has immunities: "+characters[targeted].immunity+"<br>has vulnerabilities: "+characters[targeted].vulnerability+"<p>versus<p>"+characters[x].rollNames2[i]+"<br><input onClick='characters[targeted].setDamageConditions(theDamageConditions);checkTheTarget()' type='button' value='Assign this dmg condition?'></td><td><h3>Damage Roll</h3>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll1+" natural<br>"+dmgRollModifier1+" modifier<br>="+dmgRoll1+"<br>"+abiMod+" "+abi+"<br>="+dmgRollTotal1+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp-dmgRollTotal1);checkTheTarget()' type='button' value=Dmg?><br><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(dmgRollTotal1/2))));checkTheTarget()' type='button' value='1/2 Dmg?'></td>";
+dmgRollLog="</td><td>"+characters[targeted].name+"<br>has resistances: "+characters[targeted].resistance+"<br>has immunities: "+characters[targeted].immunity+"<br>has vulnerabilities: "+characters[targeted].vulnerability+"<p>versus<p>"+characters[x].rollNames2[i]+"<br><input onClick='characters[targeted].setDamageConditions(theDamageConditions);checkTheTarget()' type='button' value='Assign this dmg condition?'></td><td><h3>Damage Roll</h3>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll1+" natural<br>"+dmgRollModifier1+" modifier<br>="+dmgRollTotal1+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp-dmgRollTotal1);checkTheTarget()' type='button' value=Dmg?><br><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(dmgRollTotal1/2))));checkTheTarget()' type='button' value='1/2 Dmg?'></td>";
 //DC Save Rolls
 if(rip=characters[x].rollNames[i].match(/DC(\d{1,2})/gi)){
 roll1=rip[0];
 dcTotal=roll1+abiMod / 1+characters[x].pro / 1 ;
-DCSaveLog=characters[x].name+"<br>"+characters[x].rollNames[i]+"<p>"+rip[0]+"<br>"+abiMod+" "+abi+"<br>"+characters[x].pro+" pro<br>="+dcTotal+"<p>vs<p>";
+DCSaveLog=characters[x].name+"<br>"+characters[x].rollNames[i]+"<p>"+rip[0]+"<p>vs<p>";
 
 if(characters[x].rollNames[i].match(/vsFortitude/gi)){modName="fortitude"
 saveMod=characters[targeted].fortitudeProf
@@ -6157,9 +6157,9 @@ D20RollModifier1=roll;
 D20Roll2=parseInt(rollDForm('1d20+0'));
 D20NaturalRoll2=naturalRoll;
 D20RollModifier2=roll;
-savingRollTotal1=D20Roll1+parseInt(saveMod)+parseInt(savePro)+parseInt(characters[x].sit);
-savingRollTotal2=D20Roll2+parseInt(saveMod)+parseInt(savePro)+parseInt(characters[x].sit);
-savingThrowLog=characters[targeted].name+"</td><td><h3>Saving Throw 1</h3>1d20+0<br>="+D20NaturalRoll1+" natural<br>"+D20RollModifier1+" modifier<br>="+D20Roll1+"<br>"+saveMod+" "+modName+"<br>"+savePro+" "+saveProName+"<br>"+characters[x].sit+" sit<br>="+savingRollTotal1+"</td>";
+savingRollTotal1=D20Roll1+parseInt(saveMod)+parseInt(characters[x].sit);
+savingRollTotal2=D20Roll2+parseInt(characters[x].sit);
+savingThrowLog=characters[targeted].name+"</td><td><h3>Saving Throw</h3>1d20+0<br>="+D20NaturalRoll1+" natural<br>"+saveMod+" "+modName+"<br>"+characters[x].sit+" sit<br>="+savingRollTotal1+"</td>";
 characters[x].setCombatLog(DCSaveLog+savingThrowLog+dmgRollLog);
 }else{
 //atk Rolls
@@ -6169,9 +6169,9 @@ atkRollModifier1=roll;
 atkRoll2=parseInt(rollDForm(characters[x].rolls[i]));
 atkNaturalRoll2=naturalRoll;
 atkRollModifier2=roll;
-atkRollTotal1=atkRoll1+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
+atkRollTotal1=atkRoll1+parseInt(characters[x].sit);
 atkRollTotal2=atkRoll2+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
-atkRollLog=characters[x].name+"<br>"+characters[x].rollNames[i]+"<p>vs<p>"+characters[targeted].name+" AC: "+characters[targeted].curAc+"</td><td><h3>Attack Roll</h3>"+characters[x].rolls[i]+"<br>="+atkNaturalRoll1+" natural<br>"+atkRollModifier1+" modifier<br>="+atkRoll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+atkRollTotal1+"</td>";
+atkRollLog=characters[x].name+"<br>"+characters[x].rollNames[i]+"<p>vs<p>"+characters[targeted].name+" AC: "+characters[targeted].curAc+"</td><td><h3>Attack Roll</h3>"+characters[x].rolls[i]+"<br>="+atkNaturalRoll1+" natural<br>"+atkRollModifier1+" modifier<br>="+characters[x].sit+" circumstances modifier<br>="+atkRollTotal1+"</td>";
 characters[x].setCombatLog(atkRollLog+dmgRollLog);
 }
 }
