@@ -2982,6 +2982,7 @@ function _ref(){
 boxContents="<img src='"+this.figure+"'>";
 boxContents+="<table><tr><td class='piece'>"+this.name;
 boxContents+="<br>Initative: "+this.init;
+boxContents+="<br>Current Hit Points: "+this.curHp;
 boxContents+="<br>Target? <input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
 boxContents+="<br><input class='piece' onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
 boxContents+="</td></tr></table><span id=toggled1"+this.index+" style='display: "+this.toggled1+"'>"
@@ -3079,7 +3080,7 @@ boxContents+="</td><td>9th Spell Lvl Slots: "+this.maxSlot9+"<input onClick='thi
 boxContents+="</td></tr><tr><td colSpan='3'><img src='Decorations/GameTokens.png' width='50px'>";
 boxContents+="</td></tr><tr><td>Rest to earn back your spent game token slots.<input onClick='characters["+this.index+"].setCurSlot1("+this.maxSlot1+");characters["+this.index+"].setCurSlot2("+this.maxSlot2+");characters["+this.index+"].setCurSlot3("+this.maxSlot3+");characters["+this.index+"].setCurSlot4("+this.maxSlot4+");characters["+this.index+"].setCurSlot5("+this.maxSlot5+");characters["+this.index+"].setCurSlot6("+this.maxSlot6+");characters["+this.index+"].setCurSlot7("+this.maxSlot7+");characters["+this.index+"].setCurSlot8("+this.maxSlot8+");characters["+this.index+"].setCurSlot9("+this.maxSlot9+");checkTheTarget("+this.index+")' type='button' value='Take a rest?'>";
 }
-boxContents+="</td></tr><tr><td>Target the enemy piece to attack. Target this piece for skill checks."
+boxContents+="</td></tr><tr><td>Target the enemy piece to attack. Target this piece for skill checks. 3 actions per turn. Second attack -4 Circumstances, Third attack -8"
 boxContents+="<br>+Circumstances Modifier: <input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
 boxContents+="</td></tr></table><table><tr><td>Make a new roll?</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName1(this.value);checkTheTarget("+this.index+")'placeHolder='atkRollToHitName+Ability+pro SpellSlot RangeInFeet'size='30' type='text' value='"+this.rollName1+"'>"
 boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll1(this.value);checkTheTarget("+this.index+")'placeHolder='XdY+Z'size='8' type='text' value="+this.roll1+">"
@@ -5630,16 +5631,16 @@ this.curDex=0;
 this.curHp=0;
 this.curIni='+0';
 this.curInt=0;
-this.curSlot1=this.maxSlot1;
-this.curSlot2=this.maxSlot1;
-this.curSlot3=this.maxSlot3;
-this.curSlot4=this.maxSlot4;
-this.curSlot4=this.maxSlot4;
-this.curSlot5=this.maxSlot5;
-this.curSlot6=this.maxSlot6;
-this.curSlot7=this.maxSlot7;
-this.curSlot8=this.maxSlot8;
-this.curSlot9=this.maxSlot9;
+this.curSlot1=0;
+this.curSlot2=0;
+this.curSlot3=0;
+this.curSlot4=0;
+this.curSlot4=0;
+this.curSlot5=0;
+this.curSlot6=0;
+this.curSlot7=0;
+this.curSlot8=0;
+this.curSlot9=0;
 this.curStr=0;
 this.curWis=0;
 this.deception='';
