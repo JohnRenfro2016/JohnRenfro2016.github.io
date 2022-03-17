@@ -19,9 +19,7 @@ $('.DraggableDiv').draggableTouch()
 
 <style>
 
-@font-face{font-family: GoodOT;src: url("Decorations/GoodOT.ttf");}
 @font-face{font-family: Taroca;src: url("Decorations/Taroca.ttf");}
-@font-face{font-family: SabonLTStd-Roman;src: url("Decorations/SabonLTStd-Roman.ttf");}
 
 body{
 background-color: #e7c8ab;
@@ -42,7 +40,6 @@ border: 1px;
 border-color: #333b2f;
 border-style: solid;
 border-radius: 4px;
-font-family: 'GoodOT';
 font-size: 12px;
 margin: 1px;
 outline: 1px solid transparent;
@@ -59,7 +56,6 @@ border: 1px;
 border-color: #333b2f;
 border-style: solid;
 border-radius: 4px;
-font-family: 'SabonLTStd-Roman';
 margin: 1px;
 max-width: 100px;
 min-width: 100px;
@@ -402,7 +398,7 @@ characters[x].setIntPro(characters[targeted].intPro);
 characters[x].setIntimidation(characters[targeted].intimidation);
 characters[x].setInvestigation(characters[targeted].investigation);
 characters[x].setLanguages(characters[targeted].language);
-characters[x].setLvl(characters[targeted].lvl);
+characters[x].setLevel(characters[targeted].level);
 characters[x].setMaxHp(characters[targeted].maxHp);
 characters[x].setMedicine(characters[targeted].medicine);
 characters[x].setNature(characters[targeted].nature);
@@ -2868,7 +2864,7 @@ toSave+=varName+"=new Character('"+this.name+"', '"+this.type+"')<br>";
 for(var i=0; i<this.rolls.length; i++){toSave+=varName+".addRoll('"+this.rollNames[i]+"', '"+this.rolls[i]+"', '"+this.rollNames2[i]+"', '"+this.rolls2[i]+"')<br>"
 }toSave+=varName+".putAt(\'"+this.x+"\', \'"+this.y+"\' )<br>";
 toSave+=varName+".setClass('"+this.class+"')<br>";
-toSave+=varName+".setLvl('"+this.lvl+"')<br>";
+toSave+=varName+".setLevel("+this.level+")<br>";
 toSave+=varName+".setRace('"+this.race+"')<br>";
 toSave+=varName+".setBackground('"+this.background+"')<br>";
 toSave+=varName+".setAbility('"+this.ability+"')<br>";
@@ -2995,74 +2991,75 @@ boxContents+="</td><td><input onClick='toggleTab5("+this.index+");checkTheTarget
 boxContents+="</td><td><input onClick='toggleTab6("+this.index+");checkTheTarget("+this.index+")' type='button' value=' Class?'>";
 
 boxContents+="</td></tr></table><br><table><tr><td></span><table><tr><td><span id=toggled2"+this.index+" style='display: "+this.toggled2+"'>";
-boxContents+="<table><tr><td><b>Name: </b><input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='30' type='text' value='"+this.name+"'>";
-boxContents+="</td></tr><tr><td>Level: <input maxLength='2' onChange='characters["+this.index+"].setLvl('this.value')' size=3 type='text' value="+this.lvl+">";
-boxContents+="</td></tr><tr><td>Alignment: <select onChange='characters["+this.index+"].setAlignment(this.value)'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
+boxContents+="<table><tr><td><b>Name: </b><input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value);checkTheTarget("+this.index+")' placeHolder='Name'size='30' type='text' value='"+this.name+"'>";
+boxContents+="</td></tr><tr><td><b>Miniature File: </b><input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value);checkTheTarget("+this.index+")'placeHolder='*.png'size='30' type='text' value='"+this.figure+"'>";
+boxContents+="</td></tr><tr><td><b>Level: </b><input maxLength='2' onChange='characters["+this.index+"].setLevel(this.value);checkTheTarget("+this.index+")' size=3 type='text' value="+this.level+">";
+boxContents+="</td></tr><tr><td><b>Alignment: </b><select onChange='characters["+this.index+"].setAlignment(this.value);checkTheTarget("+this.index+")'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
 boxContents+="<br>"+this.alignmentDescription;
-boxContents+="</td></tr><tr><td>Size: <select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
-boxContents+="</td></tr><tr><td>Ancestry: <select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn,Black<option>Dragonborn,Blue<option>Dragonborn,Brass<option>Dragonborn,Bronze<option>Dragonborn,Gold<option>Dragonborn,Green<option>Dragonborn,Red<option>Dragonborn,Silver<option>Dragonborn,White<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kenku<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tabaxi<option>Tiefling, Asmodeus<option>Tiefling, Baazebul<option>Tiefling, Dispater<option>Tiefling, Fierna<option>Tiefling, Glasya<option>Tiefling, Levistus<option>Tiefling, Mammon<option>Tiefling, Mephistopheles<option>Tiefling, Zariel<option>Yuan-Ti</select>";
-boxContents+="<br>or<input maxLength='200' onChange='characters["+this.index+"].setRace(this.value)' placeHolder='other race' size='30' type='ptext'>";
-boxContents+="</td></tr><tr><td>Traits: (Gender, Age, Color, Height, Weight)<textArea cols='30' rows='3' onChange='characters["+this.index+"].setTrait(this.value)'placeHolder=''>"+this.trait+"</textarea>";
-boxContents+="</td></tr><tr><td>Perception: <input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='30' type='text' value='"+this.senses+"'>";
+boxContents+="</td></tr><tr><td><b>Size: </b><select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft, Reach Tall 2.5ft, Reach Long 2.5ft<option>Small 5x5ft, Reach Tall 5ft, Reach Long 5ft<option>Medium 5x5ft, Reach Tall 5ft, Reach Long 5ft<option>Large 10x10ft, Reach Tall 10ft, Reach Long 5ft<option>Huge 15x15ft, Reach Tall 15ft, Reach Long 10ft<option>Gargantuan 20x20ft+, Reach Tall 20ft, Reach Long 15ft</select>";
+boxContents+="</td></tr><tr><td><b>Ancestry: </b><select onChange='characters["+this.index+"].setRace(this.value);checkTheTarget("+this.index+")'><option>"+this.race+"<option>Celestial Angel</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn,Black<option>Dragonborn,Blue<option>Dragonborn,Brass<option>Dragonborn,Bronze<option>Dragonborn,Gold<option>Dragonborn,Green<option>Dragonborn,Red<option>Dragonborn,Silver<option>Dragonborn,White<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kenku<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tabaxi<option>Tiefling, Asmodeus<option>Tiefling, Baazebul<option>Tiefling, Dispater<option>Tiefling, Fierna<option>Tiefling, Glasya<option>Tiefling, Levistus<option>Tiefling, Mammon<option>Tiefling, Mephistopheles<option>Tiefling, Zariel<option>Yuan-Ti</select>";
+boxContents+="<br>or<input maxLength='200' onChange='characters["+this.index+"].setRace(this.value);checkTheTarget("+this.index+")' placeHolder='other race' size='30' type='ptext'>";
+boxContents+="</td></tr><tr><td><b>Perception: </b><input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='30' type='text' value='"+this.senses+"'>";
+boxContents+="<br><b>Initiative Bonus: </b><input maxLength='3' onChange='characters["+this.index+"].setInitBonus(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.initBonus+">/"+this.curIni;
 boxContents+="<br><input type='button' value='Roll (Ini)tiative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
-boxContents+="<br>Initiative Bonus:(same as Perception) <input maxLength='3' onChange='characters["+this.index+"].setInitBonus(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.initBonus+">/"+this.curIni;
-boxContents+="</td></tr><tr><td>Background Skills: <input maxLength='200' onChange='characters["+this.index+"].setBackS(this.value);checkTheTarget("+this.index+")' size='30' value='"+this.backS+"'>";
-boxContents+="</td></tr><tr><td>Class Skills: <input maxLength='200' onChange='characters["+this.index+"].setSkills(this.value);checkTheTarget("+this.index+")' size='30' value='"+this.skills+"'>";
-boxContents+="</td></tr><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/<mark>"+this.curStr+"</mark> mod: "+this.strMod
-boxContents+="</td></tr><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setDex(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.dex+">/<mark>"+this.curDex+"</mark> mod: "+this.dexMod
-boxContents+="</td></tr><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCon(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.con+">/<mark>"+this.curCon+"</mark> mod: "+this.conMod
-boxContents+="</td></tr><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/<mark>"+this.curInt+"</mark> mod: "+this.intMod
-boxContents+="</td></tr><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/<mark>"+this.curWis+"</mark> mod: "+this.wisMod
-boxContents+="</td></tr><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/<mark>"+this.curCha+"</mark> mod: "+this.chaMod
-boxContents+="</td></tr><tr><td>Items: <textArea cols='30' rows='3' onChange='characters["+this.index+"].setEquipment(this.value)'>"+this.equipment+"</textArea>";
-boxContents+="</td></tr><tr><td>Armor Class: <input maxLength='2' onChange='characters["+this.index+"].setAC(this.value);checkTheTarget("+this.index+")' size='2' type='text' value="+this.ac+">/"+this.curAc;
-boxContents+="<br><select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth @DisAdv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth @DisAdv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth @DisAdv<option>Ring AC14 Stealth @DisAdv<option>Chain Mail AC16 Stealth @DisAdv str13<option>Splint AC17 Stealth @DisAdv str15<option>Plate AC18 Stealth @DisAdv str15<option>Unarmored Defense AC10+dex+con<option>Unarmored Defense AC10+dex+wis</select>";
+boxContents+="</td></tr><tr><td><b>Languages: </b><input maxLength='200' onChange='characters["+this.index+"].setLanguages(this.value);checkTheTarget("+this.index+")' size='30' type='text' value='"+this.languages+"'>";
+boxContents+="</td></tr><tr><td><b>Skills: </b><input maxLength='200' onChange='characters["+this.index+"].setBackS(this.value);checkTheTarget("+this.index+")' size='30' value='"+this.backS+"'>";
+boxContents+="</td></tr><tr><td><b>Traits: </b>(Gender, Age, Color, Height, Weight)<textArea cols='30' rows='3' onChange='characters["+this.index+"].setTrait(this.value);checkTheTarget("+this.index+")'placeHolder=''>"+this.trait+"</textarea>";
+boxContents+="</td></tr><tr><td><b>(STR)ength:</b> <input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/<mark>"+this.curStr+"</mark> mod: "+this.strMod
+boxContents+="</td></tr><tr><td><b>(DEX)terity:</b> <input maxLength='2' onChange='characters["+this.index+"].setDex(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.dex+">/<mark>"+this.curDex+"</mark> mod: "+this.dexMod
+boxContents+="</td></tr><tr><td><b>(CON)stitution:</b> <input maxLength='2' onChange='characters["+this.index+"].setCon(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.con+">/<mark>"+this.curCon+"</mark> mod: "+this.conMod
+boxContents+="</td></tr><tr><td><b>(INT)elligence:</b> <input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/<mark>"+this.curInt+"</mark> mod: "+this.intMod
+boxContents+="</td></tr><tr><td><b>(WIS)dom:</b> <input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/<mark>"+this.curWis+"</mark> mod: "+this.wisMod
+boxContents+="</td></tr><tr><td><b>(CHA)risma:</b> <input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/<mark>"+this.curCha+"</mark> mod: "+this.chaMod
+boxContents+="</td></tr><tr><td><b>Items: </b><textArea cols='30' rows='3' onChange='characters["+this.index+"].setEquipment(this.value);checkTheTarget("+this.index+")'>"+this.equipment+"</textArea>";
+boxContents+="</td></tr><tr><td><b>Armor Class: </b><input maxLength='2' onChange='characters["+this.index+"].setAC(this.value);checkTheTarget("+this.index+")' size='2' type='text' value="+this.ac+">/"+this.curAc;
+boxContents+="<br><b>Armor Type</b><select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth @DisAdv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth @DisAdv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth @DisAdv<option>Ring AC14 Stealth @DisAdv<option>Chain Mail AC16 Stealth @DisAdv str13<option>Splint AC17 Stealth @DisAdv str15<option>Plate AC18 Stealth @DisAdv str15<option>Unarmored Defense AC10+dex+con<option>Unarmored Defense AC10+dex+wis</select>";
 boxContents+="<br>or<input maxLength='200' onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")' placeHolder='other armor or magical defense' size='30' type='text'>";
-boxContents+="<br><select onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")'><option>"+this.shield+"<option>No Shield AC+0<option>Shield AC+2</select>";
+boxContents+="<br><b>Shield</b><select onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")'><option>"+this.shield+"<option>No Shield AC+0<option>Shield AC+2</select>";
 boxContents+="<br>or<input maxLength='200' onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")' placeHolder='other shield or magical defense' size='30' type='text'>";
 
-boxContents+="</td></tr><tr><td>Be sure to target this piece to roll Reflex, Fortitude and Will. Add all your magic item bonuses penalties, proficiencies into the total modifier for Reflex, Fortitude and Will scores above."
+boxContents+="</td></tr><tr><td>"
 boxContents+="<input onClick='rollReflex("+this.index+");checkTheTarget("+this.index+")' value='Roll Reflex Saving Throw?' type='button'>"
-boxContents+="<br>Reflex Score:<input maxLength='3' onChange='characters["+this.index+"].setReflex(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.reflex+">"
+boxContents+="<br><b>Reflex</b> Score:<input maxLength='3' onChange='characters["+this.index+"].setReflex(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.reflex+">"
 boxContents+="<br>1d20"
 boxContents+="<br>+Dexterity Modifier: "+this.dexMod
 boxContents+="<br>+(Reflex Proficiency: <select onChange='characters["+this.index+"].setReflexProf(this.value);checkTheTarget("+this.index+")'><option>"+this.reflexProf+"<option>untrained+0<option>trained+2<option>expert+4<option>master+6<option>lengendary+8</select>"
-boxContents+="<br>+Level: "+this.lvl
+boxContents+="<br>+Level: "+this.level
 boxContents+=")<br>+Reflex Item:<input maxLength='3' onChange='characters["+this.index+"].setReflexItem(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.reflexItem+">"
 boxContents+="<br>+Circumstances Modifier: <input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
 boxContents+="<br>"+this.reflexResult;
 
 boxContents+="</td></tr><tr><td>"
 boxContents+="<input onClick='rollFortitude("+this.index+");checkTheTarget("+this.index+")' value='Roll Fortitude Saving Throw?' type='button'>"
-boxContents+="<br>Fortitude Score:<input maxLength='3' onChange='characters["+this.index+"].setFortitude(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.fortitude+">"
+boxContents+="<br><b>Fortitude</b> Score:<input maxLength='3' onChange='characters["+this.index+"].setFortitude(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.fortitude+">"
 boxContents+="<br>1d20"
 boxContents+="<br>+Constitution Modifier: "+this.conMod
 boxContents+="<br>+(Fortitude Proficiency: <select onChange='characters["+this.index+"].setFortitudeProf(this.value);checkTheTarget("+this.index+")'><option>"+this.fortitudeProf+"<option>untrained+0<option>trained+2<option>expert+4<option>master+6<option>lengendary+8</select>"
-boxContents+="<br>+Level: "+this.lvl
+boxContents+="<br>+Level: "+this.level
 boxContents+=")<br>+Fortitude Item:<input maxLength='3' onChange='characters["+this.index+"].setFortitudeItem(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.fortitudeItem+">"
 boxContents+="<br>+Circumstances Modifier: <input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
 boxContents+="<br>"+this.fortitudeResult;
 
 boxContents+="</td></tr><tr><td>"
 boxContents+="<input onClick='rollWill("+this.index+");checkTheTarget("+this.index+")' value='Roll Will Saving Throw?' type='button'>"
-boxContents+="<br>Will Score:<input maxLength='3' onChange='characters["+this.index+"].setWill(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.will+">"
+boxContents+="<br><b>Will</b> Score:<input maxLength='3' onChange='characters["+this.index+"].setWill(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.will+">"
 boxContents+="<br>1d20"
 boxContents+="<br>+Wisdom Modifier: "+this.wisMod
 boxContents+="<br>+(Will Proficiency: <select onChange='characters["+this.index+"].setWillProf(this.value);checkTheTarget("+this.index+")'><option>"+this.willProf+"<option>untrained+0<option>trained+2<option>expert+4<option>master+6<option>lengendary+8</select>"
-boxContents+="<br>+Level: "+this.lvl
+boxContents+="<br>+Level: "+this.level
 boxContents+=")<br>+Will Item:<input maxLength='3' onChange='characters["+this.index+"].setWillItem(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.willItem+">"
 boxContents+="<br>+Circumstances Modifier: <input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
 boxContents+="<br>"+this.willResult;
 
-boxContents+="</td></tr><tr><td>Immunities:(0dmg) <input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value)' size='30' value='"+this.immunity+"'>";
-boxContents+="</td></tr><tr><td>Resistances:(reduce dmg by the number on the right) <input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='30' value='"+this.resistance+"'>";
-boxContents+="</td></tr><tr><td>Weaknesses:(add dmg by the number on the right) <input maxLength='200' onChange='characters["+this.index+"].setVulnerability(this.value);checkTheTarget("+this.index+")' size='30' value='"+this.vulnerability+"'>";
-boxContents+="</td></tr><tr><td>Hit Points: <input maxLength='3' onChange='characters["+this.index+"].setMaxHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.maxHp+">";
+boxContents+="</td></tr><tr><td><b>Immunities:</b> <input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value)' size='30' value='"+this.immunity+"'>";
+boxContents+="</td></tr><tr><td><b>Resistances: </b><input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='30' value='"+this.resistance+"'>";
+boxContents+="</td></tr><tr><td><b>Weaknesses: </b><input maxLength='200' onChange='characters["+this.index+"].setVulnerability(this.value);checkTheTarget("+this.index+")' size='30' value='"+this.vulnerability+"'>";
+boxContents+="</td></tr><tr><td><b>Hit Points: </b><input maxLength='3' onChange='characters["+this.index+"].setMaxHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.maxHp+">";
 boxContents+="/<input maxLength='3' onChange='characters["+this.index+"].setCurHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.curHp+">";
 boxContents+="<br>Temporary Hit Points: "+this.tempHp;
 boxContents+="<br>Take damage? <input maxLength='3' onChange='characters["+this.index+"].setDmg(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
 boxContents+="<br>Heal up? <input maxLength='3' onChange='characters["+this.index+"].setHealing(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
-boxContents+="</td></tr><tr><td>Stride: <input maxLength='200' onChange='characters["+this.index+"].setSpeed(this.value);checkTheTarget("+this.index+")' size='30' type='text' value='"+this.speed+"'>";
+boxContents+="</td></tr><tr><td><b>Stride: </b><input maxLength='200' onChange='characters["+this.index+"].setSpeed(this.value);checkTheTarget("+this.index+")' size='30' type='text' value='"+this.speed+"'>";
 
 boxContents+="</td></tr></table></td><td></span><span id=toggled4"+this.index+" style='display: "+this.toggled4+"'>";
 boxContents+="<table><tr><td>"
@@ -3101,8 +3098,9 @@ boxContents+="</td><td><input type='button' onClick='deleteRollPrompt("+this.ind
 }
 }
 boxContents+="</td></tr></table></td><td></span><span id=toggled5"+this.index+" style='display: "+this.toggled5+"'>";
-boxContents+="<table><tr><td>Miniature File: <input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='30' type='text' value='"+this.figure+"'>";
-boxContents+="</td></tr><tr><td>Languages: <input maxLength='200' onChange='characters["+this.index+"].setLanguages(this.value);checkTheTarget("+this.index+")' size='30' type='text' value='"+this.languages+"'>";
+boxContents+="<table><tr><td>"
+
+
 boxContents+="</td></tr><tr><td><a href='https: //tetra-cube.com/dnd/dnd-char-gen.html' target='_blank'>Tetra-Cube.Com's Random Personality Generator</a>";
 boxContents+="</td></tr><tr><td>Background: <select onChange='characters["+this.index+"].setBackground(this.value)'><option>"+this.background+"<option>Acolyte<option>Charlatan<option>City Investigator<option>City Watch<option>Cloistered Scholar<option>Courtier<option>Criminal, Blackmailer<option>Criminal, Burglar<option>Criminal, Enforcer<option>Criminal, Fence<option>Criminal, Highway Robber<option>Criminal, Hired Killer<option>Criminal, Pickpocket<option>Criminal, Smuggler<option>Criminal, Spy<option>Entertainer, Actor<option>Entertainer, Dancer<option>Entertainer, Fire-Eater<option>Entertainer, Gladiator<option>Entertainer, Instrumentalist<option>Entertainer, Jester<option>Entertainer, Juggler<option>Entertainer, Poet<option>Entertainer, Singer<option>Entertainer, Storyteller<option>Entertainer, Tumbler<option>Faction Agent<option>Folk Hero, Farmer<option>Guild, Alchemist<option>Guild, Brewer<option>Guild, Calligrapher<option>Guild, Carpenter<option>Guild, Cartographer<option>Guild, Cobbler<option>Guild, Cook<option>Guild Crafter<option>Guild, Glassblower<option>Guild, Jeweler<option>Guild, Leatherworker<option>Guild, Mason<option>Guild, Painter<option>Guild, Potter<option>Guild, Smith<option>Guild, Tinker<option>Guild, Weaver<option>Guild, or Woodcarver<option>Hermit<option>Noble, Knight<option>Noble, Retainer<option>Outlander, Bounty Hunter<option>Outlander, Exile<option>Outlander, Forester<option>Outlander, Guide<option>Outlander, Homesteader<option>Outlander, Hunter-Gatherer<option>Outlander, Pilgrim<option>Outlander, Trapper<option>Outlander, Tribal Marauder<option>Outlander, Tribal Nomad<option>Sage, Alchemist<option>Sage, Astronomer<option>Sage, Discredited Academic<option>Sage, Librarian<option>Sage, Professor<option>Sage, Researcher<option>Sage, Scribe<option>Sage, Wizard Apprentice<option>Sailor, Cartographer<option>Sailor, Pirate<option>Soldier, Cavalry<option>Soldier, Healer<option>Soldier, Infantry<option>Soldier, Officer<option>Soldier, Quartermaster<option>Soldier, Scout<option>Urchin</select>";
 boxContents+="<br><input maxLength='200' onChange='characters["+this.index+"].setBackground(this.value)' placeHolder='other background' size='30' type='text'>";
@@ -3261,7 +3259,6 @@ c='@10th(Share Pain)1/1, short rest recharge, tgt a being to take your dmg on a 
 dx='@14th(Disrupt Life)1act,1 spell slot, 20ft-radi you tgt vsCon 1/2dmg,dmg or 1d10 necrotic per spell slot+your chaMod'
 }
 this.setFeatures("</td></tr><tr><td>@1st(Spellcasting)@1st(Hexes)2 Cantrips, and opt to replace 1 hex for another when lvling up<b onClick='FalseLife()'>False Life</b>, <b onClick='InflictWounds()'>Inflict Wounds</b></td></tr><tr><td>@1st(Witch s Curse)(Hideous)save vs your fright spells @DisAdv, 1tgt vsWis or frightened utteoint or(Hollow)when tgt is reduced to 0HP, you gain temp HP witch lvl+chaMod or(Possessed)learn+1 1st lvl witch spell, 4th, 8th, 12th, and 16th which do not count against your known spells</td></tr><tr><td>@2nd(Cackle)bonus,60ft, spell time+1 round</td></tr><tr><td>@2nd(Familiar)bonus,your familiar can react atk or cast</td></tr><tr><td>"+a+"</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>"+b+"</td></tr><tr><td>@7th(Improved Familiar)your familiar conce,trates your spell</td></tr><tr><td>@9th(Cauldron)Alchemy Points @9th 3 @12th 4 @15th 5 @18th 6 1AP 1 potion of Animal Friendship, or Healing, or Poison @13th 2AP 1 potion Heroism and Mind Reading, Philters of Love 24hr potency</td></tr><tr><td>@11th(Grand Hex)@11th 1 @15th 2 @18th 3<b onClick='Abate()'>Abate</b>, <b onClick='BeckonFamiliar()'>Beckon Familiar</b>, <b onClick='Bleeding()'>Bleeding</b>, <b onClick='CharmPerson()'>Charm</b>, <b onClick='Cripple()'>Cripple</b>, <b onClick='DireFamiliar()'>Dire Familiar</b>, <b onClick='Discord()'>Discord</b>, <b onClick='DisguiseSelf()'>Disguise</b>, <b onClick='Disorient()'>Disorient</b>, <b onClick='Duplicity()'>Duplicity</b>, <b onClick='Fear()'>Evil Eye</b>, <b onClick='Fortune()'>Fortune</b>, <b onClick='GoUnseen()'>Go Unseen</b>, <b onClick='Hesitate()'>Hesitate</b>, <b onClick='Mire()'>Mire</b>, <b onClick='Misfortune()'>Misfortune</b>, <b onClick='Nails()'>Nails</b>, <b onClick='Obfuscate()'>Obfuscate</b>, <b onClick='Pestilence()'>Pestilence</b>, <b onClick='Ruin()'>Ruin</b>, <b onClick='Slumber()'>Slumber</b>, <b onClick='Telepathy()'>Telepathy</b>, <b onClick='Tremors()'>Tremors</b>, <b onClick='Ward()'>Ward</b>(Grand Hexes)<b onClick='Coven()'>Coven</b>, <b onClick='DualHex()'>Dual Hex</b>, <b onClick='InsidiousHex()'>Insidious Hex</b>, <b onClick='IntoAToad()'>IntoAToad</b>, <b onClick='RemoteHex()'>Remote Hex</b>, <b onClick='SlowDeath()'>Slow Death</b>, <b onClick='WeaveOfFate()'>Weave of Fate</b>, <b onClick='WitchsBroom()'>Witch s Broom</b>, <b onClick='WitchsHut()'>Witch s Hut</b></td></tr><tr><td>"+c+"</td></tr><tr><td>"+d+"</td></tr><tr><td>@20th(Hex Master)tgts save vs your hexes @DisAdv");
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simplewpns, blowguns, shortswords, whips');
 this.setSaving('wis+pro, cha+pro');
 this.setStrPro('');
@@ -3311,7 +3308,6 @@ dx='@14th(Rage Beyond Death)during rage 0hp not unconscious and do not die until
 }
 this.setFeatures('</td></tr><tr><td>@1st(Rage)while unarmored, enter rage as bonus,str@Adv, dmg+rage dmg, resist bludg, pierc, slash, lasts til taking no dmg and not atking@1st 2/2,@3rd 3/3,@6th 4/4,@12th 5/5,@17th 6/6recover rages /long rest<p>(Rage Dmg)@1st(+2),@9th(+3),@16th(+4)</td></tr><tr><td>@1st(Unarmored Defense)AC10+dex+con</td></tr><tr><td>@2nd(Danger Sense)vsDex@Adv vs seen trap spells</td></tr><tr><td>@2nd(Reckless atk)str melee atk@Adv, atkd@Adv</td></tr><tr><td>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1 or 1 feat@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Extra atk)</td></tr><tr><td>@5th(Fast Movement)unarmored, speed+10ft</td></tr><tr><td>'+b+'</td></tr><tr><td>@7th(Feral Instinct)init@Adv, act normally surprised</td></tr><tr><td>@9th(Brutal Critical)dmg @9th +1d,@13th +2d,@17th +3d</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Relentless Rage)1/1 0 hp DC10 vsCon 1 hp, DC+5 each use before/long rest</td></tr><tr><td>'+dx+'</td></tr><tr><td>@15th(Persistent Rage)</td></tr><tr><td>@18th(Indomitable Might)higher of str roll or str score</td></tr><tr><td>@20th( Champion)str+4(max24), con+4(max24)');
 this.setActionNotes("(Rages) 2/2 (Rage Dmg)dmg+2")
-this.setHitDice(this.lvl+'d12+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, and all wpns');
 this.setSaving('str+pro, con+pro');
 this.setStrPro('pro');
@@ -3469,7 +3465,6 @@ BardSpells+="<b onClick=Foresight()>Foresight</b>,"
 BardSpells+="<b onClick=PowerWordKill()>PowerWordKill</b>,"
 BardSpells+="<b onClick=TruePolymorph()>TruePolymorph</b>,"
 this.setFeatures('</td></tr><tr><td><p>Spells Known: @1st(4),@2nd(5),@3rd(6),@4th(7),@5th(8),@6th(9),@7th(10),@8th(11),@9th(12),@10th(14),@11(15),@13th(16)@14th(18),@15th(19),@17th(20),@18th(22)</td></tr><tr><td>'+BardSpells+'</td></tr><tr><td>@1st(Bardic Inspiration)1 or chaMod @1st(d6),@5th(d8),@(10th d10),@(15th d12)ally ads 1 BI to their roll</td></tr><tr><td>@2nd(Jack of All Trades)non pro abi checks+half pro</td></tr><tr><td>@2nd(Song of Rest)during rest, heal allies who hear ,@2nd(d6),@9th(d8),@13th(d10),@17th(d12)</td></tr><tr><td>@3rd(Expertise)2 skills+pro are+exp ,@3rd(2),@10th(2 more)</td></tr><tr><td>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Font of Inspiration)regain bardic inspiration during a short rest</td></tr><tr><td>@6th(Countercharm)act 30ft save vs charm fear</td></tr><tr><td>'+b+'</td></tr><tr><td>@10th(Magical Secrets)learn 2 spells any class @your lvl@10th(2),@14th(2 more)</td></tr><tr><td>'+c+'</td></tr><tr><td>@20th(Superior Inspiration)@0 Bardic Inspiration gain 1 each encounter');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simplewpns, hand crossbows, longswords, rapiers, and shortswords');
 this.setSaving('dex+pro, cha+pro');
 this.setStrPro('');
@@ -3657,7 +3652,6 @@ ClericSpells+="<b onClick=TrueResurrection()>TrueResurrection</b>"
 this.setFeatures('<h3>Spells Known: wis+lvl</h3></td></tr><tr><td>'+ClericSpells+'</td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Channel Divinity),@2nd(1/1)@5th(2/2)@18th(3/3)</td></tr><tr><td>@2nd(Turn Undead)1CD, 30ft-radi, vsWis or frightened, @DisAdv while cleric is in sight, dash away, 10/10turns</td></tr><tr><td>'+b+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Destroy Undead)1CD,@5th CR1/2,@8th CR1-1/2,@11th CR2-1/2,@14th CR3-1/2,@17th CR4-1/2</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Divine Intervention)d100 roll your lvl or lower,divine helps</td></tr><tr><td>'+dx+' @20th auto success');
 this.setActionNotes('1st Slots 2/2');
 this.setEquipment('mace or warhammer.scale mail or leather armor or chain mail.light crossbow 20 bolts or simple weapon.priest pack or explorer pack.shield.holy symbol');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, simplewpns');
 this.setSaving('wis+pro, cha+pro');
 this.setStrPro('');
@@ -3827,7 +3821,6 @@ DruidSpells+="<b onClick=StormOfVengeance()>StormOfVengeance</b>,"
 DruidSpells+="<b onClick=TrueResurrection()>TrueResurrection</b>,"
 this.setFeatures('</td></tr><tr><td>'+DruidSpells+'</td></tr><tr><td>@1st(Druidic Language)</td></tr><tr><td>@2nd(Wild Shape)2/2 short rest, for lvl hours/2, no spell casting inthis form, @0hp revert to your original curHP,@2nd(CR1/4)no flying swimming@4th(CR1/2)no flying,@8th(CR1)</td></tr><tr><td>@2nd(Circle of the Land)<p>(Bonus Cantrip)<p>(Natural Recovery)regain half lvl spell slot lvls after short rest</td></tr><tr><td>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>@6th(Land s Stride)ignore difficult terrain, pass plants without dmg, ignore slowed, immune to Entangle</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@10th(Nature s Ward)immune to charmed, frightened, poisoned, diseased</td></tr><tr><td>@14th(Nature s Sanctury)vsWis atking tgt must atk another</td></tr><tr><td>@18th(Timeless Body)age 1 year for every 10<p>@18th(Beast Spells)cast spells in wild shape</td></tr><tr><td>@20th(Archdruid)unlimited wild shape');
 this.setEquipment('wooden shield or simple weapon.sciitar or simple melee weapon.leather armor.explorer pack.Druidic focus');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light non-metal armor, medium non-metal armor, non-metal shields, clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears, an herbalism kit');
 this.setSaving('int+pro, wis+pro');
 this.setStrPro('');
@@ -3877,7 +3870,6 @@ e='@18th.IMPROVED WAR MAGIC cast spell, make bonus weapon atk'
 this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)<br>(Archery)ranged atk+2or(Defense)while armored, AC+1<br>or(Dueling)melee dmg+2<br>or(Great Weapon Fighting)reroll on 1 or 2<br>or(Protection)with shield, adjac allies atkd @DisAdv<br>or(Two Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>@2nd(Second Wind)1/1 short rest, bonus,heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surges)@2nd 1/1,@17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)@4th,@6th,@8th@12th@14th@16th@19th</td></tr><tr><td>@5th(Extra atks)@5th 2,@10th 3,@20th 4</td></tr><tr><td>'+b+'</td></tr><tr><td>@9th(Indomitable)re-roll failed save/long rest@9th 1,@13th 2,@17th 3</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>'+e+'');
 this.setActionNotes("(Fighting Style)(?),(Second Wind)0/0,(Action Surges)0/0,(Extra Atks)0,(Indomitable)0/0(Relentless)0/0");
 this.setEquipment('chain mail or leather.Longbow.20 arrows.martial weapon and shield or 2 martialwpns.light crossbow 20 bolts or 2 handaxes.dungeoneer pack or explorer pack');
-this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('all armor, shields, simplewpns, martialwpns');
 this.setSaving('str+pro, con+pro');
 this.setStrPro('pro');
@@ -3924,7 +3916,6 @@ dx='@17th.OPPORTUNIST when adjac tgt hit by ally, react 1 melee atk'
 }
 this.setFeatures('</td></tr><tr><td>@1st(Unarmored Defense)unarmored no shield, AC10+dexMod+wisMod<p>(Martial Arts Damage Dice)unnarmed+bonus unarmed or simple weapon+bonus unarmed+dexMod or strMod weapon dam or 1d4 dam@1st 1d4@5th 1d6@11th 1d8@17th 1d10</td></tr><tr><td>@2nd(Ki Powers)save vs DC8+wis+pro<p>(Ki Points)1 per Monk Level, are recovered after a short 4 hour rest<p>(Flurry of Blows)1Ki, 1 more bonus narmed<p>(Patient Defense)1Ki, Dodge is bonus<p>(Step of the Wind)1Ki, Disengage or Dash as bonus,jumpft x 2<p>@(Unarmored Movement)when unarmored no shield,@2nd +10ft,@6th+15ft@9th move across walls and water without falling@10th +20ft@14th +25ft @18th +30ft</td></tr><tr><td>@3rd(Monastic Tradition)Way of the'+a+'<p>(Deflect Missiles)react, ranged hit dmg-1d10+dexMod, @0 dam catch and bonus ranged 20/60ft atk+pro</td></tr><tr><td>@4th(Slow Fall)fall dmg-5 x lvl<p>@4th(Ability Score Improvement)@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th Extra atk</td></tr><tr><td>@5th(Stunning Strike)1Ki, vsCon or stunned tteo your nt</td></tr><tr><td>@6th(Ki-Empowered Strikes)unarmed is magical</td></tr><tr><td>'+b+'</td></tr><tr><td>@7th(Evasion)dex 1/2dmg,is no dmg</td></tr><tr><td>@7th(Stillness of Mind)1act,self, end 1 charm or fear</td></tr><tr><td>@10th(Purity of Body)immune disease poison</td></tr><tr><td>'+c+'</td></tr><tr><td>@13th(Tongue of the Sun and Moon)understand all languages, tgts understand yours</td></tr><tr><td>@14th(Diamond Soul)all saves+pro, 1Ki reroll 1 save</td></tr><tr><td>@15th(Timeless Body)immune magical aging, no age penalties, no need food water</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Empty Body)4Ki invisible 10/10turns, resist all but force, 8Ki Astral Projection you and 1 ally</td></tr><tr><td>@20th(Perfect Self)roll init 0Ki is 4Ki');
 this.setEquipment('shortsword or simple weapon.dungeoneer pack or explorer pack.10/10 darts');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('simplewpns, shortswords');
 this.setSaving('str+pro, dex+pro');
 this.setStrPro('pro');
@@ -4009,7 +4000,6 @@ PaladinSpells+="<b onClick=Geas()>Geas</b>,"
 PaladinSpells+="<b onClick=RaiseDead()>RaiseDead</b>"
 this.setFeatures('</td></tr><tr><td>Cantrips Known: none<br>Spells Known: all Paladin Spells, just need to level up to aquire the slots to spend</td></tr><tr><td>'+PaladinSpells+'</td></tr><tr><td>@1st(Divine Sense)60ft aura detect celestial, fiend, undead, Hallow spell desecrated consecrated places or objects, tteo your nt(1+chaMod/1+chaMod)/long rest</td></tr><tr><td>@1st(Lay on Hands)touch less undead and constructs heal from a pool of 5x lvl points(6/6)/long rest, 5 pool points/cure 1 disease or neutralize 1 poison</td></tr><tr><td>@2nd(Fighting Style)<br>(Defense)while armored AC+1<br>or(Dueling)weapon dmg+2<br>or(Great Weapon Fighting)re-roll dmg on 1 or 2<br>or(Protection)with shield adjac allies atkd @DisAdv</td></tr><tr><td>@2nd(Divine Smite)after melee hit spend 1 slot dmg+2d8 radia+1d8/slot max 5d8+1d8 if fiend or undead@(11th+1d8 radiant)</td></tr><tr><td>@3rd(Divine Health)immune disease</td></tr><tr><td>@3rd(Channel Divinity)1/1 short rest</td></tr><tr><td>'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Extra atk)</td></tr><tr><td>'+b+'</td></tr><tr><td>@6th(Aura of Protection)5ft, you and allies save+chaMod,@6th 10ft@18th 30ft</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Aura of Courage)you and allies immune fright@10th 10ft@18th 30ft</td></tr><tr><td>'+dx+'</td></tr><tr><td>@14th(Cleansing Touch)1 or chaMod/1 or chaMod/long rest end 1 spell on you or ally</td></tr><tr><td>'+e);
 this.setEquipment('martial weapon and shield or 2 martialwpns.5/5 javelins or simple melee weapon.priest pack or explorer pack.chain mail.holy symbol');
-this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('all armor, shields, and all wpns');
 this.setSaving('wis+pro, cha+pro');
 this.setStrPro('');
@@ -4090,7 +4080,6 @@ RangerSpells+="<b onClick=CommuneWithNature()>CommuneWithNature</b>,"
 RangerSpells+="<b onClick=TreeStride()>TreeStride</b>"
 this.setFeatures('</td></tr><tr><td>Cantrips Known: none<p>Spells Known: @2nd 2,@3rd 3,@5th 4,@7th 5,@9th 6,@11th 7,@13th 8,@15th 9,@17th 10,@19th 11</td></tr><tr><td>'+RangerSpells+'</td></tr><tr><td>@1st(Favored Enemy)Survival@Adv to track, Intelligence@Adv to speak enemy language@1st 1 enemy,@6th 2 enemies@14th 3 enemies<p>or (Favored Foe)your lvl pro/ lvl pro per short rest, hit 1tgt marked 1min conce,@1st+1d4 dmg,@6th+1d6 dmg@14th+1d8 dmg</td></tr><tr><td>@1st(Natural Explorer)ignore difficult terrain, always alert, alone Stealth normal pace, forage x 2, know number, size, time of tracked enemy@1st 1 terrain type,@6th 2 terrain types@10th 3terrain types<p>or @1st(Deft Explorer)@1st(Canny)1 skill+pro becomes skill+exp, speak, read, write+2 languages,@6th(Roving)climb, swim=walk speed+5ft @10th(Tireless)1 act, temp hp 1d8+wis, lvl pro/lvl pro per short rest</td></tr><tr><td>@2nd(Fighting Style)(Archery)ranged+2or(Defense)armored AC+1or(Blind Fighting)blindsight 10ft unless tgt total coveror(Druidic Warrior)2 Druid Cantrips+wis+proor(Dueling)dmg+2or(Thrown Weapon Fighting)draw and atk, ranged+2 dmgor(Two-Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>'+a+'<p>( Awareness)xtra Ranger spells,@3rd <b onClick=SpeakWithAnimals()>Speak with Animals</b>@5th <b onClick=BeastSense()>Beast Sense</b>@9th <b onClick=SpeakWithPlants()>Speak with Plants</b>@13th <b onClick=LocateCreature()>Locate Creature</b>@17th <b onClick=CommuneWithNature()>Commune with Nature</b></td></tr><tr><td>@4th(Ability Score Improvement)abi+1 and another abi+1 or abi+2@4th,@8th,@12th,@16th,@19th<p>@4th(Martial Versatility)replace your fighting style with another</td></tr><tr><td>@5th(Extra atk)</td></tr><tr><td>'+b+'</td></tr><tr><td>@8th(Land s Stride)difficult terrain no penalty, save@Adv vs plant spells</td></tr><tr><td>@10th(Primeval Awareness)1act,1slot, 10/10turns, know beings in area 1mi, favored terrain 6mi<p>@10th(Hide in Plain Sight)10/10turns camo, unmoving, stealth+10or(Nature s Veil)bonus , invisible until start next turn lvl pro/ lvl pro/long rest</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Vanish)Hide as bonus,not nonmagically tracked</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Feral Senses)invisible 30ft no@Adv vs you</td></tr><tr><td>@20th(Foe Slayer)1/turn dmg+wisMod');
 this.setEquipment('scale mail or leather armor.2 shortswords or 2 simple meleewpns.dungeoneer pack or explorer pack.Longbow 20 arrows');
-this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, medium armor, shields, all wpns');
 this.setSaving('str+pro, dex+pro');
 this.setStrPro('pro');
@@ -4218,7 +4207,6 @@ dx="@17th(Thief s Fortitudees)1st turn @init, 2nd(turn @init-10 1st round"
 }
 this.setFeatures('</td></tr><tr><td>@1st(Expertise)Thieves Tools+exp and 1 skill+exp or 2 skills+exp,@6th 2 more skills+exp</td></tr><tr><td>@1st(Sneak atk)1/turn when atking@Adv or ally adjac to tgt xtra dmg@1st+1d6,@3rd+2d6@5th+3d6@7th+4d6,@8th+5d6</td></tr><tr><td>@1st(Thieves Cant)gestures</td></tr><tr><td>@2nd(Cunning Action)bonus Dash, Disengage, or Hide after atk, under half cover, Stealth vs Perception or tgt can not atk</td></tr><tr><td>'+a+'</td></tr><tr><td>@3rd(Steady Aim)bonus,no movement atk@Adv after 0 movement till next turn</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1 or 1 feat@4th,@6th,@8th@12th@16th@19th</td></tr><tr><td>@5th(Uncanny Dodge)1 react per turn 1/2dmg,dmg</td></tr><tr><td>@7th(Evasion)when atkd,vsDex 1/2dmg,is no dmg</td></tr><tr><td>'+b+'</td></tr><tr><td>@11th(Reliable Talent)abi+pro roll of 9 or less is 10</td></tr><tr><td>'+c+'</td></tr><tr><td>@14th(Blindsense)know location of invisibles 10ft</td></tr><tr><td>@15th(Slippery Mind)wis+pro</td></tr><tr><td>'+dx+'</td></tr><tr><td>@18th(Elusive)not atkd@Adv less incapacitated</td></tr><tr><td>@20th(Stroke of Luck)recharge short rest, roll failure is success');
 this.setEquipment('rapier or shortsword.shortbow 20 arrows or shortsword.burglar pack or dungeoneer pack or explorer pack.leather armor.2 daggers.thieves tools');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('daggers, darts, light crossbows, quarterstaffs, and slings');
 this.setSaving('con+pro, cha+pro');
 this.setStrPro('');
@@ -4387,7 +4375,6 @@ SorcererSpells+="<b onClick=Wish()>Wish</b>"
 this.setFeatures('</td></tr><tr><td>(Sorcerer)<p>Sorcery Points,@2nd 2+1 Sorcerery Point/lvl<p><p>Spells Known@1st 2lvl+1</td></tr><tr><td>'+SorcererSpells+'</td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Font of Magic)exchange spell slots and Sorcery Points<p>@2nd(Spell Points) your lvl/your lvl</td></tr><tr><td>(Metamagic),@3rd 2@10th 3 @17th 4(Careful Spell)1SP, select chaMod tgts in spell area to be immune(Distant Spell)1SP, range x 2, touch is 30ft(Empowered Spell)1SP, discard dmg and reroll dmg chaMod times, in addition to other Metamagic(Extend Spell)1SP, duration x 2, max 24 hrs(Heightened Spell)3SP, tgt rolls 1st save @DisAdv(Quickened Spell)1SP, 1 act is 1 bonus cast(Subtile Spell)1SP, no verbal somatic cast needed(Twinned Spell)SP is spell lvl, non self spell, tgt another</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Sorcerous Restoration)0SP is 4SP, recharge short rest');
 this.setActionNotes('(Sorcrery Points),@2nd lvl+1/lvl+1, (1st Slot)0/0, (2nd Slot)0/0, (3rd Slot)0/0, (4th Slot)0/0, (5th Slot)0/0, (6th Slot)0/0, (7th Slot)0/0, (8th Slot)0/0, (9th Slot)0/0');
 this.setEquipment('light crossbow 20 bolts or focus.dungeoneer pack or explorer pack.2 daggers');
-this.setHitDice(this.lvl+'d6+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('Draconic, daggers, darts, light crossbows, quarterstaffs, and slings');
 this.setSaving('con+pro, cha+pro');
 this.setStrPro('');
@@ -4524,7 +4511,6 @@ WarlockSpells+="<b onClick=PowerWordKill()>PowerWordKill</b>,"
 WarlockSpells+="<b onClick=TruePolymorph()>TruePolymorph</b>,"
 this.setFeatures('</td></tr><tr><td>@1st(Pact Magic)spellMod is chaMod<p><p>Spells Known@1st(2)@2nd(3)@3rd(4)@4th(5)@5th(6),@6th(7),@7th (8),@8th(9),@9th(10),@11th(11),@13th(12),@15th(13),@17th(14),@19th (15)<p>Slot Lvl(Warlocks always cast all spells at this Slot Lvl)@1st (1st Slot),@2nd(2nd Slot),@4th(3rd Slot),@7th(4th Slot),@9th(5th Slot)</td></tr><tr><td>'+WarlockSpells+'</td></tr><tr><td>Warlock Invocations Known,@2nd 2@5th 3@7th 4@9th 5@12th 6@15th 7@18th 8<p>(Expanded Spell List)<p>Cantrips<b onClick=BoomingBlade()>BoomingBlade</b>, <b onClick=GreenFlameBlade()>GreenFlameBlade</b>, <b onClick=LightningLure()>LightningLure</b>, <b onClick=MindSliver()>MindSliver</b>, <b onClick=SwordBurst()>SwordBurst</b><br>3rd Lvl Spells<b onClick=IntellectFortress()>IntellectFortress</b>, <b onClick=SpiritShroud()>SpiritShroud</b>, <b onClick=SummonFey()>SummonFey</b>, <b onClick=SummonShadowspawn()>SummonShadowspawn</b>, <b onClick=SummonUndead()>SummonUndead</b><br>4th Lvl Spells<b onClick=SummonAberration()>SummonAberration</b><p>5th Lvl Spells<b onClick=Mislead()>Mislead</b>, <b onClick=PlanarBinding()>PlanarBinding</b>, <b onClick=TeleportationCircle()>TeleportationCircle</b><p>6th Lvl Spells<b onClick=SummonFiend()>SummonFiend</b>, <b onClick=TashasOtherworldlyGuise()>TashasOtherworldlyGuise</b><p>7th Lvl Spells<b onClick=DreamOfTheBlueVeil()>DreamOfTheBlueVeil</b><p>9th Lvl Spells<b onClick=BladeOfDisaster()>BladeOfDisaster</b>, <b onClick=Gate()>Gate</b>, <b onClick=Weird()>Weird</b></td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Eldritch Invocations)INVOCATION AGONIZING BLAST must have Eldritch Blast, dmg+chaMod<p>ARMOR OF SHADOWS Mage Armor no slot cost<p>@9th ASCENDANT STEP Levitate @will, no slot cost<p>BEAST SPEECH Speak with Animals @will, no slot cost<p>BEGUILING INFLUENCE Deception Persuasion+pro<p>@7th BEWITCHING WHISPERS Compulsion, slot cost, 1/1/long rest<p>BOOK OF ANCIENT SECRETS must have Pact of the Tome, 2 1st lvl spells of any class as rituals, add adventure rituals 2hrs 50gp<p>@15th CHAINS OF CARCERI 1/1/long rest, Hold Monster @will, no slot cost or components(Devil s Sight)120ft see in magical nonmagical darkness @7th(Dreadful Word)1/1/long rest, Confusion, slot cost<p>ELDRITCH SIGHT Detect magic @will, no slot cost<p>ELDRITCH SPEAR must have Eldritch Blast, range 300ft<p>EYES OF THE RUNE KEEPER read all writing<p>FIENDISH VIGOR False Life @will, no slot cost<p>GAZE OF TWO MINDS see through ally till tteo your nt<p>@12th LIFEDRINKER must have Pact of the Blade, dmg+chaMod necrotic<p>MASK OF MANY FACES <b onClick=DisguiseSelf()>Disguise Self</b> @will, no slot cost<p>@15th MASTER OF MYRIAD FORMS Alter Self @will, no slot cost<p>@9th MINIONS OF CHAOS 1/1/long rest, Conjure Elemental, slot cost<p>@5th MIRE THE MIND 1/1/long rest, Slow, slot cost<p>MISTY VISIONS Silent Image @will, no slot cost, no material component<p>@5th ONE WITH SHADOWS in dim or darkness, 1act,invisible til move, act, react<p>@9th OTHERWORLDLY LEAP jump @will, no slot cost, no material component<p>REPELLING BLAST must have Eldritch Blast, on hit push tgt up to 10ft<p>@7th SCULPTOR OF FLESH 1/1/long rest, Polymorph, 1 slot<p>@5th SIGN OF ILL OMEN 1/1/long rest, Bestow Curse<p>THIEF OF FIVE FATES 1/1/long rest, Bane<p>@5th THIRSTING BLADE must have Pact of the Blade, 1 more atk<p>@15th VISIONS OF DISTANT REALMS Eye @will, no slot cost<p>VOICE OF THE CHAIN MASTER must have Pact of the Chain, telepathy with familiar, sense and speak through familiar<p>@9th WHISPERS OF THE GRAVE Speak with Dead @will, no slot cost<p>@15th WITCH SIGHT see true form of shapechanger of or transmu 30ft</td></tr><tr><td>@3rd(Pact Boon)</td></tr><tr><td>@3rd(Pact of the Chain)Find Familiar as ritual, imp, pseudodragon, quasit, sprite, or normal familiar, familiar atks as its reactfamiliar fly or swim at 40ftbonus,familiar magical atks with your spellAbi+DCfamiliar takes your resistance dmg<p>(Pact of the Talisman)abi check+1d4 proLvl/proLvl/long rest, 1hr ritual to replace the talisman@12th(Bond of the Talisman)ally wears your talisman, you can teleport to your ally, lvl pro/lvl pro/long restor (Eldritch Mind)vsCon@Adv to maintain concen@7th(Protection of the Talisman)ally wears your talisman, +1d4 to save throw, lvlPro/lvlPro/long restor @7th(Rebuke of the Talisman)react, atkr 30ft takes lvlPro psychic dmg and pushed 10ft<p>or ,@3rd(Pact of the Blade)weapon becomes magical, summon dismiss weapon as bonus<p>or ,@3rd(Pact of the Tomb)3 any class xtra cantrips, 1hr to replace book@5th(Far Scribe)lvl pro of allies write name in book, Sending Spell send and receive messages, 1min@9th(Gift of the Protectors)lvl pro of allies write name in book, 0hp becomes 1hp less take 2xMaxHP+CurHP, 1/long rest</td></tr><tr><td>@4th(Ability Score Improvement)1 abi+2, or abi+1 another abi+1@4th,@8th,@12th,@16th,@19th <p>(Eldritch Versatility)during abi increase, exchange 1 cantrip, exchange pact boon feature, @12th exchange 1 Mystic Arcanum spell</td></tr><tr><td>@5th(Undying Servitude) <b onClick=AnimateDead()>AnimateDead</b> no spell slot/long rest'+b+'</td></tr><tr><td>'+c+'</td></tr><tr><td>@11th(Mystic Arcanum)1 new 6th lvl Warlock spell without slot cost, after slot cost)1/1, @13th 7th lvl 1/1, @15th 8th lvl 1/1, @17th 9th lvl 1/1 </td></tr><tr><td>'+dx+'</td></tr><tr><td>@20th(Eldritch Master)1/1/long rest, takes 1min restore all slots</td></tr>');
 this.setEquipment('light crossbow 20 bolts or simple weapon.component pouch or focus.scholar pack or dungeoneer pack.leather armor.simple weapon.2 daggers');
-this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('light armor, simplewpns');
 this.setSaving('wis+pro, cha+pro');
 this.setStrPro('');
@@ -4780,7 +4766,6 @@ WizardSpells+="<b onClick=Weird()>Weird</b>,"
 WizardSpells+="<b onClick=Wish()>Wish</b>"
 if(this.class.match(/Wizard/)){this.setFeatures("</td></tr><tr><td>(Spells Known)intMod+1 and +2 spells every lvl-up</td></tr><tr><td>"+WizardSpells+"</td></tr><tr><td>@1st( Recovery)1/1 short rest, recover 1/2 lvl rnd up in 6th lvl or fewer slots</td></tr><tr><td>"+a+"</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>"+b+"</td></tr><tr><td>@18th(Spell Mastery)cast a known 1st and 2nd lvl spell @no 1st cost, 8hrs change the know spells</td></tr><tr><td>@20th(Signature Spells)cast 2 known 3rd lvl spells @no 3rd cost");
 this.setEquipment('quarterstaff or dagger.component pouch or focus.scholar pack or explorer pack.spellbook');
-this.setHitDice(this.lvl+'d6+'+(parseInt(this.lvl)*parseInt(this.conMod)));
 this.setProficiencies('daggers, darts, light crossbows, quarterstaffs, and slings');
 this.setSaving('int+pro, wis+pro');
 this.setStrPro('');
@@ -4852,6 +4837,7 @@ function _setArcana(x){this.arcana=x;this.refresh(x)}
 function _setAthletics(x){this.athletics=x;this.refresh(x)}
 function _setChaPro(x){this.chaPro=x;this.refresh(x)}
 function _setCombatLog(x){this.combatLog=x;this.refresh()}
+function _setCombatLog2(x){this.combatLog2=x;this.refresh()}
 function _setCon(x){this.con=x;this.curCon=x;calcMod(x);this.conMod=mod;this.setClass(this.class);this.refresh()}
 function _setConPro(x){this.conPro=x;this.refresh(x)}
 function _setContents(newContents){this.contents=newContents;this.refresh()}
@@ -4896,6 +4882,7 @@ function _setInsight(x){this.insight=x;this.refresh(x)}
 function _setIntPro(x){this.intPro=x;this.refresh(x)}
 function _setIntimidation(x){this.intimidation=x;this.refresh(x)}
 function _setInvestigation(x){this.investigation=x;this.refresh(x)}
+function _setLevel(x){this.level=x;this.refresh(x)}
 function _setMaxSlot1(x){this.maxSlot1=x;this.curSlot1=this.maxSlot1;this.refresh(x);}
 function _setMaxSlot2(x){this.maxSlot2=x;this.curSlot2=this.maxSlot2;this.refresh(x);}
 function _setMaxSlot3(x){this.maxSlot3=x;this.curSlot3=this.maxSlot3;this.refresh(x);}
@@ -5057,8 +5044,8 @@ D20NaturalRoll2=naturalRoll;
 D20RollModifier2=roll;
 abilityCheckRollTotal1=D20Roll1+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
 abilityCheckRollTotal2=D20Roll2+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
-AbiCheckLog=characters[x].name+" s<br>Ability Check<br>or Skill Check<br>or Saving Throw</td><td><h3>Roll 1</h3>1d20+0<br>="+D20NaturalRoll1+" natural<br>"+D20RollModifier1+" modifier<br>="+D20Roll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal1+"</td><td><h3>Roll 2</h3>1d20+0<br>="+D20NaturalRoll2+" natural<br>"+D20RollModifier2+" modifier<br>="+D20Roll2+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal2;
-characters[x].setCombatLog(AbiCheckLog);
+AbiCheckLog=characters[x].name+" s<br>Ability Check Roll1d20+0 ="+D20NaturalRoll1+" natural<br>"+D20RollModifier1+" modifier<br>="+D20Roll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal1;
+characters[x].setCombatLog2(AbiCheckLog);
 }
 
 function rollReflex(x){
@@ -5633,6 +5620,7 @@ this.chaMod='+0';
 this.chaPro='';
 this.class='';
 this.combatLog="";
+this.combatLog2="";
 this.con=0;
 this.conMod='+0';
 this.conPro='';
@@ -5758,6 +5746,7 @@ this.setCha=_setCha;
 this.setChaPro=_setChaPro;
 this.setClass=_setClass;
 this.setCombatLog=_setCombatLog;
+this.setCombatLog2=_setCombatLog2;
 this.setCon=_setCon;
 this.setConPro=_setConPro;
 this.setCurAc=_setCurAc;
@@ -5809,7 +5798,7 @@ this.setIntPro=_setIntPro;
 this.setIntimidation=_setIntimidation;
 this.setInvestigation=_setInvestigation;
 this.setLanguages=_setLanguages;
-this.setLvl=_setLvl;
+this.setLevel=_setLevel;
 this.setMaxHp=_setMaxHp;
 this.setMaxSlot1=_setMaxSlot1;
 this.setMaxSlot2=_setMaxSlot2;
@@ -6232,118 +6221,6 @@ if(children.indexOf(e.target.parentNode)>children.indexOf(row))
  e.target.parentNode.after(row);
 else
  e.target.parentNode.before(row)}
-
-function _setLvl(x){this.lvl=x;
-if(this.lvl.match(/[0-4]/)){this.setPro('+2')}
-if(this.lvl.match(/[5-8]/)){this.setPro('+3')}
-if(this.lvl.match(/9|1[0-2]/)){this.setPro('+4')}
-if(this.lvl.match(/1[3-6]/)){this.setPro('+5')}
-if(this.lvl.match(/1[7-9]|20/)){this.setPro('+6')}
-if(this.lvl.match(/2[1-4]/)){this.setPro('+7')}
-if(this.lvl.match(/2[5-8]/)){this.setPro('+8')}
-if(this.lvl.match(/29|30/)){this.setPro('+9')}
-
-if(this.class.match(/ |Eldritch/)){
-if(this.lvl.match(/[0-2]/)){this.setMaxSlot1(0)};
-if(this.lvl.match(/3/)){this.setMaxSlot1(2)};
-if(this.lvl.match(/[4-6]/)){this.setMaxSlot1(3)};
-if(this.lvl.match(/[7-9]|1[0-9]|20/)){this.setMaxSlot1(4)};
-if(this.lvl.match(/[0-6]/)){this.setMaxSlot2(0)};
-if(this.lvl.match(/[7-9]/)){this.setMaxSlot2(2)};
-if(this.lvl.match(/1[0-9]|20/)){this.setMaxSlot2(3)};
-if(this.lvl.match(/[0-9]|1[0-2]/)){this.setMaxSlot3(0)};
-if(this.lvl.match(/1[3-5]/)){this.setMaxSlot3(2)};
-if(this.lvl.match(/1[6-9]|20/)){this.setMaxSlot3(3)};
-if(this.lvl.match(/[0-9]|1[0-8]/)){this.setMaxSlot4(0)};
-if(this.lvl.match(/19|20/)){this.setMaxSlot4(1)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot5(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot6(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot7(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot8(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot9(0)};
-}
-
-if(this.class.match(/Bard|Cleric|Druid|Sorcerer|Wizard/)){
-if(this.lvl.match(/0/)){this.setMaxSlot1(0)};
-if(this.lvl.match(/1/)){this.setMaxSlot1(2)};
-if(this.lvl.match(/2/)){this.setMaxSlot1(3)};
-if(this.lvl.match(/[3-9]|1[0-9]|20/)){this.setMaxSlot1(4)};
-if(this.lvl.match(/[0-2]/)){this.setMaxSlot2(0)};
-if(this.lvl.match(/3/)){this.setMaxSlot2(2)};
-if(this.lvl.match(/[4-9]|1[0-9]|20/)){this.setMaxSlot2(3)};
-if(this.lvl.match(/[0-4]/)){this.setMaxSlot3(0)};
-if(this.lvl.match(/5/)){this.setMaxSlot3(2)};
-if(this.lvl.match(/[6-9]|1[0-9]|20/)){this.setMaxSlot3(3)};
-if(this.lvl.match(/[0-6]/)){this.setMaxSlot4(0)};
-if(this.lvl.match(/7/)){this.setMaxSlot4(1)};
-if(this.lvl.match(/8/)){this.setMaxSlot4(2)};
-if(this.lvl.match(/9|1[0-9]|20/)){this.setMaxSlot4(3)};
-if(this.lvl.match(/[0-8]/)){this.setMaxSlot5(0)};
-if(this.lvl.match(/9/)){this.setMaxSlot5(1)};
-if(this.lvl.match(/1[0-7]/)){this.setMaxSlot5(2)};
-if(this.lvl.match(/1[8-9]|20/)){this.setMaxSlot5(3)};
-if(this.lvl.match(/[0-9]|10/)){this.setMaxSlot6(0)};
-if(this.lvl.match(/1[0-8]/)){this.setMaxSlot6(1)};
-if(this.lvl.match(/19|20/)){this.setMaxSlot6(2)};
-if(this.lvl.match(/[0-9]|1[0-2]/)){this.setMaxSlot7(0)};
-if(this.lvl.match(/1[3-9]/)){this.setMaxSlot7(1)};
-if(this.lvl.match(/20]/)){this.setMaxSlot7(2)};
-if(this.lvl.match(/[0-9]|1[0-4]/)){this.setMaxSlot8(0)};
-if(this.lvl.match(/1[5-9]|20/)){this.setMaxSlot8(1)};
-if(this.lvl.match(/[0-9]|1[0-6]/)){this.setMaxSlot9(0)};
-if(this.lvl.match(/1[7-9]|20/)){this.setMaxSlot9(1)};
-}
-
-if(this.class.match(/Paladin|Ranger/)){
-if(this.lvl.match(/[0-1]/)){this.setMaxSlot1(0)};
-if(this.lvl.match(/2/)){this.setMaxSlot1(2)};
-if(this.lvl.match(/3/)){this.setMaxSlot1(3)};
-if(this.lvl.match(/[4-9]|1[0-9]|20/)){this.setMaxSlot1(4)};
-if(this.lvl.match(/[0-4]/)){this.setMaxSlot2(0)};
-if(this.lvl.match(/[5-6]/)){this.setMaxSlot2(2)};
-if(this.lvl.match(/[7-9]|1[0-9]|20/)){this.setMaxSlot2(3)};
-if(this.lvl.match(/[0-8]/)){this.setMaxSlot3(0)};
-if(this.lvl.match(/9|10/)){this.setMaxSlot3(2)};
-if(this.lvl.match(/1[1-9]|20/)){this.setMaxSlot3(3)};
-if(this.lvl.match(/[0-9]|1[0-2]/)){this.setMaxSlot4(0)};
-if(this.lvl.match(/1[3-4]/)){this.setMaxSlot4(1)};
-if(this.lvl.match(/1[5-6]/)){this.setMaxSlot4(2)};
-if(this.lvl.match(/1[7-9]|20/)){this.setMaxSlot4(3)};
-if(this.lvl.match(/[0-9]|1[0-6]/)){this.setMaxSlot5(0)};
-if(this.lvl.match(/1[7-8]/)){this.setMaxSlot5(1)};
-if(this.lvl.match(/19|20/)){this.setMaxSlot5(2)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot6(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot7(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot8(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot9(0)};
-}
-
-if(this.class.match(/Warlock/)){
-if(this.lvl.match(/0/)){this.setMaxSlot1(0)};
-if(this.lvl.match(/1/)){this.setMaxSlot1(1)};
-if(this.lvl.match(/2/)){this.setMaxSlot1(2)};
-if(this.lvl.match(/[3-9]|1[0-9]|20/)){this.setMaxSlot1(0)};
-if(this.lvl.match(/[0-2]/)){this.setMaxSlot2(0)};
-if(this.lvl.match(/[3-4]/)){this.setMaxSlot2(2)};
-if(this.lvl.match(/[5-9]|1[0-9]|20/)){this.setMaxSlot2(0)};
-if(this.lvl.match(/[0-5]/)){this.setMaxSlot3(0)};
-if(this.lvl.match(/[6-7]/)){this.setMaxSlot3(3)};
-if(this.lvl.match(/[8-9]|1[0-9]|20/)){this.setMaxSlot3(0)};
-if(this.lvl.match(/[0-2]/)){this.setMaxSlot4(0)};
-if(this.lvl.match(/[7-8]/)){this.setMaxSlot4(4)};
-if(this.lvl.match(/9|1[0-9]|20/)){this.setMaxSlot4(0)};
-if(this.lvl.match(/[0-8]/)){this.setMaxSlot5(0)};
-if(this.lvl.match(/9|1[0-1]/)){this.setMaxSlot5(5)};
-if(this.lvl.match(/1[2-4]/)){this.setMaxSlot5(6)};
-if(this.lvl.match(/1[5-7]/)){this.setMaxSlot5(7)};
-if(this.lvl.match(/1[8-9]|20/)){this.setMaxSlot5(8)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot6(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot7(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot8(0)};
-if(this.lvl.match(/[0-9]|1[0-9]|20/)){this.setMaxSlot9(0)};
-}
-
-this.refresh()}
 
 </script>
 <script src="Characters.js"></script>
