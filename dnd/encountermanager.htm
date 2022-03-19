@@ -2102,13 +2102,15 @@ savePane.putAt(100, 100);
 
 function setStats()
 {
-if(rip=stats.match(/CREATURE\s(\d{1,2})/i)){characters[targeted].setLevel(rip[1])}
+if(rip=stats.match(/^([\s\S].+)/i)){characters[targeted].setName(rip[1])}
 
-if(rip=stats.match(/(NE)/)){characters[targeted].setAlignment(rip[1])}
+if(rip=stats.match(/CREATURE\s(\d{1,2})/)){characters[targeted].setLevel(rip[1])}
 
-if(rip=stats.match(/(MEDIUM)/)){characters[targeted].setSize(rip[1])}
+if(rip=stats.match(/CREATURE[\s\S]*(LN|NE|NG|LG|LE|CE|CG|CN|N|UN)/)){characters[targeted].setAlignment(rip[1])}
 
-if(rip=stats.match(/(GOBLIN\sHUMANOID)/)){characters[targeted].setRace(rip[1])}
+if(rip=stats.match(/(TINY|SMALL|MEDIUM|LARGE|HUGE|GARGANTUAN)/)){characters[targeted].setSize(rip[1])}
+
+if(rip=stats.match(/(TINY|SMALL|MEDIUM|LARGE|HUGE|GARGANTUAN)([\s\S].+)/)){characters[targeted].setRace(rip[2])}
 
 if(rip=stats.match(/Perception\s([\s\S].+)/)){characters[targeted].setSenses(rip[1])}
 
@@ -2127,6 +2129,8 @@ if(rip=stats.match(/Ref\s([\s\S].+?)\,/)){characters[targeted].setReflex(rip[1])
 if(rip=stats.match(/Will\s([\s\S].+)/)){characters[targeted].setWill(rip[1])}
 
 if(rip=stats.match(/HP\s(\d{1,3})/i)){characters[targeted].setMaxHp(rip[1])}
+
+if(rip=stats.match(/Immunities\s([\s\S].+)/)){characters[targeted].setImmunity(rip[1])}
 
 if(rip=stats.match(/(Speed\s|Stride\s)([\s\S].+)/)){characters[targeted].setSpeed(rip[2])}
 
@@ -2319,9 +2323,10 @@ boxContents+="</td></tr></table><br><table><tr><td></span><table><tr><td><span i
 boxContents+="<table><tr><td><b>Name: </b><input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value);checkTheTarget("+this.index+")' placeHolder='Name'size='30' type='text' value='"+this.name+"'>";
 boxContents+="</td></tr><tr><td><b>Miniature File: </b><input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value);checkTheTarget("+this.index+")'placeHolder='*.png'size='30' type='text' value='"+this.figure+"'>";
 boxContents+="</td></tr><tr><td><b>Level: </b><input maxLength='2' onChange='characters["+this.index+"].setLevel(this.value);checkTheTarget("+this.index+")' size=3 type='text' value="+this.level+">";
-boxContents+="</td></tr><tr><td><b>Alignment: </b><select onChange='characters["+this.index+"].setAlignment(this.value);checkTheTarget("+this.index+")'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>True Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
+boxContents+="</td></tr><tr><td><b>Alignment: </b><select onChange='characters["+this.index+"].setAlignment(this.value);checkTheTarget("+this.index+")'><option>"+this.alignment+"<option>LG<option>LN<option>LE<option>NG<option>N<option>NE<option>CG<option>CN<option>CE<option>Unaligned</select>";
 boxContents+="<br>"+this.alignmentDescription;
-boxContents+="</td></tr><tr><td><b>Size: </b><select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft, Reach Tall 2.5ft, Reach Long 2.5ft<option>Small 5x5ft, Reach Tall 5ft, Reach Long 5ft<option>Medium 5x5ft, Reach Tall 5ft, Reach Long 5ft<option>Large 10x10ft, Reach Tall 10ft, Reach Long 5ft<option>Huge 15x15ft, Reach Tall 15ft, Reach Long 10ft<option>Gargantuan 20x20ft+, Reach Tall 20ft, Reach Long 15ft</select>";
+boxContents+="</td></tr><tr><td><b>Size: </b><select onChange='characters["+this.index+"].setSize(this.value);scheckTheTarget("+this.index+")'><option>"+this.size+"<option>TINY<option>SMALL<option>MEDIUM<option>LARGE<option>HUGE<option>GARGANTUAN</select>";
+boxContents+="<br><b>Size Description: </b>"+this.sizeDescription+" ";
 boxContents+="</td></tr><tr><td><b>Ancestry: </b><select onChange='characters["+this.index+"].setRace(this.value);checkTheTarget("+this.index+")'><option>"+this.race+"<option>Dwarf<option>Elf<option>Gnome<option>Goblin<option>Halfling<option>Human<option>Azarketi<option>Catfolk<option>Fetchling<option>Gnoll<option>Grippli<option>Hobgoblin<option>Kitsune<option>Kobold<option>Leshy<option>Lizardfolk<option>Orc<option>Ratfolk<option>Tengu<option>Anadi<option>Android<option>Automaton<option>Conrasu<option>Fleshwarp<option>Goloma<option>Poppet<option>Shisk<option>Shoony<option>Sprite<option>Strix</select>";
 boxContents+="<br>or<input maxLength='200' onChange='characters["+this.index+"].setRace(this.value);checkTheTarget("+this.index+")' placeHolder='other race' size='30' type='ptext'>";
 boxContents+="</td></tr><tr><td><b>Perception: </b><input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='30' type='text' value='"+this.senses+"'>";
@@ -2342,11 +2347,12 @@ boxContents+="</td></tr><tr><td><b>(WIS)dom:</b> <input maxLength='2' onChange='
 boxContents+="</td></tr><tr><td><b>(CHA)risma:</b> <input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/<mark>"+this.curCha+"</mark> mod: "+this.chaMod
 boxContents+="</td></tr><tr><td><b>Items: </b><textArea cols='30' rows='3' onChange='characters["+this.index+"].setEquipment(this.value);checkTheTarget("+this.index+")'>"+this.equipment+"</textArea>";
 boxContents+="</td></tr><tr><td><b>Armor Class: </b><input maxLength='2' onChange='characters["+this.index+"].setAC(this.value);checkTheTarget("+this.index+")' size='2' type='text' value="+this.ac+">/"+this.curAc;
-boxContents+="<br><b>Armor Type</b><select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>Unarmored Category:Unarmored Traits: LevelReq:0 Cost:0 gp +0 DexCap:— CheckPenalty:— SpeedPenalty:  AC:— Bulk:— <option>Explorers Clothing Category:Unarmored Traits:Comfort LevelReq:0 Cost:1 sp +0 DexCap:+5 CheckPenalty:— SpeedPenalty:  AC:— Bulk:L <option>Padded Armor Category:Light Traits:Comfort LevelReq:0 Cost:2 sp +1 DexCap:+3 CheckPenalty:— SpeedPenalty:  AC:10 Bulk:L <option>Leather Armor Category:Light Traits:— LevelReq:0 Cost:2 gp +1 DexCap:+4 CheckPenalty:-1 SpeedPenalty:— AC:10 Bulk:1 <option>Studded Leather Armor Category:Light Traits:— LevelReq:0 Cost:3 gp +2 DexCap:+3 CheckPenalty:-1 SpeedPenalty:— AC:12 Bulk:1 <option>Chain Shirt Category:Light Traits:Flexible, Noisy LevelReq:0 Cost:5 gp +2 DexCap:+3 CheckPenalty:-1 SpeedPenalty:— AC:12 Bulk:1 <option>Hide Armor Category:Medium Traits:— LevelReq:0 Cost:2 gp +3 DexCap:+2 CheckPenalty:-2 SpeedPenalty:-5 ft. AC:14 Bulk:2 <option>Scale Mail Category:Medium Traits:— LevelReq:0 Cost:4 gp +3 DexCap:+2 CheckPenalty:-2 SpeedPenalty:-5 ft. AC:14 Bulk:2 <option>Chain Mail Category:Medium Traits:Flexible, Noisy LevelReq:0 Cost:6 gp +4 DexCap:+1 CheckPenalty:-2 SpeedPenalty:-5 ft. AC:16 Bulk:2 <option>Breastplate Category:Medium Traits:— LevelReq:0 Cost:8 gp +4 DexCap:+1 CheckPenalty:-2 SpeedPenalty:-5 ft. AC:16 Bulk:2 <option>Splint Mail Category:Heavy Traits:— LevelReq:1 Cost:13 gp +5 DexCap:+1 CheckPenalty:-3 SpeedPenalty:-10 ft. AC:16 Bulk:3 <option>Half Plate Category:Heavy Traits:— LevelReq:1 Cost:18 gp +5 DexCap:+1 CheckPenalty:-3 SpeedPenalty:-10 ft. AC:16 Bulk:3 <option>Full Plate Category:Heavy Traits:Bulwark LevelReq:2 Cost:30 gp +6 DexCap:+0 CheckPenalty:-3 SpeedPenalty:-10 ft. AC:18 Bulk:4 <option>Hellknight Plate Category:Heavy Traits:Bulwark LevelReq:2 Cost:35 gp +6 DexCap:+0 CheckPenalty:-3 SpeedPenalty:-10 ft. AC:18 Bulk:4</select>";
+boxContents+="<br><b>Armor Type</b><select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>Unarmored<option>Explorers Clothing<option>Padded Armor<option>Leather Armor<option>Studded Leather<option>Chain Shirt<option>Hide Armor<option>Scale Mail<option>Chain Mail<option>Breastplate<option>Splint Mail<option>Half Plate<option>Full Plate<option>Hellknight Plate</select>";
 boxContents+="<br>or<input maxLength='200' onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")' placeHolder='other armor or magical defense' size='30' type='text'>";
-boxContents+="<br><b>Shield</b><select onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")'><option>"+this.shield+"<option>Wooden Shield Price:1 gp AC+2 Hardness:3 HP(BT):12(6)<option>Steel Shield Price:1 gp AC+2 Hardness:5 HP(BT):20(10)<option>Tower Shield Price 10 gp AC+2(+4) Speed Penalty:-5ft Hardness:5 HP(BT)20(10)<option>Buckler Price:1 gp AC+1 Hardness:3 HP(BT):6(3)</select>";
+boxContents+="<br><b>Armor Description: </b>"+this.armorDescription+" ";
+boxContents+="<br><b>Shield</b><select onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")'><option>"+this.shield+"<option>No Shield<option>Wooden Shield<option>Steel Shield<option>Tower Shield<option>Buckler</select>";
 boxContents+="<br>or<input maxLength='200' onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")' placeHolder='other shield or magical defense' size='30' type='text'>";
-
+boxContents+="<br><b>Shield Description: </b>"+this.shieldDescription+" ";
 boxContents+="</td></tr><tr><td>"
 boxContents+="<input onClick='rollReflex("+this.index+");checkTheTarget("+this.index+")' value='Roll Reflex Saving Throw?' type='button'>"
 boxContents+="<br><b>Reflex</b> Score:<input maxLength='3' onChange='characters["+this.index+"].setReflex(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.reflex+">"
@@ -2393,7 +2399,7 @@ boxContents+="</td></tr><tr><td><b>Stride: </b><input maxLength='200' onChange='
 boxContents+="</td></tr></table></td><td></span><span id=toggled4"+this.index+" style='display: "+this.toggled4+"'>";
 boxContents+="<table><tr><td>"
 
-boxContents+="</td></tr></table><table><tr><td>"+this.combatLog;
+boxContents+=""+this.combatLog;
 boxContents+="</td></tr></table><table><tr><td>"
 if(this.class.match(/Bard|Cleric|Druid|Ranger|Sorcerer|Wizard/)){
 boxContents+="Cantrips Known: "+this.cantrips;
@@ -2459,19 +2465,55 @@ function _setAC(x){this.ac=x;
 this.curAc=x;this.refresh()}
 function _setAlignment(x){this.alignment=x;
 this.setAlignmentDescription(x);
-if(this.alignment.match(/True Neutral/i)){this.setAlignmentDescription("I will help others, but avoid serious personal risks or loyalties that don\'t benefit me.")}
-if(this.alignment.match(/Chaotic Evil/i)){this.setAlignmentDescription("I violently follow my greed, hatred, or bloodlust, promoting my own freedom and control over others.")}
-if(this.alignment.match(/Chaotic Good/i)){this.setAlignmentDescription("I follow my conscience regardless of others\' expectations. Freedom and compassion matter more than rules.")}
-if(this.alignment.match(/Chaotic Neutral/i)){this.setAlignmentDescription("I follow my shifting whims with little concern about rules or later consequences.")}
-if(this.alignment.match(/Lawful Evil/i)){this.setAlignmentDescription("I take what I want up to the maximum allowed by law or loyalty, promoting order and control over others.")}
-if(this.alignment.match(/Lawful Good/i)){this.setAlignmentDescription("I do what s right as expected by society to promote order and compassion for all.")}
-if(this.alignment.match(/Lawful Neutral/i)){this.setAlignmentDescription("I obey laws, traditions or my own strict code to promote order and society above all else.")}
-if(this.alignment.match(/Neutral Evil/i)){this.setAlignmentDescription("I lack compassion and do whatever I want, promoting control over others above all else.")}
-if(this.alignment.match(/Neutral Good/i)){this.setAlignmentDescription("I help others according to their needs and promote compassion above all else.")}
-if(this.alignment.match(/Unaligned/i)){this.setAlignmentDescription("I act according to my instinct to survive and nurture my young.")}
+if(this.alignment.match(/N(?!E|G)/)){this.setAlignmentDescription("True Neutral. I will help others, but avoid serious personal risks or loyalties that don\'t benefit me.")}
+if(this.alignment.match(/CE/)){this.setAlignmentDescription("Chaotic Evil. I violently follow my greed, hatred, or bloodlust, promoting my own freedom and control over others.")}
+if(this.alignment.match(/CG/)){this.setAlignmentDescription("Chaotic Good. I follow my conscience regardless of others\' expectations. Freedom and compassion matter more than rules.")}
+if(this.alignment.match(/CN/)){this.setAlignmentDescription("Chaotic Neutral. I follow my shifting whims with little concern about rules or later consequences.")}
+if(this.alignment.match(/LE/)){this.setAlignmentDescription("Lawful Evil. I take what I want up to the maximum allowed by law or loyalty, promoting order and control over others.")}
+if(this.alignment.match(/LG/)){this.setAlignmentDescription("Lawful Good. I do what s right as expected by society to promote order and compassion for all.")}
+if(this.alignment.match(/LN/)){this.setAlignmentDescription("Lawful Neutral. I obey laws, traditions or my own strict code to promote order and society above all else.")}
+if(this.alignment.match(/NE/)){this.setAlignmentDescription("Neutral Evil. I lack compassion and do whatever I want, promoting control over others above all else.")}
+if(this.alignment.match(/NG/)){this.setAlignmentDescription("Neutral Good. I help others according to their needs and promote compassion above all else.")}
+if(this.alignment.match(/UN/)){this.setAlignmentDescription("Unaligned. I act according to my instinct to survive and nurture my young.")}
 this.refresh()}
 function _setAlignmentDescription(x){this.alignmentDescription=x;this.refresh()}
-function _setArmor(x){this.armor=x;this.refresh()}
+
+function _setArmor(x)
+{
+this.armor=x;
+let ArmorDescription=" ";
+if(this.armor.match(/Unarmored/))
+{ArmorDescription="Unarmored Category:Unarmored Traits: LevelReq:0 Cost:0 gp +0 DexCap:— CheckPenalty:— SpeedPenalty:  AC:— Bulk:— "}
+if(this.armor.match(/Explorers Clothing/))
+{ArmorDescription="Explorers Clothing Category:Unarmored Traits:Comfort LevelReq:0 Cost:1 sp +0 DexCap:+5 CheckPenalty:— SpeedPenalty:  AC:— Bulk:L"}
+if(this.armor.match(/Padded Armor/))
+{ArmorDescription="Padded Armor Category:Light Traits:Comfort LevelReq:0 Cost:2 sp +1 DexCap:+3 CheckPenalty:— SpeedPenalty:  AC:10 Bulk:L"}
+if(this.armor.match(/Leather Armor/))
+{ArmorDescription="Leather Armor Category:Light Traits:— LevelReq:0 Cost:2 gp +1 DexCap:+4 CheckPenalty:-1 SpeedPenalty:— AC:10 Bulk:1"}
+if(this.armor.match(/Studded Leather/))
+{ArmorDescription="Studded Leather Armor Category:Light Traits:— LevelReq:0 Cost:3 gp +2 DexCap:+3 CheckPenalty:-1 SpeedPenalty:— AC:12 Bulk:1"}
+if(this.armor.match(/Chain Shirt/))
+{ArmorDescription="Chain Shirt Category:Light Traits:Flexible, Noisy LevelReq:0 Cost:5 gp +2 DexCap:+3 CheckPenalty:-1 SpeedPenalty:— AC:12 Bulk:1"}
+if(this.armor.match(/Hide Armor/))
+{ArmorDescription="Hide Armor Category:Medium Traits:— LevelReq:0 Cost:2 gp +3 DexCap:+2 CheckPenalty:-2 SpeedPenalty:-5 ft. AC:14 Bulk:2"}
+if(this.armor.match(/Scale Mail/))
+{ArmorDescription="Scale Mail Category:Medium Traits:— LevelReq:0 Cost:4 gp +3 DexCap:+2 CheckPenalty:-2 SpeedPenalty:-5 ft. AC:14 Bulk:2"}
+if(this.armor.match(/Chain Mail/))
+{ArmorDescription="Chain Mail Category:Medium Traits:Flexible, Noisy LevelReq:0 Cost:6 gp +4 DexCap:+1 CheckPenalty:-2 SpeedPenalty:-5 ft. AC:16 Bulk:2"}
+if(this.armor.match(/Breastplate/))
+{ArmorDescription="Breastplate Category:Medium Traits:— LevelReq:0 Cost:8 gp +4 DexCap:+1 CheckPenalty:-2 SpeedPenalty:-5 ft. AC:16 Bulk:2"}
+if(this.armor.match(/Splint Mail/))
+{ArmorDescription="Splint Mail Category:Heavy Traits:— LevelReq:1 Cost:13 gp +5 DexCap:+1 CheckPenalty:-3 SpeedPenalty:-10 ft. AC:16 Bulk:3"}
+if(this.armor.match(/Half Plate/))
+{ArmorDescription="Half Plate Category:Heavy Traits:— LevelReq:1 Cost:18 gp +5 DexCap:+1 CheckPenalty:-3 SpeedPenalty:-10 ft. AC:16 Bulk:3"}
+if(this.armor.match(/Full Plate/))
+{ArmorDescription="Full Plate Category:Heavy Traits:Bulwark LevelReq:2 Cost:30 gp +6 DexCap:+0 CheckPenalty:-3 SpeedPenalty:-10 ft. AC:18 Bulk:4"}
+if(this.armor.match(/Hellknight Plate/))
+{ArmorDescription="Hellknight Plate Category:Heavy Traits:Bulwark LevelReq:2 Cost:35 gp +6 DexCap:+0 CheckPenalty:-3 SpeedPenalty:-10 ft. AC:18 Bulk:4"}
+this.armorDescription=ArmorDescription;
+this.refresh()
+}
+
 function _setBackground(x){this.background=x;
 if(this.background.match(/Acolyte/)){this.setBackF('Shelter of the Faithful');
 this.setBackL('2 languages');
@@ -3016,7 +3058,19 @@ function _setRollName2(x){this.rollName2=x;this.refresh()}
 function _setRoll2(x){this.roll2=x;this.refresh()}
 function _setSaving(x){this.saving=x;this.refresh()}
 function _setSenses(x){this.senses=x;this.refresh()}
-function _setShield(x){this.shield=x;this.refresh()}
+function _setShield(x){this.shield=x;
+let ShieldDescription=" ";
+if(this.shield.match(/Wooden Shield/))
+{ShieldDescription="Wooden Shield Price:1 gp AC+2 Hardness:3 HP(BT):12(6)"}
+if(this.shield.match(/Steel Shield/))
+{ShieldDescription="Steel Shield Price:1 gp AC+2 Hardness:5 HP(BT):20(10)"}
+if(this.shield.match(/Tower Shield/))
+{ShieldDescription="Tower Shield Price 10 gp AC+2(+4) Speed Penalty:-5ft Hardness:5 HP(BT)20(10)"}
+if(this.shield.match(/Buckler/))
+{ShieldDescription="Buckler Price:1 gp AC+1 Hardness:3 HP(BT):6(3)"}
+this.shieldDescription=ShieldDescription;
+this.refresh()}
+
 function _setSpeed(x){this.speed=x;this.refresh()}
 function _setSpellAbility(x){this.spellAbility=x;
 if(x==='int'){this.setSpellAbilityNumber(this.intMod)}
@@ -3028,28 +3082,45 @@ function _setSit(x){this.sit=x;
 if(this.sit===''){this.sit='+0'
 }
 this.refresh()}
-function _setSize(x){this.size=x;
-if(this.size.match(/Tiny/)){this.carryingCapacity=((this.curStr / 1)*15)/ 2;
-this.dragLiftPush=((this.curStr / 1)*30)/ 2;
-this.highJump=Math.floor(((this.strMod / 1)+3)/ 2);
-this.longJump=Math.floor((this.curStr / 1)/ 2)}
-if(this.size.match(/Small|Medium/)){this.carryingCapacity=(this.curStr / 1)*15;
-this.dragLiftPush=(this.curStr / 1)*30;
-this.highJump=Math.floor((this.strMod / 1)+3);
-this.longJump=Math.floor(this.curStr / 1)}
-if(this.size.match(/Large/)){this.carryingCapacity=((this.curStr / 1)*15)*2;
-this.dragLiftPush=((this.curStr / 1)*30)*2;
-this.highJump=Math.floor(((this.strMod / 1)+3)*2);
-this.longJump=Math.floor((this.curStr / 1)*2)}
-if(this.size.match(/Huge/)){this.carryingCapacity=((this.curStr / 1)*15)*4;
-this.dragLiftPush=((this.curStr / 1)*30)*4;
-this.highJump=Math.floor(((this.strMod / 1)+3)*4);
-this.longJump=Math.floor((this.curStr / 1)*4)}
-if(this.size.match(/Gargantuan/)){this.carryingCapacity=((this.curStr / 1)*15)*6;
-this.dragLiftPush=((this.curStr / 1)*30)*6;
-this.highJump=Math.floor(((this.strMod / 1)+3)*6);
-this.longJump=Math.floor((this.curStr / 1)*6)}
-this.refresh()}
+
+function _setSize(x)
+{
+this.size=x;
+let SizeDescription=" ";
+if(this.size.match(/TINY/))
+{SizeDescription="Tiny 2.5x2.5ft, Reach Tall 2.5ft, Reach Long 2.5ft"}
+if(this.size.match(/SMALL/))
+{SizeDescription="Small 5x5ft, Reach Tall 5ft, Reach Long 5ft"}
+if(this.size.match(/MEDIUM/))
+{SizeDescription="Medium 5x5ft, Reach Tall 5ft, Reach Long 5ft"}
+if(this.size.match(/LARGE/))
+{SizeDescription="Large 10x10ft, Reach Tall 10ft, Reach Long 5ft"}
+if(this.size.match(/HUGE/))
+{SizeDescription="Huge 15x15ft, Reach Tall 15ft, Reach Long 10ft"}
+if(this.size.match(/GARGANTUAN/))
+{SizeDescription="Gargantuan 20x20ft+, Reach Tall 20ft, Reach Long 15ft"}
+this.sizeDescription=SizeDescription;
+this.refresh()
+}
+
+function _setSizeDescription(x)
+{
+this.setSizeDescription=x;
+this.refresh();
+}
+
+function _setArmorDescription(x)
+{
+this.setArmorDescription=x;
+this.refresh();
+}
+
+function _setShieldDescription(x)
+{
+this.setShieldDescription=x;
+this.refresh();
+}
+
 function _setSkills(x){this.skills=x;this.refresh()}
 function _setStr(x){this.str=x;
 this.curStr=x;calcMod(x);
@@ -3145,9 +3216,12 @@ this.actionNotes='';
 this.addRoll=_addRoll;
 this.alignment='Unaligned';
 this.alignmentDescription='';
+this.sizeDescription='';
+this.armorDescription='';
+this.shieldDescription='';
 this.animal='';
 this.arcana='';
-this.armor='No Armor AC10+dex';
+this.armor='Unarmored';
 this.athletics='';
 this.backF='';
 this.backL='';
@@ -3275,7 +3349,10 @@ this.setAbility=_setAbility;
 this.setAcrobatics=_setAcrobatics;
 this.setActionNotes=_setActionNotes;
 this.setAlignment=_setAlignment;
+this.setArmorDescription=_setArmorDescription;
+this.setSizeDescription=_setSizeDescription;
 this.setAlignmentDescription=_setAlignmentDescription;
+this.setShieldDescription=_setShieldDescription;
 this.setAnimal=_setAnimal;
 this.setArcana=_setArcana;
 this.setArmor=_setArmor;
