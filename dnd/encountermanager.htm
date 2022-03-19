@@ -2626,7 +2626,7 @@ this.setSenses('trained+2');
 this.setReflexProf('expert+4');
 this.setFortitudeProf('expert+4');
 this.setWillProf('trained+2');
-this.setBackS('Crafting+2, Skill+2, Skill+2, Skill+2+intMod');
+this.setBackS('Crafting+2, Skill+2, Skill+2, 1+intMod+2');
 this.setProficiencies('Simple Weapons+2, Alchemical Bombs+2, Unarmed Attacks+2');
 this.setProficienciesRace('Light Armor+2, Unarmored Defense+2');
 this.setFlaws('Alchemist Class DCs+2');
@@ -2653,13 +2653,46 @@ AlchemistFeatures+='</td></tr><tr><td>Level 20 Ability boosts, alchemist feat, s
 this.setFeatures(AlchemistFeatures);
 }
 
+if(this.class.match(/Barbarian/))
+{
+this.setSenses('expert+2');
+this.setReflexProf('trained+4');
+this.setFortitudeProf('expert+4');
+this.setWillProf('expert+2');
+this.setBackS('Athletics+2, 3+intMod Skills+2');
+this.setProficiencies('Simple Weapons+2, Martial Weapons+2, Unarmed Attacks+2');
+this.setProficienciesRace('Light Armor+2, Medium Armor+2, Unarmored Defense+2');
+this.setFlaws('Barbarian Class DC+2');
+BarbarianFeatures='</td></tr><tr><td>Level  1 Ancestry and background, initial proficiencies, rage, instinct, barbarian feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 2 Barbarian feat, skill feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 3 Deny advantage, general feat, skill increase';
+BarbarianFeatures+='</td></tr><tr><td>Level 4 Barbarian feat, skill feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 5 Ability boosts, ancestry feat, brutality, skill increase';
+BarbarianFeatures+='</td></tr><tr><td>Level 6 Barbarian feat, skill feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 7 General feat, juggernaut, skill increase, weapon specialization';
+BarbarianFeatures+='</td></tr><tr><td>Level 8 Barbarian feat, skill feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 9  Ancestry feat, lightning reflexes, raging resistance, skill increase';
+BarbarianFeatures+='</td></tr><tr><td>Level 10 Ability boosts, barbarian feat, skill feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 11 General feat, mighty rage, skill increase';
+BarbarianFeatures+='</td></tr><tr><td>Level 12 Barbarian feat, skill feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 13 Ancestry feat, greater juggernaut, medium armor expertise, skill increase, weapon fury';
+BarbarianFeatures+='</td></tr><tr><td>Level 14 Barbarian feat, skill feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 15 Ability boosts, general feat, greater weapon specialization, indomitable will, skill increase';
+BarbarianFeatures+='</td></tr><tr><td>Level 16 Barbarian feat, skill feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 17 Ancestry feat, heightened senses, skill increase, quick rage';
+BarbarianFeatures+='</td></tr><tr><td>Level 18 Barbarian feat, skill feat';
+BarbarianFeatures+='</td></tr><tr><td>Level 19 Armor of fury, devastator, general feat, skill increase';
+BarbarianFeatures+='</td></tr><tr><td>Level 20 Ability boosts, barbarian feat, skill feat';
+this.setFeatures(BarbarianFeatures);
+}
+
 if(this.class.match(/Wizard/))
 {
 this.setSenses('trained+2');
 this.setReflexProf('trained+2');
 this.setFortitudeProf('trained+2');
 this.setWillProf('expert+4');
-this.setBackS('Arcana+2, Skill+2, Skill+2, +intMod');
+this.setBackS('Arcana+2, Skill+2, 1+intMod Skills+2');
 this.setProficiencies('Club+2, Crossbow+2, Dagger+2, Heavy Crossbow+2, Staff+2, Unarmed Attacks+2');
 this.setProficienciesRace('Unarmored Defense+2');
 this.setFlaws('Arcane Spell Attacks+2, Arcane Spell DCs+2');
@@ -3041,10 +3074,65 @@ if(this.race.match(/Dwarf/))
 this.setMaxHp(10);
 this.setSize('Medium 5x5ft, Reach Tall 5ft, Reach Long 5ft');
 this.setSpeed('20 feet');
-this.setAbility('con+2, wis+2, cha-2');
+this.setAbility('con+2, wis+2, abi+2, cha-2');
 this.setLanguages('Common, Dwarvish, +intMod Languages');
 this.setTrait('Humanoid,')
 this.setSenses('Darkvision');
+}
+
+if(this.race.match(/Elf/))
+{
+this.setMaxHp(6);
+this.setSize('Medium 5x5ft, Reach Tall 5ft, Reach Long 5ft');
+this.setSpeed('30 feet');
+this.setAbility('dex+2, int+2, abi+2, con-2');
+this.setLanguages('Common, Elven, +intMod Languages');
+this.setTrait('Humanoid,')
+this.setSenses('Low-Light Vision');
+}
+
+if(this.race.match(/Gnome/))
+{
+this.setMaxHp(8);
+this.setSize('Small 5x5ft, Reach Tall 5ft, Reach Long 5ft');
+this.setSpeed('25 feet');
+this.setAbility('con+2, cha+2, abi+2, str-2');
+this.setLanguages('Common, Gnomish, Sylvan, +intMod Languages');
+this.setTrait('Humanoid,')
+this.setSenses('Low-Light Vision');
+}
+
+if(this.race.match(/Goblin/))
+{
+this.setMaxHp(6);
+this.setSize('Small 5x5ft, Reach Tall 5ft, Reach Long 5ft');
+this.setSpeed('25 feet');
+this.setAbility('dex+2, cha+2, abi+2, wis-2');
+this.setLanguages('Common, Goblin, +intMod Languages');
+this.setTrait('Humanoid,')
+this.setSenses('Darkvision');
+}
+
+if(this.race.match(/Halfling/))
+{
+this.setMaxHp(6);
+this.setSize('Small 5x5ft, Reach Tall 5ft, Reach Long 5ft');
+this.setSpeed('25 feet');
+this.setAbility('dex+2, wis+2, abi+2, str-2');
+this.setLanguages('Common, Halfling, +intMod Languages');
+this.setTrait('Humanoid,')
+this.setSenses('Keen Eyes Seek+2 30 feet');
+}
+
+if(this.race.match(/Human/))
+{
+this.setMaxHp(8);
+this.setSize('Medium 5x5ft, Reach Tall 5ft, Reach Long 5ft');
+this.setSpeed('25 feet');
+this.setAbility('abi+2, abi+2');
+this.setLanguages('Common, +intMod Languages');
+this.setTrait('Humanoid,')
+this.setSenses('');
 }
 
 this.refresh()
