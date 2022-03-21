@@ -237,7 +237,9 @@ a=a.replace(/(組)(?!X)(み)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)/g, '$1X$2X$3X$4X
 a=a.replace(/(行)(?!X)(き)(?!X)(止)(?!X)(ま)(?!X)(り)(?!X)/g, '$1X$2X$3X$4X$5X, いきどまり, dead end~noun');
 a=a.replace(/(郵)(?!X)(便)(?!X)(屋)(?!X)(さ)(?!X)(ん)(?!X)/g, '$1X$2X$3X$4X$5X, ゆうびんやさん, mailman~noun');
 a=a.replace(/(録)(?!X)(音)(?!X)(テ)(?!X)(ー)(?!X)(プ)(?!X)/g, '$1X$2X$3X$4X$5X, ろくおんテープ, tape~noun');
+a=a.replace(/(ジ)(?!X)(ャ)(?!X)(ジ)(?!X)(ャ)(?!X)(ン)(?!X)/g, '$1X$2X$3X$4X$5X, jyajyan, tah-dah, here it is~noun');
 
+a=a.replace(/(目)(?!X)(白)(?!X)(押)(?!X)(し)(?!X)/g, '$1X$2X$3X$4X, mejiro oshi, packed up to the eyeballs~noun');
 a=a.replace(/(あ)(?!X)(い)(?!X)(づ)(?!X)(ち)(?!X)/g, '$1X$2X$3X$4X, あいづち, responsive sounds, chiming in~noun');
 a=a.replace(/(あ)(?!X)(ち)(?!X)(こ)(?!X)(ち)(?!X)/g, '$1X$2X$3X$4X, あちこち, all over~noun');
 a=a.replace(/(あ)(?!X)(っ)(?!X)(さ)(?!X)(り)(?!X)/g, '$1X$2X$3X$4X, あっさり, plainly, matter-of-factly~noun');
@@ -425,6 +427,7 @@ a=a.replace(/(ク)(?!X)(リ)(?!X)(ー)(?!X)(ム)(?!X)/g, '$1X$2X$3X$4X, クリ�
 a=a.replace(/(ク)(?!X)(ー)(?!X)(ラ)(?!X)(ー)(?!X)/g, '$1X$2X$3X$4X, クーラー, air conditioning, cooler~noun');
 a=a.replace(/(グ)(?!X)(リ)(?!X)(ー)(?!X)(ン)(?!X)/g, '$1X$2X$3X$4X, グリーン, green~noun');
 a=a.replace(/(グ)(?!X)(ル)(?!X)(ー)(?!X)(プ)(?!X)/g, '$1X$2X$3X$4X, グループ, group~noun');
+a=a.replace(/(タ)(?!X)(イ)(?!X)(ト)(?!X)(ル)(?!X)/g, '$1X$2X$3X$4X, taitoru, title~noun');
 a=a.replace(/(コ)(?!X)(ー)(?!X)(ナ)(?!X)(ー)(?!X)/g, '$1X$2X$3X$4X, コーナー, corner~noun');
 a=a.replace(/(コ)(?!X)(ー)(?!X)(ヒ)(?!X)(ー)(?!X)/g, '$1X$2X$3X$4X, コーヒー, coffee~noun');
 a=a.replace(/(サ)(?!X)(ッ)(?!X)(カ)(?!X)(ー)(?!X)/g, '$1X$2X$3X$4X, サッカー, soccer, football~noun');
@@ -771,7 +774,7 @@ a=a.replace(/(グ)(?!X)(ラ)(?!X)(フ)(?!X)/g, '$1X$2X$3X, グラフ, chart, gra
 a=a.replace(/(グ)(?!X)(ラ)(?!X)(ム)(?!X)/g, '$1X$2X$3X, グラム, gram~noun');
 a=a.replace(/(ケ)(?!X)(ー)(?!X)(キ)(?!X)/g, '$1X$2X$3X, ケーキ, cake~noun');
 a=a.replace(/(ケ)(?!X)(ー)(?!X)(ス)(?!X)/g, '$1X$2X$3X, ケース, case~noun');
-a=a.replace(/(ゲ)(?!X)(ー)(?!X)(ム)(?!X)/g, '$1X$2X$3X, ゲーム, game~noun');
+a=a.replace(/(ゲ)(?!X)(ー)(?!X)(ム)(?!X)/g, '$1X$2X$3X, ge-mu, game~noun');
 a=a.replace(/(コ)(?!X)(ッ)(?!X)(ク)(?!X)/g, '$1X$2X$3X, コック, cook, chef~noun');
 a=a.replace(/(コ)(?!X)(ッ)(?!X)(プ)(?!X)/g, '$1X$2X$3X, コップ, cup, glass~noun');
 a=a.replace(/(コ)(?!X)(ピ)(?!X)(ー)(?!X)/g, '$1X$2X$3X, コピー, copy, photocopy~noun');
@@ -841,6 +844,7 @@ a=a.replace(/(ビ)(?!X)(ー)(?!X)(チ)(?!X)/g, '$1X$2X$3X, ビーチ, beach~noun
 a=a.replace(/(ビ)(?!X)(ー)(?!X)(ル)(?!X)/g, '$1X$2X$3X, ビール, beer, lager~noun');
 a=a.replace(/(ピ)(?!X)(ア)(?!X)(ノ)(?!X)/g, '$1X$2X$3X, ピアノ, piano~noun');
 a=a.replace(/(ピ)(?!X)(ン)(?!X)(ク)(?!X)/g, '$1X$2X$3X, ピンク, pink~noun');
+a=a.replace(/(プ)(?!X)(レ)(?!X)(イ)(?!X)/g, '$1X$2X$3X, purei, play~noun');
 a=a.replace(/(フ)(?!X)(ァ)(?!X)(ン)(?!X)/g, '$1X$2X$3X, ファン, fan, lover~noun');
 a=a.replace(/(ブ)(?!X)(ラ)(?!X)(シ)(?!X)/g, '$1X$2X$3X, ブラシ, brush~noun');
 a=a.replace(/(ブ)(?!X)(ー)(?!X)(ム)(?!X)/g, '$1X$2X$3X, ブーム, boom~noun');
@@ -1668,7 +1672,7 @@ a=a.replace(/(人)(?!X)(柄)(?!X)/g, '$1X$2X, hitogara, character, personality~n
 a=a.replace(/(人)(?!X)(格)(?!X)/g, '$1X$2X, jinkaku, character, personality~noun');
 a=a.replace(/(人)(?!X)(権)(?!X)/g, '$1X$2X, jinken, human rights~noun');
 a=a.replace(/(人)(?!X)(民)(?!X)/g, '$1X$2X, jinmin, the people, populace~noun');
-a=a.replace(/(人)(?!X)(気)(?!X)/g, '$1X$2X, ninki, popularity, temperament of the people, business conditions~noun');
+a=a.replace(/(人)(?!X)(気)(?!X)/g, '$1X$2X, popularity~noun');
 a=a.replace(/(人)(?!X)(物)(?!X)/g, '$1X$2X, jinbutsu, character, person~noun');
 a=a.replace(/(人)(?!X)(生)(?!X)/g, '$1X$2X, jinsei, human life, life~noun');
 a=a.replace(/(人)(?!X)(種)(?!X)/g, '$1X$2X, jinshyu, race~noun');
@@ -3391,6 +3395,7 @@ a=a.replace(/(病)(?!X)(死)(?!X)/g, '$1X$2X, byoushi, death from sickness~noun'
 a=a.replace(/(病)(?!X)(気)(?!X)/g, '$1X$2X, byouki, illness~noun');
 a=a.replace(/(病)(?!X)(院)(?!X)/g, '$1X$2X, byouin, hospital~noun');
 a=a.replace(/(症)(?!X)(状)(?!X)/g, '$1X$2X, shyoujyou, symptom~noun');
+a=a.replace(/(こ)(?!X)(の)(?!X)/g, '$1X$2X, kono, this~noun');
 a=a.replace(/(痛)(?!X)(み)(?!X)/g, '$1X$2X, itami, pain, ache~noun');
 a=a.replace(/(発)(?!X)(売)(?!X)/g, '$1X$2X, hatsubai, sale, selling~noun');
 a=a.replace(/(発)(?!X)(展)(?!X)/g, '$1X$2X, hatten, expansion, prosperity~noun');
@@ -6114,6 +6119,7 @@ a=a.replace(/(nounは)(?!X)/g, '$1X, wa,as for the word above~nominative~posposi
 a=a.replace(/(nounも)(?!X)/g, '$1X, too~postposition~noun');
 a=a.replace(/(nounを)(?!X)/g, '$1X, お,the previous word is the direct object~accusative~postposition~noun');
 
+a=a.replace(/(nounし)(?!X)(て)(?!X)(い)(?!X)(る)(?!X)/g, '$1X$2X$3X$4X, shiteiru, is doing~informal~suru-verb~suffix');
 a=a.replace(/(nounな)(?!X)(か)(?!X)(っ)(?!X)(た)(?!X)/g, '$1X$2X$3X$4X, nakatta, did not~informal~suru-verb~suffix');
 a=a.replace(/(nounな)(?!X)(い)(?!X)/g, '$1X$2X, nai, not do~informal~suru-verb~suffix');
 a=a.replace(/(nounす)(?!X)(る)(?!X)/g, '$1X$2X, suru, do, make~informal~suru-verb~suffix');
@@ -6137,7 +6143,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-福島県沖で１６日に起きた最大震度６強、マグニチュード（Ｍ）７・４の地震で、同県浜通り地方に立地する火力発電所が相次いで被災した。震源域に最も近い相馬共同火力発電の新地発電所（新地町）は石炭を陸揚げする巨大な設備が損壊、復旧の見通しが立っていない。東北電力の原町火力（南相馬市）も停止中。いずれも東京電力管内へ送電しており、東電の供給力にも打撃を与える結果になった。
+人気タイトル ジャジャン！この春、プレイステーションには人気のゲームが目白押し！彼がプレイしているゲームは？
 <br>
 <textArea cols='25' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
