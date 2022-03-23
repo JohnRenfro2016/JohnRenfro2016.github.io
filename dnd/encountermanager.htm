@@ -4,8 +4,8 @@
 <meta content="text/html" charset="utf-8" http-equiv="content-type">
 <meta content="utf-8" http-equiv="encoding">
 <meta name="description" content="2022 Dungeons & Dragons 5th Edition Tabletop Roleplaying Game Manager">
-<meta name="keywords" content="DnD, Dungeons and Dragons, D&D, Dungeons & Dragons, Fantasy RPG, tabletop roleplaying game, TTRPG">
-<title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game Single Encounter Manager 2022(Wizards of the Coast, Asmor, Zorn, Ren, Vanderwaal Webdesign)</title>
+<meta name="keywords" content="DnD, Dungeons and Dragons, D&D, Dungeons & Dragons, Fantasy RPG, tabletop roleplaying game, TTRPG, RPG">
+<title>The Dungeons & Dragons 5th Edition Tabletop Fantasy Roleplaying Game Single Encounter Manager 2022(Wizards of the Coast, Asmor, Zorn, Ren)</title>
 //<script src="Scripts/WZDragdrop.js"></script>
 //<script src="Scripts/jquery-3.6.0.js"></script>
 <script src="Scripts/jquery-ui-1.13.1.js"></script>
@@ -1271,42 +1271,7 @@ if(str=stats.match(/Stealth\s\(Dex\)\s\*\*/)){characters[targeted].setStealth('e
 characters[targeted].setSurvival('');
 if(str=stats.match(/Survival\s\(Wis\)\s\*/)){characters[targeted].setSurvival('pro')}
 if(str=stats.match(/Survival\s\(Wis\)\s\*\*/)){characters[targeted].setSurvival('exp')}
-if(rip=stats.match(/(Bite)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
-addRollPrompt(targeted);
-}
-if(rip=stats.match(/(Claw)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
-addRollPrompt(targeted);
-}
-if(rip=stats.match(/(Hoof)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
-addRollPrompt(targeted);
-}
-if(rip=stats.match(/(Horn)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
-addRollPrompt(targeted);
-}
-if(rip=stats.match(/(Slam)\.\sMelee[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/, ''));
-addRollPrompt(targeted);
-}
-if(rip=stats.match(/(Longbow)\.\sRanged[\s\S]*?(\+\d{1,2})[\s\S]*?\(([\s\S]*?)\)\s([\s\S]*?)\sdamage[\s\S]*?/)){characters[targeted].setRollName1(rip[1]);
-characters[targeted].setRoll1('1d20'+rip[2]);
-characters[targeted].setRollName2(rip[4]);
-characters[targeted].setRoll2(rip[3].replace(/\s/g, ''));
-addRollPrompt(targeted);
-}
+
 if(rip=stats.match(/^([\s\S]*?)CLASS[\s\S]*?LEVEL([\s\S]*?)(\d{1,2})\s([\s\S]*?)EXPERIENCE\sPOINTS([\s\S]*?)PLAYER NAME[\s\S]*?HERITAGE([\s\S]*?)BACKGROUND([\s\S]*?)CAMPAIGN[\s\S]*?STR[\s\S]*?\d{1}\s(\d{1,2})\sDEX[\s\S]*?\d{1}\s(\d{1,2})\sCON[\s\S]*?\d{1}\s(\d{1,2})\sINT[\s\S]*?\d{1}\s(\d{1,2})\sWIS[\s\S]*?\d{1}\s(\d{1,2})\sCHA[\s\S]*?\d{1}\s(\d{1,2})/)){characters[targeted].setLvl(rip[3]);
 characters[targeted].setClass(rip[2]+""+rip[4]);
 characters[targeted].setExperience(rip[5]);
@@ -1467,24 +1432,7 @@ if(weapon=stats.match(/unarmed\sstrike/i)){this.UnarmedStrike();
 this.Disarmed();
 this.KnockedProne();
 this.Stunned()}
-//Weapons
-if(weapon=stats.match(/dagger/i)){this.Dagger()}
-if(weapon=stats.match(/dart/i)){this.Dart()}
-if(weapon=stats.match(/glaive/i)){this.Glaive()}
-if(weapon=stats.match(/greataxe/i)){this.Greataxe()}
-if(weapon=stats.match(/greatsword/i)){this.Greatsword()}
-if(weapon=stats.match(/handaxe/i)){this.Handaxe()}
-if(weapon=stats.match(/javelin/i)){this.Javelin()}
-if(weapon=stats.match(/light\scrossbow/i)){this.LightCrossbow()}
-if(weapon=stats.match(/Longbow/i)){this.Longbow()}
-if(weapon=stats.match(/longsword/i)){this.Longsword()}
-if(weapon=stats.match(/mace/i)){this.Mace()}
-if(weapon=stats.match(/morningstar/i)){this.Morningstar()}
-if(weapon=stats.match(/quarterstaff/i)){this.Quarterstaff()}
-if(weapon=stats.match(/scimitar/i)){this.Scimitar()}
-if(weapon=stats.match(/shortsword/i)){this.Shortsword()}
-if(weapon=stats.match(/shortbow/i)){this.Shortbow()}
-if(weapon=stats.match(/spear/i)){this.Spear()}
+
 if(rip=stats.match(/Acid\sSplash/i)){this.AcidSplash()};
 if(rip=stats.match(/Blade\sWard/i)){this.BladeWard()};
 if(rip=stats.match(/Booming\sBlade/i)){this.BoomingBlade()};
@@ -1501,7 +1449,6 @@ if(rip=stats.match(/GreenFlame\sBlade/i)){this.GreenFlameBlade()};
 if(rip=stats.match(/Guidance/i)){this.Guidance()};
 if(rip=stats.match(/Gust\s/i)){this.Gust()};
 if(rip=stats.match(/Infestation/i)){this.Infestation()};
-if(rip=stats.match(/Light/i)){this.Light()};
 if(rip=stats.match(/Lightning\sLure/i)){this.LightningLure()};
 if(rip=stats.match(/Mage\sHand/i)){this.MageHand()};
 if(rip=stats.match(/Magic\sStone/i)){this.MagicStone()};
@@ -1514,7 +1461,6 @@ if(rip=stats.match(/Prestidigitation/i)){this.Prestidigitation()};
 if(rip=stats.match(/Primal\sSavagery/i)){this.PrimalSavagery()};
 if(rip=stats.match(/Produce\sFlame/i)){this.ProduceFlame()};
 if(rip=stats.match(/Ray\sOf\sFrost/i)){this.RayOfFrost()};
-if(rip=stats.match(/Resistance/i)){this.Resistance()};
 if(rip=stats.match(/Sacred\sFlame/i)){this.SacredFlame()};
 if(rip=stats.match(/Shape\sWater/i)){this.ShapeWater()};
 if(rip=stats.match(/Shillelagh/i)){this.Shillelagh()};
@@ -1559,6 +1505,7 @@ if(rip=stats.match(/Earth\sTremor/i)){this.EarthTremor()};
 if(rip=stats.match(/Ensnaring\sStrike/i)){this.EnsnaringStrike()};
 if(rip=stats.match(/Entangle/i)){this.Entangle()};
 if(rip=stats.match(/Expeditious\sRetreat/i)){this.ExpeditiousRetreat()};
+if(rip=stats.match(/Fear/i)){this.Fear()};
 if(rip=stats.match(/Faerie\sFire/i)){this.FaerieFire()};
 if(rip=stats.match(/False\sLife/i)){this.FalseLife()};
 if(rip=stats.match(/Feather\sFall/i)){this.FeatherFall()};
@@ -1617,7 +1564,6 @@ if(rip=stats.match(/Continual\sFlame/i)){this.ContinualFlame()};
 if(rip=stats.match(/Cordon\sOf\sArrows/i)){this.CordonOfArrows()};
 if(rip=stats.match(/Crown\sOf\sMadness/i)){this.CrownOfMadness()};
 if(rip=stats.match(/Darkness/i)){this.Darkness()};
-if(rip=stats.match(/Darkvision/i)){this.Darkvision()};
 if(rip=stats.match(/Detect\sThoughts/i)){this.DetectThoughts()};
 if(rip=stats.match(/Dragon\'s\sBreath/i)){this.DragonsBreath()};
 if(rip=stats.match(/Dust\sDevil/i)){this.DustDevil()};
@@ -1948,8 +1894,60 @@ if(rip=stats.match(/True\sResurrection/i)){this.TrueResurrection()};
 if(rip=stats.match(/Weird/i)){this.Weird()};
 if(rip=stats.match(/Wish/i)){this.Wish()};
 
-if(rip=stats.match(/XP\)([\s\S]*)$/))
+if(rip=stats.match(/XP\)([\s\S]*)ACTIONS/))
 {characters[targeted].setFeatureNotes(rip[1].replace(/\./g, '\.\n'))}
+
+if(rip=stats.match(/(Multiattack[\s\S]+?\.)/))
+{characters[targeted].setActionNotes(rip[1].replace(/\./g, '\.\n'))}
+
+if(rip=stats.match(/(Multiattack[\s\S]+?\.[\s\S]+?\.)/))
+{characters[targeted].setActionNotes(rip[1].replace(/\./g, '\.\n'))}
+
+if(rip=stats.match(/(.+Melee[\s\S]+?)(\+\d{1,2})[\s\S]+?hit\,\s([\s\S]+?)\(([\s\S]+?)\)([\s\S]+?)damage/))
+{
+characters[targeted].setRollName1(rip[1]+" "+rip[3]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[5]);
+characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/Melee[\s\S]+?(.+?Melee[\s\S]+?)(\+\d{1,2})[\s\S]+?hit\,\s([\s\S]+?)\(([\s\S]+?)\)([\s\S]+?)damage/))
+{
+characters[targeted].setRollName1(rip[1]+" "+rip[3]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[5]);
+characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/Melee[\s\S]+?Melee[\s\S]+?(.+?Melee[\s\S]+?)(\+\d{1,2})[\s\S]+?hit\,\s([\s\S]+?)\(([\s\S]+?)\)([\s\S]+?)damage/))
+{
+characters[targeted].setRollName1(rip[1]+" "+rip[3]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[5]);
+characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/(.+Ranged[\s\S]+)(\+\d{1,2})[\s\S]+hit\,\s([\s\S]+)\(([\s\S]+)\)([\s\S]+)damage/))
+{
+characters[targeted].setRollName1(rip[1]+" "+rip[3]);
+characters[targeted].setRoll1('1d20'+rip[2]);
+characters[targeted].setRollName2(rip[5]);
+characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/(DC\s\d{1,2})\s(Strength|Dexterity|Constitution|Wisdom)([\s\S]+?\.)/))
+{
+characters[targeted].setRollName1(rip[1]+" "+rip[2]+" vs"+rip[3]+rip[6]+rip[7]);
+characters[targeted].setRoll1('0d0+0'+rip[2]);
+characters[targeted].setRollName2(rip[5]);
+characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
+addRollPrompt(targeted);
+}
+
 checkTheTarget();
 }
 function _addRoll(name, roll, name2, roll2)
