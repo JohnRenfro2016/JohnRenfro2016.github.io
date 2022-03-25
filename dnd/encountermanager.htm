@@ -70,6 +70,11 @@ table
 {background-image:url("Decorations/Panel.png");
 }
 
+table.stackIt
+{
+display:inline;
+}
+
 td,tr
 {word-wrap: normal;
 }
@@ -1939,11 +1944,11 @@ characters[targeted].setRoll2(rip[4].replace(/\s/g, ''));
 addRollPrompt(targeted);
 }
 
-if(rip=stats.match(/(DC\s\d{1,2})\s(Strength|Dexterity|Constitution|Wisdom)([\s\S]+?\.)/))
+if(rip=stats.match(/(.+[\s\S].+)(DC\s\d{1,2})\s(Strength|Dexterity|Constitution|Wisdom)([\s\S]+?\.)/))
 {
-characters[targeted].setRollName1(rip[1]+"+abi+pro vs"+rip[2]);
+characters[targeted].setRollName1(rip[2]+"+abi+pro vs"+rip[1]+" "+rip[3]);
 characters[targeted].setRoll1('0d0+0');
-characters[targeted].setRollName2(rip[3]);
+characters[targeted].setRollName2(rip[4]);
 characters[targeted].setRoll2('0d0+0');
 addRollPrompt(targeted);
 }
@@ -2088,7 +2093,7 @@ boxContents+="</td></tr><tr><td class='piece'><input class='piece' onClick='togg
 
 boxContents+="</td></tr></table></span><span id=toggled1"+this.index+" style='display:"+this.toggled1+"'>"
 
-boxContents+="<table><tr><td>"
+boxContents+="<table class='stackIt'><tr><td>"
 boxContents+="<table><tr><td>tmp hp:"+this.tempHp;
 boxContents+="</td></tr><tr><td>dmg?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setDmg(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
 boxContents+="</td></tr><tr><td>heal?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setHealing(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
@@ -2171,7 +2176,7 @@ boxContents+="</td></tr><tr><td>Class Skills:<input maxLength='200' onChange='ch
 boxContents+="</td></tr><tr><td>Class Saving Throws:<input maxLength='200' onChange='characters["+this.index+"].setSaving(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.saving+"'>";
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled4"+this.index+" style='display:"+this.toggled4+"'>";
-boxContents+="<table><tr><td>Spell (Abi)lity:<select onChange='characters["+this.index+"].setSpellAbility(this.value);checkTheTarget("+this.index+")'><option>"+this.spellAbility+"<option>int<option>wis<option>cha</select>"+this.spellAbilityNumber;
+boxContents+="<table><tr><td><table><tr><td>Spell (Abi)lity:<select onChange='characters["+this.index+"].setSpellAbility(this.value);checkTheTarget("+this.index+")'><option>"+this.spellAbility+"<option>int<option>wis<option>cha</select>"+this.spellAbilityNumber;
 boxContents+="</td></tr><tr><td>Level (Pro)ficiency:"+this.pro;
 boxContents+="</td></tr><tr><td>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
 boxContents+="</td></tr><tr><td>ACTIONS<textArea cols='40' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiatks and SpellSlots'>"+this.actionNotes+"</textArea>"
@@ -2191,7 +2196,7 @@ boxContents+="Rest to earn back your spent game token slots.<input onClick='char
 }
 boxContents+="</td></tr><tr><td>Class Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setProficiencies(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.proficiencies+"'>";
 
-boxContents+="</td></tr><tr><td class=piece><h3>Combat Results</h3>"+this.combatLog;
+boxContents+="</td></tr></table></td><td><table><tr><td class=piece><h3>Combat Results</h3>"+this.combatLog;
 boxContents+="</td></tr></table></td><td>"
 boxContents+="<table><tr><td>Make a new roll?</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName1(this.value);checkTheTarget("+this.index+")'placeHolder='atkRollToHitName+Ability+pro SpellSlot RangeInFeet'size='40' type='text' value='"+this.rollName1+"'>"
 boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll1(this.value);checkTheTarget("+this.index+")'placeHolder='XdY+Z'size='8' type='text' value="+this.roll1+">"
@@ -2225,7 +2230,7 @@ boxContents+="</td></tr><tr><td>Equipment:<textArea cols='40' rows='3' onChange=
 boxContents+="</td></tr><tr><td><input type='button' onClick='characters["+this.index+"].save();checkTheTarget("+this.index+")'value='Save this character?'>";
 boxContents+="</td></tr><tr><td><input type='button' value='Delete this character?'onClick='removeChar("+this.index+");checkTheTarget("+this.index+")'>";
 
-boxContents+="</td></tr></table></span></td><td><span id=toggled6"+this.index+" style='display:"+this.toggled6+"'>";
+boxContents+="</td></tr></table></td></tr></table></span></td><td><span id=toggled6"+this.index+" style='display:"+this.toggled6+"'>";
 
 boxContents+="<table><tr><td>Class:<select onChange='characters["+this.index+"].setClass(this.value)'><option>"+this.class+"<option>Barbarian, Ancestral Guardian<option>Barbarian, Berserker<option>Barbarian, Storm Herald<option>Barbarian, Bear Totem Warrior<option>Barbarian, Eagle Totem Warrior<option>Barbarian, Wolf Totem Warrior<option>Barbarian, Zealot<option>Bard, Glamour<option>Bard, Lore<option>Bard, Satire</option><option>Bard, Swords<option>Bard, Valor<option>Bard, Whispers<option>Cleric, Arcana</option><option>Cleric, Death</option><option>Cleric, Forge<option>Cleric, Grave<option>Cleric, Knowledge<option>Cleric, Life<option>Cleric, Light<option>Cleric, Nature<option>Cleric, Tempest<option>Cleric, Trickery<option>Cleric, War<option>Druid, Arctic<option>Druid, Coast<option>Druid, Desert<option>Druid, Forest<option>Druid, Grassland<option>Druid, Moon<option>Druid, Mountain<option>Druid, Swamp<option>Druid, Underdark<option>Fighter, Arcane Archer<option>Fighter, Battle Master<option>Fighter, Cavalier<option>Fighter, Champion<option>Fighter, Eldritch Knight<option>Fighter, Samurai<option>Monk, Cobalt Soul</option><option>Monk, Drunken Master<option>Monk, Four Elements<option>Monk, Kensei<option>Monk, Open Hand<option>Monk, Shadow<option>Monk, Sun Soul<option>Paladin, Ancients<option>Paladin, Crown</option><option>Paladin, Devotion<option>Paladin, Oathbreaker<option>Paladin, Vengence<option>Ranger, Beast Master<option>Ranger, Fey Wanderer<option>Ranger, Hunter<option>Ranger, Monster Slayer<option>Ranger, Swarmkeeper<option>Rogue, Arcane Trickster<option>Rogue, Assassin<option>Rogue, Mastermind<option>Rogue, Phantom<option>Rogue, Thief<option>Rogue, Scout<option>Rogue, Soulknife<option>Rogue, Swashbuckler<option>Sorcerer, Draconic<option>Sorcerer, Fire<option>Sorcerer, Shadow Magic<option>Sorcerer, Storm<option>Sorcerer, Wild<option>Warlock, Archfey<option>Warlock, Fiend<option>Warlock,GenieOfAir<option>Warlock,GenieOfEarth<option>Warlock,GenieOfFire<option>Warlock,GenieOfWater<option>Warlock, Great Old Ones</option><option>Warlock, Hexblade</option><option>Warlock, Undying</option><option>Witch, White Magic</option><option>Witch, Black Magic</option><option>Wizard, Abjurer<option>Wizard, Bladesinger</option><option>Wizard, Conjurer<option>Wizard, Diviner<option>Wizard, Enchanter<option>Wizard, Evoker<option>Wizard, Illusionist<option>Wizard, Necromancer</option><option>Wizard, Theurgist<option>Wizard, Transmuter</select>";
 boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].setClass(this.value)' placeHolder='other class' size='40' type='text'>";
