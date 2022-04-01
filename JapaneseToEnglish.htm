@@ -252,6 +252,7 @@ a=a.replace(/(レ)(?!X)(ス)(?!X)(ト)(?!X)(ラ)(?!X)(ン)(?!X)/g,'$1X$2X$3X$4X$
 a=a.replace(/(レ)(?!X)(ン)(?!X)(ト)(?!X)(ゲ)(?!X)(ン)(?!X)/g,'$1X$2X$3X$4X$5X,X-rays~noun');
 a=a.replace(/(ワ)(?!X)(イ)(?!X)(シ)(?!X)(ャ)(?!X)(ツ)(?!X)/g,'$1X$2X$3X$4X$5X,(business) shirt,(white) shirt~noun');
 a=a.replace(/(ワ)(?!X)(ン)(?!X)(ピ)(?!X)(ー)(?!X)(ス)(?!X)/g,'$1X$2X$3X$4X$5X,dress~noun');
+a=a.replace(/(繰)(?!X)(り)(?!X)(下)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X,kuri-sage,postponement<br>$5X~ru-verb');
 a=a.replace(/(乗)(?!X)(り)(?!X)(換)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X,norikae,change,transfer<br>$5X~ru-verb');
 a=a.replace(/(乗)(?!X)(り)(?!X)(越)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X,norikoe,overcome,get over<br>$5X~ru-verb');
 a=a.replace(/(乗)(?!X)(り)(?!X)(遅)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X,noriokure,miss<br>$5X~ru-verb');
@@ -920,6 +921,7 @@ a=a.replace(/(話)(?!X)(し)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X
 a=a.replace(/(話)(?!X)(し)(?!X)(言)(?!X)(葉)(?!X)/g,'$1X$2X$3X$4X,haなしことba,spoken language~noun');
 a=a.replace(/(読)(?!X)(み)(?!X)(書)(?!X)(き)(?!X)/g,'$1X$2X$3X$4X,yoみかgi,reading and writing~noun');
 a=a.replace(/(貸)(?!X)(し)(?!X)(付)(?!X)(け)(?!X)/g,'$1X$2X$3X$4X,kashi-tsuke,loan~ichidan-verb');
+a=a.replace(/(引)(?!X)(き)(?!X)(下)(?!X)(げ)(?!X)/g,'$1X$2X$3X$4X,hiki-sage,reduction,cut~ichidan-verb');
 a=a.replace(/(貸)(?!X)(し)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X,kashida,lend,lend out<br>$4X~su-verb');
 a=a.replace(/(貸)(?!X)(し)(?!X)(出)(?!X)(し)(?!X)/g,'$1X$2X$3X$4X,kaしだ-shi,lending service,checking out~noun');
 a=a.replace(/(資)(?!X)(本)(?!X)(主)(?!X)(義)(?!X)/g,'$1X$2X$3X$4X,shiほんしゅgi,capitalism~noun');
@@ -1681,6 +1683,7 @@ a=a.replace(/(当)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,ate,gu
 a=a.replace(/(形)(?!X)(容)(?!X)(詞)(?!X)/g,'$1X$2X$3X,kei-you-shi,adjective~noun');
 a=a.replace(/(形)(?!X)(式)(?!X)(的)(?!X)/g,'$1X$2X$3X,kei-shiki-teki,formal~noun');
 a=a.replace(/(待)(?!X)(合)(?!X)(室)(?!X)/g,'$1X$2X$3X,machiaishitsu,waiting room~noun');
+a=a.replace(/(支)(?!X)(給)(?!X)(額)(?!X)/g,'$1X$2X$3X,shi-kyuu-gaku,allowance~noun');
 a=a.replace(/(後)(?!X)(回)(?!X)(し)(?!X)/g,'$1X$2X$3X,atomawa-shi,deferment,postponement~noun');
 a=a.replace(/(後)(?!X)(戻)(?!X)(り)(?!X)/g,'$1X$2X$3X,atomodori,turning back,retreat~noun');
 a=a.replace(/(後)(?!X)(書)(?!X)(き)(?!X)/g,'$1X$2X$3X,atogaki,postscript,afterword~noun');
@@ -1760,8 +1763,8 @@ a=a.replace(/(揺)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,yure,s
 a=a.replace(/(損)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,son-su,lose,suffer loss<br>$3X~ru-verb');
 a=a.replace(/(撫)(?!X)(で)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,nade,stroke,pat<br>$3X~ru-verb');
 a=a.replace(/(支)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,sasae,support,maintain<br>$3X~ru-verb');
-a=a.replace(/(支)(?!X)(払)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,shihara,payment,payout<br>$3X~i-adjective');
-a=a.replace(/(支)(?!X)(払)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2X,shihara,pay<br>$3X~u-verb');
+a=a.replace(/(支)(?!X)(払)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,shi-hara,payment,payout<br>$3X~i-adjective');
+a=a.replace(/(支)(?!X)(払)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2X,shi-hara,pay<br>$3X~u-verb');
 a=a.replace(/(改)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,aratama,be renewed,change<br>$3X~ru-verb');
 a=a.replace(/(改)(?!X)(め)(?!X)(て)(?!X)/g,'$1X$2X$3X,aratamete,once again~noun');
 a=a.replace(/(改)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,aratame,reform,change<br>$3X~ru-verb');
@@ -3618,11 +3621,13 @@ a=a.replace(/(少)(?!X)(々)(?!X)/g,'$1X$2X,syou-syou,a little,a few~noun');
 a=a.replace(/(少)(?!X)(し)(?!X)/g,'$1X$2X,suko-shi,a bit,a little while~noun');
 a=a.replace(/(少)(?!X)(女)(?!X)/g,'$1X$2X,syou-jyo,girl~noun');
 a=a.replace(/(少)(?!X)(年)(?!X)/g,'$1X$2X,syou-nen,boy~noun');
+a=a.replace(/(感)(?!X)(染)(?!X)/g,'$1X$2X,kan-sen,infection~noun');
 a=a.replace(/(少)(?!X)(数)(?!X)/g,'$1X$2X,syou-suu,small number,minority~noun');
 a=a.replace(/(少)(?!X)(量)(?!X)/g,'$1X$2X,syou-ryou,small quantity~noun');
 a=a.replace(/(就)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,tsu,set about a task,enter upon<br>$2X~ku-verb');
-a=a.replace(/(就)(?!X)(任)(?!X)/g,'$1X$2Xsyuu-nin,inauguration,appointment~noun');
-a=a.replace(/(就)(?!X)(職)(?!X)/g,'$1X$2Xsyuu-syoku,finding employment~noun');
+a=a.replace(/(就)(?!X)(任)(?!X)/g,'$1X$2X,syuu-nin,inauguration,appointment~noun');
+a=a.replace(/(就)(?!X)(職)(?!X)/g,'$1X$2X,syuu-syoku,finding employment~noun');
+a=a.replace(/(現)(?!X)(役)(?!X)/g,'$1X$2X,gen-yaku,active duty~noun');
 a=a.replace(/(居)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,i,be present<br>$2X~ru-verb');
 a=a.replace(/(居)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,o,be present,stay (humble)<br>$2X~ru-verb');
 a=a.replace(/(居)(?!X)(間)(?!X)/g,'$1X$2X,ima,living room~noun');
@@ -3930,6 +3935,8 @@ a=a.replace(/(承)(?!X)(知)(?!X)/g,'$1X$2X,syou-chi,consent,knowledge~noun');
 a=a.replace(/(承)(?!X)(認)(?!X)/g,'$1X$2X,syou-nin,approval,recognition~noun');
 a=a.replace(/(技)(?!X)(師)(?!X)/g,'$1X$2X,gi-shi,engineer,technician~noun');
 a=a.replace(/(技)(?!X)(術)(?!X)/g,'$1X$2X,gi-jyutsu,skill,technology~noun');
+a=a.replace(/(公)(?!X)(的)(?!X)/g,'$1X$2X,kyou-teki,public~noun');
+a=a.replace(/(年)(?!X)(金)(?!X)/g,'$1X$2X,nen-kin,pension~noun');
 a=a.replace(/(把)(?!X)(握)(?!X)/g,'$1X$2X,ha-aku,catch the meaning~noun');
 a=a.replace(/(投)(?!X)(書)(?!X)/g,'$1X$2X,tou-shyo,contribution,letter~noun');
 a=a.replace(/(投)(?!X)(票)(?!X)/g,'$1X$2X,tou-hyou,vote,ballot~noun');
@@ -3951,6 +3958,11 @@ a=a.replace(/(招)(?!X)(待)(?!X)/g,'$1X$2X,syou-tai,invitation~noun');
 a=a.replace(/(拝)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,oga,bow in veneration,worship<br>$2X~mu-verb');
 a=a.replace(/(拝)(?!X)(見)(?!X)/g,'$1X$2X,hai-ken,humbly look at or see~noun');
 a=a.replace(/(拡)(?!X)(大)(?!X)/g,'$1X$2X,kaku-dai,magnification,details~noun');
+a=a.replace(/(受)(?!X)(給)(?!X)/g,'$1X$2X,jyu-kyuu,receiving payements~noun');
+a=a.replace(/(図)(?!X)(表)(?!X)/g,'$1X$2X,zu-hyou,graph~noun');
+a=a.replace(/(現)(?!X)(行)(?!X)/g,'$1X$2X,go in effect~noun');
+a=a.replace(/(改)(?!X)(定)(?!X)/g,'$1X$2X,kai-tei,money amount change~noun');
+a=a.replace(/(減)(?!X)(額)(?!X)/g,'$1X$2X,gen-gaku,money amount reduction~noun');
 a=a.replace(/(拡)(?!X)(張)(?!X)/g,'$1X$2X,kaku-cyou,expansion,extension~noun');
 a=a.replace(/(括)(?!X)(弧)(?!X)/g,'$1X$2X,kakko,parentheses,brackets~noun');
 a=a.replace(/(拭)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,-fu,wipe,dry<br>$2X~ku-verb');
@@ -4524,7 +4536,7 @@ a=a.replace(/(渇)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,kawa,be thirsty<br>
 a=a.replace(/(済)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,su,be settled,complete<br>$2X~mu-verb');
 a=a.replace(/(渋)(?!X)(い|く|か|さ)(?!X)/g,'$1X,shibu,bitter,astringent<br>$2X~i-adjective');
 a=a.replace(/(渋)(?!X)(滞)(?!X)/g,'$1X$2X,jyuu-tai,delay,traffic jam~noun');
-a=a.replace(/(減)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,he,decrease,diminish<br>$2X~ru-verb');
+a=a.replace(/(減)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,he,decrease<br>$2X~ru-verb');
 a=a.replace(/(減)(?!X)(少)(?!X)/g,'$1X$2X,gen-syou,reduction~noun');
 a=a.replace(/(渡)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,wata,carry across,han-d over<br>$2X~su-verb');
 a=a.replace(/(渡)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,wata,cross,ford,go across<br>$2X~ru-verb');
@@ -4538,8 +4550,11 @@ a=a.replace(/(湯)(?!X)(気)(?!X)/g,'$1X$2X,yuge,steam,vapor~noun');
 a=a.replace(/(湿)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,shime,get damp,get wet<br>$2X~ru-verb');
 a=a.replace(/(湿)(?!X)(度)(?!X)/g,'$1X$2X,shitsu-do,humidity~noun');
 a=a.replace(/(湿)(?!X)(気)(?!X)/g,'$1X$2X,shikke,moisture,dampness~noun');
+a=a.replace(/(賃)(?!X)(金)(?!X)/g,'$1X$2X,chin-gin,money payment~noun');
 a=a.replace(/(満)(?!X)(員)(?!X)/g,'$1X$2X,man-in,full to capacity~noun');
+a=a.replace(/(増)(?!X)(額)(?!X)/g,'$1X$2X,zou-gaku,money amount increase~noun');
 a=a.replace(/(満)(?!X)(月)(?!X)/g,'$1X$2X,man-getsu,full moon~noun');
+a=a.replace(/(変)(?!X)(動)(?!X)/g,'$1X$2X,hen-dou,fluctuations~noun');
 a=a.replace(/(満)(?!X)(点)(?!X)/g,'$1X$2X,man-ten,full marks,perfect score~noun');
 a=a.replace(/(満)(?!X)(足)(?!X)/g,'$1X$2X,man-zoku,satisfaction,contentment~noun');
 a=a.replace(/(準)(?!X)(備)(?!X)/g,'$1X$2X,jyunbi,provide for,prepare for~noun');
@@ -5865,6 +5880,7 @@ a=a.replace(/(半)(?!X)/g,'$1X,han-,half~noun');
 a=a.replace(/(南)(?!X)/g,'$1X,minami,south~noun');
 a=a.replace(/(印)(?!X)/g,'$1X,shiru-shi,mark,symbol~noun');
 a=a.replace(/(卵)(?!X)/g,'$1X,tamago,egg~noun');
+a=a.replace(/(毎)(?!X)/g,'$1X,mai-,every~noun');
 a=a.replace(/(原)(?!X)/g,'$1X,hara,plain,field~noun');
 a=a.replace(/(又)(?!X)/g,'$1X,mata,again,also,or~noun');
 a=a.replace(/(友)(?!X)/g,'$1X,tomo,friend,companion~noun');
@@ -6275,7 +6291,7 @@ a=a.replace(/(都)(?!X)/g,'$1X,to,metropolis of Tokyo~noun');
 a=a.replace(/(酒)(?!X)/g,'$1X,sake,alcoholic drink,Japanese rice wine~noun');
 a=a.replace(/(酢)(?!X)/g,'$1X,su,vinegar~noun');
 a=a.replace(/(量)(?!X)/g,'$1X,ryou-,quantity,volume~noun');
-a=a.replace(/(金)(?!X)/g,'$1X,kan-e,money~noun');
+a=a.replace(/(金)(?!X)/g,'$1X,kane,money~noun');
 a=a.replace(/(金)(?!X)/g,'$1X,kin-,gold,sum of money,Friday~noun');
 a=a.replace(/(釘)(?!X)/g,'$1X,kugi,nail,spike~noun');
 a=a.replace(/(針)(?!X)/g,'$1X,hari,needle,needle-shaped object~noun');
@@ -6350,6 +6366,7 @@ a=a.replace(/(し)(?!X)(た)(?!X)/g,'$1X$2X,shita,did,~informal~verb');
 
 a=a.replace(/(nounい)(?!X)(ま)(?!X)(す)(?!X)/g,'$1X$2X$3X,is doing~formal');
 a=a.replace(/(nounか)(?!X)(ら)(?!X)/g,'$1X$2X,kara,from~postposition');
+a=a.replace(/(nounま)(?!X)(で)(?!X)/g,'$1X$2X,made,until,to~postposition');
 a=a.replace(/(nounか)(?!X)/g,'$1X,ka,indicates a question~postposition');
 a=a.replace(/(nounし)(?!X)(た)(?!X)/g,'$1X$2X,shita,did~informal~suru-verb');
 a=a.replace(/(nounし)(?!X)/g,'$1X,　-shi,do and~verb');
@@ -6408,11 +6425,9 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-【ワシントン時事】米ホワイトハウスは31日、ロシアのウクライナ侵攻に伴うエネルギー価格の高騰対策として、戦略石油備蓄から日量100万バレルを今後6カ月間放出すると発表した。
-【図解】レギュラーガソリン店頭価格の推移
-総量は過去最大の1億8000万バレル規模に達する。市場への供給量を一段と増やし、原油高に歯止めをかける狙いだ。
-バイデン大統領は同日午後にガソリン高対策についてホワイトハウスで演説する。米国では今年11月の中間選挙を前に物価高が主要争点に浮上。欧米の経済・金融制裁により、エネルギー輸出大国ロシアからの原油や天然ガス供給が滞るとの懸念が強まり、米原油先物相場は一時、約13年8カ月ぶりの高値に跳ね上がった。
-ロシアは米国、サウジアラビアに並ぶ主要産油国で、世界生産量の約1割を占める。ロシアは日量400万～500万バレルを輸出しているが、制裁の影響で今後は大きく落ち込むと指摘されている。ロイター通信によると、石油の主要消費国が加盟する国際エネルギー機関（IEA）は4月1日に緊急会合を開き、協調放出を議論する。日本も追加措置を求められる可能性がある。
+公的年金は１日から支給額が改定され、６月に支払われる４、５両月分から０・４％減額される。受給開始年齢も変更され、選択の幅が現行の６０～７０歳から、６０～７５歳に広がる。
+【図表】受給開始を７５歳まで繰り下げると８４％増額に
+公的年金の支給額は賃金や物価の変動に合わせて毎年度改定される。新型コロナウイルスの感染拡大で現役世代の賃金が減ったことから、２０２２年度は２年連続の引き下げとなった。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
