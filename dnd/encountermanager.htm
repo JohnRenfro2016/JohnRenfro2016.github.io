@@ -581,7 +581,7 @@ function ControlWater(){a='4th(Control Water)300ft conce,10min 100ft-cube of wat
 function ControlWeather(){a='8th(Control Weather)Change current weather; changes take 1d4×10min; change precipitation, temperature, wind, 10min 5-mile radius conce,8hrs',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function ControlWinds(){a='5th(Control Winds)100ft-cube of air either gusts, downdraft, or updraft; affects flying/jump/ranged; change; 300ft conce,1hr E 16',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function CordonOfArrows(){a='2nd(Cordon of Arrows)4+2/slot arrows/bolts atk first tgts in 30ft one @a time)DC8+'+characters[targeted].spellAbility+'+pro vsDex 1/2dmg,5ft 8hrs',b='0d0+0',c='pierc',dmgDice='1d6+0',getAction(t1)}
-function Counterspell(){a='3rd(Counterspell)DC8+'+characters[targeted].spellAbility+'+pro vs 10+tgt spell lvl 1 react 60ft',b='0d0+0',c='3rd lvl spells+1 lvl/slot or lower fail',dmgDice='0d0+0',getAction(t1)}
+function Counterspell(){a='3rd(Counterspell)DC8+'+characters[targeted].spellAbility+'+pro vs10+tgt spell lvl 1 react 60ft',b='0d0+0',c='3rd lvl spells+1 lvl/slot or lower fail',dmgDice='0d0+0',getAction(t1)}
 function CreateBonfire(){a='Cantrip(Create Bonfire)1act,conce,tgts 5ft-cubeDC8+'+characters[targeted].spellAbility+'+pro vsDex or take 1d8 fire dmg',b='0d0+0',c='',dmgDice='1d6+0',getAction(t1)}
 function CreateFoodAndWater(){a='3rd(Create Food/Water)Create 45 pounds of food and 30 gallons of water; enough for 15 humanoids or 5 steeds for 24h 30ft',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function CreateHomunculus(){a='6th(Create Homunculus)1hr, Create one homunculus and the caster can transfer his hit points to it up to his next long rest.',b='0d0+0',c='',dmgDice='1d6+0',getAction(t1)}
@@ -620,7 +620,7 @@ function DisguiseSelf(){a='1st(Disguise Self)DC8+'+characters[targeted].spellAbi
 function Disintegrate(){a='6th(Disintegrate)1tgt save or 10d6+3d6/slot lvl 40 Force dmg; or up to 10ft-cube nonmagical object is destroyed)DC8+'+characters[targeted].spellAbility+'+pro vsDex 60ft P 233',b='0d0+0',c='',dmgDice='10d6+0',getAction(t1)}
 function Disorient(){a='(Disorient)1act,1tgt, 60ft, DC8+'+characters[targeted].spellAbility+'+pro vsCon',b='1d6+0',c='atk roll-1d6 before tteo '+characters[x].name+' s nt',dmgDice='0d0+0',getAction(t1)}
 function DispelEvilAndGood(){a='5th(DispelEvilAndGood) Celestials, elementals, fey, fiends, undead dis. on atks vs. you; break charm/fright/possession; banish Self conce,10/10turns',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
-function DispelMagic(){a='3rd(Dispel Magic)120ft 3rd lvl spells+1 lvl/slot or lower are dispeled on object or being)DC8+'+characters[targeted].spellAbility+'+pro vs DC10+spell lvl dispels',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function DispelMagic(){a='3rd(Dispel Magic)120ft 3rd lvl spells+1 lvl/slot or lower are dispeled on object or being)DC8+'+characters[targeted].spellAbility+'+pro vsDC10+spell lvl dispels',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function DissonantWhispers(){a='1st(Dissonant Whispers)1tgt, DC8+'+characters[targeted].spellAbility+'+pro vsWis halves and no fleeing deaf immune 60ft',b='0d0+0',c='psych+1d6/slot and flee',dmgDice='3d6+0',getAction(t1)}
 function Divination(){a='4th(Divination)Get answer to one question about a goal, event, or activity to occur within the next 7 days Self',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function DivineFavor(){a='1st(Divine Favor)bonus self conce,10/10turns',b='0d0+0',c='xtra weapon radius dmg',dmgDice='1d4+0',getAction(t1)}
@@ -744,7 +744,6 @@ function HeavyCrossbow(){a='Heavy Crossbow Martial Ranged 50 gp 18 lbs Ammunitio
 function HellishRebuke(){a='1st(Hellish Rebuke)react when hit, DC8+'+characters[targeted].spellAbility+'+pro vsDex 1/2dmg,60ft',b='0d0+0',c='fire+1d10/slot',dmgDice='2d10+0',getAction(t1)}
 function HeroesFeast(){a='6th(Heroes Feast)you+12 tgts; to consume; for 24h:disease/poison immune, +2d10 max hp, (1000gp cons)10min,30ft',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function Heroism(){a='1st(Heroism)1tgt+1/slot touch conce,1min',b='0d0+0',c='immune fear gains your spell abi mod temp hp each turn conce,1min 10/10',dmgDice='0d0+0',getAction(t1)}
-function Heroism(){a='2nd(Heroism)1st(1tgt+1/slot touch conce,1min',b='0d0+0',c='immune fear gains your spell abi mod temp hp each turn conce,1min 10/10',dmgDice='0d0+0',getAction(t1)}
 function Hesitate(){a='(Hesitate)1act,1tgt, 60ft, DC8+'+characters[targeted].spellAbility+'+pro vsWis',b='0d0+0',c='tgt can move or atk but not both during its turn uteo '+characters[x].name+' s nt',dmgDice='2d10+0',getAction(t1)}
 function Hex(){a='1st(Hex)tgt 1abi @DisAdv slot3 conce,8hrs slot5 conce,24hrs bonus 90ft conce,1hr',b='0d0+0',c='xtra dmg necro',dmgDice='1d6+0',getAction(t1)}
 function HiddenBlade(){a='Hidden Blade Exotic Melee 20 gp 2 lbs Finesse, Light, Exotic Ghostwheel',b='1d20+0',c='Piercing',dmgDice='1d4+0',getAction(t1)}
@@ -859,7 +858,7 @@ function NystulsMagicAura(){a='2nd(Nystul s Magic Aura)touch 24hrs recast 30days
 function Obfuscate(){a='(Obfuscate)1act,20ft-radi sphere cloud, self',b='0d0+0',c='obscured terrain utteo your nt or 10mi>wind',dmgDice='0d0+0',getAction(t1)}
 function OtilukesFreezingSphere(){a='6th Oti. Freezing Sphere)60ft-radi all 10d6+1d6/slot lvl Cold dmg; save halves; freezes water; can save up to 10/10turns before using DC8+'+characters[targeted].spellAbility+'+pro vsDex 300ft P 263',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function OtilukesResilientSphere(){a='4th(Otiluke s Resilient Sphere)1tgt/obj up to Large)DC8+'+characters[targeted].spellAbility+'+pro vsDex or enclosed in impenetrable sphere; can be moved as hamsterball 30ft conce,10/10turns',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
-function OttsIrreDance(){a='6th(Otto s Irre. Dance)1tgt dances in place, can not move, dis. on atks/saves, adv. on atks vs. target;)DC8+'+characters[targeted].spellAbility+'+pro vs vsWis each rnd 30ft conce,10/10turns',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
+function OttsIrreDance(){a='6th(Otto s Irre. Dance)1tgt dances in place, can not move, dis. on atks/saves, adv. on atks vs. target;)DC8+'+characters[targeted].spellAbility+'+pro vsvsWis each rnd 30ft conce,10/10turns',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function PassWithoutTrace(){a='2nd(Pass without Trace)Any within 30ft-radi+10 Dex(Stealth)checks, leave no tracks, can t be tracked by nonmagical means self conce,1hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function Passwall(){a='5th(Passwall)Create a passage max 5ft wide, 8ft tall, 20ft deep in a wooden, plaster or stone surface duration 1hr',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function Pestilence(){a='(Pestilence)1act,5ft-radi sphere poison cloud around you that follows you, all tgts that enter or start turn in cloud, DC8+'+characters[targeted].spellAbility+'+pro vsCon',b='0d0+0',c='poisoned uteo '+characters[x].name+' s nt',dmgDice='0d0+0',getAction(t1)}
@@ -1069,12 +1068,189 @@ function ZephyrStrike(){a='1st(Zephyr Strike)1act bonus,conce,The caster s movem
 function ZoneOfTruth(){a='2nd(Zone of Truth 15ft-radi all in or enter save or unable to lie; you aware if saved or not; tgts aware it cannot lie Cha 60ft 10min',b='0d0+0',c='',dmgDice='0d0+0',getAction(t1)}
 function piercRound(){a='(pierc Round)DC8+'+characters[targeted].spellAbility+'+pro vsDex for half, 2h, 1act,5x30ft-line',b='0d0+0',c='lightning+dex, 6d6@19th',dmgDice='4d6+0',getAction(t1)}
 
+function AbiDalzimsHorridWilting(){a='AbiDalzims Horrid Wilting lvl 8 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='12d8+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function AbsorbElements(){a='Absorb Elements lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d6+0',b='1d20+0',c='Variable',getAction(t1)};
+function AcidSplash(){a='Acid Splash lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='1d6+0',b='1d20+0',c='Acid',getAction(t1)};
+function AganazzarsScorcher(){a='Aganazzars Scorcher lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='3d8+0',b='1d20+0',c='Fire',getAction(t1)};
+function ArmorOfAgathys(){a='Armor of Agathys lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='5+0',b='1d20+0',c='Cold',getAction(t1)};
+function ArmsOfHadar(){a='Arms of Hadar lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='2d6+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function AshardalonsStride(){a='Ashardalons Stride lvl 3 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function BanishingSmite(){a='Banishing Smite lvl 5 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='5d10+0',b='1d20+0',c='Force',getAction(t1)};
+function BigbysHand(){a='Bigbys Hand lvl 5 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='4d8+0',b='1d20+0',c='Bludgeoning, Force',getAction(t1)};
+function BladeBarrier(){a='Blade Barrier lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='6d10+0',b='1d20+0',c='Slashing',getAction(t1)};
+function BladeOfDisaster(){a='Blade of Disaster lvl 9 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='4d12+0',b='1d20+0',c='Force',getAction(t1)};
+function Blight(){a='Blight lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='8d8+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function BlindingSmite(){a='Blinding Smite lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='3d8+0',b='1d20+0',c='Radiant',getAction(t1)};
+function BonesOftheEarth(){a='Bones of the Earth lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='6d6+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function BoomingBlade(){a='Booming Blade lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Thunder',getAction(t1)};
+function BrandingSmite(){a='Branding Smite lvl 2 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='2d6+0',b='1d20+0',c='Radiant',getAction(t1)};
+function BurningHands(){a='Burning Hands lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='3d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function CallLightning(){a='Call Lightning lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='3d10+0',b='1d20+0',c='Lightning',getAction(t1)};
+function Catapult(){a='Catapult lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='3d8+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function ChainLightning(){a='Chain Lightning lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='10d8+0',b='1d20+0',c='Lightning',getAction(t1)};
+function ChaosBolt(){a='Chaos Bolt lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='2d8+0',b='1d20+0',c='Variable',getAction(t1)};
+function ChillTouch(){a='Chill Touch lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function ChromaticOrb(){a='Chromatic Orb lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='3d8+0',b='1d20+0',c='Variable',getAction(t1)};
+function CircleOfDeath(){a='Circle of Death lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='8d6+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function CloudOfDaggers(){a='Cloud of Daggers lvl 2 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='4d4+0',b='1d20+0',c='Slashing',getAction(t1)};
+function Cloudkill(){a='Cloudkill lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='5d8+0',b='1d20+0',c='Poison',getAction(t1)};
+function ConeOfCold(){a='Cone of Cold lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='8d8+0',b='1d20+0',c='Cold',getAction(t1)};
+function ControlWater(){a='Control Water lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='2d8+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function CordonOfArrows(){a='Cordon of Arrows lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='1d6+0',b='1d20+0',c='Piercing',getAction(t1)};
+function CreateBonfire(){a='Create Bonfire lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='1d8+0',b='1d20+0',c='Fire',getAction(t1)};
+function CrownOfStars(){a='Crown of Stars lvl 7 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='4d12+0',b='1d20+0',c='Radiant',getAction(t1)};
+function CrusadersMantle(){a='Crusaders Mantle lvl 3 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d4+0',b='1d20+0',c='Radiant',getAction(t1)};
+function DarkStar(){a='Dark Star lvl 8 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='8d10+0',b='1d20+0',c='Force',getAction(t1)};
+function Dawn(){a='Dawn lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vstitution',dmgDice='4d10+0',b='1d20+0',c='Radiant',getAction(t1)};
+function DelayedBlastFireball(){a='Delayed Blast Fireball lvl 7 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='12d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function DestructiveWave(){a='Destructive Wave lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='5d6+0',b='1d20+0',c='Thunder, Variable',getAction(t1)};
+function Disintegrate(){a='Disintegrate lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='10d6+40+0',b='1d20+0',c='Force',getAction(t1)};
+function DissonantWhispers(){a='Dissonant Whispers lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='3d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function DivineFavor(){a='Divine Favor lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsCharisma',dmgDice='1d4+0',b='1d20+0',c='Radiant',getAction(t1)};
+function DraconicTransformation(){a='Draconic Transformation lvl 7 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='6d8+0',b='1d20+0',c='Force',getAction(t1)};
+function DragonsBreath(){a='Dragons Breath lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='3d6+0',b='1d20+0',c='Variable',getAction(t1)};
+function DustDevil(){a='Dust Devil lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='1d8+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function EarthTremor(){a='Earth Tremor lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='1d6+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function Earthquake(){a='Earthquake lvl 8 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='5d6+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function EldritchBlast(){a='Eldritch Blast lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d10+0',b='1d20+0',c='Force',getAction(t1)};
+function ElementalBane(){a='Elemental Bane lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d6+0',b='1d20+0',c='Variable',getAction(t1)};
+function ElementalWeapon(){a='Elemental Weapon lvl 3 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d4+0',b='1d20+0',c='Variable',getAction(t1)};
+function Enervation(){a='Enervation lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='4d8+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function EnsnaringStrike(){a='Ensnaring Strike lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='1d6+0',b='1d20+0',c='Piercing',getAction(t1)};
+function EruptingEarth(){a='Erupting Earth lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='3d12+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function EvardsBlackTentacles(){a='Evards Black Tentacles lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='3d6+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function Feeblemind(){a='Feeblemind lvl 8 DC8+'+characters[targeted].spellAbility+'+pro vsIntelligence',dmgDice='4d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function FingerOfDeath(){a='Finger of Death lvl 7 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='7d8+30+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function FireBolt(){a='Fire Bolt lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d10+0',b='1d20+0',c='Fire',getAction(t1)};
+function FireShield(){a='Fire Shield lvl 4 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='2d8+0',b='1d20+0',c='Variable',getAction(t1)};
+function FireStorm(){a='Fire Storm lvl 7 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='7d10+0',b='1d20+0',c='Fire',getAction(t1)};
+function Fireball(){a='Fireball lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='8d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function FlameArrows(){a='Flame Arrows lvl 3 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function FlameBlade(){a='Flame Blade lvl 2 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='3d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function FlameStrike(){a='Flame Strike lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='4d6+4d6+0',b='1d20+0',c='Fire, Radiant',getAction(t1)};
+function FlamingSphere(){a='Flaming Sphere lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='2d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function Forbiddance(){a='Forbiddance lvl 6 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='5d10+0',b='1d20+0',c='Variable',getAction(t1)};
+function FrostFingers(){a='Frost Fingers lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d8+0',b='1d20+0',c='Cold',getAction(t1)};
+function Frostbite(){a='Frostbite lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='1d6+0',b='1d20+0',c='Cold',getAction(t1)};
+function GlyphOfWarding(){a='Glyph of Warding lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='5d8+0',b='1d20+0',c='Variable',getAction(t1)};
+function GravityFissure(){a='Gravity Fissure lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='8d8+0',b='1d20+0',c='Force',getAction(t1)};
+function GravitySinkhole(){a='Gravity Sinkhole lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='5d10+0',b='1d20+0',c='Force',getAction(t1)};
+function GreenFlameBlade(){a='GreenFlame Blade lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Fire',getAction(t1)};
+function GuardianOfFaith(){a='Guardian of Faith lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='20+0',b='1d20+0',c='Radiant',getAction(t1)};
+function GuidingBolt(){a='Guiding Bolt lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='4d6+0',b='1d20+0',c='Radiant',getAction(t1)};
+function HailOfThorns(){a='Hail of Thorns lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='1d10+0',b='1d20+0',c='Piercing',getAction(t1)};
+function Harm(){a='Harm lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vstitution',dmgDice='14d6+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function HeatMetal(){a='Heat Metal lvl 2 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='2d8+0',b='1d20+0',c='Fire',getAction(t1)};
+function HellishRebuke(){a='Hellish Rebuke lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='3d10+0',b='1d20+0',c='Fire',getAction(t1)};
+function Hex(){a='Hexspell DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d6+0',b='1d20+0',c='Necrotic level 1',getAction(t1)};
+function HolyWeapon(){a='Holy Weapon lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d8+0',b='1d20+0',c='Radiant',getAction(t1)};
+function HungerOfHadar(){a='Hunger of Hadar lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='2d6+0',b='1d20+0',c='Acid, Cold',getAction(t1)};
+function HuntersMark(){a='Hunters Mark lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d6+0',b='1d20+0',c='Variable',getAction(t1)};
+function IceKnife(){a='Ice Knife lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='1d10+0',b='1d20+0',c='Cold, Piercing',getAction(t1)};
+function IceStorm(){a='Ice Storm lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='2d8+4d6+0',b='1d20+0',c='Bludgeoning, Cold',getAction(t1)};
+function IllusoryDragon(){a='Illusory Dragon lvl 8 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='7d6+0',b='1d20+0',c='Variable',getAction(t1)};
+function Immolation(){a='Immolation lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='8d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function IncendiaryCloud(){a='Incendiary Cloud lvl 8 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='10d8+0',b='1d20+0',c='Fire',getAction(t1)};
+function Infestation(){a='Infestation lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='1d6+0',b='1d20+0',c='Poison',getAction(t1)};
+function InflictWounds(){a='Inflict Wounds lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='3d10+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function InsectPlague(){a='Insect Plague lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='4d10+0',b='1d20+0',c='Piercing',getAction(t1)};
+function InvestitureOfFlame(){a='Investiture of Flame lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='1d10+0',b='1d20+0',c='Fire',getAction(t1)};
+function InvestitureOfIce(){a='Investiture of Ice lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='4d6+0',b='1d20+0',c='Cold',getAction(t1)};
+function InvestitureOfWind(){a='Investiture of Wind lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d10+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function JimsMagicMissile(){a='Jims Magic Missile lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='2d4+0',b='1d20+0',c='Force',getAction(t1)};
+function LifeTransference(){a='Life Transference lvl 3 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='4d8+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function LightningArrow(){a='Lightning Arrow lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='4d8+0',b='1d20+0',c='Lightning',getAction(t1)};
+function LightningBolt(){a='Lightning Bolt lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='8d6+0',b='1d20+0',c='Lightning',getAction(t1)};
+function LightningLure(){a='Lightning Lure lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='1d8+0',b='1d20+0',c='Lightning',getAction(t1)};
+function MaddeningDarkness(){a='Maddening Darkness lvl 8 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='8d8+0',b='1d20+0',c='Psychic',getAction(t1)};
+function Maelstrom(){a='Maelstrom lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='6d6+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function MagicMissile(){a='Magic Missile lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d4+1+0',b='1d20+0',c='Force',getAction(t1)};
+function MagicStone(){a='Magic Stone lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d6+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function MagnifyGravity(){a='Magnify Gravity lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d8+0',b='1d20+0',c='Force',getAction(t1)};
+function MaximiliansEarthenGrasp(){a='Maximilians Earthen Grasp lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='2d6+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function MelfsAcidArrow(){a='Melfs Acid Arrow lvl 2 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='4d4+0',b='1d20+0',c='Acid',getAction(t1)};
+function MelfsMinuteMeteors(){a='Melfs Minute Meteors lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='2d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function MentalPrison(){a='Mental Prison lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsIntelligence',dmgDice='5d10+0',b='1d20+0',c='Psychic',getAction(t1)};
+function MeteorSwarm(){a='Meteor Swarm lvl 9 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='20d6+0',b='1d20+0',c='Bludgeoning, Fire',getAction(t1)};
+function MindSliver(){a='Mind Sliver lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsIntelligence',dmgDice='1d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function MindSpike(){a='Mind Spike lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='3d8+0',b='1d20+0',c='Psychic',getAction(t1)};
+function Moonbeam(){a='Moonbeam lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d10+0',b='1d20+0',c='Radiant',getAction(t1)};
+function MordenkainensFaithfulHound(){a='Mordenkainens Faithful Hound lvl 4 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='4d8+0',b='1d20+0',c='Piercing',getAction(t1)};
+function MordenkainensSword(){a='Mordenkainens Sword lvl 7 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='3d10+0',b='1d20+0',c='Force',getAction(t1)};
+function NegativeEnergyFlood(){a='Negative Energy Flood lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='5d12+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function OtilukesFreezingSphere(){a='Otilukes Freezing Sphere lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='10d6+0',b='1d20+0',c='Cold',getAction(t1)};
+function PhantasmalForce(){a='Phantasmal Force lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsIntelligence',dmgDice='1d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function PhantasmalKiller(){a='Phantasmal Killer lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='4d10+0',b='1d20+0',c='Psychic',getAction(t1)};
+function PoisonSpray(){a='Poison Spray lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='1d12+0',b='1d20+0',c='Poison',getAction(t1)};
+function PrimalSavagery(){a='Primal Savagery lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d10+0',b='1d20+0',c='Acid',getAction(t1)};
+function PrismaticSpray(){a='Prismatic Spray lvl 7 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='10d6+0',b='1d20+0',c='Variable',getAction(t1)};
+function PrismaticWall(){a='Prismatic Wall lvl 9 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='10d6+0',b='1d20+0',c='Acid, Cold, Fire, Lightning, Poison',getAction(t1)};
+function ProduceFlame(){a='Produce Flame lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Fire',getAction(t1)};
+function PsychicScream(){a='Psychic Scream lvl 9 DC8+'+characters[targeted].spellAbility+'+pro vsIntelligence',dmgDice='14d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function PulseWave(){a='Pulse Wave lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='6d6+0',b='1d20+0',c='Force',getAction(t1)};
+function RaulothimsPsychicLance(){a='Raulothims Psychic Lance lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsIntelligence',dmgDice='7d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function RavenousVoid(){a='Ravenous Void lvl 9 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='5d10+0',b='1d20+0',c='Force',getAction(t1)};
+function RayOfFrost(){a='Ray of Frost lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Cold',getAction(t1)};
+function RayOfSickness(){a='Ray of Sickness lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d8+0',b='1d20+0',c='Poison',getAction(t1)};
+function RimesBindingIce(){a='Rimes Binding Ice lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='3d8+0',b='1d20+0',c='Cold',getAction(t1)};
+function SacredFlame(){a='Sacred Flame lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='1d8+0',b='1d20+0',c='Radiant',getAction(t1)};
+function SappingSting(){a='Sapping Sting lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='1d4+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function ScorchingRay(){a='Scorching Ray lvl 2 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='2d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function SearingSmite(){a='Searing Smite lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='1d6+0',b='1d20+0',c='Fire',getAction(t1)};
+function ShadowBlade(){a='Shadow Blade lvl 2 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='2d8+0',b='1d20+0',c='Psychic',getAction(t1)};
+function ShadowOfMoil(){a='Shadow of Moil lvl 4 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='2d8+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function Shatter(){a='Shatter lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='3d8+0',b='1d20+0',c='Thunder',getAction(t1)};
+function Shillelagh(){a='Shillelagh lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function ShockingGrasp(){a='Shocking Grasp lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Lightning',getAction(t1)};
+function SickeningRadiance(){a='Sickening Radiance lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='4d10+0',b='1d20+0',c='Radiant',getAction(t1)};
+function SnillocsSnowballSwarm(){a='Snillocs Snowball Swarm lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='3d6+0',b='1d20+0',c='Cold',getAction(t1)};
+function SpiritGuardians(){a='Spirit Guardians lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='3d8+0',b='1d20+0',c='Variable',getAction(t1)};
+function SpiritShroud(){a='Spirit Shroud lvl 3 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Variable',getAction(t1)};
+function SpiritualWeapon(){a='Spiritual Weapon lvl 2 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Force',getAction(t1)};
+function StaggeringSmite(){a='Staggering Smite lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='4d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function SteelWindStrike(){a='Steel Wind Strike lvl 5 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='6d10+0',b='1d20+0',c='Force',getAction(t1)};
+function StormOfVengeance(){a='Storm of Vengeance lvl 9 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d6+0',b='1d20+0',c='Acid, Bludgeoning, Cold, Lightning, Thunder',getAction(t1)};
+function StormSphere(){a='Storm Sphere lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='2d6+0',b='1d20+0',c='Bludgeoning, Lightning',getAction(t1)};
+function Sunbeam(){a='Sunbeam lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='6d8+0',b='1d20+0',c='Radiant',getAction(t1)};
+function Sunburst(){a='Sunburst lvl 8 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='12d6+0',b='1d20+0',c='Radiant',getAction(t1)};
+function SwordBurst(){a='Sword Burst lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='1d6+0',b='1d20+0',c='Force',getAction(t1)};
+function Symbol(){a='Symbol lvl 7 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='10d10+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function SynapticStatic(){a='Synaptic Static lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsIntelligence',dmgDice='8d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function TashasCausticBrew(){a='Tashas Caustic Brew lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='2d4+0',b='1d20+0',c='Acid',getAction(t1)};
+function TashasMindWhip(){a='Tashas Mind Whip lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsIntelligence',dmgDice='3d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function ThornWhip(){a='Thorn Whip lvl 0 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d6+0',b='1d20+0',c='Piercing',getAction(t1)};
+function ThunderStep(){a='Thunder Step lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='3d10+0',b='1d20+0',c='Thunder',getAction(t1)};
+function Thunderclap(){a='Thunderclap lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='1d6+0',b='1d20+0',c='Thunder',getAction(t1)};
+function ThunderousSmite(){a='Thunderous Smite lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='2d6+0',b='1d20+0',c='Thunder',getAction(t1)};
+function Thunderwave(){a='Thunderwave lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d8+0',b='1d20+0',c='Thunder',getAction(t1)};
+function TidalWave(){a='Tidal Wave lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='4d8+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function TimeRavage(){a='Time Ravage lvl 9 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='10d12+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function TolltheDead(){a='Toll the Dead lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='1d8+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function TransmuteRock(){a='Transmute Rock lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='4d8+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function Tsunami(){a='Tsunami lvl 8 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='6d10+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function VampiricTouch(){a='Vampiric Touch lvl 3 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='3d6+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function ViciousMockery(){a='Vicious Mockery lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='1d4+0',b='1d20+0',c='Psychic',getAction(t1)};
+function VitriolicSphere(){a='Vitriolic Sphere lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='10d4+0',b='1d20+0',c='Acid',getAction(t1)};
+function WallOfFire(){a='Wall of Fire lvl 4 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='5d8+0',b='1d20+0',c='Fire',getAction(t1)};
+function WallOfIce(){a='Wall of Ice lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='10d6+0',b='1d20+0',c='Cold',getAction(t1)};
+function WallOfLight(){a='Wall of Light lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='4d8+0',b='1d20+0',c='Radiant',getAction(t1)};
+function WallOfThorns(){a='Wall of Thorns lvl 6 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='7d8+0',b='1d20+0',c='Piercing, Slashing',getAction(t1)};
+function Weird(){a='Weird DC8+'+characters[targeted].spellAbility+'+pro vsWisdom lvl 9',dmgDice='4d10+0',b='1d20+0',c='Psychic',getAction(t1)};
+function Whirlwind(){a='Whirlwind lvl 7 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='10d6+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function WindWall(){a='Wind Wall lvl 3 DC8+'+characters[targeted].spellAbility+'+pro vsStrength',dmgDice='3d8+0',b='1d20+0',c='Bludgeoning',getAction(t1)};
+function WitchBolt(){a='Witch Bolt lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d12+0',b='1d20+0',c='Lightning',getAction(t1)};
+function WitherandBloom(){a='Wither and Bloom lvl 2 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='2d6+0',b='1d20+0',c='Necrotic',getAction(t1)};
+function WordOfRadiance(){a='Word of Radiance lvl 0 DC8+'+characters[targeted].spellAbility+'+pro vsConstitution',dmgDice='1d6+0',b='1d20+0',c='Radiant',getAction(t1)};
+function WrathOfNature(){a='Wrath of Nature lvl 5 DC8+'+characters[targeted].spellAbility+'+pro vsDexterity',dmgDice='4d6+0',b='1d20+0',c='Bludgeoning, Slashing',getAction(t1)};
+function WrathfulSmite(){a='Wrathful Smite lvl 1 DC8+'+characters[targeted].spellAbility+'+pro vsWisdom',dmgDice='1d6+0',b='1d20+0',c='Psychic',getAction(t1)};
+function ZephyrStrike(){a='Zephyr Strike lvl 1 DC8+'+characters[targeted].spellAbility+'+pro',dmgDice='1d8+0',b='1d20+0',c='Force',getAction(t1)};
+
 function getAction(){characters[targeted].setRollName1(a),characters[targeted].setRoll1(b),characters[targeted].setRollName2(c),characters[targeted].setRoll2(dmgDice),addRollPrompt(targeted)}
 
-s1="<input onClick='",s2="()' type='button' value='",s3="'/></td></tr><tr><td>"
+s1="<input onClick='",s2="()' type='button' value='",s3="'/>"
 s4=document.write.bind(document)
 
-s4("<table><tr><td>Target the piece first to receive these weapons.</td></tr><tr><td>")
+s4("<table><tr><td>Target the piece first to receive these weapons or spells.</td></tr><tr><td>")
 s4(s1+'Atlatl'+s2+'Atlatl'+s3)
 s4(s1+'Battleaxe'+s2+'Battleaxe'+s3)
 s4(s1+'Greataxe'+s2+'Greataxe'+s3)
@@ -1134,7 +1310,183 @@ s4(s1+'Shortsword'+s2+'Shortsword'+s3)
 s4(s1+'Trident'+s2+'Trident'+s3)
 s4(s1+'WarPick'+s2+'War Pick'+s3)
 s4(s1+'Whip'+s2+'Whip'+s3)
-s4(s1+'CatONine-Tails'+s2+'Cat-o\'-Nine-Tails'+s3)
+s4(s1+'CatONineTails'+s2+'CatONine-Tails'+s3)
+s4(s1+'AbiDalzimsHorridWilting'+s2+'AbiDalzimsHorridWilting'+s3)
+s4(s1+'AbsorbElements'+s2+'AbsorbElements'+s3)
+s4(s1+'AcidSplash'+s2+'AcidSplash'+s3)
+s4(s1+'AganazzarsScorcher'+s2+'AganazzarsScorcher'+s3)
+s4(s1+'ArmorOfAgathys'+s2+'ArmorOfAgathys'+s3)
+s4(s1+'ArmsOfHadar'+s2+'ArmsOfHadar'+s3)
+s4(s1+'AshardalonsStride'+s2+'AshardalonsStride'+s3)
+s4(s1+'BanishingSmite'+s2+'BanishingSmite'+s3)
+s4(s1+'BigbysHand'+s2+'BigbysHand'+s3)
+s4(s1+'BladeBarrier'+s2+'BladeBarrier'+s3)
+s4(s1+'BladeOfDisaster'+s2+'BladeOfDisaster'+s3)
+s4(s1+'Blight'+s2+'Blight'+s3)
+s4(s1+'BlindingSmite'+s2+'BlindingSmite'+s3)
+s4(s1+'BonesOftheEarth'+s2+'BonesOftheEarth'+s3)
+s4(s1+'BoomingBlade'+s2+'BoomingBlade'+s3)
+s4(s1+'BrandingSmite'+s2+'BrandingSmite'+s3)
+s4(s1+'BurningHands'+s2+'BurningHands'+s3)
+s4(s1+'CallLightning'+s2+'CallLightning'+s3)
+s4(s1+'Catapult'+s2+'Catapult'+s3)
+s4(s1+'ChainLightning'+s2+'ChainLightning'+s3)
+s4(s1+'ChaosBolt'+s2+'ChaosBolt'+s3)
+s4(s1+'ChillTouch'+s2+'ChillTouch'+s3)
+s4(s1+'ChromaticOrb'+s2+'ChromaticOrb'+s3)
+s4(s1+'CircleOfDeath'+s2+'CircleOfDeath'+s3)
+s4(s1+'CloudOfDaggers'+s2+'CloudOfDaggers'+s3)
+s4(s1+'Cloudkill'+s2+'Cloudkill'+s3)
+s4(s1+'ConeOfCold'+s2+'ConeOfCold'+s3)
+s4(s1+'ControlWater'+s2+'ControlWater'+s3)
+s4(s1+'CordonOfArrows'+s2+'CordonOfArrows'+s3)
+s4(s1+'CreateBonfire'+s2+'CreateBonfire'+s3)
+s4(s1+'CrownOfStars'+s2+'CrownOfStars'+s3)
+s4(s1+'CrusadersMantle'+s2+'CrusadersMantle'+s3)
+s4(s1+'DarkStar'+s2+'DarkStar'+s3)
+s4(s1+'Dawn'+s2+'Dawn'+s3)
+s4(s1+'DelayedBlastFireball'+s2+'DelayedBlastFireball'+s3)
+s4(s1+'DestructiveWave'+s2+'DestructiveWave'+s3)
+s4(s1+'Disintegrate'+s2+'Disintegrate'+s3)
+s4(s1+'DissonantWhispers'+s2+'DissonantWhispers'+s3)
+s4(s1+'DivineFavor'+s2+'DivineFavor'+s3)
+s4(s1+'DraconicTransformation'+s2+'DraconicTransformation'+s3)
+s4(s1+'DragonsBreath'+s2+'DragonsBreath'+s3)
+s4(s1+'DustDevil'+s2+'DustDevil'+s3)
+s4(s1+'EarthTremor'+s2+'EarthTremor'+s3)
+s4(s1+'Earthquake'+s2+'Earthquake'+s3)
+s4(s1+'EldritchBlast'+s2+'EldritchBlast'+s3)
+s4(s1+'ElementalBane'+s2+'ElementalBane'+s3)
+s4(s1+'ElementalWeapon'+s2+'ElementalWeapon'+s3)
+s4(s1+'Enervation'+s2+'Enervation'+s3)
+s4(s1+'EnsnaringStrike'+s2+'EnsnaringStrike'+s3)
+s4(s1+'EruptingEarth'+s2+'EruptingEarth'+s3)
+s4(s1+'EvardsBlackTentacles'+s2+'EvardsBlackTentacles'+s3)
+s4(s1+'Feeblemind'+s2+'Feeblemind'+s3)
+s4(s1+'FingerOfDeath'+s2+'FingerOfDeath'+s3)
+s4(s1+'FireBolt'+s2+'FireBolt'+s3)
+s4(s1+'FireShield'+s2+'FireShield'+s3)
+s4(s1+'FireStorm'+s2+'FireStorm'+s3)
+s4(s1+'Fireball'+s2+'Fireball'+s3)
+s4(s1+'FlameArrows'+s2+'FlameArrows'+s3)
+s4(s1+'FlameBlade'+s2+'FlameBlade'+s3)
+s4(s1+'FlameStrike'+s2+'FlameStrike'+s3)
+s4(s1+'FlamingSphere'+s2+'FlamingSphere'+s3)
+s4(s1+'Forbiddance'+s2+'Forbiddance'+s3)
+s4(s1+'FrostFingers'+s2+'FrostFingers'+s3)
+s4(s1+'Frostbite'+s2+'Frostbite'+s3)
+s4(s1+'GlyphOfWarding'+s2+'GlyphOfWarding'+s3)
+s4(s1+'GravityFissure'+s2+'GravityFissure'+s3)
+s4(s1+'GravitySinkhole'+s2+'GravitySinkhole'+s3)
+s4(s1+'GreenFlameBlade'+s2+'GreenFlameBlade'+s3)
+s4(s1+'GuardianOfFaith'+s2+'GuardianOfFaith'+s3)
+s4(s1+'GuidingBolt'+s2+'GuidingBolt'+s3)
+s4(s1+'HailOfThorns'+s2+'HailOfThorns'+s3)
+s4(s1+'Harm'+s2+'Harm'+s3)
+s4(s1+'HeatMetal'+s2+'HeatMetal'+s3)
+s4(s1+'HellishRebuke'+s2+'HellishRebuke'+s3)
+s4(s1+'Hex'+s2+'Hex'+s3)
+s4(s1+'HolyWeapon'+s2+'HolyWeapon'+s3)
+s4(s1+'HungerOfHadar'+s2+'HungerOfHadar'+s3)
+s4(s1+'HuntersMark'+s2+'HuntersMark'+s3)
+s4(s1+'IceKnife'+s2+'IceKnife'+s3)
+s4(s1+'IceStorm'+s2+'IceStorm'+s3)
+s4(s1+'IllusoryDragon'+s2+'IllusoryDragon'+s3)
+s4(s1+'Immolation'+s2+'Immolation'+s3)
+s4(s1+'IncendiaryCloud'+s2+'IncendiaryCloud'+s3)
+s4(s1+'Infestation'+s2+'Infestation'+s3)
+s4(s1+'InflictWounds'+s2+'InflictWounds'+s3)
+s4(s1+'InsectPlague'+s2+'InsectPlague'+s3)
+s4(s1+'InvestitureOfFlame'+s2+'InvestitureOfFlame'+s3)
+s4(s1+'InvestitureOfIce'+s2+'InvestitureOfIce'+s3)
+s4(s1+'InvestitureOfWind'+s2+'InvestitureOfWind'+s3)
+s4(s1+'JimsMagicMissile'+s2+'JimsMagicMissile'+s3)
+s4(s1+'LifeTransference'+s2+'LifeTransference'+s3)
+s4(s1+'LightningArrow'+s2+'LightningArrow'+s3)
+s4(s1+'LightningBolt'+s2+'LightningBolt'+s3)
+s4(s1+'LightningLure'+s2+'LightningLure'+s3)
+s4(s1+'MaddeningDarkness'+s2+'MaddeningDarkness'+s3)
+s4(s1+'Maelstrom'+s2+'Maelstrom'+s3)
+s4(s1+'MagicMissile'+s2+'MagicMissile'+s3)
+s4(s1+'MagicStone'+s2+'MagicStone'+s3)
+s4(s1+'MagnifyGravity'+s2+'MagnifyGravity'+s3)
+s4(s1+'MaximiliansEarthenGrasp{'+s2+'MaximiliansEarthenGrasp{'+s3)
+s4(s1+'MelfsAcidArrow'+s2+'MelfsAcidArrow'+s3)
+s4(s1+'MelfsMinuteMeteors'+s2+'MelfsMinuteMeteors'+s3)
+s4(s1+'MentalPrison'+s2+'MentalPrison'+s3)
+s4(s1+'MeteorSwarm'+s2+'MeteorSwarm'+s3)
+s4(s1+'MindSliver'+s2+'MindSliver'+s3)
+s4(s1+'MindSpike'+s2+'MindSpike'+s3)
+s4(s1+'Moonbeam'+s2+'Moonbeam'+s3)
+s4(s1+'MordenkainensFaithfulHound'+s2+'MordenkainensFaithfulHound'+s3)
+s4(s1+'MordenkainensSword'+s2+'MordenkainensSword'+s3)
+s4(s1+'NegativeEnergyFlood'+s2+'NegativeEnergyFlood'+s3)
+s4(s1+'OtilukesFreezingSphere'+s2+'OtilukesFreezingSphere'+s3)
+s4(s1+'PhantasmalForce'+s2+'PhantasmalForce'+s3)
+s4(s1+'PhantasmalKiller'+s2+'PhantasmalKiller'+s3)
+s4(s1+'PoisonSpray'+s2+'PoisonSpray'+s3)
+s4(s1+'PrimalSavagery'+s2+'PrimalSavagery'+s3)
+s4(s1+'PrismaticSpray'+s2+'PrismaticSpray'+s3)
+s4(s1+'PrismaticWall'+s2+'PrismaticWall'+s3)
+s4(s1+'ProduceFlame'+s2+'ProduceFlame'+s3)
+s4(s1+'PsychicScream'+s2+'PsychicScream'+s3)
+s4(s1+'PulseWave'+s2+'PulseWave'+s3)
+s4(s1+'RaulothimsPsychicLance'+s2+'RaulothimsPsychicLance'+s3)
+s4(s1+'RavenousVoid'+s2+'RavenousVoid'+s3)
+s4(s1+'RayOfFrost'+s2+'RayOfFrost'+s3)
+s4(s1+'RayOfSickness'+s2+'RayOfSickness'+s3)
+s4(s1+'RimesBindingIce'+s2+'RimesBindingIce'+s3)
+s4(s1+'SacredFlame'+s2+'SacredFlame'+s3)
+s4(s1+'SappingSting'+s2+'SappingSting'+s3)
+s4(s1+'ScorchingRay'+s2+'ScorchingRay'+s3)
+s4(s1+'SearingSmite'+s2+'SearingSmite'+s3)
+s4(s1+'ShadowBlade'+s2+'ShadowBlade'+s3)
+s4(s1+'ShadowOfMoil'+s2+'ShadowOfMoil'+s3)
+s4(s1+'Shatter'+s2+'Shatter'+s3)
+s4(s1+'Shillelagh'+s2+'Shillelagh'+s3)
+s4(s1+'ShockingGrasp'+s2+'ShockingGrasp'+s3)
+s4(s1+'SickeningRadiance'+s2+'SickeningRadiance'+s3)
+s4(s1+'SnillocsSnowballSwarm'+s2+'SnillocsSnowballSwarm'+s3)
+s4(s1+'SpiritGuardians'+s2+'SpiritGuardians'+s3)
+s4(s1+'SpiritShroud'+s2+'SpiritShroud'+s3)
+s4(s1+'SpiritualWeapon'+s2+'SpiritualWeapon'+s3)
+s4(s1+'StaggeringSmite'+s2+'StaggeringSmite'+s3)
+s4(s1+'SteelWindStrike'+s2+'SteelWindStrike'+s3)
+s4(s1+'StormOfVengeance'+s2+'StormOfVengeance'+s3)
+s4(s1+'StormSphere'+s2+'StormSphere'+s3)
+s4(s1+'Sunbeam'+s2+'Sunbeam'+s3)
+s4(s1+'Sunburst'+s2+'Sunburst'+s3)
+s4(s1+'SwordBurst'+s2+'SwordBurst'+s3)
+s4(s1+'Symbol'+s2+'Symbol'+s3)
+s4(s1+'SynapticStatic'+s2+'SynapticStatic'+s3)
+s4(s1+'TashasCausticBrew'+s2+'TashasCausticBrew'+s3)
+s4(s1+'TashasMindWhip'+s2+'TashasMindWhip'+s3)
+s4(s1+'ThornWhip'+s2+'ThornWhip'+s3)
+s4(s1+'ThunderStep'+s2+'ThunderStep'+s3)
+s4(s1+'Thunderclap'+s2+'Thunderclap'+s3)
+s4(s1+'ThunderousSmite'+s2+'ThunderousSmite'+s3)
+s4(s1+'Thunderwave'+s2+'Thunderwave'+s3)
+s4(s1+'TidalWave'+s2+'TidalWave'+s3)
+s4(s1+'TimeRavage'+s2+'TimeRavage'+s3)
+s4(s1+'TolltheDead'+s2+'TolltheDead'+s3)
+s4(s1+'TransmuteRock'+s2+'TransmuteRock'+s3)
+s4(s1+'Tsunami'+s2+'Tsunami'+s3)
+s4(s1+'VampiricTouch'+s2+'VampiricTouch'+s3)
+s4(s1+'ViciousMockery'+s2+'ViciousMockery'+s3)
+s4(s1+'VitriolicSphere'+s2+'VitriolicSphere'+s3)
+s4(s1+'WallOfFire'+s2+'WallOfFire'+s3)
+s4(s1+'WallOfIce'+s2+'WallOfIce'+s3)
+s4(s1+'WallOfLight'+s2+'WallOfLight'+s3)
+s4(s1+'WallOfThorns'+s2+'WallOfThorns'+s3)
+s4(s1+'Weird'+s2+'Weird'+s3)
+s4(s1+'Whirlwind'+s2+'Whirlwind'+s3)
+s4(s1+'WindWall'+s2+'WindWall'+s3)
+s4(s1+'WitchBolt'+s2+'WitchBolt'+s3)
+s4(s1+'WitherandBloom'+s2+'WitherandBloom'+s3)
+s4(s1+'WordOfRadiance'+s2+'WordOfRadiance'+s3)
+s4(s1+'WrathOfNature'+s2+'WrathOfNature'+s3)
+s4(s1+'WrathfulSmite'+s2+'WrathfulSmite'+s3)
+s4(s1+'ZephyrStrike'+s2+'ZephyrStrike'+s3)
 s4('</td></tr></table>')
 
 function toggleTab1(x){if(characters[x].toggled1.match(/none/)){characters[x].setToggled1("block");
@@ -1285,7 +1637,7 @@ characters[targeted].setRoll2(rip[4]);
 addRollPrompt(targeted);
 }
 
-if(rip=stats.match(/.+?Melee[\s\S]+?.(.+?Melee[\s\S]+?.)(\+\d{1,2})([\s\S]+?)\(([\s\S]+?)\)([\s\S]+?\.)/))
+if(rip=stats.match(/.+?Melee[\s\S]+?(.+?Melee[\s\S]+?.)(\+\d{1,2})([\s\S]+?)\(([\s\S]+?)\)([\s\S]+?\.)/))
 {
 characters[targeted].setRollName1(rip[1]+rip[3]);
 characters[targeted].setRoll1('1d20'+rip[2]);
@@ -1332,7 +1684,11 @@ characters[targeted].setSpeed(rip[6]);
 characters[targeted].setMaxHp(rip[7]);
 characters[targeted].setCurHp(rip[7]);
 characters[targeted].setHitDice(rip[8])}
-if(rip=stats.match(/^(.*)$/m)){characters[targeted].setName(rip[1])}
+
+if(rip=stats.match(/(^[\s\S]?.+)/)){characters[targeted].setName(rip[1])}
+
+if(rip=stats.match(/Languages([\s\S]?.+)/i)){characters[targeted].setLanguages(rip[1])}
+
 if(size=stats.match(/(Tiny|Small|Medium|Large|Huge|Gargantuan)/)){characters[targeted].setSize(size[1])}
 if(race=stats.match(/(aberration|beast|construct|elemental|fey|fiend|giant|humanoid|monstrosity|plant|undead|human)/i)){characters[targeted].setRace(race[1])}
 if(alignment=stats.match(/(neutral)/)){characters[targeted].setAlignment(alignment[1])}
@@ -1472,24 +1828,9 @@ if(weapon=stats.match(/unarmed\sstrike/i)){this.UnarmedStrike();
 this.Disarmed();
 this.KnockedProne();
 this.Stunned()}
-//Weapons
-if(weapon=stats.match(/dagger/i)){this.Dagger()}
-if(weapon=stats.match(/dart/i)){this.Dart()}
-if(weapon=stats.match(/glaive/i)){this.Glaive()}
-if(weapon=stats.match(/greataxe/i)){this.Greataxe()}
-if(weapon=stats.match(/greatsword/i)){this.Greatsword()}
-if(weapon=stats.match(/handaxe/i)){this.Handaxe()}
-if(weapon=stats.match(/javelin/i)){this.Javelin()}
-if(weapon=stats.match(/light\scrossbow/i)){this.LightCrossbow()}
-if(weapon=stats.match(/Longbow/i)){this.Longbow()}
-if(weapon=stats.match(/longsword/i)){this.Longsword()}
-if(weapon=stats.match(/mace/i)){this.Mace()}
-if(weapon=stats.match(/morningstar/i)){this.Morningstar()}
-if(weapon=stats.match(/quarterstaff/i)){this.Quarterstaff()}
-if(weapon=stats.match(/scimitar/i)){this.Scimitar()}
-if(weapon=stats.match(/shortsword/i)){this.Shortsword()}
-if(weapon=stats.match(/shortbow/i)){this.Shortbow()}
-if(weapon=stats.match(/spear/i)){this.Spear()}
+
+if(rip=stats.match(/Cantrips/i))
+{
 if(rip=stats.match(/Acid\sSplash/i)){this.AcidSplash()};
 if(rip=stats.match(/Blade\sWard/i)){this.BladeWard()};
 if(rip=stats.match(/Booming\sBlade/i)){this.BoomingBlade()};
@@ -1533,6 +1874,10 @@ if(rip=stats.match(/Toll\sThe\sDead/i)){this.TollTheDead()};
 if(rip=stats.match(/True\sStrike/i)){this.TrueStrike()};
 if(rip=stats.match(/Vicious\sMockery/i)){this.ViciousMockery()};
 if(rip=stats.match(/Word\sOf\sRadiance/i)){this.WordOfRadiance()};
+}
+
+if(rip=stats.match(/1st level/i))
+{
 if(rip=stats.match(/Absorb\sElements/i)){this.AbsorbElements()};
 if(rip=stats.match(/Alarm/i)){this.Alarm()};
 if(rip=stats.match(/Animal\sFriendship/i)){this.AnimalFriendship()};
@@ -1605,6 +1950,10 @@ if(rip=stats.match(/Unseen\sServant/i)){this.UnseenServant()};
 if(rip=stats.match(/Witch\sBolt/i)){this.WitchBolt()};
 if(rip=stats.match(/Wrathful\sSmite/i)){this.WrathfulSmite()};
 if(rip=stats.match(/Zephyr\sStrike/i)){this.ZephyrStrike()};
+}
+
+if(rip=stats.match(/2nd level/i))
+{
 if(rip=stats.match(/Aganazzar\’s\sScorcher/i)){this.AganazzarsScorcher()};
 if(rip=stats.match(/Aid/i)){this.Aid()};
 if(rip=stats.match(/Alter\sSelf/i)){this.AlterSelf()};
@@ -1676,6 +2025,10 @@ if(rip=stats.match(/Warding\sBond/i)){this.WardingBond()};
 if(rip=stats.match(/Warding\sWind/i)){this.WardingWind()};
 if(rip=stats.match(/Web/i)){this.Web()};
 if(rip=stats.match(/Zone\sOf\sTruth/i)){this.ZoneOfTruth()};
+}
+
+if(rip=stats.match(/3rd level/i))
+{
 if(rip=stats.match(/Animate\sDead/i)){this.AnimateDead()};
 if(rip=stats.match(/Aura\sOf\sVitality/i)){this.AuraOfVitality()};
 if(rip=stats.match(/Beacon\sOf\sHope/i)){this.BeaconOfHope()};
@@ -1738,6 +2091,10 @@ if(rip=stats.match(/Wall\sOf\sWater/i)){this.WallOfWater()};
 if(rip=stats.match(/Water\sBreathing/i)){this.WaterBreathing()};
 if(rip=stats.match(/Water\sWalk/i)){this.WaterWalk()};
 if(rip=stats.match(/Wind\sWall/i)){this.WindWall()};
+}
+
+if(rip=stats.match(/4th level/i))
+{
 if(rip=stats.match(/Arcane\sEye/i)){this.ArcaneEye()};
 if(rip=stats.match(/Aura\sOf\sLife/i)){this.AuraOfLife()};
 if(rip=stats.match(/Aura\sOf\sPurity/i)){this.AuraOfPurity()};
@@ -1783,6 +2140,10 @@ if(rip=stats.match(/Summon\sGreater\sDemon/i)){this.SummonGreaterDemon()};
 if(rip=stats.match(/Vitriolic\sSphere/i)){this.VitriolicSphere()};
 if(rip=stats.match(/Wall\sOf\sFire/i)){this.WallOfFire()};
 if(rip=stats.match(/Watery\sSphere/i)){this.WaterySphere()};
+}
+
+if(rip=stats.match(/5th level/i))
+{
 if(rip=stats.match(/Animate\sObjects/i)){this.AnimateObjects()};
 if(rip=stats.match(/Antilife\sShell/i)){this.AntilifeShell()};
 if(rip=stats.match(/Awaken/i)){this.Awaken()};
@@ -1841,6 +2202,10 @@ if(rip=stats.match(/Wall\sOf\sForce/i)){this.WallOfForce()};
 if(rip=stats.match(/Wall\sOf\sLight/i)){this.WallOfLight()};
 if(rip=stats.match(/Wall\sOf\sStone/i)){this.WallOfStone()};
 if(rip=stats.match(/Wrath\sOf\sNature/i)){this.WrathOfNature()};
+}
+
+if(rip=stats.match(/6th level/i))
+{
 if(rip=stats.match(/Arcane\sGate/i)){this.ArcaneGate()};
 if(rip=stats.match(/Blade\sBarrier/i)){this.BladeBarrier()};
 if(rip=stats.match(/Bones\sOf\sThe\sEarth/i)){this.BonesOfTheEarth()};
@@ -1886,6 +2251,10 @@ if(rip=stats.match(/Wall\sOf\sIce/i)){this.WallOfIce()};
 if(rip=stats.match(/Wall\sOf\sThorns/i)){this.WallOfThorns()};
 if(rip=stats.match(/Wind\sWalk/i)){this.WindWalk()};
 if(rip=stats.match(/Word\sOf\sRecall/i)){this.WordOfRecall()};
+}
+
+if(rip=stats.match(/7th level/i))
+{
 if(rip=stats.match(/Conjure\sCelestial\s/i)){this.ConjureCelestial()};
 if(rip=stats.match(/Crown\sOf\sStars/i)){this.CrownOfStars()};
 if(rip=stats.match(/Delayed\sBlast\sFireball/i)){this.DelayedBlastFireball()};
@@ -1910,6 +2279,10 @@ if(rip=stats.match(/Symbol/i)){this.Symbol()};
 if(rip=stats.match(/Teleport/i)){this.Teleport()};
 if(rip=stats.match(/Temple\sOf\sThe\sGods/i)){this.TempleOfTheGods()};
 if(rip=stats.match(/Whirlwind/i)){this.Whirlwind()};
+}
+
+if(rip=stats.match(/8th level/i))
+{
 if(rip=stats.match(/AbiDalzim\’s\sHorrid\sWilting/i)){this.AbiDalzimsHorridWilting()};
 if(rip=stats.match(/Animal\sShapes/i)){this.AnimalShapes()};
 if(rip=stats.match(/Antimagic\sField/i)){this.AntimagicField()};
@@ -1933,6 +2306,10 @@ if(rip=stats.match(/Sunburst/i)){this.Sunburst()};
 if(rip=stats.match(/Telepathy/i)){this.Telepathy()};
 if(rip=stats.match(/Trap\sThe\sSoul/i)){this.TrapTheSoul()};
 if(rip=stats.match(/Tsunami/i)){this.Tsunami()};
+}
+
+if(rip=stats.match(/9th level/i))
+{
 if(rip=stats.match(/Astral\sProjection/i)){this.AstralProjection()};
 if(rip=stats.match(/Foresight/i)){this.Foresight()};
 if(rip=stats.match(/Gate\s/i)){this.Gate()};
@@ -1952,9 +2329,11 @@ if(rip=stats.match(/True\sPolymorph/i)){this.TruePolymorph()};
 if(rip=stats.match(/True\sResurrection/i)){this.TrueResurrection()};
 if(rip=stats.match(/Weird/i)){this.Weird()};
 if(rip=stats.match(/Wish/i)){this.Wish()};
+}
 
-if(rip=stats.match(/XP\)([\s\S]*)$/))
+if(rip=stats.match(/XP\)([\s\S]+)ACTIONS/))
 {characters[targeted].setFeatureNotes(rip[1].replace(/\./g, '\.\n'))}
+
 checkTheTarget();
 }
 function _addRoll(name, roll, name2, roll2)
@@ -2062,7 +2441,7 @@ toSave+=varName+".setCurSlot6("+this.curSlot6+")<br>";
 toSave+=varName+".setCurSlot7("+this.curSlot7+")<br>";
 toSave+=varName+".setCurSlot8("+this.curSlot8+")<br>";
 toSave+=varName+".setCurSlot9("+this.curSlot9+")<br>";
-if(this.menuShown){toSave+=varName+".showMenu( )"
+if(this.menuShown){toSave+=varName+".showMenu()"
 }toSave+="add("+varName+")<br>";
 toSave+="\/\/End of "+this.name+"<br>";
 return toSave
@@ -2107,32 +2486,32 @@ boxContents+="</td></tr><tr><td><input onClick='toggleTab6("+this.index+");check
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled2"+this.index+" style='display:"+this.toggled2+"'>";
 
-boxContents+="<table><tr><td>Name:<input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value='"+this.name+"'>";
-boxContents+="</td></tr><tr><td>Miniature File:<input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='40' type='text' value='"+this.figure+"'>";
-boxContents+="</td></tr><tr><td>Size:<select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
-boxContents+="</td></tr><tr><td>Race:<select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn,Black<option>Dragonborn,Blue<option>Dragonborn,Brass<option>Dragonborn,Bronze<option>Dragonborn,Gold<option>Dragonborn,Green<option>Dragonborn,Red<option>Dragonborn,Silver<option>Dragonborn,White<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kenku<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tabaxi<option>Tiefling, Asmodeus<option>Tiefling, Baazebul<option>Tiefling, Dispater<option>Tiefling, Fierna<option>Tiefling, Glasya<option>Tiefling, Levistus<option>Tiefling, Mammon<option>Tiefling, Mephistopheles<option>Tiefling, Zariel<option>Yuan-Ti</select>";
-boxContents+="</td></tr><tr><td>or<input maxLength='200' onChange='characters["+this.index+"].setRace(this.value)' placeHolder='other race' size='40' type='ptext'>";
-boxContents+="</td></tr><tr><td>Traits:(Gender, Age, Color, Height, Weight)<textArea cols='40' rows='3' onChange='characters["+this.index+"].setTrait(this.value)'placeHolder=''>"+this.trait+"</textarea>";
-boxContents+="</td></tr><tr><td>Racial Languages:<input maxLength='200' onChange='characters["+this.index+"].setLanguages(this.value);checkTheTarget("+this.index+")' size='40' type='text' value='"+this.languages+"'>";
-boxContents+="</td></tr><tr><td>Background Languages:<input maxLength='200' onChange='characters["+this.index+"].setBackL(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.backL+"'>";
-boxContents+="</td></tr><tr><td>Alignment:<select onChange='characters["+this.index+"].setAlignment(this.value)'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
-boxContents+="</td></tr><tr><td>"+this.alignmentDescription;
-boxContents+="</td></tr><tr><td>Armor Class(AC):<input maxLength='2' onChange='characters["+this.index+"].setAC(this.value);checkTheTarget("+this.index+")' size='2' type='text' value="+this.ac+">/"+this.curAc;
-boxContents+="</td></tr><tr><td>Armor Type:<select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth @DisAdv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth @DisAdv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth @DisAdv<option>Ring AC14 Stealth @DisAdv<option>Chain Mail AC16 Stealth @DisAdv str13<option>Splint AC17 Stealth @DisAdv str15<option>Plate AC18 Stealth @DisAdv str15<option>Unarmored Defense AC10+dex+con<option>Unarmored Defense AC10+dex+wis</select>";
-boxContents+="</td></tr><tr><td>or<input maxLength='200' onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")' placeHolder='other armor or magical defense' size='40' type='text'>";
-boxContents+="</td></tr><tr><td>Shield:<select onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")'><option>"+this.shield+"<option>No Shield AC+0<option>Shield AC+2</select>";
-boxContents+="</td></tr><tr><td>or<input maxLength='200' onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")' placeHolder='other shield or magical defense' size='40' type='text'>";
-boxContents+="</td></tr><tr><td>Hit Points(HP):<input maxLength='3' onChange='characters["+this.index+"].setMaxHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.maxHp+">";
+boxContents+="<table><tr><td><b>Name:</b> <input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value='"+this.name+"'>";
+boxContents+="<br>Miniature File:<input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='40' type='text' value='"+this.figure+"'>";
+boxContents+="</td></tr><tr><td><b>Size:</b> <select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
+boxContents+="</td></tr><tr><td><b>Race:</b> <select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn,Black<option>Dragonborn,Blue<option>Dragonborn,Brass<option>Dragonborn,Bronze<option>Dragonborn,Gold<option>Dragonborn,Green<option>Dragonborn,Red<option>Dragonborn,Silver<option>Dragonborn,White<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kenku<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tabaxi<option>Tiefling, Asmodeus<option>Tiefling, Baazebul<option>Tiefling, Dispater<option>Tiefling, Fierna<option>Tiefling, Glasya<option>Tiefling, Levistus<option>Tiefling, Mammon<option>Tiefling, Mephistopheles<option>Tiefling, Zariel<option>Yuan-Ti</select>";
+boxContents+="<br>or other race: <input maxLength='200' onChange='characters["+this.index+"].setRace(this.value)' placeHolder='other race' size='40' type='ptext'>";
+boxContents+="<br>Traits:(Gender, Age, Color, Height, Weight)<textArea cols='40' rows='3' onChange='characters["+this.index+"].setTrait(this.value)'placeHolder=''>"+this.trait+"</textarea>";
+boxContents+="</td></tr><tr><td>Racial <b>Languages:</b> <input maxLength='200' onChange='characters["+this.index+"].setLanguages(this.value);checkTheTarget("+this.index+")' size='40' type='text' value='"+this.languages+"'>";
+boxContents+="<br>Background Languages:<input maxLength='200' onChange='characters["+this.index+"].setBackL(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.backL+"'>";
+boxContents+="</td></tr><tr><td><b>Alignment: </b><select onChange='characters["+this.index+"].setAlignment(this.value)'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
+boxContents+="<br>"+this.alignmentDescription;
+boxContents+="</td></tr><tr><td><b>Armor Class(AC):</b> <input maxLength='2' onChange='characters["+this.index+"].setAC(this.value);checkTheTarget("+this.index+")' size='2' type='text' value="+this.ac+">/"+this.curAc;
+boxContents+="<br>Armor Type:<select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>No Armor AC10+dex<option>Natural Armor<option>Padded AC11+dex Stealth @DisAdv<option>Leather AC11+dex<option>Studded AC12+dex<option>Hide AC12+dex max 2<option>Mage Armor AC13+dex<option>Chain Shirt AC13+dex max 2<option>Scale AC14+dex max 2 Stealth @DisAdv<option>Breastplate AC14+dex max 2<option>Half Plate AC15+dex max 2 Stealth @DisAdv<option>Ring AC14 Stealth @DisAdv<option>Chain Mail AC16 Stealth @DisAdv str13<option>Splint AC17 Stealth @DisAdv str15<option>Plate AC18 Stealth @DisAdv str15<option>Unarmored Defense AC10+dex+con<option>Unarmored Defense AC10+dex+wis</select>";
+boxContents+="<br>or other Armor Type: <input maxLength='200' onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")' placeHolder='other armor or magical defense' size='40' type='text'>";
+boxContents+="<br>Shield:<select onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")'><option>"+this.shield+"<option>No Shield AC+0<option>Shield AC+2</select>";
+boxContents+="<br>or other Defense: <input maxLength='200' onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")' placeHolder='other shield or magical defense' size='40' type='text'>";
+boxContents+="</td></tr><tr><td><b>Hit Points(HP):</b> <input maxLength='3' onChange='characters["+this.index+"].setMaxHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.maxHp+">";
 boxContents+="/<input maxLength='3' onChange='characters["+this.index+"].setCurHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.curHp+">";
-boxContents+="</td></tr><tr><td>Hit Dice(HD):<input maxLength='10' onChange='characters["+this.index+"].setHitDice(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z' size=10 type='text' value='"+this.hitDice+"'>";
-boxContents+="</td></tr><tr><td>Damage Conditions:(temp hp+10, ac-1, str+1, ini+3, blinded)<textArea cols='40' rows=2 onChange='characters["+this.index+"].setDamageConditions(this.value);checkTheTarget("+this.index+")'placeHolder=''>"+this.dmgConditions+"</textArea>"
-boxContents+="</td></tr><tr><td>Vulnerability:(2Xdmg)<input maxLength='200' onChange='characters["+this.index+"].setVulnerability(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.vulnerability+"'>";
-boxContents+="</td></tr><tr><td>Resistance:(1/2dmg)<input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.resistance+"'>";
-boxContents+="</td></tr><tr><td>Immunity:(0dmg)<input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value)' size='40' value='"+this.immunity+"'>";
-boxContents+="</td></tr><tr><td>Senses:<input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='40' type='text' value='"+this.senses+"'>";
-boxContents+="</td></tr><tr><td>Speed:<input maxLength='200' onChange='characters["+this.index+"].setSpeed(this.value);checkTheTarget("+this.index+")' size='40' type='text' value='"+this.speed+"'>";
-boxContents+="</td></tr><tr><td>Challenge Rating(CR)or Level(lvl):<input maxLength='2' onChange='characters["+this.index+"].setLvl(this.value)' size=3 type='text' value="+this.lvl+">";
-boxContents+="</td></tr><tr><td>Experience Points(XP):<input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value)'size='8' type='text' value='"+this.experience+"'>";
+boxContents+="<br>Hit Dice(HD): <input maxLength='10' onChange='characters["+this.index+"].setHitDice(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z' size=10 type='text' value='"+this.hitDice+"'>";
+boxContents+="<br>Damage Conditions: (temp hp+10, ac-1, str+1, ini+3, blinded)<textArea cols='40' rows=2 onChange='characters["+this.index+"].setDamageConditions(this.value);checkTheTarget("+this.index+")'placeHolder=''>"+this.dmgConditions+"</textArea>"
+boxContents+="<br><b>Vulnerability:(2Xdmg)</b> <input maxLength='200' onChange='characters["+this.index+"].setVulnerability(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.vulnerability+"'>";
+boxContents+="<br><b>Resistance:(1/2dmg)</b> <input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.resistance+"'>";
+boxContents+="<br><b>Immunity:(0dmg)</b> <input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value)' size='40' value='"+this.immunity+"'>";
+boxContents+="</td></tr><tr><td><b>Senses:</b> <input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='40' type='text' value='"+this.senses+"'>";
+boxContents+="</td></tr><tr><td><b>Speed:</b> <input maxLength='200' onChange='characters["+this.index+"].setSpeed(this.value);checkTheTarget("+this.index+")' size='40' type='text' value='"+this.speed+"'>";
+boxContents+="</td></tr><tr><td><b>Challenge Rating(CR)or Level(lvl):</b> <input maxLength='2' onChange='characters["+this.index+"].setLvl(this.value)' size=3 type='text' value="+this.lvl+">";
+boxContents+="<br>Experience Points(XP):<input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value)'size='8' type='text' value='"+this.experience+"'>";
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled3"+this.index+" style='display:"+this.toggled3+"'>";
 
@@ -3224,7 +3603,6 @@ this.setChaPro('');
 this.setSkills('2 from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, or Survival');
 this.setSpellAbility('wis')}
 ArcaneTricksterSpells="<h3>Cantrips Known:@3rd(MageHand+2),@10th(3)</h3>"
-ArcaneTricksterSpells+="<b onClick=AcidSplash()>AcidSplash</b>,"
 ArcaneTricksterSpells+="<b onClick=AcidSplash()>AcidSplash</b>,"
 ArcaneTricksterSpells+="<b onClick=BladeWard()>BladeWard</b>,"
 ArcaneTricksterSpells+="<b onClick=BoomingBlade()>BoomingBlade</b>,"
