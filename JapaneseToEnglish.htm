@@ -506,6 +506,7 @@ a=a.replace(/(ぶ)(?!X)(る)(?!X)(ぶ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X
 a=a.replace(/(べ)(?!X)(た)(?!X)(べ)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X,stick together~noun');
 a=a.replace(/(ぺ)(?!X)(こ)(?!X)(ぺ)(?!X)(こ)(?!X)/g,'$1X$2X$3X$4X,bow,kowtow~noun');
 a=a.replace(/(ぺ)(?!X)(こ)(?!X)(ぺ)(?!X)(こ)(?!X)/g,'$1X$2X$3X$4X,hungry,starving~noun');
+a=a.replace(/(国)(?!X)(務)(?!X)(長)(?!X)(官)(?!X)/g,'$1X$2X$3X$4X,koku-mu-cyou-kan,Secretary of State~noun');
 a=a.replace(/(ぺ)(?!X)(ら)(?!X)(ぺ)(?!X)(ら)(?!X)/g,'$1X$2X$3X$4X,floppy,flimsy~noun');
 a=a.replace(/(ぺ)(?!X)(ら)(?!X)(ぺ)(?!X)(ら)(?!X)/g,'$1X$2X$3X$4X,fluently~noun');
 a=a.replace(/(ほ)(?!X)(と)(?!X)(ん)(?!X)(ど)(?!X)/g,'$1X$2X$3X$4X,almost,hardly~noun');
@@ -2027,7 +2028,7 @@ function translateB()
 a=a.replace(/(2)(?!X)(人)(?!X)/g,'$1X$2X,futari,two people~noun');
 a=a.replace(/(2)(?!X)(日)(?!X)/g,'$1X$2X,futsu-ka,the second day of the month ~noun')
 a=a.replace(/(4)(?!X)(日)(?!X)/g,'$1X$2X,yok-ka,the fourth day of the month ~noun')
-a=a.replace(/(5)(?!X)(日)(?!X)/g,'$1X$2X,itsu-ka,the fifth day of the month ~noun')
+a=a.replace(/(５|5)(?!X)(日)(?!X)/g,'$1X$2X,itsu-ka,the fifth day of the month ~noun')
 a=a.replace(/(6)(?!X)(日)(?!X)/g,'$1X$2X,mui-ka,the sixth day of the month ~noun')
 a=a.replace(/(7)(?!X)(日)(?!X)/g,'$1X$2X,nan-oka,the seventh day of the month ~noun')
 a=a.replace(/(8)(?!X)(日)(?!X)/g,'$1X$2X,you-ka,the eighth day of the month ~noun')
@@ -2765,6 +2766,8 @@ a=a.replace(/(助)(?!X)(手)(?!X)/g,'$1X$2X,jyo-syu,assistant,helper~noun');
 a=a.replace(/(助)(?!X)(詞)(?!X)/g,'$1X$2X,jyo-shi,particle,postpositionnoun');
 a=a.replace(/(努)(?!X)(力)(?!X)/g,'$1X$2X,do-ryoku,endeavor,effort~noun');
 a=a.replace(/(労)(?!X)(働)(?!X)/g,'$1X$2X,rou-dou,labor,toil~noun');
+a=a.replace(/(虐)(?!X)(殺)(?!X)/g,'$1X$2X,gyaku-satsu,slaughter~noun');
+a=a.replace(/(疑)(?!X)(惑)(?!X)/g,'$1X$2X,gi-waku,doubt~noun');
 a=a.replace(/(労)(?!X)(力)(?!X)/g,'$1X$2X,rou-ryoku,labor,work~noun');
 a=a.replace(/(効)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,ki,be effective<br>$2X~ku-verb');
 a=a.replace(/(効)(?!X)(力)(?!X)/g,'$1X$2X,kou-ryoku,effect,validity~noun');
@@ -2996,6 +2999,7 @@ a=a.replace(/(器)(?!X)(具)(?!X)/g,'$1X$2X,kigu,utensil,implement~noun');
 a=a.replace(/(器)(?!X)(械)(?!X)/g,'$1X$2X,ki-kai,instrument,apparatus~noun');
 a=a.replace(/(器)(?!X)(用)(?!X)/g,'$1X$2X,kiyou,skillful,clever~noun');
 a=a.replace(/(噴)(?!X)(水)(?!X)/g,'$1X$2X,funsui,jet,fountain~noun');
+a=a.replace(/(容)(?!X)(疑)(?!X)/g,'$1X$2X,you-gi,criminal charge~noun');
 a=a.replace(/(噴)(?!X)(火)(?!X)/g,'$1X$2X,funka,eruption,volcanic activity~noun');
 a=a.replace(/(囁)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,sasaya,whisper<br>$2X~ku-verb');
 a=a.replace(/(四)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,'$1X,yoっ,four (things)<br>$2X~tsu-verb');
@@ -3003,6 +3007,7 @@ a=a.replace(/(四)(?!X)(季)(?!X)/g,'$1X$2X,-shiki,the four seasons~noun');
 a=a.replace(/(四)(?!X)(方)(?!X)/g,'$1X$2X,shi-hou,all directions,far and wide~noun');
 a=a.replace(/(四)(?!X)(日)(?!X)/g,'$1X$2X,yok-ka,four days,4th of the month~noun');
 a=a.replace(/(四)(?!X)(角)(?!X)/g,'$1X$2X,shi-kaku,square,quadrilateral~noun');
+a=a.replace(/(検)(?!X)(察)(?!X)/g,'$1X$2X,ken-satsu,ivestigation~noun');
 a=a.replace(/(回)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,mawa,turn,rotate<br>$2X~su-verb');
 a=a.replace(/(回)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,mawa,turn round,go round,detour<br>$2X~ru-verb');
 a=a.replace(/(回)(?!X)(廊)(?!X)/g,'$1X$2X,kai-rou,corridor~noun');
@@ -3280,7 +3285,7 @@ a=a.replace(/(実)(?!X)(現)(?!X)/g,'$1X$2X,jitsu-gen,implementation,realization
 a=a.replace(/(実)(?!X)(用)(?!X)/g,'$1X$2X,jitsuyou,practical use,utility~noun');
 a=a.replace(/(実)(?!X)(績)(?!X)/g,'$1X$2X,jis-seki,achievement,performance~noun');
 a=a.replace(/(実)(?!X)(習)(?!X)/g,'$1X$2X,jis-syuu,practice,training~noun');
-a=a.replace(/(実)(?!X)(行)(?!X)/g,'$1X$2X,jik-kou,practice,execution~noun');
+a=a.replace(/(実)(?!X)(行)(?!X)/g,'$1X$2X,jik-kou,carrying out~noun');
 a=a.replace(/(実)(?!X)(際)(?!X)/g,'$1X$2X,jis-sai,actual state~noun');
 a=a.replace(/(実)(?!X)(験)(?!X)/g,'$1X$2X,jik-ken,experiment~noun');
 a=a.replace(/(客)(?!X)(間)(?!X)/g,'$1X$2X,kyaku-ma,guest room,parlor~noun');
@@ -3387,10 +3392,12 @@ a=a.replace(/(市)(?!X)(場)(?!X)/g,'$1X$2X,ichi-ba,market~noun');
 a=a.replace(/(市)(?!X)(外)(?!X)/g,'$1X$2X,shi-gai,city outskirts,suburbs~noun');
 a=a.replace(/(市)(?!X)(民)(?!X)/g,'$1X$2X,shi-min,townspeople~noun');
 a=a.replace(/(市)(?!X)(立)(?!X)/g,'$1X$2X,shi-ritsu,municipal,city~noun');
+a=a.replace(/(犯)(?!X)(行)(?!X)/g,'$1X$2X,han-kou,criminal act~noun');
 a=a.replace(/(市)(?!X)(街)(?!X)/g,'$1X$2X,shi-gai,the streets,downtown~noun');
 a=a.replace(/(市)(?!X)(長)(?!X)/g,'$1X$2X,shi-cyou,mayor~noun');
 a=a.replace(/(布)(?!X)(団)(?!X)/g,'$1X$2X,fu-ton,futon,bedquilt~noun');
 a=a.replace(/(希)(?!X)(望)(?!X)/g,'$1X$2X,ki-bou,hope,wish~noun');
+a=a.replace(/(追)(?!X)(及)(?!X)/g,'$1X$2X,tsui-kyuu,investigating and narrowing in on~noun');
 a=a.replace(/(師)(?!X)(走)(?!X)/g,'$1X$2X,shiwasu,December~noun');
 a=a.replace(/(帰)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,kae,sen-d home,see out<br>$2X~su-verb');
 a=a.replace(/(帰)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,kae,return home<br>$2X~ru-verb');
@@ -3596,7 +3603,7 @@ a=a.replace(/(想)(?!X)(像)(?!X)/g,'$1X$2X,sou-zou,imagination~noun');
 a=a.replace(/(愉)(?!X)(快)(?!X)/g,'$1X$2X,yu-kai,pleasant,delightful~noun');
 a=a.replace(/(意)(?!X)(向)(?!X)/g,'$1X$2X,i-kou,intention,inclination~noun');
 a=a.replace(/(意)(?!X)(味)(?!X)/g,'$1X$2X,i-mi,meaning~noun');
-a=a.replace(/(意)(?!X)(図)(?!X)/g,'$1X$2X,ito,intention,aim~noun');
+a=a.replace(/(意)(?!X)(図)(?!X)/g,'$1X$2X,i-to,intention~noun');
 a=a.replace(/(意)(?!X)(外)(?!X)/g,'$1X$2X,i-gai,unexpected,unforeseen~noun');
 a=a.replace(/(意)(?!X)(志)(?!X)/g,'$1X$2X,i-shi,will,volition~noun');
 a=a.replace(/(意)(?!X)(欲)(?!X)/g,'$1X$2X,iyoku,volition,motivation~noun');
@@ -5596,7 +5603,7 @@ a=a.replace(/(亀)(?!X)/g,'$1X,kame,turtle,tortoise~noun');
 a=a.replace(/(事)(?!X)/g,'$1X,koto,thing,incident~noun');
 a=a.replace(/(二)(?!X)/g,'$1X,ni,two~noun');
 a=a.replace(/(五)(?!X)/g,'$1X,go,five~noun');
-a=a.replace(/(人)(?!X)/g,'$1X,-nin or hito,person~noun');
+a=a.replace(/(人)(?!X)/g,'$1X,-nin or -jin or hito,person~noun');
 a=a.replace(/(今)(?!X)/g,'$1X,ima,now~noun');
 a=a.replace(/(仏)(?!X)/g,'$1X,hotoke,buddha,Buddhist image~noun');
 a=a.replace(/(他)(?!X)/g,'$1X,hoka,other~noun');
@@ -5819,6 +5826,7 @@ a=a.replace(/(机)(?!X)/g,'$1X,tsukue,desk,table~noun');
 a=a.replace(/(村)(?!X)/g,'$1X,mura,village~noun');
 a=a.replace(/(束)(?!X)/g,'$1X,taba,bun-dle,counter for bundles~noun');
 a=a.replace(/(東)(?!X)/g,'$1X,higa-shi,east~noun');
+a=a.replace(/(件)(?!X)/g,'$1X,-ken,counter for legal cases~noun');
 a=a.replace(/(板)(?!X)/g,'$1X,ita,board,plank~noun');
 a=a.replace(/(枕)(?!X)/g,'$1X,makura,pillow~noun');
 a=a.replace(/(林)(?!X)/g,'$1X,haya-shi,woods,grove~noun');
@@ -6202,11 +6210,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-ウクライナ軍が奪還した首都キーウ近郊の村で、400人以上が行方不明になっていることがわかった。
-
-地元当局者がラジオ局のインタビューで明かしたもので、キーウ近郊のホストメリで400人以上が行方不明になっており、死亡が確認された人たちの遺体も見つからないという。
-
-遺体が別の村で見つかったケースもあり、当局者は、ロシア軍が遺体を移動させた可能性を指摘し、「侵略者が残虐行為の痕跡を消そうとしている」と主張している。
+【ワシントン＝横堀裕也】ウクライナの首都キーウ（キエフ）近郊ブチャなどでロシア軍が多数の民間人を虐殺した疑惑に関し、米国のブリンケン国務長官は５日、「意図的な作戦」と述べ、露軍が組織的・計画的に実行したとの認識を示した。ウクライナ検察当局は５日、「戦争犯罪の容疑で約５０００件を捜査している」と明かしており、ロシアの組織的犯行だと追及する動きが強まっている。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
