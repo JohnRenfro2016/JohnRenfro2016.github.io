@@ -1129,6 +1129,7 @@ a=a.replace(/(例)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,tatoe,
 a=a.replace(/(保)(?!X)(育)(?!X)(園)(?!X)/g,'$1X$2X$3X,hoikuen,day-care center,nursery school~noun');
 a=a.replace(/(保)(?!X)(証)(?!X)(人)(?!X)/g,'$1X$2X$3X,hosyounin,guarantor~noun');
 a=a.replace(/(保)(?!X)(護)(?!X)(者)(?!X)/g,'$1X$2X$3X,hogo-sya,guardian,protector~noun');
+a=a.replace(/(価)(?!X)(値)(?!X)(観)(?!X)/g,'$1X$2X$3X,ka-chi-kan,sense of values~noun');
 a=a.replace(/(信)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,shinji,believe,trust,have faith in<br>$3X~ru-verb');
 a=a.replace(/(倒)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,taore,fall over,succumb<br>$3X~ru-verb');
 a=a.replace(/(借)(?!X)(り)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,kari,borrow<br>$3X~ru-verb');
@@ -2010,7 +2011,7 @@ a=a.replace(/(髪)(?!X)(の)(?!X)(毛)(?!X)/g,'$1X$2X$3X,kami-noke,hair~noun');
 a=a.replace(/(鮮)(?!X)(や)(?!X)(か)(?!X)/g,'$1X$2X$3X,azayaka,vivid~noun');
 a=a.replace(/(鳴)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X,nara,ring,sound<br>$3X~su-verb');
 a=a.replace(/(黄)(?!X)(色)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,ki-iro,yellow<br>$3X~i-adjective');
-a=a.replace(/(１)(?!X)(６)(?!X)(日)(?!X)/g,'$1X$2X$3X,jyuu-rokunichi,the sixteenth day of the month~noun');
+a=a.replace(/(１)(?!X)(６)(?!X)(日)(?!X)/g,'$1X$2X$3X,jyuu-roku-nichi,the sixteenth day of the month~noun');
 a=a.replace(/(１|1)(?!X)(0)(?!X)(日)(?!X)/g,'$1X$2X$3X,too-ka,the tenth day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(1)(?!X)(日)(?!X)/g,'$1X$2X$3X,jyuu-ichi-nichi,the eleventh	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(2)(?!X)(日)(?!X)/g,'$1X$2X$3X,jyuu-ni-nichi,the twelfth day of the month ~noun')
@@ -2243,7 +2244,7 @@ a=a.replace(/(下)(?!X)(り)(?!X)/g,'$1X$2X,kudari,downhill,going down~noun');
 a=a.replace(/(下)(?!X)(品)(?!X)/g,'$1X$2X,ge-hin,vulgar,low~noun');
 a=a.replace(/(下)(?!X)(宿)(?!X)/g,'$1X$2X,geshyuku,lodging,boarding house~noun');
 a=a.replace(/(下)(?!X)(手)(?!X)/g,'$1X$2X,heta,not good at~noun');
-a=a.replace(/(下)(?!X)(旬)(?!X)/g,'$1X$2X,ge-jyun,end of the month~noun');
+a=a.replace(/(下)(?!X)(旬)(?!X)/g,'$1X$2X,ge-jyun,last 10 days of the month~noun');
 a=a.replace(/(下)(?!X)(水)(?!X)/g,'$1X$2X,ge-sui,sewerage,drainage~noun');
 a=a.replace(/(下)(?!X)(流)(?!X)/g,'$1X$2X,ka-ryuu,downstream~noun');
 a=a.replace(/(下)(?!X)(町)(?!X)/g,'$1X$2X,shitama-chi,old part of town~noun');
@@ -2254,7 +2255,12 @@ a=a.replace(/(下)(?!X)(着)(?!X)/g,'$1X$2X,shitagi,underwear~noun');
 a=a.replace(/(下)(?!X)(車)(?!X)/g,'$1X$2X,ge-sya,get off,stopover~noun');
 a=a.replace(/(不)(?!X)(便)(?!X)/g,'$1X$2X,fu-ben,inconvenient~noun');
 a=a.replace(/(不)(?!X)(利)(?!X)/g,'$1X$2X,fu-ri,disadvantage~noun');
+a=a.replace(/(先)(?!X)(進)(?!X)/g,'$1X$2X,sen-shin,developed~noun');
 a=a.replace(/(不)(?!X)(在)(?!X)/g,'$1X$2X,fu-zai,absence~noun');
+a=a.replace(/(覇)(?!X)(権)(?!X)/g,'$1X$2X,ha-ken,hegemony~noun');
+a=a.replace(/(結)(?!X)(束)(?!X)/g,'$1X$2X,kes-soku,solidarity~noun');
+a=a.replace(/(共)(?!X)(有)(?!X)/g,'$1X$2X,kyou-yuu,sharing~noun');
+a=a.replace(/(念)(?!X)(頭)(?!X)/g,'$1X$2X,nen-tou,one one\'s mind~noun');
 a=a.replace(/(不)(?!X)(安)(?!X)/g,'$1X$2X,fu-an,uneasiness,anxiety~noun');
 a=a.replace(/(不)(?!X)(平)(?!X)/g,'$1X$2X,fu-hei,discontent,dissatisfaction~noun');
 a=a.replace(/(不)(?!X)(幸)(?!X)/g,'$1X$2X,fu-kou,unhappiness,misfortune,bereavement~noun');
@@ -2725,7 +2731,7 @@ a=a.replace(/(列)(?!X)(車)(?!X)/g,'$1X$2X,res-sya,train~noun');
 a=a.replace(/(初)(?!X)(め)(?!X)/g,'$1X$2X,hajime,beginning~noun');
 a=a.replace(/(初)(?!X)(夏)(?!X)/g,'$1X$2X,syoka,early summer~noun');
 a=a.replace(/(初)(?!X)(恋)(?!X)/g,'$1X$2X,hatsu-koi,first love~noun');
-a=a.replace(/(初)(?!X)(日)(?!X)/g,'$1X$2X,syonichi,first day,opening day~noun');
+a=a.replace(/(初)(?!X)(日)(?!X)/g,'$1X$2X,syo-nichi,first day,opening day~noun');
 a=a.replace(/(初)(?!X)(期)(?!X)/g,'$1X$2X,syoki,early days,initial~noun');
 a=a.replace(/(初)(?!X)(歩)(?!X)/g,'$1X$2X,syoho,first steps,beginning~noun');
 a=a.replace(/(初)(?!X)(級)(?!X)/g,'$1X$2X,syo-kyuu,beginner class,elementary level~noun');
@@ -3621,7 +3627,7 @@ a=a.replace(/(悪)(?!X)(用)(?!X)/g,'$1X$2X,akuyou,abuse,misuse~noun');
 a=a.replace(/(悪)(?!X)(質)(?!X)/g,'$1X$2X,akushitsu,bad,malignant~noun');
 a=a.replace(/(悲)(?!X)(劇)(?!X)/g,'$1X$2X,hi-geki,tragedy,tragic drama~noun');
 a=a.replace(/(悲)(?!X)(鳴)(?!X)/g,'$1X$2X,himei,shriek,scream~noun');
-a=a.replace(/(情)(?!X)(勢)(?!X)/g,'$1X$2X,jyou-sei,state of things,situation~noun');
+a=a.replace(/(情)(?!X)(勢)(?!X)/g,'$1X$2X,jyou-sei,situation~noun');
 a=a.replace(/(情)(?!X)(報)(?!X)/g,'$1X$2X,jyou-hou,information~noun');
 a=a.replace(/(情)(?!X)(熱)(?!X)/g,'$1X$2X,jyou-netsu,enthusiasm~noun');
 a=a.replace(/(惨)(?!X)(め)(?!X)/g,'$1X$2X,mijime,miserable,pitiable~noun');
@@ -3896,7 +3902,7 @@ a=a.replace(/(日)(?!X)(中)(?!X)/g,'$1X$2X,niccyuu,during the day~noun');
 a=a.replace(/(日)(?!X)(光)(?!X)/g,'$1X$2X,nik-kou,sunshine,sunlight~noun');
 a=a.replace(/(日)(?!X)(常)(?!X)/g,'$1X$2X,nichi-jyou,dai-ly,everyday~noun');
 a=a.replace(/(日)(?!X)(数)(?!X)/g,'$1X$2X,nissuu,number of days~noun');
-a=a.replace(/(日)(?!X)(日)(?!X)/g,'$1X$2X,hinichi,date,number of days~noun');
+a=a.replace(/(日)(?!X)(日)(?!X)/g,'$1X$2X,hi-nichi,date,number of days~noun');
 a=a.replace(/(日)(?!X)(時)(?!X)/g,'$1X$2X,nichi-ji,calendar date~noun');
 a=a.replace(/(日)(?!X)(本)(?!X)/g,'$1X$2X,ni-hon,Japan~noun');
 a=a.replace(/(日)(?!X)(程)(?!X)/g,'$1X$2X,nit-tei,program,schedule~noun');
@@ -3916,7 +3922,7 @@ a=a.replace(/(早)(?!X)(速)(?!X)/g,'$1X$2X,sas-soku,immediately~noun');
 a=a.replace(/(昇)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,nobo,rise,<br>$2X~ru-verb');
 a=a.replace(/(明)(?!X)(日)(?!X)/g,'$1X$2X,ashita,tomorrow~noun');
 a=a.replace(/(明)(?!X)(日)(?!X)/g,'$1X$2X,asu,tomorrow~noun');
-a=a.replace(/(明)(?!X)(日)(?!X)/g,'$1X$2X,myounichi,tomorrow~noun');
+a=a.replace(/(明)(?!X)(日)(?!X)/g,'$1X$2X,myou-nichi,tomorrow~noun');
 a=a.replace(/(明)(?!X)(朝)(?!X)/g,'$1X$2X,myou-cyou,tomorrow morning~noun');
 a=a.replace(/(明)(?!X)(治)(?!X)/g,'$1X$2X,meiji,Meiji era~noun');
 a=a.replace(/(明)(?!X)(白)(?!X)/g,'$1X$2X,meihaku,clear,plain~noun');
@@ -4062,7 +4068,7 @@ a=a.replace(/(条)(?!X)(件)(?!X)/g,'$1X$2X,jyou-ken,condition,item~noun');
 a=a.replace(/(条)(?!X)(約)(?!X)/g,'$1X$2X,jyou-yaku,treaty~noun');
 a=a.replace(/(来)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,ku,come<br>$2X~ru-verb');
 a=a.replace(/(来)(?!X)(年)(?!X)/g,'$1X$2X,rai-nen,next year~noun');
-a=a.replace(/(来)(?!X)(日)(?!X)/g,'$1X$2X,rainichi,coming to Japan~noun');
+a=a.replace(/(来)(?!X)(日)(?!X)/g,'$1X$2X,rai-nichi,coming to Japan~noun');
 a=a.replace(/(来)(?!X)(月)(?!X)/g,'$1X$2X,rai-getsu,next month~noun');
 a=a.replace(/(来)(?!X)(週)(?!X)/g,'$1X$2X,rai-syuu,next week~noun');
 a=a.replace(/(東)(?!X)(京)(?!X)/g,'$1X$2X,tou-kyou,Japan~noun');
@@ -4182,7 +4188,7 @@ a=a.replace(/(母)(?!X)(親)(?!X)/g,'$1X$2X,haha-oya,mother~noun');
 a=a.replace(/(毎)(?!X)(年)(?!X)/g,'$1X$2X,mai-nen,every year~noun');
 a=a.replace(/(毎)(?!X)(年)(?!X)/g,'$1X$2X,maito-shi,every year~noun');
 a=a.replace(/(毎)(?!X)(度)(?!X)/g,'$1X$2X,mai-do,every time,always~noun');
-a=a.replace(/(毎)(?!X)(日)(?!X)/g,'$1X$2X,mainichi,every day~noun');
+a=a.replace(/(毎)(?!X)(日)(?!X)/g,'$1X$2X,mai-nichi,every day~noun');
 a=a.replace(/(毎)(?!X)(晩)(?!X)/g,'$1X$2X,mai-ban,every evening~noun');
 a=a.replace(/(毎)(?!X)(朝)(?!X)/g,'$1X$2X,maiasa,every morning~noun');
 a=a.replace(/(毎)(?!X)(朝)(?!X)/g,'$1X$2X,maiasa,every morning~noun');
@@ -6266,22 +6272,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-ロシアによるウクライナ攻撃が続く中、EU（ヨーロッパ連合）の委員長が、ウクライナのゼレンスキー大統領と首都キーウで会談し、EUへの加盟に向けた手続きの最初の書類を手渡した。
-
-ゼレンスキー大統領「委員長...」
-フォンデアライエン欧州委員長「会えてうれしいです」
-ゼレンスキー大統領「元気ですか?」
-フォンデアライエン欧州委員長「お招きいただきありがとうございます」
-
-キーウで行われた会談で、EUのフォンデアライエン委員長とゼレンスキー大統領は、EUによる支援やロシアへの制裁強化などについて協議した。
-
-フォンデアライエン欧州委員長「（EUの）意見をまとめるのは通例のように何年もかからず、数週間のうちにできる思う」
-
-会談後の記者会見の場で、フォンデアライエン委員長は、ウクライナのEU加盟に向けた質問書をゼレンスキー大統領に手渡し、迅速な手続きを行うよう提案すると約束した。
-
-フォンデアライエン委員長はこれに先立ち、ロシアによる攻撃で多くの民間人が犠牲になったキーウ近郊のブチャを視察し、並べられた遺体の袋を前に息をのむ場面もあった。
-
-一方、東部ドネツク州では8日、駅に短距離弾道ミサイルが撃ち込まれ、これまでに子ども5人を含む50人が死亡したほか、およそ100人が負傷している。
+ドイツのショルツ首相が4月下旬に就任後初めて来日する方向で調整していることが分かった。28日にも岸田文雄首相と会談する。ドイツは今年の先進7カ国（G7）議長国で、日本は来年の議長国。ロシア軍が侵攻したウクライナ情勢を協議し、覇権主義的傾向を強める中国を念頭にインド太平洋地域での連携も確認する。政府関係者が9日、明らかにした。
+両氏は、ドイツ南部で6月26～28日に開くサミット成功へ向け、自由や民主主義といった価値観を共有するG7の結束をアピールする考えだ。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
