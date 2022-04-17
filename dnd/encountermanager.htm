@@ -1002,7 +1002,7 @@ function Greataxe(){a="Greataxe 30 gp 7 lb. Heavy, two-handed",b="1d20+0",dmgDic
 function Greatsword(){a="Greatsword 50 gp 6 lb. Heavy, two-handed",b="1d20+0",dmgDice=" 2d6+0",c="slashing ",getAction(t1)};
 function Halberd(){a="Halberd 20 gp 6 lb. Heavy, reach, two-handed",b="1d20+0",dmgDice=" 1d10+0",c="slashing ",getAction(t1)};
 function Lance(){a="Lance 10 gp 6 lb. Reach, special",b="1d20+0",dmgDice="1d12+0",c="piercing ",getAction(t1)};
-function Longsword(){a="Longsword 15 gp 3 lb. Versatile (1d10)",b="1d20+0",dmgDice=" 1d8+0",c="slashing ",getAction(t1)};
+function Longsword(){a="Longsword+str+pro,15 gp,3 lb.,Versatile (1d10)",b="1d20+0",dmgDice=" 1d8+0",c="slashing ",getAction(t1)};
 function Maul(){a="Maul 10 gp 10 lb. Heavy, two-handed",b="1d20+0",dmgDice="2d6+0",c="bludgeoning ",getAction(t1)};
 function Morningstar(){a="Morningstar 15 gp 4 lb. —",b="1d20+0",dmgDice=" 1d8+0",c="piercing ",getAction(t1)};
 function Pike(){a="Pike 5 gp 18 lb. Heavy, reach, two-handed",b="1d20+0",dmgDice="1d10+0",c="piercing ",getAction(t1)};
@@ -1014,7 +1014,7 @@ function WarPick(){a="War pick 5 gp 2 lb. —",b="1d20+0",dmgDice=" 1d8+0",c="pi
 function Warhammer(){a="Warhammer 15 gp 2 lb. Versatile (1d10)",b="1d20+0",dmgDice=" 1d8+0",c="bludgeoning ",getAction(t1)};
 function Whip(){a="Whip 2 gp 3 lb. Finesse, reach",b="1d20+0",dmgDice="1d4+0",c="slashing ",getAction(t1)};
 function Blowgun(){a="Blowgun 10 gp 1 lb. Ammunition (range 25/100), loading",b="1d20+0",dmgDice=" 1+0",c="piercing ",getAction(t1)};
-function CrossbowHand(){a="Crossbow, hand 75 gp 3 lb. Ammunition (range 30/120), light, loading",b="1d20+0",dmgDice=" 1d6+0",c="piercing ",getAction(t1)};
+function CrossbowHand(){a="HandCrossbow+dex+pro,75 gp,3 lb. Ammunition (range 30/120), light, loading",b="1d20+0",dmgDice=" 1d6+0",c="piercing ",getAction(t1)};
 function CrossbowHeavy(){a="Crossbow, heavy 50 gp 18 lb. Ammunition (range 100/400), heavy, loading, two-handed",b="1d20+0",dmgDice=" 1d10+0",c="piercing ",getAction(t1)};
 function Longbow(){a="Longbow 50 gp 2 lb. Ammunition (range 150/600), heavy, two-handed",b="1d20+0",dmgDice=" 1d8+0",c="piercing ",getAction(t1)};
 function Net(){a="Net 1 gp Special, thrown (range 5/15)",b="1d20+0",c="restrained",getAction(t1)};
@@ -1920,83 +1920,84 @@ varName="";
 varName="pc";
 varName+=Math.ceil(Math.random()*10000);
 toSave="\/\/"+this.name+"<br>";
-toSave+=varName+"=new Character(' "+this.name+"', ' "+this.type+"')<br>";
-for(var i=0; i<this.rolls.length; i++){toSave+=varName+".addRoll(' "+this.rollNames[i]+"', ' "+this.rolls[i]+"', ' "+this.rollNames2[i]+"', ' "+this.rolls2[i]+"')<br>"
-}toSave+=varName+".putAt(' "+this.x+"\', \' "+this.y+"\' )<br>";
-toSave+=varName+".setClass(' "+this.class+"')<br>";
-toSave+=varName+".setLvl(' "+this.lvl+"')<br>";
-toSave+=varName+".setRace(' "+this.race+"')<br>";
-toSave+=varName+".setBackground(' "+this.background+"')<br>";
-toSave+=varName+".setAbility(' "+this.ability+"')<br>";
+toSave+=varName+"=new Character('"+this.name+"', '"+this.type+"')<br>";
+for(var i=0; i<this.rolls.length; i++){toSave+=varName+".addRoll('"+this.rollNames[i]+"', '"+this.rolls[i]+"', '"+this.rollNames2[i]+"', '"+this.rolls2[i]+"')<br>"
+}
+toSave+=varName+".putAt('"+this.x+"\', \'"+this.y+"\' )<br>";
+toSave+=varName+".setClass('"+this.class+"')<br>";
+toSave+=varName+".setLvl('"+this.lvl+"')<br>";
+toSave+=varName+".setRace('"+this.race+"')<br>";
+toSave+=varName+".setBackground('"+this.background+"')<br>";
+toSave+=varName+".setAbility('"+this.ability+"')<br>";
 toSave+=varName+".setAC("+this.ac+")<br>";
-toSave+=varName+".setAcrobatics(' "+this.acrobatics+"')<br>";
-toSave+=varName+".setAlignment(' "+this.alignment+"')<br>";
-toSave+=varName+".setAnimal(' "+this.animal+"')<br>";
-toSave+=varName+".setArmor(' "+this.armor+"')<br>";
-toSave+=varName+".setArcana(' "+this.arcana+"')<br>";
-toSave+=varName+".setAthletics(' "+this.athletics+"')<br>";
-toSave+=varName+".setBackF(' "+this.backF+"')<br>";
-toSave+=varName+".setBackL(' "+this.backL+"')<br>";
-toSave+=varName+".setBackS(' "+this.backS+"')<br>";
-toSave+=varName+".setBackT(' "+this.backT+"')<br>";
-toSave+=varName+".setBonds(' "+this.bonds+"')<br>";
+toSave+=varName+".setAcrobatics('"+this.acrobatics+"')<br>";
+toSave+=varName+".setAlignment('"+this.alignment+"')<br>";
+toSave+=varName+".setAnimal('"+this.animal+"')<br>";
+toSave+=varName+".setArmor('"+this.armor+"')<br>";
+toSave+=varName+".setArcana('"+this.arcana+"')<br>";
+toSave+=varName+".setAthletics('"+this.athletics+"')<br>";
+toSave+=varName+".setBackF('"+this.backF+"')<br>";
+toSave+=varName+".setBackL('"+this.backL+"')<br>";
+toSave+=varName+".setBackS('"+this.backS+"')<br>";
+toSave+=varName+".setBackT('"+this.backT+"')<br>";
+toSave+=varName+".setBonds('"+this.bonds+"')<br>";
 toSave+=varName+".setCha("+this.cha+")<br>";
-toSave+=varName+".setChaPro(' "+this.chaPro+"')<br>";
+toSave+=varName+".setChaPro('"+this.chaPro+"')<br>";
 toSave+=varName+".setCon("+this.con+")<br>";
-toSave+=varName+".setConPro(' "+this.conPro+"')<br>";
+toSave+=varName+".setConPro('"+this.conPro+"')<br>";
 toSave+=varName+".setCurHp("+this.curHp+")<br>";
-toSave+=varName+".setDeception(' "+this.deception+"')<br>";
+toSave+=varName+".setDeception('"+this.deception+"')<br>";
 toSave+=varName+".setDex("+this.dex+")<br>";
-toSave+=varName+".setDexPro(' "+this.dexPro+"')<br>";
-toSave+=varName+".setEquipment(' "+this.equipment+"')<br>";
-toSave+=varName+".setExperience(' "+this.experience+"')<br>";
-toSave+=varName+".setFeats(' "+this.feats+"')<br>";
-toSave+=varName+".setActionNotes(' "+this.actionNotes+"')<br>";
-toSave+=varName+".setFeatureNotes(' "+this.featureNotes+"')<br>";
-toSave+=varName+".setFigure(' "+this.figure+"')<br>";
-toSave+=varName+".setFlaws(' "+this.flaws+"')<br>";
-toSave+=varName+".setHistory(' "+this.history+"')<br>";
-toSave+=varName+".setHitDice(' "+this.hitDice+"')<br>";
-toSave+=varName+".setIdeals(' "+this.ideals+"')<br>";
+toSave+=varName+".setDexPro('"+this.dexPro+"')<br>";
+toSave+=varName+".setEquipment('"+this.equipment+"')<br>";
+toSave+=varName+".setExperience('"+this.experience+"')<br>";
+toSave+=varName+".setFeats('"+this.feats+"')<br>";
+toSave+=varName+".setActionNotes('"+this.actionNotes+"')<br>";
+toSave+=varName+".setFeatureNotes('"+this.featureNotes+"')<br>";
+toSave+=varName+".setFigure('"+this.figure+"')<br>";
+toSave+=varName+".setFlaws('"+this.flaws+"')<br>";
+toSave+=varName+".setHistory('"+this.history+"')<br>";
+toSave+=varName+".setHitDice('"+this.hitDice+"')<br>";
+toSave+=varName+".setIdeals('"+this.ideals+"')<br>";
 if(!isNaN(this.init)){toSave+=varName+".setInit("+this.init+")<br>"
-}toSave+=varName+".setImmunity(' "+this.immunity+"')<br>";
-toSave+=varName+".setInitBonus(' "+this.initBonus+"')<br>";
-toSave+=varName+".setInsight(' "+this.insight+"')<br>";
+}toSave+=varName+".setImmunity('"+this.immunity+"')<br>";
+toSave+=varName+".setInitBonus('"+this.initBonus+"')<br>";
+toSave+=varName+".setInsight('"+this.insight+"')<br>";
 toSave+=varName+".setInt("+this.inte+")<br>";
-toSave+=varName+".setIntimidation(' "+this.intimidation+"')<br>";
-toSave+=varName+".setIntPro(' "+this.intPro+"')<br>";
-toSave+=varName+".setInvestigation(' "+this.investigation+"')<br>";
-toSave+=varName+".setLanguages(' "+this.languages+"')<br>";
+toSave+=varName+".setIntimidation('"+this.intimidation+"')<br>";
+toSave+=varName+".setIntPro('"+this.intPro+"')<br>";
+toSave+=varName+".setInvestigation('"+this.investigation+"')<br>";
+toSave+=varName+".setLanguages('"+this.languages+"')<br>";
 toSave+=varName+".setMaxHp("+this.maxHp+")<br>";
 toSave+=varName+".setCurHp("+this.curHp+")<br>";
-toSave+=varName+".setMedicine(' "+this.medicine+"')<br>";
-toSave+=varName+".setNature(' "+this.nature+"')<br>";
-toSave+=varName+".setPerception(' "+this.perception+"')<br>";
-toSave+=varName+".setPerformance(' "+this.performance+"')<br>";
-toSave+=varName+".setPersuasion(' "+this.persuasion+"')<br>";
-toSave+=varName+".setPro(' "+this.pro+"')<br>";
-toSave+=varName+".setProficiencies(' "+this.proficiencies+"')<br>";
-toSave+=varName+".setProficienciesRace(' "+this.proficienciesRace+"')<br>";
-toSave+=varName+".setReligion(' "+this.religion+"')<br>";
-toSave+=varName+".setResistance(' "+this.resistance+"')<br>";
-toSave+=varName+".setSaving(' "+this.saving+"')<br>";
-toSave+=varName+".setSenses(' "+this.senses+"')<br>";
-toSave+=varName+".setShield(' "+this.shield+"')<br>";
-toSave+=varName+".setSize(' "+this.size+"')<br>";
-toSave+=varName+".setSleight(' "+this.sleight+"')<br>";
-toSave+=varName+".setSkills(' "+this.skills+"')<br>";
-toSave+=varName+".setSpeed(' "+this.speed+"')<br>";
+toSave+=varName+".setMedicine('"+this.medicine+"')<br>";
+toSave+=varName+".setNature('"+this.nature+"')<br>";
+toSave+=varName+".setPerception('"+this.perception+"')<br>";
+toSave+=varName+".setPerformance('"+this.performance+"')<br>";
+toSave+=varName+".setPersuasion('"+this.persuasion+"')<br>";
+toSave+=varName+".setPro('"+this.pro+"')<br>";
+toSave+=varName+".setProficiencies('"+this.proficiencies+"')<br>";
+toSave+=varName+".setProficienciesRace('"+this.proficienciesRace+"')<br>";
+toSave+=varName+".setReligion('"+this.religion+"')<br>";
+toSave+=varName+".setResistance('"+this.resistance+"')<br>";
+toSave+=varName+".setSaving('"+this.saving+"')<br>";
+toSave+=varName+".setSenses('"+this.senses+"')<br>";
+toSave+=varName+".setShield('"+this.shield+"')<br>";
+toSave+=varName+".setSize('"+this.size+"')<br>";
+toSave+=varName+".setSleight('"+this.sleight+"')<br>";
+toSave+=varName+".setSkills('"+this.skills+"')<br>";
+toSave+=varName+".setSpeed('"+this.speed+"')<br>";
 toSave+=varName+".setSpellAbility('"+this.spellAbility+"')<br>";
-toSave+=varName+".setSpellAbilityNumber(' "+this.spellAbilityNumber+"')<br>";
-toSave+=varName+".setStealth(' "+this.stealth+"')<br>";
+toSave+=varName+".setSpellAbilityNumber('"+this.spellAbilityNumber+"')<br>";
+toSave+=varName+".setStealth('"+this.stealth+"')<br>";
 toSave+=varName+".setStr("+this.str+")<br>";
-toSave+=varName+".setStrPro(' "+this.strPro+"')<br>";
-toSave+=varName+".setSurvival(' "+this.survival+"')<br>";
-toSave+=varName+".setTrait(' "+this.trait+"')<br>";
-toSave+=varName+".setVulnerability(' "+this.vulnerability+"')<br>";
+toSave+=varName+".setStrPro('"+this.strPro+"')<br>";
+toSave+=varName+".setSurvival('"+this.survival+"')<br>";
+toSave+=varName+".setTrait('"+this.trait+"')<br>";
+toSave+=varName+".setVulnerability('"+this.vulnerability+"')<br>";
 toSave+=varName+".setWis("+this.wis+")<br>";
-toSave+=varName+".setWisPro(' "+this.wisPro+"')<br>";
-toSave+=varName+".setDamageConditions(' "+this.dmgConditions+"')<br>";
+toSave+=varName+".setWisPro('"+this.wisPro+"')<br>";
+toSave+=varName+".setDamageConditions('"+this.dmgConditions+"')<br>";
 toSave+=varName+".setCurSlot1("+this.curSlot1+")<br>";
 toSave+=varName+".setCurSlot2("+this.curSlot2+")<br>";
 toSave+=varName+".setCurSlot3("+this.curSlot3+")<br>";
@@ -2030,7 +2031,7 @@ this.box.putAt(x, y);
 this.menu.putAt(menuX, y)}$("input[name='id_radioname']").on('change', function(e){var value=$("input[name='id_radioname']:checked").val();
 localStorage.setItem('option', value);
 location.reload()})
-function _ref(){boxContents="<img id='rotated"+this.index+"' onClick='characters["+this.index+"].setRotation("+this.index+")' src=' "+this.figure+"'>";
+function _ref(){boxContents="<img id='rotated"+this.index+"' onClick='characters["+this.index+"].setRotation("+this.index+")' src='"+this.figure+"'>";
 boxContents+="<table><tr><td class='piece'>"+this.name;
 boxContents+="</td></tr><tr><td class='piece'>(Init)iative:"+this.init;
 boxContents+="</td></tr><tr><td class='piece'>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
@@ -2058,9 +2059,9 @@ boxContents+="<br>Level (Pro)ficiency:"+this.pro;
 boxContents+="<br>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
 boxContents+="</td><td>ACTIONS<textArea cols='40' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiatks and SpellSlots'>"+this.actionNotes+"</textArea>"
 boxContents+="</td><td>Feature Notes:<textArea cols='40' rows='2' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
-boxContents+="</td><td>Racial Proficiencies:<input maxLength='400' onChange='characters["+this.index+"].setProficienciesRace(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.proficienciesRace+"'>";
-boxContents+="<br>Background Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setBackT(this.value)' size='40' value=' "+this.backT+"'>";
-boxContents+="<br>Class Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setProficiencies(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.proficiencies+"'>";
+boxContents+="</td><td>Racial Proficiencies:<input maxLength='400' onChange='characters["+this.index+"].setProficienciesRace(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.proficienciesRace+"'>";
+boxContents+="<br>Background Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setBackT(this.value)' size='40' value='"+this.backT+"'>";
+boxContents+="<br>Class Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setProficiencies(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.proficiencies+"'>";
 boxContents+="</td></tr></table><br>"
 if(this.class.match(/Arcane\sTrickster|Bard|Cleric|Druid|Eldritch|Paladin|Ranger|Sorcerer|Warlock|Wizard/))
 {boxContents+="<table><tr><td>1st Spell,lvlSlots: "+this.maxSlot1+"<input onClick='this.value="+(this.curSlot1-1)+";characters["+this.index+"].setCurSlot1(this.value);checkTheTarget("+this.index+")' type='button' value='Spend?'>"+this.curSlot1;
@@ -2076,33 +2077,33 @@ boxContents+="</td><td><img src='Decorations/GameTokens.png' width='50px'>";
 boxContents+="</td><td>Rest to earn back your spent game token slots.<input onClick='characters["+this.index+"].setCurSlot1("+this.maxSlot1+");characters["+this.index+"].setCurSlot2("+this.maxSlot2+");characters["+this.index+"].setCurSlot3("+this.maxSlot3+");characters["+this.index+"].setCurSlot4("+this.maxSlot4+");characters["+this.index+"].setCurSlot5("+this.maxSlot5+");characters["+this.index+"].setCurSlot6("+this.maxSlot6+");characters["+this.index+"].setCurSlot7("+this.maxSlot7+");characters["+this.index+"].setCurSlot8("+this.maxSlot8+");characters["+this.index+"].setCurSlot9("+this.maxSlot9+");checkTheTarget("+this.index+")' type='button' value='Take a rest?'>";
 boxContents+="</td></tr></table>";
 }
-boxContents+="<br><table><tr><td>Make a new roll?</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName1(this.value);checkTheTarget("+this.index+")'placeHolder='atkRollToHitName+Ability+pro SpellSlot RangeInFeet'size='40' type='text' value=' "+this.rollName1+"'>"
+boxContents+="<br><table><tr><td>Make a new roll?</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName1(this.value);checkTheTarget("+this.index+")'placeHolder='atkRollToHitName+Ability+pro SpellSlot RangeInFeet'size='40' type='text' value='"+this.rollName1+"'>"
 boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll1(this.value);checkTheTarget("+this.index+")'placeHolder='XdY+Z'size='8' type='text' value="+this.roll1+">"
-boxContents+="</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName2(this.value);checkTheTarget("+this.index+")'placeHolder=' dmgType+Ability and dmgConditions' size='40' type='text' value=' "+this.rollName2+"'>"
+boxContents+="</td><td><input maxLength='200' onChange='characters["+this.index+"].setRollName2(this.value);checkTheTarget("+this.index+")'placeHolder=' dmgType+Ability and dmgConditions' size='40' type='text' value='"+this.rollName2+"'>"
 boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].setRoll2(this.value);checkTheTarget("+this.index+")'placeHolder='XdY+Z'size='8' type='text' value="+this.roll2+">"
 boxContents+="</td><td><input maxLength='8' onClick='addRollPrompt("+this.index+")'size='8' type='button' value='Add this roll?'>";
 if(this.rolls.length===0){boxContents+="</td></tr><tr><td><i>No custom rolls listed.</i>"
 }
 else
 {for(var i=0; i<this.rolls.length; i++){boxContents+="</td></tr><tr><td><input type='button' onClick='makeRoll("+this.index+", "+i+")'value='Roll?'>"
-boxContents+="</td><td><input maxLength='200' onChange='characters["+this.index+"].rollNames["+i+"]=this.value' size='40' type='text' value=' "+this.rollNames[i]+"'>";
-boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].rolls["+i+"]=this.value' size='8' type='text' value=' "+this.rolls[i]+"'>";
-boxContents+="</td><td><input maxLength='200' onChange='characters["+this.index+"].rollNames2["+i+"]=this.value' size='40' type='text' value=' "+this.rollNames2[i]+"'>";
-boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].rolls2["+i+"]=this.value' size='8' type='text' value=' "+this.rolls2[i]+"'>";
+boxContents+="</td><td><input maxLength='200' onChange='characters["+this.index+"].rollNames["+i+"]=this.value' size='40' type='text' value='"+this.rollNames[i]+"'>";
+boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].rolls["+i+"]=this.value' size='8' type='text' value='"+this.rolls[i]+"'>";
+boxContents+="</td><td><input maxLength='200' onChange='characters["+this.index+"].rollNames2["+i+"]=this.value' size='40' type='text' value='"+this.rollNames2[i]+"'>";
+boxContents+="</td><td><input maxLength='8' onChange='characters["+this.index+"].rolls2["+i+"]=this.value' size='8' type='text' value='"+this.rolls2[i]+"'>";
 boxContents+="</td><td><input type='button' onClick='deleteRollPrompt("+this.index+", "+i+")'value='Delete this roll?'>"
 }
 }
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled3"+this.index+" style='display:"+this.toggled3+"'>";
 
-boxContents+="<table><tr><td><b>Name:</b> <input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value=' "+this.name+"'>";
-boxContents+="<br>Miniature File:<input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='40' type='text' value=' "+this.figure+"'>";
+boxContents+="<table><tr><td><b>Name:</b> <input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='40' type='text' value='"+this.name+"'>";
+boxContents+="<br>Miniature File:<input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='40' type='text' value='"+this.figure+"'>";
 boxContents+="</td></tr><tr><td><b>Size:</b> <select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
 boxContents+="</td></tr><tr><td><b>Race:</b> <select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn,Black<option>Dragonborn,Blue<option>Dragonborn,Brass<option>Dragonborn,Bronze<option>Dragonborn,Gold<option>Dragonborn,Green<option>Dragonborn,Red<option>Dragonborn,Silver<option>Dragonborn,White<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kenku<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tabaxi<option>Tiefling, Asmodeus<option>Tiefling, Baazebul<option>Tiefling, Dispater<option>Tiefling, Fierna<option>Tiefling, Glasya<option>Tiefling, Levistus<option>Tiefling, Mammon<option>Tiefling, Mephistopheles<option>Tiefling, Zariel<option>Yuan-Ti</select>";
 boxContents+="<br>or other race: <input maxLength='200' onChange='characters["+this.index+"].setRace(this.value)' placeHolder='other race' size='40' type='ptext'>";
 boxContents+="<br>Traits:(Gender, Age, Color, Height, Weight)<textArea cols='40' rows='3' onChange='characters["+this.index+"].setTrait(this.value)'placeHolder=''>"+this.trait+"</textarea>";
-boxContents+="</td></tr><tr><td>Racial <b>Languages:</b> <input maxLength='200' onChange='characters["+this.index+"].setLanguages(this.value);checkTheTarget("+this.index+")' size='40' type='text' value=' "+this.languages+"'>";
-boxContents+="<br>Background Languages:<input maxLength='200' onChange='characters["+this.index+"].setBackL(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.backL+"'>";
+boxContents+="</td></tr><tr><td>Racial <b>Languages:</b> <input maxLength='200' onChange='characters["+this.index+"].setLanguages(this.value);checkTheTarget("+this.index+")' size='40' type='text' value='"+this.languages+"'>";
+boxContents+="<br>Background Languages:<input maxLength='200' onChange='characters["+this.index+"].setBackL(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.backL+"'>";
 boxContents+="</td></tr><tr><td><b>Alignment:</b> <select onChange='characters["+this.index+"].setAlignment(this.value)'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
 boxContents+="<br>"+this.alignmentDescription;
 boxContents+="</td></tr><tr><td><b>Armor Class(AC):</b> <input maxLength='2' onChange='characters["+this.index+"].setAC(this.value);checkTheTarget("+this.index+")' size='2' type='text' value="+this.ac+">/"+this.curAc;
@@ -2112,15 +2113,15 @@ boxContents+="<br>Shield: <select onChange='characters["+this.index+"].setShield
 boxContents+="<br>or other shield: <input maxLength='200' onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")' placeHolder='other shield or magical defense' size='40' type='text'>";
 boxContents+="</td></tr><tr><td><b>Hit Points(HP):</b> <input maxLength='3' onChange='characters["+this.index+"].setMaxHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.maxHp+">";
 boxContents+="/<input maxLength='3' onChange='characters["+this.index+"].setCurHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.curHp+">";
-boxContents+="<br>Hit Dice(HD): <input maxLength='10' onChange='characters["+this.index+"].setHitDice(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z' size=10 type='text' value=' "+this.hitDice+"'>";
+boxContents+="<br>Hit Dice(HD): <input maxLength='10' onChange='characters["+this.index+"].setHitDice(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z' size=10 type='text' value='"+this.hitDice+"'>";
 boxContents+="<br>Damage Conditions: (temp hp+10, ac-1, str+1, ini+3, blinded)<textArea cols='40' rows=2 onChange='characters["+this.index+"].setDamageConditions(this.value);checkTheTarget("+this.index+")'placeHolder=''>"+this.dmgConditions+"</textArea>"
-boxContents+="</td></tr><tr><td>Vulnerability:(2Xdmg)<input maxLength='200' onChange='characters["+this.index+"].setVulnerability(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.vulnerability+"'>";
-boxContents+="</td></tr><tr><td><b>Damage Resistances: </b>(1/2dmg)<input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.resistance+"'>";
-boxContents+="</td></tr><tr><td><b>Damage Immunities:</b> (0dmg)<input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value)' size='40' value=' "+this.immunity+"'>";
-boxContents+="</td></tr><tr><td><b>Senses:</b> <input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='40' type='text' value=' "+this.senses+"'>";
-boxContents+="</td></tr><tr><td><b>Speed:</b> <input maxLength='200' onChange='characters["+this.index+"].setSpeed(this.value);checkTheTarget("+this.index+")' size='40' type='text' value=' "+this.speed+"'>";
+boxContents+="</td></tr><tr><td>Vulnerability:(2Xdmg)<input maxLength='200' onChange='characters["+this.index+"].setVulnerability(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.vulnerability+"'>";
+boxContents+="</td></tr><tr><td><b>Damage Resistances: </b>(1/2dmg)<input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.resistance+"'>";
+boxContents+="</td></tr><tr><td><b>Damage Immunities:</b> (0dmg)<input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value)' size='40' value='"+this.immunity+"'>";
+boxContents+="</td></tr><tr><td><b>Senses:</b> <input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='40' type='text' value='"+this.senses+"'>";
+boxContents+="</td></tr><tr><td><b>Speed:</b> <input maxLength='200' onChange='characters["+this.index+"].setSpeed(this.value);checkTheTarget("+this.index+")' size='40' type='text' value='"+this.speed+"'>";
 boxContents+="</td></tr><tr><td><b>Challenge</b> Rating(CR)or Level(lvl):<input maxLength='2' onChange='characters["+this.index+"].setLvl(this.value)' size=3 type='text' value="+this.lvl+">";
-boxContents+="<br>Experience Points(XP): <input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value)'size='8' type='text' value=' "+this.experience+"'>";
+boxContents+="<br>Experience Points(XP): <input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value)'size='8' type='text' value='"+this.experience+"'>";
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled4"+this.index+" style='display:"+this.toggled4+"'>";
 
@@ -2158,10 +2159,10 @@ boxContents+="</td></tr><tr><td><input onClick='abi=11;abiMod=characters["+this.
 boxContents+="</td></tr><tr><td><input onClick='abi=14;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].intimidation;abiRoll("+this.index+")'value='Roll Intimidation(cha)?'type='button'>+<select onChange='characters["+this.index+"].setIntimidation(this.value);checkTheTarget("+this.index+")'><option>"+this.intimidation+"<option><option>pro<option>exp</select>"
 boxContents+="</td></tr><tr><td><input onClick='abi=19;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].performance;abiRoll("+this.index+")'value='Roll Performance(cha)?'type='button'>+<select onChange='characters["+this.index+"].setPerformance(this.value);checkTheTarget("+this.index+")'><option>"+this.performance+"<option><option>pro<option>exp</select>"
 boxContents+="</td></tr><tr><td><input onClick='abi=20;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].persuasion;abiRoll("+this.index+")'value='Roll Persuasion(cha)?'type='button'>+<select onChange='characters["+this.index+"].setPersuasion(this.value);checkTheTarget("+this.index+")'><option>"+this.persuasion+"<option><option>pro<option>exp</select>";
-boxContents+="</td></tr><tr><td>Racial Abilility Increases:<input maxLength='200' onChange='characters["+this.index+"].setAbility(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.ability+"'>";
-boxContents+="</td></tr><tr><td>Background <b>Skills:</b> <input maxLength='200' onChange='characters["+this.index+"].setBackS(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.backS+"'>";
-boxContents+="<br>Class Skills:<input maxLength='200' onChange='characters["+this.index+"].setSkills(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.skills+"'>";
-boxContents+="</td></tr><tr><td>Class <b>Saving Throws:</b> <input maxLength='200' onChange='characters["+this.index+"].setSaving(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.saving+"'>";
+boxContents+="</td></tr><tr><td>Racial Abilility Increases:<input maxLength='200' onChange='characters["+this.index+"].setAbility(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.ability+"'>";
+boxContents+="</td></tr><tr><td>Background <b>Skills:</b> <input maxLength='200' onChange='characters["+this.index+"].setBackS(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.backS+"'>";
+boxContents+="<br>Class Skills:<input maxLength='200' onChange='characters["+this.index+"].setSkills(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.skills+"'>";
+boxContents+="</td></tr><tr><td>Class <b>Saving Throws:</b> <input maxLength='200' onChange='characters["+this.index+"].setSaving(this.value);checkTheTarget("+this.index+")' size='40' value='"+this.saving+"'>";
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled5"+this.index+" style='display:"+this.toggled5+"'>";
 
@@ -2170,7 +2171,7 @@ boxContents+="<table><tr><td>"
 boxContents+="<a href='https://tetra-cube.com/dnd/dnd-char-gen.html' target='_blank'>Tetra-Cube.Com's Random Personality Generator</a>";
 boxContents+="</td></tr><tr><td>Background:<select onChange='characters["+this.index+"].setBackground(this.value)'><option>"+this.background+"<option>Acolyte<option>Charlatan<option>City Investigator<option>City Watch<option>Cloistered Scholar<option>Courtier<option>Criminal, Blackmailer<option>Criminal, Burglar<option>Criminal, Enforcer<option>Criminal, Fence<option>Criminal, Highway Robber<option>Criminal, Hired Killer<option>Criminal, Pickpocket<option>Criminal, Smuggler<option>Criminal, Spy<option>Entertainer, Actor<option>Entertainer, Dancer<option>Entertainer, Fire-Eater<option>Entertainer, Gladiator<option>Entertainer, Instrumentalist<option>Entertainer, Jester<option>Entertainer, Juggler<option>Entertainer, Poet<option>Entertainer, Singer<option>Entertainer, Storyteller<option>Entertainer, Tumbler<option>Faction Agent<option>Folk Hero, Farmer<option>Guild, Alchemist<option>Guild, Brewer<option>Guild, Calligrapher<option>Guild, Carpenter<option>Guild, Cartographer<option>Guild, Cobbler<option>Guild, Cook<option>Guild Crafter<option>Guild, Glassblower<option>Guild, Jeweler<option>Guild, Leatherworker<option>Guild, Mason<option>Guild, Painter<option>Guild, Potter<option>Guild, Smith<option>Guild, Tinker<option>Guild, Weaver<option>Guild, or Woodcarver<option>Hermit<option>Noble, Knight<option>Noble, Retainer<option>Outlander, Bounty Hunter<option>Outlander, Exile<option>Outlander, Forester<option>Outlander, Guide<option>Outlander, Homesteader<option>Outlander, Hunter-Gatherer<option>Outlander, Pilgrim<option>Outlander, Trapper<option>Outlander, Tribal Marauder<option>Outlander, Tribal Nomad<option>Sage, Alchemist<option>Sage, Astronomer<option>Sage, Discredited Academic<option>Sage, Librarian<option>Sage, Professor<option>Sage, Researcher<option>Sage, Scribe<option>Sage, Wizard Apprentice<option>Sailor, Cartographer<option>Sailor, Pirate<option>Soldier, Cavalry<option>Soldier, Healer<option>Soldier, Infantry<option>Soldier, Officer<option>Soldier, Quartermaster<option>Soldier, Scout<option>Urchin</select>";
 boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].setBackground(this.value)' placeHolder='other background' size='40' type='text'>";
-boxContents+="</td></tr><tr><td>Background Features:<input maxLength='200' onChange='characters["+this.index+"].setBackF(this.value)' size='40' type='text' value=' "+this.backF+"'>";
+boxContents+="</td></tr><tr><td>Background Features:<input maxLength='200' onChange='characters["+this.index+"].setBackF(this.value)' size='40' type='text' value='"+this.backF+"'>";
 boxContents+="</td></tr><tr><td>Bonds:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setBonds(this.value)'>"+this.bonds+"</textArea>";
 boxContents+="</td></tr><tr><td>Flaws:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setFlaws(this.value)'>"+this.flaws+"</textArea>";
 boxContents+="</td></tr><tr><td>Ideals:<textArea cols='40' rows='3' onChange='characters["+this.index+"].setIdeals(this.value)'>"+this.ideals+"</textArea>";
@@ -2945,7 +2946,7 @@ c="@10th.ELDRITCH STRIKE on weapon hit, tgt saves @DisAdv vs your next spell";
 dx="@15th.ARCANE CHARGE use action surge then teleport 30ft</td></tr><tr><td>Relentless</td></tr><tr><td>@(15th 1/1)roll init with 0SD is 1SD";
 e="@18th.IMPROVED WAR MAGIC cast spell, make bonus weapon atk"
 }
-this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)<br>(Archery)ranged atk+2or(Defense)while armored, AC+1<br>or(Dueling)melee dmg+2<br>or(Great Weapon Fighting)reroll on 1 or 2<br>or(Protection)with shield, adjac allies atkd @DisAdv<br>or(Two Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>@2nd(Second Wind)1/1 short rest, bonus,heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surges)@2nd 1/1,@17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)@4th,@6th,@8th@12th@14th@16th@19th</td></tr><tr><td>@5th(Extra atks)@5th 2,@10th 3,@20th 4</td></tr><tr><td>'+b+'</td></tr><tr><td>@9th(Indomitable)re-roll failed save/long rest@9th 1,@13th 2,@17th 3</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>'+e+'');
+this.setFeatures('</td></tr><tr><td>@1st(Fighting Style)<br>(Archery)ranged atk+2<br>or(Defense)while armored, AC+1<br>or(Dueling)melee dmg+2<br>or(Great Weapon Fighting)reroll on 1 or 2<br>or(Protection)with shield, adjac allies atkd @DisAdv<br>or(Two Weapon Fighting)secondary dmg+abiMod</td></tr><tr><td>@2nd(Second Wind)1/1 short rest, bonus,heal 1d10+lvl</td></tr><tr><td>@2nd(Action Surges)@2nd 1/1,@17th 2/2</td></tr><tr><td>@3rd(Martial Archetype)'+a+'</td></tr><tr><td>@4th(Ability Score Improvement)@4th,@6th,@8th@12th@14th@16th@19th</td></tr><tr><td>@5th(Extra atks)@5th 2,@10th 3,@20th 4</td></tr><tr><td>'+b+'</td></tr><tr><td>@9th(Indomitable)re-roll failed save/long rest@9th 1,@13th 2,@17th 3</td></tr><tr><td>'+c+'</td></tr><tr><td>'+dx+'</td></tr><tr><td>'+e+'');
 this.setActionNotes("(Fighting Style)(?),(Second Wind)0/0,(Action Surges)0/0,(Extra Atks)0,(Indomitable)0/0(Relentless)0/0");
 this.setEquipment('chain mail or leather.Longbow.20 arrows.martial weapon and shield or 2 martialwpns.light crossbow 20 bolts or 2 handaxes.dungeoneer pack or explorer pack');
 this.setHitDice(this.lvl+'d10+'+(parseInt(this.lvl)*parseInt(this.conMod)));
