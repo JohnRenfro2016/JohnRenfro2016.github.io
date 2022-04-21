@@ -15,12 +15,6 @@ font-family: "Kraash";
 src: url("Kraash.ttf");
 }
 
-@font-face
-{
-font-family: "Blaze Stanley";
-src: url("Blaze Stanley.ttf");
-}
-
 a:link,
 a:hover,
 a:active,
@@ -49,7 +43,6 @@ font-size: 30px;
 .HeaderStyle
 {
 color: #a49e08;
-font-family: "Blaze Stanley";
 font-size: 50px;
 }
 
@@ -1284,6 +1277,7 @@ a=a.replace(/(茶)(?!X)(わ)(?!X)(ん)(?!X)/g,'$1X$2X$3X,cyawan,tea cup,rice bow
 a=a.replace(/(華)(?!X)(や)(?!X)(か)(?!X)/g,'$1X$2X$3X,hana-yaka,gorgeous,colorful~noun');
 a=a.replace(/(落)(?!X)(ち)(?!X)(葉)(?!X)/g,'$1X$2X$3X,ochiba,fallen leaves~noun');
 a=a.replace(/(葉)(?!X)(っ)(?!X)(ぱ)(?!X)/g,'$1X$2X$3X,happa,leaf~noun');
+a=a.replace(/(国)(?!X)(防)(?!X)(相)(?!X)/g,'$1X$2X$3X,koku-bou-syou,Minister of Defense~noun');
 a=a.replace(/(著)(?!X)(名)(?!X)(人)(?!X)/g,'$1X$2X$3X,cyo-mei-jin,celebrity~noun');
 a=a.replace(/(蛋)(?!X)(白)(?!X)(質)(?!X)/g,'$1X$2X$3X,tanpakushitsu,protein~noun');
 a=a.replace(/(蛍)(?!X)(光)(?!X)(灯)(?!X)/g,'$1X$2X$3X,kei-kou-tou,fluorescent lamp~noun');
@@ -2805,7 +2799,7 @@ a=a.replace(/(名)(?!X)(称)(?!X)/g,'$1X$2X,mei-syou,name~noun');
 a=a.replace(/(名)(?!X)(簿)(?!X)/g,'$1X$2X,meibo,registry,name list~noun');
 a=a.replace(/(名)(?!X)(詞)(?!X)/g,'$1X$2X,mei-shi,noun~noun');
 a=a.replace(/(向)(?!X)(上)(?!X)/g,'$1X$2X,kou-jyou,improvement~noun');
-a=a.replace(/(否)(?!X)(定)(?!X)/g,'$1X$2X,hi-tei,den-ial,negation~noun');
+a=a.replace(/(否)(?!X)(定)(?!X)/g,'$1X$2X,hi-tei,denial~noun');
 a=a.replace(/(吸)(?!X)(入)(?!X)/g,'$1X$2X,kyuu-nyuu,inhalation~noun');
 a=a.replace(/(吸)(?!X)(収)(?!X)/g,'$1X$2X,kyuu-syuu,absorption,merger~noun');
 a=a.replace(/(周)(?!X)(囲)(?!X)/g,'$1X$2Xsyuu-i,circumference,surroundings~noun');
@@ -3083,7 +3077,8 @@ a=a.replace(/(安)(?!X)(心)(?!X)/g,'$1X$2X,an-shin,relief~noun');
 a=a.replace(/(完)(?!X)(了)(?!X)/g,'$1X$2X,kan-ryou,completion~noun');
 a=a.replace(/(完)(?!X)(全)(?!X)/g,'$1X$2X,kan-zen,complete~noun');
 a=a.replace(/(完)(?!X)(成)(?!X)/g,'$1X$2X,kan-sei,completion,finish~noun');
-a=a.replace(/(宗)(?!X)(教)(?!X)/g,'$1X$2Xsyuu-kyou,religion~noun');
+a=a.replace(/(宗)(?!X)(教)(?!X)/g,'$1X$2X,syuu-kyou,religion~noun');
+a=a.replace(/(祝)(?!X)(福)(?!X)/g,'$1X$2X,syuku-fuku,luck~noun');
 a=a.replace(/(官)(?!X)(庁)(?!X)/g,'$1X$2X,kan-cyou,government office~noun');
 a=a.replace(/(定)(?!X)(例)(?!X)/g,'$1X$2X,tei-rei,regular~noun');
 a=a.replace(/(定)(?!X)(価)(?!X)/g,'$1X$2X,tei-ka,fixed price~noun');
@@ -3095,6 +3090,8 @@ a=a.replace(/(定)(?!X)(食)(?!X)/g,'$1X$2X,tei-syoku,day\'s special,set menu~no
 a=a.replace(/(宛)(?!X)(先)(?!X)/g,'$1X$2X,atesaki,recipient,addressee~noun');
 a=a.replace(/(宛)(?!X)(名)(?!X)/g,'$1X$2X,atena,name of recipient,addressee~noun');
 a=a.replace(/(宝)(?!X)(石)(?!X)/g,'$1X$2X,hou-seki,gem,jewel~noun');
+a=a.replace(/(依)(?!X)(然)(?!X)/g,'$1X$2X,i-zen,still~noun');
+a=a.replace(/(勝)(?!X)(利)(?!X)/g,'$1X$2X,syou-ri,victory~noun');
 a=a.replace(/(実)(?!X)(に)(?!X)/g,'$1X$2X,jitsuni,truly,surely~noun');
 a=a.replace(/(実)(?!X)(は)(?!X)/g,'$1X$2X,jitsuha,actually~noun');
 a=a.replace(/(実)(?!X)(例)(?!X)/g,'$1X$2X,jitsu-rei,example,instance~noun');
@@ -4843,6 +4840,7 @@ a=a.replace(/(近)(?!X)(郊)(?!X)/g,'$1X$2X,kin-kou,outskirts~noun');
 a=a.replace(/(近)(?!X)(頃)(?!X)/g,'$1X$2X,chi-kagoro,recently,nowadays~noun');
 a=a.replace(/(返)(?!X)(事)(?!X)/g,'$1X$2X,henji,answer,reply~noun');
 a=a.replace(/(返)(?!X)(却)(?!X)/g,'$1X$2X,henk-yaku,return~noun');
+a=a.replace(/(宣)(?!X)(言)(?!X)/g,'$1X$2X,sen-gen,declaration~noun');
 a=a.replace(/(迷)(?!X)(信)(?!X)/g,'$1X$2X,mei-shin,superstition~noun');
 a=a.replace(/(迷)(?!X)(子)(?!X)/g,'$1X$2X,maigo,lost child,lost person~noun');
 a=a.replace(/(迷)(?!X)(惑)(?!X)/g,'$1X$2X,meiwaku,trouble,annoyance~noun');
@@ -5808,7 +5806,7 @@ a=a.replace(/(同)(?!X)/g,'$1X,dou-,the same~noun');
 a=a.replace(/(名)(?!X)/g,'$1X,na,name,reputation~noun');
 a=a.replace(/(君)(?!X)/g,'$1X,kimi,you~noun');
 a=a.replace(/(味)(?!X)/g,'$1X,aji,taste,flavor~noun');
-a=a.replace(/(命)(?!X)/g,'$1X,ino-chi,life~noun');
+a=a.replace(/(命)(?!X)/g,'$1X,inochi,life~noun');
 a=a.replace(/(咳)(?!X)/g,'$1X,seki-,cough~noun');
 a=a.replace(/(品)(?!X)/g,'$1X,shin-a,article,item~noun');
 a=a.replace(/(員)(?!X)/g,'$1X,in,employee~noun');
@@ -6308,6 +6306,7 @@ a=a.replace(/(nounま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3X,did~formal~verb');
 a=a.replace(/(た)(?!X)(ら)(?!X)/g,'$1X$2X,tara,if~informal~verb');
 a=a.replace(/(っ)(?!X)(た)(?!X)/g,'$1X$2X,tta,did~informal~verb');
 a=a.replace(/(nounま)(?!X)(で)(?!X)/g,'$1X$2X,made,until,to~postposition');
+a=a.replace(/(nounす)(?!X)(る)(?!X)/g,'$1X$2X,suru,to do~informal verb');
 a=a.replace(/(nounし|verbし)(?!X)(て)(?!X)/g,'$1X$2X,shite,is doing~verb');
 a=a.replace(/(nounし|verbし)(?!X)(て)(?!X)/g,'$1X$2X,shite,is doing~verb');
 a=a.replace(/(nounな)(?!X)(い)(?!X)/g,'$1X$2X,nai,not do~informal~suru-verb');
@@ -6378,16 +6377,18 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-［２０日　ロイター］ -     ２０日の米国株式市場で、米動画配信サービス大手ネットフリックスの株価が３割強下落した。第１・四半期の契約者数が約１０年ぶりに減少に転じ、同社の成長に対する懸念が広がった。
+ロシアがマリウポリ制圧を宣言しました。一方でウクライナ側は否定しています。
 
-ネットフリックスの株価は３７％安の２２０．４０ドル。下落率は約１８年ぶりの大きさとなる勢い。
+ロシア大統領府の発表によりますと、ロシアのショイグ国防相がプーチン大統領に対してマリウポリを制圧したと報告しました。
 
-ボケ・キャピタル・パートナーズの最高投資責任者（ＣＩＯ）、キム・フォレスト氏は「ネットフリックスは成長企業が成長を失うとどうなるかの見本となった」と指摘。成長企業への投資はキャッシュフローの伸びが前提だが、株価が急落すれば成長を求める投資家はすぐに手を引くと述べた。
+ウクライナの兵士たちが立てこもっている製鉄所について、ショイグ国防相はまだ2000人以上の兵士が中にいて、作戦が「3～4日で完了する」という見通しを伝えました。
 
-ＪＰモルガンは目標株価を半減させ３０５ドルと、ウォール街の予想中央値４００ドルを大幅に下回る水準に設定。２０２２年の契約者数の伸び見通しも従来予想の半分の８００万人に引き下げた。
+これに対し、プーチン大統領は、マリウポリ制圧の成功を祝福し、製鉄所に対しては攻撃をやめ、「ハエも通れないよう」封鎖するよう命じたということです。
 
-パイパー・サンドラーは「ビジネスの転換期を迎えている。契約者数は減速しており、パンデミック（世界的大流行）前の純増ペースに戻るとは考えにくい」とした。
-　<br>
+一方、マリウポリの市長顧問は、ウクライナメディアに対して、「プーチン氏はただ破壊された町を背景に勝利を宣言したいだけ、彼らは勝利していない」と制圧を否定しました。
+
+ウクライナメディアは、兵士たちが依然市内で戦っていると伝えています。
+<br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
 <span id="translatedTextDisplay"></span>
