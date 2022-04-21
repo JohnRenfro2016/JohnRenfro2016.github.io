@@ -156,6 +156,7 @@ a=a.replace(/(差)(?!X)(し)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?
 a=a.replace(/(引)(?!X)(き)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X,hikiage,pull up,salvage<br>$5X~ru-verb');
 a=a.replace(/(引)(?!X)(き)(?!X)(伸)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X$4X,hikinoba,stretch out,enlarge<br>$5X~su-verb');
 a=a.replace(/(引)(?!X)(き)(?!X)(受)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X,hikiuke,undertake<br>$5X~ru-verb');
+a=a.replace(/(引)(?!X)(き)(?!X)(上)(?!X)(げ)(?!X)/g,'$1X$2X$3X$4X,hiki-age,raise<br>~ichidan-verb');
 a=a.replace(/(引)(?!X)(き)(?!X)(延)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X$4X,hikinoba,extend,prolong<br>$5X~su-verb');
 a=a.replace(/(引)(?!X)(き)(?!X)(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X,hikitome,detain,keep<br>$5X~ru-verb');
 a=a.replace(/(引)(?!X)(っ)(?!X)(掛)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X,hikkaka,be caught,be trapped<br>$5X~ru-verb');
@@ -660,9 +661,10 @@ a=a.replace(/(隣)(?!X)(り)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X
 a=a.replace(/(飛)(?!X)(び)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X,tobida,fly out,dash out<br>$4X~su-verb');
 a=a.replace(/(飛)(?!X)(び)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X,tobiko,dive into<br>$4X~mu-verb');
 a=a.replace(/(飲)(?!X)(み)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X,nomiko,swallow,grasp<br>$4X~mu-verb');
+a=a.replace(/(盛)(?!X)(り)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X,mori-ko,incorporate<br>$4X~mu-verb');
 
 a=a.replace(/(2|２)(?!X)(０|0)(?!X)(日)(?!X)/g,'$1X$2X$3X,hatsu-ka,the twentieth day of the month ~noun')
-a=a.replace(/(2|２)(?!X)(1)(?!X)(日)(?!X)/g,'$1X$2X$3X,ni-jyuu-ichi-nichi,the twenty-first day of the month ~noun')
+a=a.replace(/(2|２)(?!X)(１|1)(?!X)(日)(?!X)/g,'$1X$2X$3X,ni-jyuu-ichi-nichi,the twenty-first day of the month ~noun')
 a=a.replace(/(2|２)(?!X)(2)(?!X)(日)(?!X)/g,'$1X$2X$3X,ni-jyuu-ni-nichi,the twenty-second day of the month ~noun')
 a=a.replace(/(2|２)(?!X)(3)(?!X)(日)(?!X)/g,'$1X$2X$3X,ni-jyuu-san-nichi,the twenty-third day of the month ~noun')
 a=a.replace(/(2|２)(?!X)(4|４)(?!X)(日)(?!X)/g,'$1X$2X$3X,ni-jyuu-yok-ka,the twenty-fourth day of the month ~noun')
@@ -673,6 +675,7 @@ a=a.replace(/(2|２)(?!X)(8|８)(?!X)(日)(?!X)/g,'$1X$2X$3X,ni-jyuu-hachi-nichi
 a=a.replace(/(2|２)(?!X)(9)(?!X)(日)(?!X)/g,'$1X$2X$3X,ni-jyuu-ku-nichi,the twenty-nineth day of the month ~noun')
 a=a.replace(/(3)(?!X)(0)(?!X)(日)(?!X)/g,'$1X$2X$3X,san-jyuu-nichi,the thirtieth day of the month ~noun')
 a=a.replace(/(3)(?!X)(1)(?!X)(日)(?!X)/g,'$1X$2X$3X,san-jyuu-ichi-nichi,the thirty-first day of the month ~noun')
+a=a.replace(/(低)(?!X)(所)(?!X)(得)(?!X)/g,'$1X$2X$3X,tei-syo-toku,low income~noun')
 a=a.replace(/(あ)(?!X)(え)(?!X)(て)(?!X)/g,'$1X$2X$3X,aete,boldly~noun');
 a=a.replace(/(あ)(?!X)(く)(?!X)(び)(?!X)/g,'$1X$2X$3X,a-kubi,yawn~noun');
 a=a.replace(/(あ)(?!X)(ぐ)(?!X)(ら)(?!X)/g,'$1X$2X$3X,agura,sit cross legged~noun');
@@ -1133,6 +1136,8 @@ a=a.replace(/(本)(?!X)(当)(?!X)(に)(?!X)/g,'$1X$2X$3X,hon-tou ni,really~noun'
 a=a.replace(/(本)(?!X)(格)(?!X)(的)(?!X)/g,'$1X$2X$3X,hon-kaku-teki,full-scale,authentic~noun');
 a=a.replace(/(枠)(?!X)(組)(?!X)(み)(?!X)/g,'$1X$2X$3X,waku-gumi,outline,framework~noun');
 a=a.replace(/(柔)(?!X)(ら)(?!X)(か)(?!X)/g,'$1X$2X$3X,yawaraka,soft,tender,gen-tle~noun');
+a=a.replace(/(自)(?!X)(民)(?!X)(党)(?!X)/g,'$1X$2X$3X,ji-min-tou,The Liberal Democratic Party of Japan~noun');
+a=a.replace(/(公)(?!X)(明)(?!X)(党)(?!X)/g,'$1X$2X$3X,kou-mei-tou,The Koumeito Party of Japan~noun');
 a=a.replace(/(栓)(?!X)(抜)(?!X)(き)(?!X)/g,'$1X$2X$3X,sen-nuki,bottle opener,corkscrew~noun');
 a=a.replace(/(核)(?!X)(兵)(?!X)(器)(?!X)/g,'$1X$2X$3X,kaku-hei-ki,nuclear weapons~noun');
 a=a.replace(/(案)(?!X)(の)(?!X)(定)(?!X)/g,'$1X$2X$3X,anno-jyou,as feared,sure enough~noun');
@@ -1159,6 +1164,7 @@ a=a.replace(/(気)(?!X)(持)(?!X)(ち)(?!X)/g,'$1X$2X$3X,kimo-chi,feeling,sen-sa
 a=a.replace(/(水)(?!X)(平)(?!X)(線)(?!X)/g,'$1X$2X$3X,sui-hei-sen,horizon~noun');
 a=a.replace(/(水)(?!X)(族)(?!X)(館)(?!X)/g,'$1X$2X$3X,sui-zoku-kan,aquarium~noun');
 a=a.replace(/(水)(?!X)(曜)(?!X)(日)(?!X)/g,'$1X$2X$3X,sui-youbi,Wednesday~noun');
+a=a.replace(/(補)(?!X)(助)(?!X)(金)(?!X)/g,'$1X$2X$3X,ho-jyo-kin,subsidy~noun');
 a=a.replace(/(決)(?!X)(し)(?!X)(て)(?!X)/g,'$1X$2X$3X,kesshite,never,by no means~noun');
 a=a.replace(/(決)(?!X)(ま)(?!X)(り)(?!X)/g,'$1X$2X$3X,kimari,settlement,rule~noun');
 a=a.replace(/(法)(?!X)(学)(?!X)(部)(?!X)/g,'$1X$2X$3X,hou-gakubu,law department~noun');
@@ -1660,7 +1666,7 @@ a=a.replace(/(懸)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,kake,s
 a=a.replace(/(手)(?!X)(伝)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,tetsuda,help,assistant<br>$3X~i-adjective');
 a=a.replace(/(手)(?!X)(伝)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2X,tetsuda,help,assist<br>$3X~u-verb');
 a=a.replace(/(手)(?!X)(洗)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,teara,toilet,washstand<br>$3X~i-adjective');
-a=a.replace(/(抑)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,osae,suppress,bring under control<br>$3X~ru-verb');
+a=a.replace(/(抑)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,osae,bring under control<br>$3X~ru-verb');
 a=a.replace(/(投)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,nage,throw,abandon<br>$3X~ru-verb');
 a=a.replace(/(折)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,ore,snap,be folded,give in<br>$3X~ru-verb');
 a=a.replace(/(抜)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,nuke,come out,leave<br>$3X~ru-verb');
@@ -2214,12 +2220,13 @@ a=a.replace(/(乞)(?!X)(食)(?!X)/g,'$1X$2X,koj-iki,beggar~noun');
 a=a.replace(/(乱)(?!X)(暴)(?!X)/g,'$1X$2X,ran-bou,violence~noun');
 a=a.replace(/(乾)(?!X)(杯)(?!X)/g,'$1X$2X,kan-pai,a toast~noun');
 a=a.replace(/(乾)(?!X)(燥)(?!X)/g,'$1X$2X,kan-sou,drying up,desiccation~noun');
-a=a.replace(/(予)(?!X)(備)(?!X)/g,'$1X$2X,yobi,reserve,spare~noun');
+a=a.replace(/(予)(?!X)(備)(?!X)/g,'$1X$2X,yo-bi,reserve,spare~noun');
 a=a.replace(/(予)(?!X)(報)(?!X)/g,'$1X$2X,yo-hou,forecast,prediction~noun');
 a=a.replace(/(予)(?!X)(定)(?!X)/g,'$1X$2X,yo-tei,schedule,plan~noun');
 a=a.replace(/(予)(?!X)(想)(?!X)/g,'$1X$2X,yo-sou,prediction~noun');
 a=a.replace(/(予)(?!X)(測)(?!X)/g,'$1X$2X,yo-soku,estimation~noun');
-a=a.replace(/(予)(?!X)(算)(?!X)/g,'$1X$2X,yosan,budget~noun');
+a=a.replace(/(予)(?!X)(算)(?!X)/g,'$1X$2X,yo-san,budget~noun');
+a=a.replace(/(編)(?!X)(成)(?!X)/g,'$1X$2X,hen-sei,composition~noun');
 a=a.replace(/(予)(?!X)(約)(?!X)/g,'$1X$2X,yo-yaku,reservation,subscription~noun');
 a=a.replace(/(予)(?!X)(習)(?!X)/g,'$1X$2X,yo-syuu,preparation,previewing (a lesson)~noun');
 a=a.replace(/(予)(?!X)(言)(?!X)/g,'$1X$2X,yo-gen,prediction,forecast~noun');
@@ -3523,6 +3530,7 @@ a=a.replace(/(支)(?!X)(援)(?!X)/g,'$1X$2X,shi-en,backing~noun');
 a=a.replace(/(支)(?!X)(社)(?!X)/g,'$1X$2X,shi-sya,branch office~noun');
 a=a.replace(/(支)(?!X)(配)(?!X)/g,'$1X$2X,shi-hai,man-agement~noun');
 a=a.replace(/(改)(?!X)(善)(?!X)/g,'$1X$2X,kai-zen,improvement,amelioration~noun');
+a=a.replace(/(与)(?!X)(党)(?!X)/g,'$1X$2X,yo-tou,ruling party~noun');
 a=a.replace(/(改)(?!X)(定)(?!X)/g,'$1X$2X,kai-tei,money amount change~noun');
 a=a.replace(/(改)(?!X)(札)(?!X)/g,'$1X$2X,kai-satsu,ticket gate~noun');
 a=a.replace(/(改)(?!X)(正)(?!X)/g,'$1X$2X,kai-sei,revision,amendment~noun');
@@ -3582,6 +3590,7 @@ a=a.replace(/(新)(?!X)(人)(?!X)/g,'$1X$2X,shin-jin,newcomer,freshman~noun');
 a=a.replace(/(新)(?!X)(地)(?!X)/g,'$1X$2X,shin-chi,reclaimed land~noun');
 a=a.replace(/(新)(?!X)(型)(?!X)/g,'$1X$2X,shin-gata,new type~noun');
 a=a.replace(/(新)(?!X)(婚)(?!X)/g,'$1X$2X,shin-kon,newlywed~noun');
+a=a.replace(/(上)(?!X)(限)(?!X)/g,'$1X$2X,jyou-gen,upper limit~noun');
 a=a.replace(/(新)(?!X)(年)(?!X)/g,'$1X$2X,shin-nen,New Year~noun');
 a=a.replace(/(新)(?!X)(築)(?!X)/g,'$1X$2X,shin-chiku,new building~noun');
 a=a.replace(/(新)(?!X)(聞)(?!X)/g,'$1X$2X,shin-bun,newspaper~noun');
@@ -4272,6 +4281,7 @@ a=a.replace(/(県)(?!X)(警)(?!X)/g,'$1X$2X,ken-kei,prefectural police~noun');
 a=a.replace(/(真)(?!X)(剣)(?!X)/g,'$1X$2X,shin-ken,sincere~noun');
 a=a.replace(/(真)(?!X)(夏)(?!X)/g,'$1X$2X,man-atsu,midsummer~noun');
 a=a.replace(/(真)(?!X)(実)(?!X)/g,'$1X$2X,shin-jitsu,really~noun');
+a=a.replace(/(補)(?!X)(正)(?!X)/g,'$1X$2X,ho-sei,compensation~noun');
 a=a.replace(/(真)(?!X)(心)(?!X)/g,'$1X$2X,magokoro,sincerity,true heart~noun');
 a=a.replace(/(真)(?!X)(珠)(?!X)/g,'$1X$2X,shin-jyu,pearl~noun');
 a=a.replace(/(真)(?!X)(理)(?!X)/g,'$1X$2X,shin-ri,truth~noun');
@@ -5250,6 +5260,7 @@ a=a.replace(/(adjectiveっ)(?!X)(た)(?!X)/g,'$1X$2X,tta,did~informal~adjective'
 a=a.replace(/(adjectiveっ)(?!X)(た)(?!X)/g,'$1X$2X,tta,did~informal~adjective');
 a=a.replace(/(あ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,a,there is~inanimate<br>$2X~ru-verb');
 a=a.replace(/(か)(?!X)(け)(?!X)/g,'$1X$2X,kake,start,hang~ichidan-verb');
+a=a.replace(/(決)(?!X)(め)(?!X)/g,'$1X$2X,kime,decide~ichidan-verb');
 a=a.replace(/(断)(?!X)(じ)(?!X)/g,'$1X$2X,danji,conclude~ichidan-verb');
 a=a.replace(/(が)(?!X)(ぶ)(?!X)(が)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,'$1X$2X$3X,gabuga,(the sound of) guzzling<br>$4X~bu-verb');
 a=a.replace(/(こ)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,ko,this kind of<br>$2X~u-verb');
@@ -6322,7 +6333,7 @@ a=a.replace(/(nounか)(?!X)/g,'$1X,ka,indicates a question~postposition');
 a=a.replace(/(nounだ)(?!X)/g,'$1X,da,is~informal~verb');
 a=a.replace(/(nounと|verbと)(?!X)/g,'$1X,to,together with someone above~postposition');
 a=a.replace(/(nounへ)(?!X)/g,'$1X,e,toward~postposition');
-a=a.replace(/(nounや)(?!X)/g,'$1X,ya,and,comma~postposition');
+a=a.replace(/(verbや|nounや)(?!X)/g,'$1X,ya,and,comma~postposition');
 a=a.replace(/(nounら)(?!X)/g,'$1X,ra,plural~postposition');
 a=a.replace(/(postpositionし|nounし)(?!X)/g,'$1X,shi,do and~suru-verb');
 a=a.replace(/(postpositionの|verbの|nounの)(?!X)/g,'$1X,no,of~postposition');
@@ -6377,17 +6388,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-ロシアがマリウポリ制圧を宣言しました。一方でウクライナ側は否定しています。
-
-ロシア大統領府の発表によりますと、ロシアのショイグ国防相がプーチン大統領に対してマリウポリを制圧したと報告しました。
-
-ウクライナの兵士たちが立てこもっている製鉄所について、ショイグ国防相はまだ2000人以上の兵士が中にいて、作戦が「3～4日で完了する」という見通しを伝えました。
-
-これに対し、プーチン大統領は、マリウポリ制圧の成功を祝福し、製鉄所に対しては攻撃をやめ、「ハエも通れないよう」封鎖するよう命じたということです。
-
-一方、マリウポリの市長顧問は、ウクライナメディアに対して、「プーチン氏はただ破壊された町を背景に勝利を宣言したいだけ、彼らは勝利していない」と制圧を否定しました。
-
-ウクライナメディアは、兵士たちが依然市内で戦っていると伝えています。
+　政府・与党は２１日、原油価格や物価の高騰に対応するための緊急経済対策を巡り、今国会で２０２２年度補正予算案を編成し、成立を目指す方針を決めた。対策には、ガソリン価格を抑えるための補助金の上限引き上げや、低所得世帯の子どもへの１人あたり５万円の支給などを盛り込む。【写真】高騰するガソリン価格自民党の茂木、公明党
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
