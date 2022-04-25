@@ -1137,6 +1137,7 @@ a=a.replace(/(朝)(?!X)(御)(?!X)(飯)(?!X)/g,'$1X$2X$3X,asagohan,breakfast~noun
 a=a.replace(/(木)(?!X)(の)(?!X)(葉)(?!X)/g,'$1X$2X$3X,kon-oha,tree leaves~noun');
 a=a.replace(/(木)(?!X)(曜)(?!X)(日)(?!X)/g,'$1X$2X$3X,moku-youbi,Thursday~noun');
 a=a.replace(/(未)(?!X)(成)(?!X)(年)(?!X)/g,'$1X$2X$3X,mi-sei-nen,underage minor~noun');
+a=a.replace(/(運)(?!X)(転)(?!X)(士)(?!X)/g,'$1X$2X$3X,un-ten-shi,professional driver~noun');
 a=a.replace(/(未)(?!X)(成)(?!X)(年)(?!X)/g,'$1X$2X$3X,misei-nen,minor,underage~noun');
 a=a.replace(/(末)(?!X)(っ)(?!X)(子)(?!X)/g,'$1X$2X$3X,suekko,youngest child~noun');
 a=a.replace(/(本)(?!X)(当)(?!X)(に)(?!X)/g,'$1X$2X$3X,hon-tou ni,really~noun');
@@ -1895,7 +1896,7 @@ a=a.replace(/(詫)(?!X)(び)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,wabi,a
 a=a.replace(/(詰)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,tsuma,be stopped up<br>$3X~ru-verb');
 a=a.replace(/(詰)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,tsume,stuff,fill<br>$3X~ru-verb');
 a=a.replace(/(話)(?!X)(し)(?!X)(合)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X,hanashia,talk,discussion<br>$4X~i-adjective');
-a=a.replace(/(詳)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,kuwa-shi,detailed,complete<br>$3X~i-adjective');
+a=a.replace(/(詳)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,kuwa-shi,complete details<br>$3X~i-adjective');
 a=a.replace(/(認)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,mitome,approve<br>$3X~ru-verb');
 a=a.replace(/(調)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,shirabe,investigate,check<br>$3X~ru-verb');
 a=a.replace(/(論)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,ronji,argue,discuss<br>$3X~ru-verb');
@@ -2247,7 +2248,7 @@ a=a.replace(/(事)(?!X)(変)(?!X)/g,'$1X$2X,ji-hen,incident~noun');
 a=a.replace(/(事)(?!X)(実)(?!X)/g,'$1X$2X,ji-jitsu,fact,truth~noun');
 a=a.replace(/(事)(?!X)(情)(?!X)/g,'$1X$2X,ji-jyou,circumstances,conditions~noun');
 a=a.replace(/(事)(?!X)(態)(?!X)/g,'$1X$2X,ji-tai,situation,state of affairs~noun');
-a=a.replace(/(事)(?!X)(故)(?!X)/g,'$1X$2X,ji-ko,accident,incident~noun');
+a=a.replace(/(事)(?!X)(故)(?!X)/g,'$1X$2X,ji-ko,accident~noun');
 a=a.replace(/(事)(?!X)(柄)(?!X)/g,'$1X$2X,koto-gara,matter,affair~noun');
 a=a.replace(/(事)(?!X)(業)(?!X)/g,'$1X$2X,ji-gyou,business~noun');
 a=a.replace(/(二)(?!X)(人)(?!X)/g,'$1X$2X,futari,two persons~noun');
@@ -2832,6 +2833,7 @@ a=a.replace(/(呼)(?!X)(吸)(?!X)/g,'$1X$2X,ko-kyuu,breathing,respiration~noun')
 a=a.replace(/(命)(?!X)(令)(?!X)/g,'$1X$2X,mei-rei,command,order~noun');
 a=a.replace(/(和)(?!X)(室)(?!X)/g,'$1X$2X,washitsu,Japanese style room~noun');
 a=a.replace(/(和)(?!X)(式)(?!X)/g,'$1X$2X,wa-shiki,Japanese style~noun');
+a=a.replace(/(保)(?!X)(安)(?!X)/g,'$1X$2X,ho-an,security~noun');
 a=a.replace(/(和)(?!X)(服)(?!X)/g,'$1X$2X,wafuku,Japanese clothes,kimono~noun');
 a=a.replace(/(和)(?!X)(英)(?!X)/g,'$1X$2X,waei,Japanese-English~noun');
 a=a.replace(/(和)(?!X)(語)(?!X)/g,'$1X$2X,wago,native Japanese word~noun');
@@ -3576,12 +3578,16 @@ a=a.replace(/(教)(?!X)(室)(?!X)/g,'$1X$2X,kyou-shitsu,classroom,class~noun');
 a=a.replace(/(教)(?!X)(師)(?!X)/g,'$1X$2X,kyou-shi,teacher,instructor~noun');
 a=a.replace(/(教)(?!X)(授)(?!X)/g,'$1X$2X,kyou-jyu,professor~noun');
 a=a.replace(/(教)(?!X)(育)(?!X)/g,'$1X$2X,kyou-iku,education~noun');
+a=a.replace(/(追)(?!X)(悼)(?!X)/g,'$1X$2X,tsui-tou,mourning~noun');
+a=a.replace(/(接)(?!X)(地)(?!X)/g,'$1X$2X,sec-chi,electrical grounding~noun');
+a=a.replace(/(慰)(?!X)(霊)(?!X)/g,'$1X$2X,i-rei,consoling spirits~noun');
+a=a.replace(/(遺)(?!X)(族)(?!X)/g,'$1X$2X,i-zoku,bereaved family~noun');
 a=a.replace(/(教)(?!X)(養)(?!X)/g,'$1X$2X,kyou-you,culture,education~noun');
 a=a.replace(/(散)(?!X)(歩)(?!X)/g,'$1X$2X,san-po,walk,stroll~noun');
 a=a.replace(/(敬)(?!X)(語)(?!X)/g,'$1X$2X,kei-go,hon-orific language,polite speech~noun');
 a=a.replace(/(数)(?!X)(字)(?!X)/g,'$1X$2X,suuji,figure,numeral~noun');
 a=a.replace(/(数)(?!X)(学)(?!X)/g,'$1X$2X,suu-gaku,mathematics~noun');
-a=a.replace(/(整)(?!X)(備)(?!X)/g,'$1X$2X,sei-bi,maintenance,servicing~noun');
+a=a.replace(/(整)(?!X)(備)(?!X)/g,'$1X$2X,sei-bi,maintenance~noun');
 a=a.replace(/(整)(?!X)(列)(?!X)/g,'$1X$2X,sei-retsu,row,line~noun');
 a=a.replace(/(整)(?!X)(理)(?!X)/g,'$1X$2X,sei-ri,disposition,arrangement~noun');
 a=a.replace(/(敷)(?!X)(地)(?!X)/g,'$1X$2X,shiki-chi,grounds~noun');
@@ -4326,6 +4332,7 @@ a=a.replace(/(石)(?!X)(鹸)(?!X)/g,'$1X$2X,sek-ken,soap~noun');
 a=a.replace(/(砂)(?!X)(浜)(?!X)/g,'$1X$2X,sunahama,san-dy beach,san-ds~noun');
 a=a.replace(/(砂)(?!X)(漠)(?!X)/g,'$1X$2X,sabaku,desert~noun');
 a=a.replace(/(砂)(?!X)(糖)(?!X)/g,'$1X$2X,sa-tou,sugar~noun');
+a=a.replace(/(売)(?!X)(却)(?!X)/g,'$1X$2X,bai-kyaku,sale~noun');
 a=a.replace(/(研)(?!X)(究)(?!X)/g,'$1X$2X,ken-kyuu,research~noun');
 a=a.replace(/(砲)(?!X)(弾)(?!X)/g,'$1X$2X,hou-dan,bombshell~noun');
 a=a.replace(/(砲)(?!X)(撃)(?!X)/g,'$1X$2X,hou-geki,shelling~noun');
@@ -4619,7 +4626,7 @@ a=a.replace(/(行)(?!X)(程)(?!X)/g,'$1X$2X,kou-tei,distance,journey~noun');
 a=a.replace(/(行)(?!X)(進)(?!X)/g,'$1X$2X,kou-shin,march,parade~noun');
 a=a.replace(/(衛)(?!X)(星)(?!X)/g,'$1X$2X,ei-sei,satellite,moon~noun');
 a=a.replace(/(衛)(?!X)(生)(?!X)/g,'$1X$2X,ei-sei,hygiene,san-itation~noun');
-a=a.replace(/(衝)(?!X)(突)(?!X)/g,'$1X$2X,syou-totsu,collision,conflict~noun');
+a=a.replace(/(衝)(?!X)(突)(?!X)/g,'$1X$2X,syou-totsu,collision~noun');
 a=a.replace(/(衣)(?!X)(料)(?!X)/g,'$1X$2X,i-ryou,clothing,garments~noun');
 a=a.replace(/(衣)(?!X)(服)(?!X)/g,'$1X$2X,i-fuku,clothes~noun');
 a=a.replace(/(衣)(?!X)(類)(?!X)/g,'$1X$2X,i-rui,clothes,garments~noun');
@@ -4805,6 +4812,7 @@ a=a.replace(/(買)(?!X)(収)(?!X)/g,'$1X$2X,bai-syuu,buying up,bribing~noun');
 a=a.replace(/(貸)(?!X)(金)(?!X)/g,'$1X$2X,kashi-kin,loan advance~noun');
 a=a.replace(/(費)(?!X)(用)(?!X)/g,'$1X$2X,hi-you,expenses~noun');
 a=a.replace(/(貿)(?!X)(易)(?!X)/g,'$1X$2X,boueki,trade,commerce~noun');
+a=a.replace(/(劣)(?!X)(化)(?!X)/g,'$1X$2X,rek-ka,deterioration~noun');
 a=a.replace(/(賃)(?!X)(金)(?!X)/g,'$1X$2X,chi-n-gin,money payment~noun');
 a=a.replace(/(資)(?!X)(料)(?!X)/g,'$1X$2X,shi-ryou,materials,data~noun');
 a=a.replace(/(資)(?!X)(格)(?!X)/g,'$1X$2X,shi-kaku,qualifications,competence~noun');
@@ -5207,7 +5215,8 @@ a=a.replace(/(せ)(?!X)(い|く|か|さ)(?!X)/g,'$1X,se,cause,fault<br>$2X~i-adj
 a=a.replace(/(せ)(?!X)(ず)(?!X)/g,'$1X$2X,sezu,without doing~verb');
 a=a.replace(/(そ)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,so,in such a way<br>$2X~u-verb');
 a=a.replace(/(だ)(?!X)(ぶ)(?!X)(だ)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,'$1X$2X$3X,dabuda,baggy,too big<br>42X~bu-verb');
-a=a.replace(/(で)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,to be, is<br>$2X~su-verb');
+a=a.replace(/(で)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,de,to be, is<br>$2X~su-verb');
+a=a.replace(/(残)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,noko,remain<br>$2X~su-verb');
 a=a.replace(/(ど)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,do,move out of the way<br>$2X~ku-verb');
 a=a.replace(/(ど)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,how,what<br>$2X~u-verb');
 a=a.replace(/(な)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,na,become<br>$2X~ru-verb');
@@ -6270,7 +6279,7 @@ a=a.replace(/(陸)(?!X)/g,'$1X,oka,shore~noun');
 a=a.replace(/(陸)(?!X)/g,'$1X,ruku,shore~noun');
 a=a.replace(/(隅)(?!X)/g,'$1X,sumi,nook,corner~noun');
 a=a.replace(/(際)(?!X)/g,'$1X,sai-,occasion,time~noun');
-a=a.replace(/(隣)(?!X)/g,'$1X,tonari,neighboring house,next seat~noun');
+a=a.replace(/(隣)(?!X)/g,'$1X,tonari,next to~noun');
 a=a.replace(/(雀)(?!X)/g,'$1X,suzume,sparrow~noun');
 a=a.replace(/(雄)(?!X)/g,'$1X,osu,male~noun');
 a=a.replace(/(雌)(?!X)/g,'$1X,mesu,female~noun');
@@ -6370,7 +6379,7 @@ a=a.replace(/(verbだ)(?!X)/g,'$1X,da,did~informal~verb');
 a=a.replace(/(verbて)(?!X)/g,'$1X,te,do and~verb');
 a=a.replace(/(verbで)(?!X)(い)(?!X)(た)(?!X)/g,'$1X$2X$3X,deita,was doing~informal~verb');
 a=a.replace(/(verbで|nounで)(?!X)/g,'$1X,de,with,at~postposition');
-a=a.replace(/(verbと|nounと)(?!X)/g,'$1X,to,together with~postposition');
+a=a.replace(/(nounと)(?!X)/g,'$1X,to,together with~postposition');
 a=a.replace(/(verbな)(?!X)(い)(?!X)/g,'$1X$2X,nai,not do~informal~verb');
 a=a.replace(/(verbに|nounに)(?!X)/g,'$1X,ni,at,in,on~postposition');
 a=a.replace(/(verbね)(?!X)/g,'$1X,ne,isn\'t it\?~informal~verb');
@@ -6389,6 +6398,8 @@ a=a.replace(/(さX~i-adjective)/g,'$1,sa~gerund form~noun');
 
 a=a.replace(/(postpositionし|nounし)(?!X)(た)(?!X)/g,'$1X$2X,shita,did~informal~suru-verb');
 a=a.replace(/(postpositionす|nounす)(?!X)(る)(?!X)/g,'$1X$2X,suru,do~informal~suru-verb');
+
+a=a.replace(/(verbと)(?!X)/g,'$1X,to,what the narrator is doing~postposition');
 
 }
 function translateC()
@@ -6412,17 +6423,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-（ＣＮＮ）　ロシア軍幹部がウクライナ侵攻の目標は同国南部の支配とモルドバへのアクセスの確保にあると発言したことを受け、モルドバ外務・欧州統合省は２２日、ロシア大使を呼び出して懸念を伝えた。
-
-モルドバ外務省は声明で「ロシア国防省の代表者の発言に留意した」と述べ、「深い懸念」を表明したことを明らかにした。
-
-ロシア国営メディアはこれに先立ち同日、ウクライナ侵攻の第２段階におけるロシア軍の目標はウクライナ南部の「完全支配」にあると報じていた。
-
-国営タス通信によると、ロシア軍中央軍管区のミンネカエフ司令官代行（少将）は、目標はウクライナ東部ドンバス地方とクリミア半島を結ぶ陸上回廊の構築にあると説明。ウクライナ南部を支配すれば、ロシア軍はモルドバにある分離派支配地域トランスニストリア（沿ドニエストル）へアクセスできるようになると付言した。トランスニストリアには１９９０年代初頭からロシア軍が駐留する。
-
-これに対しモルドバ外務省は、ロシア軍将官の発言には根拠が示されておらず、モルドバの主権と領土的一体性を支持するロシア連邦の立場と矛盾すると指摘した。
-
-モルドバの当局者はロシア大使と面会中、モルドバは中立国家であり、この原則はロシア連邦を含むすべての国際的アクターによって尊重される必要があると改めて表明したという。
+米ツイッターはイーロン・マスク氏への同社の売却について協議しており、今週中にもまとまる可能性がある。事情に詳しい関係者が明らかにした。マスク氏がツイッターに対する430億ドル（約5兆5300億円）での買収提案を明らかにしてからわずか10日後に劇的な展開を見せた。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
