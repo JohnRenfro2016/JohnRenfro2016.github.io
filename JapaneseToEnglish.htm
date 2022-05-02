@@ -94,6 +94,7 @@ a=a.replace(/(ば)(?!X)(か)(?!X)(ば)(?!X)(か)(?!X)(し)(?!X)(い|く|か|さ)
 a=a.replace(/(ぱ)(?!X)(い)(?!X)(な)(?!X)(っ)(?!X)(ぷ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X$5X,painap-pu,pineapple<br>$6X~ru-verb');
 a=a.replace(/(び)(?!X)(っ)(?!X)(く)(?!X)(り)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X$5X,bikkurisu,surprised<br>$6X~ru-verb');
 
+a=a.replace(/(の)(?!X)(み)(?!X)(な)(?!X)(ら)(?!X)(ず)(?!X)/g,'$1X$2X$3X$4X$5X,nominarazu,as well as~noun');
 a=a.replace(/(あ)(?!X)(ら)(?!X)(か)(?!X)(じ)(?!X)(め)(?!X)/g,'$1X$2X$3X$4X$5X,arakajime,in advance~noun');
 a=a.replace(/(い)(?!X)(つ)(?!X)(の)(?!X)(ま)(?!X)(に)(?!X)/g,'$1X$2X$3X$4X$5X,iつのまni,when~noun');
 a=a.replace(/(い)(?!X)(つ)(?!X)(ま)(?!X)(で)(?!X)(も)(?!X)/g,'$1X$2X$3X$4X$5X,iつまでmo,forever~noun');
@@ -592,13 +593,13 @@ a=a.replace(/(払)(?!X)(い)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X
 a=a.replace(/(押)(?!X)(さ)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X,osae,hold down<br>$4X~ru-verb');
 a=a.replace(/(持)(?!X)(ち)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X,mochiko,bring in,carry on<br>$4X~mu-verb');
 a=a.replace(/(振)(?!X)(り)(?!X)(向)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3X,furimu,turn around,look back<br>$4X~ku-verb');
-a=a.replace(/(振)(?!X)(り)(?!X)(返)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X,turn around<br>$4X~ru-verb');
+a=a.replace(/(振)(?!X)(り)(?!X)(返)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X,kurikae,turn around<br>$4X~ru-verb');
 a=a.replace(/(捕)(?!X)(ま)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X,tsukamae,arrest,capture<br>$4X~ru-verb');
 a=a.replace(/(掻)(?!X)(き)(?!X)(回)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X,kakimawa,stir up,agitate<br>$4X~su-verb');
 a=a.replace(/(散)(?!X)(ら)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X,chi-raka,scatter,disarrange<br>$4X~su-verb');
 a=a.replace(/(散)(?!X)(ら)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X,chi-raka,lie scattered about,be in disorder<br>$4X~ru-verb');
 a=a.replace(/(散)(?!X)(ら)(?!X)(ば)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X,chi-raba,be scattered<br>$4X~ru-verb');
-a=a.replace(/(暑)(?!X)(中)(?!X)(見)(?!X)(舞)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X$4X,syochiゅumima,summer greeting<br>$5X~i-adjective');
+a=a.replace(/(暑)(?!X)(中)(?!X)(見)(?!X)(舞)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X$4X,syocyuumima,summer greeting<br>$5X~i-adjective');
 a=a.replace(/(書)(?!X)(き)(?!X)(取)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X,kakito,write down,note down<br>$4X~ru-verb');
 a=a.replace(/(書)(?!X)(き)(?!X)(直)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X,kakinao,rewrite<br>$4X~su-verb');
 a=a.replace(/(書)(?!X)(き)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X,kaki-ko,fill in a field<br>$4X~mu-verb');
@@ -1396,7 +1397,7 @@ a=a.replace(/(高)(?!X)(気)(?!X)(圧)(?!X)/g,'$1X$2X$3X,kou-ki-atsu,high pressu
 a=a.replace(/(髪)(?!X)(の)(?!X)(毛)(?!X)/g,'$1X$2X$3X,kami-noke,hair~noun');
 a=a.replace(/(鮮)(?!X)(や)(?!X)(か)(?!X)/g,'$1X$2X$3X,azayaka,vivid~noun');
 a=a.replace(/(１)(?!X)(６)(?!X)(日)(?!X)/g,'$1X$2X$3X,jyuu-roku-nichi,the sixteenth day of the month~noun');
-a=a.replace(/(１|1)(?!X)(0)(?!X)(日)(?!X)/g,'$1X$2X$3X,too-ka,the tenth day of the month ~noun')
+a=a.replace(/(１|1)(?!X)(０|0)(?!X)(日)(?!X)/g,'$1X$2X$3X,too-ka,the tenth day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(1)(?!X)(日)(?!X)/g,'$1X$2X$3X,jyuu-ichinichi,the eleventh	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(2)(?!X)(日)(?!X)/g,'$1X$2X$3X,jyuu-ni-nichi,the twelfth day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(4)(?!X)(日)(?!X)/g,'$1X$2X$3X,jyuu-yok-ka,the fourteenth,day of the month ~noun')
@@ -1750,7 +1751,7 @@ a=a.replace(/(欲)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,ho-shi,want,de
 a=a.replace(/(止)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,toma,come to a stop,cease<br>$3X~ru-verb');
 a=a.replace(/(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,tome,stop,turn off<br>$3X~ru-verb');
 a=a.replace(/(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,yame,stop,give up,abolish<br>$3X~ru-verb');
-a=a.replace(/(正)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,tada-shi,correct,righteous,lawful<br>$3X~i-adjective');
+a=a.replace(/(正)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,tada-shi,correct<br>$3X~i-adjective');
 a=a.replace(/(比)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,kurabe,compare,contrast<br>$3X~ru-verb');
 a=a.replace(/(気)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X,kizu,notice,become aware of<br>$3X~ku-verb');
 a=a.replace(/(求)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,motome,wish for<br>$3X~ru-verb');
@@ -3042,6 +3043,7 @@ a=a.replace(/(大)(?!X)(小)(?!X)/g,'$1X$2X,dai-syou,size~noun');
 a=a.replace(/(大)(?!X)(層)(?!X)/g,'$1X$2X,tai-sou,very,highly~noun');
 a=a.replace(/(大)(?!X)(工)(?!X)/g,'$1X$2X,dai-ku,carpenter~noun');
 a=a.replace(/(大)(?!X)(幅)(?!X)/g,'$1X$2X,oo-haba,drastically~noun');
+a=a.replace(/(行)(?!X)(使)(?!X)/g,'$1X$2X,kou-shi,use~noun');
 a=a.replace(/(大)(?!X)(戦)(?!X)/g,'$1X$2X,tai-sen,world war~noun');
 a=a.replace(/(大)(?!X)(手)(?!X)/g,'$1X$2X,oo-te,major company~noun');
 a=a.replace(/(大)(?!X)(抵)(?!X)/g,'$1X$2X,tai-tei,generally,mostly~noun');
@@ -3154,7 +3156,7 @@ a=a.replace(/(宛)(?!X)(先)(?!X)/g,'$1X$2X,atesaki,recipient,addressee~noun');
 a=a.replace(/(宛)(?!X)(名)(?!X)/g,'$1X$2X,atena,name of recipient,addressee~noun');
 a=a.replace(/(宝)(?!X)(石)(?!X)/g,'$1X$2X,hou-seki,gem,jewel~noun');
 a=a.replace(/(実)(?!X)(に)(?!X)/g,'$1X$2X,jitsuni,truly,surely~noun');
-a=a.replace(/(実)(?!X)(は)(?!X)/g,'$1X$2X,jitsuha,actually~noun');
+a=a.replace(/(実)(?!X)(は)(?!X)/g,'$1X$2X,jitsu wa,actually~noun');
 a=a.replace(/(実)(?!X)(例)(?!X)/g,'$1X$2X,jitsu-rei,example,instance~noun');
 a=a.replace(/(実)(?!X)(力)(?!X)/g,'$1X$2X,jitsu-ryoku,efficiency~noun');
 a=a.replace(/(実)(?!X)(感)(?!X)/g,'$1X$2X,jik-kan,true sense,realization~noun');
@@ -3214,6 +3216,7 @@ a=a.replace(/(尊)(?!X)(敬)(?!X)/g,'$1X$2X,son-kei,respect,esteem,hon-or~noun')
 a=a.replace(/(尊)(?!X)(重)(?!X)/g,'$1X$2X,son-cyou,deep respect~noun');
 a=a.replace(/(導)(?!X)(入)(?!X)/g,'$1X$2X,dou-nyuu,introduction~noun');
 a=a.replace(/(小)(?!X)(便)(?!X)/g,'$1X$2X,syou-ben,urine,pee~noun');
+a=a.replace(/(ど)(?!X)(の)(?!X)/g,'$1X$2X,dono,in what way~noun');
 a=a.replace(/(小)(?!X)(包)(?!X)/g,'$1X$2X,kodutsumi,parcel,package~noun');
 a=a.replace(/(小)(?!X)(型)(?!X)/g,'$1X$2X,ko-gata,small-sized~noun');
 a=a.replace(/(小)(?!X)(川)(?!X)/g,'$1X$2X,ogawa,brook,stream~noun');
@@ -3607,7 +3610,7 @@ a=a.replace(/(放)(?!X)(置)(?!X)/g,'$1X$2X,hou-chi,left~noun');
 a=a.replace(/(放)(?!X)(送)(?!X)/g,'$1X$2X,hou-sou,broadcast~noun');
 a=a.replace(/(政)(?!X)(党)(?!X)/g,'$1X$2X,sei-tou,political party~noun');
 a=a.replace(/(政)(?!X)(府)(?!X)/g,'$1X$2X,sei-fu,government~noun');
-a=a.replace(/(政)(?!X)(権)(?!X)/g,'$1X$2X,sei-ken,political power~noun');
+a=a.replace(/(政)(?!X)(権)(?!X)/g,'$1X$2X,sei-ken,government administration~noun');
 a=a.replace(/(政)(?!X)(治)(?!X)/g,'$1X$2X,sei-ji,politics~noun');
 a=a.replace(/(政)(?!X)(策)(?!X)/g,'$1X$2X,sei-saku,policy~noun');
 a=a.replace(/(故)(?!X)(郷)(?!X)/g,'$1X$2X,ko-kyou,hometown,birthplace~noun');
@@ -3622,7 +3625,11 @@ a=a.replace(/(教)(?!X)(会)(?!X)/g,'$1X$2X,kyou-kai,church~noun');
 a=a.replace(/(教)(?!X)(員)(?!X)/g,'$1X$2X,kyou-in,teacher,teaching staff~noun');
 a=a.replace(/(教)(?!X)(室)(?!X)/g,'$1X$2X,kyou-shitsu,classroom,class~noun');
 a=a.replace(/(教)(?!X)(師)(?!X)/g,'$1X$2X,kyou-shi,teacher,instructor~noun');
+a=a.replace(/(想)(?!X)(定)(?!X)/g,'$1X$2X,sou-tei,hypothesis~noun');
 a=a.replace(/(教)(?!X)(授)(?!X)/g,'$1X$2X,kyou-jyu,professor~noun');
+a=a.replace(/(机)(?!X)(上)(?!X)/g,'$1X$2X,ki-jyou,on the desk~noun');
+a=a.replace(/(末)(?!X)(期)(?!X)/g,'$1X$2X,mak-ki,end stage~noun');
+a=a.replace(/(演)(?!X)(習)(?!X)/g,'$1X$2X,en-syuu,drill~noun');
 a=a.replace(/(教)(?!X)(育)(?!X)/g,'$1X$2X,kyou-iku,education~noun');
 a=a.replace(/(教)(?!X)(養)(?!X)/g,'$1X$2X,kyou-you,culture,education~noun');
 a=a.replace(/(散)(?!X)(歩)(?!X)/g,'$1X$2X,san-po,walk,stroll~noun');
@@ -3744,6 +3751,7 @@ a=a.replace(/(暑)(?!X)(さ)(?!X)/g,'$1X$2X,atsusa,heat,summer heat~noun');
 a=a.replace(/(暖)(?!X)(か)(?!X)/g,'$1X$2X,atataka,warm,warmhearted~noun');
 a=a.replace(/(暖)(?!X)(房)(?!X)/g,'$1X$2X,dan-bou,heating~noun');
 a=a.replace(/(暗)(?!X)(記)(?!X)/g,'$1X$2X,anki,memorization~noun');
+a=a.replace(/(渡)(?!X)(航)(?!X)/g,'$1X$2X,to-kou,voyage~noun');
 a=a.replace(/(暫)(?!X)(定)(?!X)/g,'$1X$2X,zan-tei,temporary~noun');
 a=a.replace(/(暮)(?!X)(れ)(?!X)/g,'$1X$2X,kure,dusk,the end (of a season or a year)~noun');
 a=a.replace(/(暴)(?!X)(力)(?!X)/g,'$1X$2X,bou-ryoku,violence,force~noun');
@@ -4774,14 +4782,15 @@ a=a.replace(/(計)(?!X)(画)(?!X)/g,'$1X$2X,kei-kaku,plan~noun');
 a=a.replace(/(計)(?!X)(算)(?!X)/g,'$1X$2X,kei-san,calculation~noun');
 a=a.replace(/(討)(?!X)(論)(?!X)/g,'$1X$2X,tou-ron,debate~noun');
 a=a.replace(/(訓)(?!X)(練)(?!X)/g,'$1X$2X,kun-ren,training,drill~noun');
-a=a.replace(/(記)(?!X)(事)(?!X)/g,'$1X$2X,kiji,article~noun');
-a=a.replace(/(記)(?!X)(入)(?!X)/g,'$1X$2X,kinyuu,entry,record~noun');
+a=a.replace(/(記)(?!X)(事)(?!X)/g,'$1X$2X,ki-ji,article~noun');
+a=a.replace(/(記)(?!X)(入)(?!X)/g,'$1X$2X,ki-nyuu,entry,record~noun');
 a=a.replace(/(記)(?!X)(号)(?!X)/g,'$1X$2X,ki-gou,symbol,mark~noun');
-a=a.replace(/(記)(?!X)(念)(?!X)/g,'$1X$2X,kin-en,commemoration,memory~noun');
-a=a.replace(/(記)(?!X)(憶)(?!X)/g,'$1X$2X,kioku,memory,recollection~noun');
+a=a.replace(/(記)(?!X)(念)(?!X)/g,'$1X$2X,ki-nen,commemoration,memory~noun');
+a=a.replace(/(記)(?!X)(憶)(?!X)/g,'$1X$2X,ki-oku,memory,recollection~noun');
 a=a.replace(/(記)(?!X)(者)(?!X)/g,'$1X$2X,ki-sya,reporter~noun');
 a=a.replace(/(記)(?!X)(述)(?!X)/g,'$1X$2X,ki-jyutsu,description~noun');
-a=a.replace(/(記)(?!X)(録)(?!X)/g,'$1X$2X,ki-roku,record,~noun');
+a=a.replace(/(記)(?!X)(録)(?!X)/g,'$1X$2X,ki-roku,record~noun');
+a=a.replace(/(反)(?!X)(撃)(?!X)/g,'$1X$2X,han-geki,counterattack~noun');
 a=a.replace(/(訪)(?!X)(問)(?!X)/g,'$1X$2X,hou-mon,visit~noun');
 a=a.replace(/(設)(?!X)(備)(?!X)/g,'$1X$2X,setsu-bi,equipment,facilities~noun');
 a=a.replace(/(設)(?!X)(定)(?!X)/g,'$1X$2X,set-tei,set~noun');
@@ -5889,7 +5898,7 @@ a=a.replace(/(元)(?!X)/g,'$1X,moto,former,origin~noun');
 a=a.replace(/(兄)(?!X)/g,'$1X,ani,older brother~noun');
 a=a.replace(/(先)(?!X)/g,'$1X,saki,ahead,first~noun');
 a=a.replace(/(光)(?!X)/g,'$1X,hikari,light,flash~noun');
-a=a.replace(/(党)(?!X)/g,'$1X,tou,political party~noun');
+a=a.replace(/(党)(?!X)/g,'$1X,+tou,political party~noun');
 a=a.replace(/(全)(?!X)/g,'$1X,zen+,all~noun');
 a=a.replace(/(８|8|八)(?!X)/g,'$1X,hachi,eight~noun');
 a=a.replace(/(６|6|六)(?!X)/g,'$1X,roku,six~noun');
@@ -6076,8 +6085,7 @@ a=a.replace(/(服)(?!X)/g,'$1X,fuku+,clothes~noun');
 a=a.replace(/(朝)(?!X)/g,'$1X,asa,morning~noun');
 a=a.replace(/(期)(?!X)/g,'$1X,ki,time period~noun');
 a=a.replace(/(木)(?!X)/g,'$1X,ki,tree,wood~noun');
-a=a.replace(/(末)(?!X)/g,'$1X,matsu,last part,end~noun');
-a=a.replace(/(末)(?!X)/g,'$1X,sue,(after) the end~noun');
+a=a.replace(/(末)(?!X)/g,'$1X,matsu+,last part~noun');
 a=a.replace(/(本)(?!X)/g,'$1X,hon+,book~noun');
 a=a.replace(/(札)(?!X)/g,'$1X,fuda,sign,billboard~noun');
 a=a.replace(/(札)(?!X)/g,'$1X,satsu+,bill,paper money~noun');
@@ -6513,19 +6521,27 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-東南アジアとヨーロッパ5カ国を歴訪中の岸田首相は、1日夜、アジア最後の訪問国タイに到着した。
+ロシアのウクライナ侵攻後、ロシアが通常兵器のみならず、核戦力を使用することに対する懸念が高まっている。ロシアが万が一にも核戦力を行使した場合、米国はどのような対応を取るのか。実は米国はバイデン大統領と同じ民主党のオバマ政権の末期、ロシアの核使用を想定した机上作戦演習を行い、具体的な報復の対象を選んでいた。
 
-2日に行われる首脳会談の見通しについて、同行しているフジテレビ政治部・門脇功樹記者がお伝えする。
+【写真】ロシア去る判断「正しかった」　国後島から泳ぎ渡航の男性
 
-タイは、ロシアもメンバーのAPEC（アジア太平洋経済協力会議）の議長国で、今後予定される国際会議のリーダーから、ロシアへの圧力強化に向けた協力を引き出せるかが焦点。
+ラブロフ外相＝３月１０日（ゲッティ＝共同）
 
-1日に行われたベトナムとの首脳会談で、伝統的にロシアとの関係の深いベトナムが、ウクライナへの人道支援を初めて表明したことについて、岸田首相は「前向きな一歩だ」と手応えを語った。
+　ラトビアの首都リガに拠点を置き、ロシアに関する独自の報道を続けている独立系ニュースサイト「ザ・インサイダー」はこのほど、米国の著名ジャーナリストの調査報道を引用する形で、米国の報復シナリオに関する特集記事を掲載した。同盟国への核攻撃に核で反撃しない選択肢も示されるなど、ロシア侵攻後、日本でも始まった「核の傘」による安全保障を巡る議論にも一石を投じるものとなっている。（共同通信＝太田清）
 
-岸田首相は「さまざまな理由から、G7と同じ対応をしていない国が相当数存在する。このような国から、できるだけ理解と協力を得るよう努めることが重要」と強調。
+　▽現実的な脅威
 
-G20議長国で、ロシアのプーチン大統領のサミット出席を容認しているインドネシアや、ベトナムともウクライナでの「即時停戦」を求めることを確認するなど、一致点を導き出してきた。
+　ここで、核に関して、米国と並ぶ核大国のリーダーたるロシアのプーチン大統領がどのような発言を行ってきたかを振り返ってみたい。ロシアが「特別軍事作戦」と呼ぶウクライナ侵攻を開始した２月２４日の演説で、プーチン氏は「誰であれ外部からわれわれに介入しようとする者、ましてや脅威を与えようとする者は知っておくべきだ。その結果は、今まで歴史上、見たことのないようなものとなる」と、北大西洋条約機構（ＮＡＴＯ）が侵攻に介入すれば核兵器を使用する可能性を示唆。また、２７日には、ショイグ国防相に対し「ＮＡＴＯ加盟国から攻撃的な発言が行われている」と述べ、核抑止力部隊を高い警戒態勢に置くよう命じ、米国などをけん制した。
 
-岸田首相は、タイのプラユット首相との会談でもG7が足並みをそろえる「ロシア包囲網」への理解を促し、温度差を埋めることができるかが焦点。
+プーチン大統領＝４月２４日（ゲッティ＝共同）
+
+　これに対し、米中央情報局（ＣＩＡ）のバーンズ長官はロシアの戦術核使用の可能性を「軽視できない」と言及。一方、ブルームバーグ通信によると、米国防総省傘下の国防情報局（ＤＩＡ）のベリア局長は、ウクライナ軍の抵抗で侵攻が長引き通常兵器が不足する事態に陥れば、ロシアは核抑止力への依存を強める可能性が高いとする報告書をまとめた。
+
+　こうした発言は、米国でロシアによるウクライナでの戦術核使用が、あり得ない話ではなく、現実味をもって受け止められていることを示している。
+
+　また、ロシアのラブロフ外相は４月２５日、「核戦争を起こさないことがロシアの基本的な立場だ」としながら、現在はロシア米国間の対話のチャンネルが存在しないと指摘し、第３次大戦が起きる可能性は「十分にあり、過小評価すべきではない」と強調した。
+
+　プーチン大統領は２７日にも、第三国がロシアに戦略的脅威を与えようとした場合は「電撃的で素早い対抗措置を取る」と述べて核兵器使用を辞さない姿勢を示した。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
