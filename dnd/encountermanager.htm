@@ -1315,7 +1315,7 @@ characters[targeted].setMaxHp(rip[7]);
 characters[targeted].setCurHp(rip[7]);
 characters[targeted].setHitDice(rip[8])}
 if(rip=stats.match(/^(.*)$/m)){characters[targeted].setName(rip[1])}
-if(size=stats.match(/(Tiny|Small|Medium|Large|Huge|Gargantuan)/)){characters[targeted].setSize(size[1])}
+if(size=stats.match(/(Tiny|Small|Medium|Large|Huge|Gargantuan)/i)){characters[targeted].setSize(size[1])}
 if(race=stats.match(/(aberration|beast|construct|dragon|elemental|fey|fiend|giant|humanoid|monstrosity|plant|undead|human)/i)){characters[targeted].setRace(race[1])}
 if(alignment=stats.match(/(neutral)/)){characters[targeted].setAlignment(alignment[1])}
 if(alignment=stats.match(/(lawful good|lawful neutral|lawful evil|chaotic good|chaotic neutral|chaotic evil|neutral evil|unaligned)/i)){characters[targeted].setAlignment(alignment[1])}
@@ -1967,8 +1967,14 @@ if(rip=stats.match(/Will\s([\s\S].+)/))
 if(rip=stats.match(/HP\s([\s\S].+?);/))
 {characters[targeted].setMaxHp(rip[1])};
 
+if(rip=stats.match(/Weaknesses\s([\s\S].+)/))
+{characters[targeted].setVulnerability(rip[1])};
+
 if(rip=stats.match(/Resistances\s([\s\S].+)/))
 {characters[targeted].setResistance(rip[1])};
+
+if(rip=stats.match(/Immunities\s([\s\S].+)/))
+{characters[targeted].setImmunity(rip[1])};
 
 if(rip=stats.match(/(?:Speed|Stride)([\s\S].+)/))
 {characters[targeted].setSpeed(rip[1])};
@@ -2111,7 +2117,7 @@ characters[targeted].setRoll2(rip[4].replace(/\s/g,''));
 addRollPrompt(targeted);
 }
 
-if(rip=stats.match(/(Ranged\s[\s\S].+?)(\+\d{1,2})([\s\S].+)Damage\s(\d{1,2}d\d{1,2}\+\d{1,2}|\d{1,2}d\d{1,2})([\s\S].+)/))
+if(rip=stats.match(/(Ranged\s[\s\S].+?)(\+\d{1,2})([\s\S]+)Damage\s([\s\S]+)(piercing)/))
 {
 characters[targeted].setRollName1(rip[1]+" "+rip[3]);
 characters[targeted].setRoll1('1d20'+rip[2]);
