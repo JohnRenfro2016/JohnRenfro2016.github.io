@@ -3199,7 +3199,7 @@ a=a.replace(/(定)(?!X)(食)(?!X)/g,'$1X$2X,tei-syoku,day\'s special,set menu~no
 a=a.replace(/(宛)(?!X)(先)(?!X)/g,'$1X$2X,atesaki,recipient,addressee~noun');
 a=a.replace(/(宛)(?!X)(名)(?!X)/g,'$1X$2X,atena,name of recipient,addressee~noun');
 a=a.replace(/(宝)(?!X)(石)(?!X)/g,'$1X$2X,hou-seki,gem,jewel~noun');
-a=a.replace(/(実)(?!X)(に)(?!X)/g,'$1X$2X,jitsuni,truly,surely~noun');
+a=a.replace(/(実)(?!X)(に)(?!X)/g,'$1X$2X,jitsu ni,truly~noun');
 a=a.replace(/(実)(?!X)(は)(?!X)/g,'$1X$2X,jitsu wa,actually~noun');
 a=a.replace(/(実)(?!X)(例)(?!X)/g,'$1X$2X,jitsu-rei,example,instance~noun');
 a=a.replace(/(実)(?!X)(力)(?!X)/g,'$1X$2X,jitsu-ryoku,efficiency~noun');
@@ -3829,7 +3829,9 @@ a=a.replace(/(暴)(?!X)(落)(?!X)/g,'$1X$2X,bouraku,slump,crash~noun');
 a=a.replace(/(暴)(?!X)(風)(?!X)/g,'$1X$2X,bou-fuu,windstorm,gale~noun');
 a=a.replace(/(曇)(?!X)(り)(?!X)/g,'$1X$2X,kumori,cloudiness~noun');
 a=a.replace(/(曖)(?!X)(昧)(?!X)/g,'$1X$2X,ai-mai,ambiguous,vague~noun');
+a=a.replace(/(復)(?!X)(帰)(?!X)/g,'$1X$2X,fuk-ki,reinstatement~noun');
 a=a.replace(/(曜)(?!X)(日)(?!X)/g,'$1X$2X,-you-bi,day of the week~noun');
+a=a.replace(/(共)(?!X)(催)(?!X)/g,'$1X$2X,kyou-sai,cosponsorship~noun');
 a=a.replace(/(曲)(?!X)(線)(?!X)/g,'$1X$2X,kyoku-sen,curve,curved line~noun');
 a=a.replace(/(更)(?!X)(に)(?!X)/g,'$1X$2X,sarani,furthermore,still more~noun');
 a=a.replace(/(更)(?!X)(新)(?!X)/g,'$1X$2X,kou-shin,update~noun');
@@ -5265,6 +5267,7 @@ a=a.replace(/(降)(?!X)(伏)(?!X)/g,'$1X$2X,kou-fuku,surrender~noun');
 a=a.replace(/(限)(?!X)(り)(?!X)/g,'$1X$2X,kagiri,to the limit~noun');
 a=a.replace(/(限)(?!X)(定)(?!X)/g,'$1X$2X,gen-tei,limited~noun');
 a=a.replace(/(限)(?!X)(度)(?!X)/g,'$1X$2X,gen-do,bounds~noun');
+a=a.replace(/(軽)(?!X)(減)(?!X)/g,'$1X$2X,kei-gen,alleviation~noun');
 a=a.replace(/(限)(?!X)(界)(?!X)/g,'$1X$2X,gen-kai,boundary,limit~noun');
 a=a.replace(/(陥)(?!X)(落)(?!X)/g,'$1X$2X,kan-raku,collapse~noun');
 a=a.replace(/(陰)(?!X)(性)(?!X)/g,'$1X$2X,in-sei,negative result~noun');
@@ -5276,7 +5279,7 @@ a=a.replace(/(随)(?!X)(分)(?!X)/g,'$1X$2X,zui-bun,extremely,considerably~noun'
 a=a.replace(/(障)(?!X)(子)(?!X)/g,'$1X$2X,syou-ji,paper sliding-door~noun');
 a=a.replace(/(障)(?!X)(害)(?!X)/g,'$1X$2X,syou-gai,obstacle,disorder~noun');
 a=a.replace(/(雄)(?!X)(大)(?!X)/g,'$1X$2X,yuu-dai,grand,magnificent~noun');
-a=a.replace(/(集)(?!X)(中)(?!X)/g,'$1X$2Xsyuu-cyuu,concentration,convergence~noun');
+a=a.replace(/(集)(?!X)(中)(?!X)/g,'$1X$2Xsyuu-cyuu,concentration~noun');
 a=a.replace(/(集)(?!X)(会)(?!X)/g,'$1X$2X,syuu-kai,gathering~noun');
 a=a.replace(/(集)(?!X)(合)(?!X)/g,'$1X$2Xsyuu-gou,gathering,assembly~noun');
 a=a.replace(/(集)(?!X)(団)(?!X)/g,'$1X$2Xsyuu-dan,group,mass~noun');
@@ -5786,7 +5789,7 @@ a=a.replace(/(祝)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,iwa,celebrate,congr
 a=a.replace(/(移)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,ut,shift<br>$2X~su-verb');
 a=a.replace(/(移)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,utsu,move,shift<br>$2X~ru-verb');
 a=a.replace(/(稼)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,'$1X,kase,earn,make money<br>$2X~gu-verb');
-a=a.replace(/(積)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,tsu,pile up,accumulate<br>$2X~mu-verb');
+a=a.replace(/(積)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,tsu,accumulate<br>$2X~mu-verb');
 a=a.replace(/(空)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,a,become available or vacant<br>$2X~ku-verb');
 a=a.replace(/(空)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,su,be empty<br>$2X~ku-verb');
 a=a.replace(/(突)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,tsu,thrust,poke<br>$2X~ku-verb');
@@ -6650,10 +6653,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-ロシア軍の侵攻が続くウクライナでは12日、北部チェルニヒウ州で学校への攻撃があった。ウクライナのゼレンスキー大統領は「学校を攻撃して何が得られるというのか」とロシア軍を非難した。
-【写真】製鉄所でわずか3日間の結婚生活　夫へ「私はまだ地獄」
-チェルニヒウ州当局のフェイスブックへの投稿によると、12日に学校2校や学生寮に複数回のロケット攻撃があった。行政庁舎や住宅も被害を受け、少なくとも3人が死亡、12人がけがをしたという。
-ウクライナではこれまでも学校への攻撃が起きている。7日には東部ルハンスク州で学校が空爆され、地下に避難していた住民約60人が取り残された。10日にも同州にある寄宿学校が砲撃を受けた。
+　沖縄は15日、1972年の日本復帰から50年を迎えた。沖縄県と政府が共催した記念式典で、沖縄県の玉城デニー知事は復帰当時に国と県が共有した「沖縄を平和の島とする」目標がなお達成されていないと述べ、全国の米軍専用施設の70％が集中する基地負担の軽減を日米両政府に求めた。岸田文雄首相は「目に見える成果を着実に積み上げる」として負担軽減に取り組む姿勢を示した。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
