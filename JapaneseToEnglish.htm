@@ -553,7 +553,7 @@ a=a.replace(/(思)(?!X)(い)(?!X)(や)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X
 a=a.replace(/(思)(?!X)(い)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3X,omoitsu,think of,hit upon<br>$4X~ku-verb');
 a=a.replace(/(思)(?!X)(い)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X,omoida,recollect,recall<br>$4X~su-verb');
 a=a.replace(/(思)(?!X)(い)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X,omoiko,assume,believe<br>$4X~mu-verb');
-a=a.replace(/(恥)(?!X)(ず)(?!X)(か)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X$4X,hazuka-shi,shy,ashamed,disgraceful<br>$5X~i-adjective');
+a=a.replace(/(恥)(?!X)(ず)(?!X)(か)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X$4X,hazuka-shi,embarrassing<br>$5X~i-adjective');
 a=a.replace(/(恵)(?!X)(ま)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X,megumare,be blessed,be privileged<br>$4X~ru-verb');
 a=a.replace(/(慌)(?!X)(た)(?!X)(だ)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X$4X,awatada-shi,busy<br>$5X~i-adjective');
 a=a.replace(/(成)(?!X)(り)(?!X)(立)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,'$1X$2X$3X,narita,consist of,be built on<br>$4X~tsu-verb');
@@ -765,7 +765,9 @@ a=a.replace(/(ま)(?!X)(ぐ)(?!X)(ろ)(?!X)/g,'$1X$2X$3X,maguro,tuna~noun');
 a=a.replace(/(ま)(?!X)(さ)(?!X)(か)(?!X)/g,'$1X$2X$3X,masaka,never in a million years~noun');
 a=a.replace(/(ま)(?!X)(し)(?!X)(て)(?!X)/g,'$1X$2X$3X,mashite,much more~noun');
 a=a.replace(/(ま)(?!X)(と)(?!X)(め)(?!X)/g,'$1X$2X$3X,matome,summary~noun');
+a=a.replace(/(す)(?!X)(で)(?!X)(に)(?!X)/g,'$1X$2X$3X,sude no,already too late~noun');
 a=a.replace(/(ま)(?!X)(な)(?!X)(板)(?!X)/g,'$1X$2X$3X,man-aita,chopping board~noun');
+a=a.replace(/(絶)(?!X)(え)(?!X)(間)(?!X)/g,'$1X$2X$3X,taema,pause~noun');
 a=a.replace(/(ま)(?!X)(ぶ)(?!X)(た)(?!X)/g,'$1X$2X$3X,mabuta,eyelid~noun');
 a=a.replace(/(ま)(?!X)(る)(?!X)(で)(?!X)/g,'$1X$2X$3X,maru de,just like,completely~noun');
 a=a.replace(/(み)(?!X)(か)(?!X)(ん)(?!X)/g,'$1X$2X$3X,mi-kan,tangerine,man-darin orange~noun');
@@ -1423,7 +1425,7 @@ a=a.replace(/(お)(?!X)(か)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X,o
 a=a.replace(/(お)(?!X)(ご)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,ogo,treat<br>$3X~ru-verb');
 a=a.replace(/(お)(?!X)(互)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,otaga,each other<br>$3X~i-adjective');
 a=a.replace(/(お)(?!X)(仕)(?!X)(舞)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X,oshima,finished,over<br>$4X~i-adjective');
-a=a.replace(/(お)(?!X)(手)(?!X)(伝)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X,otetsuda,helper,assistant<br>$4X~i-adjective');
+a=a.replace(/(お)(?!X)(手)(?!X)(伝)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X,otetsuda,help<br>$4X~i-adjective');
 a=a.replace(/(お)(?!X)(手)(?!X)(洗)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X,oteara,toilet,bathroom<br>$4X~i-adjective');
 a=a.replace(/(お)(?!X)(祝)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,oiwa,celebrate<br>$3X~i-adjective');
 a=a.replace(/(お)(?!X)(願)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,onega,favor<br>$3X~i-adjective');
@@ -2588,7 +2590,7 @@ a=a.replace(/(内)(?!X)(科)(?!X)/g,'$1X$2X,nai-ka,internal medicine~noun');
 a=a.replace(/(内)(?!X)(緒)(?!X)/g,'$1X$2X,nai-syo,secrecy,privacy~noun');
 a=a.replace(/(内)(?!X)(臓)(?!X)/g,'$1X$2X,nai-zou,internal organs~noun');
 a=a.replace(/(内)(?!X)(訳)(?!X)/g,'$1X$2X,uchi-wake,breakdown~noun');
-a=a.replace(/(内)(?!X)(部)(?!X)/g,'$1X$2X,nai-bu,interior,inner parts~noun');
+a=a.replace(/(内)(?!X)(部)(?!X)/g,'$1X$2X,nai-bu,interior~noun');
 a=a.replace(/(内)(?!X)(閣)(?!X)/g,'$1X$2X,nai-kaku,cabinet~noun');
 a=a.replace(/(内)(?!X)(陸)(?!X)/g,'$1X$2X,nai-rikuinland,interior~noun');
 a=a.replace(/(円)(?!X)(安)(?!X)/g,'$1X$2X,en-yasu,depreciation~noun');
@@ -3582,6 +3584,7 @@ a=a.replace(/(抑)(?!X)(制)(?!X)/g,'$1X$2X,yoku-sei,control~noun');
 a=a.replace(/(抑)(?!X)(止)(?!X)/g,'$1X$2X,yoku-shi,deterrence~noun');
 a=a.replace(/(投)(?!X)(じ)(?!X)/g,'$1X$2X,touji,devote~ichidan-verb');
 a=a.replace(/(投)(?!X)(入)(?!X)/g,'$1X$2X,tou-nyuu,put in~noun');
+a=a.replace(/(沿)(?!X)(海)(?!X)/g,'$1X$2X,en-kai,coastal waters~noun');
 a=a.replace(/(投)(?!X)(書)(?!X)/g,'$1X$2X,tou-syo,contribution,letter~noun');
 a=a.replace(/(投)(?!X)(票)(?!X)/g,'$1X$2X,tou-hyou,vote~noun');
 a=a.replace(/(投)(?!X)(稿)(?!X)/g,'$1X$2X,tou-kou,online post~noun');
@@ -3596,7 +3599,7 @@ a=a.replace(/(抽)(?!X)(出)(?!X)/g,'$1X$2X,cyuu-syutsu,extraction~noun');
 a=a.replace(/(担)(?!X)(任)(?!X)/g,'$1X$2X,tannin,supervisor~noun');
 a=a.replace(/(担)(?!X)(当)(?!X)/g,'$1X$2X,tan-tou,person in charge~noun');
 a=a.replace(/(拍)(?!X)(手)(?!X)/g,'$1X$2X,haku-syu,applause,clapping~noun');
-a=a.replace(/(拒)(?!X)(否)(?!X)/g,'$1X$2X,kyo-hi,den-ial,rejection~noun');
+a=a.replace(/(拒)(?!X)(否)(?!X)/g,'$1X$2X,kyo-hi,rejection~noun');
 a=a.replace(/(招)(?!X)(待)(?!X)/g,'$1X$2X,syou-tai,invitation~noun');
 a=a.replace(/(拝)(?!X)(見)(?!X)/g,'$1X$2X,hai-ken,humbly look at or see~noun');
 a=a.replace(/(拠)(?!X)(点)(?!X)/g,'$1X$2X,kyo-ten,position~noun');
@@ -6424,6 +6427,7 @@ a=a.replace(/(縄)(?!X)/g,'$1X,nawa,rope,cord~noun');
 a=a.replace(/(縦)(?!X)/g,'$1X,tate,lengthways,vertical~noun');
 a=a.replace(/(缶)(?!X)/g,'$1X,kan,can,tin~noun');
 a=a.replace(/(罪)(?!X)/g,'$1X,tsumi,crime,sin~noun');
+a=a.replace(/(残)(?!X)/g,'$1X$2X,noko,leave behind~ichidan-verb');
 a=a.replace(/(罰)(?!X)/g,'$1X,batsu,punishment,penalty~noun');
 a=a.replace(/(者)(?!X)/g,'$1X,sya or +mono,person~noun');
 a=a.replace(/(耳)(?!X)/g,'$1X,mimi,ear,hearing~noun');
@@ -6702,7 +6706,84 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-三菱電機（東京都千代田区）が、新型コロナの影響で一時帰国した海外赴任者に支払った給与をめぐり、東京国税局から所得税の源泉徴収漏れを指摘されていたことがわかった。所得税法は、国内で働いた分の給与は所得税の課税対象と定める。同社は、帰国した従業員が海外の業務を続けていたため、課税対象に当たらないと判断したとみられる。同局の税務調査で発覚し、約1億4千万円を追徴課税された。
+・ロシア軍がウクライナでの攻勢を強める一方、ロシア国内では“ほころび”が。
+・ロシア兵の権利を保護する団体のタバロフさんによると、「ウクライナでの戦闘を拒否して帰還した兵士は少なくない」
+
+ロシアが完全掌握を目指す、ウクライナ東部のルハンシク州では、残された住民の避難が行われていました。
+
+（警察）「警察です。避難しますか？　お手伝いすることは？」
+（住民）「荷物がたくさんあります」
+
+ルハンシク州の知事によると、すでに95％をロシア側が占領。
+ウクライナ軍の最後の拠点となっているセベロドネツクでは、絶え間ない攻撃にさらされているといいます。
+包囲されるのを防ぐためウクライナ軍が撤退する可能性も伝えられており、これにクレバ外相は。
+
+（ウクライナ　クレバ外相）
+「（東部の戦況は）言われているよりもっと悪い。私たちには武器が必要です。本当にウクライナのことを考えるなら、武器、武器、そしてさらに武器だ」
+
+ロシア軍がウクライナでの攻勢を強める一方、ロシア国内では“ほころび”が見え始めています。
+
+27日、ロシア極東の沿海地方の議会では…
+
+（ワシェケビチ議員）「議員団はロシア大統領に対する以下の声明を作成しました、今から提案を読み上げます『尊敬するロシア大統領…』」
+（議長）「ちょっとお待ちください！」
+（ワシェケビチ議員）「大統領にお願いしたいのは」
+（議長）「ワシュケービッチ議員！」
+
+審議中に議員がプーチン大統領へ宛てた声明を読み上げました。
+
+（ワシェケビチ議員）
+「軍事作戦をやめなければ、孤児はさらに増える。国に貢献できたはずの若者たちが、軍事作戦のせいで犠牲となり、身体に障害を負った」
+
+また、今週前半にはロシアの国際機関代表部顧問のボリス・ボンダレフ氏が辞任しました。
+
+（ボリス・ボンダレフ氏）
+「ロシアの外交官としてこれ以上関わることはできません」
+
+一般のロシア国民の中にもSNSで反戦を訴える人々がいます。
+
+（サンクトペテルブルク在住の男性）
+「まず、ロシア人全員がプーチンを支持しているわけではないこと、戦争を支持しているわけではないことを世界に示したい。むしろ、国民の大半は戦争に反対だと思う」
+
+モスクワの街なかで見つけた反戦の落書きの写真をアップし、侵攻を非難する女性は…
+
+（モスクワ在住の女性）
+「誰でもチャンスがあれば掴みたいと思うはずです。私の場合は少しでも他の人の考えを変えたいと思っています」
+「ロシアでは何かをオープンに発言することが難しい、でも私は恐れていませんし、『恐れていない』ということを示したいです」
+「『何もしない』、今はこれが一番恥ずかしいです」
+
+侵攻に反対する空気はロシア軍内部にも漂っています。
+
+（ロシア　プーチン大統領）
+「彼らはまさしく英雄だ自らの意思で命を危険にさらしている」
+
+今週、プーチン大統領はモスクワの病院で負傷した兵士を見舞いました。
+
+（プーチン大統領）「家族には会えましたか？」
+（兵士）「会えておりません」
+（プーチン大統領）「ここに来て少佐の顔を見たら、ご家族は安心するでしょう」
+
+背景にあるのは戦力の消耗です。
+侵攻開始から3カ月あまりイギリスの国防省の分析ではロシア軍は投入した地上戦力の3分の1を失ったといいます。
+
+兵士不足を解消する狙いかロシアではきょう、志願兵の年齢の上限を撤廃する法案が成立しました。
+
+こうした中、ロシア軍の兵士たちは…
+
+（ロシア徴集兵の権利を守る人権活動家　アレクセイ・タバロフさん）
+「もうこれ以上参加したくない、自分は死にたくない、他人も殺したくないという声が毎日届いています」
+
+人権活動家で、ロシア兵の権利を保護する団体のタバロフさんによると、ウクライナでの戦闘を拒否して帰還した兵士は少なくないといいます。
+団体には毎日10件以上の相談が寄せられているといいます。
+
+（ロシア徴集兵の権利を守る人権活動家　アレクセイ・タバロフさん）
+「中隊の大半の兵士が除隊し、戦闘に参加することを拒否して帰って行ってしまいました。一方で留まることにした者もいました。彼らに対して指揮官が『軍事裁判にかける』とか『銃殺する』とか『反逆罪で25年刑務所に入れる』などと脅していたからです」
+「彼らは長い間悩み、私たちは契約を破棄するよう2週間ほど説得していました」
+
+そして多くのロシア人にとってこの侵攻は不可解であるといいます。
+
+（ロシア徴集兵の権利を守る人権活動家　アレクセイ・タバロフさん）
+「多くの人にとって、この戦争は不当な戦争であり、理解しがたい戦争なのです。みんながみんな、オリガルヒのヨットやプーチンの宮殿のために死ぬ覚悟ができているわけでもありません」
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
