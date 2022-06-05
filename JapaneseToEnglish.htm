@@ -2713,7 +2713,7 @@ a=a.replace(/(舞)(?!X)(台)(?!X)/g,'$1X$2X,bu-tai,stage~noun');
 a=a.replace(/(興)(?!X)(行)(?!X)/g,'$1X$2X,kou-gyou,performance~noun');
 a=a.replace(/(興)(?!X)(奮)(?!X)/g,'$1X$2X,kou-fun,excitement,agitation~noun');
 a=a.replace(/(興)(?!X)(味)(?!X)/g,'$1X$2X,kyou-mi,interest~noun');
-a=a.replace(/(至)(?!X)(急)(?!X)/g,'$1X$2X,shi-kyuu,urgent,pressing~noun');
+a=a.replace(/(至)(?!X)(急)(?!X)/g,'$1X$2X,shi-kyuu,pressing~noun');
 a=a.replace(/(自)(?!X)(身)(?!X)/g,'$1X$2X,ji-shin,self~noun');
 a=a.replace(/(自)(?!X)(衛)(?!X)/g,'$1X$2X,ji-ei,self-defense~noun');
 a=a.replace(/(自)(?!X)(習)(?!X)/g,'$1X$2X,ji-syuu,self-study,self-teaching~noun');
@@ -2791,12 +2791,15 @@ a=a.replace(/(総)(?!X)(額)(?!X)/g,'$1X$2X,sou-gaku,grand total of~noun');
 a=a.replace(/(総)(?!X)(長)(?!X)/g,'$1X$2X,sou-cyou,secretary general~noun');
 a=a.replace(/(総)(?!X)(量)(?!X)/g,'$1X$2X,sou-ryou,aggregate amount~noun');
 a=a.replace(/(総)(?!X)(裁)(?!X)/g,'$1X$2X,sou-sai,president~noun');
+a=a.replace(/(巡)(?!X)(航)(?!X)/g,'$1X$2X,jyun-kou,cruise~noun');
+a=a.replace(/(迎)(?!X)(撃)(?!X)/g,'$1X$2X,gei-geki,intercept~noun');
 a=a.replace(/(総)(?!X)(理)(?!X)/g,'$1X$2X,sou-ri,prime minister~noun');
 a=a.replace(/(枠)(?!X)(内)(?!X)/g,'$1X$2X,waku-nai,within limits~noun');
 a=a.replace(/(総)(?!X)(数)(?!X)/g,'$1X$2X,sou-suu,total~noun');
+a=a.replace(/(参)(?!X)(集)(?!X)/g,'$1X$2X,san-syuu,gathering together~noun');
 a=a.replace(/(総)(?!X)(合)(?!X)/g,'$1X$2X,sou-gou,combination~noun');
 a=a.replace(/(総)(?!X)(会)(?!X)/g,'$1X$2X,sou-kai,general meeting~noun');
-a=a.replace(/(緊)(?!X)(急)(?!X)/g,'$1X$2X,kin-kyuu,urgent,pressing~noun');
+a=a.replace(/(緊)(?!X)(急)(?!X)/g,'$1X$2X,kin-kyuu,urgent~noun');
 a=a.replace(/(緊)(?!X)(急)(?!X)/g,'$1X$2X,kin-kyuu,emergency~noun');
 a=a.replace(/(緊)(?!X)(張)(?!X)/g,'$1X$2X,kin-cyou,tension~noun');
 a=a.replace(/(緊)(?!X)(密)(?!X)/g,'$1X$2X,kin-mitsu,closely knit~noun');
@@ -5157,6 +5160,7 @@ a=a.replace(/(付)(?!X)(属)(?!X)/g,'$1X$2X,fu-zoku,attachment,belonging~noun');
 a=a.replace(/(他)(?!X)(方)(?!X)/g,'$1X$2X,ta-hou,other side~noun');
 a=a.replace(/(他)(?!X)(人)(?!X)/g,'$1X$2X,ta-nin,another person,stranger~noun');
 a=a.replace(/(仕)(?!X)(方)(?!X)/g,'$1X$2X,shi-kata,way,method~noun');
+a=a.replace(/(官)(?!X)(邸)(?!X)/g,'$1X$2X,kan-tei,prime minster\'s residence~noun');
 a=a.replace(/(仕)(?!X)(事)(?!X)/g,'$1X$2X,shigoto,work,job~noun');
 a=a.replace(/(仏)(?!X)(教)(?!X)/g,'$1X$2X,buk-kyou,Buddhism~noun');
 a=a.replace(/(介)(?!X)(入)(?!X)/g,'$1X$2X,kai-nyuu,kai-nyuu,intervention~noun');
@@ -5766,7 +5770,7 @@ a=a.replace(/(止)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,ya,stop<br>$2X~mu-v
 a=a.replace(/(歌)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,uta,sing<br>$2X~u-verb');
 a=a.replace(/(次)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,'$1X,tsu,come next<br>$2X~gu-verb');
 a=a.replace(/(欠)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,ka,lack<br>$2X~ku-verb');
-a=a.replace(/(構)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,kama,mind,care for<br>$2X~u-verb');
+a=a.replace(/(構)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,kama,keep in mind<br>$2X~u-verb');
 a=a.replace(/(構)(?!X)(え)(?!X)/g,'$1X$2X,kamae,stand ready to do~ichidan-verb');
 a=a.replace(/(染)(?!X)(み)(?!X)/g,'$1X$2X,shimi,permeate~ichidan-verb');
 a=a.replace(/(望)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,nozo,desire,hope<br>$2X~mu-verb');
@@ -6275,6 +6279,7 @@ a=a.replace(/(目)(?!X)/g,'$1X,me,eye~noun');
 a=a.replace(/(盟)(?!X)/g,'$1X,mei,alliance~noun');
 a=a.replace(/(盆)(?!X)/g,'$1X,bon,tray~noun');
 a=a.replace(/(盆)(?!X)/g,'$1X,bon,Bon Festival~noun');
+a=a.replace(/(韓)(?!X)/g,'$1X,kan,Korea~noun');
 a=a.replace(/(皿)(?!X)/g,'$1X,sara,plate,counter for plates or helpings~noun');
 a=a.replace(/(皮)(?!X)/g,'$1X,kawa,peel,fur~noun');
 a=a.replace(/(皆)(?!X)/g,'$1X,mina,everybody~noun');
@@ -6735,7 +6740,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-厚生労働省が3日に発表した2021年の人口動態統計によると、1人の女性が生涯に産む子どもの数に相当する合計特殊出生率は1・30だった。前年から0・03ポイント下回り、6年連続の低下となった。下落幅は縮まらず、新型コロナウイルスの感染長期化が影響した可能性がある。出生数は81万1604人で前年より2万9231人減少し、過去最少を更新した。
+政府は5日、北朝鮮の弾道ミサイル発射を受け、関係省庁幹部らが首相官邸や防衛省にそれぞれ緊急参集し、情報収集に当たった。巡航ミサイルを含めて今年17回目となる発射が、迎撃が難しい連続発射だったことを警戒。米韓両国と協調し、北朝鮮の意図などの分析を急ぐ構えだ。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
