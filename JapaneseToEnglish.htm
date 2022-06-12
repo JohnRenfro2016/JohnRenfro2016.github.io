@@ -428,6 +428,7 @@ a=a.replace(/(あ)(?!X)(い)(?!X)(づ)(?!X)(ち)(?!X)/g,'$1X$2X$3X$4X,aizuchi,re
 a=a.replace(/(飲)(?!X)(み)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X,nomiko,swallow,grasp<br>$4X~mu-verb');
 a=a.replace(/(飛)(?!X)(び)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X,tobiko,dive into<br>$4X~mu-verb');
 a=a.replace(/(飛)(?!X)(び)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X,tobida,fly out,dash out<br>$4X~su-verb');
+a=a.replace(/(動)(?!X)(き)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X,ugoki-da,come alive<br>$4X~su-verb');
 a=a.replace(/(隣)(?!X)(り)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2X$3X,tonaria,adjoin,be next door to each other<br>$4X~u-verb');
 a=a.replace(/(間)(?!X)(違)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X,machigae,mistake,confuse<br>$4X~ru-verb');
 a=a.replace(/(間)(?!X)(も)(?!X)(無)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3X,mamona,soon,in a short time<br>$4X~ku-verb');
@@ -1273,7 +1274,7 @@ a=a.replace(/(よ)(?!X)(そ)(?!X)(見)(?!X)/g,'$1X$2X$3X,yosomi,look around~noun
 a=a.replace(/(ゆ)(?!X)(と)(?!X)(り)(?!X)/g,'$1X$2X$3X,yutori,room,leeway~noun');
 a=a.replace(/(や)(?!X)(り)(?!X)(方)(?!X)/g,'$1X$2X$3X,yari-kata,way of doing~noun');
 a=a.replace(/(や)(?!X)(は)(?!X)(り)(?!X)/g,'$1X$2X$3X,yahari,as expected,also,still~noun');
-a=a.replace(/(や)(?!X)(っ)(?!X)(と)(?!X)/g,'$1X$2X$3X,yatto,at finally~noun');
+a=a.replace(/(や)(?!X)(っ)(?!X)(と)(?!X)/g,'$1X$2X$3X,yatto,finally~noun');
 a=a.replace(/(や)(?!X)(け)(?!X)(ど)(?!X)/g,'$1X$2X$3X,yake-do,burn~noun');
 a=a.replace(/(や)(?!X)(が)(?!X)(て)(?!X)/g,'$1X$2X$3X,yagate,soon,before long~noun');
 a=a.replace(/(や)(?!X)(か)(?!X)(ん)(?!X)/g,'$1X$2X$3X,ya-kan,kettle~noun');
@@ -4885,7 +4886,8 @@ a=a.replace(/(製)(?!X)(品)(?!X)/g,'$1X$2X,sei-hin,manufactured goods~noun');
 a=a.replace(/(製)(?!X)(造)(?!X)/g,'$1X$2X,sei-zou,production,manufacture~noun');
 a=a.replace(/(複)(?!X)(数)(?!X)/g,'$1X$2X,fuku-suu,plural~noun');
 a=a.replace(/(複)(?!X)(雑)(?!X)/g,'$1X$2X,fuku-zatsu,complicated,intricate~noun');
-a=a.replace(/(襲)(?!X)(撃)(?!X)/g,'$1X$2Xsyuu-geki,charge~noun');
+a=a.replace(/(襲)(?!X)(撃)(?!X)/g,'$1X$2X,syuu-geki,charge~noun');
+a=a.replace(/(難)(?!X)(色)(?!X)/g,'$1X$2X,nan-syoku,disapproval~noun');
 a=a.replace(/(西)(?!X)(方)(?!X)/g,'$1X$2X,sei-hou,western direction~noun');
 a=a.replace(/(西)(?!X)(暦)(?!X)/g,'$1X$2X,sei-reki,Christian Era,A.D.~noun');
 a=a.replace(/(西)(?!X)(洋)(?!X)/g,'$1X$2X,sei-you,the West~noun');
@@ -6739,37 +6741,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-6月6日(月)、気象庁から関東甲信地方が梅雨入りしたとみられると発表がありました。
-
-昨年より8日早く、平年より1日早い梅雨入りです。
-昨年より早い梅雨入りに
-
-各地の梅雨入り状況
-
-昨年の関東甲信地方は6月中旬に梅雨入りしましたが、今年は6月上旬の梅雨入りとなりました。
-
-▼気象庁の発表
-関東甲信地方の梅雨入り
-　昨年より8日早く、平年より1日早い
-
-・梅雨入りには平均的に5日間程度の「移り変わり」の期間があります。
-・春から夏にかけての実際の天候経過を考慮した検討の結果、期日が見直しされる場合があります。
-この先の天気予報
-
-この先10日間の天気予報
-
-明日7日(火)以降は梅雨前線が南に離れるものの、曇りや雨の日が続く予想です。
-
-次に梅雨前線が北上するのは来週の週末以降の可能性が高くなっています。
-
-梅雨明けに関しては、関東甲信地方では平年だと7月中旬ですが、今年はラニーニャの影響で梅雨明けが早くなる可能性もあります。
-
-梅雨の期間が短くても、集中豪雨となることもありますので油断は出来ません。特に6月後半から7月上旬にかけては前線活動の活発化が想定されるため、大雨の季節への対策を早めに進めるようにしてください。
-各地の梅雨入り予想
-
-九州から東海にかけての地域では、梅雨入りは平年よりも遅れる予想です。今週は前線が南に離れるため、各地の梅雨入りは早くても次の週末以降になる可能性があります。
-
-ただ、湿った空気の影響を受けやすくなるこの時期は、大気の状態が不安定となる日もあるため、日々の天気予報で確認するようにしてください。
+ウクライナ侵攻が長期化するなか、停戦をめぐるウクライナとロシアの主張には変化がみられる。ただし、とりわけウクライナ側には現状での交渉が不利という判断が働きやすく、現状での停戦協議に難色を示している。ウクライナの警戒心は、停戦協議を働きかける西側先進国にも向かっている。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
