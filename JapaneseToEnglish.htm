@@ -749,6 +749,7 @@ a=a.replace(/(西)(?!X)(洋)(?!X)(人)(?!X)/g,'$1X$2X$3X,sei-you-jin,Westerner~n
 a=a.replace(/(製)(?!X)(鉄)(?!X)(所)(?!X)/g,'$1X$2X$3X,sei-tetsu-jyo,steelworks~noun');
 a=a.replace(/(補)(?!X)(助)(?!X)(金)(?!X)/g,'$1X$2X$3X,ho-jyo-kin,subsidy~noun');
 a=a.replace(/(補)(?!X)(佐)(?!X)(官)(?!X)/g,'$1X$2X$3X,ho-sa-kan,aide~noun');
+a=a.replace(/(熱)(?!X)(中)(?!X)(症)(?!X)/g,'$1X$2X$3X,nec-cyuu-syou,heatstroke~noun');
 a=a.replace(/(裏)(?!X)(返)(?!X)(し)(?!X)/g,'$1X$2X$3X,uragae-shi,turn over,turn inside out~noun');
 a=a.replace(/(裁)(?!X)(判)(?!X)(所)(?!X)/g,'$1X$2X$3X,sai-bansyo,courthouse~noun');
 a=a.replace(/(被)(?!X)(害)(?!X)(者)(?!X)/g,'$1X$2X$3X,hi-gai-sya,victim~noun');
@@ -1743,7 +1744,7 @@ a=a.replace(/(慰)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,nagusa
 a=a.replace(/(慣)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,nare,grow accustomed to<br>$3X~ru-verb');
 a=a.replace(/(慣)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X,nara,accustom<br>$3X~su-verb');
 a=a.replace(/(慌)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,awate,be flurried,hurry<br>$3X~ru-verb');
-a=a.replace(/(感)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,kan-ji,feel,sen-se<br>$3X~ru-verb');
+a=a.replace(/(感)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,kan-ji,feel<br>$3X~ru-verb');
 a=a.replace(/(愛)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X,aisu,love,care for<br>$3X~ru-verb');
 a=a.replace(/(惜)(?!X)(し)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X,o-shi,grudge,regret<br>$3X~mu-verb');
 a=a.replace(/(惜)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X,o-shi,almost,close<br>$3X~i-adjective');
@@ -3009,7 +3010,7 @@ a=a.replace(/(真)(?!X)(理)(?!X)/g,'$1X$2X,shin-ri,truth~noun');
 a=a.replace(/(真)(?!X)(珠)(?!X)/g,'$1X$2X,shin-jyu,pearl~noun');
 a=a.replace(/(真)(?!X)(心)(?!X)/g,'$1X$2X,magokoro,sincerity,true heart~noun');
 a=a.replace(/(真)(?!X)(実)(?!X)/g,'$1X$2X,shin-jitsu,really~noun');
-a=a.replace(/(真)(?!X)(夏)(?!X)/g,'$1X$2X,man-atsu,midsummer~noun');
+a=a.replace(/(真)(?!X)(夏)(?!X)/g,'$1X$2X,ma-natsu,midsummer~noun');
 a=a.replace(/(真)(?!X)(剣)(?!X)/g,'$1X$2X,shin-ken,sincere~noun');
 a=a.replace(/(県)(?!X)(道)(?!X)/g,'$1X$2X,ken-dou,prefectural road~noun');
 a=a.replace(/(県)(?!X)(警)(?!X)/g,'$1X$2X,ken-kei,prefectural police~noun');
@@ -3408,7 +3409,7 @@ a=a.replace(/(か)(?!X)(も)(?!X)/g,'$1X$2X,kamo,might do~noun');
 a=a.replace(/(気)(?!X)(絶)(?!X)/g,'$1X$2X,ki-zetsu,fainting~noun');
 a=a.replace(/(議)(?!X)(席)(?!X)/g,'$1X$2X,gi-seki,parliament seat~noun');
 a=a.replace(/(過)(?!X)(半)(?!X)/g,'$1X$2X,ka-han,the greater part~noun');
-a=a.replace(/(気)(?!X)(温)(?!X)/g,'$1X$2X,kion,temperature~noun');
+a=a.replace(/(気)(?!X)(温)(?!X)/g,'$1X$2X,ki-on,temperature~noun');
 a=a.replace(/(気)(?!X)(楽)(?!X)/g,'$1X$2X,kiraku,easygoing,comfortable~noun');
 a=a.replace(/(気)(?!X)(圧)(?!X)/g,'$1X$2X,ki-atsu,atmospheric pressure~noun');
 a=a.replace(/(気)(?!X)(力)(?!X)/g,'$1X$2X,ki-ryoku,energy,vitality~noun');
@@ -3665,7 +3666,7 @@ a=a.replace(/(暫)(?!X)(定)(?!X)/g,'$1X$2X,zan-tei,temporary~noun');
 a=a.replace(/(暗)(?!X)(記)(?!X)/g,'$1X$2X,anki,memorization~noun');
 a=a.replace(/(暖)(?!X)(房)(?!X)/g,'$1X$2X,dan-bou,heating~noun');
 a=a.replace(/(暖)(?!X)(か)(?!X)/g,'$1X$2X,atataka,warm,warmhearted~noun');
-a=a.replace(/(暑)(?!X)(さ)(?!X)/g,'$1X$2X,atsusa,heat,summer heat~noun');
+a=a.replace(/(暑)(?!X)(さ)(?!X)/g,'$1X$2X,atsusa,heat~noun');
 a=a.replace(/(晴)(?!X)(れ)(?!X)/g,'$1X$2X,hare,fine weather,clear sky~noun');
 a=a.replace(/(景)(?!X)(色)(?!X)/g,'$1X$2X,ke-shiki,scenery,landscape~noun');
 a=a.replace(/(景)(?!X)(気)(?!X)/g,'$1X$2X,kei-ki,economic climate~noun');
@@ -4921,12 +4922,13 @@ a=a.replace(/(冒)(?!X)(険)(?!X)/g,'$1X$2X,bou-ken,adventure,risk~noun');
 a=a.replace(/(再)(?!X)(開)(?!X)/g,'$1X$2X,sai-kai,reopening~noun');
 a=a.replace(/(再)(?!X)(発)(?!X)/g,'$1X$2X,sai-hatsu,recurrence~noun');
 a=a.replace(/(再)(?!X)(生)(?!X)/g,'$1X$2X,sai-sei,restoration~noun');
+a=a.replace(/(猛)(?!X)(暑)(?!X)/g,'$1X$2X,mou-syo,heat wave~noun');
 a=a.replace(/(再)(?!X)(建)(?!X)/g,'$1X$2X,sai-ken,rebuilding~noun');
 a=a.replace(/(再)(?!X)(会)(?!X)/g,'$1X$2X,sai-kai,reunion~noun');
 a=a.replace(/(再)(?!X)(び)(?!X)/g,'$1X$2X,futatabi,once again~noun');
 a=a.replace(/(円)(?!X)(高)(?!X)/g,'$1X$2X,endaka,appreciation of the yen~noun');
 a=a.replace(/(円)(?!X)(安)(?!X)/g,'$1X$2X,en-yasu,depreciation~noun');
-a=a.replace(/(内)(?!X)(陸)(?!X)/g,'$1X$2X,nai-rikuinland,interior~noun');
+a=a.replace(/(内)(?!X)(陸)(?!X)/g,'$1X$2X,nai-riku,inland~noun');
 a=a.replace(/(内)(?!X)(閣)(?!X)/g,'$1X$2X,nai-kaku,cabinet~noun');
 a=a.replace(/(内)(?!X)(部)(?!X)/g,'$1X$2X,nai-bu,interior~noun');
 a=a.replace(/(内)(?!X)(訳)(?!X)/g,'$1X$2X,uchi-wake,breakdown~noun');
@@ -5115,6 +5117,7 @@ a=a.replace(/(何)(?!X)(度)(?!X)/g,'$1X$2X,nan-do,how many degrees,how many tim
 a=a.replace(/(何)(?!X)(千)(?!X)/g,'$1X$2X,nan-zen,several thousand,thousands~noun');
 a=a.replace(/(何)(?!X)(十)(?!X)/g,'$1X$2X,nan-jyuu,several tens~noun');
 a=a.replace(/(何)(?!X)(と)(?!X)/g,'$1X$2X,nan-to,what,how~noun');
+a=a.replace(/(指)(?!X)(標)(?!X)/g,'$1X$2X,shi-hyou,indicator~noun');
 a=a.replace(/(何)(?!X)(で)(?!X)/g,'$1X$2X,nan-de,why,what for~noun');
 a=a.replace(/(何)(?!X)(て)(?!X)/g,'$1X$2X,nan-te,what,how~noun');
 a=a.replace(/(何)(?!X)(か)(?!X)/g,'$1X$2X,nan-i-ka,something,some~noun');
@@ -6674,7 +6677,11 @@ a=a.replace(/(８|8|八)(?!X)/g,'$1X,hachi,eight~noun');
 
 a=a.replace(/(postpositionの|verbの|nounの)(?!X)/g,'$1X,no,of~postposition');
 
+a=a.replace(/(adjectiveが|postpositionが|verbが|nounが)(?!X)/g,'$1X,ga,the above acts~postposition');
+
 a=a.replace(/(postpositionに|verbに|nounに)(?!X)/g,'$1X,ni,at,in,on~postposition');
+
+a=a.replace(/(verbは|postpositionは|nounは)(?!X)/g,'$1X,wa,as for~postposition');
 
 a=a.replace(/(postpositionか|verbか|nounか)(?!X)/g,'$1X,ka,indicates a question~postposition');
 
@@ -6701,7 +6708,6 @@ a=a.replace(/(verbま|nounま)(?!X)(で)(?!X)/g,'$1X$2X,made,until,to~postpositi
 a=a.replace(/(verbま|nounま)(?!X)(す)(?!X)/g,'$1X$2X,masu~formal~verb');
 a=a.replace(/(verbべ)(?!X)(き)(?!X)/g,'$1X$2X,should~postposition');
 a=a.replace(/(verbば)(?!X)/g,'$1X,if~postposition');
-a=a.replace(/(verbは|postpositionは|nounは)(?!X)/g,'$1X,wa,as for~postposition');
 a=a.replace(/(verbね)(?!X)/g,'$1X,ne,isn\'t it\?~informal~verb');
 a=a.replace(/(verbな|nounな)(?!X)(く)(?!X)/g,'$1X$2X,naku,not and~noun');
 a=a.replace(/(verbな|nounな)(?!X)(い)(?!X)/g,'$1X$2X,nai,not do~informal~suru-verb');
@@ -6740,7 +6746,6 @@ a=a.replace(/(adjectiveま|nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3
 a=a.replace(/(adjectiveな|nounな)(?!X)/g,'$1X,na,~na-adjective<br>');
 a=a.replace(/(adjectiveで|verbで|nounで)(?!X)/g,'$1X,de,with,at~postposition');
 a=a.replace(/(adjectiveっ)(?!X)(た)(?!X)/g,'$1X$2X,tta,did~informal~adjective');
-a=a.replace(/(adjectiveが|postpositionが|verbが|nounが)(?!X)/g,'$1X,ga,the above acts~postposition');
 
 }
 function translateC()
@@ -6765,7 +6770,13 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-参院選が２２日公示され、１８日間に及ぶ論戦の火ぶたが切られた。長引く新型コロナウイルス禍に、ロシアによるウクライナ侵攻の余波で社会不安が増大し、食料品やエネルギーなどの止まらぬ物価高が国民生活を苦しめている。有権者は政治に何を求め、１票にどんな思いを託すのか。暮らしの現場で耳を傾けた。
+熱中症「危険」レベルの所も
+
+きょう26日は高気圧に覆われて、広い範囲で晴れるでしょう。うだるような暑さと熱中症に警戒が必要です。東京都心の午前5時現在の気温は26.3℃と、朝にかけて気温が下がらず、暑さを感じる時間が長いということも、警戒のポイントです。
+
+最高気温はきのう25日と同じくらいで、30℃以上の真夏日の所が多いでしょう。特に気温が高いエリアが関東や東北です。内陸ほど気温が上がり、最高気温は35℃以上の猛暑日になる所もあるでしょう。
+
+熱中症指数は「厳重警戒」の所が多く、那覇、福岡、東京は「危険」となっています。すべての生活活動で熱中症がおこる危険性があり、「危険」は特別の場合以外は運動を中止、特に子どもの場合には中止すべきという指標です。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
