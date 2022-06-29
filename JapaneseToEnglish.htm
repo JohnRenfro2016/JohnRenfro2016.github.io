@@ -3376,10 +3376,12 @@ a=a.replace(/(沈)(?!X)(没)(?!X)/g,'$1X$2X,chin-botsu,sinking~noun');
 a=a.replace(/(汽)(?!X)(車)(?!X)/g,'$1X$2X,ki-sya,train~noun');
 a=a.replace(/(決)(?!X)(選)(?!X)/g,'$1X$2X,kes-sen,election run-off~noun');
 a=a.replace(/(決)(?!X)(議)(?!X)/g,'$1X$2X,ke-tsugi,resolution~noun');
+a=a.replace(/(埼)(?!X)(玉)(?!X)/g,'$1X$2X,Sai-tama,Japan~noun');
 a=a.replace(/(決)(?!X)(裁)(?!X)/g,'$1X$2X,kes-sai,approval of penalty~noun');
 a=a.replace(/(決)(?!X)(着)(?!X)/g,'$1X$2X,kec-cyaku,settlement~noun');
 a=a.replace(/(決)(?!X)(断)(?!X)/g,'$1X$2X,ketsu-dan,determination~noun');
 a=a.replace(/(決)(?!X)(意)(?!X)/g,'$1X$2X,ketsu-i,resolution~noun');
+a=a.replace(/(史)(?!X)(上)(?!X)/g,'$1X$2X,shi-jyou,in history~noun');
 a=a.replace(/(決)(?!X)(心)(?!X)/g,'$1X$2X,kes-shin,determination,resolve~noun');
 a=a.replace(/(決)(?!X)(定)(?!X)/g,'$1X$2X,ket-tei,decision~noun');
 a=a.replace(/(決)(?!X)(勝)(?!X)/g,'$1X$2X,kes-syou,final,final game~noun');
@@ -5782,6 +5784,7 @@ a=a.replace(/(済)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,su,be settled,compl
 a=a.replace(/(渇)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,kawa,be thirsty<br>$2X~ku-verb');
 a=a.replace(/(添)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,so,accompany,go along with<br>$2X~u-verb');
 a=a.replace(/(深)(?!X)(い|く|か|さ)(?!X)/g,'$1X,fuka,deep,profound<br>$2X~i-adjective');
+a=a.replace(/(達)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,tas-,reach<br>$2X~su-verb');
 a=a.replace(/(消)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,ke,switch off,turn off<br>$2X~su-verb');
 a=a.replace(/(消)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,ke,erase<br>$2X~su-verb');
 a=a.replace(/(浮)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,u,float<br>$2X~ku-verb');
@@ -6379,7 +6382,7 @@ a=a.replace(/(毒)(?!X)/g,'$1X,doku,poison,harm~noun');
 a=a.replace(/(毛)(?!X)/g,'$1X,ke,hair,wool~noun');
 a=a.replace(/(氏)(?!X)/g,'$1X,shi,Mr.~noun');
 a=a.replace(/(気)(?!X)/g,'$1X,ki,spirit,temperament~noun');
-a=a.replace(/(水)(?!X)/g,'$1X,mizu,water~noun');
+a=a.replace(/(水)(?!X)/g,'$1X,mizu,water or sui,Wednesday~noun');
 a=a.replace(/(氷)(?!X)/g,'$1X,koori,ice~noun');
 a=a.replace(/(汁)(?!X)/g,'$1X,shiru,soup~noun');
 a=a.replace(/(汗)(?!X)/g,'$1X,ase,sweat~noun');
@@ -6686,6 +6689,14 @@ a=a.replace(/(８|8|八)(?!X)/g,'$1X,hachi,eight~noun');
 a=a.replace(/(さ)(?!X)(れ)(?!X)(て)(?!X)(い)(?!X)/g,'$1X$2X$3X$4X,saretei,had been doing~verb');
 a=a.replace(/(さX~i-adjective)/g,'$1,sa~gerund form~noun');
 
+a=a.replace(/(し)(?!X)(ま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X,shimashita,did~formal~verb');
+a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(ま)(?!X)(す)(?!X)/g,'$1X$2X$3X$4X$5X,shiteimasu,is doing~formal<br>~suru-verb');
+a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X,shiteita,was doing~informal~verb');
+a=a.replace(/(し)(?!X)(た)(?!X)/g,'$1X$2X,shita,did,~informal~verb');
+a=a.replace(/(postpositionし|nounし)(?!X)/g,'$1X,shi,do and~suru-verb');
+a=a.replace(/(postpositionし|nounし)(?!X)(た)(?!X)/g,'$1X$2X,shita,did~informal~suru-verb');
+a=a.replace(/(nounし|verbし)(?!X)(て)(?!X)/g,'$1X$2X,shite,is doing~verb');
+
 a=a.replace(/(postpositionの|verbの|nounの)(?!X)/g,'$1X,no,of~postposition');
 
 a=a.replace(/(adjectiveが|postpositionが|verbが|nounが)(?!X)/g,'$1X,ga,the above acts~postposition');
@@ -6705,14 +6716,6 @@ a=a.replace(/(adjectiveな|nounな)(?!X)/g,'$1X,na,~na-adjective<br>');
 
 a=a.replace(/(っ)(?!X)(た)(?!X)/g,'$1X$2X,tta,did~informal~verb');
 a=a.replace(/(た)(?!X)(ら)(?!X)/g,'$1X$2X,tara,if~informal~verb');
-
-a=a.replace(/(し)(?!X)(ま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X,shimashita,did~formal~verb');
-a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(ま)(?!X)(す)(?!X)/g,'$1X$2X$3X$4X$5X,shiteimasu,is doing~formal<br>~suru-verb');
-a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X,shiteita,was doing~informal~verb');
-a=a.replace(/(し)(?!X)(た)(?!X)/g,'$1X$2X,shita,did,~informal~verb');
-a=a.replace(/(postpositionし|nounし)(?!X)/g,'$1X,shi,do and~suru-verb');
-a=a.replace(/(postpositionし|nounし)(?!X)(た)(?!X)/g,'$1X$2X,shita,did~informal~suru-verb');
-a=a.replace(/(nounし|verbし)(?!X)(て)(?!X)/g,'$1X$2X,shite,is doing~verb');
 
 a=a.replace(/(verbま|nounま)(?!X)(し)(?!X)(ょ)(?!X)(う)(?!X)/g,'$1X$2X$3X$4X,masyou,let\'s do~formal~verb');
 a=a.replace(/(verbま|nounま)(?!X)(す)(?!X)/g,'$1X$2X,masu~formal~verb');
@@ -6784,26 +6787,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-きょう28日も沖縄や九州から関東、北陸の最高気温は35℃前後まで上がる所が多く、危険な暑さになるでしょう。熱中症に厳重な警戒が必要です。東北南部でも30℃くらいまで上がり、蒸し暑いでしょう。
-危険な暑さが続く
-
-画像：tenki.jp
-
-きょう28日も猛烈な暑さに注意が必要です。
-
-沖縄や九州から関東、北陸は強い日差しが照りつけて、朝から気温がグングン上がるでしょう。最高気温は35℃前後まで上がる所が多くなりそうです。名古屋市は昨日27日に続き、35℃以上の猛暑日になるでしょう。東京都心は34℃と猛暑日にはならないものの、厳しい暑さが続きそうです。熊谷市など内陸部では36℃ほどと体温並みの暑さに。危険な暑さが続きます。熱中症に厳重に警戒してください。
-
-きょう28日も東京電力エリアでは、夕方の時間帯を中心に予備率が5%を下回る見込みのため、政府は「電力需給ひっ迫注意報」を継続して発表していますが、使用していない照明を消すなどの節電をしつつ、冷房は適切に使用し、暑さで体調を崩さないようお気をつけください。
-
-曇りや雨の東北南部でも最高気温は30℃くらいまで上がる予想です。湿度も高く、不快な蒸し暑さになるでしょう。こまめな水分補給を心がけてください。東北北部や北海道は雨が降りますが、最高気温は25℃前後の所が多く、ムシムシするでしょう。
-熱中症予防のポイント
-
-画像：tenki.jp
-
-熱中症を予防するには、以下のポイントを心がけてください。
-
-①日頃から、体調管理を心がけましょう。朝など時間を決めて、毎日体温を測定したり、健康状態をチェックしたりすることにより、体調の変化に気づくことができます。
-②できるだけ暑さを避けて、喉が渇く前から水分補給を心がけましょう。なるべく涼しい服装を心がけ、日傘や帽子も活用するのが効果的です。入浴の前後や、起床後も、まずは水分を補給しましょう。汗を大量にか
+きょう29日（水）も東日本、とりわけ関東甲信を中心に猛烈な暑さが続いている。伊勢崎（群馬）で午後2時18分に40.0℃に達し、今年2日目の40℃以上の高温となった。6月に40℃以上を2日観測したのは、全国でも観測史上初めて。その他、前橋、鳩山（埼玉）、桐生（群馬）、大月（山梨）でも39℃を超えた（午後2時20分現在）。また、東京都心はきょうで5日連続35℃以上の猛暑日となり、これも6月としては観測史上初めてとなる。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
