@@ -3239,7 +3239,7 @@ a=a.replace(/(無)(?!X)(線)(?!X)/g,'$1X$2X,mu-sen,radio,wireless~noun');
 a=a.replace(/(無)(?!X)(知)(?!X)/g,'$1X$2X,mu-chi,ignorance~noun');
 a=a.replace(/(無)(?!X)(用)(?!X)/g,'$1X$2X,mu-you,useless,unnecessary~noun');
 a=a.replace(/(無)(?!X)(理)(?!X)/g,'$1X$2X,mu-ri,impossibility~noun');
-a=a.replace(/(無)(?!X)(料)(?!X)/g,'$1X$2X,mu-ryou,no charge,free~noun');
+a=a.replace(/(無)(?!X)(料)(?!X)/g,'$1X$2X,mu-ryou,no charge~noun');
 a=a.replace(/(無)(?!X)(数)(?!X)/g,'$1X$2X,mu-suu,countless,innumerable~noun');
 a=a.replace(/(無)(?!X)(害)(?!X)/g,'$1X$2X,mu-gai,harmless~noun');
 a=a.replace(/(無)(?!X)(口)(?!X)/g,'$1X$2X,mu-ku-chi,not speaking much,reticence~noun');
@@ -5173,7 +5173,7 @@ a=a.replace(/(休)(?!X)(日)(?!X)/g,'$1X$2X,kyuu-jitsu,day off~noun');
 a=a.replace(/(休)(?!X)(憩)(?!X)/g,'$1X$2X,kyuu-kei,rest,repose~noun');
 a=a.replace(/(休)(?!X)(息)(?!X)/g,'$1X$2X,kyuu-soku,rest,break~noun');
 a=a.replace(/(休)(?!X)(学)(?!X)/g,'$1X$2X,kyuu-gaku,leave of absence,absence~noun');
-a=a.replace(/(休)(?!X)(み)(?!X)/g,'$1X$2X,yasumi,rest,holiday,absence~noun');
+a=a.replace(/(休)(?!X)(み)(?!X)/g,'$1X$2X,yasumi,rest~noun');
 a=a.replace(/(企)(?!X)(画)(?!X)/g,'$1X$2X,ki-kaku,plan~noun');
 a=a.replace(/(企)(?!X)(業)(?!X)/g,'$1X$2X,ki-gyou,business~noun');
 a=a.replace(/(任)(?!X)(期)(?!X)/g,'$1X$2X,nin-ki,term in office~noun');
@@ -6296,7 +6296,7 @@ a=a.replace(/(彼)(?!X)/g,'$1X,kare,he,one\'s boyfriend~noun');
 a=a.replace(/(後)(?!X)/g,'$1X,ato or +go,after~noun');
 a=a.replace(/(得)(?!X)/g,'$1X,toku,gain,advantage~noun');
 a=a.replace(/(心)(?!X)/g,'$1X,kokoro,heart,mind~noun');
-a=a.replace(/(急)(?!X)/g,'$1X,kyuu,urgent,dire,pressing~noun');
+a=a.replace(/(急)(?!X)/g,'$1X,kyuu,dire~noun');
 a=a.replace(/(性)(?!X)/g,'$1X,sei,sex,nature~noun');
 a=a.replace(/(恋)(?!X)/g,'$1X,koi,love,romance~noun');
 a=a.replace(/(恥)(?!X)/g,'$1X,haji,shame,disgrace~noun');
@@ -6699,6 +6699,7 @@ a=a.replace(/(さX~i-adjective)/g,'$1,sa~gerund form~noun');
 a=a.replace(/(し)(?!X)(ま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X,shimashita,did~formal~verb');
 a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(ま)(?!X)(す)(?!X)/g,'$1X$2X$3X$4X$5X,shiteimasu,is doing~formal<br>~suru-verb');
 a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X,shiteita,was doing~informal~verb');
+a=a.replace(/(nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3X,mashita,did~formal~verb');
 a=a.replace(/(し)(?!X)(た)(?!X)/g,'$1X$2X,shita,did,~informal~verb');
 a=a.replace(/(postpositionし|nounし)(?!X)/g,'$1X,shi,do and~suru-verb');
 a=a.replace(/(postpositionし|nounし)(?!X)(た)(?!X)/g,'$1X$2X,shita,did~informal~suru-verb');
@@ -6732,6 +6733,7 @@ a=a.replace(/(verbま|nounま)(?!X)(す)(?!X)/g,'$1X$2X,masu~formal~verb');
 a=a.replace(/(postpositionも|verbも|nounも)(?!X)/g,'$1X,mo,too~postposition');
 
 a=a.replace(/(い)(?!X)(る)(?!X)/g,'$1X$2X,iru,is doing~informal~verb');
+a=a.replace(/(nounへ)(?!X)/g,'$1X,e,toward~postposition');
 a=a.replace(/(verbれ|nounれ)(?!X)(て)(?!X)(い)(?!X)/g,'$1X$2X$3X,is doing~verb');
 a=a.replace(/(verbれ)(?!X)/g,'$1X,is done~passive~verb');
 a=a.replace(/(verbれ)(?!X)(verbて)(?!X)/g,'$1X$2X,rete,has been doing~passive~verb');
@@ -6759,9 +6761,7 @@ a=a.replace(/(verbい)(?!X)(る)(?!X)/g,'$1X$2X,iru,is doing, will be doing~info
 a=a.replace(/(verb|noun|i-adjective|postposition)/g,"$1<br>");
 a=a.replace(/(nounら)(?!X)/g,'$1X,ra,plural~postposition');
 a=a.replace(/(nounま|verbま)(?!X)(せ)(?!X)(ん)(?!X)/g,'$1X$2X$3X,masen,didn\'t~formal~verb');
-a=a.replace(/(nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3X,mashita,did~formal~verb');
 a=a.replace(/(nounま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3X,did~formal~verb');
-a=a.replace(/(nounへ)(?!X)/g,'$1X,e,toward~postposition');
 a=a.replace(/(nounと)(?!X)/g,'$1X,to,with~postposition');
 a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3X,datta,was~informal~verb');
 a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3X,datta,was~informal~verb');
@@ -6794,7 +6794,15 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-8月上旬に臨時国会を召集した上で、その後に内閣改造・党役員人事を行い、体制を強化する方針。銃撃事件で安倍晋三元首相を失ったことに対する党内の動揺を抑えるため、人事は「結束」を重視する考えも示した。
+<div class="HeaderStyle"><img src='Panel.png'></div>
+
+　新型コロナウイルスの感染急拡大を受けて政府は夏休み期間中、無料の検査場を駅や空港などに臨時で設置する方針を固めました。
+
+　無料の検査場は現在、全国に約1万3000カ所設置されています。
+
+　しかし、感染拡大が進むなか、お盆休みなどに帰省や旅行で移動する人が増えることから駅や空港、サービスエリアなどに臨時の検査場を100カ所程度、設置することが検討されています。
+
+　オミクロン株への感染は特に60歳以上の重症化リスクが高いことが指摘されていて、政府関係者は「行動制限はしないが、60歳以上に感染が広がらないよう対策をしっかりしてもらう必要がある」としています。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
