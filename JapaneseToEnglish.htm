@@ -3725,8 +3725,10 @@ a=a.replace(/(早)(?!X)(寝)(?!X)/g,'$1X$2X,hayane,going to bed early~noun');
 a=a.replace(/(早)(?!X)(口)(?!X)/g,'$1X$2X,hayaku-chi,fast talking~noun');
 a=a.replace(/(早)(?!X)(々)(?!X)/g,'$1X$2X,haya-baya,promptly~noun');
 a=a.replace(/(日)(?!X)(韓)(?!X)/g,'$1X$2X,nik-kan,Japan and Korea~noun');
-a=a.replace(/(日)(?!X)(陰)(?!X)/g,'$1X$2X,hikage,the shade~noun');
+a=a.replace(/(日)(?!X)(陰)(?!X)/g,'$1X$2X,hi-kage,the shade~noun');
+a=a.replace(/(降)(?!X)(水)(?!X)/g,'$1X$2X,kou-sui,rainfall~noun');
 a=a.replace(/(日)(?!X)(課)(?!X)/g,'$1X$2X,nikka,daily routine~noun');
+a=a.replace(/(線)(?!X)(状)(?!X)/g,'$1X$2X,sen-jyou,linear~noun');
 a=a.replace(/(日)(?!X)(記)(?!X)/g,'$1X$2X,nikki,diary~noun');
 a=a.replace(/(日)(?!X)(米)(?!X)/g,'$1X$2X,nichi-bei,Japan and U.S.~noun');
 a=a.replace(/(日)(?!X)(程)(?!X)/g,'$1X$2X,nit-tei,schedule~noun');
@@ -3736,7 +3738,7 @@ a=a.replace(/(日)(?!X)(日)(?!X)/g,'$1X$2X,hi-nichi,date,number of days~noun');
 a=a.replace(/(日)(?!X)(数)(?!X)/g,'$1X$2X,nissuu,number of days~noun');
 a=a.replace(/(日)(?!X)(常)(?!X)/g,'$1X$2X,nichi-jyou,daily,everyday~noun');
 a=a.replace(/(日)(?!X)(光)(?!X)/g,'$1X$2X,nik-kou,sunshine,sunlight~noun');
-a=a.replace(/(日)(?!X)(中)(?!X)/g,'$1X$2X,niccyuu,during the day~noun');
+a=a.replace(/(日)(?!X)(中)(?!X)/g,'$1X$2X,nic-cyuu,during the day~noun');
 a=a.replace(/(日)(?!X)(ソ)(?!X)/g,'$1X$2X,nisso,Japanese-Soviet~noun');
 a=a.replace(/(日)(?!X)(々)(?!X)/g,'$1X$2X,hibi,daily,every day~noun');
 a=a.replace(/(既)(?!X)(製)(?!X)/g,'$1X$2X,ki-sei,ready-made,ready-to-wear~noun');
@@ -6113,7 +6115,7 @@ a=a.replace(/(下)(?!X)/g,'$1X,shita or ge+,down,under,below,inferior~noun');
 a=a.replace(/(世)(?!X)/g,'$1X,yo,world,public,~noun');
 a=a.replace(/(丘)(?!X)/g,'$1X,oka,hill,slope~noun');
 a=a.replace(/(両)(?!X)/g,'$1X,ryou+,both~noun');
-a=a.replace(/(中)(?!X)/g,'$1X,cyuu+ or naka,middle,medium~noun');
+a=a.replace(/(中)(?!X)/g,'$1X,+cyuu or naka,middle,medium~noun');
 a=a.replace(/(中)(?!X)/g,'$1X,naka,inside,middle~noun');
 a=a.replace(/(丸)(?!X)/g,'$1X,maru,circle or sphere,wholeness~noun');
 a=a.replace(/(主)(?!X)/g,'$1X,omo,the main thing~noun');
@@ -6311,7 +6313,7 @@ a=a.replace(/(愛)(?!X)/g,'$1X,ai,love~noun');
 a=a.replace(/(益)(?!X)/g,'$1X,eki,profit~noun');
 a=a.replace(/(戦)(?!X)/g,'$1X,sen or ikusa,war~noun');
 a=a.replace(/(戸)(?!X)/g,'$1X,to,door,shutter~noun');
-a=a.replace(/(所)(?!X)/g,'$1X,+syo,office or tokoro,place~noun');
+a=a.replace(/(所)(?!X)/g,'$1X,+syo,office or tokoro,place or about to~noun');
 a=a.replace(/(扉)(?!X)/g,'$1X,tobira,door~noun');
 a=a.replace(/(手)(?!X)/g,'$1X,te,hand~noun');
 a=a.replace(/(指)(?!X)/g,'$1X,yubi,finger,toe~noun');
@@ -6695,6 +6697,8 @@ a=a.replace(/(４|4|四)(?!X)/g,'$1X,yon or shi,four~noun');
 a=a.replace(/(６|6|六)(?!X)/g,'$1X,roku,six~noun');
 a=a.replace(/(８|8|八)(?!X)/g,'$1X,hachi,eight~noun');
 
+a=a.replace(/(adjectiveで|verbで|nounで)(?!X)/g,'$1X,de,with,at~postposition');
+
 a=a.replace(/(verbを|nounを)(?!X)/g,'$1X,oo,direct object~postposition');
 
 a=a.replace(/(nounと)(?!X)/g,'$1X,to,with~postposition');
@@ -6721,8 +6725,6 @@ a=a.replace(/(verbは|postpositionは|nounは)(?!X)/g,'$1X,wa,as for~postpositio
 
 a=a.replace(/(postpositionか|verbか|nounか)(?!X)(ら)(?!X)/g,'$1X$2X,kara,from~postposition');
 a=a.replace(/(postpositionか|verbか|nounか)(?!X)/g,'$1X,ka,indicates a question~postposition');
-
-a=a.replace(/(adjectiveで|verbで|nounで)(?!X)/g,'$1X,de,with,at~postposition');
 
 a=a.replace(/(nounな)(?!X)(か)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X,nakatta,did not~informal~suru-verb');
 a=a.replace(/(な)(?!X)(け)(?!X)(れ)(?!X)(ば)(?!X)/g,'$1X$2X$3X$4X,nakereba,must~noun');
@@ -6800,7 +6802,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 
 <div class="HeaderStyle"><img src='Panel.png'></div>
 
-安倍晋三元毎日新聞と社会調査研究センターは16、17の両日、全国世論調査を実施した。岸田内閣の支持率は52％で、6月18日の前回調査（48％）から4ポイント上昇した。不支持率は37％で前回（44％）から7ポイント低下した。首相が街頭演説中に銃撃を受けて殺害された事件で、二之湯智国家公安委員長が17日、奈良市西大寺東町の近鉄大和西大寺駅北側の現場を訪れた。献花台そばで手を合わせて黙禱（もくとう）した後、奈良県警の鬼塚友章本部長から、事件当時の様子や警備態勢などの説明を受けた。
+きょう19日、九州北部では午前中まで、九州南部では日中にかけて線状降水帯が発生しやすい状況が続くでしょう。猛烈な雨による大雨災害に厳重な警戒を。中国地方や四国から北陸でも非常に激しい雨が降り、大雨となる所があるでしょう。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
