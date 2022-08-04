@@ -11,7 +11,8 @@
       font-size: 30px; 
       overflow-wrap: break-word;
      }
-    div
+
+    .niceHeader
     {    
      background: #959595;
      background: linear-gradient(to right, #959595 0%, #0D0D0D 46%, #010101 50%, #0A0A0A 53%, #4E4E4E 76%, #383838 87%, #1B1B1B 100%);
@@ -22,17 +23,39 @@
       -ms-text-shadow: 0px 13px 10px rgba(0, 0, 0, 0.75);
       -webkit-text-shadow: 0px 13px 10px rgba(0, 0, 0, 0.75);
       text-shadow: 0px 13px 10px rgba(0, 0, 0, 0.75);
-      
-     font-family: Galligra;
-     font-size: 70px;
-    }
+
+      font-family: Galligra;
+      font-size: 70px;
+     }
+
+    .right
+     {
+      float: right;
+      padding: 0 0 20px 20px;
+     }
+
+     .white_overlay p
+      {
+       padding: 20px;
+       position: absolute;
+        top: 80px;
+        right: -12px;
+       color: white;
+       margin: 0;
+      }
+
   </style>
   <body>
-    <div>John's Journal</div>
+    <div class='right white_overlay'>
+    <img src='PepsiTwist.png'><p>Pepsi Is Coke with Lemon</p>
+    </div>
+    <div class='niceHeader'>John's Journal</div>
     2022 August 04 16:49 Tokyo
     <p>
      my 
     <a href = "https://www.pinterest.jp/johnrenfro2016/">Pinterest</a> collection of my favorite things from the 70s to today
+    <p>
+    ..reading Judy Blume "Otherwise Known as Sheila the Great". This kid learns to swim.
     </div>  
   </body>
 </html>
