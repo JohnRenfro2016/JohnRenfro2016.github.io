@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- START: Catman header -->
+
+<script type="text/javascript">
+var cm_role = "live"
+var cm_host = "tripod.lycos.com"
+var cm_taxid = "/membererror"
+</script> 
+<script type="text/javascript" src="http://scripts.lycos.com/catman/init.js"></script>
+<script type="text/javascript">
+var objAdMgr = new AdManager();
+var strProdSetName = objAdMgr.chooseProductSet(); objAdMgr.renderHeader();
+</script>
+
+<!-- END: Catman header -->
+<title>Create a Website | Tripod Web Hosting </title>
+<link href="http://ly.lygo.com/ly/tpSite/css/tpStyle.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+  <script src="http://ly.lygo.com/ly/js/html5.js"></script>
+<![endif]-->
+</head>
+<body class="interior">
+
+<script src="http://ly.lygo.com/ly/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="/common/tp/js/tp.js" type="text/javascript"></script>
+<section id="topBar" class="">
+	<span class="float_right member">
+           <a href="/adm/redirect/www/bin/membership/logout?home=1" title="Log out of your account">Log out</a>
+    </span>
+    <br class="clr" />
+</section>
+<header class="loggedIn">
+	<div class="container">
+        <h1 class="logo"><a href="http://www.tripod.lycos.com/" title="Tripod.com"><span>Tripod.com</span></a></h1>
+       <nav id="cpanelNav">
+            <ul>
+                <li><a href="http://www.tripod.lycos.com/" title="Build" id="build-btn" class="cpButton selected">Build</a></li>
+                <li class="noborder"><a href="http://www.tripod.lycos.com/help/" title="Help" id="help-btn">Help</a></li>
+            </ul>
+       </nav>
+    </div>
+</header>
+<div id="divider"></div>
+
+<section id="content" class="container helpPage">
+<div class="mainContents float_left" id="errorLeft">
+	<h1 class="mPageTitle">404 - Page Not Found</h1>
+    <br class="clr" />
+   
+<article class="mainArticle boxSize">
+	<h3>
+    	We couldn't find the page you requested.<br />
+            Please check the URL and try again.
+	</h3>
+
+<a href="http://www.tripod.com/" class="tripod errorCall pad emphBlock mb15">
+            <span><strong>Tripod.com</strong> <br /> Create a website for your business, interests and hobbies on Tripod!</span>
+        </a>
+
+        <a href="http://shopping.lycos.com/" class="shopping errorCall pad emphBlock mb15">
+            <span>
+            <strong>Lycos Shopping</strong> <br />The best online shopping deals, coupons &amp; exclusive close out sales at bargain prices.
+            </span>
+        </a>
+
+        <a href="http://www.lycos.com/" title="Lycos.com" class="classifieds errorCall pad emphBlock">
+            <span><strong>Lycos.com</strong> <br /> Search the web, read the news, check your mail and more!</span>
+        </a>
+</article>
+</div>
+
+<div class="float_right" id="errorRight"> 
+
+    <script type="text/javascript">
+if (objAdMgr.isSlotAvailable("messagingunit")) {
+	objAdMgr.renderSlot("messagingunit")
+}
+</script>
+<noscript>
+ <!-- BEGIN STANDARD TAG - 300 x 250 - Lycos - Tripod: Tripod - JS Disabled Fallthrough - DO NOT MODIFY -->
+ <iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="300" height="250" src="http://ad.yieldmanager.com/st?ad_type=iframe&ad_size=300x250&section=209094"></iframe>
+ <!-- END TAG -->
+</noscript>
+
+
+    </div>
+</section>
+
+<div class="txt_center" style="margin-bottom:40px">
+    <img src="http://members.tripod.com/adm/ot_e404.gif?foof=yay" style="height:1px; width:1px" />
+    <!--leaderboard-->
+    <script type="text/javascript">
+if (objAdMgr.isSlotAvailable("leaderboard")) {
+	objAdMgr.renderSlot("leaderboard")
+}
+</script>
+<noscript>
+ <!-- BEGIN STANDARD TAG - 728 x 90 - Lycos - Tripod Fallthrough - DO NOT MODIFY -->
+ <iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="728" height="90" src="http://ad.yieldmanager.com/st?ad_type=iframe&ad_size=728x90&section=209094"></iframe>
+ <!-- END TAG -->
+</noscript>
+
+    <!--leaderboard end-->
+</div>
+
+<footer>
+	<section class="container">
+    	<article id="socialFooter" class="float_left boxSize">
+        	<h4>Connect with Us</h4>
+            <ul>
+            	<li><a href="http://www.facebook.com/tripodclub" title="Tripod on Facebook" class="icon"><span class="fbLink"></span>Facebook</a></li>
+				<li><a href="http://twitter.com/tripod" title="Tripod on Twitter" class="icon"><span class="tLink"></span>Twitter</a></li>
+                <li><a href="http://vimeo.com/tripod" title="Tripod's Vimeo Page" class="icon"><span class="vLink"></span>Tripod Videos</a></li>
+            </ul>            
+        </article>
+        <article id="quickLinks" class="float_left boxSize">
+        	<h4>Navigate</h4>
+            <ul class="footerList">
+            	<li><a href="http://www.tripod.lycos.com/features/" title="Tripod Features">Features</a></li>
+                <li><a href="http://www.tripod.lycos.com/pricing/" title="Plan Pricing">Pricing</a></li>
+                <li><a href="http://www.tripod.lycos.com/help/" title="Tripod Help">Help</a></li>
+                <li><a href="http://www.tripod.lycos.com/about.tmpl" title="About Tripod">About Tripod</a></li>
+				<li><a href="http://www.tripod.lycos.com//sotm/index.tmpl" title="About Tripod">About Tripod</a></li>
+        	</ul>
+        </article>
+        
+         <article id="shareThis" class="float_left boxSize ie7Hide">
+        	<h4>Share Tripod</h4>
+            <ul class="socialShare">
+            <li>
+                <div id="fb-root"></div>
+                <script type="text/javascript">(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=225733757485531";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+            	<div class="fb-like" data-href="http://www.tripod.lycos.com" data-send="false" data-layout="button_count" data-width="70" data-show-faces="false" data-font="arial"></div>
+            </li>   
+            <li>      
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.tripod.lycos.com" data-text="Build a website on Tripod.com with @zeeblio" data-via="tripod">Tweet</a>
+				<script type="text/javascript">
+				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+                </script>
+            </li>
+            <li>
+                <g:plusone size="medium" href="http://www.tripod.lycos.com"></g:plusone>
+                <script type="text/javascript">
+                  (function() {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                  })();
+                </script>
+            </li>
+            </ul>
+   		</article>
+        <article id="siteMonth" class="float_left boxSize">
+        	
+        </article>
+        <br class="clr" />
+    </section>
+    <section id="bookEnd">
+    	<div class="bookEndCenter">
+    	<p class="float_left">
+        	<script type="text/javascript">
+			copyright=new Date();
+			update=copyright.getFullYear();
+			document.write("Copyright &copy; "+ update + "");
+			</script> -
+            <a href="http://www.lycos.com" title="Lycos Inc.">Lycos Inc.</a> -
+            All Rights Reserved
+        </p>
+        <ul class="float_right">
+        	<li><a href="http://info.lycos.com/" title="About us" rel="nofollow">About Us</a></li>
+            <li><a href="http://info.lycos.com/privacy.php" title="Lycos Privacy Policy" rel="nofollow">Privacy Policy</a></li>
+            <li><a href="http://info.lycos.com/tos.php" title="Lycos Terms of Service" rel="nofollow">Terms of Service</a></li>
+            <li><a href="http://advertising.lycos.com/" title="Advertise with us" rel="nofollow">Advertise With Us</a></li>
+        </ul>
+        </div>
+    </section>
+</footer>
+</body>
+</html>
