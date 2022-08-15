@@ -4114,7 +4114,9 @@ a=a.replace(/(当)(?!X)(局)(?!X)/g,'$1X$2X,tou-kyoku,the authorities concerned~
 a=a.replace(/(当)(?!X)(初)(?!X)/g,'$1X$2X,tou-syo,initial~noun');
 a=a.replace(/(当)(?!X)(分)(?!X)/g,'$1X$2X,tou-bun,for some time,for the present~noun');
 a=a.replace(/(当)(?!X)(人)(?!X)/g,'$1X$2X,tou-nin,the person in question~noun');
+a=a.replace(/(悲)(?!X)(惨)(?!X)/g,'$1X$2X,hi-san,tragic~noun');
 a=a.replace(/(当)(?!X)(事)(?!X)/g,'$1X$2X,tou-ji,matter of concern~noun');
+a=a.replace(/(参)(?!X)(列)(?!X)/g,'$1X$2X,san-retsu,presence~noun');
 a=a.replace(/(弾)(?!X)(道)(?!X)/g,'$1X$2X,dan-dou,balistic~noun');
 a=a.replace(/(弾)(?!X)(薬)(?!X)/g,'$1X$2X,dan-yaku,ammunition~noun');
 a=a.replace(/(強)(?!X)(風)(?!X)/g,'$1X$2X,kyou-fuu,high winds~noun');
@@ -4181,9 +4183,9 @@ a=a.replace(/(年)(?!X)(収)(?!X)/g,'$1X$2X,nen-syuu,annual income~noun');
 a=a.replace(/(年)(?!X)(内)(?!X)/g,'$1X$2X,nen-nai,within the year~noun');
 a=a.replace(/(年)(?!X)(代)(?!X)/g,'$1X$2X,nen-dai,era~noun');
 a=a.replace(/(年)(?!X)(代)(?!X)/g,'$1X$2X,nen-dai,age,date~noun');
-a=a.replace(/(年)(?!X)(中)(?!X)/g,'$1X$2X,nenjyuu,all year~noun');
-a=a.replace(/(年)(?!X)(下)(?!X)/g,'$1X$2X,toshishita,younger,junior~noun');
-a=a.replace(/(年)(?!X)(上)(?!X)/g,'$1X$2X,toshiue,older,sen-ior~noun');
+a=a.replace(/(年)(?!X)(中)(?!X)/g,'$1X$2X,nen-jyuu,all year~noun');
+a=a.replace(/(年)(?!X)(下)(?!X)/g,'$1X$2X,toshi-shita,younger,junior~noun');
+a=a.replace(/(年)(?!X)(上)(?!X)/g,'$1X$2X,toshi-ue,older~noun');
 a=a.replace(/(年)(?!X)(々)(?!X)/g,'$1X$2X,nen-nen,year by year,annually~noun');
 a=a.replace(/(平)(?!X)(面)(?!X)/g,'$1X$2X,hei-men,level surface,plain~noun');
 a=a.replace(/(平)(?!X)(野)(?!X)/g,'$1X$2X,hei-ya,plain,open field~noun');
@@ -4779,7 +4781,7 @@ a=a.replace(/(十)(?!X)(分)(?!X)/g,'$1X$2X,jyuu-bun,enough~noun');
 a=a.replace(/(医)(?!X)(者)(?!X)/g,'$1X$2X,i-sya,doctor~noun');
 a=a.replace(/(医)(?!X)(療)(?!X)/g,'$1X$2X,i-ryou,healthcare~noun');
 a=a.replace(/(医)(?!X)(師)(?!X)/g,'$1X$2X,i-shi,doctor~noun');
-a=a.replace(/(医)(?!X)(学)(?!X)/g,'$1X$2X,i-gaku,medical science,medicine~noun');
+a=a.replace(/(医)(?!X)(学)(?!X)/g,'$1X$2X,i-gaku,medical science~noun');
 a=a.replace(/(区)(?!X)(画)(?!X)/g,'$1X$2X,ku-kaku,division,section~noun');
 a=a.replace(/(区)(?!X)(域)(?!X)/g,'$1X$2X,ku-iki,zone~noun');
 a=a.replace(/(区)(?!X)(別)(?!X)/g,'$1X$2X,ku-betsu,distinction,classification~noun');
@@ -5606,7 +5608,7 @@ a=a.replace(/(遅)(?!X)(い|く|か|さ)(?!X)/g,'$1X,oso,slow,late<br>$2X~i-adje
 a=a.replace(/(進)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,susu,advance<br>$2X~mu-verb');
 a=a.replace(/(逢)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,a,meet<br>$2X~u-verb');
 a=a.replace(/(速)(?!X)(い|く|か|さ)(?!X)/g,'$1X,haya,fast<br>$2X~i-adjective');
-a=a.replace(/(通)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,kayo,go to and from,frequent a place<br>$2X~u-verb');
+a=a.replace(/(通)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,kayo,frequent a place<br>$2X~u-verb');
 a=a.replace(/(通)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,too,pass,take,go through<br>$2X~ru-verb');
 a=a.replace(/(通)(?!X)(じ)(?!X)/g,'$1X$2X,tsuu-ji,to be open to~ichidan-verb');
 a=a.replace(/(通)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,too,let pass,run through<br>$2X~su-verb');
@@ -6804,9 +6806,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-<div class="HeaderStyle"><img src='Panel.png'></div>
+「あと何年生きているか分からないので、最後の機会と思って参列した。悲惨な戦争は二度としてはいけない」と訴える。沢崎さんは6人きょうだいの末っ子。父親が朝鮮鉄道に勤務していた関係で、平壌で生まれ現地の医学専門学校に通った。戦争では15歳年上の長男進さん＝当時（34）＝と、5歳違いの次男源次さん＝同（26）＝を亡くした
 
-政府は参院選遊説中に銃撃されて亡くなった安倍晋三元首相の「国葬」を9月下旬に東京都千代田区の日本武道館で行う調整に入った。22日の閣議で決定する見通し。19日、複数の政府関係者が明らかにした。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
