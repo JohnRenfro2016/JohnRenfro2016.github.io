@@ -1174,6 +1174,7 @@ a=a.replace(/(値)(?!X)(引)(?!X)(き)(?!X)/g,'$1X$2X$3X,neb-iki,discount~noun')
 a=a.replace(/(値)(?!X)(下)(?!X)(げ)(?!X)/g,'$1X$2X$3X,nesage,price reduction~noun');
 a=a.replace(/(値)(?!X)(上)(?!X)(げ)(?!X)/g,'$1X$2X$3X,ne-age,price hike~noun');
 a=a.replace(/(保)(?!X)(護)(?!X)(者)(?!X)/g,'$1X$2X$3X,hogo-sya,guardian~noun');
+a=a.replace(/(宮)(?!X)(古)(?!X)(島)(?!X)/g,'$1X$2X$3X,Miya-ko-jima, Japan~noun');
 a=a.replace(/(保)(?!X)(証)(?!X)(人)(?!X)/g,'$1X$2X$3X,hosyounin,guarantor~noun');
 a=a.replace(/(保)(?!X)(育)(?!X)(士)(?!X)/g,'$1X$2X$3X,hou-iku-shi,preschool teacher~noun');
 a=a.replace(/(保)(?!X)(育)(?!X)(園)(?!X)/g,'$1X$2X$3X,ho-iku-en,preschool~noun');
@@ -4048,6 +4049,7 @@ a=a.replace(/(急)(?!X)(行)(?!X)/g,'$1X$2X,kyuu-kou,express train,going in a hu
 a=a.replace(/(急)(?!X)(病)(?!X)/g,'$1X$2X,kyuu-byou,sudden illness~noun');
 a=a.replace(/(急)(?!X)(用)(?!X)/g,'$1X$2X,kyuu-you,urgent business~noun');
 a=a.replace(/(急)(?!X)(増)(?!X)/g,'$1X$2X,kyuu-zou,sudden increase~noun');
+a=a.replace(/(停)(?!X)(滞)(?!X)/g,'$1X$2X,tei-tai,accumulation~noun');
 a=a.replace(/(急)(?!X)(に)(?!X)/g,'$1X$2X,kyuu-ni,suddenly,unexpectedly~noun');
 a=a.replace(/(思)(?!X)(想)(?!X)/g,'$1X$2X,shi-sou,thought,conception~noun');
 a=a.replace(/(怒)(?!X)(り)(?!X)/g,'$1X$2X,ikari,anger,rage~noun');
@@ -4059,6 +4061,7 @@ a=a.replace(/(応)(?!X)(用)(?!X)/g,'$1X$2X,ou-you,application~noun');
 a=a.replace(/(応)(?!X)(札)(?!X)/g,'$1X$2X,ou-satsu,bidding~noun');
 a=a.replace(/(応)(?!X)(援)(?!X)/g,'$1X$2X,ou-en,support,cheering~noun');
 a=a.replace(/(応)(?!X)(募)(?!X)/g,'$1X$2X,ou-bo,application~noun');
+a=a.replace(/(北)(?!X)(上)(?!X)/g,'$1X$2X,hoku-jyou,going north~noun');
 a=a.replace(/(応)(?!X)(え)(?!X)/g,'$1X$2X,kotae,answer~ichidan-verb');
 a=a.replace(/(忍)(?!X)(者)(?!X)/g,'$1X$2X,nin-jya,Ninja~noun');
 a=a.replace(/(必)(?!X)(要)(?!X)/g,'$1X$2X,hitsu-you,necessity~noun');
@@ -5581,7 +5584,7 @@ a=a.replace(/(隠)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X,kaku-,hide,conceal<br>$
 a=a.replace(/(陥)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,ochi-i,fall into<br>$2X~u-verb');
 a=a.replace(/(除)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,nozo,rid of,exclude<br>$2X~ku-verb');
 a=a.replace(/(限)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,kagi,be limited to<br>$2X~ru-verb');
-a=a.replace(/(降)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,fu,fall,come down<br>$2X~ru-verb');
+a=a.replace(/(降)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,fu,fall<br>$2X~ru-verb');
 a=a.replace(/(防)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,'$1X,fuse,prevent<br>$2X~gu-verb');
 a=a.replace(/(闘)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,tataka,fight<br>$2X~u-verb');
 a=a.replace(/(開)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X,hira,open<br>$2X~ku-verb');
@@ -6184,7 +6187,7 @@ a=a.replace(/(区)(?!X)/g,'$1X,ku,ward~noun');
 a=a.replace(/(十)(?!X)/g,'$1X,jyuu+,ten~noun');
 a=a.replace(/(千)(?!X)/g,'$1X,sen,thousand~noun');
 a=a.replace(/(半)(?!X)/g,'$1X,han+,half~noun');
-a=a.replace(/(南)(?!X)/g,'$1X,minami or +nan+,south~noun');
+a=a.replace(/(南)(?!X)/g,'$1X,minami or +nan,south~noun');
 a=a.replace(/(印)(?!X)/g,'$1X,shiru+shi,mark,symbol~noun');
 a=a.replace(/(卵)(?!X)/g,'$1X,tamago,egg~noun');
 a=a.replace(/(原)(?!X)/g,'$1X,hara,plain,field~noun');
@@ -6806,7 +6809,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-「あと何年生きているか分からないので、最後の機会と思って参列した。悲惨な戦争は二度としてはいけない」と訴える。沢崎さんは6人きょうだいの末っ子。父親が朝鮮鉄道に勤務していた関係で、平壌で生まれ現地の医学専門学校に通った。戦争では15歳年上の長男進さん＝当時（34）＝と、5歳違いの次男源次さん＝同（26）＝を亡くした
+きょう2日は、九州から関東は、雨が降る時間があり、雷を伴って激しい雨が降る所があるでしょう。東海では、局地的に非常に激しい雨が降り、大雨になる恐れがあります。台風11号は、宮古島の南で停滞しており、今後ゆっくり北上する見込みです。沖縄では、風が強まるでしょう。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
