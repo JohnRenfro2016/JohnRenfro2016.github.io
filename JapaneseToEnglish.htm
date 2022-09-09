@@ -97,6 +97,7 @@ a=a.replace(/(間)(?!X)(に)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|
 a=a.replace(/(ク)(?!X)(レ)(?!X)(ジ)(?!X)(ッ)(?!X)(ト)(?!X)/g,'$1X$2X$3X$4X$5Xkurejitto,credit~noun');
 a=a.replace(/(ウ)(?!X)(ク)(?!X)(ラ)(?!X)(イ)(?!X)(ナ)(?!X)/g,'$1X$2X$3X$4X$5Xukuraina,Ukraine~noun');
 a=a.replace(/(オ)(?!X)(ミ)(?!X)(ク)(?!X)(ロ)(?!X)(ン)(?!X)/g,'$1X$2X$3X$4X$5Xomikuron,Omicron~noun');
+a=a.replace(/(禁)(?!X)(じ)(?!X)(得)(?!X)(な)(?!X)(い)(?!X)/g,'$1X$2X$3X$4X$5Xkinji-enai,can\'t help feeling~noun');
 
 a=a.replace(/(飛)(?!X)(び)(?!X)(下)(?!X)(り)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xtobiori,jump off,jump down<br>$5X~ru-verb');
 a=a.replace(/(飛)(?!X)(び)(?!X)(上)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xtobiaga,fly up,jump up<br>$5X~ru-verb');
@@ -152,7 +153,7 @@ a=a.replace(/(出)(?!X)(来)(?!X)(上)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?
 a=a.replace(/(作)(?!X)(り)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xtsukuriage,make up,build up<br>$5X~ru-verb');
 a=a.replace(/(付)(?!X)(け)(?!X)(加)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xtsukekuwae,add<br>$5X~ru-verb');
 a=a.replace(/(乗)(?!X)(り)(?!X)(遅)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xnoriokure,miss<br>$5X~ru-verb');
-a=a.replace(/(乗)(?!X)(り)(?!X)(越)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xnorikoe,overcome,get over<br>$5X~ru-verb');
+a=a.replace(/(乗)(?!X)(り)(?!X)(越)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xnori-koe,overcome<br>$5X~ru-verb');
 a=a.replace(/(乗)(?!X)(り)(?!X)(換)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xnorikae,change,transfer<br>$5X~ru-verb');
 a=a.replace(/(や)(?!X)(っ)(?!X)(て)(?!X)(来)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xyatteku,come,turn up<br>$5X~ru-verb');
 a=a.replace(/(や)(?!X)(っ)(?!X)(つ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4Xyattsuke,beat,let someone have it<br>$5X~ru-verb');
@@ -355,7 +356,9 @@ a=a.replace(/(ウ)(?!X)(イ)(?!X)(ル)(?!X)(ス)(?!X)/g,'$1X$2X$3X$4Xwirusu,viru
 a=a.replace(/(じ)(?!X)(め)(?!X)(じ)(?!X)(め)(?!X)/g,'$1X$2X$3X$4Xfeel damp,clammy~noun');
 a=a.replace(/(し)(?!X)(ば)(?!X)(し)(?!X)(ば)(?!X)/g,'$1X$2X$3X$4Xof-ten,frequently~noun');
 a=a.replace(/(し)(?!X)(っ)(?!X)(か)(?!X)(り)(?!X)/g,'$1X$2X$3X$4Xshikari,reliable~noun');
+a=a.replace(/(哀)(?!X)(悼)(?!X)(の)(?!X)(意)(?!X)/g,'$1X$2X$3X$4Xai-tou no i,condolences~noun');
 a=a.replace(/(し)(?!X)(か)(?!X)(な)(?!X)(い)(?!X)/g,'$1X$2X$3X$4Xshikanai,no choice but to~noun');
+a=a.replace(/(に)(?!X)(お)(?!X)(い)(?!X)(て)(?!X)/g,'$1X$2X$3X$4Xni oite,as for~postposition');
 a=a.replace(/(ざ)(?!X)(ら)(?!X)(ざ)(?!X)(ら)(?!X)/g,'$1X$2X$3X$4Xrou-gh,gritty~noun');
 a=a.replace(/(ざ)(?!X)(あ)(?!X)(ざ)(?!X)(あ)(?!X)/g,'$1X$2X$3X$4Xheavily,pouring~noun');
 a=a.replace(/(さ)(?!X)(ま)(?!X)(ざ)(?!X)(ま)(?!X)/g,'$1X$2X$3X$4Xsama-zama,all sorts of~noun');
@@ -1000,7 +1003,7 @@ a=a.replace(/(成)(?!X)(熟)(?!X)(度)(?!X)/g,'$1X$2X$3Xsei-jyuku-do,degree of d
 a=a.replace(/(憎)(?!X)(し)(?!X)(み)(?!X)/g,'$1X$2X$3Xnikushimi,hatred,enmity~noun');
 a=a.replace(/(慣)(?!X)(用)(?!X)(句)(?!X)/g,'$1X$2X$3Xkan-youku,idiom,common phrase~noun');
 a=a.replace(/(意)(?!X)(地)(?!X)(悪)(?!X)/g,'$1X$2X$3Xijiwaru,nastiness,ill-natured person~noun');
-a=a.replace(/(悲)(?!X)(し)(?!X)(み)(?!X)/g,'$1X$2X$3Xkan-ashimi,grief,sadness~noun');
+a=a.replace(/(悲)(?!X)(し)(?!X)(み)(?!X)/g,'$1X$2X$3Xkanashimi,sadness~noun');
 a=a.replace(/(思)(?!X)(わ)(?!X)(ず)(?!X)/g,'$1X$2X$3Xomowazu,unintentionally,unconsciously~noun');
 a=a.replace(/(思)(?!X)(い)(?!X)(出)(?!X)/g,'$1X$2X$3Xomoide,recollections,memory~noun');
 a=a.replace(/(忘)(?!X)(年)(?!X)(会)(?!X)/g,'$1X$2X$3Xbounen-kai,year-end party~noun');
@@ -1087,7 +1090,7 @@ a=a.replace(/(大)(?!X)(し)(?!X)(て)(?!X)/g,'$1X$2X$3Xtai-shite,very,greatly~n
 a=a.replace(/(大)(?!X)(げ)(?!X)(さ)(?!X)/g,'$1X$2X$3Xoo-gesa,exaggerate~noun');
 a=a.replace(/(大)(?!X)(き)(?!X)(さ)(?!X)/g,'$1X$2X$3Xoo-kisa,size~noun');
 a=a.replace(/(親)(?!X)(権)(?!X)(者)(?!X)/g,'$1X$2X$3Xshin-ken-sya,legal guardian~noun');
-a=a.replace(/(大)(?!X)(い)(?!X)(に)(?!X)/g,'$1X$2X$3Xoo-ini,very,greatly~noun');
+a=a.replace(/(大)(?!X)(い)(?!X)(に)(?!X)/g,'$1X$2X$3Xooi ni,greatly~noun');
 a=a.replace(/(夜)(?!X)(明)(?!X)(け)(?!X)/g,'$1X$2X$3Xyoake,dawn,daybreak~noun');
 a=a.replace(/(外)(?!X)(来)(?!X)(語)(?!X)/g,'$1X$2X$3Xgai-raigo,loanword,foreign word~noun');
 a=a.replace(/(外)(?!X)(国)(?!X)(語)(?!X)/g,'$1X$2X$3Xgai-kokugo,foreign language~noun');
@@ -3619,6 +3622,7 @@ a=a.replace(/(態)(?!X)(勢)(?!X)/g,'$1X$2Xtai-sei,state,preparedness~noun');
 a=a.replace(/(態)(?!X)(度)(?!X)/g,'$1X$2Xtai-do,attitude,man-ner~noun');
 a=a.replace(/(慎)(?!X)(重)(?!X)/g,'$1X$2Xshin-cyou,prudence,discretion~noun');
 a=a.replace(/(慣)(?!X)(れ)(?!X)/g,'$1X$2Xnare,getting used to,habituation~noun');
+a=a.replace(/(日)(?!X)(英)(?!X)/g,'$1X$2Xnichi-ei,Japan and England~noun');
 a=a.replace(/(慰)(?!X)(霊)(?!X)/g,'$1X$2Xi-rei,consoling spirits~noun');
 a=a.replace(/(憧)(?!X)(れ)(?!X)/g,'$1X$2Xakogare,yearning,longing~noun');
 a=a.replace(/(憲)(?!X)(法)(?!X)/g,'$1X$2Xken-pou,constitutional law~noun');
@@ -4877,6 +4881,7 @@ a=a.replace(/(背)(?!X)(景)(?!X)/g,'$1X$2Xhai-kei,background~noun');
 a=a.replace(/(胴)(?!X)(衣)(?!X)/g,'$1X$2Xdou-i,padded vest~noun');
 a=a.replace(/(能)(?!X)(力)(?!X)/g,'$1X$2Xnou-ryoku,ability~noun');
 a=a.replace(/(能)(?!X)(率)(?!X)/g,'$1X$2Xnou-ritsu,efficiency~noun');
+a=a.replace(/(貢)(?!X)(献)(?!X)/g,'$1X$2Xkou-ken,furthering the cause of~noun');
 a=a.replace(/(脂)(?!X)(肪)(?!X)/g,'$1X$2Xshi-bou,fat,grease~noun');
 a=a.replace(/(脅)(?!X)(威)(?!X)/g,'$1X$2Xkyou-i,menace~noun');
 a=a.replace(/(脱)(?!X)(出)(?!X)/g,'$1X$2Xdas-syutsu,escape~noun');
@@ -6063,7 +6068,7 @@ a=a.replace(/(薄)(?!X)(い|く|か|さ)(?!X)/g,'$1Xusu,t-hin,weak,pale<br>$2X~i
 a=a.replace(/(薦)(?!X)(め)(?!X)/g,'$1X$2Xsusume,recommend~ichidan-verb');
 a=a.replace(/(行)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xi,go, or okona,happen<br>$2X~ku-verb');
 a=a.replace(/(行)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xokona,conduct<br>$2X~u-verb');
-a=a.replace(/(表)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xarawa,express,represent<br>$2X~su-verb');
+a=a.replace(/(表)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xarawa,express<br>$2X~su-verb');
 a=a.replace(/(被)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xkabu,wear,put on<br>$2X~ru-verb');
 a=a.replace(/(装)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xyosoo,disguise<br>$2X~u-verb');
 a=a.replace(/(補)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xogina,supplement,replenish<br>$2X~u-verb');
@@ -6914,23 +6919,12 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-　英王室は8日、女王エリザベス2世が死去したと発表した。96歳だった。女王死去を受け、長男チャールズ皇太子（73）が新国王として即位する。
+イギリスのエリザベス女王が亡くなったことを受け、岸田総理は「深い悲しみを禁じ得ない。国際社会において大きな損失だ」と哀悼の意を述べました。
 
-【写真】ダイアナ妃とエリザベス女王　今は亡き二人
+岸田総理
+「深い悲しみを禁じえません。日本国政府として英国王室、英国政府、英国国民の皆様に対し、心から哀悼の意を表します」
 
-　1952年から70年間に及んだ在任期間は、君主としてはフランスのルイ14世（在位1643～1715年）の72年と110日に次ぎ、史上2番目の長さだった。今年6月には在位70年を祝う式典が開かれたが、最近は健康不安も伝えられていた。
-
-　1926年4月21日、ヨーク公（後の国王ジョージ6世）の長女としてロンドンに生まれた。本名エリザベス・アレクサンドラ・メアリー・ウィンザー。妹はマーガレット王女。47年にギリシャ王室の血を引くフィリップ・マウントバッテン大尉（エディンバラ公）と結婚。父の病死に伴い、52年2月6日に25歳で即位した。53年6月2日にウェストミンスター寺院で戴冠式を行った。長男チャールズ皇太子、長女アン王女、次男アンドルー王子、三男エドワード王子の3男1女をもうけた。
-
-　「英国の顔」としての外遊は約100カ国、260回超。71年の昭和天皇訪英の返礼として75年に訪日した。旧植民地諸国を中心とした緩やかな連合体・英連邦（コモンウェルス）の元首も務めた。
-
-　国民から敬愛され、居城バッキンガム宮殿やウィンザー城は観光名所として人気を集めた。一方、チャールズ皇太子と離婚したダイアナ元妃が97年に交通事故死した際、数日間弔意を示さなかったことで一時は批判も浴びたが、以後はパブを訪れる姿を見せるなど「国民に近い王室」の発信に努めた。
-
-　新型コロナウイルス感染拡大直後の2020年4月には、「私たちが団結し、強い意志を持ち続ければ、病を必ず克服できる」と国民を励ますテレビ演説を行い、英国内で約2400万人が視聴。危機の際に国民をまとめる存在感を世界に示した。
-
-　21年4月には夫フィリップ殿下（当時99歳）と死別。今年2月にはコロナに感染した。
-
-　女王に仕えた英首相は第二次大戦を勝利に導いたチャーチルから現在のトラス首相まで15人に上る。
+岸田総理はエリザベス女王について、「日英関係の強化に大いに貢献をされた。激動の世界状況において、イギリスのみならず、国際社会において大きな損失だ」と話しました。そのうえで、「イギリス国民の皆さまが深い悲しみを乗り越えるにあたり、日本は英国とともにある」とも話しました。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
