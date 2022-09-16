@@ -1,0 +1,126 @@
+MATH CONCEPTS
+
+Natural Counting Numbers are 1, 2, 3, ...
+Whole Numbers are 0, 1, 2, 3, ....
+Integers are ..., -3, -2, -1, 0, 1, 2, 3, ...
+Rational Numbers are terminating and repeating decimal numbers, fractions and integers
+..., -3, -2.5, -2, -1, 0, 1.5(1/2), ...
+
+ADDING
+the addend plus the addend equals the sum
+
+stack multiple digit addends and add from right to left
+adds up to 9, everything is fine
+adds up to 10 or more, take the extra next door
+
+the absolute value of a negative or positive number
+is the number of units to zero
+the absolute value of -3 is 3
+the absolute value of 3 is 3
+
+when adding like sign integers
+add them
+keep the sign
+When adding different sign integers
+stack the greater absolute value over the lesser absolute value
+subtract them
+keep the sign of the greater absolute value
+
+when adding decimals
+stack the addends
+line up the decimals
+pad with zeros
+add normally
+bring the decimal down to the sum
+
+the Zero/Identity Property of Addition
+says adding 0 to a sum does not change the sum
+
+the Commutative Property of Addition
+says you can add the addends in any order
+and the sum remains the same
+
+the Associative Property of Addition
+says you can group addends in ( ) in any way
+and the sum remains the same
+
+the inverse operation of addition is subtraction
+
+SUBTRACTING
+the minuend minus the subtrahend equals the difference
+
+stack the minuend over the subtrahend and subtract from right to left
+more on the top, no need to stop
+more on the floor, borrow 10 next door
+numbers the same, zero's the game
+
+when subtracting integers
+change the minus sign to a plus sign
+change the sign of the subtrahend to the opposite sign
+add the integers
+
+when subtracting decimals
+stack the minuend over the subtrahend
+line up the decimals
+pad with zeros
+subtract normally
+bring down the decimal to the difference
+
+the inverse operation of subtraction is addition
+
+MULTIPLYING
+
+the factor times the factor equals the product
+
+multiplication is repeated addition
+8 x 3 = 24
+8 + 8 + 8 = 24
+
+multiplying a factor by 2
+is doubling the factor 2 x 6 = 6 + 6 = 12
+multiplying a factor by 3
+is doubling the factor and adding the factor 3 x 6 = (6 + 6) + 6 = 18
+multiplying a factor by 4
+is doubling the factor and then doubling the product 4 x 6 = (6 + 6) = (12 + 12) = 24
+multiplying a factor by 5
+is counting the factor by 5s 5 x 6 = 5, 10, 15, 20, 25, 30
+multiplying a factor by 6
+is counting the factor by 5s and adding a factor 6 x 6 = 5, 10, 15, 20, 25, 30 + 6 = 36
+
+M.any Z.oos M.any A.nimals
+stack two factors over each other
+M.ultiply the tens digit of the second factor to the tens digit of the first factor
+multiply the tens digit of the second factor to the hundreds digit of the first factor
+make a line and put the product under the line
+under the product on the right side under the tens digit of the product put a Z.ero
+M.ultiply the hundreds digit of the second factor to the tens digit of the first factor
+multiply the hundreds digit of the second factor to the hundreds digit of the first factor
+make a line and A.dd the two products together from right to left
+make a double line under the sum of the products
+
+multiply same sign integers
+the product is always positive
+multiply different sign integers
+the product is always negative
+
+multiplying decimals
+multiply normally
+count the decimal places from right to left of both factors
+add the decimal places
+in the product from right to left, place the decimal that many places
+
+the Zero Property of Multiplication
+says that a factor times 0 is 0
+
+the Identity Property of Multiplication
+says that a factor times 1 is that factor
+
+the Commutative Property of Multiplication
+says that multiplying the factors in any order results in the same product
+
+the Associative Property of Multiplication 
+says that grouping the factors in any order ( ) results in the same product
+
+
+
+
