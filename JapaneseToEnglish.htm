@@ -897,6 +897,7 @@ a=a.replace(/(洗)(?!X)(面)(?!X)(所)(?!X)/g,'$1X$2X$3Xsen-men-jyo,washroom,bat
 a=a.replace(/(洗)(?!X)(面)(?!X)(器)(?!X)/g,'$1X$2X$3Xsen-men-ki,washbowl,sink~noun');
 a=a.replace(/(洗)(?!X)(濯)(?!X)(機)(?!X)/g,'$1X$2X$3Xsen-taku-ki,washing machine~noun');
 a=a.replace(/(洗)(?!X)(い)(?!X)(物)(?!X)/g,'$1X$2X$3Xarai-mono,dishes to be washed~noun');
+a=a.replace(/(安)(?!X)(保)(?!X)(理)(?!X)/g,'$1X$2X$3Xan-po-ri,UN security council~noun');
 a=a.replace(/(泣)(?!X)(き)(?!X)(顔)(?!X)/g,'$1X$2X$3Xnaki-gao,tear-stained face~noun');
 a=a.replace(/(泣)(?!X)(き)(?!X)(声)(?!X)/g,'$1X$2X$3Xnaki-goe,tearful voice,crying~noun');
 a=a.replace(/(法)(?!X)(学)(?!X)(部)(?!X)/g,'$1X$2X$3Xhou-gaku-bu,law department~noun');
@@ -1099,6 +1100,7 @@ a=a.replace(/(夜)(?!X)(明)(?!X)(け)(?!X)/g,'$1X$2X$3Xyoake,dawn,daybreak~noun
 a=a.replace(/(外)(?!X)(来)(?!X)(語)(?!X)/g,'$1X$2X$3Xgai-raigo,loanword,foreign word~noun');
 a=a.replace(/(外)(?!X)(国)(?!X)(語)(?!X)/g,'$1X$2X$3Xgai-kokugo,foreign language~noun');
 a=a.replace(/(外)(?!X)(国)(?!X)(人)(?!X)/g,'$1X$2X$3Xgai-koku-jin,foreign person~noun');
+a=a.replace(/(重)(?!X)(要)(?!X)(性)(?!X)/g,'$1X$2X$3Xjyuu-you-sei,gravity~noun');
 a=a.replace(/(外)(?!X)(務)(?!X)(省)(?!X)/g,'$1X$2X$3Xgai-mu-syou,Ministry of Foreign Affairs~noun');
 a=a.replace(/(外)(?!X)(交)(?!X)(官)(?!X)/g,'$1X$2X$3Xgai-kou-kan,diplomat~noun');
 a=a.replace(/(夕)(?!X)(焼)(?!X)(け)(?!X)/g,'$1X$2X$3Xyuu-yake,sunset glow~noun');
@@ -1405,7 +1407,7 @@ a=a.replace(/(ご)(?!X)(存)(?!X)(じ)(?!X)/g,'$1X$2X$3Xgozonji,know~noun');
 a=a.replace(/(ご)(?!X)(主)(?!X)(人)(?!X)/g,'$1X$2X$3Xgosyu-jin,(your) husband~noun');
 a=a.replace(/(こ)(?!X)(れ)(?!X)(ら)(?!X)/g,'$1X$2X$3Xkorera,these~noun');
 a=a.replace(/(こ)(?!X)(の)(?!X)(頃)(?!X)/g,'$1X$2X$3Xkon-ogoro,now,these days,recently~noun');
-a=a.replace(/(こ)(?!X)(の)(?!X)(間)(?!X)/g,'$1X$2X$3Xkon-oaida,the other day,recently~noun');
+a=a.replace(/(こ)(?!X)(の)(?!X)(間)(?!X)/g,'$1X$2X$3Xkono aida,the other day,recently~noun');
 a=a.replace(/(こ)(?!X)(の)(?!X)(度)(?!X)/g,'$1X$2X$3Xkon-otabi,on this occasion~noun');
 a=a.replace(/(こ)(?!X)(っ)(?!X)(ち)(?!X)/g,'$1X$2X$3Xkoc-chi,here~noun');
 a=a.replace(/(こ)(?!X)(ち)(?!X)(ら)(?!X)/g,'$1X$2X$3Xkochira,here,this way~noun');
@@ -1467,7 +1469,9 @@ a=a.replace(/(2|２)(?!X)(2|２)(?!X)(日)(?!X)/g,'$1X$2X$3Xni-jyuu-ni-nichi,the
 
 a=a.replace(/(黄)(?!X)(色)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2Xki-iro,yellow<br>$3X~i-adjective');
 a=a.replace(/(鳴)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2Xnara,ring,sound<br>$3X~su-verb');
+a=a.replace(/(名)(?!X)(指)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2Xnaza,to call out by name<br>$3X~su-verb');
 a=a.replace(/(高)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xtakame,enhance<br>$3X~ru-verb');
+a=a.replace(/(め)(?!X)(ぐ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xmegu,centering around<br>$3X~ru-verb');
 a=a.replace(/(高)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xtakama,increase<br>$3X~ru-verb');
 a=a.replace(/(驚)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2Xodoroka,surprise,amaze<br>$3X~su-verb');
 a=a.replace(/(騒)(?!X)(が)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3Xsawaga-shi,noisy<br>$4X~i-adjective');
@@ -1861,7 +1865,7 @@ a=a.replace(/(増)(?!X)(や)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2Xfuya,increa
 a=a.replace(/(増)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xfue,increase,accrue<br>$3X~ru-verb');
 a=a.replace(/(塩)(?!X)(辛)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2Xshiokara,salty<br>$3X~i-adjective');
 a=a.replace(/(塞)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xfusaga,close up<br>$3X~ru-verb');
-a=a.replace(/(基)(?!X)(づ)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2Xmotozu,based on<br>$3X~ku-verb');
+a=a.replace(/(基)(?!X)(づ)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2Xmoto-zu,based on<br>$3X~ku-verb');
 a=a.replace(/(基)(?!X)(ず)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2Xmotozu,be based on<br>$3X~ku-verb');
 a=a.replace(/(埋)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xuzume,bury,fill in<br>$3X~ru-verb');
 a=a.replace(/(埋)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xume,bury,fill up<br>$3X~ru-verb');
@@ -2664,6 +2668,8 @@ a=a.replace(/(円)(?!X)(安)(?!X)/g,'$1X$2Xen-yasu,depreciation~noun');
 a=a.replace(/(円)(?!X)(高)(?!X)/g,'$1X$2Xendaka,appreciation of the yen~noun');
 a=a.replace(/(再)(?!X)(び)(?!X)/g,'$1X$2Xfutatabi,once again~noun');
 a=a.replace(/(再)(?!X)(会)(?!X)/g,'$1X$2Xsai-kai,reunion~noun');
+a=a.replace(/(英)(?!X)(知)(?!X)/g,'$1X$2Xei-chi,wisdom~noun');
+a=a.replace(/(結)(?!X)(集)(?!X)/g,'$1X$2Xkes-syuu,marshalling~noun');
 a=a.replace(/(再)(?!X)(建)(?!X)/g,'$1X$2Xsai-ken,rebuilding~noun');
 a=a.replace(/(再)(?!X)(生)(?!X)/g,'$1X$2Xsai-sei,restoration~noun');
 a=a.replace(/(再)(?!X)(発)(?!X)/g,'$1X$2Xsai-hatsu,recurrence~noun');
@@ -2682,7 +2688,7 @@ a=a.replace(/(処)(?!X)(分)(?!X)/g,'$1X$2Xsyo-bun,penalty~noun');
 a=a.replace(/(処)(?!X)(理)(?!X)/g,'$1X$2Xsyori,management,process~noun');
 a=a.replace(/(出)(?!X)(世)(?!X)/g,'$1X$2Xsyu-sse,success,promotion~noun');
 a=a.replace(/(出)(?!X)(前)(?!X)/g,'$1X$2Xde-mae,home delivery of food~noun');
-a=a.replace(/(出)(?!X)(力)(?!X)/g,'$1X$2Xsyutsu-ryoku,ou-tput~noun');
+a=a.replace(/(出)(?!X)(力)(?!X)/g,'$1X$2Xsyutsu-ryoku,output~noun');
 a=a.replace(/(出)(?!X)(動)(?!X)/g,'$1X$2Xsyutsu-dou,mobilization~noun');
 a=a.replace(/(出)(?!X)(勤)(?!X)/g,'$1X$2Xsyuk-kin,to go to work,attendance at work~noun');
 a=a.replace(/(出)(?!X)(口)(?!X)/g,'$1X$2Xde-gu-chi,exit,exit ramp~noun');
@@ -3067,7 +3073,7 @@ a=a.replace(/(国)(?!X)(籍)(?!X)/g,'$1X$2Xkoku-seki,nationality,citizenship~nou
 a=a.replace(/(国)(?!X)(葬)(?!X)/g,'$1X$2Xkoku-sou,state funeral~noun');
 a=a.replace(/(国)(?!X)(語)(?!X)/g,'$1X$2Xkoku-go,national language,Japanese~noun');
 a=a.replace(/(国)(?!X)(費)(?!X)/g,'$1X$2Xkoku-hi,national expenditure~noun');
-a=a.replace(/(国)(?!X)(連)(?!X)/g,'$1X$2Xkoku-ren,United national~noun');
+a=a.replace(/(国)(?!X)(連)(?!X)/g,'$1X$2Xkoku-ren,United Nations~noun');
 a=a.replace(/(国)(?!X)(道)(?!X)/g,'$1X$2Xkoku-dou,national highway~noun');
 a=a.replace(/(国)(?!X)(鉄)(?!X)/g,'$1X$2Xkoku-tetsu,Japan National Railways~noun');
 a=a.replace(/(国)(?!X)(際)(?!X)/g,'$1X$2Xkoku-sai,international~noun');
@@ -3328,7 +3334,7 @@ a=a.replace(/(家)(?!X)(族)(?!X)/g,'$1X$2Xka-zoku,family~noun');
 a=a.replace(/(家)(?!X)(計)(?!X)/g,'$1X$2Xka-kei,family finances~noun');
 a=a.replace(/(家)(?!X)(賃)(?!X)/g,'$1X$2Xya-chin,rent~noun');
 a=a.replace(/(容)(?!X)(器)(?!X)/g,'$1X$2Xyouki,receptacle,container~noun');
-a=a.replace(/(容)(?!X)(易)(?!X)/g,'$1X$2Xyoui,easy,simple~noun');
+a=a.replace(/(容)(?!X)(易)(?!X)/g,'$1X$2Xyou-i,easy,simple~noun');
 a=a.replace(/(王)(?!X)(子)(?!X)/g,'$1X$2Xou-ji,prince~noun');
 a=a.replace(/(容)(?!X)(疑)(?!X)/g,'$1X$2Xyou-gi,criminal charge~noun');
 a=a.replace(/(容)(?!X)(認)(?!X)/g,'$1X$2Xyou-nin,approval~noun');
@@ -3447,6 +3453,7 @@ a=a.replace(/(平)(?!X)(面)(?!X)/g,'$1X$2Xhei-men,level surface,plain~noun');
 a=a.replace(/(年)(?!X)(々)(?!X)/g,'$1X$2Xnen-nen,year by year,annually~noun');
 a=a.replace(/(年)(?!X)(上)(?!X)/g,'$1X$2Xtoshi-ue,older~noun');
 a=a.replace(/(年)(?!X)(下)(?!X)/g,'$1X$2Xtoshi-shita,younger,junior~noun');
+a=a.replace(/(廃)(?!X)(案)(?!X)/g,'$1X$2Xhai-an,abolish~noun');
 a=a.replace(/(年)(?!X)(中)(?!X)/g,'$1X$2Xnen-jyuu,all year~noun');
 a=a.replace(/(年)(?!X)(代)(?!X)/g,'$1X$2Xnen-dai,age,date~noun');
 a=a.replace(/(年)(?!X)(代)(?!X)/g,'$1X$2Xnen-dai,era~noun');
@@ -3634,6 +3641,7 @@ a=a.replace(/(意)(?!X)(外)(?!X)/g,'$1X$2Xi-gai,unexpected,unforeseen~noun');
 a=a.replace(/(意)(?!X)(志)(?!X)/g,'$1X$2Xi-shi,will,volition~noun');
 a=a.replace(/(意)(?!X)(欲)(?!X)/g,'$1X$2Xiyoku,volition,motivation~noun');
 a=a.replace(/(意)(?!X)(義)(?!X)/g,'$1X$2Xigi,meaning,significance~noun');
+a=a.replace(/(文)(?!X)(言)(?!X)/g,'$1X$2Xmon-gon,wording~noun');
 a=a.replace(/(意)(?!X)(見)(?!X)/g,'$1X$2Xi-ken,opinion~noun');
 a=a.replace(/(意)(?!X)(識)(?!X)/g,'$1X$2Xi-shiki,consciousness,awareness~noun');
 a=a.replace(/(愛)(?!X)(情)(?!X)/g,'$1X$2Xai-jyou,affection~noun');
@@ -3905,6 +3913,7 @@ a=a.replace(/(方)(?!X)(言)(?!X)/g,'$1X$2Xhou-gen,dialect~noun');
 a=a.replace(/(方)(?!X)(針)(?!X)/g,'$1X$2Xhou-shin,policy~noun');
 a=a.replace(/(方)(?!X)(面)(?!X)/g,'$1X$2Xhou-men,direction~noun');
 a=a.replace(/(施)(?!X)(策)(?!X)/g,'$1X$2Xshi-saku,policy measure~noun');
+a=a.replace(/(不)(?!X)(全)(?!X)/g,'$1X$2Xfu-zen,partial~noun');
 a=a.replace(/(施)(?!X)(行)(?!X)/g,'$1X$2Xshi-kou,enforcing the law~noun');
 a=a.replace(/(施)(?!X)(設)(?!X)/g,'$1X$2Xshi-setsu,facilities~noun');
 a=a.replace(/(旅)(?!X)(団)(?!X)/g,'$1X$2Xryo-dan,brigade~noun');
@@ -4064,6 +4073,7 @@ a=a.replace(/(未)(?!X)(明)(?!X)/g,'$1X$2Xmi-mei,early dawn~noun');
 a=a.replace(/(未)(?!X)(来)(?!X)/g,'$1X$2Xmi-rai,future~noun');
 a=a.replace(/(未)(?!X)(満)(?!X)/g,'$1X$2Xmi-man,less than the number~noun');
 a=a.replace(/(未)(?!X)(然)(?!X)/g,'$1X$2Xmi-zen,before it happens~noun');
+a=a.replace(/(常)(?!X)(任)(?!X)/g,'$1X$2Xjyou-nin,permanent~noun');
 a=a.replace(/(未)(?!X)(知)(?!X)/g,'$1X$2Xmi-chi,unknown~noun');
 a=a.replace(/(末)(?!X)(期)(?!X)/g,'$1X$2Xmak-ki,end stage~noun');
 a=a.replace(/(本)(?!X)(人)(?!X)/g,'$1X$2Xhon-nin,the said person~noun');
@@ -4079,7 +4089,7 @@ a=a.replace(/(本)(?!X)(日)(?!X)/g,'$1X$2Xhon-jitsu,today~noun');
 a=a.replace(/(本)(?!X)(来)(?!X)/g,'$1X$2Xhon-rai,originally,essentially~noun');
 a=a.replace(/(本)(?!X)(格)(?!X)/g,'$1X$2Xhon-kaku,method~noun');
 a=a.replace(/(本)(?!X)(棚)(?!X)/g,'$1X$2Xhon-dana,bookshelf~noun');
-a=a.replace(/(本)(?!X)(気)(?!X)/g,'$1X$2Xhon-ki,seriousness,earnestness~noun');
+a=a.replace(/(本)(?!X)(気)(?!X)/g,'$1X$2Xhon-ki,seriousness~noun');
 a=a.replace(/(本)(?!X)(物)(?!X)/g,'$1X$2Xhon-mono,real thing,gen-uine article~noun');
 a=a.replace(/(本)(?!X)(社)(?!X)/g,'$1X$2Xhon-sya,head office~noun');
 a=a.replace(/(本)(?!X)(箱)(?!X)/g,'$1X$2Xhon-bako,bookcase~noun');
@@ -4262,6 +4272,7 @@ a=a.replace(/(水)(?!X)(害)(?!X)/g,'$1X$2Xsui-gai,flood damage~noun');
 a=a.replace(/(水)(?!X)(平)(?!X)/g,'$1X$2Xsui-hei,horizontal,level~noun');
 a=a.replace(/(水)(?!X)(泳)(?!X)/g,'$1X$2Xsui-ei,swimming~noun');
 a=a.replace(/(水)(?!X)(洗)(?!X)/g,'$1X$2Xsui-sen,flushing,washing~noun');
+a=a.replace(/(機)(?!X)(運)(?!X)/g,'$1X$2Xki-un,good opportunity~noun');
 a=a.replace(/(水)(?!X)(準)(?!X)/g,'$1X$2Xsui-jyun,level~noun');
 a=a.replace(/(水)(?!X)(田)(?!X)/g,'$1X$2Xsui-den,paddy field,rice field~noun');
 a=a.replace(/(水)(?!X)(着)(?!X)/g,'$1X$2Xmizugi,bathing suit~noun');
@@ -4283,7 +4294,7 @@ a=a.replace(/(決)(?!X)(断)(?!X)/g,'$1X$2Xketsu-dan,determination~noun');
 a=a.replace(/(激)(?!X)(戦)(?!X)/g,'$1X$2Xgeki-sen,fierce battle~noun');
 a=a.replace(/(決)(?!X)(着)(?!X)/g,'$1X$2Xkec-cyaku,settlement~noun');
 a=a.replace(/(決)(?!X)(裁)(?!X)/g,'$1X$2Xkes-sai,approval of penalty~noun');
-a=a.replace(/(決)(?!X)(議)(?!X)/g,'$1X$2Xke-tsugi,resolution~noun');
+a=a.replace(/(決)(?!X)(議)(?!X)/g,'$1X$2Xketsu-gi,resolution~noun');
 a=a.replace(/(決)(?!X)(選)(?!X)/g,'$1X$2Xkes-sen,election run-off~noun');
 a=a.replace(/(汽)(?!X)(車)(?!X)/g,'$1X$2Xki-sya,train~noun');
 a=a.replace(/(沈)(?!X)(没)(?!X)/g,'$1X$2Xchin-botsu,sinking~noun');
@@ -4738,9 +4749,11 @@ a=a.replace(/(禁)(?!X)(煙)(?!X)/g,'$1X$2Xkin-en,no smoking,giving up smoking~n
 a=a.replace(/(禁)(?!X)(輸)(?!X)/g,'$1X$2Xkin,yu,embargo~noun');
 a=a.replace(/(禁)(?!X)(酒)(?!X)/g,'$1X$2Xkin-syu,abstention from alcohol~noun');
 a=a.replace(/(福)(?!X)(岡)(?!X)/g,'$1X$2Xfuku-oka, Japan~noun')
+a=a.replace(/(徹)(?!X)(底)(?!X)/g,'$1X$2Xtet-tei,consistency~noun')
 a=a.replace(/(福)(?!X)(島)(?!X)/g,'$1X$2XFuku-shima, Japan~noun');
 a=a.replace(/(福)(?!X)(祉)(?!X)/g,'$1X$2Xfuku-shi,welfare~noun');
 a=a.replace(/(私)(?!X)(用)(?!X)/g,'$1X$2Xshi-you,private business,private use~noun');
+a=a.replace(/(作)(?!X)(成)(?!X)/g,'$1X$2Xsaku-sei,making a contract~noun');
 a=a.replace(/(私)(?!X)(立)(?!X)/g,'$1X$2Xshi-ritsu,private~noun');
 a=a.replace(/(私)(?!X)(費)(?!X)/g,'$1X$2Xshihi,private expense~noun');
 a=a.replace(/(私)(?!X)(鉄)(?!X)/g,'$1X$2Xshi-tetsu,private railway~noun');
@@ -4751,7 +4764,7 @@ a=a.replace(/(科)(?!X)(料)(?!X)/g,'$1X$2Xka-ryou,fine~noun');
 a=a.replace(/(科)(?!X)(目)(?!X)/g,'$1X$2Xkamoku,subject~noun');
 a=a.replace(/(秘)(?!X)(密)(?!X)/g,'$1X$2Xhimitsu,secret,privacy~noun');
 a=a.replace(/(秘)(?!X)(書)(?!X)/g,'$1X$2Xhisyo,secretary~noun');
-a=a.replace(/(秩)(?!X)(序)(?!X)/g,'$1X$2Xchi-tsu-jyo,order,method~noun');
+a=a.replace(/(秩)(?!X)(序)(?!X)/g,'$1X$2Xchi-tsujyo,order,method~noun');
 a=a.replace(/(移)(?!X)(動)(?!X)/g,'$1X$2Xi-dou,shift~noun');
 a=a.replace(/(移)(?!X)(行)(?!X)/g,'$1X$2Xi-kou,transition~noun');
 a=a.replace(/(移)(?!X)(転)(?!X)/g,'$1X$2Xi-ten,transfer,change of address~noun');
@@ -5599,7 +5612,7 @@ a=a.replace(/(青)(?!X)(年)(?!X)/g,'$1X$2Xsei-nen,youth~noun');
 a=a.replace(/(青)(?!X)(春)(?!X)/g,'$1X$2Xsei-syun,youth~noun');
 a=a.replace(/(青)(?!X)(空)(?!X)/g,'$1X$2Xaozora,blue sky~noun');
 a=a.replace(/(静)(?!X)(か)(?!X)/g,'$1X$2Xshizuka,quiet,tranquil~noun');
-a=a.replace(/(非)(?!X)(常)(?!X)/g,'$1X$2Xhi-jyou,emergency,calamity~noun');
+a=a.replace(/(非)(?!X)(常)(?!X)/g,'$1X$2Xhi-jyou,emergency~noun');
 a=a.replace(/(非)(?!X)(難)(?!X)/g,'$1X$2Xhi-nan,criticsm~noun');
 a=a.replace(/(面)(?!X)(会)(?!X)/g,'$1X$2Xmen-kai,face to face~noun');
 a=a.replace(/(面)(?!X)(倒)(?!X)/g,'$1X$2Xmen-dou,troublesome,difficult~noun');
@@ -6232,7 +6245,7 @@ a=a.replace(/(防)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,'$1Xfuse,prevent<br>$2X~
 a=a.replace(/(降)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xfu,fall<br>$2X~ru-verb');
 a=a.replace(/(限)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xkagi,be limited to<br>$2X~ru-verb');
 a=a.replace(/(除)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xnozo,exclude<br>$2X~ku-verb');
-a=a.replace(/(陥)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xochi-i,fall into<br>$2X~u-verb');
+a=a.replace(/(陥)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xochi,fall into<br>$2X~u-verb');
 a=a.replace(/(隠)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xkaku,hide<br>$2X~su-verb');
 a=a.replace(/(隠)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xkaku-,hide,conceal<br>$2X~su-verb');
 a=a.replace(/(集)(?!X)(め)(?!X)/g,'$1X$2Xatsume,collect~ichidan-verb');
@@ -6876,6 +6889,16 @@ a=a.replace(/(」)/g,'$1,close bracket~punctuation');
 a=a.replace(/(、)/g,'$1,comma~punctuation');
 a=a.replace(/(。)/g,'$1,period~punctuation');
 
+a=a.replace(/(adjectiveま|nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xmashita,did~formal~verb');
+a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3Xdatta,was~informal~verb');
+a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3Xdatta,was~informal~verb');
+a=a.replace(/(nounま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xdid~formal~verb');
+a=a.replace(/(nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xmashita,did~formal~verb');
+a=a.replace(/(verbま)(?!X)(せ)(?!X)(ん)(?!X)/g,'$1X$2X$3Xmasen,didn\'t~formal~verb');
+a=a.replace(/(verbで)(?!X)(い)(?!X)(た)(?!X)/g,'$1X$2X$3Xdeita,was doing~informal~verb');
+a=a.replace(/(verbれ|nounれ)(?!X)(て)(?!X)(い)(?!X)/g,'$1X$2X$3Xis doing~helping-verb');
+a=a.replace(/(verbま)(?!X)(せ)(?!X)(ん)(?!X)/g,'$1X$2X$3Xmasen,not do-formal~verb');
+
 a=a.replace(/(nounな)(?!X)(か)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3X$4Xnakatta,did not~informal~suru-verb');
 a=a.replace(/(verbて)(?!X)(い)(?!X)(ま)(?!X)(す)(?!X)/g,'$1X$2X$3X$4Xteimasu,is doing~formal<br>~suru-verb');
 a=a.replace(/(verbま|nounま)(?!X)(し)(?!X)(ょ)(?!X)(う)(?!X)/g,'$1X$2X$3X$4Xmasyou,let\'s do~formal~verb');
@@ -6884,15 +6907,6 @@ a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(た)(?!X)/g,'$1X$2X$3X$4Xshiteita,wa
 a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(ま)(?!X)(す)(?!X)/g,'$1X$2X$3X$4X$5Xshiteimasu,is doing~formal<br>~suru-verb');
 a=a.replace(/(し)(?!X)(ま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3X$4Xshimashita,did~formal~verb');
 a=a.replace(/(な)(?!X)(け)(?!X)(れ)(?!X)(ば)(?!X)/g,'$1X$2X$3X$4Xnakereba,must~noun');
-
-a=a.replace(/(adjectiveま|nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xmashita,did~formal~verb');
-a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3Xdatta,was~informal~verb');
-a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3Xdatta,was~informal~verb');
-a=a.replace(/(nounま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xdid~formal~verb');
-a=a.replace(/(nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xmashita,did~formal~verb');
-a=a.replace(/(nounま|verbま)(?!X)(せ)(?!X)(ん)(?!X)/g,'$1X$2X$3Xmasen,didn\'t~formal~verb');
-a=a.replace(/(verbで)(?!X)(い)(?!X)(た)(?!X)/g,'$1X$2X$3Xdeita,was doing~informal~verb');
-a=a.replace(/(verbれ|nounれ)(?!X)(て)(?!X)(い)(?!X)/g,'$1X$2X$3Xis doing~helping-verb');
 
 a=a.replace(/(adjectiveっ)(?!X)(た)(?!X)/g,'$1X$2Xtta,did~informal~adjective');
 a=a.replace(/(nounい|verbい)(?!X)(た)(?!X)/g,'$1X$2Xita,was doing~informal~verb');
@@ -6923,7 +6937,7 @@ a=a.replace(/(verbで)(?!X)/g,'$1Xde,do,and~helping-verb');
 a=a.replace(/(adjectiveで|nounで)(?!X)/g,'$1Xde,with,at~postposition');
 a=a.replace(/(adjectiveな|nounな)(?!X)/g,'$1Xna,~na-adjective<br>');
 a=a.replace(/(nounだ)(?!X)/g,'$1Xda,is~informal~verb');
-a=a.replace(/(punctuationと|nounと)(?!X)/g,'$1Xto,with~postposition');
+a=a.replace(/(adjectiveと|punctuationと|nounと)(?!X)/g,'$1Xto,with~postposition');
 a=a.replace(/(punctuationへ|nounへ)(?!X)/g,'$1Xe,toward~postposition');
 a=a.replace(/(nounら)(?!X)/g,'$1Xra,plural~postposition');
 a=a.replace(/(postpositionか|verbか|nounか)(?!X)/g,'$1Xka,indicates a question~postposition');
@@ -6986,13 +7000,18 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-【AFP＝時事】19日に執り行われたエリザベス英女王（Queen Elizabeth II）の国葬では、かつて「ファブ・フォー（すてきな4人）」と呼ばれたウィリアム皇太子（Prince William）とキャサリン皇太子妃（Catherine, Princess of Wales）、ヘンリー王子（Prince Harry）とメーガン妃（Meghan, Duchess of Sussex）が一緒に女王のひつぎの後ろを行進した。
+アメリカを訪問中の岸田総理は、国連総会の一般討論演説に初めて臨み、ロシアによるウクライナ侵攻をめぐり、国連改革などを訴えました。国連本部前から同行している室井記者に伝えてもらいます。
 
-【写真】ウィリアム皇太子一家とは離れた席に座ったヘンリー王子夫妻
+日本の総理として3年ぶりに対面での国連総会に出席した岸田総理ですが、演説ではロシアを名指しで批判し、法の支配の重要性を強調し、国連が変わらなければいけないと訴えました。
 
-　だが、舞台裏ではヘンリー王子の軍服着用や王子夫妻の子どもの肩書をめぐる確執があると伝えられ、来年には王子による回顧録出版が控えていることもあり、国葬で両夫妻の距離が近づいた様子はうかがえなかった。
+岸田総理
+「法の支配に基づく国際秩序の徹底のため、力と英知を結集するときです。そのためにどうしても実現せねばならないのが国連の改革であり、国連自身の機能強化です」
 
-　ウィリアム皇太子は、軍服姿で国葬に参列。一方、王室を離脱して以来、軍服着用を禁じられているヘンリー王子は、勲章を付けたモーニングスーツ姿だった。女王のひつぎがウェストミンスター寺院（Westminster Abbey）に運び込まれると、軍服姿の王族が敬礼する中、ヘンリー王子は目を伏せて立っていた。
+岸田総理はロシアによるウクライナ侵攻をめぐり、国連の安全保障理事会が機能不全に陥っている現実を踏まえ、安保理を含む国連の改革と機能強化を訴えました。その上で、「改革に向けて文言ベースの交渉を開始する時だ」と述べ、国連改革に向けた具体的な決議案の作成を呼び掛けました。
+
+ただ、国連改革の決議案をめぐっては、2005年に日本などが決議案を作ったものの採択されず廃案になるなど、この間ほとんど前に進んでいません。
+
+ウクライナ情勢などで国連改革の機運が高まっているとはいえ、常任理事国を含めた合意形成は容易ではなく、来年からは加盟国の中で最も多い12回目の非常任理事国入りが決まっている日本の本気度が試されています。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
