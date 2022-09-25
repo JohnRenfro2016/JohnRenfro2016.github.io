@@ -1379,6 +1379,7 @@ a=a.replace(/(誕)(?!X)(生)(?!X)(日)(?!X)/g,'$1X$2X$3Xtanjyou-bi,birthday~noun
 a=a.replace(/(読)(?!X)(み)(?!X)(方)(?!X)/g,'$1X$2X$3Xyomi-kata,way of reading,reading~noun');
 a=a.replace(/(調)(?!X)(味)(?!X)(料)(?!X)/g,'$1X$2X$3Xcyou-mi-ryou,seasoning,flavoring~noun');
 a=a.replace(/(論)(?!X)(理)(?!X)(的)(?!X)/g,'$1X$2X$3Xron-ri-teki,logical~noun');
+a=a.replace(/(独)(?!X)(立)(?!X)(系)(?!X)/g,'$1X$2X$3Xdoku-ritsu-kei,independent~noun');
 a=a.replace(/(警)(?!X)(察)(?!X)(官)(?!X)/g,'$1X$2X$3Xkei-satsu-kan,police officers~noun');
 a=a.replace(/(財)(?!X)(務)(?!X)(相)(?!X)/g,'$1X$2X$3Xzai-mu-syou,Minister of Finance~noun');
 a=a.replace(/(財)(?!X)(務)(?!X)(省)(?!X)/g,'$1X$2X$3Xzai-mu-syou,Ministry of Finance~noun');
@@ -2237,15 +2238,15 @@ a=a.replace(/(不)(?!X)(便)(?!X)/g,'$1X$2Xfu-ben,inconvenient~noun');
 a=a.replace(/(不)(?!X)(全)(?!X)/g,'$1X$2Xfu-zen,partial~noun');
 a=a.replace(/(不)(?!X)(利)(?!X)/g,'$1X$2Xfu-ri,disadvantage~noun');
 a=a.replace(/(不)(?!X)(在)(?!X)/g,'$1X$2Xfu-zai,absence~noun');
-a=a.replace(/(不)(?!X)(安)(?!X)/g,'$1X$2Xfu-an,uneasiness,anxiety~noun');
-a=a.replace(/(不)(?!X)(平)(?!X)/g,'$1X$2Xfu-hei,discontent,dissatisfaction~noun');
+a=a.replace(/(不)(?!X)(安)(?!X)/g,'$1X$2Xfu-an,anxiety~noun');
+a=a.replace(/(不)(?!X)(平)(?!X)/g,'$1X$2Xfu-hei,discontent~noun');
 a=a.replace(/(不)(?!X)(幸)(?!X)/g,'$1X$2Xfu-kou,unhappiness,misfortune,bereavement~noun');
 a=a.replace(/(不)(?!X)(快)(?!X)/g,'$1X$2Xfu-kai,unpleasant~noun');
 a=a.replace(/(不)(?!X)(明)(?!X)/g,'$1X$2Xfu-mei,unknown~noun');
 a=a.replace(/(不)(?!X)(正)(?!X)/g,'$1X$2Xfu-sei,fraud~noun');
 a=a.replace(/(不)(?!X)(況)(?!X)/g,'$1X$2Xfu-kyou,depression,slump~noun');
 a=a.replace(/(不)(?!X)(測)(?!X)/g,'$1X$2Xfu-soku,unexpected~noun');
-a=a.replace(/(不)(?!X)(満)(?!X)/g,'$1X$2Xfu-man,dissatisfaction,discontent~noun');
+a=a.replace(/(不)(?!X)(満)(?!X)/g,'$1X$2Xfu-man,discontent~noun');
 a=a.replace(/(不)(?!X)(潔)(?!X)/g,'$1X$2Xfu-ketsu,dirty,filthy~noun');
 a=a.replace(/(不)(?!X)(能)(?!X)/g,'$1X$2Xfu-nou,impossibility~noun');
 a=a.replace(/(不)(?!X)(良)(?!X)/g,'$1X$2Xfu-ryou,bad,defective~noun');
@@ -2321,7 +2322,7 @@ a=a.replace(/(乞)(?!X)(食)(?!X)/g,'$1X$2Xkoj-iki,beggar~noun');
 a=a.replace(/(乱)(?!X)(暴)(?!X)/g,'$1X$2Xran-bou,violence~noun');
 a=a.replace(/(乾)(?!X)(杯)(?!X)/g,'$1X$2Xkan-pai,a toast~noun');
 a=a.replace(/(乾)(?!X)(燥)(?!X)/g,'$1X$2Xkan-sou,drying up,desiccation~noun');
-a=a.replace(/(予)(?!X)(備)(?!X)/g,'$1X$2Xyo-bi,reserve,spare~noun');
+a=a.replace(/(予)(?!X)(備)(?!X)/g,'$1X$2Xyo-bi,reserve~noun');
 a=a.replace(/(予)(?!X)(報)(?!X)/g,'$1X$2Xyo-hou,forecast~noun');
 a=a.replace(/(予)(?!X)(定)(?!X)/g,'$1X$2Xyo-tei,schedule~noun');
 a=a.replace(/(予)(?!X)(想)(?!X)/g,'$1X$2Xyo-sou,prediction~noun');
@@ -2702,7 +2703,7 @@ a=a.replace(/(出)(?!X)(力)(?!X)/g,'$1X$2Xsyutsu-ryoku,output~noun');
 a=a.replace(/(出)(?!X)(動)(?!X)/g,'$1X$2Xsyutsu-dou,mobilization~noun');
 a=a.replace(/(出)(?!X)(勤)(?!X)/g,'$1X$2Xsyuk-kin,to go to work,attendance at work~noun');
 a=a.replace(/(出)(?!X)(口)(?!X)/g,'$1X$2Xde-gu-chi,exit,exit ramp~noun');
-a=a.replace(/(出)(?!X)(国)(?!X)/g,'$1X$2Xsyu-k-koku,emigration~noun');
+a=a.replace(/(出)(?!X)(国)(?!X)/g,'$1X$2Xsyuk-koku,emigration~noun');
 a=a.replace(/(出)(?!X)(場)(?!X)/g,'$1X$2Xsyutsu-jyou,participation~noun');
 a=a.replace(/(出)(?!X)(席)(?!X)/g,'$1X$2Xsyus-seki,attendance~noun');
 a=a.replace(/(出)(?!X)(張)(?!X)/g,'$1X$2Xsyuc-cyou,business trip~noun');
@@ -2994,6 +2995,9 @@ a=a.replace(/(名)(?!X)(詞)(?!X)/g,'$1X$2Xmei-shi,noun~noun');
 a=a.replace(/(名)(?!X)(誉)(?!X)/g,'$1X$2Xmei-yo,good reputation~noun');
 a=a.replace(/(向)(?!X)(上)(?!X)/g,'$1X$2Xkou-jyou,improvement~noun');
 a=a.replace(/(君)(?!X)(主)(?!X)/g,'$1X$2Xkun-syu,soverign~noun');
+a=a.replace(/(空)(?!X)(路)(?!X)/g,'$1X$2Xkuu-ro,airway~noun');
+a=a.replace(/(陸)(?!X)(路)(?!X)/g,'$1X$2Xriku-ro,land route~noun');
+a=a.replace(/(退)(?!X)(避)(?!X)/g,'$1X$2Xtai-hi,taking refuge~noun');
 a=a.replace(/(否)(?!X)(定)(?!X)/g,'$1X$2Xhi-tei,denial~noun');
 a=a.replace(/(吸)(?!X)(入)(?!X)/g,'$1X$2Xkyuu-nyuu,inhalation~noun');
 a=a.replace(/(吸)(?!X)(収)(?!X)/g,'$1X$2Xkyuu-syuu,absorption,merger~noun');
@@ -3101,7 +3105,7 @@ a=a.replace(/(地)(?!X)(価)(?!X)/g,'$1X$2Xchi-ka,price of land~noun');
 a=a.replace(/(地)(?!X)(元)(?!X)/g,'$1X$2Xji-moto,hometown~noun');
 a=a.replace(/(地)(?!X)(名)(?!X)/g,'$1X$2Xchi-mei,place name~noun');
 a=a.replace(/(地)(?!X)(味)(?!X)/g,'$1X$2Xji-mi,plain,sober~noun');
-a=a.replace(/(地)(?!X)(図)(?!X)/g,'$1X$2Xchi-zu,map,atlas~noun');
+a=a.replace(/(地)(?!X)(図)(?!X)/g,'$1X$2Xchi-zu,map~noun');
 a=a.replace(/(地)(?!X)(域)(?!X)/g,'$1X$2Xchi-iki,area~noun');
 a=a.replace(/(地)(?!X)(帯)(?!X)/g,'$1X$2Xchi-tai,zone,area~noun');
 a=a.replace(/(地)(?!X)(形)(?!X)/g,'$1X$2Xchi-kei,geographical features,topography~noun');
@@ -3115,6 +3119,7 @@ a=a.replace(/(地)(?!X)(面)(?!X)/g,'$1X$2Xji-men,ground~noun');
 a=a.replace(/(垂)(?!X)(直)(?!X)/g,'$1X$2Xsui-cyoku,vertical,perpendicular~noun');
 a=a.replace(/(基)(?!X)(地)(?!X)/g,'$1X$2Xki-chi,military base~noun');
 a=a.replace(/(基)(?!X)(本)(?!X)/g,'$1X$2Xki-hon,basis~noun');
+a=a.replace(/(抑)(?!X)(圧)(?!X)/g,'$1X$2Xyoku-atsu,suppress~noun');
 a=a.replace(/(基)(?!X)(準)(?!X)/g,'$1X$2Xki-jyun,standard,criterion~noun');
 a=a.replace(/(基)(?!X)(盤)(?!X)/g,'$1X$2Xki-ban,basis~noun');
 a=a.replace(/(基)(?!X)(礎)(?!X)/g,'$1X$2Xki-so,basis~noun');
@@ -3296,7 +3301,7 @@ a=a.replace(/(守)(?!X)(備)(?!X)/g,'$1X$2Xsyu-bi,defense,fielding~noun');
 a=a.replace(/(安)(?!X)(保)(?!X)/g,'$1X$2Xan-po,national security~noun');
 a=a.replace(/(安)(?!X)(倍)(?!X)/g,'$1X$2XA-be,family name~noun');
 a=a.replace(/(安)(?!X)(全)(?!X)/g,'$1X$2Xan-zen,safety~noun');
-a=a.replace(/(安)(?!X)(定)(?!X)/g,'$1X$2Xan-tei,stability,composure~noun');
+a=a.replace(/(安)(?!X)(定)(?!X)/g,'$1X$2Xan-tei,stability~noun');
 a=a.replace(/(安)(?!X)(心)(?!X)/g,'$1X$2Xan-shin,relief~noun');
 a=a.replace(/(安)(?!X)(打)(?!X)/g,'$1X$2Xan-da,safe hit~noun');
 a=a.replace(/(完)(?!X)(了)(?!X)/g,'$1X$2Xkan-ryou,completion~noun');
@@ -3982,6 +3987,7 @@ a=a.replace(/(時)(?!X)(代)(?!X)/g,'$1X$2Xji-dai,age,antiquity~noun');
 a=a.replace(/(時)(?!X)(刻)(?!X)/g,'$1X$2Xji-koku,favorable time~noun');
 a=a.replace(/(時)(?!X)(差)(?!X)/g,'$1X$2Xji-sa,time difference~noun');
 a=a.replace(/(時)(?!X)(期)(?!X)/g,'$1X$2Xji-ki,phase~noun');
+a=a.replace(/(招)(?!X)(集)(?!X)/g,'$1X$2Xsyou-syuu,summon~noun');
 a=a.replace(/(時)(?!X)(機)(?!X)/g,'$1X$2Xj-iki,opportunity,chance~noun');
 a=a.replace(/(時)(?!X)(点)(?!X)/g,'$1X$2Xji-ten,point in time~noun');
 a=a.replace(/(時)(?!X)(給)(?!X)/g,'$1X$2Xji-kyuu,hourly wage~noun');
@@ -4359,6 +4365,7 @@ a=a.replace(/(海)(?!X)(洋)(?!X)/g,'$1X$2Xkai-you,ocean,sea~noun');
 a=a.replace(/(海)(?!X)(流)(?!X)/g,'$1X$2Xkai-ryuu,ocean current~noun');
 a=a.replace(/(海)(?!X)(苔)(?!X)/g,'$1X$2Xnori,laver~noun');
 a=a.replace(/(海)(?!X)(軍)(?!X)/g,'$1X$2Xkai-gun,Navy~noun');
+a=a.replace(/(収)(?!X)(拾)(?!X)/g,'$1X$2Xsyuu-syuu,get under control~noun');
 a=a.replace(/(浸)(?!X)(水)(?!X)/g,'$1X$2Xshin-sui,flood~noun');
 a=a.replace(/(消)(?!X)(化)(?!X)/g,'$1X$2Xsyou-ka,digestion,consumption~noun');
 a=a.replace(/(消)(?!X)(息)(?!X)/g,'$1X$2Xsyou-soku,whereabouts~noun');
@@ -4371,7 +4378,7 @@ a=a.replace(/(深)(?!X)(さ)(?!X)/g,'$1X$2Xfukasa,depth~noun');
 a=a.replace(/(深)(?!X)(刻)(?!X)/g,'$1X$2Xshin-koku,serious~noun');
 a=a.replace(/(深)(?!X)(化)(?!X)/g,'$1X$2Xshin-ka,deepening~noun');
 a=a.replace(/(深)(?!X)(夜)(?!X)/g,'$1X$2Xshin-ya,late night~noun');
-a=a.replace(/(混)(?!X)(乱)(?!X)/g,'$1X$2Xkon-ran,disorder,confusion~noun');
+a=a.replace(/(混)(?!X)(乱)(?!X)/g,'$1X$2Xkon-ran,disorder~noun');
 a=a.replace(/(混)(?!X)(雑)(?!X)/g,'$1X$2Xkon-zatsu,confusion,disorder~noun');
 a=a.replace(/(清)(?!X)(書)(?!X)/g,'$1X$2Xsei-syo,clean copy~noun');
 a=a.replace(/(清)(?!X)(潔)(?!X)/g,'$1X$2Xsei-ketsu,cleanliness,neatness~noun');
@@ -5749,6 +5756,7 @@ a=a.replace(/(と)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xto,to try to do<br>$2X~s
 a=a.replace(/(ど)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xdo,move out of the way<br>$2X~ku-verb');
 a=a.replace(/(ど)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xhow,what<br>$2X~u-verb');
 a=a.replace(/(な)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xna,become<br>$2X~ru-verb');
+a=a.replace(/(募)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xtsuno,get violent<br>$2X~ru-verb');
 a=a.replace(/(ひ)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xhi,run over<br>$2X~ku-verb');
 a=a.replace(/(ま)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xma,scatter,plant<br>$2X~ku-verb');
 a=a.replace(/(ま)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xma,sow,scatter<br>$2X~ku-verb');
@@ -6170,7 +6178,7 @@ a=a.replace(/(行)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xokona,conduct<br>$2X
 a=a.replace(/(表)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xarawa,express<br>$2X~su-verb');
 a=a.replace(/(被)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xkabu,wear,put on<br>$2X~ru-verb');
 a=a.replace(/(装)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xyosoo,disguise<br>$2X~u-verb');
-a=a.replace(/(補)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xogina,supplement,replenish<br>$2X~u-verb');
+a=a.replace(/(補)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xogina,make up for<br>$2X~u-verb');
 a=a.replace(/(襲)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xoso,raid,attack<br>$2X~u-verb');
 a=a.replace(/(要)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xi,need,require<br>$2X~ru-verb');
 a=a.replace(/(覆)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xoo-,cover,hide<br>$2X~u-verb');
@@ -6320,7 +6328,7 @@ a=a.replace(/(丼)(?!X)/g,'$1Xdonburi,bowl~noun');
 a=a.replace(/(亀)(?!X)/g,'$1Xkame,turtle,tortoise~noun');
 a=a.replace(/(事)(?!X)/g,'$1Xkoto,thing,incident~noun');
 a=a.replace(/(人)(?!X)/g,'$1Xnin or +jin or hito,person~noun');
-a=a.replace(/(今)(?!X)/g,'$1Xima,now~noun');
+a=a.replace(/(令)(?!X)/g,'$1Xrei,order~noun');
 a=a.replace(/(仏)(?!X)/g,'$1Xhotoke,buddha,Buddhist image~noun');
 a=a.replace(/(他)(?!X)/g,'$1Xhoka,other~noun');
 a=a.replace(/(他)(?!X)/g,'$1Xta,others,other things~noun');
@@ -6560,6 +6568,7 @@ a=a.replace(/(柄)(?!X)/g,'$1Xgara,pattern,design~noun');
 a=a.replace(/(柱)(?!X)/g,'$1Xhashira,pillar~noun');
 a=a.replace(/(柿)(?!X)/g,'$1Xkaki,persim+mon,persimmon tree~noun');
 a=a.replace(/(校)(?!X)/g,'$1Xkou,schools~noun');
+a=a.replace(/(今)(?!X)/g,'$1Xima,now~noun');
 a=a.replace(/(株)(?!X)/g,'$1Xkabu,stocks,strains~noun');
 a=a.replace(/(核)(?!X)/g,'$1Xkaku+,core,atomic nucleus~noun');
 a=a.replace(/(超)(?!X)/g,'$1Xkoe,over~noun');
@@ -6914,13 +6923,14 @@ a=a.replace(/(」)/g,'$1,close bracket~punctuation');
 a=a.replace(/(、)/g,'$1,comma~punctuation');
 a=a.replace(/(。)/g,'$1,period~punctuation');
 
+a=a.replace(/(せ)(?!X)/g,'$1Xse,be made to do~helping-verb');
+
 a=a.replace(/(adjectiveま|nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xmashita,did,formal~verb');
 a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3Xdatta,was,informal~verb');
 a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3Xdatta,was,informal~verb');
 a=a.replace(/(nounま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xdid,formal~verb');
 a=a.replace(/(nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xmashita,did,formal~verb');
 a=a.replace(/(verbま)(?!X)(せ)(?!X)(ん)(?!X)/g,'$1X$2X$3Xmasen,didn\'t,formal~verb');
-a=a.replace(/(verbで)(?!X)(い)(?!X)(た)(?!X)/g,'$1X$2X$3Xdeita,was doing,informal~verb');
 a=a.replace(/(verbれ|nounれ)(?!X)(て)(?!X)(い)(?!X)/g,'$1X$2X$3Xis doing~helping-verb');
 a=a.replace(/(verbま)(?!X)(せ)(?!X)(ん)(?!X)/g,'$1X$2X$3Xmasen,not do-formal~verb');
 a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)/g,'$1X$2X$3Xshitei,is doing~suru-verb');
@@ -7025,18 +7035,13 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-　現地時間９月24日に開催されたUEFAネーションズリーグのリーグAグループ２第５節で、ポルトガル代表がチェコ代表と敵地で対戦した。
+　ウクライナ侵攻を続けるロシアのプーチン政権が、予備役の男性を28日にも出国禁止にする方針であることが分かった。
 
-【画像】大量流血で顔面血だらけのC・ロナウド…それでもなんとフル出場！
+【図解】地図で見るウクライナ情勢
 
-　この試合で、ポルトガルのエース、クリスティアーノ・ロナウドにアクシデントが発生したのは、スコアレスで迎えた13分だった。ゴール前に浮き上がったボールをヘッドでねじ込もうとジャンプをすると、パンチングで逃れようとした敵GKトマシュ・ヴァツリークの左手が顔面に直撃。ピッチに倒れ込んで大量に流血し、スタジアムは騒然となった。
+　独立系メディア「メドゥーザ」が25日、大統領府関係者2人の話として伝えた。ロシア軍の人的損害を補おうと、予備役を招集する部分動員令が21日に出て以降、空路・陸路での国外退避が相次いでいた。
 
-
-　顔面が血で真っ赤に染まり、状態が心配されたものの、出血は鼻からだけだったようだ。鼻血を止める処置を行ない、血で汚れたユニホームを着替えて、なんとその後もプレーを続けた。
-
-　英紙『Express』は、このアクシデントを「クリスティアーノ・ロナウドは、ポルトガルの試合で残忍な衝突に巻き込まれ、血まみれになった」と伝えている。
-
-　なお、ポルトガルは４―０で圧勝。背番号７はフル出場し、82分にはディオゴ・ジョッタの４点目をアシストしている。
+　政権は予備役の出国禁止をルール化することで、混乱の収拾を図り、安定的に招集を進めたい考え。しかし、動員に抗議する大規模デモが起きるなど社会不安が広がっており、抑圧的な措置で国民は不満を募らせることになりそうだ。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
