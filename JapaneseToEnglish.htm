@@ -671,7 +671,7 @@ a=a.replace(/(2|２)(?!X)(０|0)(?!X)(日)(?!X)/g,'$1X$2X$3Xhatsu-ka,the twentie
 a=a.replace(/(2|２)(?!X)(１|1)(?!X)(日)(?!X)/g,'$1X$2X$3Xni-jyuu-ichi-nichi,the twenty-first day of the month ~noun')
 a=a.replace(/(2|２)(?!X)(７|7)(?!X)(日)(?!X)/g,'$1X$2X$3Xni-jyuu-shichi-nichi,the twenty-seventh day of the month~noun')
 a=a.replace(/(2|２)(?!X)(９|9)(?!X)(日)(?!X)/g,'$1X$2X$3Xni-jyuu-ku-nichi,the twenty-nineth day of the month ~noun')
-a=a.replace(/(3)(?!X)(0)(?!X)(日)(?!X)/g,'$1X$2X$3Xsan-jyuu-nichi,the thirtieth day of the month ~noun')
+a=a.replace(/(3|３)(?!X)(0|０)(?!X)(日)(?!X)/g,'$1X$2X$3Xsan-jyuu-nichi,the thirtieth day of the month ~noun')
 a=a.replace(/(3|3)(?!X)(1|1)(?!X)(日)(?!X)/g,'$1X$2X$3Xsan-jyuu-ichi-nichi,the thirty-first day of the month ~noun')
 a=a.replace(/(\d)(\d)(\d)/g,'$1+hyaku,the hundreds place~noun$2$3');
 a=a.replace(/(あ)(?!X)(え)(?!X)(て)(?!X)/g,'$1X$2X$3Xaete,boldly~noun');
@@ -3486,6 +3486,11 @@ a=a.replace(/(平)(?!X)(等)(?!X)/g,'$1X$2Xbyou-dou,equality,impartiality~noun')
 a=a.replace(/(平)(?!X)(行)(?!X)/g,'$1X$2Xhei-kou,parallel,side by side~noun');
 a=a.replace(/(平)(?!X)(野)(?!X)/g,'$1X$2Xhei-ya,plain,open field~noun');
 a=a.replace(/(平)(?!X)(面)(?!X)/g,'$1X$2Xhei-men,level surface,plain~noun');
+a=a.replace(/(編)(?!X)(入)(?!X)/g,'$1X$2Xhen-nyuu,admission~noun');
+a=a.replace(/(法)(?!X)(令)(?!X)/g,'$1X$2Xhou-rei,act of government~noun');
+a=a.replace(/(隣)(?!X)(国)(?!X)/g,'$1X$2Xrin-goku,neighboring country~noun');
+a=a.replace(/(徴)(?!X)(兵)(?!X)/g,'$1X$2Xcyou-hei,military draft~noun');
+a=a.replace(/(開)(?!X)(設)(?!X)/g,'$1X$2Xkai-setsu,establishing~noun');
 a=a.replace(/(年)(?!X)(々)(?!X)/g,'$1X$2Xnen-nen,year by year,annually~noun');
 a=a.replace(/(年)(?!X)(上)(?!X)/g,'$1X$2Xtoshi-ue,older~noun');
 a=a.replace(/(年)(?!X)(下)(?!X)/g,'$1X$2Xtoshi-shita,younger,junior~noun');
@@ -6484,6 +6489,7 @@ a=a.replace(/(姉)(?!X)/g,'$1Xane,older sister~noun');
 a=a.replace(/(姓)(?!X)/g,'$1Xsei,surname,family name~noun');
 a=a.replace(/(姪)(?!X)/g,'$1Xmei,niece~noun');
 a=a.replace(/(姿)(?!X)/g,'$1Xsugata,figure,appearance~noun');
+a=a.replace(/(領)(?!X)/g,'$1Xeri,collar or +ryou,territory~noun');
 a=a.replace(/(娘)(?!X)/g,'$1Xmusume,daughter,girl~noun');
 a=a.replace(/(嫁)(?!X)/g,'$1Xyome,bride,daughter+in+law~noun');
 a=a.replace(/(嫌)(?!X)/g,'$1Xiya,dislike,have a dislike for~noun');
@@ -7072,13 +7078,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-28日午前、東名高速でトラックなど合わせて3台が炎上した事故で、警察はガスボンベを積んでいたトラックの運転手を逮捕しました。
+［２９日　ロイター］ -     ロシアのプーチン大統領は２９日、ウクライナのヘルソンとザポロジエのロシアへの正式編入に向けた法令に署名した。
 
-　東名高速の豊田ジャンクションで起きた事故では、2トントラックの運転手とみられる男性1人が死亡し、助手席の男性（54）とトレーラーの運転手の男性（52）の2人がやけどを負う軽傷です。
+【動画】ロシアから隣国ジョージアへ大脱出続く、国境に臨時徴兵所開設の動きも
 
-　警察は29日朝、ガスボンベを積んだトラックを運転していた愛知県の会社員・浅井渉容疑者（29）を過失運転致死傷の疑いで逮捕しました。
-
-　警察などによりますと、トラックに積まれていた、およそ120本のガスボンベが、前方にいたトラックとトレーラーの方向に転がり、爆発したことが炎上の原因となった可能性があるということです。
+法令はこれら２地域をプーチン氏が独立領として認めたとしており、３０日に同地域のロシア編入発表に向けた手続きとなる。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
