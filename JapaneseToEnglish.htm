@@ -387,6 +387,7 @@ a=a.replace(/(必)(?!X)(ず)(?!X)(し)(?!X)(も)(?!X)/g,'$1X$2X$3X$4Xkanarazushi
 a=a.replace(/(思)(?!X)(い)(?!X)(や)(?!X)(り)(?!X)/g,'$1X$2X$3X$4Xomoiyari,thoughtfulness,kin-dness~noun');
 a=a.replace(/(思)(?!X)(い)(?!X)(切)(?!X)(り)(?!X)/g,'$1X$2X$3X$4Xomoikiri,to one\'s heart\'s content,with all one\'s might~noun');
 a=a.replace(/(打)(?!X)(ち)(?!X)(消)(?!X)(し)(?!X)/g,'$1X$2X$3X$4Xuchi-keshi,denial~noun');
+a=a.replace(/(い)(?!X)(つ)(?!X)(か)(?!X)(ら)(?!X)/g,'$1X$2X$3X$4Xitsu kara,how long~noun');
 a=a.replace(/(押)(?!X)(し)(?!X)(入)(?!X)(れ)(?!X)/g,'$1X$2X$3X$4Xoshiire,closet~noun');
 a=a.replace(/(振)(?!X)(り)(?!X)(仮)(?!X)(名)(?!X)/g,'$1X$2X$3X$4Xfurigana,reading aid in kana characters~noun');
 a=a.replace(/(日)(?!X)(の)(?!X)(入)(?!X)(り)(?!X)/g,'$1X$2X$3X$4Xhinoiri,sunset~noun');
@@ -1466,7 +1467,6 @@ a=a.replace(/(１|1)(?!X)(4)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-yok-ka,the fourteen
 a=a.replace(/(１|1)(?!X)(6)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-roku-nichi,the sixteenth	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(7)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-shichi-nichi,the seventeenth	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(8|８)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-hachi-nichi,the eighteenth	day of the month ~noun')
-a=a.replace(/(１|1)(?!X)(日)(?!X)/g,'$1X$2Xtsuitachi,the first day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(０|0)(?!X)(日)(?!X)/g,'$1X$2X$3Xtoo-ka,the tenth day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(０|0)(?!X)(月)(?!X)/g,'$1X$2X$3Xjyuu-gatsu,October ~noun')
 a=a.replace(/(１|1)(?!X)(１|1)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-ichi-nichi,the eleventh	day of the month ~noun')
@@ -1585,7 +1585,7 @@ a=a.replace(/(仕)(?!X)(舞)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2Xshima,p
 a=a.replace(/(付)(?!X)(き)(?!X)(合)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3Xtsukia,friendship,association<br>$4X~i-adjective');
 a=a.replace(/(付)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xtsuke,attach,set,apply<br>$3X~ru-verb');
 a=a.replace(/(代)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xkae,substitute,use in place of<br>$3X~ru-verb');
-a=a.replace(/(代)(?!X)(わ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xkawa,substitute,be substituted for<br>$3X~ru-verb');
+a=a.replace(/(代)(?!X)(わ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xkawa,substitute<br>$3X~ru-verb');
 a=a.replace(/(仮)(?!X)(名)(?!X)(遣)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3Xkan-azuka,kan-a orthography,use of kana<br>$4X~i-adjective');
 a=a.replace(/(仲)(?!X)(良)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2Xnakayo,harmoniously,amicably<br>$3X~ku-verb');
 a=a.replace(/(任)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xmakase,entrust to,leave it to<br>$3X~ru-verb');
@@ -2408,6 +2408,8 @@ a=a.replace(/(今)(?!X)(週)(?!X)/g,'$1X$2Xkon-syuu,this week~noun');
 a=a.replace(/(介)(?!X)(入)(?!X)/g,'$1X$2Xkai-nyuu,intervention~noun');
 a=a.replace(/(仏)(?!X)(教)(?!X)/g,'$1X$2Xbuk-kyou,Buddhism~noun');
 a=a.replace(/(仕)(?!X)(事)(?!X)/g,'$1X$2Xshigoto,work,job~noun');
+a=a.replace(/(配)(?!X)(布)(?!X)/g,'$1X$2Xhai-fu,distribution~noun');
+a=a.replace(/(斎)(?!X)(藤)(?!X)/g,'$1X$2Xsai-to,place or family name~noun');
 a=a.replace(/(仕)(?!X)(方)(?!X)/g,'$1X$2Xshi-kata,way,method~noun');
 a=a.replace(/(仕)(?!X)(様)(?!X)/g,'$1X$2Xshi-you,method~noun');
 a=a.replace(/(他)(?!X)(人)(?!X)/g,'$1X$2Xta-nin,another person,stranger~noun');
@@ -2419,7 +2421,7 @@ a=a.replace(/(付)(?!X)(録)(?!X)/g,'$1X$2Xfu-roku,appendix,supplement~noun');
 a=a.replace(/(代)(?!X)(行)(?!X)/g,'$1X$2Xdai-kou,acting on behalf of~noun');
 a=a.replace(/(代)(?!X)(表)(?!X)/g,'$1X$2Xdai-hyou,representative~noun');
 a=a.replace(/(代)(?!X)(読)(?!X)/g,'$1X$2Xdai-doku,reading for another~noun');
-a=a.replace(/(代)(?!X)(金)(?!X)/g,'$1X$2Xdai-kin,charge,fee~noun');
+a=a.replace(/(代)(?!X)(金)(?!X)/g,'$1X$2Xdai-kin,fee~noun');
 a=a.replace(/(以)(?!X)(上)(?!X)/g,'$1X$2Xi-jyou,more than~noun');
 a=a.replace(/(以)(?!X)(下)(?!X)/g,'$1X$2Xi-ka,below~noun');
 a=a.replace(/(以)(?!X)(内)(?!X)/g,'$1X$2Xi-nai,within~noun');
@@ -4648,6 +4650,8 @@ a=a.replace(/(発)(?!X)(見)(?!X)/g,'$1X$2Xhak-ken,discovery~noun');
 a=a.replace(/(発)(?!X)(覚)(?!X)/g,'$1X$2Xhak-kaku,detection~noun');
 a=a.replace(/(発)(?!X)(言)(?!X)/g,'$1X$2Xhatsu-gen,speech~noun');
 a=a.replace(/(発)(?!X)(足)(?!X)/g,'$1X$2Xhas-soku,establishment of~noun');
+a=a.replace(/(割)(?!X)(引)(?!X)/g,'$1X$2Xwari-biki,discount~noun');
+a=a.replace(/(喚)(?!X)(起)(?!X)/g,'$1X$2Xkan-ki,evocation~noun');
 a=a.replace(/(発)(?!X)(車)(?!X)/g,'$1X$2Xhas-sya,start,leave~noun');
 a=a.replace(/(発)(?!X)(達)(?!X)/g,'$1X$2Xhat-tatsu,development~noun');
 a=a.replace(/(発)(?!X)(達)(?!X)/g,'$1X$2Xhat-tatsu,development~noun');
@@ -4865,6 +4869,7 @@ a=a.replace(/(紅)(?!X)(茶)(?!X)/g,'$1X$2Xkou-cya,black tea~noun');
 a=a.replace(/(紅)(?!X)(葉)(?!X)/g,'$1X$2Xkou-you,autumn leaves,crimson foliage~noun');
 a=a.replace(/(納)(?!X)(得)(?!X)/g,'$1X$2Xnat-toku,persuasion~noun');
 a=a.replace(/(納)(?!X)(豆)(?!X)/g,'$1X$2Xnat-tou,natto (fermented soybeans)~noun');
+a=a.replace(/(小)(?!X)(池)(?!X)/g,'$1X$2Xko-ike,place or family name~noun');
 a=a.replace(/(純)(?!X)(増)(?!X)/g,'$1X$2Xjyun,zou,net decrease~noun');
 a=a.replace(/(純)(?!X)(粋)(?!X)/g,'$1X$2Xjyun-sui,pure,unmixed~noun');
 a=a.replace(/(紙)(?!X)(屑)(?!X)/g,'$1X$2Xkami-kuzu,wastepaper~noun');
@@ -5496,7 +5501,7 @@ a=a.replace(/(適)(?!X)(合)(?!X)/g,'$1X$2Xteki-gou,compatibility~noun');
 a=a.replace(/(適)(?!X)(度)(?!X)/g,'$1X$2Xteki-do,moderate,proper~noun');
 a=a.replace(/(適)(?!X)(当)(?!X)/g,'$1X$2Xteki-tou,sui-table,appropriate~noun');
 a=a.replace(/(適)(?!X)(応)(?!X)/g,'$1X$2Xteki-ou,adaptation,adjustment~noun');
-a=a.replace(/(適)(?!X)(用)(?!X)/g,'$1X$2Xteki-you,adoption of a plan or technology~noun');
+a=a.replace(/(適)(?!X)(用)(?!X)/g,'$1X$2Xteki-you,plan adoption~noun');
 a=a.replace(/(選)(?!X)(手)(?!X)/g,'$1X$2Xsen-syu,athlete~noun');
 a=a.replace(/(選)(?!X)(択)(?!X)/g,'$1X$2Xsen-taku,selection,choice~noun');
 a=a.replace(/(選)(?!X)(挙)(?!X)/g,'$1X$2Xsen-kyo,election~noun');
@@ -6348,13 +6353,14 @@ a=a.replace(/(鳴)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xna,an animal cry<br>
 a=a.replace(/(黒)(?!X)(い|く|か|さ)(?!X)/g,'$1Xkuro,black,dark<br>$2X~i-adjective');
 a=a.replace(/(黙)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xdama,shut one\'s mouth<br>$2X~ru-verb');
 
+a=a.replace(/(１|1)(?!X)(日)(?!X)/g,'$1X$2Xtsuitachi,the first day of the month ~noun')
+
 a=a.replace(/(2|２|二)(?!X)/g,'$1Xni,two~noun');
 a=a.replace(/(5|５|五)(?!X)/g,'$1Xgo,five~noun');
 a=a.replace(/(7|７|七)(?!X)/g,'$1Xnana or shichi,seven~noun');
 a=a.replace(/(9|９|九)(?!X)/g,'$1Xkyuu,nine~noun');
 a=a.replace(/(き)(?!X)/g,'$1Xki,come,start to do~noun');
 a=a.replace(/(カ)(?!X)/g,'$1Xka,counter for things~noun');
-a=a.replace(/(一|１|1)(?!X)/g,'$1Xichi,one or not spoken before tens, hundreds, thousands~noun');
 a=a.replace(/(万)(?!X)/g,'$1Xman+,ten thousand~noun');
 a=a.replace(/(上)(?!X)/g,'$1Xue or jyou+,up,over,above,superior~noun');
 a=a.replace(/(下)(?!X)/g,'$1Xshita or ge+,down,under,below,inferior~noun');
@@ -6954,6 +6960,8 @@ a=a.replace(/(４|4|四)(?!X)/g,'$1Xyon or shi,four~noun');
 a=a.replace(/(６|6|六)(?!X)/g,'$1Xroku,six~noun');
 a=a.replace(/(８|8|八)(?!X)/g,'$1Xhachi,eight~noun');
 
+a=a.replace(/(一|１|1)(?!X)/g,'$1Xichi,one or not spoken before tens, hundreds, thousands~noun');
+
 a=a.replace(/(【)/g,'$1,open parenthese~punctuation');
 a=a.replace(/(】)/g,'$1,close parenthese~punctuation');
 a=a.replace(/(\()/g,'$1,open parenthese~punctuation');
@@ -7058,9 +7066,9 @@ a=a.replace(/(~noun)/g,"<span style=color:black></span><p>");
 
 a=a.replace(/(~postposition)/g,"<span style=color:green>$1<p></span>");
 
-a=a.replace(/(~tsu-verb|~ichidan-verb|~gu-verb|~nu-verb|~bu-verb|~i-adjective|~ru-verb|~u-verb|~ku-verb|~mu-verb|~su-verb)/g,"<span style=color:red>$1<br></span>");
+a=a.replace(/(~tsu-verb|~ichidan-verb|~gu-verb|~nu-verb|~bu-verb|~i-adjective|~ru-verb|~u-verb|~ku-verb|~mu-verb|~su-verb)/g,"<span style=color:red>$1<p></span>");
 
-a=a.replace(/(~helping-verb)/g,"<span style=color:purple>$1<br></span>");
+a=a.replace(/(~helping-verb)/g,"<span style=color:purple>$1<p></span>");
 
 a=a.replace(/(~be-verb|~verb|~suru-verb)/g,"<span style=color:red>$1<p></span>");
 
@@ -7078,11 +7086,13 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-［２９日　ロイター］ -     ロシアのプーチン大統領は２９日、ウクライナのヘルソンとザポロジエのロシアへの正式編入に向けた法令に署名した。
+政府が来月11日から始める「全国旅行支援」について、東京都は、来月20日から開始することを決めた。新型コロナウイルスに関する専門家会議の後、小池知事が、記者会見で明らかにした。
 
-【動画】ロシアから隣国ジョージアへ大脱出続く、国境に臨時徴兵所開設の動きも
+「全国旅行支援」の適用について、東京都では、これまで、新型コロナの感染状況などをもとに、専門家からの意見を聞いて判断する考えで、開始時期については明らかにされていなかった。
 
-法令はこれら２地域をプーチン氏が独立領として認めたとしており、３０日に同地域のロシア編入発表に向けた手続きとなる。
+「全国旅行支援」は、「Go To トラベル」に代わる観光需要の喚起策で、近隣地域のみが対象の「県民割」の「全国版」に当たる。代金割引とクーポン配布で、1人1泊当たり最大1万1000円を支援する。
+
+斉藤国交相は、きょうの閣議後の記者会見で、東京都を除く46道府県が、来月11日からの割引適用に向けて準備を進めていることを明らかにしていた。東京都が、いつから「全国旅行支援」を適用するのかが注目されていた。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
