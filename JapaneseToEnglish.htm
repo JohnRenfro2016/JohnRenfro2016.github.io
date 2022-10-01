@@ -190,6 +190,7 @@ a=a.replace(/(お)(?!X)(じ)(?!X)(さ)(?!X)(ん)(?!X)/g,'$1X$2X$3X$4Xojisan,Mist
 a=a.replace(/(お)(?!X)(じ)(?!X)(さ)(?!X)(ん)(?!X)/g,'$1X$2X$3X$4Xojisan,uncle~noun');
 a=a.replace(/(お)(?!X)(に)(?!X)(ぎ)(?!X)(り)(?!X)/g,'$1X$2X$3X$4Xonigiri,rice ball~noun');
 a=a.replace(/(メ)(?!X)(デ)(?!X)(ィ)(?!X)(ア)(?!X)/g,'$1X$2X$3X$4Xmedeia,media~noun');
+a=a.replace(/(ミ)(?!X)(サ)(?!X)(イ)(?!X)(ル)(?!X)/g,'$1X$2X$3X$4Xmisairu,missle~noun');
 a=a.replace(/(お)(?!X)(ば)(?!X)(さ)(?!X)(ん)(?!X)/g,'$1X$2X$3X$4Xobasan,aunt~noun');
 a=a.replace(/(お)(?!X)(ば)(?!X)(さ)(?!X)(ん)(?!X)/g,'$1X$2X$3X$4Xobasan,middle-aged woman~noun');
 a=a.replace(/(お)(?!X)(も)(?!X)(ち)(?!X)(ゃ)(?!X)/g,'$1X$2X$3X$4Xomochya,toy,plaything~noun');
@@ -3854,6 +3855,8 @@ a=a.replace(/(撤)(?!X)(退)(?!X)/g,'$1X$2Xtet-tai,withdrawl~noun');
 a=a.replace(/(撮)(?!X)(影)(?!X)/g,'$1X$2Xsatsu-ei,photoshoot~noun');
 a=a.replace(/(操)(?!X)(作)(?!X)/g,'$1X$2Xsou-sa,operation~noun');
 a=a.replace(/(操)(?!X)(縦)(?!X)/g,'$1X$2Xsou-jyuu,steering,piloting~noun');
+a=a.replace(/(水)(?!X)(域)(?!X)/g,'$1X$2Xsui-iki,waters~noun');
+a=a.replace(/(海)(?!X)(側)(?!X)/g,'$1X$2Xumi-gawa,seaward~noun');
 a=a.replace(/(支)(?!X)(出)(?!X)/g,'$1X$2Xshi-syutsu,expenditure~noun');
 a=a.replace(/(支)(?!X)(店)(?!X)/g,'$1X$2Xshi-ten,branch~noun');
 a=a.replace(/(支)(?!X)(度)(?!X)/g,'$1X$2Xshi-taku,arrangement,preparation~noun');
@@ -7018,6 +7021,9 @@ a=a.replace(/(で)(?!X)(は)(?!X)/g,'$1X$2Xde wa,well then~postposition');
 a=a.replace(/(に)(?!X)(も)(?!X)/g,'$1X$2Xni mo,as well~postposition');
 a=a.replace(/(れ)(?!X)(た)(?!X)/g,'$1X$2Xreta,was done,informal~verb');
 
+a=a.replace(/(verbた)(?!X)/g,'$1Xta,did,informal~verb');
+a=a.replace(/(verbる)(?!X)/g,'$1Xru,do,will do,informal~verb');
+
 a=a.replace(/(verbで)(?!X)/g,'$1Xde,do,and~helping-verb');
 a=a.replace(/(adjectiveで|nounで)(?!X)/g,'$1Xde,with,at~postposition');
 a=a.replace(/(adjectiveな|nounな)(?!X)/g,'$1Xna,~na-adjective<br>');
@@ -7043,9 +7049,6 @@ a=a.replace(/(verbよ)(?!X)/g,'$1Xyo,exclamation,informal~verb');
 a=a.replace(/(verbれ)(?!X)/g,'$1Xis done~passive~helping-verb');
 a=a.replace(/(adjectiveを|punctuationを|verbを|nounを)(?!X)/g,'$1Xoo,direct object~postposition');
 a=a.replace(/(さX~i-adjective)/g,'$1,sa~gerund form~noun');
-
-a=a.replace(/(verbた)(?!X)/g,'$1Xta,did,informal~verb');
-a=a.replace(/(verbる)(?!X)/g,'$1Xru,do,will do,informal~verb');
 
 a=a.replace(/(punctuationの|adjectiveの|postpositionの|verbの|nounの)(?!X)/g,'$1Xno,of~postposition');
 
@@ -7086,13 +7089,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-政府が来月11日から始める「全国旅行支援」について、東京都は、来月20日から開始することを決めた。新型コロナウイルスに関する専門家会議の後、小池知事が、記者会見で明らかにした。
-
-「全国旅行支援」の適用について、東京都では、これまで、新型コロナの感染状況などをもとに、専門家からの意見を聞いて判断する考えで、開始時期については明らかにされていなかった。
-
-「全国旅行支援」は、「Go To トラベル」に代わる観光需要の喚起策で、近隣地域のみが対象の「県民割」の「全国版」に当たる。代金割引とクーポン配布で、1人1泊当たり最大1万1000円を支援する。
-
-斉藤国交相は、きょうの閣議後の記者会見で、東京都を除く46道府県が、来月11日からの割引適用に向けて準備を進めていることを明らかにしていた。東京都が、いつから「全国旅行支援」を適用するのかが注目されていた。
+　防衛省は1日、北朝鮮から弾道ミサイルの可能性があるものが発射されたと同日午前6時45分ごろに発表した。海上保安庁は午前7時ごろと同5分ごろにすでに落下したとみられると発表。政府関係者によると、北朝鮮から日本海側に複数発発射され、落下地点はいずれも日本の排他的経済水域（EEZ）の外とみられるという。被害情報は入っていない。海上保安庁は落下物に近づかないよう注意を呼びかけている。
 
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
