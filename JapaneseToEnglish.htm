@@ -24,8 +24,9 @@ body
  {
   background-color: #aa4d06;
   display: inline-block;
-  font-size: 30px;
-  margin: 5px;
+  font-size: 28px;
+  margin: 15px;
+  padding: 15px;
  }
 
 .ComicTitle
@@ -45,8 +46,6 @@ body
   column-count:2;
   column-rule:4px #fc7000;
   color: #f5c103;
-  margin: 5px;
-  padding: 20px;
  }
 
 .HeaderStyle
@@ -59,8 +58,6 @@ body
          0.3em 0.3em 1em rgba(0,0,0,0.3);
   color: #f9cd31;
   font-size: inherit;
-  margin: 5px;
-  padding: 20px;
  }
 
 textArea
@@ -72,8 +69,6 @@ textArea
          0.3em 0.3em 1em rgba(0,0,0,0.3);
   color: #fdeda9;
   font-size: inherit;
-  margin: 5px;
-  padding: 20px;
  }
 s
 </style>
@@ -1229,7 +1224,9 @@ a=a.replace(/(本)(?!X)(拠)(?!X)(地)(?!X)/g,'$1X$2X$3Xhon-kyo-chi,stronghold~n
 a=a.replace(/(本)(?!X)(格)(?!X)(化)(?!X)/g,'$1X$2X$3Xhon-kaku-ka,regularization~noun');
 a=a.replace(/(本)(?!X)(格)(?!X)(的)(?!X)/g,'$1X$2X$3Xhon-kaku-teki,full-scale~noun');
 a=a.replace(/(枠)(?!X)(組)(?!X)(み)(?!X)/g,'$1X$2X$3Xwaku-gumi,outline,framework~noun');
+a=a.replace(/(輸)(?!X)(出)(?!X)(国)(?!X)/g,'$1X$2X$3Xyu-syuk-koku,exporting country~noun');
 a=a.replace(/(柔)(?!X)(ら)(?!X)(か)(?!X)/g,'$1X$2X$3Xyawaraka,soft,tender,gen-tle~noun');
+a=a.replace(/(産)(?!X)(油)(?!X)(国)(?!X)/g,'$1X$2X$3Xsan-yu-koku,oil producing country~noun');
 a=a.replace(/(栓)(?!X)(抜)(?!X)(き)(?!X)/g,'$1X$2X$3Xsen-nuki,bottle opener,corkscrew~noun');
 a=a.replace(/(核)(?!X)(兵)(?!X)(器)(?!X)/g,'$1X$2X$3Xkaku-hei-ki,nuclear weapons~noun');
 a=a.replace(/(案)(?!X)(の)(?!X)(定)(?!X)/g,'$1X$2X$3Xanno-jyou,as feared,sure enough~noun');
@@ -2367,6 +2364,7 @@ a=a.replace(/(主)(?!X)(観)(?!X)/g,'$1X$2Xsyu-kan,subjectivity,subject~noun');
 a=a.replace(/(主)(?!X)(題)(?!X)/g,'$1X$2Xsyu-dai,subject,theme~noun');
 a=a.replace(/(主)(?!X)(食)(?!X)/g,'$1X$2Xsyu-syoku,staple food~noun');
 a=a.replace(/(乗)(?!X)(じ)(?!X)/g,'$1X$2Xjyouji,take advantage of~ichidan-verb');
+a=a.replace(/(比)(?!X)(べ)(?!X)/g,'$1X$2Xkurabe,compare~ichidan-verb');
 a=a.replace(/(乗)(?!X)(員)(?!X)/g,'$1X$2Xjyou-in,crew~noun');
 a=a.replace(/(乗)(?!X)(客)(?!X)/g,'$1X$2Xjyou-kyaku,passenger~noun');
 a=a.replace(/(乗)(?!X)(船)(?!X)/g,'$1X$2Xjyou-sen,boarding a ship~noun');
@@ -3623,6 +3621,7 @@ a=a.replace(/(強)(?!X)(制)(?!X)/g,'$1X$2Xkyou-sei,force~noun');
 a=a.replace(/(強)(?!X)(力)(?!X)/g,'$1X$2Xkyou-ryoku,powerful~noun');
 a=a.replace(/(強)(?!X)(化)(?!X)/g,'$1X$2Xkyou-ka,strengthening~noun');
 a=a.replace(/(強)(?!X)(固)(?!X)/g,'$1X$2Xkyou-ko,solid,stable~noun');
+a=a.replace(/(減)(?!X)(産)(?!X)/g,'$1X$2Xgen-san,decrease in production~noun');
 a=a.replace(/(強)(?!X)(気)(?!X)/g,'$1X$2Xtsuyoki,tou-gh,bullish~noun');
 a=a.replace(/(強)(?!X)(烈)(?!X)/g,'$1X$2Xkyou-retsu,intense,severe~noun');
 a=a.replace(/(強)(?!X)(盗)(?!X)/g,'$1X$2Xgou-tou,robbery~noun');
@@ -5047,7 +5046,7 @@ a=a.replace(/(編)(?!X)(集)(?!X)/g,'$1X$2Xhen-syuu,editing~noun');
 a=a.replace(/(緩)(?!X)(和)(?!X)/g,'$1X$2Xkan-wa,relief~noun');
 a=a.replace(/(練)(?!X)(習)(?!X)/g,'$1X$2Xren-syuu,practice,training~noun');
 a=a.replace(/(縮)(?!X)(み)(?!X)/g,'$1X$2Xchi-ぢmi,shrinkage~noun');
-a=a.replace(/(縮)(?!X)(小)(?!X)/g,'$1X$2Xsyuku-syou,reduction,curtailment~noun');
+a=a.replace(/(縮)(?!X)(小)(?!X)/g,'$1X$2Xsyuku-syou,reduction~noun');
 a=a.replace(/(繁)(?!X)(栄)(?!X)/g,'$1X$2Xhan-ei,prosperity,thriving~noun');
 a=a.replace(/(織)(?!X)(物)(?!X)/g,'$1X$2Xori-mono,cloth,textile~noun');
 a=a.replace(/(缶)(?!X)(詰)(?!X)/g,'$1X$2Xkan-dume,canned goods,cooping-up~noun');
@@ -6651,6 +6650,7 @@ a=a.replace(/(席)(?!X)/g,'$1Xseki+,seat~noun');
 a=a.replace(/(帯)(?!X)/g,'$1Xobi,belt,sash~noun');
 a=a.replace(/(幅)(?!X)/g,'$1Xhaba,width,breadth~noun');
 a=a.replace(/(幕)(?!X)/g,'$1Xmaku,curtain~noun');
+a=a.replace(/(比)(?!X)/g,'$1Xgoro or koro,comparison~noun');
 a=a.replace(/(年)(?!X)/g,'$1Xnen,year~noun');
 a=a.replace(/(幹)(?!X)/g,'$1Xm+iki,tree trunk~noun');
 a=a.replace(/(庁)(?!X)/g,'$1Xcyou,agency~noun');
@@ -7210,7 +7210,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-タス通信によると、ロシアのプーチン大統領は５日、ウクライナ東・南部４州の一方的な併合に必要な法案に署名した。ロシアが東部ドネツク、ルハンスク両州と南部ヘルソン、ザポリージャ両州を併合する手続きが完了した。
+石油輸出国機構（OPEC）とロシアなど非加盟の産油国でつくるOPECプラスは5日の閣僚級会合で、11月の原油生産ペースを10月に比べて日量200万バレル減らすことを決めた。ロイター通信が伝えた。減産幅は新型コロナ禍の経済活動縮小に対応した2020年4月会合の1000万バレル（18年秋比）以来の大きさとなる。
 
 <p>
 <textArea cols='70%' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
