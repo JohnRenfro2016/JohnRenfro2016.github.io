@@ -23,17 +23,8 @@ a:visited {color: #ffe994}
 body
  {
   background-color: #aa4d06;
-  font-size: 20px;
+  font-size: 30px;
   margin: 5px;
-  width: 700px;
- }
-
-img
- {
-  padding: 5px  background-color:#00a493;
-  border: 2px #85c441;
-  position: sticky;
-  width:400px;
  }
 
 .ComicTitle
@@ -57,7 +48,7 @@ img
   padding: 20px;
  }
 
-.HeaderStyle,textarea
+.HeaderStyle
  {
   background-color:#6f1100;
   border: 2px #280b00;
@@ -66,12 +57,13 @@ img
          0 0  0 2px rgb(255,255,255),
          0.3em 0.3em 1em rgba(0,0,0,0.3);
   color: #f9cd31;
+  font-size: inherit;
   margin: 5px;
+  overflow-wrap: break-word;
   padding: 20px;
-  width: 90%;
  }
 
- .RightPanel
+textArea
  {
   background: linear-gradient(120deg, #c45a02 0%, #4b0d02 100%);
   box-shadow:
@@ -79,19 +71,17 @@ img
          0 0  0 2px rgb(255,255,255),
          0.3em 0.3em 1em rgba(0,0,0,0.3);
   color: #fdeda9;
-  display; block;
-  float: right;
+  font-size: inherit;
   margin: 5px;
-  padding: 5px;
-  vertical-align: top;
-  width: 200px;
+  overflow-wrap: break-word;
+  padding: 20px;
  }
 
  .TiltedPicture
  {
   background-image: url("She-Hulk.png");
   color: #ffffff;
-  font-size: 15px;
+  font-size: 35px;
   height: 300px;
   line-height: 20px;
   margin: 5px;
@@ -7215,7 +7205,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 　岸田文雄首相は4日、首相官邸で開いた「新しい資本主義実現会議」で、2023年の春闘に向けて「物価上昇をカバーする賃上げを目標に、企業の実情に応じて労使で議論していただきたい」と述べ、賃上げ実現に期待を示した。月内に策定する総合経済対策に、賃上げにつながる労働市場の改革策などを盛り込むことも確認した。
 
 <p>
-<textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
+<textArea cols='70%' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
 <div class='cStyle'>
 <span id="translatedTextDisplay"></span>
 </div>
