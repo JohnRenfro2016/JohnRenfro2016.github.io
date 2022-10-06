@@ -23,10 +23,10 @@ a:visited {color: #ffe994}
 body
  {
   background-color: #aa4d06;
-  display: inline-block;
   font-size: 28px;
   margin: 15px;
   padding: 15px;
+  width: 650px;
  }
 
 .ComicTitle
@@ -46,6 +46,7 @@ body
   column-count:2;
   column-rule:4px #fc7000;
   color: #f5c103;
+  word-wrap: break-inside;
  }
 
 .HeaderStyle
@@ -58,6 +59,7 @@ body
          0.3em 0.3em 1em rgba(0,0,0,0.3);
   color: #f9cd31;
   font-size: inherit;
+  white-space: normal;
  }
 
 textArea
@@ -69,6 +71,7 @@ textArea
          0.3em 0.3em 1em rgba(0,0,0,0.3);
   color: #fdeda9;
   font-size: inherit;
+  word-wrap: break-inside;
  }
 s
 </style>
@@ -962,6 +965,7 @@ a=a.replace(/(浴)(?!X)(び)(?!X)(せ)(?!X)/g,'$1X$2X$3Xabise,bathe in~ichidan-v
 a=a.replace(/(先)(?!X)(立)(?!X)(ち)(?!X)/g,'$1X$2X$3Xsaki-dachi,before~noun');
 a=a.replace(/(免)(?!X)(許)(?!X)(証)(?!X)/g,'$1X$2X$3Xmenkyo-syou,license~noun');
 a=a.replace(/(入)(?!X)(り)(?!X)(口)(?!X)/g,'$1X$2X$3Xiri-gu-chi,entrance~noun');
+a=a.replace(/(民)(?!X)(主)(?!X)(党)(?!X)/g,'$1X$2X$3Xmin-syu-tou,Democratic Party of Japan~noun');
 a=a.replace(/(入)(?!X)(れ)(?!X)(物)(?!X)/g,'$1X$2X$3Xire-mono,receptacle,container~noun');
 a=a.replace(/(入)(?!X)(場)(?!X)(券)(?!X)/g,'$1X$2X$3Xnyuu-jyou-ken,entrance ticket~noun');
 a=a.replace(/(全)(?!X)(体)(?!X)(像)(?!X)/g,'$1X$2X$3Xzen-tai-zou,the big picture~noun');
@@ -1403,7 +1407,7 @@ a=a.replace(/(見)(?!X)(か)(?!X)(け)(?!X)/g,'$1X$2X$3Xmi-kake,looks,appearance
 a=a.replace(/(見)(?!X)(出)(?!X)(し)(?!X)/g,'$1X$2X$3Xmi-da-shi,headline,heading~noun');
 a=a.replace(/(見)(?!X)(物)(?!X)(人)(?!X)/g,'$1X$2X$3Xken-butsunin,spectator,sightseer~noun');
 a=a.replace(/(見)(?!X)(覚)(?!X)(え)(?!X)/g,'$1X$2X$3Xmi-oboe,recognition,remembrance~noun');
-a=a.replace(/(見)(?!X)(込)(?!X)(み)(?!X)/g,'$1X$2X$3Xmi-komi,hope,prospect~noun');
+a=a.replace(/(見)(?!X)(込)(?!X)(み)(?!X)/g,'$1X$2X$3Xmi-komi,prospect~noun');
 a=a.replace(/(見)(?!X)(送)(?!X)(り)(?!X)/g,'$1X$2X$3Xmi-okuri,seeing someone off~noun');
 a=a.replace(/(見)(?!X)(通)(?!X)(し)(?!X)/g,'$1X$2X$3Xmi-tooshi,perspective~noun');
 a=a.replace(/(親)(?!X)(し)(?!X)(み)(?!X)/g,'$1X$2X$3Xshitashimi,intimacy,familiarity~noun');
@@ -2446,7 +2450,7 @@ a=a.replace(/(今)(?!X)(夜)(?!X)/g,'$1X$2Xkon-ya,tonight~noun');
 a=a.replace(/(今)(?!X)(年)(?!X)/g,'$1X$2Xkoto-shi,this year~noun');
 a=a.replace(/(今)(?!X)(度)(?!X)/g,'$1X$2Xkon-do,this time,next time~noun');
 a=a.replace(/(今)(?!X)(後)(?!X)/g,'$1X$2Xkon-go,from now on~noun');
-a=a.replace(/(今)(?!X)(日)(?!X)/g,'$1X$2Xkon-nichi,today,these days~noun');
+a=a.replace(/(今)(?!X)(日)(?!X)/g,'$1X$2Xkon-nichi,these days~noun');
 a=a.replace(/(今)(?!X)(日)(?!X)/g,'$1X$2Xkyou,today~noun');
 a=a.replace(/(今)(?!X)(晩)(?!X)/g,'$1X$2Xkon-ban,this evening,tonight~noun');
 a=a.replace(/(今)(?!X)(更)(?!X)/g,'$1X$2Ximasara,now,too late~noun');
@@ -3144,7 +3148,7 @@ a=a.replace(/(固)(?!X)(定)(?!X)/g,'$1X$2Xko-tei,fixing,stability~noun');
 a=a.replace(/(固)(?!X)(有)(?!X)/g,'$1X$2Xko-yuu,peculiar to,characteristic~noun');
 a=a.replace(/(国)(?!X)(々)(?!X)/g,'$1X$2Xkuni-guni,national~noun');
 a=a.replace(/(国)(?!X)(交)(?!X)/g,'$1X$2Xkok-kou,diplomatic relations~noun');
-a=a.replace(/(国)(?!X)(会)(?!X)/g,'$1X$2Xkok-kai,National Diet government of Japan~noun');
+a=a.replace(/(国)(?!X)(会)(?!X)/g,'$1X$2Xkok-kai,National Diet~noun');
 a=a.replace(/(国)(?!X)(債)(?!X)/g,'$1X$2Xkoku-sai,national debt~noun');
 a=a.replace(/(国)(?!X)(内)(?!X)/g,'$1X$2Xkoku-nai,domestic~noun');
 a=a.replace(/(国)(?!X)(名)(?!X)/g,'$1X$2Xkoku-mei,country name~noun');
@@ -3445,7 +3449,7 @@ a=a.replace(/(容)(?!X)(認)(?!X)/g,'$1X$2Xyou-nin,approval~noun');
 a=a.replace(/(宿)(?!X)(題)(?!X)/g,'$1X$2Xsyuku-dai,homework~noun');
 a=a.replace(/(寄)(?!X)(宿)(?!X)/g,'$1X$2Xki-syuku,boarding room~noun');
 a=a.replace(/(密)(?!X)(か)(?!X)/g,'$1X$2Xhisoka,secret,private~noun');
-a=a.replace(/(寒)(?!X)(さ)(?!X)/g,'$1X$2Xsamusa,coldness,cold~noun');
+a=a.replace(/(寒)(?!X)(さ)(?!X)/g,'$1X$2Xsamusa,coldness~noun');
 a=a.replace(/(寒)(?!X)(気)(?!X)/g,'$1X$2Xsamu-ke,chilly~noun');
 a=a.replace(/(寝)(?!X)(坊)(?!X)/g,'$1X$2Xne-bou,late riser,oversleeping~noun');
 a=a.replace(/(寝)(?!X)(室)(?!X)/g,'$1X$2Xshin-shitsu,bedroom~noun');
@@ -4071,6 +4075,7 @@ a=a.replace(/(明)(?!X)(朝)(?!X)/g,'$1X$2Xmyou-cyou,tomorrow morning~noun');
 a=a.replace(/(明)(?!X)(治)(?!X)/g,'$1X$2Xmeiji,Meiji era~noun');
 a=a.replace(/(明)(?!X)(白)(?!X)/g,'$1X$2Xmei-haku,clear~noun');
 a=a.replace(/(明)(?!X)(瞭)(?!X)/g,'$1X$2Xmei-ryou,clear,plain~noun');
+a=a.replace(/(初)(?!X)(冬)(?!X)/g,'$1X$2Xsyo-tou,early winter~noun');
 a=a.replace(/(明)(?!X)(確)(?!X)/g,'$1X$2Xmei-kaku,precise~noun');
 a=a.replace(/(明)(?!X)(言)(?!X)/g,'$1X$2Xmei-gen,declaration~noun');
 a=a.replace(/(映)(?!X)(像)(?!X)/g,'$1X$2Xei-zou,image~noun');
@@ -4516,6 +4521,7 @@ a=a.replace(/(湿)(?!X)(気)(?!X)/g,'$1X$2Xshikke,moisture,dampness~noun');
 a=a.replace(/(満)(?!X)(了)(?!X)/g,'$1X$2Xman-ryou,ended~noun');
 a=a.replace(/(満)(?!X)(員)(?!X)/g,'$1X$2Xman-in,full to capacity~noun');
 a=a.replace(/(満)(?!X)(月)(?!X)/g,'$1X$2Xman-getsu,full moon~noun');
+a=a.replace(/(打)(?!X)(診)(?!X)/g,'$1X$2Xda-shin,tapping~noun');
 a=a.replace(/(満)(?!X)(点)(?!X)/g,'$1X$2Xman-ten,full marks,perfect score~noun');
 a=a.replace(/(満)(?!X)(足)(?!X)/g,'$1X$2Xman-zoku,satisfaction,contentment~noun');
 a=a.replace(/(準)(?!X)(備)(?!X)/g,'$1X$2Xjyun-bi,preparation~noun');
@@ -6712,7 +6718,7 @@ a=a.replace(/(朝)(?!X)/g,'$1Xasa,morning~noun');
 a=a.replace(/(期)(?!X)/g,'$1Xki,time period~noun');
 a=a.replace(/(木)(?!X)/g,'$1Xki,tree or moku-you-bi,Thursday~noun');
 a=a.replace(/(末)(?!X)/g,'$1Xmatsu+,last part~noun');
-a=a.replace(/(本)(?!X)/g,'$1Xhon+,book~noun');
+a=a.replace(/(本)(?!X)/g,'$1Xhon+,book or heavy~noun');
 a=a.replace(/(札)(?!X)/g,'$1Xfuda,sign,billboard~noun');
 a=a.replace(/(札)(?!X)/g,'$1Xsatsu+,bill,paper money~noun');
 a=a.replace(/(机)(?!X)/g,'$1Xtsukue,desk,table~noun');
@@ -7098,7 +7104,7 @@ a=a.replace(/(℃)/g,'$1,celcius~punctuation');
 
 a=a.replace(/(せ)(?!X)/g,'$1Xse,be made to do~helping-verb');
 
-a=a.replace(/(adjectiveま|nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xmashita,did,formal~verb');
+a=a.replace(/(adjectiveま|nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xmashita,did-formal~verb');
 a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3Xdatta,was,informal~verb');
 a=a.replace(/(nounだ|verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3Xdatta,was,informal~verb');
 a=a.replace(/(nounま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3Xdid,formal~verb');
@@ -7109,7 +7115,6 @@ a=a.replace(/(verbま)(?!X)(せ)(?!X)(ん)(?!X)/g,'$1X$2X$3Xmasen,not do-formal~
 a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)/g,'$1X$2X$3Xshitei,is doing~suru-verb');
 
 a=a.replace(/(nounな)(?!X)(か)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3X$4Xnakatta,did not,informal~suru-verb');
-a=a.replace(/(verbて)(?!X)(い)(?!X)(ま)(?!X)(す)(?!X)/g,'$1X$2X$3X$4Xteimasu,is doing,formal<p>~verb');
 a=a.replace(/(verbま|nounま)(?!X)(し)(?!X)(ょ)(?!X)(う)(?!X)/g,'$1X$2X$3X$4Xmasyou,let\'s do,formal~verb');
 a=a.replace(/(さ)(?!X)(れ)(?!X)(て)(?!X)(い)(?!X)/g,'$1X$2X$3X$4Xsaretei,had been doing~verb');
 a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(た)(?!X)/g,'$1X$2X$3X$4Xshiteita,was doing,informal~verb');
@@ -7143,9 +7148,6 @@ a=a.replace(/(れ)(?!X)(た)(?!X)/g,'$1X$2Xreta,was done,informal~verb');
 
 a=a.replace(/(verbれ)(?!X)/g,'$1Xis done-passive~helping-verb');
 
-a=a.replace(/(verbた)(?!X)/g,'$1Xta,did,informal~verb');
-a=a.replace(/(verbる)(?!X)/g,'$1Xru,do,will do,informal~verb');
-
 a=a.replace(/(verbで)(?!X)/g,'$1Xde,do,and~helping-verb');
 a=a.replace(/(adjectiveで|nounで)(?!X)/g,'$1Xde,with,at~postposition');
 a=a.replace(/(verbな|adjectiveな|nounな)(?!X)/g,'$1Xna,~na-adjective<p>');
@@ -7156,7 +7158,7 @@ a=a.replace(/(nounら)(?!X)/g,'$1Xra,plural~postposition');
 a=a.replace(/(postpositionか|verbか|nounか)(?!X)/g,'$1Xka,indicates a question~postposition');
 a=a.replace(/(postpositionし|nounし)(?!X)/g,'$1Xshi,do and~suru-verb');
 a=a.replace(/(punctuationに|adjectiveに|postpositionに|verbに|nounに)(?!X)/g,'$1Xni,at,in,on~postposition');
-a=a.replace(/(postpositionも|verbも|nounも)(?!X)/g,'$1Xmo,too~postposition');
+a=a.replace(/(punctuationも|postpositionも|verbも|nounも)(?!X)/g,'$1Xmo,too~postposition');
 a=a.replace(/(verbえ)(?!X)/g,'$1Xe,can do~verb');
 a=a.replace(/(verbず)(?!X)/g,'$1Xzu,without doing~verb');
 a=a.replace(/(verbだ)(?!X)/g,'$1Xda,did,informal~verb');
@@ -7169,11 +7171,14 @@ a=a.replace(/(punctuationや|verbや|nounや)(?!X)/g,'$1Xya,and,comma~postpositi
 a=a.replace(/(verbよ)(?!X)/g,'$1Xyo,exclamation,informal~verb');
 a=a.replace(/(verbよ)(?!X)/g,'$1Xyo,exclamation,informal~verb');
 a=a.replace(/(adjectiveを|punctuationを|verbを|nounを)(?!X)/g,'$1Xoo,direct object~postposition');
-a=a.replace(/(さX~i-adjective)/g,'$1,sa~gerund form~noun');
+a=a.replace(/(さ(?!X)~i-adjective)/g,'$1,sa~gerund form~noun');
 
 a=a.replace(/(punctuationの|adjectiveの|postpositionの|verbの|nounの)(?!X)/g,'$1Xno,of~postposition');
 
 a=a.replace(/(punctuationが|verbが|adjectiveが|postpositionが|verbが|nounが)(?!X)/g,'$1Xga,the above acts~postposition');
+
+a=a.replace(/(verbた)(?!X)/g,'$1Xta,did,informal~verb');
+a=a.replace(/(verbる)(?!X)/g,'$1Xru,do,will do,informal~verb');
 
 }
 function translateC()
@@ -7210,10 +7215,16 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
 
-石油輸出国機構（OPEC）とロシアなど非加盟の産油国でつくるOPECプラスは5日の閣僚級会合で、11月の原油生産ペースを10月に比べて日量200万バレル減らすことを決めた。ロイター通信が伝えた。減産幅は新型コロナ禍の経済活動縮小に対応した2020年4月会合の1000万バレル（18年秋比）以来の大きさとなる。
+最高気温13℃台なら10月上旬としては88年ぶりの低さ
+
+東京の気温変化
+
+今日6日(木)の関東は昼間も15℃未満で経過し、初冬を思わせる寒さになりました。明日7日(金)も同じような寒さが続く見込みです。
+
+今日の東京都心は6時過ぎに最高気温15.0℃を観測。その後は雨が本降りになるとともにじわじわと気温が下がり、午後は12℃前後で経過しました。
 
 <p>
-<textArea cols='70%' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
+<textArea cols='38' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
 <div class='cStyle'>
 <span id="translatedTextDisplay"></span>
 </div>
