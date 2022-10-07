@@ -154,7 +154,7 @@ mark
 </td></tr><tr><td>
 </td></tr><tr><td><a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
 </td></tr><tr><td>
-<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>Attack Matrixes</a>
+<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>Attack Matrixes</a> Note the attacker's class and level and the target's armor class. Go to the right table to find the minimum that must be rolled to hit.
 </td></tr><tr><td>
 
 <a href='https://archive.org/details/tsr09033s3expeditiontothebarrierpeaks/page/n37/mode/1up' target='_blank'>Character Roster</a>
@@ -2262,9 +2262,9 @@ localStorage.setItem('option', value);
 location.reload()})
 function _ref(){boxContents="<img id='rotated"+this.index+"' onClick='characters["+this.index+"].setRotation("+this.index+")' src=' "+this.figure+"'>";
 boxContents+="<table><tr><td class='piece'>"+this.name;
-boxContents+="</td></tr><tr><td class='piece'>(Init)iative:"+this.init;
-boxContents+="</td></tr><tr><td class='piece'>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
-boxContents+="</td></tr><tr><td class='piece'>HP:"+this.maxHp+"/"+this.curHp;
+boxContents+=" Level: "+this.lvl+" Class: "+this.class+"</td></tr><tr><td class='piece'>(Init)iative:"+this.init;
+boxContents+=" Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
+boxContents+="</td></tr><tr><td class='piece'>AC:"+this.curAc+" HP:"+this.maxHp+"/"+this.curHp;
 boxContents+="</td></tr><tr><td class='piece'><input class='piece' onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
 
 boxContents+="</td></tr></table></span><span id=toggled1"+this.index+" style='display:"+this.toggled1+"'>"
