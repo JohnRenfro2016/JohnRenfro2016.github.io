@@ -20,13 +20,14 @@ a:hover,
 a:active,
 a:visited {color: #ffe994}
 
-body
+body,
+div,
+textarea
  {
   background-color: #aa4d06;
-  font-size: 28px;
+  font-size: 30px;
   margin: 15px;
   padding: 15px;
-  width: 650px;
  }
 
 .ComicTitle
@@ -46,7 +47,6 @@ body
   column-count:2;
   column-rule:4px #fc7000;
   color: #f5c103;
-  word-wrap: break-inside;
  }
 
 .HeaderStyle
@@ -58,8 +58,6 @@ body
          0 0  0 2px rgb(255,255,255),
          0.3em 0.3em 1em rgba(0,0,0,0.3);
   color: #f9cd31;
-  font-size: inherit;
-  white-space: normal;
  }
 
 textArea
@@ -70,10 +68,10 @@ textArea
          0 0  0 2px rgb(255,255,255),
          0.3em 0.3em 1em rgba(0,0,0,0.3);
   color: #fdeda9;
-  font-size: inherit;
-  word-wrap: break-inside;
+  height: 90%;
+  width: 90%;
  }
-s
+
 </style>
  </head>
 <script>
@@ -762,7 +760,7 @@ a=a.replace(/(し)(?!X)(か)(?!X)(し)(?!X)/g,'$1X$2X$3Xshikashi,however~noun');
 a=a.replace(/(じ)(?!X)(っ)(?!X)(と)(?!X)/g,'$1X$2X$3Xjitto,without moving,still~noun');
 a=a.replace(/(す)(?!X)(い)(?!X)(か)(?!X)/g,'$1X$2X$3Xsui-ka,watermelon~noun');
 a=a.replace(/(す)(?!X)(っ)(?!X)(と)(?!X)/g,'$1X$2X$3Xsutto,clear~noun');
-a=a.replace(/(す)(?!X)(で)(?!X)(に)(?!X)/g,'$1X$2X$3Xsude no,already too late~noun');
+a=a.replace(/(す)(?!X)(で)(?!X)(に)(?!X)/g,'$1X$2X$3Xsude ni,already too late~noun');
 a=a.replace(/(す)(?!X)(べ)(?!X)(き)(?!X)/g,'$1X$2X$3Xsubeki,should~noun');
 a=a.replace(/(す)(?!X)(べ)(?!X)(て)(?!X)/g,'$1X$2X$3X subete,completely~noun');
 a=a.replace(/(す)(?!X)(る)(?!X)(と)(?!X)/g,'$1X$2X$3Xsuru to,by way of the verb above~noun');
@@ -3497,6 +3495,8 @@ a=a.replace(/(小)(?!X)(量)(?!X)/g,'$1X$2Xsyou-ryou,small amount~noun');
 a=a.replace(/(小)(?!X)(雨)(?!X)/g,'$1X$2Xkosame,drizzle~noun');
 a=a.replace(/(小)(?!X)(鳥)(?!X)/g,'$1X$2Xkotori,small bird~noun');
 a=a.replace(/(小)(?!X)(麦)(?!X)/g,'$1X$2Xkomugi,wheat~noun');
+a=a.replace(/(崩)(?!X)(落)(?!X)/g,'$1X$2Xhou-raku,collapse~noun');
+a=a.replace(/(苦)(?!X)(戦)(?!X)/g,'$1X$2Xku-sen,hard fight~noun');
 a=a.replace(/(少)(?!X)(々)(?!X)/g,'$1X$2Xsyou-syou,a little,a few~noun');
 a=a.replace(/(少)(?!X)(々)(?!X)/g,'$1X$2Xsyou-syou,a little,a few~noun');
 a=a.replace(/(少)(?!X)(し)(?!X)/g,'$1X$2Xsukoshi,a bit,a little while~noun');
@@ -3521,6 +3521,7 @@ a=a.replace(/(岐)(?!X)(路)(?!X)/g,'$1X$2Xki-ro,crossroads~noun');
 a=a.replace(/(岸)(?!X)(田)(?!X)/g,'$1X$2Xkishi-da,family name~noun');
 a=a.replace(/(崩)(?!X)(れ)(?!X)/g,'$1X$2Xkuzure,crumble~ichidan-verb');
 a=a.replace(/(崩)(?!X)(壊)(?!X)/g,'$1X$2Xhou-kai,collapse~noun');
+a=a.replace(/(テ)(?!X)(ロ)(?!X)/g,'$1X$2Xtero,terrorism~noun');
 a=a.replace(/(巡)(?!X)(航)(?!X)/g,'$1X$2Xjyun-kou,cruise~noun');
 a=a.replace(/(工)(?!X)(事)(?!X)/g,'$1X$2Xkou-ji,construction~noun');
 a=a.replace(/(工)(?!X)(場)(?!X)/g,'$1X$2Xkou-jyou,factory~noun');
@@ -3607,6 +3608,7 @@ a=a.replace(/(度)(?!X)(々)(?!X)/g,'$1X$2Xtabitabi,often~noun');
 a=a.replace(/(座)(?!X)(席)(?!X)/g,'$1X$2Xza-seki,seat~noun');
 a=a.replace(/(座)(?!X)(敷)(?!X)/g,'$1X$2Xza-shiki,drawing room,Japanese-style room~noun');
 a=a.replace(/(廃)(?!X)(案)(?!X)/g,'$1X$2Xhai-an,abolish~noun');
+a=a.replace(/(本)(?!X)(土)(?!X)/g,'$1X$2Xhon-do,mainland~noun');
 a=a.replace(/(廃)(?!X)(止)(?!X)/g,'$1X$2Xhai-shi,discontinuance~noun');
 a=a.replace(/(廊)(?!X)(下)(?!X)/g,'$1X$2Xrou-ka,hallway,corridor~noun');
 a=a.replace(/(延)(?!X)(期)(?!X)/g,'$1X$2Xenki,postponement,deferment~noun');
@@ -4552,7 +4554,7 @@ a=a.replace(/(火)(?!X)(事)(?!X)/g,'$1X$2Xkaji,fire~noun');
 a=a.replace(/(火)(?!X)(力)(?!X)/g,'$1X$2Xka-ryoku,heating power~noun');
 a=a.replace(/(火)(?!X)(山)(?!X)/g,'$1X$2Xkazan,volcano~noun');
 a=a.replace(/(火)(?!X)(星)(?!X)/g,'$1X$2Xka-sei,the planet Mars~noun');
-a=a.replace(/(火)(?!X)(災)(?!X)/g,'$1X$2Xka-sai,fire,conflagration~noun');
+a=a.replace(/(火)(?!X)(災)(?!X)/g,'$1X$2Xka-sai,fire~noun');
 a=a.replace(/(灯)(?!X)(油)(?!X)/g,'$1X$2Xtou-yu,kerosene,lamp oil~noun');
 a=a.replace(/(灰)(?!X)(皿)(?!X)/g,'$1X$2Xhai-zara,ashtray~noun');
 a=a.replace(/(灰)(?!X)(色)(?!X)/g,'$1X$2Xhai-iro,ash color,gray~noun');
@@ -4914,6 +4916,9 @@ a=a.replace(/(税)(?!X)(金)(?!X)/g,'$1X$2Xzeikin,tax~noun');
 a=a.replace(/(税)(?!X)(関)(?!X)/g,'$1X$2Xzei-kan,custom house,customs~noun');
 a=a.replace(/(種)(?!X)(目)(?!X)/g,'$1X$2Xsyu-moku,item,event~noun');
 a=a.replace(/(種)(?!X)(類)(?!X)/g,'$1X$2Xsyu-rui,kin-d,species~noun');
+a=a.replace(/(実)(?!X)(効)(?!X)/g,'$1X$2Xjik-kou,effective~noun');
+a=a.replace(/(治)(?!X)(安)(?!X)/g,'$1X$2Xchi-an,public order~noun');
+a=a.replace(/(工)(?!X)(作)(?!X)/g,'$1X$2Xkou-saku,construction~noun');
 a=a.replace(/(稼)(?!X)(働)(?!X)/g,'$1X$2Xka-dou,machine operation~noun');
 a=a.replace(/(稽)(?!X)(古)(?!X)/g,'$1X$2Xkei-ko,practice,learning~noun');
 a=a.replace(/(穀)(?!X)(物)(?!X)/g,'$1X$2Xkoku-motsu,grain~noun');
@@ -5318,7 +5323,7 @@ a=a.replace(/(設)(?!X)(備)(?!X)/g,'$1X$2Xsetsu-bi,equipment,facilities~noun');
 a=a.replace(/(設)(?!X)(問)(?!X)/g,'$1X$2Xsetsu-mon,pose a question~noun');
 a=a.replace(/(設)(?!X)(営)(?!X)/g,'$1X$2Xsetsu-ei,arrange an event~noun');
 a=a.replace(/(設)(?!X)(定)(?!X)/g,'$1X$2Xset-tei,set~noun');
-a=a.replace(/(設)(?!X)(立)(?!X)/g,'$1X$2Xsetsu-ritsu,establishment,foundation~noun');
+a=a.replace(/(設)(?!X)(立)(?!X)/g,'$1X$2Xsetsu-ritsu,foundation~noun');
 a=a.replace(/(設)(?!X)(置)(?!X)/g,'$1X$2Xsec-chi,establishment~noun');
 a=a.replace(/(設)(?!X)(計)(?!X)/g,'$1X$2Xsek-kei,design,plan~noun');
 a=a.replace(/(許)(?!X)(可)(?!X)/g,'$1X$2Xkyo-ka,permission,approval~noun');
@@ -7157,13 +7162,12 @@ a=a.replace(/(れ)(?!X)(た)(?!X)/g,'$1X$2Xreta,was done,informal~verb');
 a=a.replace(/(verbれ)(?!X)/g,'$1Xis done-passive~helping-verb');
 
 a=a.replace(/(verbで)(?!X)/g,'$1Xde,do,and~helping-verb');
-a=a.replace(/(adjectiveで|nounで)(?!X)/g,'$1Xde,with,at~postposition');
+a=a.replace(/(punctuationで|adjectiveで|nounで)(?!X)/g,'$1Xde,with,at~postposition');
 a=a.replace(/(verbな|adjectiveな|nounな)(?!X)/g,'$1Xna,~na-adjective<p>');
 a=a.replace(/(nounだ)(?!X)/g,'$1Xda,is,informal~verb');
 a=a.replace(/(adjectiveと|punctuationと|nounと)(?!X)/g,'$1Xto,with~postposition');
 a=a.replace(/(punctuationへ|nounへ|verbへ)(?!X)/g,'$1Xe,toward~postposition');
 a=a.replace(/(nounら)(?!X)/g,'$1Xra,plural~postposition');
-a=a.replace(/(postpositionか|verbか|nounか)(?!X)/g,'$1Xka,indicates a question~postposition');
 a=a.replace(/(postpositionし|nounし)(?!X)/g,'$1Xshi,do and~suru-verb');
 a=a.replace(/(punctuationに|adjectiveに|postpositionに|verbに|nounに)(?!X)/g,'$1Xni,at,in,on~postposition');
 a=a.replace(/(punctuationも|postpositionも|verbも|nounも)(?!X)/g,'$1Xmo,too~postposition');
@@ -7172,6 +7176,7 @@ a=a.replace(/(verbず)(?!X)/g,'$1Xzu,without doing~verb');
 a=a.replace(/(verbだ)(?!X)/g,'$1Xda,did,informal~verb');
 a=a.replace(/(verbて)(?!X)/g,'$1Xte,do and~verb');
 a=a.replace(/(postpositionか|verbか|nounか)(?!X)(ら)(?!X)/g,'$1X$2Xkara,from~postposition');
+a=a.replace(/(postpositionか|verbか|nounか)(?!X)/g,'$1Xka,indicates a question~postposition');
 a=a.replace(/(verbと)(?!X)/g,'$1Xto,what the narrator is doing~postposition');
 a=a.replace(/(verbね)(?!X)/g,'$1Xne,isn\'t it\?,informal~verb');
 a=a.replace(/(punctuationは|verbは|postpositionは|nounは)(?!X)/g,'$1Xwa,as for~postposition');
@@ -7222,14 +7227,16 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="TheTextPanel2">&copy; 2022
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
-<div class="HeaderStyle">Cut and Paste</div>
+<div class="HeaderStyle">
+ロシア本土と2014年に併合されたウクライナ南部クリミア半島を結ぶ自動車・鉄道橋「クリミア橋」で8日早朝、火災が発生し、黒煙が上った。
 
-ウクライナのニュースサイト「ウクライナ・プラウダ」は6日、ウクライナ軍が今月に入ってから、南部ヘルソン州で400平方キロ以上の地域を奪還したと報じた。ウクライナ軍の広報担当者の話として伝えた。ヘルソン州は、ロシアが一方的に併合したと主張する4州に含まれている。
+【図解】ウクライナ南部クリミア半島
 
-　ウクライナ・プラウダによると、南部ウクライナ軍のフメニュク・合同調整プレスセンター長が6日、記者会見で明らかにした。
+　タス通信などによると、ロシアの国家テロ対策委員会などは、本土側からのトラックが爆発したのが原因で、3人が死亡したと発表した。一方、ウクライナのメディアは関係筋の話として、爆発に情報機関のウクライナ保安局（SBU）が関与したと報じた。
 
-　フメニュク氏は今月に入ってからの戦果について、「我々はすでに十分、説得力のある成功を手にしている。ヘルソン州の400平方キロ以上をすでに解放し、さらに先へ進んでいる」と述べたという。
+　現地から伝えられた映像では、燃料輸送列車の一部が火災を起こし、自動車橋が崩落した様子がうかがえる。クリミア橋は、ロシアが先に併合した南部ヘルソン州に至る補給ルート。ロシア軍が苦戦する戦況にも影響を与えそうだ。
 
+</div>
 <p>
 <textArea cols='38' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
 <div class='cStyle'>
