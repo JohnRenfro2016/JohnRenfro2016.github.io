@@ -1219,6 +1219,7 @@ a=a.replace(/(明)(?!X)(ら)(?!X)(か)(?!X)/g,'$1X$2X$3Xakiraka,apparently~noun'
 a=a.replace(/(明)(?!X)(後)(?!X)(日)(?!X)/g,'$1X$2X$3Xasatte,day after tomorrow~noun');
 a=a.replace(/(映)(?!X)(画)(?!X)(館)(?!X)/g,'$1X$2X$3Xeiga-kan,movie theater~noun');
 a=a.replace(/(昼)(?!X)(休)(?!X)(み)(?!X)/g,'$1X$2X$3Xhiruyasumi,noon recess,lunch break~noun');
+a=a.replace(/(デ)(?!X)(ー)(?!X)(タ)(?!X)/g,'$1X$2X$3Xde-ta,data~noun');
 a=a.replace(/(昼)(?!X)(過)(?!X)(ぎ)(?!X)/g,'$1X$2X$3Xhiru-sugi,early afternoon~noun');
 a=a.replace(/(暮)(?!X)(ら)(?!X)(し)(?!X)/g,'$1X$2X$3Xkura-shi,living,livelihood~noun');
 a=a.replace(/(書)(?!X)(き)(?!X)(方)(?!X)/g,'$1X$2X$3Xkaki-kata,how to write,way of writing~noun');
@@ -4299,6 +4300,7 @@ a=a.replace(/(梅)(?!X)(雨)(?!X)/g,'$1X$2Xtsu-yu,rainy season~noun');
 a=a.replace(/(棄)(?!X)(権)(?!X)/g,'$1X$2Xki-ken,dropping out,ren-ouncing rights~noun');
 a=a.replace(/(森)(?!X)(林)(?!X)/g,'$1X$2Xshin-rin,forest,woodland~noun');
 a=a.replace(/(椅)(?!X)(子)(?!X)/g,'$1X$2Xisu,chair~noun');
+a=a.replace(/(宮)(?!X)(城)(?!X)/g,'$1X$2Xmiya-gi,Japan~noun');
 a=a.replace(/(植)(?!X)(木)(?!X)/g,'$1X$2Xueki,garden plant,shrub~noun');
 a=a.replace(/(植)(?!X)(物)(?!X)/g,'$1X$2Xsyoku-butsu,plant,vegetation~noun');
 a=a.replace(/(検)(?!X)(出)(?!X)/g,'$1X$2Xken-syutsu,detection~noun');
@@ -4307,6 +4309,7 @@ a=a.replace(/(検)(?!X)(挙)(?!X)/g,'$1X$2Xken-kyo,rou-nd up and arrest~noun');
 a=a.replace(/(検)(?!X)(査)(?!X)/g,'$1X$2Xken-sa,inspection~noun');
 a=a.replace(/(検)(?!X)(疫)(?!X)/g,'$1X$2Xken-eki,quarantine~noun');
 a=a.replace(/(検)(?!X)(討)(?!X)/g,'$1X$2Xken-tou,consideration~noun');
+a=a.replace(/(防)(?!X)(災)(?!X)/g,'$1X$2Xbou-sai,disaster prevention~noun');
 a=a.replace(/(検)(?!X)(証)(?!X)/g,'$1X$2Xken-syou,verification~noun');
 a=a.replace(/(業)(?!X)(務)(?!X)/g,'$1X$2Xgyou-mu,business~noun');
 a=a.replace(/(業)(?!X)(界)(?!X)/g,'$1X$2Xgyou-kai,business world~noun');
@@ -5808,6 +5811,10 @@ a=a.replace(/(集)(?!X)(積)(?!X)/g,'$1X$2Xsyuu-seki,collection~noun');
 a=a.replace(/(時)(?!X)(間)(?!X)/g,'$1X$2Xji-kan,hour or time~noun');
 a=a.replace(/(雇)(?!X)(用)(?!X)/g,'$1X$2Xko-you,employment~noun');
 a=a.replace(/(雑)(?!X)(誌)(?!X)/g,'$1X$2Xzas-shi,magazine,journal~noun');
+a=a.replace(/(岩)(?!X)(手)(?!X)/g,'$1X$2Xiwa-te,Japan~noun');
+a=a.replace(/(津)(?!X)(波)(?!X)/g,'$1X$2Xtsu-nami,tsunami~noun');
+a=a.replace(/(水)(?!X)(深)(?!X)/g,'$1X$2Xsui-shin,water depth~noun');
+a=a.replace(/(公)(?!X)(営)(?!X)/g,'$1X$2Xkou-ei,public~noun');
 a=a.replace(/(雑)(?!X)(談)(?!X)/g,'$1X$2Xzatsu-dan,chat,idle talk~noun');
 a=a.replace(/(雑)(?!X)(音)(?!X)/g,'$1X$2Xzatsu-on,noise,interference~noun');
 a=a.replace(/(離)(?!X)(れ)(?!X)/g,'$1X$2Xhanare,be separated~ichidan-verb');
@@ -5839,7 +5846,7 @@ a=a.replace(/(需)(?!X)(給)(?!X)/g,'$1X$2Xjyu-kyuu,supply and demand~noun');
 a=a.replace(/(需)(?!X)(要)(?!X)/g,'$1X$2Xjyu-you,demand~noun');
 a=a.replace(/(震)(?!X)(度)(?!X)/g,'$1X$2Xshin-do,seismic intensity~noun');
 a=a.replace(/(震)(?!X)(源)(?!X)/g,'$1X$2Xshin-gen,epicenter~noun');
-a=a.replace(/(震)(?!X)(災)(?!X)/g,'$1X$2Xshin-sai,earthquake disaster~noun');
+a=a.replace(/(震)(?!X)(災)(?!X)/g,'$1X$2Xshin-sai,earthquake~noun');
 a=a.replace(/(青)(?!X)(山)(?!X)/g,'$1X$2XAo-yama,Japan~noun');
 a=a.replace(/(青)(?!X)(年)(?!X)/g,'$1X$2Xsei-nen,youth~noun');
 a=a.replace(/(青)(?!X)(春)(?!X)/g,'$1X$2Xsei-syun,youth~noun');
@@ -6536,7 +6543,7 @@ a=a.replace(/(2|２|二)(?!X)/g,'$1Xni,two~noun');
 a=a.replace(/(5|５|五)(?!X)/g,'$1Xgo,five~noun');
 a=a.replace(/(7|７|七)(?!X)/g,'$1Xnana or shichi,seven~noun');
 a=a.replace(/(9|９|九)(?!X)/g,'$1Xkyuu or ku+,nine~noun');
-a=a.replace(/(き)(?!X)/g,'$1Xki,come,start to do~noun');
+a=a.replace(/(き)(?!X)/g,'$1Xki,come,start to do~verb');
 a=a.replace(/(カ)(?!X)/g,'$1Xka,counter for things~noun');
 a=a.replace(/(万)(?!X)/g,'$1Xman+,ten thousand~noun');
 a=a.replace(/(上)(?!X)/g,'$1Xue or jyou+,up,over,above,superior~noun');
@@ -7273,15 +7280,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">
-【タシケント時事】柔道の世界選手権最終日は13日、タシケントで男女混合の団体戦が行われ、東京五輪銀メダルの日本は決勝で同五輪金のフランスに4―2で勝ち、5連覇を果たした。
-
-【写真】混合団体で5連覇を果たし、笑顔を見せる新添左季
-
-　日本は男女各7階級の個人戦と合わせ、今大会で金メダル6個を獲得した。
-
-　決勝は3―2で迎えた6人目で、新添左季（自衛隊）がマリエブ・ゲイエに一本勝ちした。初戦の2回戦はドミニカ共和国、準々決勝でオランダ、準決勝ではドイツにいずれも4―0で勝った。
-
-　チームは男女各3人の計6人で構成され、男子は73キロ、90キロ、90キロ超、女子は57キロ、70キロ、70キロ超の体重区分で争った。どちらかが4勝して勝敗が決した時点で終了。3―3で並んだ場合は、無作為に選ばれた区分の選手同士による代表戦が行われた。
+2011年の東日本大震災で甚大な被害を受けた岩手、宮城、福島の3県の沿岸市町村にある災害公営住宅（復興住宅）の約4割が、今後起こりうる最大級の津波で浸水にさらされる恐れがあることが判明した。各県が公表した、最大級の津波に伴い浸水する区域と水深を予想した「津波浸水想定」のデータなどを毎日新聞が分析した。避難所の約1割も浸水する恐れがある。災害に強いまちづくりを進めてきた被災地は、防災対策の見直しを迫られている。
 </div>
 <p>
 <textArea cols='38' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
