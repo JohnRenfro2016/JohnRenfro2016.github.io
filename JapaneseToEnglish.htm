@@ -11,8 +11,14 @@ href="MyFavicon.png"
 
 @font-face
  {
-  font-family: "Kraash";
-  src: url("Kraash.ttf");
+  font-family: "MonstrosityHide";
+  src: url("MonstrosityHide.ttf");
+ }
+
+@font-face
+ {
+  font-family: "TheSansPlain";
+  src: url("TheSansPlain.ttf");
  }
 
 a:link,
@@ -20,19 +26,28 @@ a:hover,
 a:active,
 a:visited {color: #ffe994}
 
-body,
-div,
-textarea
+body
  {
   background-color: #aa4d06;
-  font-size: 30px;
-  margin: 15px;
-  padding: 15px;
+  font-family: "TheSansPlain";
+  font-size: 20px;
+  margin: 5px;
+  width: 700px;
+ }
+
+img
+ {
+  padding: 5px  background-color:#00a493;
+  border: 2px #85c441;
+  position: sticky;
+  width:400px;
  }
 
 .ComicTitle
  {
-  font-family: "Kraash";
+  color: #bad14f;
+  font-family: "MonstrosityHide";
+  font-size: 50px;
  }
 
 .cStyle
@@ -47,6 +62,8 @@ textarea
   column-count:2;
   column-rule:4px #fc7000;
   color: #f5c103;
+  margin: 5px;
+  padding: 20px;
  }
 
 .HeaderStyle
@@ -58,21 +75,27 @@ textarea
          0 0  0 2px rgb(255,255,255),
          0.3em 0.3em 1em rgba(0,0,0,0.3);
   color: #f9cd31;
+  margin: 5px;
+  padding: 20px;
  }
 
 textArea
  {
-  background: linear-gradient(120deg, #c45a02 0%, #4b0d02 100%);
+  background: linear-gradient(120deg, #283e69 0%, #7f82ba 100%);
   box-shadow:
    inset 0 -3em 3em rgba(0,0,0,0.1),
          0 0  0 2px rgb(255,255,255),
          0.3em 0.3em 1em rgba(0,0,0,0.3);
-  color: #fdeda9;
-  height: 90%;
-  width: 90%;
+  color: #91b68f;
+  display; block;
+  margin: 5px;
+  padding: 5px;
+  vertical-align: top;
+  width: 680px;
  }
 
 </style>
+
  </head>
 <script>
 
@@ -3720,6 +3743,7 @@ a=a.replace(/(必)(?!X)(ず)(?!X)/g,'$1X$2Xkanarazu,without fail,certainly~noun'
 a=a.replace(/(必)(?!X)(死)(?!X)/g,'$1X$2Xhis-shi,desperation~noun');
 a=a.replace(/(必)(?!X)(然)(?!X)/g,'$1X$2Xhitsu-zen,inevitable,necessary~noun');
 a=a.replace(/(必)(?!X)(要)(?!X)/g,'$1X$2Xhitsu-you,necessity~noun');
+a=a.replace(/(視)(?!X)(野)(?!X)/g,'$1X$2Xshi-ya,view~noun');
 a=a.replace(/(忍)(?!X)(者)(?!X)/g,'$1X$2Xnin-jya,Ninja~noun');
 a=a.replace(/(忘)(?!X)(れ)(?!X)/g,'$1X$2Xwasure,forget~ichidan-verb');
 a=a.replace(/(応)(?!X)(え)(?!X)/g,'$1X$2Xkotae,answer~ichidan-verb');
@@ -4170,6 +4194,8 @@ a=a.replace(/(暴)(?!X)(行)(?!X)/g,'$1X$2Xbou-kou,assault~noun');
 a=a.replace(/(暴)(?!X)(言)(?!X)/g,'$1X$2Xbou-gen,abusive language~noun');
 a=a.replace(/(暴)(?!X)(風)(?!X)/g,'$1X$2Xbou-fuu,windstorm~noun');
 a=a.replace(/(曇)(?!X)(り)(?!X)/g,'$1X$2Xkumori,cloudiness~noun');
+a=a.replace(/(統)(?!X)(一)(?!X)/g,'$1X$2Xtou-itsu,unification~noun');
+a=a.replace(/(法)(?!X)(人)(?!X)/g,'$1X$2Xhou-jin,legal entity~noun');
 a=a.replace(/(曖)(?!X)(昧)(?!X)/g,'$1X$2Xai-mai,ambiguous,vague~noun');
 a=a.replace(/(曜)(?!X)(日)(?!X)/g,'$1X$2X-you-bi,day of the week~noun');
 a=a.replace(/(曲)(?!X)(線)(?!X)/g,'$1X$2Xkyoku-sen,curve,curved line~noun');
@@ -7231,7 +7257,7 @@ a=a.replace(/(postpositionか|verbか|nounか)(?!X)/g,'$1Xka,indicates a questio
 a=a.replace(/(verbと)(?!X)/g,'$1Xto,what the narrator is doing~postposition');
 a=a.replace(/(verbね)(?!X)/g,'$1Xne,isn\'t it\?,informal~verb');
 a=a.replace(/(punctuationは|verbは|postpositionは|nounは)(?!X)/g,'$1Xwa,as for~postposition');
-a=a.replace(/(verbば)(?!X)/g,'$1Xif~postposition');
+a=a.replace(/(verbば)(?!X)/g,'$1Xba,if~postposition');
 a=a.replace(/(punctuationや|verbや|nounや)(?!X)/g,'$1Xya,and,comma~postposition');
 a=a.replace(/(verbよ)(?!X)/g,'$1Xyo,exclamation,informal~verb');
 a=a.replace(/(verbよ)(?!X)/g,'$1Xyo,exclamation,informal~verb');
@@ -7280,10 +7306,10 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">
-2011年の東日本大震災で甚大な被害を受けた岩手、宮城、福島の3県の沿岸市町村にある災害公営住宅（復興住宅）の約4割が、今後起こりうる最大級の津波で浸水にさらされる恐れがあることが判明した。各県が公表した、最大級の津波に伴い浸水する区域と水深を予想した「津波浸水想定」のデータなどを毎日新聞が分析した。避難所の約1割も浸水する恐れがある。災害に強いまちづくりを進めてきた被災地は、防災対策の見直しを迫られている。
+　岸田文雄首相は、世界平和統一家庭連合（旧統一教会）の問題を巡り、宗教法人法に基づく調査実施の検討に入った。消費者庁の有識者検討会が近く調査要求を含む提言をまとめることを踏まえ、17日の衆院予算委員会で表明する見通しだ。必要であれば調査を行うよう、文部科学相に指示する考えを示す方向だ。複数の政府関係者が15日、明らかにした。調査が実際に行われた場合、結果次第では解散命令の請求が視野に入る。
 </div>
 <p>
-<textArea cols='38' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
+<textArea cols='60' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
 <div class='cStyle'>
 <span id="translatedTextDisplay"></span>
 </div>
