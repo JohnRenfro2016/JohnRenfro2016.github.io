@@ -936,6 +936,7 @@ a=a.replace(/(不)(?!X)(確)(?!X)(か)(?!X)/g,'$1X$2X$3Xfu-tashika,unreliable,un
 a=a.replace(/(不)(?!X)(確)(?!X)(実)(?!X)/g,'$1X$2X$3Xfu-kaku-jitsu,uncertain~noun');
 a=a.replace(/(不)(?!X)(自)(?!X)(然)(?!X)/g,'$1X$2X$3Xfu-shi-zen,unnatural~noun');
 a=a.replace(/(不)(?!X)(自)(?!X)(由)(?!X)/g,'$1X$2X$3Xfu-ji-yuu,inconvenience,discomfort~noun');
+a=a.replace(/(先)(?!X)(ほ)(?!X)(ど)(?!X)/g,'$1X$2X$3Xsaki hodo,a short while ago~noun');
 a=a.replace(/(不)(?!X)(規)(?!X)(則)(?!X)/g,'$1X$2X$3Xfu-ki-soku,irregular~noun');
 a=a.replace(/(不)(?!X)(親)(?!X)(切)(?!X)/g,'$1X$2X$3Xfu-shin-setsu,unkind,inattentive~noun');
 a=a.replace(/(与)(?!X)(野)(?!X)(党)(?!X)/g,'$1X$2X$3Xyo-ya-tou,ruling party~noun');
@@ -1541,9 +1542,9 @@ a=a.replace(/(髪)(?!X)(の)(?!X)(毛)(?!X)/g,'$1X$2X$3Xkami-noke,hair~noun');
 a=a.replace(/(鮮)(?!X)(や)(?!X)(か)(?!X)/g,'$1X$2X$3Xazayaka,vivid~noun');
 a=a.replace(/(１)(?!X)(６)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-roku-nichi,the sixteenth day of the month~noun');
 a=a.replace(/(１|1)(?!X)(2|２)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-ni-nichi,the twelfth day of the month ~noun')
-a=a.replace(/(１|1)(?!X)(4)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-yok-ka,the fourteenth,day of the month ~noun')
-a=a.replace(/(１|1)(?!X)(6)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-roku-nichi,the sixteenth	day of the month ~noun')
-a=a.replace(/(１|1)(?!X)(7)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-shichi-nichi,the seventeenth	day of the month ~noun')
+a=a.replace(/(１|1)(?!X)(4|４)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-yok-ka,the fourteenth,day of the month ~noun')
+a=a.replace(/(１|1)(?!X)(6|６)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-roku-nichi,the sixteenth	day of the month ~noun')
+a=a.replace(/(１|1)(?!X)(7|７)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-shichi-nichi,the seventeenth	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(8|８)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-hachi-nichi,the eighteenth	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(０|0)(?!X)(日)(?!X)/g,'$1X$2X$3Xtoo-ka,the tenth day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(０|0)(?!X)(月)(?!X)/g,'$1X$2X$3Xjyuu-gatsu,October ~noun')
@@ -7308,7 +7309,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">
-　企業が従業員に支払った休業手当を国が補助する「雇用調整助成金」（雇調金）をめぐり、コロナ下での不正受給が9月末までに920件、総額135億円にのぼることが厚生労働省への取材で分かった。迅速に支給するため、手続きを簡素化したことなどが背景にある。
+速報です。先ほど（午前5時ごろ）、円相場は1ドル=149円台をつけ32年ぶりの円安水準を更新しました。
+
+きのう午後8時ごろに148円89銭前後をつけ32年ぶりの水準を更新したばかりで、このところ連日のように更新しています。
+
+15日にアメリカのバイデン大統領が「ドル高を懸念していない」と述べドル高容認姿勢を示した一方、日銀の黒田総裁はきのうも国会で「金融緩和継続が適当」と発言。日米の金利差がさらに拡大するとの見方から円安に歯止めがかからない状況です。
 </div>
 <p>
 <textArea cols='60' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
