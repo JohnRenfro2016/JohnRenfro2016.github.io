@@ -168,28 +168,28 @@ Encounter Notes,XP totals(not saved after shift reload of webpage):
 <textArea cols='30' rows='4'></textarea>
 </td></tr><tr><td>
 Condition Durations:
-<input type='field' size='40'><br>10/<input id='1stDuration' type='field' size='2' value='10'>turns.
+<input type='field' size='30'><br>10/<input id='1stDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne(){document.getElementById('1stDuration').value=(document.getElementById('1stDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne()' value='end turn?'>
 </td></tr><tr><td>
 Condition Durations:
-<input type='field' size='40'><br>10/<input id='2ndDuration' type='field' size='2' value='10'>turns.
+<input type='field' size='30'><br>10/<input id='2ndDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne2(){document.getElementById('2ndDuration').value=(document.getElementById('2ndDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne2()' value='end turn?'>
 </td></tr><tr><td>
 Condition Durations:
-<input type='field' size='40'><br>10/<input id='3rdDuration' type='field' size='2' value='10'>turns.
+<input type='field' size='30'><br>10/<input id='3rdDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne3(){document.getElementById('3rdDuration').value=(document.getElementById('3rdDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne3()' value='end turn?'>
 </td></tr><tr><td>
 Condition Durations:
-<input type='field' size='40'><br>10/<input id='4thDuration' type='field' size='2' value='10'>turns.
+<input type='field' size='30'><br>10/<input id='4thDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne4(){document.getElementById('4thDuration').value=(document.getElementById('4thDuration').value-1)}
 </script>
@@ -2228,88 +2228,78 @@ this.menu.putAt(menuX, y)}$("input[name='id_radioname']").on('change', function(
 localStorage.setItem('option', value);
 location.reload()})
 function _ref(){boxContents="<img id='rotated"+this.index+"' onClick='characters["+this.index+"].setRotation("+this.index+")' src=' "+this.figure+"'>";
-boxContents+="<table><tr><td class='piece'>"+this.name;
-boxContents+=" Level: "+this.lvl+" Class: "+this.class+"</td></tr><tr><td class='piece'>(Init)iative:"+this.init;
+boxContents+="<table><tr><td>"+this.name;
+boxContents+=" Ini:"+this.init;
 boxContents+=" Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
-boxContents+="</td></tr><tr><td class='piece'>AC:"+this.curAc+" HP:"+this.maxHp+"/"+this.curHp;
-boxContents+="</td></tr><tr><td class='piece'><input class='piece' onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
+boxContents+=" HP:"+this.maxHp+"/"+this.curHp;
+boxContents+="</td></tr><tr><td><input onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
 
 boxContents+="</td></tr></table></span><span id=toggled1"+this.index+" style='display:"+this.toggled1+"'>"
 
 boxContents+="<table>"
 boxContents+="<tr><td><b>Name:</b> <input class=name maxLength='200' onChange='characters["+this.index+"].setName(this.value)' placeHolder='Name'size='30' type='text' value=' "+this.name+"'>";
-boxContents+="</td></tr><tr><td><b>Traits:</b>Gender, Age, Color, Height, Weight<textArea cols='30' rows='3' onChange='characters["+this.index+"].setTrait(this.value)'placeHolder=''>"+this.trait+"</textarea>";
-boxContents+="</td></tr><tr><td><b>Class:</b><select onChange='characters["+this.index+"].setClass(this.value)'><option>"+this.class+"<option>Monster</option><option>Assassin</option><option>Bard</option><option>Cleric</option><option>Druid</option><option>Fighter</option><option>Illusionist</option><option>Magic User</option><option>Monk</option><option>Paladin</option><option>Ranger</option><option>Thief</option></select>";
-boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].setClass(this.value)' placeHolder='other class' size='40' type='text'>";
-boxContents+="</td></tr><tr><td><b>Level:</b><input maxLength='2' onChange='characters["+this.index+"].setLvl(this.value);csheckTheTarget("+this.index+")' size=3 type='text' value="+this.lvl+">";
+boxContents+="<br><b>Miniature File:</b> <input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='30' type='text' value=' "+this.figure+"'>";
 boxContents+="</td></tr><tr><td><b>AC:</b>Armor Class <input maxLength='2' onChange='characters["+this.index+"].setAC(this.value);checkTheTarget("+this.index+")' size='2' type='text' value="+this.ac+">/"+this.curAc;
-boxContents+="<br>Armor Type: <select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>No Armor AC10<option>Leather AC8</option><option>Padded AC8<option>Studded Leather AC7<option>Ring Mail AC7<option>Scale Mail AC6<option>Chain Mail AC5<option>Banded Mail AC4<option>Plate Mail AC3</select>";
-boxContents+="<br>or other armor type: <input maxLength='200' onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")' placeHolder='other armor or magical defense' size='40' type='text'>";
-boxContents+="<br>Shield: <select onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")'><option>"+this.shield+"<option>No Shield AC-0<option>Shield AC-1</select>";
-boxContents+="<br>or other shield: <input maxLength='200' onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")' placeHolder='other shield or magical defense' size='40' type='text'>";
+boxContents+="<br><b>Armor Type:</b> <select onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")'><option>"+this.armor+"<option>No Armor AC10<option>Leather AC8</option><option>Padded AC8<option>Studded Leather AC7<option>Ring Mail AC7<option>Scale Mail AC6<option>Chain Mail AC5<option>Banded Mail AC4<option>Plate Mail AC3</select>";
+boxContents+="<br>or other armor type: <input maxLength='200' onChange='characters["+this.index+"].setArmor(this.value);checkTheTarget("+this.index+")' placeHolder='other armor or magical defense' size='30' type='text'>";
+boxContents+="<br><b>Shield:</b> <select onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")'><option>"+this.shield+"<option>No Shield AC-0<option>Shield AC-1</select>";
+boxContents+="<br>or other shield: <input maxLength='200' onChange='characters["+this.index+"].setShield(this.value);checkTheTarget("+this.index+")' placeHolder='other shield or magical defense' size='30' type='text'>";
 boxContents+="</td></tr><tr><td><b>MV:</b> movement in inches<input maxLength='200' onChange='characters["+this.index+"].setSpeed(this.value);checkTheTarget("+this.index+")' size='8' type='text' value=' "+this.speed+"'>";
-boxContents+="</td></tr><tr><td><b>HD:</b>Hit Dice <input maxLength='10' onChange='characters["+this.index+"].setHitDice(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z' size=10 type='text' value=' "+this.hitDice+"'>";
-boxContents+="</td></tr><tr><td><b>Damage Conditions:</b>temp hp+10, ac-1, str+1, ini+3, blinded<textArea cols='30' rows=2 onChange='characters["+this.index+"].setDamageConditions(this.value);checkTheTarget("+this.index+")'placeHolder=''>"+this.dmgConditions+"</textArea>"
-boxContents+="</td></tr><tr><td><b>Vulnerability:</b>(2Xdmg)<input maxLength='200' onChange='characters["+this.index+"].setVulnerability(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.vulnerability+"'>";
-boxContents+="</td></tr><tr><td><b>Damage Resistances: </b>(1/2dmg)<input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.resistance+"'>";
-boxContents+="</td></tr><tr><td><b>Damage Immunities:</b> (0dmg)<input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.immunity+"'>";
-boxContents+="</td></tr><tr><td>Damage?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setDmg(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
-boxContents+="</td></tr><tr><td>Heal?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setHealing(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
-boxContents+="</td></tr><tr><td><b>HP:</b> <input maxLength='3' onChange='characters["+this.index+"].setMaxHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.maxHp+">";
+boxContents+="</td></tr><tr><td><b>Senses:</b> <input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='30' type='text' value=' "+this.senses+"'>";
+boxContents+="</td></tr><tr><td><b>Class:</b><select onChange='characters["+this.index+"].setClass(this.value)'><option>"+this.class+"<option>Monster</option><option>Assassin</option><option>Bard</option><option>Cleric</option><option>Druid</option><option>Fighter</option><option>Illusionist</option><option>Magic User</option><option>Monk</option><option>Paladin</option><option>Ranger</option><option>Thief</option></select>";
+boxContents+="<br><input maxLength='200' onChange='characters["+this.index+"].setClass(this.value)' placeHolder='or other class' size='30' type='text'>";
+boxContents+="<br><b>Level:</b><input maxLength='2' onChange='characters["+this.index+"].setLvl(this.value);csheckTheTarget("+this.index+")' size=3 type='text' value="+this.lvl+">";
+boxContents+="<br><b>XP:</b>experience points <input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value);checkTheTarget("+this.index+")'size='8' type='text' value=' "+this.experience+"'>";
+boxContents+="<br><b>HD:</b>Hit Dice <input maxLength='10' onChange='characters["+this.index+"].setHitDice(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z' size=10 type='text' value=' "+this.hitDice+"'>";
+boxContents+="<br><b>Damage Conditions:</b>temp hp+10, ac-1, str+1, ini+3, blinded<textArea cols='30' rows=2 onChange='characters["+this.index+"].setDamageConditions(this.value);checkTheTarget("+this.index+")'placeHolder=''>"+this.dmgConditions+"</textArea>"
+boxContents+="<br><b>Vulnerability:</b>(2Xdmg)<input maxLength='200' onChange='characters["+this.index+"].setVulnerability(this.value);checkTheTarget("+this.index+")' size='30' value=' "+this.vulnerability+"'>";
+boxContents+="<br><b>Damage Resistances: </b>(1/2dmg)<input maxLength='200' onChange='characters["+this.index+"].setResistance(this.value);checkTheTarget("+this.index+")' size='30' value=' "+this.resistance+"'>";
+boxContents+="<br><b>Damage Immunities:</b> (0dmg)<input maxLength='200' onChange='characters["+this.index+"].setImmunity(this.value);checkTheTarget("+this.index+")' size='30' value=' "+this.immunity+"'>";
+boxContents+="<br>Damage?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setDmg(this.value);checkTheTarget("+this.index+")'size='3' type='text'>";
+boxContents+="<br>Heal?<input class='piece' maxLength='3' onChange='characters["+this.index+"].setHealing(this.value);checkTheTarget("+this.index+")'size='3' type='text'><br><b>Temporary Hit Points</b>:"+this.tempHp;
+boxContents+="<br><b>HP:</b> <input maxLength='3' onChange='characters["+this.index+"].setMaxHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.maxHp+">";
 boxContents+="/<input maxLength='3' onChange='characters["+this.index+"].setCurHp(this.value);checkTheTarget("+this.index+")' size='3' type='text' value="+this.curHp+">";
-boxContents+="</td></tr><tr><td><b>AT: </b><textArea cols='30' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiattacks'>"+this.actionNotes+"</textArea>"
-boxContents+="</td></tr><tr><td><b>Make a new roll?</b></td></tr><tr><td><b>Weapon or Spell Name:</b><input maxLength='200' onChange='characters["+this.index+"].setRollName1(this.value);checkTheTarget("+this.index+")' type='text' value=' "+this.rollName1+"'>"
-boxContents+="</td></tr><tr><td><b>Attack Dice:</b><input maxLength='8' onChange='characters["+this.index+"].setRoll1(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z'size='8' type='text' value="+this.roll1+">"
-boxContents+="</td></tr><tr><td><b>Damage Type:</b><input maxLength='200' onChange='characters["+this.index+"].setRollName2(this.value);checkTheTarget("+this.index+")' placeHolder='damage type' size='30' type='text' value=' "+this.rollName2+"'>"
-boxContents+="</td></tr><tr><td><b>Damage Dice:</b><input maxLength='8' onChange='characters["+this.index+"].setRoll2(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z'size='8' type='text' value="+this.roll2+">"
-boxContents+="</td></tr><tr><td><input maxLength='8' onClick='addRollPrompt("+this.index+")'size='8' type='button' value='Add this roll?'>";
+boxContents+="</td></tr><tr><td><b>AT: </b>actions in combat<textArea cols='30' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiattacks'>"+this.actionNotes+"</textArea>"
+boxContents+="</td></tr><tr><td>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
+boxContents+="</td></tr><tr><td><b>Make a new roll?</b><br><b>Weapon or Spell Name:</b><input maxLength='200' onChange='characters["+this.index+"].setRollName1(this.value);checkTheTarget("+this.index+")' size='30' type='text' value=' "+this.rollName1+"'>"
+boxContents+="<b>Attack Dice:</b><input maxLength='8' onChange='characters["+this.index+"].setRoll1(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z'size='8' type='text' value="+this.roll1+">"
+boxContents+="<b>Damage Type:</b><input maxLength='200' onChange='characters["+this.index+"].setRollName2(this.value);checkTheTarget("+this.index+")' placeHolder='damage type' size='30' type='text' value=' "+this.rollName2+"'>"
+boxContents+="<b>Damage Dice:</b><input maxLength='8' onChange='characters["+this.index+"].setRoll2(this.value);checkTheTarget("+this.index+")' placeHolder='XdY+Z'size='8' type='text' value="+this.roll2+">"
+boxContents+="<input maxLength='8' onClick='addRollPrompt("+this.index+")'size='8' type='button' value='Add this roll?'>";
 if(this.rolls.length===0){boxContents+="</td></tr><tr><td><i>No custom rolls listed.</i>"
 }
 else
-{for(var i=0; i<this.rolls.length; i++){boxContents+="</td></tr><tr><td><input type='button' onClick='makeRoll("+this.index+", "+i+")'value='Roll?'>"
-boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].rollNames["+i+"]=this.value' size='40' type='text' value=' "+this.rollNames[i]+"'>";
-boxContents+="</td></tr><tr><td><input maxLength='8' onChange='characters["+this.index+"].rolls["+i+"]=this.value' size='8' type='text' value=' "+this.rolls[i]+"'>";
-boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].rollNames2["+i+"]=this.value' size='40' type='text' value=' "+this.rollNames2[i]+"'>";
-boxContents+="</td></tr><tr><td><input maxLength='8' onChange='characters["+this.index+"].rolls2["+i+"]=this.value' size='8' type='text' value=' "+this.rolls2[i]+"'>";
-boxContents+="</td></tr><tr><td><input type='button' onClick='deleteRollPrompt("+this.index+", "+i+")'value='Delete this roll?'>"
+{for(var i=0; i<this.rolls.length; i++){boxContents+="</td></tr><tr><td><input type='button' onClick='makeRoll("+this.index+", "+i+")'value='Roll? Target first.'>"
+boxContents+="<input maxLength='200' onChange='characters["+this.index+"].rollNames["+i+"]=this.value' size='30' type='text' value=' "+this.rollNames[i]+"'>";
+boxContents+="<input maxLength='8' onChange='characters["+this.index+"].rolls["+i+"]=this.value' size='8' type='text' value=' "+this.rolls[i]+"'>";
+boxContents+="<input maxLength='200' onChange='characters["+this.index+"].rollNames2["+i+"]=this.value' size='30' type='text' value=' "+this.rollNames2[i]+"'>";
+boxContents+="<input maxLength='8' onChange='characters["+this.index+"].rolls2["+i+"]=this.value' size='8' type='text' value=' "+this.rolls2[i]+"'>";
+boxContents+="<input type='button' onClick='deleteRollPrompt("+this.index+", "+i+")'value='Delete this roll?'>"
 }
 }
-boxContents+="</td></tr></table><table><tr><td>tmp hp:"+this.tempHp;
-boxContents+="</td></tr><tr><td><input onClick='toggleTab2("+this.index+");checkTheTarget("+this.index+")' type='button' value='Actions?'>";
-boxContents+="</td></tr><tr><td><input onClick='toggleTab3("+this.index+");checkTheTarget("+this.index+")' type='button' value=' AC, HP?'>";
-boxContents+="</td></tr><tr><td><input onClick='toggleTab4("+this.index+");checkTheTarget("+this.index+")' type='button' value=' Abilities?'>";
-boxContents+="</td></tr><tr><td><input onClick='toggleTab5("+this.index+");checkTheTarget("+this.index+")' type='button' value=' Background?'>";
-boxContents+="</td></tr><tr><td><input onClick='toggleTab6("+this.index+");checkTheTarget("+this.index+")' type='button' value=' Class?'>";
+boxContents+="</td></tr><tr><td><b>Race:</b> <select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Dwarf</option><option>Elf</option><option>Gnome</option><option>Half Elf<option>Halfling<option>Half Orc<option>Human</select>";
+boxContents+="<br><input maxLength='200' onChange='characters["+this.index+"].setRace(this.value)' placeHolder='or other race' size='30' type='ptext'>";
+boxContents+="<br><b>Size:</b> <select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
+boxContents+="<br><b>Traits:</b>Gender, Age, Color, Height, Weight<textArea cols='30' rows='3' onChange='characters["+this.index+"].setTrait(this.value)'placeHolder=''>"+this.trait+"</textarea>";
+boxContents+="<br><b>Languages:</b> <input maxLength='200' onChange='characters["+this.index+"].setLanguages(this.value);checkTheTarget("+this.index+")' size='30' type='text' value=' "+this.languages+"'>";
+boxContents+="<br><b>Alignment:</b> <select onChange='characters["+this.index+"].setAlignment(this.value);checkTheTarget("+this.index+")'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
+boxContents+="<br>"+this.alignmentDescription;
+boxContents+="</td></tr><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/<mark>"+this.curStr+"</mark>"
+boxContents+="</td></tr><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setDex(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.dex+">/<mark>"+this.curDex+"</mark>"
+boxContents+="</td></tr><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCon(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.con+">/<mark>"+this.curCon+"</mark>"
+boxContents+="</td></tr><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/<mark>"+this.curWis+"</mark>"
+boxContents+="</td></tr><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/<mark>"+this.curInt+"</mark>"
+boxContents+="</td></tr><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/<mark>"+this.curCha+"</mark>"
+boxContents+="</td></tr><tr><td>Equipment:<textArea cols='30' rows='3' onChange='characters["+this.index+"].setEquipment(this.value)'>"+this.equipment+"</textArea>";
+boxContents+="</td></tr><tr><td><h3>Combat Results</h3>"+this.combatLog;
 boxContents+="</td></tr><tr><td><input type='button' onClick='characters["+this.index+"].save();checkTheTarget("+this.index+")'value='Save this character?'>";
 boxContents+="</td></tr><tr><td><input type='button' value='Delete this character?'onClick='removeChar("+this.index+");checkTheTarget("+this.index+")'>";
-boxContents+="</td></tr><tr><td><h3>Combat Results</h3>"+this.combatLog;
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled2"+this.index+" style='display:"+this.toggled2+"'>";
-boxContents+="<table><tr><td>Spell (Abi)lity:<select onChange='characters["+this.index+"].setSpellAbility(this.value);checkTheTarget("+this.index+")'><option>"+this.spellAbility+"<option>int<option>wis<option>cha</select>"+this.spellAbilityNumber;
-boxContents+="<br>Level (Pro)ficiency:"+this.pro;
-boxContents+="<br>(Sit)uation (Mod)ifier:<input maxLength='3' onChange='characters["+this.index+"].setSit(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.sit+">";
-boxContents+="</td><td>ACTIONS<textArea cols='30' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiatks and SpellSlots'>"+this.actionNotes+"</textArea>"
-boxContents+="</td><td>Feature Notes:<textArea cols='30' rows='2' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
-boxContents+="</td><td>Racial Proficiencies:<input maxLength='400' onChange='characters["+this.index+"].setProficienciesRace(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.proficienciesRace+"'>";
-boxContents+="<br>Background Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setBackT(this.value)' size='40' value=' "+this.backT+"'>";
-boxContents+="<br>Class Proficiencies:<input maxLength='200' onChange='characters["+this.index+"].setProficiencies(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.proficiencies+"'>";
-boxContents+="</td></tr></table><br>"
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled3"+this.index+" style='display:"+this.toggled3+"'>";
 
 boxContents+="<table><tr><td>";
-boxContents+="<br>Miniature File:<input maxLength='200' onChange='characters["+this.index+"].setFigure(this.value)'placeHolder='*.png'size='40' type='text' value=' "+this.figure+"'>";
-boxContents+="</td></tr><tr><td><b>Size:</b> <select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
-boxContents+="</td></tr><tr><td><b>Race:</b> <select onChange='characters["+this.index+"].setRace(this.value)'><option>"+this.race+"<option>Aasimar, Fallen</option><option>Aasimar, Protector</option><option>Aasimar, Scourge</option><option>Bugbear<option>Dragonborn,Black<option>Dragonborn,Blue<option>Dragonborn,Brass<option>Dragonborn,Bronze<option>Dragonborn,Gold<option>Dragonborn,Green<option>Dragonborn,Red<option>Dragonborn,Silver<option>Dragonborn,White<option>Dwarf, Gray<option>Dwarf, Hill<option>Dwarf, Mountain<option>Elf, Dark<option>Elf, Half<option>Elf, High<option>Elf, Moon<option>Elf, Wood<option>Elf, Shadow<option>Firbolg<option>Gnome, Deep<option>Gnome, Forest<option>Gnome, Rock<option>Goblin<option>Halfling, Lightfoot<option>Halfling, Stout<option>Hobgoblin<option>Human<option>Kenku<option>Kobold<option>Orc<option>Orc, Half<option>Satyr<option>Tabaxi<option>Tiefling, Asmodeus<option>Tiefling, Baazebul<option>Tiefling, Dispater<option>Tiefling, Fierna<option>Tiefling, Glasya<option>Tiefling, Levistus<option>Tiefling, Mammon<option>Tiefling, Mephistopheles<option>Tiefling, Zariel<option>Yuan-Ti</select>";
-boxContents+="<br>or other race: <input maxLength='200' onChange='characters["+this.index+"].setRace(this.value)' placeHolder='other race' size='40' type='ptext'>";
-
-boxContents+="</td></tr><tr><td>Racial <b>Languages:</b> <input maxLength='200' onChange='characters["+this.index+"].setLanguages(this.value);checkTheTarget("+this.index+")' size='40' type='text' value=' "+this.languages+"'>";
-boxContents+="<br>Background Languages:<input maxLength='200' onChange='characters["+this.index+"].setBackL(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.backL+"'>";
-boxContents+="</td></tr><tr><td><b>Alignment:</b> <select onChange='characters["+this.index+"].setAlignment(this.value);checkTheTarget("+this.index+")'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
-boxContents+="<br>"+this.alignmentDescription;
-boxContents+="</td></tr><tr><td>Equipment:<textArea cols='30' rows='3' onChange='characters["+this.index+"].setEquipment(this.value)'>"+this.equipment+"</textArea>";
-boxContents+="</td></tr><tr><td><b>Senses:</b> <input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='40' type='text' value=' "+this.senses+"'>";
-boxContents+="<br>Experience Points(XP): <input maxLength='8' onChange='characters["+this.index+"].setExperience(this.value);checkTheTarget("+this.index+")'size='8' type='text' value=' "+this.experience+"'>";
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled4"+this.index+" style='display:"+this.toggled4+"'>";
 
@@ -2347,10 +2337,10 @@ boxContents+="</td></tr><tr><td><input onClick='abi=11;abiMod=characters["+this.
 boxContents+="</td></tr><tr><td><input onClick='abi=14;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].intimidation;abiRoll("+this.index+")'value='Roll Intimidation(cha)?'type='button'>+<select onChange='characters["+this.index+"].setIntimidation(this.value);checkTheTarget("+this.index+")'><option>"+this.intimidation+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
 boxContents+="</td></tr><tr><td><input onClick='abi=19;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].performance;abiRoll("+this.index+")'value='Roll Performance(cha)?'type='button'>+<select onChange='characters["+this.index+"].setPerformance(this.value);checkTheTarget("+this.index+")'><option>"+this.performance+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
 boxContents+="</td></tr><tr><td><input onClick='abi=20;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].persuasion;abiRoll("+this.index+")'value='Roll Persuasion(cha)?'type='button'>+<select onChange='characters["+this.index+"].setPersuasion(this.value);checkTheTarget("+this.index+")'><option>"+this.persuasion+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>";
-boxContents+="</td></tr><tr><td>Racial Abilility Increases:<input maxLength='200' onChange='characters["+this.index+"].setAbility(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.ability+"'>";
-boxContents+="</td></tr><tr><td>Background <b>Skills:</b> <input maxLength='200' onChange='characters["+this.index+"].setBackS(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.backS+"'>";
-boxContents+="<br>Class Skills:<input maxLength='200' onChange='characters["+this.index+"].setSkills(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.skills+"'>";
-boxContents+="</td></tr><tr><td>Class <b>Saving Throws:</b> <input maxLength='200' onChange='characters["+this.index+"].setSaving(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.saving+"'>";
+boxContents+="</td></tr><tr><td>Racial Abilility Increases:<input maxLength='200' onChange='characters["+this.index+"].setAbility(this.value);checkTheTarget("+this.index+")' size='30' value=' "+this.ability+"'>";
+boxContents+="</td></tr><tr><td>Background <b>Skills:</b> <input maxLength='200' onChange='characters["+this.index+"].setBackS(this.value);checkTheTarget("+this.index+")' size='30' value=' "+this.backS+"'>";
+boxContents+="<br>Class Skills:<input maxLength='200' onChange='characters["+this.index+"].setSkills(this.value);checkTheTarget("+this.index+")' size='30' value=' "+this.skills+"'>";
+boxContents+="</td></tr><tr><td>Class <b>Saving Throws:</b> <input maxLength='200' onChange='characters["+this.index+"].setSaving(this.value);checkTheTarget("+this.index+")' size='30' value=' "+this.saving+"'>";
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled5"+this.index+" style='display:"+this.toggled5+"'>";
 
@@ -2358,8 +2348,8 @@ boxContents+="<table><tr><td>"
 
 boxContents+="<a href='https://tetra-cube.com/dnd/dnd-char-gen.html' target='_blank'>Tetra-Cube.Com's Random Personality Generator</a>";
 boxContents+="</td></tr><tr><td>Background:<select onChange='characters["+this.index+"].setBackground(this.value)'><option>"+this.background+"<option>Acolyte<option>Charlatan<option>City Investigator<option>City Watch<option>Cloistered Scholar<option>Courtier<option>Criminal, Blackmailer<option>Criminal, Burglar<option>Criminal, Enforcer<option>Criminal, Fence<option>Criminal, Highway Robber<option>Criminal, Hired Killer<option>Criminal, Pickpocket<option>Criminal, Smuggler<option>Criminal, Spy<option>Entertainer, Actor<option>Entertainer, Dancer<option>Entertainer, Fire-Eater<option>Entertainer, Gladiator<option>Entertainer, Instrumentalist<option>Entertainer, Jester<option>Entertainer, Juggler<option>Entertainer, Poet<option>Entertainer, Singer<option>Entertainer, Storyteller<option>Entertainer, Tumbler<option>Faction Agent<option>Folk Hero, Farmer<option>Guild, Alchemist<option>Guild, Brewer<option>Guild, Calligrapher<option>Guild, Carpenter<option>Guild, Cartographer<option>Guild, Cobbler<option>Guild, Cook<option>Guild Crafter<option>Guild, Glassblower<option>Guild, Jeweler<option>Guild, Leatherworker<option>Guild, Mason<option>Guild, Painter<option>Guild, Potter<option>Guild, Smith<option>Guild, Tinker<option>Guild, Weaver<option>Guild, or Woodcarver<option>Hermit<option>Noble, Knight<option>Noble, Retainer<option>Outlander, Bounty Hunter<option>Outlander, Exile<option>Outlander, Forester<option>Outlander, Guide<option>Outlander, Homesteader<option>Outlander, Hunter-Gatherer<option>Outlander, Pilgrim<option>Outlander, Trapper<option>Outlander, Tribal Marauder<option>Outlander, Tribal Nomad<option>Sage, Alchemist<option>Sage, Astronomer<option>Sage, Discredited Academic<option>Sage, Librarian<option>Sage, Professor<option>Sage, Researcher<option>Sage, Scribe<option>Sage, Wizard Apprentice<option>Sailor, Cartographer<option>Sailor, Pirate<option>Soldier, Cavalry<option>Soldier, Healer<option>Soldier, Infantry<option>Soldier, Officer<option>Soldier, Quartermaster<option>Soldier, Scout<option>Urchin</select>";
-boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].setBackground(this.value)' placeHolder='other background' size='40' type='text'>";
-boxContents+="</td></tr><tr><td>Background Features:<input maxLength='200' onChange='characters["+this.index+"].setBackF(this.value)' size='40' type='text' value=' "+this.backF+"'>";
+boxContents+="</td></tr><tr><td><input maxLength='200' onChange='characters["+this.index+"].setBackground(this.value)' placeHolder='other background' size='30' type='text'>";
+boxContents+="</td></tr><tr><td>Background Features:<input maxLength='200' onChange='characters["+this.index+"].setBackF(this.value)' size='30' type='text' value=' "+this.backF+"'>";
 boxContents+="</td></tr><tr><td>Bonds:<textArea cols='30' rows='3' onChange='characters["+this.index+"].setBonds(this.value)'>"+this.bonds+"</textArea>";
 boxContents+="</td></tr><tr><td>Flaws:<textArea cols='30' rows='3' onChange='characters["+this.index+"].setFlaws(this.value)'>"+this.flaws+"</textArea>";
 boxContents+="</td></tr><tr><td>Ideals:<textArea cols='30' rows='3' onChange='characters["+this.index+"].setIdeals(this.value)'>"+this.ideals+"</textArea>";
@@ -3813,7 +3803,7 @@ dmgRollTotal1=dmgRoll1+parseInt(abiMod);
 dmgRollTotal2=dmgRoll2+parseInt(abiMod);
 dmgRollTotal3=dmgRoll2;
 theDamageConditions=characters[x].dmgConditions+characters[x].rollNames2[i];
-dmgRollLog="</td></tr><tr><td>"+characters[targeted].name+"<br>has resistances: "+characters[targeted].resistance+"<br>has immunities: "+characters[targeted].immunity+"<br>has vulnerabilities: "+characters[targeted].vulnerability+"<p>versus<p>"+characters[x].rollNames2[i]+"<br><input onClick='characters[targeted].setDamageConditions(theDamageConditions);checkTheTarget()' type='button' value='Assign this dmg condition?'></td></tr><tr><td><h3>Dmg 1</h3>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll1+" natural<br>"+dmgRollModifier1+" modifier<br>="+dmgRoll1+"<br>"+abiMod+" "+abi+"<br>="+dmgRollTotal1+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp-dmgRollTotal1);checkTheTarget()' type='button' value=Dmg?><br><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(dmgRollTotal1/2))));checkTheTarget()' type='button' value='1/2 Dmg?'></td></tr><tr><td><h3>Dmg 2 w/ abiMod</h3>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll2+" natural<br>"+dmgRollModifier2+" modifier<br>="+dmgRoll2+"<br>"+abiMod+" "+abi+"<br>="+dmgRollTotal2+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp-dmgRollTotal1);checkTheTarget()' type='button' value=Dmg?><br><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(dmgRollTotal1/2))));checkTheTarget()' type='button' value='1/2 Dmg?'></td></tr><tr><td><h3>Dmg 2 w/o abiMod</h3>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll2+" natural<br>"+dmgRollModifier2+" modifier<br>="+dmgRoll2+"<br>+0 no abi 2nd dmg<br>="+dmgRollTotal3+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp-dmgRollTotal1);checkTheTarget()' type='button' value=Dmg?><br><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(dmgRollTotal1/2))));checkTheTarget()' type='button' value='1/2 Dmg?'>";
+dmgRollLog="</td></tr><tr><td>"+characters[targeted].name+"<br>has resistances: "+characters[targeted].resistance+"<br>has immunities: "+characters[targeted].immunity+"<br>has vulnerabilities: "+characters[targeted].vulnerability+"<p>versus<p>"+characters[x].rollNames2[i]+"<br><input onClick='characters[targeted].setDamageConditions(theDamageConditions);checkTheTarget()' type='button' value='Assign this dmg condition?'></td></tr><tr><td><h3>Dmg 1</h3>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll1+" natural<br>"+dmgRollModifier1+" modifier<br>="+dmgRoll1+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp-dmgRollTotal1);checkTheTarget()' type='button' value=Dmg?><br><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(dmgRollTotal1/2))));checkTheTarget()' type='button' value='1/2 Dmg?'></td></tr><tr><td><h3>Dmg 2</h3>"+characters[x].rolls2[i]+"<br>="+dmgNaturalRoll2+" natural<br>"+dmgRollModifier2+" modifier<br>="+dmgRoll2+"<br><input onClick='characters[targeted].setCurHp(characters[targeted].curHp-dmgRollTotal1);checkTheTarget()' type='button' value=Dmg?><br><input onClick='characters[targeted].setCurHp(Math.floor(characters[targeted].curHp-(parseInt(dmgRollTotal1/2))));checkTheTarget()' type='button' value='1/2 Dmg?'>";
 //DC Save Rolls
 
 if(characters[x].rollNames[i].match(/DC\d{1,2}/gi)){roll1=8;
@@ -4044,9 +4034,6 @@ atkRollTotal1=atkRoll1+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x
 atkRollTotal2=atkRoll2+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
 let theAttackResult1='<br>miss'
 
-let toHit1=0;
-if(characters[targeted].curAc/1===-10 && characters[x].lvl/1===6){toHit1=13}
-
 if(atkRollTotal1>=characters[targeted].curAc){theAttackResult1='<br>hit'}
 if(atkRollTotal1>=(10+characters[targeted].curAc)){theAttackResult1='<br>critical hit'}
 if(atkRollTotal1<characters[targeted].curAc){theAttackResult1='<br>failure'}
@@ -4056,7 +4043,7 @@ if(atkRollTotal2>=characters[targeted].curAc){theAttackResult2='<br>hit'}
 if(atkRollTotal2>=(10+characters[targeted].curAc)){theAttackResult2='<br>critical hit'}
 if(atkRollTotal2<characters[targeted].curAc){theAttackResult2='<br>failure'}
 if(atkRollTotal2<(characters[targeted].curAc-10)){theAttackResult2='<br>critical failure'}
-atkRollLog="Target AC: "+characters[targeted].curAc+"<br>Attacker Class: "+characters[x].class+"<br>Attacker Level or Hit Dice: "+characters[x].lvl+"<br>to hit: "+toHit1+"<br> "+characters[x].name+"<br>"+characters[x].rollNames[i]+"<p>vs<p>"+characters[targeted].name+" AC:"+characters[targeted].curAc+"</td></tr><tr><td><h3>Atk 1</h3>"+characters[x].rolls[i]+"<br>="+atkNaturalRoll1+" natural<br>"+atkRollModifier1+" modifier<br>="+atkRoll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+atkRollTotal1+theAttackResult1+"</td></tr><tr><td><h3>Atk 2</h3>"+characters[x].rolls[i]+"<br>="+atkNaturalRoll2+" natural<br>"+atkRollModifier2+" modifier<br>="+atkRoll2+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+atkRollTotal2+theAttackResult2;
+atkRollLog="<h3>Atk 1</h3>"+characters[x].rolls[i]+"<br>="+atkNaturalRoll1+" natural<br>"+atkRollModifier1+" modifier<br>="+atkRoll1+"<br>"+characters[x].sit+" sit<br>="+atkRollTotal1+"</td></tr><tr><td><h3>Atk 2</h3>"+characters[x].rolls[i]+"<br>="+atkNaturalRoll2+" natural<br>"+atkRollModifier2+" modifier<br>="+atkRoll2+"<br>"+characters[x].sit+" sit<br>="+atkRollTotal2;
 characters[x].setCombatLog(atkRollLog+dmgRollLog);
 }
 }
