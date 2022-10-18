@@ -1650,7 +1650,7 @@ a=a.replace(/(下)(?!X)(回)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xshita-m
 a=a.replace(/(下)(?!X)(支)(?!X)(え)(?!X)/g,'$1X$2X$3Xshita-zasae,backup,prop up<p>~ichidan-verb');
 a=a.replace(/(与)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xatae,give<p>$3X~ru-verb');
 a=a.replace(/(並)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xnarabe,line up<p>$3X~ru-verb');
-a=a.replace(/(乏)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2Xtobo-shi,scarce,short of<p>$3X~i-adjective');
+a=a.replace(/(乏)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2Xtoboshi,scarce<p>$3X~i-adjective');
 a=a.replace(/(乱)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xmidare,be disordered,be disturbed<p>$3X~ru-verb');
 a=a.replace(/(乾)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2Xkawaka,dry<p>$3X~su-verb');
 a=a.replace(/(亡)(?!X)(く)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2Xnaku,lose (in death)<p>$3X~su-verb');
@@ -1855,7 +1855,7 @@ a=a.replace(/(支)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xsasae,m
 a=a.replace(/(支)(?!X)(払)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2Xshi-hara,payment,payout<p>$3X~i-adjective');
 a=a.replace(/(支)(?!X)(払)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2Xshi-hara,pay<p>$3X~u-verb');
 a=a.replace(/(改)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xaratama,be renewed,change<p>$3X~ru-verb');
-a=a.replace(/(改)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xaratame,reform,change<p>$3X~ru-verb');
+a=a.replace(/(改)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xaratame,reform<p>$3X~ru-verb');
 a=a.replace(/(攻)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xseme,attack,take the offensive<p>$3X~ru-verb');
 a=a.replace(/(敗)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xyabure,be defeated,be beaten<p>$3X~ru-verb');
 a=a.replace(/(教)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xoshie,teach,tell<p>$3X~ru-verb');
@@ -2399,7 +2399,7 @@ a=a.replace(/(主)(?!X)(体)(?!X)/g,'$1X$2Xsyu-tai,agent,main constituent~noun')
 a=a.replace(/(主)(?!X)(催)(?!X)/g,'$1X$2Xsyu-sai,sponsorship,promotion~noun');
 a=a.replace(/(主)(?!X)(婦)(?!X)/g,'$1X$2Xsyu-fu,homemaker~noun');
 a=a.replace(/(主)(?!X)(導)(?!X)/g,'$1X$2Xsyu-dou,initiative~noun');
-a=a.replace(/(主)(?!X)(張)(?!X)/g,'$1X$2Xsyu-cyou,assertion~noun');
+a=a.replace(/(主)(?!X)(張)(?!X)/g,'$1X$2Xsyu-cyou,emphasize~noun');
 a=a.replace(/(主)(?!X)(役)(?!X)/g,'$1X$2Xsyu-yaku,leading part~noun');
 a=a.replace(/(主)(?!X)(権)(?!X)/g,'$1X$2Xsyu-ken,sovereignty~noun');
 a=a.replace(/(主)(?!X)(演)(?!X)/g,'$1X$2Xsyu-en,starring~noun');
@@ -2593,7 +2593,7 @@ a=a.replace(/(余)(?!X)(り)(?!X)/g,'$1X$2Xamari,remainder,leftover~noun');
 a=a.replace(/(余)(?!X)(分)(?!X)/g,'$1X$2Xyo-bun,excess,extra~noun');
 a=a.replace(/(余)(?!X)(地)(?!X)/g,'$1X$2Xyo-chi,room,space~noun');
 a=a.replace(/(余)(?!X)(波)(?!X)/g,'$1X$2Xyo-ha,aftermath~noun');
-a=a.replace(/(余)(?!X)(裕)(?!X)/g,'$1X$2Xyo-yuu,room,leeway~noun');
+a=a.replace(/(余)(?!X)(裕)(?!X)/g,'$1X$2Xyo-yuu,leeway~noun');
 a=a.replace(/(余)(?!X)(計)(?!X)/g,'$1X$2Xyo-kei,excess,needless~noun');
 a=a.replace(/(作)(?!X)(品)(?!X)/g,'$1X$2Xsaku-hin,work of art~noun');
 a=a.replace(/(作)(?!X)(家)(?!X)/g,'$1X$2Xsak-ka,writer~noun');
@@ -7312,10 +7312,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">
-18日午前、神埼市脊振町を走っていたスクールバスと乗用車の事故があり、バスに乗っていた児童生徒7人と、大人2人が病院に搬送されています。
-
-18日午前7時半頃、神埼市脊振町を走っていたスクールバスと乗用車の事故がありました。市などによりますと、バスには小学生5人と中学生2人が乗っていて、全員が病院に搬送されましたが、重傷者はいないということです。また、大人2人も搬送されています。
-バスは脊振小学校と中学校の児童、生徒向けに市が市内のタクシー会社に委託し、朝と午後のの通学時間帯に3つのルート、それぞれ1本を運行しているということです。
+　深刻な物価高対策が18日の衆院予算委員会で論戦となった。野党は政府に対して根本的な考え方を改めるよう主張。間接的な補助制度ではなく利用者に直接支援したり、金融緩和路線から転換したりすることを求めた。政府は賃上げの実現を前提に物価高を容認する構えだが、家計はそれを待つ余裕が乏しい。
 </div>
 <p>
 <textArea cols='60' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
