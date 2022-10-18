@@ -1147,7 +1147,7 @@ a=a.replace(/(専)(?!X)(門)(?!X)(家)(?!X)/g,'$1X$2X$3Xsen-mon-ka,specialist~no
 a=a.replace(/(小)(?!X)(児)(?!X)(科)(?!X)/g,'$1X$2X$3Xsyou-nika,pediatrics~noun');
 a=a.replace(/(小)(?!X)(売)(?!X)(店)(?!X)/g,'$1X$2X$3Xkou-ri-ten,retail store,ou-tlet~noun');
 a=a.replace(/(小)(?!X)(学)(?!X)(校)(?!X)/g,'$1X$2X$3Xsyou-gak-kou,elementary school~noun');
-a=a.replace(/(小)(?!X)(学)(?!X)(生)(?!X)/g,'$1X$2X$3Xsyou-gaku-sei,schoolchild-ren,schoolboy~noun');
+a=a.replace(/(小)(?!X)(学)(?!X)(生)(?!X)/g,'$1X$2X$3Xsyou-gaku-sei,school children~noun');
 a=a.replace(/(小)(?!X)(麦)(?!X)(粉)(?!X)/g,'$1X$2X$3Xkomugiko,flour~noun');
 a=a.replace(/(少)(?!X)(し)(?!X)(も)(?!X)/g,'$1X$2X$3Xsukoshimo,at all~noun');
 a=a.replace(/(局)(?!X)(地)(?!X)(的)(?!X)/g,'$1X$2X$3Xkyoku-chi-teki,local~noun');
@@ -3554,6 +3554,7 @@ a=a.replace(/(少)(?!X)(々)(?!X)/g,'$1X$2Xsyou-syou,a little,a few~noun');
 a=a.replace(/(少)(?!X)(々)(?!X)/g,'$1X$2Xsyou-syou,a little,a few~noun');
 a=a.replace(/(少)(?!X)(し)(?!X)/g,'$1X$2Xsukoshi,a bit,a little while~noun');
 a=a.replace(/(少)(?!X)(女)(?!X)/g,'$1X$2Xsyou-jyo,girl~noun');
+a=a.replace(/(乗)(?!X)(用)(?!X)/g,'$1X$2Xjyou-you,passenger~noun');
 a=a.replace(/(少)(?!X)(年)(?!X)/g,'$1X$2Xsyou-nen,boy~noun');
 a=a.replace(/(少)(?!X)(数)(?!X)/g,'$1X$2Xsyou-suu,small number,minority~noun');
 a=a.replace(/(少)(?!X)(量)(?!X)/g,'$1X$2Xsyou-ryou,small quantity~noun');
@@ -4157,7 +4158,10 @@ a=a.replace(/(昼)(?!X)(前)(?!X)/g,'$1X$2Xhiru-mae,before noon~noun');
 a=a.replace(/(昼)(?!X)(寝)(?!X)/g,'$1X$2Xhiru-ne,nap~noun');
 a=a.replace(/(昼)(?!X)(間)(?!X)/g,'$1X$2Xhiru-ma,daytime~noun');
 a=a.replace(/(昼)(?!X)(食)(?!X)/g,'$1X$2Xcyuu-syoku,lunch~noun');
+a=a.replace(/(重)(?!X)(症)(?!X)/g,'$1X$2Xjyuu-syou,serious injury~noun');
+a=a.replace(/(委)(?!X)(託)(?!X)/g,'$1X$2Xi-taku,entrust~noun');
 a=a.replace(/(時)(?!X)(々)(?!X)/g,'$1X$2Xtokidoki,sometimes~noun');
+a=a.replace(/(運)(?!X)(行)(?!X)/g,'$1X$2Xun-kou,operating transportation~noun');
 a=a.replace(/(時)(?!X)(事)(?!X)/g,'$1X$2Xji-ji,current events~noun');
 a=a.replace(/(時)(?!X)(代)(?!X)/g,'$1X$2Xji-dai,age,antiquity~noun');
 a=a.replace(/(時)(?!X)(刻)(?!X)/g,'$1X$2Xji-koku,favorable time~noun');
@@ -5619,7 +5623,7 @@ a=a.replace(/(通)(?!X)(例)(?!X)/g,'$1X$2Xtsuu-rei,as a rule~noun');
 a=a.replace(/(通)(?!X)(信)(?!X)/g,'$1X$2Xtsuu-shin,communication~noun');
 a=a.replace(/(通)(?!X)(勤)(?!X)/g,'$1X$2Xtsuu-kin,commuting~noun');
 a=a.replace(/(通)(?!X)(報)(?!X)/g,'$1X$2Xtsuu-hou,tip~noun');
-a=a.replace(/(通)(?!X)(学)(?!X)/g,'$1X$2Xtsuu-gaku,attending school,going to school~noun');
+a=a.replace(/(通)(?!X)(学)(?!X)/g,'$1X$2Xtsuu-gaku,going to school~noun');
 a=a.replace(/(通)(?!X)(帳)(?!X)/g,'$1X$2Xtsuu-cyou,bankbook,passbook~noun');
 a=a.replace(/(通)(?!X)(常)(?!X)/g,'$1X$2Xtsuu-jyou,common~noun');
 a=a.replace(/(通)(?!X)(知)(?!X)/g,'$1X$2Xtsuu-chi,notification~noun');
@@ -6035,8 +6039,7 @@ a=a.replace(/(与)(?!X)(え)(?!X)/g,'$1X$2Xatae,grant~ichidan-verb');
 a=a.replace(/(並)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,'$1Xnara,line up<p>$2X~bu-verb');
 a=a.replace(/(丸)(?!X)(い|く|か|さ)(?!X)/g,'$1Xmaru,rou-nd<p>$2X~i-adjective');
 a=a.replace(/(乗)(?!X)(せ)(?!X)/g,'$1X$2Xnose,give a ride~ichidan-verb');
-a=a.replace(/(乗)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xno,ride,take<p>$2X~ru-verb');
-a=a.replace(/(乗)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xno,ride,take<p>$2X~ru-verb');
+a=a.replace(/(乗)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xno,ride<p>$2X~ru-verb');
 a=a.replace(/(九)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,'$1Xkokono,nine (things)<p>$2X~tsu-verb');
 a=a.replace(/(乱)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xmida,put into disorder,disrupt<p>$2X~su-verb');
 a=a.replace(/(乾)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xkawa,dry,run dry<p>$2X~ku-verb');
@@ -6473,7 +6476,7 @@ a=a.replace(/(貼)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xha,stick,paste<p>$2X
 a=a.replace(/(賢)(?!X)(い|く|か|さ)(?!X)/g,'$1Xkashiko,wise,smart<p>$2X~i-adjective');
 a=a.replace(/(贈)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xoku,offer,give<p>$2X~ru-verb');
 a=a.replace(/(赤)(?!X)(い|く|か|さ)(?!X)/g,'$1Xaka,red<p>$2X~i-adjective');
-a=a.replace(/(走)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xha-shi,run<p>$2X~ru-verb');
+a=a.replace(/(走)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xhashi,run<p>$2X~ru-verb');
 a=a.replace(/(起)(?!X)(き)(?!X)/g,'$1X$2Xoki,occur~ichidan-verb');
 a=a.replace(/(超)(?!X)(え)(?!X)/g,'$1X$2Xkoe,surpass~ichidan-verb');
 a=a.replace(/(越)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xko,go over<p>$2X~su-verb');
@@ -7309,11 +7312,10 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">
-速報です。先ほど（午前5時ごろ）、円相場は1ドル=149円台をつけ32年ぶりの円安水準を更新しました。
+18日午前、神埼市脊振町を走っていたスクールバスと乗用車の事故があり、バスに乗っていた児童生徒7人と、大人2人が病院に搬送されています。
 
-きのう午後8時ごろに148円89銭前後をつけ32年ぶりの水準を更新したばかりで、このところ連日のように更新しています。
-
-15日にアメリカのバイデン大統領が「ドル高を懸念していない」と述べドル高容認姿勢を示した一方、日銀の黒田総裁はきのうも国会で「金融緩和継続が適当」と発言。日米の金利差がさらに拡大するとの見方から円安に歯止めがかからない状況です。
+18日午前7時半頃、神埼市脊振町を走っていたスクールバスと乗用車の事故がありました。市などによりますと、バスには小学生5人と中学生2人が乗っていて、全員が病院に搬送されましたが、重傷者はいないということです。また、大人2人も搬送されています。
+バスは脊振小学校と中学校の児童、生徒向けに市が市内のタクシー会社に委託し、朝と午後のの通学時間帯に3つのルート、それぞれ1本を運行しているということです。
 </div>
 <p>
 <textArea cols='60' rows='6' onChange='a=this.value;translateC()' placeHolder='Paste the Japanese text here.'></textArea>
