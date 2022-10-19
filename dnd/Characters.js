@@ -1,6 +1,6 @@
 //Elwita
 pc4720=new Character('Elwita', ' PC')
-pc4720.addRoll('+2 Warhammer', ' 1d20+2', ' bludgeoning', ' 1d6+2')
+pc4720.addRoll('+2 Warhammer', ' 1d20+3', ' bludgeoning', ' 1d6+3')
 pc4720.putAt('433px', ' 251px' )
 pc4720.setClass('Fighter')
 pc4720.setLvl('6')

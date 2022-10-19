@@ -36,7 +36,7 @@ border-color:#333b2f;
 border-style:solid;
 border-radius:4px;
 font-family: 'MyKidsHandwritten';
-font-size:18px;
+font-size:25px;
 margin:1px;
 outline:1px solid transparent;
 overflow-wrap:anywhere;
@@ -45,25 +45,6 @@ text-decoration:#22271f;
 text-decoration-thickness:2px;
 vertical-align:top;
 word-break:break-word;
-}
-
-.piece
-{background-color:inherit;
-border:1px;
-border-color:#333b2f;
-border-style:solid;
-border-radius:4px;
-font-family: 'MyKidsHandwritten';
-font-size:75%;
-margin:1px;
-max-width:100px;
-min-width:100px;
-outline:1px solid transparent;
-padding:1px;
-text-decoration:#22271f;
-text-decoration-thickness:2px;
-vertical-align:top;
-z-index:1;
 }
 
 table
@@ -151,8 +132,7 @@ mark
 <input type='button' value='Target then Clone a character?' onClick='cloneIt(type)'>
 </td></tr><tr><td>
 <input type='button' value='Create a new character?' onClick='newCharacter(PC)'>
-</td></tr><tr><td>
-</td></tr><tr><td><a href='https://archive.org/details/tsr02100addplayershandbook/page/n36/mode/1up' target='_blank'>The AD&D 1st Edition Player's Handbook Armor and Weapons</a>
+</td></tr><tr><td><a href='https://archive.org/details/tsr02100addplayershandbook/page/n36/mode/1up' target='_blank'>The AD&D 1st Edition Player's Handbook of Armor and Weapons</a>
 </td></tr><tr><td>
 <a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>Attack Matrixes</a> Note the attacker's class and level and the target's armor class. Go to the right table to find the minimum that must be rolled to hit.
 </td></tr><tr><td>
@@ -226,20 +206,9 @@ function reduceByOne4(){document.getElementById('4thDuration').value=(document.g
 <input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
 </td></tr><tr><td>
 Random Skills:<br><span id='displayRandomSkills'></span>
-</td></tr><tr><td>
-Random Languages:<br><span id='displayRandomLanguages'></span>
-</td></tr><tr><td>
-Random Musical Instruments:<br><span id='displayRandomMusicalInstruments'></span>
-</td></tr><tr><td>
-Random Tools:<br><span id='displayRandomTools'></span>
-</td></tr><tr><td>
-Random Gambling Sets:<span id='displayRandomGamblingSets'></span>
-</td></tr></table>
-</td><td>
-<table width='500px'><tr><td rowSpan='30'><img class='MapSelection' src='Maps/Map.png'>
-</td></tr></table>
-</td><td>
-<table><tr><td>
+</td></tr>
+<tr><td>
+<h3>Encounter Description</h3>
 EGG CHAMBER:
 The passageway rises quickly above the level of the
 sewage and the chamber floor seems dry. The
@@ -251,7 +220,10 @@ one in each upper forelimb. Beyond them near the
 far wall are many glistening white ovoids, about 6”
 to I’ in length.
 </td></tr></table>
-<br>
+</td><td>
+<table width='500px'><tr><td rowSpan='30'><img class='MapSelection' src='Maps/Map.png'>
+</td></tr></table>
+
 <script>
 
 const shuffleSkillsArray = (array) => { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));
@@ -261,34 +233,6 @@ const shuffleSkillsArray = (array) => { for (let i = array.length - 1; i > 0; i-
 skillsArray=["Acrobatics(Dex)","AnimalHandling(Wis)","Arcana(Int)","Athletics(Str)","Deception(Cha)","History(Int)","Insight(Wis)","Intimidation(Cha)","Investigation(Int)","Medicine(Wis)","Nature(Int)","Perception(Wis)","Performance(Cha)","Persuasion(Cha)","Religion(Int)","SleightOfHand(Dex)","Stealth(Dex)","Survival(Wis)"];
 shuffleSkillsArray(skillsArray);
 document.getElementById("displayRandomSkills").innerHTML=(skillsArray);
-
-const shuffleLanguagesArray = (array) => { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));
- [array[i], array[j]] = [array[j], array[i]];
- }
-}
-languagesArray=["Common","Dwarvish","Elvish","Giant","Gnomish","Goblin","Halfling","Orc","Abyssal","Celestial","DeepSpeech","Draconic","Infernal","Primordial","Sylvan","Undercommon"];
-shuffleLanguagesArray(languagesArray);
-document.getElementById("displayRandomLanguages").innerHTML =(languagesArray);
-
-const shuffleToolsArray = (array) => { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));
- [array[i], array[j]] = [array[j], array[i]];
- }
-}
-toolsArray=["AlchemistSupplies","BrewerSupplies","CalligrapherSupplies","ThievesTools","CarpenterTools","CartographerTools","CobblerTools","CookUtensils","DisguiseKit","ForgeryKit","GlassblowerTools","HerbalismKit","JewelerTools","LeatherworkerTools","MasonTools","NavigatorTools","PainterSupplies","PotterTools","SmithTools","TinkerTools","WeaverTools","WoodcarverTools"];
-shuffleToolsArray(toolsArray)
-document.getElementById("displayRandomTools").innerHTML=(toolsArray);
-
-const shuffleMusicalInstrumentsArray = (array) => { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));
- [array[i], array[j]] = [array[j], array[i]];
- }
-}
-musicalInstrumentsArray=["Bagpipes","Drum","Dulcimer","Flute","Lute","Lyre","Horn","PanFlute","Shawm","Viol"];
-shuffleMusicalInstrumentsArray(musicalInstrumentsArray);
-document.getElementById("displayRandomMusicalInstruments").innerHTML =(musicalInstrumentsArray);
-
-const gamblingSetsArray = (arr) => arr.sort(() => 0.5 - Math.random());
-
-document.getElementById("displayRandomGamblingSets").innerHTML =(gamblingSetsArray(["DartsSet","DragonDiceSet","PlayingCardSet"]));
 
 function AGEBox(color, code, textColorCode)
 {this.borderX=10;
@@ -454,42 +398,6 @@ t1="a, b, c, dmgDice"
 function AbiDalzimsHorridWilting(){a="Abi-Dalzim s Horrid Wilting,lvl8,1act,instant,150ft cube 30ftDC8+"+characters[targeted].spellAbility+"+pro vsCon You draw the moisture from every creature in a 30ft-cube centered on a point you choose within range. Each creature in that area vsCon . Constructs and undead aren t affected, and plants and water elementals make this saving throw with @disadv.,1tgt takes 12d8 necrotic dmg if fail, or half as much dmg on a successful one. Nonmagical plants in the area that aren t creatures, such as trees and shrubs, wither and die instantly.",b="1d20+0",c="Necrotic",dmgDice="12d8+0",getAction(t1)}
 
 function Club(){a="Club 1 sp 2 lb. Light",b="1d20+0",dmgDice="1d4+0",c="bludg ",getAction(t1)};
-function Dagger(){a="Dagger 2 gp 1 lb. Finesse, light, thrown (range 20/60)",b="1d20+0",dmgDice="1d4+0",c="pierc ",getAction(t1)};
-function Greatclub(){a="Greatclub 2 sp 10 lb. Two-handed",b="1d20+0",dmgDice=" 1d8+0",c="bludg ",getAction(t1)};
-function Handaxe(){a="Handaxe 5 gp 2 lb. Light, thrown (range 20/60)",b="1d20+0",dmgDice=" 1d6+0",c="slash ",getAction(t1)};
-function Javelin(){a="Javelin 5 sp 2 lb. Thrown (range 30/120)",b="1d20+0",dmgDice=" 1d6+0",c="pierc ",getAction(t1)};
-function HammerLight(){a="Light Hammer 2 gp 2 lb. Light, thrown (range 20/60)",b="1d20+0",dmgDice=" 1d4+0",c="bludg ",getAction(t1)};
-function Mace(){a="Mace Footmans",b="1d20+0",dmgDice="1d6+0",c="bludg",getAction(t1)};
-function Quarterstaff(){a="Quarterstaff 2 sp 4 lb. Versatile (1d8)",b="1d20+0",dmgDice=" 1d6+0",c="bludg ",getAction(t1)};
-function Sickle(){a="Sickle 1 gp 2 lb. Light",b="1d20+0",dmgDice="1d4+0",c="slash ",getAction(t1)};
-function Spear(){a="Spear 1 gp 3 lb. Thrown (range 20/60), versatile (1d8)",b="1d20+0",dmgDice="1d6+0",c="pierc ",getAction(t1)};
-function CrossbowLight(){a="Crossbow, light 25 gp 5 lb. Ammunition (range 80/320), loading, two-handed",b="1d20+0",dmgDice="1d8+0",c="pierc ",getAction(t1)};
-function Dart(){a="Dart 5 cp 1/4 lb. Finesse, thrown (range 20/60)",b="1d20+0",dmgDice="1d4+0",c="pierc ",getAction(t1)};
-function Shortbow(){a="Shortbow 25 gp 2 lb. Ammunition (range 80/320), two-handed",b="1d20+0",dmgDice=" 1d6+0",c="pierc ",getAction(t1)};
-function Sling(){a="Sling 1 sp — Ammunition (range 30/120)",b="1d20+0",dmgDice="1d4+0",c="bludg ",getAction(t1)};
-function Battleaxe(){a="Battleaxe 10 gp 4 lb. Versatile (1d10)",b="1d20+0",dmgDice=" 1d8+0",c="slash ",getAction(t1)};
-function Flail(){a="Flail 10 gp 2 lb. —",b="1d20+0",dmgDice="1d8+0",c="bludg ",getAction(t1)};
-function Glaive(){a="Glaive 20 gp 6 lb. Heavy, reach, two-handed",b="1d20+0",dmgDice="1d10+0",c="slash ",getAction(t1)};
-function Greataxe(){a="Greataxe 30 gp 7 lb. Heavy, two-handed",b="1d20+0",dmgDice=" 1d12+0",c="slash ",getAction(t1)};
-function Greatsword(){a="Greatsword 50 gp 6 lb. Heavy, two-handed",b="1d20+0",dmgDice=" 2d6+0",c="slash ",getAction(t1)};
-function Halberd(){a="Halberd 20 gp 6 lb. Heavy, reach, two-handed",b="1d20+0",dmgDice=" 1d10+0",c="slash ",getAction(t1)};
-function Lance(){a="Lance 10 gp 6 lb. Reach, special",b="1d20+0",dmgDice="1d12+0",c="pierc ",getAction(t1)};
-function Longsword(){a="Longsword 15 gp 3 lb. Versatile (1d10)",b="1d20+0",dmgDice=" 1d8+0",c="slash ",getAction(t1)};
-function Maul(){a="Maul 10 gp 10 lb. Heavy, two-handed",b="1d20+0",dmgDice="2d6+0",c="bludg ",getAction(t1)};
-function Morningstar(){a="Morningstar 15 gp 4 lb. —",b="1d20+0",dmgDice=" 1d8+0",c="pierc ",getAction(t1)};
-function Pike(){a="Pike 5 gp 18 lb. Heavy, reach, two-handed",b="1d20+0",dmgDice="1d10+0",c="pierc ",getAction(t1)};
-function Rapier(){a="Rapier 25 gp 2 lb. Finesse",b="1d20+0",dmgDice="1d8+0",c="pierc ",getAction(t1)};
-function Scimitar(){a="Scimitar 25 gp 3 lb. Finesse, light",b="1d20+0",dmgDice=" 1d6+0",c="slash ",getAction(t1)};
-function Shortsword(){a="Shortsword 10 gp 2 lb. Finesse, light",b="1d20+0",dmgDice=" 1d6+0",c="pierc ",getAction(t1)};
-function Trident(){a="Trident 5 gp 4 lb. Thrown (range 20/60), versatile (1d8)",b="1d20+0",dmgDice=" 1d6+0",c="pierc ",getAction(t1)};
-function WarPick(){a="War pick 5 gp 2 lb. —",b="1d20+0",dmgDice=" 1d8+0",c="pierc ",getAction(t1)};
-function Warhammer(){a="Warhammer 15 gp 2 lb. Versatile (1d10)",b="1d20+0",dmgDice=" 1d8+0",c="bludg ",getAction(t1)};
-function Whip(){a="Whip 2 gp 3 lb. Finesse, reach",b="1d20+0",dmgDice="1d4+0",c="slash ",getAction(t1)};
-function Blowgun(){a="Blowgun 10 gp 1 lb. Ammunition (range 25/100), loading",b="1d20+0",dmgDice=" 1+0",c="pierc ",getAction(t1)};
-function CrossbowHand(){a="Crossbow, hand 75 gp 3 lb. Ammunition (range 30/120), light, loading",b="1d20+0",dmgDice=" 1d6+0",c="pierc ",getAction(t1)};
-function CrossbowHeavy(){a="Crossbow, heavy 50 gp 18 lb. Ammunition (range 100/400), heavy, loading, two-handed",b="1d20+0",dmgDice=" 1d10+0",c="pierc ",getAction(t1)};
-function Longbow(){a="Longbow 50 gp 2 lb. Ammunition (range 150/600), heavy, two-handed",b="1d20+0",dmgDice=" 1d8+0",c="pierc ",getAction(t1)};
-function Net(){a="Net 1 gp Special, thrown (range 5/15)",b="1d20+0",c="restrained",getAction(t1)};
 
 function getAction(){characters[targeted].setRollName1(a),characters[targeted].setRoll1(b),characters[targeted].setRollName2(c),characters[targeted].setRoll2(dmgDice),addRollPrompt(targeted)}
 
@@ -498,42 +406,6 @@ s4=document.write.bind(document)
 
 s4("<table><tr><td>Target the piece first to receive these wpns.</td></tr><tr><td>")
 s4(s1+'Club'+s2+'Club'+s3)
-s4(s1+'Dagger'+s2+'Dagger'+s3)
-s4(s1+'Greatclub'+s2+'Greatclub'+s3)
-s4(s1+'Handaxe'+s2+'Handaxe'+s3)
-s4(s1+'Javelin'+s2+'Javelin'+s3)
-s4(s1+'HammerLight'+s2+'HammerLight'+s3)
-s4(s1+'Mace'+s2+'Mace'+s3)
-s4(s1+'Quarterstaff'+s2+'Quarterstaff'+s3)
-s4(s1+'Sickle'+s2+'Sickle'+s3)
-s4(s1+'Spear'+s2+'Spear'+s3)
-s4(s1+'CrossbowLight'+s2+'CrossbowLight'+s3)
-s4(s1+'Dart'+s2+'Dart'+s3)
-s4(s1+'Shortbow'+s2+'Shortbow'+s3)
-s4(s1+'Sling'+s2+'Sling'+s3)
-s4(s1+'Battleaxe'+s2+'Battleaxe'+s3)
-s4(s1+'Flail'+s2+'Flail'+s3)
-s4(s1+'Glaive'+s2+'Glaive'+s3)
-s4(s1+'Greataxe'+s2+'Greataxe'+s3)
-s4(s1+'Greatsword'+s2+'Greatsword'+s3)
-s4(s1+'Halberd'+s2+'Halberd'+s3)
-s4(s1+'Lance'+s2+'Lance'+s3)
-s4(s1+'Longsword'+s2+'Longsword'+s3)
-s4(s1+'Maul'+s2+'Maul'+s3)
-s4(s1+'Morningstar'+s2+'Morningstar'+s3)
-s4(s1+'Pike'+s2+'Pike'+s3)
-s4(s1+'Rapier'+s2+'Rapier'+s3)
-s4(s1+'Scimitar'+s2+'Scimitar'+s3)
-s4(s1+'Shortsword'+s2+'Shortsword'+s3)
-s4(s1+'Trident'+s2+'Trident'+s3)
-s4(s1+'WarPick'+s2+'WarPick'+s3)
-s4(s1+'Warhammer'+s2+'Warhammer'+s3)
-s4(s1+'Whip'+s2+'Whip'+s3)
-s4(s1+'Blowgun'+s2+'Blowgun'+s3)
-s4(s1+'CrossbowHand'+s2+'CrossbowHand'+s3)
-s4(s1+'CrossbowHeavy'+s2+'CrossbowHeavy'+s3)
-s4(s1+'Longbow'+s2+'Longbow'+s3)
-s4(s1+'Net'+s2+'Net'+s3)
 s4('</td></tr></table>')
 
 function toggleTab1(x){if(characters[x].toggled1.match(/none/)){characters[x].setToggled1("block");
@@ -1782,12 +1654,12 @@ boxContents+="</td></tr><tr><td><input onClick='abi=3;abiMod=characters["+this.i
 boxContents+="</td></tr><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/<mark>"+this.curWis+"</mark>"
 boxContents+="</td></tr><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/<mark>"+this.curInt+"</mark>"
 boxContents+="</td></tr><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/<mark>"+this.curCha+"</mark>"
+boxContents+="</td></tr><tr><td><h3>Saving Throws</h3>minimum on 1d20 needed to save for Monsters and Characters";
+boxContents+="</td></tr><tr><td>Paralysis, Poison or Death<input maxLength='2' onChange='characters["+this.index+"].setParalysis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.paralysis+"><mark>"
 
-boxContents+="</td></tr><tr><td>Paralysis<input maxLength='2' onChange='characters["+this.index+"].setParalysis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.paralysis+"><mark>"
+boxContents+="</td></tr><tr><td>Petrify or Polymorph<input maxLength='2' onChange='characters["+this.index+"].setPetrify(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.petrify+">"
 
-boxContents+="</td></tr><tr><td>Petrify<input maxLength='2' onChange='characters["+this.index+"].setPetrify(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.petrify+">"
-
-boxContents+="</td></tr><tr><td>Rods<input maxLength='2' onChange='characters["+this.index+"].setRods(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.rods+">"
+boxContents+="</td></tr><tr><td>Rod, Staff, Wand<input maxLength='2' onChange='characters["+this.index+"].setRods(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.rods+">"
 
 boxContents+="</td></tr><tr><td>Breath<input maxLength='2' onChange='characters["+this.index+"].setBreath(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.breath+">"
 
