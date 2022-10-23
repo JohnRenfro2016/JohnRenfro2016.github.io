@@ -11,45 +11,54 @@ href="MyFavicon.png"
 
 @font-face
 {
-font-family: "Kraash";
-src: url("Kraash.ttf");
+font-family: "MrsMonster";
+src: url("MrsMonster.ttf");
 }
 
 a:link,
 a:hover,
 a:active,
-a:visited {color: #3d2526}
+a:visited {color: white}
 
-body,textArea
+body, textArea
 {
-background-color:#d4d6d3;
-border-radius: 25px;
+background-color:#401519;
+color: #ed7707;
 font-size: 25px;
-margin: 10px 10px 10px 10px;
-text-align:center;
+margin: 5px;
+padding: 5px;
+text-align: center;
 text-shadow: 2px 2px 4px #3d2526;
-word-wrap:break-word;
+width: 50%;
+}
+
+textArea
+{
+width: 400px;
+}
+
+img
+{
+width:400px;
 }
 
 .ComicTitle
 {
-color: #f5c103;
-font-family: "Kraash";
+font-family: "MrsMonster";
 font-size: 30px;
 }
 
-.cStyle{column-count:2;}
-
 .HeaderStyle
 {
-color: #a49e08;
-font-size: 50px;
+background: linear-gradient(0.25turn, #ee730c, #cc4111, #5b0001);
+color: white;
+position:relative;
+margin:20px auto;
 }
 
 .TheStripe
 {
-background: repeating-linear-gradient(45deg,transparent,transparent 10px,#000000 10px,#000000 20px),linear-gradient(to bottom,#f5c103,#000000)
-}
+background: repeating-linear-gradient(45deg, transparent, transparent 10px, #000000 10px, #000000 20px), linear-gradient(to bottom, #f5c103, #000000)
 }
 
 </style>
@@ -1164,6 +1173,7 @@ a=a.replace(/(全)(?!X)(速)(?!X)(力)(?!X)/g,'$1X$2X$3X,zen-soku-ryoku,full spe
 a=a.replace(/(入)(?!X)(場)(?!X)(券)(?!X)/g,'$1X$2X$3X,nyuu-jyou-ken,entrance ticket~noun');
 a=a.replace(/(入)(?!X)(れ)(?!X)(物)(?!X)/g,'$1X$2X$3X,ire-mono,receptacle,container~noun');
 a=a.replace(/(入)(?!X)(り)(?!X)(口)(?!X)/g,'$1X$2X$3X,iri-gu-chi,entrance~noun');
+a=a.replace(/(不)(?!X)(祥)(?!X)(事)(?!X)/g,'$1X$2X$3X,fu-syou-ji,misconduct~noun');
 a=a.replace(/(免)(?!X)(許)(?!X)(証)(?!X)/g,'$1X$2X$3X,menkyo-syou,license~noun');
 a=a.replace(/(先)(?!X)(立)(?!X)(ち)(?!X)/g,'$1X$2X$3X,saki-dachi,before~noun');
 a=a.replace(/(兄)(?!X)(さ)(?!X)(ん)(?!X)/g,'$1X$2X$3X,niisan,older brother~noun');
@@ -1236,6 +1246,7 @@ a=a.replace(/(不)(?!X)(景)(?!X)(気)(?!X)/g,'$1X$2X$3X,fu-ke-iki,business depr
 a=a.replace(/(不)(?!X)(愉)(?!X)(快)(?!X)/g,'$1X$2X$3X,fu-yu-kai,unpleasant,disagreeable~noun');
 a=a.replace(/(不)(?!X)(思)(?!X)(議)(?!X)/g,'$1X$2X$3X,fushigi,mystery,wonder~noun');
 a=a.replace(/(不)(?!X)(必)(?!X)(要)(?!X)/g,'$1X$2X$3X,fu-hitsuyou,unnecessary,superfluous~noun');
+a=a.replace(/(だ)(?!X)(ろ)(?!X)(う)(?!X)/g,'$1X$2X$3X,darou,I guess or probably right~noun');
 a=a.replace(/(不)(?!X)(得)(?!X)(意)(?!X)/g,'$1X$2X$3X,fu-tokui,one\'s weak point~noun');
 a=a.replace(/(不)(?!X)(幸)(?!X)(せ)(?!X)/g,'$1X$2X$3X,fu-shiawase,unhappiness,misfortune~noun');
 a=a.replace(/(不)(?!X)(平)(?!X)(等)(?!X)/g,'$1X$2X$3X,fu-byou-dou,unequal,unfair~noun');
@@ -2815,6 +2826,7 @@ a=a.replace(/(緊)(?!X)(急)(?!X)/g,'$1X$2X,kin-kyuu,emergency~noun');
 a=a.replace(/(緊)(?!X)(張)(?!X)/g,'$1X$2X,kin-cyou,tension~noun');
 a=a.replace(/(緊)(?!X)(密)(?!X)/g,'$1X$2X,kin-mitsu,closely knit~noun');
 a=a.replace(/(維)(?!X)(新)(?!X)/g,'$1X$2X,i-shin,renewal~noun');
+a=a.replace(/(後)(?!X)(任)(?!X)/g,'$1X$2X,kou-nin,successor~noun');
 a=a.replace(/(維)(?!X)(持)(?!X)/g,'$1X$2X,i-ji,maintenance,upkeep~noun');
 a=a.replace(/(続)(?!X)(編)(?!X)/g,'$1X$2X,zoku-hen,sequel~noun');
 a=a.replace(/(続)(?!X)(出)(?!X)/g,'$1X$2X,zoku-syutsu,one after another~noun');
@@ -3514,6 +3526,9 @@ a=a.replace(/(模)(?!X)(範)(?!X)/g,'$1X$2X,mohan,model,role model~noun');
 a=a.replace(/(模)(?!X)(様)(?!X)/g,'$1X$2X,moyou,pattern,design~noun');
 a=a.replace(/(標)(?!X)(準)(?!X)/g,'$1X$2X,hyou-jyun,standard,norm~noun');
 a=a.replace(/(様)(?!X)(子)(?!X)/g,'$1X$2X,you-su,appearance~noun');
+a=a.replace(/(党)(?!X)(首)(?!X)/g,'$1X$2X,tou-syu,party leader~noun');
+a=a.replace(/(出)(?!X)(馬)(?!X)/g,'$1X$2X,syutsu-ba,running for election~noun');
+a=a.replace(/(統)(?!X)(治)(?!X)/g,'$1X$2X,tou-chi,rule~noun');
 a=a.replace(/(様)(?!X)(々)(?!X)/g,'$1X$2X,sama-zama,various~noun');
 a=a.replace(/(構)(?!X)(造)(?!X)/g,'$1X$2X,kou-zou,construction,structure~noun');
 a=a.replace(/(構)(?!X)(築)(?!X)/g,'$1X$2X,kou-chiku,putting up~noun');
@@ -5562,6 +5577,7 @@ a=a.replace(/(養)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,yashina,foster,supp
 a=a.replace(/(飾)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X,kaza,decorate,exhibit<br>$2X~ru-verb');
 a=a.replace(/(飼)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,ka,raise,keep<br>$2X~u-verb');
 a=a.replace(/(飲)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,no,drink<br>$2X~mu-verb');
+a=a.replace(/(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X,ko,pack in<br>$2X~mu-verb');
 a=a.replace(/(食)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,ku,eat,live on<br>$2X~u-verb');
 a=a.replace(/(飛)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,'$1X,to,fly<br>$2X~bu-verb');
 a=a.replace(/(願)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X,nega,wish,ask a favor,apply for<br>$2X~u-verb');
@@ -6498,6 +6514,10 @@ a=a.replace(/(筆)(?!X)/g,'$1X,fude,writing brush,penmanship~noun');
 a=a.replace(/(筋)(?!X)/g,'$1X,suji,muscle~noun');
 a=a.replace(/(策)(?!X)/g,'$1X,saku,plan~noun');
 a=a.replace(/(管)(?!X)/g,'$1X,kan,pipe,tube~noun');
+a=a.replace(/(、)(?!X)/g,'$1X,comma~noun');
+a=a.replace(/(。)(?!X)/g,'$1X,period~noun');
+a=a.replace(/(「)(?!X)/g,'$1X,open quote~noun');
+a=a.replace(/(」)(?!X)/g,'$1X,close quote~noun');
 a=a.replace(/(箱)(?!X)/g,'$1X,hako,box,case~noun');
 a=a.replace(/(箸)(?!X)/g,'$1X,hashi,chopsticks~noun');
 a=a.replace(/(米)(?!X)/g,'$1X,bei+,The U.S. or kome,rice~noun');
@@ -6803,8 +6823,9 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
+（ブルームバーグ）： ジョンソン前英首相は23日、トラス首相の後任を決める与党保守党の党首選に出馬しないとの声明を発表した。
 
-政府は参院選遊説中に銃撃されて亡くなった安倍晋三元首相の「国葬」を9月下旬に東京都千代田区の日本武道館で行う調整に入った。22日の閣議で決定する見通し。19日、複数の政府関係者が明らかにした。
+不祥事が相次ぎ先月退陣に追い込まれたジョンソン氏は、自身が党首選に出馬するのは「正しいことではないだろう」と表明。「議会において団結した党がなければ、効果的に統治できない」と述べた。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
