@@ -374,7 +374,6 @@ a=a.replace(/(ぐ)(?!X)(ず)(?!X)(ぐ)(?!X)(ず)(?!X)/g,'$1X$2X$3X$4X drag one\'
 a=a.replace(/(く)(?!X)(だ)(?!X)(さ)(?!X)(い)(?!X)/g,'$1X$2X$3X$4X kudasai,please~noun');
 a=a.replace(/(く)(?!X)(た)(?!X)(く)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X exhausted~noun');
 a=a.replace(/(く)(?!X)(し)(?!X)(ゃ)(?!X)(み)(?!X)/g,'$1X$2X$3X$4X sneeze~noun');
-a=a.replace(/(\d)(\d)(\d)(\d)/g,'$1+sen,the thousands place~noun$2$3$4');
 a=a.replace(/(ぎ)(?!X)(り)(?!X)(ぎ)(?!X)(り)(?!X)/g,'$1X$2X$3X$4X just in time,barely~noun');
 a=a.replace(/(ぎ)(?!X)(ら)(?!X)(ぎ)(?!X)(ら)(?!X)/g,'$1X$2X$3X$4X dazzling,glaring,blinding~noun');
 a=a.replace(/(ぎ)(?!X)(ょ)(?!X)(う)(?!X)(ざ)(?!X)/g,'$1X$2X$3X$4X chin-ese dumpling~noun');
@@ -392,6 +391,15 @@ a=a.replace(/(が)(?!X)(や)(?!X)(が)(?!X)(や)(?!X)/g,'$1X$2X$3X$4X chatter lo
 a=a.replace(/(が)(?!X)(っ)(?!X)(か)(?!X)(り)(?!X)/g,'$1X$2X$3X$4X feel disappointed~noun');
 a=a.replace(/(が)(?!X)(た)(?!X)(が)(?!X)(た)(?!X)/g,'$1X$2X$3X$4X rattle~noun');
 a=a.replace(/(が)(?!X)(さ)(?!X)(が)(?!X)(さ)(?!X)/g,'$1X$2X$3X$4X rustle~noun');
+a=a.replace(/(1|１)(?!X)([０-９]|[0-9])([０-９]|[0-9])([０-９]|[0-9])/g,'$1X is-sen,one-thousand~noun$2$3$4');
+a=a.replace(/(2|２)(?!X)([０-９]|[0-9])([０-９]|[0-9])([０-９]|[0-9])/g,'$1X ni-sen,two-thousand~noun$2$3$4');
+a=a.replace(/(3|３)(?!X)([０-９]|[0-9])([０-９]|[0-9])([０-９]|[0-9])/g,'$1X san-zen,three-thousand~noun$2$3$4');
+a=a.replace(/(4|４)(?!X)([０-９]|[0-9])([０-９]|[0-9])([０-９]|[0-9])/g,'$1X yon-sen,four-thousand~noun$2$3$4');
+a=a.replace(/(5|５)(?!X)([０-９]|[0-9])([０-９]|[0-9])([０-９]|[0-9])/g,'$1X go-sen,five-thousand~noun$2$3$4');
+a=a.replace(/(6|６)(?!X)([０-９]|[0-9])([０-９]|[0-9])([０-９]|[0-9])/g,'$1X roku-sen,six-thousand~noun$2$3$4');
+a=a.replace(/(7|７)(?!X)([０-９]|[0-9])([０-９]|[0-9])([０-９]|[0-9])/g,'$1X nana-sen,seven-thousand~noun$2$3$4');
+a=a.replace(/(8|８)(?!X)([０-９]|[0-9])([０-９]|[0-9])([０-９]|[0-9])/g,'$1X hachi-sen,eight-thousand~noun$2$3$4');
+a=a.replace(/(9|９)(?!X)([０-９]|[0-9])([０-９]|[0-9])([０-９]|[0-9])/g,'$1X kyuu-sen,nine-thousand~noun$2$3$4');
 a=a.replace(/(が)(?!X)(く)(?!X)(ん)(?!X)(と)(?!X)/g,'$1X$2X$3X$4X sharply~noun');
 a=a.replace(/(か)(?!X)(ん)(?!X)(か)(?!X)(ん)(?!X)/g,'$1X$2X$3X$4X furious~noun');
 a=a.replace(/(か)(?!X)(ら)(?!X)(か)(?!X)(ら)(?!X)/g,'$1X$2X$3X$4X thirsty,dry~noun');
@@ -1447,9 +1455,9 @@ a=a.replace(/(１|1)(?!X)(6)(?!X)(日)(?!X)/g,'$1X$2X$3X jyuu-roku-nichi,the six
 a=a.replace(/(１|1)(?!X)(8|８)(?!X)(日)(?!X)/g,'$1X$2X$3X jyuu-hachi-nichi,the eighteenth	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(日)(?!X)/g,'$1X$2X tsuitachi,the first day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(０|0)(?!X)(日)(?!X)/g,'$1X$2X$3X too-ka,the tenth day of the month ~noun')
-a=a.replace(/(１|1)(?!X)(０|0)(?!X)(月)(?!X)/g,'$1X$2X$3X jyuu-gatsu October ~noun')
-a=a.replace(/(１|1)(?!X)(１|1)(?!X)(月)(?!X)/g,'$1X$2X$3X jyuu-ichi-gatsu November ~noun')
-a=a.replace(/(１|1)(?!X)(２|2)(?!X)(月)(?!X)/g,'$1X$2X$3X jyuu-ni-gatsu December ~noun')
+a=a.replace(/(１|1)(?!X)(０|0)(?!X)(月)(?!X)/g,'$1X$2X$3X jyuu-gatsu,October ~noun')
+a=a.replace(/(１|1)(?!X)(１|1)(?!X)(月)(?!X)/g,'$1X$2X$3X jyuu-ichi-gatsu,November ~noun')
+a=a.replace(/(１|1)(?!X)(２|2)(?!X)(月)(?!X)/g,'$1X$2X$3X jyuu-ni-gatsu,December ~noun')
 a=a.replace(/(１|1)(?!X)(３|3)(?!X)(日)(?!X)/g,'$1X$2X$3X jyuu-san-nichi,the thirteenth day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(５|5)(?!X)(日)(?!X)/g,'$1X$2X$3X jyuu-go-nichi,the fifteenth day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(７|7)(?!X)(日)(?!X)/g,'$1X$2X$3X jyuu-shichi-nichi,the seventeenth	day of the month ~noun')
@@ -2369,6 +2377,7 @@ a=a.replace(/(人)(?!X)(物)(?!X)/g,'$1X$2X jin-butsu,character,person~noun');
 a=a.replace(/(人)(?!X)(生)(?!X)/g,'$1X$2X jin-sei,human life,life~noun');
 a=a.replace(/(人)(?!X)(種)(?!X)/g,'$1X$2X jin-syu,race~noun');
 a=a.replace(/(人)(?!X)(道)(?!X)/g,'$1X$2X jin-dou,humanitarian~noun');
+a=a.replace(/(開)(?!X)(示)(?!X)/g,'$1X$2X kai-ji,disclosure~noun');
 a=a.replace(/(人)(?!X)(間)(?!X)/g,'$1X$2X nin-gen,human being~noun');
 a=a.replace(/(人)(?!X)(類)(?!X)/g,'$1X$2X jin-rui,man-kind,humankind~noun');
 a=a.replace(/(今)(?!X)(に)(?!X)/g,'$1X$2X imani,before long,someday~noun');
@@ -2385,7 +2394,7 @@ a=a.replace(/(今)(?!X)(更)(?!X)/g,'$1X$2X imasara,now,too late~noun');
 a=a.replace(/(今)(?!X)(月)(?!X)/g,'$1X$2X kon-getsu,this month~noun');
 a=a.replace(/(今)(?!X)(朝)(?!X)/g,'$1X$2X kesa,this morning~noun');
 a=a.replace(/(今)(?!X)(週)(?!X)/g,'$1X$2X kon-syuu,this week~noun');
-a=a.replace(/(介)(?!X)(入)(?!X)/g,'$1X$2X kai-nyuu,kai-nyuu,intervention~noun');
+a=a.replace(/(介)(?!X)(入)(?!X)/g,'$1X$2X kai-nyuu,intervention~noun');
 a=a.replace(/(仏)(?!X)(教)(?!X)/g,'$1X$2X buk-kyou,Buddhism~noun');
 a=a.replace(/(仕)(?!X)(事)(?!X)/g,'$1X$2X shigoto,work,job~noun');
 a=a.replace(/(仕)(?!X)(方)(?!X)/g,'$1X$2X shi-kata,way,method~noun');
@@ -6832,7 +6841,7 @@ a=a.replace(/(verbる)(?!X)/g,'$1X ru,informal~verb');
 a=a.replace(/(verbと)(?!X)/g,'$1X to,what the subject is doing~postposition');
 a=a.replace(/(nounと)(?!X)/g,'$1X to,with~postposition');
 a=a.replace(/(nounを)(?!X)/g,'$1X oo,direct object~postposition');
-a=a.replace(/(postpositionは|nounは)(?!X)/g,'$1X wa,as for~postposition');
+a=a.replace(/(verbは|postpositionは|nounは)(?!X)/g,'$1X wa,as for~postposition');
 a=a.replace(/(adjectiveが|postpositionが|verbが|nounが)(?!X)/g,'$1X ga,the above acts~postposition');
 
 a=a.replace(/(し)(?!X)(て)(?!X)(い)(?!X)(ま)(?!X)(す)(?!X)/g,'$1X$2X$3X$4X$5X shiteimasu,is doing-formal<br>~suru-verb');
@@ -6909,7 +6918,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-【ソウル共同】韓国ソウルの繁華街・梨泰院でハロウィーンイベントに集まった多数の若者らが29日夜、転倒した事故で、消防当局は30日、146人が死亡、150人が負傷したと明らかにした。韓国メディアによると、若者らが路地で折り重なるように倒れ、圧死したとみられる。
+財務省は31日、直近1カ月（9月29日～10月27日）で総額6兆3499億円の為替介入を実施したと公表した。記録を開示する1991年度以降では、1カ月の円買い介入としては過去最大規模となる。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
