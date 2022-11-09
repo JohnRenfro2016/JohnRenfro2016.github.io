@@ -29,11 +29,7 @@ margin: 5px;
 padding: 5px;
 text-align: center;
 text-shadow: 2px 2px 4px #3d2526;
-}
-
-textArea
-{
-width: 400px;
+width: 80%;
 }
 
 img
@@ -940,7 +936,7 @@ a=a.replace(/(八)(?!X)(百)(?!X)(屋)(?!X)/g,'$1X$2X$3X ya-oya,vegetable store,
 a=a.replace(/(公)(?!X)(務)(?!X)(員)(?!X)/g,'$1X$2X$3X kou-muin,public officer,government worker~noun');
 a=a.replace(/(公)(?!X)(明)(?!X)(党)(?!X)/g,'$1X$2X$3X kou-mei-tou,The Koumeito Party of Japan~noun');
 a=a.replace(/(公)(?!X)(聴)(?!X)(会)(?!X)/g,'$1X$2X$3X kou-cyou-kai,public hearing~noun');
-a=a.replace(/(共)(?!X)(和)(?!X)(党)(?!X)/g,'$1X$2X$3X kyou-wa-tou,the U.S. Republican Party or the different KyouWaTou ruling party in Japan~noun');
+a=a.replace(/(共)(?!X)(和)(?!X)(党)(?!X)/g,'$1X$2X$3X kyou-wa-tou,republican~noun');
 a=a.replace(/(共)(?!X)(和)(?!X)(国)(?!X)/g,'$1X$2X$3X kyou-wa-koku,republic~noun');
 a=a.replace(/(共)(?!X)(通)(?!X)(語)(?!X)/g,'$1X$2X$3X kyou-tsuu-go,common language,lingua franca~noun');
 a=a.replace(/(具)(?!X)(体)(?!X)(化)(?!X)/g,'$1X$2X$3X gu-tai-ka,actualization~noun');
@@ -2299,7 +2295,7 @@ a=a.replace(/(中)(?!X)(身)(?!X)/g,'$1X$2X nakami,content,interior~noun');
 a=a.replace(/(中)(?!X)(途)(?!X)/g,'$1X$2X cyuu-to,halfway~noun');
 a=a.replace(/(中)(?!X)(道)(?!X)/g,'$1X$2X cyuu-dou,moderate~noun');
 a=a.replace(/(中)(?!X)(部)(?!X)/g,'$1X$2X cyuu-bu,central region~noun');
-a=a.replace(/(中)(?!X)(間)(?!X)/g,'$1X$2X cyuu-kan,middle,between~noun');
+a=a.replace(/(中)(?!X)(間)(?!X)/g,'$1X$2X cyuu-kan,middle~noun');
 a=a.replace(/(主)(?!X)(に)(?!X)/g,'$1X$2X omoni,mainly,mostly~noun');
 a=a.replace(/(主)(?!X)(人)(?!X)/g,'$1X$2X syu-jin,master,husband~noun');
 a=a.replace(/(主)(?!X)(任)(?!X)/g,'$1X$2X syu-nin,person in charge,head~noun');
@@ -3539,6 +3535,7 @@ a=a.replace(/(役)(?!X)(割)(?!X)/g,'$1X$2X yaku-wari,role~noun');
 a=a.replace(/(役)(?!X)(員)(?!X)/g,'$1X$2X yaku-in,person in charge~noun');
 a=a.replace(/(役)(?!X)(所)(?!X)/g,'$1X$2X yaku-syo,public office~noun');
 a=a.replace(/(役)(?!X)(目)(?!X)/g,'$1X$2X yaku-me,duty,role~noun');
+a=a.replace(/(開)(?!X)(票)(?!X)/g,'$1X$2X kai-hyou,counting votes~noun');
 a=a.replace(/(彼)(?!X)(ら)(?!X)/g,'$1X$2X karera,they~noun');
 a=a.replace(/(彼)(?!X)(女)(?!X)/g,'$1X$2X kan-o-jyo,she,one\'s girlfriend~noun');
 a=a.replace(/(往)(?!X)(復)(?!X)/g,'$1X$2X ou-fuku,round trip~noun');
@@ -3888,7 +3885,9 @@ a=a.replace(/(新)(?!X)(鮮)(?!X)/g,'$1X$2X shin-sen,fresh~noun');
 a=a.replace(/(方)(?!X)(々)(?!X)/g,'$1X$2X hou-bou,everyone,all people~noun');
 a=a.replace(/(方)(?!X)(々)(?!X)/g,'$1X$2X kata-gata,people~noun');
 a=a.replace(/(方)(?!X)(向)(?!X)/g,'$1X$2X hou-kou,direction,course~noun');
+a=a.replace(/(低)(?!X)(迷)(?!X)/g,'$1X$2X tei-mei,remaining low~noun');
 a=a.replace(/(方)(?!X)(法)(?!X)/g,'$1X$2X hou-hou,method,procedure~noun');
+a=a.replace(/(拮)(?!X)(抗)(?!X)/g,'$1X$2X kik-kou,rivalry~noun');
 a=a.replace(/(方)(?!X)(角)(?!X)/g,'$1X$2X hou-gaku,direction~noun');
 a=a.replace(/(方)(?!X)(言)(?!X)/g,'$1X$2X hou-gen,dialect~noun');
 a=a.replace(/(方)(?!X)(針)(?!X)/g,'$1X$2X hou-shin,policy~noun');
@@ -3933,6 +3932,7 @@ a=a.replace(/(明)(?!X)(治)(?!X)/g,'$1X$2X meiji,Meiji era~noun');
 a=a.replace(/(明)(?!X)(白)(?!X)/g,'$1X$2X meihaku,clear,plain~noun');
 a=a.replace(/(明)(?!X)(瞭)(?!X)/g,'$1X$2X mei-ryou,clear,plain~noun');
 a=a.replace(/(明)(?!X)(確)(?!X)/g,'$1X$2X mei-kaku,clear,precise~noun');
+a=a.replace(/(４|4)(?!X)(つ)(?!X)/g,'$1X$2X yot-tsu,four things~noun');
 a=a.replace(/(明)(?!X)(言)(?!X)/g,'$1X$2X mei-gen,declaration~noun');
 a=a.replace(/(映)(?!X)(像)(?!X)/g,'$1X$2X ei-zou,image~noun');
 a=a.replace(/(映)(?!X)(画)(?!X)/g,'$1X$2X eiga,movie~noun');
@@ -4032,6 +4032,7 @@ a=a.replace(/(服)(?!X)(装)(?!X)/g,'$1X$2X fuku-sou,clothes~noun');
 a=a.replace(/(望)(?!X)(み)(?!X)/g,'$1X$2X nozomi,desire,hope~noun');
 a=a.replace(/(朝)(?!X)(刊)(?!X)/g,'$1X$2X cyou-kan,morning edition~noun');
 a=a.replace(/(朝)(?!X)(日)(?!X)/g,'$1X$2X asahi,morning~noun');
+a=a.replace(/(善)(?!X)(戦)(?!X)/g,'$1X$2X zen-sen,put up a good fight~noun');
 a=a.replace(/(除)(?!X)(外)(?!X)/g,'$1X$2X jyo-gai,exception~noun');
 a=a.replace(/(朝)(?!X)(顔)(?!X)/g,'$1X$2X asagao,morning glory~noun');
 a=a.replace(/(朝)(?!X)(食)(?!X)/g,'$1X$2X cyou-syoku,breakfast~noun');
@@ -5712,6 +5713,7 @@ a=a.replace(/(償)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X tsuguna,make up for
 a=a.replace(/(飾)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X kaza,decorate,exhibit<br>$2X~ru-verb');
 a=a.replace(/(飼)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X ka,raise,keep<br>$2X~u-verb');
 a=a.replace(/(飲)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X no,drink<br>$2X~mu-verb');
+a=a.replace(/(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X ko,in,out,through<br>$2X~mu-verb');
 a=a.replace(/(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X ko,pack in<br>$2X~mu-verb');
 a=a.replace(/(絡)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X kara,entangle,involve<br>$2X~mu-verb');
 a=a.replace(/(食)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X ku,eat,live on<br>$2X~u-verb');
@@ -6465,6 +6467,7 @@ a=a.replace(/(後)(?!X)/g,'$1X ato or +go,after~noun');
 a=a.replace(/(得)(?!X)/g,'$1X toku,gain,advantage~noun');
 a=a.replace(/(心)(?!X)/g,'$1X kokoro,heart,mind~noun');
 a=a.replace(/(急)(?!X)/g,'$1X kyuu,dire~noun');
+a=a.replace(/(現)(?!X)/g,'$1X gen+,present~noun');
 a=a.replace(/(性)(?!X)/g,'$1X sei,sex,nature~noun');
 a=a.replace(/(恋)(?!X)/g,'$1X koi,love,romance~noun');
 a=a.replace(/(恥)(?!X)/g,'$1X haji,shame,disgrace~noun');
@@ -6637,6 +6640,7 @@ a=a.replace(/(着)(?!X)/g,'$1X ki,wear~ichidan-verb');
 a=a.replace(/(石)(?!X)/g,'$1X i+shi,stone,small rock~noun');
 a=a.replace(/(砂)(?!X)/g,'$1X suna,sand,grit~noun');
 a=a.replace(/(礼)(?!X)/g,'$1X rei+,bow,courtesy~noun');
+a=a.replace(/(院)(?!X)/g,'$1X +in,house in government~noun');
 a=a.replace(/(社)(?!X)/g,'$1X +sya,company~noun');
 a=a.replace(/(神)(?!X)/g,'$1X kami+,god,spirit~noun');
 a=a.replace(/(禍)(?!X)/g,'$1X wazawai,trouble~noun');
@@ -6887,7 +6891,7 @@ a=a.replace(/(postpositionの|verbの|nounの)(?!X)/g,'$1X no,of or gerund verb 
 
 a=a.replace(/(i-adjectiveと|verbと)(?!X)/g,'$1X to,what the subject is doing~postposition');
 a=a.replace(/(nounと)(?!X)/g,'$1X to,with~postposition');
-a=a.replace(/(nounを)(?!X)/g,'$1X oo,direct object~postposition');
+a=a.replace(/(i-adjectiveを|nounを)(?!X)/g,'$1X oo,direct object~postposition');
 a=a.replace(/(verbは|postpositionは|nounは)(?!X)/g,'$1X wa,as for~postposition');
 a=a.replace(/(adjectiveが|postpositionが|verbが|nounが)(?!X)/g,'$1X ga,the above acts~postposition');
 
@@ -6962,12 +6966,23 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-東京五輪・パラリンピックをめぐる汚職事件で東京地検特捜部は、公式マスコットのぬいぐるみを製造・販売した「サン・アロー」の社長と顧問について、大会組織委員会の元理事・高橋治之容疑者（78）=受託収賄容疑で再逮捕=に対する贈賄罪で在宅起訴する方針を固めた。元理事への資金の受け皿とされた休眠会社の元代表は、「身分なき共犯」として受託収賄罪で在宅起訴する。
+開票が進むアメリカ中間選挙は、下院で野党・共和党が過半数を奪還する見通しだが、与党・民主党が当初の予想よりも善戦している。
+
+アメリカABCテレビによると、現時点の獲得議席は、下院は民主党が194、共和党は211となっている。
+
+下院は事前の予測通り、共和党が勢いを見せているが、与党・民主党が当初の予想よりも善戦している。
+
+一方の上院は、民主党が48、共和党も48議席と拮抗（きっこう）していて、残り4つの州の結果が勝敗を決めることになる。
+
+このうちジョージア州では、候補者が過半数の得票に至らず、12月6日の決選投票に持ち越されることになった。
+
+今回の選挙は、バイデン大統領の支持率が低迷する中で、議席の減少を最小限に抑えられるかが焦点の一つ。
+
+上下両院で過半数を失えば、苦しい政権運営に追い込まれる。
 <br>
-<textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
-<div class='cStyle'>
 <span id="translatedTextDisplay"></span>
-</div>
+<br>
+<textArea cols='60' rows='6' onChange='a=this.value;translateC()'></textArea>
 </div>
 </span>
 </body>
