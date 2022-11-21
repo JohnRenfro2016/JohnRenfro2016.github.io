@@ -419,6 +419,7 @@ a=a.replace(/(立)(?!X)(ち)(?!X)(上)(?!X)(げ)(?!X)/g,'$1X$2X$3X$4X tachi-age,
 a=a.replace(/(筆)(?!X)(記)(?!X)(用)(?!X)(具)(?!X)/g,'$1X$2X$3X$4X hik-ki-you-gu,writing materials,pens and pencils~noun');
 a=a.replace(/(筆)(?!X)(記)(?!X)(試)(?!X)(験)(?!X)/g,'$1X$2X$3X$4X hik-ki-shi-ken,written examination~noun');
 a=a.replace(/(総)(?!X)(理)(?!X)(大)(?!X)(臣)(?!X)/g,'$1X$2X$3X$4X sou-ri-dai-jin,prime minister~noun');
+a=a.replace(/(か)(?!X)(ど)(?!X)(う)(?!X)(か)(?!X)/g,'$1X$2X$3X$4X kadoka,whether or not~noun');
 a=a.replace(/(締)(?!X)(め)(?!X)(切)(?!X)(り)(?!X)/g,'$1X$2X$3X$4X shimekiri,deadline,time limit~noun');
 a=a.replace(/(自)(?!X)(作)(?!X)(自)(?!X)(演)(?!X)/g,'$1X$2X$3X$4X ji-saku-ji-en,doing it all by yourself~noun');
 a=a.replace(/(自)(?!X)(然)(?!X)(科)(?!X)(学)(?!X)/g,'$1X$2X$3X$4X shizenkaga,ku,natural science~noun');
@@ -964,6 +965,7 @@ a=a.replace(/(割)(?!X)(合)(?!X)(に)(?!X)/g,'$1X$2X$3X wariaini,relatively,rat
 a=a.replace(/(労)(?!X)(働)(?!X)(者)(?!X)/g,'$1X$2X$3X rou-dou-sya,laborer,worker~noun');
 a=a.replace(/(効)(?!X)(き)(?!X)(目)(?!X)/g,'$1X$2X$3X kikime,effect,efficacy~noun');
 a=a.replace(/(動)(?!X)(物)(?!X)(園)(?!X)/g,'$1X$2X$3X dou-butsuen,zoo~noun');
+a=a.replace(/(総)(?!X)(務)(?!X)(省)(?!X)/g,'$1X$2X$3X sou-mu-syou,Minister of Internal Affairs~noun');
 a=a.replace(/(勤)(?!X)(め)(?!X)(先)(?!X)/g,'$1X$2X$3X tsutomesaki,employment~noun');
 a=a.replace(/(包)(?!X)(み)(?!X)(紙)(?!X)/g,'$1X$2X$3X tsutsumi-gami,wrapping paper~noun');
 a=a.replace(/(北)(?!X)(朝)(?!X)(鮮)(?!X)/g,'$1X$2X$3X kita-cyou-sen, North Korea~noun');
@@ -2945,7 +2947,8 @@ a=a.replace(/(古)(?!X)(典)(?!X)/g,'$1X$2X ko-ten,classics~noun');
 a=a.replace(/(古)(?!X)(本)(?!X)/g,'$1X$2X furu-hon,secondhand book~noun');
 a=a.replace(/(古)(?!X)(里)(?!X)/g,'$1X$2X furusato,hometown,birthplace~noun');
 a=a.replace(/(叫)(?!X)(び)(?!X)/g,'$1X$2X sakebi,shout,cry~noun');
-a=a.replace(/(召)(?!X)(集)(?!X)/g,'$1X$2X convening~noun');
+a=a.replace(/(召)(?!X)(集)(?!X)/g,'$1X$2X syou-syuu,convening~noun');
+a=a.replace(/(視)(?!X)(野)(?!X)/g,'$1X$2X shi-ya,outlook~noun');
 a=a.replace(/(可)(?!X)(能)(?!X)/g,'$1X$2X ka-nou,possible~noun');
 a=a.replace(/(台)(?!X)(所)(?!X)/g,'$1X$2X dai-dokoro,kitchen~noun');
 a=a.replace(/(台)(?!X)(湾)(?!X)/g,'$1X$2X Tai-wan,Taiwan~noun');
@@ -3823,6 +3826,8 @@ a=a.replace(/(支)(?!X)(援)(?!X)/g,'$1X$2X shi-en,backing~noun');
 a=a.replace(/(支)(?!X)(社)(?!X)/g,'$1X$2X shi-sya,branch office~noun');
 a=a.replace(/(支)(?!X)(給)(?!X)/g,'$1X$2X shi-kyuu,financial assistance~noun');
 a=a.replace(/(支)(?!X)(配)(?!X)/g,'$1X$2X shi-hai,management~noun');
+a=a.replace(/(刷)(?!X)(新)(?!X)/g,'$1X$2X sas-shin,reform~noun');
+a=a.replace(/(断)(?!X)(行)(?!X)/g,'$1X$2X dan-kou,decisive action~noun');
 a=a.replace(/(改)(?!X)(善)(?!X)/g,'$1X$2X kai-zen,improvement~noun');
 a=a.replace(/(改)(?!X)(定)(?!X)/g,'$1X$2X kai-tei,price revision~noun');
 a=a.replace(/(改)(?!X)(憲)(?!X)/g,'$1X$2X kai-ken,constitutional revision~noun');
@@ -6755,6 +6760,7 @@ a=a.replace(/(虹)(?!X)/g,'$1X niji,rainbow~noun');
 a=a.replace(/(蚊)(?!X)/g,'$1X ka,mosquito~noun');
 a=a.replace(/(蛇)(?!X)/g,'$1X hebi,snake,serpent~noun');
 a=a.replace(/(蜂)(?!X)/g,'$1X ha+chi,bee~noun');
+a=a.replace(/(相)(?!X)/g,'$1X ai,together~noun');
 a=a.replace(/(血)(?!X)/g,'$1X chi,blood~noun');
 a=a.replace(/(行)(?!X)/g,'$1X gyou,line,row~noun');
 a=a.replace(/(街)(?!X)/g,'$1X +gai,district~noun');
@@ -6988,7 +6994,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-　岸田文雄首相が擁護し、党内にもその判断を容認する声があったが、2022年度第2次補正予算案の審議入りを来週に控え、このまま続投させれば国会日程や政権運営に影響しかねないとの空気が強まった。首相は東南アジア歴訪から帰国する19日以降、判断を迫られそうだ。
+岸田文雄首相は内閣改造・自民党役員人事を行う検討に入った。当初予算案編成後の12月末から2023年1月の通常国会召集までの間での実施を視野に入れている。寺田稔総務相の更迭をはじめ閣僚辞任が相次ぐ状況の中、通常国会に向けて体制の刷新で政権浮揚を図る狙いがある。首相は今後の臨時国会の状況などを踏まえて人事を断行するかどうかを判断する。
 <br>
 <span id="translatedTextDisplay"></span>
 <br>
