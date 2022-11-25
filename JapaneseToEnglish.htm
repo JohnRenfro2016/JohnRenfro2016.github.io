@@ -3495,6 +3495,7 @@ a=a.replace(/(広)(?!X)(さ)(?!X)/g,'$1X$2X hirosa,area,extent~noun');
 a=a.replace(/(広)(?!X)(告)(?!X)/g,'$1X$2X kou-koku,public notice,advertisement~noun');
 a=a.replace(/(広)(?!X)(場)(?!X)/g,'$1X$2X hiro-ba,public square~noun');
 a=a.replace(/(広)(?!X)(島)(?!X)/g,'$1X$2X Hiro-shima, Japan~noun');
+a=a.replace(/(減)(?!X)(免)(?!X)/g,'$1X$2X gen-men,exemption,mitigation~noun');
 a=a.replace(/(床)(?!X)(屋)(?!X)/g,'$1X$2X tok-oya,barber,barbershop~noun');
 a=a.replace(/(店)(?!X)(員)(?!X)/g,'$1X$2X ten-in,clerk~noun');
 a=a.replace(/(店)(?!X)(頭)(?!X)/g,'$1X$2X ten-tou,storefront~noun');
@@ -4204,6 +4205,7 @@ a=a.replace(/(武)(?!X)(器)(?!X)/g,'$1X$2X bu-ki,weapons~noun');
 a=a.replace(/(武)(?!X)(士)(?!X)/g,'$1X$2X bu-shi,samu-rai,warrior~noun');
 a=a.replace(/(武)(?!X)(道)(?!X)/g,'$1X$2X bu-dou,martial arts~noun');
 a=a.replace(/(歩)(?!X)(道)(?!X)/g,'$1X$2X ho-dou,sidewalk,footpath~noun');
+a=a.replace(/(談)(?!X)(合)(?!X)/g,'$1X$2X dan-gou,bid rigging or price fixing~noun');
 a=a.replace(/(歯)(?!X)(科)(?!X)/g,'$1X$2X shika,den-tistry~noun');
 a=a.replace(/(歳)(?!X)(末)(?!X)/g,'$1X$2X sai-matsuyear end~noun');
 a=a.replace(/(歴)(?!X)(史)(?!X)/g,'$1X$2X reki-shi,history~noun');
@@ -4321,6 +4323,7 @@ a=a.replace(/(洗)(?!X)(剤)(?!X)/g,'$1X$2X sen-zai,detergent,cleanser~noun');
 a=a.replace(/(洗)(?!X)(濯)(?!X)/g,'$1X$2X sen-taku,laundering,washing~noun');
 a=a.replace(/(洗)(?!X)(面)(?!X)/g,'$1X$2X sen-men,washing one\'s face~noun');
 a=a.replace(/(洪)(?!X)(水)(?!X)/g,'$1X$2X kou-zui,flood,inundation~noun');
+a=a.replace(/(申)(?!X)(告)(?!X)/g,'$1X$2X shin-koku,file a report~noun');
 a=a.replace(/(活)(?!X)(動)(?!X)/g,'$1X$2X katsu-dou,activity~noun');
 a=a.replace(/(活)(?!X)(字)(?!X)/g,'$1X$2X katsu-ji,printed type~noun');
 a=a.replace(/(活)(?!X)(性)(?!X)/g,'$1X$2X kas-sei,active~noun');
@@ -4809,6 +4812,7 @@ a=a.replace(/(米)(?!X)(国)(?!X)/g,'$1X$2X bei-koku,The U.S.A.~noun');
 a=a.replace(/(米)(?!X)(欧)(?!X)/g,'$1X$2X bei-ou,The United States and Europe~noun');
 a=a.replace(/(米)(?!X)(英)(?!X)/g,'$1X$2X the U.S. and the U.K.~noun');
 a=a.replace(/(粗)(?!X)(筋)(?!X)/g,'$1X$2X arasuji,ou-tline,plot~noun');
+a=a.replace(/(入)(?!X)(札)(?!X)/g,'$1X$2X nyuu-satsu,bid~noun');
 a=a.replace(/(精)(?!X)(密)(?!X)/g,'$1X$2X sei-mitsu,precise~noun');
 a=a.replace(/(精)(?!X)(神)(?!X)/g,'$1X$2X sei-shin,mind,spirit~noun');
 a=a.replace(/(精)(?!X)(算)(?!X)/g,'$1X$2X sei-san,settlement of accounts,adjustment~noun');
@@ -6950,6 +6954,10 @@ a=a.replace(/(た)(?!X)(ら)(?!X)/g,'$1X$2X tara,if-informal~verb');
 a=a.replace(/(っ)(?!X)(た)(?!X)/g,'$1X$2X tta,did-informal~verb');
 a=a.replace(/(れ)(?!X)(ば)(?!X)/g,'$1X$2X reba,if it is done~verb');
 
+a=a.replace(/(postpositionし|nounし)(?!X)/g,'$1X shi,do and~suru-verb');
+
+a=a.replace(/(verbれ)(?!X)/g,'$1X is done-passive~verb');
+
 a=a.replace(/(verbた)(?!X)/g,'$1X ta,did-informal~verb');
 
 a=a.replace(/(adjectiveが|postpositionが|verbが|nounが)(?!X)/g,'$1X ga,the above acts~postposition');
@@ -6959,7 +6967,6 @@ a=a.replace(/(verbを|i-adjectiveを|nounを)(?!X)/g,'$1X oo,direct object~postp
 a=a.replace(/(nounだ)(?!X)/g,'$1X da,is-informal~verb');
 a=a.replace(/(nounへ)(?!X)/g,'$1X e,toward~postposition');
 a=a.replace(/(postpositionか|verbか|nounか)(?!X)/g,'$1X ka,indicates a question~postposition');
-a=a.replace(/(postpositionし|nounし)(?!X)/g,'$1X shi,do and~suru-verb');
 a=a.replace(/(postpositionで|adjectiveで|verbで|nounで)(?!X)/g,'$1X de,with,at~postposition');
 a=a.replace(/(postpositionに|verbに|nounに)(?!X)/g,'$1X ni,at,in,on~postposition');
 a=a.replace(/(postpositionの|verbの|nounの)(?!X)/g,'$1X no,of or gerund verb to noun form~postposition');
@@ -6974,7 +6981,6 @@ a=a.replace(/(verbば)(?!X)/g,'$1X if~postposition');
 a=a.replace(/(verbや|nounや)(?!X)/g,'$1X ya,and,comma~postposition');
 a=a.replace(/(verbよ)(?!X)/g,'$1X yo,exclamation-informal~verb');
 a=a.replace(/(verbる)(?!X)/g,'$1X ru,informal~verb');
-a=a.replace(/(verbれ)(?!X)/g,'$1X is done-passive~verb');
 
 a=a.replace(/(verb|noun|i-adjective|postposition)/g,"$1<br>");
 
@@ -6998,9 +7004,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-政府・与党は、有識者会議の報告書を踏まえ、防衛費の規模や財源の調整を本格化させる。
-
-　年末に国家安全保障戦略と併せて改定する中期防衛力整備計画（中期防）や2023年度予算編成・税制改正を通じ、今後5年間の歳出・歳入の枠組みを定める方針で、与党内では基幹税目である法人税と所得税に加え、たばこ税、金融所得課税の計4税目の増税論が浮上している。
+東京五輪・パラリンピックのテスト大会事業を巡り、東京地検特捜部は、入札に参加した業者などの間で談合が行われた疑いが強まったとして、独占禁止法違反（不当な取引制限）容疑で強制捜査に乗り出す方針を固めた。同事業を巡っては、入札に参加した大手広告会社のＡＤＫ側が課徴金減免（リーニエンシー）制度に基づいて公正取引委員会に違反を自主申告しているが、実態解明のためには強制捜査が必要と判断したとみられる。
 <br>
 <span id="translatedTextDisplay"></span>
 <br>
