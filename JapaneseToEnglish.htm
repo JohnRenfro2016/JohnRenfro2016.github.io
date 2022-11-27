@@ -594,6 +594,7 @@ a=a.replace(/(書)(?!X)(き)(?!X)(直)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$
 a=a.replace(/(書)(?!X)(き)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X kaki-ko,fill in a field<br>$4X~mu-verb');
 a=a.replace(/(欲)(?!X)(し)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X hoshiga,desire,wish for,covet<br>$4X~ru-verb');
 a=a.replace(/(気)(?!X)(に)(?!X)(入)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X kin-ii,like,be pleased with<br>$4X~ru-verb');
+a=a.replace(/(ぞ)(?!X)(ん)(?!X)(ざ)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X zoんza,rou-gh,rude<br>$4X~i-adjective');
 a=a.replace(/(流)(?!X)(れ)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3X nagare-ko,flow into<br>$4X~mu-verb');
 a=a.replace(/(浮)(?!X)(か)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X ukabe,set afloat<br>$4X~ru-verb');
 a=a.replace(/(済)(?!X)(ま)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X sumase,finish off,get done with<br>$4X~ru-verb');
@@ -1177,6 +1178,7 @@ a=a.replace(/(朗)(?!X)(ら)(?!X)(か)(?!X)/g,'$1X$2X$3X hogaraka,cheerful,brigh
 a=a.replace(/(朝)(?!X)(御)(?!X)(飯)(?!X)/g,'$1X$2X$3X asagohan,breakfast~noun');
 a=a.replace(/(木)(?!X)(の)(?!X)(葉)(?!X)/g,'$1X$2X$3X kon-oha,tree leaves~noun');
 a=a.replace(/(木)(?!X)(曜)(?!X)(日)(?!X)/g,'$1X$2X$3X moku-you-bi,Thursday~noun');
+a=a.replace(/(総)(?!X)(書)(?!X)(記)(?!X)/g,'$1X$2X$3X sou-syo-ki,secretary general~noun');
 a=a.replace(/(未)(?!X)(成)(?!X)(年)(?!X)/g,'$1X$2X$3X mi-sei-nen,underage minor~noun');
 a=a.replace(/(未)(?!X)(成)(?!X)(年)(?!X)/g,'$1X$2X$3X misei-nen,minor,underage~noun');
 a=a.replace(/(末)(?!X)(っ)(?!X)(子)(?!X)/g,'$1X$2X$3X suekko,youngest child~noun');
@@ -1302,7 +1304,7 @@ a=a.replace(/(着)(?!X)(替)(?!X)(え)(?!X)/g,'$1X$2X$3X kigae,change of clothes
 a=a.replace(/(知)(?!X)(ら)(?!X)(せ)(?!X)/g,'$1X$2X$3X shirase,information,notice~noun');
 a=a.replace(/(社)(?!X)(会)(?!X)(人)(?!X)/g,'$1X$2X$3X sya-kai-jin,member of society,working person~noun');
 a=a.replace(/(私)(?!X)(た)(?!X)(ち)(?!X)/g,'$1X$2X$3X watashi-tachi,we~noun');
-a=a.replace(/(科)(?!X)(学)(?!X)(者)(?!X)/g,'$1X$2X$3X kagaku-sya,scientist~noun');
+a=a.replace(/(科)(?!X)(学)(?!X)(者)(?!X)/g,'$1X$2X$3X ka-gaku-sya,scientist~noun');
 a=a.replace(/(積)(?!X)(極)(?!X)(的)(?!X)/g,'$1X$2X$3X sek-kyoku-teki,positive,active~noun');
 a=a.replace(/(穏)(?!X)(や)(?!X)(か)(?!X)/g,'$1X$2X$3X odayaka,calm,mild~noun');
 a=a.replace(/(空)(?!X)(き)(?!X)(地)(?!X)/g,'$1X$2X$3X aki-chi,unoccupied ground,vacant lot~noun');
@@ -1494,7 +1496,6 @@ a=a.replace(/(し)(?!X)(つ)(?!X)(こ)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X s
 a=a.replace(/(ず)(?!X)(る)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X zuru,cunning,sneaky<br>$3X~i-adjective');
 a=a.replace(/(ず)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X zure,off track,ou-t of line<br>$3X~ru-verb');
 a=a.replace(/(せ)(?!X)(い)(?!X)(ぜ)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X seize,at most<br>$4X~i-adjective');
-a=a.replace(/(ぞ)(?!X)(ん)(?!X)(ざ)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X zoんza,rou-gh,rude<br>$4X~i-adjective');
 a=a.replace(/(た)(?!X)(ん)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X tan,chest of drawers,wardrobe<br>$3X~su-verb');
 a=a.replace(/(だ)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3X datta,was-informal~be-verb');
 a=a.replace(/(だ)(?!X)(る)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X daru,be dull,feel dull,weary<br>$3X~i-adjective');
@@ -1539,7 +1540,7 @@ a=a.replace(/(も)(?!X)(ろ)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X moro,weak,brit
 a=a.replace(/(ゆ)(?!X)(で)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X yude,boil<br>$3X~ru-verb');
 a=a.replace(/(よ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X yoke,avoid,evade<br>$3X~ru-verb');
 a=a.replace(/(よ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X yoke,move out the way<br>$3X~ru-verb');
-a=a.replace(/(よ)(?!X)(こ)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X yoko,sen-d,hand over<br>$3X~su-verb');
+a=a.replace(/(よ)(?!X)(こ)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X yoko,send,hand over<br>$3X~su-verb');
 a=a.replace(/(よ)(?!X)(ろ)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X yoro-shi,all right<br>$4X~i-adjective');
 a=a.replace(/(サ)(?!X)(ボ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X サボ,blow off,play truant<br>$3X~ru-verb');
 a=a.replace(/(上)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X aga,be completed<br>$3X~ru-verb');
@@ -2119,7 +2120,7 @@ a=a.replace(/(す)(?!X)(る)(?!X)/g,'$1X$2X suru,do-informal~suru-verb');
 a=a.replace(/(そ)(?!X)(こ)(?!X)/g,'$1X$2X soko,that~noun');
 a=a.replace(/(そ)(?!X)(こ)(?!X)/g,'$1X$2X soko,there~noun');
 a=a.replace(/(そ)(?!X)(の)(?!X)/g,'$1X$2X sono,that~noun');
-a=a.replace(/(そ)(?!X)(ば)(?!X)/g,'$1X$2X soba,buckwheat noodles,soba~noun');
+a=a.replace(/(そ)(?!X)(ば)(?!X)/g,'$1X$2X soba,noodles or near~noun');
 a=a.replace(/(そ)(?!X)(ば)(?!X)/g,'$1X$2X soba,side,vicinity~noun');
 a=a.replace(/(そ)(?!X)(れ)(?!X)/g,'$1X$2X sore,that,that one~noun');
 a=a.replace(/(た)(?!X)(だ)(?!X)/g,'$1X$2X tada,free~noun');
@@ -2385,7 +2386,7 @@ a=a.replace(/(人)(?!X)(権)(?!X)/g,'$1X$2X jin-ken,human rights~noun');
 a=a.replace(/(人)(?!X)(民)(?!X)/g,'$1X$2X jin-min,populace~noun');
 a=a.replace(/(人)(?!X)(気)(?!X)/g,'$1X$2X nin-ki,popularity~noun');
 a=a.replace(/(人)(?!X)(波)(?!X)/g,'$1X$2X hito-nami,stampede~noun');
-a=a.replace(/(人)(?!X)(物)(?!X)/g,'$1X$2X jin-butsu,character,person~noun');
+a=a.replace(/(人)(?!X)(物)(?!X)/g,'$1X$2X jin-butsu,personage~noun');
 a=a.replace(/(人)(?!X)(生)(?!X)/g,'$1X$2X jin-sei,human life,life~noun');
 a=a.replace(/(人)(?!X)(種)(?!X)/g,'$1X$2X jin-syu,race~noun');
 a=a.replace(/(人)(?!X)(道)(?!X)/g,'$1X$2X jin-dou,humanitarian~noun');
@@ -5024,7 +5025,9 @@ a=a.replace(/(荷)(?!X)(物)(?!X)/g,'$1X$2X nimotsu,baggage,load~noun');
 a=a.replace(/(落)(?!X)(下)(?!X)/g,'$1X$2X rak-ka,descent~noun');
 a=a.replace(/(落)(?!X)(第)(?!X)/g,'$1X$2X raku-dai,failing an exam~noun');
 a=a.replace(/(落)(?!X)(雷)(?!X)/g,'$1X$2X raku-rai,lightning strike~noun');
-a=a.replace(/(葉)(?!X)(書)(?!X)/g,'$1X$2X hagaki,postcard~noun');
+a=a.replace(/(掲)(?!X)(載)(?!X)/g,'$1X$2X kei-sai,publication~noun');
+a=a.replace(/(葉)(?!X)(書)(?!X)/g,'$1X$2X ha-gaki,postcard~noun');
+a=a.replace(/(貢)(?!X)(献)(?!X)/g,'$1X$2X kou-ken,contribution~noun');
 a=a.replace(/(著)(?!X)(名)(?!X)/g,'$1X$2X cyou-mei,well known~noun');
 a=a.replace(/(著)(?!X)(書)(?!X)/g,'$1X$2X chyosyo,literary work,book~noun');
 a=a.replace(/(著)(?!X)(者)(?!X)/g,'$1X$2X cyo-sya,writer~noun');
@@ -5374,7 +5377,7 @@ a=a.replace(/(退)(?!X)(屈)(?!X)/g,'$1X$2X tai-kutsu,boring,tedious~noun');
 a=a.replace(/(退)(?!X)(職)(?!X)/g,'$1X$2X tai-syoku,retirement,resignation~noun');
 a=a.replace(/(退)(?!X)(院)(?!X)/g,'$1X$2X tai-in,discharge from a hospital~noun');
 a=a.replace(/(退)(?!X)(陣)(?!X)/g,'$1X$2X tai-jin,stepping down~noun');
-a=a.replace(/(送)(?!X)(別)(?!X)/g,'$1X$2X sou-betsu,farewell,sen-d-off~noun');
+a=a.replace(/(送)(?!X)(別)(?!X)/g,'$1X$2X sou-betsu,farewell,send-off~noun');
 a=a.replace(/(送)(?!X)(検)(?!X)/g,'$1X$2X sou-ken,referring a case to a prosecutor~noun');
 a=a.replace(/(送)(?!X)(致)(?!X)/g,'$1X$2X sou-chi,forwarding~noun');
 a=a.replace(/(送)(?!X)(金)(?!X)/g,'$1X$2X sou-kin,money transfer,remittance~noun');
@@ -5395,7 +5398,7 @@ a=a.replace(/(通)(?!X)(訳)(?!X)/g,'$1X$2X tsuu-yaku,interpreting~noun');
 a=a.replace(/(通)(?!X)(路)(?!X)/g,'$1X$2X tsuu-ro,passage,alley~noun');
 a=a.replace(/(通)(?!X)(過)(?!X)/g,'$1X$2X tsuu-ka,passage~noun');
 a=a.replace(/(速)(?!X)(報)(?!X)/g,'$1X$2X soku-hou,breaking news~noun');
-a=a.replace(/(速)(?!X)(度)(?!X)/g,'$1X$2X soku-do,speed,velocity~noun');
+a=a.replace(/(速)(?!X)(度)(?!X)/g,'$1X$2X soku-do,velocity~noun');
 a=a.replace(/(速)(?!X)(達)(?!X)/g,'$1X$2X soku-tatsu,special delivery,express mail~noun');
 a=a.replace(/(連)(?!X)(れ)(?!X)/g,'$1X$2X tsure,companion~noun');
 a=a.replace(/(連)(?!X)(休)(?!X)/g,'$1X$2X ren-kyuu,consecutive holidays~noun');
@@ -5919,7 +5922,7 @@ a=a.replace(/(崩)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X kuzu,destroy,break<br>$
 a=a.replace(/(巡)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X megu,go round or regarding<br>$2X~ru-verb');
 a=a.replace(/(差)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X sa,open (an umbrella)<br>$2X~su-verb');
 a=a.replace(/(巻)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X ma,roll up,wind,wrap<br>$2X~ku-verb');
-a=a.replace(/(帰)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X kae,sen-d home,see out<br>$2X~su-verb');
+a=a.replace(/(帰)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X kae,send home,see out<br>$2X~su-verb');
 a=a.replace(/(帰)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X kae,return home<br>$2X~ru-verb');
 a=a.replace(/(干)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X ho,dry,desiccate<br>$2X~su-verb');
 a=a.replace(/(幸)(?!X)(い|く|か|さ)(?!X)/g,'$1X sai-wa,happiness,good fortune<br>$2X~i-adjective');
@@ -6238,7 +6241,7 @@ a=a.replace(/(述)(?!X)(べ)(?!X)/g,'$1X$2X nobe,express~ichidan-verb');
 a=a.replace(/(迷)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X mayo,be perplexed,hesitate,get lost<br>$2X~u-verb');
 a=a.replace(/(追)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X o,chase<br>$2X~u-verb');
 a=a.replace(/(退)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X do,step aside<br>$2X~ku-verb');
-a=a.replace(/(送)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X oku,sen-d<br>$2X~ru-verb');
+a=a.replace(/(送)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X oku,send<br>$2X~ru-verb');
 a=a.replace(/(逃)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X noga,miss,let go<br>$2X~su-verb');
 a=a.replace(/(逃)(?!X)(れ)(?!X)/g,'$1X$2X nogare,evade~ichidan-verb');
 a=a.replace(/(通)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X too,let pass,run through<br>$2X~su-verb');
@@ -6456,7 +6459,7 @@ a=a.replace(/(姉)(?!X)/g,'$1X ane,older sister~noun');
 a=a.replace(/(姓)(?!X)/g,'$1X sei,surname,family name~noun');
 a=a.replace(/(姪)(?!X)/g,'$1X mei,niece~noun');
 a=a.replace(/(姿)(?!X)/g,'$1X su+gata,figure,appearance~noun');
-a=a.replace(/(娘)(?!X)/g,'$1X musume,daughter,girl~noun');
+a=a.replace(/(娘)(?!X)/g,'$1X musume,daughter~noun');
 a=a.replace(/(嫁)(?!X)/g,'$1X yome,bride,daughter+in+law~noun');
 a=a.replace(/(嫌)(?!X)/g,'$1X iya,dislike,have a dislike for~noun');
 a=a.replace(/(子)(?!X)/g,'$1X ko,child~noun');
@@ -7010,7 +7013,15 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-厚生労働省は、新型コロナウイルスの感染症法上の位置づけの見直しに向け、本格的な検討を始める方針を固めた。季節性インフルエンザ並みの「5類」への引き下げが念頭にあり、近く専門家を交えて新型コロナの感染力や感染した場合の症状の重さ、変異の可能性などの評価に着手する。感染者隔離の根拠となっている入院勧告や医療費の公費負担、ワクチンの無料接種など特例的な措置の見直しも検討する。
+北朝鮮メディアは金正恩総書記が最新型ICBM「火星17」の開発者らとの記念撮影に娘とともに参加したと伝えました。
+
+　27日付の朝鮮労働党の機関紙は18日に発射に成功したとするICBM＝大陸間弾道ミサイル「火星17」の開発に貢献した科学者や兵士らとの記念撮影に金総書記が参加したと伝えました。
+
+　金総書記は開発者らに賞賛を送ったうえで「核戦争の抑止力を著しく速い速度で拡大、強化していく」とさらなる軍事開発を指示したということです。
+
+　記事では金総書記の子どもが参加したことも伝えられ、娘とみられる人物が金総書記のそばで拍手を送る写真も掲載されています。
+
+　総書記の「娘」は19日に初めて姿が公開され、注目されていました。
 <br>
 <span id="translatedTextDisplay"></span>
 <br>
