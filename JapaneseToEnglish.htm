@@ -1422,6 +1422,7 @@ a=a.replace(/(集)(?!X)(ま)(?!X)(り)(?!X)/g,'$1X$2X$3X atsumari,gathering,asse
 a=a.replace(/(雛)(?!X)(祭)(?!X)(り)(?!X)/g,'$1X$2X$3X hina-matsuri,Doll Festival~noun');
 a=a.replace(/(雨)(?!X)(降)(?!X)(り)(?!X)/g,'$1X$2X$3X ame-furi,rainfall,rainy weather~noun');
 a=a.replace(/(雰)(?!X)(囲)(?!X)(気)(?!X)/g,'$1X$2X$3X fun-iki,atmosphere,mood~noun');
+a=a.replace(/(漏)(?!X)(え)(?!X)(い)(?!X)/g,'$1X$2X$3X rouei,data leak~noun');
 a=a.replace(/(電)(?!X)(話)(?!X)(帳)(?!X)/g,'$1X$2X$3X den-wa-cyou,telephone book~noun');
 a=a.replace(/(非)(?!X)(常)(?!X)(口)(?!X)/g,'$1X$2X$3X hi-jyou-gu-chi,emergency exit~noun');
 a=a.replace(/(非)(?!X)(常)(?!X)(識)(?!X)/g,'$1X$2X$3X hi-jyou-shiki,lack of common sense~noun');
@@ -1488,6 +1489,7 @@ a=a.replace(/(か)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X kaka,s
 a=a.replace(/(か)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X kaji,nibble,bite<br>$3X~ru-verb');
 a=a.replace(/(か)(?!X)(ゆ)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X kaゆ,itchy<br>$3X~i-adjective');
 a=a.replace(/(か)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X kara,crow,raven<br>$3X~su-verb');
+a=a.replace(/(指)(?!X)(示)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X sashi-shime,indicate<br>$3X~su-verb');
 a=a.replace(/(き)(?!X)(つ)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X kitsu-,severe,hard,strict<br>$3X~i-adjective');
 a=a.replace(/(き)(?!X)(つ)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X kitsu-,tight,difficult<br>$3X~i-adjective');
 a=a.replace(/(く)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X kure,be given<br>$3X~ru-verb');
@@ -1885,7 +1887,7 @@ a=a.replace(/(知)(?!X)(り)(?!X)(合)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X s
 a=a.replace(/(知)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X shire,become known,be found out<br>$3X~ru-verb');
 a=a.replace(/(砕)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X kudake,be crushed,break down<br>$3X~ru-verb');
 a=a.replace(/(破)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X yabure,tear,rip open<br>$3X~ru-verb');
-a=a.replace(/(禁)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X kin-ji,prohibit,forbid<br>$3X~ru-verb');
+a=a.replace(/(禁)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X kin-ji,forbid<br>$3X~ru-verb');
 a=a.replace(/(積)(?!X)(も)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X tsumo,accumulate,get accumulated<br>$3X~ru-verb');
 a=a.replace(/(空)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X ake,empty,clear out<br>$3X~ru-verb');
 a=a.replace(/(立)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X tate,stand,set up,establish<br>$3X~ru-verb');
@@ -2646,6 +2648,7 @@ a=a.replace(/(公)(?!X)(正)(?!X)/g,'$1X$2X kou-sei,impartiality~noun');
 a=a.replace(/(公)(?!X)(演)(?!X)/g,'$1X$2X kou-en,public performance~noun');
 a=a.replace(/(公)(?!X)(的)(?!X)/g,'$1X$2X kyou-teki,public~noun');
 a=a.replace(/(公)(?!X)(示)(?!X)/g,'$1X$2X kou-ji,public announcement~noun');
+a=a.replace(/(個)(?!X)(人)(?!X)/g,'$1X$2X ko-jin,private,personal~noun');
 a=a.replace(/(公)(?!X)(私)(?!X)/g,'$1X$2X kou-shi,private and public~noun');
 a=a.replace(/(公)(?!X)(立)(?!X)/g,'$1X$2X kou-ritsu,public~noun');
 a=a.replace(/(公)(?!X)(衆)(?!X)/g,'$1X$2X kou-syuu,the public~noun');
@@ -3880,7 +3883,8 @@ a=a.replace(/(整)(?!X)(備)(?!X)/g,'$1X$2X sei-bi,maintenance~noun');
 a=a.replace(/(整)(?!X)(列)(?!X)/g,'$1X$2X sei-retsu,row,line~noun');
 a=a.replace(/(整)(?!X)(理)(?!X)/g,'$1X$2X sei-ri,disposition,arrangement~noun');
 a=a.replace(/(敷)(?!X)(地)(?!X)/g,'$1X$2X shiki-chi,grounds~noun');
-a=a.replace(/(敷)(?!X)(金)(?!X)/g,'$1X$2X shikikin,deposit,key money~noun');
+a=a.replace(/(敷)(?!X)(金)(?!X)/g,'$1X$2X shiki-kin,deposit,key money~noun');
+a=a.replace(/(正)(?!X)(規)(?!X)/g,'$1X$2X sei-ki,regular~noun');
 a=a.replace(/(文)(?!X)(化)(?!X)/g,'$1X$2X bun-ka,culture~noun');
 a=a.replace(/(文)(?!X)(句)(?!X)/g,'$1X$2X monku,complaint~noun');
 a=a.replace(/(文)(?!X)(学)(?!X)/g,'$1X$2X bun-gaku,literature~noun');
@@ -4074,13 +4078,14 @@ a=a.replace(/(未)(?!X)(満)(?!X)/g,'$1X$2X mi-man,less than the number~noun');
 a=a.replace(/(未)(?!X)(然)(?!X)/g,'$1X$2X mi-zen,before it happens~noun');
 a=a.replace(/(未)(?!X)(知)(?!X)/g,'$1X$2X mi-chi,unknown~noun');
 a=a.replace(/(末)(?!X)(期)(?!X)/g,'$1X$2X mak-ki,end stage~noun');
-a=a.replace(/(本)(?!X)(人)(?!X)/g,'$1X$2X hon-nin,the said person~noun');
+a=a.replace(/(本)(?!X)(人)(?!X)/g,'$1X$2X hon-nin,person in question~noun');
 a=a.replace(/(本)(?!X)(名)(?!X)/g,'$1X$2X hon-myou,real name~noun');
 a=a.replace(/(本)(?!X)(国)(?!X)/g,'$1X$2X hon-goku,one\'s native countries~noun');
 a=a.replace(/(本)(?!X)(屋)(?!X)/g,'$1X$2X hon-ya,bookstore,bookseller~noun');
 a=a.replace(/(本)(?!X)(年)(?!X)/g,'$1X$2X hon-nen,this year~noun');
 a=a.replace(/(本)(?!X)(店)(?!X)/g,'$1X$2X hon-ten,head office~noun');
 a=a.replace(/(本)(?!X)(当)(?!X)/g,'$1X$2X hon-tou,really~noun');
+a=a.replace(/(徹)(?!X)(底)(?!X)/g,'$1X$2X tet-tei,consistency~noun');
 a=a.replace(/(本)(?!X)(文)(?!X)/g,'$1X$2X hon-bun,text,this text~noun');
 a=a.replace(/(本)(?!X)(日)(?!X)/g,'$1X$2X hon-jitsu,today~noun');
 a=a.replace(/(本)(?!X)(来)(?!X)/g,'$1X$2X hon-rai,originally,essentially~noun');
@@ -4224,6 +4229,7 @@ a=a.replace(/(残)(?!X)(虐)(?!X)/g,'$1X$2X zan-gyaku,brutal~noun');
 a=a.replace(/(段)(?!X)(々)(?!X)/g,'$1X$2X dan-dan,gradually,one after another~noun');
 a=a.replace(/(段)(?!X)(落)(?!X)/g,'$1X$2X danraku,end of paragraph~noun');
 a=a.replace(/(段)(?!X)(階)(?!X)/g,'$1X$2X dan-kai,stage~noun');
+a=a.replace(/(転)(?!X)(売)(?!X)/g,'$1X$2X ten-bai,resale~noun');
 a=a.replace(/(殺)(?!X)(人)(?!X)/g,'$1X$2X satsu-jin,murder~noun');
 a=a.replace(/(殺)(?!X)(傷)(?!X)/g,'$1X$2X sas-syou,fatal wound~noun');
 a=a.replace(/(殺)(?!X)(害)(?!X)/g,'$1X$2X satsu-gai,kill~noun');
@@ -4327,6 +4333,7 @@ a=a.replace(/(洪)(?!X)(水)(?!X)/g,'$1X$2X kou-zui,flood,inundation~noun');
 a=a.replace(/(申)(?!X)(告)(?!X)/g,'$1X$2X shin-koku,file a report~noun');
 a=a.replace(/(活)(?!X)(動)(?!X)/g,'$1X$2X katsu-dou,activity~noun');
 a=a.replace(/(活)(?!X)(字)(?!X)/g,'$1X$2X katsu-ji,printed type~noun');
+a=a.replace(/(実)(?!X)(証)(?!X)/g,'$1X$2X jis-syou,demonstration~noun');
 a=a.replace(/(活)(?!X)(性)(?!X)/g,'$1X$2X kas-sei,active~noun');
 a=a.replace(/(活)(?!X)(用)(?!X)/g,'$1X$2X katsu-you,utilization~noun');
 a=a.replace(/(活)(?!X)(発)(?!X)/g,'$1X$2X kap-patsu,lively~noun');
@@ -4338,8 +4345,7 @@ a=a.replace(/(流)(?!X)(れ)(?!X)/g,'$1X$2X nagare,flow,stream~noun');
 a=a.replace(/(流)(?!X)(入)(?!X)/g,'$1X$2X ryuu-nyuu,influx~noun');
 a=a.replace(/(流)(?!X)(出)(?!X)/g,'$1X$2X ryuu-syutsu,outflow~noun');
 a=a.replace(/(流)(?!X)(行)(?!X)/g,'$1X$2X ryuu-kou,fashion,trend~noun');
-a=a.replace(/(流)(?!X)(行)(?!X)/g,'$1X$2X ryuu-kou,prevalence~noun');
-a=a.replace(/(流)(?!X)(行)(?!X)/g,'$1X$2X ryuu-kou,trend~noun');
+a=a.replace(/(所)(?!X)(定)(?!X)/g,'$1X$2X syo-tei,designated~noun');
 a=a.replace(/(流)(?!X)(通)(?!X)/g,'$1X$2X ryuu-tsuu,circulation~noun');
 a=a.replace(/(浜)(?!X)(辺)(?!X)/g,'$1X$2X hamabe,beach,seashore~noun');
 a=a.replace(/(浮)(?!X)(上)(?!X)/g,'$1X$2X fu-jyou,surfacing~noun');
@@ -4631,6 +4637,7 @@ a=a.replace(/(監)(?!X)(査)(?!X)/g,'$1X$2X kan-sa,audit~noun');
 a=a.replace(/(監)(?!X)(査)(?!X)/g,'$1X$2X kan-sa,audit~noun');
 a=a.replace(/(監)(?!X)(督)(?!X)/g,'$1X$2X kan-toku,supervisor,film director~noun');
 a=a.replace(/(監)(?!X)(視)(?!X)/g,'$1X$2X kan-shi,monitoring~noun');
+a=a.replace(/(取)(?!X)(得)(?!X)/g,'$1X$2X syu-toku,obtain~noun');
 a=a.replace(/(目)(?!X)(上)(?!X)/g,'$1X$2X meue,one\'s superiors,one\'s elders~noun');
 a=a.replace(/(目)(?!X)(下)(?!X)/g,'$1X$2X meshita,one\'s inferiors~noun');
 a=a.replace(/(目)(?!X)(下)(?!X)/g,'$1X$2X mokka,now,at present~noun');
@@ -4964,6 +4971,7 @@ a=a.replace(/(臨)(?!X)(時)(?!X)/g,'$1X$2X rin-ji,temporary~noun');
 a=a.replace(/(自)(?!X)(ら)(?!X)/g,'$1X$2X mizukara,oneself~noun');
 a=a.replace(/(自)(?!X)(主)(?!X)/g,'$1X$2X ji-syu,independence,autonomy~noun');
 a=a.replace(/(自)(?!X)(信)(?!X)/g,'$1X$2X ji-shin,self-confidence~noun');
+a=a.replace(/(営)(?!X)(利)(?!X)/g,'$1X$2X ei-ri,money-making~noun');
 a=a.replace(/(自)(?!X)(分)(?!X)/g,'$1X$2X ji-bun,self,oneself~noun');
 a=a.replace(/(自)(?!X)(動)(?!X)/g,'$1X$2X ji-dou,automatic operation~noun');
 a=a.replace(/(自)(?!X)(国)(?!X)/g,'$1X$2X ji-koku,one\'s own countries~noun');
@@ -5209,7 +5217,7 @@ a=a.replace(/(誤)(?!X)(解)(?!X)/g,'$1X$2X go-kai,misunderstanding~noun');
 a=a.replace(/(誤)(?!X)(認)(?!X)/g,'$1X$2X go-nin,misrecognition~noun');
 a=a.replace(/(説)(?!X)(得)(?!X)/g,'$1X$2X set-toku,persuasion~noun');
 a=a.replace(/(説)(?!X)(明)(?!X)/g,'$1X$2X setsu-mei,explanation~noun');
-a=a.replace(/(読)(?!X)(み)(?!X)/g,'$1X$2X yomi,reading,judgment,foresight~noun');
+a=a.replace(/(読)(?!X)(み)(?!X)/g,'$1X$2X yomi,reading~noun');
 a=a.replace(/(読)(?!X)(書)(?!X)/g,'$1X$2X dokusyo,reading a book~noun');
 a=a.replace(/(読)(?!X)(者)(?!X)/g,'$1X$2X doku-sya,reader,subscriber~noun');
 a=a.replace(/(誰)(?!X)(か)(?!X)/g,'$1X$2X dareka,someone~noun');
@@ -5991,7 +5999,7 @@ a=a.replace(/(掻)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X ka,scratch<br>$2X~k
 a=a.replace(/(揃)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X soro,be (all) together<br>$2X~u-verb');
 a=a.replace(/(描)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X ega,depict,describe<br>$2X~ku-verb');
 a=a.replace(/(揚)(?!X)(げ)(?!X)/g,'$1X$2X age,fry~ichidan-verb');
-a=a.replace(/(握)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X nigi,grasp,make hand-rolled sushi balls<br>$2X~ru-verb');
+a=a.replace(/(握)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X nigi,grasp<br>$2X~ru-verb');
 a=a.replace(/(撃)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,'$1X u,shoot<br>$2X~tsu-verb');
 a=a.replace(/(撮)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X to,photograph,film<br>$2X~ru-verb');
 a=a.replace(/(擦)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X kosu,rub,strike<br>$2X~ru-verb');
@@ -6449,6 +6457,7 @@ a=a.replace(/(外)(?!X)/g,'$1X soto,outside~noun');
 a=a.replace(/(夜)(?!X)/g,'$1X yoru or +ya,evening~noun');
 a=a.replace(/(夢)(?!X)/g,'$1X yume,dream~noun');
 a=a.replace(/(大)(?!X)/g,'$1X dai,large~noun');
+a=a.replace(/(証)(?!X)/g,'$1X syou-document card~noun');
 a=a.replace(/(天)(?!X)/g,'$1X ten,sky,Heaven~noun');
 a=a.replace(/(夫)(?!X)/g,'$1X otto,husband~noun');
 a=a.replace(/(奥)(?!X)/g,'$1X oku,inner part,the back,inner chamber~noun');
@@ -7013,15 +7022,23 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-北朝鮮メディアは金正恩総書記が最新型ICBM「火星17」の開発者らとの記念撮影に娘とともに参加したと伝えました。
+政府が、プロスポーツやコンサートのチケット販売に、マイナンバーカードの活用を検討していることがわかった。購入時と入場時に本人だと確認し、第三者への高額転売を防ぐ。マイナカードが活用できる機会を増やすことで、幅広い普及を狙う。
 
-　27日付の朝鮮労働党の機関紙は18日に発射に成功したとするICBM＝大陸間弾道ミサイル「火星17」の開発に貢献した科学者や兵士らとの記念撮影に金総書記が参加したと伝えました。
+【図表】マイナカード普及率ランキング、市によって差
 
-　金総書記は開発者らに賞賛を送ったうえで「核戦争の抑止力を著しく速い速度で拡大、強化していく」とさらなる軍事開発を指示したということです。
+　河野デジタル相が、デジタル庁に対し、プロスポーツを始めとする関係団体と具体的な協議を始めるよう指示した。すでに、チケット販売にマイナカードが使えるかどうかを調べる実証実験を行っており、課題を検証して早期の導入を目指す。
 
-　記事では金総書記の子どもが参加したことも伝えられ、娘とみられる人物が金総書記のそばで拍手を送る写真も掲載されています。
+　この仕組みは、本人であることを証明する電子証明書機能を使う。チケット購入時に、利用者がマイナカードをスマートフォンにかざせば、内蔵したＩＣチップを通じて情報を確認できる。転売を防ぐために、入場時もマイナカードをかざして第三者ではないかを調べる。
 
-　総書記の「娘」は19日に初めて姿が公開され、注目されていました。
+　現在は、インターネットで予約し、コンビニエンスストアなどで紙のチケットを受け取って入場する例が多い。紙を使わずに、マイナカードを活用すれば、本人確認が徹底でき、第三者の入場を食い止められる。
+
+　政府は、マイナカードの普及が行政のデジタル化のカギを握るとして、２０２２年度末までに、ほぼすべての国民が持つことを目指している。所定の登録をすれば、健康保険証代わりになる。２４年秋には現行の保険証を廃止し、マイナカードに一本化することを決めた。
+
+　運転免許証との一体化も進める方針を掲げており、持ち歩かずにすむよう、機能をスマホに搭載することも進めている。ただ、取得にメリットが感じられないとの声もあり、申請率は６割にとどまっている。
+
+　イベントチケットを巡っては、１９年にチケット不正転売禁止法が施行され、営利目的での転売が禁じられた。その後もネット上で高値転売する事例は後を絶たない。チケット仲介サイトによれば、アイドルグループのチケットが正規料金の数十倍で取引される例もあるという。
+
+　新しい仕組みを導入すれば、イベント主催者は、会場にマイナカードを読み取る端末を設置する必要がある。スマホを持っていない人や家族の分をまとめて購入した時に、どうやって本人を確認するのかという課題もある。個人情報の漏えいを恐れる人も多く、情報管理の徹底が欠かせない。
 <br>
 <span id="translatedTextDisplay"></span>
 <br>
