@@ -632,7 +632,7 @@ a=a.replace(/(見)(?!X)(つ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X
 a=a.replace(/(見)(?!X)(つ)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X mitsume,stare<br>$4X~ru-verb');
 a=a.replace(/(見)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X miage,look up<br>$4X~ru-verb');
 a=a.replace(/(見)(?!X)(下)(?!X)(ろ)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X mioro,look down,overlook<br>$4X~su-verb');
-a=a.replace(/(見)(?!X)(比)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X mikurabe,look from one to another,compare<br>$4X~ru-verb');
+a=a.replace(/(見)(?!X)(比)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X mi-kurabe,compare<br>$4X~ru-verb');
 a=a.replace(/(見)(?!X)(落)(?!X)(と)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X mioto,miss,fail to notice<br>$4X~su-verb');
 a=a.replace(/(見)(?!X)(違)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X michigae,mistake,fail to recognize<br>$4X~ru-verb');
 a=a.replace(/(言)(?!X)(い)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X iida,begin to speak<br>$4X~su-verb');
@@ -755,7 +755,7 @@ a=a.replace(/(た)(?!X)(と)(?!X)(え)(?!X)/g,'$1X$2X$3X tatoe,even if,granting 
 a=a.replace(/(た)(?!X)(ば)(?!X)(こ)(?!X)/g,'$1X$2X$3X tabako,tobacco,cigarette~noun');
 a=a.replace(/(た)(?!X)(ま)(?!X)(に)(?!X)/g,'$1X$2X$3X tamani,occasionally,by chance~noun');
 a=a.replace(/(だ)(?!X)(か)(?!X)(ら)(?!X)/g,'$1X$2X$3X dakara,so~noun');
-a=a.replace(/(だ)(?!X)(ろ)(?!X)(う)(?!X)/g,'$1X$2X$3X darou,I guess or probably right~noun');
+a=a.replace(/(だ)(?!X)(ろ)(?!X)(う)(?!X)/g,'$1X$2X$3X darou,probably right~noun');
 a=a.replace(/(つ)(?!X)(い)(?!X)(で)(?!X)/g,'$1X$2X$3X tsuide,on the way~noun');
 a=a.replace(/(つ)(?!X)(い)(?!X)(に)(?!X)/g,'$1X$2X$3X tsuini,at finally~noun');
 a=a.replace(/(つ)(?!X)(ば)(?!X)(め)(?!X)/g,'$1X$2X$3X tsubame,swallow~noun');
@@ -4363,7 +4363,10 @@ a=a.replace(/(海)(?!X)(苔)(?!X)/g,'$1X$2X nori,laver~noun');
 a=a.replace(/(海)(?!X)(軍)(?!X)/g,'$1X$2X kai-gun,Navy~noun');
 a=a.replace(/(浸)(?!X)(水)(?!X)/g,'$1X$2X shin-sui,flood~noun');
 a=a.replace(/(消)(?!X)(化)(?!X)/g,'$1X$2X syou-ka,digestion,consumption~noun');
+a=a.replace(/(寒)(?!X)(波)(?!X)/g,'$1X$2X kan-pa,cold wave~noun');
 a=a.replace(/(消)(?!X)(息)(?!X)/g,'$1X$2X syou-soku,whereabouts~noun');
+a=a.replace(/(雪)(?!X)(雲)(?!X)/g,'$1X$2X yuki-gumo,snow cloud~noun');
+a=a.replace(/(到)(?!X)(来)(?!X)/g,'$1X$2X tou-rai,arrival~noun');
 a=a.replace(/(消)(?!X)(毒)(?!X)/g,'$1X$2X syou-doku,disinfection,sterilization~noun');
 a=a.replace(/(消)(?!X)(火)(?!X)/g,'$1X$2X syou-ka,fire fighting~noun');
 a=a.replace(/(消)(?!X)(費)(?!X)/g,'$1X$2X syou-hi,expenditures~noun');
@@ -4418,7 +4421,9 @@ a=a.replace(/(激)(?!X)(化)(?!X)/g,'$1X$2X geki-ka,aggravation~noun');
 a=a.replace(/(濃)(?!X)(厚)(?!X)/g,'$1X$2X nou-kou,highly likely~noun');
 a=a.replace(/(火)(?!X)(事)(?!X)/g,'$1X$2X kaji,fire~noun');
 a=a.replace(/(火)(?!X)(力)(?!X)/g,'$1X$2X ka-ryoku,heating power~noun');
+a=a.replace(/(肉)(?!X)(眼)(?!X)/g,'$1X$2X niku-gan,naked eye~noun');
 a=a.replace(/(火)(?!X)(山)(?!X)/g,'$1X$2X kazan,volcano~noun');
+a=a.replace(/(名)(?!X)(言)(?!X)/g,'$1X$2X mei-gen,famous saying~noun');
 a=a.replace(/(火)(?!X)(星)(?!X)/g,'$1X$2X ka-sei,the planet Mars~noun');
 a=a.replace(/(火)(?!X)(災)(?!X)/g,'$1X$2X ka-sai,fire,conflagration~noun');
 a=a.replace(/(灯)(?!X)(油)(?!X)/g,'$1X$2X tou-yu,kerosene,lamp oil~noun');
@@ -6709,9 +6714,8 @@ a=a.replace(/(税)(?!X)/g,'$1X zei,tax~noun');
 a=a.replace(/(種)(?!X)/g,'$1X tane,seed~noun');
 a=a.replace(/(稲)(?!X)/g,'$1X ine,rice plant~noun');
 a=a.replace(/(穴)(?!X)/g,'$1X ana,hole,cavity~noun');
-a=a.replace(/(空)(?!X)/g,'$1X kara,emptiness,hollow~noun');
-a=a.replace(/(空)(?!X)/g,'$1X sora,sky,weather~noun');
-a=a.replace(/(窓)(?!X)/g,'$1X ma+do,window,windowpane~noun');
+a=a.replace(/(空)(?!X)/g,'$1X sora,sky~noun');
+a=a.replace(/(窓)(?!X)/g,'$1X ma+do,window~noun');
 a=a.replace(/(章)(?!X)/g,'$1X syou,chapter~noun');
 a=a.replace(/(端)(?!X)/g,'$1X hashi,end,edge~noun');
 a=a.replace(/(竹)(?!X)/g,'$1X take,bamboo~noun');
@@ -7022,23 +7026,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-政府が、プロスポーツやコンサートのチケット販売に、マイナンバーカードの活用を検討していることがわかった。購入時と入場時に本人だと確認し、第三者への高額転売を防ぐ。マイナカードが活用できる機会を増やすことで、幅広い普及を狙う。
-
-【図表】マイナカード普及率ランキング、市によって差
-
-　河野デジタル相が、デジタル庁に対し、プロスポーツを始めとする関係団体と具体的な協議を始めるよう指示した。すでに、チケット販売にマイナカードが使えるかどうかを調べる実証実験を行っており、課題を検証して早期の導入を目指す。
-
-　この仕組みは、本人であることを証明する電子証明書機能を使う。チケット購入時に、利用者がマイナカードをスマートフォンにかざせば、内蔵したＩＣチップを通じて情報を確認できる。転売を防ぐために、入場時もマイナカードをかざして第三者ではないかを調べる。
-
-　現在は、インターネットで予約し、コンビニエンスストアなどで紙のチケットを受け取って入場する例が多い。紙を使わずに、マイナカードを活用すれば、本人確認が徹底でき、第三者の入場を食い止められる。
-
-　政府は、マイナカードの普及が行政のデジタル化のカギを握るとして、２０２２年度末までに、ほぼすべての国民が持つことを目指している。所定の登録をすれば、健康保険証代わりになる。２４年秋には現行の保険証を廃止し、マイナカードに一本化することを決めた。
-
-　運転免許証との一体化も進める方針を掲げており、持ち歩かずにすむよう、機能をスマホに搭載することも進めている。ただ、取得にメリットが感じられないとの声もあり、申請率は６割にとどまっている。
-
-　イベントチケットを巡っては、１９年にチケット不正転売禁止法が施行され、営利目的での転売が禁じられた。その後もネット上で高値転売する事例は後を絶たない。チケット仲介サイトによれば、アイドルグループのチケットが正規料金の数十倍で取引される例もあるという。
-
-　新しい仕組みを導入すれば、イベント主催者は、会場にマイナカードを読み取る端末を設置する必要がある。スマホを持っていない人や家族の分をまとめて購入した時に、どうやって本人を確認するのかという課題もある。個人情報の漏えいを恐れる人も多く、情報管理の徹底が欠かせない。
+「雪は天から送られた手紙である」。世界で初めて人工の雪の結晶を作った中谷宇吉郎氏の名言だ。あなたは、「雪の結晶」を肉眼で見たことはあるだろうか？　気温や湿度など空の状態に大きく影響される結晶の形。その形を見比べることで雪雲の中の気象状況がわかるそう。今週末には今季最も強い寒波が到来し、日本海側を中心に大雪となる見込み。雪の仕組みや雪害について理解し、気象庁の新たな予報「今後の雪」も活用して、雪に備えたい。（監修：津田紗矢佳、取材・文：Yahoo!ニュース オリジナル 特集編集部）
 <br>
 <span id="translatedTextDisplay"></span>
 <br>
