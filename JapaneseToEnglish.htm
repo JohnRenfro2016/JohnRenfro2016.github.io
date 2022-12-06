@@ -133,7 +133,7 @@ a=a.replace(/(引)(?!X)(き)(?!X)(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?
 a=a.replace(/(引)(?!X)(き)(?!X)(延)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X$4X hikinoba,extend,prolong<br>$5X~su-verb');
 a=a.replace(/(引)(?!X)(き)(?!X)(受)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X hikiuke,undertake<br>$5X~ru-verb');
 a=a.replace(/(引)(?!X)(き)(?!X)(伸)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3X$4X hikinoba,stretch out,enlarge<br>$5X~su-verb');
-a=a.replace(/(引)(?!X)(き)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X hikiage,pull up,salvage<br>$5X~ru-verb');
+a=a.replace(/(引)(?!X)(き)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X hiki-age,pull up,salvage<br>$5X~ru-verb');
 a=a.replace(/(差)(?!X)(し)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X sashiage,respectfully give<br>$5X~ru-verb');
 a=a.replace(/(寄)(?!X)(り)(?!X)(集)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X yoriatsuma,gather,assemble<br>$5X~ru-verb');
 a=a.replace(/(寄)(?!X)(り)(?!X)(掛)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3X$4X yorikaka,lean against something<br>$5X~ru-verb');
@@ -2717,7 +2717,7 @@ a=a.replace(/(出)(?!X)(張)(?!X)/g,'$1X$2X syuc-cyou,business trip~noun');
 a=a.replace(/(出)(?!X)(演)(?!X)/g,'$1X$2X syutsu-en,performance~noun');
 a=a.replace(/(出)(?!X)(版)(?!X)/g,'$1X$2X syup-pan,publishing~noun');
 a=a.replace(/(出)(?!X)(生)(?!X)/g,'$1X$2X syus-syou,birth~noun');
-a=a.replace(/(出)(?!X)(産)(?!X)/g,'$1X$2X syus-san,birth,delivery~noun');
+a=a.replace(/(出)(?!X)(産)(?!X)/g,'$1X$2X syus-san,birth~noun');
 a=a.replace(/(出)(?!X)(発)(?!X)/g,'$1X$2X syup-patsu,departure~noun');
 a=a.replace(/(出)(?!X)(航)(?!X)/g,'$1X$2X syuk-kou,leaving port~noun');
 a=a.replace(/(出)(?!X)(荷)(?!X)/g,'$1X$2X syuk-ka,shipping~noun');
@@ -2904,7 +2904,7 @@ a=a.replace(/(即)(?!X)(時)(?!X)/g,'$1X$2X soku-ji,prompt~noun');
 a=a.replace(/(厚)(?!X)(さ)(?!X)/g,'$1X$2X atsusa,thickness~noun');
 a=a.replace(/(厚)(?!X)(生)(?!X)/g,'$1X$2X kou-sei,public welfare~noun');
 a=a.replace(/(厚)(?!X)(着)(?!X)/g,'$1X$2X atsugi,heavy clothing~noun');
-a=a.replace(/(原)(?!X)(則)(?!X)/g,'$1X$2X gen-soku,principle,general rule~noun');
+a=a.replace(/(原)(?!X)(則)(?!X)/g,'$1X$2X gen-soku,general rule~noun');
 a=a.replace(/(原)(?!X)(因)(?!X)/g,'$1X$2X gen-in,cause,origin~noun');
 a=a.replace(/(原)(?!X)(料)(?!X)/g,'$1X$2X gen-ryou,raw material~noun');
 a=a.replace(/(原)(?!X)(油)(?!X)/g,'$1X$2X gen-yu,crude oil~noun');
@@ -3480,7 +3480,7 @@ a=a.replace(/(年)(?!X)(代)(?!X)/g,'$1X$2X nen-dai,era~noun');
 a=a.replace(/(年)(?!X)(内)(?!X)/g,'$1X$2X nen-nai,within the year~noun');
 a=a.replace(/(年)(?!X)(収)(?!X)/g,'$1X$2X nen-syuu,annual income~noun');
 a=a.replace(/(年)(?!X)(始)(?!X)/g,'$1X$2X nen-shi,beginning of the year~noun');
-a=a.replace(/(年)(?!X)(度)(?!X)/g,'$1X$2X nen-do,fiscal year,school year~noun');
+a=a.replace(/(年)(?!X)(度)(?!X)/g,'$1X$2X nen-do,fiscal year~noun');
 a=a.replace(/(年)(?!X)(月)(?!X)/g,'$1X$2X nen-getsu,years,time~noun');
 a=a.replace(/(年)(?!X)(月)(?!X)/g,'$1X$2X toshi-tsuki,time,years~noun');
 a=a.replace(/(年)(?!X)(末)(?!X)/g,'$1X$2X nen-matsu,end of year~noun');
@@ -4074,6 +4074,7 @@ a=a.replace(/(望)(?!X)(み)(?!X)/g,'$1X$2X nozomi,desire,hope~noun');
 a=a.replace(/(朝)(?!X)(刊)(?!X)/g,'$1X$2X cyou-kan,morning edition~noun');
 a=a.replace(/(朝)(?!X)(日)(?!X)/g,'$1X$2X asahi,morning~noun');
 a=a.replace(/(朝)(?!X)(顔)(?!X)/g,'$1X$2X asagao,morning glory~noun');
+a=a.replace(/(少)(?!X)(子)(?!X)/g,'$1X$2X syou-shi,small number of children~noun');
 a=a.replace(/(朝)(?!X)(食)(?!X)/g,'$1X$2X cyou-syoku,breakfast~noun');
 a=a.replace(/(期)(?!X)(待)(?!X)/g,'$1X$2X ki-tai,expectation~noun');
 a=a.replace(/(期)(?!X)(日)(?!X)/g,'$1X$2X ki-jitsu,due date~noun');
@@ -4973,7 +4974,7 @@ a=a.replace(/(肌)(?!X)(着)(?!X)/g,'$1X$2X hada-gi,underwear~noun');
 a=a.replace(/(肌)(?!X)(色)(?!X)/g,'$1X$2X hada-iro,flesh color~noun');
 a=a.replace(/(肝)(?!X)(心)(?!X)/g,'$1X$2X kan-jin,vital,essential~noun');
 a=a.replace(/(肯)(?!X)(定)(?!X)/g,'$1X$2X kou-tei,affirmation~noun');
-a=a.replace(/(育)(?!X)(児)(?!X)/g,'$1X$2X iku-ji,childcare,child-raising~noun');
+a=a.replace(/(育)(?!X)(児)(?!X)/g,'$1X$2X iku-ji,childcare~noun');
 a=a.replace(/(育)(?!X)(成)(?!X)/g,'$1X$2X iku-sei,cultivation~noun');
 a=a.replace(/(胃)(?!X)(腸)(?!X)/g,'$1X$2X i-cyou,stomach and intestines~noun');
 a=a.replace(/(背)(?!X)(中)(?!X)/g,'$1X$2X sen-aka,back~noun');
@@ -6183,7 +6184,7 @@ a=a.replace(/(考)(?!X)(え)(?!X)/g,'$1X$2X kangae,think~ichidan-verb');
 a=a.replace(/(聞)(?!X)(え)(?!X)/g,'$1X$2X kikoe,hear~ichidan-verb');
 a=a.replace(/(聞)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X ki,hear,ask<br>$2X~ku-verb');
 a=a.replace(/(聴)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X ki,listen to<br>$2X~ku-verb');
-a=a.replace(/(育)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,'$1X soda,be brought up,grow<br>$2X~tsu-verb');
+a=a.replace(/(育)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,'$1X soda,bring up<br>$2X~tsu-verb');
 a=a.replace(/(脅)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X odo,threaten<br>$2X~su-verb');
 a=a.replace(/(脱)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,'$1X nu,remove clothes,take off<br>$2X~gu-verb');
 a=a.replace(/(腐)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X kusa,rot,corrode<br>$2X~ru-verb');
@@ -7047,9 +7048,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-【アルワクラ５日＝内田　知宏】ＦＩＦＡランキング２４位の日本は、史上初の８強を懸けた決勝トーナメント（Ｔ）１回戦で、同１２位のクロアチアに１―１の延長戦でも決着がつかず、ＰＫ戦１―３で敗れた。森保ジャパンが目指してきた「新しい景色」を見ることはできなかった。
-
-　日本は前半４３分、コーナーキックを起点にＦＷ前田がゴール。今大会で初めて先制に成功し、前半を終えた。しかし後半１０分、ＦＷペリシッチに強烈なヘディングシュートを決められ、１―１と追いつかれた。後半１９分に１次リーグ（Ｌ）最終戦スペイン戦で決勝アシストをした三笘、１次Ｌ初戦ドイツ戦で決勝ゴールを挙げた浅野を投入。勝ち越しを狙ったがゴールはならず。今大会決勝Ｔで初めての延長戦でも決着はつかず、勝負はＰＫ戦に持ち越された。ＰＫ戦は１番手の南野、三笘が続けてＧＫに阻まれた。３番手の浅野は決めたが、４番手で登場したキャプテンＤＦ吉田がまたもＧＫに止められた。
+政府は、出産時の保険給付として子ども１人につき原則４２万円が支払われる出産育児一時金について、２０２３年度から５０万円程度に引き上げる方向で検討に入った。子育て世帯の負担を軽減し、少子化対策を強化する狙いがある。近く岸田首相が最終判断し、引き上げ額を表明する。
 <br>
 <span id="translatedTextDisplay"></span>
 <br>
