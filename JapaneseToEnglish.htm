@@ -5357,12 +5357,13 @@ a=a.replace(/(世)(?!X)(代)(?!X)/g,'$1X$2X,se-dai,generation~noun');
 a=a.replace(/(与)(?!X)(党)(?!X)/g,'$1X$2X,yo-tou,ruling party~noun');
 a=a.replace(/(不)(?!X)(運)(?!X)/g,'$1X$2X,fu-un,misfortune,bad luck~noun');
 a=a.replace(/(不)(?!X)(通)(?!X)/g,'$1X$2X,fu-tsuu,interruption of service~noun');
+a=a.replace(/(外)(?!X)(遊)(?!X)/g,'$1X$2X,gai-yuu,foreign travel~noun');
 a=a.replace(/(不)(?!X)(足)(?!X)/g,'$1X$2X,fu-soku,shortage~noun');
 a=a.replace(/(不)(?!X)(要)(?!X)/g,'$1X$2X,fu-you,unnecessary,waste~noun');
 a=a.replace(/(不)(?!X)(良)(?!X)/g,'$1X$2X,fu-ryou,bad,defective~noun');
 a=a.replace(/(不)(?!X)(能)(?!X)/g,'$1X$2X,fu-nou,impossibility~noun');
 a=a.replace(/(不)(?!X)(潔)(?!X)/g,'$1X$2X,fu-ketsu,dirty,filthy~noun');
-a=a.replace(/(召)(?!X)(集)(?!X)/g,'$1X$2X,convening~noun');
+a=a.replace(/(召)(?!X)(集)(?!X)/g,'$1X$2X, syou-syuu,convening~noun');
 a=a.replace(/(不)(?!X)(満)(?!X)/g,'$1X$2X,fu-man,dissatisfaction,discontent~noun');
 a=a.replace(/(不)(?!X)(測)(?!X)/g,'$1X$2X,fu-soku,unexpected~noun');
 a=a.replace(/(不)(?!X)(況)(?!X)/g,'$1X$2X,fu-kyou,depression,slump~noun');
@@ -6256,7 +6257,6 @@ a=a.replace(/(実)(?!X)/g,'$1X,mi,fruit,nut~noun');
 a=a.replace(/(客)(?!X)/g,'$1X,kyaku,customer~noun');
 a=a.replace(/(害)(?!X)/g,'$1X,gai,harm,damage~noun');
 a=a.replace(/(家)(?!X)/g,'$1X,ie or +ka, home or +worker~noun');
-a=a.replace(/(家)(?!X)/g,'$1X,u+chi or +ka, home or +worker~noun');
 a=a.replace(/(寮)(?!X)/g,'$1X,ryou+,dormitory,lodge~noun');
 a=a.replace(/(寺)(?!X)/g,'$1X,tera,buddhist temple~noun');
 a=a.replace(/(対)(?!X)/g,'$1X,tsui,pair~noun');
@@ -6271,7 +6271,6 @@ a=a.replace(/(岩)(?!X)/g,'$1X,iwa,rock,crag~noun');
 a=a.replace(/(岸)(?!X)/g,'$1X,kishi,shore~noun');
 a=a.replace(/(峠)(?!X)/g,'$1X,tou+ge,mountain pass,ridge~noun');
 a=a.replace(/(島)(?!X)/g,'$1X,shima,island~noun');
-a=a.replace(/(島)(?!X)/g,'$1X,tou,island~noun');
 a=a.replace(/(崖)(?!X)/g,'$1X,gake,cliff~noun');
 a=a.replace(/(嵐)(?!X)/g,'$1X,arashi,storm~noun');
 a=a.replace(/(川)(?!X)/g,'$1X,kawa,river~noun');
@@ -6279,6 +6278,7 @@ a=a.replace(/(州)(?!X)/g,'$1Xsyuu+,state~noun');
 a=a.replace(/(巣)(?!X)/g,'$1X,su,nest,den+~noun');
 a=a.replace(/(左)(?!X)/g,'$1X,hidari,left~noun');
 a=a.replace(/(差)(?!X)/g,'$1X,sa,difference~noun');
+a=a.replace(/(訪)(?!X)/g,'$1X,hou,visit~noun');
 a=a.replace(/(市)(?!X)/g,'$1X,shi,city~noun');
 a=a.replace(/(布)(?!X)/g,'$1X,nuno,cloth~noun');
 a=a.replace(/(席)(?!X)/g,'$1X,seki+,seat,one\'s place~noun');
@@ -6780,12 +6780,13 @@ a=a.replace(/(nounい|verbい)(?!X)(て)(?!X)/g,'$1X$2X,ite,is doing~verb');
 a=a.replace(/(nounい|verbい)(?!X)(た)(?!X)/g,'$1X$2X,ita,was doing~informal~verb');
 a=a.replace(/(adjectiveま|nounま|verbま)(?!X)(し)(?!X)(た)(?!X)/g,'$1X$2X$3X,mashita,did~formal~verb');
 a=a.replace(/(adjectiveっ)(?!X)(た)(?!X)/g,'$1X$2X,tta,did~informal~adjective');
+a=a.replace(/(だ)(?!X)/g,'$1X,da,was~noun');
 
 }
 function translateC()
 {
 
-a=a.replace(/(”|\?|「|」|。|、|（|）|『|』|【|】)/g,"$1<br>");
+a=a.replace(/(”|\?|「|」|。|、|（|）|『|』|【|】)/g,"$1~noun");
 
 translateA();
 translateB();
@@ -6803,10 +6804,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-
-<div class="HeaderStyle"><img src='Panel.png'></div>
-
-政府は参院選遊説中に銃撃されて亡くなった安倍晋三元首相の「国葬」を9月下旬に東京都千代田区の日本武道館で行う調整に入った。22日の閣議で決定する見通し。19日、複数の政府関係者が明らかにした。
+政府・与党は、来年の通常国会を１月２７日に召集する案を軸に調整に入った。岸田首相は１月上旬に訪米し、バイデン大統領と会談することを検討している。召集日は、首相の外遊日程などを考慮して最終判断する見通しだ。政府・与党関係者が明らかにした。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
