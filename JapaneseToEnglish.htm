@@ -584,7 +584,7 @@ a=a.replace(/(払)(?!X)(い)(?!X)(戻)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$
 a=a.replace(/(払)(?!X)(い)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3Xharai-ko,pay in,pay up$4X~mu-verb');
 a=a.replace(/(折)(?!X)(り)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2X$3Xoria,meet halfway$4X~u-verb');
 a=a.replace(/(押)(?!X)(さ)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xosae,hold down$4X~ru-verb');
-a=a.replace(/(持)(?!X)(ち)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3Xmochiko,bring in,carry on$4X~mu-verb');
+a=a.replace(/(持)(?!X)(ち)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3Xmochi-ko,bring in,carry on$4X~mu-verb');
 a=a.replace(/(振)(?!X)(り)(?!X)(向)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3Xfurimu,turn around,look back$4X~ku-verb');
 a=a.replace(/(振)(?!X)(り)(?!X)(返)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xkurikae,turn around$4X~ru-verb');
 a=a.replace(/(捕)(?!X)(ま)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xtsukamae,arrest,capture$4X~ru-verb');
@@ -1292,6 +1292,7 @@ a=a.replace(/(男)(?!X)(の)(?!X)(子)(?!X)/g,'$1X$2X$3Xotokonoko,boy,baby boy~n
 a=a.replace(/(男)(?!X)(性)(?!X)(的)(?!X)/g,'$1X$2X$3Xdansei-teki,masculine,man-ly~noun');
 a=a.replace(/(町)(?!X)(外)(?!X)(れ)(?!X)/g,'$1X$2X$3Xmachihazure,outskirts of a town~noun');
 a=a.replace(/(留)(?!X)(学)(?!X)(生)(?!X)/g,'$1X$2X$3Xryuu-gaku-sei,student studying abroad~noun');
+a=a.replace(/(簡)(?!X)(素)(?!X)(化)(?!X)/g,'$1X$2X$3Xkan-so-ka,simplification~noun');
 a=a.replace(/(留)(?!X)(守)(?!X)(番)(?!X)/g,'$1X$2X$3Xrusu-ban,caretaking,caretaker~noun');
 a=a.replace(/(留)(?!X)(置)(?!X)(場)(?!X)/g,'$1X$2X$3Xryuu-chi-jyou,jail cell~noun');
 a=a.replace(/(発)(?!X)(電)(?!X)(所)(?!X)/g,'$1X$2X$3Xhatsu-densho,power plant~noun');
@@ -1469,7 +1470,7 @@ a=a.replace(/(高)(?!X)(気)(?!X)(圧)(?!X)/g,'$1X$2X$3Xkou-ki-atsu,high pressur
 a=a.replace(/(髪)(?!X)(の)(?!X)(毛)(?!X)/g,'$1X$2X$3Xkami-noke,hair~noun');
 a=a.replace(/(鮮)(?!X)(や)(?!X)(か)(?!X)/g,'$1X$2X$3Xazayaka,vivid~noun');
 a=a.replace(/(１)(?!X)(６)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-roku-nichi,the sixteenth day of the month~noun');
-a=a.replace(/(１|1)(?!X)(1)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-ichi-nichi,the eleventh	day of the month ~noun')
+a=a.replace(/(１|1)(?!X)(1|１)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-ichi-nichi,the eleventh	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(2)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-ni-nichi,the twelfth day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(4)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-yok-ka,the fourteenth,day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(6)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-roku-nichi,the sixteenth	day of the month ~noun')
@@ -2078,15 +2079,15 @@ function translateB()
 
 a=a.replace(/(１|1|一)(?!X)(人)(?!X)/g,'$1X$2Xhitori,one person~noun');
 a=a.replace(/(1|１)(0|０)/g,'$1X$2X,jyuu,ten~noun');
-a=a.replace(/(1|１)(1|１)/g,'$1X$2X,jyuu-ichi,eleven~noun');
-a=a.replace(/(1|１)(2|２)/g,'$1X$2X,jyuu-ni,twelve~noun');
-a=a.replace(/(1|１)(3|３)/g,'$1X$2X,jyuu-san,thirteen~noun');
-a=a.replace(/(1|１)(4|４)/g,'$1X$2X,jyuu-yon,fourteen~noun');
-a=a.replace(/(1|１)(5|５)/g,'$1X$2X,jyuu-go,fifteen~noun');
-a=a.replace(/(1|１)(6|６)/g,'$1X$2X,jyuu-roku,sixteen~noun');
-a=a.replace(/(1|１)(7|７)/g,'$1X$2X,jyuu-nana,seventeen~noun');
-a=a.replace(/(1|１)(8|８)/g,'$1X$2X,jyuu-hachi,eighteen~noun');
-a=a.replace(/(1|１)(9|９)/g,'$1X$2X,jyuu-kyuu,nineteen~noun');
+a=a.replace(/(1|１)(1|１)/g,'$1X$2Xjyuu-ichi,eleven~noun');
+a=a.replace(/(1|１)(2|２)/g,'$1X$2Xjyuu-ni,twelve~noun');
+a=a.replace(/(1|１)(3|３)/g,'$1X$2Xjyuu-san,thirteen~noun');
+a=a.replace(/(1|１)(4|４)/g,'$1X$2Xjyuu-yon,fourteen~noun');
+a=a.replace(/(1|１)(5|５)/g,'$1X$2Xjyuu-go,fifteen~noun');
+a=a.replace(/(1|１)(6|６)/g,'$1X$2Xjyuu-roku,sixteen~noun');
+a=a.replace(/(1|１)(7|７)/g,'$1X$2Xjyuu-nana,seventeen~noun');
+a=a.replace(/(1|１)(8|８)/g,'$1X$2Xjyuu-hachi,eighteen~noun');
+a=a.replace(/(1|１)(9|９)/g,'$1X$2Xjyuu-kyuu,nineteen~noun');
 a=a.replace(/(2)(?!X)(日)(?!X)/g,'$1X$2Xfutsu-ka,the second day of the month ~noun');
 a=a.replace(/(2|２)(?!X)([0-9]|[０-９])(?!X)/g,'$1Xni-jyuu,twenty~noun$2');
 a=a.replace(/(2|２)(?!X)(人)(?!X)/g,'$1X$2Xfutari,two people~noun');
@@ -4211,7 +4212,9 @@ a=a.replace(/(機)(?!X)(内)(?!X)/g,'$1X$2Xki-nai,in-flight~noun');
 a=a.replace(/(機)(?!X)(器)(?!X)/g,'$1X$2Xki-ki,machinery~noun');
 a=a.replace(/(機)(?!X)(嫌)(?!X)/g,'$1X$2Xki-gen,mood,health~noun');
 a=a.replace(/(機)(?!X)(械)(?!X)/g,'$1X$2Xki-kai,machine~noun');
+a=a.replace(/(審)(?!X)(査)(?!X)/g,'$1X$2Xshin-sa,inspection~noun');
 a=a.replace(/(機)(?!X)(構)(?!X)/g,'$1X$2Xki-kou,organization~noun');
+a=a.replace(/(締)(?!X)(結)(?!X)/g,'$1X$2Xtei-ketsu,execution of a contract~noun');
 a=a.replace(/(機)(?!X)(能)(?!X)/g,'$1X$2Xki-nou,function~noun');
 a=a.replace(/(機)(?!X)(長)(?!X)/g,'$1X$2Xki-cyou,airplane captain~noun');
 a=a.replace(/(機)(?!X)(関)(?!X)/g,'$1X$2Xki-kan,committee~noun');
@@ -4607,6 +4610,7 @@ a=a.replace(/(田)(?!X)(舎)(?!X)/g,'$1X$2Xinaka,countries,countriesside~noun');
 a=a.replace(/(申)(?!X)(請)(?!X)/g,'$1X$2Xshin-sei,application~noun');
 a=a.replace(/(男)(?!X)(児)(?!X)/g,'$1X$2Xdan-ji,little boy~noun');
 a=a.replace(/(男)(?!X)(女)(?!X)/g,'$1X$2Xdan-jyo,males and females~noun');
+a=a.replace(/(遺)(?!X)(産)(?!X)/g,'$1X$2Xi-san,inheritance~noun');
 a=a.replace(/(男)(?!X)(子)(?!X)/g,'$1X$2Xdan-shi,boy~noun');
 a=a.replace(/(男)(?!X)(性)(?!X)/g,'$1X$2Xdan-sei,gentlemen~noun');
 a=a.replace(/(町)(?!X)(中)(?!X)/g,'$1X$2Xmachinaka,downtown area,the central area of a town~noun');
@@ -6482,7 +6486,7 @@ a=a.replace(/(器)(?!X)/g,'$1Xutsuwa,vessel,dish~noun');
 a=a.replace(/(回)(?!X)/g,'$1Xkai,repitition~noun');
 a=a.replace(/(団)(?!X)/g,'$1Xdan,corps~noun');
 a=a.replace(/(図)(?!X)/g,'$1Xzu,figure,map~noun');
-a=a.replace(/(国)(?!X)/g,'$1Xkoku,kuni,country~noun');
+a=a.replace(/(国)(?!X)/g,'$1Xkoku or kuni,country~noun');
 a=a.replace(/(土)(?!X)/g,'$1Xdo,Saturday or tsuchi,soil~noun');
 a=a.replace(/(地)(?!X)/g,'$1Xchi,place~noun');
 a=a.replace(/(坂)(?!X)/g,'$1Xsaka,slope~noun');
@@ -6596,7 +6600,7 @@ a=a.replace(/(新)(?!X)/g,'$1Xshin,new~noun');
 a=a.replace(/(方)(?!X)/g,'$1Xhou or kata,the other person~noun');
 a=a.replace(/(旅)(?!X)/g,'$1Xtabi,journey,travel~noun');
 a=a.replace(/(旗)(?!X)/g,'$1Xhata,flag,banner~noun');
-a=a.replace(/(日)(?!X)/g,'$1Xhi,day or nichi,Sunday~noun');
+a=a.replace(/(日)(?!X)/g,'$1Xhi,day or nichi,Sunday or ni,Japan~noun');
 a=a.replace(/(旧)(?!X)/g,'$1Xkyuu,old,former~noun');
 a=a.replace(/(昔)(?!X)/g,'$1Xmukashi,old times,the old days~noun');
 a=a.replace(/(星)(?!X)/g,'$1Xhoshi,star,planet,spot~noun');
@@ -6841,7 +6845,7 @@ a=a.replace(/(蜂)(?!X)/g,'$1Xhachi,bee~noun');
 a=a.replace(/(血)(?!X)/g,'$1Xchi,blood~noun');
 a=a.replace(/(行)(?!X)/g,'$1Xgyou,line,row~noun');
 a=a.replace(/(街)(?!X)/g,'$1X+gai,district~noun');
-a=a.replace(/(表)(?!X)/g,'$1X+hyou,table,list~noun');
+a=a.replace(/(表)(?!X)/g,'$1Xhyou,table,list~noun');
 a=a.replace(/(表)(?!X)/g,'$1Xomote,front side,face,outside~noun');
 a=a.replace(/(袋)(?!X)/g,'$1Xfukuro,bag~noun');
 a=a.replace(/(袖)(?!X)/g,'$1Xsode,sleeve~noun');
@@ -7081,21 +7085,19 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-中国政府は、日本の水際対策の強化などを受け、日本から中国に渡航するビザの発給を一時停止することを発表した。
+　【ロンドン＝藤原健作、池田慶太】岸田首相は１１日午後（日本時間１１日深夜）、ロンドン市内の世界遺産「ロンドン塔」で英国のスナク首相と会談した。会談後、両首脳は自衛隊と英軍が共同訓練をしやすくする「円滑化協定」（ＲＡＡ）に署名。両国の安全保障協力の深化に加え、経済分野での連携強化も確認した。
 
-中国政府は日本が水際対策を強化していることなどを受け、中国に渡航するビザの発給を、10日と11日の2日間停止することを日本の旅行会社などに通知。
+【表】日英首脳、中露念頭に安保「協定」までの経過
 
-また、在日中国大使館はビザの発給を一時停止すると、ウェブサイト上で発表し、再開についてはあらためて知らせるとしている。
+　会談の冒頭、岸田首相は「日本と英国は特別な戦略的なパートナーとして、力を合わせて国際社会の課題に取り組む責任を担っている」と述べた。スナク氏は「日英関係はかつてなく緊密だ。私どもはＧ７（先進７か国）を中心に前進しなければならない」と語った。昨年末に改定された日本の新たな国家安全保障戦略を「歓迎する」とした。
 
-中国外務省・汪文斌報道官は記者会見で、「われわれは、いくつかの国が中国に対して、入国制限措置を取ることに断固反対し、中国も対等の措置を取る」と述べたうえで、「政治的な駆け引きや差別的な行為をしてはならない」などと反発した。
+　両首脳は昨年１１月、インドネシアでの主要２０か国・地域（Ｇ２０）首脳会議で立ち話をしたが、本格的な対面会談は初めて。日本のＲＡＡ締結はオーストラリアに続き２か国目となる。
 
-この突然の通知に、日本企業の反応もさまざま。
+　ＲＡＡは、部隊が互いの国に滞在した際の法的地位を定めるもので、入国審査などの免除や、武器弾薬の持ち込み手続きの簡素化が柱だ。共同訓練や艦艇の寄港などが実施しやすくなる。
 
-トヨタ自動車は、「現時点では影響はありませんが、引き続き状況を注視してまいります」とコメント。
+日英首脳会談を前に、栄誉礼を受ける岸田首相（左から３人目）とスナク英首相（同４人目）（１１日午後、ロンドンで）＝源幸正倫撮影
 
-三菱電機は、「日本からの出張については中国国内での感染爆発をふまえ、本土への渡航は原則自粛を支持しているので、現時点では影響ないと考える」としている。
-
-また、ある大手商社は、もともと駐在員向けのビザが緩和されていくということで良かったなと話をしていた矢先の話、情報が錯綜（さくそう）しているが適切に対応していくとしている。
+　スナク氏は会談に先立ち発表した声明で、ＲＡＡ締結を「両国にとって極めて重要」と歓迎し、防衛協力の加速につながるとの認識を示した。「インド太平洋地域への英国の関与を強固にする」とも訴え、日本との協力強化に期待を示した。
 <p><textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
 <span id="translatedTextDisplay"></span>
@@ -7105,11 +7107,14 @@ For memorizing, use <a href='https://play.google.com/store/apps/details?id=com.c
 <p>
 Make up a story with the basic meaning of these kanji to memorize them together.
 <p>
+KOU 観光｜工場｜高校｜銀行｜効果｜外交｜講義｜公開｜興奮｜攻撃｜購買｜空港｜人口｜変更｜格好｜候補者
+<p>
 KYOU, KYO=許可｜距離｜郷里｜恐怖｜拠点｜巨大｜去年｜凶器｜教師｜興味｜狂気｜強烈｜兄弟｜共有｜矯正｜協会｜提供
-<br>
+<p>
 SYOU, SYOS(Showman)症書処所初障小肖傷賞掌正勝将照商粧証詳
-<br>
+<p>
 TOU, TO=渡
+<br>
 </div>
 </span>
 </body>
