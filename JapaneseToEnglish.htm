@@ -479,7 +479,7 @@ a=a.replace(/(だ)(?!X)(ら)(?!X)(し)(?!X)(な)(?!X)(い|く|か|さ)(?!X)/g,'$
 a=a.replace(/(ち)(?!X)(ぎ)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xchi-gire,be torn off,come off$4X~ru-verb');
 a=a.replace(/(つ)(?!X)(か)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xtsukama,grab$4X~ru-verb');
 a=a.replace(/(つ)(?!X)(く)(?!X)(ず)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3Xtsukuzu,truly,deeply$4X~ku-verb');
-a=a.replace(/(つ)(?!X)(な)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xtsunaga,connect,join$4X~ru-verb');
+a=a.replace(/(つ)(?!X)(な)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xtsunaga,connect$4X~ru-verb');
 a=a.replace(/(つ)(?!X)(な)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,'$1X$2Xtsuna,connect,join$3X~gu-verb');
 a=a.replace(/(つ)(?!X)(ぶ)(?!X)(や)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3Xtsubuya,mutter,murmur$4X~ku-verb');
 a=a.replace(/(つ)(?!X)(ま)(?!X)(ず)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3Xtsumazu,stumble,trip$4X~ku-verb');
@@ -1142,6 +1142,7 @@ a=a.replace(/(だ)(?!X)(ろ)(?!X)(う)(?!X)/g,'$1X$2X$3Xdarou,might be~informal~
 a=a.replace(/(探)(?!X)(査)(?!X)(機)(?!X)/g,'$1X$2X$3Xtan-sa-ki,probe~noun');
 a=a.replace(/(不)(?!X)(信)(?!X)(感)(?!X)/g,'$1X$2X$3Xfu-shin-kan,distrust~noun');
 a=a.replace(/(控)(?!X)(え)(?!X)(室)(?!X)/g,'$1X$2X$3Xhikaeshitsu,waiting room~noun');
+a=a.replace(/(経)(?!X)(団)(?!X)(連)(?!X)/g,'$1X$2X$3Xkei-dan-ren,Japanese Business Association~noun');
 a=a.replace(/(掲)(?!X)(示)(?!X)(板)(?!X)/g,'$1X$2X$3Xkei-ji-ban,bulletin board~noun');
 a=a.replace(/(支)(?!X)(給)(?!X)(額)(?!X)/g,'$1X$2X$3Xshi-kyuu-gaku,allowance~noun');
 a=a.replace(/(改)(?!X)(め)(?!X)(て)(?!X)/g,'$1X$2X$3Xaratamete,once again~noun');
@@ -1287,6 +1288,7 @@ a=a.replace(/(生)(?!X)(ま)(?!X)(れ)(?!X)/g,'$1X$2X$3Xumare,birth~noun');
 a=a.replace(/(生)(?!X)(意)(?!X)(気)(?!X)/g,'$1X$2X$3Xnama-iki,cheeky,conceited~noun');
 a=a.replace(/(田)(?!X)(ん)(?!X)(ぼ)(?!X)/g,'$1X$2X$3Xtanbo,rice field~noun');
 a=a.replace(/(田)(?!X)(植)(?!X)(え)(?!X)/g,'$1X$2X$3Xtaue,rice planting~noun');
+a=a.replace(/(賃)(?!X)(上)(?!X)(げ)(?!X)/g,'$1X$2X$3Xchinage,pay raise~noun');
 a=a.replace(/(甲)(?!X)(子)(?!X)(園)(?!X)/g,'$1X$2X$3Xkou-shien,high school baseball championship~noun');
 a=a.replace(/(申)(?!X)(し)(?!X)(訳)(?!X)/g,'$1X$2X$3Xmoushiwake,excuse,apology~noun');
 a=a.replace(/(男)(?!X)(の)(?!X)(子)(?!X)/g,'$1X$2X$3Xotokonoko,boy,baby boy~noun');
@@ -1475,7 +1477,7 @@ a=a.replace(/(１|1)(?!X)(1|１)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-ichi-nichi,the 
 a=a.replace(/(１|1)(?!X)(2)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-ni-nichi,the twelfth day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(4)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-yok-ka,the fourteenth,day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(6)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-roku-nichi,the sixteenth	day of the month ~noun')
-a=a.replace(/(１|1)(?!X)(7)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-shichi-nichi,the seventeenth	day of the month ~noun')
+a=a.replace(/(１|1)(?!X)(７|7)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-shichi-nichi,the seventeenth	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(8|８)(?!X)(日)(?!X)/g,'$1X$2X$3Xjyuu-hachi-nichi,the eighteenth	day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(日)(?!X)/g,'$1X$2Xtsuitachi,the first day of the month ~noun')
 a=a.replace(/(１|1)(?!X)(０|0)(?!X)(日)(?!X)/g,'$1X$2X$3Xtoo-ka,the tenth day of the month ~noun')
@@ -4551,6 +4553,7 @@ a=a.replace(/(特)(?!X)(集)(?!X)/g,'$1X$2Xtoku-syuu,special edition~noun');
 a=a.replace(/(犠)(?!X)(牲)(?!X)/g,'$1X$2Xgi-sei,sacrifice~noun');
 a=a.replace(/(犯)(?!X)(人)(?!X)/g,'$1X$2Xhan-nin,criminal~noun');
 a=a.replace(/(犯)(?!X)(罪)(?!X)/g,'$1X$2Xhan-zai,crime~noun');
+a=a.replace(/(中)(?!X)(小)(?!X)/g,'$1X$2Xcyuu-syou,medium and small~noun');
 a=a.replace(/(犯)(?!X)(行)(?!X)/g,'$1X$2Xhan-kou,criminal act~noun');
 a=a.replace(/(状)(?!X)(態)(?!X)/g,'$1X$2Xjyou-tai,condition~noun');
 a=a.replace(/(状)(?!X)(況)(?!X)/g,'$1X$2Xjyou-kyou,state of affairs~noun');
@@ -4608,6 +4611,8 @@ a=a.replace(/(用)(?!X)(件)(?!X)/g,'$1X$2Xyou-ken,matter,things to be done~noun
 a=a.replace(/(用)(?!X)(例)(?!X)/g,'$1X$2Xyou-rei,example,illustration~noun');
 a=a.replace(/(撤)(?!X)(廃)(?!X)/g,'$1X$2Xtep-pai,repeal~noun');
 a=a.replace(/(用)(?!X)(心)(?!X)/g,'$1X$2Xyou-jin,care,caution~noun');
+a=a.replace(/(明)(?!X)(記)(?!X)/g,'$1X$2Xmei-ki,in clear writing~noun');
+a=a.replace(/(浮)(?!X)(揚)(?!X)/g,'$1X$2Xfu-you,floating in the air~noun');
 a=a.replace(/(用)(?!X)(意)(?!X)/g,'$1X$2Xyou-i,ready oneself~noun');
 a=a.replace(/(用)(?!X)(紙)(?!X)/g,'$1X$2Xyou-shi,blank form,stationery~noun');
 a=a.replace(/(用)(?!X)(途)(?!X)/g,'$1X$2Xyouto,use,service~noun');
@@ -4958,6 +4963,7 @@ a=a.replace(/(総)(?!X)(裁)(?!X)/g,'$1X$2Xsou-sai,president~noun');
 a=a.replace(/(総)(?!X)(量)(?!X)/g,'$1X$2Xsou-ryou,aggregate amount~noun');
 a=a.replace(/(総)(?!X)(長)(?!X)/g,'$1X$2Xsou-cyou,secretary general~noun');
 a=a.replace(/(総)(?!X)(額)(?!X)/g,'$1X$2Xsou-gaku,grand total of~noun');
+a=a.replace(/(労)(?!X)(委)(?!X)/g,'$1X$2Xrou-i,labor relations board~noun');
 a=a.replace(/(緑)(?!X)(色)(?!X)/g,'$1X$2Xmidori-iro,green~noun');
 a=a.replace(/(線)(?!X)(状)(?!X)/g,'$1X$2Xsen-jyou,linear~noun');
 a=a.replace(/(線)(?!X)(路)(?!X)/g,'$1X$2Xsen-ro,line,track~noun');
@@ -6599,6 +6605,7 @@ a=a.replace(/(戸)(?!X)/g,'$1Xto,door,shutter~noun');
 a=a.replace(/(所)(?!X)/g,'$1Xsyo,office or tokoro,place or about to~noun');
 a=a.replace(/(扉)(?!X)/g,'$1Xtobira,door~noun');
 a=a.replace(/(手)(?!X)/g,'$1Xte,hand~noun');
+a=a.replace(/(経)(?!X)/g,'$1Xkei,economic~noun');
 a=a.replace(/(指)(?!X)/g,'$1Xyubi,finger,toe~noun');
 a=a.replace(/(損)(?!X)/g,'$1Xson,loss,damage~noun');
 a=a.replace(/(数)(?!X)/g,'$1Xsu or kazu,a number of~noun');
@@ -7089,13 +7096,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 
 </script>
 <body>
-<div class="TheTextPanel2">&copy; 2022
+<div class="TheTextPanel2">&copy; 2023
 <span class="ComicTitle"><span class="TheStripe">Japanese to English</span>
 </div>
 <div class="HeaderStyle">Cut and Paste</div>
-岸田文雄首相は15日、欧米5カ国歴訪を終えた。
-
-　5月に広島市で開く先進7カ国首脳会議（G7サミット）に向け、各国首脳と連携を確認。自身が重視する核軍縮のメッセージを発信するための地ならしに努めた。ただ、近く開幕する長丁場の通常国会は不安要素が多い。支持率が低迷する政権の反転につなげられるか、道筋は見えていない。
+経団連は１７日、２０２３年春闘で、経営側の交渉方針を示す「経営労働政策特別委員会報告（経労委報告）」を発表した。急速な物価上昇を受け、基本給を底上げするベースアップ（ベア）を「前向きに検討することが望まれる」と明記した。中小企業を含めて幅広く賃上げの動きが広がり、景気の浮揚につなげられるかが焦点となる。
 <p><textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
 <span id="translatedTextDisplay"></span>
@@ -7106,6 +7111,8 @@ For memorizing, use <a href='https://play.google.com/store/apps/details?id=com.c
 Make up a story with the basic meaning of these kanji to memorize them together.
 <p>
 Ko, Kou 観光｜工場｜高校｜銀行｜効果｜外交｜講義｜公開｜興奮｜攻撃｜購買｜空港｜人口｜変更｜格好｜候補者
+<p>
+Kyu, Kyuu 休憩｜九州｜休日｜給料｜研究｜上級｜救急
 <p>
 Kyo, Kyou 許可｜距離｜郷里｜恐怖｜拠点｜巨大｜去年｜凶器｜教師｜興味｜狂気｜強烈｜兄弟｜共有｜矯正｜協会｜提供
 <p>
