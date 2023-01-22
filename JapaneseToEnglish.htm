@@ -523,7 +523,7 @@ a=a.replace(/(付)(?!X)(け)(?!X)(足)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$
 a=a.replace(/(似)(?!X)(て)(?!X)(い)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xnitei,look like,resemble$4X~ru-verb');
 a=a.replace(/(何)(?!X)(と)(?!X)(な)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3Xnaんtona,in some way,somehow$4X~ku-verb');
 a=a.replace(/(傷)(?!X)(付)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xkizutsuke,wound,hurt$4X~ru-verb');
-a=a.replace(/(冷)(?!X)(え)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3Xhieko,get colder$4X~mu-verb');
+a=a.replace(/(冷)(?!X)(え)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2X$3Xhie-ko,get colder$4X~mu-verb');
 a=a.replace(/(冷)(?!X)(や)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2X$3Xhiyaka,tease,jeer$4X~su-verb');
 a=a.replace(/(出)(?!X)(掛)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xdekake,go out,be about to go out$4X~ru-verb');
 a=a.replace(/(分)(?!X)(か)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xwakare,be divided,disperse,branch off$4X~ru-verb');
@@ -1387,7 +1387,7 @@ a=a.replace(/(見)(?!X)(か)(?!X)(け)(?!X)/g,'$1X$2X$3Xmi-kake,looks,appearance
 a=a.replace(/(見)(?!X)(出)(?!X)(し)(?!X)/g,'$1X$2X$3Xmi-da-shi,headline,heading~noun');
 a=a.replace(/(見)(?!X)(物)(?!X)(人)(?!X)/g,'$1X$2X$3Xken-butsunin,spectator,sightseer~noun');
 a=a.replace(/(見)(?!X)(覚)(?!X)(え)(?!X)/g,'$1X$2X$3Xmi-oboe,recognition,remembrance~noun');
-a=a.replace(/(見)(?!X)(込)(?!X)(み)(?!X)/g,'$1X$2X$3Xmi-komi,hope~noun');
+a=a.replace(/(見)(?!X)(込)(?!X)(み)(?!X)/g,'$1X$2X$3Xmi-komi,likelihood~noun');
 a=a.replace(/(見)(?!X)(送)(?!X)(り)(?!X)/g,'$1X$2X$3Xmi-okuri,seeing someone off~noun');
 a=a.replace(/(見)(?!X)(通)(?!X)(し)(?!X)/g,'$1X$2X$3Xmi-tooshi,perspective~noun');
 a=a.replace(/(親)(?!X)(し)(?!X)(み)(?!X)/g,'$1X$2X$3Xshitashimi,intimacy,familiarity~noun');
@@ -4154,6 +4154,8 @@ a=a.replace(/(来)(?!X)(月)(?!X)/g,'$1X$2Xrai-getsu,next month~noun');
 a=a.replace(/(来)(?!X)(週)(?!X)/g,'$1X$2Xrai-syuu,next week~noun');
 a=a.replace(/(東)(?!X)(京)(?!X)/g,'$1X$2Xtou-kyou,Japan~noun');
 a=a.replace(/(東)(?!X)(北)(?!X)/g,'$1X$2Xtou-hoku,northeast~noun');
+a=a.replace(/(水)(?!X)(域)(?!X)/g,'$1X$2Xsui-iki,waters~noun');
+a=a.replace(/(保)(?!X)(有)(?!X)/g,'$1X$2Xho-yuu,retention~noun');
 a=a.replace(/(東)(?!X)(南)(?!X)/g,'$1X$2Xtou-nan,southeast~noun');
 a=a.replace(/(東)(?!X)(洋)(?!X)/g,'$1X$2Xtou-you,Orient~noun');
 a=a.replace(/(東)(?!X)(海)(?!X)/g,'$1X$2XTou-kai, Japan~noun');
@@ -6686,6 +6688,7 @@ a=a.replace(/(次)(?!X)/g,'$1Xtsugi,next~noun');
 a=a.replace(/(欲)(?!X)/g,'$1Xyoku,desire,greed~noun');
 a=a.replace(/(歌)(?!X)/g,'$1Xuta,son+g~noun');
 a=a.replace(/(正)(?!X)/g,'$1Xsei,right,positiveness~noun');
+a=a.replace(/(\.)(?!X)/g,'$1Xten,decimal~noun');
 a=a.replace(/(歯)(?!X)/g,'$1Xha,tooth,cog~noun');
 a=a.replace(/(歳)(?!X)/g,'$1Xsai,years old~noun');
 a=a.replace(/(死)(?!X)/g,'$1Xshi,death~noun');
@@ -6704,6 +6707,7 @@ a=a.replace(/(汗)(?!X)/g,'$1Xase,sweat~noun');
 a=a.replace(/(池)(?!X)/g,'$1Xike,pond~noun');
 a=a.replace(/(沖)(?!X)/g,'$1Xoki,offshore~noun');
 a=a.replace(/(油)(?!X)/g,'$1Xabura,oil,animal oil~noun');
+a=a.replace(/(猛)(?!X)/g,'$1Xmou,extreme~noun');
 a=a.replace(/(泉)(?!X)/g,'$1Xizumi,spring,fountain~noun');
 a=a.replace(/(法)(?!X)/g,'$1Xhou,law~noun');
 a=a.replace(/(波)(?!X)/g,'$1Xha or nami,wave,fluctuations~noun');
@@ -7012,7 +7016,9 @@ a=a.replace(/(４|4|四)(?!X)/g,'$1Xyon or shi,four~noun');
 a=a.replace(/(６|6|六)(?!X)/g,'$1Xroku,six~noun');
 a=a.replace(/(８|8|八)(?!X)/g,'$1Xhachi,eight~noun');
 
-a=a.replace(/(postposition|nounし)(?!X)/g,'$1Xshi,do or will do~suru-verb');
+a=a.replace(/(nounし)(?!X)/g,'$1Xshi,do or will do~suru-verb');
+
+a=a.replace(/(verbれ)(?!X)/g,'$1Xre,is done~passive~verb');
 
 a=a.replace(/(verbせ)(?!X)/g,'$1Xse,make someone do,let someone do~verb');
 
@@ -7074,7 +7080,6 @@ a=a.replace(/(verbば)(?!X)/g,'$1Xif~postposition~noun');
 a=a.replace(/(verbも|nounも)(?!X)/g,'$1Xmo,too~postposition~noun');
 a=a.replace(/(verbや|nounや)(?!X)/g,'$1Xya,and,comma~postposition~noun');
 a=a.replace(/(verbよ)(?!X)/g,'$1Xyo,exclamation~informal~verb');
-a=a.replace(/(verbれ)(?!X)/g,'$1Xis done~passive~verb');
 a=a.replace(/(verbを|nounを)(?!X)/g,'$1Xoo,direct object~postposition~noun');
 
 a=a.replace(/(verbた)(?!X)/g,'$1Xta,did~informal~verb');
@@ -7113,33 +7118,17 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <br>
 <div class="HeaderStyle">Cut and Paste</div>
-1月22日、神戸市兵庫区の3階建ての集合住宅で火事があり、住人4人が死亡、4人が意識不明の重体となっています。
+岸田内閣の支持率が政権発足以来、最も低い28.1％になったことがANNの世論調査で分かりました。
 
-【写真を見る】4人死亡4人が意識不明…『焼け焦げた壁』火事現場の状況は？
+　調査は21日、22日に行われました。
 
-　22日午前1時半ごろ、神戸市兵庫区湊町1丁目にある3階建ての集合住宅で「火事です。黒煙が窓から出ている」と消防に通報がありました。
+　岸田内閣の支持率は先月より3ポイント下がり28.1％で、政権維持の「危険水域」といわれる3割を切りました。
 
-　警察などによりますと、消防車21台が出動し火は約1時間半後にほぼ消し止められましたが、この火事で建物300平方メートルのうち1階と2階の計約60平方メートルが焼けて、現場で4人の死亡が確認されました。
+　防衛費の増額や反撃能力の保有など防衛政策の見直しについて岸田総理大臣の説明が「不十分だ」と答えた人が8割を超えました。
 
-　死亡した4人はいずれも集合住宅の住人の成人男性で、1階から見つかったということです。
+　また、防衛費の財源として段階的に増税する方針についても「支持しない」が58％、「支持する」が30％となりました。
 
-　このほかに40代～70代の住人男性ら4人が病院へ搬送されましたが、いずれも意識不明の重体だということです。
-
-　警察によりますと、出火当時建物の中には30人ほどがいたとみられるということです。
-
-　警察と消防が火事の原因などについて詳しく調べています。
-
-　現場はJR神戸駅から南へ約1km離れた住宅などが立ち並ぶ地域です。
-集合住宅の住人「部屋の中が真っ白な状態…ガラス越しで真っ赤に」
-
-火事現場の様子（神戸・兵庫区）
-
-　火事があった集合住宅の近くに住む21歳の男性はMBSの取材に対して次のように話しています。
-
-　「焦げ臭いにおいで火事に気付きました。1階部分から大量の白い煙が上がっていた。建物からハンカチで手を押さえながら次々と住人が避難をしていました。まさかこんな近所で大きな火災が起こるとは思わなかった。気が動転しましたが、消防車が来ておらず、消火器がないか探して現場に持っていきました。早く消防が来てくれないかという思いでした」
-
-　集合住宅に住む男性は次のように話しています。
-「寝ていたら1階の外で女性が騒いでいた。部屋の中が真っ白な状態だった。1階の部屋の一部がガラス越しで真っ赤になっていた」
+　新型コロナについて岸田総理が季節性のインフルエンザと同じ感染症法上の「5類」に引き下げるよう検討を指示したことについては「賛成」が50％、「反対」が37％でした。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
@@ -7154,6 +7143,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </ul>
 <p>
 Ko, Kou 小little 個personal 光light|空air 攻attack 工factory|行go 高high|校school 交association 効success｜購buy 講association|公public 興excitement 港harbor 口enterance 更change｜好good 子child｜候season
+<p>
+Do, Dou 怒気　奴隷｜土星｜動詞｜童話　瞳孔｜道具｜同時　洞穴　胴体　銅山｜何度｜
 </div>
 </span>
 </body>
