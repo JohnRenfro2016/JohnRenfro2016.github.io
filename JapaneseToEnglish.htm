@@ -316,6 +316,7 @@ a=a.replace(/(ぴ)(?!X)(か)(?!X)(ぴ)(?!X)(か)(?!X)/g,'$1X$2X$3X$4Xnew,shin-y~
 a=a.replace(/(ぴ)(?!X)(た)(?!X)(り)(?!X)(と)(?!X)/g,'$1X$2X$3X$4Xsuddenly~noun');
 a=a.replace(/(ぴ)(?!X)(っ)(?!X)(た)(?!X)(り)(?!X)/g,'$1X$2X$3X$4Xexactly right,perfect~noun');
 a=a.replace(/(ぴ)(?!X)(ょ)(?!X)(ん)(?!X)(と)(?!X)/g,'$1X$2X$3X$4Xjump~noun');
+a=a.replace(/(し)(?!X)(ま)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3X$4Xshimatta,regretfully happened~noun');
 a=a.replace(/(ふ)(?!X)(ら)(?!X)(ふ)(?!X)(ら)(?!X)/g,'$1X$2X$3X$4Xweak~noun');
 a=a.replace(/(ふ)(?!X)(わ)(?!X)(ふ)(?!X)(わ)(?!X)/g,'$1X$2X$3X$4Xsoft~noun');
 a=a.replace(/(ぶ)(?!X)(ら)(?!X)(ぶ)(?!X)(ら)(?!X)/g,'$1X$2X$3X$4Xwander aimlessly,han-g about~noun');
@@ -1532,6 +1533,7 @@ a=a.replace(/(つ)(?!X)(ぶ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xtsubu,c
 a=a.replace(/(つ)(?!X)(ま)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X$2Xtsuma,munch on$3X~mu-verb');
 a=a.replace(/(と)(?!X)(い)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2Xto be called$3X~u-verb');
 a=a.replace(/(と)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xtoga,be sharp$3X~ru-verb');
+a=a.replace(/(替)(?!X)(わ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xkawa,replace$3X~ru-verb');
 a=a.replace(/(と)(?!X)(さ)(?!X)(れ)(?!X)/g,'$1X$2X$3Xtosare,is considered to be~ichidan-verb');
 a=a.replace(/(と)(?!X)(し)(?!X)(て)(?!X)/g,'$1X$2X$3Xtoshite,in the role of~su-verb');
 a=a.replace(/(と)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xtoji,bind,file$3X~ru-verb');
@@ -1826,7 +1828,7 @@ a=a.replace(/(構)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xkamae,s
 a=a.replace(/(横)(?!X)(切)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xyokogi,cross,go across$3X~ru-verb');
 a=a.replace(/(欠)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xkake,be chipped,be missing$3X~ru-verb');
 a=a.replace(/(欲)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2Xho-shi,want,desire$3X~i-adjective~noun');
-a=a.replace(/(止)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xtoma,cease$3X~ru-verb');
+a=a.replace(/(止)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xtoma,stop$3X~ru-verb');
 a=a.replace(/(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xtome,stop,turn off$3X~ru-verb');
 a=a.replace(/(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xyame,stop,give up,abolish$3X~ru-verb');
 a=a.replace(/(正)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2Xtada-shi,correct$3X~i-adjective~noun');
@@ -3900,7 +3902,7 @@ a=a.replace(/(政)(?!X)(権)(?!X)/g,'$1X$2Xsei-ken,administration~noun');
 a=a.replace(/(政)(?!X)(治)(?!X)/g,'$1X$2Xsei-ji,politics~noun');
 a=a.replace(/(政)(?!X)(策)(?!X)/g,'$1X$2Xsei-saku,policy~noun');
 a=a.replace(/(故)(?!X)(郷)(?!X)/g,'$1X$2Xko-kyou,hometown,birthplace~noun');
-a=a.replace(/(故)(?!X)(障)(?!X)/g,'$1X$2Xko-syou,malfunction,fault,breakdown~noun');
+a=a.replace(/(故)(?!X)(障)(?!X)/g,'$1X$2Xko-syou,malfunction~noun');
 a=a.replace(/(敏)(?!X)(感)(?!X)/g,'$1X$2Xbin-kan,sensitive~noun');
 a=a.replace(/(救)(?!X)(助)(?!X)/g,'$1X$2Xkyuu-jyo,rescue~noun');
 a=a.replace(/(救)(?!X)(命)(?!X)/g,'$1X$2Xkyuu-mei,lifesaving~noun');
@@ -4383,7 +4385,10 @@ a=a.replace(/(注)(?!X)(文)(?!X)/g,'$1X$2Xcyuu-mon,order,request~noun');
 a=a.replace(/(注)(?!X)(目)(?!X)/g,'$1X$2Xcyuu-moku,attention~noun');
 a=a.replace(/(洋)(?!X)(室)(?!X)/g,'$1X$2Xyou-shitsu,Western-style room~noun');
 a=a.replace(/(洋)(?!X)(式)(?!X)/g,'$1X$2Xyou-shiki,Western style~noun');
+a=a.replace(/(空)(?!X)(調)(?!X)/g,'$1X$2Xkuu-cyou,air conditioning~noun');
+a=a.replace(/(除)(?!X)(霜)(?!X)/g,'$1X$2Xjyo-sou,defrost~noun');
 a=a.replace(/(洋)(?!X)(服)(?!X)/g,'$1X$2Xyou-fuku,clothes~noun');
+a=a.replace(/(冬)(?!X)(場)(?!X)/g,'$1X$2Xfuyu-ba,wintertime~noun');
 a=a.replace(/(日)(?!X)(和)(?!X)/g,'$1X$2Xhi-yori,fine day~noun');
 a=a.replace(/(洋)(?!X)(画)(?!X)/g,'$1X$2Xyou-ga,foreign film~noun');
 a=a.replace(/(洋)(?!X)(間)(?!X)/g,'$1X$2Xyou-ma,Western-style room~noun');
@@ -4398,7 +4403,7 @@ a=a.replace(/(活)(?!X)(字)(?!X)/g,'$1X$2Xkatsu-ji,printed type~noun');
 a=a.replace(/(活)(?!X)(性)(?!X)/g,'$1X$2Xkas-sei,active~noun');
 a=a.replace(/(活)(?!X)(用)(?!X)/g,'$1X$2Xkatsu-you,utilization~noun');
 a=a.replace(/(活)(?!X)(発)(?!X)/g,'$1X$2Xkap-patsu,lively~noun');
-a=a.replace(/(活)(?!X)(躍)(?!X)/g,'$1X$2Xkatsu-yaku,activity,action~noun');
+a=a.replace(/(活)(?!X)(躍)(?!X)/g,'$1X$2Xkatsu-yaku,activity~noun');
 a=a.replace(/(派)(?!X)(手)(?!X)/g,'$1X$2Xhade,showy,flashy~noun');
 a=a.replace(/(派)(?!X)(遣)(?!X)/g,'$1X$2Xha-ken,dispatch~noun');
 a=a.replace(/(爆)(?!X)(撃)(?!X)/g,'$1X$2Xbaku-geki,bombing~noun');
@@ -4866,7 +4871,7 @@ a=a.replace(/(空)(?!X)(港)(?!X)/g,'$1X$2Xkuu-kou,airport~noun');
 a=a.replace(/(空)(?!X)(爆)(?!X)/g,'$1X$2Xkuu-baku,aerial bombing~noun');
 a=a.replace(/(空)(?!X)(白)(?!X)/g,'$1X$2Xkuu-haku,blank space~noun');
 a=a.replace(/(空)(?!X)(間)(?!X)/g,'$1X$2Xkuu-kan,room space~noun');
-a=a.replace(/(突)(?!X)(然)(?!X)/g,'$1X$2Xtotsu-zen,abruptly,suddenly~noun');
+a=a.replace(/(突)(?!X)(然)(?!X)/g,'$1X$2Xtotsu-zen,abruptly~noun');
 a=a.replace(/(窓)(?!X)(口)(?!X)/g,'$1X$2Xmado-gu-chi,window~noun');
 a=a.replace(/(窮)(?!X)(屈)(?!X)/g,'$1X$2Xkyuu-kutsu,tight,cramped~noun');
 a=a.replace(/(立)(?!X)(地)(?!X)/g,'$1X$2Xric-chi,choosing a site~noun');
@@ -5552,6 +5557,7 @@ a=a.replace(/(遺)(?!X)(体)(?!X)/g,'$1X$2Xi-tai,corpse~noun');
 a=a.replace(/(遺)(?!X)(憾)(?!X)/g,'$1X$2Xi-kan,deplorable~noun');
 a=a.replace(/(遺)(?!X)(族)(?!X)/g,'$1X$2Xi-zoku,bereaved family~noun');
 a=a.replace(/(遺)(?!X)(棄)(?!X)/g,'$1X$2Xi-ki,desertion~noun');
+a=a.replace(/(室)(?!X)(外)(?!X)/g,'$1X$2Xshitsu-gai,outdoors~noun');
 a=a.replace(/(避)(?!X)(難)(?!X)/g,'$1X$2Xhi-nan,evacuation~noun');
 a=a.replace(/(邪)(?!X)(魔)(?!X)/g,'$1X$2Xjya-ma,obstruction~noun');
 a=a.replace(/(郊)(?!X)(外)(?!X)/g,'$1X$2Xkou-gai,outskirts~noun');
@@ -5560,7 +5566,7 @@ a=a.replace(/(部)(?!X)(会)(?!X)/g,'$1X$2Xbu-kai,section meeting~noun');
 a=a.replace(/(部)(?!X)(分)(?!X)/g,'$1X$2Xbu-bun,part~noun');
 a=a.replace(/(部)(?!X)(品)(?!X)/g,'$1X$2Xbu-hin,parts,accessories~noun');
 a=a.replace(/(部)(?!X)(屋)(?!X)/g,'$1X$2Xhe-ya,room~noun');
-a=a.replace(/(部)(?!X)(長)(?!X)/g,'$1X$2Xbu-cyou,section chief,department head~noun');
+a=a.replace(/(部)(?!X)(長)(?!X)/g,'$1X$2Xbu-cyou,department head~noun');
 a=a.replace(/(部)(?!X)(門)(?!X)/g,'$1X$2Xbu-mon,division,department~noun');
 a=a.replace(/(部)(?!X)(隊)(?!X)/g,'$1X$2Xbu-tai,troops~noun');
 a=a.replace(/(郵)(?!X)(便)(?!X)/g,'$1X$2Xyuu-bin,mail service,postal matter~noun');
@@ -5996,7 +6002,7 @@ a=a.replace(/(実)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xmino,bear fruit,ripe
 a=a.replace(/(寄)(?!X)(せ)(?!X)/g,'$1X$2Xyose,approach~ichidan-verb');
 a=a.replace(/(寄)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xyo,stop by,stop off$2X~ru-verb');
 a=a.replace(/(富)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1Xto,be rich,abound in$2X~mu-verb');
-a=a.replace(/(寒)(?!X)(い|く|か|さ)(?!X)/g,'$1Xsamu,cold (temperature of the air)$2X~i-adjective~noun');
+a=a.replace(/(寒)(?!X)(い|く|か|さ)(?!X)/g,'$1Xsamu,cold air$2X~i-adjective~noun');
 a=a.replace(/(寝)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xne,sleep$2X~ru-verb');
 a=a.replace(/(寝)(?!X)(転)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,'$1X$2Xnekoro,lie down$3X~bu-verb');
 a=a.replace(/(対)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xtai,oppose$2X~su-verb');
@@ -7125,13 +7131,18 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <br>
 <div class="HeaderStyle">Cut and Paste</div>
-大雪の影響によって、新名神高速道路で20時間以上にわたって起きた立ち往生は解消したとみられるが、渋滞が続き、通行止めの解除には、まだ時間がかかかるとみられる。
+寒い日に、大活躍なのがエアコンの暖房です。しかし、寒くなると故障でもないのに突然、エアコンの暖房が止まることがあるそうです。原因と対策について調べました。
 
-新名神高速道路下り線の三重県の四日市JCTと、滋賀県の甲賀土山ICの間では、雪のため、25日午前4時ごろから、トラックなど多くの車が立ち往生する状態が続いていた。
 
-この立ち往生は断続的に30km以上にわたり、巻き込まれた20代の女性が体調不良を訴えて病院に搬送されるなどしたが、除雪をしながら車を1台ずつ出す作業を行い、解消されたとみられる。
+　冬場、エアコンの暖房を付けていたら、突然止まってしまった、なんて経験ありませんか？
+　エアコンから「ボコッ」という音が聞こえた…。実は、その多くは故障ではないんです！
+　名古屋市内にある空調設備の設置業者に聞いてみると――
 
-立ち往生はなくなったとみられるものの、26日午前6時現在も甲賀土山インター付近で車両を出す作業に時間がかかり、3kmほどの渋滞が続いている。
+「あれっていうのは、除霜、デフロストといいます」(ミナミテクノ工事部 今井翔紀部長)
+
+　突然、エアコンの暖房が止まってしまった。その理由は、室外機の“霜取り”。
+
+　エアコンが、一時的に「霜取り運転」に切り替わっているんです。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
