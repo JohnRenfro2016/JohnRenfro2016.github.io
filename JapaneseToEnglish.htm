@@ -1565,7 +1565,7 @@ a=a.replace(/(も)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xmote,be
 a=a.replace(/(も)(?!X)(ら)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2Xmora,receive$3X~u-verb');
 a=a.replace(/(も)(?!X)(ろ)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2Xmoro,weak,brittle$3X~i-adjective~noun');
 a=a.replace(/(ゆ)(?!X)(で)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xyude,boil$3X~ru-verb');
-a=a.replace(/(よ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xyoke,avoid,evade$3X~ru-verb');
+a=a.replace(/(よ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xyoke,evade$3X~ru-verb');
 a=a.replace(/(よ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2Xyoke,move out the way$3X~ru-verb');
 a=a.replace(/(よ)(?!X)(こ)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1X$2Xyoko,send,hand over$3X~su-verb');
 a=a.replace(/(よ)(?!X)(ろ)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3Xyoro-shi,all right$4X~i-adjective~noun');
@@ -3867,7 +3867,7 @@ a=a.replace(/(掲)(?!X)(示)(?!X)/g,'$1X$2Xkei-ji,notice,bulletin~noun');
 a=a.replace(/(提)(?!X)(供)(?!X)/g,'$1X$2Xtei-kyou,sponsorship~noun');
 a=a.replace(/(提)(?!X)(出)(?!X)/g,'$1X$2Xtei-syutsu,submittal~noun');
 a=a.replace(/(提)(?!X)(唱)(?!X)/g,'$1X$2Xtei-syou,advocacy~noun');
-a=a.replace(/(提)(?!X)(国)(?!X)/g,'$1X$2Xkan-koku,Korea~noun');
+a=a.replace(/(提)(?!X)(国)(?!X)/g,'$1X$2XKan-koku,Korea~noun');
 a=a.replace(/(提)(?!X)(案)(?!X)/g,'$1X$2Xtei-an,proposal~noun');
 a=a.replace(/(提)(?!X)(示)(?!X)/g,'$1X$2Xtei-ji,presentation~noun');
 a=a.replace(/(提)(?!X)(言)(?!X)/g,'$1X$2Xtei-gen,proposal~noun');
@@ -5586,6 +5586,7 @@ a=a.replace(/(配)(?!X)(達)(?!X)/g,'$1X$2Xhai-tatsu,delivery~noun');
 a=a.replace(/(酒)(?!X)(屋)(?!X)/g,'$1X$2Xsakaya,liquor store~noun');
 a=a.replace(/(酸)(?!X)(化)(?!X)/g,'$1X$2Xsan-ka,oxidation~noun');
 a=a.replace(/(酸)(?!X)(素)(?!X)/g,'$1X$2Xsan-so,oxygen~noun');
+a=a.replace(/(被)(?!X)(告)(?!X)/g,'$1X$2Xhi-koku,defendant~noun');
 a=a.replace(/(醤)(?!X)(油)(?!X)/g,'$1X$2Xsyou-yu,soy sauce~noun');
 a=a.replace(/(重)(?!X)(さ)(?!X)/g,'$1X$2Xomosa,weight~noun');
 a=a.replace(/(重)(?!X)(み)(?!X)/g,'$1X$2Xomomi,weight,importance~noun');
@@ -5607,7 +5608,7 @@ a=a.replace(/(金)(?!X)(属)(?!X)/g,'$1X$2Xkin-zoku,metal~noun');
 a=a.replace(/(金)(?!X)(庫)(?!X)/g,'$1X$2Xkin-ko,strong box,safe~noun');
 a=a.replace(/(金)(?!X)(色)(?!X)/g,'$1X$2Xkin-iro,golden color~noun');
 a=a.replace(/(金)(?!X)(融)(?!X)/g,'$1X$2Xkin-yuu,finance~noun');
-a=a.replace(/(金)(?!X)(銭)(?!X)/g,'$1X$2Xkin-sen,money,cash~noun');
+a=a.replace(/(金)(?!X)(銭)(?!X)/g,'$1X$2Xkin-sen,money~noun');
 a=a.replace(/(金)(?!X)(額)(?!X)/g,'$1X$2Xkin-gaku,sum~noun');
 a=a.replace(/(釣)(?!X)(り)(?!X)/g,'$1X$2Xtsuri,angling~noun');
 a=a.replace(/(鈍)(?!X)(感)(?!X)/g,'$1X$2Xdon-kan,thick-headedness~noun');
@@ -5912,7 +5913,7 @@ a=a.replace(/(倣)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xnara,copy,follow an 
 a=a.replace(/(偉)(?!X)(い|く|か|さ)(?!X)/g,'$1Xera,great,famous,eminent$2X~i-adjective~noun');
 a=a.replace(/(偏)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xkatayo,be one-sided,deviate$2X~ru-verb');
 a=a.replace(/(催)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xmoyoo,feel,experience$2X~su-verb');
-a=a.replace(/(傾)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xkatamu,decline,go down$2X~ku-verb');
+a=a.replace(/(傾)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xkatamu,decline$2X~ku-verb');
 a=a.replace(/(働)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xhatara,work$2X~ku-verb');
 a=a.replace(/(光)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xhika,shin-e,emit light$2X~ru-verb');
 a=a.replace(/(入)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xhai,enter$2X~ru-verb');
@@ -7138,7 +7139,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <br>
 <div class="HeaderStyle">Cut and Paste</div>
-東京五輪・パラリンピックのテスト大会業務をめぐる入札談合事件で、大会組織委員会側が、落札企業が原則として本大会の業務も受注すると複数の資料に明記していたことが、関係者への取材でわかった。実際に、計約5億4千万円のテスト大会を落札した企業は全て、そのまま本大会業務などを随意契約で受注。随意契約の総額は約400億円に上り、独占禁止法違反（不当な取引制限）容疑で調べている東京地検特捜部が、本大会分なども一体とみて立件する方向で検討していることも判明した。談合の規模は大幅に大きくなる可能性がある。
+日韓両政府は、韓国側が検討している「元徴用工（旧朝鮮半島出身労働者）」訴訟問題の解決案を巡り、金銭的負担など被告の日本企業による直接関与を避ける形で決着を図る方向で調整に入った。１９６５年の日韓請求権・経済協力協定に基づき、「問題は解決済み」との日本の立場は固いことから、韓国政府も被告企業の直接関与は困難との判断に傾いた。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
