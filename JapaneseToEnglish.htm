@@ -678,7 +678,7 @@ a=a.replace(/(2|２)(?!X)(１|1)(?!X)(日)(?!X)/g,'$1X$2X$3Xni-jyuu-ichi-nichi,t
 a=a.replace(/(2|２)(?!X)(７|7)(?!X)(日)(?!X)/g,'$1X$2X$3Xni-jyuu-shichi-nichi,the twenty-seventh day of the month~noun')
 a=a.replace(/(2|２)(?!X)(９|9)(?!X)(日)(?!X)/g,'$1X$2X$3Xni-jyuu-ku-nichi,the twenty-nineth day of the month ~noun')
 a=a.replace(/(3)(?!X)(0)(?!X)(日)(?!X)/g,'$1X$2X$3Xsan-jyuu-nichi,the thirtieth day of the month ~noun')
-a=a.replace(/(3|3)(?!X)(1|1)(?!X)(日)(?!X)/g,'$1X$2X$3Xsan-jyuu-ichi-nichi,the thirty-first day of the month ~noun')
+a=a.replace(/(３|3)(?!X)(１|1)(?!X)(日)(?!X)/g,'$1X$2X$3Xsan-jyuu-ichi-nichi,the thirty-first day of the month ~noun')
 a=a.replace(/(3|３)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,'$1Xsan-byaku,three-hundred~noun$2$3');
 a=a.replace(/(4|４)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,'$1Xyon-hyaku,four-hundred~noun$2$3');
 a=a.replace(/(5|５)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,'$1Xgo-hyaku,five-hundred~noun$2$3');
@@ -4059,6 +4059,8 @@ a=a.replace(/(時)(?!X)(計)(?!X)/g,'$1X$2Xto-kei,clock,watch~noun');
 a=a.replace(/(時)(?!X)(速)(?!X)/g,'$1X$2Xji-soku,speed per hour~noun');
 a=a.replace(/(時)(?!X)(間)(?!X)/g,'$1X$2Xji-kan,hours~noun');
 a=a.replace(/(時)(?!X)(間)(?!X)/g,'$1X$2Xji-kan,time~noun');
+a=a.replace(/(雪)(?!X)(国)(?!X)/g,'$1X$2Xyuki-guni,snow country~noun');
+a=a.replace(/(融)(?!X)(雪)(?!X)/g,'$1X$2Xyuu-setsu,melting snow~noun');
 a=a.replace(/(晩)(?!X)(年)(?!X)/g,'$1X$2Xban-nen,late in life~noun');
 a=a.replace(/(普)(?!X)(及)(?!X)/g,'$1X$2Xfu-kyuu,universal spread~noun');
 a=a.replace(/(普)(?!X)(段)(?!X)/g,'$1X$2Xfu-dan,usual,ordinary~noun');
@@ -4722,6 +4724,7 @@ a=a.replace(/(目)(?!X)(安)(?!X)/g,'$1X$2Xme-yasu,standard~noun');
 a=a.replace(/(目)(?!X)(方)(?!X)/g,'$1X$2Xme-kata,weight~noun');
 a=a.replace(/(目)(?!X)(標)(?!X)/g,'$1X$2Xmoku-hyou,target,goal~noun');
 a=a.replace(/(目)(?!X)(次)(?!X)/g,'$1X$2Xmoku-ji,table of contents~noun');
+a=a.replace(/(直)(?!X)(面)(?!X)/g,'$1X$2cyoku-men,face~noun');
 a=a.replace(/(目)(?!X)(玉)(?!X)/g,'$1X$2Xme-dama,eyeball~noun');
 a=a.replace(/(目)(?!X)(的)(?!X)/g,'$1X$2Xmoku-teki,goal~noun');
 a=a.replace(/(目)(?!X)(薬)(?!X)/g,'$1X$2Xmegusuri,eye drops~noun');
@@ -6005,7 +6008,7 @@ a=a.replace(/(安)(?!X)(い|く|か|さ)(?!X)/g,'$1Xyasu,inexpensive,cheap$2X~i-
 a=a.replace(/(定)(?!X)(め)(?!X)/g,'$1X$2Xsadame,certainly~ichidan-verb');
 a=a.replace(/(実)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xmino,bear fruit,ripen$2X~ru-verb');
 a=a.replace(/(寄)(?!X)(せ)(?!X)/g,'$1X$2Xyose,approach~ichidan-verb');
-a=a.replace(/(寄)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xyo,stop by,stop off$2X~ru-verb');
+a=a.replace(/(寄)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xyo,stop by$2X~ru-verb');
 a=a.replace(/(富)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1Xto,be rich,abound in$2X~mu-verb');
 a=a.replace(/(寒)(?!X)(い|く|か|さ)(?!X)/g,'$1Xsamu,cold air$2X~i-adjective~noun');
 a=a.replace(/(寝)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xne,sleep$2X~ru-verb');
@@ -6481,7 +6484,7 @@ a=a.replace(/(党)(?!X)/g,'$1Xtou,political party~noun');
 a=a.replace(/(全)(?!X)/g,'$1Xzen,all~noun');
 a=a.replace(/(内)(?!X)/g,'$1Xnai,inside~noun');
 a=a.replace(/(円)(?!X)/g,'$1Xen,yen~noun');
-a=a.replace(/(再)(?!X)/g,'$1Xsai+,again~noun');
+a=a.replace(/(再)(?!X)/g,'$1Xsai,again~noun');
 a=a.replace(/(冬)(?!X)/g,'$1Xfuyu,winter~noun');
 a=a.replace(/(出)(?!X)/g,'$1Xde,go out~ichidan-verb');
 a=a.replace(/(刀)(?!X)/g,'$1Xkatana,sword,blade~noun');
@@ -6662,7 +6665,7 @@ a=a.replace(/(暖)(?!X)/g,'$1Xdan,warmth~noun');
 a=a.replace(/(暦)(?!X)/g,'$1Xkoyomi,calendar,almanac~noun');
 a=a.replace(/(曲)(?!X)/g,'$1Xkyoku,son+g,melody,tune~noun');
 a=a.replace(/(書)(?!X)/g,'$1Xsyo,document~noun');
-a=a.replace(/(最)(?!X)/g,'$1Xsai+,most~noun');
+a=a.replace(/(最)(?!X)/g,'$1Xsai,most~noun');
 a=a.replace(/(月)(?!X)/g,'$1Xtsuki,moon or getsu,Monday~noun');
 a=a.replace(/(服)(?!X)/g,'$1Xfuku+,clothes~noun');
 a=a.replace(/(朝)(?!X)/g,'$1Xasa,morning~noun');
@@ -7139,7 +7142,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <br>
 <div class="HeaderStyle">Cut and Paste</div>
-日韓両政府は、韓国側が検討している「元徴用工（旧朝鮮半島出身労働者）」訴訟問題の解決案を巡り、金銭的負担など被告の日本企業による直接関与を避ける形で決着を図る方向で調整に入った。１９６５年の日韓請求権・経済協力協定に基づき、「問題は解決済み」との日本の立場は固いことから、韓国政府も被告企業の直接関与は困難との判断に傾いた。
+［東京　３１日　ロイター］ -     日本政府と北大西洋条約機構（ＮＡＴＯ）は３１日、国際社会が直面する課題に対して連携強化を確認する共同声明を発表した。日本が新たに策定した国家安全保障戦略を歓迎するとともに、サイバー空間、宇宙、偽情報、重要・新興技術など安保の新領域で協力する重要性を再確認した。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
