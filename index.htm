@@ -615,6 +615,7 @@ a=a.replace(/(盛)(?!X)(り)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,'$1X
 a=a.replace(/(目)(?!X)(立)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,'$1X$2Xme-da,conspicuous$3X~tsu-verb');
 a=a.replace(/(目)(?!X)(覚)(?!X)(ま)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X$4Xmezama-shi,striking,marvelous$5X~i-adjective~noun');
 a=a.replace(/(真)(?!X)(っ)(?!X)(直)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,'$1X$2X$3Xmassu,dead straight,hon-estly$4X~gu-verb');
+a=a.replace(/(相)(?!X)(次)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,'$1X$2Xaitsu,one after the other$3X~gu-verb');
 a=a.replace(/(着)(?!X)(替)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xkigae,change clothes$4X~ru-verb');
 a=a.replace(/(知)(?!X)(ら)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xshirase,let know,inform$4X~ru-verb');
 a=a.replace(/(知)(?!X)(り)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1X$2X$3Xshiria,get acquainted with$4X~u-verb');
@@ -3882,6 +3883,9 @@ a=a.replace(/(提)(?!X)(言)(?!X)/g,'$1X$2Xtei-gen,proposal~noun');
 a=a.replace(/(換)(?!X)(気)(?!X)/g,'$1X$2Xkan-ki,arousal~noun');
 a=a.replace(/(握)(?!X)(手)(?!X)/g,'$1X$2Xaku-syu,handshake,handshaking~noun');
 a=a.replace(/(援)(?!X)(助)(?!X)/g,'$1X$2Xen-jyo,aid,assistance~noun');
+a=a.replace(/(収)(?!X)(容)(?!X)/g,'$1X$2Xsyuu-you,detention~noun');
+a=a.replace(/(送)(?!X)(還)(?!X)/g,'$1X$2Xsou-kan,deportation~noun');
+a=a.replace(/(入)(?!X)(管)(?!X)/g,'$1X$2Xnyuu-kan,immigration~noun');
 a=a.replace(/(援)(?!X)(護)(?!X)/g,'$1X$2Xen-go,support~noun');
 a=a.replace(/(損)(?!X)(壊)(?!X)/g,'$1X$2Xson-kai,structural damage~noun');
 a=a.replace(/(損)(?!X)(失)(?!X)/g,'$1X$2Xson-shitsu,loss of assets~noun');
@@ -4558,6 +4562,7 @@ a=a.replace(/(牛)(?!X)(乳)(?!X)/g,'$1X$2Xgyuu-nyuu,milk~noun');
 a=a.replace(/(牛)(?!X)(肉)(?!X)/g,'$1X$2Xgyuu-niku,beef~noun');
 a=a.replace(/(牧)(?!X)(場)(?!X)/g,'$1X$2Xboku-jyou,stock farm,pasture~noun');
 a=a.replace(/(物)(?!X)(事)(?!X)/g,'$1X$2Xmono-goto,things,everything~noun');
+a=a.replace(/(詐)(?!X)(欺)(?!X)/g,'$1X$2Xsa-gi,fraud~noun');
 a=a.replace(/(物)(?!X)(体)(?!X)/g,'$1X$2Xbut-tai,object,physical body~noun');
 a=a.replace(/(物)(?!X)(価)(?!X)/g,'$1X$2Xbuk-ka,prices~noun');
 a=a.replace(/(物)(?!X)(理)(?!X)/g,'$1X$2Xbutsu-ri,physics,natural law~noun');
@@ -4576,7 +4581,7 @@ a=a.replace(/(特)(?!X)(急)(?!X)/g,'$1X$2Xtok-kyuu,super-express~noun');
 a=a.replace(/(特)(?!X)(性)(?!X)/g,'$1X$2Xtoku-sei,special traits~noun');
 a=a.replace(/(特)(?!X)(捜)(?!X)/g,'$1X$2Xtoku-sou,special investigation~noun');
 a=a.replace(/(特)(?!X)(有)(?!X)/g,'$1X$2Xtoku-yuu,characteristic,special~noun');
-a=a.replace(/(特)(?!X)(殊)(?!X)/g,'$1X$2Xtoku-syu,special,unique~noun');
+a=a.replace(/(特)(?!X)(殊)(?!X)/g,'$1X$2Xtoku-syu,unique~noun');
 a=a.replace(/(特)(?!X)(派)(?!X)/g,'$1X$2Xtoku-ha,envoy~noun');
 a=a.replace(/(特)(?!X)(色)(?!X)/g,'$1X$2Xtokusyoku,characteristic~noun');
 a=a.replace(/(特)(?!X)(集)(?!X)/g,'$1X$2Xtoku-syuu,special edition~noun');
@@ -6592,6 +6597,7 @@ a=a.replace(/(寝)(?!X)/g,'$1Xne,sleep~ichidan-verb');
 a=a.replace(/(寮)(?!X)/g,'$1Xryou,dormitory,lodge~noun');
 a=a.replace(/(寺)(?!X)/g,'$1Xtera,buddhist temple~noun');
 a=a.replace(/(対)(?!X)/g,'$1Xtsui,pair~noun');
+a=a.replace(/(状)(?!X)/g,'$1Xjyou,circumstances~noun');
 a=a.replace(/(封)(?!X)/g,'$1Xfuu,sealing~noun');
 a=a.replace(/(小)(?!X)/g,'$1Xsyou,small~noun');
 a=a.replace(/(尾)(?!X)/g,'$1Xo,tail~noun');
@@ -7150,19 +7156,19 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <br>
 <div class="HeaderStyle">Twitter Comments</div>
-2023.02.05
+2023.02.06
 <p>
-General Mark Milley is an idiot but so is the Biden Administration. They are infighting because they are scatterbrains.
+Censoring people has many negative effects. They might become violently passive aggressive if they keep bottling up valid emotions and feel like they aren't being heard.
 <p>
-My dreams are vivid and strange right now too. It means something significant is about to happen. I don't care. I'll wait here and endure by your side.
-<p>
-We aren't being told the entire Chinese Spy Balloon story.
+The Democratic Party of 2023 pretends to be Liberal and Progressive. They're more like George W. Bush Republicans. They are war profiteering, corrupt, censoring, racist, divisive, scum.
 <hr>
 <p>
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into the text area below.
 <p>
-原発から出る高レベル放射性廃棄物「核のごみ」の最終処分場の候補地について、政府が原発立地自治体など「原子力と関係の深い」自治体の首長らとの「協議の場」を新設する方向で調整に入った。いまは全国の自治体を対象に広く働きかけているが、政府は原発などがある自治体に強く働きかける方が、議論が進みやすいと判断した。
+相次ぐ強盗事件などとの関連が疑われ、フィリピンの収容所にいる4人の容疑者について、少なくとも2人が7日にも日本へ送還される予定であることがわかりました。
+
+フィリピンの入管施設に収容されている渡邉優樹容疑者（38）ら4人は、特殊詐欺事件に関与したとして逮捕状が出ています。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <div class='cStyle'>
@@ -7172,7 +7178,7 @@ Cut and paste this Japanese text into the text area below.
 <ul>
 <li>Group kanji by the same sound using <a href='https://www.wanikani.com/vocabulary/' target="_blank">WaniKani</a>.
 <li>Group them by similar elements.
-<li>Practice writing them until you can do it from memory using <a href='https://play.google.com/store/apps/details?id=com.craxic.akebifree&hl=en&gl=US' target="_blank">Android Akebi</a>.
+<li>Practice writing only the same sound Kanji until you can do it from memory using <a href='https://play.google.com/store/apps/details?id=com.craxic.akebifree&hl=en&gl=US' target="_blank">Android Akebi</a>.
 </ul>
 <p>
 Chi 知恵｜地図｜父｜治療｜乳首｜　Chiku 建築｜備蓄｜畜生
@@ -7183,13 +7189,12 @@ Books: Iggy's House by Judy Blume
 <br>
 Movies: The Thing 2011
 <br>
-Television: How I Met Your Father Disney+<br>
-That 90s Show Netflix
+Television: How I Met Your Father Disney+, That 90s Show Netflix
 <br>
-Hobbies: Weight Lifting, Swimming, Hiking, Emulation of old video games, Guitar, and watching IPTV channels from all over the world and their commercials.
+Hobbies: Weight Lifting, Swimming, Hiking, Video Game Emulation, Guitar, World IPTV with their commercials
 <p>
 <div class="HeaderStyle">Pinterest</div>
-<a href='https://www.pinterest.jp/johnrenfro2016' target="_blank">Pinterest</a> is a digital burial chamber of all things that I loved when alive.
+<a href='https://www.pinterest.jp/johnrenfro2016' target="_blank">Pinterest</a> is a digital burial chamber of all the things that I loved when alive.
 <p>
 <div class="HeaderStyle">Dungeons & Dragons 5 and Pathfinder 2</div>
 <a href='dnd/encountermanager.htm' target="_blank">Encounter Manager</a> is a JavaScript game I wrote to test the capabilities of FireFox web browser in the 2000s. I no longer maintain it.
