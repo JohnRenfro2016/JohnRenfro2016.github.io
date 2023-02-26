@@ -18,11 +18,11 @@ src: url("Kraash.ttf");
 a:link,
 a:hover,
 a:active,
-a:visited {color: #3d2526}
+a:visited {color: #000000}
 
 body
 {
-background-image: linear-gradient(180deg, #014e5e, #006464);
+background-image: linear-gradient(180deg, #e98c3a, #eb984e);
 border-radius: 25px;
 color: #000000;
 font-size: 25px;
@@ -35,7 +35,7 @@ word-wrap:break-word;
 
 textarea
 {
-background-color:#d4d6d3;
+background-color:#f0af75;
 border-radius: 25px;
 font-size: 25px;
 text-align:center;
@@ -46,18 +46,19 @@ word-wrap:break-word;
 
 .ComicTitle
 {
-color: #f5c103;
+color: #f2ba89;
 font-family: "Kraash";
 font-size: 30px;
 }
 
 .HeaderStyle
 {
-box-shadow: 5px 5px black, 10px 10px #003a58, 15px 15px #00345b;
-color: #a49e08;
-font-size: 50px;
+box-shadow: 5px 5px black, 10px 10px #fbe8d8, 15px 15px #fdf4eb;
+color: #e98c3a;
+font-family: "Kraash";
+font-size: 30px;
 margin-bottom: 20px;
-text-shadow: 0px -2px 4px #fec711, 0px -2px 10px #ee5b23, 0px -10px 20px         #F90, 0px -20px 40px #fba622;
+text-shadow: 0px -2px 4px #f4c69d, 0px -2px 10px #f6d1b0, 0px -10px 20px         #F90, 0px -20px 40px #f8ddc4;
 }
 
 .TheStripe
@@ -4499,6 +4500,9 @@ a=a.replace(/(混)(?!X)(雑)(?!X)/g,'$1X$2Xkon-zatsu,confusion,disorder~noun');
 a=a.replace(/(清)(?!X)(書)(?!X)/g,'$1X$2Xsei-syo,clean copy~noun');
 a=a.replace(/(清)(?!X)(潔)(?!X)/g,'$1X$2Xsei-ketsu,cleanliness,neatness~noun');
 a=a.replace(/(渋)(?!X)(滞)(?!X)/g,'$1X$2Xjyuu-tai,traffic jam~noun');
+a=a.replace(/(参)(?!X)(謀)(?!X)/g,'$1X$2Xsan-bou,general staff~noun');
+a=a.replace(/(脱)(?!X)(走)(?!X)/g,'$1X$2Xdas-sou,fleeing~noun');
+a=a.replace(/(放)(?!X)(棄)(?!X)/g,'$1X$2Xhou-ki,abandonment~noun');
 a=a.replace(/(渋)(?!X)(谷)(?!X)/g,'$1X$2XShibu-ya Tokyo, Japan~noun');
 a=a.replace(/(減)(?!X)(少)(?!X)/g,'$1X$2Xgen-syou,reduction~noun');
 a=a.replace(/(減)(?!X)(速)(?!X)/g,'$1X$2Xgen-soku,decrease~noun');
@@ -6344,6 +6348,7 @@ a=a.replace(/(著)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xarawa,write,compose$2X~s
 a=a.replace(/(薄)(?!X)(い|く|か|さ)(?!X)/g,'$1Xusu,thin,weak,pale$2X~i-adjective~noun');
 a=a.replace(/(薦)(?!X)(め)(?!X)/g,'$1X$2Xsusume,recommend~ichidan-verb');
 a=a.replace(/(行)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xi,go, or okona,happen$2X~ku-verb');
+a=a.replace(/(割)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1Xsa,carve up$2X~ku-verb');
 a=a.replace(/(行)(?!X)(わ|い|う|え|お|っ)(?!X)/g,'$1Xokona,conduct$2X~u-verb');
 a=a.replace(/(表)(?!X)(さ|し|す|せ|そ)(?!X)/g,'$1Xarawa,express,represent$2X~su-verb');
 a=a.replace(/(被)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1Xkabu,wear,put on$2X~ru-verb');
@@ -6636,6 +6641,7 @@ a=a.replace(/(妻)(?!X)/g,'$1Xtsuma,wife~noun');
 a=a.replace(/(姉)(?!X)/g,'$1Xane,older sister~noun');
 a=a.replace(/(姓)(?!X)/g,'$1Xsei,surname,family name~noun');
 a=a.replace(/(姪)(?!X)/g,'$1Xmei,niece~noun');
+a=a.replace(/(増)(?!X)/g,'$1Xzou,increase~noun');
 a=a.replace(/(姿)(?!X)/g,'$1Xsugata,figure~noun');
 a=a.replace(/(娘)(?!X)/g,'$1Xmusume,daughter,girl~noun');
 a=a.replace(/(嫁)(?!X)/g,'$1Xyome,bride,daughter in law~noun');
@@ -6794,6 +6800,7 @@ a=a.replace(/(気)(?!X)/g,'$1Xki,spirit or energy or mood~noun');
 a=a.replace(/(水)(?!X)/g,'$1Xmizu,water or sui,Wednesday~noun');
 a=a.replace(/(氷)(?!X)/g,'$1Xkoori,ice~noun');
 a=a.replace(/(汁)(?!X)/g,'$1Xshiru,soup~noun');
+a=a.replace(/(兵)(?!X)/g,'$1Xhei,soldier~noun');
 a=a.replace(/(汗)(?!X)/g,'$1Xase,sweat~noun');
 a=a.replace(/(池)(?!X)/g,'$1Xike,pond~noun');
 a=a.replace(/(沖)(?!X)/g,'$1Xoki,offshore~noun');
@@ -7216,7 +7223,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into the text area below.
 <p>
-　東京オリンピック・パラリンピックを巡る談合事件で、談合があったとされる2018年度から大会が閉幕した21年度までに組織委員会が結んだ契約のうち、特命随意契約の件数が競争契約の約1・5倍に及んだことが組織委の清算法人への取材で判明した。契約総額も約1・2倍と上回った。会計法は、国などが結ぶ契約は競争契約が原則で随意契約を例外とするが、組織委では逆転していた形となる。
+ロシアによるウクライナ侵略で、ウクライナ軍は２５日、東部ドネツク州の要衝バフムトと周辺で戦闘が続き、露軍が同市の制圧と包囲に主な努力を割いていると発表した。ウクライナ軍参謀本部は同日、露軍が動員兵の脱走や戦闘放棄を防ぐため、露南部チェチェン共和国の特殊部隊最大２００人をバフムト方面に増員したと明らかにした。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
