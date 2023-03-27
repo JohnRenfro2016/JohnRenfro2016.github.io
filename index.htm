@@ -35,8 +35,9 @@ word-wrap:break-word;
 
 textarea
 {
-background-color:#f0af75;
+background-color: #11215b;
 border-radius: 25px;
+color: #9f873a;
 font-size: 25px;
 text-align:center;
 text-shadow: 2px 2px 4px #3d2526;
@@ -47,7 +48,6 @@ word-wrap:break-word;
 .ComicTitle
 {
 color: #ffffff;
-font-family: "Kraash";
 font-size: 30px;
 }
 
@@ -58,6 +58,44 @@ font-family: "Kraash";
 font-size: 30px;
 margin-bottom: 20px;
 text-shadow: 0px -2px 4px #3179c6, 0px -2px 10px #65b0f2, 0px -10px 20px         #F90, 0px -20px 40px #14449b;
+}
+
+.paper {
+  background: #fff;
+  color: #000000;
+  padding: 30px;
+  position: relative;
+}
+
+.paper,
+.paper::before,
+.paper::after {
+  /* Styles to distinguish sheets from one another */
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+  border: 1px solid #bbb;
+}
+
+.paper::before,
+.paper::after {
+  content: "";
+  position: absolute;
+  height: 95%;
+  width: 99%;
+  background-color: #eee;
+}
+
+.paper::before {
+  right: 15px;
+  top: 0;
+  transform: rotate(-1deg);
+  z-index: -1;
+}
+
+.paper::after {
+  top: 5px;
+  right: -5px;
+  transform: rotate(1deg);
+  z-index: -2;
 }
 
 .TheStripe
@@ -4714,7 +4752,12 @@ a=a.replace(/(男)(?!X)(性)(?!X)/g,'$1X$2Xdan-sei,gentlemen~noun');
 a=a.replace(/(町)(?!X)(中)(?!X)/g,'$1X$2Xmachinaka,downtown area,the central area of a town~noun');
 a=a.replace(/(町)(?!X)(角)(?!X)/g,'$1X$2Xmachika-do,street corner~noun');
 a=a.replace(/(画)(?!X)(像)(?!X)/g,'$1X$2Xga-zou,image~noun');
-a=a.replace(/(画)(?!X)(家)(?!X)/g,'$1X$2Xgaka,artist,painter~noun');
+a=a.replace(/(静)(?!X)(止)(?!X)/g,'$1X$2Xsei-shi,standing still~noun');
+a=a.replace(/(分)(?!X)(断)(?!X)/g,'$1X$2Xbun-dan,dividing into parts~noun');
+a=a.replace(/(反)(?!X)(対)(?!X)/g,'$1X$2Xhan-tai,opposition~noun');
+a=a.replace(/(本)(?!X)(土)(?!X)/g,'$1X$2Xhon-do,mainland~noun');
+a=a.replace(/(台)(?!X)(湾)(?!X)/g,'$1X$2XTai-wan~noun');
+a=a.replace(/(総)(?!X)(統)(?!X)/g,'$1X$2Xsou-tou,President~noun');
 a=a.replace(/(画)(?!X)(面)(?!X)/g,'$1X$2Xgamen,screen~noun');
 a=a.replace(/(留)(?!X)(学)(?!X)/g,'$1X$2Xryuu-gaku,studying abroad~noun');
 a=a.replace(/(留)(?!X)(守)(?!X)/g,'$1X$2Xrusu,not at home~noun');
@@ -7262,9 +7305,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into the text area below.
 <p>
-【ワシントン時事】米連邦準備制度理事会（FRB）や日銀など日米欧の6中央銀行は19日、米ドルの資金供給を毎日実施する拡充策で協調することを決定した。【写真】経営危機に陥ったクレディ・スイスと同社を買収するUBS
+台湾の馬英九前総統が27日午後、上海に到着しました。台湾の総統経験者が中国本土を訪問するのは1949年の分断以降、初めてです。
 
-　資金繰り難に陥った銀行の経営不安に対応する。20日から開始し、少なくとも4月末まで続ける予定だ。
+　台湾の馬英九前総統は日本時間午後5時半ごろ、上海に到着しました。
+
+　馬氏の中国本土への訪問に対して、台湾の空港では訪問に反対する人たちのデモが起き、警察に静止される一幕もありました。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
@@ -7280,11 +7325,14 @@ Chi 知恵｜地図｜父｜治療｜乳首｜　Chiku 建築｜備蓄｜畜生
 </div>
 <hr>
 <div class="HeaderStyle">Killing Time</div>
-Books: It's Not the End of the World by Judy Blume
+<div class='paper'>
+Books: <i>Forever...</i> by Judy Blume. This one was published in 1975. Two high school senior teenagers decide to have responsible sex. This book was a frequent target of censorship in the 1990s.
+</div>
 <br>
 Movies: The Lost City 2022
-<br>
-Television: How I Met Your Father Disney+, That 90s Show Netflix
+<hr>
+Television: Who watched this show only a few times because there were no video cassette recording devices back then?
+<img src='Kotter.png'>
 <hr>
 <div class="HeaderStyle">Pinterest</div>
 <a href='https://www.pinterest.jp/johnrenfro2016' target="_blank">Pinterest</a> is a digital burial chamber of all the things that I loved when alive.
