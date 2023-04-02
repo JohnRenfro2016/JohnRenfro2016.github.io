@@ -547,7 +547,7 @@ a=a.replace(/(と)(?!X)(み)(?!X)(ら)(?!X)(れ)(?!X)/g,'$1X$2X$3X$4Xto mirare,b
 a=a.replace(/(と)(?!X)(も)(?!X)(か)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3Xtomoka,at least,at any rate$4X~ku-verb');
 a=a.replace(/(と)(?!X)(ん)(?!X)(か)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,'$1X$2X$3Xtoんka,pork cutlet$4X~tsu-verb');
 a=a.replace(/(な)(?!X)(か)(?!X)(っ)(?!X)(た)(?!X)/g,'$1X$2X$3X$4Xnakatta,was not~verb');
-a=a.replace(/(な)(?!X)(る)(?!X)(べ)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3Xnarube,as...as possible,if possible$4X~ku-verb');
+a=a.replace(/(な)(?!X)(る)(?!X)(べ)(?!X)(か|き|く|け|こ|い)(?!X)/g,'$1X$2X$3Xnarube,if possible$4X~ku-verb');
 a=a.replace(/(ぬ)(?!X)(る)(?!X)(ぬ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xnurunu,slimy$4X~ru-verb');
 a=a.replace(/(ば)(?!X)(か)(?!X)(ら)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,'$1X$2X$3X$4Xbakara-shi,stupid,useless$5X~i-adjective~noun');
 a=a.replace(/(ふ)(?!X)(ざ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,'$1X$2X$3Xfuzake,mess around,fool around$4X~ru-verb');
@@ -4097,9 +4097,11 @@ a=a.replace(/(旅)(?!X)(費)(?!X)/g,'$1X$2Xryohi,traveling expenses~noun');
 a=a.replace(/(旅)(?!X)(館)(?!X)/g,'$1X$2Xryo-kan,Japanese inn~noun');
 a=a.replace(/(既)(?!X)(に)(?!X)/g,'$1X$2Xsude ni,previously~noun');
 a=a.replace(/(既)(?!X)(に)(?!X)/g,'$1X$2Xsude ni,previously~noun');
+a=a.replace(/(製)(?!X)(薬)(?!X)/g,'$1X$2Xsei-yaku,drug making~noun');
 a=a.replace(/(日)(?!X)(々)(?!X)/g,'$1X$2Xhibi,daily,every day~noun');
 a=a.replace(/(日)(?!X)(ソ)(?!X)/g,'$1X$2Xnisso,Japanese-Soviet~noun');
-a=a.replace(/(日)(?!X)(中)(?!X)/g,'$1X$2Xnic-cyuu,during the day~noun');
+a=a.replace(/(国)(?!X)(務)(?!X)/g,'$1X$2Xkoku-mu,affairs of state~noun');
+a=a.replace(/(日)(?!X)(中)(?!X)/g,'$1X$2Xnic-cyuu,daytime or China and Japan~noun');
 a=a.replace(/(日)(?!X)(光)(?!X)/g,'$1X$2Xnik-kou,sunshine,sunlight~noun');
 a=a.replace(/(日)(?!X)(和)(?!X)/g,'$1X$2Xhi-yori,fine day~noun');
 a=a.replace(/(日)(?!X)(常)(?!X)/g,'$1X$2Xnichi-jyou,daily,everyday~noun');
@@ -6789,7 +6791,7 @@ a=a.replace(/(恋)(?!X)/g,'$1Xkoi,love,romance~noun');
 a=a.replace(/(恥)(?!X)/g,'$1Xhaji,shame,disgrace~noun');
 a=a.replace(/(恩)(?!X)/g,'$1Xon,debt of gratitude,kin+dness~noun');
 a=a.replace(/(息)(?!X)/g,'$1Xiki,breath~noun');
-a=a.replace(/(悪)(?!X)/g,'$1Xaku+evil,badness~noun');
+a=a.replace(/(悪)(?!X)/g,'$1Xaku,evil~noun');
 a=a.replace(/(愛)(?!X)/g,'$1Xai,love~noun');
 a=a.replace(/(戦)(?!X)/g,'$1Xsen or ikusa,war~noun');
 a=a.replace(/(系)(?!X)/g,'$1Xkei,system or network~noun');
@@ -7310,10 +7312,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into the text area below.
 <p>
-岩手県大槌町は東日本大震災の津波で流されがれきの中から見つかったものの持ち主がわからない拾得物「思い出の品」を処分しました。
-　28日は平野公三町長から処分を担当する業者にランドセルや表彰盾などおよそ300点の拾得物が引き渡されました。平野町長は「二度と『思い出の品』を災害に奪われないよう防災や震災伝承に取り組んでいきたい」とあいさつしました。
-　町は、これまでおよそ750点の物品と5000枚以上の写真を返還してきました。一方で引き取り手のない拾得物は、年月が経つにつれ劣化が進み、これ以上の保管が困難になったことから、処分を決めました。
-　町では今後も、およそ5万枚ある写真の保管と返還は続けるということです。
+日中外相会談、双方の主張は平行線か　林氏、日本人拘束に抗議毎日新聞
+　林芳正外相と中国の秦剛（しんごう）国務委員兼外相は2日、北京で会談した。林氏は3月に北京でアステラス製薬社員の日本人男性が中国当局に拘束された問題について抗議し、早期解放を要求した。一方、秦氏は、米国の要請を受けた日本が中国を念頭に先端半導体製造装置の輸出規制を強化する方針を発表したことについて「悪人の手先になるべきではない」と批判した。「建設的かつ安定的な日中関係」の構築を目指すことでは一致する両国。だが米中対立が深刻化する中で、他にも対立点は多く、この日の会談でも立場の違いが浮き彫りになった。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
