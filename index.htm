@@ -229,6 +229,7 @@ const replsA = [
 {pat:/(\d)(?!X)(\d)(?!X)(\d)(?!X)(\d)(?!X)/g,repl:'$1X+sen,thousands place~Noun$2X$3$4'},
 {pat:/(あ)(?!X)(い)(?!X)(づ)(?!X)(ち)(?!X)/g,repl:'$1X$2X$3X$4Xaizuchi,responsive sounds,chi-ming in~Noun'},
 {pat:/(あ)(?!X)(ち)(?!X)(こ)(?!X)(ち)(?!X)/g,repl:'$1X$2X$3X$4Xachiko-chi,all over~Noun'},
+{pat:/(ま)(?!X)(も)(?!X)(な)(?!X)(く)(?!X)/g,repl:'$1X$2X$3X$4Xmamonaku,soon~Noun'},
 {pat:/(あ)(?!X)(っ)(?!X)(さ)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xassari,plainly,matter-of-factly~Noun'},
 {pat:/(あ)(?!X)(れ)(?!X)(こ)(?!X)(れ)(?!X)/g,repl:'$1X$2X$3X$4Xarekore,this and that,one thing or another~Noun'},
 {pat:/(あ)(?!X)(ん)(?!X)(な)(?!X)(に)(?!X)/g,repl:'$1X$2X$3X$4Xannani,that,so~Noun'},
@@ -576,7 +577,7 @@ const replsA = [
 {pat:/(引)(?!X)(き)(?!X)(揚)(?!X)(げ)(?!X)/g,repl:'$1Xhi$2Xki$3Xa$4Xge,pull up~IchidanVerb'},
 {pat:/(乗)(?!X)(り)(?!X)(越)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2X$3Xnoriko,ride past$4X~SuVerb'},
 {pat:/(乗)(?!X)(り)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1X$2X$3Xnoriko,board,march into$4X~MuVerb'},
-{pat:/(亡)(?!X)(く)(?!X)(な)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xnakuna,pass away$4X~RuVerb'},
+{pat:/(亡)(?!X)(く)(?!X)(な)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xna$2Xku$3Xna,pass away$4X~RuVerb'},
 {pat:/(仕)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xshiage,finish,complete$4X~RuVerb'},
 {pat:/(付)(?!X)(き)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1X$2X$3Xtsukia,socialize with,see someone$4X~UVerb'},
 {pat:/(付)(?!X)(け)(?!X)(足)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2X$3Xtsuketa,add on,append$4X~SuVerb'},
@@ -596,7 +597,7 @@ const replsA = [
 {pat:/(取)(?!X)(り)(?!X)(次)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,repl:'$1Xto$2X$3Xritsu,relay a message,transfer a call$4X~GuVerb'},
 {pat:/(取)(?!X)(り)(?!X)(残)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xtori$2X$3Xnoko,leave behind$4X~SuVerb'},
 {pat:/(取)(?!X)(り)(?!X)(消)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2X$3Xtorike,cancel$4X~SuVerb'},
-{pat:/(取)(?!X)(り)(?!X)(組)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xtori$2X$3Xku,grapple$4X~MuVerb'},
+{pat:/(取)(?!X)(り)(?!X)(組)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xtori$2X$3Xku$4X,grapple~MuVerb'},
 {pat:/(取)(?!X)(り)(?!X)(返)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2X$3Xtorikae,take back,regain$4X~SuVerb'},
 {pat:/(受)(?!X)(け)(?!X)(入)(?!X)(れ)(?!X)/g,repl:'$1X$2X$3X$4Xuke-ire,reception~IchidanVerb'},
 {pat:/(受)(?!X)(け)(?!X)(取)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xuketo,receive,understand$4X~RuVerb'},
@@ -1047,7 +1048,7 @@ const replsA = [
 {pat:/(勤)(?!X)(め)(?!X)(先)(?!X)/g,repl:'$1X$2X$3Xtsutomesaki,employment~Noun'},
 {pat:/(包)(?!X)(み)(?!X)(紙)(?!X)/g,repl:'$1Xtsutsumi$2X$3Xgami,wrapping paper~Noun'},
 {pat:/(北)(?!X)(朝)(?!X)(鮮)(?!X)/g,repl:'$1Xkita$2Xcyou$3Xsen,North Korea~Noun'},
-{pat:/(北)(?!X)(海)(?!X)(道)(?!X)/g,repl:'$1X$2X$3XHok-kai-dou,Japan~Noun'},
+{pat:/(北)(?!X)(海)(?!X)(道)(?!X)/g,repl:'$1Xhok$2Xkai$3Xdou,Japan~Noun'},
 {pat:/(区)(?!X)(役)(?!X)(所)(?!X)/g,repl:'$1X$2X$3Xkuyakusyo,ward office~Noun'},
 {pat:/(十)(?!X)(字)(?!X)(路)(?!X)/g,repl:'$1Xjyuu$2Xji$3Xiro,crossroads~Noun'},
 {pat:/(半)(?!X)(導)(?!X)(体)(?!X)/g,repl:'$1Xhan$2Xdou$3Xtai,semiconductor~Noun'},
@@ -1264,7 +1265,7 @@ const replsA = [
 {pat:/(未)(?!X)(成)(?!X)(年)(?!X)/g,repl:'$1Xmi$2Xsei$3Xnen,underage minor~Noun'},
 {pat:/(未)(?!X)(成)(?!X)(年)(?!X)/g,repl:'$1Xmisei$2X$3Xnen,minor,underage~Noun'},
 {pat:/(末)(?!X)(っ)(?!X)(子)(?!X)/g,repl:'$1X$2X$3Xsuekko,youngest child~Noun'},
-{pat:/(本)(?!X)(当)(?!X)(に)(?!X)/g,repl:'$1Xhon$2X$3Xtou ni,really~Noun'},
+{pat:/(本)(?!X)(当)(?!X)(に)(?!X)/g,repl:'$1Xhon$2Xtou$3Xni,really~Noun'},
 {pat:/(本)(?!X)(拠)(?!X)(地)(?!X)/g,repl:'$1Xhon$2Xkyo$3Xchi,stronghold~Noun'},
 {pat:/(本)(?!X)(格)(?!X)(化)(?!X)/g,repl:'$1Xhon$2Xkaku$3Xka,regularization~Noun'},
 {pat:/(本)(?!X)(格)(?!X)(的)(?!X)/g,repl:'$1Xhon$2Xkaku$3Xteki,full-scale~Noun'},
@@ -1321,7 +1322,7 @@ const replsA = [
 {pat:/(湯)(?!X)(飲)(?!X)(み)(?!X)/g,repl:'$1Xyu$2X$3Xnomi,teacup~Noun'},
 {pat:/(準)(?!X)(決)(?!X)(勝)(?!X)/g,repl:'$1Xjyun$2Xkes$3Xsyou,semifinals'},
 {pat:/(溜)(?!X)(め)(?!X)(息)(?!X)/g,repl:'$1Xtame$2X$3Xiki,sigh~Noun'},
-{pat:/(そ)(?!X)(し)(?!X)(て)(?!X)/g,repl:'$1Xso$2X$3Xte,with that~Noun'},
+{pat:/(そ)(?!X)(し)(?!X)(て)(?!X)/g,repl:'$1X$2X$3Xsoshite,with that~Noun'},
 {pat:/(滑)(?!X)(ら)(?!X)(か)(?!X)/g,repl:'$1X$2X$3Xnameraka,smooth,glassy~Noun'},
 {pat:/(漏)(?!X)(え)(?!X)(い)(?!X)/g,repl:'$1X$2X$3Xroei,data leak~Noun'},
 {pat:/(漫)(?!X)(画)(?!X)(家)(?!X)/g,repl:'$1Xman$2Xga$3Xka,comicbook artist~Noun'},
@@ -1845,7 +1846,7 @@ const replsA = [
 {pat:/(捕)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xto,capture$2X~RuVerb'},
 {pat:/(捨)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsute,discard,abandon$3X~RuVerb'},
 {pat:/(掛)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkaka,han-g,splash,require$3X~RuVerb'},
-{pat:/(掛)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkake,start to -do,han-g$3X~RuVerb'},
+{pat:/(掛|か)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkake,start to do,hang$3X~RuVerb'},
 {pat:/(接)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsessu,come in contact,adjoin$3X~RuVerb'},
 {pat:/(控)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhika$2Xe,hold back$3X~RuVerb'},
 {pat:/(揃)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsoroe,align,make uniform$3X~RuVerb'},
@@ -1869,6 +1870,7 @@ const replsA = [
 {pat:/(早)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xhayama,make a hasty decision,jump gun$3X~RuVerb'},
 {pat:/(早)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhaya$2Xme,move forward (in time),expedite$3X~RuVerb'},
 {pat:/(明)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xa$2Xka,verify$3X~SuVerb'},
+{pat:/(閉)(?!X)(ざ)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xto$2Xza,closed$3X~SuVerb'},
 {pat:/(明)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xake,to dawn$3X~RuVerb'},
 {pat:/(明)(?!X)(る)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2Xakaru,bright,cheerful$3X~IAdjective~Noun'},
 {pat:/(易)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xyasa$2Xshi,easy,simple$3X~IAdjective~Noun'},
@@ -2084,7 +2086,7 @@ const replsA = [
 {pat:/(近)(?!X)(づ)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1X$2Xchikazu,get close$3X~KuVerb'},
 {pat:/(近)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xchi$2Xkazu,approach3X~KuVerb'},
 {pat:/(近)(?!X)(寄)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xchi$2Xkayo,go near,approach$3X~RuVerb'},
-{pat:/(述)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xnobe,state orally,expound,mention$3X~RuVerb'},
+{pat:/(述)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xno$2Xbe,mention$3X~RuVerb'},
 {pat:/(逃)(?!X)(が)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xniga,let go$3X~SuVerb'},
 {pat:/(逃)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xnige,escape,run away$3X~RuVerb'},
 {pat:/(逆)(?!X)(ら)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1X$2Xsakara,disobey,go against$3X~UVerb'},
@@ -2220,7 +2222,7 @@ const replsB = [
 {pat:/(こ)(?!X)(れ)(?!X)/g,repl:'$1X$2Xkore,this~Noun'},
 {pat:/(ご)(?!X)(と)(?!X)/g,repl:'$1X$2Xgoto,including~Noun'},
 {pat:/(ご)(?!X)(み)(?!X)/g,repl:'$1X$2Xgomi,trash~Noun'},
-{pat:/(ご)(?!X)(ろ)(?!X)/g,repl:'$1X$2Xgoro,around time~Noun'},
+{pat:/(ご)(?!X)(ろ)(?!X)/g,repl:'$1X$2Xgoro,around the time~Noun'},
 {pat:/(ご)(?!X)(免)(?!X)/g,repl:'$1Xgo$2Xmen,sorry~Noun'},
 {pat:/(ご)(?!X)(飯)(?!X)/g,repl:'$1Xgo$2Xhan,cooked rice,meal~Noun'},
 {pat:/(さ)(?!X)(ぞ)(?!X)/g,repl:'$1X$2Xsazo,no doubt,must~Noun'},
@@ -3189,6 +3191,7 @@ const replsB = [
 {pat:/(味)(?!X)(方)(?!X)/g,repl:'$1Xmi$2Xkata,ally~Noun'},
 {pat:/(呼)(?!X)(吸)(?!X)/g,repl:'$1Xko$2Xkyuu,breathing~Noun'},
 {pat:/(命)(?!X)(令)(?!X)/g,repl:'$1Xmei$2Xrei,command~Noun'},
+{pat:/(個)(?!X)(人)(?!X)/g,repl:'$1Xko$2Xjin,personal~Noun'},
 {pat:/(和)(?!X)(室)(?!X)/g,repl:'$1Xwa$2Xshitsu,Japanese style room~Noun'},
 {pat:/(和)(?!X)(平)(?!X)/g,repl:'$1Xwa$2Xhei,peace~Noun'},
 {pat:/(和)(?!X)(式)(?!X)/g,repl:'$1Xwa$2Xshiki,Japanese style~Noun'},
@@ -3616,6 +3619,8 @@ const replsB = [
 {pat:/(崩)(?!X)(壊)(?!X)/g,repl:'$1Xhou$2Xkai,collapse~Noun'},
 {pat:/(巡)(?!X)(航)(?!X)/g,repl:'$1Xjyun$2Xkou,cruise~Noun'},
 {pat:/(工)(?!X)(事)(?!X)/g,repl:'$1Xkou$2Xji,construction~Noun'},
+{pat:/(法)(?!X)(定)(?!X)/g,repl:'$1Xhou$2Xtei,legal~Noun'},
+{pat:/(通)(?!X)(貨)(?!X)/g,repl:'$1Xtsuu$2Xka,currency~Noun'},
 {pat:/(工)(?!X)(場)(?!X)/g,repl:'$1Xkou$2Xjyou,factory~Noun'},
 {pat:/(工)(?!X)(夫)(?!X)/g,repl:'$1X$2Xkufuu,contrivance,scheme~Noun'},
 {pat:/(工)(?!X)(学)(?!X)/g,repl:'$1Xkou$2Xgaku,engineering~Noun'},
@@ -3828,7 +3833,7 @@ const replsB = [
 {pat:/(恐)(?!X)(れ)(?!X)/g,repl:'$1X$2Xosore,fear,risk~Noun'},
 {pat:/(恨)(?!X)(み)(?!X)/g,repl:'$1Xura$2Xmi,grudge,hatred~Noun'},
 {pat:/(恩)(?!X)(恵)(?!X)/g,repl:'$1Xon$2Xkei,favor~Noun'},
-{pat:/(息)(?!X)(子)(?!X)/g,repl:'$1X$2Xmusuko,son-~Noun'},
+{pat:/(息)(?!X)(子)(?!X)/g,repl:'$1Xmusu$2Xko,son~Noun'},
 {pat:/(患)(?!X)(者)(?!X)/g,repl:'$1Xkan$2Xjya,patient~Noun'},
 {pat:/(悩)(?!X)(み)(?!X)/g,repl:'$1X$2Xnayami,troubles~Noun'},
 {pat:/(悪)(?!X)(化)(?!X)/g,repl:'$1Xak$2Xka,worsening~Noun'},
@@ -4661,7 +4666,7 @@ const replsB = [
 {pat:/(湿)(?!X)(気)(?!X)/g,repl:'$1X$2Xshikke,moisture,dampness~Noun'},
 {pat:/(満)(?!X)(員)(?!X)/g,repl:'$1Xman$2Xin,full to capacity~Noun'},
 {pat:/(満)(?!X)(月)(?!X)/g,repl:'$1Xman$2Xgetsu,full moon~Noun'},
-{pat:/(満)(?!X)(点)(?!X)/g,repl:'$1Xman$2Xten,full marks,perfect score~Noun'},
+{pat:/(満)(?!X)(点)(?!X)/g,repl:'$1Xman$2Xten,perfect score~Noun'},
 {pat:/(満)(?!X)(足)(?!X)/g,repl:'$1Xman$2Xzoku,satisfaction,contentment~Noun'},
 {pat:/(準)(?!X)(備)(?!X)/g,repl:'$1Xjyun$2Xbi,preparation~Noun'},
 {pat:/(準)(?!X)(急)(?!X)/g,repl:'$1Xjyun$2Xkyuu,local express~Noun'},
@@ -5268,6 +5273,7 @@ const replsB = [
 {pat:/(自)(?!X)(己)(?!X)/g,repl:'$1Xji$2Xko,oneself~Noun'},
 {pat:/(自)(?!X)(慢)(?!X)/g,repl:'$1Xji$2Xman,showing off~Noun'},
 {pat:/(自)(?!X)(殺)(?!X)/g,repl:'$1Xji$2Xsatsu,suicide~Noun'},
+{pat:/(激)(?!X)(安)(?!X)/g,repl:'$1Xgeki$2Xyasu,dirt cheap~Noun'},
 {pat:/(自)(?!X)(民)(?!X)/g,repl:'$1Xji$2Xmin,Liberal Democratic Party~Noun'},
 {pat:/(自)(?!X)(炊)(?!X)/g,repl:'$1Xji$2Xsui,cooking food for oneself~Noun'},
 {pat:/(自)(?!X)(然)(?!X)/g,repl:'$1Xshi$2Xzen,natural,naturally~Noun'},
@@ -5672,9 +5678,11 @@ const replsB = [
 {pat:/(近)(?!X)(視)(?!X)/g,repl:'$1Xkin$2Xshi,nearsightedness,shortsightedness~Noun'},
 {pat:/(近)(?!X)(道)(?!X)/g,repl:'$1Xchi$2Xkami-chi,shortcut~Noun'},
 {pat:/(近)(?!X)(郊)(?!X)/g,repl:'$1Xkin$2Xkou,outskirts~Noun'},
+{pat:/(流)(?!X)(氷)(?!X)/g,repl:'$1Xryuu$2Xhyou,drift ice~Noun'},
 {pat:/(近)(?!X)(頃)(?!X)/g,repl:'$1Xchi$2Xkagoro,recently,nowadays~Noun'},
 {pat:/(返)(?!X)(事)(?!X)/g,repl:'$1X$2Xhenji,answer,reply~Noun'},
 {pat:/(返)(?!X)(却)(?!X)/g,repl:'$1X$2Xhenkyaku,return~Noun'},
+{pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1X$2Xtachi,plural~Noun'},
 {pat:/(返)(?!X)(礼)(?!X)/g,repl:'$1Xhen$2Xrei,gift~Noun'},
 {pat:/(返)(?!X)(納)(?!X)/g,repl:'$1Xhen$2Xnou,returning to authorities~Noun'},
 {pat:/(返)(?!X)(還)(?!X)/g,repl:'$1Xhen$2Xkan,restoration~Noun'},
@@ -6681,8 +6689,8 @@ const replsB = [
 {pat:/(\）)(?!X)/g,repl:'$1Xclose parenthesis~Punctuation~Noun'},
 {pat:/(、)(?!X)/g,repl:'$1Xcomma~Punctuation~Noun'},
 {pat:/(。)(?!X)/g,repl:'$1Xperiod~Punctuation~Noun'},
-{pat:/(「)(?!X)/g,repl:'$1Xopen quote~Punctuation~Noun'},
-{pat:/(」)(?!X)/g,repl:'$1Xclose quote~Punctuation~Noun'},
+{pat:/(「|『)(?!X)/g,repl:'$1Xopen quote~Punctuation~Noun'},
+{pat:/(」|』)(?!X)/g,repl:'$1Xclose quote~Punctuation~Noun'},
 {pat:/(【)(?!X)/g,repl:'$1Xopen bracket~Punctuation~Noun'},
 {pat:/(】)(?!X)/g,repl:'$1Xclose bracket~Punctuation~Noun'},
 {pat:/(き)(?!X)/g,repl:'$1Xki,come,start to do~Verb'},
@@ -7076,11 +7084,12 @@ const replsB = [
 {pat:/(神)(?!X)/g,repl:'$1Xkami,god,spirit~Noun'},
 {pat:/(禍)(?!X)/g,repl:'$1Xwazawai,trouble~Noun'},
 {pat:/(私)(?!X)/g,repl:'$1Xwatashi,I~Noun'},
-{pat:/(秋)(?!X)/g,repl:'$1Xaki,Autumn~Noun'},
+{pat:/(岬)(?!X)/g,repl:'$1Xmisaki,cape,coast~Noun'},
 {pat:/(程)(?!X)/g,repl:'$1Xho+do,extent,limit~Noun'},
 {pat:/(税)(?!X)/g,repl:'$1Xzei,tax~Noun'},
 {pat:/(種)(?!X)/g,repl:'$1Xtane,seed~Noun'},
 {pat:/(稲)(?!X)/g,repl:'$1Xine,rice plant~Noun'},
+{pat:/(士)(?!X)/g,repl:'$1X+shi,licensed worker~Noun'},
 {pat:/(穴)(?!X)/g,repl:'$1Xana,hole,cavity~Noun'},
 {pat:/(空)(?!X)/g,repl:'$1Xkara,emptiness,hollow~Noun'},
 {pat:/(空)(?!X)/g,repl:'$1Xsora,sky,weather~Noun'},
@@ -7125,7 +7134,7 @@ const replsB = [
 {pat:/(者)(?!X)/g,repl:'$1Xsya or mono,person~Noun'},
 {pat:/(耳)(?!X)/g,repl:'$1Xmimi,ear,hearing~Noun'},
 {pat:/(職)(?!X)/g,repl:'$1Xsyoku,work~Noun'},
-{pat:/(肉)(?!X)/g,repl:'$1Xniku,flesh,meat~Noun'},
+{pat:/(肉)(?!X)/g,repl:'$1Xniku,meat~Noun'},
 {pat:/(肌)(?!X)/g,repl:'$1Xhada,skin,surface~Noun'},
 {pat:/(股)(?!X)/g,repl:'$1Xmata,crotch,groin~Noun'},
 {pat:/(肩)(?!X)/g,repl:'$1Xkata,shoulder~Noun'},
@@ -7424,7 +7433,11 @@ a = a.replace(/(けX)(~KuVerb)/g,'<p>けXke,can do$2');
 a = a.replace(/(げX)(~GuVerb)/g,'<p>げXge,can do$2');
 a = a.replace(/(さX)(~SuVerb)/g,'<p>さXsa$2');
 a = a.replace(/(すX)(~SuVerb)/g,'<p>すXsu,to do,will do$2');
-a = a.replace(/(むX)(~MuVerb)/g,'<p>むXmu,to do,will do$2');
+a = a.replace(/(まX)(~MuVerb)/g,'<p>まXma$2');
+a = a.replace(/(みX)(~MuVerb)/g,'<p>みXmi$2');
+a = a.replace(/(むX)(~MuVerb)/g,'<p>むXmu,to do, will do$2');
+a = a.replace(/(めX)(~MuVerb)/g,'<p>めXme,can do$2');
+a = a.replace(/(もX)(~MuVerb)/g,'<p>もXmo,let\'s do$2');
 a = a.replace(/(しX)(~SuVerb)/g,'<p>しXshi$2');
 a = a.replace(/(せX)(~SuVerb)/g,'<p>せXse,can do$2');
 a = a.replace(/(っX)(~RuVerb)/g,'<p>っXt$2');
@@ -7459,7 +7472,20 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-富裕層の外国人旅行者の需要を見込み、日本初となる外資系の超高級ホテルが都内に相次ぎ進出している。4月4日、JR東京駅前にイタリアの高級ブランド、ブルガリが「ブルガリ ホテル東京」をオープンした。今秋にかけてハイアット系列の「ホテル虎ノ門ヒルズ」、アマン系列の「ジャヌ東京」などが開業を控える。なぜいま、超高級ホテルの日本初進出が相次いでいるのか。ホテル評論家の瀧澤信秋氏に話を聞いた。
+東京・足立区にある、サービス満点のスーパー「肉の金井」。肉も野菜もすべてが激安価格で、一日500人以上が詰め掛ける人気ぶりです。さらに驚くべきことは、スーパーにもかかわらず、営業が前代未聞の“週1日”だけ！常識破り、場所も不便なのに大盛況な秘密を探るため、裏側を追跡しました。
+
+■豚ロース100gが95円！　大量買いが続出
+
+最寄り駅から徒歩15分の場所にあり、毎週土曜日だけ営業するスーパー。
+
+店先で、ひと際大きな声を出すのは、社長の金井孝雄さん（82）です。
+
+そして、妻の三紀子さん（72）、息子の孝一さん（47）、娘のあづささん（49）。家族が中心となって店を切り盛りしています。
+
+客：「本当に安くて、品物もすごく良いんですよ、肉が」「この子（息子）もともと肉が嫌いだったんですよ。でも食べるようになって」
+
+高級店にも引けをとらない、おいしい肉が格安で手に入ると評判です。
+
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
