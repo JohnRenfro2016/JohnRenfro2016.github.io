@@ -737,7 +737,7 @@ const replsA = [
 {pat:/(2|２)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xni$2Xjyuu$3Xichi-nichi,twenty-first day of the month~Noun'},
 {pat:/(2|２)(?!X)(６|6)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xroku$3Xnichi,twenty-sixth day of the month~Noun'},
 {pat:/(2|２)(?!X)(７|7)(?!X)(日)(?!X)/g,repl:'$1Xni$2Xjyuu$3Xshichi-nichi,twenty-seventh day of the month~Noun'},
-{pat:/(2|２)(?!X)(９|9)(?!X)(日)(?!X)/g,repl:'$1Xni$2Xjyuu$3Xku-nichi,twenty-nineth day of the month~Noun'},
+{pat:/(2|２)(?!X)(９|9)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xku$3Xnichi,twenty-nineth day of the month~Noun'},
 {pat:/(3)(?!X)(0)(?!X)(日)(?!X)/g,repl:'$1Xsan$2Xjyuu$3Xnichi,thirtieth day of the month~Noun'},
 {pat:/(3|３)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xsan-byaku,three-hundred~Noun$2$3'},
 {pat:/(4|４)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xyon-hyaku,four-hundred~Noun$2X$3'},
@@ -4031,6 +4031,7 @@ const replsB = [
 {pat:/(接)(?!X)(近)(?!X)/g,repl:'$1Xsek$2Xkin,approach~Noun'},
 {pat:/(控)(?!X)(え)(?!X)/g,repl:'$1X$2Xhikae,hold back~IchidanVerb'},
 {pat:/(推)(?!X)(定)(?!X)/g,repl:'$1Xsui$2Xtei,estimation~Noun'},
+{pat:/(の)(?!X)(に)(?!X)/g,repl:'$1X$2Xno ni,although~Postposition~Noun'},
 {pat:/(推)(?!X)(測)(?!X)/g,repl:'$1Xsui$2Xsoku,conjecture,guess~Noun'},
 {pat:/(推)(?!X)(移)(?!X)/g,repl:'$1Xsui$2Xi,transition~Noun'},
 {pat:/(推)(?!X)(薦)(?!X)/g,repl:'$1Xsui$2Xsen,recommendation,nomination~Noun'},
@@ -4561,7 +4562,7 @@ const replsB = [
 {pat:/(水)(?!X)(素)(?!X)/g,repl:'$1Xsui$2Xso,hydrogen~Noun'},
 {pat:/(水)(?!X)(色)(?!X)/g,repl:'$1Xmizu$2Xiro,sky blue,turquoise~Noun'},
 {pat:/(水)(?!X)(道)(?!X)/g,repl:'$1Xsui$2Xdou,water supply~Noun'},
-{pat:/(水)(?!X)(際)(?!X)/g,repl:'$1Xmizu$2Xzawa,stem flow at border~Noun'},
+{pat:/(水)(?!X)(際)(?!X)/g,repl:'$1Xmizu$2Xzawa,stem the flow~Noun'},
 {pat:/(水)(?!X)(面)(?!X)/g,repl:'$1Xsui$2Xmen,surface of water~Noun'},
 {pat:/(永)(?!X)(久)(?!X)/g,repl:'$1Xei$2Xkyuu,permanence,eternity~Noun'},
 {pat:/(永)(?!X)(遠)(?!X)/g,repl:'$1Xei$2Xen,eternity~Noun'},
@@ -5192,6 +5193,7 @@ const replsB = [
 {pat:/(統)(?!X)(計)(?!X)/g,repl:'$1Xtou$2Xkei,statistics~Noun'},
 {pat:/(絵)(?!X)(本)(?!X)/g,repl:'$1Xe$2Xhon,picture book~Noun'},
 {pat:/(絶)(?!X)(妙)(?!X)/g,repl:'$1Xzetsu$2Xmyou,exquisite~Noun'},
+{pat:/(官)(?!X)(房)(?!X)/g,repl:'$1Xkan$2Xbou,government secretariat~Noun'},
 {pat:/(絶)(?!X)(対)(?!X)/g,repl:'$1Xzet$2Xtai,absolutely~Noun'},
 {pat:/(継)(?!X)(承)(?!X)/g,repl:'$1Xkei$2Xsyou,succession~Noun'},
 {pat:/(継)(?!X)(続)(?!X)/g,repl:'$1Xkei$2Xzoku,continuation~Noun'},
@@ -7504,17 +7506,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-戦闘が続くアフリカのスーダンから、周辺国のジブチに退避した日本人が、日本時間の28日午後、帰国の途につくことになった。
-
-日本政府は、これまで自衛隊の輸送機やフランス政府の支援で、スーダンにいる日本人とその家族を退避させたが、27日、新たに日本人とその家族あわせて5人が、カナダ政府の協力を得てジブチに退避した。
-
-これまでにスーダンから退避した日本人とその家族は、あわせて65人になった。
-
-関係者によると、この中で日本への帰国を希望する人たちが、日本時間の28日夕方、ジブチからチャーター機で日本に向かい、翌日の朝に到着する見通し。
-
-さらなる退避などに備え、大使館員など、一部の日本人は現地に残る方針。
-
-スーダンでは、停戦合意の期限が日本時間の午前7時から、さらに72時間延長されたが、情勢は依然として不透明なまま。
+政府は、新型コロナを巡る水際対策を29日午前0時に終了した。感染症法上の位置付けが5月8日に5類に移行するのに合わせて終了予定だったが、前倒しした。松野博一官房長官は28日の記者会見で「連休中の海外旅行者の帰国を円滑化する」と説明した。
 <br>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
