@@ -172,7 +172,7 @@ const replsA = [
 {pat:/(取)(?!X)(り)(?!X)(替)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xtorikae,change,replace$5X~RuVerb'},
 {pat:/(取)(?!X)(り)(?!X)(締)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xtorishima,control,crack down$5X~RuVerb'},
 {pat:/(受)(?!X)(け)(?!X)(付)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xuketsuke,undertake$5X~RuVerb'},
-{pat:/(受)(?!X)(け)(?!X)(入)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xuke-ire,accommodate$5X~RuVerb'},
+{pat:/(受)(?!X)(け)(?!X)(入)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xu$2Xke$3Xi$4Xre,accommodate$5X~RuVerb'},
 {pat:/(受)(?!X)(け)(?!X)(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xuketome,catch,receive$5X~RuVerb'},
 {pat:/(召)(?!X)(し)(?!X)(上)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xmeshiaga,eat,drink$5X~RuVerb'},
 {pat:/(呼)(?!X)(び)(?!X)(掛)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xyobi-kake,call to$5X~RuVerb'},
@@ -733,7 +733,7 @@ const replsA = [
 {pat:/(2|２)(?!X)(3|３)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xsan$3Xnichi,twenty-third day of the month~Noun'},
 {pat:/(2|２)(?!X)(4|４)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xyok$3Xka,twenty-fourth day of the month~Noun'},
 {pat:/(2|２)(?!X)(5|５)(?!X)(日)(?!X)/g,repl:'$1Xni$2Xjyuu$3Xgo-nichi,twenty-fifth day of the month~Noun'},
-{pat:/(2|２)(?!X)(8|８)(?!X)(日)(?!X)/g,repl:'$1Xni$2Xjyuu$3Xhachi-nichi,twenty-eighth day of the month~Noun'},
+{pat:/(2|２)(?!X)(8|８)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xhachi$3Xnichi,twenty-eighth day of the month~Noun'},
 {pat:/(2|２)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xni-hyaku,two-hundred~Noun$2$3'},
 {pat:/(2|２)(?!X)(０|0)(?!X)(日)(?!X)/g,repl:'$1Xhatsu$2X$3Xka,twentieth day of the month~Noun'},
 {pat:/(2|２)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xni$2Xjyuu$3Xichi-nichi,twenty-first day of the month~Noun'},
@@ -742,12 +742,12 @@ const replsA = [
 {pat:/(2|２)(?!X)(９|9)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xku$3Xnichi,twenty-nineth day of the month~Noun'},
 {pat:/(３|3)(?!X)(０|0)(?!X)(日)(?!X)/g,repl:'$1Xsan$2Xjyuu$3Xnichi,thirtieth day of the month~Noun'},
 {pat:/(3|３)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xsan-byaku,three-hundred~Noun$2$3'},
-{pat:/(4|４)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xyon-hyaku,four-hundred~Noun$2X$3'},
-{pat:/(5|５)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xgo-hyaku,five-hundred~Noun$2X$3'},
-{pat:/(6|６)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xrop-pyaku,six-hundred~Noun$2X$3'},
-{pat:/(7|７)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xnana-hyaku,seven-hundred~Noun$2X$3'},
-{pat:/(8|８)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xhap-pyaku,eight-hundred~Noun$2X$3'},
-{pat:/(9|９)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xkyuu-hyaku,nine-hundred~Noun$2X$3'},
+{pat:/(4|４)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xyon-hyaku,four-hundred~Noun$2$3'},
+{pat:/(5|５)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xgo-hyaku,five-hundred~Noun$2$3'},
+{pat:/(6|６)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xrop-pyaku,six-hundred~Noun$2$3'},
+{pat:/(7|７)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xnana-hyaku,seven-hundred~Noun$2$3'},
+{pat:/(8|８)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xhap-pyaku,eight-hundred~Noun$2$3'},
+{pat:/(9|９)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xkyuu-hyaku,nine-hundred~Noun$2$3'},
 {pat:/(あ)(?!X)(え)(?!X)(て)(?!X)/g,repl:'$1X$2X$3Xaete,boldly~Noun'},
 {pat:/(あ)(?!X)(く)(?!X)(び)(?!X)/g,repl:'$1Xa$2X$3Xkubi,yawn~Noun'},
 {pat:/(あ)(?!X)(ぐ)(?!X)(ら)(?!X)/g,repl:'$1X$2X$3Xagura,sit cross legged~Noun'},
@@ -1062,6 +1062,7 @@ const replsA = [
 {pat:/(半)(?!X)(導)(?!X)(体)(?!X)/g,repl:'$1Xhan$2Xdou$3Xtai,semiconductor~Noun'},
 {pat:/(博)(?!X)(物)(?!X)(館)(?!X)/g,repl:'$1Xhaku$2Xbutsu$3Xkan,museum~Noun'},
 {pat:/(博)(?!X)(覧)(?!X)(会)(?!X)/g,repl:'$1Xhaku$2Xran$3Xkai,fair~Noun'},
+{pat:/(利)(?!X)(便)(?!X)(性)(?!X)/g,repl:'$1Xri$2Xben$3Xsei,user friendly~Noun'},
 {pat:/(原)(?!X)(子)(?!X)(力)(?!X)/g,repl:'$1Xgen$2Xshi$3Xryoku,nuclear power~Noun'},
 {pat:/(参)(?!X)(考)(?!X)(書)(?!X)/g,repl:'$1Xsan$2X$3Xkousyo,reference book~Noun'},
 {pat:/(参)(?!X)(議)(?!X)(院)(?!X)/g,repl:'$1Xsan$2Xgi$3Xin,Upper House of government~Noun'},
@@ -1421,6 +1422,7 @@ const replsA = [
 {pat:/(絵)(?!X)(葉)(?!X)(書)(?!X)/g,repl:'$1X$2X$3Xehagaki,picture postcard~Noun'},
 {pat:/(絶)(?!X)(え)(?!X)(ず)(?!X)/g,repl:'$1X$2X$3Xtaezu,constantly,always~Noun'},
 {pat:/(絶)(?!X)(え)(?!X)(間)(?!X)/g,repl:'$1X$2X$3Xtaema,pause~Noun'},
+{pat:/(屈)(?!X)(辱)(?!X)(的)(?!X)/g,repl:'$1Xkutsu$2Xjyoku$3Xteki,humiliating~Noun'},
 {pat:/(絶)(?!X)(対)(?!X)(に)(?!X)/g,repl:'$1X$2X$3Xzettaini,absolutely,unconditionally~Noun'},
 {pat:/(絶)(?!X)(望)(?!X)(的)(?!X)/g,repl:'$1Xzetsu$2Xbou$3Xteki,hopeless~Noun'},
 {pat:/(緩)(?!X)(や)(?!X)(か)(?!X)/g,repl:'$1X$2X$3Xyuruyaka,slack,loose~Noun'},
@@ -1798,7 +1800,7 @@ const replsA = [
 {pat:/(小)(?!X)(遣)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2Xkozuka,pocket money,spending money$3X~IAdjective~Noun'},
 {pat:/(少)(?!X)(な)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xsuku$2Xna,few,little$3X~IAdjective~Noun'},
 {pat:/(届)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtodoke,reach$3X~RuVerb'},
-{pat:/(属)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xzokusu,belong to,be one of$3X~RuVerb'},
+{pat:/(属)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xzoku$2Xsu,be one of$3X~RuVerb'},
 {pat:/(崩)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkuzure,crumble,collapse$3X~RuVerb'},
 {pat:/(幅)(?!X)(広)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xhaba$2Xbiro,wide,broad$3X~IAdjective~Noun'},
 {pat:/(平)(?!X)(た)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2Xhirata,flat,level$3X~IAdjective~Noun'},
@@ -2016,7 +2018,7 @@ const replsA = [
 {pat:/(締)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshi$2Xmei,tigh-ten,fasten$3X~RuVerb'},
 {pat:/(緩)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyurume,loo-sen,unloose$3X~RuVerb'},
 {pat:/(縮)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xchi$2Xjima,be shortened,be contracted$3X~RuVerb'},
-{pat:/(縮)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xchi$2Xjime,contract,shorten$3X~RuVerb'},
+{pat:/(縮)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xchiji$2Xme,contract,shorten$3X~RuVerb'},
 {pat:/(罰)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xbassu,punish$3X~RuVerb'},
 {pat:/(美)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xutsuku$2Xshi,beautiful$3X~IAdjective~Noun'},
 {pat:/(羨)(?!X)(ま)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xurayama$2X$3Xshi,envious,envy$4X~IAdjective~Noun'},
@@ -2107,7 +2109,7 @@ const replsA = [
 {pat:/(途)(?!X)(切)(?!X)(れ)(?!X)/g,repl:'$1Xto$2X$3Xgire,cut short~IchidanVerb'},
 {pat:/(通)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtsuu$2Xji,communicate with$3X~RuVerb'},
 {pat:/(連)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtsure,take along,bring along$3X~RuVerb'},
-{pat:/(進)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsusume,advance,promote$3X~RuVerb'},
+{pat:/(進)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xsusu$2Xme,advance,promote$3X~RuVerb'},
 {pat:/(遂)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtoge,achieve$3X~RuVerb'},
 {pat:/(遅)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xokura,delay,put off$3X~SuVerb'},
 {pat:/(遅)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xokure,be late$3X~RuVerb'},
@@ -2942,7 +2944,7 @@ const replsB = [
 {pat:/(利)(?!X)(息)(?!X)/g,repl:'$1Xri$2Xsoku,interest~Noun'},
 {pat:/(利)(?!X)(用)(?!X)/g,repl:'$1Xri$2Xyou,utilization~Noun'},
 {pat:/(利)(?!X)(益)(?!X)/g,repl:'$1Xri$2Xeki,profit~Noun'},
-{pat:/(到)(?!X)(底)(?!X)/g,repl:'$1Xtou$2Xtei,after all,in long run~Noun'},
+{pat:/(到)(?!X)(底)(?!X)/g,repl:'$1Xtou$2Xtei,in the long run~Noun'},
 {pat:/(到)(?!X)(着)(?!X)/g,repl:'$1Xtou$2Xcyaku,arrival~Noun'},
 {pat:/(到)(?!X)(達)(?!X)/g,repl:'$1Xtou$2Xtatsu,arrival,attainment~Noun'},
 {pat:/(制)(?!X)(圧)(?!X)/g,repl:'$1Xsei$2Xatsu,gaining total control~Noun'},
@@ -3228,6 +3230,7 @@ const replsB = [
 {pat:/(和)(?!X)(服)(?!X)/g,repl:'$1Xwa$2Xfuku,Japanese clothes,kimono~Noun'},
 {pat:/(和)(?!X)(英)(?!X)/g,repl:'$1Xwa$2Xei,Japanese-English~Noun'},
 {pat:/(和)(?!X)(解)(?!X)/g,repl:'$1Xwa$2Xkai,reconciliation~Noun'},
+{pat:/(独)(?!X)(島)(?!X)/g,repl:'$1Xdoku$2Xshima,Japan~Noun'},
 {pat:/(和)(?!X)(語)(?!X)/g,repl:'$1Xwa$2Xgo,native Japanese word~Noun'},
 {pat:/(和)(?!X)(風)(?!X)/g,repl:'$1Xwa$2Xfuu,Japanese style~Noun'},
 {pat:/(和)(?!X)(食)(?!X)/g,repl:'$1Xwa$2Xsyoku,Japanese-style food~Noun'},
@@ -3819,6 +3822,7 @@ const replsB = [
 {pat:/(復)(?!X)(興)(?!X)/g,repl:'$1Xfuk$2Xkou,reconstRuCtion~Noun'},
 {pat:/(循)(?!X)(環)(?!X)/g,repl:'$1Xjyun$2Xkan,circulation~Noun'},
 {pat:/(微)(?!X)(か)(?!X)/g,repl:'$1Xkasu$2Xka,faint,dim~Noun'},
+{pat:/(若)(?!X)(手)(?!X)/g,repl:'$1Xwaka$2Xte,young person~Noun'},
 {pat:/(微)(?!X)(妙)(?!X)/g,repl:'$1Xbi$2Xmyou,subtle,delicate~Noun'},
 {pat:/(徴)(?!X)(収)(?!X)/g,repl:'$1Xcyou$2Xsyuu,collection of fees and taxes~Noun'},
 {pat:/(徹)(?!X)(夜)(?!X)/g,repl:'$1Xtetsu$2Xya,staying up all night~Noun'},
@@ -4061,14 +4065,16 @@ const replsB = [
 {pat:/(提)(?!X)(供)(?!X)/g,repl:'$1Xtei$2Xkyou,sponsorship~Noun'},
 {pat:/(提)(?!X)(出)(?!X)/g,repl:'$1Xtei$2Xsyutsu,submittal~Noun'},
 {pat:/(提)(?!X)(唱)(?!X)/g,repl:'$1Xtei$2Xsyou,advocacy~Noun'},
-{pat:/(提)(?!X)(国)(?!X)/g,repl:'$1X$2XKan-koku,Korea~Noun'},
+{pat:/(提)(?!X)(国)(?!X)/g,repl:'$1Xkan$2Xkoku,Korea~Noun'},
+{pat:/(激)(?!X)(変)(?!X)/g,repl:'$1Xgeki$2Xhen,sudden change~Noun'},
+{pat:/(開)(?!X)(幕)(?!X)/g,repl:'$1Xkai$2Xmaku,opening an event~Noun'},
 {pat:/(提)(?!X)(案)(?!X)/g,repl:'$1Xtei$2Xan,proposal~Noun'},
 {pat:/(提)(?!X)(示)(?!X)/g,repl:'$1Xtei$2Xji,presentation~Noun'},
 {pat:/(提)(?!X)(言)(?!X)/g,repl:'$1Xtei$2Xgen,proposal~Noun'},
 {pat:/(提)(?!X)(訴)(?!X)/g,repl:'$1Xtei$2Xso,starting a lawsuit~Noun'},
 {pat:/(換)(?!X)(気)(?!X)/g,repl:'$1Xkan$2Xki,arousal~Noun'},
 {pat:/(換)(?!X)(算)(?!X)/g,repl:'$1X$2Xconverting foreign money~Noun'},
-{pat:/(握)(?!X)(手)(?!X)/g,repl:'$1Xaku$2Xsyu,handshake,handshaking~Noun'},
+{pat:/(握)(?!X)(手)(?!X)/g,repl:'$1Xaku$2Xsyu,handshake~Noun'},
 {pat:/(援)(?!X)(助)(?!X)/g,repl:'$1Xen$2Xjyo,aid,assistance~Noun'},
 {pat:/(援)(?!X)(護)(?!X)/g,repl:'$1Xen$2Xgo~support~Noun'},
 {pat:/(損)(?!X)(壊)(?!X)/g,repl:'$1Xson$2Xkai,stRuCtural damage~Noun'},
@@ -4268,6 +4274,7 @@ const replsB = [
 {pat:/(時)(?!X)(速)(?!X)/g,repl:'$1Xji$2Xsoku,speed per hour~Noun'},
 {pat:/(時)(?!X)(間)(?!X)/g,repl:'$1Xji$2X-kan,time~Noun'},
 {pat:/(晩)(?!X)(年)(?!X)/g,repl:'$1Xban$2Xnen,late in life~Noun'},
+{pat:/(立)(?!X)(証)(?!X)/g,repl:'$1Xris$2Xsyou,establishing proof~Noun'},
 {pat:/(普)(?!X)(及)(?!X)/g,repl:'$1Xfu$2Xkyuu,universal spread~Noun'},
 {pat:/(普)(?!X)(段)(?!X)/g,repl:'$1Xfu$2Xdan,usual,ordinary~Noun'},
 {pat:/(普)(?!X)(通)(?!X)/g,repl:'$1Xfu$2Xtsuu,normal~Noun'},
@@ -4408,6 +4415,7 @@ const replsB = [
 {pat:/(栄)(?!X)(養)(?!X)/g,repl:'$1Xei$2Xyou,nutrition,nourishment~Noun'},
 {pat:/(否)(?!X)(認)(?!X)/g,repl:'$1Xhi$2Xnin,deny~Noun'},
 {pat:/(校)(?!X)(庭)(?!X)/g,repl:'$1Xkou$2Xtei,schoolyard,campus~Noun'},
+{pat:/(往)(?!X)(来)(?!X)/g,repl:'$1Xou$2Xrai,coming and going~Noun'},
 {pat:/(校)(?!X)(舎)(?!X)/g,repl:'$1Xkou$2Xsya,school building~Noun'},
 {pat:/(校)(?!X)(長)(?!X)/g,repl:'$1Xkou$2Xcyou,principal,schoolmaster~Noun'},
 {pat:/(株)(?!X)(価)(?!X)/g,repl:'$1Xkabu$2Xka,stock price~Noun'},
@@ -5031,7 +5039,7 @@ const replsB = [
 {pat:/(短)(?!X)(所)(?!X)/g,repl:'$1Xtan$2Xsyo,shortcoming,defect~Noun'},
 {pat:/(短)(?!X)(期)(?!X)/g,repl:'$1Xtan$2Xki,short-term~Noun'},
 {pat:/(短)(?!X)(気)(?!X)/g,repl:'$1Xtan$2Xki,short temper~Noun'},
-{pat:/(短)(?!X)(縮)(?!X)/g,repl:'$1X$2Xtansyuku,shortening,contraction~Noun'},
+{pat:/(短)(?!X)(縮)(?!X)/g,repl:'$1Xtan$2Xsyuku,shortening,contraction~Noun'},
 {pat:/(短)(?!X)(髪)(?!X)/g,repl:'$1Xtan$2Xpatsu,short hair~Noun'},
 {pat:/(石)(?!X)(油)(?!X)/g,repl:'$1Xseki$2Xyu,oil~Noun'},
 {pat:/(石)(?!X)(炭)(?!X)/g,repl:'$1Xseki$2Xtan,coal~Noun'},
@@ -6257,7 +6265,7 @@ const replsB = [
 {pat:/(九)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xkokono,nine (things)$2X~TsuVerb'},
 {pat:/(乱)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xmida,put into disorder,disrupt$2X~SuVerb'},
 {pat:/(乾)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xkawa,dry,run dry$2X~KuVerb'},
-{pat:/(争)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xaraso,conflict,battle$2X~IAdjective~Noun'},
+{pat:/(争)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xaraso,conflict$2X~IAdjective~Noun'},
 {pat:/(争)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xaraso,compete,fight$2X~UVerb'},
 {pat:/(二)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xfuta,two (things)$2X~TsuVerb'},
 {pat:/(互)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xtaga,each other$2X~IAdjective~Noun'},
@@ -7536,15 +7544,13 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-TOHOシネマズは、6月1日から映画鑑賞料金を値上げすると1日、発表した。一般は1900円から100円値上げし2000円となる。
+三菱UFJ銀行は2日、東京や大阪、愛知といった都市部の支店など98カ所で行っているATMの24時間稼働を、2023年度内に終了すると明らかにした。午前6時から翌午前0時までの18時間に縮める。現金を使わないキャッシュレスの進展により、未明から早朝にかけての時間帯で利用件数が減っており、コスト削減を進める。
 
-【写真】もう1900円では鑑賞できない…6月1日以降に上映予定の映画作品
+【写真】ATM横の現金封筒、続々廃止　地銀や信金
 
-　同社は「キャッシュレス決済の推進やモバイルチケットの導入等による運営の効率化を図るとともに、映画をより多くのお客様にお届けし、お楽しみいただくため、新規出店や鑑賞環境の改善に努めて参りました」と説明。しかし「エネルギー価格の高騰や円安による仕入れコストの上昇、アルバイト人件費を中心とした運営コスト増や各種設備投資における負担増等により、企業努力だけではこれらの吸収は極めて困難であると判断し、鑑賞料金の改定を行うことといたしました」と値上げに至った理由を明かした。
+　提携先のコンビニのATMではこれまで通り24時間使え、利便性への影響は少ないと判断した。三菱UFJのATMは21年3月時点で約1750カ所。24時間稼働ではないATMでも時間を短縮する。
 
-　値上げの対象となるのは、一般のほかシニア（1200円→1300円）、レイトショー（1400円→1500円）、ファーストデイ・シネマイレージデイ・TOHOウェンズデイ（いずれも1200円→1300円）。大学・高校・中学・小学生・幼児の鑑賞料金は改定せず、障がい者割引は現行料金1000円のまま変わらない。対象劇場はTOHOシネマズ名の全国71拠点（※2023年5月1日時点）。
-
-　「今後も更なる企業努力により、お客様にご満足いただけるようサービスの向上に努めて参りますので、何卒ご理解賜りますようお願い申し上げます」と呼びかけた。
+　みずほ、三井住友の両銀行は当面、ATMの24時間稼働を続ける方針。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
