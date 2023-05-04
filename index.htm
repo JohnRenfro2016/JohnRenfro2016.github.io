@@ -138,7 +138,7 @@ const replsA = [
 
 {pat:/(く)(?!X)(す)(?!X)(ぐ)(?!X)(っ)(?!X)(た)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xkusugutta,ticklish$6X~IAdjective~Noun'},
 {pat:/(ご)(?!X)(ち)(?!X)(そ)(?!X)(う)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xgochisousu,treat$6X~RuVerb'},
-{pat:/(じ)(?!X)(ゃ)(?!X)(ぶ)(?!X)(じ)(?!X)(ゃ)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1X$2X$3X$4X$5Xjyabujya,vigorously$6X~BuCerb'},
+{pat:/(じ)(?!X)(ゃ)(?!X)(ぶ)(?!X)(じ)(?!X)(ゃ)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1X$2X$3X$4X$5Xjyabujya,vigorously$6X~BuVerb'},
 {pat:/(ず)(?!X)(う)(?!X)(ず)(?!X)(う)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xzuuzuu-shi,cheeky,impudent$6X~IAdjective~Noun'},
 {pat:/(ず)(?!X)(る)(?!X)(が)(?!X)(し)(?!X)(こ)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xzurugashiko,sly,cunning$6X~IAdjective~Noun'},
 {pat:/(と)(?!X)(ん)(?!X)(で)(?!X)(も)(?!X)(な)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xtoんdemona,unthinkable,ou-trageous$6X~IAdjective~Noun'},
@@ -324,7 +324,7 @@ const replsA = [
 {pat:/(せ)(?!X)(っ)(?!X)(せ)(?!X)(と)(?!X)/g,repl:'$1X$2X$3X$4Xhard,diligently~Noun'},
 {pat:/(そ)(?!X)(っ)(?!X)(く)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xidentical,look alike~Noun'},
 {pat:/(そ)(?!X)(の)(?!X)(ま)(?!X)(ま)(?!X)/g,repl:'$1X$2X$3X$4Xsono mama,like that,unchanged~Noun'},
-{pat:/(そ)(?!X)(も)(?!X)(そ)(?!X)(も)(?!X)/g,repl:'$1X$2X$3X$4Xsomosomo,to begin with~Noun'},
+{pat:/(そ)(?!X)(も)(?!X)(そ)(?!X)(も)(?!X)/g,repl:'$1X$2X$3X$4Xsomo somo,to begin with~Noun'},
 {pat:/(そ)(?!X)(れ)(?!X)(ぞ)(?!X)(れ)(?!X)/g,repl:'$1X$2X$3X$4Xsore-zore,each~Noun'},
 {pat:/(繰)(?!X)(り)(?!X)(広)(?!X)(げ)(?!X)/g,repl:'$1Xku$2Xri$3Xhiro$4Xge,unfold~IchidanVerb'},
 {pat:/(そ)(?!X)(れ)(?!X)(ぞ)(?!X)(れ)(?!X)/g,repl:'$1X$2X$3X$4Xsore-zore,each~Noun'},
@@ -517,7 +517,7 @@ const replsA = [
 {pat:/(お)(?!X)(だ)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xodate,flatter$4X~RuVerb'},
 {pat:/(お)(?!X)(や)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xoya$2X,snack,refreshment$3X~TsuVerb'},
 {pat:/(か)(?!X)(ら)(?!X)(か)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1X$2X$3Xkaraka,make fun of,tease$4X~UVerb'},
-{pat:/(が)(?!X)(ぶ)(?!X)(が)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1X$2X$3Xgabuga,(sound of) guzzling$4X~BuCerb'},
+{pat:/(が)(?!X)(ぶ)(?!X)(が)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1X$2X$3Xgabuga,(sound of) guzzling$4X~BuVerb'},
 {pat:/(く)(?!X)(す)(?!X)(ぐ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xkusugu,tickle$4X~RuVerb'},
 {pat:/(く)(?!X)(だ)(?!X)(ら)(?!X)(な)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4Xkudarana,worthless,trifling$5X~IAdjective~Noun'},
 {pat:/(く)(?!X)(っ)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1X$2X$3Xkuttsu,stick,cling$4X~KuVerb'},
@@ -726,7 +726,7 @@ const replsA = [
 {pat:/(飛)(?!X)(び)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2X$3Xtobida,fly out,dash out$4X~SuVerb'},
 {pat:/(飛)(?!X)(び)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1X$2X$3Xtobiko,dive into$4X~MuVerb'},
 {pat:/(飲)(?!X)(み)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1X$2X$3Xnomiko,swallow,grasp$4X~MuVerb'},
-{pat:/(だ)(?!X)(ぶ)(?!X)(だ)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1X$2X$3Xdabuda,baggy,too big42X~BuCerb'},
+{pat:/(だ)(?!X)(ぶ)(?!X)(だ)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1X$2X$3Xdabuda,baggy,too big42X~BuVerb'},
 
 {pat:/(1|１)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xhyaku,one-hundred~Noun$2X$3'},
 {pat:/(2|２)(?!X)(2|２)(?!X)(日)(?!X)/g,repl:'$1Xni$2Xjyuu$3Xni-nichi,twenty-second day of the month~Noun'},
@@ -843,7 +843,7 @@ const replsA = [
 {pat:/(ど)(?!X)(っ)(?!X)(ち)(?!X)/g,repl:'$1Xdoc$2X$3Xchi,which~Noun'},
 {pat:/(ど)(?!X)(っ)(?!X)(と)(?!X)/g,repl:'$1X$2X$3Xdotto,burst (out laughing)~Noun'},
 {pat:/(ど)(?!X)(な)(?!X)(た)(?!X)/g,repl:'$1X$2X$3Xdonata,who~Noun'},
-{pat:/(ど)(?!X)(ん)(?!X)(な)(?!X)/g,repl:'$1X$2X$3Xdonna,what kind of~Noun'},
+{pat:/(ど)(?!X)(ん)(?!X)(な)(?!X)/g,repl:'$1X$2X$3Xdon na,what kind of~Noun'},
 {pat:/(な)(?!X)(が)(?!X)(ら)(?!X)/g,repl:'$1X$2X$3Xnagara,during~Noun'},
 {pat:/(な)(?!X)(ぜ)(?!X)(か)(?!X)/g,repl:'$1X$2X$3Xnazeka,for some reason~Noun'},
 {pat:/(に)(?!X)(よ)(?!X)(る)(?!X)/g,repl:'$1X$2X$3Xni yoru,according to~Noun'},
@@ -2048,7 +2048,7 @@ const replsA = [
 {pat:/(裏)(?!X)(返)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xura$2Xgae,turn over,turn inside out$3X~SuVerb'},
 {pat:/(褒)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xhome,praise,commend$3X~RuVerb'},
 {pat:/(要)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyousu,require,need$3X~RuVerb'},
-{pat:/(見)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xmie,be visible$3X~RuVerb'},
+{pat:/(見)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmi$2Xe,be visible$3X~RuVerb'},
 {pat:/(見)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xmise,show$3X~RuVerb'},
 {pat:/(見)(?!X)(合)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2Xmia,meeting with a view to marriage$3X~IAdjective~Noun'},
 {pat:/(見)(?!X)(守)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xmimamo,watch,keep watch over$3X~RuVerb'},
@@ -2078,7 +2078,7 @@ const replsA = [
 {pat:/(詰)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtsume,stuff,fill$3X~RuVerb'},
 {pat:/(話)(?!X)(し)(?!X)(合)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3Xhanashia,talk,discussion$4X~IAdjective~Noun'},
 {pat:/(詳)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xkuwa$2Xshi,complete details$3X~IAdjective~Noun'},
-{pat:/(認)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xmitome,approve$3X~RuVerb'},
+{pat:/(認)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmeto$2Xme,approve$3X~RuVerb'},
 {pat:/(調)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xshirabe,research$3X~RuVerb'},
 {pat:/(論)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xronji,argue,discuss$3X~RuVerb'},
 {pat:/(諦)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xakirame,give up$3X~RuVerb'},
@@ -2256,7 +2256,7 @@ const replsB = [
 {pat:/(た)(?!X)(だ)(?!X)/g,repl:'$1X$2Xtada,merely~Noun'},
 {pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1X$2Xchi,plural~Noun'},
 {pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1X$2Xtachi,plural~Noun'},
-{pat:/(た)(?!X)(め)(?!X)/g,repl:'$1X$2Xme,for~Noun'},
+{pat:/(た)(?!X)(め)(?!X)/g,repl:'$1X$2Xtame,for~Noun'},
 {pat:/(た)(?!X)(り)(?!X)/g,repl:'$1X$2Xtari,and things like that~Noun'},
 {pat:/(だ)(?!X)(け)(?!X)/g,repl:'$1X$2Xdake,only~Noun'},
 {pat:/(ち)(?!X)(り)(?!X)/g,repl:'$1Xchi$2Xri,dust~Noun'},
@@ -4052,7 +4052,7 @@ const replsB = [
 {pat:/(控)(?!X)(え)(?!X)/g,repl:'$1X$2Xhikae,hold back~IchidanVerb'},
 {pat:/(推)(?!X)(定)(?!X)/g,repl:'$1Xsui$2Xtei,estimation~Noun'},
 {pat:/(の)(?!X)(に)(?!X)/g,repl:'$1X$2Xno ni,although~Postposition~Noun'},
-{pat:/(た)(?!X)(め)(?!X)/g,repl:'$1X$2Xtame,for~Noun'},
+{pat:/(た)(?!X)(め)(?!X)/g,repl:'$1Xta$2Xme,for~Noun'},
 {pat:/(推)(?!X)(測)(?!X)/g,repl:'$1Xsui$2Xsoku,conjecture,guess~Noun'},
 {pat:/(推)(?!X)(移)(?!X)/g,repl:'$1Xsui$2Xi,transition~Noun'},
 {pat:/(推)(?!X)(薦)(?!X)/g,repl:'$1Xsui$2Xsen,recommendation,nomination~Noun'},
@@ -5100,7 +5100,7 @@ const replsB = [
 {pat:/(科)(?!X)(目)(?!X)/g,repl:'$1Xka$2Xmoku,subject~Noun'},
 {pat:/(秘)(?!X)(密)(?!X)/g,repl:'$1Xhi$2Xmitsu,secret~Noun'},
 {pat:/(秘)(?!X)(書)(?!X)/g,repl:'$1Xhi$2Xsyo,secretary~Noun'},
-{pat:/(秩)(?!X)(序)(?!X)/g,repl:'$1Xchi$2Xtsu-jyo,order,method~Noun'},
+{pat:/(秩)(?!X)(序)(?!X)/g,repl:'$1Xchitsu$2Xjyo,order~Noun'},
 {pat:/(移)(?!X)(動)(?!X)/g,repl:'$1Xi$2Xdou,shift~Noun'},
 {pat:/(移)(?!X)(行)(?!X)/g,repl:'$1Xi$2Xkou,transition~Noun'},
 {pat:/(移)(?!X)(転)(?!X)/g,repl:'$1Xi$2Xten,transfer,change of address~Noun'},
@@ -6184,7 +6184,7 @@ const replsB = [
 {pat:/(始)(?!X)(め)(?!X)/g,repl:'$1Xhaji$2Xme,begin~IchidanVerb'},
 {pat:/(定)(?!X)(め)(?!X)/g,repl:'$1Xsada$2Xme,certainly~IchidanVerb'},
 {pat:/(寄)(?!X)(せ)(?!X)/g,repl:'$1Xyo$2Xse,approach~IchidanVerb'},
-{pat:/(寝)(?!X)(転)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xne$2Xkoro,lie down$3X~BuCerb'},
+{pat:/(寝)(?!X)(転)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xne$2Xkoro,lie down$3X~BuVerb'},
 {pat:/(強)(?!X)(引)(?!X)/g,repl:'$1Xgou$2Xin,coercive~Noun'},
 {pat:/(応)(?!X)(じ)(?!X)/g,repl:'$1Xou$2Xji,comply~IchidanVerb'},
 {pat:/(抑)(?!X)(え)(?!X)/g,repl:'$1Xosa$2X,supress~IchidanVerb'},
@@ -6197,7 +6197,7 @@ const replsB = [
 {pat:/(比)(?!X)(べ)(?!X)/g,repl:'$1Xkura$2Xbe,compare~IchidanVerb'},
 {pat:/(求)(?!X)(め)(?!X)/g,repl:'$1Xmoto$2Xme,request~IchidanVerb'},
 {pat:/(決)(?!X)(め)(?!X)/g,repl:'$1Xki$2Xme,decide~IchidanVerb'},
-{pat:/(浮)(?!X)(か)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xu$2Xka,float$3X~BuCerb'},
+{pat:/(浮)(?!X)(か)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xu$2Xka,float$3X~BuVerb'},
 {pat:/(焦)(?!X)(げ)(?!X)/g,repl:'$1Xko$2Xge,scorch~IchidanVerb'},
 {pat:/(燃)(?!X)(え)(?!X)/g,repl:'$1Xmo$2X,burn~IchidanVerb'},
 {pat:/(生)(?!X)(じ)(?!X)/g,repl:'$1Xsyou$2Xji,cause~IchidanVerb'},
@@ -6257,7 +6257,7 @@ const replsB = [
 {pat:/(上)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xnobo,go up$2X~RuVerb'},
 {pat:/(下)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkuda,go down,go down or away from a central place$2X~RuVerb'},
 {pat:/(下)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xkuda,make a decision$2X~SuVerb'},
-{pat:/(並)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xnara,line up$2X~BuCerb'},
+{pat:/(並)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xnara,line up$2X~BuVerb'},
 {pat:/(丸)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xmaru,rou-nd$2X~IAdjective~Noun'},
 {pat:/(乗)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xno,ride$2X~RuVerb'},
 {pat:/(乗)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xno,ride,take$2X~RuVerb'},
@@ -6324,11 +6324,11 @@ const replsB = [
 {pat:/(厚)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xatsu,thick,bulky$2X~IAdjective~Noun'},
 {pat:/(去)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xsa,go away,leave$2X~RuVerb'},
 {pat:/(参)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmai,go,come$2X~RuVerb'},
-{pat:/(及)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xoyo,come up to$2X~BuCerb'},
+{pat:/(及)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xoyo,come up to$2X~BuVerb'},
 {pat:/(取)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xto,take,get$2X~RuVerb'},
 {pat:/(古)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xfuru,old$2X~IAdjective~Noun'},
 {pat:/(叩)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xtata,tap,hit$2X~KuVerb'},
-{pat:/(叫)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xsake,shout,cry out$2X~BuCerb'},
+{pat:/(叫)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xsake,shout,cry out$2X~BuVerb'},
 {pat:/(叱)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshika,scold,tell off,reprimand$2X~RuVerb'},
 {pat:/(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xa,fit$2X~UVerb'},
 {pat:/(吐)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xha,holler,spew$2X~KuVerb'},
@@ -6336,12 +6336,12 @@ const replsB = [
 {pat:/(含)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xfuku,contain$2X~MuVerb'},
 {pat:/(吸)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xsu,inhale,suck$2X~UVerb'},
 {pat:/(吹)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xfu,blow$2X~KuVerb'},
-{pat:/(呼)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xyo,call,name$2X~BuCerb'},
+{pat:/(呼)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xyo,call,name$2X~BuVerb'},
 {pat:/(咲)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xsa,bloom,blossom$2X~KuVerb'},
 {pat:/(問)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xto,question,inquiry$2X~IAdjective~Noun'},
 {pat:/(問)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xto,query$2X~UVerb'},
 {pat:/(喋)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xsyabe,chat$2X~RuVerb'},
-{pat:/(喜)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xyoroko,be happy to do$2X~BuCerb'},
+{pat:/(喜)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xyoroko,be happy to do$2X~BuVerb'},
 {pat:/(嗅)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,repl:'$1Xka,smell,sniff$2X~GuVerb'},
 {pat:/(嘆)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xnage,sigh,grieve$2X~KuVerb'},
 {pat:/(噛)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xka,bite,chew$2X~MuVerb'},
@@ -6369,7 +6369,7 @@ const replsB = [
 {pat:/(好)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xkono,like,be fond of$2X~MuVerb'},
 {pat:/(嫌)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xkira,dislike$2X~IAdjective~Noun'},
 {pat:/(嫌)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xkira,dislike$2X~UVerb'},
-{pat:/(学)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xman-a,learn,study$2X~BuCerb'},
+{pat:/(学)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xman-a,learn,study$2X~BuVerb'},
 {pat:/(守)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmamo,protect$2X~RuVerb'},
 {pat:/(安)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xyasu,inexpensive,cheap$2X~IAdjective~Noun'},
 {pat:/(実)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmino,bear fruit,ripen$2X~RuVerb'},
@@ -6586,7 +6586,7 @@ const replsB = [
 {pat:/(組)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xku,pair up$2X~MuVerb'},
 {pat:/(経)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhe,pass,pass through$2X~RuVerb'},
 {pat:/(経)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xta,elapse$2X~TsuVerb'},
-{pat:/(結)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xmusu,tie$2X~BuCerb'},
+{pat:/(結)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xmusu,tie$2X~BuVerb'},
 {pat:/(絞)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshibo,wring out,squeeze$2X~RuVerb'},
 {pat:/(絶)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xta,give up$2X~TsuVerb'},
 {pat:/(継)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,repl:'$1Xtsu,succeed,inherit$2X~GuVerb'},
@@ -6661,11 +6661,11 @@ const replsB = [
 {pat:/(走)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhashi,run$2X~RuVerb'},
 {pat:/(越)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xko,go over$2X~SuVerb'},
 {pat:/(足)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xta,add,supplement$2X~SuVerb'},
-{pat:/(跳)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xto,jump or fly$2X~BuCerb'},
+{pat:/(跳)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xto,jump or fly$2X~BuVerb'},
 {pat:/(踊)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xodo,dance$2X~RuVerb'},
 {pat:/(踏)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xfu,step on$2X~MuVerb'},
 {pat:/(蹴)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xke,kick$2X~RuVerb'},
-{pat:/(転)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xkoro,tumble down,fall over$2X~BuCerb'},
+{pat:/(転)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xkoro,tumble down,fall over$2X~BuVerb'},
 {pat:/(転)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xkoka,knock down$2X~SuVerb'},
 {pat:/(軽)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xkaru,light,light weight$2X~IAdjective~Noun'},
 {pat:/(載)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xno,appear in print$2X~RuVerb'},
@@ -6691,15 +6691,15 @@ const replsB = [
 {pat:/(逢)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xa,meet$2X~UVerb'},
 {pat:/(進)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xsusu,advance$2X~MuVerb'},
 {pat:/(遅)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xoso,slow,late$2X~IAdjective~Noun'},
-{pat:/(遊)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xaso,play$2X~BuCerb'},
-{pat:/(運)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xhako,carry,transport$2X~BuCerb'},
+{pat:/(遊)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xaso,play$2X~BuVerb'},
+{pat:/(運)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xhako,carry,transport$2X~BuVerb'},
 {pat:/(達)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xtas-,reach$2X~SuVerb'},
 {pat:/(違)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xchiga,difference,mistake$2X~IAdjective~Noun'},
 {pat:/(違)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xchiga,differ,be wrong$2X~UVerb'},
 {pat:/(遠)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xtoo,far,distant$2X~IAdjective~Noun'},
 {pat:/(遠)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xtoo,great distance$2X~KuVerb'},
 {pat:/(遭)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xa,meet with,encounter$2X~UVerb'},
-{pat:/(選)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xera,choose,elect$2X~BuCerb'},
+{pat:/(選)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xera,choose,elect$2X~BuVerb'},
 {pat:/(配)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkuba,hand out,distribute,allot$2X~RuVerb'},
 {pat:/(酔)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xyo,get drunk$2X~UVerb'},
 {pat:/(醜)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xminiku,ugly,bad-looking$2X~IAdjective~Noun'},
@@ -6729,7 +6729,7 @@ const replsB = [
 {pat:/(頼)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtayo,rely on,depend on$2X~RuVerb'},
 {pat:/(願)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xnega,wish,request$2X~IAdjective~Noun'},
 {pat:/(願)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xnega,wish,ask a favor,apply for$2X~UVerb'},
-{pat:/(飛)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xto,fly$2X~BuCerb'},
+{pat:/(飛)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xto,fly$2X~BuVerb'},
 {pat:/(食)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xku,eat,live on$2X~UVerb'},
 {pat:/(飲)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xno,drink$2X~MuVerb'},
 {pat:/(飼)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xka,raise,keep$2X~UVerb'},
@@ -7514,8 +7514,8 @@ a = a.replace(/(せX)(~SuVerb)/g,'<p>せXse,can do$2');
 a = a.replace(/(っX)(~RuVerb)/g,'<p>っXt$2');
 a = a.replace(/(っX)(~UVerb)/g,'<p>っXt$2');
 a = a.replace(/(わX)(~UVerb)/g,'<p>わXwa$2');
-a = a.replace(/(ぶX)(~BuCerb)/g,'<p>ぶXbu,to do,will do$2');
-a = a.replace(/(んX)(~BuCerb)/g,'<p>んXn$2');
+a = a.replace(/(ぶX)(~BuVerb)/g,'<p>ぶXbu,to do,will do$2');
+a = a.replace(/(んX)(~BuVerb)/g,'<p>んXn$2');
 a = a.replace(/(りX)(~RuVerb)/g,'<p>りXri$2');
 a = a.replace(/(るX)(~RuVerb)/g,'<p>るXru,to do, will do$2');
 a = a.replace(/(れX)(~RuVerb)/g,'<p>れXre,can do$2');
@@ -7544,13 +7544,13 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-三菱UFJ銀行は2日、東京や大阪、愛知といった都市部の支店など98カ所で行っているATMの24時間稼働を、2023年度内に終了すると明らかにした。午前6時から翌午前0時までの18時間に縮める。現金を使わないキャッシュレスの進展により、未明から早朝にかけての時間帯で利用件数が減っており、コスト削減を進める。
+アフリカ歴訪中の岸田文雄首相は4日、モザンビークの首都マプトで記者会見した。ロシアがウクライナに侵攻する中、法の支配に基づく自由で開かれた国際秩序を維持する重要性を強調。力による一方的な現状変更の試みは「世界のどこであっても認められないことを（各国と）確認した」と述べ、成果を強調した。
 
-【写真】ATM横の現金封筒、続々廃止　地銀や信金
+【写真】【そもそも解説】日本とアフリカはどんな関係？　首相訪問の狙いは？
 
-　提携先のコンビニのATMではこれまで通り24時間使え、利便性への影響は少ないと判断した。三菱UFJのATMは21年3月時点で約1750カ所。24時間稼働ではないATMでも時間を短縮する。
+　首相は今回、エジプト、ガーナ、ケニア、モザンビークを訪れた。19日から広島で始まる主要7カ国首脳会議（G7サミット）では、ロシアによるウクライナ侵攻が最大のテーマになる。ただ、「グローバルサウス」と呼ばれる新興国・途上国はロシアとの関係が深く、G7と距離を置く国も少なくない。このため、今回の歴訪はサミットを前に、グローバルサウスと連携を強化する狙いがあった。
 
-　みずほ、三井住友の両銀行は当面、ATMの24時間稼働を続ける方針。
+　首相は会見で、今、日本に求められているのはエネルギーや食料、保健、開発などの分野で「目に見える形でのG7による積極的な協力」を示すことだとした。サミットについては「これまでの外交成果を議論の糧にし、G7の結束及びグローバルサウスとの連携の強化につなげていく」と述べた。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
