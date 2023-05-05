@@ -1139,7 +1139,7 @@ const replsA = [
 {pat:/(始)(?!X)(め)(?!X)(に)(?!X)/g,repl:'$1X$2X$3Xhajime ni,in beginning,early in~Noun'},
 {pat:/(委)(?!X)(員)(?!X)(会)(?!X)/g,repl:'$1Xi$2Xin$3Xkai,committee~Noun'},
 {pat:/(婆)(?!X)(さ)(?!X)(ん)(?!X)/g,repl:'$1X$2X$3Xbaasan,grandmother,old lady~Noun'},
-{pat:/(子)(?!X)(ど)(?!X)(も)(?!X)/g,repl:'$1X$2X$3Xkodomo,children~Noun'},
+{pat:/(子)(?!X)(ど)(?!X)(も)(?!X)/g,repl:'$1Xko$2X$3Xdomo,children~Noun'},
 {pat:/(安)(?!X)(売)(?!X)(り)(?!X)/g,repl:'$1Xyasu$2X$3Xuri,sale~Noun'},
 {pat:/(定)(?!X)(休)(?!X)(日)(?!X)/g,repl:'$1Xtei$2Xkyuu$3Xbi,regular holiday~Noun'},
 {pat:/(定)(?!X)(期)(?!X)(券)(?!X)/g,repl:'$1Xtei$2Xki$3Xken,commuter\'s pass~Noun'},
@@ -2266,7 +2266,7 @@ const replsB = [
 {pat:/(過)(?!X)(失)(?!X)/g,repl:'$1Xka$2Xshitsu,fault~Noun'},
 {pat:/(と)(?!X)(に)(?!X)/g,repl:'$1X$2Xto ni,suddenly~Noun'},
 {pat:/(と)(?!X)(の)(?!X)/g,repl:'$1Xtou$2Xnou,about~Postposition~Noun'},
-{pat:/(と)(?!X)(も)(?!X)/g,repl:'$1Xto$2Xmo,including~Noun'},
+{pat:/(と)(?!X)(も)(?!X)/g,repl:'$1X$2Xto mo,including~Noun'},
 {pat:/(ど)(?!X)(こ)(?!X)/g,repl:'$1X$2Xdoko,where~Noun'},
 {pat:/(ど)(?!X)(の)(?!X)/g,repl:'$1X$2Xdono,in what way~Noun'},
 {pat:/(ど)(?!X)(れ)(?!X)/g,repl:'$1X$2Xdore,what,which~Noun'},
@@ -2691,14 +2691,16 @@ const replsB = [
 {pat:/(保)(?!X)(存)(?!X)/g,repl:'$1Xho$2Xzon,preservation,conservation~Noun'},
 {pat:/(保)(?!X)(守)(?!X)/g,repl:'$1Xho$2Xsyu,conservatism,maintenance~Noun'},
 {pat:/(保)(?!X)(安)(?!X)/g,repl:'$1Xho$2Xan,security~Noun'},
+{pat:/(苦)(?!X)(悩)(?!X)/g,repl:'$1Xku$2Xnou,mental anguish~Noun'},
 {pat:/(保)(?!X)(有)(?!X)/g,repl:'$1Xho$2Xyuu,retention~Noun'},
 {pat:/(保)(?!X)(管)(?!X)/g,repl:'$1Xho$2Xkan,storage~Noun'},
 {pat:/(保)(?!X)(証)(?!X)/g,repl:'$1Xho$2Xsyou,guarantee~Noun'},
+{pat:/(配)(?!X)(慮)(?!X)/g,repl:'$1Xhi$2Xryo,concern~Noun'},
 {pat:/(保)(?!X)(護)(?!X)/g,repl:'$1Xho$2Xgo,safeguard~Noun'},
 {pat:/(保)(?!X)(険)(?!X)/g,repl:'$1Xho$2Xken,insurance~Noun'},
 {pat:/(保)(?!X)(障)(?!X)/g,repl:'$1Xho$2Xsyou,pledge~Noun'},
 {pat:/(保)(?!X)(革)(?!X)/g,repl:'$1Xho$2Xkaku,conservative~Noun'},
-{pat:/(信)(?!X)(仰)(?!X)/g,repl:'$1Xshin$2Xkou,faith,religious belief~Noun'},
+{pat:/(信)(?!X)(仰)(?!X)/g,repl:'$1Xshin$2Xkou,religious belief~Noun'},
 {pat:/(信)(?!X)(号)(?!X)/g,repl:'$1Xshin$2Xgou,signal,traffic light~Noun'},
 {pat:/(信)(?!X)(念)(?!X)/g,repl:'$1Xshin$2Xnen,conviction~Noun'},
 {pat:/(信)(?!X)(用)(?!X)/g,repl:'$1Xshin$2Xyou,trust,credit~Noun'},
@@ -4018,10 +4020,12 @@ const replsB = [
 {pat:/(指)(?!X)(標)(?!X)/g,repl:'$1Xshi$2Xhyou,indicator~Noun'},
 {pat:/(指)(?!X)(示)(?!X)/g,repl:'$1Xshi$2Xji,indicate~Noun'},
 {pat:/(指)(?!X)(輪)(?!X)/g,repl:'$1X$2Xyubiwa,ring~Noun'},
+{pat:/(輸)(?!X)(血)(?!X)/g,repl:'$1Xyu$2Xketsu,blood transfusion~Noun'},
 {pat:/(指)(?!X)(針)(?!X)/g,repl:'$1Xshi$2Xshin,compass needle,guideline~Noun'},
 {pat:/(挑)(?!X)(戦)(?!X)/g,repl:'$1Xcyou$2Xsen,challenge~Noun'},
 {pat:/(挑)(?!X)(発)(?!X)/g,repl:'$1Xcyou$2Xhatsu,provocation~Noun'},
 {pat:/(挙)(?!X)(げ)(?!X)/g,repl:'$1X$2Xage,raise~IchidanVerb'},
+{pat:/(命)(?!X)(じ)(?!X)/g,repl:'$1Xmei$2Xji,order~IchidanVerb'},
 {pat:/(挨)(?!X)(拶)(?!X)/g,repl:'$1Xai$2Xsatsu,greet,greeting~Noun'},
 {pat:/(振)(?!X)(り)(?!X)/g,repl:'$1X$2Xfuri,swing,shake~Noun'},
 {pat:/(振)(?!X)(動)(?!X)/g,repl:'$1Xshin$2Xdou,vibration~Noun'},
@@ -4705,6 +4709,7 @@ const replsB = [
 {pat:/(温)(?!X)(帯)(?!X)/g,repl:'$1Xon$2Xtai,temperate zone~Noun'},
 {pat:/(温)(?!X)(床)(?!X)/g,repl:'$1Xon$2Xsyou,hotbed~Noun'},
 {pat:/(温)(?!X)(度)(?!X)/g,repl:'$1Xon$2Xdo,temperature~Noun'},
+{pat:/(判)(?!X)(例)(?!X)/g,repl:'$1Xhan$2Xrei,precedent~Noun'},
 {pat:/(温)(?!X)(暖)(?!X)/g,repl:'$1Xon$2Xdan,warm,mild~Noun'},
 {pat:/(温)(?!X)(泉)(?!X)/g,repl:'$1Xon$2Xsen,hot spring~Noun'},
 {pat:/(測)(?!X)(定)(?!X)/g,repl:'$1Xsoku$2Xtei,measure,gauge~Noun'},
@@ -6234,6 +6239,7 @@ const replsB = [
 
 {pat:/(で)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xde,to be,is$2X~BeVerb'},
 {pat:/(と)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xto,to try to do$2X~SuVerb'},
+{pat:/(反)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xkae,return something$2X~SuVerb'},
 {pat:/(ど)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xdo,move out of way$2X~KuVerb'},
 {pat:/(ど)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xhow,what$2X~UVerb'},
 {pat:/(な)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xna,become$2X~RuVerb'},
@@ -6242,6 +6248,7 @@ const replsB = [
 {pat:/(ま)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xma,sow,scatter$2X~KuVerb'},
 {pat:/(む)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xmu,peel,pare$2X~KuVerb'},
 {pat:/(も)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xmo,rub,massage$2X~MuVerb'},
+{pat:/(拒)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xkoba,reject$2X~MuVerb'},
 {pat:/(も)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xmo,already,yet$2X~UVerb'},
 {pat:/(も)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xmo,another,again$2X~UVerb'},
 {pat:/(や)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xya,do$2X~RuVerb'},
@@ -7488,47 +7495,68 @@ function translateC()
 translateA();
 translateB();
 
-a = a.replace(/(ちX)(~TsuVerb)/g,'<p>ちXchi$2');
-a = a.replace(/(いX)(~GuVerb)/g,'<p>いXi,to do,will do$2');
-a = a.replace(/(ぎX)(~GuVerb)/g,'<p>ぎXgi$2');
+
+a = a.replace(/(Punctuation|Postposition)/g,'<font color=red>$1</font><p>');
+
+a = a.replace(/(~UVerb|~KuVerb)/g,'$1<br>');
+a = a.replace(/(いX)(~IAdjective~Noun)/g,'<p>$1i$2<p>');
+a = a.replace(/(くX)(~IAdjective~Noun)/g,'<p>$1Xku,and<p>');
+a = a.replace(/(いX)(~KuVerb)/g,'<p>きXi$2');
 a = a.replace(/(いX)(~UVerb)/g,'<p>いXi$2');
 a = a.replace(/(うX)(~UVerb)/g,'<p>うXu,to do,will do$2');
 a = a.replace(/(えX)(~UVerb)/g,'<p>えXe,can do$2');
 a = a.replace(/(かX)(~KuVerb)/g,'<p>かXka$2');
+a = a.replace(/(かX)(~KuVerb)/g,'<p>かXka$2');
+a = a.replace(/(がX)(~GuVerb)/g,'<p>がXga$2');
 a = a.replace(/(きX)(~KuVerb)/g,'<p>きXki$2');
-a = a.replace(/(いX)(~IAdjective~Noun)/g,'<p>$1i$2<p>');
+a = a.replace(/(きX)(~KuVerb)/g,'<p>きXki,i$2');
+a = a.replace(/(ぎX)(~GuVerb)/g,'<p>ぎXgi$2');
+a = a.replace(/(ぎX)(~GuVerb)/g,'<p>ぎXgi$2');
 a = a.replace(/(くX)(~IAdjective~Noun)/g,'<p>$1ku,and$2<p>');
 a = a.replace(/(くX)(~KuVerb)/g,'<p>くXku,to do,will do$2');
+a = a.replace(/(ぐX)(~GuVerb)/g,'<p>ぐXgu,to do,will do$2');
 a = a.replace(/(けX)(~KuVerb)/g,'<p>けXke,can do$2');
 a = a.replace(/(げX)(~GuVerb)/g,'<p>げXge,can do$2');
+a = a.replace(/(こX)(~KuVerb)/g,'<p>きXko,let us do$2');
+a = a.replace(/(ごX)(~GuVerb)/g,'<p>ごXgo,let us do$2');
 a = a.replace(/(さX)(~SuVerb)/g,'<p>さXsa$2');
-a = a.replace(/(すX)(~SuVerb)/g,'<p>すXsu,to do,will do$2');
-a = a.replace(/(まX)(~MuVerb)/g,'<p>まXma$2');
-a = a.replace(/(みX)(~MuVerb)/g,'<p>みXmi$2');
-a = a.replace(/(んX)(~MuVerb)/g,'<p>んn$2');
-a = a.replace(/(むX)(~MuVerb)/g,'<p>むXmu,to do, will do$2');
-a = a.replace(/(めX)(~MuVerb)/g,'<p>めXme,can do$2');
-a = a.replace(/(もX)(~MuVerb)/g,'<p>もXmo,let\'s do$2');
 a = a.replace(/(しX)(~SuVerb)/g,'<p>しXshi$2');
+a = a.replace(/(すX)(~SuVerb)/g,'<p>すXsu,to do,will do$2');
 a = a.replace(/(せX)(~SuVerb)/g,'<p>せXse,can do$2');
+a = a.replace(/(そX)(~SuVerb)/g,'<p>そXso,let us do$2');
+a = a.replace(/(たX)(~TsuVerb)/g,'<p>たXta$2');
+a = a.replace(/(ちX)(~TsuVerb)/g,'<p>ちXchi$2');
 a = a.replace(/(っX)(~RuVerb)/g,'<p>っXt$2');
 a = a.replace(/(っX)(~UVerb)/g,'<p>っXt$2');
-a = a.replace(/(わX)(~UVerb)/g,'<p>わXwa$2');
+a = a.replace(/(つX)(~TsuVerb)/g,'<p>つXtsu,to do,will do$2');
+a = a.replace(/(てX)(~TsuVerb)/g,'<p>てXte,can do$2');
+a = a.replace(/(とX)(~TsuVerb)/g,'<p>とXto,let us do$2');
+a = a.replace(/(ばX)(~BuVerb)/g,'<p>ばXba$2');
+a = a.replace(/(びX)(~BuVerb)/g,'<p>びXbi$2');
 a = a.replace(/(ぶX)(~BuVerb)/g,'<p>ぶXbu,to do,will do$2');
-a = a.replace(/(んX)(~BuVerb)/g,'<p>んXn$2');
+a = a.replace(/(べX)(~BuVerb)/g,'<p>べXbe,can do$2');
+a = a.replace(/(ぼX)(~BuVerb)/g,'<p>ぼXbo,let us do$2');
+a = a.replace(/(まX)(~MuVerb)/g,'<p>まXma$2');
+a = a.replace(/(みX)(~MuVerb)/g,'<p>みXmi$2');
+a = a.replace(/(むX)(~MuVerb)/g,'<p>むXmu,to do, will do$2');
+a = a.replace(/(めX)(~MuVerb)/g,'<p>めXme,can do$2');
+a = a.replace(/(もX)(~MuVerb)/g,'<p>もXmo,let us do$2');
+a = a.replace(/(らX)(~RuVerb)/g,'<p>らXra$2');
 a = a.replace(/(りX)(~RuVerb)/g,'<p>りXri$2');
 a = a.replace(/(るX)(~RuVerb)/g,'<p>るXru,to do, will do$2');
 a = a.replace(/(れX)(~RuVerb)/g,'<p>れXre,can do$2');
+a = a.replace(/(ろX)(~RuVerb)/g,'<p>ろXro,let us do$2');
+a = a.replace(/(わX)(~UVerb)/g,'<p>わXwa$2');
+a = a.replace(/(んX)(~BuVerb)/g,'<p>んXn$2');
+a = a.replace(/(んX)(~MuVerb)/g,'<p>んn$2');
 a = a.replace(/~IchidanVerbる/g,'<p>るXru~IchidanVerb');
-
-a = a.replace(/(IAdjective)/g,'$1<p>');
-a = a.replace(/(Punctuation|Postposition)/g,'<font color=red>$1</font><p>');
-a = a.replace(/(Verb)/g,'$1<p>');
-a = a.replace(/(~Noun)/g,'<p>');
-a = a.replace(/(~UVerb|~KuVerb)/g,'$1<br>');
 
 a = a.replace(/(Verb)(と)(?!X)/g,'$1<p>$2Xto,by way of');
 a = a.replace(/(Verbる)(?!X)/g,'$1Xru,to do,will do~InformalVerb');
+
+a = a.replace(/(IAdjective)/g,'$1<p>');
+a = a.replace(/(Verb)/g,'$1<p>');
+a = a.replace(/(~Noun)/g,'<p>');
 
 a = a.replace(/X/g,'');
 
@@ -7544,13 +7572,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-アフリカ歴訪中の岸田文雄首相は4日、モザンビークの首都マプトで記者会見した。ロシアがウクライナに侵攻する中、法の支配に基づく自由で開かれた国際秩序を維持する重要性を強調。力による一方的な現状変更の試みは「世界のどこであっても認められないことを（各国と）確認した」と述べ、成果を強調した。
-
-【写真】【そもそも解説】日本とアフリカはどんな関係？　首相訪問の狙いは？
-
-　首相は今回、エジプト、ガーナ、ケニア、モザンビークを訪れた。19日から広島で始まる主要7カ国首脳会議（G7サミット）では、ロシアによるウクライナ侵攻が最大のテーマになる。ただ、「グローバルサウス」と呼ばれる新興国・途上国はロシアとの関係が深く、G7と距離を置く国も少なくない。このため、今回の歴訪はサミットを前に、グローバルサウスと連携を強化する狙いがあった。
-
-　首相は会見で、今、日本に求められているのはエネルギーや食料、保健、開発などの分野で「目に見える形でのG7による積極的な協力」を示すことだとした。サミットについては「これまでの外交成果を議論の糧にし、G7の結束及びグローバルサウスとの連携の強化につなげていく」と述べた。
+　宗教を理由に保護者が子どもへの医療を拒む事例が後を絶たない。毎日新聞のアンケート調査に応じた全国の55病院のうち、約3割の18病院が過去10年間に子どもへの医療拒否を経験し、少なくとも計48件に上った。厚生労働省は子どもへの医療拒否を虐待としているが、成人患者が宗教的信念に反して輸血されたケースでは病院側に賠償を命じた判例もある。救命を最優先とする一方で、信仰への配慮も求められる医療現場の苦悩が浮かぶ。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
