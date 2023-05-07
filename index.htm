@@ -604,7 +604,7 @@ const replsA = [
 {pat:/(受)(?!X)(け)(?!X)(持)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1X$2X$3Xukemo,have charge of$4X~TsuVerb'},
 {pat:/(可)(?!X)(愛)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xkawaiga,love,cherish$4X~RuVerb'},
 {pat:/(可)(?!X)(愛)(?!X)(ら)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4Xkawaira-shi,lovely,charming$5X~IAdjective~Noun'},
-{pat:/(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xawase,adjust,match$4X~RuVerb'},
+{pat:/(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xa$2X$3Xwase,exchange$4X~RuVerb'},
 {pat:/(名)(?!X)(付)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xnazuke,name,give a name to$4X~RuVerb'},
 {pat:/(吸)(?!X)(い)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xsui$2X$3Xko,inhale,suck in$4X~MuVerb'},
 {pat:/(呼)(?!X)(び)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xyo$2Xbi$3Xda,call out$4X~SuVerb'},
@@ -1308,7 +1308,6 @@ const replsA = [
 {pat:/(水)(?!X)(族)(?!X)(館)(?!X)/g,repl:'$1Xsui$2Xzoku$3Xkan,aquarium~Noun'},
 {pat:/(水)(?!X)(曜)(?!X)(日)(?!X)/g,repl:'$1Xsui$2Xyou$3Xbi,Wednesday~Noun'},
 {pat:/(決)(?!X)(し)(?!X)(て)(?!X)/g,repl:'$1X$2X$3Xkesshite,never,by no means~Noun'},
-{pat:/(決)(?!X)(ま)(?!X)(り)(?!X)/g,repl:'$1X$2X$3Xkimari,settlement,rule~Noun'},
 {pat:/(法)(?!X)(務)(?!X)(省)(?!X)/g,repl:'$1Xhou$2Xmu$3Xsyou,Ministry of Justice~Noun'},
 {pat:/(法)(?!X)(学)(?!X)(部)(?!X)/g,repl:'$1Xhou$2Xgaku$3Xbu,law department~Noun'},
 {pat:/(泣)(?!X)(き)(?!X)(声)(?!X)/g,repl:'$1Xnaki$2X$3Xgoe,tearful voice,crying~Noun'},
@@ -1918,7 +1917,7 @@ const replsA = [
 {pat:/(気)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1X$2Xkizu,notice$3X~KuVerb'},
 {pat:/(求)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmoto$2Xme,wish for$3X~RuVerb'},
 {pat:/(汚)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyogore,become dirty,become defiled$3X~RuVerb'},
-{pat:/(決)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkima,be decided$3X~RuVerb'},
+{pat:/(決)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xki$2Xma,be decided$3X~RuVerb'},
 {pat:/(決)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xki$2Xme,decide,agree upon$3X~RuVerb'},
 {pat:/(沈)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xshizume,sink,submerge$3X~RuVerb'},
 {pat:/(沸)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xwa$2Xka,boil,excite$3X~SuVerb'},
@@ -2255,6 +2254,7 @@ const replsB = [
 {pat:/(だ)(?!X)(け)(?!X)/g,repl:'$1X$2Xdake,only~Noun'},
 {pat:/(ち)(?!X)(り)(?!X)/g,repl:'$1Xchi$2Xri,dust~Noun'},
 {pat:/(つ)(?!X)(け)(?!X)/g,repl:'$1X$2Xtsuke,soak~IchidanVerb'},
+{pat:/(委)(?!X)(ね)(?!X)/g,repl:'$1Xyuda$2Xne,leave it up to~IchidanVerb'},
 {pat:/(て)(?!X)(も)(?!X)/g,repl:'$1X$2Xtemo,even if~Noun'},
 {pat:/(で)(?!X)(も)(?!X)/g,repl:'$1X$2Xdemo,but~Postposition~Noun'},
 {pat:/(過)(?!X)(失)(?!X)/g,repl:'$1Xka$2Xshitsu,fault~Noun'},
@@ -2929,7 +2929,7 @@ const replsB = [
 {pat:/(初)(?!X)(頭)(?!X)/g,repl:'$1Xsyo$2Xtou,beginning of an era~Noun'},
 {pat:/(判)(?!X)(子)(?!X)/g,repl:'$1Xhan$2Xko,seal,stamp~Noun'},
 {pat:/(判)(?!X)(定)(?!X)/g,repl:'$1Xhan$2Xtei,judgement~Noun'},
-{pat:/(判)(?!X)(断)(?!X)/g,repl:'$1Xhan$2Xdan,court judgment~Noun'},
+{pat:/(判)(?!X)(断)(?!X)/g,repl:'$1Xhan$2Xdan,judgment~Noun'},
 {pat:/(判)(?!X)(明)(?!X)/g,repl:'$1Xhan$2Xmei,acertain~Noun'},
 {pat:/(判)(?!X)(決)(?!X)/g,repl:'$1Xhanketsu$2X,judgment~Noun'},
 {pat:/(別)(?!X)(々)(?!X)/g,repl:'$1Xbetsu$2Xbetsu,separately~Noun'},
@@ -3416,6 +3416,7 @@ const replsB = [
 {pat:/(大)(?!X)(型)(?!X)/g,repl:'$1Xoo$2Xgata,large scale~Noun'},
 {pat:/(大)(?!X)(声)(?!X)/g,repl:'$1Xoo$2Xgoe,loud voice~Noun'},
 {pat:/(大)(?!X)(変)(?!X)/g,repl:'$1Xtai$2Xhen,awful~Noun'},
+{pat:/(氾)(?!X)(濫)(?!X)/g,repl:'$1Xhan$2Xran,overflowing~Noun'},
 {pat:/(大)(?!X)(学)(?!X)/g,repl:'$1Xdai$2Xgaku,university~Noun'},
 {pat:/(大)(?!X)(家)(?!X)/g,repl:'$1Xooya$2X,landlord~Noun'},
 {pat:/(大)(?!X)(小)(?!X)/g,repl:'$1Xdai$2Xsyou,size~Noun'},
@@ -4104,6 +4105,7 @@ const replsB = [
 {pat:/(支)(?!X)(配)(?!X)/g,repl:'$1Xshi$2Xhai,management~Noun'},
 {pat:/(支)(?!X)(障)(?!X)/g,repl:'$1Xshi$2Xsyou,obstacle~Noun'},
 {pat:/(改)(?!X)(善)(?!X)/g,repl:'$1Xkai$2Xzen,improvement~Noun'},
+{pat:/(診)(?!X)(療)(?!X)/g,repl:'$1Xshin$2Xryou,diagnosis~Noun'},
 {pat:/(改)(?!X)(定)(?!X)/g,repl:'$1Xkai$2Xtei,price revision~Noun'},
 {pat:/(改)(?!X)(憲)(?!X)/g,repl:'$1Xkai$2Xken,constitutional revision~Noun'},
 {pat:/(改)(?!X)(札)(?!X)/g,repl:'$1Xkai$2Xsatsu,ticket gate~Noun'},
@@ -4581,6 +4583,7 @@ const replsB = [
 {pat:/(気)(?!X)(候)(?!X)/g,repl:'$1Xki$2Xkou,climate~Noun'},
 {pat:/(気)(?!X)(分)(?!X)/g,repl:'$1Xki$2Xbun,feeling,mood~Noun'},
 {pat:/(気)(?!X)(力)(?!X)/g,repl:'$1Xki$2Xryoku,energy,vitality~Noun'},
+{pat:/(竜)(?!X)(巻)(?!X)/g,repl:'$1Xtatsu$2Xmaki,tornado~Noun'},
 {pat:/(気)(?!X)(圧)(?!X)/g,repl:'$1Xki$2Xatsu,atmospheric pressure~Noun'},
 {pat:/(気)(?!X)(楽)(?!X)/g,repl:'$1X$2Xkiraku,easygoing,comfortable~Noun'},
 {pat:/(気)(?!X)(温)(?!X)/g,repl:'$1Xki$2Xon,temperature~Noun'},
@@ -7028,6 +7031,7 @@ const replsB = [
 {pat:/(暦)(?!X)/g,repl:'$1Xkoyomi,calendar,almanac~Noun'},
 {pat:/(晋)(?!X)/g,repl:'$1XShin~Noun'},
 {pat:/(太)(?!X)/g,repl:'$1XTa,fat or grand~Noun'},
+{pat:/(伊)(?!X)/g,repl:'$1XI,Italy~Noun'},
 {pat:/(郎)(?!X)/g,repl:'$1XRou,nth son~Noun'},
 {pat:/(曲)(?!X)/g,repl:'$1Xkyoku,song,melody,tune~Noun'},
 {pat:/(書)(?!X)/g,repl:'$1Xsyo,document~Noun'},
@@ -7096,6 +7100,7 @@ const replsB = [
 {pat:/(汗)(?!X)/g,repl:'$1Xase,sweat~Noun'},
 {pat:/(池)(?!X)/g,repl:'$1Xike,pond~Noun'},
 {pat:/(沖)(?!X)/g,repl:'$1Xoki,offshore~Noun'},
+{pat:/(厄)(?!X)/g,repl:'$1XYaku,bad luck~Noun'},
 {pat:/(油)(?!X)/g,repl:'$1Xabura,oil,animal oil~Noun'},
 {pat:/(泉)(?!X)/g,repl:'$1Xizumi,spring,fountain~Noun'},
 {pat:/(法)(?!X)/g,repl:'$1Xhou,law~Noun'},
@@ -7178,7 +7183,7 @@ const replsB = [
 {pat:/(砂)(?!X)/g,repl:'$1Xsuna,sand,grit~Noun'},
 {pat:/(礼)(?!X)/g,repl:'$1Xrei,bow,courtesy~Noun'},
 {pat:/(社)(?!X)/g,repl:'$1Xsya,company~Noun'},
-{pat:/(神)(?!X)/g,repl:'$1Xkami,god,spirit~Noun'},
+{pat:/(神)(?!X)/g,repl:'$1Xkami or Jin,god,spirit~Noun'},
 {pat:/(禍)(?!X)/g,repl:'$1Xwazawai,trouble~Noun'},
 {pat:/(私)(?!X)/g,repl:'$1Xwatashi,I~Noun'},
 {pat:/(程)(?!X)/g,repl:'$1Xho+do,extent,limit~Noun'},
@@ -7249,6 +7254,11 @@ const replsB = [
 {pat:/(腹)(?!X)/g,repl:'$1Xhara,belly~Noun'},
 {pat:/(自)(?!X)/g,repl:'$1Xji,one\'s own~Noun'},
 {pat:/(舌)(?!X)/g,repl:'$1Xshita,tongue~Noun'},
+{pat:/(古)(?!X)/g,repl:'$1XKo,old~Noun'},
+{pat:/(加)(?!X)/g,repl:'$1XKa,addition~Noun'},
+{pat:/(茂)(?!X)/g,repl:'$1XShige,grow thick~Noun'},
+{pat:/(賀)(?!X)/g,repl:'$1XGa,celebration~Noun'},
+{pat:/(野)(?!X)/g,repl:'$1XNo,field~Noun'},
 {pat:/(舗)(?!X)/g,repl:'$1Xho,shop~Noun'},
 {pat:/(船)(?!X)/g,repl:'$1Xfune,-sen,boat~Noun'},
 {pat:/(色)(?!X)/g,repl:'$1Xiro,color~Noun'},
@@ -7301,7 +7311,7 @@ const replsB = [
 {pat:/(謎)(?!X)/g,repl:'$1Xnazo,puzzle,mystery~Noun'},
 {pat:/(警)(?!X)/g,repl:'$1Xkei,police~Noun'},
 {pat:/(谷)(?!X)/g,repl:'$1Xtani,valley,ravine~Noun'},
-{pat:/(豆)(?!X)/g,repl:'$1Xmame,bean~Noun'},
+{pat:/(豆)(?!X)/g,repl:'$1Xmame or Zu,bean~Noun'},
 {pat:/(豚)(?!X)/g,repl:'$1Xbuta,pig~Noun'},
 {pat:/(象)(?!X)/g,repl:'$1Xzou,elephant~Noun'},
 {pat:/(貝)(?!X)/g,repl:'$1Xkai,shellfish,shell~Noun'},
@@ -7594,7 +7604,13 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-アスレチックスの藤浪晋太郎（29）が5日(日本時間6日)、敵地のカンザスシティで行われたロイヤルズ戦に4点リードの7回から中継ぎ登板して打者4人に3四球を与えて一死しか取れずに”自滅炎上”して満塁で降板した。代わったオースティン・プルイットが藤浪が残した走者を全員生還させてしまい藤浪に3失点がつき、防御率は13.50まで悪化した。チームは勝利したが、藤浪への風当たりがますます強くなってきた。
+新型コロナウイルスの感染症法上の位置付けが8日、これまでの「2類相当」から季節性インフルエンザと同じ「5類」に移行した。
+
+【図解】新型コロナウイルス「2類相当」と「5類」の違い
+
+　行動制限に関する法的根拠がなくなり、感染対策は個人の判断に委ねられる。感染者の国内初確認から約3年4カ月。コロナ禍から脱却し、社会・経済活動の正常化に向けた大きな区切りとなる。
+
+　5類への移行に伴い、無料だったウイルス検査や外来診療の費用は自己負担となる。政府の試算によると、初診料は最大4170円となる見通し。入院する場合は、軽減措置として、月に最大2万円が補助される。コロナに対応する医療機関を増やし、入院患者は約8300カ所で最大約5万8000人を受け入れられるようにする。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
