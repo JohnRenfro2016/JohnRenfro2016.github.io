@@ -448,7 +448,7 @@ const replsA = [
 {pat:/(必)(?!X)(ず)(?!X)(し)(?!X)(も)(?!X)/g,repl:'$1X$2X$3X$4Xkanarazushimo,not always,not necessarily~Noun'},
 {pat:/(思)(?!X)(い)(?!X)(や)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xomoiyari,thoughtfulness,kin-dness~Noun'},
 {pat:/(思)(?!X)(い)(?!X)(切)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xomoikiri,to one\'s heart\'s content,with all one\'s might~Noun'},
-{pat:/(打)(?!X)(ち)(?!X)(消)(?!X)(し)(?!X)/g,repl:'$1X$2X$3X$4Xuchi-keshi,denial~Noun'},
+{pat:/(打)(?!X)(ち)(?!X)(消)(?!X)(し)(?!X)/g,repl:'$1Xu$2Xchi$3Xke$4Xshi,denial~Noun'},
 {pat:/(押)(?!X)(し)(?!X)(入)(?!X)(れ)(?!X)/g,repl:'$1X$2X$3X$4Xoshiire,closet~Noun'},
 {pat:/(振)(?!X)(り)(?!X)(仮)(?!X)(名)(?!X)/g,repl:'$1X$2X$3X$4Xfurigana,reading aid in kana characters~Noun'},
 {pat:/(日)(?!X)(の)(?!X)(入)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xhinoiri,sunset~Noun'},
@@ -1307,6 +1307,7 @@ const replsA = [
 {pat:/(水)(?!X)(平)(?!X)(線)(?!X)/g,repl:'$1Xsui$2Xhei$3Xsen,horizon~Noun'},
 {pat:/(水)(?!X)(族)(?!X)(館)(?!X)/g,repl:'$1Xsui$2Xzoku$3Xkan,aquarium~Noun'},
 {pat:/(水)(?!X)(曜)(?!X)(日)(?!X)/g,repl:'$1Xsui$2Xyou$3Xbi,Wednesday~Noun'},
+{pat:/(非)(?!X)(友)(?!X)(好)(?!X)/g,repl:'$1Xhi$2Xyuu$3Xkou,unfriendly~Noun'},
 {pat:/(決)(?!X)(し)(?!X)(て)(?!X)/g,repl:'$1X$2X$3Xkesshite,never,by no means~Noun'},
 {pat:/(法)(?!X)(務)(?!X)(省)(?!X)/g,repl:'$1Xhou$2Xmu$3Xsyou,Ministry of Justice~Noun'},
 {pat:/(法)(?!X)(学)(?!X)(部)(?!X)/g,repl:'$1Xhou$2Xgaku$3Xbu,law department~Noun'},
@@ -1925,7 +1926,7 @@ const replsA = [
 {pat:/(泊)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xto$2Xma,stay overnight$3X~RuVerb'},
 {pat:/(泊)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtome,lodge,give shelter$3X~RuVerb'},
 {pat:/(注)(?!X)(意)(?!X)(深)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xchi$2X$3Xゅuibuka,careful,discreet$4X~IAdjective~Noun'},
-{pat:/(流)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xnagare,flow,pass,drift away$3X~RuVerb'},
+{pat:/(流)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xnaga$2Xre,flow,pass,drift away$3X~RuVerb'},
 {pat:/(流)(?!X)(行)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xhaya,be in fashion,be popular$3X~RuVerb'},
 {pat:/(浴)(?!X)(び)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xabi,take (a shower)$3X~RuVerb'},
 {pat:/(消)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkie,be extinguished,disappear$3X~RuVerb'},
@@ -2072,7 +2073,7 @@ const replsA = [
 {pat:/(話)(?!X)(し)(?!X)(合)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3Xhanashia,talk,discussion$4X~IAdjective~Noun'},
 {pat:/(詳)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xkuwa$2Xshi,complete details$3X~IAdjective~Noun'},
 {pat:/(認)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmeto$2Xme,approve$3X~RuVerb'},
-{pat:/(調)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xshirabe,research$3X~RuVerb'},
+{pat:/(調)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshira$2Xbe,research$3X~RuVerb'},
 {pat:/(論)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xronji,argue,discuss$3X~RuVerb'},
 {pat:/(諦)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xakirame,give up$3X~RuVerb'},
 {pat:/(負)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xmake,lose$3X~RuVerb'},
@@ -2508,7 +2509,7 @@ const replsB = [
 {pat:/(交)(?!X)(番)(?!X)/g,repl:'$1Xkou$2Xban,police box~Noun'},
 {pat:/(交)(?!X)(通)(?!X)/g,repl:'$1Xkou$2Xtsuu,traffic~Noun'},
 {pat:/(交)(?!X)(際)(?!X)/g,repl:'$1Xkou$2Xsai,association,friendship~Noun'},
-{pat:/(京)(?!X)(都)(?!X)/g,repl:'$1X$2XKyou-to,Japan~Noun'},
+{pat:/(京)(?!X)(都)(?!X)/g,repl:'$1Xkyou$2Xto,Japan~Noun'},
 {pat:/(人)(?!X)(々)(?!X)/g,repl:'$1Xhito$2Xbito,people~Noun'},
 {pat:/(人)(?!X)(事)(?!X)/g,repl:'$1Xjin$2Xji,human affairs~Noun'},
 {pat:/(人)(?!X)(出)(?!X)/g,repl:'$1Xhito$2Xde,turnout,crowd~Noun'},
@@ -2856,7 +2857,7 @@ const replsB = [
 {pat:/(円)(?!X)(安)(?!X)/g,repl:'$1Xen$2Xyasu,depreciation~Noun'},
 {pat:/(円)(?!X)(滑)(?!X)/g,repl:'$1Xen$2Xkatsu,smooth~Noun'},
 {pat:/(円)(?!X)(高)(?!X)/g,repl:'$1Xen$2Xdaka,appreciation of yen~Noun'},
-{pat:/(再)(?!X)(び)(?!X)/g,repl:'$1X$2Xfutatabi,once again~Noun'},
+{pat:/(再)(?!X)(び)(?!X)/g,repl:'$1Xfutata$2Xbi,once again~Noun'},
 {pat:/(再)(?!X)(会)(?!X)/g,repl:'$1Xsai$2Xkai,reunion~Noun'},
 {pat:/(再)(?!X)(審)(?!X)/g,repl:'$1Xsai$2Xban,retrial~Noun'},
 {pat:/(再)(?!X)(建)(?!X)/g,repl:'$1Xsai$2Xken,rebuilding~Noun'},
@@ -3230,7 +3231,7 @@ const replsB = [
 {pat:/(和)(?!X)(語)(?!X)/g,repl:'$1Xwa$2Xgo,native Japanese word~Noun'},
 {pat:/(和)(?!X)(風)(?!X)/g,repl:'$1Xwa$2Xfuu,Japanese style~Noun'},
 {pat:/(和)(?!X)(食)(?!X)/g,repl:'$1Xwa$2Xsyoku,Japanese-style food~Noun'},
-{pat:/(品)(?!X)(物)(?!X)/g,repl:'$1Xshin$2Xa-mono,article,thing~Noun'},
+{pat:/(品)(?!X)(物)(?!X)/g,repl:'$1Xshina$2Xmono,article,thing~Noun'},
 {pat:/(品)(?!X)(目)(?!X)/g,repl:'$1Xhin$2Xmoku,commodities~Noun'},
 {pat:/(品)(?!X)(質)(?!X)/g,repl:'$1Xhin$2Xshitsu,quality~Noun'},
 {pat:/(哲)(?!X)(学)(?!X)/g,repl:'$1Xtetsu$2Xgaku,philosophy~Noun'},
@@ -3589,6 +3590,8 @@ const replsB = [
 {pat:/(寝)(?!X)(室)(?!X)/g,repl:'$1Xshin$2Xshitsu,bedroom~Noun'},
 {pat:/(審)(?!X)(判)(?!X)/g,repl:'$1Xshin$2Xpan,verdict~Noun'},
 {pat:/(審)(?!X)(査)(?!X)/g,repl:'$1Xshin$2Xsa,inspection~Noun'},
+{pat:/(痛)(?!X)(烈)(?!X)/g,repl:'$1Xtsuu$2Xretsu,scathing~Noun'},
+{pat:/(祖)(?!X)(国)(?!X)/g,repl:'$1Xso$2Xkoku,homeland~Noun'},
 {pat:/(審)(?!X)(議)(?!X)/g,repl:'$1Xshin$2Xgi,deliberation~Noun'},
 {pat:/(対)(?!X)(処)(?!X)/g,repl:'$1Xtai$2Xsyo,handling~Noun'},
 {pat:/(対)(?!X)(応)(?!X)/g,repl:'$1Xtai$2Xou,equivalence~Noun'},
@@ -3748,7 +3751,7 @@ const replsB = [
 {pat:/(建)(?!X)(物)(?!X)/g,repl:'$1Xtate$2Xmono,building~Noun'},
 {pat:/(建)(?!X)(築)(?!X)/g,repl:'$1Xken$2Xchiku,architecture~Noun'},
 {pat:/(建)(?!X)(設)(?!X)/g,repl:'$1Xken$2Xsetsu,constRuCtion~Noun'},
-{pat:/(弁)(?!X)(当)(?!X)/g,repl:'$1Xben$2Xtou,box lunch,picnic lunch~Noun'},
+{pat:/(弁)(?!X)(当)(?!X)/g,repl:'$1Xben$2Xtou,box lunch~Noun'},
 {pat:/(弁)(?!X)(明)(?!X)/g,repl:'$1Xben$2Xmei,vindication~Noun'},
 {pat:/(弁)(?!X)(論)(?!X)/g,repl:'$1Xben$2Xron,discussion,oral proceedings~Noun'},
 {pat:/(弁)(?!X)(護)(?!X)/g,repl:'$1Xben$2Xgo,defense~Noun'},
@@ -4061,7 +4064,7 @@ const replsB = [
 {pat:/(推)(?!X)(計)(?!X)/g,repl:'$1Xsui$2Xkei,estimation~Noun'},
 {pat:/(推)(?!X)(進)(?!X)/g,repl:'$1Xsui$2Xshin,promotion~Noun'},
 {pat:/(措)(?!X)(置)(?!X)/g,repl:'$1Xso$2Xchi,steps to act~Noun'},
-{pat:/(掲)(?!X)(げ)(?!X)/g,repl:'$1X$2Xkakage,put up notice~IchidanVerb'},
+{pat:/(掲)(?!X)(げ)(?!X)/g,repl:'$1Xkaka$2Xge,put up notice~IchidanVerb'},
 {pat:/(掲)(?!X)(げ)(?!X)/g,repl:'$1X$2Xkakage,put up notice~IchidanVerb'},
 {pat:/(掲)(?!X)(示)(?!X)/g,repl:'$1Xkei$2Xji,notice,bulletin~Noun'},
 {pat:/(提)(?!X)(供)(?!X)/g,repl:'$1Xtei$2Xkyou,sponsorship~Noun'},
@@ -4297,8 +4300,10 @@ const replsB = [
 {pat:/(暴)(?!X)(落)(?!X)/g,repl:'$1Xbou$2Xraku,slump,crash~Noun'},
 {pat:/(暴)(?!X)(行)(?!X)/g,repl:'$1Xbou$2Xkou,assault~Noun'},
 {pat:/(暴)(?!X)(風)(?!X)/g,repl:'$1Xbou$2Xfuu,windstorm~Noun'},
+{pat:/(受)(?!X)(理)(?!X)/g,repl:'$1Xjyu$2Xri,acceptance~Noun'},
 {pat:/(曇)(?!X)(り)(?!X)/g,repl:'$1X$2Xkumori,cloudiness~Noun'},
 {pat:/(曖)(?!X)(昧)(?!X)/g,repl:'$1Xai$2Xmai,ambiguous,vague~Noun'},
+{pat:/(携)(?!X)(帯)(?!X)/g,repl:'$1Xkei$2Xtai,cell phone~Noun'},
 {pat:/(曜)(?!X)(日)(?!X)/g,repl:'$1X$2X-you-bi,day of week~Noun'},
 {pat:/(曲)(?!X)(線)(?!X)/g,repl:'$1Xkyoku$2Xsen,curve,curved line~Noun'},
 {pat:/(更)(?!X)(に)(?!X)/g,repl:'$1X$2Xsara ni,furthermore,still more~Noun'},
@@ -4360,6 +4365,7 @@ const replsB = [
 {pat:/(期)(?!X)(待)(?!X)/g,repl:'$1Xki$2Xtai,expectation~Noun'},
 {pat:/(期)(?!X)(日)(?!X)/g,repl:'$1Xki$2Xjitsu,due date~Noun'},
 {pat:/(期)(?!X)(間)(?!X)/g,repl:'$1Xki$2Xkan,term,period~Noun'},
+{pat:/(執)(?!X)(務)(?!X)/g,repl:'$1Xshitsu$2Xmu,job duties~Noun'},
 {pat:/(期)(?!X)(限)(?!X)/g,repl:'$1Xki$2Xgen,limited time~Noun'},
 {pat:/(木)(?!X)(綿)(?!X)/g,repl:'$1X$2Xmomen,cotton~Noun'},
 {pat:/(木)(?!X)(造)(?!X)/g,repl:'$1Xmoku$2Xzou,wooden~Noun'},
@@ -4407,6 +4413,7 @@ const replsB = [
 {pat:/(来)(?!X)(月)(?!X)/g,repl:'$1Xrai$2Xgetsu,next month~Noun'},
 {pat:/(来)(?!X)(週)(?!X)/g,repl:'$1Xrai$2Xsyuu,next week~Noun'},
 {pat:/(東)(?!X)(京)(?!X)/g,repl:'$1Xtou$2Xkyou,Japan~Noun'},
+{pat:/(失)(?!X)(踪)(?!X)/g,repl:'$1Xshis$2Xsou,disappearance~Noun'},
 {pat:/(東)(?!X)(北)(?!X)/g,repl:'$1Xtou$2Xhoku,northeast~Noun'},
 {pat:/(東)(?!X)(南)(?!X)/g,repl:'$1Xtou$2Xnan,southeast~Noun'},
 {pat:/(東)(?!X)(洋)(?!X)/g,repl:'$1Xtou$2Xyou,Orient~Noun'},
@@ -4542,6 +4549,7 @@ const replsB = [
 {pat:/(死)(?!X)(因)(?!X)/g,repl:'$1Xshi$2Xin,cause of death~Noun'},
 {pat:/(死)(?!X)(者)(?!X)/g,repl:'$1Xshi$2Xsya,dead people~Noun'},
 {pat:/(殊)(?!X)(に)(?!X)/g,repl:'$1Xkoto$2Xni,especially,exceptionally~Noun'},
+{pat:/(決)(?!X)(算)(?!X)/g,repl:'$1Xkes$2Xsan,financial reporting~Noun'},
 {pat:/(残)(?!X)(念)(?!X)/g,repl:'$1Xzan$2Xnen,regretful~Noun'},
 {pat:/(残)(?!X)(暑)(?!X)/g,repl:'$1X$2Xzansyo,lingering summer heat~Noun'},
 {pat:/(残)(?!X)(業)(?!X)/g,repl:'$1Xzan$2Xgyou,overtime~Noun'},
@@ -4671,7 +4679,7 @@ const replsB = [
 {pat:/(派)(?!X)(手)(?!X)/g,repl:'$1X$2Xhade,showy,flashy~Noun'},
 {pat:/(派)(?!X)(遣)(?!X)/g,repl:'$1Xha$2Xken,dispatch~Noun'},
 {pat:/(派)(?!X)(閥)(?!X)/g,repl:'$1Xha$2Xbatsu,clique,faction~Noun'},
-{pat:/(流)(?!X)(れ)(?!X)/g,repl:'$1X$2Xnagare,flow,stream~Noun'},
+{pat:/(流)(?!X)(れ)(?!X)/g,repl:'$1Xnaga$2Xre,flow,stream~IchidanVerb'},
 {pat:/(流)(?!X)(入)(?!X)/g,repl:'$1Xryuu$2Xnyuu,influx~Noun'},
 {pat:/(流)(?!X)(出)(?!X)/g,repl:'$1Xryuu$2Xsyutsu,outflow~Noun'},
 {pat:/(流)(?!X)(氷)(?!X)/g,repl:'$1Xryuu$2Xhyou,drift ice~Noun'},
@@ -4731,7 +4739,7 @@ const replsB = [
 {pat:/(満)(?!X)(足)(?!X)/g,repl:'$1Xman$2Xzoku,satisfaction~Noun'},
 {pat:/(準)(?!X)(備)(?!X)/g,repl:'$1Xjyun$2Xbi,preparation~Noun'},
 {pat:/(準)(?!X)(急)(?!X)/g,repl:'$1Xjyun$2Xkyuu,local express~Noun'},
-{pat:/(滋)(?!X)(賀)(?!X)/g,repl:'$1X$2XShi-ga,Japan~Noun'},
+{pat:/(滋)(?!X)(賀)(?!X)/g,repl:'$1Xshi$2Xga,Japan~Noun'},
 {pat:/(滞)(?!X)(在)(?!X)/g,repl:'$1Xtai$2Xzai,stay~Noun'},
 {pat:/(滞)(?!X)(留)(?!X)/g,repl:'$1Xtai$2Xryuu,stagnation~Noun'},
 {pat:/(漁)(?!X)(協)(?!X)/g,repl:'$1Xgyo$2Xkyou,fishery~Noun'},
@@ -5156,7 +5164,9 @@ const replsB = [
 {pat:/(第)(?!X)(一)(?!X)/g,repl:'$1Xdai$2Xichi,number one~Noun'},
 {pat:/(筆)(?!X)(者)(?!X)/g,repl:'$1Xhis$2Xsya,writer~Noun'},
 {pat:/(筋)(?!X)(肉)(?!X)/g,repl:'$1Xkin$2Xniku,muscle~Noun'},
+{pat:/(配)(?!X)(送)(?!X)/g,repl:'$1Xhai$2Xsou,delivery~Noun'},
 {pat:/(筋)(?!X)(道)(?!X)/g,repl:'$1Xsujimi$2Xchi,method,logic~Noun'},
+{pat:/(入)(?!X)(荷)(?!X)/g,repl:'$1Xnyuu$2Xka,shipment of goods~Noun'},
 {pat:/(筒)(?!X)(状)(?!X)/g,repl:'$1Xtsutsu$2Xjyou,cylindrical~Noun'},
 {pat:/(答)(?!X)(え)(?!X)/g,repl:'$1Xkota$2X,answer~IchidanVerb'},
 {pat:/(答)(?!X)(弁)(?!X)/g,repl:'$1Xtou$2Xben,response~Noun'},
@@ -5527,7 +5537,7 @@ const replsB = [
 {pat:/(解)(?!X)(明)(?!X)/g,repl:'$1Xkai$2Xmei,revelation~Noun'},
 {pat:/(一)(?!X)(死)(?!X)/g,repl:'$1Xis$2Xshi,one out~Noun'},
 {pat:/(解)(?!X)(析)(?!X)/g,repl:'$1Xkai$2Xseki,parsing~Noun'},
-{pat:/(解)(?!X)(決)(?!X)/g,repl:'$1Xkaiketsu$2X,settlement~Noun'},
+{pat:/(解)(?!X)(決)(?!X)/g,repl:'$1Xkai$2Xketsu,settlement~Noun'},
 {pat:/(解)(?!X)(消)(?!X)/g,repl:'$1Xkai$2Xsyou,reduced~Noun'},
 {pat:/(解)(?!X)(答)(?!X)/g,repl:'$1Xkai$2Xtou,solution~Noun'},
 {pat:/(解)(?!X)(約)(?!X)/g,repl:'$1Xkai$2Xyaku,contract cancellation~Noun'},
@@ -6875,7 +6885,7 @@ const replsB = [
 {pat:/(台)(?!X)/g,repl:'$1Xdai,stand,counter for vehicles~Noun'},
 {pat:/(右)(?!X)/g,repl:'$1Xmigi,right~Noun'},
 {pat:/(号)(?!X)/g,repl:'$1Xgou,counter for numbers~Noun'},
-{pat:/(各)(?!X)/g,repl:'$1X$2Xkaku,each~Noun'},
+{pat:/(各)(?!X)/g,repl:'$1Xkaku,each~Noun'},
 {pat:/(同)(?!X)/g,repl:'$1Xdou,same~Noun'},
 {pat:/(名)(?!X)/g,repl:'$1Xna,name,reputation~Noun'},
 {pat:/(君)(?!X)/g,repl:'$1Xkimi,you~Noun'},
@@ -6938,6 +6948,7 @@ const replsB = [
 {pat:/(実)(?!X)/g,repl:'$1Xmi,fruit,nut~Noun'},
 {pat:/(客)(?!X)/g,repl:'$1Xkyaku,customer~Noun'},
 {pat:/(害)(?!X)/g,repl:'$1Xgai,harm,damage~Noun'},
+{pat:/(減)(?!X)/g,repl:'$1Xgen,reduced~Noun'},
 {pat:/(家)(?!X)/g,repl:'$1Xie or ka,home or master artisan~Noun'},
 {pat:/(寝)(?!X)/g,repl:'$1Xne,sleep~IchidanVerb'},
 {pat:/(寮)(?!X)/g,repl:'$1Xryou,dormitory,lodge~Noun'},
@@ -7417,6 +7428,7 @@ const replsB = [
 {pat:/(馬)(?!X)/g,repl:'$1Xuma,horse~Noun'},
 {pat:/(駅)(?!X)/g,repl:'$1Xeki,railway station~Noun'},
 {pat:/(骨)(?!X)/g,repl:'$1Xhone,bone~Noun'},
+{pat:/(秋)(?!X)/g,repl:'$1Xaki,Fall~Noun'},
 {pat:/(高)(?!X)/g,repl:'$1Xdaka or kou,high~Noun'},
 {pat:/(髪)(?!X)/g,repl:'$1Xkami,hair,hairstyle~Noun'},
 {pat:/(魚)(?!X)/g,repl:'$1Xsakana,fish~Noun'},
@@ -7581,7 +7593,7 @@ a = a.replace(/(ろX)(~RuVerb)/g,'<p>ろXro,let us do$2');
 a = a.replace(/(わX)(~UVerb)/g,'<p>わXwa$2');
 a = a.replace(/(んX)(~BuVerb)/g,'<p>んXn$2');
 a = a.replace(/(んX)(~MuVerb)/g,'<p>んn$2');
-a = a.replace(/~IchidanVerbる/g,'<p>るru~IchidanVerb');
+a = a.replace(/~IchidanVerbる/g,'<p>るXru,to do,will do~IchidanVerb');
 
 a = a.replace(/(Verb)(と)(?!X)/g,'$1<p>$2Xto,by way of');
 a = a.replace(/(Verbる)(?!X)/g,'$1Xru,to do,will do~InformalVerb');
@@ -7604,13 +7616,19 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-新型コロナウイルスの感染症法上の位置付けが8日、これまでの「2類相当」から季節性インフルエンザと同じ「5類」に移行した。
+先ほど、警視庁の捜査員が秋田市の山林の地中から遺体を見つけました。警視庁はこの遺体と、2021年に失踪した愛知県の女性の関連を調べる方針です。
 
-【図解】新型コロナウイルス「2類相当」と「5類」の違い
+捜査関係者によりますと、警視庁はきょう午後6時半ごろ、秋田市・金足下刈の山林の地中から遺体を見つけたということです。
 
-　行動制限に関する法的根拠がなくなり、感染対策は個人の判断に委ねられる。感染者の国内初確認から約3年4カ月。コロナ禍から脱却し、社会・経済活動の正常化に向けた大きな区切りとなる。
+警視庁は、この遺体と2年前に行方不明になった愛知県の女性の関連を調べるとともに死体遺棄事件として捜査する方針です。
 
-　5類への移行に伴い、無料だったウイルス検査や外来診療の費用は自己負担となる。政府の試算によると、初診料は最大4170円となる見通し。入院する場合は、軽減措置として、月に最大2万円が補助される。コロナに対応する医療機関を増やし、入院患者は約8300カ所で最大約5万8000人を受け入れられるようにする。
+女性は2021年6月に仕事で上京したのち、勤務先に荷物を置いたまま財布や携帯などを持って失踪したとみられ、警視庁は翌月に家族から行方不明届を受理していました。
+
+この捜査の過程で、警視庁は女性が遺棄されている可能性のある場所を特定し、捜査員がおととい現地入りし、きのう午前9時ごろから捜索を行っていました。
+
+警視庁は今後遺体を東京に運び身元の確認を急ぐとともに、関係者にさらに詳しく事情を聴き、死体遺棄に関与した人物の特定を行う方針です。
+
+現場は東京から約600キロ、JR秋田駅から北に直線距離で15キロほど離れた、国道7号近くの住宅地と山林が隣接している一帯です。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
