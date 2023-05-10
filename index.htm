@@ -461,6 +461,7 @@ const replsA = [
 {pat:/(書)(?!X)(き)(?!X)(言)(?!X)(葉)(?!X)/g,repl:'$1X$2X$3X$4Xkakikotoba,written language~Noun'},
 {pat:/(木)(?!X)(枯)(?!X)(ら)(?!X)(し)(?!X)/g,repl:'$1X$2X$3X$4Xkogara-shi,cold wintry wind~Noun'},
 {pat:/(果)(?!X)(た)(?!X)(し)(?!X)(て)(?!X)/g,repl:'$1Xha$2X$3X$4Xtashite,as was expected,really~Noun'},
+{pat:/(そ)(?!X)(ろ)(?!X)(っ)(?!X)(て)(?!X)/g,repl:'$1X$2X$3X$4Xsorotte,all together~Noun'},
 {pat:/(梅)(?!X)(雨)(?!X)(入)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xtsu-yu-iri,start of rainy season~Noun'},
 {pat:/(梅)(?!X)(雨)(?!X)(明)(?!X)(け)(?!X)/g,repl:'$1X$2X$3X$4Xtsu-yu-ake,end of rainy season~Noun'},
 {pat:/(極)(?!X)(超)(?!X)(音)(?!X)(速)(?!X)/g,repl:'$1X$2X$3X$4Xgoku-cyou-on-soku,hypersonic speed~Noun'},
@@ -1232,6 +1233,7 @@ const replsA = [
 {pat:/(文)(?!X)(化)(?!X)(的)(?!X)/g,repl:'$1Xbun$2Xka$3Xteki,cultural~Noun'},
 {pat:/(文)(?!X)(化)(?!X)(財)(?!X)/g,repl:'$1Xbun$2Xka$3Xzai,cultural assets~Noun'},
 {pat:/(文)(?!X)(学)(?!X)(者)(?!X)/g,repl:'$1Xbun$2Xgaku$3Xsya,literary person~Noun'},
+{pat:/(な)(?!X)(ど)(?!X)(の)(?!X)/g,repl:'$1X$2X$3Xnado no,ecetera and~Noun'},
 {pat:/(文)(?!X)(房)(?!X)(具)(?!X)/g,repl:'$1Xbun$2Xbou$3Xgu,stationery~Noun'},
 {pat:/(断)(?!X)(続)(?!X)(的)(?!X)/g,repl:'$1Xdan$2Xzoku$3Xteki,intermittent~Noun'},
 {pat:/(新)(?!X)(学)(?!X)(期)(?!X)/g,repl:'$1Xshin$2Xgak$3Xki,new term,new semester~Noun'},
@@ -1257,6 +1259,7 @@ const replsA = [
 {pat:/(明)(?!X)(後)(?!X)(日)(?!X)/g,repl:'$1X$2X$3Xasatte,day after tomorrow~Noun'},
 {pat:/(映)(?!X)(画)(?!X)(館)(?!X)/g,repl:'$1Xe$2Xiga$3Xkan,movie theater~Noun'},
 {pat:/(昼)(?!X)(休)(?!X)(み)(?!X)/g,repl:'$1X$2X$3Xhiruyasumi,noon recess,lunch break~Noun'},
+{pat:/(流)(?!X)(動)(?!X)(的)(?!X)/g,repl:'$1Xryuu$2Xdou$3Xteki,unsettled~Noun'},
 {pat:/(昼)(?!X)(過)(?!X)(ぎ)(?!X)/g,repl:'$1Xhiru$2X$3Xsugi,early afternoon~Noun'},
 {pat:/(暮)(?!X)(ら)(?!X)(し)(?!X)/g,repl:'$1Xku$2X$3Xrashi,living~Noun'},
 {pat:/(書)(?!X)(き)(?!X)(方)(?!X)/g,repl:'$1Xkaki$2X$3Xkata,how to write,way of writing~Noun'},
@@ -1483,7 +1486,7 @@ const replsA = [
 {pat:/(財)(?!X)(務)(?!X)(相)(?!X)/g,repl:'$1Xzai$2Xmu$3Xsyou,Minister of Finance~Noun'},
 {pat:/(財)(?!X)(務)(?!X)(省)(?!X)/g,repl:'$1Xzai$2Xmu$3Xsyou,Ministry of Finance~Noun'},
 {pat:/(貧)(?!X)(乏)(?!X)(人)(?!X)/g,repl:'$1X$2X$3Xbinbounin,poor person,poor~Noun'},
-{pat:/(貴)(?!X)(重)(?!X)(品)(?!X)/g,repl:'$1Xkicyou$2X$3Xhin,article of value,valuables~Noun'},
+{pat:/(貴)(?!X)(重)(?!X)(品)(?!X)/g,repl:'$1Xkicyou$2X$3Xhin or Shina,article of value,valuables~Noun'},
 {pat:/(買)(?!X)(い)(?!X)(物)(?!X)/g,repl:'$1Xkai$2X$3Xmono,shopping~Noun'},
 {pat:/(賃)(?!X)(上)(?!X)(げ)(?!X)/g,repl:'$1X$2X$3Xchinage,pay raise~Noun'},
 {pat:/(賑)(?!X)(や)(?!X)(か)(?!X)/g,repl:'$1X$2X$3Xnigiyaka,lively,exciting~Noun'},
@@ -1757,7 +1760,7 @@ const replsA = [
 {pat:/(命)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmei$2Xji,order,give orders$3X~RuVerb'},
 {pat:/(喜)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xyorokoba,please,gladden$3X~SuVerb'},
 {pat:/(四)(?!X)(角)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xshi$2Xkaku,square,four-sided$3X~IAdjective~Noun'},
-{pat:/(固)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkata$2X,solidify$3X~RuVerb'},
+{pat:/(固)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkata$2Xma,solidify$3X~RuVerb'},
 {pat:/(固)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkata$2X,strengthen$3X~RuVerb'},
 {pat:/(埋)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xuma,be buried$3X~RuVerb'},
 {pat:/(埋)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xume,bury,fill up$3X~RuVerb'},
@@ -1910,7 +1913,7 @@ const replsA = [
 {pat:/(横)(?!X)(切)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyokogi,cross,go across$3X~RuVerb'},
 {pat:/(欠)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkake,be chipped,be missing$3X~RuVerb'},
 {pat:/(欲)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xho$2Xshi,want,desire$3X~IAdjective~Noun'},
-{pat:/(止)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtoma,stop$3X~RuVerb'},
+{pat:/(止)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xto$2Xma,stop$3X~RuVerb'},
 {pat:/(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtome,stop,turn off$3X~RuVerb'},
 {pat:/(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyame,stop,give up,abolish$3X~RuVerb'},
 {pat:/(正)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xtada$2Xshi,correct$3X~IAdjective~Noun'},
@@ -2062,8 +2065,8 @@ const replsA = [
 {pat:/(解)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtoke,solve,resolve$3X~RuVerb'},
 {pat:/(触)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xfure,touch$3X~RuVerb'},
 {pat:/(言)(?!X)(葉)(?!X)(遣)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3Xkotobazuka,wording,language$4X~IAdjective~Noun'},
-{pat:/(訪)(?!X)(ね)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtazune,visit,call on$3X~RuVerb'},
-{pat:/(訪)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xotozure,visit,call on$3X~RuVerb'},
+{pat:/(訪)(?!X)(ね)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtazu$2Xne,visit,call on$3X~RuVerb'},
+{pat:/(訪)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xotozu$2Xre,visit,call on$3X~RuVerb'},
 {pat:/(設)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmou$2Xke,set up$3X~RuVerb'},
 {pat:/(訴)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xuttae,sue$3X~RuVerb'},
 {pat:/(試)(?!X)(み)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkokoro$2Xmi,attempt$3X~RuVerb'},
@@ -2091,7 +2094,7 @@ const replsA = [
 {pat:/(転)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkoroga,roll over,tumble$3X~RuVerb'},
 {pat:/(載)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xnose,place,put on$3X~RuVerb'},
 {pat:/(辞)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyame,resign,retire$3X~RuVerb'},
-{pat:/(込)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkome,put in,concentrate on$3X~RuVerb'},
+{pat:/(込)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xko$2Xme,put in,concentrate on$3X~RuVerb'},
 {pat:/(迎)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmuka$2X,go out to meet$3X~RuVerb'},
 {pat:/(近)(?!X)(づ)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1X$2Xchikazu,get close$3X~KuVerb'},
 {pat:/(近)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xchi$2Xkazu,approach3X~KuVerb'},
@@ -3572,7 +3575,7 @@ const replsB = [
 {pat:/(家)(?!X)(内)(?!X)/g,repl:'$1Xka$2Xnai,my wife~Noun'},
 {pat:/(家)(?!X)(出)(?!X)/g,repl:'$1X$2Xiede,running away from home~Noun'},
 {pat:/(家)(?!X)(宅)(?!X)/g,repl:'$1Xka$2Xtaku,domicile~Noun'},
-{pat:/(家)(?!X)(屋)(?!X)/g,repl:'$1X$2Xkaoku,hou-se,building~Noun'},
+{pat:/(家)(?!X)(屋)(?!X)/g,repl:'$1Xka$2Xoku,building~Noun'},
 {pat:/(家)(?!X)(庭)(?!X)/g,repl:'$1Xka$2Xtei,home life~Noun'},
 {pat:/(家)(?!X)(族)(?!X)/g,repl:'$1Xka$2Xzoku,family~Noun'},
 {pat:/(家)(?!X)(計)(?!X)/g,repl:'$1Xka$2Xkei,family finances~Noun'},
@@ -3738,7 +3741,6 @@ const replsB = [
 {pat:/(広)(?!X)(告)(?!X)/g,repl:'$1Xkou$2Xkoku,public notice,advertisement~Noun'},
 {pat:/(広)(?!X)(域)(?!X)/g,repl:'$1Xkou$2Xiki,wide area~Noun'},
 {pat:/(広)(?!X)(場)(?!X)/g,repl:'$1Xhiro$2Xba,public square~Noun'},
-{pat:/(広)(?!X)(島)(?!X)/g,repl:'$1Xhiro$2Xshima,Japan~Noun'},
 {pat:/(床)(?!X)(屋)(?!X)/g,repl:'$1Xtokoya$2X,barber,barbershop~Noun'},
 {pat:/(店)(?!X)(員)(?!X)/g,repl:'$1Xten$2Xin,clerk~Noun'},
 {pat:/(店)(?!X)(頭)(?!X)/g,repl:'$1Xten$2Xtou,storefront~Noun'},
@@ -3982,7 +3984,9 @@ const replsB = [
 {pat:/(技)(?!X)(師)(?!X)/g,repl:'$1Xgi$2Xshi,engineer,technician~Noun'},
 {pat:/(技)(?!X)(能)(?!X)/g,repl:'$1Xgi$2Xnou,technical skill~Noun'},
 {pat:/(技)(?!X)(術)(?!X)/g,repl:'$1Xgi$2Xjyutsu,skill,technology~Noun'},
+{pat:/(転)(?!X)(倒)(?!X)/g,repl:'$1Xten$2Xtou,fall down~Noun'},
 {pat:/(把)(?!X)(握)(?!X)/g,repl:'$1Xha$2Xaku,catch meaning~Noun'},
+{pat:/(個)(?!X)(別)(?!X)/g,repl:'$1Xko$2Xbetsu,personsal~Noun'},
 {pat:/(抑)(?!X)(制)(?!X)/g,repl:'$1Xyoku$2Xsei,control~Noun'},
 {pat:/(抑)(?!X)(止)(?!X)/g,repl:'$1Xyoku$2Xshi,deterrence~Noun'},
 {pat:/(投)(?!X)(げ)(?!X)/g,repl:'$1X$2Xnage,throw~IchidanVerb'},
@@ -4219,7 +4223,7 @@ const replsB = [
 {pat:/(旅)(?!X)(行)(?!X)/g,repl:'$1Xryo$2Xkou,travel~Noun'},
 {pat:/(旅)(?!X)(費)(?!X)/g,repl:'$1X$2Xryohi,traveling expenses~Noun'},
 {pat:/(旅)(?!X)(館)(?!X)/g,repl:'$1Xryo$2Xkan,Japanese inn~Noun'},
-{pat:/(既)(?!X)(に)(?!X)/g,repl:'$1X$2Xsude ni,previously~Noun'},
+{pat:/(既)(?!X)(に)(?!X)/g,repl:'$1Xsude$2Xni,previously~Noun'},
 {pat:/(既)(?!X)(に)(?!X)/g,repl:'$1X$2Xsude ni,previously~Noun'},
 {pat:/(日)(?!X)(々)(?!X)/g,repl:'$1X$2Xhibi,daily,every day~Noun'},
 {pat:/(日)(?!X)(ソ)(?!X)/g,repl:'$1X$2Xnisso,Japanese-Soviet~Noun'},
@@ -4464,6 +4468,7 @@ const replsB = [
 {pat:/(検)(?!X)(疫)(?!X)/g,repl:'$1Xken$2Xeki,quarantine~Noun'},
 {pat:/(検)(?!X)(討)(?!X)/g,repl:'$1Xken$2Xtou,consideration~Noun'},
 {pat:/(検)(?!X)(証)(?!X)/g,repl:'$1Xken$2Xsyou,verification~Noun'},
+{pat:/(開)(?!X)(設)(?!X)/g,repl:'$1Xkai$2Xsetsu,setting up~Noun'},
 {pat:/(業)(?!X)(務)(?!X)/g,repl:'$1Xgyou$2Xmu,business~Noun'},
 {pat:/(業)(?!X)(界)(?!X)/g,repl:'$1Xgyou$2Xkai,business world~Noun'},
 {pat:/(業)(?!X)(績)(?!X)/g,repl:'$1Xgyou$2Xseki,achievement,performance~Noun'},
@@ -4622,6 +4627,7 @@ const replsB = [
 {pat:/(水)(?!X)(際)(?!X)/g,repl:'$1Xmizu$2Xzawa,stem the flow~Noun'},
 {pat:/(水)(?!X)(面)(?!X)/g,repl:'$1Xsui$2Xmen,surface of water~Noun'},
 {pat:/(永)(?!X)(久)(?!X)/g,repl:'$1Xei$2Xkyuu,permanence,eternity~Noun'},
+{pat:/(破)(?!X)(裂)(?!X)/g,repl:'$1Xha$2Xretsu,bursting~Noun'},
 {pat:/(永)(?!X)(遠)(?!X)/g,repl:'$1Xei$2Xen,eternity~Noun'},
 {pat:/(求)(?!X)(人)(?!X)/g,repl:'$1Xkyuu$2Xjin,recruiting~Noun'},
 {pat:/(汚)(?!X)(れ)(?!X)/g,repl:'$1X$2Xyogore,dirt,filth~Noun'},
@@ -5562,7 +5568,7 @@ const replsB = [
 {pat:/(記)(?!X)(事)(?!X)/g,repl:'$1Xki$2Xji,article~Noun'},
 {pat:/(記)(?!X)(入)(?!X)/g,repl:'$1Xki$2Xnyuu,entry,record~Noun'},
 {pat:/(記)(?!X)(号)(?!X)/g,repl:'$1Xki$2Xgou,symbol,mark~Noun'},
-{pat:/(記)(?!X)(念)(?!X)/g,repl:'$1Xki$2Xnen,commemoration,memory~Noun'},
+{pat:/(記)(?!X)(念)(?!X)/g,repl:'$1Xki$2Xnen,commemoration~Noun'},
 {pat:/(記)(?!X)(憶)(?!X)/g,repl:'$1Xki$2Xoku,memory,recollection~Noun'},
 {pat:/(記)(?!X)(者)(?!X)/g,repl:'$1Xki$2Xsya,reporter~Noun'},
 {pat:/(記)(?!X)(載)(?!X)/g,repl:'$1Xki$2Xsai,mentioned in a document~Noun'},
@@ -6821,7 +6827,7 @@ const replsB = [
 {pat:/(令)(?!X)/g,repl:'$1Xrei,order~Noun'},
 {pat:/(仮)(?!X)/g,repl:'$1Xkari,provisional,temporary~Noun'},
 {pat:/(仲)(?!X)/g,repl:'$1Xnaka,personal relationship~Noun'},
-{pat:/(件)(?!X)/g,repl:'$1Xken,counter for legal cases~Noun'},
+{pat:/(件)(?!X)/g,repl:'$1Xken,counter for items~Noun'},
 {pat:/(会)(?!X)/g,repl:'$1Xkai,meeting association~Noun'},
 {pat:/(伝)(?!X)/g,repl:'$1Xden,legendary~Noun'},
 {pat:/(位)(?!X)/g,repl:'$1Xkurai,rank,dignity~Noun'},
@@ -6876,7 +6882,7 @@ const replsB = [
 {pat:/(匹)(?!X)/g,repl:'$1Xpiki,counter for small animals~Noun'},
 {pat:/(区)(?!X)/g,repl:'$1Xku,ward~Noun'},
 {pat:/(十)(?!X)/g,repl:'$1Xjyuu+,ten~Noun'},
-{pat:/(千)(?!X)/g,repl:'$1Xsen,thousand~Noun'},
+{pat:/(千)(?!X)/g,repl:'$1Xsen or Chi,thousand~Noun'},
 {pat:/(半)(?!X)/g,repl:'$1Xhan,half~Noun'},
 {pat:/(南)(?!X)/g,repl:'$1Xminami or nan,south~Noun'},
 {pat:/(印)(?!X)/g,repl:'$1Xshirushi,mark,symbol~Noun'},
@@ -6908,7 +6914,7 @@ const replsB = [
 {pat:/(回)(?!X)/g,repl:'$1Xkai,repitition~Noun'},
 {pat:/(団)(?!X)/g,repl:'$1Xdan,corps~Noun'},
 {pat:/(図)(?!X)/g,repl:'$1Xzu,figure,map~Noun'},
-{pat:/(国)(?!X)/g,repl:'$1X-koku,kuni,country~Noun'},
+{pat:/(国)(?!X)/g,repl:'$1Xkuni or koku,country~Noun'},
 {pat:/(土)(?!X)/g,repl:'$1Xdo,Saturday or tsuchi,soil~Noun'},
 {pat:/(地)(?!X)/g,repl:'$1Xchi,place~Noun'},
 {pat:/(坂)(?!X)/g,repl:'$1Xsaka,slope~Noun'},
@@ -6974,7 +6980,7 @@ const replsB = [
 {pat:/(崎)(?!X)/g,repl:'$1Xsaki or zaki,peninsula~Noun'},
 {pat:/(崖)(?!X)/g,repl:'$1Xgake,cliff~Noun'},
 {pat:/(嵐)(?!X)/g,repl:'$1Xarashi,storm~Noun'},
-{pat:/(川)(?!X)/g,repl:'$1Xkawa,river~Noun'},
+{pat:/(川)(?!X)/g,repl:'$1Xkawa or Gawa,river~Noun'},
 {pat:/(州)(?!X)/g,repl:'$1Xsyuu,state~Noun'},
 {pat:/(巣)(?!X)/g,repl:'$1Xsu,nest,den~Noun'},
 {pat:/(左)(?!X)/g,repl:'$1Xhidari,left~Noun'},
@@ -6986,7 +6992,7 @@ const replsB = [
 {pat:/(幅)(?!X)/g,repl:'$1Xhaba,width,breadth~Noun'},
 {pat:/(幕)(?!X)/g,repl:'$1Xmaku,curtain~Noun'},
 {pat:/(年)(?!X)/g,repl:'$1Xnen,year~Noun'},
-{pat:/(幹)(?!X)/g,repl:'$1Xmiki,tree trunk~Noun'},
+{pat:/(幹)(?!X)/g,repl:'$1Xmiki or Gi,tree trunk~Noun'},
 {pat:/(庁)(?!X)/g,repl:'$1Xcyou,agency~Noun'},
 {pat:/(床)(?!X)/g,repl:'$1Xyuka,floor~Noun'},
 {pat:/(底)(?!X)/g,repl:'$1Xsoko,bottom,depths~Noun'},
@@ -7003,8 +7009,8 @@ const replsB = [
 {pat:/(役)(?!X)/g,repl:'$1Xyaku,role~Noun'},
 {pat:/(彼)(?!X)/g,repl:'$1Xkare,he~Noun'},
 {pat:/(後)(?!X)/g,repl:'$1Xato or go,after~Noun'},
-{pat:/(得)(?!X)/g,repl:'$1Xe,get,secure~IchidanVerb'},
-{pat:/(得)(?!X)/g,repl:'$1Xtoku,gain,advantage~Noun'},
+{pat:/(得)(?!X)/g,repl:'$1Xe or toku,get,secure~IchidanVerb'},
+{pat:/(浜)(?!X)/g,repl:'$1Xhama,beach~Noun'},
 {pat:/(心)(?!X)/g,repl:'$1Xkokoro,heart,mind~Noun'},
 {pat:/(急)(?!X)/g,repl:'$1Xkyuu,dire~Noun'},
 {pat:/(性)(?!X)/g,repl:'$1Xsei,sex,nature~Noun'},
@@ -7125,7 +7131,7 @@ const replsB = [
 {pat:/(注)(?!X)/g,repl:'$1Xcyuu,annotation,explanatory note~Noun'},
 {pat:/(洋)(?!X)/g,repl:'$1Xyou,ocean~Noun'},
 {pat:/(派)(?!X)/g,repl:'$1Xha,faction~Noun'},
-{pat:/(海)(?!X)/g,repl:'$1Xkai or umi,sea~Noun'},
+{pat:/(広)(?!X)/g,repl:'$1Xhiro,wide~Noun'},
 {pat:/(海)(?!X)/g,repl:'$1Xkai or umi,sea~Noun'},
 {pat:/(液)(?!X)/g,repl:'$1Xeki,liquid~Noun'},
 {pat:/(淳)(?!X)/g,repl:'$1XJyun,name~Noun'},
@@ -7287,7 +7293,7 @@ const replsB = [
 {pat:/(茶)(?!X)/g,repl:'$1Xcya,tea (plain form)~Noun'},
 {pat:/(草)(?!X)/g,repl:'$1Xkusa,grass,weed~Noun'},
 {pat:/(菊)(?!X)/g,repl:'$1Xkiku,chrysanthemum~Noun'},
-{pat:/(葉)(?!X)/g,repl:'$1Xha,leaf~Noun'},
+{pat:/(葉)(?!X)/g,repl:'$1Xha or Ba,leaf~Noun'},
 {pat:/(薬)(?!X)/g,repl:'$1Xkusuri,drug~Noun'},
 {pat:/(虫)(?!X)/g,repl:'$1Xmushi,insect~Noun'},
 {pat:/(虹)(?!X)/g,repl:'$1Xniji,rainbow~Noun'},
@@ -7309,7 +7315,9 @@ const replsB = [
 {pat:/(要)(?!X)/g,repl:'$1Xhyou,vote or you,need for~Noun'},
 {pat:/(覆)(?!X)/g,repl:'$1Xfuku,concealment~Noun'},
 {pat:/(見)(?!X)/g,repl:'$1Xmi,see~IchidanVerb'},
+{pat:/(津)(?!X)/g,repl:'$1Xzu or tsu,harbor~Noun'},
 {pat:/(視)(?!X)/g,repl:'$1Xshi,regard as~SuruVerb'},
+{pat:/(更)(?!X)/g,repl:'$1Xsara,new~Noun'},
 {pat:/(親)(?!X)/g,repl:'$1Xoya,parent~Noun'},
 {pat:/(観)(?!X)/g,repl:'$1Xkan,perspective~Noun'},
 {pat:/(角)(?!X)/g,repl:'$1Xka+do,corner,edge,angle~Noun'},
@@ -7462,7 +7470,7 @@ const replsB = [
 {pat:/(Verbて)(?!X)(い)(?!X)/g,repl:'$1X$2Xtei,is doing~ConjunctiveVerb'},
 {pat:/(Verbで)(?!X)(い)(?!X)/g,repl:'$1X$2Xdei,is doing~Verb'},
 
-{pat:/(Verbて)(?!X)/g,repl:'$1Xte,do and~Verb'},
+{pat:/(Verbて)(?!X)/g,repl:'$1Xte,do and~ConjuctiveVerb'},
 
 {pat:/(Verbた)(?!X)(く)(?!X)(な)(?!X)(い)(?!X)/g,repl:'$1X$2X$3X$4Xtakunai,does not want to~Verb'},
 {pat:/(Nounな)(?!X)(か)(?!X)(っ)(?!X)(た)(?!X)/g,repl:'$1X$2X$3X$4Xnakatta,did not~InformalVerb~SuruVerb'},
@@ -7518,10 +7526,6 @@ const replsB = [
 {pat:/(Verbや|Nounや)(?!X)/g,repl:'$1Xya,and,comma~Postposition~Noun'},
 {pat:/(Verbよ)(?!X)/g,repl:'$1Xyo,exclamation~Punctuation~Noun'},
 
-{pat:/(Verbた)(?!X)/g,repl:'$1Xta,did~InformalVerb'},
-{pat:/(Verbだ)(?!X)/g,repl:'$1Xda,did~InformalVerb'},
-{pat:/(Verbる)(?!X)/g,repl:'$1Xru,do,will do~InformalVerb'},
-
 {pat:/(Verbの|Nounの)(?!X)/g,repl:'$1Xno,of~Postposition~Noun'},
 
 {pat:/(Verbを|Nounを)(?!X)/g,repl:'$1Xoo,direct object~Postposition~Noun'},
@@ -7543,68 +7547,69 @@ function translateC()
 translateA();
 translateB();
 
-
 a = a.replace(/(Punctuation|Postposition)/g,'<font color=red>$1</font><p>');
 
 a = a.replace(/(~UVerb|~KuVerb)/g,'$1<br>');
-a = a.replace(/(いX)(~IAdjective~Noun)/g,'<p>$1i$2<p>');
-a = a.replace(/(くX)(~IAdjective~Noun)/g,'<p>$1Xku,and<p>');
-a = a.replace(/(かX)(~IAdjective~Noun)/g,'<p>$1Xka$2<p>');
-a = a.replace(/(いX)(~KuVerb)/g,'<p>いXi$2');
-a = a.replace(/(いX)(~UVerb)/g,'<p>いXi$2');
-a = a.replace(/(うX)(~UVerb)/g,'<p>うXu,to do,will do$2');
-a = a.replace(/(えX)(~UVerb)/g,'<p>えXe,can do$2');
-a = a.replace(/(かX)(~KuVerb)/g,'<p>かXka$2');
-a = a.replace(/(かX)(~KuVerb)/g,'<p>かXka$2');
-a = a.replace(/(がX)(~GuVerb)/g,'<p>がXga$2');
-a = a.replace(/(きX)(~KuVerb)/g,'<p>きXki$2');
-a = a.replace(/(きX)(~KuVerb)/g,'<p>きXki,i$2');
-a = a.replace(/(ぎX)(~GuVerb)/g,'<p>ぎXgi$2');
-a = a.replace(/(ぎX)(~GuVerb)/g,'<p>ぎXgi$2');
-a = a.replace(/(くX)(~IAdjective~Noun)/g,'<p>$1ku,and$2<p>');
-a = a.replace(/(くX)(~KuVerb)/g,'<p>くXku,to do,will do$2');
-a = a.replace(/(ぐX)(~GuVerb)/g,'<p>ぐXgu,to do,will do$2');
-a = a.replace(/(けX)(~KuVerb)/g,'<p>けXke,can do$2');
-a = a.replace(/(げX)(~GuVerb)/g,'<p>げXge,can do$2');
-a = a.replace(/(こX)(~KuVerb)/g,'<p>きXko,let us do$2');
-a = a.replace(/(ごX)(~GuVerb)/g,'<p>ごXgo,let us do$2');
-a = a.replace(/(さX)(~SuVerb)/g,'<p>さXsa$2');
-a = a.replace(/(しX)(~SuVerb)/g,'<p>しXshi$2');
-a = a.replace(/(すX)(~SuVerb)/g,'<p>すXsu,to do,will do$2');
-a = a.replace(/(せX)(~SuVerb)/g,'<p>せXse,can do$2');
-a = a.replace(/(そX)(~SuVerb)/g,'<p>そXso,let us do$2');
-a = a.replace(/(たX)(~TsuVerb)/g,'<p>たXta$2');
-a = a.replace(/(ちX)(~TsuVerb)/g,'<p>ちXchi$2');
-a = a.replace(/(っX)(~RuVerb)/g,'<p>っXt$2');
-a = a.replace(/(っX)(~UVerb)/g,'<p>っXt$2');
-a = a.replace(/(つX)(~TsuVerb)/g,'<p>つXtsu,to do,will do$2');
-a = a.replace(/(てX)(~TsuVerb)/g,'<p>てXte,can do$2');
-a = a.replace(/(とX)(~TsuVerb)/g,'<p>とXto,let us do$2');
-a = a.replace(/(ばX)(~BuVerb)/g,'<p>ばXba$2');
-a = a.replace(/(びX)(~BuVerb)/g,'<p>びXbi$2');
-a = a.replace(/(ぶX)(~BuVerb)/g,'<p>ぶXbu,to do,will do$2');
-a = a.replace(/(べX)(~BuVerb)/g,'<p>べXbe,can do$2');
-a = a.replace(/(ぼX)(~BuVerb)/g,'<p>ぼXbo,let us do$2');
-a = a.replace(/(まX)(~MuVerb)/g,'<p>まXma$2');
-a = a.replace(/(みX)(~MuVerb)/g,'<p>みXmi$2');
-a = a.replace(/(むX)(~MuVerb)/g,'<p>むXmu,to do, will do$2');
-a = a.replace(/(めX)(~MuVerb)/g,'<p>めXme,can do$2');
-a = a.replace(/(もX)(~MuVerb)/g,'<p>もXmo,let us do$2');
-a = a.replace(/(らX)(~RuVerb)/g,'<p>らXra$2');
-a = a.replace(/(りX)(~RuVerb)/g,'<p>りXri$2');
-a = a.replace(/(るX)(~RuVerb)/g,'<p>るXru,to do, will do$2');
-a = a.replace(/(れX)(~RuVerb)/g,'<p>れXre,can do$2');
-a = a.replace(/(ろX)(~RuVerb)/g,'<p>ろXro,let us do$2');
-a = a.replace(/(わX)(~UVerb)/g,'<p>わXwa$2');
-a = a.replace(/(んX)(~BuVerb)/g,'<p>んXn$2');
-a = a.replace(/(んX)(~MuVerb)/g,'<p>んn$2');
-a = a.replace(/~IchidanVerbる/g,'<p>るXru,to do,will do~IchidanVerb');
+a = a.replace(/(いX)(~IAdjective~Noun)/g,'<br>$1i$2<br>');
+a = a.replace(/(くX)(~IAdjective~Noun)/g,'<br>$1Xku,and$2<br>');
+a = a.replace(/(かX)(~IAdjective~Noun)/g,'<br>$1Xka$2<br>');
+a = a.replace(/(いX)(~KuVerb)/g,'<br>いXi$2');
+a = a.replace(/(いX)(~UVerb)/g,'<br>いXi$2');
+a = a.replace(/(うX)~UVerb/g,'<br>うXu,to do,will do~UVerb');
+a = a.replace(/(えX)(~UVerb)/g,'<br>えXe,can do$2');
+a = a.replace(/(かX)(~KuVerb)/g,'<br>かXka$2');
+a = a.replace(/(かX)(~KuVerb)/g,'<br>かXka$2');
+a = a.replace(/(がX)(~GuVerb)/g,'<br>がXga$2');
+a = a.replace(/(きX)(~KuVerb)/g,'<br>きXki$2');
+a = a.replace(/(きX)(~KuVerb)/g,'<br>きXki,i$2');
+a = a.replace(/(ぎX)(~GuVerb)/g,'<br>ぎXgi$2');
+a = a.replace(/(ぎX)(~GuVerb)/g,'<br>ぎXgi$2');
+a = a.replace(/(くX)(~IAdjective~Noun)/g,'<br>$1ku,and$2<br>');
+a = a.replace(/(くX)(~KuVerb)/g,'<br>くXku,to do,will do$2');
+a = a.replace(/(ぐX)(~GuVerb)/g,'<br>ぐXgu,to do,will do$2');
+a = a.replace(/(けX)(~KuVerb)/g,'<br>けXke,can do$2');
+a = a.replace(/(げX)(~GuVerb)/g,'<br>げXge,can do$2');
+a = a.replace(/(こX)(~KuVerb)/g,'<br>きXko,let us do$2');
+a = a.replace(/(ごX)(~GuVerb)/g,'<br>ごXgo,let us do$2');
+a = a.replace(/(さX)(~SuVerb)/g,'<br>さXsa$2');
+a = a.replace(/(しX)(~SuVerb)/g,'<br>しXshi$2');
+a = a.replace(/(すX)(~SuVerb)/g,'<br>すXsu,to do,will do$2');
+a = a.replace(/(せX)(~SuVerb)/g,'<br>せXse,can do$2');
+a = a.replace(/(そX)(~SuVerb)/g,'<br>そXso,let us do$2');
+a = a.replace(/(たX)(~TsuVerb)/g,'<br>たXta$2');
+a = a.replace(/(ちX)(~TsuVerb)/g,'<br>ちXchi$2');
+a = a.replace(/(っX)(~RuVerb)/g,'<br>っXt$2');
+a = a.replace(/(っX)(~UVerb)/g,'<br>っXt$2');
+a = a.replace(/(つX)(~TsuVerb)/g,'<br>つXtsu,to do,will do$2');
+a = a.replace(/(てX)(~TsuVerb)/g,'<br>てXte,can do$2');
+a = a.replace(/(とX)(~TsuVerb)/g,'<br>とXto,let us do$2');
+a = a.replace(/(ばX)(~BuVerb)/g,'<br>ばXba$2');
+a = a.replace(/(びX)(~BuVerb)/g,'<br>びXbi$2');
+a = a.replace(/(ぶX)(~BuVerb)/g,'<br>ぶXbu,to do,will do$2');
+a = a.replace(/(べX)(~BuVerb)/g,'<br>べXbe,can do$2');
+a = a.replace(/(ぼX)(~BuVerb)/g,'<br>ぼXbo,let us do$2');
+a = a.replace(/(まX)(~MuVerb)/g,'<br>まXma$2');
+a = a.replace(/(みX)(~MuVerb)/g,'<br>みXmi$2');
+a = a.replace(/(むX)(~MuVerb)/g,'<br>むXmu,to do, will do$2');
+a = a.replace(/(めX)(~MuVerb)/g,'<br>めXme,can do$2');
+a = a.replace(/(もX)(~MuVerb)/g,'<br>もXmo,let us do$2');
+a = a.replace(/(らX)(~RuVerb)/g,'<br>らXra$2');
+a = a.replace(/(りX)(~RuVerb)/g,'<br>りXri$2');
+a = a.replace(/(るX)(~RuVerb)/g,'<br>るXru,to do, will do$2');
+a = a.replace(/(れX)(~RuVerb)/g,'<br>れXre,can do$2');
+a = a.replace(/(ろX)(~RuVerb)/g,'<br>ろXro,let us do$2');
+a = a.replace(/(わX)(~UVerb)/g,'<br>わXwa$2');
+a = a.replace(/(んX)(~BuVerb)/g,'<br>んXn$2');
+a = a.replace(/(んX)(~MuVerb)/g,'<br>んn$2');
+a = a.replace(/~IchidanVerbる/g,'<br>るXru,to do,will do~IchidanVerb');
 
 a = a.replace(/(Verb)(と)(?!X)/g,'$1<p>$2Xto,by way of');
-a = a.replace(/(Verbる)(?!X)/g,'$1Xru,to do,will do~InformalVerb');
+a = a.replace(/(Verb)(た)(?!X)/g,'<br>$1X$2Xta,did~InformalVerb<p>');
+a = a.replace(/(Verb)(だ)(?!X)/g,'<br>$1X$2Xda,did~InformalVerb<p>');
+a = a.replace(/(Verb)(る)(?!X)/g,'<br>$1X$2Xru,do,will do~InformalVerb<p>');
 
 a = a.replace(/(IAdjective)/g,'$1<p>');
-a = a.replace(/(Verb)/g,'$1<p>');
+a = a.replace(/(Verb)/g,'$1<br>');
 a = a.replace(/(~Noun)/g,'<p>');
 
 a = a.replace(/X/g,'');
@@ -7621,13 +7626,25 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-【AFP＝時事】AFP通信のウクライナ駐在動画コーディネーター、アルマン・ソルディン（Arman Soldin）氏（32）が9日、東部チャシウヤール（Chasiv Yar）近郊で行われたロケット攻撃により死亡した。
+政府は、１９～２１日に広島市で開く先進７か国首脳会議（Ｇ７サミット）に合わせ、インドや韓国など、招待国８か国の首脳に広島平和記念資料館を訪問してもらう方向で調整に入った。岸田首相と８か国首脳がそろって訪問する案も検討している。
 
-【写真】ウクライナの塹壕を取材したソルディン氏
+【図】G7サミットの日程と会場
 
-　現地のAFPジャーナリストたちによると、数か月にわたり激戦が続くバフムート（Bakhmut）に近いチャシウヤール近郊で午後4時半ごろ、ウクライナ軍部隊に同行していた取材班が、多連装ロケット砲BM21「グラート（Grad）」による攻撃を受けた。ソルディン氏は、地面に横たわっていたところ、近くにロケット弾が着弾して死亡。他のジャーナリストはいずれも無事だった。
+（写真：読売新聞）
 
-　ソルディン氏はボスニア・ヘルツェゴビナの首都サラエボ出身で、フランス国籍を保有。AFPのローマ支局でインターンとして働いた後、ロンドン支局で採用された。ロシアがウクライナに侵攻した2022年2月24日の翌日、AFPが最初に派遣した取材班の一員として現地入りし、9月からは同国に駐在していた。【翻訳編集】 AFPBB News
+　複数の政府関係者が明らかにした。資料館訪問を巡っては、Ｇ７各国首脳がそろって行うことが既に固まっており、Ｇ７の枠を超え、核軍縮の重要性を国際社会に広く強調する狙いがある。
+
+　政府高官によると、８か国には水面下で訪問を打診しており、核保有国のインドを含め、大半の国から前向きな回答を得たという。現在、残る国と協議を続けている。
+
+　日本政府内には、ロシアがウクライナを核で威嚇する中、ロシアと一定の関係を保つインドのモディ首相やブラジルのルラ大統領が資料館を訪れれば、「プーチン露大統領に対する強いけん制となる」（外務省幹部）との見方がある。
+
+　核軍縮のメッセージを最大限に打ち出すため、政府は資料館訪問について、８か国首脳が個別に行うのではなく、岸田首相と各首脳がそろった形で実現したい考えだ。ただ、サミット期間中、各首脳の日程は流動的で、調整がつくかどうかは不透明な部分もある。
+
+　Ｇ７首脳は、１９日に資料館を訪問、視察する予定だ。そろって訪れるのは初めてで、岸田首相は自らが案内役を務め、「核兵器のない世界」の実現に向けた機運の醸成を目指す。
+
+　政府はＧ７首脳の配偶者による資料館訪問も検討している。岸田首相の裕子夫人が案内役を務める方向だ。
+
+　広島平和記念資料館は広島の被爆の実相を世界に伝えるため、１９５５年に開館した。被爆者の遺品などのほか、被爆前後の広島の様子を伝える資料が展示されている。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
