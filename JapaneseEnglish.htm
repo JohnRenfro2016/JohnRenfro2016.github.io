@@ -910,7 +910,7 @@ const replsA = [
 {pat:/(一)(?!X)(昨)(?!X)(日)(?!X)/g,repl:'$1X$2X$3Xototoi,day before yesterday~Noun'},
 {pat:/(一)(?!X)(昨)(?!X)(日)(?!X)/g,repl:'$1Xissaku$2X$3Xjitsu,day before yesterday~Noun'},
 {pat:/(一)(?!X)(緒)(?!X)(に)(?!X)/g,repl:'$1X$2X$3Xissyoni,together,at same time~Noun'},
-{pat:/(一)(?!X)(般)(?!X)(に)(?!X)/g,repl:'$1X$2X$3Xippanni,generally,in general~Noun'},
+{pat:/(一)(?!X)(般)(?!X)(に)(?!X)/g,repl:'$1Xip$2Xpan$3Xni,generally~Noun'},
 {pat:/(一)(?!X)(通)(?!X)(り)(?!X)/g,repl:'$1X$2X$3Xhitotoori,briefly,once over~Noun'},
 {pat:/(一)(?!X)(遍)(?!X)(に)(?!X)/g,repl:'$1X$2X$3Xiっぺnni,all at once~Noun'},
 {pat:/(一)(?!X)(部)(?!X)(分)(?!X)/g,repl:'$1Xichi$2Xbu$3Xbun,part,portion~Noun'},
@@ -1017,7 +1017,7 @@ const replsA = [
 {pat:/(全)(?!X)(速)(?!X)(力)(?!X)/g,repl:'$1Xzen$2Xsoku$3Xryoku,full speed,full steam~Noun'},
 {pat:/(全)(?!X)(面)(?!X)(的)(?!X)/g,repl:'$1Xzen$2Xmen$3Xteki,all-out,overall~Noun'},
 {pat:/(八)(?!X)(百)(?!X)(屋)(?!X)/g,repl:'$1Xya$2X$3Xoya,vegetable store,greengrocer~Noun'},
-{pat:/(公)(?!X)(務)(?!X)(員)(?!X)/g,repl:'$1Xkou$2X$3Xmuin,public officer,government worker~Noun'},
+{pat:/(公)(?!X)(務)(?!X)(員)(?!X)/g,repl:'$1Xkou$2Xmu$3Xin,public officer,government worker~Noun'},
 {pat:/(公)(?!X)(明)(?!X)(党)(?!X)/g,repl:'$1Xkou$2Xmei$3Xtou,The Koumeito Party of Japan~Noun'},
 {pat:/(公)(?!X)(聴)(?!X)(会)(?!X)/g,repl:'$1Xkou$2Xcyou$3Xkai,public hearing~Noun'},
 {pat:/(共)(?!X)(和)(?!X)(党)(?!X)/g,repl:'$1Xkyou$2Xwa$3Xtou,Japanese Republican Party~Noun'},
@@ -1381,7 +1381,7 @@ const replsA = [
 {pat:/(盆)(?!X)(踊)(?!X)(り)(?!X)/g,repl:'$1X$2X$3Xbonodori,Bon Festival dance~Noun'},
 {pat:/(目)(?!X)(撃)(?!X)(者)(?!X)/g,repl:'$1Xmoku$2Xgeki$3Xsya,eye witness~Noun'},
 {pat:/(目)(?!X)(的)(?!X)(地)(?!X)/g,repl:'$1Xmoku$2Xteki$3Xchi,destination,goal~Noun'},
-{pat:/(直)(?!X)(ち)(?!X)(に)(?!X)/g,repl:'$1X$2X$3Xtadachi ni,at once~Noun'},
+{pat:/(直)(?!X)(ち)(?!X)(に)(?!X)/g,repl:'$1Xtada$2Xchi$3Xni,at once~Noun'},
 {pat:/(看)(?!X)(護)(?!X)(婦)(?!X)/g,repl:'$1Xkan$2Xgo$3Xfu,female nurse~Noun'},
 {pat:/(看)(?!X)(護)(?!X)(師)(?!X)/g,repl:'$1Xkan$2Xgo$3Xshi,nurses~Noun'},
 {pat:/(真)(?!X)(っ)(?!X)(先)(?!X)/g,repl:'$1X$2X$3Xmassaki,first thing,forefront~Noun'},
@@ -1740,7 +1740,7 @@ const replsA = [
 {pat:/(占)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshi$2Xmei,occupy,hold$3X~RuVerb'},
 {pat:/(危)(?!X)(な)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xabu$2Xna,dangerous$3X~IAdjective~Noun'},
 {pat:/(厚)(?!X)(労)(?!X)(省)(?!X)/g,repl:'$1Xkou$2Xrou$3Xsyou,Ministry of Health,Labor and Welfare,adjective~Noun'},
-{pat:/(厳)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2Xkibishi,strict$3X~IAdjective~Noun'},
+{pat:/(厳)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xkibi$2Xshi,strict$3X~IAdjective~Noun'},
 {pat:/(反)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xhansu,oppose~RuVerb'},
 {pat:/(取)(?!X)(り)(?!X)(扱)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xtori$2X$3Xatsuka,handling$4X~IAdjective~Noun'},
 {pat:/(取)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtore,be harvested,be cultivated$3X~RuVerb'},
@@ -1812,7 +1812,7 @@ const replsA = [
 {pat:/(弱)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyowame,wea-ken,lower$3X~RuVerb'},
 {pat:/(強)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtsuyoma,become strong$3X~RuVerb'},
 {pat:/(強)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtsuyo$2Xme,strengthen$3X~RuVerb'},
-{pat:/(当)(?!X)(た)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xata$2X,hit a target$3X~RuVerb'},
+{pat:/(当)(?!X)(た)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xa$2Xta,hit a target$3X~RuVerb'},
 {pat:/(当)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xate,guess,hit jackpot$3X~RuVerb'},
 {pat:/(形)(?!X)(容)(?!X)(詞)(?!X)/g,repl:'$1Xkei$2Xyou$3Xshi,adjective~Noun'},
 {pat:/(得)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtokusu,profit,gai-n$3X~RuVerb'},
@@ -2552,7 +2552,7 @@ const replsB = [
 {pat:/(今)(?!X)(月)(?!X)/g,repl:'$1Xkon$2Xgetsu,this month~Noun'},
 {pat:/(今)(?!X)(朝)(?!X)/g,repl:'$1X$2Xkesa,this morning~Noun'},
 {pat:/(今)(?!X)(週)(?!X)/g,repl:'$1Xkon$2Xsyuu,this week~Noun'},
-{pat:/(介)(?!X)(入)(?!X)/g,repl:'$1Xkai$2Xnyuu,kai-nyuu,intervention~Noun'},
+{pat:/(介)(?!X)(入)(?!X)/g,repl:'$1Xkai$2Xnyuu,intervention~Noun'},
 {pat:/(介)(?!X)(護)(?!X)/g,repl:'$1Xkai$2Xgo,nursing home~Noun'},
 {pat:/(仏)(?!X)(教)(?!X)/g,repl:'$1Xbuk$2Xkyou,Buddhism~Noun'},
 {pat:/(仕)(?!X)(事)(?!X)/g,repl:'$1Xshi$2Xgoto,job~Noun'},
@@ -3294,7 +3294,7 @@ const replsB = [
 {pat:/(国)(?!X)(務)(?!X)/g,repl:'$1Xkoku$2Xmu,affairs of state~Noun'},
 {pat:/(国)(?!X)(名)(?!X)/g,repl:'$1Xkoku$2Xmei,countries name~Noun'},
 {pat:/(国)(?!X)(営)(?!X)/g,repl:'$1Xkoku$2Xei,state management~Noun'},
-{pat:/(国)(?!X)(土)(?!X)/g,repl:'$1Xkoku$2Xdo,countries,territory~Noun'},
+{pat:/(国)(?!X)(土)(?!X)/g,repl:'$1Xkoku$2Xdo,territory~Noun'},
 {pat:/(国)(?!X)(境)(?!X)/g,repl:'$1Xkok$2Xkyou,national border~Noun'},
 {pat:/(国)(?!X)(外)(?!X)/g,repl:'$1Xkoku$2Xgai,abroad~Noun'},
 {pat:/(国)(?!X)(家)(?!X)/g,repl:'$1Xkok$2Xka,national~Noun'},
@@ -4444,6 +4444,7 @@ const replsB = [
 {pat:/(株)(?!X)(式)(?!X)/g,repl:'$1Xkabu$2Xshiki,stock~Noun'},
 {pat:/(根)(?!X)(拠)(?!X)/g,repl:'$1Xkon$2Xkyo,basis~Noun'},
 {pat:/(根)(?!X)(本)(?!X)/g,repl:'$1Xkon$2Xpon,basis~Noun'},
+{pat:/(異)(?!X)(動)(?!X)/g,repl:'$1Xi$2Xdou,job transfer~Noun'},
 {pat:/(格)(?!X)(好)(?!X)/g,repl:'$1Xkak$2Xkou,shape,appearance~Noun'},
 {pat:/(格)(?!X)(差)(?!X)/g,repl:'$1Xkaku$2Xsa,gap,disparity~Noun'},
 {pat:/(栽)(?!X)(培)(?!X)/g,repl:'$1Xsai$2Xbai,cultivation,raising~Noun'},
@@ -4686,10 +4687,12 @@ const replsB = [
 {pat:/(活)(?!X)(用)(?!X)/g,repl:'$1Xkatsu$2Xyou,utilization~Noun'},
 {pat:/(活)(?!X)(発)(?!X)/g,repl:'$1Xkap$2Xpatsu,lively~Noun'},
 {pat:/(活)(?!X)(躍)(?!X)/g,repl:'$1Xkatsu$2Xyaku,activity~Noun'},
+{pat:/(送)(?!X)(信)(?!X)/g,repl:'$1Xsou$2Xshin,transmission~Noun'},
 {pat:/(派)(?!X)(手)(?!X)/g,repl:'$1X$2Xhade,showy,flashy~Noun'},
 {pat:/(派)(?!X)(遣)(?!X)/g,repl:'$1Xha$2Xken,dispatch~Noun'},
 {pat:/(派)(?!X)(閥)(?!X)/g,repl:'$1Xha$2Xbatsu,clique,faction~Noun'},
 {pat:/(流)(?!X)(れ)(?!X)/g,repl:'$1Xnaga$2Xre,flow,stream~IchidanVerb'},
+{pat:/(禁)(?!X)(じ)(?!X)/g,repl:'$1Xkin$2Xji,prohibit~IchidanVerb'},
 {pat:/(流)(?!X)(入)(?!X)/g,repl:'$1Xryuu$2Xnyuu,influx~Noun'},
 {pat:/(流)(?!X)(出)(?!X)/g,repl:'$1Xryuu$2Xsyutsu,outflow~Noun'},
 {pat:/(流)(?!X)(氷)(?!X)/g,repl:'$1Xryuu$2Xhyou,drift ice~Noun'},
@@ -7631,15 +7634,17 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-【パリ時事】世界保健機関（WHO）のテドロス事務局長は11日、天然痘に似た症状の感染症「サル痘（エムポックス）」について、感染者の減少が続いているとして、昨年宣言した「緊急事態」の終了を発表した。
+国土交通省OBによる民間企業への人事介入問題に関連し、国交省は12日、一般には公表されていない省内の人事情報が、現役職員から省外のメールアドレス173件に送られていたと明らかにした。現役職員から、民間企業に天下ったOBに人事情報が送られていたとの指摘を踏まえ、国交省が確認した。
 
-【図解】サル痘の主な特徴
+【図解】「アポお取りしました」のメール　説明に矛盾
 
-　10日に開かれたWHOの専門家会合で同様の判断が示されたことを受け、約10カ月で宣言解除に踏み切った。
+　12日の衆院国交委員会で、立憲民主の城井崇議員らの質問に斉藤鉄夫国交相が答えた。斉藤氏は「いまだ公表されていない異動に関する情報が外部に共有されていたことは大変遺憾で、事務方に厳しく注意した」と語った。
 
-　テドロス氏は記者会見で「エムポックスは引き続き公衆衛生上の大きな課題で、忍耐強い対策が必要だ」と述べ、警戒を怠らないよう訴えた。
+　一連の問題では、東証プライム上場の「空港施設」（東京都）の副社長だった国交省OBに2021～22年、国交省の現役職員から人事に関する情報がメールで3回にわたって送られていたと、同社の検証委員会が指摘していた。
 
-　アフリカの一部地域で発生していたエムポックスは、昨年5月ごろから欧米などに感染が拡大。日本では同年7月に感染者が初確認された。WHOによると、同年8月には1週間当たりの世界の新規感染者が7500人を超えたが、ここ数カ月は100人前後で推移していた。
+　国家公務員法は、再就職を目的に職員が企業側に職員の情報を提供することを禁じている。斉藤氏はメール送信を確認したとしたうえで「内示情報について職員有志が取りまとめ、関係者に慣習的に広く共有されていた」「直ちに違反に当たるものではないと考えている」などと説明した。
+
+　国交省がこの日、国会議員に示した資料によると、21年6月29日にOBに「BCC」で送られたメールは、職員の入省年次や経歴が整理された「線引き」と呼ばれる情報が添えられていた。当時のメールは残っていなかったが、今年4月に同様に現役職員から一斉送信されたメールの宛先は計1058件で、うち173件は外部のアドレスだったという。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
