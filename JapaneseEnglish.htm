@@ -130,7 +130,7 @@ const replsA = [
 {pat:/(お)(?!X)(目)(?!X)(に)(?!X)(掛)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xomenikaka,meet,have honor of seeing$6X~RuVerb'},
 {pat:/(も)(?!X)(っ)(?!X)(た)(?!X)(い)(?!X)(な)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xmottaina,wasteful,a shame$6X~IAdjective~Noun'},
 {pat:/(代)(?!X)(わ)(?!X)(る)(?!X)(代)(?!X)(わ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xkawarugawa,by turns,alternately$6X~RuVerb'},
-{pat:/(問)(?!X)(い)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xtoiawase,inquire,contact$6X~RuVerb'},
+{pat:/(問)(?!X)(い)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xto$2Xi$3Xa$4Xwa$5Xse,inquire,contact$6X~RuVerb'},
 {pat:/(待)(?!X)(ち)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xmachiawase,wait for,meet by appointment$6X~RuVerb'},
 {pat:/(思)(?!X)(い)(?!X)(が)(?!X)(け)(?!X)(な)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xomoigakena,unexpected,accidental$6X~IAdjective~Noun'},
 {pat:/(打)(?!X)(ち)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xuchiawase,arrange,discuss$6X~RuVerb'},
@@ -470,7 +470,7 @@ const replsA = [
 {pat:/(消)(?!X)(し)(?!X)(ゴ)(?!X)(ム)(?!X)/g,repl:'$1X$2X$3X$4Xkeshi-gomu,eraser~Noun'},
 {pat:/(無)(?!X)(理)(?!X)(や)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xmu-riyari,by force,against one\'s will~Noun'},
 {pat:/(焼)(?!X)(き)(?!X)(そ)(?!X)(ば)(?!X)/g,repl:'$1X$2X$3X$4Xyakisoba,pan-fried noodles~Noun'},
-{pat:/(生)(?!X)(年)(?!X)(月)(?!X)(日)(?!X)/g,repl:'$1X$2X$3X$4Xsei-nen-gap-pi,date of birth~Noun'},
+{pat:/(生)(?!X)(年)(?!X)(月)(?!X)(日)(?!X)/g,repl:'$1Xsei$2Xnen$3Xgap$4Xpi,date of birth~Noun'},
 {pat:/(産)(?!X)(婦)(?!X)(人)(?!X)(科)(?!X)/g,repl:'$1X$2X$3X$4Xsanfujinka,obstetrics and gynecology~Noun'},
 {pat:/(申)(?!X)(し)(?!X)(込)(?!X)(み)(?!X)/g,repl:'$1X$2X$3X$4Xmoushi-komi,application~Noun'},
 {pat:/(百)(?!X)(科)(?!X)(事)(?!X)(典)(?!X)/g,repl:'$1X$2X$3X$4Xyak-ka-ji-ten,encyclopedia~Noun'},
@@ -609,7 +609,7 @@ const replsA = [
 {pat:/(名)(?!X)(付)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xnazuke,name,give a name to$4X~RuVerb'},
 {pat:/(吸)(?!X)(い)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xsui$2X$3Xko,inhale,suck in$4X~MuVerb'},
 {pat:/(呼)(?!X)(び)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xyo$2Xbi$3Xda,call out$4X~SuVerb'},
-{pat:/(和)(?!X)(ら)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,repl:'$1X$2Xyawara,sof-ten,calm down$3X~GuVerb'},
+{pat:/(和)(?!X)(ら)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,repl:'$1Xyawa$2Xra,smoothe over$3X~GuVerb'},
 {pat:/(和)(?!X)(ら)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xyawarage,sof-ten,relieve$4X~RuVerb'},
 {pat:/(噛)(?!X)(み)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xkami$2X$3Xtsu,bite at$4X~KuVerb'},
 {pat:/(売)(?!X)(り)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2X$3Xurida,put on sale$4X~SuVerb'},
@@ -810,7 +810,7 @@ const replsA = [
 {pat:/(す)(?!X)(で)(?!X)(に)(?!X)/g,repl:'$1X$2X$3Xsude ni,already too late~Noun'},
 {pat:/(す)(?!X)(べ)(?!X)(き)(?!X)/g,repl:'$1X$2X$3Xsubeki,should~Noun'},
 {pat:/(す)(?!X)(べ)(?!X)(て)(?!X)/g,repl:'$1X$2X$3X subete,completely~Noun'},
-{pat:/(す)(?!X)(る)(?!X)(と)(?!X)/g,repl:'$1X$2X$3Xsuru to,by way of verb above~Noun'},
+{pat:/(す)(?!X)(る)(?!X)(と)(?!X)/g,repl:'$1X$2X$3Xsuru to,by way of~SuruVerb'},
 {pat:/(す)(?!X)(れ)(?!X)(ば)(?!X)/g,repl:'$1X$2X$3Xsureba,if that is case then~Noun'},
 {pat:/(ず)(?!X)(っ)(?!X)(と)(?!X)/g,repl:'$1X$2X$3Xzutto,throughout~Noun'},
 {pat:/(ず)(?!X)(ら)(?!X)(り)(?!X)/g,repl:'$1X$2X$3Xzurari,line up neatly~Noun'},
@@ -878,7 +878,7 @@ const replsA = [
 {pat:/(み)(?!X)(ぞ)(?!X)(れ)(?!X)/g,repl:'$1X$2X$3Xmizore,sleet~Noun'},
 {pat:/(み)(?!X)(ん)(?!X)(な)(?!X)/g,repl:'$1X$2X$3Xminna,everybody~Noun'},
 {pat:/(む)(?!X)(し)(?!X)(ろ)(?!X)/g,repl:'$1X$2X$3Xmushiro,rather~Noun'},
-{pat:/(も)(?!X)(う)(?!X)(け)(?!X)/g,repl:'$1X$2X$3Xmouke,profits,earnings~Noun'},
+{pat:/(も)(?!X)(う)(?!X)(け)(?!X)/g,repl:'$1X$2X$3Xmouke,earnings~Noun'},
 {pat:/(も)(?!X)(し)(?!X)(も)(?!X)/g,repl:'$1X$2X$3Xmoshimo,if,if ever~Noun'},
 {pat:/(も)(?!X)(っ)(?!X)(と)(?!X)/g,repl:'$1X$2X$3Xmotto,more~Noun'},
 {pat:/(も)(?!X)(の)(?!X)(で)(?!X)/g,repl:'$1X$2X$3Xmono de,reason for~Noun'},
@@ -2033,7 +2033,7 @@ const replsA = [
 {pat:/(苦)(?!X)(し)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xkuru$2Xshi,suffer,be troubled$3X~MuVerb'},
 {pat:/(荒)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xare,be wild,run waste$3X~RuVerb'},
 {pat:/(落)(?!X)(ち)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xo$2Xchi,fall,sink$3X~RuVerb'},
-{pat:/(落)(?!X)(と)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xoto,drop$3X~SuVerb'},
+{pat:/(落)(?!X)(と)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xo$2Xto,drop$3X~SuVerb'},
 {pat:/(著)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xichi$2Xjiru-shi,remarkable,conspicuous$3X~IAdjective~Noun'},
 {pat:/(蒸)(?!X)(し)(?!X)(暑)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xmushi$2X$3Xatsu,humid$4X~IAdjective~Noun'},
 {pat:/(薄)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xusume,thin,dilute$3X~RuVerb'},
@@ -3777,6 +3777,7 @@ const replsB = [
 {pat:/(強)(?!X)(盗)(?!X)/g,repl:'$1Xgou$2Xtou,robbery~Noun'},
 {pat:/(強)(?!X)(要)(?!X)/g,repl:'$1Xkyou$2Xyou,extortion~Noun'},
 {pat:/(強)(?!X)(調)(?!X)/g,repl:'$1Xkyou$2Xcyou,emphasis~Noun'},
+{pat:/(債)(?!X)(務)(?!X)/g,repl:'$1Xsai$2Xmu,debt~Noun'},
 {pat:/(強)(?!X)(風)(?!X)/g,repl:'$1Xkyou$2Xfuu,high winds~Noun'},
 {pat:/(弾)(?!X)(薬)(?!X)/g,repl:'$1Xdan$2Xyaku,ammunition~Noun'},
 {pat:/(弾)(?!X)(道)(?!X)/g,repl:'$1Xdan$2Xdou,balistic~Noun'},
@@ -3815,6 +3816,7 @@ const replsB = [
 {pat:/(後)(?!X)(者)(?!X)/g,repl:'$1Xkou$2Xsya,latter~Noun'},
 {pat:/(後)(?!X)(輩)(?!X)/g,repl:'$1Xkou$2Xhai,one\'s junior~Noun'},
 {pat:/(後)(?!X)(退)(?!X)/g,repl:'$1Xkou$2Xtai,retreat~Noun'},
+{pat:/(暗)(?!X)(証)(?!X)/g,repl:'$1Xan$2Xsyou,secret pass code~Noun'},
 {pat:/(徐)(?!X)(行)(?!X)/g,repl:'$1Xjyo$2Xkou,slow speed~Noun'},
 {pat:/(徒)(?!X)(労)(?!X)/g,repl:'$1Xto$2Xrou,pointless~Noun'},
 {pat:/(徒)(?!X)(歩)(?!X)/g,repl:'$1Xto$2Xho,going on foot~Noun'},
@@ -3978,7 +3980,7 @@ const replsB = [
 {pat:/(扶)(?!X)(養)(?!X)/g,repl:'$1Xfu$2X$3Xyou,dependants~Noun'},
 {pat:/(批)(?!X)(判)(?!X)/g,repl:'$1Xhi$2Xhan,criticism~Noun'},
 {pat:/(批)(?!X)(評)(?!X)/g,repl:'$1Xhi$2Xhyou,criticism,comment~Noun'},
-{pat:/(承)(?!X)(知)(?!X)/g,repl:'$1Xsyou$2Xchi,consent,knowledge~Noun'},
+{pat:/(承)(?!X)(知)(?!X)/g,repl:'$1Xsyou$2Xchi,consent~Noun'},
 {pat:/(承)(?!X)(認)(?!X)/g,repl:'$1Xsyou$2Xnin,approval~Noun'},
 {pat:/(技)(?!X)(師)(?!X)/g,repl:'$1Xgi$2Xshi,engineer,technician~Noun'},
 {pat:/(技)(?!X)(能)(?!X)/g,repl:'$1Xgi$2Xnou,technical skill~Noun'},
@@ -4378,6 +4380,7 @@ const replsB = [
 {pat:/(未)(?!X)(だ)(?!X)/g,repl:'$1X$2Xmada,yet,more~Noun'},
 {pat:/(未)(?!X)(婚)(?!X)/g,repl:'$1X$2Xmikon,unmarried~Noun'},
 {pat:/(未)(?!X)(定)(?!X)/g,repl:'$1Xmi$2Xtei,undecided,pending~Noun'},
+{pat:/(資)(?!X)(材)(?!X)/g,repl:'$1Xshi$2Xzai,material~Noun'},
 {pat:/(未)(?!X)(明)(?!X)/g,repl:'$1Xmi$2Xmei,early dawn~Noun'},
 {pat:/(未)(?!X)(来)(?!X)/g,repl:'$1Xmi$2Xrai,future~Noun'},
 {pat:/(未)(?!X)(満)(?!X)/g,repl:'$1Xmi$2Xman,less than number~Noun'},
@@ -4603,6 +4606,8 @@ const replsB = [
 {pat:/(気)(?!X)(力)(?!X)/g,repl:'$1Xki$2Xryoku,energy,vitality~Noun'},
 {pat:/(竜)(?!X)(巻)(?!X)/g,repl:'$1Xtatsu$2Xmaki,tornado~Noun'},
 {pat:/(気)(?!X)(圧)(?!X)/g,repl:'$1Xki$2Xatsu,atmospheric pressure~Noun'},
+{pat:/(取)(?!X)(得)(?!X)/g,repl:'$1Xsyu$2Xtoku,acquisition of~Noun'},
+{pat:/(謄)(?!X)(本)(?!X)/g,repl:'$1Xtou$2Xhon,certified copy~Noun'},
 {pat:/(気)(?!X)(楽)(?!X)/g,repl:'$1X$2Xkiraku,easygoing,comfortable~Noun'},
 {pat:/(気)(?!X)(温)(?!X)/g,repl:'$1Xki$2Xon,temperature~Noun'},
 {pat:/(気)(?!X)(球)(?!X)/g,repl:'$1Xki$2Xkyuu,blimp~Noun'},
@@ -4692,6 +4697,7 @@ const replsB = [
 {pat:/(派)(?!X)(遣)(?!X)/g,repl:'$1Xha$2Xken,dispatch~Noun'},
 {pat:/(派)(?!X)(閥)(?!X)/g,repl:'$1Xha$2Xbatsu,clique,faction~Noun'},
 {pat:/(流)(?!X)(れ)(?!X)/g,repl:'$1Xnaga$2Xre,flow,stream~IchidanVerb'},
+{pat:/(忘)(?!X)(れ)(?!X)/g,repl:'$1Xwasu$2Xre,forget,lose something~IchidanVerb'},
 {pat:/(禁)(?!X)(じ)(?!X)/g,repl:'$1Xkin$2Xji,prohibit~IchidanVerb'},
 {pat:/(流)(?!X)(入)(?!X)/g,repl:'$1Xryuu$2Xnyuu,influx~Noun'},
 {pat:/(流)(?!X)(出)(?!X)/g,repl:'$1Xryuu$2Xsyutsu,outflow~Noun'},
@@ -4930,7 +4936,7 @@ const replsB = [
 {pat:/(町)(?!X)(民)(?!X)/g,repl:'$1Xcyou$2Xmin,townspeople~Noun'},
 {pat:/(町)(?!X)(角)(?!X)/g,repl:'$1Xmachika$2Xdo,street corner~Noun'},
 {pat:/(画)(?!X)(像)(?!X)/g,repl:'$1Xga$2Xzou,image~Noun'},
-{pat:/(画)(?!X)(面)(?!X)/g,repl:'$1X$2Xgamen,screen~Noun'},
+{pat:/(画)(?!X)(面)(?!X)/g,repl:'$1Xga$2Xmen,screen~Noun'},
 {pat:/(留)(?!X)(学)(?!X)/g,repl:'$1Xryuu$2Xgaku,studying abroad~Noun'},
 {pat:/(留)(?!X)(守)(?!X)/g,repl:'$1X$2Xrusu,not at home~Noun'},
 {pat:/(留)(?!X)(意)(?!X)/g,repl:'$1Xryuu$2Xi,heed~Noun'},
@@ -5598,7 +5604,7 @@ const replsB = [
 {pat:/(詐)(?!X)(欺)(?!X)/g,repl:'$1Xsa$2Xgi,fraud~Noun'},
 {pat:/(評)(?!X)(価)(?!X)/g,repl:'$1Xhyou$2Xka,assessment~Noun'},
 {pat:/(評)(?!X)(判)(?!X)/g,repl:'$1Xhyou$2Xban,fame~Noun'},
-{pat:/(試)(?!X)(し)(?!X)/g,repl:'$1Xtame$2Xshi,trial,test~Noun'},
+{pat:/(試)(?!X)(し)(?!X)/g,repl:'$1Xtame$2Xshi,trial,test~IchidanVerb'},
 {pat:/(試)(?!X)(み)(?!X)/g,repl:'$1Xkokoro$2Xmi,attempt~IchidanVerb'},
 {pat:/(試)(?!X)(合)(?!X)/g,repl:'$1Xshi$2Xai,match,game~Noun'},
 {pat:/(試)(?!X)(案)(?!X)/g,repl:'$1Xshi$2Xan,drafted bill~Noun'},
@@ -5839,7 +5845,7 @@ const replsB = [
 {pat:/(連)(?!X)(日)(?!X)/g,repl:'$1Xren$2Xjitsu,day after day,everyday~Noun'},
 {pat:/(連)(?!X)(用)(?!X)/g,repl:'$1Xren$2Xyou,conjunctive~Noun'},
 {pat:/(連)(?!X)(盟)(?!X)/g,repl:'$1Xren$2Xmei,federation~Noun'},
-{pat:/(連)(?!X)(絡)(?!X)/g,repl:'$1Xren$2Xraku,connection,communication~Noun'},
+{pat:/(連)(?!X)(絡)(?!X)/g,repl:'$1Xren$2Xraku,communication~Noun'},
 {pat:/(連)(?!X)(続)(?!X)/g,repl:'$1Xren$2Xzoku,continuation~Noun'},
 {pat:/(連)(?!X)(行)(?!X)/g,repl:'$1Xren$2Xkou,dragging someone away~Noun'},
 {pat:/(連)(?!X)(載)(?!X)/g,repl:'$1Xren$2Xsai,serialization~Noun'},
@@ -5938,7 +5944,7 @@ const replsB = [
 {pat:/(醤)(?!X)(油)(?!X)/g,repl:'$1Xsyou$2Xyu,soy sauce~Noun'},
 {pat:/(重)(?!X)(さ)(?!X)/g,repl:'$1X$2Xomosa,weight~Noun'},
 {pat:/(重)(?!X)(み)(?!X)/g,repl:'$1X$2Xomomi,weight,importance~Noun'},
-{pat:/(重)(?!X)(体)(?!X)/g,repl:'$1Xjyuu$2X-tai,critical condition~Noun'},
+{pat:/(重)(?!X)(体)(?!X)/g,repl:'$1Xjyuu$2Xtai,critical condition~Noun'},
 {pat:/(重)(?!X)(大)(?!X)/g,repl:'$1Xjyuu$2X-dai,important,serious~Noun'},
 {pat:/(重)(?!X)(役)(?!X)/g,repl:'$1Xjyuu$2X-yaku,executive~Noun'},
 {pat:/(重)(?!X)(点)(?!X)/g,repl:'$1Xjyuu$2X-ten,emphasis~Noun'},
@@ -6732,7 +6738,7 @@ const replsB = [
 {pat:/(逃)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xnoga,miss,let go$2X~SuVerb'},
 {pat:/(通)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtoo,pass,take,go through$2X~RuVerb'},
 {pat:/(通)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xtoo,let pass,run through$2X~SuVerb'},
-{pat:/(通)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xkayo,go to and from,frequent a place$2X~UVerb'},
+{pat:/(通)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xkayo,go to and from$2X~UVerb'},
 {pat:/(速)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xhaya,fast$2X~IAdjective~Noun'},
 {pat:/(逢)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xa,meet$2X~UVerb'},
 {pat:/(進)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xsusu,advance$2X~MuVerb'},
@@ -7044,6 +7050,7 @@ const replsB = [
 {pat:/(料)(?!X)/g,repl:'$1Xryou,charge~Noun'},
 {pat:/(新)(?!X)/g,repl:'$1Xshin,new~Noun'},
 {pat:/(方)(?!X)/g,repl:'$1Xhou or kata,other person~Noun'},
+{pat:/(永)(?!X)/g,repl:'$1Xei,permanent~Noun'},
 {pat:/(旅)(?!X)/g,repl:'$1Xtabi,journey,travel~Noun'},
 {pat:/(旗)(?!X)/g,repl:'$1Xhata,flag,banner~Noun'},
 {pat:/(日)(?!X)/g,repl:'$1Xhi,day or nichi,Sunday or ni,Japan~Noun'},
@@ -7053,7 +7060,7 @@ const replsB = [
 {pat:/(映)(?!X)/g,repl:'$1Xe,movie~Noun'},
 {pat:/(春)(?!X)/g,repl:'$1Xharu,spring~Noun'},
 {pat:/(昼)(?!X)/g,repl:'$1Xhiru,midday~Noun'},
-{pat:/(時)(?!X)/g,repl:'$1X-ji,toki|time~Noun'},
+{pat:/(時)(?!X)/g,repl:'$1Xji or toki,time~Noun'},
 {pat:/(晩)(?!X)/g,repl:'$1Xban,evening (usually from sunset to bedtime)~Noun'},
 {pat:/(暇)(?!X)/g,repl:'$1Xhima,free time,spare time~Noun'},
 {pat:/(暖)(?!X)/g,repl:'$1Xdan,warmth~Noun'},
@@ -7206,6 +7213,7 @@ const replsB = [
 {pat:/(相)(?!X)/g,repl:'$1Xsyou,government minister~Noun'},
 {pat:/(省)(?!X)/g,repl:'$1Xsyou,government ministry~Noun'},
 {pat:/(眉)(?!X)/g,repl:'$1Xmayu,eyebrow~Noun'},
+{pat:/(票)(?!X)/g,repl:'$1Xhyou,vote~Noun'},
 {pat:/(県)(?!X)/g,repl:'$1Xken,prefecture~Noun'},
 {pat:/(着)(?!X)/g,repl:'$1Xki,wear~IchidanVerb'},
 {pat:/(石)(?!X)/g,repl:'$1Xishi,stone~Noun'},
@@ -7253,6 +7261,7 @@ const replsB = [
 {pat:/(綱)(?!X)/g,repl:'$1Xtsuna,rope,line~Noun'},
 {pat:/(網)(?!X)/g,repl:'$1Xami,net~Noun'},
 {pat:/(総)(?!X)/g,repl:'$1Xsou,total~Noun'},
+{pat:/(証)(?!X)/g,repl:'$1Xsyou,proof~Noun'},
 {pat:/(緑)(?!X)/g,repl:'$1Xmidori,green,foliage~Noun'},
 {pat:/(線)(?!X)/g,repl:'$1Xsen,line~Noun'},
 {pat:/(縄)(?!X)/g,repl:'$1Xnawa,rope,cord~Noun'},
@@ -7376,6 +7385,7 @@ const replsB = [
 {pat:/(酢)(?!X)/g,repl:'$1Xsu,vinegar~Noun'},
 {pat:/(酸)(?!X)/g,repl:'$1Xsan,acid~Noun'},
 {pat:/(重)(?!X)/g,repl:'$1Xjyuu,serious~Noun'},
+{pat:/(敦)(?!X)/g,repl:'$1Xatsu,industry~Noun'},
 {pat:/(量)(?!X)/g,repl:'$1Xryou,quantity~Noun'},
 {pat:/(金)(?!X)/g,repl:'$1Xkane,money or kin,gold or Friday~Noun'},
 {pat:/(釘)(?!X)/g,repl:'$1Xkugi,nai+l,spike~Noun'},
@@ -7611,14 +7621,14 @@ a = a.replace(/(んX)(~BuVerb)/g,'んXn$2');
 a = a.replace(/(んX)(~MuVerb)/g,'んn$2');
 a = a.replace(/~IchidanVerbる/g,'るXru,to do,will do~IchidanVerb');
 
-a = a.replace(/(Verb)(と)(?!X)/g,'$1<p>$2Xto,by way of');
+a = a.replace(/(Verb)(と)(?!X)/g,'$1<p>$2Xto,by way of~Postposition~Noun');
 a = a.replace(/(Verb)(た)(?!X)/g,'<br>$1X$2Xta,did~InformalVerb<p>');
 a = a.replace(/(Verb)(だ)(?!X)/g,'<br>$1X$2Xda,did~InformalVerb<p>');
 a = a.replace(/(Verb)(る)(?!X)/g,'<br>$1X$2Xru,do,will do~InformalVerb<p>');
 
 a = a.replace(/(IAdjective)/g,'$1<p>');
-a = a.replace(/(~Noun)/g,'<p>');
-a = a.replace(/(Verb)/g,'$1<br>');
+a = a.replace(/(~Noun)/g,'<p><p>');
+a = a.replace(/(Verb)/g,'$1<p>');
 
 a = a.replace(/X/g,'');
 
@@ -7634,17 +7644,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-国土交通省OBによる民間企業への人事介入問題に関連し、国交省は12日、一般には公表されていない省内の人事情報が、現役職員から省外のメールアドレス173件に送られていたと明らかにした。現役職員から、民間企業に天下ったOBに人事情報が送られていたとの指摘を踏まえ、国交省が確認した。
-
-【図解】「アポお取りしました」のメール　説明に矛盾
-
-　12日の衆院国交委員会で、立憲民主の城井崇議員らの質問に斉藤鉄夫国交相が答えた。斉藤氏は「いまだ公表されていない異動に関する情報が外部に共有されていたことは大変遺憾で、事務方に厳しく注意した」と語った。
-
-　一連の問題では、東証プライム上場の「空港施設」（東京都）の副社長だった国交省OBに2021～22年、国交省の現役職員から人事に関する情報がメールで3回にわたって送られていたと、同社の検証委員会が指摘していた。
-
-　国家公務員法は、再就職を目的に職員が企業側に職員の情報を提供することを禁じている。斉藤氏はメール送信を確認したとしたうえで「内示情報について職員有志が取りまとめ、関係者に慣習的に広く共有されていた」「直ちに違反に当たるものではないと考えている」などと説明した。
-
-　国交省がこの日、国会議員に示した資料によると、21年6月29日にOBに「BCC」で送られたメールは、職員の入省年次や経歴が整理された「線引き」と呼ばれる情報が添えられていた。当時のメールは残っていなかったが、今年4月に同様に現役職員から一斉送信されたメールの宛先は計1058件で、うち173件は外部のアドレスだったという。
+１３日午前６時半ごろ、敦賀市永大町の住宅資材メーカー・永大産業敦賀事業所で火事があり、従業員４人が病院に搬送された。従業員１人が意識不明の重体。１人が行方不明となっているという。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
