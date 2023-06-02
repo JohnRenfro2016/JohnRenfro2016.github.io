@@ -1210,7 +1210,7 @@ const replsA = [
 {pat:/(手)(?!X)(す)(?!X)(り)(?!X)/g,repl:'$1Xte$2X$3Xsuri,railing~Noun'},
 {pat:/(手)(?!X)(入)(?!X)(れ)(?!X)/g,repl:'$1Xtei$2X$3Xre,care,repairs~Noun'},
 {pat:/(手)(?!X)(当)(?!X)(て)(?!X)/g,repl:'$1Xte$2X$3Xate,allowance,medical care~Noun'},
-{pat:/(手)(?!X)(続)(?!X)(き)(?!X)/g,repl:'$1Xte$2X$3Xtsuzuki,formal procedure~Noun'},
+{pat:/(手)(?!X)(続)(?!X)(き)(?!X)/g,repl:'$1Xte$2Xtsuzu$3Xki,formal procedure~Noun'},
 {pat:/(抑)(?!X)(止)(?!X)(力)(?!X)/g,repl:'$1Xyoku$2Xshi$3Xryoku,deterrence~Noun'},
 {pat:/(投)(?!X)(開)(?!X)(票)(?!X)/g,repl:'$1Xtou$2Xkai$3Xhyou,casting and counting votes~Noun'},
 {pat:/(抽)(?!X)(象)(?!X)(的)(?!X)/g,repl:'$1Xcyuu$2Xsyou$3Xteki,abstract~Noun'},
@@ -1374,7 +1374,7 @@ const replsA = [
 {pat:/(留)(?!X)(学)(?!X)(生)(?!X)/g,repl:'$1Xryuu$2Xgaku$3Xsei,student studying abroad~Noun'},
 {pat:/(留)(?!X)(守)(?!X)(番)(?!X)/g,repl:'$1Xrusu$2X$3Xban,caretaking,caretaker~Noun'},
 {pat:/(留)(?!X)(置)(?!X)(場)(?!X)/g,repl:'$1Xryuu$2Xchi$3Xjyou,jail cell~Noun'},
-{pat:/(発)(?!X)(電)(?!X)(所)(?!X)/g,repl:'$1Xhatsu$2X$3Xdensho,power plant~Noun'},
+{pat:/(発)(?!X)(電)(?!X)(所)(?!X)/g,repl:'$1Xhatsu$2Xden$3Xsho,power plant~Noun'},
 {pat:/(百)(?!X)(貨)(?!X)(店)(?!X)/g,repl:'$1Xyak$2Xka$3Xten,department store~Noun'},
 {pat:/(皆)(?!X)(さ)(?!X)(ん)(?!X)/g,repl:'$1Xmina$2X$3Xsan,everybody~Noun'},
 {pat:/(盆)(?!X)(踊)(?!X)(り)(?!X)/g,repl:'$1X$2X$3Xbonodori,Bon Festival dance~Noun'},
@@ -1552,6 +1552,9 @@ const replsA = [
 {pat:/(駆)(?!X)(け)(?!X)(足)(?!X)/g,repl:'$1Xkakea$2X$3Xshi,gallop,run~Noun'},
 {pat:/(駐)(?!X)(車)(?!X)(場)(?!X)/g,repl:'$1Xcyuu$2Xsya$3Xjyou,parking area~Noun'},
 {pat:/(高)(?!X)(性)(?!X)(能)(?!X)/g,repl:'$1Xtaka$2Xsei$3Xnou,high performance~Noun'},
+{pat:/(積)(?!X)(乱)(?!X)(雲)(?!X)/g,repl:'$1Xseki$2Xran$3Xun,cumulonimbus cloud~Noun'},
+{pat:/(小)(?!X)(売)(?!X)(り)(?!X)/g,repl:'$1Xko$2Xu$3Xri,retail~Noun'},
+{pat:/(新)(?!X)(店)(?!X)(舗)(?!X)/g,repl:'$1Xshin$2Xten$3Xpo,new store~Noun'},
 {pat:/(高)(?!X)(校)(?!X)(生)(?!X)/g,repl:'$1Xkou$2Xkou$3Xsei,high school student~Noun'},
 {pat:/(高)(?!X)(気)(?!X)(圧)(?!X)/g,repl:'$1Xkou$2Xki$3Xatsu,high pressure~Noun'},
 {pat:/(髪)(?!X)(の)(?!X)(毛)(?!X)/g,repl:'$1Xkami$2X$3Xnoke,hair~Noun'},
@@ -1692,7 +1695,7 @@ const replsA = [
 {pat:/(伝)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtsuta$2X,convey$3X~RuVerb'},
 {pat:/(伝)(?!X)(わ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtsutawa,be transmitted,be handed down$3X~RuVerb'},
 {pat:/(伸)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xnoba,stretch,straighten$3X~SuVerb'},
-{pat:/(伸)(?!X)(び)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xnobi,stretch,grow$3X~RuVerb'},
+{pat:/(伸)(?!X)(び)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xno$2Xbi,stretch,grow$3X~RuVerb'},
 {pat:/(似)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xnise,imitate,forge$3X~RuVerb'},
 {pat:/(似)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1X$2Xnia,sui-t,match well$3X~UVerb'},
 {pat:/(住)(?!X)(ま)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2Xsuma,dwelling,residence$3X~IAdjective~Noun'},
@@ -1938,7 +1941,7 @@ const replsA = [
 {pat:/(混)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xmaji,be blended,get mixed$3X~RuVerb'},
 {pat:/(混)(?!X)(ぜ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xmaze,blend,mix by stirring$3X~RuVerb'},
 {pat:/(添)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsoe,add to,attach to$3X~RuVerb'},
-{pat:/(済)(?!X)(ま)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xsuma,settle,complete$3X~SuVerb'},
+{pat:/(済)(?!X)(ま)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xsu$2Xma,settle,complete$3X~SuVerb'},
 {pat:/(減)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xhera,decrease$3X~SuVerb'},
 {pat:/(湿)(?!X)(っ)(?!X)(ぽ)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xshi$2X$3Xmeiっぽ,damp,gloomy$4X~IAdjective~Noun'},
 {pat:/(満)(?!X)(た)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xmita,fill,satisfy$3X~SuVerb'},
@@ -2161,7 +2164,7 @@ const replsA = [
 {pat:/(騒)(?!X)(が)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xsawaga$2X$3Xshi,noisy$4X~IAdjective~Noun'},
 {pat:/(驚)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xodoroka,surprise,amaze$3X~SuVerb'},
 {pat:/(高)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtaka$2Xma,increase$3X~RuVerb'},
-{pat:/(高)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtakame,enhance$3X~RuVerb'},
+{pat:/(高)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtaka$2Xme,enhance$3X~RuVerb'},
 {pat:/(鳴)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xnara,ring,sound$3X~SuVerb'},
 {pat:/(黄)(?!X)(色)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xki$2Xiro,yellow$3X~IAdjective~Noun'},
 
@@ -2245,7 +2248,7 @@ const replsB = [
 {pat:/(そ)(?!X)(こ)(?!X)/g,repl:'$1X$2Xsoko,that~Noun'},
 {pat:/(そ)(?!X)(こ)(?!X)/g,repl:'$1X$2Xsoko,there~Noun'},
 {pat:/(そ)(?!X)(の)(?!X)/g,repl:'$1X$2Xsono,that~Noun'},
-{pat:/(そ)(?!X)(ば)(?!X)/g,repl:'$1X$2Xsoba,buckwheat noodles,soba~Noun'},
+{pat:/(そ)(?!X)(ば)(?!X)/g,repl:'$1X$2Xsoba,buckwheat noodles or next to~Noun'},
 {pat:/(そ)(?!X)(れ)(?!X)/g,repl:'$1X$2Xsore,that,that one~Noun'},
 {pat:/(た)(?!X)(だ)(?!X)/g,repl:'$1X$2Xtada,free~Noun'},
 {pat:/(た)(?!X)(だ)(?!X)/g,repl:'$1X$2Xtada,merely~Noun'},
@@ -2498,7 +2501,7 @@ const replsB = [
 {pat:/(事)(?!X)(業)(?!X)/g,repl:'$1Xji$2Xgyou,business~Noun'},
 {pat:/(事)(?!X)(象)(?!X)/g,repl:'$1Xji$2Xsyou,matter~Noun'},
 {pat:/(二)(?!X)(人)(?!X)/g,repl:'$1X$2Xfutari,two persons~Noun'},
-{pat:/(二)(?!X)(日)(?!X)/g,repl:'$1X$2Xfutsuka,two days,2nd of the month~Noun'},
+{pat:/(２|二)(?!X)(日)(?!X)/g,repl:'$1X$2Xfutsuka,two days,2nd of the month~Noun'},
 {pat:/(二)(?!X)(流)(?!X)/g,repl:'$1X$2Xniryuu,second-rate~Noun'},
 {pat:/(二)(?!X)(階)(?!X)/g,repl:'$1Xni$2Xkai,second floor,upstairs~Noun'},
 {pat:/(五)(?!X)(日)(?!X)/g,repl:'$1Xitsu$2Xka,five days,5th of the month~Noun'},
@@ -3579,6 +3582,9 @@ const replsB = [
 {pat:/(実)(?!X)(力)(?!X)/g,repl:'$1Xjitsu$2Xryoku,efficiency~Noun'},
 {pat:/(実)(?!X)(感)(?!X)/g,repl:'$1Xjik$2Xkan,true sense,realization~Noun'},
 {pat:/(実)(?!X)(態)(?!X)/g,repl:'$1Xjit$2Xtai,actual situation~Noun'},
+{pat:/(争)(?!X)(議)(?!X)/g,repl:'$1X.sou$2Xgi,dispute~Noun'},
+{pat:/(店)(?!X)(舗)(?!X)/g,repl:'$1Xten$2Xpo,store~Noun'},
+{pat:/(北)(?!X)(米)(?!X)/g,repl:'$1Xhoku$2Xbei,North America~Noun'},
 {pat:/(実)(?!X)(施)(?!X)/g,repl:'$1Xjis$2Xshi,implementation~Noun'},
 {pat:/(実)(?!X)(物)(?!X)/g,repl:'$1Xjitsu$2Xbutsu,real thing,actual object~Noun'},
 {pat:/(実)(?!X)(現)(?!X)/g,repl:'$1Xjitsu$2Xgen,implementation~Noun'},
@@ -3904,7 +3910,8 @@ const replsB = [
 {pat:/(怪)(?!X)(物)(?!X)/g,repl:'$1Xkai$2Xbutsu,monster~Noun'},
 {pat:/(恋)(?!X)(人)(?!X)/g,repl:'$1Xkoi$2Xbito,sweetheart~Noun'},
 {pat:/(恋)(?!X)(愛)(?!X)/g,repl:'$1Xren$2Xai,love~Noun'},
-{pat:/(恐)(?!X)(れ)(?!X)/g,repl:'$1X$2Xosore,fear,risk~Noun'},
+{pat:/(恐)(?!X)(れ)(?!X)/g,repl:'$1Xoso$2Xre,fear,risk~Noun'},
+{pat:/(最)(?!X)(新)(?!X)/g,repl:'$1Xsai$2Xshin,latest~Noun'},
 {pat:/(恒)(?!X)(例)(?!X)/g,repl:'$1Xkou$2Xrei,custom~Noun'},
 {pat:/(恨)(?!X)(み)(?!X)/g,repl:'$1Xura$2Xmi,grudge,hatred~Noun'},
 {pat:/(恩)(?!X)(恵)(?!X)/g,repl:'$1Xon$2Xkei,favor~Noun'},
@@ -4091,7 +4098,7 @@ const replsB = [
 {pat:/(接)(?!X)(続)(?!X)/g,repl:'$1Xsetsu$2Xzoku,connection,joining~Noun'},
 {pat:/(接)(?!X)(触)(?!X)/g,repl:'$1Xses$2Xsyoku,close contact~Noun'},
 {pat:/(接)(?!X)(近)(?!X)/g,repl:'$1Xsek$2Xkin,approach~Noun'},
-{pat:/(控)(?!X)(え)(?!X)/g,repl:'$1X$2Xhikae,hold back~IchidanVerb'},
+{pat:/(控)(?!X)(え)(?!X)/g,repl:'$1Xhika$2Xe,hold back~IchidanVerb'},
 {pat:/(推)(?!X)(定)(?!X)/g,repl:'$1Xsui$2Xtei,estimation~Noun'},
 {pat:/(推)(?!X)(測)(?!X)/g,repl:'$1Xsui$2Xsoku,conjecture,guess~Noun'},
 {pat:/(推)(?!X)(移)(?!X)/g,repl:'$1Xsui$2Xi,transition~Noun'},
@@ -7019,7 +7026,7 @@ const replsB = [
 {pat:/(市)(?!X)/g,repl:'$1Xshi,city~Noun'},
 {pat:/(布)(?!X)/g,repl:'$1Xnuno,cloth~Noun'},
 {pat:/(席)(?!X)/g,repl:'$1Xseki,seat,one\'s place~Noun'},
-{pat:/(帯)(?!X)/g,repl:'$1Xobi,belt,sash~Noun'},
+{pat:/(帯)(?!X)/g,repl:'$1Xobi,belt,sash or +tai,strip~Noun'},
 {pat:/(幅)(?!X)/g,repl:'$1Xhaba,width,breadth~Noun'},
 {pat:/(幕)(?!X)/g,repl:'$1Xmaku,curtain~Noun'},
 {pat:/(年)(?!X)/g,repl:'$1Xnen,year~Noun'},
@@ -7662,21 +7669,26 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-　政府は２２日、「次元の異なる少子化対策」について話し合う「こども未来戦略会議」（議長・岸田首相）の４回目の会合を首相官邸で開き、財源確保策の議論を行った。首相は会合で、「大前提として、消費税を含めた新たな税負担は考えていない」と表明した。政府は２０２６年度にも社会保険料を引き上げる方向で調整している。
+アップル、小売り強化で中国とインドへ進出拡大－横浜に新店舗も計画
 
-【表】少子化対策の財源を巡る政府案のポイント
+6/2(金) 10:28配信
+Bloomberg
 
-　政府は３月末、少子化対策のたたき台を発表し、２４年度からの３年間で行う児童手当拡充などの「加速化プラン」を示した。児童手当の所得制限撤廃や支給対象年齢の延長、多子世帯への加算などを盛り込んでおり、追加予算として年３兆円程度が必要と見込まれている。
+インド・ムンバイの店舗
 
-　この日の会合では、財源の基本方針案が示された。徹底した歳出の見直しを行い、公費財源の確保や保険料負担の抑制を最大限図ることや、企業を含め社会・経済の参加者全体が連帯し、公平な立場で、広く支え合う新たな枠組みを検討することなどが盛り込まれた。
+（ブルームバーグ）： 米アップルは小売りチェーンの拡大と活性化の計画に取り組んでいる。中国やその他のアジア地域により深く進出を目指す一方で、米国と欧州の既存店舗の見直しを検討している。
 
-　社会保険料の引き上げでは、主に医療保険料を対象にする案が有力だ。若年層から高齢者まで幅広い世代や企業から広く薄く徴収でき、既存の仕組みを活用できる利点がある。
+事情に詳しい複数の関係者によると、アップルは2027年までにアジア太平洋地域に15店舗、欧州・中東に５店舗、米国とカナダに４店舗の新規出店を議論している。また、アジアで６店舗、欧州で９店舗、北米で13店舗の改装または移転を目指しているという。関係者が情報は非公開だとして匿名を条件に語った。合計では今後４年間に53店舗の新規出店や移転、改装を計画している。
 
-　負担と給付の関係をわかりやすくするため、複数省庁にまたがる予算を特別会計として一元管理することも想定している。保険料引き上げまでの期間は、財源を示した上で発行するつなぎ国債の活用も検討する。
+アップルは22年の歴史を持つ小売り事業に新たな輝きをもたらしたい意向。近年は新型コロナウイルス禍や顧客サービスの問題、労働争議に悩まされているが、インドなどの成長市場でアップルのブランドを確立すると同時に、米国や欧州の消費者により良い体験を提供することを目指す考えだ。
 
-　これまでの会合では、参加者から、増税して財源を確保すべきだとの意見も出た。ただ、政府は昨年、防衛費増に伴う増税方針を決めたばかりだ。首相は、政府・与党内で「追加増税は国民の理解を得にくい」との慎重論が強いことを踏まえ、増税見送りを明言したとみられる。
+関係者によると、現在検討中か開発中の最も注目すべき新店舗はインドの３カ所と、マレーシアでの同社初の拠点で、パリのオペラ座近くにある店舗もアップグレードするという。また、ロンドンの旧バタシー発電所の再開発地区に置く英本部のそばにも近々店舗をオープンする予定で、米フロリダ州マイアミにも新たな店舗を計画。さらに、上海の静安寺広場に旗艦店をオープンする。
 
-　首相は「３０年までの少子化対策のラストチャンスを逃さない」と強調し、次回会合で、財源確保の大枠を含む「こども未来戦略方針」の素案を示す考えを示した。戦略方針の内容は、６月に取りまとめる「経済財政運営と改革の基本方針（骨太の方針）」に反映される見通しだ。
+これらの店舗の一部はまだ社内の計画や提案にとどまっており、延期や中止の可能性もある。だが多くの店舗は、アップルが地主とのリース契約を済ますなど、既に手続きが進行している。カリフォルニア州クパチーノに本社を置く同社の広報担当者はコメントを控えた。
+
+アップルは現在、26カ国に520以上の店舗を持ち、その約半分は米国にある。
+
+アップルが小売り事業拡大で重点を置くのはアジア太平洋地域で、27年までに21カ所の新設・改装を予定。同市場の売上高は昨年、アップル全体の３分の１程度に相当する約1300億ドル（約18兆円）に上っており、インドなどの国々が重要な成長エンジンとして台頭している。アップルは４月にインドで初めて出店し、２店舗をオープンした。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
