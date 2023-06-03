@@ -1077,6 +1077,7 @@ const replsA = [
 {pat:/(嘘)(?!X)(つ)(?!X)(き)(?!X)/g,repl:'$1X$2X$3Xusotsuki,liar~Noun'},
 {pat:/(四)(?!X)(つ)(?!X)(角)(?!X)/g,repl:'$1Xyotsuka$2X$3Xdo,street corner,intersection~Noun'},
 {pat:/(回)(?!X)(り)(?!X)(道)(?!X)/g,repl:'$1Xmawarimi$2X$3Xchi,rou-ndabout way,detour~Noun'},
+{pat:/(東)(?!X)(海)(?!X)(道)(?!X)/g,repl:'$1Xtou$2Xkai$3Xdo,Highway Japan~Noun'},
 {pat:/(回)(?!X)(数)(?!X)(券)(?!X)/g,repl:'$1Xkai$2Xsuu$3Xken,book of tickets~Noun'},
 {pat:/(困)(?!X)(窮)(?!X)(者)(?!X)/g,repl:'$1Xkon$2Xkyuu$3Xsya,needy~Noun'},
 {pat:/(図)(?!X)(書)(?!X)(室)(?!X)/g,repl:'$1X$2X$3Xtosyoshitsu,library~Noun'},
@@ -1942,7 +1943,7 @@ const replsA = [
 {pat:/(混)(?!X)(ぜ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xmaze,blend,mix by stirring$3X~RuVerb'},
 {pat:/(添)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsoe,add to,attach to$3X~RuVerb'},
 {pat:/(済)(?!X)(ま)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xsu$2Xma,settle,complete$3X~SuVerb'},
-{pat:/(減)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xhera,decrease$3X~SuVerb'},
+{pat:/(減)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xhe$2Xra,decrease$3X~SuVerb'},
 {pat:/(湿)(?!X)(っ)(?!X)(ぽ)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xshi$2X$3Xmeiっぽ,damp,gloomy$4X~IAdjective~Noun'},
 {pat:/(満)(?!X)(た)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xmita,fill,satisfy$3X~SuVerb'},
 {pat:/(満)(?!X)(ち)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmi$2Xchi,be filled,expire$3X~RuVerb'},
@@ -2244,7 +2245,7 @@ const replsB = [
 {pat:/(さ)(?!X)(ん)(?!X)/g,repl:'$1X$2Xsan,Mister,Miss,or Mrs~Noun'},
 {pat:/(し)(?!X)(わ)(?!X)/g,repl:'$1X$2Xshiwa,wrinkle~Noun'},
 {pat:/(す)(?!X)(り)(?!X)/g,repl:'$1X$2Xsuri,pickpocket~Noun'},
-{pat:/(す)(?!X)(る)(?!X)/g,repl:'$1X$2Xsuru,to do, will do~InformalVerb~SuruVerb'},
+{pat:/(す)(?!X)(る)(?!X)/g,repl:'$1X$2Xsuru,to do,will do~InformalVerb~SuruVerb'},
 {pat:/(そ)(?!X)(こ)(?!X)/g,repl:'$1X$2Xsoko,that~Noun'},
 {pat:/(そ)(?!X)(こ)(?!X)/g,repl:'$1X$2Xsoko,there~Noun'},
 {pat:/(そ)(?!X)(の)(?!X)/g,repl:'$1X$2Xsono,that~Noun'},
@@ -3468,7 +3469,7 @@ const replsB = [
 {pat:/(大)(?!X)(衆)(?!X)/g,repl:'$1Xtai$2Xsyuu,public~Noun'},
 {pat:/(大)(?!X)(量)(?!X)/g,repl:'$1Xtai$2Xryou,large quantity~Noun'},
 {pat:/(大)(?!X)(金)(?!X)/g,repl:'$1Xtai$2Xkin,large sum of money~Noun'},
-{pat:/(大)(?!X)(阪)(?!X)/g,repl:'$1Xoo$2Xsaka,Japan~Noun'},
+{pat:/(大)(?!X)(阪)(?!X)/g,repl:'$1Xoo$2Xsaka,Big Hill,Japan~Noun'},
 {pat:/(大)(?!X)(陸)(?!X)/g,repl:'$1Xtai$2Xriku,continent~Noun'},
 {pat:/(大)(?!X)(雨)(?!X)/g,repl:'$1Xoo$2Xame,heavy rain~Noun'},
 {pat:/(大)(?!X)(雪)(?!X)/g,repl:'$1Xoo$2Xyuki,heavy snow~Noun'},
@@ -4095,6 +4096,7 @@ const replsB = [
 {pat:/(採)(?!X)(算)(?!X)/g,repl:'$1Xsai$2Xsan,profit~Noun'},
 {pat:/(探)(?!X)(査)(?!X)/g,repl:'$1Xtan$2Xsa,inquiry~Noun'},
 {pat:/(接)(?!X)(種)(?!X)/g,repl:'$1Xses$2Xsyu,inoculation~Noun'},
+{pat:/(東)(?!X)(海)(?!X)/g,repl:'$1Xtou$2Xkai,Eastern Sea,Japan~Noun'},
 {pat:/(接)(?!X)(続)(?!X)/g,repl:'$1Xsetsu$2Xzoku,connection,joining~Noun'},
 {pat:/(接)(?!X)(触)(?!X)/g,repl:'$1Xses$2Xsyoku,close contact~Noun'},
 {pat:/(接)(?!X)(近)(?!X)/g,repl:'$1Xsek$2Xkin,approach~Noun'},
@@ -4557,7 +4559,8 @@ const replsB = [
 {pat:/(正)(?!X)(当)(?!X)/g,repl:'$1Xsei$2Xtou,legal~Noun'},
 {pat:/(正)(?!X)(教)(?!X)/g,repl:'$1Xsei$2Xkyou,orthodox~Noun'},
 {pat:/(正)(?!X)(月)(?!X)/g,repl:'$1Xsyou$2Xgatsu,New Year~Noun'},
-{pat:/(正)(?!X)(直)(?!X)/g,repl:'$1Xsyou$2Xj-iki,hon-est,upright~Noun'},
+{pat:/(正)(?!X)(直)(?!X)/g,repl:'$1Xsyou$2Xjiki,hon-est,upright~Noun'},
+{pat:/(運)(?!X)(行)(?!X)/g,repl:'$1Xun$2Xkou,commuter traffic~Noun'},
 {pat:/(正)(?!X)(確)(?!X)/g,repl:'$1Xsei$2Xkaku,precise~Noun'},
 {pat:/(正)(?!X)(義)(?!X)/g,repl:'$1Xsei$2Xgi,justice,righteousness~Noun'},
 {pat:/(正)(?!X)(規)(?!X)/g,repl:'$1Xsei$2Xki,regular~Noun'},
@@ -5058,7 +5061,7 @@ const replsB = [
 {pat:/(直)(?!X)(線)(?!X)/g,repl:'$1Xcyoku$2Xsen,straight line~Noun'},
 {pat:/(直)(?!X)(角)(?!X)/g,repl:'$1Xchyok$2Xkaku,right angle~Noun'},
 {pat:/(直)(?!X)(近)(?!X)/g,repl:'$1Xcyok$2Xkin,nearest in time~Noun'},
-{pat:/(直)(?!X)(通)(?!X)/g,repl:'$1Xcyoku$2Xtsuu,direct link~Noun'},
+{pat:/(直)(?!X)(通)(?!X)/g,repl:'$1Xcyoku$2Xtsuu,direct link,non-stop~Noun'},
 {pat:/(直)(?!X)(面)(?!X)/g,repl:'$1Xcyoku$2Xmen,face~Noun'},
 {pat:/(相)(?!X)(互)(?!X)/g,repl:'$1Xsou$2Xgo,mutual~Noun'},
 {pat:/(相)(?!X)(場)(?!X)/g,repl:'$1Xsou$2Xba,market speculation~Noun'},
@@ -5650,6 +5653,7 @@ const replsB = [
 {pat:/(証)(?!X)(券)(?!X)/g,repl:'$1Xsyou$2Xken,bill,bond~Noun'},
 {pat:/(証)(?!X)(拠)(?!X)/g,repl:'$1Xsyou$2Xko,proof~Noun'},
 {pat:/(証)(?!X)(明)(?!X)/g,repl:'$1Xsyou$2Xmei,proof~Noun'},
+{pat:/(山)(?!X)(陽)(?!X)/g,repl:'$1Xsan$2Xyou,Mountain Place,Japan~Noun'},
 {pat:/(証)(?!X)(言)(?!X)/g,repl:'$1Xsyou$2Xgen,testimony~Noun'},
 {pat:/(詐)(?!X)(欺)(?!X)/g,repl:'$1Xsa$2Xgi,fraud~Noun'},
 {pat:/(評)(?!X)(価)(?!X)/g,repl:'$1Xhyou$2Xka,assessment~Noun'},
@@ -5930,7 +5934,7 @@ const replsB = [
 {pat:/(進)(?!X)(展)(?!X)/g,repl:'$1Xshin$2Xten,progress~Noun'},
 {pat:/(進)(?!X)(歩)(?!X)/g,repl:'$1Xshin$2Xpo,progress,advancement~Noun'},
 {pat:/(進)(?!X)(行)(?!X)/g,repl:'$1Xshin$2Xkou,advancement~Noun'},
-{pat:/(進)(?!X)(路)(?!X)/g,repl:'$1Xshin$2Xro,course,rou-te~Noun'},
+{pat:/(進)(?!X)(路)(?!X)/g,repl:'$1Xshin$2Xro,course,route~Noun'},
 {pat:/(逸)(?!X)(脱)(?!X)/g,repl:'$1Xitsu$2Xdatsu,omission~Noun'},
 {pat:/(遅)(?!X)(れ)(?!X)/g,repl:'$1Xoku$2Xre,being late~IchidanVerb'},
 {pat:/(遅)(?!X)(刻)(?!X)/g,repl:'$1Xchi$2Xkoku,tardiness,lateness~Noun'},
@@ -5960,7 +5964,7 @@ const replsB = [
 {pat:/(道)(?!X)(徳)(?!X)/g,repl:'$1Xdou$2Xtoku,morality,morals~Noun'},
 {pat:/(道)(?!X)(筋)(?!X)/g,repl:'$1Xmichi$2Xsuji,itinerary~Noun'},
 {pat:/(道)(?!X)(路)(?!X)/g,repl:'$1Xdou$2Xro,street~Noun'},
-{pat:/(道)(?!X)(順)(?!X)/g,repl:'$1Xmichi$2Xjyun,rou-te,itinerary~Noun'},
+{pat:/(道)(?!X)(順)(?!X)/g,repl:'$1Xmichi$2Xjyun,route,itinerary~Noun'},
 {pat:/(達)(?!X)(成)(?!X)/g,repl:'$1Xtas$2Xsei,attain,achieve~Noun'},
 {pat:/(違)(?!X)(反)(?!X)/g,repl:'$1Xi$2Xhan,violation~Noun'},
 {pat:/(違)(?!X)(法)(?!X)/g,repl:'$1Xi$2Xhou,illegal~Noun'},
@@ -6851,7 +6855,7 @@ const replsB = [
 {pat:/(丼)(?!X)/g,repl:'$1Xdonburi,bowl~Noun'},
 {pat:/(亀)(?!X)/g,repl:'$1Xkame,turtle,tortoise~Noun'},
 {pat:/(事)(?!X)/g,repl:'$1Xkoto,thing,incident~Noun'},
-{pat:/(人)(?!X)/g,repl:'$1X-nin,counter for people, -jin, hito,person~Noun'},
+{pat:/(人)(?!X)/g,repl:'$1X-nin,counter for people,-jin,hito,person~Noun'},
 {pat:/(今)(?!X)/g,repl:'$1Xima,now~Noun'},
 {pat:/(仏)(?!X)/g,repl:'$1Xhotoke,buddha,Buddhist image~Noun'},
 {pat:/(他)(?!X)/g,repl:'$1Xhoka or ta-,other~Noun'},
@@ -7197,7 +7201,7 @@ const replsB = [
 {pat:/(版)(?!X)/g,repl:'$1Xban or han,version~Noun'},
 {pat:/(牛)(?!X)/g,repl:'$1Xushi,cattle,cow~Noun'},
 {pat:/(牛)(?!X)/g,repl:'$1Xushi,cattle,cow~Noun'},
-{pat:/(物)(?!X)/g,repl:'$1Xbutsu,material, or mono,person or koto,thing~Noun'},
+{pat:/(物)(?!X)/g,repl:'$1Xbutsu,material,or mono,person or koto,thing~Noun'},
 {pat:/(犬)(?!X)/g,repl:'$1Xinu,dog~Noun'},
 {pat:/(猛)(?!X)/g,repl:'$1Xmou,extreme~Noun'},
 {pat:/(猫)(?!X)/g,repl:'$1Xneko,cat~Noun'},
@@ -7633,12 +7637,12 @@ a = a.replace(/(べX)(~BuVerb)/g,'べXbe,can do$2');
 a = a.replace(/(ぼX)(~BuVerb)/g,'ぼXbo,let us do$2');
 a = a.replace(/(まX)(~MuVerb)/g,'まXma$2');
 a = a.replace(/(みX)(~MuVerb)/g,'みXmi$2');
-a = a.replace(/(むX)(~MuVerb)/g,'むXmu,to do, will do$2');
+a = a.replace(/(むX)(~MuVerb)/g,'むXmu,to do,will do$2');
 a = a.replace(/(めX)(~MuVerb)/g,'めXme,can do$2');
 a = a.replace(/(もX)(~MuVerb)/g,'もXmo,let us do$2');
 a = a.replace(/(らX)(~RuVerb)/g,'らXra$2');
 a = a.replace(/(りX)(~RuVerb)/g,'りXri$2');
-a = a.replace(/(るX)(~RuVerb)/g,'るXru,to do, will do$2');
+a = a.replace(/(るX)(~RuVerb)/g,'るXru,to do,will do$2');
 a = a.replace(/(れX)(~RuVerb)/g,'れXre,can do$2');
 a = a.replace(/(ろX)(~RuVerb)/g,'ろXro,let us do$2');
 a = a.replace(/(わX)(~UVerb)/g,'わXwa$2');
@@ -7669,31 +7673,18 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-アップル、小売り強化で中国とインドへ進出拡大－横浜に新店舗も計画
+　大雨の影響により、東海道新幹線は3日の始発から、東京―名古屋間で午前中の運転を見合わせた。
 
-6/2(金) 10:28配信
-Bloomberg
+【図解】台風2号の予想進路（2日15時現在）
 
-インド・ムンバイの店舗
+　JR東海によると、正午以降に運転を再開する予定。
 
-（ブルームバーグ）： 米アップルは小売りチェーンの拡大と活性化の計画に取り組んでいる。中国やその他のアジア地域により深く進出を目指す一方で、米国と欧州の既存店舗の見直しを検討している。
-
-事情に詳しい複数の関係者によると、アップルは2027年までにアジア太平洋地域に15店舗、欧州・中東に５店舗、米国とカナダに４店舗の新規出店を議論している。また、アジアで６店舗、欧州で９店舗、北米で13店舗の改装または移転を目指しているという。関係者が情報は非公開だとして匿名を条件に語った。合計では今後４年間に53店舗の新規出店や移転、改装を計画している。
-
-アップルは22年の歴史を持つ小売り事業に新たな輝きをもたらしたい意向。近年は新型コロナウイルス禍や顧客サービスの問題、労働争議に悩まされているが、インドなどの成長市場でアップルのブランドを確立すると同時に、米国や欧州の消費者により良い体験を提供することを目指す考えだ。
-
-関係者によると、現在検討中か開発中の最も注目すべき新店舗はインドの３カ所と、マレーシアでの同社初の拠点で、パリのオペラ座近くにある店舗もアップグレードするという。また、ロンドンの旧バタシー発電所の再開発地区に置く英本部のそばにも近々店舗をオープンする予定で、米フロリダ州マイアミにも新たな店舗を計画。さらに、上海の静安寺広場に旗艦店をオープンする。
-
-これらの店舗の一部はまだ社内の計画や提案にとどまっており、延期や中止の可能性もある。だが多くの店舗は、アップルが地主とのリース契約を済ますなど、既に手続きが進行している。カリフォルニア州クパチーノに本社を置く同社の広報担当者はコメントを控えた。
-
-アップルは現在、26カ国に520以上の店舗を持ち、その約半分は米国にある。
-
-アップルが小売り事業拡大で重点を置くのはアジア太平洋地域で、27年までに21カ所の新設・改装を予定。同市場の売上高は昨年、アップル全体の３分の１程度に相当する約1300億ドル（約18兆円）に上っており、インドなどの国々が重要な成長エンジンとして台頭している。アップルは４月にインドで初めて出店し、２店舗をオープンした。
+　名古屋―新大阪間は午前中、1時間に1本程度「こだま」を運行する。山陽新幹線は東海道との直通運転を午後3時ごろまで取りやめるほか、始発から本数を減らして運転するという。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
 <h3>Transcribing</h3>
-One great way to study a foreign language is to do this. For Google Chrome browser, <a href='https://dictation.io/speech' target="_blank">dictation.io</a> allows you to get real time subtitles for many languages. Just turn your microphone volume up all the way. Go to a foreign streaming television show and then press "Start". Install the Google Translate extension on Chrome. Highlight the subtitles and you will get it translated into English.
+One great way to study a foreign language is to do this. For Google Chrome browser,<a href='https://dictation.io/speech' target="_blank">dictation.io</a> allows you to get real time subtitles for many languages. Just turn your microphone volume up all the way. Go to a foreign streaming television show and then press "Start". Install the Google Translate extension on Chrome. Highlight the subtitles and you will get it translated into English.
 <h3>Memorizing Kanji</h3>
 <ul>
 <li>Use <a href='https://addons.mozilla.org/en-US/firefox/addon/10ten-ja-reader/' target="_blank">10ten Japanese Reader</a> browser extension to read kanji on your desktop or laptop computer.
