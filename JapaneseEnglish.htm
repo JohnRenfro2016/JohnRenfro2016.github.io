@@ -984,6 +984,7 @@ const replsA = [
 {pat:/(仲)(?!X)(良)(?!X)(し)(?!X)/g,repl:'$1Xnakayo$2X$3Xshi,good friend,chum~Noun'},
 {pat:/(低)(?!X)(所)(?!X)(得)(?!X)/g,repl:'$1Xtei$2Xsyo$3Xtoku,low income~Noun'},
 {pat:/(低)(?!X)(気)(?!X)(圧)(?!X)/g,repl:'$1Xtei$2Xki$3Xatsu,low pressure~Noun'},
+{pat:/(国)(?!X)(税)(?!X)(庁)(?!X)/g,repl:'$1Xkoku$2Xzei$3Xcyou,national tax agency~Noun'},
 {pat:/(住)(?!X)(宅)(?!X)(地)(?!X)/g,repl:'$1Xjyuu$2Xtaku$3Xchi,residential district~Noun'},
 {pat:/(住)(?!X)(宅)(?!X)(街)(?!X)/g,repl:'$1Xjyuu$2Xtaku$3Xgai,residential area~Noun'},
 {pat:/(体)(?!X)(温)(?!X)(計)(?!X)/g,repl:'$1Xtai$2Xon$3Xkei,thermometer~Noun'},
@@ -1426,8 +1427,10 @@ const replsA = [
 {pat:/(美)(?!X)(容)(?!X)(院)(?!X)/g,repl:'$1Xbi$2Xyou$3Xin,beauty shop~Noun'},
 {pat:/(美)(?!X)(術)(?!X)(館)(?!X)/g,repl:'$1Xbi$2Xjyutsu$3Xkan,art museum~Noun'},
 {pat:/(耳)(?!X)(鼻)(?!X)(科)(?!X)/g,repl:'$1Xji$2Xbi$3Xka,otorhinology,ENT~Noun'},
-{pat:/(聞)(?!X)(き)(?!X)(手)(?!X)/g,repl:'$1Xkiki$2X$3Xte,listener,audience~Noun'},
+{pat:/(聞)(?!X)(き)(?!X)(手)(?!X)/g,repl:'$1Xki$2Xki$3Xte,listener,audience~Noun'},
+{pat:/(整)(?!X)(合)(?!X)(性)(?!X)/g,repl:'$1Xsei$2Xgou$3Xsei,compliance~Noun'},
 {pat:/(肩)(?!X)(甲)(?!X)(骨)(?!X)/g,repl:'$1Xken$2Xkou$3Xkotsu,shoulder blade~Noun'},
+{pat:/(総)(?!X)(点)(?!X)(検)(?!X)/g,repl:'$1Xsou$2Xten$3Xken,complete overhaul~Noun'},
 {pat:/(腕)(?!X)(時)(?!X)(計)(?!X)/g,repl:'$1Xude$2Xdo$3Xkei,wrist watch~Noun'},
 {pat:/(腰)(?!X)(掛)(?!X)(け)(?!X)/g,repl:'$1Xkoshi$2X$3Xkake,stool,seat~Noun'},
 {pat:/(腹)(?!X)(一)(?!X)(杯)(?!X)/g,repl:'$1Xhara$2Xip$3Xpai,full stomach~Noun'},
@@ -2895,7 +2898,7 @@ const replsB = [
 {pat:/(冷)(?!X)(房)(?!X)/g,repl:'$1Xrei$2Xbou,air conditioning~Noun'},
 {pat:/(冷)(?!X)(淡)(?!X)/g,repl:'$1Xrei$2Xtan,cool,indifferent~Noun'},
 {pat:/(冷)(?!X)(静)(?!X)/g,repl:'$1Xrei$2Xsei,cool,calm~Noun'},
-{pat:/(凍)(?!X)(結)(?!X)/g,repl:'$1Xtouketsu$2X,freezing~Noun'},
+{pat:/(凍)(?!X)(結)(?!X)/g,repl:'$1Xtou$2Xketsu,freezing~Noun'},
 {pat:/(処)(?!X)(分)(?!X)/g,repl:'$1Xsyo$2Xbun,penalty or disposal~Noun'},
 {pat:/(処)(?!X)(理)(?!X)/g,repl:'$1Xsyo$2Xri,management,process~Noun'},
 {pat:/(処)(?!X)(罰)(?!X)/g,repl:'$1Xsyo$2Xbatsu,punishment~Noun'},
@@ -4026,7 +4029,7 @@ const replsB = [
 {pat:/(技)(?!X)(師)(?!X)/g,repl:'$1Xgi$2Xshi,engineer,technician~Noun'},
 {pat:/(技)(?!X)(能)(?!X)/g,repl:'$1Xgi$2Xnou,technical skill~Noun'},
 {pat:/(技)(?!X)(術)(?!X)/g,repl:'$1Xgi$2Xjyutsu,skill,technology~Noun'},
-{pat:/(把)(?!X)(握)(?!X)/g,repl:'$1Xha$2Xaku,catch meaning~Noun'},
+{pat:/(把)(?!X)(握)(?!X)/g,repl:'$1Xha$2Xaku,catch the meaning~Noun'},
 {pat:/(抑)(?!X)(え)(?!X)/g,repl:'$1Xosa$2X,supress~IchidanVerb'},
 {pat:/(抑)(?!X)(制)(?!X)/g,repl:'$1Xyoku$2Xsei,control~Noun'},
 {pat:/(抑)(?!X)(止)(?!X)/g,repl:'$1Xyoku$2Xshi,deterrence~Noun'},
@@ -4145,6 +4148,9 @@ const replsB = [
 {pat:/(撮)(?!X)(影)(?!X)/g,repl:'$1Xsatsu$2Xei,photograph~Noun'},
 {pat:/(操)(?!X)(作)(?!X)/g,repl:'$1Xsou$2Xsa,operation~Noun'},
 {pat:/(操)(?!X)(縦)(?!X)/g,repl:'$1Xsou$2Xjyuu,steering,piloting~Noun'},
+{pat:/(口)(?!X)(座)(?!X)/g,repl:'$1Xkou$2Xza,bank account~Noun'},
+{pat:/(公)(?!X)(金)(?!X)/g,repl:'$1Xkou$2Xkin,public money~Noun'},
+{pat:/(受)(?!X)(取)(?!X)/g,repl:'$1Xuke$2Xtori,receiving~Noun'},
 {pat:/(支)(?!X)(え)(?!X)/g,repl:'$1Xsasa$2X~support~IchidanVerb'},
 {pat:/(支)(?!X)(出)(?!X)/g,repl:'$1Xshi$2Xsyutsu,expenditure~Noun'},
 {pat:/(支)(?!X)(局)(?!X)/g,repl:'$1Xshi$2Xkyoku,branch office~Noun'},
@@ -7680,23 +7686,13 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-花壇を乗り越え、消防署の外壁に突っ込むようにして止まった白い乗用車。
+　ロシアのルデンコ外務次官は5日、ウクライナ侵攻を続けるロシアに対し日本政府が5月26日に発表した追加制裁を「非常に否定的に受け止めた」とし「報復措置を検討中で、無反応のままではない」と記者団に述べた。タス通信が伝えた。
 
-運転席のドアは開き、ボンネットの上で横になった長いポールが、建物のガラスを突き破っているのが確認できる。
+ロシアが核攻撃に踏み切ったらアメリカはどこに報復するか？　米政権内で行われていた机上演習の衝撃的な中身
 
-「乗用車が歩道に乗り上げた。けが人が2人、うち1人が心肺停止」と消防に通報が寄せられたのは、5日午後4時半前のことだった。
+　朝鮮半島情勢を巡り「地域情勢はエスカレートする傾向にある」と指摘。弾道ミサイル発射を繰り返す北朝鮮の核開発問題を話し合う枠組みの米国や中国、韓国、日本との6カ国協議について「われわれは協議再開の用意があるが、西側諸国が応えていない」と主張した。
 
-車が突っ込んだのは、東京・町田市にある町田消防署。
-
-乗用車は車道から歩道に乗り上げたあと、歩行者をはね、そのまま消防署の外壁に突っ込んだとみられている。
-
-歩道を歩いていた70代の男性が事故に巻き込まれ、心肺停止の状態で病院に搬送されたが、死亡が確認された。
-
-また、乗用車を運転していた高齢男性がけがをしたが、命に別条はないという。
-
-事故は、なぜ起きたのだろうか。
-
-警視庁は、乗用車を運転していた男性がブレーキとアクセルを踏み間違えた可能性があるとみて、事故のくわしい原因を調べている。
+　日本は追加制裁で、ロシア軍関係者を含む24人と78団体の資産を凍結、軍関連を中心とした80の特定団体に対する輸出を禁止した。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
