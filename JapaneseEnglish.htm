@@ -166,7 +166,7 @@ const replsA = [
 {pat:/(付)(?!X)(け)(?!X)(加)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xtsukekuwae,add$5X~RuVerb'},
 {pat:/(作)(?!X)(り)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xu$2Xri$3Xa$4Xge,amount sold,build up$5X~RuVerb'},
 {pat:/(出)(?!X)(来)(?!X)(上)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xdekiaga,be completed$5X~RuVerb'},
-{pat:/(割)(?!X)(り)(?!X)(当)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xwariate,assign,allot$5X~RuVerb'},
+{pat:/(割)(?!X)(り)(?!X)(当)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xwa$2Xri$3Xa$4Xte,assign$5X~RuVerb'},
 {pat:/(取)(?!X)(り)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xtoriage,take up,confiscate$5X~RuVerb'},
 {pat:/(取)(?!X)(り)(?!X)(入)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xtoriire,take in,adopt$5X~RuVerb'},
 {pat:/(取)(?!X)(り)(?!X)(替)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4Xtorikae,change,replace$5X~RuVerb'},
@@ -461,10 +461,11 @@ const replsA = [
 {pat:/(書)(?!X)(き)(?!X)(言)(?!X)(葉)(?!X)/g,repl:'$1X$2X$3X$4Xkakikotoba,written language~Noun'},
 {pat:/(木)(?!X)(枯)(?!X)(ら)(?!X)(し)(?!X)/g,repl:'$1X$2X$3X$4Xkogara-shi,cold wintry wind~Noun'},
 {pat:/(果)(?!X)(た)(?!X)(し)(?!X)(て)(?!X)/g,repl:'$1Xha$2X$3X$4Xtashite,as was expected,really~Noun'},
+{pat:/(イ)(?!X)(ン)(?!X)(フ)(?!X)(ラ)(?!X)/g,repl:'$1X$2X$3X$4Xinfura,infrastructure~Noun'},
 {pat:/(そ)(?!X)(ろ)(?!X)(っ)(?!X)(て)(?!X)/g,repl:'$1X$2X$3X$4Xsorotte,all together~Noun'},
 {pat:/(梅)(?!X)(雨)(?!X)(入)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xtsu-yu-iri,start of rainy season~Noun'},
 {pat:/(梅)(?!X)(雨)(?!X)(明)(?!X)(け)(?!X)/g,repl:'$1X$2X$3X$4Xtsu-yu-ake,end of rainy season~Noun'},
-{pat:/(極)(?!X)(超)(?!X)(音)(?!X)(速)(?!X)/g,repl:'$1X$2X$3X$4Xgoku-cyou-on-soku,hypersonic speed~Noun'},
+{pat:/(極)(?!X)(超)(?!X)(音)(?!X)(速)(?!X)/g,repl:'$1Xgoku$2Xcyou$3Xon$4Xsoku,hypersonic speed~Noun'},
 {pat:/(横)(?!X)(断)(?!X)(歩)(?!X)(道)(?!X)/g,repl:'$1X$2X$3X$4Xoudanhodou,pedestrian crossing,crosswalk~Noun'},
 {pat:/(歯)(?!X)(ブ)(?!X)(ラ)(?!X)(シ)(?!X)/g,repl:'$1X$2X$3X$4Xhabura-shi,toothbrush~Noun'},
 {pat:/(消)(?!X)(し)(?!X)(ゴ)(?!X)(ム)(?!X)/g,repl:'$1X$2X$3X$4Xkeshi-gomu,eraser~Noun'},
@@ -672,7 +673,7 @@ const replsA = [
 {pat:/(申)(?!X)(し)(?!X)(出)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xmoushide,offer,propose$4X~RuVerb'},
 {pat:/(申)(?!X)(し)(?!X)(訳)(?!X)(な)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4Xmoushi-wakena,inexcusable$5X~IAdjective~Noun'},
 {pat:/(申)(?!X)(し)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1X$2X$3Xmoushiko,apply,make a proposal$4X~MuVerb'},
-{pat:/(盛)(?!X)(り)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xmori$2X$3Xko,incorporate$4X~MuVerb'},
+{pat:/(盛)(?!X)(り)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xmo$2Xri$3Xko,incorporate$4X~MuVerb'},
 {pat:/(目)(?!X)(立)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xme$2Xda,conspicuous$3X~TsuVerb'},
 {pat:/(目)(?!X)(覚)(?!X)(ま)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4Xmezama-shi,striking,marvelous$5X~IAdjective~Noun'},
 {pat:/(相)(?!X)(次)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,repl:'$1Xai$2Xtsu,one after other$3X~GuVerb'},
@@ -1723,7 +1724,7 @@ const replsA = [
 {pat:/(冷)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsame,cool off,subside$3X~RuVerb'},
 {pat:/(冷)(?!X)(や)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xhiya,cool,chi-ll$3X~SuVerb'},
 {pat:/(出)(?!X)(会)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1X$2Xdea,meet$3X~UVerb'},
-{pat:/(分)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xwa$2Xka,understand$3X~RuVerb'},
+{pat:/(分|わ)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xwa$2Xka,understand$3X~RuVerb'},
 {pat:/(分)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xwake,sort$3X~RuVerb'},
 {pat:/(切)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xki$2Xre,run out,expire,can cut$3X~RuVerb'},
 {pat:/(別)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xwaka$2Xre,separate,part from$3X~RuVerb'},
@@ -4203,6 +4204,7 @@ const replsB = [
 {pat:/(教)(?!X)(員)(?!X)/g,repl:'$1Xkyou$2Xin,teacher,teaching staff~Noun'},
 {pat:/(教)(?!X)(団)(?!X)/g,repl:'$1Xkyou$2Xdan,religious group~Noun'},
 {pat:/(教)(?!X)(委)(?!X)/g,repl:'$1Xkyou$2Xi,board of education~Noun'},
+{pat:/(音)(?!X)(速)(?!X)/g,repl:'$1Xon$2Xsoku,the speed of sound~Noun'},
 {pat:/(教)(?!X)(室)(?!X)/g,repl:'$1Xkyou$2Xshitsu,classroom,class~Noun'},
 {pat:/(教)(?!X)(師)(?!X)/g,repl:'$1Xkyou$2Xshi,teacher,instructor~Noun'},
 {pat:/(教)(?!X)(授)(?!X)/g,repl:'$1Xkyou$2Xjyu,professor~Noun'},
@@ -4297,6 +4299,7 @@ const replsB = [
 {pat:/(早)(?!X)(期)(?!X)/g,repl:'$1Xsou$2Xki,early stage~Noun'},
 {pat:/(早)(?!X)(退)(?!X)/g,repl:'$1Xsou$2Xtai,early departure~Noun'},
 {pat:/(早)(?!X)(速)(?!X)/g,repl:'$1Xsas$2Xsoku,immediately~Noun'},
+{pat:/(基)(?!X)(幹)(?!X)/g,repl:'$1Xki$2Xkan,mainstay~Noun'},
 {pat:/(明)(?!X)(日)(?!X)/g,repl:'$1X$2Xashita,tomorrow~Noun'},
 {pat:/(明)(?!X)(朝)(?!X)/g,repl:'$1Xmyou$2Xcyou,tomorrow morning~Noun'},
 {pat:/(明)(?!X)(治)(?!X)/g,repl:'$1Xmei$2Xji,Meiji era~Noun'},
@@ -4391,6 +4394,7 @@ const replsB = [
 {pat:/(月)(?!X)(見)(?!X)/g,repl:'$1X$2Xtsukimi,moon viewing~Noun'},
 {pat:/(月)(?!X)(謝)(?!X)/g,repl:'$1Xges$2Xsya,monthly fee~Noun'},
 {pat:/(月)(?!X)(額)(?!X)/g,repl:'$1Xgetsu$2Xgaku,monthly sum~Noun'},
+{pat:/(特)(?!X)(許)(?!X)/g,repl:'$1Xtok$2Xkyo,patent~Noun'},
 {pat:/(有)(?!X)(事)(?!X)/g,repl:'$1Xyuu$2Xji,emergency~Noun'},
 {pat:/(有)(?!X)(人)(?!X)/g,repl:'$1Xyuu$2Xjin,piloted~Noun'},
 {pat:/(有)(?!X)(利)(?!X)/g,repl:'$1Xyuu$2Xri,advantageous,profitable~Noun'},
@@ -4639,7 +4643,8 @@ const replsB = [
 {pat:/(気)(?!X)(分)(?!X)/g,repl:'$1Xki$2Xbun,feeling,mood~Noun'},
 {pat:/(気)(?!X)(力)(?!X)/g,repl:'$1Xki$2Xryoku,energy,vitality~Noun'},
 {pat:/(気)(?!X)(圧)(?!X)/g,repl:'$1Xki$2Xatsu,atmospheric pressure~Noun'},
-{pat:/(気)(?!X)(楽)(?!X)/g,repl:'$1X$2Xkiraku,easygoing,comfortable~Noun'},
+{pat:/(気)(?!X)(楽)(?!X)/g,repl:'$1X$ki2Xraku,easygoing,comfortable~Noun'},
+{pat:/(決)(?!X)(壊)(?!X)/g,repl:'$1Xkek$2Xkai,rupture~Noun'},
 {pat:/(気)(?!X)(温)(?!X)/g,repl:'$1Xki$2Xon,temperature~Noun'},
 {pat:/(気)(?!X)(球)(?!X)/g,repl:'$1Xki$2Xkyuu,blimp~Noun'},
 {pat:/(気)(?!X)(絶)(?!X)/g,repl:'$1Xki$2Xzetsu,fainting~Noun'},
@@ -4648,7 +4653,7 @@ const replsB = [
 {pat:/(気)(?!X)(配)(?!X)/g,repl:'$1Xke$2Xhai,hint~Noun'},
 {pat:/(水)(?!X)(中)(?!X)/g,repl:'$1Xsui$2Xcyuu,in water,underwater~Noun'},
 {pat:/(水)(?!X)(分)(?!X)/g,repl:'$1Xsui$2Xbun,hydration~Noun'},
-{pat:/(水)(?!X)(力)(?!X)/g,repl:'$1Xsui$2Xryoku,waterpower,hydraulic power~Noun'},
+{pat:/(水)(?!X)(力)(?!X)/g,repl:'$1Xsui$2Xryoku,waterpower~Noun'},
 {pat:/(水)(?!X)(域)(?!X)/g,repl:'$1Xsui$2Xiki,waters~Noun'},
 {pat:/(水)(?!X)(害)(?!X)/g,repl:'$1Xsui$2Xgai,flood damage~Noun'},
 {pat:/(水)(?!X)(平)(?!X)/g,repl:'$1Xsui$2Xhei,horizontal,level~Noun'},
@@ -4720,7 +4725,7 @@ const replsB = [
 {pat:/(洗)(?!X)(濯)(?!X)/g,repl:'$1Xsen$2Xtaku,laundering~Noun'},
 {pat:/(洗)(?!X)(面)(?!X)/g,repl:'$1Xsen$2Xmen,washing one\'s face~Noun'},
 {pat:/(津)(?!X)(波)(?!X)/g,repl:'$1Xtsu$2Xnami,tidal wave~Noun'},
-{pat:/(洪)(?!X)(水)(?!X)/g,repl:'$1Xkou$2Xzui,flood,inundation~Noun'},
+{pat:/(洪)(?!X)(水)(?!X)/g,repl:'$1Xkou$2Xzui,flood~Noun'},
 {pat:/(活)(?!X)(動)(?!X)/g,repl:'$1Xkatsu$2Xdou,activity~Noun'},
 {pat:/(活)(?!X)(字)(?!X)/g,repl:'$1Xkatsu$2Xji,printed type~Noun'},
 {pat:/(活)(?!X)(性)(?!X)/g,repl:'$1Xkas$2Xsei,active~Noun'},
@@ -6196,7 +6201,7 @@ const replsB = [
 {pat:/(静)(?!X)(か)(?!X)/g,repl:'$1X$2Xshizuka,quiet,tranquil~Noun'},
 {pat:/(静)(?!X)(岡)(?!X)/g,repl:'$1X$2XShizu-oka,Japan~Noun'},
 {pat:/(静)(?!X)(止)(?!X)/g,repl:'$1Xsei$2Xshi,standing still~Noun'},
-{pat:/(非)(?!X)(常)(?!X)/g,repl:'$1Xhi$2Xjyou,emergency,calamity~Noun'},
+{pat:/(非)(?!X)(常)(?!X)/g,repl:'$1Xhi$2Xjyou,calamity~Noun'},
 {pat:/(非)(?!X)(難)(?!X)/g,repl:'$1Xhi$2Xnan,criticsm~Noun'},
 {pat:/(面)(?!X)(会)(?!X)/g,repl:'$1Xmen$2Xkai,face to face~Noun'},
 {pat:/(面)(?!X)(倒)(?!X)/g,repl:'$1Xmen$2Xdou,troublesome,difficult~Noun'},
@@ -6675,7 +6680,7 @@ const replsB = [
 {pat:/(経)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xta,elapse$2X~TsuVerb'},
 {pat:/(経)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhe,pass,pass through$2X~RuVerb'},
 {pat:/(結)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xmusu,tie$2X~BuVerb'},
-{pat:/(絞)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshibo,wring out,squeeze$2X~RuVerb'},
+{pat:/(絞)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshibo,squeeze$2X~RuVerb'},
 {pat:/(絶)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xta,give up$2X~TsuVerb'},
 {pat:/(継)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,repl:'$1Xtsu,succeed,inherit$2X~GuVerb'},
 {pat:/(続)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xtsuzu,continue$2X~KuVerb'},
@@ -6788,7 +6793,7 @@ const replsB = [
 {pat:/(遠)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xtoo,far,distant$2X~IAdjective~Noun'},
 {pat:/(遠)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xtoo,great distance$2X~KuVerb'},
 {pat:/(遭)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xa,meet with,encounter$2X~UVerb'},
-{pat:/(選)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xera,choose,elect$2X~BuVerb'},
+{pat:/(選)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xera,choose$2X~BuVerb'},
 {pat:/(配)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkuba,hand out$2X~RuVerb'},
 {pat:/(酔)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xyo,get drunk$2X~UVerb'},
 {pat:/(醜)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xminiku,ugly,bad-looking$2X~IAdjective~Noun'},
@@ -6967,6 +6972,7 @@ const replsB = [
 {pat:/(回)(?!X)/g,repl:'$1Xkai,repitition~Noun'},
 {pat:/(団)(?!X)/g,repl:'$1Xdan,corps~Noun'},
 {pat:/(図)(?!X)/g,repl:'$1Xzu,figure,map~Noun'},
+{pat:/(任)(?!X)/g,repl:'$1Xnin,responsibility~Noun'},
 {pat:/(国)(?!X)/g,repl:'$1Xkuni or koku,country~Noun'},
 {pat:/(土)(?!X)/g,repl:'$1Xdo,Saturday or tsuchi,soil~Noun'},
 {pat:/(地)(?!X)/g,repl:'$1Xchi,place~Noun'},
@@ -7472,7 +7478,7 @@ const replsB = [
 {pat:/(霧)(?!X)/g,repl:'$1Xkiri,fog,mist~Noun'},
 {pat:/(露)(?!X)/g,repl:'$1Xtsuyu,dew,or ro,Russia~Noun'},
 {pat:/(青)(?!X)/g,repl:'$1Xao,blue-green~Noun'},
-{pat:/(非)(?!X)/g,repl:'$1Xhi+,non-~Noun'},
+{pat:/(非)(?!X)/g,repl:'$1Xhi,non-~Noun'},
 {pat:/(面)(?!X)/g,repl:'$1Xmen,entire aspect~Noun'},
 {pat:/(革)(?!X)/g,repl:'$1Xkawa,leather~Noun'},
 {pat:/(靴)(?!X)/g,repl:'$1Xkutsu,shoes~Noun'},
@@ -7686,13 +7692,9 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-　ロシアのルデンコ外務次官は5日、ウクライナ侵攻を続けるロシアに対し日本政府が5月26日に発表した追加制裁を「非常に否定的に受け止めた」とし「報復措置を検討中で、無反応のままではない」と記者団に述べた。タス通信が伝えた。
+経済安保強化へ、政府が２５分野「特許非公開」…戦闘機のステルス性能や極超音速飛行の関連技術読売新聞オンライン
 
-ロシアが核攻撃に踏み切ったらアメリカはどこに報復するか？　米政権内で行われていた机上演習の衝撃的な中身
-
-　朝鮮半島情勢を巡り「地域情勢はエスカレートする傾向にある」と指摘。弾道ミサイル発射を繰り返す北朝鮮の核開発問題を話し合う枠組みの米国や中国、韓国、日本との6カ国協議について「われわれは協議再開の用意があるが、西側諸国が応えていない」と主張した。
-
-　日本は追加制裁で、ロシア軍関係者を含む24人と78団体の資産を凍結、軍関連を中心とした80の特定団体に対する輸出を禁止した。
+　昨年５月に成立した経済安全保障推進法に基づき、政府が「特許非公開」とする計２５の技術分野と、電気や鉄道など基幹インフラ（社会基盤）事業者の指定基準を盛り込んだ制度案の全容がわかった。非公開の対象には、レーダーに映りにくいステルス性能や音速の５倍以上の極超音速飛行の関連技術が選ばれた。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
