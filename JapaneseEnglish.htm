@@ -140,6 +140,7 @@ const replsA = [
 {pat:/(ご)(?!X)(ち)(?!X)(そ)(?!X)(う)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xgochisousu,treat$6X~RuVerb'},
 {pat:/(じ)(?!X)(ゃ)(?!X)(ぶ)(?!X)(じ)(?!X)(ゃ)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1X$2X$3X$4X$5Xjyabujya,vigorously$6X~BuVerb'},
 {pat:/(ず)(?!X)(う)(?!X)(ず)(?!X)(う)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xzuuzuu-shi,cheeky,impudent$6X~IAdjective~Noun'},
+{pat:/(ワ)(?!X)(シ)(?!X)(ン)(?!X)(ト)(?!X)(ン)(?!X)/g,repl:'$1X$2X$3X$4X$5Xwashinton,Washington~Noun'},
 {pat:/(ず)(?!X)(る)(?!X)(が)(?!X)(し)(?!X)(こ)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xzurugashiko,sly,cunning$6X~IAdjective~Noun'},
 {pat:/(と)(?!X)(ん)(?!X)(で)(?!X)(も)(?!X)(な)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xtoんdemona,unthinkable,ou-trageous$6X~IAdjective~Noun'},
 {pat:/(ば)(?!X)(か)(?!X)(ば)(?!X)(か)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xbakabaka-shi,stupid,absurd$6X~IAdjective~Noun'},
@@ -351,6 +352,7 @@ const replsA = [
 {pat:/(と)(?!X)(ん)(?!X)(と)(?!X)(ん)(?!X)/g,repl:'$1X$2X$3X$4Xtapping~Noun'},
 {pat:/(ど)(?!X)(う)(?!X)(し)(?!X)(て)(?!X)/g,repl:'$1X$2X$3X$4Xwhy~Noun'},
 {pat:/(ど)(?!X)(う)(?!X)(に)(?!X)(か)(?!X)/g,repl:'$1X$2X$3X$4Xsomehow~Noun'},
+{pat:/(ニ)(?!X)(ュ)(?!X)(ー)(?!X)(ス)(?!X)/g,repl:'$1X$2X$3X$4Xnyu-su,news~Noun'},
 {pat:/(ど)(?!X)(う)(?!X)(や)(?!X)(ら)(?!X)/g,repl:'$1X$2X$3X$4Xseems,looks like~Noun'},
 {pat:/(ど)(?!X)(き)(?!X)(っ)(?!X)(と)(?!X)/g,repl:'$1X$2X$3X$4Xsurprised,shocked~Noun'},
 {pat:/(ど)(?!X)(き)(?!X)(ど)(?!X)(き)(?!X)/g,repl:'$1X$2X$3X$4Xfeel excited,feel nervous~Noun'},
@@ -662,7 +664,7 @@ const replsA = [
 {pat:/(書)(?!X)(き)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xkaki$2X$3Xko,fill in a field$4X~MuVerb'},
 {pat:/(欲)(?!X)(し)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xhoshiga,desire,wish for,covet$4X~RuVerb'},
 {pat:/(気)(?!X)(に)(?!X)(入)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkin$2X$3Xii,like,be pleased with$4X~RuVerb'},
-{pat:/(流)(?!X)(れ)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xnagare$2X$3Xko,flow into$4X~MuVerb'},
+{pat:/(流)(?!X)(れ)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xnaga$2Xre$3Xko,flow into$4X~MuVerb'},
 {pat:/(浮)(?!X)(か)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xukabe,set afloat$4X~RuVerb'},
 {pat:/(済)(?!X)(ま)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xsumase,finish off,get done with$4X~RuVerb'},
 {pat:/(無)(?!X)(く)(?!X)(な)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3Xnakuna,disappear,run short,get lost$4X~RuVerb'},
@@ -1220,6 +1222,7 @@ const replsA = [
 {pat:/(担)(?!X)(当)(?!X)(相)(?!X)/g,repl:'$1Xtan$2Xtou$3Xsyou,Minister of State for Special Missions~Noun'},
 {pat:/(持)(?!X)(ち)(?!X)(主)(?!X)/g,repl:'$1Xmochi$2X$3Xnushi,owner~Noun'},
 {pat:/(持)(?!X)(ち)(?!X)(物)(?!X)/g,repl:'$1Xmochi$2X$3Xmono,one\'s property,one\'s baggage~Noun'},
+{pat:/(ポ)(?!X)(ス)(?!X)(ト)(?!X)/g,repl:'$1X$2X$3Xposuto,post~Noun'},
 {pat:/(掃)(?!X)(除)(?!X)(機)(?!X)/g,repl:'$1Xsou$2Xj$3Xiki,vacuum cleaner~Noun'},
 {pat:/(掛)(?!X)(け)(?!X)(算)(?!X)/g,repl:'$1X$2X$3Xkakezan,multiplication~Noun'},
 {pat:/(探)(?!X)(査)(?!X)(機)(?!X)/g,repl:'$1Xtan$2Xsa$3Xki,probe~Noun'},
@@ -1350,6 +1353,7 @@ const replsA = [
 {pat:/(無)(?!X)(関)(?!X)(心)(?!X)/g,repl:'$1Xmu$2Xkan$3Xshin,apathy,indifference~Noun'},
 {pat:/(焼)(?!X)(き)(?!X)(肉)(?!X)/g,repl:'$1X$2X$3Xyakiniku,grilled meat,barbequed meat~Noun'},
 {pat:/(焼)(?!X)(き)(?!X)(鳥)(?!X)/g,repl:'$1X$2X$3Xyakitori,yakitori,grilled chicken~Noun'},
+{pat:/(ロ)(?!X)(シ)(?!X)(ア)(?!X)/g,repl:'$1X$2X$3Xroshia,Russia~Noun'},
 {pat:/(熱)(?!X)(中)(?!X)(症)(?!X)/g,repl:'$1Xnec$2Xcyuu$3Xsyou,heatstroke~Noun'},
 {pat:/(爆)(?!X)(撃)(?!X)(機)(?!X)/g,repl:'$1Xbaku$2Xgeki$3Xki,bomber aircraft~Noun'},
 {pat:/(爪)(?!X)(切)(?!X)(り)(?!X)/g,repl:'$1Xtsume$2X$3Xkiri,nail clipper~Noun'},
@@ -3303,6 +3307,8 @@ const replsB = [
 {pat:/(団)(?!X)(地)(?!X)/g,repl:'$1Xdan$2Xchi,housing estate,housing complex~Noun'},
 {pat:/(団)(?!X)(結)(?!X)/g,repl:'$1Xdanketsu$2X,solidarity~Noun'},
 {pat:/(困)(?!X)(難)(?!X)/g,repl:'$1Xkon$2Xnan,hardship~Noun'},
+{pat:/(臓)(?!X)(器)(?!X)/g,repl:'$1Xzou$2Xki,internal organs~Noun'},
+{pat:/(移)(?!X)(植)(?!X)/g,repl:'$1Xi$2Xsyoku,transplant~Noun'},
 {pat:/(囲)(?!X)(碁)(?!X)/g,repl:'$1Xi$2Xgo,game of Go~Noun'},
 {pat:/(図)(?!X)(書)(?!X)/g,repl:'$1Xto$2Xsyo,books~Noun'},
 {pat:/(図)(?!X)(表)(?!X)/g,repl:'$1Xzu$2Xhyou,graph~Noun'},
@@ -5906,13 +5912,14 @@ const replsB = [
 {pat:/(透)(?!X)(明)(?!X)/g,repl:'$1Xtou$2Xmei,transparent~Noun'},
 {pat:/(途)(?!X)(中)(?!X)/g,repl:'$1Xto$2Xcyuu,on way~Noun'},
 {pat:/(通)(?!X)(じ)(?!X)/g,repl:'$1Xtsuu$2Xji,to be open to~IchidanVerb'},
+{pat:/(延)(?!X)(び)(?!X)/g,repl:'$1Xno$2Xbi,extend~IchidanVerb'},
 {pat:/(通)(?!X)(り)(?!X)/g,repl:'$1X$2Xtoori,passage,street~Noun'},
 {pat:/(通)(?!X)(例)(?!X)/g,repl:'$1Xtsuu$2Xrei,as a rule~Noun'},
 {pat:/(通)(?!X)(信)(?!X)/g,repl:'$1Xtsuu$2Xshin,communication~Noun'},
 {pat:/(通)(?!X)(勤)(?!X)/g,repl:'$1Xtsuu$2Xkin,commuting~Noun'},
 {pat:/(通)(?!X)(告)(?!X)/g,repl:'$1Xtsuu$2Xkoku,notice~Noun'},
 {pat:/(通)(?!X)(報)(?!X)/g,repl:'$1Xtsuu$2Xhou,tip~Noun'},
-{pat:/(通)(?!X)(学)(?!X)/g,repl:'$1Xtsuu$2Xgaku,attending school,going to school~Noun'},
+{pat:/(通)(?!X)(学)(?!X)/g,repl:'$1Xtsuu$2Xgaku,going to school~Noun'},
 {pat:/(通)(?!X)(帳)(?!X)/g,repl:'$1Xtsuu$2Xcyou,bankbook,passbook~Noun'},
 {pat:/(通)(?!X)(常)(?!X)/g,repl:'$1Xtsuu$2Xjyou,common~Noun'},
 {pat:/(通)(?!X)(知)(?!X)/g,repl:'$1Xtsuu$2Xchi,notification~Noun'},
@@ -7692,9 +7699,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-経済安保強化へ、政府が２５分野「特許非公開」…戦闘機のステルス性能や極超音速飛行の関連技術読売新聞オンライン
-
-　昨年５月に成立した経済安全保障推進法に基づき、政府が「特許非公開」とする計２５の技術分野と、電気や鉄道など基幹インフラ（社会基盤）事業者の指定基準を盛り込んだ制度案の全容がわかった。非公開の対象には、レーダーに映りにくいステルス性能や音速の５倍以上の極超音速飛行の関連技術が選ばれた。
+　米紙ワシントン・ポストと米NBCニュースは8日、ロシアの侵攻を受けるウクライナ軍が大規模な反転攻勢を開始したと報じた。いずれもウクライナ軍から情報を得たとしている。事実だとすれば、ロシア軍の占領地をどこまで奪還できるかが焦点となる。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
