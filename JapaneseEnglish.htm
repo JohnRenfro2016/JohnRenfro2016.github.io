@@ -841,7 +841,7 @@ const replsA = [
 {pat:/(つ)(?!X)(も)(?!X)(り)(?!X)/g,repl:'$1X$2X$3Xtsumori-intention,purpose~Noun'},
 {pat:/(と)(?!X)(こ)(?!X)(ろ)(?!X)/g,repl:'$1X$2X$3Xtokoro-about to do~Noun'},
 {pat:/(と)(?!X)(て)(?!X)(も)(?!X)/g,repl:'$1X$2X$3Xtotemo-very~Noun'},
-{pat:/(と)(?!X)(も)(?!X)(に)(?!X)/g,repl:'$1X$2X$3Xtomo ni,jointly~Noun'},
+{pat:/(共|と)(?!X)(も)(?!X)(に)(?!X)/g,repl:'$1X$2X$3Xtomo ni-jointly~Noun'},
 {pat:/(ど)(?!X)(う)(?!X)(せ)(?!X)/g,repl:'$1Xdou$2X$3Xse-anyway~Noun'},
 {pat:/(ど)(?!X)(う)(?!X)(ぞ)(?!X)/g,repl:'$1Xdou$2X$3Xzo-please~Noun'},
 {pat:/(ど)(?!X)(う)(?!X)(も)(?!X)/g,repl:'$1Xdou$2X$3Xmo-somehow~Noun'},
@@ -852,7 +852,7 @@ const replsA = [
 {pat:/(ど)(?!X)(ん)(?!X)(な)(?!X)/g,repl:'$1X$2X$3Xdon na,what kind of~Noun'},
 {pat:/(な)(?!X)(が)(?!X)(ら)(?!X)/g,repl:'$1X$2X$3Xnagara-during~Noun'},
 {pat:/(な)(?!X)(ぜ)(?!X)(か)(?!X)/g,repl:'$1X$2X$3Xnazeka-for some reason~Noun'},
-{pat:/(に)(?!X)(よ)(?!X)(る)(?!X)/g,repl:'$1X$2X$3Xni yoru,according to~Noun'},
+{pat:/(に)(?!X)(よ)(?!X)(る)(?!X)/g,repl:'$1X$2X$3Xni yoru-according to~Noun'},
 {pat:/(ね)(?!X)(ず)(?!X)(み)(?!X)/g,repl:'$1X$2X$3Xnezumi-rat,mouse~Noun'},
 {pat:/(の)(?!X)(ど)(?!X)(か)(?!X)/g,repl:'$1X$2X$3Xnodoka-tranquil,peaceful~Noun'},
 {pat:/(の)(?!X)(ど)(?!X)(か)(?!X)/g,repl:'$1X$2X$3Xnodoka-tranquil,peaceful~Noun'},
@@ -1587,7 +1587,7 @@ const replsA = [
 {pat:/(１|1)(?!X)(５|5)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xgo$3Xnichi-fifteenth day of the month~Noun'},
 {pat:/(１|1)(?!X)(７|7)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xshichi$3Xnichi-seventeenth	day of the month~Noun'},
 {pat:/(１|1)(?!X)(９|9)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xku$3Xnichi-nineteenth day of the month~Noun'},
-{pat:/(３|3)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xsan$2Xjyuu$3Xichi-nichi,thirty-first day of the month~Noun'},
+{pat:/(３|3)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xsan$2Xjyuu$3Xichi-nichi-thirty-first day of the month~Noun'},
 
 {pat:/(あ)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xage-give$3X~RuVerb'},
 {pat:/(す)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsusu-slurp$3X~RuVerb'},
@@ -2207,7 +2207,7 @@ const replsB = [
 {pat:/(2)(?!X)(日)(?!X)/g,repl:'$1Xfutsu$2Xka-second day of the month~Noun'},
 {pat:/(2|２)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xni-jyuu,twenty~Noun$2'},
 {pat:/(2|２)(?!X)(人)(?!X)/g,repl:'$1X$2Xfutari-two people~Noun'},
-{pat:/(3|３)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xsan-jyuu,thirty~Noun$2'},
+{pat:/(3|３)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xsan-jyuu-thirty~Noun$2'},
 {pat:/(4|４)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xyon-jyuu,fourty~Noun$2'},
 {pat:/(5|５)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xgo-jyuu,fifty~Noun$2'},
 {pat:/(6|6)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xroku-jyuu,sixty~Noun$2'},
@@ -2218,9 +2218,9 @@ const replsB = [
 {pat:/(8|８)(?!X)(日)(?!X)/g,repl:'$1Xyou$2Xka-eighth day of the month~Noun'},
 {pat:/(9)(?!X)(日)(?!X)/g,repl:'$1Xkokono$2Xka-nineth day of the month~Noun'},
 {pat:/(9|９)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xkyuu-jyuu,ninety~Noun$2'},
-{pat:/(\d{1})(?!X)(分)(?!X)/g,repl:'$1X$2Xpun-minutes~Noun'},
+{pat:/(\d{1})(?!X)(分)(?!X)/g,repl:'$1$2Xpun-minutes~Noun'},
 {pat:/(\d{1})(?!X)(時)(?!X)/g,repl:'$1$2Xji-hour~Noun'},
-{pat:/(\d{1})(?!X)(発)(?!X)/g,repl:'$1$2X-patsu,counter for shots~Noun'},
+{pat:/(\d{1})(?!X)(発)(?!X)/g,repl:'$1$2Xpatsu-counter for shots~Noun'},
 {pat:/(\d{1}話)(?!X)/g,repl:'$1Xwa-counter for stories~Noun'},
 {pat:/(あ)(?!X)(あ)(?!X)/g,repl:'$1X$2Xaa-that kind of~Noun'},
 {pat:/(あ)(?!X)(す)(?!X)/g,repl:'$1X$2Xasu-morning~Noun'},
@@ -2860,7 +2860,6 @@ const replsB = [
 {pat:/(公)(?!X)(金)(?!X)/g,repl:'$1Xkou$2Xkin-public money~Noun'},
 {pat:/(公)(?!X)(開)(?!X)/g,repl:'$1Xkou$2Xkai-opening to the public~Noun'},
 {pat:/(六)(?!X)(日)(?!X)/g,repl:'$1X$2Xmuika-six days,6th of the month~Noun'},
-{pat:/(共)(?!X)(に)(?!X)/g,repl:'$1X$2Xtomo ni,together,both~Noun'},
 {pat:/(教)(?!X)(官)(?!X)/g,repl:'$1Xkyou$2Xkan-drill instructor~Noun'},
 {pat:/(共)(?!X)(催)(?!X)/g,repl:'$1Xkyou$2Xsai-cosponsorship~Noun'},
 {pat:/(共)(?!X)(同)(?!X)/g,repl:'$1Xkyou$2Xdou-joint~Noun'},
@@ -3616,6 +3615,7 @@ const replsB = [
 {pat:/(実)(?!X)(施)(?!X)/g,repl:'$1Xjis$2Xshi-implementation~Noun'},
 {pat:/(実)(?!X)(物)(?!X)/g,repl:'$1Xjitsu$2Xbutsu-real thing,actual object~Noun'},
 {pat:/(実)(?!X)(現)(?!X)/g,repl:'$1Xjitsu$2Xgen-implementation~Noun'},
+{pat:/(軌)(?!X)(道)(?!X)/g,repl:'$1Xki$2Xdou-trajectory~Noun'},
 {pat:/(実)(?!X)(用)(?!X)/g,repl:'$1Xjitsu$2Xyou-practical use,utility~Noun'},
 {pat:/(実)(?!X)(績)(?!X)/g,repl:'$1Xjis$2Xseki-achievement,performance~Noun'},
 {pat:/(実)(?!X)(習)(?!X)/g,repl:'$1Xjis$2Xsyuu-practical training~Noun'},
@@ -4018,7 +4018,9 @@ const replsB = [
 {pat:/(戦)(?!X)(略)(?!X)/g,repl:'$1Xsen$2Xryaku-strategy~Noun'},
 {pat:/(戦)(?!X)(術)(?!X)/g,repl:'$1Xsen$2Xjyutsu-tactical~Noun'},
 {pat:/(戦)(?!X)(闘)(?!X)/g,repl:'$1Xsen$2Xtou-battle~Noun'},
+{pat:/(大)(?!X)(麻)(?!X)/g,repl:'$1Xtai$2Xma,Marijuana~Noun'},
 {pat:/(戸)(?!X)(棚)(?!X)/g,repl:'$1X$2Xtodana-closet,cupboard~Noun'},
+{pat:/(所)(?!X)(持)(?!X)/g,repl:'$1Xsyo$2Xji-possession~Noun'},
 {pat:/(戸)(?!X)(籍)(?!X)/g,repl:'$1Xko$2Xseki-family register~Noun'},
 {pat:/(所)(?!X)(々)(?!X)/g,repl:'$1Xtokoro$2Xdokoro-here and there~Noun'},
 {pat:/(所)(?!X)(属)(?!X)/g,repl:'$1Xsyo$2Xzoku-belonging to~Noun'},
@@ -4210,6 +4212,7 @@ const replsB = [
 {pat:/(政)(?!X)(党)(?!X)/g,repl:'$1Xsei$2Xtou-political party~Noun'},
 {pat:/(政)(?!X)(府)(?!X)/g,repl:'$1Xsei$2Xfu-government~Noun'},
 {pat:/(政)(?!X)(権)(?!X)/g,repl:'$1Xsei$2Xken-administration~Noun'},
+{pat:/(西)(?!X)(岸)(?!X)/g,repl:'$1Xsei$2Xgan,west coast~Noun'},
 {pat:/(政)(?!X)(治)(?!X)/g,repl:'$1Xsei$2Xji-politics~Noun'},
 {pat:/(政)(?!X)(策)(?!X)/g,repl:'$1Xsei$2Xsaku-policy~Noun'},
 {pat:/(政)(?!X)(調)(?!X)/g,repl:'$1Xsei$2Xcyou-politial party research~Noun'},
@@ -4267,7 +4270,7 @@ const replsB = [
 {pat:/(断)(?!X)(念)(?!X)/g,repl:'$1Xdan$2Xnen-abandoning hope~Noun'},
 {pat:/(断)(?!X)(水)(?!X)/g,repl:'$1X$2Xdansui-water stoppage~Noun'},
 {pat:/(新)(?!X)(た)(?!X)/g,repl:'$1Xara$2Xta-fresh~Noun'},
-{pat:/(新)(?!X)(人)(?!X)/g,repl:'$1Xshin$2Xjin-newcomer,freshman~Noun'},
+{pat:/(新)(?!X)(人)(?!X)/g,repl:'$1Xshin$2Xjin-newbie~Noun'},
 {pat:/(新)(?!X)(卒)(?!X)/g,repl:'$1Xshin$2Xsotsu-recent graduate~Noun'},
 {pat:/(新)(?!X)(地)(?!X)/g,repl:'$1Xshin$2Xchi-reclaimed land~Noun'},
 {pat:/(新)(?!X)(型)(?!X)/g,repl:'$1Xshin$2Xgata-new type~Noun'},
@@ -4705,6 +4708,7 @@ const replsB = [
 {pat:/(趣)(?!X)(旨)(?!X)/g,repl:'$1Xsyu$2Xshi-gist~Noun'},
 {pat:/(決)(?!X)(意)(?!X)/g,repl:'$1Xketsu$2Xi-resolution~Noun'},
 {pat:/(決)(?!X)(断)(?!X)/g,repl:'$1Xketsu$2Xdan-determination~Noun'},
+{pat:/(決)(?!X)(戦)(?!X)/g,repl:'$1Xkes$2Xsen,decisive battle~Noun'},
 {pat:/(決)(?!X)(済)(?!X)/g,repl:'$1Xkes$2Xsai-payment,settlement~Noun'},
 {pat:/(決)(?!X)(着)(?!X)/g,repl:'$1Xkec$2Xcyaku-settlement~Noun'},
 {pat:/(決)(?!X)(算)(?!X)/g,repl:'$1Xkes$2Xsan-financial reporting~Noun'},
@@ -5709,7 +5713,7 @@ const replsB = [
 {pat:/(試)(?!X)(験)(?!X)/g,repl:'$1Xshi$2Xken-test~Noun'},
 {pat:/(詩)(?!X)(人)(?!X)/g,repl:'$1Xshi$2Xjin-poet~Noun'},
 {pat:/(詰)(?!X)(め)(?!X)/g,repl:'$1Xtsu$2Xme-pack~IchidanVerb'},
-{pat:/(話)(?!X)(題)(?!X)/g,repl:'$1Xwa$2Xdai-topic of conversation~Noun'},
+{pat:/(話)(?!X)(題)(?!X)/g,repl:'$1Xwa$2Xdai-topic~Noun'},
 {pat:/(該)(?!X)(当)(?!X)/g,repl:'$1Xgai$2Xtou-relevant~Noun'},
 {pat:/(詳)(?!X)(細)(?!X)/g,repl:'$1Xsyou$2Xsai-specifics~Noun'},
 {pat:/(詳)(?!X)(述)(?!X)/g,repl:'$1Xsyou$2Xjyutsu-detailed~Noun'},
@@ -6415,7 +6419,7 @@ const replsB = [
 {pat:/(催)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xmoyoo-feel,experience$2X~SuVerb'},
 {pat:/(傾)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xkatamu-decline$2X~KuVerb'},
 {pat:/(働)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xhatara-work$2X~KuVerb'},
-{pat:/(光)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhika-shin-e,emit light$2X~RuVerb'},
+{pat:/(光)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhika-shine$2X~RuVerb'},
 {pat:/(入)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhai-enter$2X~RuVerb'},
 {pat:/(全)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xmatta-entirely$2X~KuVerb'},
 {pat:/(八)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xyaっ,eight (things)$2X~TsuVerb'},
@@ -6908,8 +6912,9 @@ const replsB = [
 {pat:/(丼)(?!X)/g,repl:'$1Xdonburi-bowl~Noun'},
 {pat:/(也)(?!X)/g,repl:'$1Xya-classic~Noun'},
 {pat:/(亀)(?!X)/g,repl:'$1Xkame-turtle,tortoise~Noun'},
+{pat:/(編)(?!X)/g,repl:'$1Xhen,edition~Noun'},
 {pat:/(事)(?!X)/g,repl:'$1Xkoto-thing,incident~Noun'},
-{pat:/(京)(?!X)/g,repl:'$1Xkyou,myako,capital~Noun'},
+{pat:/(京)(?!X)/g,repl:'$1Xkyou,myako-capital~Noun'},
 {pat:/(人)(?!X)/g,repl:'$1Xnin,jin-counter for people/hito-person~Noun'},
 {pat:/(今)(?!X)/g,repl:'$1Xima-now~Noun'},
 {pat:/(仏)(?!X)/g,repl:'$1Xhotoke-buddha,Buddhist image~Noun'},
@@ -7031,7 +7036,7 @@ const replsB = [
 {pat:/(増)(?!X)/g,repl:'$1Xzou-increase~Noun'},
 {pat:/(墨)(?!X)/g,repl:'$1Xsumi-black ink~Noun'},
 {pat:/(壁)(?!X)/g,repl:'$1Xkabe-wall~Noun'},
-{pat:/(士)(?!X)/g,repl:'$1X+shi,licensed worker~Noun'},
+{pat:/(士)(?!X)/g,repl:'$1Xshi,licensed worker~Noun'},
 {pat:/(声)(?!X)/g,repl:'$1Xkoe-voice~Noun'},
 {pat:/(変)(?!X)/g,repl:'$1Xhen-strange,funny~Noun'},
 {pat:/(夏)(?!X)/g,repl:'$1Xnatsu-summer~Noun'},
@@ -7226,14 +7231,16 @@ const replsB = [
 {pat:/(死)(?!X)/g,repl:'$1Xshi-death~Noun'},
 {pat:/(段)(?!X)/g,repl:'$1Xdan-step,grade~Noun'},
 {pat:/(母)(?!X)/g,repl:'$1Xhaha-(speaker\'s)mother~Noun'},
-{pat:/(毎)(?!X)/g,repl:'$1Xmai+,every~Noun'},
+{pat:/(毎)(?!X)/g,repl:'$1Xmai,every~Noun'},
+{pat:/(斗)(?!X)/g,repl:'$1Xto,square measure~Noun'},
+{pat:/(絢)(?!X)/g,repl:'$1Xken,brilliant~Noun'},
 {pat:/(毒)(?!X)/g,repl:'$1Xdoku-poison,harm~Noun'},
 {pat:/(毛)(?!X)/g,repl:'$1Xke-hair,wool~Noun'},
 {pat:/(氏)(?!X)/g,repl:'$1Xshi-Mr.~Noun'},
 {pat:/(気)(?!X)/g,repl:'$1Xki-spirit/energy/mood~Noun'},
 {pat:/(水)(?!X)/g,repl:'$1Xmizu-water/sui,Wednesday~Noun'},
 {pat:/(氷)(?!X)/g,repl:'$1Xkoori-ice~Noun'},
-{pat:/(永)(?!X)/g,repl:'$1Xei-permanent~Noun'},
+{pat:/(永)(?!X)/g,repl:'$1Xei-eternal~Noun'},
 {pat:/(汁)(?!X)/g,repl:'$1Xshiru-soup~Noun'},
 {pat:/(汗)(?!X)/g,repl:'$1Xase-sweat~Noun'},
 {pat:/(池)(?!X)/g,repl:'$1Xike-pond~Noun'},
@@ -7430,7 +7437,7 @@ const replsB = [
 {pat:/(蜂)(?!X)/g,repl:'$1Xhachi-bee~Noun'},
 {pat:/(芳)(?!X)/g,repl:'$1Xyoshi-favorable~Noun'},
 {pat:/(則)(?!X)/g,repl:'$1Xnori-model~Noun'},
-{pat:/(血)(?!X)/g,repl:'$1Xchi-blood~Noun'},
+{pat:/(血)(?!X)/g,repl:'$1Xchi-blood,stock~Noun'},
 {pat:/(行)(?!X)/g,repl:'$1Xgyou-line,row~Noun'},
 {pat:/(街)(?!X)/g,repl:'$1X-gai,district~Noun'},
 {pat:/(表)(?!X)/g,repl:'$1Xhyou-table,list~Noun'},
@@ -7581,10 +7588,10 @@ const replsB = [
 {pat:/(鳩)(?!X)/g,repl:'$1Xhato-pigeon,dove~Noun'},
 {pat:/(鶏)(?!X)/g,repl:'$1Xniwatori-chi+cken~Noun'},
 {pat:/(麦)(?!X)/g,repl:'$1Xmugi-wheat~Noun'},
-{pat:/(黒)(?!X)/g,repl:'$1Xkuro-black~Noun'},
-{pat:/(鼻)(?!X)/g,repl:'$1Xhana+,nose~Noun'},
-{pat:/(３|3|三)(?!X)/g,repl:'$1Xsan,zou,three~Noun'},
-{pat:/(４|4|四)(?!X)/g,repl:'$1Xyon,shi,four~Noun'},
+{pat:/(黒)(?!X)/g,repl:'$1Xkuro,guro-black~Noun'},
+{pat:/(鼻)(?!X)/g,repl:'$1Xhana-nose~Noun'},
+{pat:/(３|3|三)(?!X)/g,repl:'$1Xsan,zou-three~Noun'},
+{pat:/(４|4|四)(?!X)/g,repl:'$1Xyon,shi-four~Noun'},
 {pat:/(６|6|六)(?!X)/g,repl:'$1Xroku-six~Noun'},
 {pat:/(８|8|八)(?!X)/g,repl:'$1Xhachi-eight~Noun'},
 
@@ -7755,7 +7762,17 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-岐阜市にある陸上自衛隊射撃場で男性隊員3人が自動小銃で撃たれ、2人が死亡、1人がけがを負った事件で、殺人未遂容疑で現行犯逮捕された自衛官候補生の男（18）が死亡した52歳の教官に叱られたという趣旨の供述をしていることが14日、捜査関係者への取材で分かった。もう1人の死亡した25歳隊員を狙ったわけではなく、発射を妨げようとしたから撃ったという話もしている。25歳隊員への殺意は否定。岐阜県警と陸自は教官が標的だった疑いもあるとみて、トラブルの有無や当時の状況を調べている。
+俳優、永山絢斗容疑者（３４）が１５日深夜に東京・目黒区の自宅マンションで大麻を所持したとして、警視庁に大麻取締法違反の疑いで現行犯逮捕されたことが分かった。
+
+【写真14枚】「東京リベンジャーズ２　血のハロウィン編―決戦―」イベントに出席した永山絢斗容疑者
+
+捜査関係者によると、警視庁の捜査員が同日に東京・目黒区の永山容疑者の自宅マンションに家宅捜索に入り、自宅にいた永山容疑者から事情を聞いた上、逮捕した。
+
+逮捕３日前の１２日には、都内で行われた映画「東京リベンジャーズ２　血のハロウィン編―決戦―」（英勉監督）のイベントに出演したばかり。同作は３０日公開だけに影響が注目される。
+
+また、２０２４年放送のＮＨＫ大河ドラマ「光る君へ」には藤原隆家役で出演が決まっており、降板必至だ。
+
+永山容疑者は俳優、永山瑛太（４０）の実弟。２００７年の日本テレビ系「おじいさん先生」で俳優デビューし、１０年公開の初主演映画「ソフトボーイ」で第３４回日本アカデミー賞新人俳優賞を受賞。ＮＨＫ大河ドラマ「いだてん～東京オリムピック噺～」や映画「クローズＥＸＰＬＯＤＥ」「真田十勇士」などイケメンの実力派として話題作に多数出演していた。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
