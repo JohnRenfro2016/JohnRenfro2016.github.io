@@ -1220,6 +1220,7 @@ const replsA = [
 {pat:/(手)(?!X)(入)(?!X)(れ)(?!X)/g,repl:'$1Xtei$2X$3Xre-care,repairs~Noun'},
 {pat:/(手)(?!X)(当)(?!X)(て)(?!X)/g,repl:'$1Xte$2X$3Xate-allowance,medical care~Noun'},
 {pat:/(手)(?!X)(続)(?!X)(き)(?!X)/g,repl:'$1Xte$2Xtsuzu$3Xki-formal procedure~Noun'},
+{pat:/(射)(?!X)(撃)(?!X)(場)(?!X)/g,repl:'$1Xsya$2Xgeki$3Xjyou,firing range~Noun'},
 {pat:/(抑)(?!X)(止)(?!X)(力)(?!X)/g,repl:'$1Xyoku$2Xshi$3Xryoku-deterrence~Noun'},
 {pat:/(投)(?!X)(開)(?!X)(票)(?!X)/g,repl:'$1Xtou$2Xkai$3Xhyou-casting and counting votes~Noun'},
 {pat:/(抽)(?!X)(象)(?!X)(的)(?!X)/g,repl:'$1Xcyuu$2Xsyou$3Xteki-abstract~Noun'},
@@ -2423,7 +2424,6 @@ const replsB = [
 {pat:/(世)(?!X)(論)(?!X)/g,repl:'$1Xyo$2Xron-public opinion~Noun'},
 {pat:/(世)(?!X)(間)(?!X)/g,repl:'$1Xse$2Xken-world,public~Noun'},
 {pat:/(両)(?!X)(側)(?!X)/g,repl:'$1Xryou$2Xgawa-both sides~Noun'},
-{pat:/(両)(?!X)(国)(?!X)/g,repl:'$1Xryou$2Xkoku-both countries~Noun'},
 {pat:/(両)(?!X)(手)(?!X)/g,repl:'$1Xryou$2Xte-both hands~Noun'},
 {pat:/(両)(?!X)(方)(?!X)/g,repl:'$1Xryou$2Xhou-both~Noun'},
 {pat:/(両)(?!X)(日)(?!X)/g,repl:'$1Xryou$2Xjitsu-both days~Noun'},
@@ -2861,6 +2861,7 @@ const replsB = [
 {pat:/(公)(?!X)(開)(?!X)/g,repl:'$1Xkou$2Xkai-opening to the public~Noun'},
 {pat:/(六)(?!X)(日)(?!X)/g,repl:'$1X$2Xmuika-six days,6th of the month~Noun'},
 {pat:/(共)(?!X)(に)(?!X)/g,repl:'$1X$2Xtomo ni,together,both~Noun'},
+{pat:/(教)(?!X)(官)(?!X)/g,repl:'$1Xkyou$2Xkan-drill instructor~Noun'},
 {pat:/(共)(?!X)(催)(?!X)/g,repl:'$1Xkyou$2Xsai-cosponsorship~Noun'},
 {pat:/(共)(?!X)(同)(?!X)/g,repl:'$1Xkyou$2Xdou-joint~Noun'},
 {pat:/(共)(?!X)(有)(?!X)/g,repl:'$1Xkyou$2Xyuu-sharing~Noun'},
@@ -2950,10 +2951,12 @@ const replsB = [
 {pat:/(切)(?!X)(手)(?!X)/g,repl:'$1X$2Xkitte-postage stamp~Noun'},
 {pat:/(切)(?!X)(断)(?!X)/g,repl:'$1X$2Xcut off~Noun'},
 {pat:/(切)(?!X)(符)(?!X)/g,repl:'$1X$2Xkippu-ticket~Noun'},
+{pat:/(標)(?!X)(的)(?!X)/g,repl:'$1Xhyou$2Xteki,target~Noun'},
 {pat:/(刑)(?!X)(事)(?!X)/g,repl:'$1Xkei$2Xji-detective~Noun'},
 {pat:/(列)(?!X)(島)(?!X)/g,repl:'$1Xret$2Xtou-archipelago~Noun'},
 {pat:/(列)(?!X)(車)(?!X)/g,repl:'$1Xres$2Xsya-train~Noun'},
 {pat:/(初)(?!X)(め)(?!X)/g,repl:'$1Xhaji$2Xme-begin~IchidanVerb'},
+{pat:/(妨)(?!X)(げ)(?!X)/g,repl:'$1Xsamata$2Xge,hinder~IchidanVerb'},
 {pat:/(初)(?!X)(夏)(?!X)/g,repl:'$1Xsyo$2Xka-early summer~Noun'},
 {pat:/(初)(?!X)(恋)(?!X)/g,repl:'$1Xhatsu$2Xkoi-first love~Noun'},
 {pat:/(初)(?!X)(日)(?!X)/g,repl:'$1Xsyo$2Xnichi-opening day~Noun'},
@@ -3343,7 +3346,7 @@ const replsB = [
 {pat:/(国)(?!X)(家)(?!X)/g,repl:'$1Xkok$2Xka-national~Noun'},
 {pat:/(国)(?!X)(政)(?!X)/g,repl:'$1Xkoku$2Xsei-national politics~Noun'},
 {pat:/(国)(?!X)(旗)(?!X)/g,repl:'$1Xkok$2Xki-national flag~Noun'},
-{pat:/(国)(?!X)(民)(?!X)/g,repl:'$1Xkoku$2Xmin-people~Noun'},
+{pat:/(国)(?!X)(民)(?!X)/g,repl:'$1Xkoku$2Xmin-citizen~Noun'},
 {pat:/(国)(?!X)(産)(?!X)/g,repl:'$1Xkoku$2Xsan-domestically produced~Noun'},
 {pat:/(国)(?!X)(立)(?!X)/g,repl:'$1Xkoku$2Xritsu-national~Noun'},
 {pat:/(国)(?!X)(籍)(?!X)/g,repl:'$1Xkoku$2Xseki-nationality,citizenship~Noun'},
@@ -3691,7 +3694,8 @@ const replsB = [
 {pat:/(小)(?!X)(説)(?!X)/g,repl:'$1Xsyou$2Xsetsu-novel,story~Noun'},
 {pat:/(小)(?!X)(量)(?!X)/g,repl:'$1Xsyou$2Xryou-small amount~Noun'},
 {pat:/(小)(?!X)(雨)(?!X)/g,repl:'$1X$2Xkosame-drizzle~Noun'},
-{pat:/(小)(?!X)(鳥)(?!X)/g,repl:'$1Xkoto$2Xri-small bird~Noun'},
+{pat:/(小)(?!X)(雨)(?!X)/g,repl:'$1X$2Xkosame-drizzle~Noun'},
+{pat:/(小)(?!X)(銃)(?!X)/g,repl:'$1Xsyou$2Xjyuu,small arms,rifle~Noun'},
 {pat:/(小)(?!X)(麦)(?!X)/g,repl:'$1X$2Xkomugi-wheat~Noun'},
 {pat:/(少)(?!X)(々)(?!X)/g,repl:'$1Xsyou$2Xsyou-a little,a few~Noun'},
 {pat:/(少)(?!X)(し)(?!X)/g,repl:'$1Xsuko$2Xshi-a bit,a little while~Noun'},
@@ -4030,7 +4034,7 @@ const replsB = [
 {pat:/(手)(?!X)(段)(?!X)/g,repl:'$1Xsyu$2Xdan-means,way~Noun'},
 {pat:/(手)(?!X)(紙)(?!X)/g,repl:'$1Xte$2Xgami-letter~Noun'},
 {pat:/(手)(?!X)(腕)(?!X)/g,repl:'$1Xte$2Xwan-ability~Noun'},
-{pat:/(手)(?!X)(術)(?!X)/g,repl:'$1Xsyu$2Xjyutsu-surgical operation~Noun'},
+{pat:/(手)(?!X)(術)(?!X)/g,repl:'$1Xsyu$2Xjyutsu-surgery~Noun'},
 {pat:/(手)(?!X)(袋)(?!X)/g,repl:'$1X$2Xtebukuro-gloves~Noun'},
 {pat:/(手)(?!X)(製)(?!X)/g,repl:'$1Xte$2Xsei-homemade~Noun'},
 {pat:/(手)(?!X)(足)(?!X)/g,repl:'$1Xtea$2Xshi-hands and feet,limbs~Noun'},
@@ -4110,7 +4114,7 @@ const replsB = [
 {pat:/(捜)(?!X)(査)(?!X)/g,repl:'$1Xsou$2Xsa-criminal search~Noun'},
 {pat:/(捜)(?!X)(索)(?!X)/g,repl:'$1Xsou$2Xsaku-search and rescue~Noun'},
 {pat:/(捨)(?!X)(て)(?!X)/g,repl:'$1Xsu$2Xte-throw away,abandon~IchidanVerb'},
-{pat:/(据)(?!X)(え)(?!X)/g,repl:'$1X$2Xsue-set~IchidanVerb'},
+{pat:/(据)(?!X)(え)(?!X)/g,repl:'$1Xsu$2Xe-set~IchidanVerb'},
 {pat:/(捻)(?!X)(出)(?!X)/g,repl:'$1Xnen$2Xsyutsu-scrape together funding~Noun'},
 {pat:/(掃)(?!X)(除)(?!X)/g,repl:'$1Xsou$2Xji-cleaning~Noun'},
 {pat:/(授)(?!X)(業)(?!X)/g,repl:'$1Xjyu$2Xgyou-class,lesson~Noun'},
@@ -4233,6 +4237,7 @@ const replsB = [
 {pat:/(散)(?!X)(乱)(?!X)/g,repl:'$1Xsan$2Xran-scattering~Noun'},
 {pat:/(散)(?!X)(歩)(?!X)/g,repl:'$1Xsan$2Xpo-walk,stroll~Noun'},
 {pat:/(散)(?!X)(策)(?!X)/g,repl:'$1Xsan$2Xsaku-roaming around~Noun'},
+{pat:/(有)(?!X)(無)(?!X)/g,repl:'$1Xyuu$2Xmu,exists or does not exist~Noun'},
 {pat:/(敬)(?!X)(語)(?!X)/g,repl:'$1Xkei$2Xgo-hon-orific language,polite speech~Noun'},
 {pat:/(数)(?!X)(十)(?!X)/g,repl:'$1Xsuu$2Xjyuu-dozens~Noun'},
 {pat:/(数)(?!X)(字)(?!X)/g,repl:'$1Xsuu$2Xji-number~Noun'},
@@ -4311,6 +4316,7 @@ const replsB = [
 {pat:/(日)(?!X)(銀)(?!X)/g,repl:'$1Xnichi$2Xgin-Bank of Japan~Noun'},
 {pat:/(日)(?!X)(陰)(?!X)/g,repl:'$1Xhi$2Xkage-shade~Noun'},
 {pat:/(日)(?!X)(韓)(?!X)/g,repl:'$1Xnik$2Xkan-Japan and Korea~Noun'},
+{pat:/(優)(?!X)(生)(?!X)/g,repl:'$1Xyuu$2Xsei-eugenics~Noun'},
 {pat:/(早)(?!X)(々)(?!X)/g,repl:'$1Xhaya$2Xbaya-promptly~Noun'},
 {pat:/(早)(?!X)(め)(?!X)/g,repl:'$1Xhaya$2Xme-fast~IchidanVerb'},
 {pat:/(早)(?!X)(口)(?!X)/g,repl:'$1Xhayaku$2Xchi-fast talking~Noun'},
@@ -4374,6 +4380,7 @@ const replsB = [
 {pat:/(暴)(?!X)(力)(?!X)/g,repl:'$1Xbou$2Xryoku-violence,force~Noun'},
 {pat:/(暴)(?!X)(落)(?!X)/g,repl:'$1Xbou$2Xraku-slump,crash~Noun'},
 {pat:/(暴)(?!X)(行)(?!X)/g,repl:'$1Xbou$2Xkou-assault~Noun'},
+{pat:/(射)(?!X)(撃)(?!X)/g,repl:'$1Xsya$2Xgeki,firing~Noun'},
 {pat:/(暴)(?!X)(風)(?!X)/g,repl:'$1Xbou$2Xfuu-windstorm~Noun'},
 {pat:/(曇)(?!X)(り)(?!X)/g,repl:'$1X$2Xkumori-cloudiness~Noun'},
 {pat:/(曖)(?!X)(昧)(?!X)/g,repl:'$1Xai$2Xmai-ambiguous,vague~Noun'},
@@ -4695,6 +4702,7 @@ const replsB = [
 {pat:/(決)(?!X)(壊)(?!X)/g,repl:'$1Xkek$2Xkai-rupture~Noun'},
 {pat:/(決)(?!X)(定)(?!X)/g,repl:'$1Xket$2Xtei-decision~Noun'},
 {pat:/(決)(?!X)(心)(?!X)/g,repl:'$1Xkes$2Xshin-determination,resolve~Noun'},
+{pat:/(趣)(?!X)(旨)(?!X)/g,repl:'$1Xsyu$2Xshi-gist~Noun'},
 {pat:/(決)(?!X)(意)(?!X)/g,repl:'$1Xketsu$2Xi-resolution~Noun'},
 {pat:/(決)(?!X)(断)(?!X)/g,repl:'$1Xketsu$2Xdan-determination~Noun'},
 {pat:/(決)(?!X)(済)(?!X)/g,repl:'$1Xkes$2Xsai-payment,settlement~Noun'},
@@ -5045,6 +5053,7 @@ const replsB = [
 {pat:/(発)(?!X)(明)(?!X)/g,repl:'$1Xhatsu$2Xmei-invention~Noun'},
 {pat:/(発)(?!X)(注)(?!X)/g,repl:'$1Xhac$2Xcyuu-place an order~Noun'},
 {pat:/(発)(?!X)(熱)(?!X)/g,repl:'$1Xhatsu$2Xnetsu-generation of heat,get a fever~Noun'},
+{pat:/(隊)(?!X)(員)(?!X)/g,repl:'$1Xtai$2Xin,trooper~Noun'},
 {pat:/(発)(?!X)(生)(?!X)/g,repl:'$1Xhas$2Xsei-occurrence~Noun'},
 {pat:/(発)(?!X)(症)(?!X)/g,repl:'$1Xhas$2Xsyou-outbreak~Noun'},
 {pat:/(発)(?!X)(給)(?!X)/g,repl:'$1Xhak$2Xkyuu-issuance of a passport~Noun'},
@@ -6342,6 +6351,7 @@ const replsB = [
 {pat:/(せ)(?!X)(ず)(?!X)/g,repl:'$1X$2Xsezu-without doing~Verb'},
 
 {pat:/(こ)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xko-this kind of$2X~UVerb'},
+{pat:/(負)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xo-take damage$2X~UVerb'},
 {pat:/(せ)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xse-cause,fault$2X~IAdjective~Noun'},
 {pat:/(そ)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xso-in such a way$2X~UVerb'},
 {pat:/(で)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xde-to be,is$2X~BeVerb'},
@@ -6444,7 +6454,7 @@ const replsB = [
 {pat:/(古)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xfuru-old$2X~IAdjective~Noun'},
 {pat:/(叩)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xtata-tap,hit$2X~KuVerb'},
 {pat:/(叫)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xsake-shout,cry out$2X~BuVerb'},
-{pat:/(叱)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshika-scold,tell off,reprimand$2X~RuVerb'},
+{pat:/(叱)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshika-reprimand$2X~RuVerb'},
 {pat:/(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xa-fit$2X~UVerb'},
 {pat:/(吐)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xha-holler,spew$2X~KuVerb'},
 {pat:/(向)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xmu-face$2X~KuVerb'},
@@ -6886,7 +6896,7 @@ const replsB = [
 {pat:/(一|１|1)(?!X)/g,repl:'$1Xichi-one~Noun'},
 {pat:/(万)(?!X)/g,repl:'$1Xman-ten thousand~Noun'},
 {pat:/(上)(?!X)/g,repl:'$1Xue,jyou/gami,up,over,above,superior~Noun'},
-{pat:/(下)(?!X)/g,repl:'$1Xshita,ge,down,under,below,inferior~Noun'},
+{pat:/(下)(?!X)/g,repl:'$1Xshita,ge-down,under,below,inferior~Noun'},
 {pat:/(不)(?!X)/g,repl:'$1Xfu-not~Noun'},
 {pat:/(世)(?!X)/g,repl:'$1Xyo-world~Noun'},
 {pat:/(丘)(?!X)/g,repl:'$1Xoka-hill,slope~Noun'},
@@ -6900,7 +6910,7 @@ const replsB = [
 {pat:/(亀)(?!X)/g,repl:'$1Xkame-turtle,tortoise~Noun'},
 {pat:/(事)(?!X)/g,repl:'$1Xkoto-thing,incident~Noun'},
 {pat:/(京)(?!X)/g,repl:'$1Xkyou,myako,capital~Noun'},
-{pat:/(人)(?!X)/g,repl:'$1Xnin,jin,counter for people/hito,person~Noun'},
+{pat:/(人)(?!X)/g,repl:'$1Xnin,jin-counter for people/hito-person~Noun'},
 {pat:/(今)(?!X)/g,repl:'$1Xima-now~Noun'},
 {pat:/(仏)(?!X)/g,repl:'$1Xhotoke-buddha,Buddhist image~Noun'},
 {pat:/(他)(?!X)/g,repl:'$1Xhoka,ta-,other~Noun'},
@@ -6967,14 +6977,14 @@ const replsB = [
 {pat:/(北)(?!X)/g,repl:'$1Xkita-north~Noun'},
 {pat:/(匹)(?!X)/g,repl:'$1Xpiki-counter for small animals~Noun'},
 {pat:/(区)(?!X)/g,repl:'$1Xku-ward~Noun'},
-{pat:/(十)(?!X)/g,repl:'$1Xjyuu+,ten~Noun'},
+{pat:/(十)(?!X)/g,repl:'$1Xjyuu,ten~Noun'},
 {pat:/(千)(?!X)/g,repl:'$1Xsen,Chi,thousand~Noun'},
 {pat:/(半)(?!X)/g,repl:'$1Xhan-half~Noun'},
 {pat:/(南)(?!X)/g,repl:'$1Xminami,nan,south~Noun'},
 {pat:/(印)(?!X)/g,repl:'$1Xshirushi-mark,symbol~Noun'},
 {pat:/(卵)(?!X)/g,repl:'$1Xtamago-egg~Noun'},
 {pat:/(厄)(?!X)/g,repl:'$1XYaku-bad luck~Noun'},
-{pat:/(原)(?!X)/g,repl:'$1Xhara,bara,plain~Noun'},
+{pat:/(原)(?!X)/g,repl:'$1Xhara,bara-plain~Noun'},
 {pat:/(又)(?!X)/g,repl:'$1Xmata-again,also,or~Noun'},
 {pat:/(友)(?!X)/g,repl:'$1Xtomo-friend,companion~Noun'},
 {pat:/(口)(?!X)/g,repl:'$1Xkuchi,guchi,mouth~Noun'},
@@ -7003,7 +7013,7 @@ const replsB = [
 {pat:/(回)(?!X)/g,repl:'$1Xkai-repitition~Noun'},
 {pat:/(団)(?!X)/g,repl:'$1Xdan-corps~Noun'},
 {pat:/(図)(?!X)/g,repl:'$1Xzu-figure,map~Noun'},
-{pat:/(国)(?!X)/g,repl:'$1Xkuni,koku,country~Noun'},
+{pat:/(国)(?!X)/g,repl:'$1Xkuni,koku-country~Noun'},
 {pat:/(土)(?!X)/g,repl:'$1Xdo-Saturday/tsuchi,soil~Noun'},
 {pat:/(地)(?!X)/g,repl:'$1Xchi-place~Noun'},
 {pat:/(坂)(?!X)/g,repl:'$1Xsaka-hill~Noun'},
@@ -7140,7 +7150,9 @@ const replsB = [
 {pat:/(日)(?!X)/g,repl:'$1Xhi-day/nichi,Sunday/ni,Japan~Noun'},
 {pat:/(旧)(?!X)/g,repl:'$1Xkyuu-old,former~Noun'},
 {pat:/(昔)(?!X)/g,repl:'$1Xmukashi-old times,old days~Noun'},
+{pat:/(阜)(?!X)/g,repl:'$1Xfu,mound~Noun'},
 {pat:/(星)(?!X)/g,repl:'$1Xhoshi-star,planet,spot~Noun'},
+{pat:/(岐)(?!X)/g,repl:'$1Xgi,fork in the road,branch off~Noun'},
 {pat:/(映)(?!X)/g,repl:'$1Xe-movie~Noun'},
 {pat:/(春)(?!X)/g,repl:'$1Xharu-spring~Noun'},
 {pat:/(泰)(?!X)/g,repl:'$1Xyasu-peaceful~Noun'},
@@ -7154,6 +7166,7 @@ const replsB = [
 {pat:/(暖)(?!X)/g,repl:'$1Xdan-warmth~Noun'},
 {pat:/(暦)(?!X)/g,repl:'$1Xkoyomi-calendar,almanac~Noun'},
 {pat:/(曲)(?!X)/g,repl:'$1Xkyoku-song,melody,tune~Noun'},
+{pat:/(室)(?!X)/g,repl:'$1Xshitsu,ya-room,shop~Noun'},
 {pat:/(更)(?!X)/g,repl:'$1Xsara-new~Noun'},
 {pat:/(書)(?!X)/g,repl:'$1Xsyo-document~Noun'},
 {pat:/(最)(?!X)/g,repl:'$1Xsai-most~Noun'},
@@ -7168,9 +7181,11 @@ const replsB = [
 {pat:/(机)(?!X)/g,repl:'$1Xtsukue-desk,table~Noun'},
 {pat:/(村)(?!X)/g,repl:'$1Xmura-village~Noun'},
 {pat:/(束)(?!X)/g,repl:'$1Xtaba-bundle,counter for bundles~Noun'},
+{pat:/(官)(?!X)/g,repl:'$1Xkan-chief~Noun'},
 {pat:/(来)(?!X)/g,repl:'$1Xku,ki,come~IchidanVerb'},
 {pat:/(東)(?!X)/g,repl:'$1Xhigashi,tou-east~Noun'},
 {pat:/(板)(?!X)/g,repl:'$1Xita-board,plank~Noun'},
+{pat:/(犯)(?!X)/g,repl:'$1Xhan-crime~Noun'},
 {pat:/(枕)(?!X)/g,repl:'$1Xmakura-pillow~Noun'},
 {pat:/(林)(?!X)/g,repl:'$1Xhayashi-grove~Noun'},
 {pat:/(枚)(?!X)/g,repl:'$1Xmai-counter for flat objects~Noun'},
@@ -7339,7 +7354,7 @@ const replsB = [
 {pat:/(管)(?!X)/g,repl:'$1Xkan-pipe,tube~Noun'},
 {pat:/(箱)(?!X)/g,repl:'$1Xhako-box~Noun'},
 {pat:/(箸)(?!X)/g,repl:'$1Xhashi-chopsticks~Noun'},
-{pat:/(米)(?!X)/g,repl:'$1Xbei-The United States of America/kome,rice~Noun'},
+{pat:/(米)(?!X)/g,repl:'$1Xbei-The United States of America/kome-rice~Noun'},
 {pat:/(粉)(?!X)/g,repl:'$1Xkon+a,powder,flour~Noun'},
 {pat:/(粒)(?!X)/g,repl:'$1Xtsubu-grain,drop~Noun'},
 {pat:/(糊)(?!X)/g,repl:'$1Xnori-glue,starch~Noun'},
@@ -7492,7 +7507,7 @@ const replsB = [
 {pat:/(針)(?!X)/g,repl:'$1Xhari-needle~Noun'},
 {pat:/(鉄)(?!X)/g,repl:'$1X-tetsu,iron~Noun'},
 {pat:/(銀)(?!X)/g,repl:'$1Xgin-silver~Noun'},
-{pat:/(銃)(?!X)/g,repl:'$1Xjyuu+,gun~Noun'},
+{pat:/(銃)(?!X)/g,repl:'$1Xjyuu,gun~Noun'},
 {pat:/(銅)(?!X)/g,repl:'$1Xdou-copper~Noun'},
 {pat:/(鋏)(?!X)/g,repl:'$1Xhasami-scissors,pincers,tongs~Noun'},
 {pat:/(鍋)(?!X)/g,repl:'$1Xnabe-pot~Noun'},
@@ -7558,6 +7573,7 @@ const replsB = [
 {pat:/(馬)(?!X)/g,repl:'$1Xuma-horse~Noun'},
 {pat:/(駅)(?!X)/g,repl:'$1Xeki-railway station~Noun'},
 {pat:/(骨)(?!X)/g,repl:'$1Xhone-bone~Noun'},
+{pat:/(％)(?!X)/g,repl:'$1Xpa-cento,percent~Noun'},
 {pat:/(高)(?!X)/g,repl:'$1Xdaka,kou,high~Noun'},
 {pat:/(髪)(?!X)/g,repl:'$1Xkami-hair,hairstyle~Noun'},
 {pat:/(魚)(?!X)/g,repl:'$1Xsakana-fish~Noun'},
@@ -7605,7 +7621,7 @@ const replsB = [
 {pat:/(Nounい|Verbい)(?!X)(て)(?!X)/g,repl:'$1X$2Xite-is doing~Verb'},
 {pat:/(Nounし|Verbし)(?!X)(て)(?!X)/g,repl:'$1X$2Xshite-is doing~Verb'},
 {pat:/(Verbか|Nounか)(?!X)(ら)(?!X)/g,repl:'$1X$2Xkara-from~Postposition~Noun'},
-{pat:/(に)(?!X)(も)(?!X)/g,repl:'$1Xni$2X,also~Postposition~Noun'},
+{pat:/(に)(?!X)(も)(?!X)/g,repl:'$1Xni$2Xmo,also~Postposition~Noun'},
 {pat:/(Verbた)(?!X)(い)(?!X)/g,repl:'$1X$2Xtai-want to do~Verb'},
 {pat:/(な)(?!X)(い)(?!X)/g,repl:'$1X$2Xnai-not do~InformalVerb'},
 {pat:/(な)(?!X)(く)(?!X)/g,repl:'$1X$2Xnaku-not and~ConjunctiveVerb'},
@@ -7663,25 +7679,19 @@ function translateC()
 translateA();
 translateB();
 
-a = a.replace(/(Punctuation|Postposition)/g,'<font color=red>$1</font><p>');
+a = a.replace(/(Punctuation|Postposition)/g,'$1<p><font color=red>____________________</font><p>');
 
-a = a.replace(/(~UVerb|~KuVerb)/g,'<p>$1');
 a = a.replace(/(いX)(~IAdjective~Noun)/g,'<p>$1i$2');
-a = a.replace(/(くX)(~IAdjective~Noun)/g,'<p>$1Xku-and$2');
-a = a.replace(/(かX)(~IAdjective~Noun)/g,'<p>$1Xka$2');
-a = a.replace(/(いX)(~KuVerb)/g,'<p>$1$2');
+a = a.replace(/(いX)(~KuVerb)/g,'<p>いXi$2');
 a = a.replace(/(いX)(~UVerb)/g,'<p>いXi$2');
 a = a.replace(/(うX)~UVerb/g,'<p>うXu,to do,will do~UVerb');
 a = a.replace(/(えX)(~UVerb)/g,'<p>えXe,can do$2');
-a = a.replace(/(かX)(~KuVerb)/g,'<p>かXka$2');
-a = a.replace(/(いX)(~KuVerb)/g,'<p>いXi$2');
+a = a.replace(/(かX)(~IAdjective~Noun)/g,'<p>$1Xka$2');
 a = a.replace(/(かX)(~KuVerb)/g,'<p>かXka$2');
 a = a.replace(/(がX)(~GuVerb)/g,'<p>がXga$2');
 a = a.replace(/(きX)(~KuVerb)/g,'<p>きXki$2');
-a = a.replace(/(きX)(~KuVerb)/g,'<p>きXki,i$2');
 a = a.replace(/(ぎX)(~GuVerb)/g,'<p>ぎXgi$2');
-a = a.replace(/(ぎX)(~GuVerb)/g,'<p>ぎXgi$2');
-a = a.replace(/(くX)(~IAdjective~Noun)/g,'<p>$1ku,and$2');
+a = a.replace(/(くX)(~IAdjective~Noun)/g,'<p>$1Xku-and$2');
 a = a.replace(/(くX)(~KuVerb)/g,'<p>くXku,to do,will do$2');
 a = a.replace(/(ぐX)(~GuVerb)/g,'<p>ぐXgu,to do,will do$2');
 a = a.replace(/(けX)(~KuVerb)/g,'<p>けXke,can do$2');
@@ -7717,7 +7727,7 @@ a = a.replace(/(れX)(~RuVerb)/g,'<p>れXre,can do$2');
 a = a.replace(/(ろX)(~RuVerb)/g,'<p>ろXro,let us do$2');
 a = a.replace(/(わX)(~UVerb)/g,'<p>わXwa$2');
 a = a.replace(/(んX)(~BuVerb)/g,'<p>んXn$2');
-a = a.replace(/(んX)(~MuVerb)/g,'<p>んn$2');
+a = a.replace(/(んX)(~MuVerb)/g,'<p>んXn$2');
 a = a.replace(/~IchidanVerbる/g,'<p>るXru,to do,will do~IchidanVerb');
 
 a = a.replace(/(Verb)(と)(?!X)/g,'$1<p>$2Xto-by way of~Postposition~Noun');
@@ -7745,9 +7755,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-高校サッカーの強豪校、東福岡高（福岡市）サッカー部の志波芳則総監督（７２）が、部員に体罰を加えたとして引責辞任したことが１３日わかった。
-
-【写真】東福岡高サッカー部の志波芳則総監督
+岐阜市にある陸上自衛隊射撃場で男性隊員3人が自動小銃で撃たれ、2人が死亡、1人がけがを負った事件で、殺人未遂容疑で現行犯逮捕された自衛官候補生の男（18）が死亡した52歳の教官に叱られたという趣旨の供述をしていることが14日、捜査関係者への取材で分かった。もう1人の死亡した25歳隊員を狙ったわけではなく、発射を妨げようとしたから撃ったという話もしている。25歳隊員への殺意は否定。岐阜県警と陸自は教官が標的だった疑いもあるとみて、トラブルの有無や当時の状況を調べている。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
