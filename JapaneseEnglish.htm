@@ -2266,7 +2266,7 @@ const replsB = [
 {pat:/(そ)(?!X)(れ)(?!X)/g,repl:'$1X$2Xsore-that,that one~Noun'},
 {pat:/(た)(?!X)(だ)(?!X)/g,repl:'$1X$2Xtada-free~Noun'},
 {pat:/(た)(?!X)(だ)(?!X)/g,repl:'$1X$2Xtada-merely~Noun'},
-{pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1X$2Xchi-plural~Noun'},
+{pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1X$2Xtachi-plural~Noun'},
 {pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1X$2Xtachi-plural~Noun'},
 {pat:/(た)(?!X)(め)(?!X)/g,repl:'$1X$2Xtame-for~Noun'},
 {pat:/(た)(?!X)(め)(?!X)/g,repl:'$1Xta$2Xme-for~Noun'},
@@ -3213,7 +3213,7 @@ const replsB = [
 {pat:/(右)(?!X)(手)(?!X)/g,repl:'$1Xmigi$2Xte-right hand~Noun'},
 {pat:/(右)(?!X)(派)(?!X)/g,repl:'$1Xu$2Xha-right-wing~Noun'},
 {pat:/(右)(?!X)(翼)(?!X)/g,repl:'$1Xu$2Xyoku-right wing~Noun'},
-{pat:/(司)(?!X)(会)(?!X)/g,repl:'$1Xshi$2Xkai-master of ceremonies,host~Noun'},
+{pat:/(司)(?!X)(会)(?!X)/g,repl:'$1Xshi$2Xkai-host~Noun'},
 {pat:/(司)(?!X)(法)(?!X)/g,repl:'$1Xshi$2Xhou-law enforcement~Noun'},
 {pat:/(各)(?!X)(国)(?!X)/g,repl:'$1Xkak$2Xkoku-every countries~Noun'},
 {pat:/(各)(?!X)(地)(?!X)/g,repl:'$1Xkaku$2Xchi-every place~Noun'},
@@ -3221,6 +3221,7 @@ const replsB = [
 {pat:/(各)(?!X)(種)(?!X)/g,repl:'$1Xkaku$2Xsyu-each kind,various~Noun'},
 {pat:/(各)(?!X)(自)(?!X)/g,repl:'$1Xkaku$2Xji-each one,every individual~Noun'},
 {pat:/(合)(?!X)(同)(?!X)/g,repl:'$1Xgou$2Xdou-union~Noun'},
+{pat:/(領)(?!X)(内)(?!X)/g,repl:'$1Xryou$2Xnai-within a territory~Noun'},
 {pat:/(合)(?!X)(唱)(?!X)/g,repl:'$1Xgas$2Xsyou-chorus~Noun'},
 {pat:/(合)(?!X)(図)(?!X)/g,repl:'$1Xai$2Xzu-signal,sign~Noun'},
 {pat:/(合)(?!X)(意)(?!X)/g,repl:'$1Xgou$2Xi-mutual agreement~Noun'},
@@ -3778,7 +3779,7 @@ const replsB = [
 {pat:/(年)(?!X)(中)(?!X)/g,repl:'$1X$2Xnenjyuu-all year~Noun'},
 {pat:/(年)(?!X)(代)(?!X)/g,repl:'$1Xnen$2Xdai-age,date~Noun'},
 {pat:/(年)(?!X)(代)(?!X)/g,repl:'$1Xnen$2Xdai-era~Noun'},
-{pat:/(年)(?!X)(内)(?!X)/g,repl:'$1Xnen$2Xnai-within year~Noun'},
+{pat:/(年)(?!X)(内)(?!X)/g,repl:'$1Xnen$2Xnai-within the year~Noun'},
 {pat:/(年)(?!X)(収)(?!X)/g,repl:'$1Xnen$2Xsyuu-annual income~Noun'},
 {pat:/(年)(?!X)(始)(?!X)/g,repl:'$1Xnen$2Xshi-beginning of year~Noun'},
 {pat:/(年)(?!X)(度)(?!X)/g,repl:'$1Xnen$2Xdo-fiscal year~Noun'},
@@ -3869,6 +3870,7 @@ const replsB = [
 {pat:/(彼)(?!X)(ら)(?!X)/g,repl:'$1X$2Xkarera-they~Noun'},
 {pat:/(彼)(?!X)(女)(?!X)/g,repl:'$1Xkano$2Xjyo-she,one\'s girlfriend~Noun'},
 {pat:/(往)(?!X)(復)(?!X)/g,repl:'$1Xou$2Xfuku-round trip~Noun'},
+{pat:/(搬)(?!X)(入)(?!X)/g,repl:'$1Xhan$2Xnyuu,carrying~Noun'},
 {pat:/(往)(?!X)(来)(?!X)/g,repl:'$1Xou$2Xrai-coming and going~Noun'},
 {pat:/(往)(?!X)(路)(?!X)/g,repl:'$1Xou$2Xro-course~Noun'},
 {pat:/(待)(?!X)(機)(?!X)/g,repl:'$1Xtai$2Xki-standing by~Noun'},
@@ -4400,7 +4402,7 @@ const replsB = [
 {pat:/(最)(?!X)(上)(?!X)/g,repl:'$1Xsai$2Xjyou-best,highest~Noun'},
 {pat:/(最)(?!X)(中)(?!X)/g,repl:'$1Xsai$2Xcyuu-right in middle of~Noun'},
 {pat:/(最)(?!X)(低)(?!X)/g,repl:'$1Xsai$2Xtei-lowest~Noun'},
-{pat:/(最)(?!X)(初)(?!X)/g,repl:'$1Xsai$2Xsyo-outset~Noun'},
+{pat:/(最)(?!X)(初)(?!X)/g,repl:'$1Xsai$2Xfrom the start~Noun'},
 {pat:/(最)(?!X)(多)(?!X)/g,repl:'$1Xsai$2Xta-largest number of~Noun'},
 {pat:/(最)(?!X)(大)(?!X)/g,repl:'$1Xsai$2Xdai-largest~Noun'},
 {pat:/(最)(?!X)(小)(?!X)/g,repl:'$1Xsai$2Xsyou-minimum~Noun'},
@@ -5909,6 +5911,7 @@ const replsB = [
 {pat:/(迷)(?!X)(信)(?!X)/g,repl:'$1Xmei$2Xshin-superstition~Noun'},
 {pat:/(迷)(?!X)(子)(?!X)/g,repl:'$1Xmai$2Xgo-lost person~Noun'},
 {pat:/(迷)(?!X)(惑)(?!X)/g,repl:'$1Xmei$2Xwaku-trouble,annoyance~Noun'},
+{pat:/(門)(?!X)(戸)(?!X)/g,repl:'$1Xmon$2Xko-door~Noun'},
 {pat:/(追)(?!X)(伸)(?!X)/g,repl:'$1Xtsui$2Xshin-P.S.~Noun'},
 {pat:/(追)(?!X)(加)(?!X)/g,repl:'$1Xtsui$2Xka-addition~Noun'},
 {pat:/(追)(?!X)(徴)(?!X)/g,repl:'$1Xtsui$2Xcyou-supplementary charge~Noun'},
@@ -7250,7 +7253,7 @@ const replsB = [
 {pat:/(法)(?!X)/g,repl:'$1Xhou-law~Noun'},
 {pat:/(波)(?!X)/g,repl:'$1Xha,nami-wave,fluctuations~Noun'},
 {pat:/(泥)(?!X)/g,repl:'$1Xdoro-mud,dirt~Noun'},
-{pat:/(注)(?!X)/g,repl:'$1Xcyuu-annotation,explanatory note~Noun'},
+{pat:/(注)(?!X)/g,repl:'$1Xcyuu-annotation~Noun'},
 {pat:/(洋)(?!X)/g,repl:'$1Xyou-ocean~Noun'},
 {pat:/(津)(?!X)/g,repl:'$1Xzu,tsu,harbor~Noun'},
 {pat:/(洲)(?!X)/g,repl:'$1Xsyuu,Zu,state~Noun'},
@@ -7580,7 +7583,7 @@ const replsB = [
 {pat:/(馬)(?!X)/g,repl:'$1Xuma-horse~Noun'},
 {pat:/(駅)(?!X)/g,repl:'$1Xeki-railway station~Noun'},
 {pat:/(骨)(?!X)/g,repl:'$1Xhone-bone~Noun'},
-{pat:/(％)(?!X)/g,repl:'$1Xpa-cento,percent~Noun'},
+{pat:/(%|％)(?!X)/g,repl:'$1Xpa-cento,percent~Noun'},
 {pat:/(高)(?!X)/g,repl:'$1Xdaka,kou,high~Noun'},
 {pat:/(髪)(?!X)/g,repl:'$1Xkami-hair,hairstyle~Noun'},
 {pat:/(魚)(?!X)/g,repl:'$1Xsakana-fish~Noun'},
@@ -7606,6 +7609,7 @@ const replsB = [
 {pat:/(さ)(?!X)(れ)(?!X)(た)(?!X)/g,repl:'$1X$2X$3Xsareta-was done~informalVerb'},
 {pat:/(Verbて)(?!X)(い)(?!X)(く)(?!X)/g,repl:'$1X$2X$3Xteiku-is going to do~Verb'},
 
+{pat:/(Verbて)(?!X)(い)(?!X)(く)(?!X)/g,repl:'$1X$2X$3Xteiku-is doing and~ConjunctiveVerb'},
 {pat:/(Verbて)(?!X)(い)(?!X)/g,repl:'$1X$2Xtei-is doing~ConjunctiveVerb'},
 {pat:/(Verbで)(?!X)(い)(?!X)/g,repl:'$1X$2Xdei-is doing~ConjunctiveVerb'},
 
@@ -7616,9 +7620,9 @@ const replsB = [
 {pat:/(Verbま|Nounま)(?!X)(し)(?!X)(ょ)(?!X)(う)(?!X)/g,repl:'$1X$2X$3X$4Xmasyou-let\'s do~FormalVerb'},
 {pat:/(さ)(?!X)(れ)(?!X)(て)(?!X)(い)(?!X)/g,repl:'$1X$2X$3X$4Xsaretei-had been doing~Verb'},
 {pat:/(な)(?!X)(け)(?!X)(れ)(?!X)(ば)(?!X)/g,repl:'$1X$2X$3X$4Xnakereba-must~Noun'},
+{pat:/(し)(?!X)(ま)(?!X)(し)(?!X)(た)(?!X)/g,repl:'$1X$2X$3X$4Xshimashita,did~SuruFormalVerb'},
 
 {pat:/(Nounだ|Verbだ)(?!X)(っ)(?!X)(た)(?!X)/g,repl:'$1X$2X$3Xdatta-was~InformalVerb'},
-{pat:/(Nounま)(?!X)(し)(?!X)(た)(?!X)/g,repl:'$1X$2X$3Xdid~FormalVerb'},
 {pat:/(Nounま|Verbま)(?!X)(し)(?!X)(た)(?!X)/g,repl:'$1X$2X$3Xmashita-did~FormalVerb'},
 {pat:/(Nounま|Verbま)(?!X)(せ)(?!X)(ん)(?!X)/g,repl:'$1X$2X$3Xmasen-didn\'t~FormalVerb'},
 {pat:/(Verbれ|Nounれ)(?!X)(て)(?!X)(い)(?!X)/g,repl:'$1X$2X$3Xis doing~Verb'},
@@ -7645,9 +7649,11 @@ const replsB = [
 
 {pat:/(Nounら|Noun等)(?!X)/g,repl:'$1Xra-plural~Postposition~Noun'},
 
+{pat:/(Nounま)(?!X)(し)(?!X)(た)(?!X)/g,repl:'$1Xmashita,did~FormalVerb'},
+
 {pat:/(し)(?!X)/g,repl:'$1Xshi-to do,will do~SuruVerb'},
 
-{pat:/(Verbい)(?!X)/g,repl:'$1Xi-is doing,~ConjunctiveVerb'},
+{pat:/(Verbい)(?!X)/g,repl:'$1Xi-is doing~ConjunctiveVerb'},
 {pat:/(Nounお)(?!X)/g,repl:'$1Xo-respected~formal~Noun'},
 {pat:/(Nounご)(?!X)/g,repl:'$1Xgo-respected~formal~Noun'},
 {pat:/(Nounだ)(?!X)/g,repl:'$1Xda-is~InformalVerb'},
@@ -7737,10 +7743,12 @@ a = a.replace(/(んX)(~BuVerb)/g,'<p>んXn$2');
 a = a.replace(/(んX)(~MuVerb)/g,'<p>んXn$2');
 a = a.replace(/~IchidanVerbる/g,'<p>るXru,to do,will do~IchidanVerb');
 
-a = a.replace(/(Verb)(と)(?!X)/g,'$1<p>$2Xto-by way of~Postposition~Noun');
+a = a.replace(/(Verb)(ま)(?!X)(す)(?!X)/g,'<br>$1$2X$3Xmasu-to do,will do~FormalVerb');
 a = a.replace(/(Verb)(た)(?!X)/g,'<br>$1X$2Xta-did~InformalVerb');
 a = a.replace(/(Verb)(だ)(?!X)/g,'<br>$1X$2Xda-did~InformalVerb<p>');
 a = a.replace(/(Verb)(る)(?!X)/g,'<br>$1X$2Xru-do,will do~InformalVerb<p>');
+
+a = a.replace(/(Verb)(と)(?!X)/g,'$1<p>$2Xto-by way of~Postposition~Noun');
 
 a = a.replace(/Verb(の)(?!X)/g,'<br>$1Xno-doing<p>');
 
@@ -7762,17 +7770,31 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-俳優、永山絢斗容疑者（３４）が１５日深夜に東京・目黒区の自宅マンションで大麻を所持したとして、警視庁に大麻取締法違反の疑いで現行犯逮捕されたことが分かった。
+ロシアのプーチン大統領は同盟関係にある隣国ベラルーシへのロシアの戦術核兵器の配備について、最初の核兵器がすでにベラルーシ領内に運ばれたと表明しました。
 
-【写真14枚】「東京リベンジャーズ２　血のハロウィン編―決戦―」イベントに出席した永山絢斗容疑者
+ロシア プーチン大統領
+「最初の核兵器がベラルーシに搬入された。これはあくまで第一弾だ」
 
-捜査関係者によると、警視庁の捜査員が同日に東京・目黒区の永山容疑者の自宅マンションに家宅捜索に入り、自宅にいた永山容疑者から事情を聞いた上、逮捕した。
+プーチン大統領は16日、サンクトペテルブルクで開かれている国際経済フォーラムで、司会者の質問に答える形で最初の戦術核兵器がすでにベラルーシ領内に運ばれたと明らかにしました。配備作業は「年内に完了する」としています。
 
-逮捕３日前の１２日には、都内で行われた映画「東京リベンジャーズ２　血のハロウィン編―決戦―」（英勉監督）のイベントに出演したばかり。同作は３０日公開だけに影響が注目される。
+そして、配備について「戦略的にわれわれを敗北させようとする者たちは、このことを忘れない方が良い」とし、ウクライナへの軍事支援を続ける欧米を強くけん制しました。
 
-また、２０２４年放送のＮＨＫ大河ドラマ「光る君へ」には藤原隆家役で出演が決まっており、降板必至だ。
+ただ、ウクライナ侵攻をめぐっては核兵器使用の「必要性はない」とも発言。反転攻勢をかけるウクライナ軍に対し、多大な損失を与えているとして、ウクライナ側が成功する「チャンスはない」と主張しました。
 
-永山容疑者は俳優、永山瑛太（４０）の実弟。２００７年の日本テレビ系「おじいさん先生」で俳優デビューし、１０年公開の初主演映画「ソフトボーイ」で第３４回日本アカデミー賞新人俳優賞を受賞。ＮＨＫ大河ドラマ「いだてん～東京オリムピック噺～」や映画「クローズＥＸＰＬＯＤＥ」「真田十勇士」などイケメンの実力派として話題作に多数出演していた。
+また、ウクライナへの戦闘機供与の動きをめぐり、NATO=北大西洋条約機構による「危険な関与だ」と指摘し、ロシアとの戦闘に使用される機体を「どこでどのように攻撃するか検討する必要がある」と話し、警告しました。
+
+プーチン氏は演説の中で、今年のGDP=国内総生産の成長率が1.5%から2%のプラスになるとの見通しを示し、制裁を受ける中でも経済が好調だとアピールしました。
+
+撤退した外国企業の復帰については「門戸を閉ざさない」としましたが、フォーラムに参加した外国首脳はアルジェリアとアラブ首長国連邦のみで、ロシアが「非友好国」とする日本や欧米などのメディアは取材から排除されています。
+
+ベラルーシへのロシアの戦術核兵器搬入についてのプーチン大統領の発言を受け、アメリカのブリンケン国務長官は。
+
+アメリカ ブリンケン国務長官
+「アメリカが核態勢を調整すべき状況にはなっていないし、ロシアが核兵器を使用する準備をしているという兆候も見ていない」
+
+このように話すとともに、引き続き状況を注視していく考えを示しました。
+
+また、ブリンケン長官はベラルーシやウクライナがソ連崩壊に際して核兵器を保有しない道を選んだことを指摘し、「ルカシェンコ大統領がベラルーシ国民の意思に反して国の主権をロシアに無責任に譲り渡している」と批判しました。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
