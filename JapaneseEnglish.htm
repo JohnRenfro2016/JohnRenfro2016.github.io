@@ -1578,7 +1578,6 @@ const replsA = [
 {pat:/(１|1)(?!X)(4)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xyok$3Xka-fourteenth,day of the month~Noun'},
 {pat:/(１|1)(?!X)(6)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xroku$3Xnichi-sixteenth	day of the month~Noun'},
 {pat:/(１|1)(?!X)(8|８)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xhachi$3Xnichi-eighteenth	day of the month~Noun'},
-{pat:/(１|1)(?!X)(日)(?!X)/g,repl:'$1X$2Xtsuitachi-first day of the month~Noun'},
 {pat:/(１|1)(?!X)(０|0)(?!X)(日)(?!X)/g,repl:'$1Xtoo$2X$3Xka-tenth day of the month~Noun'},
 {pat:/(１|1)(?!X)(０|0)(?!X)(月)(?!X)/g,repl:'$1Xjyuu$2X$3Xgatsu October~Noun'},
 {pat:/(１|1)(?!X)(１|1)(?!X)(月)(?!X)/g,repl:'$1Xjyuu$2Xichi$3Xgatsu November~Noun'},
@@ -1587,7 +1586,7 @@ const replsA = [
 {pat:/(１|1)(?!X)(５|5)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xgo$3Xnichi-fifteenth day of the month~Noun'},
 {pat:/(１|1)(?!X)(７|7)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xshichi$3Xnichi-seventeenth	day of the month~Noun'},
 {pat:/(１|1)(?!X)(９|9)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xku$3Xnichi-nineteenth day of the month~Noun'},
-{pat:/(３|3)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xsan$2Xjyuu$3Xichi-nichi-thirty-first day of the month~Noun'},
+{pat:/(３|3)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xsan-jyuu$2Xichi$3Xnichi-thirty-first day of the month~Noun'},
 
 {pat:/(あ)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xage-give$3X~RuVerb'},
 {pat:/(す)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsusu-slurp$3X~RuVerb'},
@@ -2331,7 +2330,6 @@ const replsB = [
 {pat:/(一)(?!X)(律)(?!X)/g,repl:'$1Xichi$2Xritsu-equal~Noun'},
 {pat:/(一)(?!X)(応)(?!X)/g,repl:'$1Xichi$2Xou-tentatively~Noun'},
 {pat:/(一)(?!X)(方)(?!X)/g,repl:'$1Xip$2Xpou-on other hand~Noun'},
-{pat:/(一)(?!X)(日)(?!X)/g,repl:'$1X$2Xtsuitachi-1st of the month~Noun'},
 {pat:/(一)(?!X)(旦)(?!X)/g,repl:'$1X$2Xittan-once,for a while~Noun'},
 {pat:/(一)(?!X)(時)(?!X)/g,repl:'$1Xichi$2Xji-temporarily~Noun'},
 {pat:/(一)(?!X)(杯)(?!X)/g,repl:'$1X$2Xippai-full~Noun'},
@@ -4153,6 +4151,7 @@ const replsB = [
 {pat:/(提)(?!X)(出)(?!X)/g,repl:'$1Xtei$2Xsyutsu-submittal~Noun'},
 {pat:/(提)(?!X)(唱)(?!X)/g,repl:'$1Xtei$2Xsyou-advocacy~Noun'},
 {pat:/(提)(?!X)(国)(?!X)/g,repl:'$1Xkan$2Xkoku-Korea~Noun'},
+{pat:/(朝)(?!X)(鮮)(?!X)/g,repl:'$1Xcyou$2Xsen-Korea~Noun'},
 {pat:/(提)(?!X)(案)(?!X)/g,repl:'$1Xtei$2Xan-proposal~Noun'},
 {pat:/(提)(?!X)(示)(?!X)/g,repl:'$1Xtei$2Xji-presentation~Noun'},
 {pat:/(提)(?!X)(言)(?!X)/g,repl:'$1Xtei$2Xgen-proposal~Noun'},
@@ -6230,7 +6229,9 @@ const replsB = [
 {pat:/(需)(?!X)(給)(?!X)/g,repl:'$1Xjyu$2Xkyuu-supply and demand~Noun'},
 {pat:/(需)(?!X)(要)(?!X)/g,repl:'$1Xjyu$2Xyou-demand~Noun'},
 {pat:/(震)(?!X)(度)(?!X)/g,repl:'$1Xshin$2Xdo-seismic intensity~Noun'},
+{pat:/(欠)(?!X)(陥)(?!X)/g,repl:'$1Xkek$2Xkan-defect~Noun'},
 {pat:/(震)(?!X)(源)(?!X)/g,repl:'$1Xshin$2Xgen-epicenter~Noun'},
+{pat:/(一|１|1)(?!X)(日)(?!X)/g,repl:'$1X$2Xtsuitachi-first day of the month~Noun'},
 {pat:/(震)(?!X)(災)(?!X)/g,repl:'$1Xshin$2Xsai-earthquake disaster~Noun'},
 {pat:/(青)(?!X)(年)(?!X)/g,repl:'$1Xsei$2Xnen-youth~Noun'},
 {pat:/(青)(?!X)(春)(?!X)/g,repl:'$1Xsei$2Xsyun-youth~Noun'},
@@ -7770,31 +7771,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-ロシアのプーチン大統領は同盟関係にある隣国ベラルーシへのロシアの戦術核兵器の配備について、最初の核兵器がすでにベラルーシ領内に運ばれたと表明しました。
-
-ロシア プーチン大統領
-「最初の核兵器がベラルーシに搬入された。これはあくまで第一弾だ」
-
-プーチン大統領は16日、サンクトペテルブルクで開かれている国際経済フォーラムで、司会者の質問に答える形で最初の戦術核兵器がすでにベラルーシ領内に運ばれたと明らかにしました。配備作業は「年内に完了する」としています。
-
-そして、配備について「戦略的にわれわれを敗北させようとする者たちは、このことを忘れない方が良い」とし、ウクライナへの軍事支援を続ける欧米を強くけん制しました。
-
-ただ、ウクライナ侵攻をめぐっては核兵器使用の「必要性はない」とも発言。反転攻勢をかけるウクライナ軍に対し、多大な損失を与えているとして、ウクライナ側が成功する「チャンスはない」と主張しました。
-
-また、ウクライナへの戦闘機供与の動きをめぐり、NATO=北大西洋条約機構による「危険な関与だ」と指摘し、ロシアとの戦闘に使用される機体を「どこでどのように攻撃するか検討する必要がある」と話し、警告しました。
-
-プーチン氏は演説の中で、今年のGDP=国内総生産の成長率が1.5%から2%のプラスになるとの見通しを示し、制裁を受ける中でも経済が好調だとアピールしました。
-
-撤退した外国企業の復帰については「門戸を閉ざさない」としましたが、フォーラムに参加した外国首脳はアルジェリアとアラブ首長国連邦のみで、ロシアが「非友好国」とする日本や欧米などのメディアは取材から排除されています。
-
-ベラルーシへのロシアの戦術核兵器搬入についてのプーチン大統領の発言を受け、アメリカのブリンケン国務長官は。
-
-アメリカ ブリンケン国務長官
-「アメリカが核態勢を調整すべき状況にはなっていないし、ロシアが核兵器を使用する準備をしているという兆候も見ていない」
-
-このように話すとともに、引き続き状況を注視していく考えを示しました。
-
-また、ブリンケン長官はベラルーシやウクライナがソ連崩壊に際して核兵器を保有しない道を選んだことを指摘し、「ルカシェンコ大統領がベラルーシ国民の意思に反して国の主権をロシアに無責任に譲り渡している」と批判しました。
+【北京共同】朝鮮中央通信は19日、北朝鮮の朝鮮労働党の重要会議、中央委員会拡大総会が16～18日に開かれ、この中で5月31日の軍事偵察衛星の打ち上げ失敗が「最も重大な欠陥」だと指摘され、早期に再打ち上げを行う方針が強調されたと伝えた。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
