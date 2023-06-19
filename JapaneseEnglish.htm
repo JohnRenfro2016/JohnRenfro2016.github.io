@@ -2113,7 +2113,7 @@ const replsA = [
 {pat:/(辞)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyame-resign,retire$3X~RuVerb'},
 {pat:/(込)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xko$2Xme-put in,concentrate on$3X~RuVerb'},
 {pat:/(迎)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmuka$2X,go out to meet$3X~RuVerb'},
-{pat:/(近)(?!X)(づ)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1X$2Xchikazu-get close$3X~KuVerb'},
+{pat:/(近)(?!X)(づ)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xchika$2Xzu-get close$3X~KuVerb'},
 {pat:/(近)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xchi$2Xkazu-approach3X~KuVerb'},
 {pat:/(近)(?!X)(寄)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xchi$2Xkayo-go near,approach$3X~RuVerb'},
 {pat:/(述)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xno$2Xbe-mention$3X~RuVerb'},
@@ -4278,6 +4278,7 @@ const replsB = [
 {pat:/(新)(?!X)(卒)(?!X)/g,repl:'$1Xshin$2Xsotsu-recent graduate~Noun'},
 {pat:/(新)(?!X)(地)(?!X)/g,repl:'$1Xshin$2Xchi-reclaimed land~Noun'},
 {pat:/(新)(?!X)(型)(?!X)/g,repl:'$1Xshin$2Xgata-new type~Noun'},
+{pat:/(良|い)(?!X)(い)(?!X)/g,repl:'$1X$2Xii,good~Noun'},
 {pat:/(新)(?!X)(婚)(?!X)/g,repl:'$1Xshin$2Xkon-newlywed~Noun'},
 {pat:/(新)(?!X)(年)(?!X)/g,repl:'$1Xshin$2Xnen-New Year~Noun'},
 {pat:/(新)(?!X)(潟)(?!X)/g,repl:'$1X$2XNii-gata,Japan~Noun'},
@@ -4637,6 +4638,7 @@ const replsB = [
 {pat:/(段)(?!X)(落)(?!X)/g,repl:'$1Xdan$2Xraku-end~Noun'},
 {pat:/(段)(?!X)(階)(?!X)/g,repl:'$1Xdan$2Xkai-stage~Noun'},
 {pat:/(殺)(?!X)(人)(?!X)/g,repl:'$1Xsatsu$2Xjin-murder~Noun'},
+{pat:/(在)(?!X)(任)(?!X)/g,repl:'$1Xzai$2Xnin,term in office~Noun'},
 {pat:/(殺)(?!X)(傷)(?!X)/g,repl:'$1Xsas$2Xsyou-fatal wound~Noun'},
 {pat:/(殺)(?!X)(害)(?!X)/g,repl:'$1Xsatsu$2Xgai-kill~Noun'},
 {pat:/(殺)(?!X)(意)(?!X)/g,repl:'$1Xsatsu$2Xi-intent to kill~Noun'},
@@ -5212,6 +5214,7 @@ const replsB = [
 {pat:/(祭)(?!X)(り)(?!X)/g,repl:'$1X$2Xmatsuri-festival~Noun'},
 {pat:/(祭)(?!X)(日)(?!X)/g,repl:'$1Xsai$2Xjitsu-national holiday,festival day~Noun'},
 {pat:/(禁)(?!X)(じ)(?!X)/g,repl:'$1Xkin$2Xji-prohibit~IchidanVerb'},
+{pat:/(込)(?!X)(め)(?!X)/g,repl:'$1Xko$2Xme-put in or up~IchidanVerb'},
 {pat:/(禁)(?!X)(止)(?!X)/g,repl:'$1Xkin$2Xshi-prohibition~Noun'},
 {pat:/(禁)(?!X)(煙)(?!X)/g,repl:'$1Xkin$2Xen-no smoking,giving up smoking~Noun'},
 {pat:/(禁)(?!X)(輸)(?!X)/g,repl:'$1X$2Xkin-yu,embargo~Noun'},
@@ -5613,7 +5616,7 @@ const replsB = [
 {pat:/(要)(?!X)(点)(?!X)/g,repl:'$1Xyou$2Xten-main point,gist~Noun'},
 {pat:/(要)(?!X)(素)(?!X)/g,repl:'$1Xyou$2Xso-factor,component~Noun'},
 {pat:/(要)(?!X)(衝)(?!X)/g,repl:'$1Xyou$2Xsyou-strategic point~Noun'},
-{pat:/(要)(?!X)(請)(?!X)/g,repl:'$1Xyou$2Xsei-a call for doing something~Noun'},
+{pat:/(要)(?!X)(請)(?!X)/g,repl:'$1Xyou$2Xsei-call to do~Noun'},
 {pat:/(要)(?!X)(項)(?!X)/g,repl:'$1Xyou$2Xkou-important points~Noun'},
 {pat:/(覇)(?!X)(権)(?!X)/g,repl:'$1Xha$2Xken-hegemony~Noun'},
 {pat:/(見)(?!X)(せ)(?!X)/g,repl:'$1Xmi$2Xse-show~IchidanVerb'},
@@ -5745,7 +5748,8 @@ const replsB = [
 {pat:/(読)(?!X)(者)(?!X)/g,repl:'$1Xdoku$2Xsya-reader,subscriber~Noun'},
 {pat:/(誰)(?!X)(か)(?!X)/g,repl:'$1Xdare$2Xka-someone~Noun'},
 {pat:/(誰)(?!X)(も)(?!X)/g,repl:'$1Xdare$2Xmo-nobody~Noun'},
-{pat:/(課)(?!X)(程)(?!X)/g,repl:'$1Xka$2Xtei-course,curriculum~Noun'},
+{pat:/(誰)(?!X)(も)(?!X)/g,repl:'$1Xdare$2Xmo-nobody~Noun'},
+{pat:/(不)(?!X)(和)(?!X)/g,repl:'$1Xfu$2Xwa-discord~Noun'},
 {pat:/(課)(?!X)(税)(?!X)/g,repl:'$1Xka$2Xzei-taxation~Noun'},
 {pat:/(課)(?!X)(長)(?!X)/g,repl:'$1Xka$2Xcyou-section chief~Noun'},
 {pat:/(課)(?!X)(題)(?!X)/g,repl:'$1Xka$2Xdai-task~Noun'},
@@ -7777,7 +7781,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-国土交通省OBによる民間企業への人事介入問題に関連し、未公表の人事情報などが現役職員からOBに提供されていた問題で、朝日新聞が主要19府省庁に同様の行為の有無をたずねたところ、国交省を除く18府省庁が未公表情報の外部への提供は「していない」と答えた。国交省で慣習となっていたやりとりの異例さが際立つ形だ。
+［ワシントン　１６日　ロイター］ -     北大西洋条約機構（ＮＡＴＯ）のストルテンベルグ事務総長に対し、さらに１年続けてほしいと要請する動きが浮上している。事情に詳しい関係者と米当局者が明らかにした。
+
+ストルテンベルグ氏は今年９月で退任する予定。これまで３回にわたり任期は延長され、在任は９年に及ぶ。米当局者は「巡り巡ってバイデン政権は、ストルテンベルグ氏にもう１年という案に戻ってきた」と語った。
+
+７月のビリニュスでのＮＡＴＯ首脳会議が近づいてきても「後任を誰にするか加盟国間で絞り込めない」（米当局者）状態が続く。加盟国の不和をロシアにさらすくらいなら、ストルテンベルグ氏に続けてもらった方がいいと考える空気が広がっているという。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
