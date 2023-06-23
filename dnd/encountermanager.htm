@@ -1150,24 +1150,27 @@ savePane.setStyle("zIndex", "200");
 savePane.putAt(100, 100);
 function setStats(){
 
-if(rip=stats.match(/AC\b(\d{1,2})/)){characters[targeted].setCurAc(rip[1])
+if(rip=stats.match(/(.+)AC/)){characters[targeted].setName(rip[1])
+}
+
+if(rip=stats.match(/AC.(\d{1,2})/)){characters[targeted].setCurAc(rip[1])
  characters[targeted].setAC(rip[1])
 }
 
-if(rip=stats.match(/MV\b(\d{1,2})\"/)){characters[targeted].setSpeed(rip[1]+" inches")
+if(rip=stats.match(/MV.(\d{1,2})\"/)){characters[targeted].setSpeed(rip[1]+" inches")
 }
 
-if(rip=stats.match(/HD\b(\d{1,2})/)){characters[targeted].setHitDice(rip[1]+"d")
+if(rip=stats.match(/HD.(\d{1,2})/)){characters[targeted].setHitDice(rip[1]+"d")
 }
 
-if(rip=stats.match(/hp\b(\d{1,2})/)){characters[targeted].setCurHp(rip[1]);
+if(rip=stats.match(/hp.(\d{1,2})/)){characters[targeted].setCurHp(rip[1]);
  characters[targeted].setMaxHp(rip[1]);
 }
 
-if(rip=stats.match(/AT\b(.+)/)){characters[targeted].setActionNotes(rip[1])
+if(rip=stats.match(/AT(.+)/)){characters[targeted].setActionNotes(rip[1])
 }
 
-if(rip=stats.match(/(crossbow)\b(\d{1,2})\-(\d{1,2})/))
+if(rip=stats.match(/(D )(\d{1,2})\-(\d{1,2})/))
 {
 characters[targeted].setRollName1(rip[1]);
 characters[targeted].setRoll1('1d20');
@@ -1176,7 +1179,16 @@ characters[targeted].setRoll2(rip[2]+"d"+rip[3].replace(/\s/g,''));
 addRollPrompt(targeted);
 }
 
-if(rip=stats.match(/(sword)\b(\d{1,2})\-(\d{1,2})/))
+if(rip=stats.match(/(crossbow).(\d{1,2})\-(\d{1,2})/))
+{
+characters[targeted].setRollName1(rip[1]);
+characters[targeted].setRoll1('1d20');
+characters[targeted].setRollName2(rip[1]);
+characters[targeted].setRoll2(rip[2]+"d"+rip[3].replace(/\s/g,''));
+addRollPrompt(targeted);
+}
+
+if(rip=stats.match(/(sword).(\d{1,2})\-(\d{1,2})/))
 {
 characters[targeted].setRollName1(rip[1]);
 characters[targeted].setRoll1('1d20+0');
@@ -1323,6 +1335,7 @@ function _ref(){boxContents="<img id='rotated"+this.index+"' onClick='characters
 boxContents+="<table><tr><td class='piece'>"+this.name;
 boxContents+=" Init:"+this.init;
 boxContents+="</td></tr><tr><td class='piece'>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
+boxContents+=" HD:"+this.hitDice;
 boxContents+=" AC:"+this.ac+"/"+this.curAc;
 boxContents+=" HP:"+this.maxHp+"/"+this.curHp;
 boxContents+="</td></tr><tr><td class='piece'><input class='piece' onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
