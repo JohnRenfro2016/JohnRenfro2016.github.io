@@ -1384,7 +1384,6 @@ boxContents+="<br>Miniature File:<input maxLength='200' onChange='characters["+t
 boxContents+="<br>Languages:<input maxLength='200' onChange='characters["+this.index+"].setBackL(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.backL+"'>";
 boxContents+="</td></tr><tr><td><b>Alignment:</b> <select onChange='characters["+this.index+"].setAlignment(this.value);checkTheTarget("+this.index+")'><option>"+this.alignment+"<option>Lawful Good<option>Lawful Neutral<option>Lawful Evil<option>Neutral Good<option>Neutral<option>Neutral Evil<option>Chaotic Good<option>Chaotic Neutral<option>Chaotic Evil<option>Unaligned</select>";
 boxContents+="<br>"+this.alignmentDescription;
-boxContents+="</td></tr><tr><td><b>Size:</b> <select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
 boxContents+="</td></tr><tr><td><b>Traits:</b>(Gender, Age, Color, Height, Weight, Background)<textArea cols='40' rows='4' onChange='characters["+this.index+"].setTrait(this.value)'placeHolder=''>"+this.trait+"</textarea>";
 boxContents+="</td></tr><tr><td><b>Senses:</b> <input maxLength='200' onChange='characters["+this.index+"].setSenses(this.value);checkTheTarget("+this.index+")' size='40' type='text' value=' "+this.senses+"'>";
 boxContents+="</td></tr><tr><td><b>Speed:</b> <input maxLength='200' onChange='characters["+this.index+"].setSpeed(this.value);checkTheTarget("+this.index+")' size='40' type='text' value=' "+this.speed+"'>";
@@ -1395,21 +1394,23 @@ boxContents+="<br>Experience Points(XP): <input maxLength='8' onChange='characte
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled4"+this.index+" style='display:"+this.toggled4+"'>";
 
-boxContents+="<table><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/<mark>"+this.curStr+"</mark> mod:"+this.strMod+"+<select onChange='characters["+this.index+"].setStrPro(this.value);checkTheTarget("+this.index+")'><option>"+this.strPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
+boxContents+="<table><tr><td><b>Size:</b> <select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
+boxContents+="</td></tr><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/<mark>"+this.curStr+"</mark> mod:"+this.strMod;
 boxContents+="</td></tr><tr><td>Carrying Capacity:"+this.carryingCapacity+"lbs";
 boxContents+="</td></tr><tr><td>Drag, Lift, Push:"+this.dragLiftPush+"lbs";
 boxContents+="</td></tr><tr><td>High Jump:"+this.highJump+"ft"
 boxContents+="</td></tr><tr><td>Long Jump:"+this.longJump+"ft";
-boxContents+="</td></tr><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setDex(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.dex+">/<mark>"+this.curDex+"</mark> mod:"+this.dexMod+"+<select onChange='characters["+this.index+"].setDexPro(this.value);checkTheTarget("+this.index+")'><option>"+this.dexPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
+boxContents+="</td></tr><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setDex(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.dex+">/<mark>"+this.curDex+"</mark> mod:"+this.dexMod;
 boxContents+="</td></tr><tr><td><input type='button' value='Roll (Init)iative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
 boxContents+="</td></tr><tr><td>(Init)ative Bonus:<input maxLength='3' onChange='characters["+this.index+"].setInitBonus(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.initBonus+">/"+this.curIni;
-boxContents+="</td></tr><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCon(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.con+">/<mark>"+this.curCon+"</mark> mod:"+this.conMod+"+<select onChange='characters["+this.index+"].setConPro(this.value);checkTheTarget("+this.index+")'><option>"+this.conPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
+boxContents+="</td></tr><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCon(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.con+">/<mark>"+this.curCon+"</mark> mod:"+this.conMod;
 boxContents+="</td></tr><tr><td>Hold Breath:"+(parseInt(this.conMod)+1)+"min"
 boxContents+="</td></tr><tr><td>Suffocate:"+parseInt(this.conMod)+"min";
-boxContents+="</td></tr><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/<mark>"+this.curInt+"</mark> mod:"+this.intMod+"+<select onChange='characters["+this.index+"].setIntPro(this.value);checkTheTarget("+this.index+")'><option>"+this.intPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
-boxContents+="</td></tr><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/<mark>"+this.curWis+"</mark> mod:"+this.wisMod+"+<select onChange='characters["+this.index+"].setWisPro(this.value);checkTheTarget("+this.index+")'><option>"+this.wisPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
-boxContents+="</td></tr><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/<mark>"+this.curCha+"</mark> mod:"+this.chaMod+"+<select onChange='characters["+this.index+"].setChaPro(this.value);checkTheTarget("+this.index+")'><option>"+this.chaPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
+boxContents+="</td></tr><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/<mark>"+this.curInt+"</mark> mod:"+this.intMod;
+boxContents+="</td></tr><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/<mark>"+this.curWis+"</mark> mod:"+this.wisMod;
+boxContents+="</td></tr><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/<mark>"+this.curCha+"</mark> mod:"+this.chaMod;
 boxContents+="</td></tr><tr><td><b>Saving Throws:</b> <input maxLength='200' onChange='characters["+this.index+"].setSaving(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.saving+"'>";
+boxContents+="</td></tr><tr><td><h3>Saving Throw Results</h3>"+this.combatLog2;
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled5"+this.index+" style='display:"+this.toggled5+"'>";
 
@@ -3153,6 +3154,8 @@ this.refresh()}
 
 function _setCombatLog(x){this.combatLog=x;
 this.refresh()}
+function _setCombatLog2(x){this.combatLog2=x;
+this.refresh()}
 function _setCon(x){this.con=x;
 this.curCon=x;calcMod(x);
 this.conMod=mod;
@@ -3598,7 +3601,7 @@ D20RollModifier2=roll;
 abilityCheckRollTotal1=D20Roll1+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
 abilityCheckRollTotal2=D20Roll2+parseInt(abiMod)+parseInt(skillMod)+parseInt(characters[x].sit);
 AbiCheckLog=""+characters[x].name+" s<br>Ability Check<br>or Skill Check<br>or Saving Throw</td></tr><tr><td><h3>Roll 1</h3>1d20+0<br>="+D20NaturalRoll1+" natural<br>"+D20RollModifier1+" modifier<br>="+D20Roll1+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal1+"</td></tr><tr><td><h3>Roll 2</h3>1d20+0<br>="+D20NaturalRoll2+" natural<br>"+D20RollModifier2+" modifier<br>="+D20Roll2+"<br>"+abiMod+" "+abi+"<br>"+skillMod+" "+skillModName+"<br>"+characters[x].sit+" sit<br>="+abilityCheckRollTotal2;
-characters[x].setCombatLog(AbiCheckLog);
+characters[x].setCombatLog2(AbiCheckLog);
 }
 function _setInt(x){this.inte=x;
 this.curInt=x;calcMod(x);
@@ -4101,10 +4104,13 @@ checkTheTarget(characters[targeted]);
 }
 function askInit(x){initRoll=characters[x].rollInit();
 characters[x].setInit(initRoll)}
-function calcMod(x){mod=Math.floor((x - 10)/ 2);
-if(mod> -1){mod="+"+mod
-}return mod
-}
+function calcMod(x)
+ {mod=Math.floor((x - 10)/ 2);
+  if(mod> -1){mod="+"+mod
+ }
+  return mod
+ }
+
 function Character(name, type){this.abi=0;
 
 this. dmgConditions='';
@@ -4258,6 +4264,7 @@ this.setCha=_setCha;
 this.setChaPro=_setChaPro;
 this.setClass=_setClass;
 this.setCombatLog=_setCombatLog;
+this.setCombatLog2=_setCombatLog2;
 this.setCon=_setCon;
 this.setConPro=_setConPro;
 this.setCurAc=_setCurAc;
