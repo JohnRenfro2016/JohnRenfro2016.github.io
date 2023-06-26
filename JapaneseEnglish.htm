@@ -750,7 +750,7 @@ const replsA = [
 {pat:/(2|２)(?!X)(０|0)(?!X)(日)(?!X)/g,repl:'$1Xhatsu$2X$3Xka-twentieth day of the month~Noun'},
 {pat:/(2|２)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xichi$3Xnichi,twenty-first day of the month~Noun'},
 {pat:/(2|２)(?!X)(６|6)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xroku$3Xnichi-twenty-sixth day of the month~Noun'},
-{pat:/(2|２)(?!X)(７|7)(?!X)(日)(?!X)/g,repl:'$1Xni$2Xjyuu$3Xshichi-nichi,twenty-seventh day of the month~Noun'},
+{pat:/(2|２)(?!X)(７|7)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xshichi3Xnichi,twenty-seventh day of the month~Noun'},
 {pat:/(2|２)(?!X)(９|9)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xku$3Xnichi-twenty-nineth day of the month~Noun'},
 {pat:/(３|3)(?!X)(０|0)(?!X)(日)(?!X)/g,repl:'$1Xsan$2Xjyuu$3Xnichi-thirtieth day of the month~Noun'},
 {pat:/(3|３)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xsan-byaku,three-hundred~Noun$2$3'},
@@ -1837,7 +1837,7 @@ const replsA = [
 {pat:/(建)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtate-build,erect$3X~RuVerb'},
 {pat:/(弱)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyowama-weaken$3X~RuVerb'},
 {pat:/(弱)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyowame-wea-ken,lower$3X~RuVerb'},
-{pat:/(強)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtsuyoma-become strong$3X~RuVerb'},
+{pat:/(強)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtsuyo$2Xma-become strong$3X~RuVerb'},
 {pat:/(強)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtsuyo$2Xme-strengthen$3X~RuVerb'},
 {pat:/(当)(?!X)(た)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xa$2Xta-hit a target$3X~RuVerb'},
 {pat:/(当)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xate-guess,hit jackpot$3X~RuVerb'},
@@ -3139,7 +3139,7 @@ const replsB = [
 {pat:/(博)(?!X)(士)(?!X)/g,repl:'$1X$2Xhakase-expert,doctor~Noun'},
 {pat:/(博)(?!X)(士)(?!X)/g,repl:'$1Xhaku$2Xshi-Ph.D.~Noun'},
 {pat:/(占)(?!X)(め)(?!X)/g,repl:'$1Xshi$2Xme-account for~IchidanVerb'},
-{pat:/(助)(?!X)(け)(?!X)/g,repl:'$1Xtasu$2Xke-save~IchidanVerb'},
+{pat:/(助)(?!X)(け)(?!X)/g,repl:'$1Xtasu$2Xke-save,help~IchidanVerb'},
 {pat:/(占)(?!X)(領)(?!X)/g,repl:'$1Xsen$2Xryou-occupation~Noun'},
 {pat:/(印)(?!X)(刷)(?!X)/g,repl:'$1Xin$2Xsatsu-printing~Noun'},
 {pat:/(印)(?!X)(象)(?!X)/g,repl:'$1Xin$2Xsyou-impression~Noun'},
@@ -4301,6 +4301,7 @@ const replsB = [
 {pat:/(新)(?!X)(た)(?!X)/g,repl:'$1Xara$2Xta-fresh~Noun'},
 {pat:/(新)(?!X)(人)(?!X)/g,repl:'$1Xshin$2Xjin-newbie~Noun'},
 {pat:/(新)(?!X)(卒)(?!X)/g,repl:'$1Xshin$2Xsotsu-recent graduate~Noun'},
+{pat:/(父)(?!X)(親)(?!X)/g,repl:'$1Xchichi$2Xoya-father~Noun'},
 {pat:/(新)(?!X)(地)(?!X)/g,repl:'$1Xshin$2Xchi-reclaimed land~Noun'},
 {pat:/(新)(?!X)(型)(?!X)/g,repl:'$1Xshin$2Xgata-new type~Noun'},
 {pat:/(良|い)(?!X)(い)(?!X)/g,repl:'$1X$2Xii,good~Noun'},
@@ -6980,7 +6981,7 @@ const replsB = [
 {pat:/(亀)(?!X)/g,repl:'$1Xkame-turtle,tortoise~Noun'},
 {pat:/(編)(?!X)/g,repl:'$1Xhen,edition~Noun'},
 {pat:/(事)(?!X)/g,repl:'$1Xkoto-thing,incident~Noun'},
-{pat:/(京)(?!X)/g,repl:'$1Xkyou,myako-capital~Noun'},
+{pat:/(京)(?!X)/g,repl:'$1XKyou/myako-capital~Noun'},
 {pat:/(人)(?!X)/g,repl:'$1Xnin,jin-counter for people/hito-person~Noun'},
 {pat:/(今)(?!X)/g,repl:'$1Xima-now~Noun'},
 {pat:/(仏)(?!X)/g,repl:'$1Xhotoke-buddha,Buddhist image~Noun'},
@@ -7263,7 +7264,7 @@ const replsB = [
 {pat:/(官)(?!X)/g,repl:'$1Xkan-chief~Noun'},
 {pat:/(痕)(?!X)/g,repl:'$1Xato,tracks~Noun'},
 {pat:/(来)(?!X)/g,repl:'$1Xku,ki-come/rai-next~IchidanVerb'},
-{pat:/(東)(?!X)/g,repl:'$1Xhigashi,tou-east~Noun'},
+{pat:/(東)(?!X)/g,repl:'$1Xhigashi/Tou-east~Noun'},
 {pat:/(板)(?!X)/g,repl:'$1Xita-board,plank~Noun'},
 {pat:/(犯)(?!X)/g,repl:'$1Xhan-crime~Noun'},
 {pat:/(枕)(?!X)/g,repl:'$1Xmakura-pillow~Noun'},
@@ -7361,13 +7362,14 @@ const replsB = [
 {pat:/(父)(?!X)/g,repl:'$1Xchi+chi,father~Noun'},
 {pat:/(版)(?!X)/g,repl:'$1Xban,han,version~Noun'},
 {pat:/(牛)(?!X)/g,repl:'$1Xushi-cattle,cow~Noun'},
-{pat:/(牛)(?!X)/g,repl:'$1Xushi-cattle,cow~Noun'},
+{pat:/(助)(?!X)/g,repl:'$1XSuke-help~Noun'},
 {pat:/(物)(?!X)/g,repl:'$1Xbutsu-material,or mono,person/koto,thing~Noun'},
 {pat:/(犬)(?!X)/g,repl:'$1Xinu-dog~Noun'},
 {pat:/(猛)(?!X)/g,repl:'$1Xmou-extreme~Noun'},
 {pat:/(埼)(?!X)/g,repl:'$1Xsai-peninsula~Noun'},
 {pat:/(猫)(?!X)/g,repl:'$1Xneko-cat~Noun'},
-{pat:/(猿)(?!X)/g,repl:'$1Xsaru-monkey,ape~Noun'},
+{pat:/(之)(?!X)/g,repl:'$1XNo-this person~Noun'},
+{pat:/(猿)(?!X)/g,repl:'$1Xsaru/En-monkey,ape~Noun'},
 {pat:/(獣)(?!X)/g,repl:'$1Xkemono-beast,brute~Noun'},
 {pat:/(率)(?!X)/g,repl:'$1Xritsu-percent~Noun'},
 {pat:/(玉)(?!X)/g,repl:'$1Xtama-ball~Noun'},
@@ -7481,8 +7483,8 @@ const replsB = [
 {pat:/(利)(?!X)/g,repl:'$1Xri-profit~Noun'},
 {pat:/(背)(?!X)/g,repl:'$1Xse-height,stature~Noun'},
 {pat:/(胸)(?!X)/g,repl:'$1Xmune-chest~Noun'},
-{pat:/(能)(?!X)/g,repl:'$1Xnou-ability~Noun'},
-{pat:/(能)(?!X)/g,repl:'$1Xnou-noh play~Noun'},
+{pat:/(能)(?!X)/g,repl:'$1Xnou-ability/Nou play~Noun'},
+{pat:/(孝)(?!X)/g,repl:'$1XTaka/Yoshi-filial/son~Noun'},
 {pat:/(脂)(?!X)/g,repl:'$1Xabura-fat,grease~Noun'},
 {pat:/(脳)(?!X)/g,repl:'$1Xnou-brain~Noun'},
 {pat:/(腕)(?!X)/g,repl:'$1Xude-arm~Noun'},
@@ -7860,7 +7862,19 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-　河野太郎デジタル相は25日、新潟県新発田市で講演し、別人の情報をひも付けるミスが多発したマイナンバーカードの問題について「いろいろとご迷惑をおかけしている」と陳謝した。「原因を特定したので、防ぐために一つ一つ対策を打っている」と理解を求めた。
+歌舞伎役者の市川猿之助さん（47）の両親が死亡した件で、猿之助さんが母親の自殺を手助けした疑いが強まったとして、警視庁が27日にも逮捕する方針を固めたことが分かりました。
+
+　先月18日午前10時すぎ、東京・目黒区の市川猿之助さんの自宅で、猿之助さんと両親が倒れているのが見つかりました。
+
+　母親は現場で死亡が確認され、父親は搬送先の病院で死亡しました。
+
+　両親の死因は向精神薬中毒とみられ、猿之助さんも自殺を図ったとみられています。
+
+　警視庁は猿之助さんから話を聞くなど当時の経緯などを慎重に調べていましたが、その後の捜査関係者への取材で母親の自殺を手助けした疑いが強まったとして、警視庁が市川猿之助こと喜熨斗孝彦さんを27日にも逮捕する方針を固めたことが分かりました。
+
+　猿之助さんは自身の睡眠薬を両親に手渡したとみられていて、任意の調べに対し、「家族会議をした。両親が睡眠薬を飲んだ」という趣旨の説明をしていました。
+
+　警視庁は父親が亡くなった経緯についても慎重に調べています。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
