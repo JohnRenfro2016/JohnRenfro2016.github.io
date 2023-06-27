@@ -750,7 +750,7 @@ const replsA = [
 {pat:/(2|２)(?!X)(０|0)(?!X)(日)(?!X)/g,repl:'$1Xhatsu$2X$3Xka-twentieth day of the month~Noun'},
 {pat:/(2|２)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xichi$3Xnichi,twenty-first day of the month~Noun'},
 {pat:/(2|２)(?!X)(６|6)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xroku$3Xnichi-twenty-sixth day of the month~Noun'},
-{pat:/(2|２)(?!X)(７|7)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xshichi3Xnichi,twenty-seventh day of the month~Noun'},
+{pat:/(2|２)(?!X)(７|7)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xshichi$3Xnichi,twenty-seventh day of the month~Noun'},
 {pat:/(2|２)(?!X)(９|9)(?!X)(日)(?!X)/g,repl:'$1Xni-jyuu$2Xku$3Xnichi-twenty-nineth day of the month~Noun'},
 {pat:/(３|3)(?!X)(０|0)(?!X)(日)(?!X)/g,repl:'$1Xsan$2Xjyuu$3Xnichi-thirtieth day of the month~Noun'},
 {pat:/(3|３)(?!X)([0-9]|[０-９])(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xsan-byaku,three-hundred~Noun$2$3'},
@@ -1215,7 +1215,7 @@ const replsA = [
 {pat:/(忘)(?!X)(年)(?!X)(会)(?!X)/g,repl:'$1Xbounen$2X$3Xkai-year-end party~Noun'},
 {pat:/(思)(?!X)(い)(?!X)(出)(?!X)/g,repl:'$1X$2X$3Xomoide-memory~Noun'},
 {pat:/(思)(?!X)(わ)(?!X)(ず)(?!X)/g,repl:'$1X$2X$3Xomowazu-unintentionally,unconsciously~Noun'},
-{pat:/(悲)(?!X)(し)(?!X)(み)(?!X)/g,repl:'$1Xkan$2X$3Xashimi-grief,sadness~Noun'},
+{pat:/(悲)(?!X)(し)(?!X)(み)(?!X)/g,repl:'$1Xkana$2X$3Xshimi-sadness~Noun'},
 {pat:/(意)(?!X)(地)(?!X)(悪)(?!X)/g,repl:'$1X$2X$3Xijiwaru-nastiness,ill-natured person~Noun'},
 {pat:/(慣)(?!X)(用)(?!X)(句)(?!X)/g,repl:'$1Xkan$2X$3Xyouku-idiom,common phrase~Noun'},
 {pat:/(憎)(?!X)(し)(?!X)(み)(?!X)/g,repl:'$1X$2X$3Xnikushimi-hatred,enmity~Noun'},
@@ -1928,7 +1928,7 @@ const replsA = [
 {pat:/(有)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xyuu$2Xsu-have$3X~RuVerb'},
 {pat:/(有)(?!X)(り)(?!X)(難)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3Xarigata-welcome,grateful$4X~IAdjective~Noun'},
 {pat:/(望)(?!X)(ま)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xnozoma$2X$3Xshi-desirable,welcome$4X~IAdjective~Noun'},
-{pat:/(果)(?!X)(た)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1X$2Xhata-accomplish,realize$3X~SuVerb'},
+{pat:/(果)(?!X)(た)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xha$2Xta-accomplish$3X~SuVerb'},
 {pat:/(枯)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkare-wither,die$3X~RuVerb'},
 {pat:/(染)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xsome-dye,color$3X~RuVerb'},
 {pat:/(柔)(?!X)(ら)(?!X)(か)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2X$3Xyawaraka-soft$4X~IAdjective~Noun'},
@@ -1943,7 +1943,7 @@ const replsA = [
 {pat:/(欲)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xho$2Xshi-want,desire$3X~IAdjective~Noun'},
 {pat:/(止)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xto$2Xma-stop$3X~RuVerb'},
 {pat:/(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xtome-stop,turn off$3X~RuVerb'},
-{pat:/(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xyame-stop,give up,abolish$3X~RuVerb'},
+{pat:/(止|や)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xya$2Xme-stop$3X~RuVerb'},
 {pat:/(正)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xtada$2Xshi-correct$3X~IAdjective~Noun'},
 {pat:/(比)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xkurabe-compare,contrast$3X~RuVerb'},
 {pat:/(気)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xki$2Xzu-notice$3X~KuVerb'},
@@ -4125,7 +4125,7 @@ const replsB = [
 {pat:/(拾)(?!X)(得)(?!X)/g,repl:'$1Xsyuu$2Xtoku-finding something lost~Noun'},
 {pat:/(指)(?!X)(定)(?!X)/g,repl:'$1Xshi$2Xtei-designation~Noun'},
 {pat:/(指)(?!X)(導)(?!X)/g,repl:'$1Xshi$2Xdou-guide~Noun'},
-{pat:/(指)(?!X)(揮)(?!X)/g,repl:'$1X$2Xshiki-command,initiative~Noun'},
+{pat:/(指)(?!X)(揮)(?!X)/g,repl:'$1Xshi$2Xki-command~Noun'},
 {pat:/(指)(?!X)(摘)(?!X)/g,repl:'$1Xshi$2Xteki-identification~Noun'},
 {pat:/(指)(?!X)(標)(?!X)/g,repl:'$1Xshi$2Xhyou-indicator~Noun'},
 {pat:/(指)(?!X)(示)(?!X)/g,repl:'$1Xshi$2Xji-indicate~Noun'},
@@ -4628,6 +4628,7 @@ const replsB = [
 {pat:/(次)(?!X)(長)(?!X)/g,repl:'$1Xji$2Xcyou-assistant director~Noun'},
 {pat:/(欧)(?!X)(州)(?!X)/g,repl:'$1Xou$2Xsyuu-Europe~Noun'},
 {pat:/(欧)(?!X)(米)(?!X)/g,repl:'$1Xou$2Xbei-Europe and America~Noun'},
+{pat:/(進)(?!X)(軍)(?!X)/g,repl:'$1Xshin$2Xgun-march on~Noun'},
 {pat:/(欲)(?!X)(望)(?!X)/g,repl:'$1Xyoku$2Xbou-desire,craving~Noun'},
 {pat:/(欲)(?!X)(求)(?!X)/g,repl:'$1Xyok$2Xkyuu-want,desire~Noun'},
 {pat:/(歌)(?!X)(声)(?!X)/g,repl:'$1X$2Xutagoe-singing voice~Noun'},
@@ -5549,6 +5550,8 @@ const replsB = [
 {pat:/(花)(?!X)(火)(?!X)/g,repl:'$1Xhana$2Xbi-fireworks~Noun'},
 {pat:/(花)(?!X)(瓶)(?!X)/g,repl:'$1Xka$2Xbin-flower vase~Noun'},
 {pat:/(花)(?!X)(見)(?!X)/g,repl:'$1Xhana$2Xmi-flower viewing~Noun'},
+{pat:/(蜂)(?!X)(起)(?!X)/g,repl:'$1Xhou$2Xki-revolt~Noun'},
+{pat:/(指)(?!X)(揮)(?!X)/g,repl:'$1Xshi$2Xki-command~Noun'},
 {pat:/(芳)(?!X)(名)(?!X)/g,repl:'$1Xhou$2Xmei-reputation~Noun'},
 {pat:/(芸)(?!X)(人)(?!X)/g,repl:'$1Xgei$2Xnin-entertainer~Noun'},
 {pat:/(芸)(?!X)(能)(?!X)/g,repl:'$1Xgei$2Xnou-entertainment~Noun'},
@@ -6095,15 +6098,19 @@ const replsB = [
 {pat:/(選)(?!X)(択)(?!X)/g,repl:'$1Xsen$2Xtaku-selection,choice~Noun'},
 {pat:/(選)(?!X)(挙)(?!X)/g,repl:'$1Xsen$2Xkyo-election~Noun'},
 {pat:/(選)(?!X)(考)(?!X)/g,repl:'$1Xsen$2Xkou-selection~Noun'},
+{pat:/(狂)(?!X)(乱)(?!X)/g,repl:'$1Xkyou$2Xran-madness~Noun'},
+{pat:/(腐)(?!X)(敗)(?!X)/g,repl:'$1Xfu$2Xhai-rot,corruption~Noun'},
 {pat:/(遺)(?!X)(体)(?!X)/g,repl:'$1Xi$2Xtai-corpse~Noun'},
+{pat:/(復)(?!X)(讐)(?!X)/g,repl:'$1Xfuku$2Xsyuu-revenge~Noun'},
 {pat:/(遺)(?!X)(憾)(?!X)/g,repl:'$1Xi$2Xkan-deplorable~Noun'},
+{pat:/(称)(?!X)(賛)(?!X)/g,repl:'$1Xsyou$2Xsan-admiration~Noun'},
 {pat:/(遺)(?!X)(族)(?!X)/g,repl:'$1Xi$2Xzoku-bereaved family~Noun'},
 {pat:/(遺)(?!X)(棄)(?!X)/g,repl:'$1Xi$2Xki-desertion~Noun'},
 {pat:/(遺)(?!X)(産)(?!X)/g,repl:'$1Xi$2Xsan-inheritance~Noun'},
 {pat:/(避)(?!X)(難)(?!X)/g,repl:'$1Xhi$2Xnan-evacuation~Noun'},
 {pat:/(邪)(?!X)(魔)(?!X)/g,repl:'$1Xjya$2Xma-obstruction~Noun'},
 {pat:/(郊)(?!X)(外)(?!X)/g,repl:'$1Xkou$2Xgai-outskirts~Noun'},
-{pat:/(部)(?!X)(下)(?!X)/g,repl:'$1X$2Xbuka-subordinate~Noun'},
+{pat:/(部)(?!X)(下)(?!X)/g,repl:'$1Xbu$2Xka-subordinate~Noun'},
 {pat:/(部)(?!X)(会)(?!X)/g,repl:'$1Xbu$2Xkai-section meeting~Noun'},
 {pat:/(部)(?!X)(分)(?!X)/g,repl:'$1Xbu$2Xbun-part~Noun'},
 {pat:/(部)(?!X)(品)(?!X)/g,repl:'$1Xbu$2Xhin-parts,accessories~Noun'},
@@ -6167,6 +6174,7 @@ const replsB = [
 {pat:/(録)(?!X)(画)(?!X)/g,repl:'$1X$2Xrokuga-videotaping~Noun'},
 {pat:/(録)(?!X)(音)(?!X)/g,repl:'$1Xroku$2Xon-sound recording~Noun'},
 {pat:/(鑑)(?!X)(み)(?!X)/g,repl:'$1X$2Xkangami-take into account~IchidanVerb'},
+{pat:/(絞)(?!X)(め)(?!X)/g,repl:'$1Xshi$2Xme-strangle~IchidanVerb'},
 {pat:/(鑑)(?!X)(定)(?!X)/g,repl:'$1Xkan$2Xtei-expert opinion~Noun'},
 {pat:/(鑑)(?!X)(賞)(?!X)/g,repl:'$1Xkan$2Xsyou-viewing~Noun'},
 {pat:/(長)(?!X)(さ)(?!X)/g,repl:'$1Xnaga$2Xsa-length~Noun'},
@@ -6430,6 +6438,8 @@ const replsB = [
 {pat:/(ど)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xdo-move out of way$2X~KuVerb'},
 {pat:/(ど)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xhow-what$2X~UVerb'},
 {pat:/(な)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xna-become$2X~RuVerb'},
+{pat:/(執)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xto-to command$2X~RuVerb'},
+{pat:/(罵)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xnonoshi-curse at$2X~RuVerb'},
 {pat:/(ひ)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xhi-run over$2X~KuVerb'},
 {pat:/(ま)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xma-scatter,plant$2X~KuVerb'},
 {pat:/(ま)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xma-sow,scatter$2X~KuVerb'},
@@ -7862,19 +7872,17 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-歌舞伎役者の市川猿之助さん（47）の両親が死亡した件で、猿之助さんが母親の自殺を手助けした疑いが強まったとして、警視庁が27日にも逮捕する方針を固めたことが分かりました。
+[２７日 ロイター] -     ベラルーシのルカシェンコ大統領は２７日、週末にロシアで起きた民間軍事会社ワグネルの武装蜂起について、指揮を執ったワグネル創設者エフゲニー・プリゴジン氏に対しモスクワへの進軍をやめるよう電話で数時間かけ説得したと明らかにした。
 
-　先月18日午前10時すぎ、東京・目黒区の市川猿之助さんの自宅で、猿之助さんと両親が倒れているのが見つかりました。
+ルカシェンコ大統領はベラルーシの当局者らに対し、２４日に自らが果たした役割について説明。プリゴジン氏をウクライナで多くの部下を失ったことに揺れ動いた「英雄的な男」と称賛した上で、そうした状況に感化され、２４日にロシア南部ロストフ州の州都ロストフナドヌーに到着した時には「半狂乱の状態」だったと明らかにした。
 
-　母親は現場で死亡が確認され、父親は搬送先の病院で死亡しました。
+プリゴジン氏はロシア軍指導部の腐敗と無能さに激怒し、同氏が主張する自身の部下が攻撃された事件の復讐をしたいと説明。「われわれは正義を望む。彼らはわれわれの首を絞めようとしている。われわれはモスクワに行く」と述べ、通常の会話よりもはるかに多い汚い罵り言葉を発していたという。
 
-　両親の死因は向精神薬中毒とみられ、猿之助さんも自殺を図ったとみられています。
+ルカシェンコ大統領はこれに対し、モスクワに向かう「道半ばで、虫けらのようにつぶされるだけだ」と述べ、説得に努めた。
 
-　警視庁は猿之助さんから話を聞くなど当時の経緯などを慎重に調べていましたが、その後の捜査関係者への取材で母親の自殺を手助けした疑いが強まったとして、警視庁が市川猿之助こと喜熨斗孝彦さんを27日にも逮捕する方針を固めたことが分かりました。
+さらにプリゴジン氏が要求していたショイグ国防相とゲラシモフ参謀総長の引き渡しについては「誰も両者を引き渡すことはない」とし、モスクワは守られ、反乱が続けばロシアは混乱と悲しみに包まれると述べ、蜂起を停止するよう説得したという。
 
-　猿之助さんは自身の睡眠薬を両親に手渡したとみられていて、任意の調べに対し、「家族会議をした。両親が睡眠薬を飲んだ」という趣旨の説明をしていました。
-
-　警視庁は父親が亡くなった経緯についても慎重に調べています。
+一方、プーチン大統領はプリゴジン氏が電話に応じないことにいら立ち、ルカシェンコ大統領に助けを求めた。ルカシェンコ氏は反乱分子の鎮圧を「急がないよう」とプーチン大統領に提言したという。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
