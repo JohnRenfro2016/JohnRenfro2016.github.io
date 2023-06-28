@@ -3428,7 +3428,7 @@ const replsB = [
 {pat:/(境)(?!X)(界)(?!X)/g,repl:'$1Xkyou$2Xkai-boundary,border~Noun'},
 {pat:/(境)(?!X)(目)(?!X)/g,repl:'$1Xsakai$2Xme-borderline~Noun'},
 {pat:/(墓)(?!X)(地)(?!X)/g,repl:'$1Xbo$2Xchi-graveyard,cemetery~Noun'},
-{pat:/(増)(?!X)(え)(?!X)/g,repl:'$1Xfu$2X,increase~IchidanVerb'},
+{pat:/(増)(?!X)(え)(?!X)/g,repl:'$1Xfu$2Xe,increase~IchidanVerb'},
 {pat:/(増)(?!X)(加)(?!X)/g,repl:'$1Xzou$2Xka-increase~Noun'},
 {pat:/(増)(?!X)(大)(?!X)/g,repl:'$1Xzou$2Xdai-enlargement~Noun'},
 {pat:/(増)(?!X)(水)(?!X)/g,repl:'$1Xzou$2Xsui-swelling water~Noun'},
@@ -4387,6 +4387,7 @@ const replsB = [
 {pat:/(時)(?!X)(々)(?!X)/g,repl:'$1X$2Xtokidoki-sometimes~Noun'},
 {pat:/(時)(?!X)(事)(?!X)/g,repl:'$1Xji$2Xji-current events~Noun'},
 {pat:/(時)(?!X)(代)(?!X)/g,repl:'$1Xji$2Xdai-era~Noun'},
+{pat:/(税)(?!X)(収)(?!X)/g,repl:'$1Xzei$2Xsyuu-tax revenue~Noun'},
 {pat:/(時)(?!X)(刻)(?!X)/g,repl:'$1Xji$2Xkoku-time~Noun'},
 {pat:/(時)(?!X)(季)(?!X)/g,repl:'$1Xji$2Xki-this time of year~Noun'},
 {pat:/(時)(?!X)(差)(?!X)/g,repl:'$1X$2Xjisa-time difference~Noun'},
@@ -7095,7 +7096,7 @@ const replsB = [
 {pat:/(回)(?!X)/g,repl:'$1Xkai-repitition~Noun'},
 {pat:/(団)(?!X)/g,repl:'$1Xdan-corps~Noun'},
 {pat:/(図)(?!X)/g,repl:'$1Xzu-figure,map~Noun'},
-{pat:/(国)(?!X)/g,repl:'$1Xkuni,koku-country~Noun'},
+{pat:/(国)(?!X)/g,repl:'$1Xkuni/+koku+-country~Noun'},
 {pat:/(土)(?!X)/g,repl:'$1Xdo-Saturday/tsuchi,soil~Noun'},
 {pat:/(地)(?!X)/g,repl:'$1Xchi-place~Noun'},
 {pat:/(坂)(?!X)/g,repl:'$1Xsaka-hill~Noun'},
@@ -7652,7 +7653,7 @@ const replsB = [
 {pat:/(靴)(?!X)/g,repl:'$1Xkutsu-shoes~Noun'},
 {pat:/(鞄)(?!X)/g,repl:'$1Xka+ban,bag,handbag,briefcase~Noun'},
 {pat:/(韓)(?!X)/g,repl:'$1Xkan-Korea~Noun'},
-{pat:/(音)(?!X)/g,repl:'$1Xon,oto,sound~Noun'},
+{pat:/(磨)(?!X)/g,repl:'$1XMa-polished~Noun'},
 {pat:/(音)(?!X)/g,repl:'$1Xoto-sound,noise~Noun'},
 {pat:/(音)(?!X)/g,repl:'$1Xoto-sound,speech sound,chinese pronunciation of a character~Noun'},
 {pat:/(頃)(?!X)/g,repl:'$1Xkoro-time~Noun'},
@@ -7872,17 +7873,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-[２７日 ロイター] -     ベラルーシのルカシェンコ大統領は２７日、週末にロシアで起きた民間軍事会社ワグネルの武装蜂起について、指揮を執ったワグネル創設者エフゲニー・プリゴジン氏に対しモスクワへの進軍をやめるよう電話で数時間かけ説得したと明らかにした。
-
-ルカシェンコ大統領はベラルーシの当局者らに対し、２４日に自らが果たした役割について説明。プリゴジン氏をウクライナで多くの部下を失ったことに揺れ動いた「英雄的な男」と称賛した上で、そうした状況に感化され、２４日にロシア南部ロストフ州の州都ロストフナドヌーに到着した時には「半狂乱の状態」だったと明らかにした。
-
-プリゴジン氏はロシア軍指導部の腐敗と無能さに激怒し、同氏が主張する自身の部下が攻撃された事件の復讐をしたいと説明。「われわれは正義を望む。彼らはわれわれの首を絞めようとしている。われわれはモスクワに行く」と述べ、通常の会話よりもはるかに多い汚い罵り言葉を発していたという。
-
-ルカシェンコ大統領はこれに対し、モスクワに向かう「道半ばで、虫けらのようにつぶされるだけだ」と述べ、説得に努めた。
-
-さらにプリゴジン氏が要求していたショイグ国防相とゲラシモフ参謀総長の引き渡しについては「誰も両者を引き渡すことはない」とし、モスクワは守られ、反乱が続けばロシアは混乱と悲しみに包まれると述べ、蜂起を停止するよう説得したという。
-
-一方、プーチン大統領はプリゴジン氏が電話に応じないことにいら立ち、ルカシェンコ大統領に助けを求めた。ルカシェンコ氏は反乱分子の鎮圧を「急がないよう」とプーチン大統領に提言したという。
+2022年度の国の一般会計の税収が前年度より約4兆円増え、71兆円強となる見通しであることが分かった。70兆円台に乗るのは初めてで、3年連続で過去最高を更新する。コロナ禍からの企業の業績回復のほか、物価高の影響が大きく、主要な3税である消費税、所得税、法人税がいずれも増える。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
