@@ -142,145 +142,98 @@ mark
 
 <body>
 
-<table><tr><td>
-<table><tr><td>
+<table width='900px'><tr><td rowSpan='30'><img class='MapSelection' src='Maps/Map.png'>
+</td></tr></table><br><table><tr><td>
 <input type='button' value='Roll all initiatives?' onClick='rollInitiatives()'>
-</td></tr><tr><td>
+</td><td>
 <input type='button' value='Save all characters?' onClick='saveAll()'>
-</td></tr><tr><td>
+</td><td>
 <input type='button' value='Target then Clone a character?' onClick='cloneIt(type)'>
-</td></tr><tr><td>
+</td><td>
 <input type='button' value='Create a new character?' onClick='newCharacter(PC)'>
-</td></tr><tr><td>
-</td></tr><tr><td><a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
-</td></tr><tr><td>
+</td></tr></table><br><table><tr><td>
+<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n75/mode/1up' target='_blank'>1st Edition Attack Matrix</a>(Monster Hit Dice versus Target Armor Class)
+<p>
+<a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
+<br>
 <a href='https://fastcharacter.com/' target='_blank'>FastCharacter.Com</a>
-</td></tr><tr><td>
+<br>
 You'll need to download this zip file and unarchive it to save the state of your game encounter.
 <a href='dnd.zip' target='_blank'>dnd.zip</a>
-</td></tr><tr><td>
+</td><td>
 Target then paste stats?
 <textArea cols='40' rows='5' onChange='stats=this.value;setStats()'></textarea><b id='statsDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 Encounter Notes,XP totals(not saved after shift reload of webpage):
 <textArea cols='40' rows='4'></textarea>
-</td></tr><tr><td>
+</td></tr></table><br><table><tr><td>
 Condition Durations:
 <input type='field' size='40'><br>10/<input id='1stDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne(){document.getElementById('1stDuration').value=(document.getElementById('1stDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne()' value='end turn?'>
-</td></tr><tr><td>
+<br>
 Condition Durations:
 <input type='field' size='40'><br>10/<input id='2ndDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne2(){document.getElementById('2ndDuration').value=(document.getElementById('2ndDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne2()' value='end turn?'>
-</td></tr><tr><td>
+</td><td>
 Condition Durations:
 <input type='field' size='40'><br>10/<input id='3rdDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne3(){document.getElementById('3rdDuration').value=(document.getElementById('3rdDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne3()' value='end turn?'>
-</td></tr><tr><td>
+<br>
 Condition Durations:
 <input type='field' size='40'><br>10/<input id='4thDuration' type='field' size='2' value='10'>turns.
 <script>
 function reduceByOne4(){document.getElementById('4thDuration').value=(document.getElementById('4thDuration').value-1)}
 </script>
 <input type='button' onclick='reduceByOne4()' value='end turn?'>
-</td></tr><tr><td>
+</td></tr></table><br><table><tr><td>
 <input onMouseOut="rollOne=parseInt(rollDForm(this.value));document.getElementById('rollOneDisplay').innerHTML='('+naturalRoll+roll+')='+rollOne" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollOneDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 <input onMouseOut="rollTwo=parseInt(rollDForm(this.value));document.getElementById('rollTwoDisplay').innerHTML='('+naturalRoll+roll+')='+rollTwo" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollTwoDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 <input onMouseOut="rollThree=parseInt(rollDForm(this.value));document.getElementById('rollThreeDisplay').innerHTML='('+naturalRoll+roll+')='+rollThree" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollThreeDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 <input onMouseOut="rollFour=parseInt(rollDForm(this.value));document.getElementById('rollFourDisplay').innerHTML='('+naturalRoll+roll+')='+rollFour" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFourDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 <input onMouseOut="rollFive=parseInt(rollDForm(this.value));document.getElementById('rollFiveDisplay').innerHTML='('+naturalRoll+roll+')='+rollFive" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollFiveDisplay'></b>
-</td></tr><tr><td>
+</td><td>
 <input onMouseOut="rollSix=parseInt(rollDForm(this.value));document.getElementById('rollSixDisplay').innerHTML='('+naturalRoll+roll+')='+rollSix" maxLength='8' size='8' placeHolder='XdY+Z' type='text'><b id='rollSixDisplay'></b>
-</td></tr><tr><td>
+</td></tr></table><br><table><tr><td>
 <img class='die20' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d20roll=d(20);document.getElementById('d20result').innerHTML=d20roll" type='button' value='Roll a 1d20?'><b id='d20result'></b>
-</td></tr><tr><td>
+</td><td>
 <img class='die12' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d12roll=d(12);document.getElementById('d12result').innerHTML=d12roll" type='button' value='Roll a 1d12?'><b id='d12result'></b>
-</td></tr><tr><td>
+</td><td>
 <img class='die10' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d10roll=d(10);document.getElementById('d10result').innerHTML=d10roll" type='button' value='Roll a 1d10?'><b id='d10result'></b>
-</td></tr><tr><td>
+</td><td>
 <img class='die8' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d8roll=d(8);document.getElementById('d8result').innerHTML=d8roll" type='button' value='Roll a 1d8?'><b id='d8result'></b>
-</td></tr><tr><td>
+</td><td>
 <img class='die6' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d6roll=d(6);document.getElementById('d6result').innerHTML=d6roll" type='button' value='Roll a 1d6?'><b id='d6result'></b>
-</td></tr><tr><td>
+</td><td>
 <img class='die4' src='Decorations/DiceSprite.jpeg'><br>
 <input onClick="d4roll=d(4);document.getElementById('d4result').innerHTML=d4roll" type='button' value='Roll a 1d4?'><b id='d4result'></b>
-</td></tr><tr><td>
+</td></tr></table><br><table><tr><td>
 Random Skills:<br><span id='displayRandomSkills'></span>
-</td></tr><tr><td>
+</td><td>
 Random Languages:<br><span id='displayRandomLanguages'></span>
-</td></tr><tr><td>
+</td><td>
 Random Musical Instruments:<br><span id='displayRandomMusicalInstruments'></span>
-</td></tr><tr><td>
+</td><td>
 Random Tools:<br><span id='displayRandomTools'></span>
-</td></tr><tr><td>
+</td><td>
 Random Gambling Sets:<span id='displayRandomGamblingSets'></span>
-</td></tr></table>
-</td><td>
-<table width='900px'><tr><td rowSpan='30'><img class='MapSelection' src='Maps/Map.png'>
-</td></tr></table>
-</td><td>
-<table><tr><td>
-POLICE HQ: USE ILLUSTRATION #30. There will be 1 ·3 police robots
-in the first room of this complex. They will inquire what the nature of
-business of any entrant is, and the language will be totally
-unintelligible without some scientific or magical means of
-understanding, although the robots con translate the characters'
-speech in 1 turn. The robots will then apprehend (see section on
-police robots at the end of the module) the characters and place
-them in the security cells (six 1 O' x 1 O' rooms to the north) - as few
-per cell as possible - for detention and questioning by a "proper
-authority" unless the party hos a red, gray or orange card to show.
-Of course, there are no "proper authorities" anymore, and
-prisoners will starve to death, as the computer controlled feeding
-devices in the area turn out drinkable liquids but indigestible
-food. The cell locks (located in the doors) operate by any of the
-cards mentioned (gray, red, or orange). The cells have walls on
-three sides while across the front there is a row of short projecting
-studs on both the top and the bottom. In the centerof this "wall" is
-a small post with a card lock similar to those found on other
-doors. Below this is a button and a dial that control the force
-screen. When a cell is in use, the force screen will be turned on
-and on invisible wall will radiate in the area between the studs. The
-cells are force field shells, so magic will not function beyond them,
-but cold hos a 1 0% chance of causing a lock to malfunction, fire
-balls (from outside and distant, hopefully . . . ) and magic
-missiles have a 50% chance, and lightning/electricHy a 1 0%
-chance per die of dmg. The robots will not toke away any
-gear from prisoners unless the item was used to atk one oftheir
-number or is a wpn they are familiar with (pistols, etc.).
-At various times robots will leave, so at some point within 1 2 turns
-there will be only 1 robot there, but there is a 1 in 1 2 chance of
-another entering each turn.
-A locked metal chest in the corner farthest from the cells contains
-2 gas masks (give total immunity to all gasses on the ship), 1 2
-s leep gas grenades, a n d 2 needler pistols with 1 c l i p of
-ammunition for each. (Weapons are detailed at the end of the
-module.) The chest can be forced open with magical wpns
-- one in six chance per wpn per round of forcing. It will also
-open by gray or red cord placement in its lock slot.
-The first police robot disabled/destroyed here by the party will
-have a red card stored in its chest compartment, but itwill haveto
-be pried out carefully, so there is a 50% chance of destroying it,
-lowered 1 0% for each point of dexterity above 1 4 of the character
-making the attempt.
 </td></tr></table>
 <br>
 <script>
@@ -1044,10 +997,10 @@ function Net(){a="Net 1 gp Special, thrown (range 5/15)",b="1d20+0",c="restraine
 
 function getAction(){characters[targeted].setRollName1(a),characters[targeted].setRoll1(b),characters[targeted].setRollName2(c),characters[targeted].setRoll2(dmgDice),addRollPrompt(targeted)}
 
-s1="<input onClick=",s2="() type=button value='",s3="'></td></tr><tr><td>"
+s1="<input onClick=",s2="() type=button value='",s3="'>|"
 s4=document.write.bind(document)
 
-s4("<table><tr><td>Target the piece first to receive these wpns.</td></tr><tr><td>")
+s4("<table><tr><td>Target the piece first to receive these wpns.</td><td>")
 s4(s1+'Club'+s2+'Club'+s3)
 s4(s1+'Dagger'+s2+'Dagger'+s3)
 s4(s1+'Greatclub'+s2+'Greatclub'+s3)
@@ -2123,6 +2076,17 @@ characters[targeted].setRollName2(rip[5]);
 characters[targeted].setRoll2(rip[4].replace(/\s/g,''));
 addRollPrompt(targeted);
 }
+
+if(rip=stats.match(/AC: (\d{1,2})/))
+{characters[targeted].setCurAc(rip[1]);
+characters[targeted].setAC(rip[1])};
+if(rip=stats.match(/HD: (\d{1,2})|HD.+(\d{1,2})\+\d{1,2}/))
+{characters[targeted].setHitDice(rip[1])};
+if(rip=stats.match(/HP: (\d{1,2})/))
+{characters[targeted].setCurHp(rip[1]);
+characters[targeted].setMaxHp(rip[1])};
+if(rip=stats.match(/AT: (\d{1,2})/))
+{characters[targeted].setActionNotes(rip[1])};
 
 checkTheTarget();
 }
