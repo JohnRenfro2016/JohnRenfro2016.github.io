@@ -572,6 +572,7 @@ const replsA = [
 {pat:/(ぶ)(?!X)(つ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xbut$2Xsu$3Xke-bump$4X~RuVerb'},
 {pat:/(ぶ)(?!X)(つ)(?!X)(ぶ)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1Xbut$2Xsu$3Xbu-grumble$4X~TsuVerb'},
 {pat:/(ぶ)(?!X)(る)(?!X)(ぶ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xbur$2Xub$3Xu-shiver$4X~RuVerb'},
+{pat:/(立)(?!X)(ち)(?!X)(入)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xta$2Xchi$3Xi-on the spot$4X~RuVerb'},
 {pat:/(ほ)(?!X)(ほ)(?!X)(え)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xho$2Xhoe$3X-smile$4X~MuVerb'},
 {pat:/(ま)(?!X)(す)(?!X)(ま)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xmas$2Xum$3Xa-increasingly$4X~SuVerb'},
 {pat:/(ま)(?!X)(と)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xma$3Xtoma-be collected$4X~RuVerb'},
@@ -1504,6 +1505,7 @@ const replsA = [
 {pat:/(訓)(?!X)(読)(?!X)(み)(?!X)/g,repl:'$1Xkun$2Xyo$3Xmi-Japanese pronunciation~Noun'},
 {pat:/(記)(?!X)(念)(?!X)(日)(?!X)/g,repl:'$1Xki$2Xnen$3Xbi-anniversary~Noun'},
 {pat:/(話)(?!X)(し)(?!X)(声)(?!X)/g,repl:'$1Xhana$2Xsh$3Xigoe-voice,whisper~Noun'},
+{pat:/(来)(?!X)(園)(?!X)(者)(?!X)/g,repl:'$1Xrai$2Xen$3Xsya-park visitor~Noun'},
 {pat:/(認)(?!X)(知)(?!X)(症)(?!X)/g,repl:'$1Xnin$2Xchi$3Xsyou-dementia~Noun'},
 {pat:/(誕)(?!X)(生)(?!X)(日)(?!X)/g,repl:'$1Xtanjyou$2Xbi$3X-birthday~Noun'},
 {pat:/(読)(?!X)(み)(?!X)(方)(?!X)/g,repl:'$1Xyo$2Xmi$3Xkata-way of reading,reading~Noun'},
@@ -2232,7 +2234,7 @@ const replsB = [
 {pat:/(5|５)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xgo-jyuu,fifty~Noun$2'},
 {pat:/(6|6)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xroku-jyuu,sixty~Noun$2'},
 {pat:/(6|６)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xroku-jyuu,sixty~Noun$2'},
-{pat:/(7)(?!X)(日)(?!X)/g,repl:'$1Xnano$2Xka-seventh day of the month~Noun'},
+{pat:/(７|7)(?!X)(日)(?!X)/g,repl:'$1Xnano$2Xka-seventh day of the month~Noun'},
 {pat:/(7|７)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xshichi-jyuu,seventy~Noun$2'},
 {pat:/(8|８)(?!X)([0-9]|[０-９])(?!X)/g,repl:'$1Xhachi-jyuu,eighty~Noun$2'},
 {pat:/(8|８)(?!X)(日)(?!X)/g,repl:'$1Xyou$2Xka-eighth day of the month~Noun'},
@@ -2607,7 +2609,7 @@ const replsB = [
 {pat:/(付)(?!X)(属)(?!X)/g,repl:'$1Xfu$2Xzoku-attachment,belonging~Noun'},
 {pat:/(付)(?!X)(着)(?!X)/g,repl:'$1Xfu$2Xcyaku-cling to~Noun'},
 {pat:/(付)(?!X)(言)(?!X)/g,repl:'$1Xfu$2Xgen-additional remarks~Noun'},
-{pat:/(付)(?!X)(近)(?!X)/g,repl:'$1Xfu$2Xkin-in area of~Noun'},
+{pat:/(付)(?!X)(近)(?!X)/g,repl:'$1Xfu$2Xkin-in the area of~Noun'},
 {pat:/(付)(?!X)(録)(?!X)/g,repl:'$1Xfu$2Xroku-appendix,supplement~Noun'},
 {pat:/(仙)(?!X)(台)(?!X)/g,repl:'$1Xsen$2Xdai-Japan~Noun'},
 {pat:/(代)(?!X)(行)(?!X)/g,repl:'$1Xdai$2Xkou-acting on behalf of~Noun'},
@@ -2617,6 +2619,7 @@ const replsB = [
 {pat:/(以)(?!X)(上)(?!X)/g,repl:'$1Xi$2Xjyou-more than~Noun'},
 {pat:/(以)(?!X)(下)(?!X)/g,repl:'$1Xi$2Xka-below~Noun'},
 {pat:/(以)(?!X)(内)(?!X)/g,repl:'$1Xi$2Xnai-within~Noun'},
+{pat:/(散)(?!X)(水)(?!X)/g,repl:'$1Xsan$2Xsui-sprinkling~Noun'},
 {pat:/(以)(?!X)(前)(?!X)/g,repl:'$1Xi$2Xzen-before,ago~Noun'},
 {pat:/(以)(?!X)(北)(?!X)/g,repl:'$1Xi$2Xhoku-north of~Noun'},
 {pat:/(以)(?!X)(外)(?!X)/g,repl:'$1Xi$2Xgai-excluding~Noun'},
@@ -5752,7 +5755,8 @@ const replsB = [
 {pat:/(解)(?!X)(除)(?!X)/g,repl:'$1Xkai$2Xjyo-lifting a ban~Noun'},
 {pat:/(解)(?!X)(雇)(?!X)/g,repl:'$1Xkai$2Xko-dismissal~Noun'},
 {pat:/(触)(?!X)(れ)(?!X)/g,repl:'$1Xsawa,fu$2Xre-touch~IchidanVerb'},
-{pat:/(言)(?!X)(動)(?!X)/g,repl:'$1Xgen$2Xdou-words and actions~Noun'},
+{pat:/(触)(?!X)(れ)(?!X)/g,repl:'$1Xsawa,fu$2Xre-touch~IchidanVerb'},
+{pat:/(濡)(?!X)(れ)(?!X)/g,repl:'$1Xnu$2Xre-wetting~Noun'},
 {pat:/(言)(?!X)(及)(?!X)/g,repl:'$1Xgen$2Xkyuu-reference~Noun'},
 {pat:/(言)(?!X)(葉)(?!X)/g,repl:'$1Xkoto$2Xba-word,language~Noun'},
 {pat:/(言)(?!X)(語)(?!X)/g,repl:'$1Xgen$2Xgo-language,speech~Noun'},
@@ -7265,7 +7269,7 @@ const replsB = [
 {pat:/(愛)(?!X)/g,repl:'$1Xai-love~Noun'},
 {pat:/(感)(?!X)/g,repl:'$1Xkan-feeling~Noun'},
 {pat:/(戦)(?!X)/g,repl:'$1Xsen,ikusa-war~Noun'},
-{pat:/(戸)(?!X)/g,repl:'$1Xto-door~Noun'},
+{pat:/(戸)(?!X)/g,repl:'$1Xto,be-door~Noun'},
 {pat:/(所)(?!X)/g,repl:'$1Xsyo-office,tokoro-place,about to~Noun'},
 {pat:/(扉)(?!X)/g,repl:'$1Xtobira-door~Noun'},
 {pat:/(手)(?!X)/g,repl:'$1Xte-hand~Noun'},
@@ -7366,7 +7370,7 @@ const replsB = [
 {pat:/(毛)(?!X)/g,repl:'$1Xke-hair,wool~Noun'},
 {pat:/(氏)(?!X)/g,repl:'$1Xshi-Mr.~Noun'},
 {pat:/(気)(?!X)/g,repl:'$1Xki-spirit,energy,mood~Noun'},
-{pat:/(水)(?!X)/g,repl:'$1Xmizu-water,sui,Wednesday~Noun'},
+{pat:/(水)(?!X)/g,repl:'$1Xmizu,mi,sui-water,sui,Wednesday~Noun'},
 {pat:/(氷)(?!X)/g,repl:'$1Xkoori-ice~Noun'},
 {pat:/(永)(?!X)/g,repl:'$1Xei-eternal~Noun'},
 {pat:/(汁)(?!X)/g,repl:'$1Xshiru-soup~Noun'},
@@ -7473,7 +7477,7 @@ const replsB = [
 {pat:/(磨)(?!X)/g,repl:'$1XMa-polished~Noun'},
 {pat:/(礼)(?!X)/g,repl:'$1Xrei-bow,courtesy~Noun'},
 {pat:/(社)(?!X)/g,repl:'$1Xsya-company~Noun'},
-{pat:/(神)(?!X)/g,repl:'$1Xkami,ka,jin,god,spirit~Noun'},
+{pat:/(神)(?!X)/g,repl:'$1Xkami,ka,jin,shin,kou-god,spirit~Noun'},
 {pat:/(票)(?!X)/g,repl:'$1Xhyou-vote~Noun'},
 {pat:/(禍)(?!X)/g,repl:'$1Xwazawai-trouble~Noun'},
 {pat:/(福)(?!X)/g,repl:'$1Xfuku-luck~Noun'},
@@ -7497,6 +7501,7 @@ const replsB = [
 {pat:/(筋)(?!X)/g,repl:'$1Xsuji-muscle~Noun'},
 {pat:/(策)(?!X)/g,repl:'$1Xsaku-plan~Noun'},
 {pat:/(管)(?!X)/g,repl:'$1Xkan-pipe,tube~Noun'},
+{pat:/(垂)(?!X)/g,repl:'$1Xtaru-water,sauce~Noun'},
 {pat:/(箱)(?!X)/g,repl:'$1Xhako-box~Noun'},
 {pat:/(婚)(?!X)/g,repl:'$1Xyobai,kon-marriage~Noun'},
 {pat:/(箸)(?!X)/g,repl:'$1Xhashi-chopsticks~Noun'},
@@ -7920,7 +7925,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-6日午後3時10分ごろ、宮城県栗原市の市立若柳小学校で「敷地内に入ってきた車両に児童がはねられた」と県警若柳署に通報があった。同署などによると、車両は軽トラックで、同小4年生の児童4人が頭を打つなどのけがをした。いずれも意識はあり、命に別条はないという。
+神戸徳洲会病院（神戸市垂水区）で、特定の医師が１月以降に携わったカテーテル手術の後に複数の患者が死亡したなどとする告発があり、神戸市保健所が臨時立ち入り検査をした問題で、同病院が１４日に調査委員会を設置することが７日、運営法人「徳洲会」（東京）への取材で分かった。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
