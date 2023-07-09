@@ -364,7 +364,7 @@ const replsA = [
 {pat:/(に)(?!X)(こ)(?!X)(に)(?!X)(こ)(?!X)/g,repl:'$1X$2Xsm$3Xi$4Xle~Noun'},
 {pat:/(に)(?!X)(こ)(?!X)(や)(?!X)(か)(?!X)/g,repl:'$1X$2Xsm$3Xi$4Xling-beaming~Noun'},
 {pat:/(に)(?!X)(っ)(?!X)(こ)(?!X)(り)(?!X)/g,repl:'$1X$2Xsm$3Xi$4Xling-grinning~Noun'},
-{pat:/(に)(?!X)(つ)(?!X)(い)(?!X)(て)(?!X)/g,repl:'$1Xni $2Xtsui$3Xi$4Xte,about~Postposition~Noun'},
+{pat:/(に)(?!X)(つ)(?!X)(い)(?!X)(て)(?!X)/g,repl:'$1Xni $2Xtsu$3Xi$4Xte-about~Postposition~Noun'},
 {pat:/(に)(?!X)(や)(?!X)(に)(?!X)(や)(?!X)/g,repl:'$1X$2Xgr$3Xi$4Xn to oneself~Noun'},
 {pat:/(に)(?!X)(わ)(?!X)(か)(?!X)(に)(?!X)/g,repl:'$1X$2Xra$3Xp$4Xidly~Noun'},
 {pat:/(に)(?!X)(ん)(?!X)(じ)(?!X)(ん)(?!X)/g,repl:'$1X$2Xca$3Xr$4Xrot~Noun'},
@@ -3434,6 +3434,7 @@ const replsB = [
 {pat:/(執)(?!X)(行)(?!X)/g,repl:'$1Xshik$2Xkou-execution~Noun'},
 {pat:/(基)(?!X)(地)(?!X)/g,repl:'$1Xki$2Xchi-military base~Noun'},
 {pat:/(基)(?!X)(幹)(?!X)/g,repl:'$1Xki$2Xkan-mainstay~Noun'},
+{pat:/(合)(?!X)(致)(?!X)/g,repl:'$1Xgac$2chi-compliance~Noun'},
 {pat:/(基)(?!X)(本)(?!X)/g,repl:'$1Xki$2Xhon-basis~Noun'},
 {pat:/(基)(?!X)(準)(?!X)/g,repl:'$1Xki$2Xjyun-standard~Noun'},
 {pat:/(基)(?!X)(盤)(?!X)/g,repl:'$1Xki$2Xban-basis~Noun'},
@@ -4560,6 +4561,7 @@ const replsB = [
 {pat:/(東)(?!X)(南)(?!X)/g,repl:'$1Xtou$2Xnan-southeast~Noun'},
 {pat:/(東)(?!X)(洋)(?!X)/g,repl:'$1Xtou$2Xyou-Orient~Noun'},
 {pat:/(東)(?!X)(海)(?!X)/g,repl:'$1Xtou$2Xkai-Eastern Sea,Japan~Noun'},
+{pat:/(偏)(?!X)(向)(?!X)/g,repl:'$1Xhen$2Xkou-tendancy~Noun'},
 {pat:/(東)(?!X)(海)(?!X)/g,repl:'$1Xtou$2Xkai-Japan~Noun'},
 {pat:/(東)(?!X)(西)(?!X)/g,repl:'$1Xtou$2Xzai-east and west~Noun'},
 {pat:/(東)(?!X)(部)(?!X)/g,repl:'$1Xtou$2Xbu-eastern region~Noun'},
@@ -7406,8 +7408,10 @@ const replsB = [
 {pat:/(清)(?!X)/g,repl:'$1Xkiyo,sei,shi-pure~Noun'},
 {pat:/(減)(?!X)/g,repl:'$1Xgen-reduced~Noun'},
 {pat:/(温)(?!X)/g,repl:'$1Xon-temperature~Noun'},
+{pat:/(倉)(?!X)/g,repl:'$1Xkura-warehouse~Noun'},
 {pat:/(港)(?!X)/g,repl:'$1Xminato-port,harbor~Noun'},
 {pat:/(湖)(?!X)/g,repl:'$1Xmizuumi-lake~Noun'},
+{pat:/(博)(?!X)/g,repl:'$1Xhaka-fair~Noun'},
 {pat:/(湯)(?!X)/g,repl:'$1Xyu-hot water,hot bath,bathhouse~Noun'},
 {pat:/(湾)(?!X)/g,repl:'$1Xwan-bay,gulf~Noun'},
 {pat:/(満)(?!X)/g,repl:'$1XMan-full~Noun'},
@@ -7934,7 +7938,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-　北海道蘭越町で資源調査の掘削中に蒸気が噴出し、周辺の水から高濃度のヒ素が検出された問題で、調査主体の三井石油開発（東京）の原田英典社長が8日、同町で記者会見し、「多大な心配と迷惑をかけ、深くおわびします」と謝罪した。噴出現場から約1キロ離れた井戸に注入するためのパイプラインが完成するまで2週間かかり、その間は周辺への排水を続けるという。体調不良を訴える人は4人となった。
+JR西日本によりますと、大雨のため、6時10分すぎから、小倉駅ー博多駅の間で運転を見合わせ、その後、広島駅ー博多駅間に、見合わせの範囲を広げました。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
