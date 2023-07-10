@@ -477,6 +477,7 @@ const replsA = [
 {pat:/(横)(?!X)(断)(?!X)(歩)(?!X)(道)(?!X)/g,repl:'$1X$2Xou$3Xd$4Xanhodou-pedestrian crossing,crosswalk~Noun'},
 {pat:/(歯)(?!X)(ブ)(?!X)(ラ)(?!X)(シ)(?!X)/g,repl:'$1X$2Xha$3Xb$4Xura-shi,toothbrush~Noun'},
 {pat:/(段)(?!X)(ボ)(?!X)(ー)(?!X)(ル)(?!X)/g,repl:'$1Xdan$2X$3X$4Xbo-ru,cardboard~Noun'},
+{pat:/(か)(?!X)(ど)(?!X)(う)(?!X)(か)(?!X)/g,repl:'$1Xka$2Xdo$3Xu$4Xka-whether or not~Noun'},
 {pat:/(消)(?!X)(し)(?!X)(ゴ)(?!X)(ム)(?!X)/g,repl:'$1X$2Xke$3Xshi$4X-gomu,eraser~Noun'},
 {pat:/(無)(?!X)(理)(?!X)(や)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xmu-riyari,by force,against one\'s will~Noun'},
 {pat:/(焼)(?!X)(き)(?!X)(そ)(?!X)(ば)(?!X)/g,repl:'$1X$2Xya$3Xk$4Xisoba-pan-fried noodles~Noun'},
@@ -2865,7 +2866,7 @@ const replsB = [
 {pat:/(全)(?!X)(域)(?!X)/g,repl:'$1Xzen$2Xiki-whole area~Noun'},
 {pat:/(全)(?!X)(容)(?!X)/g,repl:'$1Xzen$2Xyou-big picture~Noun'},
 {pat:/(全)(?!X)(滅)(?!X)/g,repl:'$1Xzen$2Xmetsu-annihilated~Noun'},
-{pat:/(全)(?!X)(然)(?!X)/g,repl:'$1Xzen$2Xzen-wholly,at all~Noun'},
+{pat:/(全)(?!X)(然)(?!X)/g,repl:'$1Xzen$2Xzen-at all~Noun'},
 {pat:/(全)(?!X)(般)(?!X)/g,repl:'$1Xzen$2Xpan-whole,general~Noun'},
 {pat:/(全)(?!X)(身)(?!X)/g,repl:'$1Xzen$2Xshin-whole body~Noun'},
 {pat:/(全)(?!X)(部)(?!X)/g,repl:'$1Xzen$2Xbu-all,wholly~Noun'},
@@ -3357,7 +3358,7 @@ const replsB = [
 {pat:/(回)(?!X)(復)(?!X)/g,repl:'$1Xkai$2Xfuku-recovery~Noun'},
 {pat:/(回)(?!X)(数)(?!X)/g,repl:'$1Xkai$2Xsuu-frequency~Noun'},
 {pat:/(回)(?!X)(目)(?!X)/g,repl:'$1Xkai$2Xme-nth time~Noun'},
-{pat:/(回)(?!X)(答)(?!X)/g,repl:'$1Xkai$2Xtou-reply,answer~Noun'},
+{pat:/(回)(?!X)(答)(?!X)/g,repl:'$1Xkai$2Xtou-reply~Noun'},
 {pat:/(回)(?!X)(路)(?!X)/g,repl:'$1Xkai$2Xro-circuit~Noun'},
 {pat:/(回)(?!X)(転)(?!X)/g,repl:'$1Xkai$2Xten-revolution,rotation~Noun'},
 {pat:/(回)(?!X)(避)(?!X)/g,repl:'$1Xkai$2Xhi-avoid a repeat~Noun'},
@@ -4295,6 +4296,7 @@ const replsB = [
 {pat:/(教)(?!X)(授)(?!X)/g,repl:'$1Xkyou$2Xjyu-professor~Noun'},
 {pat:/(教)(?!X)(義)(?!X)/g,repl:'$1Xkyou$2Xgi-dogma~Noun'},
 {pat:/(教)(?!X)(育)(?!X)/g,repl:'$1Xkyou$2Xiku-education~Noun'},
+{pat:/(打)(?!X)(破)(?!X)/g,repl:'$1Xda$2Xha-break down~Noun'},
 {pat:/(教)(?!X)(養)(?!X)/g,repl:'$1Xkyou$2Xyou-culture,education~Noun'},
 {pat:/(散)(?!X)(乱)(?!X)/g,repl:'$1Xsan$2Xran-scattering~Noun'},
 {pat:/(散)(?!X)(歩)(?!X)/g,repl:'$1Xsan$2Xpo-walk,stroll~Noun'},
@@ -4499,6 +4501,7 @@ const replsB = [
 {pat:/(有)(?!X)(毒)(?!X)/g,repl:'$1Xyuu$2Xdoku-poisonous,noxious~Noun'},
 {pat:/(有)(?!X)(無)(?!X)/g,repl:'$1Xyuu$2Xmu,exists or does not exist~Noun'},
 {pat:/(有)(?!X)(益)(?!X)/g,repl:'$1Xyuu$2Xeki-beneficial,profitable~Noun'},
+{pat:/(方)(?!X)(策)(?!X)/g,repl:'$1Xhou$2Xsaku-policy~Noun'},
 {pat:/(有)(?!X)(能)(?!X)/g,repl:'$1Xyuu$2Xnou-able,competent~Noun'},
 {pat:/(有)(?!X)(限)(?!X)/g,repl:'$1Xyuu$2Xgen-limited,finite~Noun'},
 {pat:/(服)(?!X)(装)(?!X)/g,repl:'$1Xfuku$2Xsou-clothes~Noun'},
@@ -4955,6 +4958,7 @@ const replsB = [
 {pat:/(無)(?!X)(人)(?!X)/g,repl:'$1Xmu$2Xjin-unmanned~Noun'},
 {pat:/(無)(?!X)(効)(?!X)/g,repl:'$1Xmu$2Xkou-ineffectiveness~Noun'},
 {pat:/(無)(?!X)(口)(?!X)/g,repl:'$1Xmu$2Xku-chi,not speaking much,reticence~Noun'},
+{pat:/(集)(?!X)(束)(?!X)/g,repl:'$1Xsyuu$2Xsoku-cluster~Noun'},
 {pat:/(無)(?!X)(害)(?!X)/g,repl:'$1Xmu$2Xgai-harmless~Noun'},
 {pat:/(無)(?!X)(数)(?!X)/g,repl:'$1Xmu$2Xsuu-countless,innumerable~Noun'},
 {pat:/(無)(?!X)(料)(?!X)/g,repl:'$1Xmu$2Xryou-no charge~Noun'},
@@ -5136,6 +5140,7 @@ const replsB = [
 {pat:/(痛)(?!X)(み)(?!X)/g,repl:'$1Xita$2Xmi-pain,ache~Noun'},
 {pat:/(痛)(?!X)(手)(?!X)/g,repl:'$1Xita$2Xde-serious blow~Noun'},
 {pat:/(痛)(?!X)(烈)(?!X)/g,repl:'$1Xtsuu$2Xretsu-scathing~Noun'},
+{pat:/(去)(?!X)(就)(?!X)/g,repl:'$1Xkyo$2Xsyuu-course of action~Noun'},
 {pat:/(療)(?!X)(養)(?!X)/g,repl:'$1Xryou$2Xyou-recuperation~Noun'},
 {pat:/(癒)(?!X)(着)(?!X)/g,repl:'$1Xyu$2Xcyaku-collusion~Noun'},
 {pat:/(発)(?!X)(令)(?!X)/g,repl:'$1Xhatsu$2Xrei-official order~Noun'},
@@ -6889,7 +6894,7 @@ const replsB = [
 {pat:/(試)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xtame-try,test$2X~SuVerb'},
 {pat:/(話)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xhana-speak$2X~SuVerb'},
 {pat:/(誓)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xchi-ka,vow,swear$2X~UVerb'},
-{pat:/(誘)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xsaso-invite,ask out$2X~UVerb'},
+{pat:/(誘)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xsaso-invite$2X~UVerb'},
 {pat:/(語)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkata-inform$2X~RuVerb'},
 {pat:/(誤)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xayama-make a mistake$2X~RuVerb'},
 {pat:/(説)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xto-explain,preach$2X~KuVerb'},
@@ -7277,7 +7282,7 @@ const replsB = [
 {pat:/(悪)(?!X)/g,repl:'$1Xaku-evil~Noun'},
 {pat:/(愛)(?!X)/g,repl:'$1Xai-love~Noun'},
 {pat:/(感)(?!X)/g,repl:'$1Xkan-feeling~Noun'},
-{pat:/(戦)(?!X)/g,repl:'$1Xsen,ikusa-war~Noun'},
+{pat:/(戦)(?!X)/g,repl:'$1Xsen,ikusa-war,game~Noun'},
 {pat:/(戸)(?!X)/g,repl:'$1Xto,be-door~Noun'},
 {pat:/(所)(?!X)/g,repl:'$1Xsyo-office,tokoro-place,about to~Noun'},
 {pat:/(扉)(?!X)/g,repl:'$1Xtobira-door~Noun'},
@@ -7411,7 +7416,7 @@ const replsB = [
 {pat:/(倉)(?!X)/g,repl:'$1Xkura-warehouse~Noun'},
 {pat:/(港)(?!X)/g,repl:'$1Xminato-port,harbor~Noun'},
 {pat:/(湖)(?!X)/g,repl:'$1Xmizuumi-lake~Noun'},
-{pat:/(博)(?!X)/g,repl:'$1Xhaka-fair~Noun'},
+{pat:/(博)(?!X)/g,repl:'$1Xhaka,haku-fair~Noun'},
 {pat:/(湯)(?!X)/g,repl:'$1Xyu-hot water,hot bath,bathhouse~Noun'},
 {pat:/(湾)(?!X)/g,repl:'$1Xwan-bay,gulf~Noun'},
 {pat:/(満)(?!X)/g,repl:'$1XMan-full~Noun'},
@@ -7497,6 +7502,7 @@ const replsB = [
 {pat:/(程)(?!X)/g,repl:'$1Xho+do,extent,limit~Noun'},
 {pat:/(税)(?!X)/g,repl:'$1Xzei-tax~Noun'},
 {pat:/(種)(?!X)/g,repl:'$1Xtane-seed~Noun'},
+{pat:/(限)(?!X)/g,repl:'$1Xgen-limited~Noun'},
 {pat:/(稲)(?!X)/g,repl:'$1Xine-rice plant~Noun'},
 {pat:/(穴)(?!X)/g,repl:'$1Xana-hole,cavity~Noun'},
 {pat:/(空)(?!X)/g,repl:'$1Xsora-sky,kara-emptiness,hollow~Noun'},
@@ -7661,6 +7667,8 @@ const replsB = [
 {pat:/(辺)(?!X)/g,repl:'$1Xhen-vicinity,part~Noun'},
 {pat:/(逆)(?!X)/g,repl:'$1Xgyaku-reverse,inverse~Noun'},
 {pat:/(連)(?!X)/g,repl:'$1Xren-federation~Noun'},
+{pat:/(翔)(?!X)/g,repl:'$1Xsyou-soar~Noun'},
+{pat:/(平)(?!X)/g,repl:'$1Xhei-plateau~Noun'},
 {pat:/(週)(?!X)/g,repl:'$1Xsyuu-week~Noun'},
 {pat:/(運)(?!X)/g,repl:'$1Xun-fortune,fate~Noun'},
 {pat:/(道)(?!X)/g,repl:'$1Xmichi-street~Noun'},
@@ -7938,7 +7946,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-JR西日本によりますと、大雨のため、6時10分すぎから、小倉駅ー博多駅の間で運転を見合わせ、その後、広島駅ー博多駅間に、見合わせの範囲を広げました。
+FAについても「まだ全然わからない、僕自身もなったことないですし」
+　エンゼルスの大谷翔平投手が10日（日本時間11日）、11日（同12日）に行われるオールスター戦を前に報道陣の取材に応じ、自身の去就問題について言及した。他チームから誘いの話があったかどうか問われると「秘密です」と回答した。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
