@@ -2289,7 +2289,7 @@ const replsB = [
 {pat:/(そ)(?!X)(こ)(?!X)/g,repl:'$1Xsok$2Xo-there~Noun'},
 {pat:/(そ)(?!X)(の)(?!X)/g,repl:'$1Xso$2Xno-that~Noun'},
 {pat:/(そ)(?!X)(ば)(?!X)/g,repl:'$1Xsob$2Xa-buckwheat noodles,next to~Noun'},
-{pat:/(そ)(?!X)(れ)(?!X)/g,repl:'$1Xsor$2Xe-that,that one~Noun'},
+{pat:/(そ)(?!X)(れ)(?!X)/g,repl:'$1Xsor$2Xe-that~Noun'},
 {pat:/(た)(?!X)(だ)(?!X)/g,repl:'$1Xta$2Xda-merely~Noun'},
 {pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1Xta$2Xchi-plural~Noun'},
 {pat:/(た)(?!X)(め)(?!X)/g,repl:'$1Xta$2Xme-for~Noun'},
@@ -4273,6 +4273,7 @@ const replsB = [
 {pat:/(政)(?!X)(権)(?!X)/g,repl:'$1Xsei$2Xken-administration~Noun'},
 {pat:/(政)(?!X)(治)(?!X)/g,repl:'$1Xsei$2Xji-politics~Noun'},
 {pat:/(政)(?!X)(界)(?!X)/g,repl:'$1Xsei$2Xkai-political world~Noun'},
+{pat:/(助)(?!X)(長)(?!X)/g,repl:'$1Xjyo$2Xcyou-encouragement~Noun'},
 {pat:/(政)(?!X)(策)(?!X)/g,repl:'$1Xsei$2Xsaku-policy~Noun'},
 {pat:/(政)(?!X)(調)(?!X)/g,repl:'$1Xsei$2Xcyou-politial party research~Noun'},
 {pat:/(故)(?!X)(郷)(?!X)/g,repl:'$1Xko$2Xkyou-hometown,birthplace~Noun'},
@@ -4473,6 +4474,9 @@ const replsB = [
 {pat:/(最)(?!X)(悪)(?!X)/g,repl:'$1Xsai$2Xaku-worst~Noun'},
 {pat:/(最)(?!X)(新)(?!X)/g,repl:'$1Xsai$2Xshin-latest~Noun'},
 {pat:/(最)(?!X)(終)(?!X)/g,repl:'$1Xsai$2Xsyuu-final~Noun'},
+{pat:/(殴)(?!X)(打)(?!X)/g,repl:'$1Xou$2Xda-strike~Noun'},
+{pat:/(鈍)(?!X)(器)(?!X)/g,repl:'$1Xdon$2Xki-blunt weapon~Noun'},
+{pat:/(打)(?!X)(撲)(?!X)/g,repl:'$1Xda$2Xboku-blows to the body~Noun'},
 {pat:/(最)(?!X)(近)(?!X)/g,repl:'$1Xsai$2Xkin-recent~Noun'},
 {pat:/(窒)(?!X)(息)(?!X)/g,repl:'$1Xchis$2Xsoku-breath~Noun'},
 {pat:/(最)(?!X)(適)(?!X)/g,repl:'$1Xsai$2Xteki-optimum~Noun'},
@@ -4701,6 +4705,7 @@ const replsB = [
 {pat:/(殊)(?!X)(に)(?!X)/g,repl:'$1Xkoto$2Xni-especially,exceptionally~Noun'},
 {pat:/(残)(?!X)(念)(?!X)/g,repl:'$1Xzan$2Xnen-regretful~Noun'},
 {pat:/(残)(?!X)(暑)(?!X)/g,repl:'$1Xzan$2Xsyo-lingering summer heat~Noun'},
+{pat:/(頭)(?!X)(部)(?!X)/g,repl:'$1Xtou$2Xbu-cranium~Noun'},
 {pat:/(残)(?!X)(業)(?!X)/g,repl:'$1Xzan$2Xgyou-overtime~Noun'},
 {pat:/(残)(?!X)(虐)(?!X)/g,repl:'$1Xzan$2Xgyaku-brutal~Noun'},
 {pat:/(残)(?!X)(骸)(?!X)/g,repl:'$1Xzan$2Xgai-wreckage debris,ruins~Noun'},
@@ -7175,6 +7180,7 @@ const replsB = [
 {pat:/(士)(?!X)/g,repl:'$1Xshi,licensed worker~Noun'},
 {pat:/(声)(?!X)/g,repl:'$1Xkoe-voice~Noun'},
 {pat:/(変)(?!X)/g,repl:'$1Xhen-strange,funny~Noun'},
+{pat:/(宅)(?!X)/g,repl:'$1Xtaku-home~Noun'},
 {pat:/(夏)(?!X)/g,repl:'$1Xnatsu-summer~Noun'},
 {pat:/(外)(?!X)/g,repl:'$1Xsoto-outside~Noun'},
 {pat:/(多)(?!X)/g,repl:'$1Xta-multi~Noun'},
@@ -7183,7 +7189,7 @@ const replsB = [
 {pat:/(大)(?!X)/g,repl:'$1Xdai,ou,large~Noun'},
 {pat:/(天)(?!X)/g,repl:'$1Xten-sky,heaven~Noun'},
 {pat:/(太)(?!X)/g,repl:'$1XTa-fat,grand~Noun'},
-{pat:/(夫)(?!X)/g,repl:'$1Xotto-husband~Noun'},
+{pat:/(夫)(?!X)/g,repl:'$1Xotto,o-husband~Noun'},
 {pat:/(奈)(?!X)/g,repl:'$1Xna-level area~Noun'},
 {pat:/(奥)(?!X)/g,repl:'$1Xoku-inner~Noun'},
 {pat:/(女)(?!X)/g,repl:'$1Xonna-girl~Noun'},
@@ -7495,6 +7501,7 @@ const replsB = [
 {pat:/(社)(?!X)/g,repl:'$1Xsya-company~Noun'},
 {pat:/(神)(?!X)/g,repl:'$1Xkami,ka,jin,shin,kou-god,spirit~Noun'},
 {pat:/(票)(?!X)/g,repl:'$1Xhyou-vote~Noun'},
+{pat:/(治)(?!X)/g,repl:'$1Xji-government~Noun'},
 {pat:/(禍)(?!X)/g,repl:'$1Xwazawai-trouble~Noun'},
 {pat:/(福)(?!X)/g,repl:'$1Xfuku-luck~Noun'},
 {pat:/(私)(?!X)/g,repl:'$1Xwatashi-I~Noun'},
@@ -7633,12 +7640,13 @@ const replsB = [
 {pat:/(話)(?!X)/g,repl:'$1Xhanashi-story~Noun'},
 {pat:/(況)(?!X)/g,repl:'$1Xkyou-outlook~Noun'},
 {pat:/(誠)(?!X)/g,repl:'$1XMakoto-honesty~Noun'},
+{pat:/(条)(?!X)/g,repl:'$1Xjyou-west and east~Noun'},
 {pat:/(説)(?!X)/g,repl:'$1Xsetsu-theory,opinion~Noun'},
 {pat:/(誰)(?!X)/g,repl:'$1Xdare-who~Noun'},
 {pat:/(課)(?!X)/g,repl:'$1Xka-section,division,lesson~Noun'},
 {pat:/(論)(?!X)/g,repl:'$1Xron-argument~Noun'},
 {pat:/(蘭)(?!X)/g,repl:'$1Xran-orchid~Noun'},
-{pat:/(越)(?!X)/g,repl:'$1Xkoshi-yew~Noun'},
+{pat:/(越)(?!X)/g,repl:'$1Xkoshi,etsu-yew~Noun'},
 {pat:/(佐)(?!X)/g,repl:'$1Xsai-assistant~Noun'},
 {pat:/(伯)(?!X)/g,repl:'$1Xki-Earl~Noun'},
 {pat:/(謎)(?!X)/g,repl:'$1Xnazo-puzzle,mystery~Noun'},
@@ -7946,8 +7954,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-FAについても「まだ全然わからない、僕自身もなったことないですし」
-　エンゼルスの大谷翔平投手が10日（日本時間11日）、11日（同12日）に行われるオールスター戦を前に報道陣の取材に応じ、自身の去就問題について言及した。他チームから誘いの話があったかどうか問われると「秘密です」と回答した。
+６月１日、新潟県上越市で自営業の男性を殺害した疑いで長野県の70歳の男が逮捕されました。
+
+７月１１日、殺人の疑いで逮捕されたのは、長野県上田市中之条の無職・小倉一夫容疑者（70）です。
+
+小倉容疑者は６月１日午後７時４４分ごろ、上越市大貫の自営業で自動車の販売などをしていた中村礼治さん（62）宅の敷地内で、殺意を持って中村さんの頭部を鈍器のようなもので複数回殴打し、頭部打撲による外傷性くも膜下出血により、殺害した疑いが持たれています。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
