@@ -300,7 +300,7 @@ const replsA = [
 {pat:/(げ)(?!X)(ら)(?!X)(げ)(?!X)(ら)(?!X)/g,repl:'$1X$2Xou$3Xt$4X loud~Noun'},
 {pat:/(こ)(?!X)(っ)(?!X)(そ)(?!X)(り)(?!X)/g,repl:'$1X$2Xst$3Xe$4Xalthily-secretly~Noun'},
 {pat:/(こ)(?!X)(れ)(?!X)(か)(?!X)(ら)(?!X)/g,repl:'$1Xko$2Xre$3Xka$4Xra-from now on,after this~Noun'},
-{pat:/(こ)(?!X)(れ)(?!X)(ま)(?!X)(で)(?!X)/g,repl:'$1X$2Xko$3Xr$4Xe made,up til now~Noun'},
+{pat:/(こ)(?!X)(れ)(?!X)(ま)(?!X)(で)(?!X)/g,repl:'$1Xko$2Xre$3Xma$4Xde-up till now~Noun'},
 {pat:/(こ)(?!X)(ん)(?!X)(な)(?!X)(に)(?!X)/g,repl:'$1X$2Xth$3Xi$4Xs-so,such~Noun'},
 {pat:/(ご)(?!X)(く)(?!X)(ん)(?!X)(と)(?!X)/g,repl:'$1X$2X$3X$4Xin one gulp~Noun'},
 {pat:/(ご)(?!X)(ろ)(?!X)(ご)(?!X)(ろ)(?!X)/g,repl:'$1X$2Xru$3Xm$4Xble~Noun'},
@@ -739,6 +739,7 @@ const replsA = [
 {pat:/(間)(?!X)(に)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xman$2Xia$3X-be in time,answer purpose,can do without$4X~UVerb'},
 {pat:/(間)(?!X)(も)(?!X)(無)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xmam$2Xon$3Xa-soon,in a short time$4X~KuVerb'},
 {pat:/(間)(?!X)(違)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmac$2Xhi$3Xgae-mistake,confuse$4X~RuVerb'},
+{pat:/(立)(?!X)(ち)(?!X)(会)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xta$2Xchi$3Xa-observe$4X~UVerb'},
 {pat:/(隣)(?!X)(り)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xton$2Xar$3Xia-adjoin,be next door to each other$4X~UVerb'},
 {pat:/(飛)(?!X)(び)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xtob$2Xid$3Xa-fly out,dash out$4X~SuVerb'},
 {pat:/(飛)(?!X)(び)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xtob$2Xik$3Xo-dive into$4X~MuVerb'},
@@ -801,7 +802,7 @@ const replsA = [
 {pat:/(か)(?!X)(な)(?!X)(り)(?!X)/g,repl:'$1Xkan$2Xar$3Xi-fairly close to~Noun'},
 {pat:/(き)(?!X)(っ)(?!X)(と)(?!X)/g,repl:'$1Xkit$2Xto$3X-surely,certainly~Noun'},
 {pat:/(き)(?!X)(の)(?!X)(う)(?!X)/g,repl:'$1Xki$2Xno$3Xu-yesterday~Noun'},
-{pat:/(き)(?!X)(ょ)(?!X)(う)(?!X)/g,repl:'$1Xkyo$2X$3Xu-today~Noun'},
+{pat:/(き)(?!X)(ょ)(?!X)(う)(?!X)/g,repl:'$1Xk$2Xyo$3Xu-today~Noun'},
 {pat:/(く)(?!X)(ら)(?!X)(い)(?!X)/g,repl:'$1Xkur$2Xai$3X-about~Noun'},
 {pat:/(け)(?!X)(れ)(?!X)(ど)(?!X)/g,repl:'$1Xker$2Xed$3Xo-however~Noun'},
 {pat:/(こ)(?!X)(ち)(?!X)(ら)(?!X)/g,repl:'$1Xko$2Xchi$3Xra-this way~Noun'},
@@ -825,7 +826,7 @@ const replsA = [
 {pat:/(す)(?!X)(で)(?!X)(に)(?!X)/g,repl:'$1Xsud$2X$3Xe ni,already too late~Noun'},
 {pat:/(す)(?!X)(べ)(?!X)(き)(?!X)/g,repl:'$1Xsub$2Xek$3Xi-should~Noun'},
 {pat:/(す)(?!X)(べ)(?!X)(て)(?!X)/g,repl:'$1X$2X$3X subete,completely~Noun'},
-{pat:/(す)(?!X)(る)(?!X)(と)(?!X)/g,repl:'$1Xsur$2X$3Xu to,by way of~SuruVerb'},
+{pat:/(す)(?!X)(る)(?!X)(と)(?!X)/g,repl:'$1Xsu$2Xru$3Xto-by way of~SuruVerb'},
 {pat:/(す)(?!X)(れ)(?!X)(ば)(?!X)/g,repl:'$1Xsur$2Xeb$3Xa-if that is case then~Noun'},
 {pat:/(ず)(?!X)(っ)(?!X)(と)(?!X)/g,repl:'$1Xzut$2Xto$3X-throughout~Noun'},
 {pat:/(ず)(?!X)(ら)(?!X)(り)(?!X)/g,repl:'$1Xzur$2Xar$3Xi-line up neatly~Noun'},
@@ -898,12 +899,12 @@ const replsA = [
 {pat:/(も)(?!X)(し)(?!X)(も)(?!X)/g,repl:'$1Xmo$2Xshi$3Xmo-if,if ever~Noun'},
 {pat:/(も)(?!X)(っ)(?!X)(と)(?!X)/g,repl:'$1Xmot$2Xto$3X-more~Noun'},
 {pat:/(も)(?!X)(の)(?!X)(で)(?!X)/g,repl:'$1Xmon$2X$3Xo de,reason for~Noun'},
-{pat:/(も)(?!X)(の)(?!X)(の)(?!X)/g,repl:'$1Xmon$2X$3Xo no,despite fact that~Noun'},
+{pat:/(も)(?!X)(の)(?!X)(の)(?!X)/g,repl:'$1Xmo$2Xno$3Xno-despite the fact that~Noun'},
 {pat:/(も)(?!X)(は)(?!X)(や)(?!X)/g,repl:'$1Xmo$2Xha$3Xya-already,no longer~Noun'},
 {pat:/(や)(?!X)(か)(?!X)(ん)(?!X)/g,repl:'$1Xya$2Xka$3Xn-kettle~Noun'},
 {pat:/(や)(?!X)(が)(?!X)(て)(?!X)/g,repl:'$1Xyag$2Xat$3Xe-soon,before long~Noun'},
 {pat:/(や)(?!X)(け)(?!X)(ど)(?!X)/g,repl:'$1Xyake$2Xdo$3X-burn~Noun'},
-{pat:/(や)(?!X)(す)(?!X)(い)(?!X)/g,repl:'$1Xyas$2Xui$3X-easy to do~Noun'},
+{pat:/(や)(?!X)(す)(?!X)/g,repl:'$1Xya$2Xsu-easy to do~IAdjective'},
 {pat:/(や)(?!X)(っ)(?!X)(と)(?!X)/g,repl:'$1Xfin$2Xal$3Xly~Noun'},
 {pat:/(や)(?!X)(は)(?!X)(り)(?!X)/g,repl:'$1Xyah$2Xar$3Xi-as expected,also,still~Noun'},
 {pat:/(や)(?!X)(り)(?!X)(方)(?!X)/g,repl:'$1Xyari$2Xka$3Xta-way of doing~Noun'},
@@ -1041,7 +1042,7 @@ const replsA = [
 {pat:/(共)(?!X)(和)(?!X)(党)(?!X)/g,repl:'$1Xkyou$2Xwa$3Xtou-Japanese Republican Party~Noun'},
 {pat:/(共)(?!X)(和)(?!X)(国)(?!X)/g,repl:'$1Xkyou$2Xwa$3Xkoku-republic~Noun'},
 {pat:/(共)(?!X)(通)(?!X)(語)(?!X)/g,repl:'$1Xkyou$2Xtsuu$3Xgo-common language,lingua franca~Noun'},
-{pat:/(共|と)(?!X)(も)(?!X)(に)(?!X)/g,repl:'$1Xtom$2X$3Xo ni-jointly~Noun'},
+{pat:/(共|と)(?!X)(も)(?!X)(に)(?!X)/g,repl:'$1Xto$2Xmo$3X ni-jointly~Noun'},
 {pat:/(具)(?!X)(体)(?!X)(化)(?!X)/g,repl:'$1Xgu$2Xtai$3Xka-actualization~Noun'},
 {pat:/(具)(?!X)(体)(?!X)(的)(?!X)/g,repl:'$1Xgu$2Xtai$3Xteki-specific~Noun'},
 {pat:/(典)(?!X)(型)(?!X)(的)(?!X)/g,repl:'$1Xtenkei$2Xte$3Xki-typical,representative~Noun'},
@@ -2071,7 +2072,7 @@ const replsA = [
 {pat:/(落)(?!X)(ち)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xo$2Xchi-fall,sink$3X~RuVerb'},
 {pat:/(落)(?!X)(と)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xo$2Xto-drop$3X~SuVerb'},
 {pat:/(著)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xichi$2Xjiru-shi,remarkable,conspicuous$3X~IAdjective~Noun'},
-{pat:/(蒸)(?!X)(し)(?!X)(暑)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xmushi$2Xat$3Xsu-humid$4X~IAdjective~Noun'},
+{pat:/(蒸)(?!X)(し)(?!X)(暑)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xmu$2Xshi$3Xatsu-humid$4X~IAdjective~Noun'},
 {pat:/(薄)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xusu$2Xme-thin,dilute$3X~RuVerb'},
 {pat:/(薄)(?!X)(暗)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xusu$2Xgura-gloomy,dim$3X~IAdjective~Noun'},
 {pat:/(衰)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xoto$2Xroe-wea-ken,decline$3X~RuVerb'},
@@ -3371,7 +3372,7 @@ const replsB = [
 {pat:/(図)(?!X)(表)(?!X)/g,repl:'$1Xzu$2Xhyou-graph~Noun'},
 {pat:/(図)(?!X)(解)(?!X)/g,repl:'$1Xzu$2Xkai-illustration~Noun'},
 {pat:/(固)(?!X)(め)(?!X)/g,repl:'$1Xkata$2Xme-decide on~IchidanVerb'},
-{pat:/(固)(?!X)(体)(?!X)/g,repl:'$1Xko$2Xtai-solid,solid matter~Noun'},
+{pat:/(固)(?!X)(体)(?!X)/g,repl:'$1Xko$2Xtai-solid matter~Noun'},
 {pat:/(固)(?!X)(定)(?!X)/g,repl:'$1Xko$2Xtei-fixing,stability~Noun'},
 {pat:/(固)(?!X)(有)(?!X)/g,repl:'$1Xko$2Xyuu-peculiar to,characteristic~Noun'},
 {pat:/(国)(?!X)(々)(?!X)/g,repl:'$1Xkuni$2Xguni-national~Noun'},
@@ -6612,7 +6613,7 @@ const replsB = [
 {pat:/(壊)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xkowa-destroy$2X~SuVerb'},
 {pat:/(売)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xu-sell$2X~RuVerb'},
 {pat:/(外)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xhazu-remove$2X~SuVerb'},
-{pat:/(多)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xoo-,lots of$2X~IAdjective~Noun'},
+{pat:/(多)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xoo-lots of$2X~IAdjective~Noun'},
 {pat:/(多)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xoo-,much,largely$2X~KuVerb'},
 {pat:/(太)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xfuto-thick,fat$2X~IAdjective~Noun'},
 {pat:/(太)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xfuto-grow fat,fatten$2X~RuVerb'},
@@ -7954,11 +7955,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-６月１日、新潟県上越市で自営業の男性を殺害した疑いで長野県の70歳の男が逮捕されました。
-
-７月１１日、殺人の疑いで逮捕されたのは、長野県上田市中之条の無職・小倉一夫容疑者（70）です。
-
-小倉容疑者は６月１日午後７時４４分ごろ、上越市大貫の自営業で自動車の販売などをしていた中村礼治さん（62）宅の敷地内で、殺意を持って中村さんの頭部を鈍器のようなもので複数回殴打し、頭部打撲による外傷性くも膜下出血により、殺害した疑いが持たれています。
+北朝鮮国営メディアは13日、金正恩（キム・ジョンウン）国務委員長の立ち会いのもと、従来の液体燃料式よりも迅速に発射できる固体燃料式の新型大陸間弾道ミサイル（ICBM）「火星18型」の発射実験を前日12日に行い、成功したと発表した。固体燃料式ICBM「火星18型」の発射成功は4月13日に続き、2回目となる。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
