@@ -1264,7 +1264,7 @@ const replsA = [
 {pat:/(新)(?!X)(学)(?!X)(期)(?!X)/g,repl:'$1Xshin$2Xgak$3Xki-new term,new semester~Noun'},
 {pat:/(新)(?!X)(幹)(?!X)(線)(?!X)/g,repl:'$1Xshin$2Xkan$3Xsen-bullet train~Noun'},
 {pat:/(新)(?!X)(店)(?!X)(舗)(?!X)/g,repl:'$1Xshin$2Xten$3Xpo-new store~Noun'},
-{pat:/(新)(?!X)(聞)(?!X)(社)(?!X)/g,repl:'$1Xshin$2Xbun$3Xsya-newspaper office~Noun'},
+{pat:/(新)(?!X)(聞)(?!X)(社)(?!X)/g,repl:'$1Xshin$2Xbun$3Xsya-news publisher~Noun'},
 {pat:/(旅)(?!X)(客)(?!X)(機)(?!X)/g,repl:'$1Xryo$2Xka$3Xkuki-passenger plane~Noun'},
 {pat:/(日)(?!X)(ご)(?!X)(ろ)(?!X)/g,repl:'$1Xhig$2Xor$3Xo-routinely~Noun'},
 {pat:/(日)(?!X)(の)(?!X)(丸)(?!X)/g,repl:'$1Xhin$2Xom$3Xaru-Rising Sun Flag,Japanese flag~Noun'},
@@ -2907,7 +2907,6 @@ const replsB = [
 {pat:/(共)(?!X)(闘)(?!X)/g,repl:'$1Xkyou$2Xtou-united front~Noun'},
 {pat:/(兵)(?!X)(器)(?!X)/g,repl:'$1Xhei$2Xki-weapons~Noun'},
 {pat:/(兵)(?!X)(士)(?!X)/g,repl:'$1Xhei$2Xshi-soldier~Noun'},
-{pat:/(兵)(?!X)(庫)(?!X)/g,repl:'$1Xhyou$2Xgo-Japan~Noun'},
 {pat:/(持)(?!X)(参)(?!X)/g,repl:'$1Xji$2Xsan-carry~Noun'},
 {pat:/(転)(?!X)(職)(?!X)/g,repl:'$1Xten$2Xsyoku-changing jobs~Noun'},
 {pat:/(兵)(?!X)(役)(?!X)/g,repl:'$1Xhei$2Xeki-military service~Noun'},
@@ -5220,6 +5219,10 @@ const replsB = [
 {pat:/(直)(?!X)(角)(?!X)/g,repl:'$1Xchyok$2Xkaku-right angle~Noun'},
 {pat:/(直)(?!X)(近)(?!X)/g,repl:'$1Xcyok$2Xkin-nearest in time~Noun'},
 {pat:/(直)(?!X)(通)(?!X)/g,repl:'$1Xcyoku$2Xtsuu-direct link,non-stop~Noun'},
+{pat:/(拳)(?!X)(銃)(?!X)/g,repl:'$1Xken$2Xjyuu-pistol~Noun'},
+{pat:/(実)(?!X)(弾)(?!X)/g,repl:'$1Xjitsu$2Xdan-live round~Noun'},
+{pat:/(巡)(?!X)(査)(?!X)/g,repl:'$1Xjyun$2Xsa-police officer~Noun'},
+{pat:/(紛)(?!X)(失)(?!X)/g,repl:'$1Xfun$2Xshitsu-shot off~Noun'},
 {pat:/(直)(?!X)(面)(?!X)/g,repl:'$1Xcyoku$2Xmen-face~Noun'},
 {pat:/(相)(?!X)(互)(?!X)/g,repl:'$1Xsou$2Xgo-mutual~Noun'},
 {pat:/(相)(?!X)(場)(?!X)/g,repl:'$1Xsou$2Xba-market speculation~Noun'},
@@ -7088,13 +7091,14 @@ const replsB = [
 {pat:/(億)(?!X)/g,repl:'$1Xoku-hundred million~Noun'},
 {pat:/(元)(?!X)/g,repl:'$1Xmoto-former,origin,base of~Noun'},
 {pat:/(兄)(?!X)/g,repl:'$1Xani-older brother~Noun'},
+{pat:/(庫)(?!X)/g,repl:'$1Xgo,kura-warehouse~Noun'},
 {pat:/(兆)(?!X)/g,repl:'$1X+cyou,trillion~Noun'},
 {pat:/(先)(?!X)/g,repl:'$1Xsaki-ahead~Noun'},
 {pat:/(光)(?!X)/g,repl:'$1Xhikari-light,flash~Noun'},
 {pat:/(党)(?!X)/g,repl:'$1Xtou-political party~Noun'},
 {pat:/(全)(?!X)/g,repl:'$1Xzen-all~Noun'},
 {pat:/(共)(?!X)/g,repl:'$1Xtomo-together~Noun'},
-{pat:/(兵)(?!X)/g,repl:'$1Xhei-soldier~Noun'},
+{pat:/(兵)(?!X)/g,repl:'$1Xhei-soldier,hyou-pawn~Noun'},
 {pat:/(内)(?!X)/g,repl:'$1Xnai-inside~Noun'},
 {pat:/(円)(?!X)/g,repl:'$1Xen-yen~Noun'},
 {pat:/(再)(?!X)/g,repl:'$1Xsai-again~Noun'},
@@ -7221,7 +7225,7 @@ const replsB = [
 {pat:/(実)(?!X)/g,repl:'$1Xmi-fruit,nut~Noun'},
 {pat:/(客)(?!X)/g,repl:'$1Xkyaku-customer~Noun'},
 {pat:/(室)(?!X)/g,repl:'$1Xshitsu,ya-room,shop~Noun'},
-{pat:/(宮)(?!X)/g,repl:'$1Xmiya,kyuu,palace~Noun'},
+{pat:/(宮)(?!X)/g,repl:'$1Xmiya,no miya,kyuu,palace~Noun'},
 {pat:/(害)(?!X)/g,repl:'$1Xgai-harm,damage~Noun'},
 {pat:/(家)(?!X)/g,repl:'$1Xie,ka,home,master artisan~Noun'},
 {pat:/(寝)(?!X)/g,repl:'$1Xne-sleep~IchidanVerb'},
@@ -7965,23 +7969,9 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-この3連休、“災害級の暑さ”にも注意が必要です。15日、最高気温32.9℃だった東京都心。
-代々木公園で開催された「ブラジルフェスティバル」では…
+兵庫県警西宮署は 15日午後、 兵庫県西宮市内のスーパーで、  男性巡査部長(49)が 一時、拳銃の実弾を紛失していたと発表しました。
 
-（小山颯リポート）
-「いま救護所に熱中症の疑いがある方が入ってきました」
-
-救護テントの下で、熱中症が疑われるスタッフが冷却シートなどで額と首元を冷やしています。
-朝から焼き場を担当していたという女性。今回は30分ほど休憩して、事なきを得ました。
-
-（“熱中症”で一時体調不良　イベントスタッフ）
-「休んだ後に栄養ドリンクなどもいただきましたのでよくなりました」
-
-16日、17日は一気に気温が上がり、東京都心で最高気温37℃、熊谷で39℃など、40℃に迫る予想も出ていて、警戒感が高まっています。
-厳しい暑さの中で活動する人は、どんな熱中症対策をしているのでしょうか。
-先ほど体調不良者も出ていたのが「焼き場」です。ブラジルの肉料理「シュラスコ」の屋台をサーモカメラで見てみると、焼き場のテントの中は、40℃以上を示す紫色に。
-こまめな水分補給と扇風機の設置に加え、イベントでは、例年より救護ベッドや看護師の数を増やして対応に当たります。
-16日は東京、愛知、兵庫など、あわせて17の地域に「熱中症警戒アラート」が出されます。
+　警察によりますと、15日午後0時10分ごろ、西宮市内のスーパーで、西宮署地域課の男性巡査部長が弾入れ袋に入った状態の「拳銃の実弾」を紛失したということです。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
