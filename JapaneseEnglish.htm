@@ -2305,7 +2305,7 @@ const replsB = [
 {pat:/(だ)(?!X)(け)(?!X)/g,repl:'$1Xdak$2Xe-only~Noun'},
 {pat:/(ち)(?!X)(り)(?!X)/g,repl:'$1Xchi$2Xri-dust~Noun'},
 {pat:/(つ)(?!X)(け)(?!X)/g,repl:'$1Xtsu$2Xke-soak~IchidanVerb'},
-{pat:/(て)(?!X)(も)(?!X)/g,repl:'$1Xtem$2Xo-even if~Noun'},
+{pat:/(て)(?!X)(も)(?!X)/g,repl:'$1Xte$2Xmo-even if~Noun'},
 {pat:/(で)(?!X)(も)(?!X)/g,repl:'$1Xde$2Xmo-but~Postposition~Noun'},
 {pat:/(と)(?!X)(に)(?!X)/g,repl:'$1X$2Xto ni,suddenly~Noun'},
 {pat:/(と)(?!X)(の)(?!X)/g,repl:'$1Xtou$2Xno-about~Postposition~Noun'},
@@ -5119,7 +5119,6 @@ const replsB = [
 {pat:/(用)(?!X)(途)(?!X)/g,repl:'$1Xyou$2Xto-use,service~Noun'},
 {pat:/(田)(?!X)(畑)(?!X)/g,repl:'$1Xtah$2Xata-fields and rice paddies~Noun'},
 {pat:/(田)(?!X)(舎)(?!X)/g,repl:'$1Xina$2Xka-countries,countriesside~Noun'},
-{pat:/(甲)(?!X)(信)(?!X)/g,repl:'$1XKou$2X-shin,region of Japan~Noun'},
 {pat:/(申)(?!X)(告)(?!X)/g,repl:'$1Xshin$2Xkoku-report~Noun'},
 {pat:/(申)(?!X)(請)(?!X)/g,repl:'$1Xshin$2Xsei-application~Noun'},
 {pat:/(男)(?!X)(児)(?!X)/g,repl:'$1Xdan$2Xji-little boy~Noun'},
@@ -5407,6 +5406,7 @@ const replsB = [
 {pat:/(算)(?!X)(出)(?!X)/g,repl:'$1Xsan$2Xsyutsu-computational output~Noun'},
 {pat:/(管)(?!X)(内)(?!X)/g,repl:'$1Xkan$2Xnai-within jurisdiction of~Noun'},
 {pat:/(管)(?!X)(理)(?!X)/g,repl:'$1Xkan$2Xri-management~Noun'},
+{pat:/(難)(?!X)(病)(?!X)/g,repl:'$1Xnan$2Xbyou-incurable disease~Noun'},
 {pat:/(箱)(?!X)(根)(?!X)/g,repl:'$1Xhako$2Xne-Japan~Noun'},
 {pat:/(節)(?!X)(約)(?!X)/g,repl:'$1Xsetsu$2Xyaku-economizing,saving~Noun'},
 {pat:/(節)(?!X)(電)(?!X)/g,repl:'$1Xsetsu$2Xden-blackout~Noun'},
@@ -7706,15 +7706,15 @@ const replsB = [
 {pat:/(辺)(?!X)/g,repl:'$1Xhen-vicinity,part~Noun'},
 {pat:/(逆)(?!X)/g,repl:'$1Xgyaku-reverse~Noun'},
 {pat:/(連)(?!X)/g,repl:'$1Xren-federation~Noun'},
-{pat:/(翔)(?!X)/g,repl:'$1Xsyou-soar~Noun'},
+{pat:/(翔)(?!X)/g,repl:'$1Xsyou,ka-soar~Noun'},
 {pat:/(平)(?!X)/g,repl:'$1Xhei-plateau~Noun'},
 {pat:/(週)(?!X)/g,repl:'$1Xsyuu-week~Noun'},
 {pat:/(運)(?!X)/g,repl:'$1Xun-fortune,fate~Noun'},
 {pat:/(道)(?!X)/g,repl:'$1Xmichi-street~Noun'},
 {pat:/(選)(?!X)/g,repl:'$1Xsen-election~Noun'},
 {pat:/(郎)(?!X)/g,repl:'$1XRou-nth son~Noun'},
-{pat:/(郡)(?!X)/g,repl:'$1Xgun-county~Noun'},
 {pat:/(部)(?!X)/g,repl:'$1Xbu-department,club,region~Noun'},
+{pat:/(峰)(?!X)/g,repl:'$1Xmine-peak~Noun'},
 {pat:/(都)(?!X)/g,repl:'$1Xto-capital,city~Noun'},
 {pat:/(酒)(?!X)/g,repl:'$1Xsake-rice alcohol~Noun'},
 {pat:/(酢)(?!X)/g,repl:'$1Xsu-vinegar~Noun'},
@@ -7750,7 +7750,8 @@ const replsB = [
 {pat:/(隊)(?!X)/g,repl:'$1Xtai-crew~Noun'},
 {pat:/(階)(?!X)/g,repl:'$1Xkai-floor~Noun'},
 {pat:/(隙)(?!X)/g,repl:'$1Xsuki-gap~Noun'},
-{pat:/(際)(?!X)/g,repl:'$1Xsai-in case of~Noun'},
+{pat:/(隙)(?!X)/g,repl:'$1Xsuki-gap~Noun'},
+{pat:/(信)(?!X)/g,repl:'$1Xshin-sincerity~Noun'},
 {pat:/(隣)(?!X)/g,repl:'$1Xtonari-next to~Noun'},
 {pat:/(雀)(?!X)/g,repl:'$1Xsuzume-sparrow~Noun'},
 {pat:/(雄)(?!X)/g,repl:'$1Xosu,O,male~Noun'},
@@ -7917,6 +7918,7 @@ a = a.replace(/(がX)(~GuVerb)/g,'<p>がXga$2');
 a = a.replace(/(きX)(~KuVerb)/g,'<p>きXki$2');
 a = a.replace(/(ぎX)(~GuVerb)/g,'<p>ぎXgi$2');
 a = a.replace(/(くX)(~IAdjective~Noun)/g,'<p>$1Xku-and$2');
+a = a.replace(/(さX)(~IAdjective~Noun)/g,'<p>$1Xsa-turns the adjective into a noun$2');
 a = a.replace(/(くX)(~KuVerb)/g,'<p>くXku,to do,will do$2');
 a = a.replace(/(ぐX)(~GuVerb)/g,'<p>ぐXgu,to do,will do$2');
 a = a.replace(/(けX)(~KuVerb)/g,'<p>けXke,can do$2');
@@ -7985,7 +7987,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-【ガンディナガル（インド西部）共同】日米欧の先進国に中国やロシアなど新興国を加えた20カ国・地域（G20）財務相・中央銀行総裁会議は18日、インド西部ガンディナガルで2日間の討議を終え閉幕した。ウクライナに侵攻したロシアへの対応を巡る対立が解けず、共同声明の採択を6会合連続で見送った。
+【イスタンブール＝小峰翔】ＮＰＯ法人「難病患者支援の会」（東京）による海外での臓器あっせん事件を巡り、ＮＰＯと連携して移植を進めていた「移植コーディネーター」のトルコ人男性（５９）が、臓器売買に関与した疑いでトルコ検察当局の捜査を受けていることがわかった。５月に一時身柄拘束され、現在は任意で捜査を受けている。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
