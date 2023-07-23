@@ -565,7 +565,7 @@ const replsA = [
 {pat:/(と)(?!X)(も)(?!X)(か)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xtom$2Xok$3Xa-at least,at any rate$4X~KuVerb'},
 {pat:/(と)(?!X)(ん)(?!X)(か)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,repl:'$1X$2Xto$3Xんka,pork cutlet$4X~TsuVerb'},
 {pat:/(な)(?!X)(か)(?!X)(っ)(?!X)(た)(?!X)/g,repl:'$1Xna$2Xka$3Xt$4Xta-was not~Verb'},
-{pat:/(な)(?!X)(る)(?!X)(べ)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xnar$2Xub$3Xe-if possible$4X~KuVerb'},
+{pat:/(な)(?!X)(る)(?!X)(べ)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xnar$2Xu$3Xbe-if possible$4X~KuVerb'},
 {pat:/(ぬ)(?!X)(る)(?!X)(ぬ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xnur$2Xun$3Xu-slimy$4X~RuVerb'},
 {pat:/(は)(?!X)(み)(?!X)(出)(?!X)(し)(?!X)/g,repl:'$1X$2Xha$3Xm$4Xidashi,stick out~Noun'},
 {pat:/(ば)(?!X)(か)(?!X)(ら)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2Xba$3Xk$4Xara-shi,stupid,useless$5X~IAdjective~Noun'},
@@ -1271,7 +1271,7 @@ const replsA = [
 {pat:/(日)(?!X)(の)(?!X)(丸)(?!X)/g,repl:'$1Xhin$2Xom$3Xaru-Rising Sun Flag,Japanese flag~Noun'},
 {pat:/(日)(?!X)(の)(?!X)(出)(?!X)/g,repl:'$1X$2Xhi$3X no de,sunrise~Noun'},
 {pat:/(日)(?!X)(付)(?!X)(け)(?!X)/g,repl:'$1Xhiz$2Xuk$3Xe-date~Noun'},
-{pat:/(日)(?!X)(差)(?!X)(し)(?!X)/g,repl:'$1Xhiza$2Xsh$3Xi-rays of sun~Noun'},
+{pat:/(日)(?!X)(差)(?!X)(し)(?!X)/g,repl:'$1Xhi$2Xza$3Xshi-rays of sun~Noun'},
 {pat:/(日)(?!X)(帰)(?!X)(り)(?!X)/g,repl:'$1Xhig$2Xae$3Xri-a day trip~Noun'},
 {pat:/(日)(?!X)(曜)(?!X)(日)(?!X)/g,repl:'$1Xnichi$2Xyou$3Xbi-Sunday~Noun'},
 {pat:/(日)(?!X)(本)(?!X)(人)(?!X)/g,repl:'$1Xni$2Xhon$3Xjin-Japanese person~Noun'},
@@ -1650,7 +1650,7 @@ const replsA = [
 {pat:/(だ)(?!X)(る)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xdar$2Xu-be dull,feel dull,weary$3X~IAdjective~Noun'},
 {pat:/(ち)(?!X)(ぎ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xchi$2Xgi-tear,tear off$3X~RuVerb'},
 {pat:/(つ)(?!X)(か)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xtsu$2Xka-grab$3X~MuVerb'},
-{pat:/(つ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtsu$2Xke-switch on$3X~RuVerb'},
+{pat:/(つ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtsu$2Xke-attach$3X~RuVerb'},
 {pat:/(つ)(?!X)(ぶ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtsu$2Xbu-close$3X~RuVerb'},
 {pat:/(つ)(?!X)(ま)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xtsu$2Xma-munch on$3X~MuVerb'},
 {pat:/(と)(?!X)(い)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xto$2Xi-to be called$3X~UVerb'},
@@ -2303,7 +2303,7 @@ const replsB = [
 {pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1Xta$2Xchi-plural~Noun'},
 {pat:/(た)(?!X)(め)(?!X)/g,repl:'$1Xta$2Xme-for~Noun'},
 {pat:/(た)(?!X)(り)(?!X)/g,repl:'$1Xta$2Xri-and things like that~Noun'},
-{pat:/(だ)(?!X)(け)(?!X)/g,repl:'$1Xdak$2Xe-only~Noun'},
+{pat:/(だ)(?!X)(け)(?!X)/g,repl:'$1Xda$2Xke-only~Noun'},
 {pat:/(ち)(?!X)(り)(?!X)/g,repl:'$1Xchi$2Xri-dust~Noun'},
 {pat:/(つ)(?!X)(け)(?!X)/g,repl:'$1Xtsu$2Xke-soak;attach~IchidanVerb'},
 {pat:/(て)(?!X)(も)(?!X)/g,repl:'$1Xte$2Xmo-even if~Noun'},
@@ -2767,6 +2767,7 @@ const replsB = [
 {pat:/(保)(?!X)(障)(?!X)/g,repl:'$1Xho$2Xsyou-pledge~Noun'},
 {pat:/(保)(?!X)(革)(?!X)/g,repl:'$1Xho$2Xkaku-conservative~Noun'},
 {pat:/(信)(?!X)(じ)(?!X)/g,repl:'$1Xshin$2Xji-believe~IchidanVerb'},
+{pat:/(避)(?!X)(け)(?!X)/g,repl:'$1Xyo$2Xke-protection,avoidance~IchidanVerb'},
 {pat:/(信)(?!X)(仰)(?!X)/g,repl:'$1Xshin$2Xkou-religious belief~Noun'},
 {pat:/(信)(?!X)(号)(?!X)/g,repl:'$1Xshin$2Xgou-signal,traffic light~Noun'},
 {pat:/(信)(?!X)(念)(?!X)/g,repl:'$1Xshin$2Xnen-conviction~Noun'},
@@ -5907,6 +5908,7 @@ const replsB = [
 {pat:/(論)(?!X)(理)(?!X)/g,repl:'$1Xron$2Xri-logic~Noun'},
 {pat:/(論)(?!X)(議)(?!X)/g,repl:'$1Xron$2Xgi-debate~Noun'},
 {pat:/(諮)(?!X)(問)(?!X)/g,repl:'$1Xshi$2Xmon-advisory~Noun'},
+{pat:/(屋)(?!X)(内)(?!X)/g,repl:'$1Xoku$2Xnai-indoors~Noun'},
 {pat:/(諸)(?!X)(国)(?!X)/g,repl:'$1Xsyo$2Xkoku-various countries~Noun'},
 {pat:/(諸)(?!X)(島)(?!X)/g,repl:'$1Xsyo$2Xtou-group of islands,archipelago~Noun'},
 {pat:/(謄)(?!X)(本)(?!X)/g,repl:'$1Xtou$2Xhon-certified copy~Noun'},
@@ -6266,7 +6268,6 @@ const replsB = [
 {pat:/(長)(?!X)(さ)(?!X)/g,repl:'$1Xnaga$2Xsa-length~Noun'},
 {pat:/(長)(?!X)(女)(?!X)/g,repl:'$1Xcyou$2Xjyo-eldest daughter~Noun'},
 {pat:/(長)(?!X)(官)(?!X)/g,repl:'$1Xcyou$2Xkan-government secretary~Noun'},
-{pat:/(長)(?!X)(崎)(?!X)/g,repl:'$1XNag$2Xa-saki,Japan~Noun'},
 {pat:/(長)(?!X)(年)(?!X)/g,repl:'$1Xnaga$2Xnen-man-y years,long time~Noun'},
 {pat:/(長)(?!X)(所)(?!X)/g,repl:'$1Xcyou$2Xsyo-strong point,merit~Noun'},
 {pat:/(長)(?!X)(期)(?!X)/g,repl:'$1Xcyou$2Xki-long term~Noun'},
@@ -7368,7 +7369,7 @@ const replsB = [
 {pat:/(更)(?!X)/g,repl:'$1Xsara-new~Noun'},
 {pat:/(書)(?!X)/g,repl:'$1Xsyo-document~Noun'},
 {pat:/(最)(?!X)/g,repl:'$1Xsai-most~Noun'},
-{pat:/(月)(?!X)/g,repl:'$1Xtsuki-moon,getsu,Monday~Noun'},
+{pat:/(月)(?!X)/g,repl:'$1Xtsuki-moon;getsu,Monday~Noun'},
 {pat:/(服)(?!X)/g,repl:'$1Xfuku-clothes~Noun'},
 {pat:/(朝)(?!X)/g,repl:'$1Xasa-morning~Noun'},
 {pat:/(期)(?!X)/g,repl:'$1Xki-time period~Noun'},
@@ -7492,7 +7493,10 @@ const replsB = [
 {pat:/(犬)(?!X)/g,repl:'$1Xinu-dog~Noun'},
 {pat:/(犯)(?!X)/g,repl:'$1Xhan-crime~Noun'},
 {pat:/(猛)(?!X)/g,repl:'$1Xmou-extreme~Noun'},
-{pat:/(猫)(?!X)/g,repl:'$1Xneko-cat~Noun'},
+{pat:/(富)(?!X)/g,repl:'$1Xto-fortune~Noun'},
+{pat:/(富)(?!X)/g,repl:'$1Xto-fortune~Noun'},
+{pat:/(阪)(?!X)/g,repl:'$1Xsaka-slope~Noun'},
+{pat:/(取)(?!X)/g,repl:'$1Xtori-take~Noun'},
 {pat:/(猿)(?!X)/g,repl:'$1Xsaru,En-monkey,ape~Noun'},
 {pat:/(獣)(?!X)/g,repl:'$1Xkemono-beast,brute~Noun'},
 {pat:/(率)(?!X)/g,repl:'$1Xritsu-percent~Noun'},
@@ -7750,7 +7754,7 @@ const replsB = [
 {pat:/(鎖)(?!X)/g,repl:'$1Xkusari-chain,tether~Noun'},
 {pat:/(鏡)(?!X)/g,repl:'$1Xkagami-mirror~Noun'},
 {pat:/(鐘)(?!X)/g,repl:'$1Xkane-bell~Noun'},
-{pat:/(長)(?!X)/g,repl:'$1Xchou-chairperson,commander/naga-long~Noun'},
+{pat:/(長)(?!X)/g,repl:'$1Xchou-chairperson,commander;naga-long~Noun'},
 {pat:/(門)(?!X)/g,repl:'$1Xmon-gate~Noun'},
 {pat:/(間)(?!X)/g,repl:'$1Xkan-time period,aida,while~Noun'},
 {pat:/(関)(?!X)/g,repl:'$1Xkan-in relation to~Noun'},
@@ -7812,7 +7816,7 @@ const replsB = [
 {pat:/(高)(?!X)/g,repl:'$1Xdaka,kou,high~Noun'},
 {pat:/(髪)(?!X)/g,repl:'$1Xkami-hair,hairstyle~Noun'},
 {pat:/(魚)(?!X)/g,repl:'$1Xsakana-fish~Noun'},
-{pat:/(鳥)(?!X)/g,repl:'$1Xtori-bird~Noun'},
+{pat:/(鳥)(?!X)/g,repl:'$1Xtori,tot-bird~Noun'},
 {pat:/(鳩)(?!X)/g,repl:'$1Xhato-pigeon,dove~Noun'},
 {pat:/(鶏)(?!X)/g,repl:'$1Xniwatori-chi+cken~Noun'},
 {pat:/(麦)(?!X)/g,repl:'$1Xmugi-wheat~Noun'},
@@ -7898,7 +7902,7 @@ const replsB = [
 
 {pat:/(Verbの|Nounの)(?!X)/g,repl:'$1Xno-of~Postposition~Noun'},
 
-{pat:/(Verbを|Nounを)(?!X)/g,repl:'$1Xoodirect object~Postposition~Noun'},
+{pat:/(Verbを|Nounを)(?!X)/g,repl:'$1Xoo-direct object~Postposition~Noun'},
 
 {pat:/(Verbは|Nounは)(?!X)/g,repl:'$1Xwa-as for~Postposition~Noun'},
 
@@ -7943,6 +7947,7 @@ a = a.replace(/(さX)(~SuVerb)/g,'<p>さXsa$2');
 a = a.replace(/(しX)(~SuVerb)/g,'<p>しXshi$2');
 a = a.replace(/(すX)(~SuVerb)/g,'<p>すXsu,to do,will do$2');
 a = a.replace(/(せX)(~SuVerb)/g,'<p>せXse,can do$2');
+a = a.replace(/(すX)(~BeVerb)/g,'<p>すXsu(polite)$2');
 a = a.replace(/(そX)(~SuVerb)/g,'<p>そXso,let us do$2');
 a = a.replace(/(たX)(~TsuVerb)/g,'<p>たXta$2');
 a = a.replace(/(ちX)(~TsuVerb)/g,'<p>ちXchi$2');
@@ -8001,14 +8006,16 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-21日（金）は、前日の中国・近畿・東海に続いて、四国と北陸で梅雨明けの発表がありました。
+きょう24日(月)も、東北から中国地方は猛烈な暑さが続き、最高気温は京都市や福井市で36℃など体温並みの所も。熱中症に警戒。屋外だけでなく、屋内でも涼しい環境を保ち、万全な対策を。
+内陸部を中心に猛暑日
 
-22日（土）と23日（日）は晴れるところが多く、久しぶりに行楽日和の週末となりそうです。
+画像：tenki.jp
 
-＜22日（土）の天気＞
-梅雨前線は南に離れた状態で、本州付近は広く高気圧に覆われる見込みです。そのため、北海道から中・四国にかけて広い範囲で晴れるでしょう。
+きょう24日(月)も、各地で真夏の暑さが続くため、熱中症に警戒が必要です。
 
-関東甲信や東北でも、梅雨明けの発表があるかもしれません。ただし、午後は山沿いを中心に夕立や通り雨の可能性があります。特に山のレジャーなどでは天気の急変にお気をつけください。
+東北から中国地方は晴れて強い日差しが照りつけるため、内陸部を中心に猛暑日(最高気温が35℃以上)の所が多いでしょう。予想最高気温は、京都市や福井市で36℃と体温並み、福島市や鳥取市、富山市、大阪市で35℃など、猛烈な暑さとなりそうです。北海道や四国、九州は雨が降るため、湿度が高く、体にこたえる暑さでしょう。
+
+熱中症警戒アラートが、石川県、三重県、鳥取県、島根県、長崎県、熊本県、宮崎県、沖縄県(八重山地方)に発表されています。暑い時間帯の外出はなるべく避け、屋内を冷房などで涼しい環境にしてお過ごしください。
 
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
