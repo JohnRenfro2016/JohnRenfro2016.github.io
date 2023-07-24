@@ -408,11 +408,6 @@ const replsA = [
 {pat:/(イ)(?!X)(ン)(?!X)(フ)(?!X)(ラ)(?!X)/g,repl:'$1X$2Xin$3Xf$4Xura-infrastructure~Noun'},
 {pat:/(オ)(?!X)(ー)(?!X)(プ)(?!X)(ン)(?!X)/g,repl:'$1X$2X$3X$4Xo-pun,open~Noun'},
 {pat:/(ザ)(?!X)(ー)(?!X)(ザ)(?!X)(ー)(?!X)/g,repl:'$1X$2X$3X$4Xza-za-sound of rushing water~Noun'},
-{pat:/(ス)(?!X)(ー)(?!X)(ダ)(?!X)(ン)(?!X)/g,repl:'$1X$2X$3X$4Xsu-dan,Sudan~Noun'},
-{pat:/(ダ)(?!X)(イ)(?!X)(バ)(?!X)(ー)(?!X)/g,repl:'$1X$2Xda$3Xi$4X-ba,diver~Noun'},
-{pat:/(ニ)(?!X)(ュ)(?!X)(ー)(?!X)(ス)(?!X)/g,repl:'$1X$2Xny$3Xu$4X-su,news~Noun'},
-{pat:/(フ)(?!X)(ラ)(?!X)(ン)(?!X)(ス)(?!X)/g,repl:'$1X$2Xfu$3Xr$4Xansu-France~Noun'},
-{pat:/(ブ)(?!X)(レ)(?!X)(ー)(?!X)(キ)(?!X)/g,repl:'$1X$2Xbu$3Xr$4Xe-ki,breaks~Noun'},
 {pat:/(一)(?!X)(人)(?!X)(一)(?!X)(人)(?!X)/g,repl:'$1X$2Xhi$3Xt$4Xori-hitori,each and every person~Noun'},
 {pat:/(一)(?!X)(生)(?!X)(懸)(?!X)(命)(?!X)/g,repl:'$1X$2Xis$3Xs$4Xhyoukenmei-for life,with all one\'s might~Noun'},
 {pat:/(下|く)(?!X)(だ)(?!X)(さ)(?!X)(い)(?!X)/g,repl:'$1X$2Xku$3Xda$4Xsai-please~Noun'},
@@ -3819,6 +3814,7 @@ const replsB = [
 {pat:/(常)(?!X)(習)(?!X)/g,repl:'$1Xjyou$2Xsyuu-habit~Noun'},
 {pat:/(常)(?!X)(識)(?!X)/g,repl:'$1Xjyou$2Xshiki-common sense~Noun'},
 {pat:/(帽)(?!X)(子)(?!X)/g,repl:'$1Xbou$2Xshi-cap,hat~Noun'},
+{pat:/(父)(?!X)(親)(?!X)/g,repl:'$1Xchichi$2Xoya-father~Noun'},
 {pat:/(干)(?!X)(渉)(?!X)/g,repl:'$1Xkan$2Xsyou-interference~Noun'},
 {pat:/(平)(?!X)(ら)(?!X)/g,repl:'$1Xtai$2Xra-flat,level~Noun'},
 {pat:/(平)(?!X)(凡)(?!X)/g,repl:'$1Xhei$2Xbon-ordinary~Noun'},
@@ -3867,6 +3863,7 @@ const replsB = [
 {pat:/(広)(?!X)(場)(?!X)/g,repl:'$1Xhiro$2Xba-public square~Noun'},
 {pat:/(床)(?!X)(屋)(?!X)/g,repl:'$1Xtokoya$2X,barber,barbershop~Noun'},
 {pat:/(店)(?!X)(員)(?!X)/g,repl:'$1Xten$2Xin-clerk~Noun'},
+{pat:/(戦)(?!X)(勝)(?!X)/g,repl:'$1Xsen$2Xsyou-winning a war~Noun'},
 {pat:/(店)(?!X)(舗)(?!X)/g,repl:'$1Xten$2Xpo-store~Noun'},
 {pat:/(店)(?!X)(頭)(?!X)/g,repl:'$1Xten$2Xtou-storefront~Noun'},
 {pat:/(府)(?!X)(庁)(?!X)/g,repl:'$1Xfu$2Xcyou-urban prefectural office~Noun'},
@@ -4885,6 +4882,7 @@ const replsB = [
 {pat:/(浮)(?!X)(上)(?!X)/g,repl:'$1Xfu$2Xjyou-surfacing~Noun'},
 {pat:/(浮)(?!X)(力)(?!X)/g,repl:'$1Xfu$2Xryoku-buoyancy~Noun'},
 {pat:/(浮)(?!X)(揚)(?!X)/g,repl:'$1Xfu$2Xyou-floating in air~Noun'},
+{pat:/(休)(?!X)(戦)(?!X)/g,repl:'$1Xkyuu$2Xsen-cease-fire~Noun'},
 {pat:/(海)(?!X)(上)(?!X)/g,repl:'$1Xkai$2Xjyou-maritime~Noun'},
 {pat:/(海)(?!X)(側)(?!X)/g,repl:'$1Xumi$2Xgawa-seaside~Noun'},
 {pat:/(海)(?!X)(兵)(?!X)/g,repl:'$1Xkai$2Xhei-sailor~Noun'},
@@ -4906,6 +4904,7 @@ const replsB = [
 {pat:/(消)(?!X)(防)(?!X)/g,repl:'$1Xsyou$2Xbou-fire fighting~Noun'},
 {pat:/(液)(?!X)(体)(?!X)/g,repl:'$1Xeki$2Xtai-liquid,fluid~Noun'},
 {pat:/(深)(?!X)(さ)(?!X)/g,repl:'$1Xfuk$2Xasa-depth~Noun'},
+{pat:/(認)(?!X)(否)(?!X)/g,repl:'$1Xnin$2Xpi-admission or denial~Noun'},
 {pat:/(深)(?!X)(め)(?!X)/g,repl:'$1Xfuka$2Xme-deepen~IchidanVerb'},
 {pat:/(深)(?!X)(刻)(?!X)/g,repl:'$1Xshin$2Xkoku-grave~Noun'},
 {pat:/(深)(?!X)(化)(?!X)/g,repl:'$1Xshin$2Xka-deepening~Noun'},
@@ -5522,9 +5521,12 @@ const replsB = [
 {pat:/(総)(?!X)(長)(?!X)/g,repl:'$1Xsou$2Xcyou-secretary general~Noun'},
 {pat:/(総)(?!X)(額)(?!X)/g,repl:'$1Xsou$2Xgaku-grand total of~Noun'},
 {pat:/(緑)(?!X)(色)(?!X)/g,repl:'$1Xmidori$2Xiro-green~Noun'},
+{pat:/(訪)(?!X)(朝)(?!X)/g,repl:'$1Xhou$2Xcyou-visit to North Korea~Noun'},
+{pat:/(周)(?!X)(年)(?!X)/g,repl:'$1Xsyuu$2Xnen-anniversary~Noun'},
+{pat:/(祝)(?!X)(賀)(?!X)/g,repl:'$1Xsyuku$2Xga-celebration~Noun'},
 {pat:/(線)(?!X)(状)(?!X)/g,repl:'$1Xsen$2Xjyou-linear~Noun'},
 {pat:/(線)(?!X)(路)(?!X)/g,repl:'$1Xsen$2Xro-line,track~Noun'},
-{pat:/(締)(?!X)(結)(?!X)/g,repl:'$1Xteiketsu$2X,execution of a contract~Noun'},
+{pat:/(締)(?!X)(結)(?!X)/g,repl:'$1Xtei$2Xketsu-execution of a contract~Noun'},
 {pat:/(編)(?!X)(成)(?!X)/g,repl:'$1Xhen$2Xsei-composition~Noun'},
 {pat:/(編)(?!X)(隊)(?!X)/g,repl:'$1Xhen$2Xtai-formation~Noun'},
 {pat:/(編)(?!X)(集)(?!X)/g,repl:'$1Xhen$2Xsyuu-editing~Noun'},
@@ -7403,6 +7405,7 @@ const replsB = [
 {pat:/(核)(?!X)/g,repl:'$1Xkaku-core,atomic nucleus~Noun'},
 {pat:/(根)(?!X)/g,repl:'$1Xne-root,source~Noun'},
 {pat:/(桃)(?!X)/g,repl:'$1Xmomo-peach,peach tree~Noun'},
+{pat:/(領)(?!X)/g,repl:'$1Xeri-collar~Noun'},
 {pat:/(案)(?!X)/g,repl:'$1Xan-bill~Noun'},
 {pat:/(桜)(?!X)/g,repl:'$1Xsakura-cherry blossom~Noun'},
 {pat:/(梅)(?!X)/g,repl:'$1Xume-plum blossom~Noun'},
@@ -7629,6 +7632,7 @@ const replsB = [
 {pat:/(自)(?!X)/g,repl:'$1Xji-one\'s own~Noun'},
 {pat:/(舌)(?!X)/g,repl:'$1Xshita-tongue~Noun'},
 {pat:/(舗)(?!X)/g,repl:'$1Xho-shop~Noun'},
+{pat:/(節)(?!X)/g,repl:'$1Xsetsu-occasion~Noun'},
 {pat:/(船)(?!X)/g,repl:'$1Xfune,sen,boat~Noun'},
 {pat:/(艇)(?!X)/g,repl:'$1Xtei-small boat~Noun'},
 {pat:/(良)(?!X)/g,repl:'$1Xra-good~Noun'},
@@ -7816,6 +7820,8 @@ const replsB = [
 {pat:/(高)(?!X)/g,repl:'$1Xdaka,kou,high~Noun'},
 {pat:/(髪)(?!X)/g,repl:'$1Xkami-hair,hairstyle~Noun'},
 {pat:/(魚)(?!X)/g,repl:'$1Xsakana-fish~Noun'},
+{pat:/(瑠)(?!X)/g,repl:'$1Xru-lapiz lazuli~Noun'},
+{pat:/(厚)(?!X)/g,repl:'$1Xatsu-thick,rich~Noun'},
 {pat:/(鳥)(?!X)/g,repl:'$1Xtori,tot-bird~Noun'},
 {pat:/(鳩)(?!X)/g,repl:'$1Xhato-pigeon,dove~Noun'},
 {pat:/(鶏)(?!X)/g,repl:'$1Xniwatori-chi+cken~Noun'},
@@ -8006,17 +8012,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-きょう24日(月)も、東北から中国地方は猛烈な暑さが続き、最高気温は京都市や福井市で36℃など体温並みの所も。熱中症に警戒。屋外だけでなく、屋内でも涼しい環境を保ち、万全な対策を。
-内陸部を中心に猛暑日
-
-画像：tenki.jp
-
-きょう24日(月)も、各地で真夏の暑さが続くため、熱中症に警戒が必要です。
-
-東北から中国地方は晴れて強い日差しが照りつけるため、内陸部を中心に猛暑日(最高気温が35℃以上)の所が多いでしょう。予想最高気温は、京都市や福井市で36℃と体温並み、福島市や鳥取市、富山市、大阪市で35℃など、猛烈な暑さとなりそうです。北海道や四国、九州は雨が降るため、湿度が高く、体にこたえる暑さでしょう。
-
-熱中症警戒アラートが、石川県、三重県、鳥取県、島根県、長崎県、熊本県、宮崎県、沖縄県(八重山地方)に発表されています。暑い時間帯の外出はなるべく避け、屋内を冷房などで涼しい環境にしてお過ごしください。
-
+　札幌市中央区のホテル客室内で頭部を切断された男性の遺体が見つかった事件で、北海道警は24日、いずれも札幌市厚別区厚別南2、職業不詳、田村瑠奈容疑者（29）と、父親で精神科医の修容疑者（59）を死体損壊、死体領得、死体遺棄の疑いで逮捕した。道警は2人の認否を明らかにしていない。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
