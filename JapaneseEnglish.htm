@@ -489,6 +489,7 @@ const replsA = [
 {pat:/(立)(?!X)(ち)(?!X)(上)(?!X)(げ)(?!X)/g,repl:'$1X$2Xta$3Xc$4Xhi-age,start up~IchidanVerb'},
 {pat:/(立)(?!X)(ち)(?!X)(往)(?!X)(生)(?!X)/g,repl:'$1X$2Xta$3Xc$4Xhi-ou-jou,brought to a standstill~Noun'},
 {pat:/(筆)(?!X)(記)(?!X)(用)(?!X)(具)(?!X)/g,repl:'$1X$2Xhi$3Xk$4X-ki-you-gu,writing materials,pens and pencils~Noun'},
+{pat:/(切)(?!X)(り)(?!X)(つ|付)(?!X)(け)(?!X)/g,repl:'$1Xki$2Xri$3Xtsu$4Xke-to slash at~IchidanVerb'},
 {pat:/(筆)(?!X)(記)(?!X)(試)(?!X)(験)(?!X)/g,repl:'$1X$2Xhi$3Xk$4X-ki-shi-ken,written examination~Noun'},
 {pat:/(総)(?!X)(理)(?!X)(大)(?!X)(臣)(?!X)/g,repl:'$1X$2Xso$3Xu$4X-ri-dai-jin,prime minister~Noun'},
 {pat:/(締)(?!X)(め)(?!X)(切)(?!X)(り)(?!X)/g,repl:'$1X$2Xsh$3Xi$4Xmekiri-deadline,time limit~Noun'},
@@ -1471,6 +1472,7 @@ const replsA = [
 {pat:/(至)(?!X)(る)(?!X)(所)(?!X)/g,repl:'$1Xitaru$2Xto$3Xkoro-everywhere,all over~Noun'},
 {pat:/(航)(?!X)(空)(?!X)(便)(?!X)/g,repl:'$1Xkou$2Xkuu$3Xbin-airmail~Noun'},
 {pat:/(航)(?!X)(空)(?!X)(券)(?!X)/g,repl:'$1Xkou$2Xkuu$3Xken-airline ticket~Noun'},
+{pat:/(ひ)(?!X)(と)(?!X)(目)(?!X)/g,repl:'$1Xhi$2Xto$3Xme-the big picture~Noun'},
 {pat:/(航)(?!X)(空)(?!X)(機)(?!X)/g,repl:'$1Xkou$2Xkuu$3Xki-aircraft,airplane~Noun'},
 {pat:/(芦)(?!X)(ノ)(?!X)(湖)(?!X)/g,repl:'$1X$2X$3X.Ashi-no-ko,Japan~Noun'},
 {pat:/(苦)(?!X)(し)(?!X)(み)(?!X)/g,repl:'$1Xkur$2Xus$3Xhimi-distress,suffering~Noun'},
@@ -2296,7 +2298,6 @@ const replsB = [
 {pat:/(そ)(?!X)(の)(?!X)/g,repl:'$1Xso$2Xno-that~Noun'},
 {pat:/(そ)(?!X)(ば)(?!X)/g,repl:'$1Xsob$2Xa-buckwheat noodles,next to~Noun'},
 {pat:/(そ)(?!X)(れ)(?!X)/g,repl:'$1Xsor$2Xe-that~Noun'},
-{pat:/(そ)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xso-in such a way$2X~UVerb'},
 {pat:/(た)(?!X)(だ)(?!X)/g,repl:'$1Xta$2Xda-merely~Noun'},
 {pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1Xta$2Xchi-plural~Noun'},
 {pat:/(た)(?!X)(び)(?!X)/g,repl:'$1Xta$2Xbi-each time~Noun'},
@@ -2309,6 +2310,7 @@ const replsB = [
 {pat:/(で)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xde-to be,is$2X~BeVerb'},
 {pat:/(で)(?!X)(も)(?!X)/g,repl:'$1Xde$2Xmo-but~Postposition~Noun'},
 {pat:/(と)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xto-to try to do$2X~SuVerb'},
+{pat:/(殺)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xkoro-to kill$2X~SuVerb'},
 {pat:/(と)(?!X)(に)(?!X)/g,repl:'$1X$2Xto ni,suddenly~Noun'},
 {pat:/(と)(?!X)(の)(?!X)/g,repl:'$1Xtou$2Xno-about~Postposition~Noun'},
 {pat:/(と)(?!X)(も)(?!X)/g,repl:'$1Xto$2Xmo-including~Noun'},
@@ -4395,6 +4397,9 @@ const replsB = [
 {pat:/(拝)(?!X)(見)(?!X)/g,repl:'$1Xhai$2Xken-humbly look at,see~Noun'},
 {pat:/(拠)(?!X)(出)(?!X)/g,repl:'$1Xkyo$2Xsyutsu-contribution~Noun'},
 {pat:/(拠)(?!X)(点)(?!X)/g,repl:'$1Xkyo$2Xten-position~Noun'},
+{pat:/(連)(?!X)(結)(?!X)/g,repl:'$1Xren$2Xketsu-consolidated~Noun'},
+{pat:/(転)(?!X)(落)(?!X)/g,repl:'$1Xten$2Xraku-tumble~Noun'},
+{pat:/(純)(?!X)(損)(?!X)/g,repl:'$1Xjyun$2Xson-net loss~Noun'},
 {pat:/(拡)(?!X)(充)(?!X)/g,repl:'$1Xkaku$2Xjyuu-expand~Noun'},
 {pat:/(拡)(?!X)(大)(?!X)/g,repl:'$1Xkaku$2Xdai-spread~Noun'},
 {pat:/(拡)(?!X)(張)(?!X)/g,repl:'$1Xkaku$2Xcyou-expansion,extension~Noun'},
@@ -4755,6 +4760,7 @@ const replsB = [
 {pat:/(最)(?!X)(中)(?!X)/g,repl:'$1Xsai$2Xcyuu-right in middle of~Noun'},
 {pat:/(最)(?!X)(低)(?!X)/g,repl:'$1Xsai$2Xtei-lowest~Noun'},
 {pat:/(最)(?!X)(初)(?!X)/g,repl:'$1Xsai$2Xfrom the start~Noun'},
+{pat:/(凶)(?!X)(器)(?!X)/g,repl:'$1Xkyou$2Xki-dangerous weapon~Noun'},
 {pat:/(最)(?!X)(多)(?!X)/g,repl:'$1Xsai$2Xta-largest number of~Noun'},
 {pat:/(最)(?!X)(大)(?!X)/g,repl:'$1Xsai$2Xdai-largest~Noun'},
 {pat:/(最)(?!X)(小)(?!X)/g,repl:'$1Xsai$2Xsyou-minimum~Noun'},
@@ -4984,6 +4990,7 @@ const replsB = [
 {pat:/(歩)(?!X)(道)(?!X)/g,repl:'$1Xho$2Xdou-sidewalk,footpath~Noun'},
 {pat:/(歯)(?!X)(科)(?!X)/g,repl:'$1Xshi$2Xka-den-tistry~Noun'},
 {pat:/(歳)(?!X)(末)(?!X)/g,repl:'$1Xsai$2Xmatsuyear end~Noun'},
+{pat:/(来)(?!X)(春)(?!X)/g,repl:'$1Xrai$2Xsyun-next spring~Noun'},
 {pat:/(歴)(?!X)(史)(?!X)/g,repl:'$1Xreki$2Xshi-history~Noun'},
 {pat:/(歴)(?!X)(訪)(?!X)/g,repl:'$1Xreki$2Xhou-historical visit~Noun'},
 {pat:/(死)(?!X)(な|に|ぬ|ね|の|ん)(?!X)/g,repl:'$1Xshi-die$2X~nuVerb'},
@@ -7048,6 +7055,7 @@ const replsB = [
 {pat:/(８|8)(?!X)(月)(?!X)/g,repl:'$1Xhachi$2Xgatsu August~Noun'},
 {pat:/(９|9)(?!X)(月)(?!X)/g,repl:'$1Xku$2Xgatsu September~Noun'},
 
+{pat:/(そ)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xso-in such a way$2X~UVerb'},
 {pat:/(さ)(?!X)(れ)(?!X)/g,repl:'$1Xsa$2Xre-is done~IchidanVerb'},
 {pat:/(し)(?!X)(て)(?!X)/g,repl:'$1Xshi$2Xte-do and~SuruVerb'},
 
@@ -8024,7 +8032,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-マイナンバーのトラブル続出を巡る政府の総点検に対し、実務を担う全国の自治体は具体的な作業範囲が定まらず、身構えている状況だ。「総点検という３文字が先行し、実際にどれほどの手間がかかるのか現場は不安になっている」。全国知事会の平井伸治会長（鳥取県知事）は、現場への過大な負担を懸念する。
+【速報】「おので殺そうと…」凶器は４０センチほど　パチンコ店で客を切りつけた男緊急逮捕〈仙台市〉仙台放送
+２６日夜、仙台市のパチンコ店で男性客が小型の「おの」で切りつけられ、頭に重傷を負った殺人未遂事件で、警察は、現場から逃走していた男を緊急逮捕しました。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
