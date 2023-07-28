@@ -992,7 +992,7 @@ const replsA = [
 {pat:/(今)(?!X)(年)(?!X)(度)(?!X)/g,repl:'$1Xkon$2Xnen$3Xdo-this year~Noun'},
 {pat:/(仕)(?!X)(上)(?!X)(げ)(?!X)/g,repl:'$1Xshi$2Xag$3Xe-completion,finishing~Noun'},
 {pat:/(仕)(?!X)(組)(?!X)(み)(?!X)/g,repl:'$1Xshi$2Xku$3Xmi-arrangement~Noun'},
-{pat:/(代)(?!X)(わ)(?!X)(り)(?!X)/g,repl:'$1Xkaw$2Xar$3Xi-substitution~Noun'},
+{pat:/(代)(?!X)(わ)(?!X)(り)(?!X)/g,repl:'$1Xka$2Xwa$3Xri-substitution~Noun'},
 {pat:/(代)(?!X)(名)(?!X)(詞)(?!X)/g,repl:'$1Xdai$2Xmei$3Xshi-pronoun~Noun'},
 {pat:/(代)(?!X)(表)(?!X)(団)(?!X)/g,repl:'$1Xdai$2Xhyou$3Xdan-delegation~Noun'},
 {pat:/(仲)(?!X)(直)(?!X)(り)(?!X)/g,repl:'$1Xna$2Xkan$3Xaori-reconciliation,making up~Noun'},
@@ -1220,6 +1220,7 @@ const replsA = [
 {pat:/(思)(?!X)(わ)(?!X)(ず)(?!X)/g,repl:'$1Xomo$2Xwa$3Xzu-unintentionally,unconsciously~Noun'},
 {pat:/(悲)(?!X)(し)(?!X)(み)(?!X)/g,repl:'$1Xkana$2Xsh$3Ximi-sadness~Noun'},
 {pat:/(意)(?!X)(地)(?!X)(悪)(?!X)/g,repl:'$1Xiji$2Xwa$3Xru-nastiness,ill-natured person~Noun'},
+{pat:/(代)(?!X)(理)(?!X)(店)(?!X)/g,repl:'$1Xdai$2Xri$3Xten-agency~Noun'},
 {pat:/(慣)(?!X)(用)(?!X)(句)(?!X)/g,repl:'$1Xkan$2Xyo$3Xuku-idiom,common phrase~Noun'},
 {pat:/(憎)(?!X)(し)(?!X)(み)(?!X)/g,repl:'$1Xnik$2Xus$3Xhimi-hatred,enmity~Noun'},
 {pat:/(成)(?!X)(熟)(?!X)(度)(?!X)/g,repl:'$1Xsei$2Xjyuku$3Xdo-degree of development~Noun'},
@@ -1792,6 +1793,7 @@ const replsA = [
 {pat:/(ほころ|綻)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xhokoro$2Xba-break out$3X~SuVerb'},
 {pat:/(後)(?!X)(押)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xato$2Xo-boost support$3X~SuVerb'},
 {pat:/(吊)(?!X)(る)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xtsu$2Xru-han-g$3X~SuVerb'},
+{pat:/(水)(?!X)(増)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xmizu$2Xma-water down;dilute$3X~SuVerb'},
 {pat:/(向)(?!X)(か)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xmu$2Xka-face$3X~IAdjective~Noun'},
 {pat:/(向)(?!X)(か)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xmu$2Xka-face$3X~UVerb'},
 {pat:/(向)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xmuk$2Xe-turn toward,point at$3X~RuVerb'},
@@ -2504,7 +2506,7 @@ const replsB = [
 {pat:/(並)(?!X)(み)(?!X)/g,repl:'$1Xna$2Xmi-ordinary,average~Noun'},
 {pat:/(並)(?!X)(木)(?!X)/g,repl:'$1Xnam$2Xiki-row of trees,roadside trees~Noun'},
 {pat:/(中)(?!X)(世)(?!X)/g,repl:'$1Xcyuu$2Xsei-Middle Ages~Noun'},
-{pat:/(中)(?!X)(古)(?!X)/g,repl:'$1Xcyuu$2Xko-secondhand goods~Noun'},
+{pat:/(中)(?!X)(古)(?!X)/g,repl:'$1Xcyuu$2Xko-second-hand,used~Noun'},
 {pat:/(中)(?!X)(国)(?!X)/g,repl:'$1Xcyuu$2Xgoku-China~Noun'},
 {pat:/(中)(?!X)(央)(?!X)/g,repl:'$1Xcyuu$2Xou-central~Noun'},
 {pat:/(中)(?!X)(学)(?!X)/g,repl:'$1Xcyuu$2Xgaku-junior high school~Noun'},
@@ -3474,6 +3476,7 @@ const replsB = [
 {pat:/(問)(?!X)(題)(?!X)/g,repl:'$1Xmon$2Xdai-problem,question~Noun'},
 {pat:/(喋)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xsyabe-chat$2X~RuVerb'},
 {pat:/(喚)(?!X)(起)(?!X)/g,repl:'$1Xkan$2Xki-excitation~Noun'},
+{pat:/(東)(?!X)(京)(?!X)/g,repl:'$1Xtou$2Xkyou-Eastern Capital,Japan~Noun'},
 {pat:/(喜)(?!X)(ば|び|ぶ|べ|ぼ|ん)(?!X)/g,repl:'$1Xyoroko-be happy to do$2X~BuVerb'},
 {pat:/(喜)(?!X)(び)(?!X)/g,repl:'$1Xyoroko$2Xbi-joy,happiness~Noun'},
 {pat:/(喜)(?!X)(劇)(?!X)/g,repl:'$1Xki$2Xgeki-comedy~Noun'},
@@ -7039,7 +7042,7 @@ const replsB = [
 {pat:/(黒)(?!X)(煙)(?!X)/g,repl:'$1Xkoku$2Xen-black smoke~Noun'},
 {pat:/(黙)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xdama-become silent$2X~RuVerb'},
 {pat:/(１|1)(?!X)(月)(?!X)/g,repl:'$1Xichi$2Xgatsu-January~Noun'},
-{pat:/(１|1|一)(?!X)(人)(?!X)/g,repl:'$1Xhit$2Xori-alone,one person~Noun'},
+{pat:/(１|1|一)(?!X)(人)(?!X)/g,repl:'$1X$2Xhitori-alone,one person~Noun'},
 {pat:/(２|2)(?!X)(月)(?!X)/g,repl:'$1Xni$2Xgatsu-February~Noun'},
 {pat:/(２|二)(?!X)(日)(?!X)/g,repl:'$1Xfut$2Xsuka-two days,second day of the month~Noun'},
 {pat:/(３|3)(?!X)(日)(?!X)/g,repl:'$1Xmik$2Xka-third day of the month~Noun'},
@@ -7278,6 +7281,7 @@ const replsB = [
 {pat:/(安)(?!X)/g,repl:'$1Xa,ya-peaceful~Noun'},
 {pat:/(宏)(?!X)/g,repl:'$1Xhiro-wide~Noun'},
 {pat:/(官)(?!X)/g,repl:'$1Xkan-chief~Noun'},
+{pat:/(兼)(?!X)/g,repl:'$1Xken-at the same time~Noun'},
 {pat:/(宝)(?!X)/g,repl:'$1Xtakara,Hou,treasure~Noun'},
 {pat:/(実)(?!X)/g,repl:'$1Xmi-fruit,nut~Noun'},
 {pat:/(客)(?!X)/g,repl:'$1Xkyaku-customer~Noun'},
@@ -7447,7 +7451,7 @@ const replsB = [
 {pat:/(様)(?!X)/g,repl:'$1Xsama-respect~Noun'},
 {pat:/(模)(?!X)/g,repl:'$1Xkatagi,mi-wooden block print~Noun'},
 {pat:/(横)(?!X)/g,repl:'$1Xyoko-side,width across~Noun'},
-{pat:/(橋)(?!X)/g,repl:'$1Xhashi-bridge~Noun'},
+{pat:/(橋)(?!X)/g,repl:'$1Xhashi,bashi-bridge~Noun'},
 {pat:/(機)(?!X)/g,repl:'$1Xki-machine,flight~Noun'},
 {pat:/(欄)(?!X)/g,repl:'$1Xran-column,field~Noun'},
 {pat:/(次)(?!X)/g,repl:'$1Xtsugi-next~Noun'},
@@ -7762,7 +7766,7 @@ const replsB = [
 {pat:/(重)(?!X)/g,repl:'$1Xjyuu-serious~Noun'},
 {pat:/(野)(?!X)/g,repl:'$1Xno-field~Noun'},
 {pat:/(量)(?!X)/g,repl:'$1Xryou-quantity~Noun'},
-{pat:/(金)(?!X)/g,repl:'$1Xkane-money;kin-gold,Friday~Noun'},
+{pat:/(金)(?!X)/g,repl:'$1Xkane,gane-money;kin-gold,Friday~Noun'},
 {pat:/(釘)(?!X)/g,repl:'$1Xkugi-nai+l,spike~Noun'},
 {pat:/(針)(?!X)/g,repl:'$1Xhari-needle~Noun'},
 {pat:/(鉄)(?!X)/g,repl:'$1X-tetsu,iron~Noun'},
@@ -8032,8 +8036,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-【速報】「おので殺そうと…」凶器は４０センチほど　パチンコ店で客を切りつけた男緊急逮捕〈仙台市〉仙台放送
-２６日夜、仙台市のパチンコ店で男性客が小型の「おの」で切りつけられ、頭に重傷を負った殺人未遂事件で、警察は、現場から逃走していた男を緊急逮捕しました。
+きょう（28日）午前、東京・板橋区の銭湯兼住宅で火事があり、焼け跡から1人の遺体が見つかりました。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
