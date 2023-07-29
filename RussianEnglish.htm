@@ -663,6 +663,7 @@ const replsB = [
 {pat:/(а)(н)(г)(л)(и)(ч)(а)(н)(и)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ Englishman(noun)'},
 {pat:/(а)(р)(е)(с)(т)(о)(в)(а)(н)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ arrested(noun)'},
 {pat:/(а)(р)(и)(с)(т)(о)(к)(р)(а)(т)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ aristocrat(noun)'},
+{pat:/(п)(о)(с)(т)(р)(а)(д)(а)(в)(ш)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ victim(noun)'},
 {pat:/(а)(р)(х)(и)(т)(е)(к)(т)(о)(р)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ architect(noun)'},
 {pat:/(а)(р)(х)(и)(т)(е)(к)(т)(у)(р)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ architecture(noun)'},
 {pat:/(а)(р)(х)(и)(т)(е)(к)(т)(у)(р)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ architectural(adjective)'},
@@ -4163,7 +4164,7 @@ const replsB = [
 {pat:/(д)(е)(й)(с)(т)(в)/ig,repl:'_$1_$2_$3_$4_$5_$6_effective(adjective)'},
 {pat:/(д)(е)(й)(с)(т)(в)/ig,repl:'_$1_$2_$3_$4_$5_$6_real(noun)'},
 {pat:/(д)(е)(к)(р)(е)(т)/ig,repl:'_$1_$2_$3_$4_$5_$6_decree(noun)'},
-{pat:/(д)(е)(н)(е)(ж)/ig,repl:'_$1_$2_$3_$4_$5_$6_money(adjective)'},
+{pat:/(д)(е)(н)(е)(ж)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_monetary(adjective)'},
 {pat:/(д)(е)(н)(ь)(г)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_fplmoney(noun)'},
 {pat:/(д)(е)(р)(е)(в)(о)/ig,repl:'_$1_$2_$3_$4_$5_$6_tree(noun)'},
 {pat:/(д)(е)(р)(ж)(а)(в)/ig,repl:'_$1_$2_$3_$4_$5_$6_powerpowerful country(noun)'},
@@ -4301,6 +4302,7 @@ const replsB = [
 {pat:/(з)(а)(т)(р)(а)(ч)/ig,repl:'_$1_$2_$3_$4_$5_$6_spend(noun)'},
 {pat:/(з)(а)(т)(я)(ж)(к)/ig,repl:'_$1_$2_$3_$4_$5_$6_delay;inhalationsmoking(noun)'},
 {pat:/(з)(а)(у)(л)(ы)(б)/ig,repl:'_$1_$2_$3_$4_$5_$6_start smiling(noun)'},
+{pat:/(п)(о)(л)(у)(ч)(а)/ig,repl:'_$1_$2_$3_$4_$5_$6_address(noun)'},
 {pat:/(з)(а)(х)(в)(а)(т)/ig,repl:'_$1_$2_$3_$4_$5_$6_seizure(noun)'},
 {pat:/(з)(а)(х)(в)(а)(т)/ig,repl:'_$1_$2_$3_$4_$5_$6_take(noun)'},
 {pat:/(з)(а)(х)(л)(о)(п)/ig,repl:'_$1_$2_$3_$4_$5_$6_bang(noun)'},
@@ -5515,7 +5517,6 @@ const replsB = [
 {pat:/(ш)(е)(р)(ш)(а)(в)/ig,repl:'_$1_$2_$3_$4_$5_$6_roughto the touch(noun)'},
 {pat:/(ш)(е)(с)(т)(о)(й)/ig,repl:'_$1_$2_$3_$4_$5_$6_sixth(noun)'},
 {pat:/(ш)(и)(н)(е)(л)(ь)/ig,repl:'_$1_$2_$3_$4_$5_$6_fgreatcoat(noun)'},
-{pat:/(з)(а)(я)(в)(и)/ig,repl:'_$1_$2_$3_$4_$5_announce(verb)'},
 {pat:/(ш)(и)(р)(о)(к)(о)/ig,repl:'_$1_$2_$3_$4_$5_$6_widely(noun)'},
 {pat:/(ш)(к)(о)(л)(ь)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_school(adjective)'},
 {pat:/(ш)(ё)(л)(к)(о)(в)/ig,repl:'_$1_$2_$3_$4_$5_$6_silk(adjective)'},
@@ -5674,7 +5675,8 @@ const replsB = [
 {pat:/(в)(е)(с)(ь)(м)/ig,repl:'_$1_$2_$3_$4_$5_very(noun)'},
 {pat:/(в)(е)(с)(ё)(л)/ig,repl:'_$1_$2_$3_$4_$5_cheerful(noun)'},
 {pat:/(в)(е)(т)(в)(и)/ig,repl:'_$1_$2_$3_$4_$5_branch(noun)'},
-{pat:/(в)(е)(т)(в)(ь)/ig,repl:'_$1_$2_$3_$4_$5_fbranch(noun)'},
+{pat:/(в)(е)(т)(в)(ь)/ig,repl:'_$1_$2_$3_$4_$5_branch(noun)'},
+{pat:/(у)(т)(о)(ч)(н)/ig,repl:'_$1_$2_$3_$4_$5_specify(verb)'},
 {pat:/(в)(е)(т)(е)(р)/ig,repl:'_$1_$2_$3_$4_$5_wind(noun)'},
 {pat:/(в)(е)(ч)(е)(р)/ig,repl:'_$1_$2_$3_$4_$5_evening(noun)'},
 {pat:/(в)(е)(ч)(н)(о)/ig,repl:'_$1_$2_$3_$4_$5_eternally(noun)'},
@@ -5944,7 +5946,7 @@ const replsB = [
 {pat:/(з)(а)(б)(о)(р)/ig,repl:'_$1_$2_$3_$4_$5_fence(noun)'},
 {pat:/(з)(а)(б)(о)(т)/ig,repl:'_$1_$2_$3_$4_$5_care(noun)'},
 {pat:/(з)(а)(б)(ы)(т)/ig,repl:'_$1_$2_$3_$4_$5_forgotten(noun)'},
-{pat:/(з)(а)(в)(а)(л)/ig,repl:'_$1_$2_$3_$4_$5_instrumental with)to block(noun)'},
+{pat:/(з)(а)(в)(а)(л)/ig,repl:'_$1_$2_$3_$4_$5_block(noun)'},
 {pat:/(з)(а)(в)(а)(р)/ig,repl:'_$1_$2_$3_$4_$5_brew(verb)'},
 {pat:/(з)(а)(в)(е)(с)/ig,repl:'_$1_$2_$3_$4_$5_screen(noun)'},
 {pat:/(з)(а)(в)(е)(щ)/ig,repl:'_$1_$2_$3_$4_$5_ip(dative to)bequeath sth(verb)'},
@@ -6184,6 +6186,8 @@ const replsB = [
 {pat:/(л)(а)(т)(и)(н)/ig,repl:'_$1_$2_$3_$4_$5_Latin(adjective)'},
 {pat:/(л)(е)(г)(к)(о)/ig,repl:'_$1_$2_$3_$4_$5_easily;it is easy(noun)'},
 {pat:/(л)(е)(д)(о)(в)/ig,repl:'_$1_$2_$3_$4_$5_ice(adjective)'},
+{pat:/(з)(а)(я)(в)(и)/ig,repl:'_$1_$2_$3_$4_$5_announce(verb)'},
+{pat:/(б)(з)(р)(ы)(в)/ig,repl:'_$1_$2_$3_$4_$5_explosion(noun)'},
 {pat:/(л)(е)(к)(а)(р)/ig,repl:'_$1_$2_$3_$4_$5_medicine(noun)'},
 {pat:/(л)(е)(н)(и)(в)/ig,repl:'_$1_$2_$3_$4_$5_lazy(noun)'},
 {pat:/(л)(е)(с)(т)(н)/ig,repl:'_$1_$2_$3_$4_$5_flattering(adjective)'},
@@ -7754,7 +7758,7 @@ const replsB = [
 {pat:/(о)(т)(с)(т)/ig,repl:'_$1_$2_$3_$4_defend(verb)'},
 {pat:/(о)(т)(ч)(е)/ig,repl:'_$1_$2_$3_$4_patronymic(noun)'},
 {pat:/(о)(х)(о)(т)/ig,repl:'_$1_$2_$3_$4_desire;hunting(noun)'},
-{pat:/(о)(ц)(е)(н)/ig,repl:'_$1_$2_$3_$4_evaluate(noun)'},
+{pat:/(о)(ц)(е)(н)/ig,repl:'_$1_$2_$3_$4_evaluate(verb)'},
 {pat:/(о)(ч)(а)(г)/ig,repl:'_$1_$2_$3_$4_hearth(noun)'},
 {pat:/(о)(ч)(и)(щ)/ig,repl:'_$1_$2_$3_$4_clean(noun)'},
 {pat:/(о)(ч)(к)(и)/ig,repl:'_$1_$2_$3_$4_glasses(noun)'},
@@ -8599,7 +8603,7 @@ const replsB = [
 {pat:/(м)(е)(л)/ig,repl:'_$1_$2_$3_chalk;whitewash(noun)'},
 {pat:/(м)(е)(р)/ig,repl:'_$1_$2_$3_measure;try onclothing(verb)'},
 {pat:/(м)(е)(р)/ig,repl:'_$1_$2_$3_measure(noun)'},
-{pat:/(м)(е)(с)/ig,repl:'_$1_$2_$3_frevenge(verb)'},
+{pat:/(м)(е)(с)/ig,repl:'_$1_$2_$3_revenge(verb)'},
 {pat:/(м)(е)(х)/ig,repl:'_$1_$2_$3_fur(noun)'},
 {pat:/(м)(е)(ч)/ig,repl:'_$1_$2_$3_sword(noun)'},
 {pat:/(м)(е)(ш)/ig,repl:'_$1_$2_$3_dative to)disturb(noun)'},
@@ -8962,10 +8966,14 @@ const replsB = [
 {pat:/(в)(о)/ig,repl:'_$1_$2_in;into;to(preposition)'},
 {pat:/(т)(е)/ig,repl:'_$1_$2_they(pronoun)'},
 
+{pat:/(\(verb\))(а)/ig,repl:'_$1_$2_(present tense)(verb)'},
+{pat:/(\(verb\))(и)/ig,repl:'_$1_$2_(present tense-plural +s)(verb)'},
+
 {pat:/(\(verb\))(а)(н)(н|)(ы|)(й|)/ig,repl:'_$1_$2_$3_$4_$5_$6_one who was'},
 {pat:/(\(verb\))(и)(в)(ш)(и)(й)/ig,repl:'_$1_$2_$3_$4_$5_$6_one who does'},
 {pat:/(\(verb\))(и)(т)(ь)(с)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_he or she will do'},
 
+{pat:/(\(verb\))(в)(а)(ю)(т)/ig,repl:'_$1_$2_$3_$4_$5_ they do'},
 {pat:/(\(adjective\))(с)(к)(а)(я)/ig,repl:'_$1_$2_$3_$4_$5_feminine-nominative as for-inanmiate)'},
 {pat:/(\(adjective\))(я)(н)(а)(м)/ig,repl:'_$1_$2_$3_$4_$5_plural +s-dative to))'},
 {pat:/(\(adjective\))(с)(к)(и)(е)/ig,repl:'_$1_$2_$3_$4_$5_plural +s-nominative as for-inanmiate)'},
@@ -8977,6 +8985,7 @@ const replsB = [
 {pat:/(\(verb\))(а)(л)(с)(я)/ig,repl:'_$1_$2_$3_$4_$5_he did'},
 {pat:/(\(verb\))(т)(ь)(с)(я)/ig,repl:'_$1_$2_$3_$4_$5_infinitive verb to do-passive is done'},
 {pat:/(\(verb\))(л)(и)(с)(ь)/ig,repl:'_$1_$2_$3_$4_$5_they did'},
+{pat:/(\(verb\))(е)(т)(с)(я)/ig,repl:'_$1_$2_$3_$4_$5_(passive verb)is done'},
 
 {pat:/(\(adjective\))(ы|и)(м)(и)/ig,repl:'_$1_$2_$3_$4_plural +s-instrumental with)'},
 {pat:/(\(adjective\))(о)(г)(о)/ig,repl:'_$1_$2_$3_$4_masculine-genitive of -animated)'},
@@ -9015,7 +9024,7 @@ const replsB = [
 {pat:/(\(noun\))(а)(х)/ig,repl:'_$1_$2_$3_(prepositional at-plural +s)'},
 {pat:/(\(noun\))(е)(й)/ig,repl:'_$1_$2_$3_(genitive of )'},
 {pat:/(\(noun\))(ы)(е)/ig,repl:'_$1_$2_$3_plural +s-nominative as for))'},
-{pat:/(\(noun\))(и)(е)/ig,repl:'_$1_$2_$3_(nominative as for-singular)'},
+{pat:/(\(noun\))(и)(е)/ig,repl:'_$1_$2_$3_(singular-nominative as for-accusative for)'},
 {pat:/(\(noun\))(и)(и)/ig,repl:'_$1_$2_$3_(nominative as for-genitive of -dative to-prepositional at))at'},
 {pat:/(\(noun\))(и)(й)/ig,repl:'_$1_$2_$3_(genitive of )'},
 {pat:/(\(noun\))(и)(ю)/ig,repl:'_$1_$2_$3_dative of )(singular)'},
@@ -9091,8 +9100,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Studying RussianLanguage</div>
 <p>
-В России будет создан электронный реестр повесток с личными кабинетами граждан. Ставить россиян на воинский учет и снимать с него теперь будут без личной явки в военкомат. Военнообязанные смогут вносить изменения в сведения реестра о себе через «Госуслуги». Повестки будут приходить на электронную почту, вручать лично или присылать по обычной почте, а на портал Госуслуг будет приходить уведомление в личный кабинет. Что изменилось для призывников — в нашем материале.
-
+Пострадавшие от взрыва в Таганроге получат денежные выплаты, заявил губернатор. Сумму он не уточнил
+На месте ЧП продолжается разбор завалов, специалисты оценивают ущерб.
 <p>
 Cut and paste this Russian text into text area below.
 <br>
