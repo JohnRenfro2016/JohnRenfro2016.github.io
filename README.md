@@ -3,4 +3,4 @@ The Japanese to English Parser
 The Russian to English Parser
 JavaScript
 Foreign Language Learning
-Dungeons & Dragons 
+Advanced Dungeons & Dragons 1st Edition RPG
