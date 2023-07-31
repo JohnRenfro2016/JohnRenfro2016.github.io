@@ -470,7 +470,7 @@ const replsA = [
 {pat:/(梅)(?!X)(雨)(?!X)(入)(?!X)(り)(?!X)/g,repl:'$1X$2Xts$3Xu$4X-yu-iri,start of rainy season~Noun'},
 {pat:/(梅)(?!X)(雨)(?!X)(明)(?!X)(け)(?!X)/g,repl:'$1Xtsu$2Xyu$3Xa4Xke-end of the rainy season~Noun'},
 {pat:/(極)(?!X)(超)(?!X)(音)(?!X)(速)(?!X)/g,repl:'$1Xgoku$2Xcyou$3Xon$4Xsoku-hypersonic speed~Noun'},
-{pat:/(横)(?!X)(断)(?!X)(歩)(?!X)(道)(?!X)/g,repl:'$1X$2Xou$3Xd$4Xanhodou-pedestrian crossing,crosswalk~Noun'},
+{pat:/(横)(?!X)(断)(?!X)(歩)(?!X)(道)(?!X)/g,repl:'$1Xou$2Xdan$3Xho$4Xdou-pedestrian crossing~Noun'},
 {pat:/(歯)(?!X)(ブ)(?!X)(ラ)(?!X)(シ)(?!X)/g,repl:'$1X$2Xha$3Xb$4Xura-shi,toothbrush~Noun'},
 {pat:/(段)(?!X)(ボ)(?!X)(ー)(?!X)(ル)(?!X)/g,repl:'$1Xdan$2X$3X$4Xbo-ru,cardboard~Noun'},
 {pat:/(消)(?!X)(し)(?!X)(ゴ)(?!X)(ム)(?!X)/g,repl:'$1X$2Xke$3Xshi$4X-gomu,eraser~Noun'},
@@ -1396,7 +1396,7 @@ const replsA = [
 {pat:/(田)(?!X)(植)(?!X)(え)(?!X)/g,repl:'$1Xtau$2X$3Xe-rice planting~Noun'},
 {pat:/(甲)(?!X)(子)(?!X)(園)(?!X)/g,repl:'$1Xkou$2Xsh$3Xien-high school baseball championship~Noun'},
 {pat:/(申)(?!X)(し)(?!X)(訳)(?!X)/g,repl:'$1Xmou$2Xsh$3Xiwake-excuse,apology~Noun'},
-{pat:/(男)(?!X)(の)(?!X)(子)(?!X)/g,repl:'$1Xoto$2Xko$3Xnoko-boy,baby boy~Noun'},
+{pat:/(男)(?!X)(の)(?!X)(子)(?!X)/g,repl:'$1Xotoko$2Xno$3Xko-boy~Noun'},
 {pat:/(男)(?!X)(性)(?!X)(的)(?!X)/g,repl:'$1Xdansei$2Xte$3Xki-masculine,man-ly~Noun'},
 {pat:/(町)(?!X)(外)(?!X)(れ)(?!X)/g,repl:'$1Xmac$2Xhi$3Xhazure-outskirts of a town~Noun'},
 {pat:/(留)(?!X)(学)(?!X)(生)(?!X)/g,repl:'$1Xryuu$2Xgaku$3Xsei-student studying abroad~Noun'},
@@ -4547,6 +4547,7 @@ const replsB = [
 {pat:/(改)(?!X)(革)(?!X)/g,repl:'$1Xkai$2Xkaku-reform~Noun'},
 {pat:/(攻)(?!X)(勢)(?!X)/g,repl:'$1Xkou$2Xsei-offensive~Noun'},
 {pat:/(攻)(?!X)(撃)(?!X)/g,repl:'$1Xkou$2Xgeki-attack~Noun'},
+{pat:/(運)(?!X)(転)(?!X)/g,repl:'$1Xun$2Xten-drive~Noun'},
 {pat:/(放)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xhana-,eviction$2X~SuVerb'},
 {pat:/(放)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhou-fling,hurl$2X~RuVerb'},
 {pat:/(放)(?!X)(出)(?!X)/g,repl:'$1Xhou$2Xsyutsu-release~Noun'},
@@ -5223,7 +5224,7 @@ const replsB = [
 {pat:/(減)(?!X)(速)(?!X)/g,repl:'$1Xgen$2Xsoku-decrease~Noun'},
 {pat:/(減)(?!X)(額)(?!X)/g,repl:'$1Xgen$2Xgaku-money amount reduction~Noun'},
 {pat:/(渡)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xwata-carry across,hand over$2X~SuVerb'},
-{pat:/(渡)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xwata-cross,ford,go across$2X~RuVerb'},
+{pat:/(渡)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xwata-go across$2X~RuVerb'},
 {pat:/(渡)(?!X)(島)(?!X)/g,repl:'$1Xtoto$2Xu-visiting an island~Noun'},
 {pat:/(渡)(?!X)(航)(?!X)/g,repl:'$1Xto$2Xkou-voyage~Noun'},
 {pat:/(温)(?!X)(帯)(?!X)/g,repl:'$1Xon$2Xtai-temperate zone~Noun'},
@@ -6215,6 +6216,7 @@ const replsB = [
 {pat:/(解)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xto-solve$2X~KuVerb'},
 {pat:/(解)(?!X)(剖)(?!X)/g,repl:'$1Xkai$2Xbou-autopsy~Noun'},
 {pat:/(解)(?!X)(放)(?!X)/g,repl:'$1Xkai$2Xhou-unleashing~Noun'},
+{pat:/(傷)(?!X)(害)(?!X)/g,repl:'$1Xsyou$2Xgai-injury~Noun'},
 {pat:/(解)(?!X)(散)(?!X)/g,repl:'$1Xkai$2Xsan-breakup,dissolution~Noun'},
 {pat:/(解)(?!X)(明)(?!X)/g,repl:'$1Xkai$2Xmei-revelation~Noun'},
 {pat:/(解)(?!X)(析)(?!X)/g,repl:'$1Xkai$2Xseki-parsing~Noun'},
@@ -6572,7 +6574,7 @@ const replsB = [
 {pat:/(途)(?!X)(中)(?!X)/g,repl:'$1Xto$2Xcyuu-on way~Noun'},
 {pat:/(通)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xtoolet pass,run through$2X~SuVerb'},
 {pat:/(通)(?!X)(じ)(?!X)/g,repl:'$1Xtsuu$2Xji-to be open to~IchidanVerb'},
-{pat:/(通)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtoopass,take,go through$2X~RuVerb'},
+{pat:/(通)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtoo-pass,go through$2X~RuVerb'},
 {pat:/(通)(?!X)(り)(?!X)/g,repl:'$1Xtoo$2Xri-passage,street~Noun'},
 {pat:/(通)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xkayo-go to and from$2X~UVerb'},
 {pat:/(通)(?!X)(例)(?!X)/g,repl:'$1Xtsuu$2Xrei-as a rule~Noun'},
@@ -7298,6 +7300,7 @@ const replsB = [
 {pat:/(寮)(?!X)/g,repl:'$1Xryou-dormitory,lodge~Noun'},
 {pat:/(寺)(?!X)/g,repl:'$1Xtera-buddhist temple~Noun'},
 {pat:/(対)(?!X)/g,repl:'$1Xtsui-pair~Noun'},
+{pat:/(姫)(?!X)/g,repl:'$1Xhime-princess~Noun'},
 {pat:/(封)(?!X)/g,repl:'$1Xfuu-sealing~Noun'},
 {pat:/(小)(?!X)/g,repl:'$1Xsyou,o,ko-small~Noun'},
 {pat:/(尾)(?!X)/g,repl:'$1Xo-tail~Noun'},
@@ -7332,7 +7335,7 @@ const replsB = [
 {pat:/(幅)(?!X)/g,repl:'$1Xhaba-width,breadth~Noun'},
 {pat:/(幌)(?!X)/g,repl:'$1Xhoro,poro-hood~Noun'},
 {pat:/(幕)(?!X)/g,repl:'$1Xmaku-curtain~Noun'},
-{pat:/(平)(?!X)/g,repl:'$1Xhei,hira-plateau~Noun'},
+{pat:/(平)(?!X)/g,repl:'$1Xhei,pei,hira-plateau~Noun'},
 {pat:/(年)(?!X)/g,repl:'$1Xnen-year~Noun'},
 {pat:/(幸)(?!X)/g,repl:'$1Xsaiwai-good luck~Noun'},
 {pat:/(幹)(?!X)/g,repl:'$1Xmiki,Gi,tree trunk~Noun'},
@@ -7579,7 +7582,7 @@ const replsB = [
 {pat:/(着)(?!X)/g,repl:'$1Xki-wear~IchidanVerb'},
 {pat:/(知)(?!X)/g,repl:'$1Xchi-wisdom~Noun'},
 {pat:/(石)(?!X)/g,repl:'$1Xishi-stone~Noun'},
-{pat:/(砂)(?!X)/g,repl:'$1Xsuna-sand,grit~Noun'},
+{pat:/(砂)(?!X)/g,repl:'$1Xsuna,sago-sand,grit~Noun'},
 {pat:/(磨)(?!X)/g,repl:'$1XMa-polished~Noun'},
 {pat:/(礼)(?!X)/g,repl:'$1Xrei-bow,courtesy~Noun'},
 {pat:/(社)(?!X)/g,repl:'$1Xsya-company~Noun'},
@@ -7745,7 +7748,7 @@ const replsB = [
 {pat:/(越)(?!X)/g,repl:'$1Xkoshi,etsu-yew~Noun'},
 {pat:/(足)(?!X)/g,repl:'$1Xashi-leg,foot~Noun'},
 {pat:/(跡)(?!X)/g,repl:'$1Xato-trace~Noun'},
-{pat:/(路)(?!X)/g,repl:'$1Xmichi-street~Noun'},
+{pat:/(路)(?!X)/g,repl:'$1Xmichi,ji-street~Noun'},
 {pat:/(身)(?!X)/g,repl:'$1Xmi-self~Noun'},
 {pat:/(車)(?!X)/g,repl:'$1Xkuruma,+sya,car~Noun'},
 {pat:/(車)(?!X)/g,repl:'$1Xsya,kuruma,vehicle~Noun'},
@@ -7847,7 +7850,7 @@ const replsB = [
 {pat:/(馬)(?!X)/g,repl:'$1Xuma-horse~Noun'},
 {pat:/(駅)(?!X)/g,repl:'$1Xeki-railway station~Noun'},
 {pat:/(骨)(?!X)/g,repl:'$1Xhone-bone~Noun'},
-{pat:/(高)(?!X)/g,repl:'$1Xdaka,kou,high~Noun'},
+{pat:/(高)(?!X)/g,repl:'$1Xtaka,daka,kou-high~Noun'},
 {pat:/(髪)(?!X)/g,repl:'$1Xkami-hair,hairstyle~Noun'},
 {pat:/(魚)(?!X)/g,repl:'$1Xsakana-fish~Noun'},
 {pat:/(鳥)(?!X)/g,repl:'$1Xtori,tot-bird~Noun'},
@@ -8042,7 +8045,19 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-山形県米沢市で部活動を終えた女子中学生（13）が熱中症の疑いで病院に搬送後、死亡したことを受け、市教育委員会は30日、記者会見し、「ガイドラインの周知徹底が不十分だった」と謝罪した。
+兵庫県姫路市で小学6年の男の子が車にはねられ意識不明の重体です。
+
+　31日午後1時半ごろ、姫路市田寺の県道で、「事故で子どもが頭から血を流している」と通りかかった男性から警察に通報がありました。
+
+【写真を見る】12歳の男の子が車にはねられ重体…現場周辺の状況は？
+
+　警察によりますと、小学6年の男子児童（12）が横断歩道がない場所を渡っていたところ乗用車にはねられたということです。
+
+　男子児童は病院に搬送されましたが、意識不明の重体です。
+
+　警察は車を運転していた高砂市の会社員・大下晋平容疑者（26）を過失運転傷害の疑いで現行犯逮捕しました。
+
+　警察の調べに対し大下容疑者は容疑を認めていて。「反対車線の車のかげになって子どもが見えなかった」と話しているということで、警察が当時の状況を調べています。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
