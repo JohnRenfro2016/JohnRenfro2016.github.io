@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>John's Journal</title>
+<title>John T.'s Journal</title>
 <link
 rel="icon"
 type="image/png"
@@ -11,8 +11,8 @@ href="MyFavicon.png"
 
 @font-face
 {
-font-family:"Kraash";
-src:url("Kraash.ttf");
+font-family:"Squealer";
+src:url("Squealer.otf");
 }
 
 a:link,
@@ -22,25 +22,12 @@ a:visited {color:#ffffff}
 
 body
 {
-background-image:linear-gradient(180deg,#11215b,#9f873a);
+background-image:linear-gradient(180deg,#99aaa2,#6c777a,#4f5457);
 border-radius:25px;
 color:#ffffff;
 font-size:25px;
 margin-left:5%;
 margin-top:5%;
-text-align:center;
-width:500px;
-word-wrap:break-word;
-}
-
-textarea
-{
-background-color:#11215b;
-border-radius:25px;
-color:#9f873a;
-font-size:25px;
-text-align:center;
-text-shadow:2px 2px 4px #3d2526;
 width:500px;
 word-wrap:break-word;
 }
@@ -48,62 +35,36 @@ word-wrap:break-word;
 .ComicTitle
 {
 color:#ffffff;
-font-size:30px;
+font-size:60px;
 }
 
 .HeaderStyle
 {
-color:#b4e0fd;
-font-family:"Kraash";
+color:#f6d356;
+font-family:"Squealer";
+float: right;
 font-size:30px;
 margin-bottom:20px;
-text-shadow:0px -2px 4px #3179c6,0px -2px 10px #65b0f2,0px -10px 20px #F90,0px -20px 40px #14449b;
-}
-
-.paper {
- background:#fff;
- color:#000000;
- padding:30px;
- position:relative;
-}
-
-.paper,
-.paper::before,
-.paper::after {
- /* Styles to distinguish sheets from one another */
- box-shadow:1px 1px 1px rgba(0,0,0,0.25);
- border:1px solid #bbb;
-}
-
-.paper::before,
-.paper::after {
- content:"";
- position:absolute;
- height:95%;
- width:99%;
- background-color:#eee;
-}
-
-.paper::before {
- right:15px;
- top:0;
- transform:rotate(-1deg);
- z-index:-1;
-}
-
-.paper::after {
- top:5px;
- right:-5px;
- transform:rotate(1deg);
- z-index:-2;
+text-shadow:0px -2px 4px #3179c6,0px -2px 10px #cc9029,0px -10px 20px #F90,0px -20px 40px #cf7b31;
 }
 
 .TheStripe
 {
 background:repeating-linear-gradient(45deg,transparent,transparent 10px,#000000 10px,#000000 20px),linear-gradient(to bottom,#f5c103,#000000)
 }
-}
 
+textarea
+{
+background-color:inherit;
+border-radius:25px;
+color:inherit;
+font-size:25px;
+text-align:center;
+text-shadow:2px 2px 4px #3d2526;
+width:500px;
+word-wrap:break-word;
+}
+}
 </style>
 </head>
 <script>
@@ -823,6 +784,7 @@ const replsA = [
 {pat:/(す)(?!X)(で)(?!X)(に)(?!X)/g,repl:'$1Xsu$2Xde$3X ni-already too late~Noun'},
 {pat:/(す)(?!X)(べ)(?!X)(き)(?!X)/g,repl:'$1Xsu$2Xbe$3Xki-should~Noun'},
 {pat:/(す)(?!X)(べ)(?!X)(て)(?!X)/g,repl:'$1Xsu$2Xbe$3Xte-completely~Noun'},
+{pat:/(お)(?!X)(ら)(?!X)(ず)(?!X)/g,repl:'$1Xo$2Xra$3Xzu-have the audacity to do~Noun'},
 {pat:/(す)(?!X)(る)(?!X)(と)(?!X)/g,repl:'$1Xsu$2Xru$3Xto-by way of~SuruVerb'},
 {pat:/(す)(?!X)(れ)(?!X)(ば)(?!X)/g,repl:'$1Xsu$2Xre$3Xba-if that is case then~Noun'},
 {pat:/(ず)(?!X)(っ)(?!X)(と)(?!X)/g,repl:'$1Xzut$2Xto$3X-throughout~Noun'},
@@ -1035,7 +997,7 @@ const replsA = [
 {pat:/(公)(?!X)(務)(?!X)(員)(?!X)/g,repl:'$1Xkou$2Xmu$3Xin-public officer,government worker~Noun'},
 {pat:/(公)(?!X)(明)(?!X)(党)(?!X)/g,repl:'$1Xkou$2Xmei$3Xtou-The Koumeito Party of Japan~Noun'},
 {pat:/(公)(?!X)(聴)(?!X)(会)(?!X)/g,repl:'$1Xkou$2Xcyou$3Xkai-public hearing~Noun'},
-{pat:/(共)(?!X)(和)(?!X)(党)(?!X)/g,repl:'$1Xkyou$2Xwa$3Xtou-Japanese Republican Party~Noun'},
+{pat:/(共)(?!X)(和)(?!X)(党)(?!X)/g,repl:'$1Xkyou$2Xwa$3Xtou-Republican Party~Noun'},
 {pat:/(共)(?!X)(和)(?!X)(国)(?!X)/g,repl:'$1Xkyou$2Xwa$3Xkoku-republic~Noun'},
 {pat:/(共)(?!X)(通)(?!X)(語)(?!X)/g,repl:'$1Xkyou$2Xtsuu$3Xgo-common language,lingua franca~Noun'},
 {pat:/(共|と)(?!X)(も)(?!X)(に)(?!X)/g,repl:'$1Xto$2Xmo$3X ni-jointly~Noun'},
@@ -5613,10 +5575,12 @@ const replsB = [
 {pat:/(眠)(?!X)(り)(?!X)/g,repl:'$1Xnem$2Xuri-sleep,slumber~Noun'},
 {pat:/(眺)(?!X)(め)(?!X)/g,repl:'$1Xnag$2Xame-view,prospect~Noun'},
 {pat:/(眼)(?!X)(科)(?!X)/g,repl:'$1Xgan$2Xka-ophthalmology~Noun'},
+{pat:/(魔)(?!X)(女)(?!X)/g,repl:'$1Xma$2Xjyo-witch~Noun'},
 {pat:/(眼)(?!X)(鏡)(?!X)/g,repl:'$1Xmeg$2Xane-glasses,judgment~Noun'},
 {pat:/(着)(?!X)(々)(?!X)/g,repl:'$1Xcyaku$2Xcyaku-steadily~Noun'},
 {pat:/(着)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xtsu-arrive,make contact,settle$2X~KuVerb'},
 {pat:/(着)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xki-wear,put on$2X~RuVerb'},
+{pat:/(狩)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xka-to hunt$2X~RuVerb'},
 {pat:/(着)(?!X)(席)(?!X)/g,repl:'$1Xcyaku$2Xseki-taking a seat~Noun'},
 {pat:/(着)(?!X)(弾)(?!X)/g,repl:'$1Xcyaku$2Xdan-bullet impact~Noun'},
 {pat:/(着)(?!X)(手)(?!X)/g,repl:'$1Xchaku$2Xsyu-starting work~Noun'},
@@ -7614,7 +7578,7 @@ const replsB = [
 {pat:/(箱)(?!X)/g,repl:'$1Xhako-box~Noun'},
 {pat:/(箸)(?!X)/g,repl:'$1Xhashi-chopsticks~Noun'},
 {pat:/(節)(?!X)/g,repl:'$1Xsetsu-occasion~Noun'},
-{pat:/(米)(?!X)/g,repl:'$1Xbei,yone-The United States of America,kome-rice~Noun'},
+{pat:/(米)(?!X)/g,repl:'$1Xbei,yone-The United States of America;kome-rice~Noun'},
 {pat:/(粉)(?!X)/g,repl:'$1Xkon+a,powder,flour~Noun'},
 {pat:/(粒)(?!X)/g,repl:'$1Xtsubu-grain,drop~Noun'},
 {pat:/(糊)(?!X)/g,repl:'$1Xnori-glue,starch~Noun'},
@@ -8045,19 +8009,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-兵庫県姫路市で小学6年の男の子が車にはねられ意識不明の重体です。
-
-　31日午後1時半ごろ、姫路市田寺の県道で、「事故で子どもが頭から血を流している」と通りかかった男性から警察に通報がありました。
-
-【写真を見る】12歳の男の子が車にはねられ重体…現場周辺の状況は？
-
-　警察によりますと、小学6年の男子児童（12）が横断歩道がない場所を渡っていたところ乗用車にはねられたということです。
-
-　男子児童は病院に搬送されましたが、意識不明の重体です。
-
-　警察は車を運転していた高砂市の会社員・大下晋平容疑者（26）を過失運転傷害の疑いで現行犯逮捕しました。
-
-　警察の調べに対し大下容疑者は容疑を認めていて。「反対車線の車のかげになって子どもが見えなかった」と話しているということで、警察が当時の状況を調べています。
+米メディアは1日、2021年1月の連邦議会襲撃事件を巡り、連邦司法当局の捜査を受けていた共和党のドナルド・トランプ前大統領（77）が起訴されたと一斉に報じた。トランプ氏は4件の事件で捜査を受けており、起訴は3件目。24年11月の大統領選で返り咲きを目指す姿勢は変えておらず、今回の起訴も「政治的な魔女狩りだ」と主張するとみられる。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
