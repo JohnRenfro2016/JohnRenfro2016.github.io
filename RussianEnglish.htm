@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Johns Journal</title>
+<title>John T.'s Journal</title>
 <link
 rel="icon"
 type="image/png"
@@ -11,8 +11,8 @@ href="MyFavicon.png"
 
 @font-face
 {
-font-family:"Kraash";
-src:url("Kraash.ttf");
+font-family:"Squealer";
+src:url("Squealer.otf");
 }
 
 a:link,
@@ -20,28 +20,14 @@ a:hover,
 a:active,
 a:visited {color:#ffffff}
 
-body,tr,td
+body
 {
-background-image:linear-gradient(180deg,#11215b,#9f873a);
+background-image:linear-gradient(180deg,#99aaa2,#6c777a,#4f5457);
 border-radius:25px;
 color:#ffffff;
 font-size:25px;
 margin-left:5%;
 margin-top:5%;
-text-align:center;
-vertical-align: top;
-width:500px;
-word-wrap:break-word;
-}
-
-textarea
-{
-background-color:#11215b;
-border-radius:25px;
-color:#9f873a;
-font-size:25px;
-text-align:center;
-text-shadow:2px 2px 4px #3d2526;
 width:500px;
 word-wrap:break-word;
 }
@@ -49,60 +35,36 @@ word-wrap:break-word;
 .ComicTitle
 {
 color:#ffffff;
-font-size:30px;
+font-size:60px;
 }
 
 .HeaderStyle
 {
-color:#b4e0fd;
-font-family:"Kraash";
+color:#f6d356;
+font-family:"Squealer";
+float: right;
 font-size:30px;
 margin-bottom:20px;
-text-shadow:0px -2px 4px #3179c6,0px -2px 10px #65b0f2,0px -10px 20px #F90,0px -20px 40px #14449b;
-}
-
-.paper {
- background:#fff;
- color:#000000;
- padding:30px;
- position:relative;
-}
-
-.paper,
-.paper::before,
-.paper::after {
- / Stylesdistinguish sheets fromone another /
- box-shadow:1px 1px 1px rgba(0,0,0,0.25);
- border:1px solid #bbb;
-}
-
-.paper::before,
-.paper::after {
- content:"";
- position:absolute;
- hht:95%;
- width:99%;
- background-color:#eee;
-}
-
-.paper::before {
- right:15px;
- top:0;
- transform:rotate(-1deg);
- z-index:-1;
-}
-
-.paper::after {
- top:5px;
- right:-5px;
- transform:rotate(1deg);
- z-index:-2;
+text-shadow:0px -2px 4px #3179c6,0px -2px 10px #cc9029,0px -10px 20px #F90,0px -20px 40px #cf7b31;
 }
 
 .TheStripe
 {
-background:repeating-linear-gradient(45deg,transparent,transparent 10px,#000000 10px,#000000 20px),linear-gradient(bottom,#f5c103,#000000)
+background:repeating-linear-gradient(45deg,transparent,transparent 10px,#000000 10px,#000000 20px),linear-gradient(to bottom,#f5c103,#000000)
 }
+
+textarea
+{
+background-color:inherit;
+border-radius:25px;
+color:inherit;
+font-size:25px;
+text-align:center;
+text-shadow:2px 2px 4px #3d2526;
+width:500px;
+word-wrap:break-word;
+}
+
 }
 
 </style>
@@ -922,7 +884,7 @@ const replsB = [
 {pat:/(п)(р)(е)(д)(п)(р)(и)(н)(и)(м)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ to undertake(verb)'},
 {pat:/(п)(р)(е)(д)(п)(р)(и)(я)(т)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ enterprise(noun)'},
 {pat:/(п)(р)(е)(д)(с)(т)(а)(в)(л)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ present itself(noun)'},
-{pat:/(п)(р)(е)(д)(с)(т)(а)(в)(л)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ to present(noun)'},
+{pat:/(п)(р)(е)(д)(с)(т)(а)(в)(л)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ presentation(noun)'},
 {pat:/(п)(р)(е)(д)(у)(с)(м)(а)(т)(р)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ envisage(noun)'},
 {pat:/(п)(р)(е)(д)(у)(с)(м)(а)(т)(р)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ ibe envisaged(noun)'},
 {pat:/(п)(р)(е)(д)(ы)(д)(у)(щ)(и)(й)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_$9_$10_ preceding(noun)'},
@@ -1688,7 +1650,6 @@ const replsB = [
 {pat:/(п)(о)(б)(у)(ж)(д)(е)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ motive(noun)'},
 {pat:/(п)(о)(д)(о)(з)(р)(е)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ suspicion(noun)'},
 {pat:/(п)(о)(д)(ч)(и)(н)(е)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ submission(noun)'},
-{pat:/(и)(з)(м)(е)(н)(е)(н)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ change(noun)'},
 {pat:/(п)(о)(п)(о)(л)(н)(е)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ replenishment;reinforcements(noun)'},
 {pat:/(п)(о)(с)(т)(р)(о)(е)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ construction(noun)'},
 {pat:/(п)(о)(т)(р)(я)(с)(е)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ shock(noun)'},
@@ -2098,7 +2059,7 @@ const replsB = [
 {pat:/(н)(е)(ч)(а)(я)(н)(н)(о)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ accidentally;unexpectedly(noun)'},
 {pat:/(н)(о)(р)(м)(а)(л)(ь)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ normal(adjective)'},
 {pat:/(н)(ы)(н)(е)(ш)(н)(и)(й)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ present(noun)'},
-{pat:/(о)(б)(в)(и)(н)(я)(т)(ь)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ accuse of(preposition)|'},
+{pat:/(о)(б)(в)(и)(н)(я)(т|)(ь|)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ to accuse(verb)'},
 {pat:/(о)(б)(и)(ж)(е)(н)(н)(о)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ resentfully(noun)'},
 {pat:/(о)(б)(н)(а)(ж)(ё)(н)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ naked(adjective)'},
 {pat:/(о)(б)(о)(р)(у)(д)(о)(в)(а)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ to equip(verb)'},
@@ -2175,7 +2136,6 @@ const replsB = [
 {pat:/(п|)(е|)(р|)(е|)(к)(р)(е)(щ)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ intersect(noun)'},
 {pat:/(п|)(е|)(р|)(е|)(л)(и)(с)(т)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ leafthrough(verb)'},
 {pat:/(п|)(е|)(р|)(е|)(м)(е)(н)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ change;transform(verb)'},
-{pat:/(п|)(е|)(р|)(е|)(м)(е)(н)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ change(noun)'},
 {pat:/(п|)(е|)(р|)(е|)(н)(о)(с)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ be carried over(noun)'},
 {pat:/(п|)(е|)(р|)(е|)(н)(о)(с)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ portable;metaphorical(adjective)'},
 {pat:/(п|)(е|)(р|)(е|)(о)(д)(е)(в)(а)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_$8_ change one’s clothes;disguise os(noun)'},
@@ -3266,8 +3226,8 @@ const replsB = [
 {pat:/(п|)(е|)(р|)(е|)(к)(и)(д)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ throw over(verb)'},
 {pat:/(п|)(е|)(р|)(е|)(л)(и)(в)(а)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ tint;play of colours(noun)'},
 {pat:/(п)(е)(р)(е)(л)(о)(м)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ break(noun)'},
+{pat:/(к)(а)(п)(и)(т)(о)(л)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ capitol(noun)'},
 {pat:/(п|)(е|)(р|)(е|)(л)(ё)(т)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ flying over;migrationbirds(noun)'},
-{pat:/(п|)(е|)(р|)(е|)(м)(е)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ change(noun)'},
 {pat:/(п|)(е|)(р|)(е|)(м)(е)(щ)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ move(noun)'},
 {pat:/(п|)(е|)(р|)(е|)(н)(и)(м)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ copy(noun)'},
 {pat:/(п|)(е|)(р|)(е|)(н)(о)(с)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ transfer(noun)'},
@@ -3286,6 +3246,7 @@ const replsB = [
 {pat:/(п)(и)(р)(а)(м)(и)(д)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ pyramid(noun)'},
 {pat:/(п)(и)(р)(о)(ж)(о)(к)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ pie(noun)'},
 {pat:/(п)(и)(щ)(е)(в)(о)(й)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ food(adjective)'},
+{pat:/(п)(р)(е)(д)(ъ)(я)(в)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ to present(verb)'},
 {pat:/(п)(л)(а)(м)(е)(н)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ burning(adjective)'},
 {pat:/(п)(л)(е)(с)(е)(н)(ь)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ fmould(noun)'},
 {pat:/(п)(л)(е)(т)(е)(н)(ь)/ig,repl:'_$1_$2_$3_$4_$5_$6_$7_ mhurdle(noun)'},
@@ -4200,6 +4161,7 @@ const replsB = [
 {pat:/(д)(о)(б)(а)(в)(к)/ig,repl:'_$1_$2_$3_$4_$5_$6_ addition(noun)'},
 {pat:/(д)(о)(б)(л)(е)(с)/ig,repl:'_$1_$2_$3_$4_$5_$6_ fvalour(verb)'},
 {pat:/(д)(о)(б)(р)(о)(т)/ig,repl:'_$1_$2_$3_$4_$5_$6_ goodness(noun)'},
+{pat:/(и)(з)(м)(е)(н)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_ to change(verb)'},
 {pat:/(д)(о)(в)(е)(р)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_ p( trust in(noun)'},
 {pat:/(д)(о)(в)(е)(р)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_ trust ;( entrust(verb)'},
 {pat:/(д)(о)(в)(о)(д)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_ dative to-infinitive)to chance to(noun)'},
@@ -4352,8 +4314,6 @@ const replsB = [
 {pat:/(и)(з)(г)(о)(н)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_ expel(noun)'},
 {pat:/(и)(з)(д)(а)(в)(н)/ig,repl:'_$1_$2_$3_$4_$5_$6_ since long ago(noun)'},
 {pat:/(и)(з)(д)(а)(л)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_ froma distance(noun)'},
-{pat:/(и)(з)(м)(е)(н)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_ change(noun)'},
-{pat:/(и)(з)(м)(е)(н)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_ change(noun)'},
 {pat:/(и)(з)(м)(е)(р)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_ measure(verb)'},
 {pat:/(и)(з)(м)(е)(р)(я)/ig,repl:'_$1_$2_$3_$4_$5_$6_ be measured(noun)'},
 {pat:/(и)(з)(р)(е)(д)(к)/ig,repl:'_$1_$2_$3_$4_$5_$6_ occasionally(noun)'},
@@ -4823,7 +4783,7 @@ const replsB = [
 {pat:/(п)(и)(д)(ж)(а)(к)/ig,repl:'_$1_$2_$3_$4_$5_$6_ jacket(noun)'},
 {pat:/(п)(и)(с)(ь)(м)(о)/ig,repl:'_$1_$2_$3_$4_$5_$6_ letter(noun)'},
 {pat:/(п)(л)(а)(в)(к)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_ swimming trunks(noun)'},
-{pat:/(с)(о)(о)(б)(щ)(а)/ig,repl:'_$1_$2_$3_$4_$5_$6_ report(verb)'},
+{pat:/(с)(о)(о)(б)(щ)(а)/ig,repl:'_$1_$2_$3_$4_$5_$6_ to report(verb)'},
 {pat:/(п)(л)(а)(в)(н)(о)/ig,repl:'_$1_$2_$3_$4_$5_$6_ smoothly(noun)'},
 {pat:/(п)(л)(а)(к)(а)(т)/ig,repl:'_$1_$2_$3_$4_$5_$6_ poster(noun)'},
 {pat:/(п)(л)(а)(н)(е)(т)/ig,repl:'_$1_$2_$3_$4_$5_$6_ anet(noun)'},
@@ -5244,7 +5204,7 @@ const replsB = [
 {pat:/(с)(о)(б)(ы)(т)(и)/ig,repl:'_$1_$2_$3_$4_$5_$6_ event(noun)'},
 {pat:/(с)(о)(в)(е)(р)(ш)/ig,repl:'_$1_$2_$3_$4_$5_$6_ accomplish(noun)'},
 {pat:/(с)(о)(в)(е)(р)(ш)/ig,repl:'_$1_$2_$3_$4_$5_$6_ be accomplished(noun)'},
-{pat:/(п|)(е|)(р|)(е|)(д)(а)/ig,repl:'_$1_$2_$3_$4_$5_$6_ hand over(verb)'},
+{pat:/(п)(е)(р)(е)(д)(а)/ig,repl:'_$1_$2_$3_$4_$5_$6_ hand over(verb)'},
 {pat:/(с)(о)(в)(с)(е)(м)/ig,repl:'_$1_$2_$3_$4_$5_$6_ completely(noun)'},
 {pat:/(с)(о)(в)(х)(о)(з)/ig,repl:'_$1_$2_$3_$4_$5_$6_ state farm(noun)'},
 {pat:/(с)(о)(г)(л)(а)(ш)/ig,repl:'_$1_$2_$3_$4_$5_$6_ agree c((noun)'},
@@ -5851,7 +5811,6 @@ const replsB = [
 {pat:/(д)(а)(в)(н)(о)/ig,repl:'_$1_$2_$3_$4_$5_ since long ago(noun)'},
 {pat:/(д)(а)(л)(е)(е)/ig,repl:'_$1_$2_$3_$4_$5_ further(noun)'},
 {pat:/(д)(а)(л)(ё)(к)/ig,repl:'_$1_$2_$3_$4_$5_ distant(noun)'},
-{pat:/(д)(а)(н)(н)(ы)/ig,repl:'_$1_$2_$3_$4_$5_ data(noun)'},
 {pat:/(д)(а)(р)(о)(м)/ig,repl:'_$1_$2_$3_$4_$5_ free(noun)'},
 {pat:/(д)(в)(а)(д)(ц)/ig,repl:'_$1_$2_$3_$4_$5_ twenty(verb)'},
 {pat:/(д)(в)(е)(р)(ц)/ig,repl:'_$1_$2_$3_$4_$5_ small door(noun)'},
@@ -6368,7 +6327,6 @@ const replsB = [
 {pat:/(о)(б)(л)(и)(к)/ig,repl:'_$1_$2_$3_$4_$5_ look(noun)'},
 {pat:/(о)(б)(м)(а)(н)(н)/ig,repl:'_$1_$2_$3_$4_$5_ deceit(noun)'},
 {pat:/(о)(б)(м)(а)(н)(н)/ig,repl:'_$1_$2_$3_$4_$5_ deceive(verb)'},
-{pat:/(о)(б)(м)(е)(н)/ig,repl:'_$1_$2_$3_$4_$5_ exchange(noun)'},
 {pat:/(о)(б)(м)(е)(н)/ig,repl:'_$1_$2_$3_$4_$5_ to exchange(noun)'},
 {pat:/(о)(б)(н)(а)(ж)/ig,repl:'_$1_$2_$3_$4_$5_ bare(noun)'},
 {pat:/(о)(б)(н)(и)(м)/ig,repl:'_$1_$2_$3_$4_$5_ embrace one another(noun)'},
@@ -7430,7 +7388,6 @@ const replsB = [
 {pat:/(г)(у)(с)(ь)/ig,repl:'_$1_$2_$3_$4_ mgoose(noun)'},
 {pat:/(д)(а)(ж)(е)/ig,repl:'_$1_$2_$3_$4_ even(noun)'},
 {pat:/(д)(а)(л)(ь)/ig,repl:'_$1_$2_$3_$4_ fdistance(noun)'},
-{pat:/(д)(а)(н)(н)/ig,repl:'_$1_$2_$3_$4_ given(adjective)'},
 {pat:/(д)(а)(н)(ь)/ig,repl:'_$1_$2_$3_$4_ ftribute(noun)'},
 {pat:/(д)(в)(и)(г)/ig,repl:'_$1_$2_$3_$4_ move(noun)'},
 {pat:/(д)(в)(и)(г)/ig,repl:'_$1_$2_$3_$4_ or( to move(noun)'},
@@ -7580,8 +7537,7 @@ const replsB = [
 {pat:/(к)(о)(н)(ь)/ig,repl:'_$1_$2_$3_$4_ mhorse(noun)'},
 {pat:/(к)(о)(р)(к)/ig,repl:'_$1_$2_$3_$4_ crust;rind(noun)'},
 {pat:/(к)(о)(р)(м)/ig,repl:'_$1_$2_$3_$4_ fodder(noun)'},
-{pat:/(к)(о)(р)(м)/ig,repl:'_$1_$2_$3_$4_ sternof ship(noun)'},
-{pat:/(к)(о)(р)(м)/ig,repl:'_$1_$2_$3_$4_ feed(verb)'},
+{pat:/(т)(е)(л)(е)/ig,repl:'_$1_$2_$3_$4_ television(noun)'},
 {pat:/(к)(о)(с)(в)(а)/ig,repl:'_$1_$2_$3_$4_ oblique(adjective)'},
 {pat:/(к)(о)(с)(и)/ig,repl:'_$1_$2_$3_$4_ become crooked look sideways at(noun)'},
 {pat:/(к)(о)(с)(о)/ig,repl:'_$1_$2_$3_$4_ squint(noun)'},
@@ -7606,6 +7562,7 @@ const replsB = [
 {pat:/(з)(е)(м)(л)/ig,repl:'_$1_$2_$3_$4_ ground(noun)'},
 {pat:/(к)(р)(у)(г)/ig,repl:'_$1_$2_$3_$4_ circle(noun)'},
 {pat:/(к)(р)(у)(ж)/ig,repl:'_$1_$2_$3_$4_ ispin;circle(verb)'},
+{pat:/(д)(а)(н)(н)/ig,repl:'_$1_$2_$3_$4_ according to the given data(noun)'},
 {pat:/(к)(р)(у)(п)/ig,repl:'_$1_$2_$3_$4_ groatsgrain(noun)'},
 {pat:/(к)(р)(у)(т)/ig,repl:'_$1_$2_$3_$4_ twist(verb)'},
 {pat:/(к)(р)(ы)(м)/ig,repl:'_$1_$2_$3_$4_ Crimea(noun)'},
@@ -8682,7 +8639,7 @@ const replsB = [
 {pat:/(н)(и)(в)(а)/ig,repl:'_$1_$2_$3_ field(noun)'},
 {pat:/(н)(и)(з)/ig,repl:'_$1_$2_$3_ bottom(noun)'},
 {pat:/(н)(и)(к)/ig,repl:'_$1_$2_$3_ little thing(noun)'},
-{pat:/(н)(о)(в)(а)/ig,repl:'_$1_$2_$3_ new(adjective)'},
+{pat:/(н)(о)(в)/ig,repl:'_$1_$2_$3_ new(adjective)'},
 {pat:/(н)(о)(г)/ig,repl:'_$1_$2_$3_ legfoot(noun)'},
 {pat:/(н)(о)(ж)/ig,repl:'_$1_$2_$3_ knife(noun)'},
 {pat:/(н)(о)(р)/ig,repl:'_$1_$2_$3_ burrow(noun)'},
@@ -8742,7 +8699,7 @@ const replsB = [
 {pat:/(п)(о)(р)/ig,repl:'_$1_$2_$3_ gust;impulse(noun)'},
 {pat:/(п)(о)(р)/ig,repl:'_$1_$2_$3_ it is time;time(noun)'},
 {pat:/(п)(о)(р)/ig,repl:'_$1_$2_$3_ tear;break off(verb)'},
-{pat:/(п)(о)/ig,repl:'_$1_$2_ on(preposition)'},
+{pat:/(п)(о)/ig,repl:'_$1_$2_ on;to(preposition)'},
 {pat:/(п)(р)(и)/ig,repl:'_$1_$2_$3_ at;in;under(preposition)'},
 {pat:/(п)(р)(о)/ig,repl:'_$1_$2_$3_ about(preposition)'},
 {pat:/(п)(у)(г)/ig,repl:'_$1_$2_$3_ frighten(verb)'},
@@ -8947,7 +8904,7 @@ const replsB = [
 
 {pat:/(\(adjective\))(с)(к)(а)(я)/ig,repl:'_$1_$2_$3_$4_$5_ feminine-nominative as for-inanmiate)|'},
 {pat:/(\(adjective\))(с)(к)(и)(й)/ig,repl:'_$1_$2_$3_$4_$5_ masculine-nominative as for-inanmiate)|'},
-{pat:/(\(adjective\))(с)(к)(и)(х)/ig,repl:'_$1_$2_$3_$4_$5_(nominative as for-animate-prepositional for-plural +s)|'},
+{pat:/(\(adjective\))(с)(к)(и)(х)/ig,repl:'_$1_$2_$3_$4_$5_(plural +s-nominative as for-animate-prepositional for)|'},
 {pat:/(\(adjective\))(ь)(н)(о)(й)/ig,repl:'_$1_$2_$3_$4_$5_(genitive of -dative to-instrumental with-prepositional at)|'},
 {pat:/(\(adjective\))(я)(н)(а)(м)/ig,repl:'_$1_$2_$3_$4_$5_ plural +s- )|'},
 {pat:/(\(noun\))(и)(я)(м)(и)/ig,repl:'_$1_$2_$3_$4_$5_ |'},
@@ -9010,7 +8967,7 @@ const replsB = [
 {pat:/(\(noun\))(и)(й)/ig,repl:'_$1_$2_$3_(genitive of )|'},
 {pat:/(\(noun\))(и)(х)/ig,repl:'_$1_$2_$3_(plural +s-genitive of-prepositional for)|'},
 {pat:/(\(noun\))(и)(ю)/ig,repl:'_$1_$2_$3_ dative of )(singular)|'},
-{pat:/(\(noun\))(и)(я)/ig,repl:'_$1_$2_$3_(nominative as for-plural +s)|'},
+{pat:/(\(noun\))(и)(я)/ig,repl:'_$1_$2_$3_(plural +s-nominative as for)|'},
 {pat:/(\(noun\))(и)(я)/ig,repl:'_$1_$2_$3_(singular-nominative as for|'},
 {pat:/(\(noun\))(к)(а)/ig,repl:'_$1_$2_$3_(singular-nominative as for)|'},
 {pat:/(\(noun\))(к)(и)/ig,repl:'_$1_$2_$3_ plural)(nominative as for)|'},
@@ -9019,7 +8976,7 @@ const replsB = [
 {pat:/(\(noun\))(о)(в|к)/ig,repl:'_$1_$2_$3_(genitive of -plural +s)|'},
 {pat:/(\(noun\))(о)(й)/ig,repl:'_$1_$2_$3_(singular- |'},
 {pat:/(\(noun\))(о)(м)/ig,repl:'_$1_$2_$3_(singular-instrumental with)|'},
-{pat:/(\(noun\))(т)(и)/ig,repl:'_$1_$2_$3_(nominative as for-plural +s)(genitive of -dative to-prepositional at-singular)|'},
+{pat:/(\(noun\))(т)(и)/ig,repl:'_$1_$2_$3_(plural +s-nominative as for)(genitive of -dative to-prepositional at-singular)|'},
 {pat:/(\(noun\))(ы)(е)/ig,repl:'_$1_$2_$3_ plural +s-nominative as for))|'},
 {pat:/(\(noun\))(ы)(й)/ig,repl:'_$1_$2_$3_(singular-nominative as for|'},
 {pat:/(\(noun\))(я)(х)/ig,repl:'_$1_$2_$3_(plural +s- |'},
@@ -9041,13 +8998,13 @@ const replsB = [
 {pat:/(\(adjective\))(й)/ig,repl:'_$1_$2_(nominative as for-masculine|'},
 {pat:/(\(adjective\))(м)/ig,repl:'_$1_$2_ dative to)-plural|'},
 {pat:/(\(adjective\))(х)/ig,repl:'_$1_$2_(genitive)of -animated-prepositional at-plural|'},
-{pat:/(\(noun\))(а)/ig,repl:'_$1_$2_(genitive of -singular)|'},
+{pat:/(\(noun\))(а)/ig,repl:'_$1_$2_(singular-genitive of)|'},
 {pat:/(\(noun\))(е)/ig,repl:'_$1_$2_(singular-nominative as for-accusative for)|'},
 {pat:/(\(noun\))(и)/ig,repl:'_$1_$2_(singular-nominative as for-prepositional at)|'},
 {pat:/(\(noun\))(м)/ig,repl:'_$1_$2_(singular-dative to)|'},
 {pat:/(\(noun\))(о)/ig,repl:'_$1_$2_(nominative as for)|'},
 {pat:/(\(noun\))(у)/ig,repl:'_$1_$2_(singular-accusative for)|'},
-{pat:/(\(noun\))(ы)/ig,repl:'_$1_$2_(nominative as for-plural +s)|'},
+{pat:/(\(noun\))(ы)/ig,repl:'_$1_$2_(plural +s-nominative as for)|'},
 {pat:/(\(noun\))(ю)/ig,repl:'_$1_$2_(singular-accusative for)|'},
 {pat:/(\(noun\))(я)/ig,repl:'_$1_$2_(nominative as for-accusative for-plural +s-genitive of -singular)|'},
 {pat:/(\(verb\))(и)/ig,repl:'_$1_$2_(singular-prepositional at)|'},
@@ -9091,9 +9048,9 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </div>
 <div class="HeaderStyle">Studying RussianLanguage</div>
 <p>
-Белоруссия и вся Европа «попали в приличный международный замес», заявил Александр Лукашенко
+Дональду Трампу предъявили новые обвинения, сообщает CNN
+По данным телеканала, прокурор Джек Смит обвинил экс-президента США в попытке изменить итоги выборов 2020 года посредством штурма Капитолия
 
-«Американцы разрушают Европу. Великобритания — это их оплот. С другой стороны — Польша», — сказал президент Белоруссии
 <p>
 Cut and paste this Russian text into text area below.
 <br>
