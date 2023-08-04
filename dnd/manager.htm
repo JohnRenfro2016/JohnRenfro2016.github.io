@@ -1149,6 +1149,8 @@ savePane.setStyle("zIndex", "200");
 savePane.putAt(100, 100);
 function setStats(){
 
+stats=stats.replace(/\'\./g,' ');
+
 if(rip=stats.match(/(Multiattack\.[\s\S]+?)Melee|rngd/)){characters[targeted].setActionNotes(rip[1])}
 
 characters[targeted].setStrPro('');
@@ -2262,7 +2264,7 @@ function _ref(){boxContents="<img id='rotated"+this.index+"' onClick='characters
 boxContents+="<table><tr><td class='piece'>"+this.name;
 boxContents+="</td></tr><tr><td class='piece'>(Init)iative:"+this.init;
 boxContents+="</td></tr><tr><td class='piece'>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
-boxContents+="</td></tr><tr><td class='piece'>AC:"+this.curAc+"/"+this.ac+" HD:"+this.hitDice+" HP:"+this.maxHp+"/"+this.curHp+" MV:"+this.speed;
+boxContents+="</td></tr><tr><td class='piece'>AC:"+this.curAc+" HP:"+this.curHp+" MV:"+this.speed;
 boxContents+="</td></tr><tr><td class='piece'><input class='piece' onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
 
 boxContents+="</td></tr></table></span><span id=toggled1"+this.index+" style='display:"+this.toggled1+"'>"
