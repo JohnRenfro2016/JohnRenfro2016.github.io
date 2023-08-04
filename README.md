@@ -1,4 +1,4 @@
 # JohnRenfro2016.github.io
-The Japanese to English Parser
-JavaScript
-Foreign Language Learning
+teaches you how to read Japanese
+teaches you how to read Russian
+JavaScript Dungeons & Dragons Manager
