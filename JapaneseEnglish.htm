@@ -385,6 +385,7 @@ const replsA = [
 {pat:/(値)(?!X)(下)(?!X)(が)(?!X)(り)(?!X)/g,repl:'$1X$2Xne$3Xs$4Xagari-fall in price~Noun'},
 {pat:/(共)(?!X)(産)(?!X)(主)(?!X)(義)(?!X)/g,repl:'$1X$2Xky$3Xo$4Xusanshyugi-Communism~Noun'},
 {pat:/(出)(?!X)(入)(?!X)(り)(?!X)(口)(?!X)/g,repl:'$1X$2X$3X$4Xde-iri-guchi,doorway,gateway~Noun'},
+{pat:/(取)(?!X)(り)(?!X)(止)(?!X)(め)(?!X)/g,repl:'$1Xto$2Xri$3Xya$4Xme-cancel~IchidanVerb'},
 {pat:/(前)(?!X)(も)(?!X)(っ)(?!X)(て)(?!X)/g,repl:'$1X$2Xma$3Xe$4X-motte,in advance~Noun'},
 {pat:/(前)(?!X)(売)(?!X)(り)(?!X)(券)(?!X)/g,repl:'$1Xmae$2Xu$3Xri$4Xken-advance ticket~Noun'},
 {pat:/(割)(?!X)(り)(?!X)(引)(?!X)(き)(?!X)/g,repl:'$1X$2Xwa$3Xr$4Xibigi-discount,reduction~Noun'},
@@ -4894,6 +4895,7 @@ const replsB = [
 {pat:/(構)(?!X)(造)(?!X)/g,repl:'$1Xkou$2Xzou-construction,structure~Noun'},
 {pat:/(様)(?!X)(々)(?!X)/g,repl:'$1Xsama$2Xzama-various~Noun'},
 {pat:/(様)(?!X)(子)(?!X)/g,repl:'$1Xyou$2Xsu-appearance~Noun'},
+{pat:/(終)(?!X)(日)(?!X)/g,repl:'$1Xsyuu$2Xjitsu-all day~Noun'},
 {pat:/(標)(?!X)(準)(?!X)/g,repl:'$1Xhyou$2Xjyun-standard,norm~Noun'},
 {pat:/(標)(?!X)(的)(?!X)/g,repl:'$1Xhyou$2Xteki,target~Noun'},
 {pat:/(模)(?!X)(様)(?!X)/g,repl:'$1Xmo$2Xyou-pattern~Noun'},
@@ -6709,7 +6711,8 @@ const replsB = [
 {pat:/(重)(?!X)(大)(?!X)/g,repl:'$1Xjyuu$2X-dai,important,serious~Noun'},
 {pat:/(重)(?!X)(役)(?!X)/g,repl:'$1Xjyuu$2X-yaku,executive~Noun'},
 {pat:/(重)(?!X)(点)(?!X)/g,repl:'$1Xjyuu$2X-ten,emphasis~Noun'},
-{pat:/(重)(?!X)(症)(?!X)/g,repl:'$1Xjyuu$2X-syou,serious illness~Noun'},
+{pat:/(重)(?!X)(症)(?!X)/g,repl:'$1Xjyuu$2Xsyou-serious illness~Noun'},
+{pat:/(走)(?!X)(行)(?!X)/g,repl:'$1Xsou$2Xkou-running transportation~Noun'},
 {pat:/(重)(?!X)(要)(?!X)/g,repl:'$1Xjyuu$2Xyou-essential~Noun'},
 {pat:/(重)(?!X)(視)(?!X)/g,repl:'$1Xjyuu$2X-shi,regarding as important~Noun'},
 {pat:/(重)(?!X)(量)(?!X)/g,repl:'$1Xjyuu$2X-ryou,weight~Noun'},
@@ -7469,7 +7472,7 @@ const replsB = [
 {pat:/(浜)(?!X)/g,repl:'$1Xhama-beach~Noun'},
 {pat:/(浦)(?!X)/g,repl:'$1Xura-inlet~Noun'},
 {pat:/(浪)(?!X)/g,repl:'$1XNami-wave~Noun'},
-{pat:/(海)(?!X)/g,repl:'$1Xkai,umi,sea~Noun'},
+{pat:/(海)(?!X)/g,repl:'$1Xkai,umi,mi-sea~Noun'},
 {pat:/(涙)(?!X)/g,repl:'$1Xnamida,tears~Noun'},
 {pat:/(液)(?!X)/g,repl:'$1Xeki-liquid~Noun'},
 {pat:/(淳)(?!X)/g,repl:'$1XJyun-name~Noun'},
@@ -7495,7 +7498,7 @@ const replsB = [
 {pat:/(無)(?!X)/g,repl:'$1Xmu-none~Noun'},
 {pat:/(煙)(?!X)/g,repl:'$1Xkemuri-smoke~Noun'},
 {pat:/(熊)(?!X)/g,repl:'$1Xkuma-bear~Noun'},
-{pat:/(熱)(?!X)/g,repl:'$1Xnetsu-heat,fever~Noun'},
+{pat:/(熱)(?!X)/g,repl:'$1Xnetsu,ata-heat,fever~Noun'},
 {pat:/(爪)(?!X)/g,repl:'$1Xtsume-nail,claw~Noun'},
 {pat:/(父)(?!X)/g,repl:'$1Xchi+chi,father~Noun'},
 {pat:/(版)(?!X)/g,repl:'$1Xban,han,version~Noun'},
@@ -7757,7 +7760,7 @@ const replsB = [
 {pat:/(鐘)(?!X)/g,repl:'$1Xkane-bell~Noun'},
 {pat:/(長)(?!X)/g,repl:'$1Xchou-chairperson,commander;naga-long~Noun'},
 {pat:/(門)(?!X)/g,repl:'$1Xmon-gate~Noun'},
-{pat:/(間)(?!X)/g,repl:'$1Xkan-time period,aida,while~Noun'},
+{pat:/(間)(?!X)/g,repl:'$1Xkan-time period;aida,while~Noun'},
 {pat:/(関)(?!X)/g,repl:'$1Xkan-in relation to~Noun'},
 {pat:/(闇)(?!X)/g,repl:'$1Xyami-night,illegal~Noun'},
 {pat:/(阜)(?!X)/g,repl:'$1Xfu,mound~Noun'},
@@ -8013,7 +8016,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-ロシア国防省によると、黒海に面した南部クラスノダール地方ノボロシスクの海軍基地で4日未明、ウクライナ軍の「水上ドローン」による攻撃があった。
+JR東日本は、5日夜、走行中の電車がコンクリート製の柱と衝突したことによる停電の影響で、東京駅と熱海駅の間の上下線で終日運転を取り止めた東海道線は、6日の始発からも運転を取り止め、午前8時ごろ運転を再開する予定だということです。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
