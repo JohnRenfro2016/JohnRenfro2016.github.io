@@ -1281,7 +1281,7 @@ const replsA = [
 {pat:/(楽)(?!X)(し)(?!X)(み)(?!X)/g,repl:'$1Xtano$2Xsh$3Ximi-looking forward to~Noun'},
 {pat:/(横)(?!X)(書)(?!X)(き)(?!X)/g,repl:'$1Xyok$2Xog$3Xaki-horizontal writing~Noun'},
 {pat:/(次)(?!X)(々)(?!X)(に)(?!X)/g,repl:'$1Xtsu$2Xgi$3Xtsugini-one after another,in succession~Noun'},
-{pat:/(次)(?!X)(第)(?!X)(に)(?!X)/g,repl:'$1Xshi$2Xda$3Xi ni,by degrees~Noun'},
+{pat:/(次)(?!X)(第)(?!X)(に)(?!X)/g,repl:'$1Xshi$2Xdai$3X ni,by degrees~Noun'},
 {pat:/(欲)(?!X)(張)(?!X)(り)(?!X)/g,repl:'$1Xyok$2Xub$3Xari-greed,greedy~Noun'},
 {pat:/(歌)(?!X)(舞)(?!X)(伎)(?!X)/g,repl:'$1Xka$2Xbu$3Xki-kabuki theater~Noun'},
 {pat:/(正)(?!X)(当)(?!X)(化)(?!X)/g,repl:'$1Xsei$2Xtou$3Xka-justification~Noun'},
@@ -7997,10 +7997,12 @@ a = a.replace(/(Verb)(る)(?!X)/g,'<br>$1X$2Xru-do,will do~InformalVerb<p>');
 
 a = a.replace(/(Verb)(と)(?!X)/g,'$1<p>$2Xto-by way of~Postposition~Noun');
 
-a = a.replace(/Verb(の)(?!X)/g,'<br>$1Xno-doing<p>');
+a = a.replace(/(ご)(?!X)/g,'<br>$1Xgo-honorable,makes words polite<p>');
 
 a = a.replace(/(IAdjective)/g,'$1<p>');
 a = a.replace(/(~Noun)/g,'<p><p>');
+a = a.replace(/(Verb)/g,'$1<p>');
+
 a = a.replace(/(Verb)/g,'$1<p>');
 
 a = a.replace(/X/g,'');
@@ -8016,7 +8018,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-JR東日本は、5日夜、走行中の電車がコンクリート製の柱と衝突したことによる停電の影響で、東京駅と熱海駅の間の上下線で終日運転を取り止めた東海道線は、6日の始発からも運転を取り止め、午前8時ごろ運転を再開する予定だということです。
+台風6号は、月曜日は次第に進路を北よりに変えて、水曜日には九州に接近するおそれがあります。台風の動きが遅く、月曜日にかけても沖縄や奄美、九州南部では大雨による土砂災害などに厳重な警戒が必要です。西日本の太平洋側も雨が続き、台風が近づく前から大雨となりそうです。晴れ間の出る関東や東北も、急な雷雨にご注意ください。北海道も雨の続く所があるため、土砂災害や川の氾濫に警戒が必要です。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
