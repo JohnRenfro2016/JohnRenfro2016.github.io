@@ -474,6 +474,7 @@ const replsA = [
 {pat:/(高)(?!X)(等)(?!X)(学)(?!X)(校)(?!X)/g,repl:'$1X$2Xko$3Xu$4Xtou-gak-kou,high school~Noun'},
 {pat:/(高)(?!X)(速)(?!X)(道)(?!X)(路)(?!X)/g,repl:'$1Xkou$2Xsoku$3Xdou$4Xrou-highway~Noun'},
 
+{pat:/(引)(?!X)(き)(?!X)(続)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xhi$2Xki$3tsuzu-one after the other$4X~KuVerb'},
 {pat:/(あ)(?!X)(い)(?!X)(に)(?!X)(か|き|く|け|こ|い)(?!X)/g,repl:'$1Xain$2X$3Xi-unfortunately$4X~KuVerb'},
 {pat:/(あ)(?!X)(き)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xaki$2Xre$3X-be stunned in disappointment,disbelief$4X~RuVerb'},
 {pat:/(あ)(?!X)(ふ)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xafu$2Xre$3X-over flow,flood$4X~RuVerb'},
@@ -1577,6 +1578,7 @@ const replsA = [
 {pat:/(３|3)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xsan-jyuu$2Xichi$3Xnichi-thirty-first day of the month~Noun'},
 
 {pat:/(定)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xsada$2Xma-be settled$3X~RuVerb'},
+{pat:/(う)(?!X)(ね)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xu$2Xne-undulation$3X~RuVerb'},
 {pat:/(あ)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xage$2X-give$3X~RuVerb'},
 {pat:/(あ)(?!X)(わ)(?!X)(せ)(?!X)/g,repl:'$1Xawa$2Xse$3X-in all~IchidanVerb'},
 {pat:/(う)(?!X)(が)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xuga$2X-gargling$3X~IAdjective~Noun'},
@@ -8022,7 +8024,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-JR九州は7日、台風6号の接近に伴い、九州新幹線の熊本―鹿児島中央間で8日午後から計画運休すると発表した。同社は「利用客の安全を考慮した」と説明している。博多―熊本間と、西九州新幹線（武雄温泉―長崎）は通常運行する。
+九州の西の海上を北上中の台風6号の影響で、奄美や西日本では、土砂災害、低い土地の浸水、河川の増水や氾濫、暴風に厳重に警戒し、うねりを伴った高波に警戒が必要となる。奄美では、引き続き、きょう9日(水)日中にかけて、九州南部、九州北部では、引き続き、あす10日(木)午前中にかけて、線状降水帯が発生して大雨災害の危険度が急激に高まる可能性がある。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
