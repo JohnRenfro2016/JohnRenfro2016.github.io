@@ -88,7 +88,7 @@ function translateB()
 
 const replsB = [
 
-{pat:/(\,|\.)/ig,repl:' '},
+{pat:/(\,|\.|\-)/ig,repl:' '},
 
 {pat:/( внешнеполитический )/ig,repl:'$1 foreign-policy '},
 {pat:/( высококачественн)/ig,repl:'$1 high-quality '},
@@ -1395,7 +1395,7 @@ const replsB = [
 {pat:/( обнаружени)/ig,repl:'$1 revealing,discovery '},
 {pat:/( обогащатьс)/ig,repl:'$1 /обогатиться,to become rich '},
 {pat:/( оборонятьс)/ig,repl:'$1 /оборониться (от +g),to defend os (from) '},
-{pat:/( оборудова)/ig,repl:'$1 ((i/p)) ,to equip '},
+{pat:/( оборудова)/ig,repl:'$1   ,to equip '},
 {pat:/( обосновани)/ig,repl:'$1 basis,grounds,justification '},
 {pat:/( образовани)/ig,repl:'$1 education,formation '},
 {pat:/( обследова)/ig,repl:'$1 (i/p) ,to investigate '},
@@ -1791,7 +1791,7 @@ const replsB = [
 {pat:/( автомашина )/ig,repl:'$1 car,vehicle '},
 {pat:/( автомобил)/ig,repl:'$1 car '},
 {pat:/( автономный )/ig,repl:'$1 autonomous '},
-{pat:/( адресова)/ig,repl:'$1 ((i/p)) (+a +d),to address (sth to s.o.) '},
+{pat:/( адресова)/ig,repl:'$1   (+a +d),to address (sth to s.o.) '},
 {pat:/( аккуратный )/ig,repl:'$1 exact,punctual,tidy '},
 {pat:/( активнос)/ig,repl:'$1 activity '},
 {pat:/( актуальный )/ig,repl:'$1 topical '},
@@ -2625,7 +2625,7 @@ const replsB = [
 {pat:/( армейский )/ig,repl:'$1 army '},
 {pat:/( армянский )/ig,repl:'$1 Armenian '},
 {pat:/( ассамбле)/ig,repl:'$1 assembly '},
-{pat:/( атакова)/ig,repl:'$1 ((i/p)) ,to attack '},
+{pat:/( атакова)/ig,repl:'$1 to attack(verb)'},
 {pat:/( атмосфера )/ig,repl:'$1 atmosphere '},
 {pat:/( аудитори)/ig,repl:'$1 auditorium '},
 {pat:/( баррикада )/ig,repl:'$1 barricade '},
@@ -3684,7 +3684,7 @@ const replsB = [
 {pat:/( археолог )/ig,repl:'$1 archaeologist '},
 {pat:/( аспирант )/ig,repl:'$1 postgraduate (noun) '},
 {pat:/( астроном )/ig,repl:'$1 astronomer '},
-{pat:/( аэродром )/ig,repl:'$1 aerodrome,airfield '},
+{pat:/( аэродром )/ig,repl:'$1 airfield(noun)'},
 {pat:/( аэропорт )/ig,repl:'$1 airport '},
 {pat:/( бабушкин )/ig,repl:'$1 grandmother’s (possessive adj) '},
 {pat:/( багровый )/ig,repl:'$1 crimson '},
@@ -4127,7 +4127,7 @@ const replsB = [
 {pat:/( крупинка )/ig,repl:'$1 grain '},
 {pat:/( крушени)/ig,repl:'$1 wreck,ruin,collapse '},
 {pat:/( крылатый )/ig,repl:'$1 winged '},
-{pat:/( крымский )/ig,repl:'$1 Crimean '},
+{pat:/( крымски)/ig,repl:'$1 Crimean(adje)'},
 {pat:/( кряхте)/ig,repl:'$1 to groan,grunt '},
 {pat:/( кубометр )/ig,repl:'$1 cubic metre '},
 {pat:/( кудрявый )/ig,repl:'$1 curly '},
@@ -5699,7 +5699,7 @@ const replsB = [
 {pat:/( пополам )/ig,repl:'$1 in half,half-and-half '},
 {pat:/( поприще )/ig,repl:'$1 field (of activity) '},
 {pat:/( попутно )/ig,repl:'$1 on the way,in passing '},
-{pat:/( попытка )/ig,repl:'$1 attempt '},
+{pat:/( попыта)/ig,repl:'$1 attempt(verb)'},
 {pat:/( поровну )/ig,repl:'$1 equally '},
 {pat:/( порошок )/ig,repl:'$1 powder '},
 {pat:/( порти)/ig,repl:'$1 /ис-,to spoil,damage '},
@@ -6437,7 +6437,7 @@ const replsB = [
 {pat:/( далеко )/ig,repl:'$1 far '},
 {pat:/( дальше )/ig,repl:'$1 further '},
 {pat:/( данные )/ig,repl:'$1 (pl),data,qualities '},
-{pat:/( данн)/ig,repl:'$1 given '},
+{pat:/( данн)/ig,repl:'$1 given(adje)'},
 {pat:/( дари)/ig,repl:'$1 /по- (+a +d),to give,present (sth to s.o.) '},
 {pat:/( дважды )/ig,repl:'$1 twice '},
 {pat:/( дверца )/ig,repl:'$1 small door,car door '},
@@ -7846,7 +7846,6 @@ const replsB = [
 {pat:/( круто )/ig,repl:'$1 steeply,sharply '},
 {pat:/( крыло )/ig,repl:'$1 wing '},
 {pat:/( крыса )/ig,repl:'$1 rat '},
-{pat:/( кры)/ig,repl:'$1 /по- ,to cover '},
 {pat:/( крыша )/ig,repl:'$1 roof '},
 {pat:/( кубик )/ig,repl:'$1 child’s building brick '},
 {pat:/( кубок )/ig,repl:'$1 goblet,bowl '},
@@ -9293,10 +9292,12 @@ const replsB = [
 {pat:/( я )/ig,repl:'$1 I '},
 
 {pat:/(\(verb\)денн)/ig,repl:'$1 was done(past)(part)<p> '},
+{pat:/(\(verb\)лись)/ig,repl:'$1 they did(2ndP)(part)<p> '},
 {pat:/(\(verb\)енн)/ig,repl:'$1 was done(past)(part)<p> '},
 {pat:/(\(verb\)ого)/ig,repl:'$1(sing-geni-accu)<p> '},
 
 {pat:/(\(adje\)ых )/ig,repl:'$1 (plur-geni-anim accu-prep)<p> '},
+{pat:/(\(adje\)ым )/ig,repl:'$1 (plur-dati)(masc-inst)(neut-instr)<p> '},
 {pat:/(\(noun\)ом )/ig,repl:'$1 (prep)<p> '},
 {pat:/(\(noun\)ие )/ig,repl:'$1 (plur-nomi-accu)<p> '},
 {pat:/(\(noun\)ьи )/ig,repl:'$1 (plu)(nom)(acc)(sing)(gen)<p> '},
@@ -9307,6 +9308,7 @@ const replsB = [
 {pat:/(\(noun\)ов )/ig,repl:'$1(plur-gen-accu)<p> '},
 {pat:/(\(verb\)ть )/ig,repl:'$1 to do(infi)<p> '},
 
+{pat:/(\(adje\)й )/ig,repl:'$1 (masc-nomi-inan accu)<p> '},
 {pat:/(\(verb\)ь )/ig,repl:'$1 to do(infi)<p> '},
 {pat:/(\(noun\)и )/ig,repl:'$1 (plur-nomi-accu)(sing-dati)<p> '},
 {pat:/(\(noun\)ы )/ig,repl:'$1 (plur-nomi-accu)(sing-geni)<p> '},
@@ -9337,16 +9339,20 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-По делу о взрыве в Сергиевом Посаде в компании «Пиро-Росс» прошли обыски. Следователи изъяли документы и допросили сотрудников Технический директор фирмы задержан в качестве подозреваемого. Также назначены взрывотехническая, баллистическая и другие экспертизы.
+В Новофедоровке ВСУ попытались атаковать крымский аэродром, сообщает Telegram-канал Baza По данным источника, системы ПВО предотвратили атаку.
 <p>
 <textArea cols='25' rows='6' onChange='a=this.value;translateC()'></textArea><p>
 <span id="translatedTextDisplay"></span>
 <p>
 <hr>
 <h3>Grammar Terms</h3>
+(accu)=accusative case, the direct object
+<p>
+(dati)=dative case, the indirect object, to who or what
+<p>
 (plur)=plural
 <p>
-(nomi)=the nominative case, the subject, as for who or what
+(nomi)=nominative case, the subject, as for who or what
 <p>
 (sing)=singular
 <p>
