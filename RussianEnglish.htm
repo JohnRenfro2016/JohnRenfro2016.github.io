@@ -90,6 +90,7 @@ const replsB = [
 
 {pat:/(\,|\.|\-)/ig,repl:' '},
 
+{pat:/( министр)/ig,repl:'$1-government(noun)'},
 {pat:/( мин)/ig,repl:'$1-government ministry(noun) '},
 {pat:/( под)/ig,repl:'$1-region(noun) '},
 
@@ -384,7 +385,6 @@ const replsB = [
 {pat:/( спохватыватьс)/ig,repl:'$1-to remember suddenly(adje)'},
 {pat:/( справедливос)/ig,repl:'$1-justice,fairness(noun)'},
 {pat:/( стимулировани)/ig,repl:'$1-stimulation(noun)'},
-{pat:/( стратегически)/ig,repl:'$1-strategic(noun)'},
 {pat:/( сформулирова)/ig,repl:'$1-to formulate(noun)'},
 {pat:/( требовательны)/ig,repl:'$1-demanding(noun)'},
 {pat:/( удовлетворени)/ig,repl:'$1-satisfaction(noun)'},
@@ -602,7 +602,7 @@ const replsB = [
 {pat:/( распоряжатьс)/ig,repl:'$1-to give orders,deal with,manage,be in charge of(noun)'},
 {pat:/( расправлятьс)/ig,repl:'$1-to deal with,straighten out(noun)'},
 {pat:/( распределени)/ig,repl:'$1-distribution(noun)'},
-{pat:/( рассматрив)/ig,repl:'$1-to examine,make out(noun)'},
+{pat:/( рассматрива)/ig,repl:'$1-to examine,make out(verb)'},
 {pat:/( расспрашив)/ig,repl:'$1-to question(noun)'},
 {pat:/( расстрелив)/ig,repl:'$1-to execute(by shooting)(noun)'},
 {pat:/( растеряннос)/ig,repl:'$1-bewilderment,dismay(noun)'},
@@ -1263,6 +1263,7 @@ const replsB = [
 {pat:/( затрагив)/ig,repl:'$1-to touch,affect(noun)'},
 {pat:/( затрачив)/ig,repl:'$1-to spend,expend(noun)'},
 {pat:/( затруднени)/ig,repl:'$1-difficulty(noun)'},
+{pat:/( стратегическ)/ig,repl:'$1-strategic(adje)'},
 {pat:/( заулыбатьс)/ig,repl:'$1-to start smiling(noun)'},
 {pat:/( захватыва)/ig,repl:'$1-to take,grasp,seize(noun)'},
 {pat:/( захлопыва)/ig,repl:'$1-to bang,slam(noun)'},
@@ -1669,6 +1670,7 @@ const replsB = [
 {pat:/( рукопожатие)/ig,repl:'$1-handshake(noun)'},
 {pat:/( самокритик)/ig,repl:'$1-self-criticism(noun)'},
 {pat:/( своеобразие)/ig,repl:'$1-peculiarity,individuality(noun)'},
+{pat:/( инфраструктур)/ig,repl:'$1-infrastructure(noun)'},
 {pat:/( свойственн)/ig,repl:'$1-(it is) characteristic(of)(noun)'},
 {pat:/( сворачив)/ig,repl:'$1-to roll(up),turn(noun)'},
 {pat:/( связыватьс)/ig,repl:'$1-to get in touch with,communicate with,get involved with(noun)'},
@@ -2794,7 +2796,7 @@ const replsB = [
 {pat:/( довоенн)/ig,repl:'$1-prewar(noun)'},
 {pat:/( довольны)/ig,repl:'$1-satisfied,pleased(with)(noun)'},
 {pat:/( докладчик)/ig,repl:'$1-speaker(at conference)(noun)'},
-{pat:/( должнос)/ig,repl:'$1-post,job(noun)'},
+{pat:/( должност)/ig,repl:'$1-job post(noun)'},
 {pat:/( донесени)/ig,repl:'$1-report,dispatch(noun)'},
 {pat:/( допуска)/ig,repl:'$1-to admit(someone to),assume,allow(noun)'},
 {pat:/( досрочны)/ig,repl:'$1-early,ahead of schedule(noun)'},
@@ -5457,7 +5459,6 @@ const replsB = [
 {pat:/( милос)/ig,repl:'$1-favour(noun)'},
 {pat:/( миндал)/ig,repl:'$1-almonds,almond tree(noun)'},
 {pat:/( минимум)/ig,repl:'$1-minimum(noun)'},
-{pat:/( министр)/ig,repl:'$1-minister(government)(noun)'},
 {pat:/( минутк)/ig,repl:'$1-moment(noun)'},
 {pat:/( миров)/ig,repl:'$1-world(noun)'},
 {pat:/( младши)/ig,repl:'$1-younger,junior(noun)'},
@@ -5589,7 +5590,7 @@ const replsB = [
 {pat:/( отличие)/ig,repl:'$1-difference,distinction(noun)'},
 {pat:/( отличн)/ig,repl:'$1-excellent(ly)(noun)'},
 {pat:/( отметк)/ig,repl:'$1-note,mark(noun)'},
-{pat:/( отрасл)/ig,repl:'$1-branch(of science,industry,government,etc.)(noun)'},
+{pat:/( отрасл)/ig,repl:'$1-office branch(noun)'},
 {pat:/( отрывок)/ig,repl:'$1-excerpt(noun)'},
 {pat:/( оттенок)/ig,repl:'$1-shade,nuance(noun)'},
 {pat:/( отчасти)/ig,repl:'$1-partly(adje)'},
@@ -7796,7 +7797,7 @@ const replsB = [
 {pat:/( како)/ig,repl:'$1-what(kind of)(noun)'},
 {pat:/( калач)/ig,repl:'$1-kalach(small white loaf)(noun)'},
 {pat:/( камин)/ig,repl:'$1-fireplace(noun)'},
-{pat:/( камыш)/ig,repl:'$1-reed,rush(noun)'},
+{pat:/( камышин)/ig,repl:'$1-reed,rush(noun)'},
 {pat:/( канал)/ig,repl:'$1-canal,channel(noun)'},
 {pat:/( канат)/ig,repl:'$1-rope,cable(noun)'},
 {pat:/( канун)/ig,repl:'$1-eve(noun)'},
@@ -8579,7 +8580,7 @@ const replsB = [
 {pat:/( дичь)/ig,repl:'$1-game,wildfowl(noun)'},
 {pat:/( днём)/ig,repl:'$1-by day,in the afternoon(noun)'},
 {pat:/( долг)/ig,repl:'$1-debt,(sg only) duty(noun)'},
-{pat:/( дол)/ig,repl:'$1-portion,share,lot,fate(noun)'},
+{pat:/( дол )/ig,repl:'$1-portion,share,lot,fate(noun)'},
 {pat:/( дом)/ig,repl:'$1-home(noun)'},
 {pat:/( дочь)/ig,repl:'$1-daughter(noun)'},
 {pat:/( друг)/ig,repl:'$1-friend,other(noun)'},
@@ -9301,14 +9302,18 @@ const replsB = [
 {pat:/(\(adje\)ые )/ig,repl:'$1-(plur-nomi-inan acce)<p> '},
 {pat:/(\(adje\)ый )/ig,repl:'$1(masc-nomi)<p> '},
 {pat:/(\(adje\)ым )/ig,repl:'$1-(plur-dati)(masc-inst)(neut-instr)<p> '},
+{pat:/(\(adje\)их )/ig,repl:'$1-(plur-geni-anim acce-prep)<p> '},
 {pat:/(\(adje\)ых )/ig,repl:'$1-(plur-geni-anim accu-prep)<p> '},
 {pat:/(\(noun\)ем )/ig,repl:'$1-(sing-instr)<p> '},
+{pat:/(\(noun\)ам )/ig,repl:'$1-(plur-dati)<p> '},
 {pat:/(\(noun\)ие )/ig,repl:'$1-(plur-nomi-accu)<p> '},
 {pat:/(\(noun\)их )/ig,repl:'$1(plur-gen-prep)<p> '},
 {pat:/(\(noun\)ой )/ig,repl:'$1-(masc-nomi-inan accu-)(femi-geni-dati-inst-prep)<p> '},
 {pat:/(\(noun\)ом )/ig,repl:'$1-(prep)<p> '},
 {pat:/(\(noun\)ов )/ig,repl:'$1-(plur-geni)<p> '},
-{pat:/(\(noun\)ьи )/ig,repl:'$1-(plu)(nom)(acc)(sing)(gen)<p> '},
+{pat:/(\(noun\)ьи )/ig,repl:'$1-(plur-nomi-accu)(sing-geni)<p> '},
+{pat:/(\(noun\)ти )/ig,repl:'$1-(plur-nomi-accu)(sing-geni-dati-prep)<p> '},
+{pat:/(\(noun\)ей )/ig,repl:'$1-(plur-geni<p> '},
 {pat:/(\(verb\)ат )/ig,repl:'$1-they do(futu)<p> '},
 {pat:/(\(verb\)ет |\(verb\)жет )/ig,repl:'$1-he or she does(3rdP)(prese)<p> '},
 {pat:/(\(verb\)ив )/ig,repl:'$1-while doing(past)(adve)<p> '},
@@ -9316,7 +9321,7 @@ const replsB = [
 {pat:/(\(verb\)им )/ig,repl:'$1-we do(futu)<p> '},
 {pat:/(\(verb\)ит )/ig,repl:'$1-he or she does(futu)<p> '},
 {pat:/(\(verb\)ли )/ig,repl:'$1-they did(2ndP)(past)<p> '},
-{pat:/(\(verb\)ть )/ig,repl:'$1-to do(infi)<p> <p> '},
+{pat:/(\(verb\)ть )/ig,repl:'$1-to do(infi)<p> '},
 
 {pat:/(\(adje\)й )/ig,repl:'$1-(masc-nomi-inan accu)<p> '},
 {pat:/(\(adje\)о )/ig,repl:'$1-(neut-short)<p> '},
@@ -9331,7 +9336,9 @@ const replsB = [
 {pat:/(\(noun\)я )/ig,repl:'$1-(plur-nomi-accu)(sing-geni)<p> '},
 {pat:/(\(verb\)й )/ig,repl:'$1-you do!(imper)<p> '},
 {pat:/(\(verb\)у |\(verb\)жу )/ig,repl:'$1-I do(futu)<p> '},
-{pat:/(\(verb\)ь )/ig,repl:'$1-to do(infi)<p> <p> '},
+{pat:/(\(verb\)ь )/ig,repl:'$1-to do(infi)<p> '},
+
+{pat:/(ся )/ig,repl:'$1-is done(pass)<p> '},
 
 {pat:/(nomi)/ig,repl:'<span style=color:orange>nomi</span>'},
 {pat:/(verb)/ig,repl:'<span style=color:red>verb</span>'},
@@ -9364,13 +9371,19 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Джо Байден объявил лесные пожары на Гавайях крупной катастрофой и разблокировал федеральную помощь для пострадавших островов
+По данным источников, на должность рассматриваются министр инфраструктуры Кубраков и министр по вопросам стратегических отраслей промышленности Камышин
 <p>
 <textArea cols='25' rows='6' onChange='a=this.value;translateC()'></textArea><p>
 <span id="translatedTextDisplay"></span>
 <p>
 <hr>
 <h3>Grammar Terms</h3>
+Suffixes have multiple meanings. Try to match the words like this.<br>
+nomi-verb-accu-dati<br>
+If there is a passive verb, match accu-verb-nomi-dati<br>
+prep-prep-prep-prep<br>
+plur-plur-plur-plur<br>
+<p>
 (accu)=accusative case,the direct object
 <p>
 (anim)=animated living things
