@@ -1563,7 +1563,7 @@ const replsA = [
 {pat:/(１)(?!X)(６)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xroku$3Xnichi-sixteenth day of the month~Noun'},
 {pat:/(１|1)(?!X)(1|１)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xichi$3Xnichi-eleventh	day of the month~Noun'},
 {pat:/(１|1)(?!X)(2|２)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xni$3Xnichi-twelfth day of the month~Noun'},
-{pat:/(１|1)(?!X)(4)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xyok$3Xka-fourteenth,day of the month~Noun'},
+{pat:/(１|1)(?!X)(４|4)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xyok$3Xka-fourteenth day of the month~Noun'},
 {pat:/(１|1)(?!X)(6)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xroku$3Xnichi-sixteenth	day of the month~Noun'},
 {pat:/(１|1)(?!X)(8|８)(?!X)(日)(?!X)/g,repl:'$1Xjyuu$2Xhachi$3Xnichi-eighteenth	day of the month~Noun'},
 {pat:/(１|1)(?!X)(０|0)(?!X)(日)(?!X)/g,repl:'$1Xtoo$2Xka$3X-tenth day of the month~Noun'},
@@ -5363,7 +5363,7 @@ const replsB = [
 {pat:/(狂)(?!X)(乱)(?!X)/g,repl:'$1Xkyou$2Xran-madness~Noun'},
 {pat:/(狙)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xnera-aim$2X~UVerb'},
 {pat:/(独)(?!X)(占)(?!X)/g,repl:'$1Xdoku$2Xsen-monopoly~Noun'},
-{pat:/(独)(?!X)(島)(?!X)/g,repl:'$1Xdoku$2Xshima-Japan~Noun'},
+{pat:/(独)(?!X)(島)(?!X)/g,repl:'$1Xdoku$2Xshima,jima-Japan~Noun'},
 {pat:/(独)(?!X)(特)(?!X)/g,repl:'$1Xdoku$2Xtoku-peculiarity,uniqueness~Noun'},
 {pat:/(独)(?!X)(立)(?!X)/g,repl:'$1Xdoku$2Xritsu-independence~Noun'},
 {pat:/(独)(?!X)(自)(?!X)/g,repl:'$1Xdoku$2Xji-unique~Noun'},
@@ -6222,6 +6222,7 @@ const replsB = [
 {pat:/(託)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xtaku-entrust$2X~SuVerb'},
 {pat:/(記)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xshiru-jot down$2X~SuVerb'},
 {pat:/(記)(?!X)(事)(?!X)/g,repl:'$1Xki$2Xji-article~Noun'},
+{pat:/(上)(?!X)(陸)(?!X)/g,repl:'$1Xjyou$2Xriku-landfall,going ashore~Noun'},
 {pat:/(記)(?!X)(入)(?!X)/g,repl:'$1Xki$2Xnyuu-entry,record~Noun'},
 {pat:/(記)(?!X)(号)(?!X)/g,repl:'$1Xki$2Xgou-symbol,mark~Noun'},
 {pat:/(記)(?!X)(念)(?!X)/g,repl:'$1Xki$2Xnen-commemoration~Noun'},
@@ -7353,6 +7354,7 @@ const replsB = [
 {pat:/(悪)(?!X)/g,repl:'$1Xaku-evil~Noun'},
 {pat:/(愛)(?!X)/g,repl:'$1Xai-love~Noun'},
 {pat:/(感)(?!X)/g,repl:'$1Xkan-feeling~Noun'},
+{pat:/(丈)(?!X)/g,repl:'$1jou-stature~Noun'},
 {pat:/(戦)(?!X)/g,repl:'$1Xsen,ikusa-war,game~Noun'},
 {pat:/(戸)(?!X)/g,repl:'$1Xto,be-door~Noun'},
 {pat:/(所)(?!X)/g,repl:'$1Xsyo-office,tokoro-place,about to~Noun'},
@@ -8027,7 +8029,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-ロシア国防省は12日、ロシアが実効支配するウクライナ南部クリミア半島とロシア本土をつなぐクリミア橋付近で、ウクライナのミサイルを撃墜したと発表した。同省はクリミア橋は損傷していないとしている。
+気象庁によると、強い台風７号は１４日午前３時現在、八丈島の南西を時速約１０キロで北西に進んだ。１５日に東日本や西日本にかなり接近し、上陸するおそれがある。近畿地方では１４日午後から１５日午後にかけて、東海地方では１４日午後から１５日夜にかけて線状降水帯が発生し、大雨災害の危険度が急激に高まる可能性があるとして、気象庁は厳重な警戒を呼び掛けている。
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
