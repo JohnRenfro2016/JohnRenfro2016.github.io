@@ -1,5 +1,2 @@
 # JohnRenfro2016.github.io
-teaches you how to read Japanese
-teaches you how to read Russian
-Dungeons & Dragons and Pathfinder Manager
-JavaScript
+These are single page html and JavaScript programs that teach you how to read Japanese, teach you how to read Russian, and manage a single encounter of The Dungeons & Dragons and Pathfinder role-playing games.
