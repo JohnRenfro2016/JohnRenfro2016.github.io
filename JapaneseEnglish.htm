@@ -53,7 +53,7 @@ text-shadow:0px -2px 4px #3179c6,0px -2px 10px #cc9029,0px -10px 20px #F90,0px -
 background:repeating-linear-gradient(45deg,transparent,transparent 10px,#000000 10px,#000000 20px),linear-gradient(to bottom,#f5c103,#000000)
 }
 
-textarea
+input,textarea
 {
 background-color:inherit;
 border-radius:25px;
@@ -68,6 +68,18 @@ word-wrap:break-word;
 </style>
 </head>
 <script>
+
+function enterWord()
+{
+const replsC =
+[
+{pat:/([一-龠ぁ-ゔァ-ヴーa-zA-Z0-9ａ-ｚＡ-Ｚ０-９々〆〤])/g,repl:'($1)(?!X)'},
+];
+replsC.forEach(replace => {
+ b = b.replace(replace.pat,replace.repl);
+});
+document.getElementById("enteredWord").innerHTML="{pat:/"+b+"/ig,repl:'"+c+"'},";
+}
 
 function translateA()
 {
@@ -1596,7 +1608,7 @@ const replsA = [
 {pat:/(お)(?!X)(手)(?!X)(伝)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xote$2Xts$3Xuda-help$4X~IAdjective~Noun'},
 {pat:/(お)(?!X)(手)(?!X)(洗)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xote$2Xar$3Xa-toilet,bathroom$4X~IAdjective~Noun'},
 {pat:/(お)(?!X)(祝)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xoiw$2Xa-celebrate$3X~IAdjective~Noun'},
-{pat:/(お)(?!X)(願)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xone$2Xga-favor$3X~IAdjective~Noun'},
+{pat:/(お)(?!X)(願)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xo$2Xnega-favor$3X~IAdjective~Noun'},
 {pat:/(か)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkae$2X-frog$3X~RuVerb'},
 {pat:/(か)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xka$2Xka-start$3X~RuVerb'},
 {pat:/(か)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xka$2Xji-nibble,bite$3X~RuVerb'},
@@ -5905,6 +5917,7 @@ const replsB = [
 {pat:/(群)(?!X)(集)(?!X)/g,repl:'$1Xgun$2Xsyuu-crowd~Noun'},
 {pat:/(義)(?!X)(務)(?!X)/g,repl:'$1Xgi$2Xmu-duty~Noun'},
 {pat:/(義)(?!X)(理)(?!X)/g,repl:'$1Xgi$2Xri-sense of duty,justice~Noun'},
+{pat:/(紀)(?!X)(伊)(?!X)/ig,repl:'$1Xki$2Xi-province, Wakayama~Noun'},
 {pat:/(羽)(?!X)(根)(?!X)/g,repl:'$1Xha$2Xne-feather~Noun'},
 {pat:/(翌)(?!X)(年)(?!X)/g,repl:'$1Xyoku$2Xnen-following year~Noun'},
 {pat:/(翌)(?!X)(日)(?!X)/g,repl:'$1Xyoku$2Xjitsu-following day~Noun'},
@@ -6119,6 +6132,7 @@ const replsB = [
 {pat:/(裏)(?!X)(門)(?!X)/g,repl:'$1Xura$2Xmon-back gate~Noun'},
 {pat:/(補)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xogina-supplement,replenish$2X~UVerb'},
 {pat:/(補)(?!X)(償)(?!X)/g,repl:'$1Xho$2Xsyou-reparations~Noun'},
+{pat:/(横)(?!X)(転)(?!X)/g,repl:'$1Xou$2Xten~toppled~Noun'},
 {pat:/(補)(?!X)(助)(?!X)/g,repl:'$1Xho$2Xjyo-assistance~Noun'},
 {pat:/(補)(?!X)(欠)(?!X)/g,repl:'$1Xho$2Xketsu-substitute~Noun'},
 {pat:/(補)(?!X)(正)(?!X)/g,repl:'$1Xho$2Xsei-compensation~Noun'},
@@ -7943,9 +7957,9 @@ function translateC()
 translateA();
 translateB();
 
-a = a.replace(/(Postposition)/g,'$1<p><font color=red>____________________</font><p>');
+a = a.replace(/(Postposition)/g,'$1<p><font color=red>XXXXXXXXXXXXXXXXXXXX</font><p>');
 
-a = a.replace(/(Punctuation)/g,'$1<p><font color=yellow>____________________</font><p>');
+a = a.replace(/(Punctuation)/g,'$1<p><font color=yellow>XXXXXXXXXXXXXXXXXXXX</font><p>');
 
 a = a.replace(/(いX)(~IAdjective~Noun)/g,'<p>$1i$2');
 a = a.replace(/(いX)(~KuVerb)/g,'<p>いXi$2');
@@ -8029,16 +8043,34 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-気象庁によると、強い台風７号は１４日午前３時現在、八丈島の南西を時速約１０キロで北西に進んだ。１５日に東日本や西日本にかなり接近し、上陸するおそれがある。近畿地方では１４日午後から１５日午後にかけて、東海地方では１４日午後から１５日夜にかけて線状降水帯が発生し、大雨災害の危険度が急激に高まる可能性があるとして、気象庁は厳重な警戒を呼び掛けている。
+【台風7号】朝までに紀伊半島上陸の見通し　夕方までの予想雨量は東海で450ミリ、近畿で400ミリ、“トラック横転”の猛烈な風も
 <p>
 <textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
+<hr>
+<h3>Admin-Translation Work Area</h3>You can only use this if you download a copy of the website and edit it in Kate,Notepadqq or another text editor for your own use.
+<p>Enter a new Japanese word. <input onChange='b=this.value'type='field' size='40'>
+<p>Enter the definition. <input onChange='c=this.value,enterWord()' type='field' size='40' value='$1X$2X$3X$4X$5X~Noun'>
+<br>
+Alternate Definition Templates:
+<br>
+(か|き|く|け|こ|い)(?!X)~KuVerb
+<br>
+(さ|し|す|せ|そ)(?!X)~SuVerb
+<br>
+(た|ち|つ|て|と|っ)(?!X)~TsuVerb
+<br>
+(ら|り|る|れ|ろ|っ)(?!X)~RuVerb
+<br>
+Cut and paste this below into your text in the appropriate X level. Save the text. Reload the page and run the translation again.
+<br>
+<span id="enteredWord"></span>
 <h3>Memorizing Kanji</h3>
 <ul>
-<li>Use <a href='https://addons.mozilla.org/en-US/firefox/addon/10ten-ja-reader/' target="_blank">10ten Japanese Reader</a> browser extension to read kanji on your desktop/laptop computer.
-<li>Group kanji by the same sound using <a href='https://www.wanikani.com/vocabulary/' target="_blank">WaniKani</a>.
+<li>Use <a href='https://addons.mozilla.org/en-US/firefox/addon/10ten-ja-reader/' target="Xblank">10ten Japanese Reader</a> browser extension to read kanji on your desktop/laptop computer.
+<li>Group kanji by the same sound using <a href='https://www.wanikani.com/vocabulary/' target="Xblank">WaniKani</a>.
 <li>Group them by similar elements.
-<li>Practice writing the same sound Kanjis until you can do it from memory using <a href='https://play.google.com/store/apps/details?id=com.craxic.akebifree&hl=en&gl=US' target="_blank">Android Akebi</a>.
+<li>Practice writing the same sound Kanjis until you can do it from memory using <a href='https://play.google.com/store/apps/details?id=com.craxic.akebifree&hl=en&gl=US' target="Xblank">Android Akebi</a>.
 </ul>
 <p>
 Syu or Syuu 主義・趣味・種類・修理・取材・[周囲・週末]・
