@@ -59,9 +59,7 @@ background-color:inherit;
 border-radius:25px;
 color:inherit;
 font-size:25px;
-text-align:center;
 text-shadow:2px 2px 4px #3d2526;
-width:500px;
 word-wrap:break-word;
 }
 }
@@ -465,7 +463,7 @@ const replsA = [
 {pat:/(筆)(?!X)(記)(?!X)(用)(?!X)(具)(?!X)/g,repl:'$1X$2Xhi$3Xk$4X-ki-you-gu,writing materials,pens and pencils~Noun'},
 {pat:/(切)(?!X)(り)(?!X)(つ|付)(?!X)(け)(?!X)/g,repl:'$1Xki$2Xri$3Xtsu$4Xke-to slash at~IchidanVerb'},
 {pat:/(筆)(?!X)(記)(?!X)(試)(?!X)(験)(?!X)/g,repl:'$1X$2Xhi$3Xk$4X-ki-shi-ken,written examination~Noun'},
-{pat:/(総)(?!X)(理)(?!X)(大)(?!X)(臣)(?!X)/g,repl:'$1X$2Xso$3Xu$4X-ri-dai-jin,prime minister~Noun'},
+{pat:/(総)(?!X)(理)(?!X)(大)(?!X)(臣)(?!X)/g,repl:'$1Xsou$2Xri$3Xdai$4Xjin-prime minister~Noun'},
 {pat:/(締)(?!X)(め)(?!X)(切)(?!X)(り)(?!X)/g,repl:'$1X$2Xsh$3Xi$4Xmekiri-deadline,time limit~Noun'},
 {pat:/(繰)(?!X)(り)(?!X)(広)(?!X)(げ)(?!X)/g,repl:'$1Xku$2Xri$3Xhiro$4Xge-unfold~IchidanVerb'},
 {pat:/(自)(?!X)(作)(?!X)(自)(?!X)(演)(?!X)/g,repl:'$1X$2X$3X$4Xji-saku-ji-en,doing it all by yourself~Noun'},
@@ -1544,6 +1542,7 @@ const replsA = [
 {pat:/(雰)(?!X)(囲)(?!X)(気)(?!X)/g,repl:'$1Xfun$2Xik$3Xi-atmosphere,mood~Noun'},
 {pat:/(電)(?!X)(話)(?!X)(帳)(?!X)/g,repl:'$1Xden$2Xwa$3Xcyou-telephone book~Noun'},
 {pat:/(非)(?!X)(友)(?!X)(好)(?!X)/g,repl:'$1Xhi$2Xyuu$3Xkou-unfriendly~Noun'},
+{pat:/(玉)(?!X)(串)(?!X)(料)(?!X)/ig,repl:'$1Xtama$2Xgushi$3Xryou-shrine donation~Noun'},
 {pat:/(非)(?!X)(常)(?!X)(口)(?!X)/g,repl:'$1Xhi$2Xjyou$3Xguchi-emergency exit~Noun'},
 {pat:/(非)(?!X)(常)(?!X)(識)(?!X)/g,repl:'$1Xhi$2Xjyou$3Xshiki-lack of common sense~Noun'},
 {pat:/(非)(?!X)(正)(?!X)(規)(?!X)/g,repl:'$1Xhi$2Xsei$3Xki-temporary~Noun'},
@@ -3061,9 +3060,12 @@ const replsB = [
 {pat:/(切)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xki-cut$2X~RuVerb'},
 {pat:/(切)(?!X)(手)(?!X)/g,repl:'$1Xkit$2Xte-postage stamp~Noun'},
 {pat:/(切)(?!X)(断)(?!X)/g,repl:'$1Xsetsu$2Xdan-severance~Noun'},
+{pat:/(論)(?!X)(評)(?!X)/ig,repl:'$1Xron$2Xpyou-criticism~Noun'},
+{pat:/(直)(?!X)(視)(?!X)/ig,repl:'$1Xcyoku$2Xshi-straight look,look in the eyes~Noun'},
 {pat:/(切)(?!X)(符)(?!X)/g,repl:'$1Xkip$2Xpu-ticket~Noun'},
 {pat:/(刑)(?!X)(事)(?!X)/g,repl:'$1Xkei$2Xji-detective~Noun'},
 {pat:/(列)(?!X)(島)(?!X)/g,repl:'$1Xret$2Xtou-archipelago~Noun'},
+{pat:/(謙)(?!X)(虚)(?!X)/ig,repl:'$1Xken$2Xkyo-humble~Noun'},
 {pat:/(列)(?!X)(車)(?!X)/g,repl:'$1Xres$2Xsya-train~Noun'},
 {pat:/(初)(?!X)(め)(?!X)/g,repl:'$1Xhaji$2Xme-begin~IchidanVerb'},
 {pat:/(初)(?!X)(夏)(?!X)/g,repl:'$1Xsyo$2Xka-early summer~Noun'},
@@ -3715,7 +3717,7 @@ const replsB = [
 {pat:/(失)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xushina-lose$2X~UVerb'},
 {pat:/(失)(?!X)(恋)(?!X)/g,repl:'$1Xshitsu$2Xren-broken heart~Noun'},
 {pat:/(失)(?!X)(敗)(?!X)/g,repl:'$1Xship$2Xpai-mistake~Noun'},
-{pat:/(失)(?!X)(望)(?!X)/g,repl:'$1Xshitsu$2Xbou-disappointment,loss of hope~Noun'},
+{pat:/(失)(?!X)(望)(?!X)/g,repl:'$1Xshitsu$2Xbou-disappointment~Noun'},
 {pat:/(失)(?!X)(業)(?!X)/g,repl:'$1Xshitsu$2Xgyou-unemployment,loss of job~Noun'},
 {pat:/(失)(?!X)(点)(?!X)/g,repl:'$1Xshit$2Xten-lost points~Noun'},
 {pat:/(失)(?!X)(礼)(?!X)/g,repl:'$1Xshitsu$2Xrei-impoliteness,bad manners,I beg your parden,Goodbye~Noun'},
@@ -4836,7 +4838,8 @@ const replsB = [
 {pat:/(本)(?!X)(箱)(?!X)/g,repl:'$1Xhon$2Xbako-bookcase~Noun'},
 {pat:/(本)(?!X)(紙)(?!X)/g,repl:'$1Xhon$2Xshi-this news publication~Noun'},
 {pat:/(本)(?!X)(能)(?!X)/g,repl:'$1Xhon$2Xnou-instinct~Noun'},
-{pat:/(本)(?!X)(質)(?!X)/g,repl:'$1Xhon$2Xshitsu-essence,reality~Noun'},
+{pat:/(省)(?!X)(み)(?!X)/ig,repl:'$1Xkaeri$2Xmi-to reflect~IchidanVerb'},
+{pat:/(真)(?!X)(の)(?!X)/ig,repl:'$1Xshin$2Xno-genuine~Noun '},{pat:/(本)(?!X)(質)(?!X)/g,repl:'$1Xhon$2Xshitsu-essence,reality~Noun'},
 {pat:/(本)(?!X)(部)(?!X)/g,repl:'$1Xhon$2Xbu-headquarters~Noun'},
 {pat:/(本)(?!X)(音)(?!X)/g,repl:'$1Xhon$2Xne-motive~Noun'},
 {pat:/(机)(?!X)(上)(?!X)/g,repl:'$1Xki$2Xjyou-on desk~Noun'},
@@ -5043,7 +5046,9 @@ const replsB = [
 {pat:/(気)(?!X)(体)(?!X)/g,repl:'$1Xki$2Xtai-gas,vapor~Noun'},
 {pat:/(気)(?!X)(候)(?!X)/g,repl:'$1Xki$2Xkou-climate~Noun'},
 {pat:/(気)(?!X)(分)(?!X)/g,repl:'$1Xki$2Xbun-feeling,mood~Noun'},
+{pat:/(靖)(?!X)(国)(?!X)/ig,repl:'$1Xyasu$2Xkuni-Pacifying the Nation Shrine~Noun'},
 {pat:/(気)(?!X)(力)(?!X)/g,repl:'$1Xki$2Xryoku-energy,vitality~Noun'},
+{pat:/(納)(?!X)(め)(?!X)/ig,repl:'$1Xosa$2Xme-put into~IchidanVerb'},
 {pat:/(気)(?!X)(圧)(?!X)/g,repl:'$1Xki$2Xatsu-atmospheric pressure~Noun'},
 {pat:/(気)(?!X)(楽)(?!X)/g,repl:'$1X$ki2Xraku-easygoing,comfortable~Noun'},
 {pat:/(気)(?!X)(温)(?!X)/g,repl:'$1Xki$2Xon-temperature~Noun'},
@@ -6114,11 +6119,16 @@ const replsB = [
 {pat:/(衝)(?!X)(撃)(?!X)/g,repl:'$1Xsyou$2Xgeki-shocking~Noun'},
 {pat:/(衝)(?!X)(突)(?!X)/g,repl:'$1Xsyou$2Xtotsu-collision~Noun'},
 {pat:/(衣)(?!X)(料)(?!X)/g,repl:'$1Xi$2Xryou-clothing,garments~Noun'},
+{pat:/(供)(?!X)(物)(?!X)/ig,repl:'$1Xku$2Xmotsu-votive offering~Noun'},
+{pat:/(奉)(?!X)(納)(?!X)/ig,repl:'$1Xhou$2Xnou-dedicated offering~Noun'},
+{pat:/(合)(?!X)(祀)(?!X)/ig,repl:'$1Xgou$2Xshi-enshrine~Noun'},
 {pat:/(衣)(?!X)(服)(?!X)/g,repl:'$1Xi$2Xfuku-clothes~Noun'},
 {pat:/(衣)(?!X)(類)(?!X)/g,repl:'$1Xi$2Xrui-clothes,garments~Noun'},
+{pat:/(美)(?!X)(化)(?!X)/ig,repl:'$1Xbi$2Xka-glorification~Noun'},
+{pat:/(参)(?!X)(拝)(?!X)/ig,repl:'$1Xsan$2Xpai-worshipping~Noun'},
 {pat:/(表)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xarawa-express,represent$2X~SuVerb'},
 {pat:/(表)(?!X)(情)(?!X)/g,repl:'$1Xhyou$2Xjyou-expression~Noun'},
-{pat:/(表)(?!X)(明)(?!X)/g,repl:'$1Xhyou$2Xmei-assertion~Noun'},
+{pat:/(表)(?!X)(明)(?!X)/g,repl:'$1Xhyou$2Xmei-assertion,showing~Noun'},
 {pat:/(表)(?!X)(現)(?!X)/g,repl:'$1Xhyou$2Xgen-expression~Noun'},
 {pat:/(表)(?!X)(示)(?!X)/g,repl:'$1Xhyou$2Xji-demonstration display~Noun'},
 {pat:/(表)(?!X)(紙)(?!X)/g,repl:'$1Xhyou$2Xshi-cover,binding~Noun'},
@@ -8047,14 +8057,19 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-京都府綾部市東部付近では雨雲が発達し、14日23時20分までの1時間に約90ミリの猛烈な雨が降ったとみられ、「記録的短時間大雨情報」が発表されました。その後、京都府舞鶴市東部付近でも、14日23時30分頃に「記録的短時間大雨情報」が発表されました。
+終戦の日に岸田総理大臣が靖国神社に玉串料を納めたことなどについて、韓国政府が深い失望を表明しました。
+
+　韓国外務省の報道官は靖国神社に岸田総理が自民党総裁として私費で玉串料を納めたことや閣僚らが参拝したことについて「日本の侵略戦争を美化し、戦争犯罪者を合祀（ごうし）した神社に日本政府と議会の責任ある指導者らが再び供物料を奉納・参拝したことに深い失望と遺憾を表明する」と反発する論評を発表しました。
+
+　また、そのうえで「韓国政府は日本の責任ある人物らが歴史を直視し、謙虚に省みて真の反省を行動で示すことを促す」などと主張しています。
 <p>
-<textArea cols='45' rows='6' onChange='a=this.value;translateC()'></textArea>
+<textArea cols='40' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
 <hr>
-<h3>Admin-Translation Work Area</h3>You can only use this if you download a copy of the website and edit it in Kate,Notepadqq or another text editor for your own use.
-<p>Enter a new Japanese word. <input onChange='b=this.value'type='field' size='40'>
-<p>Enter the definition. <input onChange='c=this.value,enterWord()' type='field' size='40' value='$1X$2X$3X$4X$5X~Noun'>
+<h3>Admin-Translation Work Area</h3>
+You can only use this if you download a copy of the website and edit it in Kate,Notepadqq or another text editor for your own use.
+<p>Enter a new Japanese word. <input maxlength='80px' onChange='b=this.value'type='field' size='40px'>
+<p>Enter the definition. <input  maxlength='80px' onChange='c=this.value,enterWord();' type='field' size='40px' value='$1X$2X$3X$4X$5X~Noun'>
 <br>
 Alternate Definition Templates:
 <br>
@@ -8065,6 +8080,8 @@ Alternate Definition Templates:
 (た|ち|つ|て|と|っ)(?!X)~TsuVerb
 <br>
 (ら|り|る|れ|ろ|っ)(?!X)~RuVerb
+<br>
+~IchidanVerb
 <br>
 Cut and paste this below into your text in the appropriate X level. Save the text. Reload the page and run the translation again.
 <br>
