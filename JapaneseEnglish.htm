@@ -85,6 +85,7 @@ function translateA()
 const replsA = [
 
 {pat:/(あ)(?!X)(ち)(?!X)(ら)(?!X)(こ)(?!X)(ち)(?!X)(ら)(?!X)/g,repl:'$1Xa$2Xchi$3Xra$4Xko$5Xchi$6Xra-all over~Noun'},
+{pat:/(コ)(?!X)(ミ)(?!X)(ュ)(?!X)(ニ)(?!X)(テ)(?!X)(ィ)(?!X)(ー)(?!X)/ig,repl:'$1Xko$2Xmi$3Xyu$4Xni$5Xti$6X--community~Noun'},
 {pat:/(い)(?!X)(つ)(?!X)(の)(?!X)(ま)(?!X)(に)(?!X)(か)(?!X)/g,repl:'$1Xi$2Xtsu$3Xno$4Xma$5Xni$6Xka-before it is noticed~Noun'},
 {pat:/(き)(?!X)(ょ)(?!X)(ろ)(?!X)(き)(?!X)(ょ)(?!X)(ろ)(?!X)/g,repl:'$1X$2X$3X$4X$5X$6Xkyorokyoro-look around~Noun'},
 {pat:/(く)(?!X)(し)(?!X)(ゃ)(?!X)(く)(?!X)(し)(?!X)(ゃ)(?!X)/g,repl:'$1X$2X$3X$4X$5X$6Xkusyakusya-messy,scrunch~Noun'},
@@ -121,7 +122,7 @@ const replsA = [
 {pat:/(攻)(?!X)(め)(?!X)(あ)(?!X)(ぐ)(?!X)(ね)(?!X)/g,repl:'$1X$2X$3X$4X$5Xsemeagune-be at a loss on how to continue~IchidanVerb'},
 {pat:/(間)(?!X)(に)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xman-iawase,make do$6X~RuVerb'},
 
-{pat:/(ウ)(?!X)(ク)(?!X)(ラ)(?!X)(イ)(?!X)(ナ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xukuraina-Ukraine~Noun'},
+{pat:/(ウ)(?!X)(ク)(?!X)(ラ)(?!X)(イ)(?!X)(ナ)(?!X)/g,repl:'$1Xu$2Xku$3Xra$4Xi$5Xna-Ukraine~Noun'},
 {pat:/(オ)(?!X)(ン)(?!X)(ラ)(?!X)(イ)(?!X)(ン)(?!X)/g,repl:'$1X$2X$3X$4X$5Xonrain-online~Noun'},
 {pat:/(ダ)(?!X)(イ)(?!X)(ビ)(?!X)(ン)(?!X)(グ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xdaibingu,diving~Noun'},
 
@@ -243,7 +244,7 @@ const replsA = [
 {pat:/(か)(?!X)(ど)(?!X)(う)(?!X)(か)(?!X)/g,repl:'$1Xka$2Xdo$3Xu$4Xka-whether or not~Noun'},
 {pat:/(か)(?!X)(ぼ)(?!X)(ち)(?!X)(ゃ)(?!X)/g,repl:'$1X$2Xpu$3Xm$4Xpkin~Noun'},
 {pat:/(か)(?!X)(み)(?!X)(そ)(?!X)(り)(?!X)/g,repl:'$1X$2Xra$3Xz$4Xor~Noun'},
-{pat:/(か)(?!X)(も)(?!X)(し)(?!X)(れ)(?!X)/g,repl:'$1X$2Xka$3Xmoshi$4Xre-might~IchidanVerb'},
+{pat:/(か)(?!X)(も)(?!X)(し)(?!X)(れ)(?!X)/g,repl:'$1Xka$2Xmo$3Xshi$4Xre-might~IchidanVerb'},
 {pat:/(か)(?!X)(ら)(?!X)(か)(?!X)(ら)(?!X)/g,repl:'$1X$2Xro$3Xa$4Xr-laugh loudly~Noun'},
 {pat:/(か)(?!X)(ら)(?!X)(か)(?!X)(ら)(?!X)/g,repl:'$1X$2Xth$3Xi$4Xrsty-dry~Noun'},
 {pat:/(か)(?!X)(ん)(?!X)(か)(?!X)(ん)(?!X)/g,repl:'$1X$2Xfu$3Xr$4Xious~Noun'},
@@ -390,6 +391,7 @@ const replsA = [
 {pat:/(乗)(?!X)(り)(?!X)(降)(?!X)(り)(?!X)/g,repl:'$1X$2Xno$3Xr$4Xiori-getting on and off~Noun'},
 {pat:/(交)(?!X)(通)(?!X)(事)(?!X)(故)(?!X)/g,repl:'$1X$2Xko$3Xu$4Xtsuu-jiko,traffic accident~Noun'},
 {pat:/(人)(?!X)(差)(?!X)(し)(?!X)(指)(?!X)/g,repl:'$1X$2Xhi$3Xt$4Xosashiyubi-index finger~Noun'},
+{pat:/(モ)(?!X)(ス)(?!X)(ク)(?!X)(ワ)(?!X)/ig,repl:'$1Xmo$2Xsu$3Xku$4Xwa-Moscow~Noun'},
 {pat:/(人)(?!X)(文)(?!X)(科)(?!X)(学)(?!X)/g,repl:'$1X$2Xji$3Xn$4X-bunka-gaku,humanities~Noun'},
 {pat:/(値)(?!X)(上)(?!X)(が)(?!X)(り)(?!X)/g,repl:'$1X$2X$3X$4Xne-agari,price rise~Noun'},
 {pat:/(値)(?!X)(下)(?!X)(が)(?!X)(り)(?!X)/g,repl:'$1X$2Xne$3Xs$4Xagari-fall in price~Noun'},
@@ -406,6 +408,7 @@ const replsA = [
 {pat:/(取)(?!X)(り)(?!X)(決)(?!X)(め)(?!X)/g,repl:'$1X$2Xto$3Xr$4Xi-kime,decision~Noun'},
 {pat:/(受)(?!X)(け)(?!X)(取)(?!X)(り)(?!X)/g,repl:'$1X$2Xuk$3Xe$4Xtori-receipt~Noun'},
 {pat:/(口)(?!X)(げ)(?!X)(ん)(?!X)(か)(?!X)/g,repl:'$1X$2Xku$3Xc$4Xhigenka-quarrel~Noun'},
+{pat:/(ド)(?!X)(ロ)(?!X)(ー)(?!X)(ン)(?!X)/ig,repl:'$1Xdo$2Xro$3X-$4Xn-drone~Noun'},
 {pat:/(向)(?!X)(こ)(?!X)(う)(?!X)(側)(?!X)/g,repl:'$1X$2Xmu$3Xk$4Xougawa-other side~Noun'},
 {pat:/(国)(?!X)(務)(?!X)(長)(?!X)(官)(?!X)/g,repl:'$1Xkoku$2Xmu$3Xcyou$4Xkan-Secretary of State~Noun'},
 {pat:/(土)(?!X)(砂)(?!X)(災)(?!X)(害)(?!X)/g,repl:'$1Xdo$2Xsya$3Xsai$4Xgai-landslide~Noun'},
@@ -1290,7 +1293,7 @@ const replsA = [
 {pat:/(植)(?!X)(物)(?!X)(園)(?!X)/g,repl:'$1Xsyoku$2Xbutsu$3Xen-botanical garden~Noun'},
 {pat:/(検)(?!X)(問)(?!X)(所)(?!X)/g,repl:'$1Xken$2Xmon$3Xsyo-checkpoint~Noun'},
 {pat:/(極)(?!X)(め)(?!X)(て)(?!X)/g,repl:'$1Xkiwa$2Xme$3Xte-extremely~Noun'},
-{pat:/(楽)(?!X)(し)(?!X)(み)(?!X)/g,repl:'$1Xtano$2Xsh$3Ximi-looking forward to~Noun'},
+{pat:/(楽)(?!X)(し)(?!X)(み)(?!X)/g,repl:'$1Xtano$2Xshi$3Xmi-looking forward to~Noun'},
 {pat:/(横)(?!X)(書)(?!X)(き)(?!X)/g,repl:'$1Xyok$2Xog$3Xaki-horizontal writing~Noun'},
 {pat:/(次)(?!X)(々)(?!X)(に)(?!X)/g,repl:'$1Xtsu$2Xgi$3Xtsugini-one after another,in succession~Noun'},
 {pat:/(次)(?!X)(第)(?!X)(に)(?!X)/g,repl:'$1Xshi$2Xdai$3X ni,by degrees~Noun'},
@@ -1546,6 +1549,7 @@ const replsA = [
 {pat:/(非)(?!X)(常)(?!X)(口)(?!X)/g,repl:'$1Xhi$2Xjyou$3Xguchi-emergency exit~Noun'},
 {pat:/(非)(?!X)(常)(?!X)(識)(?!X)/g,repl:'$1Xhi$2Xjyou$3Xshiki-lack of common sense~Noun'},
 {pat:/(非)(?!X)(正)(?!X)(規)(?!X)/g,repl:'$1Xhi$2Xsei$3Xki-temporary~Noun'},
+{pat:/(泥)(?!X)(沼)(?!X)(化)(?!X)/ig,repl:'$1Xdoro$2Xnuma$3Xka-bogged down~Noun'},
 {pat:/(音)(?!X)(読)(?!X)(み)(?!X)/g,repl:'$1Xony$2Xom$3Xi-chin-ese-derived kanji reading~Noun'},
 {pat:/(順)(?!X)(々)(?!X)(に)(?!X)/g,repl:'$1Xjyun$2Xjy$3Xunni-by turns,in order~Noun'},
 {pat:/(領)(?!X)(事)(?!X)(館)(?!X)/g,repl:'$1Xryou$2Xji$3Xkan-consulate~Noun'},
@@ -1829,6 +1833,7 @@ const replsA = [
 {pat:/(広)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhir$2Xoge-spread,unfold$3X~RuVerb'},
 {pat:/(広)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhir$2Xoma-spread,be in general circulation$3X~RuVerb'},
 {pat:/(広)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xhir$2Xome-spread,extend$3X~RuVerb'},
+{pat:/(自)(?!X)(撮)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/ig,repl:'$1Xji$2Xdo-selfie$3X~RuVerb '},
 {pat:/(延)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xnob$2Xa-extend,postpone$3X~SuVerb'},
 {pat:/(延)(?!X)(び)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xnob$2Xi-extend,postpone$3X~RuVerb'},
 {pat:/(建)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xtat$2Xe-build,erect$3X~RuVerb'},
@@ -2277,12 +2282,13 @@ const replsB = [
 {pat:/(そ)(?!X)(こ)(?!X)/g,repl:'$1Xsok$2Xo-that~Noun'},
 {pat:/(そ)(?!X)(こ)(?!X)/g,repl:'$1Xsok$2Xo-there~Noun'},
 {pat:/(そ)(?!X)(の)(?!X)/g,repl:'$1Xso$2Xno-that~Noun'},
-{pat:/(そ)(?!X)(ば)(?!X)/g,repl:'$1Xsob$2Xa-buckwheat noodles,next to~Noun'},
+{pat:/(そ)(?!X)(ば)(?!X)/g,repl:'$1Xso$2Xba-noodles,next to~Noun'},
 {pat:/(そ)(?!X)(れ)(?!X)/g,repl:'$1Xsor$2Xe-that~Noun'},
 {pat:/(た)(?!X)(だ)(?!X)/g,repl:'$1Xta$2Xda-merely~Noun'},
 {pat:/(た)(?!X)(ち)(?!X)/g,repl:'$1Xta$2Xchi-plural~Noun'},
 {pat:/(た)(?!X)(び)(?!X)/g,repl:'$1Xta$2Xbi-each time~Noun'},
 {pat:/(た)(?!X)(め)(?!X)/g,repl:'$1Xta$2Xme-for~Noun'},
+{pat:/(テ)(?!X)(ロ)(?!X)/ig,repl:'$1Xte$2Xro-terrorism~Noun'},
 {pat:/(た)(?!X)(り)(?!X)/g,repl:'$1Xta$2Xri-and things like that~Noun'},
 {pat:/(だ)(?!X)(け)(?!X)/g,repl:'$1Xda$2Xke-only~Noun'},
 {pat:/(ち)(?!X)(り)(?!X)/g,repl:'$1Xchi$2Xri-dust~Noun'},
@@ -2668,6 +2674,7 @@ const replsB = [
 {pat:/(仲)(?!X)(人)(?!X)/g,repl:'$1Xnakou$2Xdo-go-between,matchmaker~Noun'},
 {pat:/(仲)(?!X)(介)(?!X)/g,repl:'$1Xcyuu$2Xkai-mediation~Noun'},
 {pat:/(仲)(?!X)(間)(?!X)/g,repl:'$1Xnaka$2Xma-co-worker~Noun'},
+{pat:/(細)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/ig,repl:'$1Xhaso$2X~RuVerb'},
 {pat:/(件)(?!X)(数)(?!X)/g,repl:'$1Xken$2Xsuu-number of events~Noun'},
 {pat:/(任)(?!X)(務)(?!X)/g,repl:'$1Xnin$2Xmu-duty,mission~Noun'},
 {pat:/(任)(?!X)(命)(?!X)/g,repl:'$1Xnin$2Xmei-commission~Noun'},
@@ -4835,6 +4842,7 @@ const replsB = [
 {pat:/(本)(?!X)(気)(?!X)/g,repl:'$1Xhon$2Xki-seriousness,earnestness~Noun'},
 {pat:/(本)(?!X)(物)(?!X)/g,repl:'$1Xhon$2Xmono-real thing,gen-uine article~Noun'},
 {pat:/(本)(?!X)(社)(?!X)/g,repl:'$1Xhon$2Xsya-head office~Noun'},
+{pat:/(邦)(?!X)(人)(?!X)/ig,repl:'$1Xhou$2Xjin-Japanese national~Noun'},
 {pat:/(本)(?!X)(箱)(?!X)/g,repl:'$1Xhon$2Xbako-bookcase~Noun'},
 {pat:/(本)(?!X)(紙)(?!X)/g,repl:'$1Xhon$2Xshi-this news publication~Noun'},
 {pat:/(本)(?!X)(能)(?!X)/g,repl:'$1Xhon$2Xnou-instinct~Noun'},
@@ -5623,6 +5631,7 @@ const replsB = [
 {pat:/(瞬)(?!X)(間)(?!X)/g,repl:'$1Xsyun$2Xkan-instant~Noun'},
 {pat:/(矛)(?!X)(盾)(?!X)/g,repl:'$1Xmu$2Xjyun-contradiction~Noun'},
 {pat:/(矢)(?!X)(印)(?!X)/g,repl:'$1Xyajiru$2Xshi-arrow~Noun'},
+{pat:/(謳)(?!X)(歌)(?!X)/ig,repl:'$1Xou$2Xka-rejoicing~Noun'},
 {pat:/(知)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xshi-know$2X~RuVerb'},
 {pat:/(知)(?!X)(事)(?!X)/g,repl:'$1Xchi$2Xji-governor~Noun'},
 {pat:/(知)(?!X)(人)(?!X)/g,repl:'$1Xchi$2Xjin-acquaintance~Noun'},
@@ -7950,7 +7959,7 @@ const replsB = [
 
 {pat:/(Verbの|Nounの)(?!X)/g,repl:'$1Xno-of~Postposition~Noun'},
 
-{pat:/(Verbを|Nounを)(?!X)/g,repl:'$1Xoo-direct object~Postposition~Noun'},
+{pat:/(を)(?!X)/g,repl:'$1Xoo-direct object~Postposition~Noun'},
 
 {pat:/(Verbは|Nounは)(?!X)/g,repl:'$1Xwa-as for~Postposition~Noun'},
 
@@ -8057,11 +8066,13 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-終戦の日に岸田総理大臣が靖国神社に玉串料を納めたことなどについて、韓国政府が深い失望を表明しました。
+日本に暮らす皆さんの想像とは違うかもしれない。ロシアの首都モスクワの市民の生活ぶりは。
 
-　韓国外務省の報道官は靖国神社に岸田総理が自民党総裁として私費で玉串料を納めたことや閣僚らが参拝したことについて「日本の侵略戦争を美化し、戦争犯罪者を合祀（ごうし）した神社に日本政府と議会の責任ある指導者らが再び供物料を奉納・参拝したことに深い失望と遺憾を表明する」と反発する論評を発表しました。
+　ウクライナ侵攻に無関心…モスクワ市民の日常
 
-　また、そのうえで「韓国政府は日本の責任ある人物らが歴史を直視し、謙虚に省みて真の反省を行動で示すことを促す」などと主張しています。
+　ロシアがウクライナへ侵攻し、1年5か月がたつ。戦闘は泥沼化。経済制裁で一部の輸入品が姿を消し、世界的なチェーン店も撤退した。日本は「非友好国」に指定され、両国間の関係も悪化。在留邦人は侵攻前の半分以下の900人にまで減った。
+
+　反乱軍がモスクワのそばまで進軍したというのに市民の大半は無関心。政府がテロを主張するドローン墜落現場でも自撮りを楽しみ、マチは夏を謳歌（おうか）するのに必死だ。モスクワ特派員が市民の生活を描くとともに、細る日本コミュニティーの現状をつづる。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
