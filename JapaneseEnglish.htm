@@ -120,6 +120,7 @@ const replsA = [
 {pat:/(び)(?!X)(っ)(?!X)(く)(?!X)(り)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xbikkurisu-surprised$6X~RuVerb'},
 {pat:/(ワ)(?!X)(シ)(?!X)(ン)(?!X)(ト)(?!X)(ン)(?!X)/g,repl:'$1X$2X$3X$4X$5Xwashinton-Washington~Noun'},
 {pat:/(攻)(?!X)(め)(?!X)(あ)(?!X)(ぐ)(?!X)(ね)(?!X)/g,repl:'$1X$2X$3X$4X$5Xsemeagune-be at a loss on how to continue~IchidanVerb'},
+{pat:/(ツ)(?!X)(イ)(?!X)(ッ)(?!X)(タ)(?!X)(ー)(?!X)/ig,repl:'$1Xtsu$2Xi$3Xt$4Xta$5Xa-Twitter~Noun'},
 {pat:/(間)(?!X)(に)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2X$3X$4X$5Xman-iawase,make do$6X~RuVerb'},
 
 {pat:/(ウ)(?!X)(ク)(?!X)(ラ)(?!X)(イ)(?!X)(ナ)(?!X)/g,repl:'$1Xu$2Xku$3Xra$4Xi$5Xna-Ukraine~Noun'},
@@ -338,10 +339,12 @@ const replsA = [
 {pat:/(な)(?!X)(る)(?!X)(ほ)(?!X)(ど)(?!X)/g,repl:'$1X$2X$3X$4XI see,really~Noun'},
 {pat:/(に)(?!X)(こ)(?!X)(に)(?!X)(こ)(?!X)/g,repl:'$1X$2Xsm$3Xi$4Xle~Noun'},
 {pat:/(に)(?!X)(こ)(?!X)(や)(?!X)(か)(?!X)/g,repl:'$1X$2Xsm$3Xi$4Xling-beaming~Noun'},
+{pat:/(イ)(?!X)(ベ)(?!X)(ン)(?!X)(ト)(?!X)/ig,repl:'$1Xi$2Xbe$3Xn$4Xto-event~Noun'},
 {pat:/(に)(?!X)(っ)(?!X)(こ)(?!X)(り)(?!X)/g,repl:'$1X$2Xsm$3Xi$4Xling-grinning~Noun'},
 {pat:/(に)(?!X)(つ)(?!X)(い)(?!X)(て)(?!X)/g,repl:'$1Xni $2Xtsu$3Xi$4Xte-about~Postposition~Noun'},
 {pat:/(に)(?!X)(や)(?!X)(に)(?!X)(や)(?!X)/g,repl:'$1X$2Xgr$3Xi$4Xn to oneself~Noun'},
 {pat:/(に)(?!X)(わ)(?!X)(か)(?!X)(に)(?!X)/g,repl:'$1X$2Xra$3Xp$4Xidly~Noun'},
+{pat:/(わ)(?!X)(い)(?!X)(せ)(?!X)(つ)(?!X)/ig,repl:'$1Xwa$2Xi$3Xse$4Xtsu-obscene~Noun'},
 {pat:/(に)(?!X)(ん)(?!X)(じ)(?!X)(ん)(?!X)/g,repl:'$1X$2Xca$3Xr$4Xrot~Noun'},
 {pat:/(の)(?!X)(ろ)(?!X)(の)(?!X)(ろ)(?!X)/g,repl:'$1X$2Xsl$3Xo$4Xwly-easy~Noun'},
 {pat:/(の)(?!X)(ん)(?!X)(び)(?!X)(り)(?!X)/g,repl:'$1X$2Xta$3X$4Xke it easy~Noun'},
@@ -650,7 +653,7 @@ const replsA = [
 {pat:/(暑)(?!X)(中)(?!X)(見)(?!X)(舞)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1X$2Xsy$3Xo$4Xcyuumima-summer greeting$5X~IAdjective~Noun'},
 {pat:/(書)(?!X)(き)(?!X)(取)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkak$2Xit$3Xo-write down,note down$4X~RuVerb'},
 {pat:/(書)(?!X)(き)(?!X)(直)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xkak$2Xin$3Xao-rewrite$4X~SuVerb'},
-{pat:/(書)(?!X)(き)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xkaki$2Xko$3X-fill in a field$4X~MuVerb'},
+{pat:/(書)(?!X)(き)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xka$2Xki$3Xko-fill in a field$4X~MuVerb'},
 {pat:/(欲)(?!X)(し)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xho$2Xshi$3Xga-desire,wish for,covet$4X~RuVerb'},
 {pat:/(気)(?!X)(に)(?!X)(入)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xkin$2Xii$3X-like,be pleased with$4X~RuVerb'},
 {pat:/(流)(?!X)(れ)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,repl:'$1Xnaga$2Xre$3Xko-flow into$4X~MuVerb'},
@@ -5804,6 +5807,7 @@ const replsB = [
 {pat:/(節)(?!X)(電)(?!X)/g,repl:'$1Xsetsu$2Xden-blackout~Noun'},
 {pat:/(範)(?!X)(囲)(?!X)/g,repl:'$1Xhan$2Xi-range~Noun'},
 {pat:/(簡)(?!X)(単)(?!X)/g,repl:'$1Xkan$2Xtan-simple,easy~Noun'},
+{pat:/(土)(?!X)(壌)(?!X)/ig,repl:'$1Xdo$2Xjyou-foundation,fertile ground~Noun'},
 {pat:/(簡)(?!X)(易)(?!X)/g,repl:'$1Xkan$2Xi-simply convenient~Noun'},
 {pat:/(米)(?!X)(国)(?!X)/g,repl:'$1Xbei$2Xkoku-The United States of America~Noun'},
 {pat:/(米)(?!X)(英)(?!X)/g,repl:'$1Xbe$2Xei-United States and United Kingdom~Noun'},
@@ -7215,7 +7219,7 @@ const replsB = [
 {pat:/(十)(?!X)/g,repl:'$1Xjyuu,ten~Noun'},
 {pat:/(千)(?!X)/g,repl:'$1Xsen,chi-thousand~Noun'},
 {pat:/(半)(?!X)/g,repl:'$1Xhan-half~Noun'},
-{pat:/(南)(?!X)/g,repl:'$1Xminami,nan-south~Noun'},
+{pat:/(南)(?!X)/g,repl:'$1Xminami,mina,nan-south~Noun'},
 {pat:/(博)(?!X)/g,repl:'$1Xhaka,haku-fair~Noun'},
 {pat:/(博)(?!X)/g,repl:'$1Xhiro-acclaimed~Noun'},
 {pat:/(印)(?!X)/g,repl:'$1Xshirushi-mark,symbol~Noun'},
@@ -7356,7 +7360,7 @@ const replsB = [
 {pat:/(左)(?!X)/g,repl:'$1Xhidari-left~Noun'},
 {pat:/(巨)(?!X)/g,repl:'$1Xkyo-giant,great~Noun'},
 {pat:/(差)(?!X)/g,repl:'$1Xsa-difference~Noun'},
-{pat:/(市)(?!X)/g,repl:'$1Xshi-city~Noun'},
+{pat:/(市)(?!X)/g,repl:'$1Xshi,michi-city~Noun'},
 {pat:/(布)(?!X)/g,repl:'$1Xnuno-cloth~Noun'},
 {pat:/(希)(?!X)/g,repl:'$1XKi-phenomenon~Noun'},
 {pat:/(席)(?!X)/g,repl:'$1Xseki-seat,one\'s place~Noun'},
@@ -7992,10 +7996,6 @@ function translateC()
 translateA();
 translateB();
 
-a = a.replace(/(Postposition)/g,'$1<p><font color=red>XXXXXXXXXXXXXXXXXXXX</font><p>');
-
-a = a.replace(/(Punctuation)/g,'$1<p><font color=yellow>XXXXXXXXXXXXXXXXXXXX</font><p>');
-
 a = a.replace(/(いX)(~IAdjective~Noun)/g,'<p>$1i$2');
 a = a.replace(/(いX)(~KuVerb)/g,'<p>いXi$2');
 a = a.replace(/(いX)(~UVerb)/g,'<p>いXi$2');
@@ -8078,10 +8078,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-岸田総理大臣が、原発処理水放出を進めるにあたって20日の日曜日、福島県の福島第一原発を視察する方向で最終調整していることがテレビ東京の取材で分かりました。
-複数の政府関係者が明らかにしたもので、現在、日米韓首脳会議のため訪問しているアメリカで福島訪問の意向を表明する見通しです。
-岸田総理は、20日に福島第一原発内のALPS処理水の関連設備の現状を視察し、関係者に指示を出すということです。
-政府が目指す、夏ごろの処理水放出に向けて岸田総理自らが設備を視察するもので、今後、関係閣僚を交えた具体的な海洋放出の時期の検討が本格化するとみられます。
+韓国の女性DJ「DJ　SODA」さんが大阪府泉南市であった音楽イベントで胸などを触られたと訴えていた問題は、イベントの主催者が、容疑者を特定しないまま不同意わいせつ容疑などで府警に告発する事態に発展した。X（ツイッター）上では「露出度の高い服を着るから被害に遭う」というような書き込みも依然相次ぎ、専門家は背景に「性暴力を容認する土壌があるのでは」と指摘する。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
