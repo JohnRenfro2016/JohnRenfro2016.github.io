@@ -440,6 +440,7 @@ const replsA = [
 {pat:/(打)(?!X)(ち)(?!X)(消)(?!X)(し)(?!X)/g,repl:'$1Xu$2Xchi$3Xke$4Xshi-denial~Noun'},
 {pat:/(押)(?!X)(し)(?!X)(入)(?!X)(れ)(?!X)/g,repl:'$1X$2Xos$3Xh$4Xiire-closet~Noun'},
 {pat:/(振)(?!X)(り)(?!X)(仮)(?!X)(名)(?!X)/g,repl:'$1X$2Xfu$3Xr$4Xigana-reading aid in kana characters~Noun'},
+{pat:/(イ)(?!X)(ン)(?!X)(フ)(?!X)(レ)(?!X)/ig,repl:'$1Xi$2nX$3fuX$4reX;inflation~Noun'},
 {pat:/(日)(?!X)(の)(?!X)(入)(?!X)(り)(?!X)/g,repl:'$1X$2Xhi$3Xn$4Xoiri-sunset~Noun'},
 {pat:/(日)(?!X)(当)(?!X)(た)(?!X)(り)(?!X)/g,repl:'$1X$2Xhi$3Xa$4Xtari-exposure to sun~Noun'},
 {pat:/(明)(?!X)(々)(?!X)(後)(?!X)(日)(?!X)/g,repl:'$1X$2Xsh$3Xi$4Xasatte-three days from today~Noun'},
@@ -1080,6 +1081,7 @@ const replsA = [
 {pat:/(和)(?!X)(や)(?!X)(か)(?!X)/g,repl:'$1Xnag$2Xoy$3Xaka-peaceful,mild~Noun'},
 {pat:/(和)(?!X)(歌)(?!X)(山)(?!X)/g,repl:'$1Xwa$2Xka$3Xyama-Japan~Noun'},
 {pat:/(品)(?!X)(切)(?!X)(れ)(?!X)/g,repl:'$1Xshin$2Xag$3Xire-run out,sell out~Noun'},
+{pat:/(リ)(?!X)(ス)(?!X)(ク)(?!X)/ig,repl:'$1Xri$2suX$3ku;risk~Noun'},
 {pat:/(喫)(?!X)(茶)(?!X)(店)(?!X)/g,repl:'$1Xkissa$2Xte$3Xn-coffee shop,tea house,café~Noun'},
 {pat:/(嘘)(?!X)(つ)(?!X)(き)(?!X)/g,repl:'$1Xuso$2Xts$3Xuki-liar~Noun'},
 {pat:/(四)(?!X)(つ)(?!X)(角)(?!X)/g,repl:'$1Xyotsuka$2Xdo$3X-street corner,intersection~Noun'},
@@ -1611,6 +1613,7 @@ const replsA = [
 {pat:/(３|3)(?!X)(１|1)(?!X)(日)(?!X)/g,repl:'$1Xsan-jyuu$2Xichi$3Xnichi-thirty-first day of the month~Noun'},
 
 {pat:/(定)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xsada$2Xma-be settled$3X~RuVerb'},
+{pat:/(辿|た)(?!X)(ど)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xta$2Xdo;to follow a path~RuVerb'},
 {pat:/(う)(?!X)(ね)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xu$2Xne-undulation$3X~RuVerb'},
 {pat:/(あ)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xage$2X-give$3X~RuVerb'},
 {pat:/(あ)(?!X)(わ)(?!X)(せ)(?!X)/g,repl:'$1Xawa$2Xse$3X-in all~IchidanVerb'},
@@ -1694,7 +1697,7 @@ const replsA = [
 {pat:/(よ)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xyok$2Xe-move out way$3X~RuVerb'},
 {pat:/(よ)(?!X)(こ)(?!X)(さ|し|す|せ|そ)(?!X)/g,repl:'$1Xyok$2Xo-send,hand over$3X~SuVerb'},
 {pat:/(よ)(?!X)(ろ)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,repl:'$1Xyoro$2Xsh$3Xi-all right$4X~IAdjective~Noun'},
-{pat:/(よ|過)(?!X)(ぎ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xyo$2Xgi-flash by$3X~RuVerb'},
+{pat:/(す|過)(?!X)(ぎ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xsu$2Xgi-too much$3X~RuVerb'},
 {pat:/(サ)(?!X)(ボ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1X$2Xサボ,blow off,play truant$3X~RuVerb'},
 {pat:/(上)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xa$2Xga-get nervous$3X~RuVerb'},
 {pat:/(上)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xaga$2X-rise$3X~RuVerb'},
@@ -4369,7 +4372,7 @@ const replsB = [
 {pat:/(技)(?!X)(術)(?!X)/g,repl:'$1Xgi$2Xjyutsu-skill,technology~Noun'},
 {pat:/(把)(?!X)(握)(?!X)/g,repl:'$1Xha$2Xaku-catch the meaning~Noun'},
 {pat:/(抑)(?!X)(え)(?!X)/g,repl:'$1Xosa$2X,supress~IchidanVerb'},
-{pat:/(抑)(?!X)(制)(?!X)/g,repl:'$1Xyoku$2Xsei-control~Noun'},
+{pat:/(抑)(?!X)(制)(?!X)/g,repl:'$1Xyoku$2Xsei;control,curb~Noun'},
 {pat:/(抑)(?!X)(止)(?!X)/g,repl:'$1Xyoku$2Xshi-deterrence~Noun'},
 {pat:/(投)(?!X)(げ)(?!X)/g,repl:'$1Xnag$2Xe-throw~IchidanVerb'},
 {pat:/(投)(?!X)(じ)(?!X)/g,repl:'$1Xtou$2Xji-devote~IchidanVerb'},
@@ -4933,6 +4936,7 @@ const replsB = [
 {pat:/(極)(?!X)(端)(?!X)/g,repl:'$1Xkyoku$2Xtan-extreme~Noun'},
 {pat:/(楽)(?!X)(器)(?!X)/g,repl:'$1Xgak$2Xki-musical instrument~Noun'},
 {pat:/(概)(?!X)(念)(?!X)/g,repl:'$1Xgai$2Xnen-general idea,concept~Noun'},
+{pat:/(堅)(?!X)(調)(?!X)/g,repl:'$1Xken$2Xcyou;bullish,strong~Noun'},
 {pat:/(概)(?!X)(要)(?!X)/g,repl:'$1Xgai$2Xyou-summary outline~Noun'},
 {pat:/(構)(?!X)(え)(?!X)/g,repl:'$1Xkama$2Xe,stand ready to do~IchidanVerb'},
 {pat:/(構)(?!X)(わ|い|う|え|お|っ)(?!X)/g,repl:'$1Xkama-keep in mind$2X~UVerb'},
@@ -5266,7 +5270,7 @@ const replsB = [
 {pat:/(満)(?!X)(月)(?!X)/g,repl:'$1Xman$2Xgetsu-full moon~Noun'},
 {pat:/(満)(?!X)(点)(?!X)/g,repl:'$1Xman$2Xten-perfect score~Noun'},
 {pat:/(満)(?!X)(足)(?!X)/g,repl:'$1Xman$2Xzoku-satisfaction~Noun'},
-{pat:/(準)(?!X)(備)(?!X)/g,repl:'$1Xjyun$2Xbi-preparation~Noun'},
+{pat:/(準)(?!X)(備)(?!X)/g,repl:'$1Xjyun$2Xbi-preparation;reserve~Noun'},
 {pat:/(準)(?!X)(急)(?!X)/g,repl:'$1Xjyun$2Xkyuu-local express~Noun'},
 {pat:/(滋)(?!X)(賀)(?!X)/g,repl:'$1Xshi$2Xga-Japan~Noun'},
 {pat:/(滑)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,repl:'$1Xsube-slide,slip,flunk an examination$2X~RuVerb'},
@@ -5969,7 +5973,7 @@ const replsB = [
 {pat:/(翻)(?!X)(訳)(?!X)/g,repl:'$1Xhon$2Xyaku-translation~Noun'},
 {pat:/(老)(?!X)(人)(?!X)/g,repl:'$1Xrou$2Xjin-elderly~Noun'},
 {pat:/(老)(?!X)(舗)(?!X)/g,repl:'$1Xrou$2Xho-long established shop~Noun'},
-{pat:/(考)(?!X)(え)(?!X)/g,repl:'$1Xkanga$2Xe,think~IchidanVerb'},
+{pat:/(考)(?!X)(え)(?!X)/g,repl:'$1Xkanga$2Xe;think~IchidanVerb'},
 {pat:/(考)(?!X)(察)(?!X)/g,repl:'$1Xkou$2Xsatsu-investigative research~Noun'},
 {pat:/(考)(?!X)(慮)(?!X)/g,repl:'$1Xkou$2Xryo-consideration~Noun'},
 {pat:/(聞)(?!X)(え)(?!X)/g,repl:'$1Xkiko$2X,hear~IchidanVerb'},
@@ -7795,7 +7799,7 @@ const replsB = [
 {pat:/(賞)(?!X)/g,repl:'$1Xsyou-award~Noun'},
 {pat:/(質)(?!X)/g,repl:'$1Xshitsu-quality,nature~Noun'},
 {pat:/(赤)(?!X)/g,repl:'$1Xaka-red,crimson~Noun'},
-{pat:/(超)(?!X)/g,repl:'$1Xcyou-very~Noun'},
+{pat:/(超)(?!X)/g,repl:'$1Xcyou-over;very~Noun'},
 {pat:/(越)(?!X)/g,repl:'$1Xkoshi,etsu-yew~Noun'},
 {pat:/(足)(?!X)/g,repl:'$1Xashi-leg,foot~Noun'},
 {pat:/(跡)(?!X)/g,repl:'$1Xato-trace~Noun'},
@@ -8082,6 +8086,8 @@ a = a.replace(/(Punctuation)/g,'$1<hr>');
 
 a = a.replace(/X/g,'');
 
+a = a.replace(/([一-龠ぁ-ゔァ-ヴー々〆〤])/g,'<font color=#4e2b00>$1</font>');
+
 document.getElementById("translatedTextDisplay").innerHTML=a;
 }
 
@@ -8093,14 +8099,20 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-昨年フジテレビ系で放送され社会現象となった連続ドラマ「ｓｉｌｅｎｔ」の村瀬健プロデューサーと脚本家・生方美久さんが同局の１０月期連ドラで再びタッグを組んだ。タイトルは「いちばんすきな花」（木曜・後１０時）。川口春奈（２８）、目黒蓮（２６）らが出演した「ｓｉｌｅｎｔ」は、音の聴こえない世界で再会したかつての恋人の切ない恋を描いたラブストーリーだったが、今回は“４人主演”で、１人目の主人公に女優の多部未華子（３４）が起用されることが決まった。
+【ジャクソンホール時事】米連邦準備制度理事会（FRB）のパウエル議長は25日、西部ワイオミング州で開かれている「ジャクソンホール会議」で講演した。
+
+　米国のインフレ率は「依然として高過ぎる」との認識を示した上で、「適切であればさらに利上げする用意がある」と明言。金融引き締め方針を維持する考えを強調した。
+
+　米国の経済成長率は2％超で推移し、雇用情勢も堅調さを保っている。パウエル氏はFRBがインフレ抑制を目指し、急速な利上げを進めてきたものの、「景気は想定ほど減速していないという兆候に注意している」と話した。
+
+　インフレ率は昨年、約40年ぶりの高水準に達したが、現在は低下傾向をたどっている。ただ、パウエル氏は底堅い景気が物価上昇圧力を強めるリスクを警戒。「一段の引き締めが妥当となる可能性がある」と述べた。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
 <hr>
 <h3>Admin Only Work Area</h3>
 <p>Enter a new Japanese word. <input maxlength='80px' onChange='b=this.value'type='field' size='40px'>
-<p>Enter the definition. <input  maxlength='80px' onChange='c=this.value,enterWord();' type='field' size='40px' value='$1X$2X$3X$4X$5X~Noun'>
+<p>Enter the definition. <input  maxlength='80px' onChange='c=this.value,enterWord();' type='field' size='40px' value='$1X$2X$3X$4X$5X;~Noun'>
 <p>
 <span id="enteredWord"></span>
 <h3>Memorizing Kanji</h3>
