@@ -483,7 +483,7 @@ const replsB = [
 {pat:/ (выжидательн)/ig,repl:'$1 waiting,expectant(n)'},
 {pat:/ (выздоравлив)/ig,repl:'$1 to recover,get better(v)'},
 {pat:/ (выразительн)/ig,repl:'$1 expressive(n)'},
-{pat:/ (выступ)/ig,repl:'$1 speech;appearance(n)'},
+{pat:/ (выступ)/ig,repl:'$1 to give a speech(v)'},
 {pat:/ (гармоническ)/ig,repl:'$1 harmonious(n)'},
 {pat:/ (геологическ)/ig,repl:'$1 geological(n)'},
 {pat:/ (гидростанци)/ig,repl:'$1 hydroelectric station(n)'},
@@ -625,7 +625,7 @@ const replsB = [
 {pat:/ (поступ)/ig,repl:'$1 joining(n)'},
 {pat:/ (потомственн)/ig,repl:'$1 hereditary(n)'},
 {pat:/ (потребител)/ig,repl:'$1 consumer(n)'},
-{pat:/ (потреб)/ig,repl:'$1 consumption(n)'},
+{pat:/ (потреб)/ig,repl:'$1 to demand(v)'},
 {pat:/ (практически)/ig,repl:'$1 practically(n)'},
 {pat:/ (превращени)/ig,repl:'$1 conversion(n)'},
 {pat:/ (предвидени)/ig,repl:'$1 foresight(n)'},
@@ -1179,6 +1179,7 @@ const replsB = [
 {pat:/ (элементарн)/ig,repl:'$1 elementary(n)'},
 {pat:/ (эстетическ)/ig,repl:'$1 aestheti(n)'},
 
+{pat:/ (Александр)/ig,repl:'$1 Alexandr(n)'},
 {pat:/ (Богородиц)/ig,repl:'$1 the Virgin(n)'},
 {pat:/ (абстрактн)/ig,repl:'$1 abstract(n)'},
 {pat:/ (авианосец)/ig,repl:'$1 aircraft carrier(n)'},
@@ -3500,6 +3501,7 @@ const replsB = [
 {pat:/ (племенн)/ig,repl:'$1 tribal;thoroughbred(n)'},
 {pat:/ (плесен)/ig,repl:'$1 mould(n)'},
 {pat:/ (плетен)/ig,repl:'$1 hurdle,wattle(n)'},
+{pat:/ (спонсир)/ig,repl:'$1 sponsor(n)'},
 {pat:/ (плотник)/ig,repl:'$1 carpenter(n)'},
 {pat:/ (площадк)/ig,repl:'$1 ground,area(n)'},
 {pat:/ (площад)/ig,repl:'$1 square;area(n)'},
@@ -5088,6 +5090,7 @@ const replsB = [
 {pat:/ (разруш)/ig,repl:'$1 to destroy,ruin(v)'},
 {pat:/ (разруш)/ig,repl:'$1 to fall apart,be destroyed(v)'},
 {pat:/ (разрыв)/ig,repl:'$1 break,gap;shell-burst(a)'},
+{pat:/ (призна)/ig,repl:'$1 to recognize,to confess(v)'},
 {pat:/ (разрыв)/ig,repl:'$1 to tear up(v)'},
 {pat:/ (разрыв)/ig,repl:'$1 to break;explode(v)'},
 {pat:/ (разряд)/ig,repl:'$1 discharge;category(n)'},
@@ -5509,7 +5512,7 @@ const replsB = [
 {pat:/ (авари)/ig,repl:'$1 breakdown;accident(n)'},
 {pat:/ (авос)/ig,repl:'$1 perhaps(n)'},
 {pat:/ (автор)/ig,repl:'$1 author(n)'},
-{pat:/ (агент)/ig,repl:'$1 agent(n)'},
+{pat:/(агент)/ig,repl:'$1 agent(n)'},
 {pat:/ (адрес)/ig,repl:'$1 address(n)'},
 {pat:/ (азарт)/ig,repl:'$1 excitement,fervour(n)'},
 {pat:/ (азбук)/ig,repl:'$1 alphabet(n)'},
@@ -5992,7 +5995,7 @@ const replsB = [
 {pat:/ (знатн)/ig,repl:'$1 distinguished,outstanding;high-born,noble(n)'},
 {pat:/ (знающ)/ig,repl:'$1 knowledgeable(n)'},
 {pat:/ (золот)/ig,repl:'$1 gold(n)'},
-{pat:/ (золот)/ig,repl:'$1 gold,golden(n)'},
+{pat:/ (комик)/ig,repl:'$1 comedian(n)'},
 {pat:/ (иголк)/ig,repl:'$1 needle(n)'},
 {pat:/ (игрок)/ig,repl:'$1 player(n)'},
 {pat:/ (идеал)/ig,repl:'$1 ideal(n)'},
@@ -6840,7 +6843,7 @@ const replsB = [
 {pat:/ (строг)/ig,repl:'$1 strictness(n)'},
 {pat:/ (строк)/ig,repl:'$1 line(n)'},
 {pat:/ (струн)/ig,repl:'$1 string(n)'},
-{pat:/ (стыдн)/ig,repl:'$1 Yit is shameful;X is ashamedY(n)'},
+{pat:/ (стыдн)/ig,repl:'$1 ashamed(n)'},
 {pat:/ (стычк)/ig,repl:'$1 skirmish;squabble(n)'},
 {pat:/ (сугуб)/ig,repl:'$1 especially;exclusively(n)'},
 {pat:/ (судьб)/ig,repl:'$1 fate(n)'},
@@ -8305,6 +8308,7 @@ const replsB = [
 {pat:/ (бич)/ig,repl:'$1 whip;scourge(n)'},
 {pat:/ (боб)/ig,repl:'$1 bean(a)'},
 {pat:/ (бог)/ig,repl:'$1 God(n)'},
+{pat:/ (ВСУ)/ig,repl:'$1 Special Operations Forces of Ukraine(n)'},
 {pat:/ (бож)/ig,repl:'$1 God’s(n)'},
 {pat:/ (бок)/ig,repl:'$1 side(n)'},
 {pat:/ (бол)/ig,repl:'$1 to be ill;to hurt(v)'},
@@ -8645,6 +8649,7 @@ const replsB = [
 {pat:/ (окн)/ig,repl:'$1 window(n)'},
 {pat:/ (они)/ig,repl:'$1 they(n)'},
 {pat:/ (ось)/ig,repl:'$1 axis;axle(n)'},
+{pat:/ (ино)/ig,repl:'$1 foreign(a)'},
 {pat:/ (отб)/ig,repl:'$1 beating off,repulsion;retreat(n)'},
 {pat:/ (очк)/ig,repl:'$1 point glasses,spectacles(n)'},
 {pat:/ (пад)/ig,repl:'$1 to fall(v)'},
@@ -8716,7 +8721,7 @@ const replsB = [
 {pat:/ (рис)/ig,repl:'$1 rice(n)'},
 {pat:/ (роб)/ig,repl:'$1 to be timid(v)'},
 {pat:/ (рог)/ig,repl:'$1 horn(n)'},
-{pat:/ (род)/ig,repl:'$1 family,kin;birth,origin;sort,kind;gender(n)'},
+{pat:/ (род)/ig,repl:'$1 to birth(v)'},
 {pat:/ (рож)/ig,repl:'$1 face(n)'},
 {pat:/ (роз)/ig,repl:'$1 rose(n)'},
 {pat:/ (рон)/ig,repl:'$1 to drop(v)'},
@@ -8885,7 +8890,7 @@ const replsB = [
 {pat:/ (чит)/ig,repl:'$1 to read(v)'},
 {pat:/ (чих)/ig,repl:'$1 to sneeze(v)'},
 {pat:/ (чуд)/ig,repl:'$1 to seem,imagine(v)'},
-{pat:/ (что)/ig,repl:'$1 what,that(ad,c,pron)'},
+{pat:/ (что)/ig,repl:'$1 what,that(c)'},
 {pat:/ (чуд)/ig,repl:'$1 marvel,miracle(n)'},
 {pat:/ (чуж)/ig,repl:'$1 someone else’s;foreign(n)'},
 {pat:/ (чум)/ig,repl:'$1 plague(n)'},
@@ -8930,6 +8935,7 @@ const replsB = [
 {pat:/ (ясн)/ig,repl:'$1 clear(n)'},
 {pat:/ (ёлк)/ig,repl:'$1 fir tree(n)'},
 {pat:/ (ёмк)/ig,repl:'$1 capacity(n)'},
+{pat:/ (мне)/ig,repl:'$1 I,me(n)'},
 
 {pat:/ (аг)/ig,repl:'$1 ah ,aha(n)'},
 {pat:/ (ад)/ig,repl:'$1 hell(n)'},
@@ -9090,29 +9096,18 @@ const replsB = [
 {pat:/ (ж)/ig,repl:'$1 to live;p: live for a while(v)'},
 {pat:/ (з)/ig,repl:'$1 behind(n)'},
 {pat:/ (з)/ig,repl:'$1 son-in-law;brother-in-law(n)'},
-{pat:/ (к)/ig,repl:'$1 towards,to(n)'},
-{pat:/ (к)/ig,repl:'$1 which(n)'},
+{pat:/ (к)/ig,repl:'$1 towards,to,which(p)'},
 {pat:/ (к)/ig,repl:'$1 bone(n)'},
-{pat:/ (л)/ig,repl:'$1 to pour(v)'},
-{pat:/ (л)/ig,repl:'$1 to pour(v)'},
-{pat:/ (м)/ig,repl:'$1 mother(n)'},
-{pat:/ (м)/ig,repl:'$1 my(n)'},
-{pat:/ (м)/ig,repl:'$1 sediment(n)'},
-{pat:/ (м)/ig,repl:'$1 we(n)'},
-{pat:/ (м)/ig,repl:'$1 to crumple,crush(v)'},
-{pat:/ (н)/ig,repl:'$1 thread(n)'},
-{pat:/ (н)/ig,repl:'$1 but(n)'},
-{pat:/ (н)/ig,repl:'$1 well(n)'},
+{pat:/ (и)/ig,repl:'$1 and(c)'},
 {pat:/ (с)/ig,repl:'$1 with(p)'},
-{pat:/ (с)/ig,repl:'$1 net;network(n)'},
-{pat:/ (с)/ig,repl:'$1 essence(n)'},
-{pat:/ (т)/ig,repl:'$1 that;then(n)'},
 {pat:/ (т)/ig,repl:'$1 you(n)'},
 {pat:/ (ф)/ig,repl:'$1 ugh!(n)'},
-{pat:/ (ч)/ig,repl:'$1 part(n)'},
-{pat:/ (ч)/ig,repl:'$1 hardly,just(n)'},
-{pat:/ (ч)/ig,repl:'$1 to scent,smell;sense,feel(v)'},
+{pat:/ (я)/ig,repl:'$1 I(n)'},
 {pat:/ (ш)/ig,repl:'$1 to sew(v)'},
+
+{pat:/(ся)/ig,repl:'  $1 is done passive'},
+
+{pat:/(\(v\)ов)/ig,repl:'$1 conjunctive past(v)'},
 
 {pat:/(\(a\)его)( )/ig,repl:'$1 masculine genitive animated accusative neutral genitive'},
 {pat:/(\(a\)йск)( )/ig,repl:'$1 +ian,+ean gerund'},
@@ -9130,11 +9125,12 @@ const replsB = [
 {pat:/(\(v\)или)( )/ig,repl:'$1 they did second person past'},
 {pat:/(\(v\)или)( )/ig,repl:'$1 they did second person past'},
 {pat:/(\(v\)ими)( )/ig,repl:'$1 he or she was done third person perfect passive past'},
-{pat:/(\(v\)ить)( )/ig,repl:'$1 to do(infinitive)completely perfective'},
+{pat:/(\(v\)ить)( )/ig,repl:'$1 to do infinitive completely perfective'},
 {pat:/(\(v\)лся)( )/ig,repl:'$1 passive past'},
 {pat:/(\(v\)нет)( )/ig,repl:'$1 he or she will do third person future'},
 {pat:/(\(v\)тся)( )/ig,repl:'$1 he or she was done third person perfect passive past'},
 {pat:/(\(v\)уют)( )/ig,repl:'$1 they do second person present'},
+{pat:/(\(v\)ает)( )/ig,repl:'$1 he or she does third person present'},
 
 {pat:/(\(a\)ая)( )/ig,repl:'$1 feminine nominative'},
 {pat:/(\(a\)ее)( )/ig,repl:'$1 neutral nominative animated accusative inanimate accusative'},
@@ -9208,6 +9204,8 @@ const replsB = [
 {pat:/(\(v\)у) /ig,repl:'$1 singular accusative'},
 {pat:/(\(v\)ю) /ig,repl:'$1 present first person I do'},
 
+{pat:/(ование)/ig,repl:'$1 +ship(g)'},
+
 {pat:/([а-яА-ЯёЁ])/ig,repl:'<font color=orange>$1</font>'},
 
 ];
@@ -9233,9 +9231,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Восстановление Крымского моста идет по графику. Окончание первого этапа восстановительных работ намечено на 15 сентября —
+потребовал признать Александра name иноагентом и проверить на спонсирование ВСУ, сообщает RT
+
+Активист утверждает, что комик обозначил позицию фразой «мне стыдно, что я родился 24 февраля» и выступал на мероприятии, где собирали средства на помощь ВСУ
 <p>
-<textArea cols='25' rows='6' onChange='a=this.value,translateC()'></textArea><br>
+<textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
 <p>
 source:GazeteRU
