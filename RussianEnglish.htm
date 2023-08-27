@@ -604,7 +604,7 @@ const replsB = [
 {pat:/ (приключени)/ig,repl:'$1 adventure(noun)'},
 {pat:/ (принуждени)/ig,repl:'$1 compulsion(noun)'},
 {pat:/ (пристрасти)/ig,repl:'$1 partiality;weakness(noun)'},
-{pat:/ (присутстви)/ig,repl:'$1 presence(noun)'},
+{pat:/ (присутстви)/ig,repl:'$1 presente(noun)'},
 {pat:/ (присутствов)/ig,repl:'$1 to be present(verb)'},
 {pat:/ (прогрессивн)/ig,repl:'$1 progressive(noun)'},
 {pat:/ (продвижени)/ig,repl:'$1 advancement,progress(noun)'},
@@ -2870,7 +2870,7 @@ const replsB = [
 {pat:/ (керосин)/ig,repl:'$1 kerosene(noun)'},
 {pat:/ (кипяток)/ig,repl:'$1 boiling water(noun)'},
 {pat:/ (кирпичн)/ig,repl:'$1 brick(noun)'},
-{pat:/ (китайск)/ig,repl:'$1 Chinese(noun)'},
+{pat:/ (китайск)/ig,repl:'$1 Chinese(adjective)'},
 {pat:/ (классов)/ig,repl:'$1 class(noun)'},
 {pat:/ (клетчат)/ig,repl:'$1 checked(noun)'},
 {pat:/ (клястьс)/ig,repl:'$1 to swear,vow(verb)'},
@@ -2970,7 +2970,7 @@ const replsB = [
 {pat:/ (накидыв)/ig,repl:'$1 to throw on(verb)'},
 {pat:/ (наконец)/ig,repl:'$1 in the end(noun)'},
 {pat:/ (налажив)/ig,repl:'$1 to put in working order,set going,adjust,put in order(verb)'},
-{pat:/ (наличи)/ig,repl:'$1 presence(noun)'},
+{pat:/ (наличи)/ig,repl:'$1 presente(noun)'},
 {pat:/ (намерев)/ig,repl:'$1 to intend(verb)'},
 {pat:/ (намерен)/ig,repl:'$1 intend(noun)'},
 {pat:/ (напиток)/ig,repl:'$1 drink(noun)'},
@@ -7517,7 +7517,7 @@ const replsB = [
 {pat:/ (поп)/ig,repl:'$1 priest(noun)'},
 {pat:/ (пор)/ig,repl:'$1 it is time;time,season(noun)'},
 {pat:/ (пот)/ig,repl:'$1 sweat(noun)'},
-{pat:/ (при)/ig,repl:'$1 in the presenc time of;attached to(noun)'},
+{pat:/ (при)/ig,repl:'$1 in the present time of;attached to(noun)'},
 {pat:/ (пуг)/ig,repl:'$1 to frighten(verb)'},
 {pat:/ (пуд)/ig,repl:'$1 pood(noun)'},
 {pat:/ (пул)/ig,repl:'$1 bullet(noun)'},
@@ -7736,7 +7736,7 @@ const replsB = [
 {pat:/ (иб)/ig,repl:'$1 for(noun)'},
 {pat:/ (ив)/ig,repl:'$1 willow(noun)'},
 {pat:/ (иг)/ig,repl:'$1 yoke(noun)'},
-{pat:/ (из)/ig,repl:'$1 out of,from(noun)'},
+{pat:/ (из)/ig,repl:'$1 from,out of(preposition)'},
 {pat:/ (им)/ig,repl:'$1 name(noun)'},
 {pat:/ (ин)/ig,repl:'$1 other(noun)'},
 {pat:/ (их)/ig,repl:'$1 their(noun)'},
@@ -7763,7 +7763,7 @@ const replsB = [
 {pat:/ (ор)/ig,repl:'$1 to howl,yell(verb)'},
 {pat:/ (от)/ig,repl:'$1 from(noun)'},
 {pat:/ (ох)/ig,repl:'$1 oh,ah(noun)'},
-{pat:/ (по)/ig,repl:'$1 according to(noun)'},
+{pat:/ (по)/ig,repl:'$1 according to;for something(noun)'},
 {pat:/ (пр)/ig,repl:'$1 about(noun)'},
 {pat:/ (рв)/ig,repl:'$1 to tear(verb)'},
 {pat:/ (ры)/ig,repl:'$1 to dig(verb)'},
@@ -7913,7 +7913,7 @@ const replsB = [
 
 {pat:/([а-яА-Яее])/ig,repl:'<font color=orange>$1</font>'},
 
-{pat:/(perfective|infinitive|instrumental|imperfective|second person|singular|neutral|dative|prepositional|third person|past|passive|plural|feminine|genitive|accusative|masculine|noun|verb|adjective|adverb|conjunction|preposition|present)/ig,repl:'<font size=-50%>$1</font>'},
+{pat:/(perfective|infinitive|instrumental|imperfective|second person|singular|neutral|dative|prepositional|third person|past|passive|plural|feminine|genitive|accusative|masculine|noun|verb|adjective|adverb|conjunction|preposition|present|Nominative)/ig,repl:'<font size=-50%>$1</font>'},
 
 ];
 
@@ -7938,11 +7938,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and past e this Russian text into text area below.
 <p>
-В ЛДПР обнародовали записку Владимира Жириновского от 2018 года с призывом отказаться от доллара
-
-Вице-спикер Борис Чернышов отметил, что этот текст раньше нигде не публиковался, но он до сих пор остается «актуальным и логичным».
-
-По словам депутата, сейчас все идет к тому
+Китайский язык планируют включить в программы российских вузов — помощник президента РФ по науке и образованию Фурсенко
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
@@ -7957,6 +7953,18 @@ source:GazeteRU
 <p>
 <hr>
 <h3>Grammar Terms</h3>
+Accusative - case; direct object
+<p>
+Feminine - suffixes (-а and -я) or (-ь) even though some are masculine, words that express emotions; family members; natural objects like the Moon and Earth
+<p>
 Genitive - case; Possession. I have, I don't have; Quantity and Measurement 2, no, a lot of, a kilogram, much; Negation - there is no; Prepositions - like at, by, from, in; Masculine Nouns ending in consonents -o and -a
+<p>
+Instrumental - case; paired with the preposition with
+<p>
+Masculine - suffixes  (б, г, д, ж, з, к, л, м, н, п, р, с, т, ф, х, ц, ч, ш, щ) or (-й or -ь); often job words; days of the week, numbers, geography
+
+<p>
+Nominative - case; subject, as for, dictionary form
+<p>
 </body>
 </html>
