@@ -2229,6 +2229,8 @@ function translateB()
 
 const replsB = [
 
+{pat:/(続)(?!X)(出)(?!X)/ig,repl:'$1Xzoku$2Xsyutsu;one after the other~Noun'},
+
 {pat:/(1|１)(?!X)(0|０)(?!X)/g,repl:'$1Xjyuu$2X,ten~Noun'},
 {pat:/(1|１)(?!X)(1|１)(?!X)/g,repl:'$1Xjyuu$2Xichi-eleven~Noun'},
 {pat:/(1|１)(?!X)(2|２)(?!X)/g,repl:'$1Xjyuu$2Xni-twelve~Noun'},
@@ -5366,6 +5368,7 @@ const replsB = [
 {pat:/(父)(?!X)(兄)(?!X)/g,repl:'$1Xfu$2Xkei-parents,legal guardians~Noun'},
 {pat:/(父)(?!X)(母)(?!X)/g,repl:'$1Xfu$2Xbo-parents~Noun'},
 {pat:/(父)(?!X)(親)(?!X)/g,repl:'$1Xchichi$2X,father~Noun'},
+{pat:/(冠)(?!X)(水)(?!X)/ig,repl:'$1Xkan$2Xsui;flooding~Noun'},
 {pat:/(父)(?!X)(親)(?!X)/g,repl:'$1Xchichi$2Xoya-father~Noun'},
 {pat:/(父)(?!X)(親)(?!X)/g,repl:'$1Xchichi$2Xoya-father~Noun'},
 {pat:/(片)(?!X)(側)(?!X)/g,repl:'$1Xkata$2Xgawa-one side~Noun'},
@@ -8098,13 +8101,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-【ジャクソンホール時事】米連邦準備制度理事会（FRB）のパウエル議長は25日、西部ワイオミング州で開かれている「ジャクソンホール会議」で講演した。
-
-　米国のインフレ率は「依然として高過ぎる」との認識を示した上で、「適切であればさらに利上げする用意がある」と明言。金融引き締め方針を維持する考えを強調した。
-
-　米国の経済成長率は2％超で推移し、雇用情勢も堅調さを保っている。パウエル氏はFRBがインフレ抑制を目指し、急速な利上げを進めてきたものの、「景気は想定ほど減速していないという兆候に注意している」と話した。
-
-　インフレ率は昨年、約40年ぶりの高水準に達したが、現在は低下傾向をたどっている。ただ、パウエル氏は底堅い景気が物価上昇圧力を強めるリスクを警戒。「一段の引き締めが妥当となる可能性がある」と述べた。
+　きょう28日(月)も、大気の状態が不安定で、西・東日本を中心に天気の急変する所がある見込み。道路の冠水や川の増水などに注意が必要になる。厳しい残暑が続き、関東は内陸で35℃以上の猛暑日が続出しそうだ。熱中症対策も油断せず、行いたい。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateC()'></textArea>
 <span id="translatedTextDisplay"></span>
