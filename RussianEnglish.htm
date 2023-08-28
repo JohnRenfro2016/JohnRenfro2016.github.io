@@ -151,7 +151,7 @@ const replsB = [
 {pat:/ (непосредственн)/ig,repl:'$1 immediately(noun)'},
 {pat:/ (неприкосновенн)/ig,repl:'$1 untouchable,inviolable(noun)'},
 {pat:/ (общечеловеческ)/ig,repl:'$1 universal,of all mankind(noun)'},
-{pat:/ (подготовительн)/ig,repl:'$1 preparatory(noun)'},
+{pat:/ (подготови)/ig,repl:'$1 to prepare(verb)'},
 {pat:/ (последовательн)/ig,repl:'$1 consistently(noun)'},
 {pat:/ (предостав)/ig,repl:'$1 giving,granting(noun)'},
 {pat:/ (предосудительн)/ig,repl:'$1 reprehensible(noun)'},
@@ -161,6 +161,7 @@ const replsB = [
 {pat:/ (преобразовани)/ig,repl:'$1 transformation;reform(noun)'},
 {pat:/ (приспособ)/ig,repl:'$1 adaptation;device(noun)'},
 {pat:/ (продовольстви)/ig,repl:'$1 provisions(noun)'},
+{pat:/ (инфраструктур)/ig,repl:'$1 infrastructure(noun)'},
 {pat:/ (проектировани)/ig,repl:'$1 planning(noun)'},
 {pat:/ (производительн)/ig,repl:'$1 productivity(noun)'},
 {pat:/ (производственн)/ig,repl:'$1 production(noun)'},
@@ -853,6 +854,7 @@ const replsB = [
 {pat:/ (неправильн)/ig,repl:'$1 incorrectly(noun)'},
 {pat:/ (непреклонн)/ig,repl:'$1 unyielding,adamant(noun)'},
 {pat:/ (неприемлем)/ig,repl:'$1 unacceptable(noun)'},
+{pat:/ (минобороны)/ig,repl:'$1 government ministry(noun)'},
 {pat:/ (непримирим)/ig,repl:'$1 irreconcilable;uncompromising(noun)'},
 {pat:/ (неприятел)/ig,repl:'$1 enemy(noun)'},
 {pat:/ (непроходим)/ig,repl:'$1 impassable;utter(noun)'},
@@ -2649,6 +2651,7 @@ const replsB = [
 {pat:/ (вначал)/ig,repl:'$1 at first(adjective)'},
 {pat:/ (внезапн)/ig,repl:'$1 suddenly(noun)'},
 {pat:/ (водопад)/ig,repl:'$1 waterfall(noun)'},
+{pat:/ (Стамбул)/ig,repl:'$1 Istanbul(noun)'},
 {pat:/ (водород)/ig,repl:'$1 hydrogen(noun)'},
 {pat:/ (военщин)/ig,repl:'$1 militarism;militarists(noun)'},
 {pat:/ (возбужд)/ig,repl:'$1 to arouse(verb)'},
@@ -3226,7 +3229,7 @@ const replsB = [
 {pat:/ (помещич)/ig,repl:'$1 landowner’s(noun)'},
 {pat:/ (помидор)/ig,repl:'$1 tomato(noun)'},
 {pat:/ (помилов)/ig,repl:'$1 to pardon(verb)'},
-{pat:/ (понадоб)/ig,repl:'$1 to be necessary(verb)'},
+{pat:/ (понадоб)/ig,repl:'$1 must do(verb)'},
 {pat:/ (поначал)/ig,repl:'$1 at first(adjective)'},
 {pat:/ (поняти)/ig,repl:'$1 concept,notion(noun)'},
 {pat:/ (поодал)/ig,repl:'$1 at some distance(noun)'},
@@ -4329,7 +4332,9 @@ const replsB = [
 {pat:/ (паутин)/ig,repl:'$1 cobweb(noun)'},
 {pat:/ (пейзаж)/ig,repl:'$1 landscape(noun)'},
 {pat:/ (пеленк)/ig,repl:'$1 nappy,diaper(noun)'},
+{pat:/ (Украин)/ig,repl:'$1 Ukraine(noun)'},
 {pat:/ (передн)/ig,repl:'$1 front(noun)'},
+{pat:/ (напомн)/ig,repl:'$1 to remind(verb)'},
 {pat:/ (период)/ig,repl:'$1 period(noun)'},
 {pat:/ (перрон)/ig,repl:'$1 platform(noun)'},
 {pat:/ (персон)/ig,repl:'$1 person(noun)'},
@@ -5611,7 +5616,6 @@ const replsB = [
 {pat:/ (натык)/ig,repl:'$1 to run into,stumble upon,meet unexpectedly(verb)'},
 {pat:/ (научн)/ig,repl:'$1 scientifically(noun)'},
 {pat:/ (наход)/ig,repl:'$1 to find(verb)'},
-{pat:/ (начал)/ig,repl:'$1 beginning(noun)'},
 {pat:/ (начин)/ig,repl:'$1 to begin(verb)'},
 {pat:/ (наемн)/ig,repl:'$1 hired(noun)'},
 {pat:/ (негд)/ig,repl:'$1 there is nowhere(noun)'},
@@ -5985,7 +5989,6 @@ const replsB = [
 {pat:/ (связ)/ig,repl:'$1 connection,link,communication(noun)'},
 {pat:/ (свекл)/ig,repl:'$1 beet(noun)'},
 {pat:/ (сдвиг)/ig,repl:'$1 shift,displacement;change,improvement(noun)'},
-{pat:/ (сдел)/ig,repl:'$1 to do;to make(verb)'},
 {pat:/ (север)/ig,repl:'$1 north(noun)'},
 {pat:/ (седин)/ig,repl:'$1 grey hair(noun)'},
 {pat:/ (седьм)/ig,repl:'$1 seventh(noun)'},
@@ -5999,6 +6002,7 @@ const replsB = [
 {pat:/ (сильн)/ig,repl:'$1 severe;strong(adjective)'},
 {pat:/ (синев)/ig,repl:'$1 blue colour,blueness(noun)'},
 {pat:/ (синяк)/ig,repl:'$1 bruise(noun)'},
+{pat:/ (сделк)/ig,repl:'$1 deal(noun)'},
 {pat:/ (сирот)/ig,repl:'$1 orphan(noun)'},
 {pat:/ (сказк)/ig,repl:'$1 fairy-tale(noun)'},
 {pat:/ (скам)/ig,repl:'$1 bench(noun)'},
@@ -6237,6 +6241,7 @@ const replsB = [
 {pat:/ (хорош)/ig,repl:'$1 good(noun)'},
 {pat:/ (хохот)/ig,repl:'$1 loud laughter,guffaw(noun)'},
 {pat:/ (храбр)/ig,repl:'$1 bravery(noun)'},
+{pat:/ (Турци)/ig,repl:'$1 Turkey(noun)'},
 {pat:/ (хрипл)/ig,repl:'$1 hoarsely(noun)'},
 {pat:/ (хрупк)/ig,repl:'$1 fragile(noun)'},
 {pat:/ (хутор)/ig,repl:'$1 farm;Ukrainian hamlet(noun)'},
@@ -6543,6 +6548,7 @@ const replsB = [
 {pat:/ (заст)/ig,repl:'$1 stagnation(noun)'},
 {pat:/ (зат)/ig,repl:'$1 venture,undertaking;game,escapade;embellishment(noun)'},
 {pat:/ (заяц)/ig,repl:'$1 hare(noun)'},
+{pat:/ (стан)/ig,repl:'$1 to become(verb)'},
 {pat:/ (заем)/ig,repl:'$1 loan(noun)'},
 {pat:/ (звен)/ig,repl:'$1 to ring;jingle(verb)'},
 {pat:/ (звон)/ig,repl:'$1 ringing(noun)'},
@@ -6755,6 +6761,7 @@ const replsB = [
 {pat:/ (обид)/ig,repl:'$1 offence,insult(noun)'},
 {pat:/ (обиж)/ig,repl:'$1 to offend,hurt(verb)'},
 {pat:/ (обит)/ig,repl:'$1 to live,reside(verb)'},
+{pat:/ (сдел)/ig,repl:'$1 to do;to make(verb)'},
 {pat:/ (обож)/ig,repl:'$1 to adore(verb)'},
 {pat:/ (обоз)/ig,repl:'$1 string of carts;military transport(noun)'},
 {pat:/ (обои)/ig,repl:'$1 wallpaper(noun)'},
@@ -7351,6 +7358,7 @@ const replsB = [
 {pat:/ (ель)/ig,repl:'$1 fir;spruce(noun)'},
 {pat:/ (еще)/ig,repl:'$1 still,yet(noun)'},
 {pat:/ (жар)/ig,repl:'$1 heat(noun)'},
+{pat:/ (для)/ig,repl:'$1 for(preposition)'},
 {pat:/ (жев)/ig,repl:'$1 to chew(verb)'},
 {pat:/ (жел)/ig,repl:'$1 to want,wish(verb)'},
 {pat:/ (жен)/ig,repl:'$1 wife(noun)'},
@@ -7462,6 +7470,7 @@ const replsB = [
 {pat:/ (мох)/ig,repl:'$1 moss(noun)'},
 {pat:/ (мст)/ig,repl:'$1 to take revenge(verb)'},
 {pat:/ (муж)/ig,repl:'$1 husband(noun)'},
+{pat:/ (ООН)/ig,repl:'$1 The United Nations(noun)'},
 {pat:/ (мух)/ig,repl:'$1 fly(noun)'},
 {pat:/ (муч)/ig,repl:'$1 to be tormented;worry,torment os(verb)'},
 {pat:/ (мыл)/ig,repl:'$1 soap(noun)'},
@@ -7481,7 +7490,7 @@ const replsB = [
 {pat:/ (низ)/ig,repl:'$1 bottom,lower part(noun)'},
 {pat:/ (нич)/ig,repl:'$1 not in the least(noun)'},
 {pat:/ (нищ)/ig,repl:'$1 destitute;beggar(noun)'},
-{pat:/ (нов)/ig,repl:'$1 piece of news(noun)'},
+{pat:/ (нов)/ig,repl:'$1 new(noun)'},
 {pat:/ (ног)/ig,repl:'$1 leg foot(noun)'},
 {pat:/ (нож)/ig,repl:'$1 knife(noun)'},
 {pat:/ (нор)/ig,repl:'$1 burrow(noun)'},
@@ -7653,6 +7662,10 @@ const replsB = [
 {pat:/ (утр)/ig,repl:'$1 morning(noun)'},
 {pat:/ (уют)/ig,repl:'$1 comfort,cosiness(noun)'},
 {pat:/ (фаз)/ig,repl:'$1 phase(noun)'},
+{pat:/ (моч)/ig,repl:'$1 to be able to(verb)'},
+{pat:/ (мож)/ig,repl:'$1 to be able to(verb)'},
+{pat:/ (мог)/ig,repl:'$1 to be able to(verb)'},
+{pat:/ (нач)/ig,repl:'$1 to start(verb)'},
 {pat:/ (фар)/ig,repl:'$1 headlamp(noun)'},
 {pat:/ (фон)/ig,repl:'$1 background(noun)'},
 {pat:/ (фот)/ig,repl:'$1 photo(noun)'},
@@ -7953,7 +7966,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and past e this Russian text into text area below.
 <p>
-США не место идеологии «белого превосходства», заявил Джо Байден. Такое заявление он сделал после очередной массовой стрельбы в стране. Байден также подчеркнул, что необходимо отказаться жить в стране, где темнокожие люди живут в страхе быть застреленными из-за цвета кожи.
+ВСУ могут начать использовать истребители F-16 следующей весной, заявил Алексей Резников в интервью Bild Глава Минобороны напомнил, что обучение пилотов, инженеров и техников уже началось. Также Украине нужно подготовить инфраструктуру для самолетов. По его словам, они станут
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
@@ -7985,9 +7998,9 @@ Feminine words - emotions, family members, suffixes -а, -я, -ость, -ест
 <p>
 Masculine words - jobs, days of the week, numbers, geography, suffixes б, г, д, ж, з, к, л, м, н, п, р, с, т, ф, х, ц, ч, ш, щ, -й or -ец -ин -арь
 <p>
- neutral words - concepts, animals, modern words, diminutive words as in little boy, languages, weather, nature, metals, elements, gerunds(verb to noun), measurements, fruit, suffixes -о, -ко, -е, у, ю
+Neutral words - concepts, animals, modern words, diminutive words as in little boy, languages, weather, nature, metals, elements, gerunds(verb to noun), measurements, fruit, suffixes -о, -ко, -е, у, ю
 <p>
-Perfective - had done, the verb is completely done and over
+Adjective suffixes -ый, -ой, -ий, -ая, -яя, -ое, -ее
 <p>
  imperfective - have been doing, the verb is done frequently and never over
 <p>
