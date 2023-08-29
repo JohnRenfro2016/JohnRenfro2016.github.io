@@ -533,6 +533,7 @@ const replsB = [
 {p1:/(売)(?!X)(り)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xuri$2Xda$3X-put on sale$4X~SuVerb'},
 {p1:/(売)(?!X)(り)(?!X)(切)(?!X)(れ)(?!X)/g,r1:'$1X$2Xur$3Xi$4Xkire-sellout,sold out~Noun'},
 {p1:/(外)(?!X)(貨)(?!X)(建)(?!X)(て)(?!X)/g,r1:'$1X$2Xga$3Xi$4X-ka-date,foreign currency~Noun'},
+{p1:/(シ)(?!X)(ス)(?!X)(テ)(?!X)(ム)(?!X)/g,r1:'$1Xshi$2Xsu$3Xte$4Xmu-system~Noun'},
 {p1:/(夜)(?!X)(更)(?!X)(か)(?!X)(し)(?!X)/g,r1:'$1X$2Xyo$3Xfu$4Xka-shi,sitting up late at night~Noun'},
 {p1:/(天)(?!X)(気)(?!X)(予)(?!X)(報)(?!X)/g,r1:'$1X$2Xte$3Xn$4X-ki-yo-hou,weather forecast~Noun'},
 {p1:/(寝)(?!X)(か)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xne$2Xkas$3Xe-put to bed,lay down$4X~RuVerb'},
@@ -653,7 +654,8 @@ const replsB = [
 {p1:/(確)(?!X)(か)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xta$2Xshi$3Xkame-make sure of,confirm$4X~RuVerb'},
 {p1:/(社)(?!X)(会)(?!X)(科)(?!X)(学)(?!X)/g,r1:'$1X$2Xsy$3Xa$4Xkaika-gaku,social sciences~Noun'},
 {p1:/(突)(?!X)(っ)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xtsuk$2Xko$3X-thrust,dash$4X~MuVerb'},
-{p1:/(立)(?!X)(ち)(?!X)(上)(?!X)(げ)(?!X)/g,r1:'$1X$2Xta$3Xc$4Xhi-age,start up~IchidanVerb'},
+{p1:/(立)(?!X)(ち)(?!X)(上)(?!X)(げ)(?!X)/g,r1:'$1Xta$2Xchi$3Xa$4Xge-start up~IchidanVerb'},
+{p1:/(究)(?!X)(明)(?!X)/g,r1:'$1Xkyuu$2Xmei-diagnostics~Noun'},
 {p1:/(立)(?!X)(ち)(?!X)(上)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xtachi$2Xag$3Xa-rise up$4X~RuVerb'},
 {p1:/(立)(?!X)(ち)(?!X)(会)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xta$2Xchi$3Xa-observe$4X~UVerb'},
 {p1:/(立)(?!X)(ち)(?!X)(入)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xta$2Xchi$3Xi-on the spot$4X~RuVerb'},
@@ -1788,6 +1790,8 @@ const replsB = [
 {p1:/(珍)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xmezura$2Xshi-rare,precious$3X~IAdjective~Noun'},
 {p1:/(現)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xarawa$2Xre-appear,emerge$3X~RuVerb'},
 {p1:/(現)(?!X)(住)(?!X)(所)(?!X)/g,r1:'$1Xgen$2Xjy$3Xuusyo-present address~Noun'},
+{p1:/(ト)(?!X)(ヨ)(?!X)(タ)(?!X)/g,r1:'$1Xto$2Xyou$3Xta-Toyota~Noun'},
+{p1:/(ラ)(?!X)(イ)(?!X)(ン)(?!X)/g,r1:'$1Xra$2Xi$3Xn-line~Noun'},
 {p1:/(理)(?!X)(事)(?!X)(会)(?!X)/g,r1:'$1Xri$2Xji$3Xkai-council~Noun'},
 {p1:/(甘)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xama$2Xe-depend on,take advantage of$3X~RuVerb'},
 {p1:/(生)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xhae$2X-grow,spring up$3X~RuVerb'},
@@ -2210,7 +2214,7 @@ const replsB = [
 {p1:/(１|1)(?!X)(５|5)(?!X)(日)(?!X)/g,r1:'$1Xjyuu$2Xgo$3Xnichi-fifteenth day of the month~Noun'},
 {p1:/(１|1)(?!X)(７|7)(?!X)(日)(?!X)/g,r1:'$1Xjyuu$2Xshichi$3Xnichi-seventeenth	day of the month~Noun'},
 {p1:/(１|1)(?!X)(９|9)(?!X)(日)(?!X)/g,r1:'$1Xjyuu$2Xku$3Xnichi-nineteenth day of the month~Noun'},
-{p1:/(３|3)(?!X)(０|0)(?!X)(日)(?!X)/g,r1:'$1Xsan jyuu$2Xni$3Xchi-thirtieth day of the month~Noun'},
+{p1:/(３|3)(?!X)(０|0)(?!X)(日)(?!X)/g,r1:'$1Xsan jyuu$2X$3Xnichi-thirtieth day of the month~Noun'},
 {p1:/(３|3)(?!X)(１|1)(?!X)(日)(?!X)/g,r1:'$1Xsan jyuu$2Xichi$3Xnichi-thirty-first day of the month~Noun'},
 
 {p1:/(1|１)(?!X)(0|０)(?!X)/g,r1:'$1Xjyuu$2X-ten~Noun'},
@@ -4745,8 +4749,12 @@ const replsB = [
 {p1:/(暗)(?!X)(証)(?!X)/g,r1:'$1Xan$2Xsyou-secret pass code~Noun'},
 {p1:/(暫)(?!X)(定)(?!X)/g,r1:'$1Xzan$2Xtei-temporary~Noun'},
 {p1:/(暮)(?!X)(れ)(?!X)/g,r1:'$1Xkur$2Xe-dusk,end (of a season,a year)~Noun'},
+{p1:/(順)(?!X)(次)(?!X)/g,r1:'$1Xjyun$2Xji-sequential~Noun'},
+{p1:/(全)(?!X)(面)(?!X)/g,r1:'$1Xzen$2Xmen-entire~Noun'},
+{p1:/(代)(?!X)(替)(?!X)/g,r1:'$1Xdai$2Xtai-substitute~Noun '},
 {p1:/(暴)(?!X)(力)(?!X)/g,r1:'$1Xbou$2Xryoku-violence,force~Noun'},
 {p1:/(暴)(?!X)(落)(?!X)/g,r1:'$1Xbou$2Xraku-slump,crash~Noun'},
+{p1:/(組)(?!X)(立)(?!X)/g,r1:'$1Xkumi$2Xtate-assembly~Noun'},
 {p1:/(暴)(?!X)(行)(?!X)/g,r1:'$1Xbou$2Xkou-assault~Noun'},
 {p1:/(暴)(?!X)(風)(?!X)/g,r1:'$1Xbou$2Xfuu-windstorm~Noun'},
 {p1:/(曇)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xkumo-become cloudy$2X~RuVerb'},
@@ -8062,7 +8070,7 @@ const replsB = [
 
 {p1:/X/g,r1:''},
 
-{p1:/([一-龠ぁ-ゔァ-ヴー々〆〤])/g,r1:'<font color=#4e2b00>$1</font>'},
+{p1:/([一-龠ぁ-ゔァ-ヴー々〆〤0-9０−９])/g,r1:'<font color=#4e2b00>$1</font>'},
 
 ];
 
@@ -8082,11 +8090,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-パドレスは28日（日本時間29日）、ダルビッシュ有投手（37）が右肘の炎症のため、15日間の負傷者リスト（IL）入りしたことを発表した。
-
-【写真】試合前、大谷と言葉を交わすダルビッシュ
-
-　ダルビッシュは25日のブルワーズ戦で4回5失点と精彩を欠き、10敗目（8勝）を喫するなど、8月は5試合に登板し、0勝3敗。年間の防御率は4・56となった。
+　トヨタ自動車は30日、部品発注に関するシステム障害で29日から停止していた車両組立工場の生産ラインを順次再開したと明らかにした。午前中に東海や東北などの12工場を再開する予定で、京都府と福岡県の残る2工場も夕方以降に生産を始める。システムの全面復旧には至っていないが、代替システムを立ち上げて対応した。障害の原因究明も進める。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
