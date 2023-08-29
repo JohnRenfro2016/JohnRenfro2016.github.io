@@ -151,9 +151,9 @@ mark
 <input type='button' value='Target then Clone a character?' onClick='cloneIt(type)'>
 </td></tr><tr><td>
 <input type='button' value='Create a new character?' onClick='newCharacter(PC)'>
-</td></tr><tr><td><a href='https://imgur.com/a/IXjjg' target='_blank'>Ozuro's Dungeon Master Screen</a>
+</td></tr><tr><td><a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n75/mode/1up' target='_blank'>Dungeon Masters Guide Page 75 Combat Tables</a>
 </td></tr><tr><td>
-<a href='https://fastcharacter.com/' target='_blank'>FastCharacter.Com</a>
+<a href='https://archive.org/details/tsr02009addmonstermanual' target='_blank'>Monster Manual</a>
 </td></tr><tr><td>
 You'll need to download this zip file and unarchive it to save the state of your game encounter.
 <a href='dnd.zip' target='_blank'>dnd.zip</a>
@@ -2083,6 +2083,36 @@ characters[targeted].setRoll2(rip[4].replace(/\s/g,''));
 addRollPrompt(targeted);
 }
 
+if(rip=stats.match(/(?:^)([\s\S].+)(?=FREQUENCY)/))
+{characters[targeted].setName(rip[1])};
+
+if(rip=stats.match(/(?:CLASS.+)(\d{1,2})(?=.+MOVE)/))
+{characters[targeted].setAC(rip[1])};
+
+if(rip=stats.match(/(?:MOVE.+)(\d{1,2})(?=\")/))
+{characters[targeted].setSpeed(rip[1])};
+
+if(rip=stats.match(/(?:DICE.+)(\d{1,2})(?=.+\%)/))
+{characters[targeted].setHitDice(rip[1])};
+
+if(rip=stats.match(/(?:TYPE)([\s\S].+)(?=NO)/))
+{characters[targeted].setEquipment(rip[1])};
+
+if(rip=stats.match(/(?:ATTACKS.+)(\d{1,2})(?=.+DAMAGE)/))
+{characters[targeted].setActionNotes(rip[1])};
+
+if(rip=stats.match(/(?:DEFENSES.+)(\d{1,2})(?=.+RESISTANCE)/))
+{characters[targeted].setResistance(rip[1])};
+
+if(rip=stats.match(/(?:\/ATTACK.+?)(\d{1,2})\-(\d{1,2})/))
+{
+characters[targeted].setRollName1('Attack');
+characters[targeted].setRoll1('1d20+0');
+characters[targeted].setRollName2('Damage');
+characters[targeted].setRoll2(rip[1]+'d'+rip[2]+'+0');
+addRollPrompt(targeted);
+}
+
 checkTheTarget();
 }
 function _addRoll(name, roll, name2, roll2)
@@ -2221,7 +2251,7 @@ function _ref(){boxContents="<img id='rotated"+this.index+"' onClick='characters
 boxContents+="<table><tr><td class='piece'>"+this.name;
 boxContents+="</td></tr><tr><td class='piece'>(Init)iative:"+this.init;
 boxContents+="</td></tr><tr><td class='piece'>Target?<input id='targeted"+this.index+"' name='targeted' onClick='targeted="+this.index+"' type='radio'>"
-boxContents+="</td></tr><tr><td class='piece'>AC:"+this.curAc+" HP:"+this.curHp+" MV:"+this.speed;
+boxContents+="</td></tr><tr><td class='piece'>AC:"+this.curAc+" HP:"+this.curHp+" MV:"+this.speed+" HD:"+this.hitDice;
 boxContents+="</td></tr><tr><td class='piece'><input class='piece' onClick='toggleTab1("+this.index+");checkTheTarget("+this.index+")' type='button' value='Show Stats?'>";
 
 boxContents+="</td></tr></table></span><span id=toggled1"+this.index+" style='display:"+this.toggled1+"'>"
