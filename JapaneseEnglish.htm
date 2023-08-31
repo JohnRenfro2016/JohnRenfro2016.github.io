@@ -4644,6 +4644,7 @@ const replsB = [
 {p1:/(新)(?!X)(興)(?!X)/g,r1:'$1Xshin$2Xkou-start-up~Noun'},
 {p1:/(新)(?!X)(規)(?!X)/g,r1:'$1Xshin$2Xki-new~Noun'},
 {p1:/(新)(?!X)(設)(?!X)/g,r1:'$1Xshin$2Xsetsu-establishing~Noun'},
+{p1:/(債)(?!X)(権)(?!X)/g,r1:'$1Xsai$2Xken-claim,credit~Noun'},
 {p1:/(新)(?!X)(鮮)(?!X)/g,r1:'$1Xshin$2Xsen-fresh~Noun'},
 {p1:/(方)(?!X)(々)(?!X)/g,r1:'$1Xhou$2Xbou-everyone,all people~Noun'},
 {p1:/(方)(?!X)(々)(?!X)/g,r1:'$1Xkata$2Xgata-people~Noun'},
@@ -5881,6 +5882,8 @@ const replsB = [
 {p1:/(給)(?!X)(与)(?!X)/g,r1:'$1Xkyuu$2Xyo-wages~Noun'},
 {p1:/(給)(?!X)(付)(?!X)/g,r1:'$1Xkyuu$2Xfu-payment benefits~Noun'},
 {p1:/(給)(?!X)(料)(?!X)/g,r1:'$1Xkyuu$2Xryou-salary,pay~Noun'},
+{p1:/(譲)(?!X)(渡)(?!X)/g,r1:'$1Xjyou$2Xto-transfer~Noun'},
+{p1:/(西)(?!X)(武)(?!X)/g,r1:'$1Xsei$2Xbu-SeiBu Department Store~Noun'},
 {p1:/(給)(?!X)(油)(?!X)/g,r1:'$1Xkyuu$2Xyu-refueling~Noun'},
 {p1:/(統)(?!X)(一)(?!X)/g,r1:'$1Xtou$2Xitsu-unification~Noun'},
 {p1:/(統)(?!X)(一)(?!X)/g,r1:'$1Xtou$2Xitsu-unity,coordination~Noun'},
@@ -6117,13 +6120,14 @@ const replsB = [
 {p1:/(蜂)(?!X)(起)(?!X)/g,r1:'$1Xhou$2Xki-revolt~Noun'},
 {p1:/(蜜)(?!X)(月)(?!X)/g,r1:'$1Xmitsu$2Xgetsu-honeymoon~Noun'},
 {p1:/(蝶)(?!X)(蝶)(?!X)/g,r1:'$1Xcyou$2Xcyou-butterfly~Noun'},
+{p1:/(貸)(?!X)(付)(?!X)/g,r1:'$1Xkashi$2Xtsuke-loan~Noun'},
 {p1:/(融)(?!X)(和)(?!X)/g,r1:'$1Xyuu$2Xwa-harmony~Noun'},
 {p1:/(融)(?!X)(雪)(?!X)/g,r1:'$1Xyuu$2Xsetsu-melting snow~Noun'},
 {p1:/(血)(?!X)(液)(?!X)/g,r1:'$1Xketsu$2Xeki-blood~Noun'},
 {p1:/(血)(?!X)(管)(?!X)/g,r1:'$1Xkek$2Xkan-blood vessel~Noun'},
 {p1:/(衆)(?!X)(参)(?!X)/g,r1:'$1Xsyuu$2Xsan-House of Representatives and The House of Councillors~Noun'},
 {p1:/(衆)(?!X)(院)(?!X)/g,r1:'$1Xsyuu$2Xin-lower house of government~Noun'},
-{p1:/(行)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xi-ko,gyou,okona,happen$2X~KuVerb'},
+{p1:/(行)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xi,ko,gyou,okona-happen$2X~KuVerb'},
 {p1:/(行)(?!X)(き)(?!X)/g,r1:'$1Xi$2Xki,yuki,going~Noun'},
 {p1:/(行)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xokona-conduct$2X~UVerb'},
 {p1:/(行)(?!X)(事)(?!X)/g,r1:'$1Xgyou$2Xji-event,function~Noun'},
@@ -8090,7 +8094,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-　トヨタ自動車は30日、部品発注に関するシステム障害で29日から停止していた車両組立工場の生産ラインを順次再開したと明らかにした。午前中に東海や東北などの12工場を再開する予定で、京都府と福岡県の残る2工場も夕方以降に生産を始める。システムの全面復旧には至っていないが、代替システムを立ち上げて対応した。障害の原因究明も進める。
+セブン＆アイ・ホールディングスは３１日、臨時取締役会を開き、百貨店そごう・西武を米投資ファンドのフォートレス・インベストメント・グループに売却することを決議した。９月１日に株式譲渡契約を行い、売却を完了する。売却金額は２２００億円程度。売却に伴い、貸付金千数百億円のうち９００億円程度の債権を放棄する方針だ。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
