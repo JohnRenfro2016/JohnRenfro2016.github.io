@@ -434,6 +434,7 @@ const replsB = [
 {p1:/(も)(?!X)(う)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xmou$2Xke$3X-make a profit$4X~RuVerb'},
 {p1:/(も)(?!X)(う)(?!X)(じ)(?!X)(き)(?!X)/g,r1:'$1X$2Xso$3Xo$4Xn~Noun'},
 {p1:/(も)(?!X)(た)(?!X)(ら)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xmo$2Xta$3Xra-bring about,lead to$4X~SuVerb'},
+{p1:/(持)(?!X)(ち)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xmo$2Xchi$3Xda-carry out$4X~SuVerb'},
 {p1:/(も)(?!X)(ち)(?!X)(ろ)(?!X)(ん)(?!X)/g,r1:'$1X$2X$3X$4Xof course,no doubt~Noun'},
 {p1:/(も)(?!X)(っ)(?!X)(と)(?!X)(も)(?!X)/g,r1:'$1X$2Xmo$3Xt$4Xtomo-mostly~Noun'},
 {p1:/(や)(?!X)(か)(?!X)(ま)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1X$2Xya$3Xk$4Xama-shi,noisy,clamorous$5X~IAdjective~Noun'},
@@ -4522,6 +4523,7 @@ const replsB = [
 {p1:/(撃)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,r1:'$1Xu-shoot$2X~TsuVerb'},
 {p1:/(撃)(?!X)(墜)(?!X)/g,r1:'$1Xgeki$2Xtsui-shoot down~Noun'},
 {p1:/(撤)(?!X)(収)(?!X)/g,r1:'$1Xtes$2Xsyuu-withdrawl,dismantling~Noun'},
+{p1:/(米)(?!X)(紙)(?!X)/g,r1:'$1Xbei$2Xshi-American news publication~Noun'},
 {p1:/(撤)(?!X)(廃)(?!X)/g,r1:'$1Xtep$2Xpai-repeal~Noun'},
 {p1:/(撤)(?!X)(退)(?!X)/g,r1:'$1Xtet$2Xtai-withdrawl~Noun'},
 {p1:/(撮)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xto-photograph,shoot,film$2X~RuVerb'},
@@ -5563,6 +5565,7 @@ const replsB = [
 {p1:/(皮)(?!X)(膚)(?!X)/g,r1:'$1Xhi$2Xfu-skin~Noun'},
 {p1:/(盆)(?!X)(地)(?!X)/g,r1:'$1Xbon$2Xchi-valley,basin~Noun'},
 {p1:/(盗)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xnusu-steal$2X~MuVerb'},
+{p1:/(絡)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xkara-entangle$2X~MuVerb'},
 {p1:/(盗)(?!X)(難)(?!X)/g,r1:'$1Xtou$2Xnan-robbery,burglary~Noun'},
 {p1:/(盛)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xmo-heap up,fill$2X~RuVerb'},
 {p1:/(盛)(?!X)(ん)(?!X)/g,r1:'$1Xsa$2Xkan-prosperous,active~Noun'},
@@ -7156,7 +7159,7 @@ const replsB = [
 {p1:/(仏)(?!X)/g,r1:'$1Xhotoke-buddha,Buddhist image~Noun'},
 {p1:/(他)(?!X)/g,r1:'$1Xhoka,ta-other~Noun'},
 {p1:/(他)(?!X)/g,r1:'$1Xta-others,other things~Noun'},
-{p1:/(付)(?!X)/g,r1:'$1Xtsuki-assistant~Noun'},
+{p1:/(付)(?!X)/g,r1:'$1Xtsuki-assistant;tsuke-date~Noun'},
 {p1:/(代)(?!X)/g,r1:'$1Xdai-era~Noun'},
 {p1:/(令)(?!X)/g,r1:'$1Xrei-order~Noun'},
 {p1:/(仮)(?!X)/g,r1:'$1Xkari-provisional,temporary~Noun'},
@@ -7676,7 +7679,7 @@ const replsB = [
 {p1:/(糸)(?!X)/g,r1:'$1Xito-thread,yarn~Noun'},
 {p1:/(系)(?!X)/g,r1:'$1Xkei-system,network~Noun'},
 {p1:/(約)(?!X)/g,r1:'$1Xyaku-about~Noun'},
-{p1:/(紙)(?!X)/g,r1:'$1Xkami,shi,paper~Noun'},
+{p1:/(紙)(?!X)/g,r1:'$1Xkami,shi-paper~Noun'},
 {p1:/(級)(?!X)/g,r1:'$1Xkyuu-grade~Noun'},
 {p1:/(紫)(?!X)/g,r1:'$1Xmurasaki-purple~Noun'},
 {p1:/(紺)(?!X)/g,r1:'$1Xkon+,dark blue,navy blue~Noun'},
@@ -8096,7 +8099,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-岸田首相は1日夕、記者団の取材に応じ、野村農水相が福島第一原発の処理水をめぐり「汚染水」と発言したことで、大臣の資質を疑問視する声が野党から出ていることについて「発言については言い間違いとはいえ不適切であり極めて遺憾であると思っている」と述べた。
+【ワシントン共同】2日付の米紙ウォールストリート・ジャーナルは、共和党有権者の59％がトランプ前大統領を2024年大統領選で党の最有力候補だと見ているとの世論調査結果を報じた。4月の調査から11ポイント増えた。議会襲撃や機密文書持ち出しなどに絡んで四つの事件で起訴されたが、同紙は「むしろ支持が強まった」と伝えた。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
