@@ -937,7 +937,7 @@ function Handaxe(){a="Handaxe 5 gp 2 lb. Light, thrown (range 20/60)",b="1d20+0"
 function Javelin(){a="Javelin 5 sp 2 lb. Thrown (range 30/120)",b="1d20+0",damageDice=" 1d6+0",c="piercing ing ",getAction(t1)};
 function HammerLight(){a="Light Hammer 2 gp 2 lb. Light, thrown (range 20/60)",b="1d20+0",damageDice=" 1d4+0",c="bludgeoning ",getAction(t1)};
 function Mace(){a="Mace 5 gp 4 lb. —",b="1d20+0",damageDice="1d6+0",c="bludgeoning ",getAction(t1)};
-function Quarterstaff(){a="Quarterstaff 2 sp 4 lb. Versatile (1d8)",b="1d20+0",damageDice=" 1d6+0",c="bludgeoning ",getAction(t1)};
+function Quarterstaff(){a="Quarterstaff 1BP",b="1d20+0",damageDice=" 1d6+0",c="bludgeoning ",getAction(t1)};
 function Sickle(){a="Sickle 1 gp 2 lb. Light",b="1d20+0",damageDice="1d4+0",c="slashing ",getAction(t1)};
 function Spear(){a="Spear 1 gp 3 lb. Thrown (range 20/60), versatile (1d8)",b="1d20+0",damageDice="1d6+0",c="piercing ing ",getAction(t1)};
 function CrossbowLight(){a="Crossbow, light 25 gp 5 lb. Ammunition (range 80/320), loading, two-handed",b="1d20+0",damageDice="1d8+0",c="piercing ing ",getAction(t1)};
@@ -1308,7 +1308,7 @@ boxContents+="</td></tr><tr><td><h3>Combat Results</h3>"+this.combatLog;
 
 boxContents+="</td></tr></table></span></td><td><span id=toggled2"+this.index+" style='display:"+this.toggled2+"'>";
 
-boxContents+="<table><tr><td>Actions:<textArea cols='80' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiatks and SpellSlots'>"+this.actionNotes+"</textArea>"
+boxContents+="<table><tr><td>Actions:<textArea cols='80' rows=2 onChange='characters["+this.index+"].setActionNotes(this.value);checkTheTarget("+this.index+")'placeHolder='Multiatks and SpellSlots'>"+this.actionNotes+"</textArea><br>Dungeon Master Rule: ability modifiers are all standard and taken from the to strength ability to hit bonus of the Dieties and Demigods 1st Edition book. Type +str or +dex in the attack field to add the ability bonus to weapons. Type +pro to add the standardized +5 attack modifer for proficient weapons, 2 proficient weapons@1st 3@5th 4@9th 5@13th, etc. Or don't add the tags to not use modifiers."
 boxContents+="</td></tr></table><br>"
 if(this.class.match(/Boogo/))
 {boxContents+="<table><tr><td>1st Spell,lvlSlots: "+this.maxSlot1+"<input onClick='this.value="+(this.curSlot1-1)+";characters["+this.index+"].setCurSlot1(this.value);checkTheTarget("+this.index+")' type='button' value='Spend?'>"+this.curSlot1;
@@ -2038,7 +2038,7 @@ function _setTempHp(x){this.tempHp=x;
 this.refresh()}
 function _setName(name){this.name=name;
 this.refresh()}
-function _setPro(x){this.pro=x;
+function _setPro(x){this.pro="+5";
 this.refresh()}
 function _setProficiencies(x){this.proficiencies=x;
 this.refresh()}
@@ -2517,9 +2517,22 @@ checkTheTarget(characters[targeted]);
 }
 function askInit(x){initRoll=characters[x].rollInit();
 characters[x].setInit(initRoll)}
-function calcMod(x){mod=Math.floor((x - 10)/ 2);
-if(mod> -1){mod="+"+mod
-}return mod
+function calcMod(x)
+{
+mod=x;
+if(mod==15){mod="+1"}
+else if(mod==16){mod="+1"}
+else if(mod==17){mod="+2"}
+else if(mod==18){mod="+2"}
+else if(mod==19){mod="+3"}
+else if(mod==20){mod="+3"}
+else if(mod==21){mod="+4"}
+else if(mod==22){mod="+4"}
+else if(mod==23){mod="+5"}
+else if(mod==24){mod="+6"}
+else if(mod==25){mod="+7"}
+else{mod="+0"};
+return mod
 }
 function Character(name, type){this.abi=0;
 
@@ -3143,14 +3156,7 @@ else
  e.target.parentNode.before(row)}
 
 function _setLvl(x){this.lvl=x;
-if(this.lvl.match(/[0-4]/)){this.setPro('+2')}
-if(this.lvl.match(/[5-8]/)){this.setPro('+3')}
-if(this.lvl.match(/9|1[0-2]/)){this.setPro('+4')}
-if(this.lvl.match(/1[3-6]/)){this.setPro('+5')}
-if(this.lvl.match(/1[7-9]|20/)){this.setPro('+6')}
-if(this.lvl.match(/2[1-4]/)){this.setPro('+7')}
-if(this.lvl.match(/2[5-8]/)){this.setPro('+8')}
-if(this.lvl.match(/29|30/)){this.setPro('+9')}
+this.setPro('+5');
 
 if(this.class.match(/Arcane|Eldritch/))
 {if(this.lvl.match(/[0-2]/)){this.setMaxSlot1(0)};
