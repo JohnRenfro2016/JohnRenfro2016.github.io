@@ -510,9 +510,9 @@ const replsB = [
 {p1:/(取)(?!X)(り)(?!X)(次)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,r1:'$1Xto$2Xri$3Xtsu-relay a message,transfer a call$4X~GuVerb'},
 {p1:/(取)(?!X)(り)(?!X)(止)(?!X)(め)(?!X)/g,r1:'$1Xto$2Xri$3Xya$4Xme-cancel~IchidanVerb'},
 {p1:/(取)(?!X)(り)(?!X)(残)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xtori$2Xno$3Xko-leave behind$4X~SuVerb'},
-{p1:/(取)(?!X)(り)(?!X)(決)(?!X)(め)(?!X)/g,r1:'$1X$2Xto$3Xr$4Xi-kime,decision~Noun'},
+{p1:/(取)(?!X)(り)(?!X)(決)(?!X)(め)(?!X)/g,r1:'$1Xto$2Xri$3Xki$4Xme-decision~IchidanVerb'},
 {p1:/(取)(?!X)(り)(?!X)(消)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xto$2Xri$3Xke-cancel$4X~SuVerb'},
-{p1:/(取)(?!X)(り)(?!X)(組)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xtori$2Xku$3X$4X,grapple~MuVerb'},
+{p1:/(取)(?!X)(り)(?!X)(組)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xto$2Xri$3Xku-grapple$4X~MuVerb'},
 {p1:/(取)(?!X)(り)(?!X)(返)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xtor$2Xik$3Xae-take back,regain$4X~SuVerb'},
 {p1:/(受)(?!X)(け)(?!X)(入)(?!X)(れ)(?!X)/g,r1:'$1X$2Xuk$3Xe$4X-ire,reception~IchidanVerb'},
 {p1:/(受)(?!X)(け)(?!X)(取)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xu$2Xke$3Xto-accept$4X~RuVerb'},
@@ -2623,7 +2623,7 @@ const replsB = [
 {p1:/(人)(?!X)(情)(?!X)/g,r1:'$1Xnin$2Xjyou-human feelings,humanity~Noun'},
 {p1:/(人)(?!X)(手)(?!X)/g,r1:'$1Xhito$2Xde-man-power~Noun'},
 {p1:/(人)(?!X)(数)(?!X)/g,r1:'$1Xnin$2Xzuu-number of people~Noun'},
-{p1:/(人)(?!X)(材)(?!X)/g,r1:'$1Xjin$2Xzai-capable person,personnel~Noun'},
+{p1:/(人)(?!X)(材)(?!X)/g,r1:'$1Xjin$2Xzai-personnel~Noun'},
 {p1:/(人)(?!X)(柄)(?!X)/g,r1:'$1Xhito$2Xgara-character,personality~Noun'},
 {p1:/(人)(?!X)(格)(?!X)/g,r1:'$1Xjin$2Xkaku-character,personality~Noun'},
 {p1:/(人)(?!X)(権)(?!X)/g,r1:'$1Xjin$2Xken-human rights~Noun'},
@@ -8099,7 +8099,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-【ワシントン共同】2日付の米紙ウォールストリート・ジャーナルは、共和党有権者の59％がトランプ前大統領を2024年大統領選で党の最有力候補だと見ているとの世論調査結果を報じた。4月の調査から11ポイント増えた。議会襲撃や機密文書持ち出しなどに絡んで四つの事件で起訴されたが、同紙は「むしろ支持が強まった」と伝えた。
+テクノロジーで気候変動対策に取り組む企業「気候テック」が世界で注目されている。各国が脱炭素を目指す中、ベンチャー投資が熱を帯び、気候テック市場に資金や人材が流入。日本政府も来年度から予算を大幅に増やして支援を強化する。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
