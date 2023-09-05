@@ -85,6 +85,8 @@ const replsB = [
 
 {p1:/(プ)(?!X)(ロ)(?!X)(デ)(?!X)(ュ)(?!X)(ー)(?!X)(サ)(?!X)(ー)(?!X)/g,r1:'$1Xpu$2Xro$3Xde$4Xyu$5Xu$6Xsa$7Xa-producer~Noun'},
 
+{p1:/(ア)(?!X)(ニ)(?!X)(メ)(?!X)(ー)(?!X)(シ)(?!X)(ョ)(?!X)(ン)(?!X)/g,r1:'$1Xa$2Xni$3Xme$4Xe$5Xs$6Xyo$7Xn-animation~Noun'},
+
 {p1:/(あ)(?!X)(ち)(?!X)(ら)(?!X)(こ)(?!X)(ち)(?!X)(ら)(?!X)/g,r1:'$1Xa$2Xchi$3Xra$4Xko$5Xchi$6Xra-all over~Noun'},
 {p1:/(い)(?!X)(つ)(?!X)(の)(?!X)(ま)(?!X)(に)(?!X)(か)(?!X)/g,r1:'$1Xi$2Xtsu$3Xno$4Xma$5Xni$6Xka-before it is noticed~Noun'},
 {p1:/(い)(?!X)(ら)(?!X)(っ)(?!X)(し)(?!X)(ゃ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2X$3X$4X$5Xirassya-come,go$6X~RuVerb'},
@@ -236,6 +238,7 @@ const replsB = [
 {p1:/(う)(?!X)(な)(?!X)(ず)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xuna$2Xzu$3X-nod$4X~KuVerb'},
 {p1:/(う)(?!X)(ろ)(?!X)(う)(?!X)(ろ)(?!X)/g,r1:'$1X$2Xur$3Xo$4Xuro-wander~Noun'},
 {p1:/(お)(?!X)(し)(?!X)(ゃ)(?!X)(れ)(?!X)/g,r1:'$1X$2Xos$3Xh$4Xyare-dressing up smartly,trendy~Noun'},
+{p1:/(ス)(?!X)(タ)(?!X)(ジ)(?!X)(オ)(?!X)/g,r1:'$1Xsu$2Xta$3Xji$4Xo-studio~Noun'},
 {p1:/(お)(?!X)(じ)(?!X)(さ)(?!X)(ん)(?!X)/g,r1:'$1X$2Xoj$3Xi$4Xsan-Mister,middle-aged man~Noun'},
 {p1:/(お)(?!X)(じ)(?!X)(さ)(?!X)(ん)(?!X)/g,r1:'$1X$2Xoj$3Xi$4Xsan-uncle~Noun'},
 {p1:/(お)(?!X)(だ)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xoda$2Xte$3X-flatter$4X~RuVerb'},
@@ -894,7 +897,7 @@ const replsB = [
 {p1:/(ど)(?!X)(ん)(?!X)(な)(?!X)/g,r1:'$1Xdo$2Xn$3Xna-what kind of~Noun'},
 {p1:/(な)(?!X)(が)(?!X)(ら)(?!X)/g,r1:'$1Xna$2Xga$3Xra-during~Noun'},
 {p1:/(な)(?!X)(さ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xnas$2Xa-do$3X~RuVerb'},
-{p1:/(な)(?!X)(ぜ)(?!X)(か)(?!X)/g,r1:'$1Xnaz$2Xek$3Xa-for some reason~Noun'},
+{p1:/(な)(?!X)(ぜ)(?!X)(か)(?!X)/g,r1:'$1Xna$2Xze$3Xka-for some reason~Noun'},
 {p1:/(な)(?!X)(ど)(?!X)(の)(?!X)/g,r1:'$1Xna$2Xdo$3Xno ,ecetera and~Noun'},
 {p1:/(な)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xnam$2Xe-lick,lap$3X~RuVerb'},
 {p1:/(に)(?!X)(よ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xni $2Xyo,according to$3X~RuVerb'},
@@ -3065,8 +3068,10 @@ const replsB = [
 {p1:/(出)(?!X)(血)(?!X)/g,r1:'$1Xsyuk$2Xketsu-bleeding~Noun'},
 {p1:/(出)(?!X)(身)(?!X)/g,r1:'$1Xsyus$2Xshin-origin~Noun'},
 {p1:/(出)(?!X)(頭)(?!X)/g,r1:'$1Xsyut$2Xtou-appearance~Noun'},
+{p1:/(傍)(?!X)(聴)(?!X)/g,r1:'$1Xhou$2Xcyou-hearing a session~Noun'},
 {p1:/(出|で)(?!X)(来|き)(?!X)/g,r1:'$1Xde$2Xki-can do~IchidanVerb'},
 {p1:/(刃)(?!X)(物)(?!X)/g,r1:'$1Xha$2Xmono-knife~Noun'},
+{p1:/(閉)(?!X)(廷)(?!X)/g,r1:'$1Xhei$2Xtei-adjourning court~Noun'},
 {p1:/(分)(?!X)(割)(?!X)/g,r1:'$1Xbun$2Xkatsu-segmentation~Noun'},
 {p1:/(分)(?!X)(担)(?!X)/g,r1:'$1Xbun$2Xtan-assigning tasks,sharing burden~Noun'},
 {p1:/(分)(?!X)(散)(?!X)/g,r1:'$1Xbun$2Xsan-dispersion~Noun'},
@@ -6480,6 +6485,7 @@ const replsB = [
 {p1:/(足)(?!X)(音)(?!X)/g,r1:'$1Xashi$2Xoto-sound of footsteps~Noun'},
 {p1:/(足)(?!X)(首)(?!X)/g,r1:'$1Xashi$2Xkubi-ankle~Noun'},
 {p1:/(距)(?!X)(離)(?!X)/g,r1:'$1Xkyo$2Xri-range~Noun'},
+{p1:/(の)(?!X)(か)(?!X)/g,r1:'$1Xno$2Xka-lamenting the previous statement~Noun'},
 {p1:/(路)(?!X)(上)(?!X)/g,r1:'$1Xro$2Xjyou-on way~Noun'},
 {p1:/(路)(?!X)(線)(?!X)/g,r1:'$1Xro$2Xsen-route,line~Noun'},
 {p1:/(路)(?!X)(肩)(?!X)/g,r1:'$1Xro$2Xkata-shoulder of road~Noun'},
@@ -7578,6 +7584,7 @@ const replsB = [
 {p1:/(灘)(?!X)/g,r1:'$1Xnada-open sea~Noun'},
 {p1:/(火)(?!X)/g,r1:'$1Xhi-fire,ka,Tuesday~Noun'},
 {p1:/(灰)(?!X)/g,r1:'$1Xhai-ashes~Noun'},
+{p1:/(伏)(?!X)/g,r1:'$1Xfushi-bow~Noun'},
 {p1:/(炎)(?!X)/g,r1:'$1Xhonoo-blaze~Noun'},
 {p1:/(点)(?!X)/g,r1:'$1Xten-point,issue~Noun'},
 {p1:/(無)(?!X)/g,r1:'$1Xmu-none~Noun'},
@@ -8099,7 +8106,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-テクノロジーで気候変動対策に取り組む企業「気候テック」が世界で注目されている。各国が脱炭素を目指す中、ベンチャー投資が熱を帯び、気候テック市場に資金や人材が流入。日本政府も来年度から予算を大幅に増やして支援を強化する。
+2019年7月、36人が死亡した京都アニメーション第1スタジオ（京都市伏見区）の放火殺人事件の初公判が京都地裁で開かれた5日、傍聴した遺族の1人が閉廷後、京都新聞社などの取材に応じた。殺人罪などに問われた青葉真司被告（45）を初めて目にし、「どんな感情なのか自分自身、分からないが、なぜか涙が出た」と明かした。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
