@@ -155,6 +155,7 @@ const replsB = [
 {p1:/( )(социалистическ)/ig,r2:'$2 socialist(adjective)'},
 {p1:/( )(транспортиров)/ig,r2:'$2 transportation(adjective)'},
 {p1:/( )(целеустремленн)/ig,r2:'$2 purposeful(adjective)'},
+{p1:/( )(подведомственн)/ig,r2:'$2 jurisdictional(adjective)'},
 {p1:/( )(централизованн)/ig,r2:'$2 centralized(adjective)'},
 
 {p1:/( )(астрономическ)/ig,r2:'$2 astronomi(adjective)'},
@@ -261,6 +262,7 @@ const replsB = [
 {p1:/( )(спецназначен)/ig,r2:'$2 special purpose(noun)'},
 {p1:/( )(индивидуальн)/ig,r2:'$2 individual(noun)'},
 {p1:/( )(индустриальн)/ig,r2:'$2 industrial(noun)'},
+{p1:/( )(трансформаци)/ig,r2:'$2 transformation(noun)'},
 {p1:/( )(интеллигенци)/ig,r2:'$2 intelligentsia,professional people(noun)'},
 {p1:/( )(исключительн)/ig,r2:'$2 exclusively,exceptionally(noun)'},
 {p1:/( )(исполнительн)/ig,r2:'$2 executive,efficient(noun)'},
@@ -397,6 +399,7 @@ const replsB = [
 {p1:/( )(господствов)/ig,r2:'$2 dominate(verb)'},
 {p1:/( )(девятнадцат)/ig,r2:'$2 nineteenth(noun)'},
 {p1:/( )(демонстраци)/ig,r2:'$2 demonstration(noun)'},
+{p1:/( )(безопасност)/ig,r2:'$2 clarity(noun)'},
 {p1:/( )(доверительн)/ig,r2:'$2 confidentially(noun)'},
 {p1:/( )(документаци)/ig,r2:'$2 documentation,documents(noun)'},
 {p1:/( )(драматическ)/ig,r2:'$2 dramati(adjective)'},
@@ -718,6 +721,7 @@ const replsB = [
 {p1:/( )(металлурги)/ig,r2:'$2 metallurgy(noun)'},
 {p1:/( )(отстранен)/ig,r2:'$2 removal(noun)'},
 {p1:/( )(механизаци)/ig,r2:'$2 mechanization(noun)'},
+{p1:/( )(направлени)/ig,r2:'$2 area(noun)'},
 {p1:/( )(механическ)/ig,r2:'$2 mechanical(adjective)'},
 {p1:/( )(Венецианск)/ig,r2:'$2 Venetian(adjective)'},
 {p1:/( )(миноборон)/ig,r2:'$2 ministry defense(noun)'},
@@ -2162,6 +2166,7 @@ const replsB = [
 {p1:/( )(прибрежн)/ig,r2:'$2 coastal,riverside(noun)'},
 {p1:/( )(привязыв)/ig,r2:'$2 attach(verb)'},
 {p1:/( )(приговор)/ig,r2:'$2 verdict,sentence(noun)'},
+{p1:/( )(разработ)/ig,r2:'$2 work out(verb)'},
 {p1:/( )(пригород)/ig,r2:'$2 suburb(noun)'},
 {p1:/( )(приготов)/ig,r2:'$2 preparation(noun)'},
 {p1:/( )(придумыв)/ig,r2:'$2 think up,invent(verb)'},
@@ -3411,6 +3416,7 @@ const replsB = [
 {p1:/( )(спичечн)/ig,r2:'$2 match(noun)'},
 {p1:/( )(сплетни)/ig,r2:'$2 gossip(noun)'},
 {p1:/( )(спокойн)/ig,r2:'$2 calmly,quietly(noun)'},
+{p1:/( )(концепц)/ig,r2:'$2 concept(noun)'},
 {p1:/( )(способн)/ig,r2:'$2 ability(noun)'},
 {p1:/( )(спрашив)/ig,r2:'$2 ask(verb)'},
 {p1:/( )(спрыгив)/ig,r2:'$2 jump off(verb)'},
@@ -6132,6 +6138,7 @@ const replsB = [
 {p1:/( )(сукин)/ig,r2:'$2 bitch’s(noun)'},
 {p1:/( )(суров)/ig,r2:'$2 severely(noun)'},
 {p1:/( )(сутки)/ig,r2:'$2 24 hours(noun)'},
+{p1:/( )(аудит)/ig,r2:'$2 audit(noun)'},
 {p1:/( )(сутул)/ig,r2:'$2 round-shouldered,stooping(noun)'},
 {p1:/( )(сухар)/ig,r2:'$2 piece of dried bread,rusk(noun)'},
 {p1:/( )(сушен)/ig,r2:'$2 dried(noun)'},
@@ -7752,6 +7759,7 @@ const replsB = [
 {p1:/( )(рус)/ig,r2:'$2 light brown(noun)'},
 {p1:/( )(руч)/ig,r2:'$2 vouch for(verb)'},
 {p1:/( )(руш)/ig,r2:'$2 collapse(verb)'},
+{p1:/(ров)( )/ig,r2:'$1 family name(pronoun)'},
 {p1:/( )(рыб)/ig,r2:'$2 fish(noun)'},
 {p1:/( )(рыд)/ig,r2:'$2 sob(verb)'},
 {p1:/( )(рыж)/ig,r2:'$2 red-haired(noun)'},
@@ -8045,6 +8053,8 @@ const replsB = [
 
 {p1:/(\(verb\))(ающ)/ig,r2:'$1<br>$2 +ing(continuous)(noun)'},
 
+{p1:/(\(verb\))(ана)/ig,r2:'$1<br>$2 will be done(future)(participle)'},
+
 {p1:/(\(verb\))(а)(е)(т)( )/ig,r2:'$1<br>$2 regularly(imperfective)<br>$3 he or she does(third person<br>$4 does(present) '},
 {p1:/(\(verb\))(а)(л)(а)( )/ig,r2:'$1<br>$2 regularly(imperfective)<br>$3 did(past)<br>$4 she(third person)'},
 {p1:/(\(verb\))(а)(л)(и)( )/ig,r2:'$1<br>$2 completely(perfective)<br>$3 did(past)<br>$4 they(second person) '},
@@ -8139,6 +8149,7 @@ const replsB = [
 {p1:/(\(noun\))(ю)( )/ig,r2:'$1<br>$2 sin-dat'},
 {p1:/(\(noun\))(я)( )/ig,r2:'$1<br>$2 plu-nom-acc,sin-gen'},
 {p1:/(\(noun\))(и)( )/ig,r2:'$1<br>$2 plu-nom-acc,sin-gen'},
+{p1:/(\(noun\))(й)( )/ig,r2:'$1<br>$2 plu-gen'},
 
 {p1:/(ование)/ig,r2:'$1 +ship(g)'},
 
@@ -8166,7 +8177,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Страны G7 не планируют пересматривать в ближайшее время потолок цен на российскую нефть, установленный в декабре — Reuters со ссылкой на источники
+Новый министр обороны Украины Рустам Умеров заявил о проведении аудита всех подведомственных направлений По его словам, в министерстве будет разработана концепция трансформации оборонной системы Украины с новой стратегией национальной безопасности и обороны страны
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
@@ -8180,10 +8191,6 @@ source:GazeteRU
 <span id="enteredWord"></span>
 <hr>
 <h3>Grammar Terms</h3>
-Common suffix matches:<br>
-(verb)acc<br>
-(preposition)pre<br>
-<p>
 acc-(accusative case)(direct object)<br>
 ani-(animate)living things<br>
 dat-(dative case)to(indirect object)<br>
