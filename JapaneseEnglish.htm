@@ -334,7 +334,7 @@ const replsB = [
 {p1:/(そ)(?!X)(の)(?!X)(ま)(?!X)(ま)(?!X)/g,r1:'$1X$2Xso$3Xn$4Xo mama,like that,unchanged~Noun'},
 {p1:/(そ)(?!X)(び)(?!X)(え)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xsob$2Xie$3X-tower$4X~RuVerb'},
 {p1:/(そ)(?!X)(も)(?!X)(そ)(?!X)(も)(?!X)/g,r1:'$1X$2Xso$3Xm$4Xo somo,to begin with~Noun'},
-{p1:/(そ)(?!X)(れ)(?!X)(ぞ)(?!X)(れ)(?!X)/g,r1:'$1X$2Xso$3Xr$4Xe-zore,each~Noun'},
+{p1:/(そ)(?!X)(れ)(?!X)(ぞ)(?!X)(れ)(?!X)/g,r1:'$1Xso$2Xre$3Xzor$4Xre-each~Noun'},
 {p1:/(そ)(?!X)(れ)(?!X)(ぞ)(?!X)(れ)(?!X)/g,r1:'$1X$2Xso$3Xr$4Xe-zore,each~Noun'},
 {p1:/(そ)(?!X)(れ)(?!X)(ほ)(?!X)(ど)(?!X)/g,r1:'$1X$2X$3X$4Xso much,that much~Noun'},
 {p1:/(そ)(?!X)(ろ)(?!X)(そ)(?!X)(ろ)(?!X)/g,r1:'$1X$2Xso$3Xo$4Xn~Noun'},
@@ -833,7 +833,6 @@ const replsB = [
 {p1:/(さ)(?!X)(ら)(?!X)(に)(?!X)/g,r1:'$1Xsa$2Xra$3X ni,furthermore~Noun'},
 {p1:/(し)(?!X)(か)(?!X)(し)(?!X)/g,r1:'$1Xshi$2Xka$3Xshi-however~Noun'},
 {p1:/(し)(?!X)(つ)(?!X)(こ)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xshi$2Xts$3Xuko-persistent$4X~IAdjective~Noun'},
-{p1:/(し)(?!X)(ま)(?!X)(す)(?!X)/g,r1:'$1Xshi$2Xma$3Xsu-to do,will do~FormalSuruVerb'},
 {p1:/(じ)(?!X)(っ)(?!X)(と)(?!X)/g,r1:'$1Xjit$2Xto$3X-without moving,still~Noun'},
 {p1:/(す)(?!X)(い)(?!X)(か)(?!X)/g,r1:'$1Xsui$2Xka$3X-watermelon~Noun'},
 {p1:/(す)(?!X)(す)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xsu$2Xsu-slurp$3X~RuVerb'},
@@ -2075,6 +2074,7 @@ const replsB = [
 {p1:/(述)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xno$2Xbe-mention$3X~RuVerb'},
 {p1:/(送)(?!X)(別)(?!X)(会)(?!X)/g,r1:'$1Xsou$2Xbetsu$3Xkai-farewell party~Noun'},
 {p1:/(逃)(?!X)(が)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xni$2Xga-let go$3X~SuVerb'},
+{p1:/(目)(?!X)(指)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xme$2Xza-to try for$3X~SuVerb'},
 {p1:/(逃)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xnig$2Xe-escape,run away$3X~RuVerb'},
 {p1:/(逃)(?!X)(げ)(?!X)(道)(?!X)/g,r1:'$1Xnigemi$2Xch$3Xi-escape route~Noun'},
 {p1:/(逆)(?!X)(さ)(?!X)(ま)(?!X)/g,r1:'$1Xsaka$2Xsa$3Xma-upside-down,reverse~Noun'},
@@ -4929,6 +4929,7 @@ const replsB = [
 {p1:/(業)(?!X)(務)(?!X)/g,r1:'$1Xgyou$2Xmu-business~Noun'},
 {p1:/(業)(?!X)(界)(?!X)/g,r1:'$1Xgyou$2Xkai-business world~Noun'},
 {p1:/(業)(?!X)(績)(?!X)/g,r1:'$1Xgyou$2Xseki-achievement,performance~Noun'},
+{p1:/(１)(?!X)(つ)(?!X)/g,r1:'$1Xhito$2Xtsu-one thing~Noun'},
 {p1:/(業)(?!X)(者)(?!X)/g,r1:'$1Xgyou$2Xsya-business person~Noun'},
 {p1:/(極)(?!X)(右)(?!X)/g,r1:'$1Xkyoku$2Xu-far right-wing~Noun'},
 {p1:/(極)(?!X)(寒)(?!X)/g,r1:'$1Xgok$2Xkan-extreme cold~Noun'},
@@ -5098,6 +5099,8 @@ const replsB = [
 {p1:/(水)(?!X)(田)(?!X)/g,r1:'$1Xsui$2Xden-paddy field,rice field~Noun'},
 {p1:/(水)(?!X)(着)(?!X)/g,r1:'$1Xmiz$2Xugi-bathing suit~Noun'},
 {p1:/(水)(?!X)(素)(?!X)/g,r1:'$1Xsui$2Xso-hydrogen~Noun'},
+{p1:/(初)(?!X)(号)(?!X)/g,r1:'$1Xsyo$2Xgou-first number~Noun'},
+{p1:/(後)(?!X)(に)(?!X)/g,r1:'$1Xnochi$2Xni-subsequently~Noun'},
 {p1:/(水)(?!X)(色)(?!X)/g,r1:'$1Xmizu$2Xiro-sky blue,turquoise~Noun'},
 {p1:/(水)(?!X)(道)(?!X)/g,r1:'$1Xsui$2Xdou-water supply~Noun'},
 {p1:/(水)(?!X)(際)(?!X)/g,r1:'$1Xmizu$2Xzawa-stem the flow~Noun'},
@@ -5646,7 +5649,7 @@ const replsB = [
 {p1:/(着)(?!X)(手)(?!X)/g,r1:'$1Xchaku$2Xsyu-starting work~Noun'},
 {p1:/(着)(?!X)(物)(?!X)/g,r1:'$1Xki$2Xmono-clothes,kimono~Noun'},
 {p1:/(着)(?!X)(用)(?!X)/g,r1:'$1Xcyaku$2Xyou-wear~Noun'},
-{p1:/(着)(?!X)(陸)(?!X)/g,r1:'$1Xcyaku$2Xrukuing~Noun'},
+{p1:/(着)(?!X)(陸)(?!X)/g,r1:'$1Xcyaku$2Xriku-landing~Noun'},
 {p1:/(睡)(?!X)(眠)(?!X)/g,r1:'$1Xsui$2Xmin-sleep~Noun'},
 {p1:/(瞬)(?!X)(間)(?!X)/g,r1:'$1Xsyun$2Xkan-instant~Noun'},
 {p1:/(矛)(?!X)(盾)(?!X)/g,r1:'$1Xmu$2Xjyun-contradiction~Noun'},
@@ -7132,6 +7135,7 @@ const replsB = [
 {p1:/(\）)(?!X)/g,r1:'$1Xclose parenthesis~Punctuation~Noun'},
 {p1:/(、)(?!X)/g,r1:'$1Xcomma~Punctuation~Noun'},
 {p1:/(。)(?!X)/g,r1:'$1Xperiod~Punctuation~Noun'},
+{p1:/(．)(?!X)/g,r1:'$1Xdot,decimal point~Punctuation~Noun'},
 {p1:/(々)(?!X)/g,r1:'$1Xka-repeats the first kanji~Noun'},
 {p1:/(「|『)(?!X)/g,r1:'$1Xopen quote~Punctuation~Noun'},
 {p1:/(」|』)(?!X)/g,r1:'$1Xclose quote~Punctuation~Noun'},
@@ -7337,7 +7341,7 @@ const replsB = [
 {p1:/(婚)(?!X)/g,r1:'$1Xyobai,kon-marriage~Noun'},
 {p1:/(嫁)(?!X)/g,r1:'$1Xyome-bride,daughter in law~Noun'},
 {p1:/(嫌)(?!X)/g,r1:'$1Xiya-dislike,have a dislike for~Noun'},
-{p1:/(子)(?!X)/g,r1:'$1Xko-child~Noun'},
+{p1:/(子)(?!X)/g,r1:'$1Xko,Ga-child~Noun'},
 {p1:/(字)(?!X)/g,r1:'$1Xji-character,letter~Noun'},
 {p1:/(孝)(?!X)/g,r1:'$1XTaka,Yoshi-filial,son~Noun'},
 {p1:/(孫)(?!X)/g,r1:'$1Xmago-grandchild~Noun'},
@@ -7752,6 +7756,7 @@ const replsB = [
 {p1:/(菊)(?!X)/g,r1:'$1Xkiku-chrysanthemum~Noun'},
 {p1:/(葉)(?!X)/g,r1:'$1Xha,ba,leaf~Noun'},
 {p1:/(蒔)(?!X)/g,r1:'$1XMaki-sow seeds~Noun'},
+{p1:/(秒)(?!X)/g,r1:'$1Xhyou-seconds~Noun'},
 {p1:/(蓮)(?!X)/g,r1:'$1Xren-lotus~Noun'},
 {p1:/(薬)(?!X)/g,r1:'$1Xkusuri,+yaku-drug~Noun'},
 {p1:/(藤)(?!X)/g,r1:'$1Xto,do,fuji,native plants~Noun'},
@@ -7887,7 +7892,7 @@ const replsB = [
 {p1:/(青)(?!X)/g,r1:'$1Xao-blue-green~Noun'},
 {p1:/(静)(?!X)/g,r1:'$1Xshizu-silent,peaceful~Noun'},
 {p1:/(非)(?!X)/g,r1:'$1Xhi-non-~Noun'},
-{p1:/(面)(?!X)/g,r1:'$1Xmen-entire aspect~Noun'},
+{p1:/(面)(?!X)/g,r1:'$1Xmen-surface,entire aspect~Noun'},
 {p1:/(革)(?!X)/g,r1:'$1Xkawa-leather~Noun'},
 {p1:/(靴)(?!X)/g,r1:'$1Xkutsu-shoes~Noun'},
 {p1:/(鞄)(?!X)/g,r1:'$1Xka+ban,bag,handbag,briefcase~Noun'},
@@ -8106,7 +8111,18 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-2019年7月、36人が死亡した京都アニメーション第1スタジオ（京都市伏見区）の放火殺人事件の初公判が京都地裁で開かれた5日、傍聴した遺族の1人が閉廷後、京都新聞社などの取材に応じた。殺人罪などに問われた青葉真司被告（45）を初めて目にし、「どんな感情なのか自分自身、分からないが、なぜか涙が出た」と明かした。
+Ｈ２Ａロケット４７号機が７日午前に種子島宇宙センターから打ち上げられ、打ち上げは成功しました。
+
+Ｈ２Ａ４７号機は、７日午前８時４２分１１秒に種子島宇宙センターから打ち上げられました。４７号機には、探査機と衛星の２つが搭載されています。
+
+１つは、日本で初めての月面着陸を目指す小型実証機「ＳＬＩＭ」です。成功すれば、その技術が宇宙飛行士の月着陸を目指すアメリカの「アルテミス計画」に利用される可能性があります。
+
+もう１つは、ＪＡＸＡやＮＡＳＡなどが共同開発した衛星「ＸＲＩＳＭ」です。Ｘ線を使って宇宙を観測し、宇宙の構造をより詳しく解明することを目指します。
+
+搭載していた「ＸＲＩＳＭ」を１４分後に、「ＳＬＩＭ」を４８分後にそれぞれの軌道に投入し、打ち上げは成功しました。
+Ｈ２Ａはこれで４７機中４６機で打ち上げに成功し、成功率は９７．９％となりました。
+
+Ｈ２Ａ４７号機は、Ｈ３初号機の打ち上げ失敗の影響で、打ち上げが今年５月から先月となりましたが、天候不良を理由に３度延期されていました。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
