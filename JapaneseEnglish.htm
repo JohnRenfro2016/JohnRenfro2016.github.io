@@ -124,6 +124,7 @@ const replsB = [
 {p1:/(組)(?!X)(み)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xku$2Xmi$3Xa$4Xwa$5Xse-join together$6X~RuVerb'},
 {p1:/(間)(?!X)(に)(?!X)(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2X$3X$4X$5Xman-iawase,make do$6X~RuVerb'},
 
+{p1:/(ま)(?!X)(た)(?!X)(し)(?!X)(て)(?!X)(も)(?!X)/g,r1:'$1Xma$2Xta$3Xshi$4Xte$5Xmo-once again~Noun'},
 {p1:/(お)(?!X)(っ)(?!X)(し)(?!X)(ゃ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xos$3Xs$4Xya-say$5X~RuVerb'},
 {p1:/(お)(?!X)(っ)(?!X)(し)(?!X)(ゃ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xos$3Xs$4Xya-say$5X~RuVerb'},
 {p1:/(く)(?!X)(た)(?!X)(び)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xku$3Xt$4Xabire-get tired,be worn out$5X~RuVerb'},
@@ -399,6 +400,7 @@ const replsB = [
 {p1:/(の)(?!X)(ろ)(?!X)(の)(?!X)(ろ)(?!X)/g,r1:'$1X$2Xsl$3Xo$4Xwly-easy~Noun'},
 {p1:/(の)(?!X)(ん)(?!X)(び)(?!X)(り)(?!X)/g,r1:'$1X$2Xta$3X$4Xke it easy~Noun'},
 {p1:/(の|飲)(?!X)(み)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xno$2Xmi$3Xko-gulp down$4X~MuVerb'},
+{p1:/(食)(?!X)(い)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xku$2Xi$3Xko-cut into$4X~MuVerb'},
 {p1:/(は)(?!X)(っ)(?!X)(き)(?!X)(り)(?!X)/g,r1:'$1X$2Xcl$3Xe$4Xarly~Noun'},
 {p1:/(は)(?!X)(み)(?!X)(出)(?!X)(し)(?!X)/g,r1:'$1X$2Xha$3Xm$4Xidashi,stick out~Noun'},
 {p1:/(ば)(?!X)(か)(?!X)(ら)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1X$2Xba$3Xk$4Xara-shi,stupid,useless$5X~IAdjective~Noun'},
@@ -995,6 +997,7 @@ const replsB = [
 {p1:/(ロ)(?!X)(シ)(?!X)(ア)(?!X)/g,r1:'$1Xro$2Xshi$3Xa-Russia~Noun'},
 {p1:/(一)(?!X)(ま)(?!X)(ず)(?!X)/g,r1:'$1X$2Xhi$3Xtomazu-first of all~Noun'},
 {p1:/(一)(?!X)(人)(?!X)(で)(?!X)/g,r1:'$1X$2Xhi$3Xtoride-by oneself~Noun'},
+{p1:/(選)(?!X)(手)(?!X)(権)(?!X)/g,r1:'$1Xsen$2Xsyu$3Xken-championship~Noun'},
 {p1:/(一)(?!X)(休)(?!X)(み)(?!X)/g,r1:'$1X$2Xhi$3Xtoyasumi-rest~Noun'},
 {p1:/(一)(?!X)(向)(?!X)(に)(?!X)/g,r1:'$1Xikk$2Xou$3Xni-absolutely,at all~Noun'},
 {p1:/(一)(?!X)(度)(?!X)(に)(?!X)/g,r1:'$1Xichi$2Xdo$3Xni-at a time,at once~Noun'},
@@ -4711,6 +4714,7 @@ const replsB = [
 {p1:/(明)(?!X)(示)(?!X)/g,r1:'$1Xmei$2Xji-elucidation~Noun'},
 {p1:/(明)(?!X)(言)(?!X)/g,r1:'$1Xmei$2Xgen-declaration~Noun'},
 {p1:/(明)(?!X)(記)(?!X)/g,r1:'$1Xmei$2Xki-in clear writing~Noun'},
+ {p1:/(樹)(?!X)(立)(?!X)/g,r1:'$1Xjyu$2Xritsu-record setting~Noun'},
 {p1:/(映)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xutsu-reflect,project$2X~SuVerb'},
 {p1:/(映)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xutsu-be reflected,appear$2X~RuVerb'},
 {p1:/(映)(?!X)(像)(?!X)/g,r1:'$1Xei$2Xzou-image~Noun'},
@@ -4747,6 +4751,7 @@ const replsB = [
 {p1:/(景)(?!X)(況)(?!X)/g,r1:'$1Xkei$2Xkyou-business outlook~Noun'},
 {p1:/(景)(?!X)(色)(?!X)/g,r1:'$1Xke$2Xshiki-scenery,landscape~Noun'},
 {p1:/(晴)(?!X)(れ)(?!X)/g,r1:'$1Xha$2Xre-clear up~IchidanVerb'},
+{p1:/(遂)(?!X)(げ)(?!X)/g,r1:'$1Xto$2Xge-accomplish~IchidanVerb'},
 {p1:/(暑)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xatsu-hot$2X~IAdjective~Noun'},
 {p1:/(暑)(?!X)(さ)(?!X)/g,r1:'$1Xatsu$2Xsa-heat~Noun'},
 {p1:/(暖)(?!X)(か)(?!X)/g,r1:'$1Xata$2Xtaka-warm,warmhearted~Noun'},
@@ -4826,6 +4831,7 @@ const replsB = [
 {p1:/(有)(?!X)(限)(?!X)/g,r1:'$1Xyuu$2Xgen-limited,finite~Noun'},
 {p1:/(服)(?!X)(装)(?!X)/g,r1:'$1Xfuku$2Xsou-clothes~Noun'},
 {p1:/(望)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xnozo-hope$2X~MuVerb'},
+{p1:/(挑)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xido-challenge$2X~MuVerb'},
 {p1:/(望)(?!X)(み)(?!X)/g,r1:'$1Xnoz$2Xomi-hope~Noun'},
 {p1:/(朝)(?!X)(刊)(?!X)/g,r1:'$1Xcyou$2Xkan-morning edition~Noun'},
 {p1:/(朝)(?!X)(日)(?!X)/g,r1:'$1Xasa$2Xhi-morning sun~Noun'},
@@ -5710,6 +5716,7 @@ const replsB = [
 {p1:/(祖)(?!X)(先)(?!X)/g,r1:'$1Xso$2Xsen-ancestor,forefather~Noun'},
 {p1:/(祖)(?!X)(国)(?!X)/g,r1:'$1Xso$2Xkoku-homeland~Noun'},
 {p1:/(祖)(?!X)(母)(?!X)/g,r1:'$1Xso$2Xbo-grandmother~Noun'},
+ {p1:/(激)(?!X)(走)(?!X)/g,r1:'$1Xgeki$2Xsou-full speed~Noun'},
 {p1:/(祖)(?!X)(父)(?!X)/g,r1:'$1Xso$2Xfu-grandfather~Noun'},
 {p1:/(祝)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xiwa-celebration,congratulation$2X~IAdjective~Noun'},
 {p1:/(祝)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xiwa-celebrate,congratulate$2X~UVerb'},
@@ -5789,8 +5796,10 @@ const replsB = [
 {p1:/(立)(?!X)(憲)(?!X)/g,r1:'$1Xrik$2Xken-constitutionalism~Noun'},
 {p1:/(立)(?!X)(案)(?!X)/g,r1:'$1Xritsu$2Xan-drafting up~Noun'},
 {p1:/(立)(?!X)(民)(?!X)/g,r1:'$1Xritsu$2Xmon-Constitutional Democratic Party~Noun'},
+{p1:/(歴)(?!X)(代)(?!X)/g,r1:'$1Xreki$2Xdai-successive generations~Noun'},
 {p1:/(立)(?!X)(派)(?!X)/g,r1:'$1Xrip$2Xpa-fine,excellent~Noun'},
 {p1:/(立)(?!X)(証)(?!X)/g,r1:'$1Xris$2Xsyou-establishing proof~Noun'},
+{p1:/(堂)(?!X)(々)(?!X)/g,r1:'$1Xdou$2Xdou-impressive~Noun'},
 {p1:/(竜)(?!X)(巻)(?!X)/g,r1:'$1Xtatsu$2Xmaki-tornado~Noun'},
 {p1:/(競)(?!X)(争)(?!X)/g,r1:'$1Xkyou$2Xsou-competition~Noun'},
 {p1:/(競)(?!X)(合)(?!X)/g,r1:'$1Xkyou$2Xgou-rivalry~Noun'},
@@ -7065,6 +7074,7 @@ const replsB = [
 {p1:/(騒)(?!X)(動)(?!X)/g,r1:'$1Xsou$2Xdou-disturbance,confusion~Noun'},
 {p1:/(騒)(?!X)(音)(?!X)/g,r1:'$1Xsou$2Xon-noise~Noun'},
 {p1:/(騙)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xdama-deceive,cheat$2X~SuVerb'},
+{p1:/(成)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xna-establish$2X~SuVerb'},
 {p1:/(驚)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xodoro-be surprised,be startled$2X~KuVerb'},
 {p1:/(驚)(?!X)(き)(?!X)/g,r1:'$1Xodoro$2Xki-surprise,amazement~Noun'},
 {p1:/(骨)(?!X)(折)(?!X)/g,r1:'$1Xkos$2Xsetsu-fracture~Noun'},
@@ -7450,7 +7460,7 @@ const replsB = [
 {p1:/(斉)(?!X)/g,r1:'$1Xsai-adjusted~Noun'},
 {p1:/(斗)(?!X)/g,r1:'$1Xto,square measure~Noun'},
 {p1:/(料)(?!X)/g,r1:'$1Xryou-charge~Noun'},
-{p1:/(新)(?!X)/g,r1:'$1Xshin,Nii-new~Noun'},
+{p1:/(新)(?!X)/g,r1:'$1Xshin,Nii-new,world record~Noun'},
 {p1:/(方)(?!X)/g,r1:'$1Xhou,kata-on the side of,other person~Noun'},
 {p1:/(旅)(?!X)/g,r1:'$1Xtabi-journey,travel~Noun'},
 {p1:/(旗)(?!X)/g,r1:'$1Xhata-flag,banner~Noun'},
@@ -8111,7 +8121,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-台風13号はきょう8日午後に東日本に上陸する見込みです。台風13号は、台風の中心の北東側に活発な雨雲があり、午前中から伊豆諸島や関東に活発な雨雲がかかっています。このあとも「非常に激しい雨」や「激しい雨」が降り、大雨となるでしょう。各地の警戒期間をまとめました。
+またしてもとてつもない激走を見せた。ブダペスト世界選手権の予選で14分37秒98の日本新を樹立して決勝に進み、8位入賞を成し遂げていた田中。5000mで初のDLに挑むと、自身の日本記録を約8秒更新して堂々3位に食い込んだ。この記録はアジア記録（14分28秒09）にあと約1秒に迫るアジア歴代2位となる。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
