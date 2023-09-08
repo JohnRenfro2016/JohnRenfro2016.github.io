@@ -1957,6 +1957,7 @@ const replsB = [
 {p1:/( )(насовсем)/ig,r2:'$2 for good,for ever(noun)'},
 {p1:/( )(настольк)/ig,r2:'$2 so much(adjective)'},
 {p1:/( )(настояще)/ig,r2:'$2 the present(noun)'},
+{p1:/( )(постпред)/ig,r2:'$2 permanent representative(noun)'},
 {p1:/( )(настраив)/ig,r2:'$2 tune,adjust,(verb)'},
 {p1:/( )(насчитыв)/ig,r2:'$2 number,total(verb)'},
 {p1:/( )(насыщенн)/ig,r2:'$2 saturated,rich(adjective)'},
@@ -2168,7 +2169,7 @@ const replsB = [
 {p1:/( )(прелестн)/ig,r2:'$2 charming(noun)'},
 {p1:/( )(преоблад)/ig,r2:'$2 predominate(verb)'},
 {p1:/( )(преподав)/ig,r2:'$2 teach(verb)'},
-{p1:/( )(преступн)/ig,r2:'$2 crime,criminality(noun)'},
+{p1:/( )(преступн)/ig,r2:'$2 crime(noun)'},
 {p1:/( )(претензи)/ig,r2:'$2 claim(noun)'},
 {p1:/( )(прибрежн)/ig,r2:'$2 coastal,riverside(noun)'},
 {p1:/( )(привязыв)/ig,r2:'$2 attach(verb)'},
@@ -2995,6 +2996,7 @@ const replsB = [
 {p1:/( )(негромк)/ig,r2:'$2 quietly,in a low voice(adjective)'},
 {p1:/( )(недалек)/ig,r2:'$2 near,dim,dull-witted(adjective)'},
 {p1:/( )(недаром)/ig,r2:'$2 not for nothing(noun)'},
+{p1:/( )(украинц)/ig,r2:'$2 Ukrainian(noun)'},
 {p1:/( )(униформ)/ig,r2:'$2 uniform(noun)'},
 {p1:/( )(пробежк)/ig,r2:'$2 jog(noun)'},
 {p1:/( )(незачем)/ig,r2:'$2 there’s no point(noun)'},
@@ -3189,7 +3191,7 @@ const replsB = [
 {p1:/( )(показ)/ig,r2:'$2 show(verb)'},
 {p1:/( )(покачив)/ig,r2:'$2 rock(verb)'},
 {p1:/( )(покрышк)/ig,r2:'$2 covering,lid(adjective)'},
-{p1:/( )(политик)/ig,r2:'$2 politician(adjective)'},
+{p1:/( )(политик)/ig,r2:'$2 politician(noun)'},
 {p1:/( )(сегодня)/ig,r2:'$2 today(adverb)'},
 {p1:/( )(половин)/ig,r2:'$2 half(noun)'},
 {p1:/( )(половиц)/ig,r2:'$2 floorboard(noun)'},
@@ -5400,7 +5402,7 @@ const replsB = [
 {p1:/( )(истек)/ig,r2:'$2 flow out,expire(verb)'},
 {p1:/( )(истин)/ig,r2:'$2 truth(noun)'},
 {p1:/( )(истк)/ig,r2:'$2 source(adjective)'},
-{p1:/( )(исход)/ig,r2:'$2 outcome,end(noun)'},
+{p1:/( )(исход)/ig,r2:'$2 outcome,end(verb)'},
 {p1:/( )(исчез)/ig,r2:'$2 vanish,disappear(verb)'},
 {p1:/( )(кабал)/ig,r2:'$2 slavery,servitude(noun)'},
 {p1:/( )(кабин)/ig,r2:'$2 cabin(noun)'},
@@ -8159,6 +8161,7 @@ const replsB = [
 {p1:/(\(noun\))(их)( )/ig,r2:'$1<br>$2 plu-gen-acc-pre'},
 {p1:/(\(noun\))(ия)( )/ig,r2:'$1<br>$2 plu-nom-acc,sin-gen'},
 {p1:/(\(noun\))(ов)( )/ig,r2:'$1<br>$2 plu-gen'},
+{p1:/(\(noun\))(ев)( )/ig,r2:'$1<br>$2 plu-gen'},
 {p1:/(\(noun\))(ью)( )/ig,r2:'$1<br>$2 sin-dat'},
 {p1:/(\(noun\))(ем)( )/ig,r2:'$1<br>$2 sin-ins'},
 {p1:/(\(noun\))(ое)( )/ig,r2:'$1<br>$2 sin-nom-acc'},
@@ -8172,6 +8175,7 @@ const replsB = [
 {p1:/(\(noun\))(е)( )/ig,r2:'$1<br>$2 sin-dat-pre'},
 {p1:/(\(noun\))(и)( )/ig,r2:'$1<br>$2 plu-nom-acc,sin-gen'},
 {p1:/(\(noun\))(у)( )/ig,r2:'$1<br>$2 sin-dat-acc'},
+{p1:/(\(noun\))(о)( )/ig,r2:'$1<br>$2 sin-nom-acc'},
 {p1:/(\(noun\))(ь)( )/ig,r2:'$1<br>$2 sin-nom'},
 {p1:/(\(noun\))(ы)( )/ig,r2:'$1<br>$2 plu-nom-acc'},
 {p1:/(\(noun\))(ю)( )/ig,r2:'$1<br>$2 sin-dat'},
@@ -8205,7 +8209,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-У России есть информация, которая указывает на попытки взорвать газопроводы «Турецкий поток» и «Голубой поток» в Черном море, заявил Сергей Лавров «Стали патрулировать эти участки Черного моря», — отметил министр
+Мобилизацию давно называют на Украине «могилизацией», заявил Василий Небензя на заседании Совбеза ООН. «Большинство украинцев прекрасно понимают, что угроза для них исходит... от преступной политики режима Зеленского», — считает постпред.
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
