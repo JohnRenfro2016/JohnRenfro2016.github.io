@@ -795,6 +795,7 @@ const replsB = [
 {p1:/( )(переживани)/ig,r2:'$2 experience,emotional experience(noun)'},
 {p1:/( )(перекрещив)/ig,r2:'$2 intersect(verb)'},
 {p1:/( )(перелистыв)/ig,r2:'$2 leaf through(verb)'},
+{p1:/( )(газопровод)/ig,r2:'$2 gas main(noun)'},
 {p1:/( )(перемещени)/ig,r2:'$2 displacement,shifting(noun)'},
 {p1:/( )(переработк)/ig,r2:'$2 reworking(adjective)'},
 {p1:/( )(перестройк)/ig,r2:'$2 restructuring(adjective)'},
@@ -3511,7 +3512,7 @@ const replsB = [
 {p1:/( )(утрачив)/ig,r2:'$2 lose(verb)'},
 {p1:/( )(ухватыв)/ig,r2:'$2 seize(verb)'},
 {p1:/( )(уцелевш)/ig,r2:'$2 surviving(noun)'},
-{p1:/( )(участк)/ig,r2:'$2 plot of land,district(adjective)'},
+{p1:/( )(участк)/ig,r2:'$2 site(noun)'},
 {p1:/( )(учащийс)/ig,r2:'$2 student(noun)'},
 {p1:/( )(учебник)/ig,r2:'$2 textbook(noun)'},
 {p1:/( )(фабричн)/ig,r2:'$2 factory(noun)'},
@@ -4444,7 +4445,7 @@ const replsB = [
 {p1:/( )(помост)/ig,r2:'$2 platform,rostrum,scaffold(noun)'},
 {p1:/( )(понятн)/ig,r2:'$2 understandably,I see! I understand!(noun)'},
 {p1:/( )(попутн)/ig,r2:'$2 on the way,in passing(noun)'},
-{p1:/( )(попытк)/ig,r2:'$2 attempt(adjective)'},
+{p1:/( )(попытк)/ig,r2:'$2 attempt(noun)'},
 {p1:/( )(поравн)/ig,r2:'$2 draw level with,come up to(verb)'},
 {p1:/( )(поровн)/ig,r2:'$2 equally(noun)'},
 {p1:/( )(порожд)/ig,r2:'$2 beget,engender,generate(verb)'},
@@ -6059,6 +6060,7 @@ const replsB = [
 {p1:/( )(склад)/ig,r2:'$2 warehouse,store(noun)'},
 {p1:/( )(склон)/ig,r2:'$2 slope(noun)'},
 {p1:/( )(скопл)/ig,r2:'$2 accumulate(verb)'},
+{p1:/( )(поток)/ig,r2:'$2 stream(noun)'},
 {p1:/( )(скорб)/ig,r2:'$2 grief(noun)'},
 {p1:/( )(скоре)/ig,r2:'$2 quicker,rather(noun)'},
 {p1:/( )(скрип)/ig,r2:'$2 squeak,creak(noun)'},
@@ -8070,6 +8072,7 @@ const replsB = [
 
 {p1:/(\(noun\))(истов)( )/ig,r2:'$1<br>$2 +ist'},
 
+{p1:/(\(noun\))(иров)/ig,r2:'$1<br>$2 noun to(verb)'},
 {p1:/(\(verb\))(аны)( )/ig,r2:'$1<br>$2 +ions,+s,(gerund)verbs into nouns'},
 
 {p1:/(\(verb\))(явших)( )/ig,r2:'$1<br>$2 who appeared to do'},
@@ -8144,6 +8147,7 @@ const replsB = [
 
 {p1:/(\(noun\))(ями)( )/ig,r2:'$1<br>$2 plu-ins'},
 {p1:/(\(noun\))(ами)( )/ig,r2:'$1<br>$2 plu-ins'},
+{p1:/(\(noun\))(ого)( )/ig,r2:'$1<br>$2 sin-gen-acc'},
 
 {p1:/(\(noun\))(ам)( )/ig,r2:'$1<br>$2 plu-dat'},
 {p1:/(\(noun\))(ах)( )/ig,r2:'$1<br>$2 plu-pre'},
@@ -8201,7 +8205,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Премьер Эстонии предложила граничащим с Россией странам ввести против нее единое торговое эмбарго, сообщает ERR
+У России есть информация, которая указывает на попытки взорвать газопроводы «Турецкий поток» и «Голубой поток» в Черном море, заявил Сергей Лавров «Стали патрулировать эти участки Черного моря», — отметил министр
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
@@ -8215,7 +8219,7 @@ source:GazeteRU
 <span id="enteredWord"></span>
 <hr>
 <h3>Grammar Terms</h3>
-Match adjacent word suffix cases to determine the correct case of the words.
+Match adjacent word suffixes to determine the case of the words.
 <p>
 acc-(accusative case)(direct object)<br>
 ani-(animate)living things<br>
@@ -8228,6 +8232,6 @@ mas-(masculine)<br>
 neu-(neutral)<br>
 nom-(nominative case)as for(subject)<br>
 plu-(plural)+es,+s<br>
-pre-(prepositional)at, in, on<br>
+pre-(prepositional case)at, in, on<br>
 </body>
 </html>
