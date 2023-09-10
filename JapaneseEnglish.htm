@@ -1021,6 +1021,7 @@ const replsB = [
 {p1:/(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xa$2Xge-raise,give,improve$3X~RuVerb'},
 {p1:/(上)(?!X)(回)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xuwa$2Xmawa-exceed$3X~RuVerb'},
 {p1:/(下)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xsa$2Xga-go down$3X~RuVerb'},
+ {p1:/(ホ)(?!X)(テ)(?!X)(ル)(?!X)/g,r1:'$1Xho$2Xte$3Xru-hotel~Noun'},
 {p1:/(下)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xsag$2Xe-lower,turn down$3X~RuVerb'},
 {p1:/(下)(?!X)(さ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xku$2Xdasa-give,favor with$3X~RuVerb'},
 {p1:/(下)(?!X)(り)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xo$2Xri-go down,come down$3X~RuVerb'},
@@ -7376,7 +7377,7 @@ const replsB = [
 {p1:/(小)(?!X)/g,r1:'$1Xsyou,o,ko-small~Noun'},
 {p1:/(尾)(?!X)/g,r1:'$1Xo-tail~Noun'},
 {p1:/(局)(?!X)/g,r1:'$1Xkyoku-bureau~Noun'},
-{p1:/(居)(?!X)/g,r1:'$1Xi-there is an animate~IchidanVerb'},
+{p1:/(居|い)(?!X)/g,r1:'$1Xi-there is an animate　being~IchidanVerb'},
 {p1:/(屋)(?!X)/g,r1:'$1Xya-store~Noun'},
 {p1:/(屑)(?!X)/g,r1:'$1Xkuzu-waste,scraps~Noun'},
 {p1:/(層)(?!X)/g,r1:'$1X+sou,group~Noun'},
@@ -7406,7 +7407,7 @@ const replsB = [
 {p1:/(幅)(?!X)/g,r1:'$1Xhaba-width,breadth~Noun'},
 {p1:/(幌)(?!X)/g,r1:'$1Xhoro,poro-hood~Noun'},
 {p1:/(幕)(?!X)/g,r1:'$1Xmaku-curtain~Noun'},
-{p1:/(平)(?!X)/g,r1:'$1Xhei,pei,hira-plateau~Noun'},
+{p1:/(平)(?!X)/g,r1:'$1Xhei,pei,Hira-plateau~Noun'},
 {p1:/(年)(?!X)/g,r1:'$1Xnen-year~Noun'},
 {p1:/(幸)(?!X)/g,r1:'$1Xsaiwai-good luck~Noun'},
 {p1:/(幹)(?!X)/g,r1:'$1Xmiki,Gi,tree trunk~Noun'},
@@ -7498,7 +7499,7 @@ const replsB = [
 {p1:/(条)(?!X)/g,r1:'$1Xjyou-west and east~Noun'},
 {p1:/(来)(?!X)/g,r1:'$1Xku,ki-come,rai-next~IchidanVerb'},
 {p1:/(東)(?!X)/g,r1:'$1Xhigashi,Tou-east~Noun'},
-{p1:/(松)(?!X)/g,r1:'$1Xmatsu-highest,pine~Noun'},
+{p1:/(松)(?!X)/g,r1:'$1XMatsu-highest,pine~Noun'},
 {p1:/(板)(?!X)/g,r1:'$1Xita-board,plank~Noun'},
 {p1:/(枕)(?!X)/g,r1:'$1Xmakura-pillow~Noun'},
 {p1:/(林)(?!X)/g,r1:'$1Xhayashi-grove~Noun'},
@@ -8121,7 +8122,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-またしてもとてつもない激走を見せた。ブダペスト世界選手権の予選で14分37秒98の日本新を樹立して決勝に進み、8位入賞を成し遂げていた田中。5000mで初のDLに挑むと、自身の日本記録を約8秒更新して堂々3位に食い込んだ。この記録はアジア記録（14分28秒09）にあと約1秒に迫るアジア歴代2位となる。
+　１１日午前１時３５分頃、石川県白山市平松町のホテルで、「女性が首や胸から血を流して倒れている」と従業員から１１０番があった。女性は搬送先の病院で死亡が確認された。県警は殺人事件とみて捜査するとともに、女性と一緒に部屋にいたとみられる男の行方を追っている。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
