@@ -6180,6 +6180,9 @@ const replsB = [
 {p1:/(表)(?!X)(示)(?!X)/g,r1:'$1Xhyou$2Xji-demonstration display~Noun'},
 {p1:/(表)(?!X)(紙)(?!X)/g,r1:'$1Xhyou$2Xshi-cover,binding~Noun'},
 {p1:/(表)(?!X)(面)(?!X)/g,r1:'$1Xhyou$2Xmen-surface,appearance~Noun'},
+ {p1:/(総)(?!X)(務)(?!X)/g,r1:'$1Xsou$2Xmu-general affairs~Noun'},
+{p1:/(続)(?!X)(投)(?!X)/g,r1:'$1Xzoku$2Xtou-staying on~Noun'},
+ {p1:/(選)(?!X)(対)(?!X)/g,r1:'$1Xsen$2Xtai-election campaign~Noun'},
 {p1:/(被)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xkabu-wear,put on$2X~RuVerb'},
 {p1:/(被)(?!X)(告)(?!X)/g,r1:'$1Xhi$2Xkoku-defendant~Noun'},
 {p1:/(被)(?!X)(害)(?!X)/g,r1:'$1Xhi$2Xgai-damage~Noun'},
@@ -7140,6 +7143,7 @@ const replsB = [
 {p1:/(9|９|九)(?!X)/g,r1:'$1Xkyuu-nine~Noun'},
 {p1:/(?![ァ-ヾ]+)(カ)(?!X|[ァ-ヾ]+)/g,r1:'$2Xka-counter for things~Noun'},
 {p1:/(\()(?!X)/g,r1:'$1Xopen parenthesis~Punctuation~Noun'},
+{p1:/(\・)(?!X)/g,r1:'$1X-word separator~Punctuation~Noun'},
 {p1:/(\))(?!X)/g,r1:'$1Xclose parenthesis~Punctuation~Noun'},
 {p1:/(\.)(?!X)/g,r1:'$1Xten-decimal~Punctuation~Noun'},
 {p1:/(\（)(?!X)/g,r1:'$1Xopen parenthesis~Punctuation~Noun'},
@@ -7178,8 +7182,9 @@ const replsB = [
 {p1:/(人)(?!X)/g,r1:'$1Xnin,jin-counter for people,hito-person~Noun'},
 {p1:/(今)(?!X)/g,r1:'$1Xima,kon-now~Noun'},
 {p1:/(仏)(?!X)/g,r1:'$1Xhotoke-buddha,Buddhist image~Noun'},
-{p1:/(他)(?!X)/g,r1:'$1Xhoka,ta-other~Noun'},
-{p1:/(他)(?!X)/g,r1:'$1Xta-others,other things~Noun'},
+{p1:/(他)(?!X)/g,r1:'$1Xta-others~Noun'},
+{p1:/(渕)(?!X)/g,r1:'$1XBuchi-deep water~Noun'},
+{p1:/(優)(?!X)/g,r1:'$1XAi,Atsu,Yuu,tenderness,superiority~Noun'},
 {p1:/(付)(?!X)/g,r1:'$1Xtsuki-assistant;tsuke-date~Noun'},
 {p1:/(代)(?!X)/g,r1:'$1Xdai-era~Noun'},
 {p1:/(令)(?!X)/g,r1:'$1Xrei-order~Noun'},
@@ -8122,7 +8127,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-　１１日午前１時３５分頃、石川県白山市平松町のホテルで、「女性が首や胸から血を流して倒れている」と従業員から１１０番があった。女性は搬送先の病院で死亡が確認された。県警は殺人事件とみて捜査するとともに、女性と一緒に部屋にいたとみられる男の行方を追っている。
+　岸田首相（自民党総裁）は１３日に行う内閣改造・党役員人事で、小渕優子組織運動本部長（４９）を選挙対策委員長に起用する方向で調整に入った。森山裕選対委員長（７８）は総務会長に横滑りさせる案が有力だ。内閣の要である松野官房長官（６０）は続投させる意向を固めた。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
