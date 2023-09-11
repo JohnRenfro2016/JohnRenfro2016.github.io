@@ -1900,6 +1900,7 @@ const replsB = [
 {p1:/( )(лицемери)/ig,r2:'$2 hypocrisy(noun)'},
 {p1:/( )(логическ)/ig,r2:'$2 logical(adjective)'},
 {p1:/( )(лондонск)/ig,r2:'$2 London(adjective)'},
+{p1:/( )(поставля)/ig,r2:'$2 deliver,supply(verb)'},
 {p1:/( )(любопытн)/ig,r2:'$2 curiously(noun)'},
 {p1:/( )(максимум)/ig,r2:'$2 maximum(noun)'},
 {p1:/( )(мальчишк)/ig,r2:'$2 boy,small boy(adjective)'},
@@ -1952,7 +1953,7 @@ const replsB = [
 {p1:/( )(нарушени)/ig,r2:'$2 violation,offence(noun)'},
 {p1:/( )(насекомо)/ig,r2:'$2 insect(noun)'},
 {p1:/( )(мятежник)/ig,r2:'$2 rebel(noun)'},
-{p1:/( )(населенн)/ig,r2:'$2 inhabited(adjective)'},
+{p1:/( )(населен)/ig,r2:'$2 population(noun)'},
 {p1:/( )(наскольк)/ig,r2:'$2 how much,as much(adjective)'},
 {p1:/( )(насовсем)/ig,r2:'$2 for good,for ever(noun)'},
 {p1:/( )(настольк)/ig,r2:'$2 so much(adjective)'},
@@ -3221,7 +3222,6 @@ const replsB = [
 {p1:/( )(поспешн)/ig,r2:'$2 hastily(noun)'},
 {p1:/( )(посреди)/ig,r2:'$2 in the middle(noun)'},
 {p1:/( )(поставк)/ig,r2:'$2 delivery(adjective)'},
-{p1:/( )(поставл)/ig,r2:'$2 deliver,supply(verb)'},
 {p1:/( )(поселк)/ig,r2:'$2 settlement(adjective)'},
 {p1:/( )(потолк)/ig,r2:'$2 ceiling(adjective)'},
 {p1:/( )(потомк)/ig,r2:'$2 descendant(adjective)'},
@@ -5297,6 +5297,7 @@ const replsB = [
 {p1:/( )(жених)/ig,r2:'$2 fiancé(noun)'},
 {p1:/( )(женск)/ig,r2:'$2 female(adjective)'},
 {p1:/( )(жертв)/ig,r2:'$2 victim(noun)'},
+{p1:/( )(Африк)/ig,r2:'$2 Africa(noun)'},
 {p1:/( )(жестк)/ig,r2:'$2 harsh(adjective)'},
 {p1:/( )(живот)/ig,r2:'$2 belly,stomach(noun)'},
 {p1:/( )(живуч)/ig,r2:'$2 hardy,enduring(noun)'},
@@ -5837,7 +5838,8 @@ const replsB = [
 {p1:/( )(парус)/ig,r2:'$2 sail(noun)'},
 {p1:/( )(пасти)/ig,r2:'$2 graze,to shepherd(verb)'},
 {p1:/( )(певец)/ig,r2:'$2 singer(noun)'},
-{p1:/( )(певиц)/ig,r2:'$2 singer f(noun)'},
+{p1:/( )(певиц)/ig,r2:'$2 singer(noun)'},
+{p1:/( )(своей)/ig,r2:'$2 his(noun)'},
 {p1:/( )(пенси)/ig,r2:'$2 pension(noun)'},
 {p1:/( )(пепел)/ig,r2:'$2 ash,ashes(noun)'},
 {p1:/( )(перед)/ig,r2:'$2 transmit(verb)'},
@@ -8130,6 +8132,7 @@ const replsB = [
 {p1:/(\(verb\))(л)(а)( )/ig,r2:'$1<br>$2 did(past)<br>$3 she(third person) '},
 {p1:/(\(verb\))(л)(и)( )/ig,r2:'$1<br>$2 did(past)<br>$3 they(second person) '},
 {p1:/(\(verb\))(л)(о)( )/ig,r2:'$1<br>$2 he(third person)<br>$3 did(past)did '},
+{p1:/(\(noun\))(ию)( )/ig,r2:'$1<br>$2 sin-dat'},
 {p1:/(\(verb\))(ся)( )/ig,r2:'$1<br>$2 is done(passive) '},
 {p1:/(\(verb\))(ть)( )/ig,r2:'$1<br>$2(infinitive)to do '},
 {p1:/(\(verb\))(у)(т)( )/ig,r2:'$1<br>$2 they(second person)<br>$3 do(present) '},
@@ -8224,7 +8227,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Украина может получить истребители F-16 в феврале 2024 года, сообщает WSJ. Отмечается, что представители США гораздо сдержаннее в оценках и считают, что украинцы не будут готовы к боевым полетам на F-16, по крайней мере, до середины следующего года
+Денис Пушилин предложил Западу дать воду Африке вместо оружия Украине По его словам, поставляемое правительствами западных стран оружие «в основной своей массе наносит ущерб в первую очередь гражданскому населению»
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
