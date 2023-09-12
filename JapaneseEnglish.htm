@@ -128,6 +128,7 @@ const replsB = [
 {p1:/(お)(?!X)(っ)(?!X)(し)(?!X)(ゃ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xos$3Xs$4Xya-say$5X~RuVerb'},
 {p1:/(お)(?!X)(っ)(?!X)(し)(?!X)(ゃ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xos$3Xs$4Xya-say$5X~RuVerb'},
 {p1:/(く)(?!X)(た)(?!X)(び)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xku$3Xt$4Xabire-get tired,be worn out$5X~RuVerb'},
+{p1:/(リ)(?!X)(サ)(?!X)(イ)(?!X)(ク)(?!X)(ル)(?!X)/g,r1:'$1Xri$2Xsa$3Xi$4Xku$5Xru-recycling~Noun'},
 {p1:/(く)(?!X)(っ)(?!X)(付)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xku$3Xt$4Xtsuke-join,paste$5X~RuVerb'},
 {p1:/(ぶ)(?!X)(ら)(?!X)(下)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xbu$3Xr$4Xasaga-han-g down,dangle$5X~RuVerb'},
 {p1:/(ぶ)(?!X)(ら)(?!X)(下)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xbu$3Xr$4Xasage-han-g,suspend$5X~RuVerb'},
@@ -493,6 +494,7 @@ const replsB = [
 {p1:/(値)(?!X)(下)(?!X)(が)(?!X)(り)(?!X)/g,r1:'$1X$2Xne$3Xs$4Xagari-fall in price~Noun'},
 {p1:/(傷)(?!X)(付)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xkiz$2Xut$3Xsuke-wound,hurt$4X~RuVerb'},
 {p1:/(共)(?!X)(産)(?!X)(主)(?!X)(義)(?!X)/g,r1:'$1X$2Xky$3Xo$4Xusanshyugi-Communism~Noun'},
+{p1:/(シ)(?!X)(リ)(?!X)(ー)(?!X)(ズ)(?!X)/g,r1:'$1Xshi$2Xri$3Xi$4Xzu-series~Noun'},
 {p1:/(冷)(?!X)(え)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xhie$2Xko$3X-get colder$4X~MuVerb'},
 {p1:/(冷)(?!X)(や)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xhiy$2Xak$3Xa-tease,jeer$4X~SuVerb'},
 {p1:/(出)(?!X)(入)(?!X)(り)(?!X)(口)(?!X)/g,r1:'$1X$2X$3X$4Xde-iri-guchi,doorway,gateway~Noun'},
@@ -524,6 +526,7 @@ const replsB = [
 {p1:/(受)(?!X)(け)(?!X)(取)(?!X)(り)(?!X)/g,r1:'$1X$2Xuk$3Xe$4Xtori-receipt~Noun'},
 {p1:/(受)(?!X)(け)(?!X)(持)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,r1:'$1Xuke$2Xmo$3X-have charge of$4X~TsuVerb'},
 {p1:/(口)(?!X)(げ)(?!X)(ん)(?!X)(か)(?!X)/g,r1:'$1X$2Xku$3Xc$4Xhigenka-quarrel~Noun'},
+ {p1:/(ス)(?!X)(マ)(?!X)(ー)(?!X)(ト)(?!X)/g,r1:'$1Xsu$2Xma$3Xa$4Xto-smart~Noun'},
 {p1:/(可)(?!X)(愛)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xkaw$2Xai$3Xga-love,cherish$4X~RuVerb'},
 {p1:/(可)(?!X)(愛)(?!X)(ら)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1X$2Xka$3Xw$4Xaira-shi,lovely,charming$5X~IAdjective~Noun'},
 {p1:/(合)(?!X)(わ)(?!X)(せ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xa$2Xwa$3Xse-exchange$4X~RuVerb'},
@@ -553,6 +556,8 @@ const replsB = [
 {p1:/(引)(?!X)(き)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xhi$2Xki$3Xda$4Xshi-drawer,withdrawal~SuVerb'},
 {p1:/(引)(?!X)(き)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xhik$2Xid$3Xa-draw out$4X~SuVerb'},
 {p1:/(引)(?!X)(き)(?!X)(分)(?!X)(け)(?!X)/g,r1:'$1X$2Xhi$3Xk$4Xiwake-draw,drawn game~Noun'},
+ {p1:/(置)(?!X)(き)(?!X)(換)(?!X)(え)(?!X)/g,r1:'$1Xo$2Xki$3Xka$4Xe-change position~IchidanVerb'},
+ {p1:/(受)(?!X)(け)(?!X)(付)(?!X)(け)(?!X)/g,r1:'$1Xu$2Xke$3Xtsu$4Xke-receive~IchidanVerb'},
 {p1:/(引)(?!X)(き)(?!X)(取)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xhik$2Xit$3Xo-take over,take custody$4X~RuVerb'},
 {p1:/(引)(?!X)(き)(?!X)(揚)(?!X)(げ)(?!X)/g,r1:'$1Xhi$2Xki$3Xa$4Xge-pull up~IchidanVerb'},
 {p1:/(引)(?!X)(き)(?!X)(換)(?!X)(え)(?!X)/g,r1:'$1X$2Xhi$3Xk$4Xikae-exchange~IchidanVerb'},
@@ -1284,6 +1289,7 @@ const replsB = [
 {p1:/(喜)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xyor$2Xokoba-please,gladden$3X~SuVerb'},
 {p1:/(喫)(?!X)(茶)(?!X)(店)(?!X)/g,r1:'$1Xkissa$2Xte$3Xn-coffee shop,tea house,café~Noun'},
 {p1:/(嘘)(?!X)(つ)(?!X)(き)(?!X)/g,r1:'$1Xuso$2Xts$3Xuki-liar~Noun'},
+ {p1:/(ポ)(?!X)(ー)(?!X)(ト)(?!X)/g,r1:'$1Xpo$2Xo$3Xto-port~Noun'},
 {p1:/(四)(?!X)(つ)(?!X)(角)(?!X)/g,r1:'$1Xyotsuka$2Xdo$3X-street corner,intersection~Noun'},
 {p1:/(四)(?!X)(角)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xshi$2Xkaku-square,four-sided$3X~IAdjective~Noun'},
 {p1:/(回)(?!X)(り)(?!X)(道)(?!X)/g,r1:'$1Xmawarimi$2Xch$3Xi-rou-ndabout way,detour~Noun'},
@@ -1329,6 +1335,7 @@ const replsB = [
 {p1:/(外)(?!X)(国)(?!X)(語)(?!X)/g,r1:'$1Xgai$2Xko$3Xkugo-foreign language~Noun'},
 {p1:/(外)(?!X)(来)(?!X)(語)(?!X)/g,r1:'$1Xgai$2Xra$3Xigo-loanword,foreign word~Noun'},
 {p1:/(外)(?!X)(資)(?!X)(系)(?!X)/g,r1:'$1Xgai$2Xshi$3Xkei-foreign company~Noun'},
+ {p1:/(モ)(?!X)(デ)(?!X)(ル)(?!X)/g,r1:'$1Xmo$2Xde$3Xru-model~Noun'},
 {p1:/(多)(?!X)(国)(?!X)(間)(?!X)/g,r1:'$1Xta$2Xkoku$3Xkan-multilateral~Noun'},
 {p1:/(夜)(?!X)(明)(?!X)(け)(?!X)/g,r1:'$1Xyo$2Xa$3Xke-dawn~Noun'},
 {p1:/(大)(?!X)(い)(?!X)(に)(?!X)/g,r1:'$1Xoo$2Xin$3Xi-greatly~Noun'},
@@ -2011,6 +2018,7 @@ const replsB = [
 {p1:/(親)(?!X)(し)(?!X)(み)(?!X)/g,r1:'$1Xshi$2Xta$3Xshimi-intimacy,familiarity~Noun'},
 {p1:/(親)(?!X)(権)(?!X)(者)(?!X)/g,r1:'$1Xshin$2Xken$3Xsya-legal guardian~Noun'},
 {p1:/(解)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xtok$2Xe-solve,resolve$3X~RuVerb'},
+{p1:/(フ)(?!X)(ォ)(?!X)(ン)(?!X)/g,r1:'$1Xfu$2Xo$3Xn-phone~Noun'},
 {p1:/(触)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xfur$2Xe-touch$3X~RuVerb'},
 {p1:/(言)(?!X)(い)(?!X)(方)(?!X)/g,r1:'$1Xii$2Xka$3Xta-way of speaking,expression~Noun'},
 {p1:/(言)(?!X)(い)(?!X)(訳)(?!X)/g,r1:'$1Xiiw$2Xak$3Xe-apology,excuse~Noun'},
@@ -6305,7 +6313,10 @@ const replsB = [
 {p1:/(記)(?!X)(憶)(?!X)/g,r1:'$1Xki$2Xoku-memory,recollection~Noun'},
 {p1:/(記)(?!X)(者)(?!X)/g,r1:'$1Xki$2Xsya-reporter~Noun'},
 {p1:/(記)(?!X)(載)(?!X)/g,r1:'$1Xki$2Xsai-mentioned in a document~Noun'},
+{p1:/(汎)(?!X)(用)(?!X)/g,r1:'$1Xhan$2Xyou-all purpose~Noun'},
 {p1:/(記)(?!X)(述)(?!X)/g,r1:'$1Xki$2Xjyutsu-description~Noun'},
+{p1:/(端)(?!X)(子)(?!X)/g,r1:'$1Xtan$2Xshi-terminal~Noun'},
+{p1:/(充)(?!X)(電)(?!X)/g,r1:'$1Xjyuu$2Xden-charging~Noun'},
 {p1:/(記)(?!X)(録)(?!X)/g,r1:'$1Xki$2Xroku-record~Noun'},
 {p1:/(訪)(?!X)(れ)(?!X)/g,r1:'$1Xotozu$2Xre-visit~IchidanVerb'},
 {p1:/(訪)(?!X)(問)(?!X)/g,r1:'$1Xhou$2Xmon-visit~Noun'},
@@ -6417,6 +6428,8 @@ const replsB = [
 {p1:/(警)(?!X)(告)(?!X)/g,r1:'$1Xkei$2Xkoku-warning~Noun'},
 {p1:/(警)(?!X)(報)(?!X)/g,r1:'$1Xkei$2Xhou-alarm~Noun'},
 {p1:/(警)(?!X)(官)(?!X)/g,r1:'$1Xkei$2Xkan-police~Noun'},
+{p1:/(素)(?!X)(材)(?!X)/g,r1:'$1Xso$2Xzai-material~Noun'},
+{p1:/(観)(?!X)(点)(?!X)/g,r1:'$1Xkan$2Xten-perspective~Noun'},
 {p1:/(警)(?!X)(察)(?!X)/g,r1:'$1Xkei$2Xsatsu-police~Noun'},
 {p1:/(警)(?!X)(戒)(?!X)/g,r1:'$1Xkei$2Xkai-vigilance~Noun'},
 {p1:/(警)(?!X)(視)(?!X)/g,r1:'$1Xkei$2Xshi-police~Noun'},
@@ -8127,7 +8140,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-　岸田首相（自民党総裁）は１３日に行う内閣改造・党役員人事で、小渕優子組織運動本部長（４９）を選挙対策委員長に起用する方向で調整に入った。森山裕選対委員長（７８）は総務会長に横滑りさせる案が有力だ。内閣の要である松野官房長官（６０）は続投させる意向を固めた。
+　Appleは9月12日（米国太平洋夏時間）、新型スマートフォン「iPhone 15シリーズ」を発表した。今回の新モデルはサステナビリティーに配慮する観点からリサイクル素材の利用比率を引き上げた他、外部接続ポート兼充電端子を独自の「Lightning端子」から汎用（はんよう）規格である「USB Type-C」に置き換えたことが特徴だ。日本では9月15日21時から予約を受け付け、9月22日に発売される。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
