@@ -67,18 +67,6 @@ word-wrap:break-word;
 </head>
 <script>
 
-function enterWord()
-{
-const replsC =
-[
-{p1:/([а-яА-Яее\-])/g,r2:'$1'},
-];
-replsC.forEach(replace => {
- b = b.replace(replace.p1,replace.r2);
-});
-document.getElementById("enteredWord").innerHTML="{p1:/( )("+b+")/ig,r2:'$2 "+c+"'},";
-}
-
 function translateB()
 {
 
@@ -436,6 +424,7 @@ const replsB = [
 {p1:/( )(механизатор)/ig,r2:'$2 mechanization expert,machine servicer(noun)'},
 {p1:/( )(механизиров)/ig,r2:'$2 mechanize(verb)'},
 {p1:/( )(механически)/ig,r2:'$2 mechanically(noun)'},
+{p1:/( )(Еврокомисси)/ig,r2:'$2 European Commission(noun)'},
 {p1:/( )(министерств)/ig,r2:'$2 ministry(noun)'},
 {p1:/( )(многообрази)/ig,r2:'$2 diversity(noun)'},
 {p1:/( )(многообразн)/ig,r2:'$2 diverse(noun)'},
@@ -630,6 +619,7 @@ const replsB = [
 {p1:/( )(воинственн)/ig,r2:'$2 warlike(adjective)'},
 {p1:/( )(воображени)/ig,r2:'$2 imagination(noun)'},
 {p1:/( )(воротничк)/ig,r2:'$2 collar(adjective)'},
+{p1:/( )(регистраци)/ig,r2:'$2 registration(noun)'},
 {p1:/( )(восторженн)/ig,r2:'$2 enthusiastically(adjective)'},
 {p1:/( )(всевозможн)/ig,r2:'$2 all kinds of(noun)'},
 {p1:/( )(всесторонн)/ig,r2:'$2 thoroughly(adjective)'},
@@ -929,6 +919,7 @@ const replsB = [
 {p1:/( )(справочник)/ig,r2:'$2 reference book,guide(noun)'},
 {p1:/( )(старательн)/ig,r2:'$2 diligently,painstakingly(noun)'},
 {p1:/( )(стекольщик)/ig,r2:'$2 glazier(adjective)'},
+{p1:/( )(сосредоточ)/ig,r2:'$2 turn attention to(verb)'},
 {p1:/( )(странствов)/ig,r2:'$2 wander,travel(verb)'},
 {p1:/( )(строительн)/ig,r2:'$2 construction(noun)'},
 {p1:/( )(студенческ)/ig,r2:'$2 student(adjective)'},
@@ -5803,13 +5794,14 @@ const replsB = [
 {p1:/( )(отним)/ig,r2:'$2 take away(verb)'},
 {p1:/( )(относ)/ig,r2:'$2 take(verb)'},
 {p1:/( )(отнын)/ig,r2:'$2 henceforth(noun)'},
+{p1:/( )(следу)/ig,r2:'$2 abide by(verb)'},
 {p1:/( )(отнюд)/ig,r2:'$2 not at all(noun)'},
 {p1:/( )(отпир)/ig,r2:'$2 unlock(verb)'},
 {p1:/( )(отпор)/ig,r2:'$2 repulse,rebuff(noun)'},
 {p1:/( )(отраж)/ig,r2:'$2 reflect,repulse(verb)'},
 {p1:/( )(отрез)/ig,r2:'$2 cut(noun)'},
 {p1:/( )(отрек)/ig,r2:'$2 renounce(verb)'},
-{p1:/( )(смягч)/ig,r2:'$2 soften(verb)'},
+{p1:/( )(смягч)/ig,r2:'$2 ease,soften(verb)'},
 {p1:/( )(отриц)/ig,r2:'$2 deny(verb)'},
 {p1:/( )(отруб)/ig,r2:'$2 chop off(verb)'},
 {p1:/( )(отры)/ig,r2:'$2 tearing off,isolation(noun)'},
@@ -8213,6 +8205,7 @@ const replsB = [
 {p1:/(\(noun\))(ы)( )/ig,r2:'$1<br>$2 plu-nom-acc'},
 {p1:/(\(noun\))(ю)( )/ig,r2:'$1<br>$2 sin-dat'},
 {p1:/(\(noun\))(я)( )/ig,r2:'$1<br>$2 plu-nom-acc,sin-gen'},
+{p1:/(\(verb\))(е)( )/ig,r2:'$1<br>$2 noun form sin-pre'},
 {p1:/(\(noun\))(и)( )/ig,r2:'$1<br>$2 plu-nom-acc,sin-gen'},
 {p1:/(\(noun\))(й)( )/ig,r2:'$1<br>$2 plu-gen'},
 
@@ -8242,18 +8235,12 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-США могут поставить Киеву дальнобойные ракеты с кассетной боевой частью, пишет Reuters В Вашингтоне считают, что применяемые в последнее время ВСУ кассетные боеприпасы показали хорошую эффективность, а потому планируют передать оснащенные кассетной боевой частью GMLRS и ATACMS
+Еврокомиссия смягчила запрет на ввоз личных вещей для россиян Отмечается, что странам — членам ЕС следует сосредоточиться на исполнении положений о запрете на ввоз автомобилей с регистрацией в РФ
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
 <p>
 source:GazeteRU
-<hr>
-<h3>Admin Only Work Area</h3>
-<p>Enter a new Russian word. <input maxlength='80px' onChange='b=this.value;'type='field' size='40px'>
-<p>Enter the definition. <input maxlength='150px' onChange='c=this.value,enterWord();' type='field' size='40px' value='(noun)'>
-<p>
-<span id="enteredWord"></span>
 <hr>
 <h3>Grammar Terms</h3>
 Match adjacent word suffixes to determine the case of the words.
