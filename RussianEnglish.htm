@@ -1990,7 +1990,7 @@ const replsB = [
 {p1:/( )(несчастн)/ig,r2:'$2 unhappy(adjective)'},
 {p1:/( )(нетронут)/ig,r2:'$2 untouched(noun)'},
 {p1:/( )(неуловим)/ig,r2:'$2 elusive(noun)'},
-{p1:/( )(неуместн)/ig,r2:'$2 inappropriate,misplaced(noun)'},
+{p1:/( )(неуместн)/ig,r2:'$2 inappropriate,misplaced(adjective)'},
 {p1:/( )(неурядиц)/ig,r2:'$2 confusion(noun)'},
 {p1:/( )(неустанн)/ig,r2:'$2 tirelessly(adjective)'},
 {p1:/( )(неутомим)/ig,r2:'$2 tireless(noun)'},
@@ -2105,7 +2105,7 @@ const replsB = [
 {p1:/( )(поглядыв)/ig,r2:'$2 cast looks at(verb)'},
 {p1:/( )(поговорк)/ig,r2:'$2 saying,proverbial phrase(adjective)'},
 {p1:/( )(подвешив)/ig,r2:'$2 suspend(verb)'},
-{p1:/( )(поддержк)/ig,r2:'$2 support(adjective)'},
+{p1:/( )(поддержк)/ig,r2:'$2 support(noun)'},
 {p1:/( )(подмигив)/ig,r2:'$2 wink(verb)'},
 {p1:/( )(подозрев)/ig,r2:'$2 suspect(verb)'},
 {p1:/( )(подписыв)/ig,r2:'$2 sign(verb)'},
@@ -6234,6 +6234,7 @@ const replsB = [
 {p1:/( )(тяжел)/ig,r2:'$2 heavy(noun)'},
 {p1:/( )(убежд)/ig,r2:'$2 convince,persuade(verb)'},
 {p1:/( )(убийц)/ig,r2:'$2 murderer(noun)'},
+{p1:/( )(Борис)/ig,r2:'$2 Boris(noun)'},
 {p1:/( )(уборк)/ig,r2:'$2 tidying up,harvest(adjective)'},
 {p1:/( )(увлек)/ig,r2:'$2 carry away,fascinate,distract(verb)'},
 {p1:/( )(углуб)/ig,r2:'$2 deepening,depression,hollow(noun)'},
@@ -6730,6 +6731,7 @@ const replsB = [
 {p1:/( )(конн)/ig,r2:'$2 horse,equestrian(adjective)'},
 {p1:/( )(конч)/ig,r2:'$2 finish,graduate(verb)'},
 {p1:/( )(копи)/ig,r2:'$2 copy(noun)'},
+{p1:/( )(назв)/ig,r2:'$2 name(verb)'},
 {p1:/( )(корк)/ig,r2:'$2 crust,rind(adjective)'},
 {p1:/( )(корм)/ig,r2:'$2 fodder(noun)'},
 {p1:/( )(кофт)/ig,r2:'$2 blouse(noun)'},
@@ -7870,7 +7872,7 @@ const replsB = [
 {p1:/( )(тож)/ig,r2:'$2 too(noun)'},
 {p1:/( )(тк)/ig,r2:'$2 electric current(adjective)'},
 {p1:/( )(том)/ig,r2:'$2 volume(noun)'},
-{p1:/( )(тон)/ig,r2:'$2 tone,musical tone,colour tone,tint(noun)'},
+{p1:/( )(тон)/ig,r2:'$2 tone,musical tone,tint(noun)'},
 {p1:/( )(топ)/ig,r2:'$2 top(noun)'},
 {p1:/( )(она)( )/ig,r2:'$2 she(pronoun)'},
 {p1:/( )(тот)/ig,r2:'$2 that(noun)'},
@@ -8205,6 +8207,7 @@ const replsB = [
 {p1:/(\(noun\))(ы)( )/ig,r2:'$1<br>$2 plu-nom-acc'},
 {p1:/(\(noun\))(ю)( )/ig,r2:'$1<br>$2 sin-dat'},
 {p1:/(\(noun\))(я)( )/ig,r2:'$1<br>$2 plu-nom-acc,sin-gen'},
+{p1:/(\(verb\))(я)( )/ig,r2:'$1<br>$2 noun form plu-nom-acc,sin-gen'},
 {p1:/(\(verb\))(е)( )/ig,r2:'$1<br>$2 noun form sin-pre'},
 {p1:/(\(noun\))(и)( )/ig,r2:'$1<br>$2 plu-nom-acc,sin-gen'},
 {p1:/(\(noun\))(й)( )/ig,r2:'$1<br>$2 plu-gen'},
@@ -8235,7 +8238,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Еврокомиссия смягчила запрет на ввоз личных вещей для россиян Отмечается, что странам — членам ЕС следует сосредоточиться на исполнении положений о запрете на ввоз автомобилей с регистрацией в РФ
+Министр обороны Германии назвал неуместным тон заявлений Дмитрия Кулебы о ракетах Taurus «Я, честно говоря, считаю, что, когда речь идет о партнере, который после США оказывает самую большую поддержку, это было неуместно», — сказал Борис Писториус
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
