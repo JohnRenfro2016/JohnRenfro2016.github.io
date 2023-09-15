@@ -521,7 +521,7 @@ const replsB = [
 {p1:/(取)(?!X)(り)(?!X)(消)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xto$2Xri$3Xke-cancel$4X~SuVerb'},
 {p1:/(取)(?!X)(り)(?!X)(組)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xto$2Xri$3Xku-grapple$4X~MuVerb'},
 {p1:/(取)(?!X)(り)(?!X)(返)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xtor$2Xik$3Xae-take back,regain$4X~SuVerb'},
-{p1:/(受)(?!X)(け)(?!X)(入)(?!X)(れ)(?!X)/g,r1:'$1X$2Xuk$3Xe$4X-ire,reception~IchidanVerb'},
+{p1:/(受)(?!X)(け)(?!X)(入)(?!X)(れ)(?!X)/g,r1:'$1Xu$2Xke$3Xi$4Xre-reception~IchidanVerb'},
 {p1:/(受)(?!X)(け)(?!X)(取)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xu$2Xke$3Xto-accept$4X~RuVerb'},
 {p1:/(受)(?!X)(け)(?!X)(取)(?!X)(り)(?!X)/g,r1:'$1X$2Xuk$3Xe$4Xtori-receipt~Noun'},
 {p1:/(受)(?!X)(け)(?!X)(持)(?!X)(た|ち|つ|て|と|っ)(?!X)/g,r1:'$1Xuke$2Xmo$3X-have charge of$4X~TsuVerb'},
@@ -5335,6 +5335,8 @@ const replsB = [
 {p1:/(災)(?!X)(難)(?!X)/g,r1:'$1Xsai$2Xnan-misfortune~Noun'},
 {p1:/(炊)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xta-cook,boil$2X~KuVerb'},
 {p1:/(炊)(?!X)(事)(?!X)/g,r1:'$1Xsui$2Xji-cooking~Noun'},
+{p1:/(全)(?!X)(額)(?!X)/g,r1:'$1Xzen$2Xgaku-full amount~Noun'},
+{p1:/(公)(?!X)(費)(?!X)/g,r1:'$1Xkou$2Xhi-public expense~Noun'},
 {p1:/(炎)(?!X)(上)(?!X)/g,r1:'$1Xen$2Xjyou-going up in flames~Noun'},
 {p1:/(炎)(?!X)(上)(?!X)/g,r1:'$1Xen$2Xjyou-going up in flames~Noun'},
 {p1:/(炭)(?!X)(素)(?!X)/g,r1:'$1Xtan$2Xso-carbon~Noun'},
@@ -8144,7 +8146,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-読売新聞社は１３～１４日、緊急全国世論調査を実施した。岸田内閣の支持率は改造前の前回調査（８月２５～２７日）と同じ３５％で、前々回調査（７月２１～２３日）から３か月連続で、岸田内閣発足以来最低の支持率となった。不支持率は前回調査と同じ５０％だった。今回の内閣改造・自民党役員人事は政権浮揚につながらなかった。
+厚生労働省の感染症部会は15日、新型コロナウイルス感染症で全額公費負担だった治療薬の費用に10月以降、一部自己負担を求めることなどを確認した。冬場に向けて新たな感染拡大も考えられる中、医療機関は患者を受け入れ続けられるのか。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
