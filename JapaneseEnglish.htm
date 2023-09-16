@@ -89,6 +89,7 @@ const replsB = [
 
 {p1:/(あ)(?!X)(ち)(?!X)(ら)(?!X)(こ)(?!X)(ち)(?!X)(ら)(?!X)/g,r1:'$1Xa$2Xchi$3Xra$4Xko$5Xchi$6Xra-all over~Noun'},
 {p1:/(い)(?!X)(つ)(?!X)(の)(?!X)(ま)(?!X)(に)(?!X)(か)(?!X)/g,r1:'$1Xi$2Xtsu$3Xno$4Xma$5Xni$6Xka-before it is noticed~Noun'},
+{p1:/(も)(?!X)(う)(?!X)(い)(?!X)(い)(?!X)(か)(?!X)(い)(?!X)/g,r1:'$1Xmo$2Xu$3Xi$4Xi$5Xka$6Xi-one more time~Noun'},
 {p1:/(い)(?!X)(ら)(?!X)(っ)(?!X)(し)(?!X)(ゃ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2X$3X$4X$5Xirassya-come,go$6X~RuVerb'},
 {p1:/(お)(?!X)(目)(?!X)(に)(?!X)(掛)(?!X)(か)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2X$3X$4X$5Xomenikaka-meet,have honor of seeing$6X~RuVerb'},
 {p1:/(き)(?!X)(ょ)(?!X)(ろ)(?!X)(き)(?!X)(ょ)(?!X)(ろ)(?!X)/g,r1:'$1X$2X$3X$4X$5X$6Xkyorokyoro-look around~Noun'},
@@ -307,6 +308,7 @@ const replsB = [
 {p1:/(ご)(?!X)(く)(?!X)(ん)(?!X)(と)(?!X)/g,r1:'$1X$2X$3X$4Xin one gulp~Noun'},
 {p1:/(ご)(?!X)(ち)(?!X)(そ)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xgoc$2Xhi$3Xso-feast,treat$4X~UVerb'},
 {p1:/(ご)(?!X)(ま)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xgo$2Xmak$3Xa-deceive,evade$4X~SuVerb'},
+{p1:/(折)(?!X)(り)(?!X)(返)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xo$2Xri$3Xkae-double back$4X~SuVerb'},
 {p1:/(ご)(?!X)(ろ)(?!X)(ご)(?!X)(ろ)(?!X)/g,r1:'$1X$2Xru$3Xm$4Xble~Noun'},
 {p1:/(さ)(?!X)(っ)(?!X)(ぱ)(?!X)(り)(?!X)/g,r1:'$1X$2Xco$3Xm$4Xpletely-not at all~Noun'},
 {p1:/(さ)(?!X)(ま)(?!X)(ざ)(?!X)(ま)(?!X)/g,r1:'$1X$2Xsa$3Xm$4Xa-zama,all sorts of~Noun'},
@@ -6824,6 +6826,7 @@ const replsB = [
 {p1:/(重)(?!X)(役)(?!X)/g,r1:'$1Xjyuu$2X-yaku,executive~Noun'},
 {p1:/(重)(?!X)(点)(?!X)/g,r1:'$1Xjyuu$2X-ten,emphasis~Noun'},
 {p1:/(重)(?!X)(症)(?!X)/g,r1:'$1Xjyuu$2Xsyou-serious illness~Noun'},
+{p1:/(発)(?!X)(揮)(?!X)/g,r1:'$1Xhak$2Xki-show of power~Noun'},
 {p1:/(重)(?!X)(要)(?!X)/g,r1:'$1Xjyuu$2Xyou-essential~Noun'},
 {p1:/(重)(?!X)(視)(?!X)/g,r1:'$1Xjyuu$2X-shi,regarding as important~Noun'},
 {p1:/(重)(?!X)(量)(?!X)/g,r1:'$1Xjyuu$2X-ryou,weight~Noun'},
@@ -7583,7 +7586,6 @@ const replsB = [
 {p1:/(汗)(?!X)/g,r1:'$1Xase-sweat~Noun'},
 {p1:/(池)(?!X)/g,r1:'$1Xike-pond~Noun'},
 {p1:/(沖)(?!X)/g,r1:'$1XOki-open sea~Noun'},
-{p1:/(沖)(?!X)/g,r1:'$1Xoki-offshore~Noun'},
 {p1:/(沢)(?!X)/g,r1:'$1Xsawa,zawa-mountain stream,swamp~Noun'},
 {p1:/(油)(?!X)/g,r1:'$1Xabura-oil,animal oil~Noun'},
 {p1:/(治)(?!X)/g,r1:'$1Xji-government~Noun'},
@@ -7595,7 +7597,8 @@ const replsB = [
 {p1:/(注)(?!X)/g,r1:'$1Xcyuu-annotation~Noun'},
 {p1:/(泰)(?!X)/g,r1:'$1Xyasu-peaceful~Noun'},
 {p1:/(洋)(?!X)/g,r1:'$1Xyou-ocean~Noun'},
-{p1:/(津)(?!X)/g,r1:'$1Xzu,tsu,harbor~Noun'},
+{p1:/(那)(?!X)/g,r1:'$1Xna-what~Noun'},
+{p1:/(津)(?!X)/g,r1:'$1Xzu,tsu-harbor~Noun'},
 {p1:/(洲)(?!X)/g,r1:'$1Xsyuu,Zu,state~Noun'},
 {p1:/(派)(?!X)/g,r1:'$1Xha-faction~Noun'},
 {p1:/(浜)(?!X)/g,r1:'$1Xhama-beach~Noun'},
@@ -7654,7 +7657,7 @@ const replsB = [
 {p1:/(用)(?!X)/g,r1:'$1Xyou-things to do~Noun'},
 {p1:/(田)(?!X)/g,r1:'$1Xta,da,rice field~Noun'},
 {p1:/(甲)(?!X)/g,r1:'$1XKou,shell~Noun'},
-{p1:/(男)(?!X)/g,r1:'$1Xotoko,an,male~Noun'},
+{p1:/(男)(?!X)/g,r1:'$1Xotoko,an,O-male~Noun'},
 {p1:/(町)(?!X)/g,r1:'$1Xmachi,Chou-city quarter~Noun'},
 {p1:/(界)(?!X)/g,r1:'$1Xkai-world~Noun'},
 {p1:/(畑)(?!X)/g,r1:'$1Xhatake-field,vegetable garden~Noun'},
@@ -8146,7 +8149,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-厚生労働省の感染症部会は15日、新型コロナウイルス感染症で全額公費負担だった治療薬の費用に10月以降、一部自己負担を求めることなどを確認した。冬場に向けて新たな感染拡大も考えられる中、医療機関は患者を受け入れ続けられるのか。
+公明党の山口那津男代表は16日、鹿児島市で講演し、衆院解散・総選挙に向けた準備を加速させる考えを示した。10月に衆院議員の任期を折り返すと「政治が動いていく」と指摘。その上で「岸田文雄首相から『もういいかい』と言われたときに『まだ』と答えているようでは、首相も解散しづらい。呼吸を合わせて力を発揮したい」と強調した。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
