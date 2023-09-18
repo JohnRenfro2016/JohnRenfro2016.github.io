@@ -238,6 +238,7 @@ const replsB = [
 {p1:/(う)(?!X)(き)(?!X)(う)(?!X)(き)(?!X)/g,r1:'$1X$2Xuk$3Xi$4Xugi-feel excited~Noun'},
 {p1:/(う)(?!X)(っ)(?!X)(か)(?!X)(り)(?!X)/g,r1:'$1X$2Xuk$3Xk$4Xari-carelessly,accidentally~Noun'},
 {p1:/(う)(?!X)(つ)(?!X)(む)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xuts$2Xum$3Xu-face downward$4X~KuVerb'},
+{p1:/(食)(?!X)(い)(?!X)(止)(?!X)(め)(?!X)/g,r1:'$1Xku$2Xi$3Xto$4Xme-stem~IchidanVerb'},
 {p1:/(う)(?!X)(な)(?!X)(ず)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xuna$2Xzu$3X-nod$4X~KuVerb'},
 {p1:/(う)(?!X)(ろ)(?!X)(う)(?!X)(ろ)(?!X)/g,r1:'$1X$2Xur$3Xo$4Xuro-wander~Noun'},
 {p1:/(お)(?!X)(し)(?!X)(ゃ)(?!X)(れ)(?!X)/g,r1:'$1X$2Xos$3Xh$4Xyare-dressing up smartly,trendy~Noun'},
@@ -1431,6 +1432,7 @@ const replsB = [
 {p1:/(工)(?!X)(学)(?!X)(部)(?!X)/g,r1:'$1Xkou$2Xgaku$3Xbu-department of engineering~Noun'},
 {p1:/(左)(?!X)(利)(?!X)(き)(?!X)/g,r1:'$1Xhidarik$2Xik$3Xi-left-handedness,left-hander~Noun'},
 {p1:/(市)(?!X)(役)(?!X)(所)(?!X)/g,r1:'$1Xshi$2Xyaku$3Xsyo-city hall~Noun'},
+{p1:/(手)(?!X)(立)(?!X)(て)(?!X)/g,r1:'$1Xte$2Xda$3Xte-by means of~Noun'},
 {p1:/(常)(?!X)(態)(?!X)(化)(?!X)/g,r1:'$1Xjyou$2Xtai$3Xka-normalization~Noun'},
 {p1:/(幅)(?!X)(広)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xhaba$2Xbiro-wide,broad$3X~IAdjective~Noun'},
 {p1:/(平)(?!X)(た)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xhir$2Xata-flat,level$3X~IAdjective~Noun'},
@@ -1798,6 +1800,7 @@ const replsB = [
 {p1:/(片)(?!X)(付)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xka$2Xtazu-be put in order,be settled$3X~KuVerb'},
 {p1:/(片)(?!X)(仮)(?!X)(名)(?!X)/g,r1:'$1Xka$2Xtak$3Xana-katakana~Noun'},
 {p1:/(物)(?!X)(凄)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xmon$2Xosugo-tremendous$3X~IAdjective~Noun'},
+{p1:/(ま)(?!X)(と)(?!X)(め)(?!X)/g,r1:'$1X$2Xma$3Xto$3Xme-collect~IchidanVerb'},
 {p1:/(物)(?!X)(差)(?!X)(し)(?!X)/g,r1:'$1Xmono$2Xsa$3Xshi-ruler~Noun'},
 {p1:/(物)(?!X)(知)(?!X)(り)(?!X)/g,r1:'$1Xmono$2Xsh$3Xiri-knowledgeable person,know-it-all~Noun'},
 {p1:/(物)(?!X)(覚)(?!X)(え)(?!X)/g,r1:'$1Xmono$2Xob$3Xoe-memory~Noun'},
@@ -5204,6 +5207,7 @@ const replsB = [
 {p1:/(活)(?!X)(字)(?!X)/g,r1:'$1Xkatsu$2Xji-printed type~Noun'},
 {p1:/(活)(?!X)(性)(?!X)/g,r1:'$1Xkas$2Xsei-active~Noun'},
 {p1:/(活)(?!X)(用)(?!X)/g,r1:'$1Xkatsu$2Xyou-utilization~Noun'},
+{p1:/(捉)(?!X)(え)(?!X)/g,r1:'$1Xtora$2Xe-catch,grasp the meaning~IchidanVerb'},
 {p1:/(活)(?!X)(発)(?!X)/g,r1:'$1Xkap$2Xpatsu-lively~Noun'},
 {p1:/(活)(?!X)(躍)(?!X)/g,r1:'$1Xkatsu$2Xyaku-activity~Noun'},
 {p1:/(派)(?!X)(手)(?!X)/g,r1:'$1Xha$2Xde-showy,flashy~Noun'},
@@ -6051,6 +6055,7 @@ const replsB = [
 {p1:/(臨)(?!X)(時)(?!X)/g,r1:'$1Xrin$2Xji-temporary~Noun'},
 {p1:/(自)(?!X)(ら)(?!X)/g,r1:'$1Xmizuka$2Xra-oneself~Noun'},
 {p1:/(自)(?!X)(主)(?!X)/g,r1:'$1Xji$2Xsyu-autonomy~Noun'},
+{p1:/(離)(?!X)(職)(?!X)/g,r1:'$1Xri$2Xsyoku-leaving the job~Noun'},
 {p1:/(自)(?!X)(体)(?!X)/g,r1:'$1Xji$2Xtai-oneself~Noun'},
 {p1:/(自)(?!X)(信)(?!X)/g,r1:'$1Xji$2Xshin-self-confidence~Noun'},
 {p1:/(自)(?!X)(分)(?!X)/g,r1:'$1Xji$2Xbun-self,oneself~Noun'},
@@ -8151,7 +8156,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-【北京＝大木聖馬、ワシントン＝田島大志】米中両政府は１７日、米国のジェイク・サリバン国家安全保障担当大統領補佐官と中国の王毅（ワンイー）外相（共産党政治局員）が１６～１７日、地中海の島国マルタで会談したと発表した。米中関係やロシアによるウクライナ侵略、朝鮮半島やアジア太平洋の情勢について議論し、両国間のハイレベル交流を維持していくことなどで一致した。
+政府は今年度、会社員が親などの介護で離職するのを防ぐ手立てを、企業向けの指針（ガイドライン）としてまとめる。介護を家族内の問題だけではなく、企業の経営上の課題と捉え、社員向けの相談窓口を設置するといった具体的な支援体制を盛り込む。両立支援のノウハウが少ない会社で、介護離職が増えるのを食い止める。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
