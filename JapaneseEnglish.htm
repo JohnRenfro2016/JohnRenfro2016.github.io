@@ -405,7 +405,7 @@ const replsB = [
 {p1:/(の)(?!X)(ん)(?!X)(び)(?!X)(り)(?!X)/g,r1:'$1X$2Xta$3X$4Xke it easy~Noun'},
 {p1:/(の|飲)(?!X)(み)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xno$2Xmi$3Xko-gulp down$4X~MuVerb'},
 {p1:/(食)(?!X)(い)(?!X)(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xku$2Xi$3Xko-cut into$4X~MuVerb'},
-{p1:/(は)(?!X)(っ)(?!X)(き)(?!X)(り)(?!X)/g,r1:'$1X$2Xcl$3Xe$4Xarly~Noun'},
+{p1:/(は)(?!X)(っ)(?!X)(き)(?!X)(り)(?!X)/g,r1:'$1Xha$2Xk$3Xki$4Xri-clearly~Noun'},
 {p1:/(は)(?!X)(み)(?!X)(出)(?!X)(し)(?!X)/g,r1:'$1X$2Xha$3Xm$4Xidashi,stick out~Noun'},
 {p1:/(ば)(?!X)(か)(?!X)(ら)(?!X)(し)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1X$2Xba$3Xk$4Xara-shi,stupid,useless$5X~IAdjective~Noun'},
 {p1:/(ば)(?!X)(ら)(?!X)(ば)(?!X)(ら)(?!X)/g,r1:'$1X$2Xse$3Xp$4Xarately~Noun'},
@@ -477,6 +477,7 @@ const replsB = [
 {p1:/(一)(?!X)(生)(?!X)(懸)(?!X)(命)(?!X)/g,r1:'$1X$2Xis$3Xs$4Xhyoukenmei-for life,with all one\'s might~Noun'},
 {p1:/(下|く)(?!X)(だ)(?!X)(さ)(?!X)(い)(?!X)/g,r1:'$1X$2Xku$3Xda$4Xsai-please~Noun'},
 {p1:/(不)(?!X)(動)(?!X)(産)(?!X)(屋)(?!X)/g,r1:'$1X$2Xfu$3Xd$4Xousanya-real estate agent,realtor~Noun'},
+{p1:/(切)(?!X)(り)(?!X)(分)(?!X)(け)(?!X)/g,r1:'$1Xki$2Xri$3Xwa$4Xke-isolate~IchidanVerb'},
 {p1:/(久)(?!X)(し)(?!X)(ぶ)(?!X)(り)(?!X)/g,r1:'$1Xhisa$2Xshi$3Xbu$4Xri-after a long time~Noun'},
 {p1:/(乗)(?!X)(り)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xnor$2Xid$3Xa-lean forward,embark on$4X~SuVerb'},
 {p1:/(乗)(?!X)(り)(?!X)(越)(?!X)(え)(?!X)/g,r1:'$1X$2Xno$3Xr$4Xi-koe,surpass~IchidanVerb'},
@@ -1654,6 +1655,7 @@ const replsB = [
 {p1:/(枠)(?!X)(組)(?!X)(み)(?!X)/g,r1:'$1Xwaku$2Xgu$3Xmi-framework~Noun'},
 {p1:/(枯)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xkar$2Xe-wither,die$3X~RuVerb'},
 {p1:/(染)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xsom$2Xe-dye,color$3X~RuVerb'},
+{p1:/(チ)(?!X)(タ)(?!X)(ン)(?!X)/g,r1:'$1Xchi$2Xta$3Xn-titanium~Noun'},
 {p1:/(柔)(?!X)(ら)(?!X)(か)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xyaw$2Xa$3Xraka-soft$4X~IAdjective~Noun'},
 {p1:/(柔)(?!X)(ら)(?!X)(か)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xyaw$2Xa$3Xraka-soft,gen-tle$4X~IAdjective~Noun'},
 {p1:/(柔)(?!X)(ら)(?!X)(か)(?!X)/g,r1:'$1Xyaw$2Xa$3Xraka-soft,tender,gentle~Noun'},
@@ -4018,7 +4020,7 @@ const replsB = [
 {p1:/(巨)(?!X)(大)(?!X)/g,r1:'$1Xkyo$2Xdai-huge~Noun'},
 {p1:/(巨)(?!X)(額)(?!X)/g,r1:'$1Xkyo$2Xgaku-huge sum~Noun'},
 {p1:/(差)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xsa-open (an umbrella)$2X~SuVerb'},
-{p1:/(差)(?!X)(別)(?!X)/g,r1:'$1Xsa$2Xbetsu-discrimination~Noun'},
+{p1:/(差)(?!X)(別)(?!X)/g,r1:'$1Xsa$2Xbetsu-discrimination,difference~Noun'},
 {p1:/(巻)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xma-roll up,wind,wrap$2X~KuVerb'},
 {p1:/(市)(?!X)(内)(?!X)/g,r1:'$1Xshi$2Xnai-in city~Noun'},
 {p1:/(市)(?!X)(場)(?!X)/g,r1:'$1Xichi$2Xba-market~Noun'},
@@ -5152,6 +5154,7 @@ const replsB = [
 {p1:/(決)(?!X)(着)(?!X)/g,r1:'$1Xkec$2Xcyaku-settlement~Noun'},
 {p1:/(決)(?!X)(算)(?!X)/g,r1:'$1Xkes$2Xsan-financial reporting~Noun'},
 {p1:/(決)(?!X)(裁)(?!X)/g,r1:'$1Xkes$2Xsai-approval of penalty~Noun'},
+{p1:/(望)(?!X)(遠)(?!X)/g,r1:'$1Xbou$2Xen-zoom~Noun'},
 {p1:/(決)(?!X)(議)(?!X)/g,r1:'$1Xke$2Xtsugi-resolution~Noun'},
 {p1:/(決)(?!X)(選)(?!X)/g,r1:'$1Xkes$2Xsen-election run-off~Noun'},
 {p1:/(汽)(?!X)(車)(?!X)/g,r1:'$1Xki$2Xsya-train~Noun'},
@@ -6710,6 +6713,7 @@ const replsB = [
 {p1:/(進)(?!X)(出)(?!X)/g,r1:'$1Xshin$2Xsyutsu-advancement~Noun'},
 {p1:/(進)(?!X)(学)(?!X)/g,r1:'$1Xshin$2Xgaku-entering a higher grade school~Noun'},
 {p1:/(進)(?!X)(展)(?!X)/g,r1:'$1Xshin$2Xten-progress~Noun'},
+{p1:/(合)(?!X)(金)(?!X)/g,r1:'$1Xgou$2Xkin-alloy~Noun'},
 {p1:/(進)(?!X)(歩)(?!X)/g,r1:'$1Xshin$2Xpo-progress,advancement~Noun'},
 {p1:/(進)(?!X)(行)(?!X)/g,r1:'$1Xshin$2Xkou-advancement~Noun'},
 {p1:/(進)(?!X)(路)(?!X)/g,r1:'$1Xshin$2Xro-course,route~Noun'},
@@ -7411,7 +7415,7 @@ const replsB = [
 {p1:/(小)(?!X)/g,r1:'$1Xsyou,o,ko-small~Noun'},
 {p1:/(尾)(?!X)/g,r1:'$1Xo-tail~Noun'},
 {p1:/(局)(?!X)/g,r1:'$1Xkyoku-bureau~Noun'},
-{p1:/(居|い)(?!X)/g,r1:'$1Xi-there is an animate　being~IchidanVerb'},
+{p1:/(居|い)(?!X)/g,r1:'$1Xi-+ing continuous verb;there is an animate being~IchidanVerb'},
 {p1:/(屋)(?!X)/g,r1:'$1Xya-store~Noun'},
 {p1:/(屑)(?!X)/g,r1:'$1Xkuzu-waste,scraps~Noun'},
 {p1:/(層)(?!X)/g,r1:'$1X+sou,group~Noun'},
@@ -8156,14 +8160,14 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-政府は今年度、会社員が親などの介護で離職するのを防ぐ手立てを、企業向けの指針（ガイドライン）としてまとめる。介護を家族内の問題だけではなく、企業の経営上の課題と捉え、社員向けの相談窓口を設置するといった具体的な支援体制を盛り込む。両立支援のノウハウが少ない会社で、介護離職が増えるのを食い止める。
+特に昨年以降、iPhoneは「価格を抑えたスタンダードな性能のライン」と、「高性能プロセッサー＋望遠カメラを搭載する、最新最強のProライン」の切り分けが明確になってきた。特に今年は、インターフェースが「USB-C」に変わり、プロセッサーが3nm世代になり、さらには素材がチタン合金になって、「Proラインの差別化」がはっきりしている。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
 <hr>
 <h3>Admin Only Work Area</h3>
 <p>Enter a new Japanese word. <input maxlength='80px' onChange='b=this.value'type='field' size='40px'>
-<p>Enter the definition. <input  maxlength='80px' onChange='c=this.value,enterWord();' type='field' size='40px' value='$1X$2X$3X$4X$5X-~Noun'>
+<p>Enter the definition. <input maxlength='80px' onChange='c=this.value,enterWord();' type='field' size='40px' value='$1X$2X$3X$4X$5X-~Noun'>
 <p>
 <span id="enteredWord"></span>
 <h3>Memorizing Kanji</h3>
