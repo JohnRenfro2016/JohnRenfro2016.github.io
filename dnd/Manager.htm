@@ -57,7 +57,7 @@ word-break:break-word;
 .piece
 {background-color:inherit;
 border:1px;
-border-color:#333b2f;
+border-color:#f2d428;
 border-style:solid;
 border-radius:4px;
 font-family: 'MyKidsHandwritten';
@@ -2040,182 +2040,7 @@ this.setSkills('any 3 skills');
 this.setSpellAbility('cha')}
 if(this.class.match(/Cleric/))
 
-{if(this.class.match(/Arcana/))
-{a="@1st(Arcana Domain)(Extra Spells)<b onClick='DetectMagic()'>Detect Magic, <b onClick='MagicMissile()'>Magic Missile<p>(Bonus Proficiencies)Arcana+pro2 Cantrips from the Wizard list</td></tr><tr><td>@2nd(Channel Divinity)<p>(Arcane Abjuration)1CD 1act 1 celestial, elemental, fey, or fiend within 30ft must save or be turned for 1 min or until damaged, must dash away, no reacts@5th, you banish the 1/2CR being for 1min,@8th 1CR@11th 2CR@14th 3CR@17th 4CR<p>";
-b="@3rd(Extra Spells)<b onClick='MagicWeapon()'>Magic Weapon, <b onClick='NystulsMagicAura()'>Nystul s Magic Aura";
-c="@5th(Extra Spells)<b onClick='DispelMagic()'>Dispel Magic, <b onClick='MagicCircle()'>Magic Circle</td></tr><tr><td>@6th(Spell Breaker)when healing ally, end one spell on the ally of the same spell,lvlas your healing spell slot or lower</td></tr><tr><td>7th(Extra Spells)<b onClick='ArcaneEye()'>Arcane Eye, <b onClick='LeomundsSecretChest()'>Leomund s Secret Chest</td></tr><tr><td>@8th(Potent Spellcasting)your cantrip damage+wisMod</td></tr><tr><td>@9th(Extra Spells)<b onClick='PlanarBinding()'>Planar Binding, <b onClick='TeleportationCircle()'>Teleportation Circle";
-dx="@17th(Arcane Mastery)choose one 6th, one 7th, one 8th, one 9th,lvlwizard spells to your domain spell list"
-}
-if(this.class.match(/Death/))
-{a="@1st(Death Domain Spells)<b onClick='FalseLife()'>False Life, <b onClick='RayOfSickness()'>Ray of Sickness</td></tr><tr><td>@1st(Bonus Proficiencies)martialwpns</td></tr><tr><td>@1st(Reaper)learn 1 necrom cantrip from any class list and tgt 2 adjac</td></tr><tr><td>@2nd(Channel Divinity Touch of Death)melee attack +5+1/2class,lvlnecro damage";
-b="@3rd(Death Domain Spells)<b onClick='BlindnessDeafness()'>Blindness Deafness, <b onClick='RayOfEnfeeblement()'>Ray of Enfeeblement";
-c="@5th(Death Domain Spells)<b onClick='AnimateDead()'>Animate Dead, <b onClick='VampiricTouch()'>Vampiric Touch</td></tr><tr><td>@6th(Inescapable Destruction)your necrotic attack s ignore resistance</td></tr><tr><td>@7th(Death Domain Spells)<b onClick='Blight()'>Blight, <b onClick='DeathWard()'>Death Ward</td></tr><tr><td>@8th(Divine Strike),@8th melee attack +1d8 necrotic damage @14th melee attack +2d8 necrotic damage</td></tr><tr><td>@9th(Death Domain Spells)<b onClick='AntilifeShell()'>Antilife Shell, <b onClick='Cloudkill()'>Cloudkill";
-dx="@17th(Improved Reaper)1st thru 5th necro spells can tgt 2 adjac"
-}
-if(this.class.match(/Forge/)){a="@1st(Forge Domain)(Extra Spells)<b onClick='Identify()'>Identify, <b onClick='SearingSmite()'>Searing Smite</td></tr><tr><td>@1st(Bonus Proficiencies)heavy armor smith s tools</td></tr><tr><td>@1st(Blessings of the Forge)turn 1 wpn or 1 armor into a+1 magical item permanently/long rest</td></tr><tr><td>@2nd(Artisan s Blessing)1CD 1hr ritual construct 1 wpn or 1 suit of armor or 10 ammo or tools, must be metal and under 100gp";
-b="@3rd(Forge Domain)(Extra Spells)<b onClick='HeatMetal()'>HeatMetal, <b onClick='MagicWeapon()'>Magic Weapon";
-c="@5th(Forge Domain)(Extra Spells)<b onClick='ElementalWeapon()'>Elemental wpn, <b onClick='ProtectionFromEnergy()'>Protection from Energy</td></tr><tr><td>@6th(Soul of the Forge)resistance fire damage heavy armor AC+1</td></tr><tr><td>7th(Forge Domain)(Extra Spells)<b onClick='Fabricate()'>Fabricate, <b onClick='WallOfFire()'>Wall of Fire</td></tr><tr><td>@8th(Divine Strike)xtra 1d8 fire damage @14th 2d8</td></tr><tr><td>@9th(Forge Domain)(Extra Spells)<b onClick='AnimateObject()'>Animate Object, <b onClick='Creation()'>Creation";
-dx="@17th(Saint of Forge and Fire)immune fire damage heavy armor resist bludgeoning , pierc, slashing from non-magicalwpns"
-}
-if(this.class.match(/Grave/)){a="@1st1(Grave Domain Spells)<b onClick='Bane()'>Bane, <b onClick='FalseLife()'>False Life</td></tr><tr><td>@1st(Circle of Mortality)restore 0hp allies with max dice number</td></tr><tr><td>@1st(Eyes of the Grave)detect undead 60ft-radi utteo your nt 1 to wis mod times/long rest</td></tr><tr><td>@2nd(Path to the Grave)1CD 1act ion 30ft,1tgt vulnerable damage utteo your nt";
-b="@3rd(Grave Domain Spells)<b onClick='GentleRepose()'>Gentle Repose, <b onClick='RayOfEnfeeblement()'>Ray of Enfeeblement";
-c="@5th(Grave Domain Spells)<b onClick='revivify()'>Revivify, <b onClick='VampiricTouch()'>Vampiric Touch</td></tr><tr><td>@6th(Sentinel @Death s Door)1ally 30ft turn crit hit into normal hit and no crit effects 1 to wis mod times/long rest</td></tr><tr><td>@8th(Potent Spellcasting)cantrip damage+wis mod</td></tr><tr><td>@9th(Grave Domain Spells)<b onClick='AntilifeShell()'>Antilife Shell, <b onClick='RaiseDead()'>Raise Dead";
-dx="@17th(Keeper of Souls)1tgt dies 60ft, you transfer tgt s hitdice to heal ally recharge ttsoynt"
-}
-if(this.class.match(/Knowledge/)){a="@1st(Blessings of Knowledge)2 languages, 2 skills+pro from Arcana, History, Nature or Religion</td></tr><tr><td>@1st<b onClick=Command()>Command @1st<b onClick=Identify()>Identify</td></tr><tr><td>@2nd(Knowledge of the Ages)1CD, 1act,60ft vsWis or read surface thoughts and Suggestion 1min";
-b="@3rd[x]Augury ,@3rd[x]Suggestion";
-c="@5th[x]Nondetection @5th[x]Speak with Dead</td></tr><tr><td>@6th.READ THOUGHTS 1/1 1CD, 1act,60ft, vsWis or read surface thoughts, 10/10turns, Suggestion, no slot cost no save</td></tr><tr><td>@7th[x]Arcane Eye @7th[x]Confusion</td></tr><tr><td>@8th.POTENT SPELL CASTING cantrip damage+wisMod</td></tr><tr><td>@9th[x]Legend Lore @9th<b onClick=Scrying()>Scrying";
-dx="@17th.VISIONS OF THE PAST 1/1/long rest, touch, wisScore is min, info on recent events"
-}
-if(this.class.match(/Cleric\,\sLife/)){a="@1st(Bonus Proficiency)heavy armor</td></tr><tr><td>@1st(Disciple of Life)healing prayers get+2+spell lvl</td></tr><tr><td>@1st(Extra Spells)<b onClick=Bless()>Bless, <b onClick=CureWounds()>Cure Wounds</td></tr><tr><td>@2nd(Preserve Life)1CD, 1act,30ft, heal 5x,lvlallies max half maxhp, less undead and constructs";
-
-b="@3rd(Extra Spells)<b onClick='LesserRestoration()'>Lesser Restoration, <b onClick=SpiritualWeapon()>Spiritual Weapon</td></tr>";
-c="@5th(Extra Spells)<b onClick='BeaconOfHope()'>Beacon of Hope, <b onClick=Revivify()>Revivify</td></tr><tr><td>@6th(Blessed Healer)when healing, you heal yourself 2+spell lvl</td></tr><tr><td>@7th(Extra Spells)<b onClick='DeathWard()'>Death Ward, <b onClick='GuardianOfFaith()'>Guardian of Faith</td></tr><tr><td>@8th(Divine Strike)1/turn wpn damage+1d8 radiant @14th+2d8)</td></tr><tr><td>@9th(Extra Spells)<b onClick=MassCureWounds()>Mass Cure Wounds,<b onClick=RaiseDead()>Raise Dead";
-dx="@17th(Supreme Healing)heal max roll"
-}
-if(this.class.match(/Light/)){a="@1st.BONUS CANTRIP Light, if know, other cantrip</td></tr><tr><td>@1st(Warding Flare)(wisMod/wisMod)/long rest, when attack d, 30ft, react attack d @DisAdv</td></tr><tr><td>@1st[x]Burning Hands</td></tr><tr><td>@1st[x]Faerie Fire</td></tr><tr><td>@2nd.RADIANCE OF THE DAWN 1CD 30ft Darkness dispelled DC8wis+pro vsCon 1/2damage,less full cover radiant 2d10+c lvl";
-b="@3rd[x]Flaming Sphere ,@3rd[x]Scorching Ray";
-c="@5th[x]Daylight @5th<b onClick='Fireball()'>Fireball</td></tr><tr><td>@6th.IMPROVED FLARE use for allies</td></tr><tr><td>@7th<b onClick='GuardianOfFaith()'>Guardian of Faith @7th[x]Wall of Fire</td></tr><tr><td>@8th.POTENT SPELLCASTING cantrip damage+wisMod</td></tr><tr><td>@9th<b onClick=FlameStrike()>Flame Strike @9th<b onClick=Scrying()>Scrying";
-dx="@17th.CORONA OF LIGHT 1act,10/10turns, 60ft rad+30ft dim light save @DisAdv vs fire radiant"
-}
-if(this.class.match(/Nature/)){a="@1st.ACOLYTE OF NATURE 1 cantrip, 2 skills+pro from Animal Handling, Nature, Survival</td></tr><tr><td>@1st(Bonus Proficiency)heavy armor</td></tr><tr><td>@1st[x]Animal Friendship @1st[x]Speak with Animals</td></tr><tr><td>@2nd.CHARM ANIMALS AND PLANTS 1CD, 30ft vsWis charmed 10/10turns or damaged";
-b="@3rd[x]Barkskin ,@3rd[x]Spike Growth</td></tr><tr><td>@5th[x]Plant Growth";
-c="@5th[x]Wind Wall</td></tr><tr><td>@6th.DAMPEN ELEMENTS you or ally 30ft rad, react, resist acid, cold, lighting or thunder</td></tr><tr><td>@7th[x]Dominate Beast @7th[x]Grasping Vine</td></tr><tr><td>@8th(Divine Strike)1/turn wpn damage+1d8 cold, fire or lightning.(@14th)+2d8</td></tr><tr><td>@9th[x]Insect Plague @9th<b onClick=TreeStride()'>TreeStride";
-dx="@17th.MASTER OF NATURE bonus command the charmed animals and plants"
-}
-if(this.class.match(/Tempest/)){a="Detect Magic</td></tr><tr><td>@1st<b onClick='FogCloud()'>Fog Cloud @1st<b onClick='Thunderwave()'>Thunderwave</td></tr><tr><td>@2nd(Destructive Wrath)1CD, deal max thunder damage";
-b="@3rd<b onClick='GustOfWind()'>Gust of Wind ,@3rd<b onClick='Shatter()'>Shatter";
-c="@5th[x]Call Lightning @5th[x]Sleet Storm</td></tr><tr><td>@6th.THUNDERBOLT STRIKE when lightning damage, option to push large or less 10ft</td></tr><tr><td>@7th[x]Control Water @7th<b onClick=IceStorm()'>IceStorm</td></tr><tr><td>@8th(Divine Strike)1/turn wpn damage+1d8thunder.(@14th)+2d8</td></tr><tr><td>@9th[x]Destructive Wave @9th[x]Insect Plague";
-dx="@17th.STORMBORN fly speed is walk speed"
-}
-if(this.class.match(/Trickery/)){a="@1st(Blessings of the Trickster)ally stealth@Adv 1hr<p><b onClick='CharmPerson()'>Charm Person, <b onClick='DisguiseSelf()'>Disguise Self</td></tr><tr><td>@2nd(Invoke Duplicity)1CD conce,10/10turns bonus move 30ft attack @Adv";
-b="@3rd<b onClick='MirrorImage()'>Mirror Image, <b onClick='PassWithoutTrace()'>Pass without Trace";
-c="<p><b onClick='Blink()'>Blink, <b onClick='DispelMagic()'>Dispel Magic</td></tr><tr><td>@6th(Cloak of Shadows)1CD invisible till t e o y n turn or attack or cast</td></tr><tr><td>@7th<b onClick='DimensionDoor()'>Dimension Door, <b onClick='Polymorph()'>Polymorph</td></tr><tr><td>@8th(Divine Strike)1/turn wpn damage+1d8poision.(@14th)+2d8</td></tr><tr><td>@9th<b onClick='DominatePerson()'>Dominate Person, <b onClick='ModifyMemory()'>Modify Memory";
-dx="@17th(Improved Duplicity)move 4 clones 30ft/turn max 120ft</td></tr><tr><td>"
-}
-if(this.class.match(/War/)){a="@1st(Bonus Proficiencies)martialwpns heavy armor</td></tr><tr><td>@1st(War Priest)when attack ing 1 bonus attack </td></tr><tr><td>@1st<b onClick='DivineFavor()'>Divine Favor, <b onClick='ShieldOfFaith()'>Shield of Faith</td></tr><tr><td>2nd(Guided Strike)1CD attack +10";
-b="@3rd<b onClick='MagicWeapon()'>Magic Weapon, <b onClick='SpiritualWeapon()'>Spiritual Weapon";
-c="@5th<b onClick='CrusadersMantle()'>Crusader s Mantle, <b onClick='SpiritGuardians()'>Spirit Guardians</td></tr><tr><td>@6th(War God s Blessing)1CD ally 30ft attack +10</td></tr><tr><td>@7th<b onClick='FreedomOfMovement()'>Freedom of Movement, <b onClick='Stoneskin()'>Stoneskin</td></tr><tr><td>@8th(Divine Strike)1/turn wpn damage+1d8 same damage type @14th+2d8</td></tr><tr><td>@9th<b onClick='FlameStrike()'>Flame Strike, <b onClick='HoldMonster()'>Hold Monster";
-dx="@17th(Avatar of Battle)resist bludgeoning , slash, piercing nonmagical wpn"
-}
-
-ClericSpells="<h3>Cantrips Known:@1st(3),@4th(4),@10th(5)</h3>"
-ClericSpells+="<b onClick=Guidance()>Guidance,"
-ClericSpells+="<b onClick=Resistance()>Resistance,"
-ClericSpells+="<b onClick=SacredFlame()>SacredFlame,"
-ClericSpells+="<b onClick=SpareTheDying()>SpareTheDying,"
-ClericSpells+="<b onClick=Thaumaturgy()>Thaumaturgy,"
-ClericSpells+="<b onClick=Light()>Light,"
-ClericSpells+="<b onClick=Mending()>Mending"
-ClericSpells+="<h3>1stSlot:@1st(2/2),@2nd(3/3),@3rd(4/4)</h3>"
-ClericSpells+="<b onClick=Bane()>Bane,"
-ClericSpells+="<b onClick=Bless()>Bless,"
-ClericSpells+="<b onClick=Command()>Command,"
-ClericSpells+="<b onClick=CreateOrDestroyWater()>CreateOrDestroyWater,"
-ClericSpells+="<b onClick=CureWounds()>CureWounds,"
-ClericSpells+="<b onClick=DetectEvilAndGood()>DetectEvilAndGood,"
-ClericSpells+="<b onClick=DetectMagic()>DetectMagic,"
-ClericSpells+="<b onClick=DetectPoisonAndDisease()>DetectPoisonAndDisease,"
-ClericSpells+="<b onClick=GuidingBolt()>GuidingBolt,"
-ClericSpells+="<b onClick=HealingWord()>HealingWord,"
-ClericSpells+="<b onClick=InflictWounds()>InflictWounds,"
-ClericSpells+="<b onClick=ProtectionFromEvilAndGood()>ProtectionFromEvilAndGood,"
-ClericSpells+="<b onClick=PurifyFoodAndDrink()>PurifyFoodAndDrink,"
-ClericSpells+="<b onClick=Sanctuary()>Sanctuary,"
-ClericSpells+="<b onClick=ShieldOfFaith()>ShieldOfFaith"
-ClericSpells+="<h3>2ndSlot:@3rd(2/2),@4th(3/3)</h3>"
-ClericSpells+="<b onClick=Aid()>Aid,"
-ClericSpells+="<b onClick=Augury()>Augury,"
-ClericSpells+="<b onClick=BlindnessDeafness()>BlindnessDeafness,"
-ClericSpells+="<b onClick=CalmEmotions()>CalmEmotions,"
-ClericSpells+="<b onClick=ContinualFlame()>ContinualFlame,"
-ClericSpells+="<b onClick=EnhanceAbility()>EnhanceAbility,"
-ClericSpells+="<b onClick=FindTraps()>FindTraps,"
-ClericSpells+="<b onClick=GentleRepose()>GentleRepose,"
-ClericSpells+="<b onClick=HoldPerson()>HoldPerson,"
-ClericSpells+="<b onClick=LesserRestoration()>LesserRestoration,"
-ClericSpells+="<b onClick=LocateObject()>LocateObject,"
-ClericSpells+="<b onClick=PrayerOfHealing()>PrayerOfHealing,"
-ClericSpells+="<b onClick=ProtectionFromPoison()>ProtectionFromPoison,"
-ClericSpells+="<b onClick=Silence()>Silence,"
-ClericSpells+="<b onClick=SpiritualWeapon()>SpiritualWeapon,"
-ClericSpells+="<b onClick=WardingBond()>WardingBond,"
-ClericSpells+="<b onClick=ZoneOfTruth()>ZoneOfTruth"
-ClericSpells+="<h3>3rdSlot:@5th(2/2),@6th(3/3)</h3>"
-ClericSpells+="<b onClick=AnimateDead()>AnimateDead,"
-ClericSpells+="<b onClick=BeaconOfHope()>BeaconOfHope,"
-ClericSpells+="<b onClick=BestowCurse()>BestowCurse,"
-ClericSpells+="<b onClick=Clairvoyance()>Clairvoyance,"
-ClericSpells+="<b onClick=CreateFoodAndWater()>CreateFoodAndWater,"
-ClericSpells+="<b onClick=Daylight()>Daylight,"
-ClericSpells+="<b onClick=DispelMagic()>DispelMagic,"
-ClericSpells+="<b onClick=GlyphOfWarding()>GlyphOfWarding,"
-ClericSpells+="<b onClick=MagicCircle()>MagicCircle,"
-ClericSpells+="<b onClick=MassHealingWord()>MassHealingWord,"
-ClericSpells+="<b onClick=MeldIntoStone()>MeldIntoStone,"
-ClericSpells+="<b onClick=ProtectionFromEnergy()>ProtectionFromEnergy,"
-ClericSpells+="<b onClick=RemoveCurse()>RemoveCurse,"
-ClericSpells+="<b onClick=Revivify()>Revivify,"
-ClericSpells+="<b onClick=Sending()>Sending,"
-ClericSpells+="<b onClick=SpeakWithDead()>SpeakWithDead,"
-ClericSpells+="<b onClick=SpiritGuardians()>SpiritGuardians,"
-ClericSpells+="<b onClick=Tongues()>Tongues,"
-ClericSpells+="<b onClick=WaterWalk()>WaterWalk"
-ClericSpells+="<h3>4thSlot:@7th(1/1),@8th(2/2),@9th(3/3)</h3>"
-ClericSpells+="<b onClick=Banishment()>Banishment,"
-ClericSpells+="<b onClick=ControlWater()>ControlWater,"
-ClericSpells+="<b onClick=DeathWard()>DeathWard,"
-ClericSpells+="<b onClick=Divination()>Divination,"
-ClericSpells+="<b onClick=FreedomOfMovement()>FreedomOfMovement,"
-ClericSpells+="<b onClick=GuardianOfFaith()>GuardianOfFaith,"
-ClericSpells+="<b onClick=LocateCreature()>LocateCreature,"
-ClericSpells+="<b onClick=StoneShape()>StoneShape"
-ClericSpells+="<h3>5thSlot:@9th(1/1),@10th(2/2),@18th(3/3)</h3>"
-ClericSpells+="<b onClick=Commune()>Commune,"
-ClericSpells+="<b onClick=Contagion()>Contagion,"
-ClericSpells+="<b onClick=DispelEvilAndGood()>DispelEvilAndGood,"
-ClericSpells+="<b onClick=FlameStrike()>FlameStrike,"
-ClericSpells+="<b onClick=Geas()>Geas,"
-ClericSpells+="<b onClick=GreaterRestoration()>GreaterRestoration,"
-ClericSpells+="<b onClick=Hallow()>Hallow,"
-ClericSpells+="<b onClick=InsectPlague()>InsectPlague,"
-ClericSpells+="<b onClick=LegendLore()>LegendLore,"
-ClericSpells+="<b onClick=MassCureWounds()>MassCureWounds,"
-ClericSpells+="<b onClick=PlanarBinding()>PlanarBinding,"
-ClericSpells+="<b onClick=RaiseDead()>RaiseDead,"
-ClericSpells+="<b onClick=Scrying()>Scrying"
-ClericSpells+="<h3>6thSlot:@11th(1/1),@19th(2/2)</h3>"
-ClericSpells+="<b onClick=BladeBarrier()>BladeBarrier,"
-ClericSpells+="<b onClick=CreateUndead()>CreateUndead,"
-ClericSpells+="<b onClick=FindThePath()>FindThePath,"
-ClericSpells+="<b onClick=Forbiddance()>Forbiddance,"
-ClericSpells+="<b onClick=Harm()>Harm,"
-ClericSpells+="<b onClick=Heal()>Heal,"
-ClericSpells+="<b onClick=HeroesFeast()>HeroesFeast,"
-ClericSpells+="<b onClick=PlanarAlly()>PlanarAlly,"
-ClericSpells+="<b onClick=TrueSeeing()>TrueSeeing,"
-ClericSpells+="<b onClick=WordOfRecall()>WordOfRecall"
-ClericSpells+="<h3>7thSlot:@13th(1/1),@20th(2/2)</h3>"
-ClericSpells+="<b onClick=ConjureCelestial()>ConjureCelestial,"
-ClericSpells+="<b onClick=DivineWord()>DivineWord,"
-ClericSpells+="<b onClick=Etherealness()>Etherealness,"
-ClericSpells+="<b onClick=FireStorm()>FireStorm,"
-ClericSpells+="<b onClick=PlaneShift()>PlaneShift,"
-ClericSpells+="<b onClick=Regenerate()>Regenerate,"
-ClericSpells+="<b onClick=Resurrection()>Resurrection,"
-ClericSpells+="<b onClick=Symbol()>Symbol"
-ClericSpells+="<h3>8thSlot:@15th(1/1)</h3>"
-ClericSpells+="<b onClick=AntimagicField()>AntimagicField,"
-ClericSpells+="<b onClick=ControlWeather()>ControlWeather,"
-ClericSpells+="<b onClick=Earthquake()>Earthquake,"
-ClericSpells+="<b onClick=HolyAura()>HolyAura"
-ClericSpells+="<h3>9thSlot:@17th(1/1)</h3>"
-ClericSpells+="<b onClick=AstralProjection()>AstralProjection,"
-ClericSpells+="<b onClick=Gate()>Gate,"
-ClericSpells+="<b onClick=MassHeal()>MassHeal,"
-ClericSpells+="<b onClick=TrueResurrection()>TrueResurrection"
-
-this.setFeatures('<h3>Spells Known:wis+lvl</h3></td></tr><tr><td>'+ClericSpells+'</td></tr><tr><td>'+a+'</td></tr><tr><td>@2nd(Channel Divinity),@2nd(1/1)@5th(2/2)@18th(3/3)</td></tr><tr><td>@2nd(Turn Undead)1CD, 30ft-radi, vsWis or frightened, @DisAdv while cleric is in sight, dash away, 10/10turns</td></tr><tr><td>'+b+'</td></tr><tr><td>@4th(Ability Score Improvement)abi+2 or abi+1 and another abi+1@4th,@8th,@12th,@16th,@19th</td></tr><tr><td>@5th(Destroy Undead)1CD,@5th CR1/2,@8th CR1-1/2,@11th CR2-1/2,@14th CR3-1/2,@17th CR4-1/2</td></tr><tr><td>'+c+'</td></tr><tr><td>@10th(Divine Intervention)d100 roll your,lvlor lower,divine helps</td></tr><tr><td>'+dx+' @20th auto success');
+if(this.class.match(/Cleric/)){
 this.setActionNotes('1st Slots 2/2');
 this.setEquipment('mace or warhammer.scale mail or leather armor or chain mail.light crossbow 20 bolts or simple wpn.priest pack or explorer pack.shield.holy symbol');
 this.setHitDice(this.lvl+'d8+'+(parseInt(this.lvl)*parseInt(this.conMod)));
@@ -2399,7 +2224,7 @@ this.setChaPro('');
 this.setSkills('2 from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, or Survival');
 this.setSpellAbility('wis')}
 
-if(this.class.match(/Fighter/)){if(this.class.match(/Archer/)){a="(Fighter)<p>";
+if(this.class.match(/Fighter/)){if(this.class.match(/Fighter/)){a="(Fighter)<p>";
 b="@7th(Curving Shot)bonus reroll attack against another tgt within 60ft<p>@7th(Magic Arrow)arrow becomes magical to defe@non-magical resistance and immunity";
 c="";
 dx="@15th(EverReady Shot)if no shots, regain 1 arcane shot";
@@ -3824,59 +3649,14 @@ this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
 this.setSpeed('30ft');
 this.setTrait('16-80 yrs old('+(16+parseInt(rollDForm('1d64+0')))+'yrs old), 6ft tall+2d12in('+(6.0+(parseInt(rollDForm('2d12+0'))/12)).toFixed(1).replace('.', 'ft ')+'in), 200lbs+2d6('+(parseInt(200)+parseInt(rollDForm('2d6+0')))+'lbs)')}
-if(this.race.match(/Dragonborn/))
-{this.setAbility('str+2, cha+1');
-this.setLanguages('Common, Draconic');
-this.setResistance('Acid');
-this.setSenses('Darkvision 60ft');
-this.setSize('Medium 5x5ft');
-this.setSpeed('30ft');
-if(this.race.match(/Dragonborn,Black/))
-{this.setProficienciesRace('(Breath wpn)(Black)1d6 Acid 5x30ft-lineDC8+"+characters[targeted].spellAbility+"+pro vsDex for half')}
-if(this.race.match(/Dragonborn,Blue/))
-{this.setProficienciesRace('(Breath wpn)(Blue)Lightning 5x30ft-lineDC8+"+characters[targeted].spellAbility+"+pro vsDex for half')}
-if(this.race.match(/Dragonborn,Brass/))
-{this.setProficienciesRace('(Breath wpn)(Brass)Fire 5x30ft-lineDC8+"+characters[targeted].spellAbility+"+pro vsDex for half(Bronze)Lightning 5x30ft-lineDC8+"+characters[targeted].spellAbility+"+pro vsDex for half')}
-if(this.race.match(/Dragonborn,Bronze/))
-{this.setProficienciesRace('(Breath wpn)(Bronze)Lightning 5x30ft-lineDC8+"+characters[targeted].spellAbility+"+pro vsDex for half')}
-if(this.race.match(/Dragonborn,Copper/))
-{this.setProficienciesRace('(Breath wpn)(Copper)Acid 5x30ft-lineDC8+"+characters[targeted].spellAbility+"+pro vsDex for half')}
-if(this.race.match(/Dragonborn,Gold/))
-{this.setProficienciesRace('(Breath wpn)(Gold)Fire 15ft-coneDC8+"+characters[targeted].spellAbility+"+pro vsDex for half')}
-if(this.race.match(/Dragonborn,Green/))
-{this.setProficienciesRace('(Breath wpn)(Green)Poison 15ft-cone vsCon for half')}
-if(this.race.match(/Dragonborn,Red/))
-{this.setProficienciesRace('(Breath wpn)(Red)Fire 15ft-coneDC8+"+characters[targeted].spellAbility+"+pro vsDex for half(Silver)Cold 15ft-cone vsCon for half')}
-if(this.race.match(/Dragonborn,Silver/))
-{this.setProficienciesRace('(Breath wpn)(Silver)Cold 15ft-cone vsCon for half')}
-if(this.race.match(/Dragonborn,White/))
-{this.setProficienciesRace('(Breath wpn)(White)Cold 15ft-cone vsCon for half+1d6,@6th, 11th, 16th lvl, 1-80 years old, 250 lbs., 6+feet tall')}
-}
-
-if(this.race.match(/Dwarf,\sHill/)){this.setAbility('con+2, wis+1');
-this.setLanguages('Common, Dwarvish');
-this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or brewer or Mason Tools,(Stonecunning)History+exp re the details of stone work age and construction');
-this.setResistance('(Dwarven Resilience)resist poison 1/2 damage save vs poison@Adv');
-this.setSenses('Darkvision 60ft');
-this.setSize('Medium 5x5ft');
-this.setSpeed('25ft');
-this.setTrait('(Dwarven Toughness)when lvling up, hp+1hp, 1-350 years old, 150 lbs., 4-5fttall')}
-if(this.race.match(/Dwarf,\sMountain/)){this.setAbility('str+2, con+2');
+if(this.race.match(/Dwarf/)){this.setAbility('str+2, con+2');
 this.setLanguages('Common, Dwarvish');
 this.setProficienciesRace('light armor, medium armor, battleaxes, handaxes, light hammers, and warhammers, smith or brewer or mason Tools,(Stonecunning)History+exp re the details of stone work age and construction');
-this.setResistance('(Dwarven Resilience)resist poison 1/2 damage save vs poison@Adv');
+this.setResistance('(Dwarven Resilience)resist poison 1/2 damage');
 this.setSenses('Darkvision 60ft');
 this.setSize('Medium 5x5ft');
 this.setSpeed('25ft');
 this.setTrait("50-350 yrs old("+(50+parseInt(rollDForm('1d300+0')))+"yrs old), 4ft 0in tall+2d4("+(4.0+(parseInt(rollDForm('2d4+0'))/12)).toFixed(1).replace('.', 'ft ')+"in tall, 115lbs+2d6("+(parseInt(115)+parseInt(rollDForm('2d6+0')))+"lbs)")}
-if(this.race.match(/Dwarf,\sGray/)){this.setAbility('str+1');
-this.setLanguages('Common, Dwarvish, Undercommon');
-this.setProficienciesRace('battleaxe, handaxe, light hammer, warhammer, smith or brewer or Mason Tools,(Stonecunning)History+exp re the details of stone work age and construction,@3rd(EnlargeReduce)only Enlarge on self 1/1/long rest, @5th(Invisibility)no components needed/in dim light 1/1/long rest');
-this.setResistance('(Duergar Resilience)save@Adv vs illusion, charm, paralysis');
-this.setSenses('Darkvision 120ft');
-this.setSize('Medium 5x5ft');
-this.setSpeed('25ft');
-this.setVulnerability('(Sunlight Sensitivity)atks and Perception @DisAdv in sunlight, 150 lbs., 4.5fttall')}
 if(this.race.match(/Elf,\sDark/)){this.setAbility('dex+2, cha+1');
 this.setImmunity('Sleep');
 this.setLanguages('Common, Elvish');
