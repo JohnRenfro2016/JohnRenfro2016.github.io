@@ -463,6 +463,7 @@ const replsB = [
 {p1:/(わ)(?!X)(ざ)(?!X)(わ)(?!X)(ざ)(?!X)/g,r1:'$1X$2X$3X$4Xgo to a lot of trouble~Noun'},
 {p1:/(わ)(?!X)(れ)(?!X)(わ)(?!X)(れ)(?!X)/g,r1:'$1Xwa$2Xre$3Xwa$4Xre-we~FormalNoun'},
 {p1:/(ア)(?!X)(メ)(?!X)(リ)(?!X)(カ)(?!X)/g,r1:'$1Xa$2Xme$3Xri$4Xka-America~Noun'},
+{p1:/(買)(?!X)(い)(?!X)(付)(?!X)(け)(?!X)/g,r1:'$1Xka$2Xi$3Xtsu$4Xke-buy in large quantity~IchidanVerb'},
 {p1:/(イ)(?!X)(ベ)(?!X)(ン)(?!X)(ト)(?!X)/g,r1:'$1Xi$2Xbe$3Xn$4Xto-event~Noun'},
 {p1:/(イ)(?!X)(ン)(?!X)(フ)(?!X)(ラ)(?!X)/g,r1:'$1X$2Xin$3Xf$4Xura-infrastructure~Noun'},
 {p1:/(イ)(?!X)(ン)(?!X)(フ)(?!X)(レ)(?!X)/g,r1:'$1Xi$2nX$3fuX$4reX;inflation~Noun'},
@@ -492,6 +493,7 @@ const replsB = [
 {p1:/(仕)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xshi$2Xag$3Xe-finish,complete$4X~RuVerb'},
 {p1:/(付)(?!X)(き)(?!X)(合)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xtsu$2Xki$3Xa-socialize with,see someone$4X~UVerb'},
 {p1:/(付)(?!X)(け)(?!X)(足)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xtsu$2Xke$3Xta-add on,append$4X~SuVerb'},
+{p1:/(踏)(?!X)(み)(?!X)(出)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xfu$2Xmi$3Xda-take steps$4X~SuVerb'},
 {p1:/(似)(?!X)(て)(?!X)(い)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xnit$2Xei$3X-look like,resemble$4X~RuVerb'},
 {p1:/(何)(?!X)(と)(?!X)(な)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1X$2Xna$3Xんtona,in some way,somehow$4X~KuVerb'},
 {p1:/(値)(?!X)(上)(?!X)(が)(?!X)(り)(?!X)/g,r1:'$1X$2X$3X$4Xne-agari,price rise~Noun'},
@@ -894,7 +896,7 @@ const replsB = [
 {p1:/(と)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xto$2Xga-be sharp$3X~RuVerb'},
 {p1:/(と)(?!X)(こ)(?!X)(ろ)(?!X)/g,r1:'$1Xto$2Xko$3Xro-about to do~Noun'},
 {p1:/(と)(?!X)(さ)(?!X)(れ)(?!X)/g,r1:'$1Xto$2Xsa$3Xre-is considered to be~IchidanVerb'},
-{p1:/(と)(?!X)(し)(?!X)(て)(?!X)/g,r1:'$1Xto$2Xshi$3Xte-in the role of~SuVerb'},
+{p1:/(と)(?!X)(し)(?!X)(て)(?!X)/g,r1:'$1Xto$2Xshi$3Xte-in the role of~Noun'},
 {p1:/(と)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xto$2Xji-bind,file$3X~RuVerb'},
 {p1:/(と)(?!X)(っ)(?!X)(て)(?!X)/g,r1:'$1Xto$2Xt$3Xte-handle,grip~Noun'},
 {p1:/(と)(?!X)(て)(?!X)(も)(?!X)/g,r1:'$1Xtot$2Xem$3Xo-very~Noun'},
@@ -1035,7 +1037,7 @@ const replsB = [
 {p1:/(下)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xsag$2Xe-lower,turn down$3X~RuVerb'},
 {p1:/(下)(?!X)(さ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xku$2Xdasa-give,favor with$3X~RuVerb'},
 {p1:/(下)(?!X)(り)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xo$2Xri-go down,come down$3X~RuVerb'},
-{p1:/(下)(?!X)(ろ)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xoro$2X-bring down,take down,pull down$3X~SuVerb'},
+{p1:/(下)(?!X)(ろ)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xo$2Xro-bring down,take down,pull down$3X~SuVerb'},
 {p1:/(下)(?!X)(回)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xshita$2Xmawa-fall below$3X~RuVerb'},
 {p1:/(下)(?!X)(支)(?!X)(え)(?!X)/g,r1:'$1Xshita$2Xza$3Xsae-backup,prop up~IchidanVerb'},
 {p1:/(下)(?!X)(書)(?!X)(き)(?!X)/g,r1:'$1Xshi$2Xta$3Xgaki-draft~Noun'},
@@ -2137,7 +2139,7 @@ const replsB = [
 {p1:/(金)(?!X)(曜)(?!X)(日)(?!X)/g,r1:'$1Xkin$2Xyou$3Xbi-Friday~Noun'},
 {p1:/(釣)(?!X)(り)(?!X)(合)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xtsu$2Xri$3Xa-balance,proportion$4X~IAdjective~Noun'},
 {p1:/(錆)(?!X)(び)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xsab$2Xi-rust,get rusty$3X~RuVerb'},
-{p1:/(長)(?!X)(ら)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xna$2Xgara-for a long time$3X~KuVerb'},
+{p1:/(長)(?!X)(ら)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xnaga$2Xra-for a long time$3X~KuVerb'},
 {p1:/(長)(?!X)(丁)(?!X)(場)(?!X)/g,r1:'$1Xnaga$2Xcyou$3Xba-for long haul~Noun'},
 {p1:/(長)(?!X)(引)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xnaga$2Xbi-be prolonged$3X~KuVerb'},
 {p1:/(長)(?!X)(持)(?!X)(ち)(?!X)/g,r1:'$1Xnagamo$2Xch$3Xi-endurance~lasting long~Noun'},
@@ -4889,6 +4891,7 @@ const replsB = [
 {p1:/(本)(?!X)(棚)(?!X)/g,r1:'$1Xhon$2Xdana-bookshelf~Noun'},
 {p1:/(本)(?!X)(気)(?!X)/g,r1:'$1Xhon$2Xki-seriousness,earnestness~Noun'},
 {p1:/(本)(?!X)(物)(?!X)/g,r1:'$1Xhon$2Xmono-real thing,gen-uine article~Noun'},
+{p1:/(一)(?!X)(歩)(?!X)/g,r1:'$1Xip$2Xpou-step by step,small amount~Noun'},
 {p1:/(本)(?!X)(社)(?!X)/g,r1:'$1Xhon$2Xsya-head office~Noun'},
 {p1:/(本)(?!X)(箱)(?!X)/g,r1:'$1Xhon$2Xbako-bookcase~Noun'},
 {p1:/(本)(?!X)(紙)(?!X)/g,r1:'$1Xhon$2Xshi-this news publication~Noun'},
@@ -5412,7 +5415,9 @@ const replsB = [
 {p1:/(物)(?!X)(資)(?!X)/g,r1:'$1Xbus$2Xshi-commodities,goods~Noun'},
 {p1:/(物)(?!X)(質)(?!X)/g,r1:'$1Xbus$2Xshitsu-matter,substance~Noun'},
 {p1:/(物)(?!X)(陰)(?!X)/g,r1:'$1Xmono$2Xkage-place behind something~Noun'},
+{p1:/(陣)(?!X)(営)(?!X)/g,r1:'$1Xjin$2Xei-camp,supporters~Noun'},
 {p1:/(物)(?!X)(音)(?!X)/g,r1:'$1Xmono$2Xoto-noise,sound~Noun'},
+{p1:/(東)(?!X)(芝)(?!X)/g,r1:'$1Xtou$2Xshiba-Toshiba Corporation~Noun'},
 {p1:/(特)(?!X)(に)(?!X)/g,r1:'$1Xtoku$2Xni-particularly~Noun'},
 {p1:/(特)(?!X)(使)(?!X)/g,r1:'$1Xtoku$2Xshi-special envoy~Noun'},
 {p1:/(特)(?!X)(例)(?!X)/g,r1:'$1Xtoku$2Xrei-exception~Noun'},
@@ -5580,6 +5585,8 @@ const replsB = [
 {p1:/(発)(?!X)(表)(?!X)/g,r1:'$1Xhap$2Xpyou-announcement~Noun'},
 {p1:/(発)(?!X)(見)(?!X)/g,r1:'$1Xhak$2Xken-discovery~Noun'},
 {p1:/(発)(?!X)(覚)(?!X)/g,r1:'$1Xhak$2Xkaku-detection~Noun'},
+{p1:/(収)(?!X)(益)(?!X)/g,r1:'$1Xsyuu$2Xeki-profit~Noun'},
+{p1:/(山)(?!X)(積)(?!X)/g,r1:'$1Xsan$2Xseki-accumulation~Noun'},
 {p1:/(発)(?!X)(言)(?!X)/g,r1:'$1Xhatsu$2Xgen-speech~Noun'},
 {p1:/(発)(?!X)(足)(?!X)/g,r1:'$1Xhas$2Xsoku-establishment of~Noun'},
 {p1:/(発)(?!X)(車)(?!X)/g,r1:'$1Xhas$2Xsy,leave~Noun'},
@@ -5901,6 +5908,7 @@ const replsB = [
 {p1:/(経)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xhe-pass,pass through$2X~RuVerb'},
 {p1:/(経)(?!X)(口)(?!X)/g,r1:'$1Xkei$2Xkou-oral~Noun'},
 {p1:/(経)(?!X)(営)(?!X)/g,r1:'$1Xkei$2Xei-management~Noun'},
+{p1:/(上)(?!X)(場)(?!X)/g,r1:'$1Xjyou$2Xjyou-listed~Noun'},
 {p1:/(経)(?!X)(歴)(?!X)/g,r1:'$1Xkei$2Xreki-resume~Noun'},
 {p1:/(経)(?!X)(済)(?!X)/g,r1:'$1Xkei$2Xzai-economics~Noun'},
 {p1:/(経)(?!X)(由)(?!X)/g,r1:'$1Xkei$2Xyu-via,through~Noun'},
@@ -8160,7 +8168,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-特に昨年以降、iPhoneは「価格を抑えたスタンダードな性能のライン」と、「高性能プロセッサー＋望遠カメラを搭載する、最新最強のProライン」の切り分けが明確になってきた。特に今年は、インターフェースが「USB-C」に変わり、プロセッサーが3nm世代になり、さらには素材がチタン合金になって、「Proラインの差別化」がはっきりしている。
+東芝の再建を巡って、国内ファンドの日本産業パートナーズ（JIP）陣営による東芝株のTOB（株式公開買い付け）が成立した。【ひと目でわかるグラフ】過去1年間の東芝株価推移 長らく続いた経営の混乱を収めるため、上場企業としての74年の歴史に幕を下ろすことで再生に一歩踏み出した格好だ。ただ、収益力改善に向けた課題は山積しており、先行きは不透明だ。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
