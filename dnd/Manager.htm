@@ -590,6 +590,28 @@ function setStats(){
 stats=stats.replace(/\'/g,' feet ');
 stats=stats.replace(/\"/g,' inches ');
 
+//1st Edition Monster Stats
+if(rip=stats.match(/^([\s\S].+?)FREQ/))
+{characters[targeted].setName(rip[1])};
+if(rip=stats.match(/AC.+?(\d{1,2})/))
+{characters[targeted].setAC(rip[1])};
+if(rip=stats.match(/MV.+?(\d{1,2})/))
+{characters[targeted].setSpeed(rip[1])};
+if(rip=stats.match(/HD.+?(\d{1,2})/))
+{characters[targeted].setHitDice(rip[1])};
+if(rip=stats.match(/hp.+?(\d{1,2})/))
+{characters[targeted].setMaxHp(rip[1])};
+if(rip=stats.match(/AT.+?(\d{1,2})/))
+{characters[targeted].setActionNotes(rip[1])};
+if(rip=stats.match(/D.+?(\d{1,2})\-(\d{1,2})/))
+{
+characters[targeted].setRollName1("Attack");
+characters[targeted].setRoll1('1d20+0');
+characters[targeted].setRollName2("Damage Type");
+characters[targeted].setRoll2(rip[1]+"d"+rip[2]+"+0");
+addRollPrompt(targeted);
+}
+
 //1st Edition Monster Manual Stat Blocks
 if(rip=stats.match(/^([\s\S].+?)FREQ/))
 {characters[targeted].setName(rip[1])};
@@ -818,20 +840,20 @@ boxContents+="</td></tr></table></span></td><td><span id=toggled4"+this.index+" 
 
 boxContents+="<table><tr><td>"
 boxContents+="Size: <select onChange='characters["+this.index+"].setSize(this.value);checkTheTarget("+this.index+")'><option>"+this.size+"<option>Tiny 2.5x2.5ft<option>Small 5x5ft<option>Medium 5x5ft<option>Large 10x10ft<option>Huge 15x15ft<option>Gargantuan 20x20ft+</select>";
-boxContents+="</td></tr><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/<mark>"+this.curStr+"</mark> mod:"+this.strMod+"+<select onChange='characters["+this.index+"].setStrPro(this.value);checkTheTarget("+this.index+")'><option>"+this.strPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
+boxContents+="</td></tr><tr><td><input onClick='abi=1;abiMod=characters["+this.index+"].strMod;skillMod=characters["+this.index+"].strPro;abiRoll("+this.index+")'value='Roll (STR)ength?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setStr(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.str+">/<mark>"+this.curStr+"</mark> mod:"+this.strMod+" Add this mod to the strength based weapon attack roll modifier.";
 boxContents+="</td></tr><tr><td>Carrying Capacity:"+this.carryingCapacity+"lbs";
 boxContents+="</td></tr><tr><td>Drag, Lift, Push:"+this.dragLiftPush+"lbs";
 boxContents+="</td></tr><tr><td>High Jump:"+this.highJump+"ft"
 boxContents+="</td></tr><tr><td>Long Jump:"+this.longJump+"ft";
-boxContents+="</td></tr><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setDex(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.dex+">/<mark>"+this.curDex+"</mark> mod:"+this.dexMod+"+<select onChange='characters["+this.index+"].setDexPro(this.value);checkTheTarget("+this.index+")'><option>"+this.dexPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
+boxContents+="</td></tr><tr><td><input onClick='abi=2;abiMod=characters["+this.index+"].dexMod;skillMod=characters["+this.index+"].dexPro;abiRoll("+this.index+")'value='Roll (DEX)terity?' type='button'><input maxLength='2' onChange='characters["+this.index+"].setDex(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.dex+">/<mark>"+this.curDex+"</mark> mod:"+this.dexMod+" Add this mod to the initiative modifier and to the Dex based weapon attack modifier.";
 boxContents+="</td></tr><tr><td><input type='button' value='Roll (Init)iative?'onClick='askInit("+this.index+");checkTheTarget("+this.index+")'>"
 boxContents+="</td></tr><tr><td>(Init)ative Bonus:<input maxLength='3' onChange='characters["+this.index+"].setInitBonus(this.value);checkTheTarget("+this.index+")'size='3' type='text' value="+this.initBonus+">/"+this.curIni;
-boxContents+="</td></tr><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCon(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.con+">/<mark>"+this.curCon+"</mark> mod:"+this.conMod+"+<select onChange='characters["+this.index+"].setConPro(this.value);checkTheTarget("+this.index+")'><option>"+this.conPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
+boxContents+="</td></tr><tr><td><input onClick='abi=3;abiMod=characters["+this.index+"].conMod;skillMod=characters["+this.index+"].conPro;abiRoll("+this.index+")'value='Roll (CON)stitution?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCon(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.con+">/<mark>"+this.curCon+"</mark> mod:"+this.conMod+" Add this mod to the level-up hit points and saves versus poison.";
 boxContents+="</td></tr><tr><td>Hold Breath:"+(parseInt(this.conMod)+1)+"min"
 boxContents+="</td></tr><tr><td>Suffocate:"+parseInt(this.conMod)+"min";
-boxContents+="</td></tr><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/<mark>"+this.curInt+"</mark> mod:"+this.intMod+"+<select onChange='characters["+this.index+"].setIntPro(this.value);checkTheTarget("+this.index+")'><option>"+this.intPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
-boxContents+="</td></tr><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/<mark>"+this.curWis+"</mark> mod:"+this.wisMod+"+<select onChange='characters["+this.index+"].setWisPro(this.value);checkTheTarget("+this.index+")'><option>"+this.wisPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
-boxContents+="</td></tr><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/<mark>"+this.curCha+"</mark> mod:"+this.chaMod+"+<select onChange='characters["+this.index+"].setChaPro(this.value);checkTheTarget("+this.index+")'><option>"+this.chaPro+"</option><option></option><option>pro</option><option>exp</option><option>Untrained+0</option><option>Trained+2</option><option>Expert+4</option><option>Master+6</option><option>Legendary+8</option></select>"
+boxContents+="</td></tr><tr><td><input onClick='abi=4;abiMod=characters["+this.index+"].intMod;skillMod=characters["+this.index+"].intPro;abiRoll("+this.index+")'value='Roll (INT)elligence?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setInt(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.inte+">/<mark>"+this.curInt+"</mark> mod:"+this.intMod+" Subtract this mod from the target\'s save versus spells.";
+boxContents+="</td></tr><tr><td><input onClick='abi=5;abiMod=characters["+this.index+"].wisMod;skillMod=characters["+this.index+"].wisPro;abiRoll("+this.index+")'value='Roll (WIS)dom?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setWis(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.wis+">/<mark>"+this.curWis+"</mark> mod:"+this.wisMod+" Subtract this mod from the target\'s save versus cleric spells and to WIS versus DEX to detect stealth.";
+boxContents+="</td></tr><tr><td><input onClick='abi=6;abiMod=characters["+this.index+"].chaMod;skillMod=characters["+this.index+"].chaPro;abiRoll("+this.index+")'value='Roll (CHA)risma?'type='button'><input maxLength='2' onChange='characters["+this.index+"].setCha(this.value);checkTheTarget("+this.index+")'size='2' type='text' value="+this.cha+">/<mark>"+this.curCha+"</mark> mod:"+this.chaMod+" Add this mod to CHA versus CHA rolls to deceive, intimidate, persuade targets.";
 boxContents+="</td></tr><tr><td>Feature Notes: <textArea cols='40' rows='2' onChange='characters["+this.index+"].setFeatureNotes(this.value)'placeHolder='Ability Score Increases, etc.'>"+this.featureNotes+"</textarea>";
 boxContents+="<br>Proficiencies: <input maxLength='200' onChange='characters["+this.index+"].setProficiencies(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.proficiencies+"'>";
 boxContents+="<br>Skills: <input maxLength='200' onChange='characters["+this.index+"].setSkills(this.value);checkTheTarget("+this.index+")' size='40' value=' "+this.skills+"'>";
@@ -1687,9 +1709,28 @@ checkTheTarget(characters[targeted]);
 }
 function askInit(x){initRoll=characters[x].rollInit();
 characters[x].setInit(initRoll)}
-function calcMod(x){mod=Math.floor((x - 10)/ 2);
-if(mod> -1){mod="+"+mod
-}return mod
+function calcMod(x)
+{
+mod=0;
+if(x>=27){mod="+7"};
+if(x==26){mod="+7"};
+if(x==25){mod="+6"};
+if(x==24){mod="+6"};
+if(x==23){mod="+5"};
+if(x==22){mod="+5"};
+if(x==21){mod="+4"};
+if(x==20){mod="+4"};
+if(x==19){mod="+3"};
+if(x==18){mod="+3"};
+if(x==17){mod="+2"};
+if(x==16){mod="+2"};
+if(x==15){mod="+1"};
+if(x==14){mod="+1"};
+if(x<=13){mod="+0"};
+
+//mod=Math.floor((x - 10)/ 2);if(mod> -1){mod="+"+mod}
+
+return mod
 }
 function Character(name, type){this.abi=0;
 
