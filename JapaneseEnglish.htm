@@ -316,7 +316,7 @@ const replsB = [
 {p1:/(ざ)(?!X)(あ)(?!X)(ざ)(?!X)(あ)(?!X)/g,r1:'$1X$2Xhe$3Xa$4Xvily-pouring~Noun'},
 {p1:/(ざ)(?!X)(ら)(?!X)(ざ)(?!X)(ら)(?!X)/g,r1:'$1X$2Xro$3Xu$4X-gh,gritty~Noun'},
 {p1:/(し)(?!X)(か)(?!X)(な)(?!X)(い)(?!X)/g,r1:'$1X$2Xsh$3Xi$4Xkanai-no choice but to~Noun'},
-{p1:/(し)(?!X)(っ)(?!X)(か)(?!X)(り)(?!X)/g,r1:'$1X$2Xsh$3Xi$4Xkari-reliable~Noun'},
+{p1:/(し)(?!X)(っ)(?!X)(か)(?!X)(り)(?!X)/g,r1:'$1Xshi$2Xk$3Xka$4Xri-reliable~Noun'},
 {p1:/(し)(?!X)(ば)(?!X)(し)(?!X)(ば)(?!X)/g,r1:'$1X$2X$3X$4Xof-ten,frequently~Noun'},
 {p1:/(し)(?!X)(ば)(?!X)(ら)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xshi$2Xba$3Xra-for time being$4X~KuVerb'},
 {p1:/(し)(?!X)(び)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xshi$2Xbi$3Xre-become numb,get pins and needles$4X~RuVerb'},
@@ -2682,7 +2682,7 @@ const replsB = [
 {p1:/(介)(?!X)(護)(?!X)/g,r1:'$1Xkai$2Xgo-nursing home~Noun'},
 {p1:/(仏)(?!X)(教)(?!X)/g,r1:'$1Xbuk$2Xkyou-Buddhism~Noun'},
 {p1:/(仕)(?!X)(事)(?!X)/g,r1:'$1Xshi$2Xgoto-job~Noun'},
-{p1:/(仕)(?!X)(入)(?!X)/g,r1:'$1Xshi$2Xire-stock buying~Noun'},
+{p1:/(仕)(?!X)(入)(?!X)/g,r1:'$1Xshi$2Xire-stock buying~IchidanVerb'},
 {p1:/(仕)(?!X)(方)(?!X)/g,r1:'$1Xshi$2Xkata-method~Noun'},
 {p1:/(他)(?!X)(人)(?!X)/g,r1:'$1Xta$2Xnin-another person~Noun'},
 {p1:/(他)(?!X)(方)(?!X)/g,r1:'$1Xta$2Xhou-other side~Noun'},
@@ -4022,7 +4022,7 @@ const replsB = [
 {p1:/(巨)(?!X)(人)(?!X)/g,r1:'$1Xkyo$2Xjin-giant~Noun'},
 {p1:/(巨)(?!X)(大)(?!X)/g,r1:'$1Xkyo$2Xdai-huge~Noun'},
 {p1:/(巨)(?!X)(額)(?!X)/g,r1:'$1Xkyo$2Xgaku-huge sum~Noun'},
-{p1:/(差)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xsa-open (an umbrella)$2X~SuVerb'},
+{p1:/(差)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xsa-open$2X~SuVerb'},
 {p1:/(差)(?!X)(別)(?!X)/g,r1:'$1Xsa$2Xbetsu-discrimination,difference~Noun'},
 {p1:/(巻)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xma-roll up,wind,wrap$2X~KuVerb'},
 {p1:/(市)(?!X)(内)(?!X)/g,r1:'$1Xshi$2Xnai-in city~Noun'},
@@ -4518,6 +4518,7 @@ const replsB = [
 {p1:/(掲)(?!X)(げ)(?!X)/g,r1:'$1Xkaka$2Xge-put up notice~IchidanVerb'},
 {p1:/(掲)(?!X)(げ)(?!X)/g,r1:'$1Xkaka$2Xge-put up notice~IchidanVerb'},
 {p1:/(掲)(?!X)(示)(?!X)/g,r1:'$1Xkei$2Xji-notice,bulletin~Noun'},
+{p1:/(カ)(?!X)(国)(?!X)/g,r1:'$1Xka$2Xkoku-counter for countries~Noun'},
 {p1:/(掻)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xka-scratch$2X~KuVerb'},
 {p1:/(揃)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xsoro-be (all) together$2X~UVerb'},
 {p1:/(描)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xega-depict,describe$2X~KuVerb'},
@@ -5419,6 +5420,7 @@ const replsB = [
 {p1:/(物)(?!X)(陰)(?!X)/g,r1:'$1Xmono$2Xkage-place behind something~Noun'},
 {p1:/(陣)(?!X)(営)(?!X)/g,r1:'$1Xjin$2Xei-camp,supporters~Noun'},
 {p1:/(物)(?!X)(音)(?!X)/g,r1:'$1Xmono$2Xoto-noise,sound~Noun'},
+{p1:/(除)(?!X)(去)(?!X)/g,r1:'$1Xjyou$2Xkyo-removal~Noun'},
 {p1:/(東)(?!X)(芝)(?!X)/g,r1:'$1Xtou$2Xshiba-Toshiba Corporation~Noun'},
 {p1:/(特)(?!X)(に)(?!X)/g,r1:'$1Xtoku$2Xni-particularly~Noun'},
 {p1:/(特)(?!X)(使)(?!X)/g,r1:'$1Xtoku$2Xshi-special envoy~Noun'},
@@ -5665,7 +5667,10 @@ const replsB = [
 {p1:/(県)(?!X)(道)(?!X)/g,r1:'$1Xken$2Xdou-prefectural road~Noun'},
 {p1:/(真)(?!X)(の)(?!X)/g,r1:'$1Xshin$2Xno-genuine~Noun '},{p1:/(本)(?!X)(質)(?!X)/g,r1:'$1Xhon$2Xshitsu-essence,reality~Noun'},
 {p1:/(真)(?!X)(冬)(?!X)/g,r1:'$1Xma$2Xfuyu-midwinter~Noun'},
+{p1:/(廃)(?!X)(業)(?!X)/g,r1:'$1Xhai$2Xgyou-business closure~Noun'},
+{p1:/(売)(?!X)(上)(?!X)/g,r1:'$1Xuri$2Xage-sales proceeds~Noun'},
 {p1:/(真)(?!X)(剣)(?!X)/g,r1:'$1Xshin$2Xken-sincere~Noun'},
+{p1:/(控)(?!X)(除)(?!X)/g,r1:'$1Xkou$2Xjyo-deduction~Noun'},
 {p1:/(真)(?!X)(夏)(?!X)/g,r1:'$1Xma$2Xnatsu-midsummer~Noun'},
 {p1:/(真)(?!X)(実)(?!X)/g,r1:'$1Xshin$2Xjitsu-really~Noun'},
 {p1:/(真)(?!X)(心)(?!X)/g,r1:'$1Xmag$2Xokoro-sincerity,true heart~Noun'},
@@ -7312,7 +7317,7 @@ const replsB = [
 {p1:/(千)(?!X)/g,r1:'$1Xsen,chi-thousand~Noun'},
 {p1:/(半)(?!X)/g,r1:'$1Xhan-half~Noun'},
 {p1:/(南)(?!X)/g,r1:'$1Xminami,mina,nan-south~Noun'},
-{p1:/(博)(?!X)/g,r1:'$1Xhaka,haku-fair~Noun'},
+{p1:/(博)(?!X)/g,r1:'$1Xhaka,haku,Hiro-fair~Noun'},
 {p1:/(博)(?!X)/g,r1:'$1Xhiro-acclaimed~Noun'},
 {p1:/(印)(?!X)/g,r1:'$1Xshirushi-mark,symbol~Noun'},
 {p1:/(卵)(?!X)/g,r1:'$1Xtamago-egg~Noun'},
@@ -7696,6 +7701,7 @@ const replsB = [
 {p1:/(白)(?!X)/g,r1:'$1Xshiro-white~Noun'},
 {p1:/(百)(?!X)/g,r1:'$1Xhyaku-hundred~Noun'},
 {p1:/(的)(?!X)/g,r1:'$1Xteki-ly~adverb~Noun'},
+{p1:/(際)(?!X)/g,r1:'$1Xsai-circumstances~Noun'},
 {p1:/(皆)(?!X)/g,r1:'$1Xmina-everybody~Noun'},
 {p1:/(皮)(?!X)/g,r1:'$1Xkawa-peel,fur~Noun'},
 {p1:/(皿)(?!X)/g,r1:'$1Xsara-plate,counter for plates,helpings~Noun'},
@@ -8172,7 +8178,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-台湾の消防当局によると、南部・屏東（へいとう）県のゴルフ用品工場で22日夕、火災が発生し、救助活動に当たっていた消防士4人がその後起きた爆発に巻き込まれて死亡した。23日午前2時（日本時間同3時）現在、従業員6人の行方が分かっていないほか、消防関係者など約100人が負傷した。
+厚生労働省は25日、製薬大手エーザイと米バイオジェンが共同開発したアルツハイマー病新薬「レカネマブ（商品名レケンビ）」の製造販売を承認した。年内にも保険適用される見通しで、病気の原因物質を除去することで進行抑制を狙った初の認知症薬となる。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
