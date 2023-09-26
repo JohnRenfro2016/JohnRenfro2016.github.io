@@ -152,7 +152,7 @@ const replsB = [
 {p1:/(取)(?!X)(り)(?!X)(締)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xto$3Xr$4Xishima-control,crack down$5X~RuVerb'},
 {p1:/(受)(?!X)(け)(?!X)(付)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xuk$3Xe$4Xtsuke-undertake$5X~RuVerb'},
 {p1:/(受)(?!X)(け)(?!X)(入)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xu$2Xke$3Xi$4Xre-accommodate$5X~RuVerb'},
-{p1:/(受)(?!X)(け)(?!X)(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xuk$3Xe$4Xtome-catch,receive$5X~RuVerb'},
+{p1:/(受)(?!X)(け)(?!X)(止)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xu$2Xke$3Xto$4Xme-catch,receive$5X~RuVerb'},
 {p1:/(召)(?!X)(し)(?!X)(上)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xme$3Xshi$4Xaga-eat,drink$5X~RuVerb'},
 {p1:/(呼)(?!X)(び)(?!X)(掛)(?!X)(け)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xyo$3Xb$4Xi-kake,call to$5X~RuVerb'},
 {p1:/(売)(?!X)(り)(?!X)(上)(?!X)(げ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xu$2Xri$3Xa$4Xge-amount sold$5X~RuVerb'},
@@ -436,7 +436,8 @@ const replsB = [
 {p1:/(ま)(?!X)(あ)(?!X)(ま)(?!X)(あ)(?!X)/g,r1:'$1X$2X$3X$4XOK-not bad,average~Noun'},
 {p1:/(ま)(?!X)(あ)(?!X)(ま)(?!X)(あ)(?!X)/g,r1:'$1X$2Xno$3Xw$4X now~Noun'},
 {p1:/(ま)(?!X)(す)(?!X)(ま)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xmas$2Xum$3Xa-increasingly$4X~SuVerb'},
-{p1:/(ま)(?!X)(と)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xma$3Xtoma-be collected$4X~RuVerb'},
+{p1:/(ま)(?!X)(と)(?!X)(ま)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xma$2Xto$3Xma-be collected$4X~RuVerb'},
+ {p1:/(踏)(?!X)(み)(?!X)(切)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xfu$2Xmi$3Xki-take the plunge$4X~RuVerb'},
 {p1:/(ま)(?!X)(と)(?!X)(め)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1X$2Xma$3Xtome-put in order$4X~RuVerb'},
 {p1:/(ま)(?!X)(も)(?!X)(な)(?!X)(く)(?!X)/g,r1:'$1X$2Xma$3Xm$4Xonaku-soon~Noun'},
 {p1:/(め)(?!X)(っ)(?!X)(た)(?!X)(に)(?!X)/g,r1:'$1X$2Xra$3Xr$4Xely~Noun'},
@@ -5574,6 +5575,7 @@ const replsB = [
 {p1:/(発)(?!X)(令)(?!X)/g,r1:'$1Xhatsu$2Xrei-official order~Noun'},
 {p1:/(発)(?!X)(信)(?!X)/g,r1:'$1Xhas$2Xshin-sharing opinions~Noun'},
 {p1:/(発)(?!X)(効)(?!X)/g,r1:'$1Xhak$2Xkou-go into effect~Noun'},
+{p1:/(額)(?!X)(面)(?!X)/g,r1:'$1Xgaku$2Xmen-face value~Noun'},
 {p1:/(発)(?!X)(動)(?!X)/g,r1:'$1Xhatsu$2Xdou-putting into operation~Noun'},
 {p1:/(発)(?!X)(売)(?!X)/g,r1:'$1Xhatsu$2Xbai-selling~Noun'},
 {p1:/(発)(?!X)(射)(?!X)/g,r1:'$1Xhas$2Xsya-launch~Noun'},
@@ -7957,6 +7959,7 @@ const replsB = [
 {p1:/(霧)(?!X)/g,r1:'$1Xkiri-fog,mist~Noun'},
 {p1:/(露)(?!X)/g,r1:'$1Xtsuyu-dew,or ro,Russia~Noun'},
 {p1:/(青)(?!X)/g,r1:'$1Xao-blue-green~Noun'},
+{p1:/(像)(?!X)/g,r1:'$1Xzou-picture~Noun'},
 {p1:/(静)(?!X)/g,r1:'$1Xshizu-silent,peaceful~Noun'},
 {p1:/(非)(?!X)/g,r1:'$1Xhi-non-~Noun'},
 {p1:/(面)(?!X)/g,r1:'$1Xmen-surface,entire aspect~Noun'},
@@ -8178,7 +8181,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-厚生労働省は25日、製薬大手エーザイと米バイオジェンが共同開発したアルツハイマー病新薬「レカネマブ（商品名レケンビ）」の製造販売を承認した。年内にも保険適用される見通しで、病気の原因物質を除去することで進行抑制を狙った初の認知症薬となる。
+岸田文雄首相が２５日、物価高対策など経済対策の「柱立て」を表明したことで、今後は１０月中の全体像取りまとめに向けた議論とともに、首相が早期の衆院解散・総選挙に踏み切るかも焦点となる。首相は表向きは早期解散の可能性を否定するが、経済対策は選挙での格好のアピール材料になりうる。与野党には首相の発言を額面通りに受け止める向きは少ない。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
