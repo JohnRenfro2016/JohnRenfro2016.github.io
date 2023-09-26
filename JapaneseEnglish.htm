@@ -5439,7 +5439,10 @@ const replsB = [
 {p1:/(特)(?!X)(派)(?!X)/g,r1:'$1Xtoku$2Xha-envoy~Noun'},
 {p1:/(特)(?!X)(色)(?!X)/g,r1:'$1Xtok$2Xusyoku-characteristic~Noun'},
 {p1:/(特)(?!X)(許)(?!X)/g,r1:'$1Xtok$2Xkyo-patent~Noun'},
+{p1:/(離)(?!X)(党)(?!X)/g,r1:'$1Xri$2Xtou-secession from a political party~Noun'},
 {p1:/(特)(?!X)(集)(?!X)/g,r1:'$1Xtoku$2Xsyuu-special edition~Noun'},
+{p1:/(賄)(?!X)(賂)(?!X)/g,r1:'$1Xwai$2Xro-bribery~Noun'},
+{p1:/(賄)(?!X)(罪)(?!X)/g,r1:'$1Xwai$2Xzai-bribery~Noun'},
 {p1:/(犠)(?!X)(牲)(?!X)/g,r1:'$1Xgi$2Xsei-sacrifice~Noun'},
 {p1:/(犯)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xoka-offend against,rape$2X~SuVerb'},
 {p1:/(犯)(?!X)(人)(?!X)/g,r1:'$1Xhan$2Xnin-criminal~Noun'},
@@ -5726,7 +5729,9 @@ const replsB = [
 {p1:/(砲)(?!X)(撃)(?!X)/g,r1:'$1Xhou$2Xgeki-shelling~Noun'},
 {p1:/(破)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xyabu-tear,break through,breach,defeat$2X~RuVerb'},
 {p1:/(破)(?!X)(壊)(?!X)/g,r1:'$1Xha$2Xkai-destruction~Noun'},
+{p1:/(持)(?!X)(続)(?!X)/g,r1:'$1Xji$2Xzoku-continuation~Noun'},
 {p1:/(破)(?!X)(壊)(?!X)/g,r1:'$1Xha$2Xkai-destruction~Noun'},
+{p1:/(受)(?!X)(託)(?!X)/g,r1:'$1Xjyu$2Xtaku-entrusted with~Noun'},
 {p1:/(破)(?!X)(片)(?!X)/g,r1:'$1Xha$2Xhen-fragment~Noun'},
 {p1:/(破)(?!X)(裂)(?!X)/g,r1:'$1Xha$2Xretsu-bursting~Noun'},
 {p1:/(硬)(?!X)(さ)(?!X)/g,r1:'$1Xka$2Xtasa-hardness~Noun'},
@@ -5755,7 +5760,8 @@ const replsB = [
 {p1:/(祖)(?!X)(先)(?!X)/g,r1:'$1Xso$2Xsen-ancestor,forefather~Noun'},
 {p1:/(祖)(?!X)(国)(?!X)/g,r1:'$1Xso$2Xkoku-homeland~Noun'},
 {p1:/(祖)(?!X)(母)(?!X)/g,r1:'$1Xso$2Xbo-grandmother~Noun'},
- {p1:/(激)(?!X)(走)(?!X)/g,r1:'$1Xgeki$2Xsou-full speed~Noun'},
+{p1:/(激)(?!X)(走)(?!X)/g,r1:'$1Xgeki$2Xsou-full speed~Noun'},
+{p1:/(洋)(?!X)(上)(?!X)/g,r1:'$1Xyou$2Xjyou-offshore~Noun'},
 {p1:/(祖)(?!X)(父)(?!X)/g,r1:'$1Xso$2Xfu-grandfather~Noun'},
 {p1:/(祝)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xiwa-celebration,congratulation$2X~IAdjective~Noun'},
 {p1:/(祝)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xiwa-celebrate,congratulate$2X~UVerb'},
@@ -7474,6 +7480,7 @@ const replsB = [
 {p1:/(底)(?!X)/g,r1:'$1Xsoko-bottom,depths~Noun'},
 {p1:/(店)(?!X)/g,r1:'$1Xmise,ten,shop~Noun'},
 {p1:/(府)(?!X)/g,r1:'$1Xfu-urban prefecture~Noun'},
+{p1:/(収)(?!X)/g,r1:'$1Xsyuu-accepting~Noun'},
 {p1:/(度)(?!X)/g,r1:'$1Xdo-times,degrees~Noun'},
 {p1:/(庫)(?!X)/g,r1:'$1Xgo,kura-warehouse~Noun'},
 {p1:/(庭)(?!X)/g,r1:'$1Xniwa-garden,court~Noun'},
@@ -7553,6 +7560,7 @@ const replsB = [
 {p1:/(札)(?!X)/g,r1:'$1Xfuda,satsu,sap-billboard,paper bill~Noun'},
 {p1:/(村)(?!X)/g,r1:'$1Xmura-village~Noun'},
 {p1:/(束)(?!X)/g,r1:'$1Xtaba-bundle,counter for bundles~Noun'},
+{p1:/(真)(?!X)/g,r1:'$1Xshin-true~Noun'},
 {p1:/(条)(?!X)/g,r1:'$1Xjyou-west and east~Noun'},
 {p1:/(来)(?!X)/g,r1:'$1Xku,ki-come,rai-next~IchidanVerb'},
 {p1:/(東)(?!X)/g,r1:'$1Xhigashi,Tou-east~Noun'},
@@ -8181,7 +8189,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-岸田文雄首相が２５日、物価高対策など経済対策の「柱立て」を表明したことで、今後は１０月中の全体像取りまとめに向けた議論とともに、首相が早期の衆院解散・総選挙に踏み切るかも焦点となる。首相は表向きは早期解散の可能性を否定するが、経済対策は選挙での格好のアピール材料になりうる。与野党には首相の発言を額面通りに受け止める向きは少ない。
+政府の洋上風力発電事業をめぐって衆院議員の秋本真利容疑者（48）=自民党を離党=が逮捕された汚職事件で、東京地検特捜部が、賄賂額を逮捕段階から1千万円ほど増やして計約7千万円と認定し、勾留期限の27日に受託収賄罪で起訴する方針であることが、関係者への取材でわかった。新型コロナウイルス対策の持続化給付金を約200万円不正に受給したという詐欺罪でも、あわせて起訴する方針だ。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
