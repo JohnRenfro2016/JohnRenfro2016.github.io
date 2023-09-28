@@ -81,16 +81,114 @@
     </style>
 </head>
 <body>
+This entire program was designed by ChatGPT after I trained it. This game does not save because you don't trust me to create files or even paste game data on your computer.<br>
     <button onclick="createUnit()">Create Piece</button>
     <button onclick="deleteUnits()">Delete Pieces</button>
     Load a map image.<input type="file" id="mapImageInput" accept="image/*">
 
-    <div class="board" id="board"></div>
+<!-- ... (existing HTML) -->
+
+<button id="rollD20Button">Roll D20</button>
+<button id="rollD12Button">Roll D12</button>
+<button id="rollD10Button">Roll D10</button>
+<button id="rollD8Button">Roll D8</button>
+<button id="rollD6Button">Roll D6</button>
+<button id="rollD4Button">Roll D4</button>
+
+<div id="resultsContainer"></div>
+
+<!-- ... (rest of the HTML) -->
+
+
+<div id="resultsContainer"></div>
+
+<div class="board" id="board"></div>
 
     <script>
         let unitCount = 0;
 
-        function loadMapImage(event) {
+// ... (existing code)
+
+// Array to store the last 5 rolls
+const lastRolls = [];
+
+// Function to display the last 5 rolls on the webpage
+function displayLastRolls() {
+    const resultsContainer = document.getElementById('resultsContainer');
+    resultsContainer.innerHTML = lastRolls.join('<br>');
+}
+
+// Function to roll a random 20-sided die (D20)
+function rollD20() {
+    const result = Math.floor(Math.random() * 20) + 1;
+    lastRolls.push(`D20 Result: ${result}`);
+    if (lastRolls.length > 5) {
+        lastRolls.shift(); // Remove the oldest roll
+    }
+    displayLastRolls();
+}
+
+// Function to roll a 12-sided die (D12)
+function rollD12() {
+    const result = Math.floor(Math.random() * 12) + 1;
+    lastRolls.push(`D12 Result: ${result}`);
+    if (lastRolls.length > 5) {
+        lastRolls.shift(); // Remove the oldest roll
+    }
+    displayLastRolls();
+}
+
+// Function to roll a 10-sided die (D10)
+function rollD10() {
+    const result = Math.floor(Math.random() * 10) + 1;
+    lastRolls.push(`D10 Result: ${result}`);
+    if (lastRolls.length > 5) {
+        lastRolls.shift(); // Remove the oldest roll
+    }
+    displayLastRolls();
+}
+
+// Function to roll an 8-sided die (D8)
+function rollD8() {
+    const result = Math.floor(Math.random() * 8) + 1;
+    lastRolls.push(`D8 Result: ${result}`);
+    if (lastRolls.length > 5) {
+        lastRolls.shift(); // Remove the oldest roll
+    }
+    displayLastRolls();
+}
+
+// Function to roll a 6-sided die (D6)
+function rollD6() {
+    const result = Math.floor(Math.random() * 6) + 1;
+    lastRolls.push(`D6 Result: ${result}`);
+    if (lastRolls.length > 5) {
+        lastRolls.shift(); // Remove the oldest roll
+    }
+    displayLastRolls();
+}
+
+// Function to roll a 4-sided die (D4)
+function rollD4() {
+    const result = Math.floor(Math.random() * 4) + 1;
+    lastRolls.push(`D4 Result: ${result}`);
+    if (lastRolls.length > 5) {
+        lastRolls.shift(); // Remove the oldest roll
+    }
+    displayLastRolls();
+}
+
+// Event listeners for rolling each die
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('rollD20Button').addEventListener('click', rollD20);
+    document.getElementById('rollD12Button').addEventListener('click', rollD12);
+    document.getElementById('rollD10Button').addEventListener('click', rollD10);
+    document.getElementById('rollD8Button').addEventListener('click', rollD8);
+    document.getElementById('rollD6Button').addEventListener('click', rollD6);
+    document.getElementById('rollD4Button').addEventListener('click', rollD4);
+});
+
+    function loadMapImage(event) {
     const mapImage = document.createElement('img');
     mapImage.src = URL.createObjectURL(event.target.files[0]);
     mapImage.style.position = 'absolute';
