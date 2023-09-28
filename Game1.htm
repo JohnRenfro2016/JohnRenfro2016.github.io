@@ -1,275 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Square Game Board with Menu</title>
-    <style>
-        .board {
-            display: grid;
-            grid-template-columns: repeat(11, 50px);
-            grid-template-rows: repeat(11, 50px);
-            border: 2px solid #000;
-            width: 550px;
-            height: 550px;
-            position: relative;
-            margin: auto;
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Advanced Dungeons & Dragons 1st Edition</title>
+ <style>
+ .board {
+ display: grid;
+ grid-template-columns: repeat(11, 50px);
+ grid-template-rows: repeat(11, 50px);
+ border: 2px solid #000;
+ width: 550px;
+ height: 550px;
+ position: relative;
+ margin: auto;
+ }
 
-        .square {
-            width: 50px;
-            height: 50px;
-            border: 1px solid #ccc;
-            position: relative;
-            background-color: #f0f0f0;
-        }
+ .square {
+ width: 50px;
+ height: 50px;
+ border: 1px solid #ccc;
+ position: relative;
+ background-color: #f0f0f0;
+ }
 
-        .unit {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            background-color: #f9f9f9;
-            cursor: move;
-            z-index: 1;
-            user-select: none;
-            transform-origin: center;
-            font-size: 14px;
-        }
+ .unit {
+ position: absolute;
+ width: 50px;
+ height: 50px;
+ border: 1px solid #ccc;
+ background-color: #f9f9f9;
+ cursor: move;
+ z-index: 1;
+ user-select: none;
+ transform-origin: center;
+ font-size: 10px;
+ }
 
-        .rotate-button {
-            display: block;
-            margin-top: 5px;
-        }
+ .rotate-button {
+ display: block;
+ font-size: 10px;
+ }
 
-        .menu {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            z-index: 2;
-        }
+ .menu {
+ display: none;
+ position: absolute;
+ background-color: #fff;
+ border: 1px solid #ccc;
+ z-index: 2;
+ }
 
-        .menu-button {
-            cursor: pointer;
-            font-size: 12px;
-        }
+ .menu-button {
+ cursor: pointer;
+ font-size: 10px;
+ }
 
-        .menu-item {
-            margin-bottom: 5px;
-        }
+ .menu-item {
+ }
 
-        .menu-input {
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 5px;
-        }
-    </style>
+ .menu-input {
+ width: 100%;
+ box-sizing: border-box;
+
+ }
+ </style>
 </head>
 <body>
-    <button onclick="createUnit()">Create Piece</button>
-    <button onclick="deleteUnits()">Delete Pieces</button>
+ <button onclick="createUnit()">Create Piece</button>
+ <button onclick="deleteUnits()">Delete Pieces</button>
 
-    <div class="board" id="board">
-        <!-- Square cells and units will be created dynamically using JavaScript -->
-    </div>
+ <div class="board" id="board">
+ <!-- Square cells and units will be created dynamically using JavaScript -->
+ </div>
 
-    <script>
-        let unitCount = 0;
+ <script>
+ let unitCount=0;
 
-        function createUnit() {
-            // Create a unit div element
-            const unitElement = document.createElement('div');
-            unitElement.className = 'unit';
-            unitElement.draggable = true;
-            unitElement.id = `unit-${unitCount}`;
+ function createUnit() {
+ // Create a unit div element
+ const unitElement=document.createElement('div');
+ unitElement.className='unit';
+ unitElement.draggable=true;
+ unitElement.id=`unit-${unitCount}`;
 
-            // Create a button for rotating the unit
-            const rotateButton = document.createElement('button');
-            rotateButton.textContent = 'R';
-            rotateButton.className = 'rotate-button';
+ // Create a button for rotating the unit
+ const rotateButton=document.createElement('button');
+ rotateButton.textContent='R';
+ rotateButton.className='rotate-button';
 
-            // Event listener for rotating the unit
-            rotateButton.addEventListener('click', function() {
-                let currentRotation = 0;
+ // Event listener for rotating the unit
+ rotateButton.addEventListener('click', function() {
+ let currentRotation=0;
 
-                // Check if rotation is already applied
-                const transform = unitElement.style.transform;
-                const match = transform && transform.match(/\d+/);
+ // Check if rotation is already applied
+ const transform=unitElement.style.transform;
+ const match=transform && transform.match(/\d+/);
 
-                if (match) {
-                    currentRotation = parseInt(match[0], 10);
-                }
+ if (match) {
+ currentRotation=parseInt(match[0], 10);
+ }
 
-                // Apply new rotation
-                unitElement.style.transform = `rotate(${(currentRotation + 45) % 360}deg)`;
-            });
+ // Apply new rotation
+ unitElement.style.transform=`rotate(${(currentRotation + 45) % 360}deg)`;
+ });
 
-            // Create a menu button
-            const menuButton = document.createElement('button');
-            menuButton.className = 'menu-button';
-            menuButton.textContent = 'M';
+ // Create a menu button
+ const menuButton=document.createElement('button');
+ menuButton.className='menu-button';
+ menuButton.textContent='M';
 
-            // Create a menu
-            const menu = document.createElement('div');
-            menu.className = 'menu';
+ unitElement.dataset.weapons = '';
+unitElement.dataset.spells = '';
 
-            // Create menu items
-            const menuText = document.createElement('div');
-            menuText.className = 'menu-item';
-            menuText.textContent = 'Change the name?';
+const menu=document.createElement('div');
+menu.className='menu';
 
-            const menuACInput = document.createElement('input');
-            menuACInput.type = 'text';
-            menuACInput.className = 'menu-input';
-            menuACInput.placeholder = 'AC';
+ // Create menu items
+ const menuText=document.createElement('input');
+ menuText.type='text';
+ menuText.className='menu-input';
+ menuText.placeholder='Name';
 
-            const menuMVInput = document.createElement('input');
-            menuMVInput.type = 'text';
-            menuMVInput.className = 'menu-input';
-            menuMVInput.placeholder = 'MV';
+const menuACText=document.createElement('div');
+menuACText.className='menu-item';
+menuACText.textContent='AC:';
 
-            const menuHDInput = document.createElement('input');
-            menuHDInput.type = 'text';
-            menuHDInput.className = 'menu-input';
-            menuHDInput.placeholder = 'HD';
+const menuACInput=document.createElement('input');
+menuACInput.className='menu-input';
+menuACInput.maxLength=2;
+menuACInput.size=2;
+menuACInput.style.width='2em';
+menuACInput.type='text';
 
-            const menuHPInput = document.createElement('input');
-            menuHPInput.type = 'text';
-            menuHPInput.className = 'menu-input';
-            menuHPInput.placeholder = 'HP';
+const menuMVText=document.createElement('div');
+menuMVText.className='menu-item';
+menuMVText.textContent='MV:';
 
-            // Create a delete button in the menu
-            const deleteButton = document.createElement('button');
-            deleteButton.className = 'menu-button';
-            deleteButton.textContent = 'Delete Piece';
-            // Event listener for deleting the unit
-            deleteButton.addEventListener('click', function() {
-                unitElement.remove();
-            });
+const menuMVInput=document.createElement('input');
+menuMVInput.className='menu-input';
+menuMVInput.maxLength=2;
+menuMVInput.size=2;
+menuMVInput.style.width='2em';
+menuMVInput.type='text';
 
-            // Event listener for showing the menu
-            menuButton.addEventListener('click', function(event) {
-                event.stopPropagation();
-                menu.style.display = 'block';
-            });
+const menuHDText=document.createElement('div');
+menuHDText.className='menu-item';
+menuHDText.textContent='HD:';
 
-            // Event listener for hiding the menu when clicking outside
-            document.addEventListener('click', function() {
-                menu.style.display = 'none';
-            });
+const menuHDInput=document.createElement('input');
+menuHDInput.className='menu-input';
+menuHDInput.maxLength=8;
+menuHDInput.size=8;
+menuHDInput.style.width='8em';
+menuHDInput.type='text';
 
-            // Event listener for preventing the menu from closing when clicking inside the menu
-            menu.addEventListener('click', function(event) {
-                event.stopPropagation();
-            });
+const menuMaxHPText = document.createElement('div');
+menuMaxHPText.className = 'menu-item';
+menuMaxHPText.textContent = 'maxHP:';
 
-            // Event listener for menu item "Change Text"
-            menuText.addEventListener('click', function() {
-                const newText = prompt('Enter new text:');
-                if (newText !== null) {
-                    unitText.textContent = newText;
-                }
-            });
+const menuMaxHPInput = document.createElement('input');
+menuMaxHPInput.className = 'menu-input';
+menuMaxHPInput.maxLength = 3;
+menuMaxHPInput.size = 3;
+menuMaxHPInput.style.width = '3em';
+menuMaxHPInput.type = 'text';
 
-            menuACInput.addEventListener('input', function() {
-                unitElement.dataset.ac = menuACInput.value;
-            });
+const menuCurrHPText = document.createElement('div');
+menuCurrHPText.className = 'menu-item';
+menuCurrHPText.textContent = 'curHP:';
 
-            menuMVInput.addEventListener('input', function() {
-                unitElement.dataset.mv = menuMVInput.value;
-            });
+const menuCurrHPInput = document.createElement('input');
+menuCurrHPInput.className = 'menu-input';
+menuCurrHPInput.maxLength = 3;
+menuCurrHPInput.size = 3;
+menuCurrHPInput.style.width = '3em';
+menuCurrHPInput.type = 'text';
 
-            menuHDInput.addEventListener('input', function() {
-                unitElement.dataset.hd = menuHDInput.value;
-            });
+const menuWeaponsText = document.createElement('div');
+menuWeaponsText.className = 'menu-item';
+menuWeaponsText.textContent = 'Weapon or Spell:';
 
-            menuHPInput.addEventListener('input', function() {
-                unitElement.dataset.hp = menuHPInput.value;
-            });
+const menuWeaponsInput = document.createElement('input');
+menuWeaponsInput.className = 'menu-input';
+menuWeaponsInput.type = 'text';
 
-            // Add the button, menu button, and menu to the unit element
-            const unitText = document.createElement('div');
-            unitText.className = 'unit-text';
-            unitText.textContent = 'Name';
+const menuAttackDiceText = document.createElement('div');
+menuAttackDiceText.className = 'menu-item';
+menuAttackDiceText.textContent = 'Attack Dice';
 
-            unitElement.appendChild(rotateButton);
-            unitElement.appendChild(menuButton);
-            menu.appendChild(menuText);
-            menu.appendChild(menuACInput);
-            menu.appendChild(menuMVInput);
-            menu.appendChild(menuHDInput);
-            menu.appendChild(menuHPInput);
-            menu.appendChild(deleteButton);
-            unitElement.appendChild(menu);
-            unitElement.appendChild(unitText);
+const menuAttackDiceInput = document.createElement('input');
+menuAttackDiceInput.className = 'menu-input';
+menuAttackDiceInput.type = 'text';
+menuAttackDiceInput.placeholder = 'XdY+Z';
 
-            // Event listener for drag start
-            unitElement.ondragstart = (event) => {
-                event.dataTransfer.setData('text/plain', event.target.id);
-            };
+const menuDamageDiceText = document.createElement('div');
+menuDamageDiceText.className = 'menu-item';
+menuDamageDiceText.textContent = 'Damage Dice';
 
-            // Add unit to the board
-            const board = document.getElementById('board');
-            const cellSize = 50;
-            const randomColumn = Math.floor(Math.random() * 11) * cellSize;
-            const randomRow = Math.floor(Math.random() * 11) * cellSize;
+const menuDamageDiceInput = document.createElement('input');
+menuDamageDiceInput.className = 'menu-input';
+menuDamageDiceInput.type = 'text';
+menuDamageDiceInput.placeholder = 'XdY+Z';
 
-            // Snap to nearest square
-            unitElement.style.left = `${Math.round(randomColumn / cellSize) * cellSize}px`;
-            unitElement.style.top = `${Math.round(randomRow / cellSize) * cellSize}px`;
+ // Create a delete button in the menu
+ const deleteButton=document.createElement('button');
+ deleteButton.className='menu-button';
+ deleteButton.textContent='Delete';
+ // Event listener for deleting the unit
+ deleteButton.addEventListener('click', function() {
+ unitElement.remove();
+ });
 
-            board.appendChild(unitElement);
+ // Event listener for showing the menu
+ menuButton.addEventListener('click', function(event) {
+ event.stopPropagation();
+ menu.style.display='block';
+ });
 
-            unitCount++;
-        }
+ // Event listener for hiding the menu when clicking outside
+ document.addEventListener('click', function() {
+ menu.style.display='none';
+ });
 
-        function deleteUnits() {
-            // Find all units by class name
-            const units = document.getElementsByClassName('unit');
+ // Event listener for preventing the menu from closing when clicking inside the menu
+ menu.addEventListener('click', function(event) {
+ event.stopPropagation();
+ });
 
-            // Convert HTMLCollection to Array for easy iteration
-            const unitsArray = Array.from(units);
+menuText.addEventListener('input', function(){unitText.textContent=menuText.value;});
 
-            // Remove each unit
-            unitsArray.forEach(unit => unit.remove());
-        }
+ menuACInput.addEventListener('input', function() {
+ unitElement.dataset.ac=menuACInput.value;
+ });
 
-        // Dynamically create square cells
-        const board = document.getElementById('board');
-        for (let i = 0; i < 121; i++) {
-            const square = document.createElement('div');
-            square.className = 'square';
-            board.appendChild(square);
-        }
+ menuMVInput.addEventListener('input', function() {
+ unitElement.dataset.mv=menuMVInput.value;
+ });
 
-        // Event listener for drag over
-        board.addEventListener('dragover', (event) => {
-            event.preventDefault();
-        });
+ menuHDInput.addEventListener('input', function() {
+ unitElement.dataset.hd=menuHDInput.value;
+ });
 
-        // Event listener for drop
-        board.addEventListener('drop', (event) => {
-            event.preventDefault();
-            const data = event.dataTransfer.getData('text/plain');
-            const draggedElement = document.getElementById(data);
-            const cellSize = 50;
+ // Add the button, menu button, and menu to the unit element
+ const unitText=document.createElement('div');
+ unitText.className='unit-text';
+ unitText.textContent='Name';
 
-            if (draggedElement) {
-                // Calculate the cell position based on mouse coordinates
-                const mouseX = event.clientX - board.offsetLeft;
-                const mouseY = event.clientY - board.offsetTop;
+ const lineBreak = document.createElement('br');
 
-                const cellX = Math.floor(mouseX / cellSize) * cellSize;
-                const cellY = Math.floor(mouseY / cellSize) * cellSize;
+ unitElement.appendChild(rotateButton);
+ unitElement.appendChild(menuButton);
+ menu.appendChild(menuText);
+ menu.appendChild(lineBreak);
+ menu.appendChild(menuACText);
+ menu.appendChild(menuACInput);
+ menu.appendChild(lineBreak);
+ menu.appendChild(menuMVText);
+ menu.appendChild(menuMVInput);
+ menu.appendChild(lineBreak);
+ menu.appendChild(menuHDText);
+ menu.appendChild(menuHDInput);
+ menu.appendChild(lineBreak);
+menu.appendChild(menuMaxHPText);
+menu.appendChild(menuMaxHPInput);
+menu.appendChild(lineBreak);
+menu.appendChild(menuCurrHPText);
+menu.appendChild(menuCurrHPInput);
+ menu.appendChild(lineBreak);
+ menu.appendChild(menuWeaponsText);
+menu.appendChild(menuWeaponsInput);
+menu.appendChild(lineBreak);
+menu.appendChild(menuAttackDiceText);
+menu.appendChild(menuAttackDiceInput);
+menu.appendChild(lineBreak);
+menu.appendChild(menuDamageDiceText);
+menu.appendChild(menuDamageDiceInput);
+ menu.appendChild(deleteButton);
+ unitElement.appendChild(menu);
+ unitElement.appendChild(unitText);
 
-                draggedElement.style.left = `${cellX}px`;
-                draggedElement.style.top = `${cellY}px`;
-            }
-        });
+menuWeaponsInput.addEventListener('input', function() {
+    unitElement.dataset.weapons = menuWeaponsInput.value;
+});
 
-    </script>
+menuAttackDiceInput.addEventListener('input', function() {
+    unitElement.dataset.spells = menuAttackDiceInput.value;
+});
+
+ // Event listener for drag start
+ unitElement.ondragstart=(event) => {
+ event.dataTransfer.setData('text/plain', event.target.id);
+ };
+
+ // Add unit to the board
+ const board=document.getElementById('board');
+ const cellSize=50;
+ const randomColumn=Math.floor(Math.random() * 11) * cellSize;
+ const randomRow=Math.floor(Math.random() * 11) * cellSize;
+
+ // Snap to nearest square
+ unitElement.style.left=`${Math.round(randomColumn / cellSize) * cellSize}px`;
+ unitElement.style.top=`${Math.round(randomRow / cellSize) * cellSize}px`;
+
+ board.appendChild(unitElement);
+
+ unitCount++;
+ }
+
+ function deleteUnits() {
+ // Find all units by class name
+ const units=document.getElementsByClassName('unit');
+
+ // Convert HTMLCollection to Array for easy iteration
+ const unitsArray=Array.from(units);
+
+ // Remove each unit
+ unitsArray.forEach(unit => unit.remove());
+ }
+
+ // Dynamically create square cells
+ const board=document.getElementById('board');
+ for (let i=0; i < 121; i++) {
+ const square=document.createElement('div');
+ square.className='square';
+ board.appendChild(square);
+ }
+
+ // Event listener for drag over
+ board.addEventListener('dragover', (event) => {
+ event.preventDefault();
+ });
+
+ // Event listener for drop
+ board.addEventListener('drop', (event) => {
+ event.preventDefault();
+ const data=event.dataTransfer.getData('text/plain');
+ const draggedElement=document.getElementById(data);
+ const cellSize=50;
+
+ if (draggedElement) {
+ // Calculate the cell position based on mouse coordinates
+ const mouseX=event.clientX - board.offsetLeft;
+ const mouseY=event.clientY - board.offsetTop;
+
+ const cellX=Math.floor(mouseX / cellSize) * cellSize;
+ const cellY=Math.floor(mouseY / cellSize) * cellSize;
+
+ draggedElement.style.left=`${cellX}px`;
+ draggedElement.style.top=`${cellY}px`;
+ }
+ });
+
+ </script>
 </body>
 </html>
