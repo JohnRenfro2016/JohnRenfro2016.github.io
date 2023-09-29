@@ -1,92 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Dungeons & Dragons 1st Edition</title>
-    <style>
-        .board {
-            border:2px solid #000;
-            display:grid;
-            grid-template-columns:repeat(7, 100px);
-            grid-template-rows:repeat(7, 100px);
-            height:700px;
-            position:relative;
-            width:700px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Dungeons & Dragons 1st Edition</title>
+<style>
 
-        .menu {
-            background-color:#fff;
-            border:1px solid #ccc;
-            display:inline-block;
-            position:absolute;
-            width:300px;
-            z-index:2;
-        }
+.board.touch {
+  touch-action: none;
+}
 
-        .menu-button {
-            cursor:pointer;
-            display:inline-block;
-            font-size:10px;
-        }
+.unit.touch {
+  touch-action: none;
+}
 
-        .menu-input {
-            display:inline-block;
-            box-sizing:border-box;
-            font-size:10px;
-            z-index:3;
-        }
+.board {
+border:2px solid #000;
+display:grid;
+grid-template-columns:repeat(7, 100px);
+grid-template-rows:repeat(7, 100px);
+height:700px;
+position:relative;
+width:700px;
+}
 
-        .menu-item {
-            display:inline-block;
-        }
+.menu {
+ background-color: #fff;
+ border: 1px solid #ccc;
+ display: inline-block;
+ position: absolute;
+ width: 300px;
+}
 
-        .rotate-button {
-            display:inline-block;
-            font-size:10px;
-        }
+.menu-button {
+cursor:pointer;
+display:inline-block;
+font-size:10px;
+}
 
-        .square {
-            border:1px solid #ccc;
-            height:100px;
-            position:relative;
-            width:100px;
-        }
+.menu-input {
+display:inline-block;
+box-sizing:border-box;
+font-size:10px;
+z-index:3;
+}
 
-        .unit {
-            background-color:#f9f9f9;
-            border:1px solid #ccc;
-            cursor:move;
-            font-size:10px;
-            height:100px;
-            position:absolute;
-            transform-origin:center;
-            user-select:none;
-            width:100px;
-            z-index:1;
-        }
+.menu-item {
+display:inline-block;
+}
 
-        .unit img {
-            position:absolute;
-            top:20px;
-            left:0px;
-            width:80%;
-            height:80%;
-        }
+.rotate-button {
+display:inline-block;
+font-size:10px;
+}
 
-        .unit-text {
-            display:inline-block;
-            font-size:10px;
-        }
-    </style>
+.square {
+border:1px solid #ccc;
+height:100px;
+position:relative;
+width:100px;
+}
+
+.unit {
+background-color:#f9f9f9;
+border:1px solid #ccc;
+cursor:move;
+font-size:10px;
+height:100px;
+position:absolute;
+transform-origin:center;
+user-select:none;
+width:100px;
+z-index:1;
+}
+
+.unit-container {
+ position: absolute;
+}
+
+.unit img {
+position:absolute;
+top:20px;
+left:0px;
+width:80%;
+height:80%;
+}
+
+.unit-text {
+display:inline-block;
+font-size:10px;
+}
+
+</style>
 </head>
 <body>
-This entire program was designed by ChatGPT after I trained it. This game does not save because you don't trust me to create files or even paste game data on your computer.<br>
-    <button onclick="createUnit()">Create Piece</button>
-    <button onclick="deleteUnits()">Delete Pieces</button>
-    Load a map image.<input type="file" id="mapImageInput" accept="image/*">
-
-<!-- ... (existing HTML) -->
+<button onclick="createUnit()">Create Piece</button>
+<button onclick="deleteUnits()">Delete Pieces</button>
+Load a map image.<input type="file" id="mapImageInput" accept="image/*">
 
 <button id="rollD20Button">Roll D20</button>
 <button id="rollD12Button">Roll D12</button>
@@ -97,446 +107,496 @@ This entire program was designed by ChatGPT after I trained it. This game does n
 
 <div id="resultsContainer"></div>
 
-<!-- ... (rest of the HTML) -->
-
-
-<div id="resultsContainer"></div>
-
 <div class="board" id="board"></div>
 
-    <script>
-        let unitCount = 0;
+<script>
 
-// ... (existing code)
+let unitCount = 0;
+let isDragging = false;
+let offsetX, offsetY;
+let draggedElement;
+let highestZIndex = 1;
 
-// Array to store the last 5 rolls
 const lastRolls = [];
 
 // Function to display the last 5 rolls on the webpage
 function displayLastRolls() {
-    const resultsContainer = document.getElementById('resultsContainer');
-    resultsContainer.innerHTML = lastRolls.join('<br>');
+const resultsContainer = document.getElementById('resultsContainer');
+resultsContainer.innerHTML = lastRolls.join('<br>');
 }
 
 // Function to roll a random 20-sided die (D20)
 function rollD20() {
-    const result = Math.floor(Math.random() * 20) + 1;
-    lastRolls.push(`D20 Result: ${result}`);
-    if (lastRolls.length > 5) {
-        lastRolls.shift(); // Remove the oldest roll
-    }
-    displayLastRolls();
+const result = Math.floor(Math.random() * 20) + 1;
+lastRolls.push(`D20 Result: ${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
 }
 
 // Function to roll a 12-sided die (D12)
 function rollD12() {
-    const result = Math.floor(Math.random() * 12) + 1;
-    lastRolls.push(`D12 Result: ${result}`);
-    if (lastRolls.length > 5) {
-        lastRolls.shift(); // Remove the oldest roll
-    }
-    displayLastRolls();
+const result = Math.floor(Math.random() * 12) + 1;
+lastRolls.push(`D12 Result: ${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
 }
 
 // Function to roll a 10-sided die (D10)
 function rollD10() {
-    const result = Math.floor(Math.random() * 10) + 1;
-    lastRolls.push(`D10 Result: ${result}`);
-    if (lastRolls.length > 5) {
-        lastRolls.shift(); // Remove the oldest roll
-    }
-    displayLastRolls();
+const result = Math.floor(Math.random() * 10) + 1;
+lastRolls.push(`D10 Result: ${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
 }
 
 // Function to roll an 8-sided die (D8)
 function rollD8() {
-    const result = Math.floor(Math.random() * 8) + 1;
-    lastRolls.push(`D8 Result: ${result}`);
-    if (lastRolls.length > 5) {
-        lastRolls.shift(); // Remove the oldest roll
-    }
-    displayLastRolls();
+const result = Math.floor(Math.random() * 8) + 1;
+lastRolls.push(`D8 Result: ${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
 }
 
 // Function to roll a 6-sided die (D6)
 function rollD6() {
-    const result = Math.floor(Math.random() * 6) + 1;
-    lastRolls.push(`D6 Result: ${result}`);
-    if (lastRolls.length > 5) {
-        lastRolls.shift(); // Remove the oldest roll
-    }
-    displayLastRolls();
+const result = Math.floor(Math.random() * 6) + 1;
+lastRolls.push(`D6 Result: ${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
 }
 
 // Function to roll a 4-sided die (D4)
 function rollD4() {
-    const result = Math.floor(Math.random() * 4) + 1;
-    lastRolls.push(`D4 Result: ${result}`);
-    if (lastRolls.length > 5) {
-        lastRolls.shift(); // Remove the oldest roll
-    }
-    displayLastRolls();
+const result = Math.floor(Math.random() * 4) + 1;
+lastRolls.push(`D4 Result: ${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
 }
 
 // Event listeners for rolling each die
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('rollD20Button').addEventListener('click', rollD20);
-    document.getElementById('rollD12Button').addEventListener('click', rollD12);
-    document.getElementById('rollD10Button').addEventListener('click', rollD10);
-    document.getElementById('rollD8Button').addEventListener('click', rollD8);
-    document.getElementById('rollD6Button').addEventListener('click', rollD6);
-    document.getElementById('rollD4Button').addEventListener('click', rollD4);
+document.getElementById('rollD20Button').addEventListener('click', rollD20);
+document.getElementById('rollD12Button').addEventListener('click', rollD12);
+document.getElementById('rollD10Button').addEventListener('click', rollD10);
+document.getElementById('rollD8Button').addEventListener('click', rollD8);
+document.getElementById('rollD6Button').addEventListener('click', rollD6);
+document.getElementById('rollD4Button').addEventListener('click', rollD4);
 });
 
-    function loadMapImage(event) {
-    const mapImage = document.createElement('img');
-    mapImage.src = URL.createObjectURL(event.target.files[0]);
-    mapImage.style.position = 'absolute';
-    mapImage.style.width = '100%';
-    mapImage.style.height = '100%';
-    mapImage.style.top = '0';
-    mapImage.style.left = '0';
-    mapImage.style.zIndex = '-1';
-    const board = document.getElementById('board');
-    board.appendChild(mapImage);
+function loadMapImage(event) {
+const mapImage = document.createElement('img');
+mapImage.src = URL.createObjectURL(event.target.files[0]);
+mapImage.style.position = 'absolute';
+mapImage.style.width = '100%';
+mapImage.style.height = '100%';
+mapImage.style.top = '0';
+mapImage.style.left = '0';
+mapImage.style.zIndex = '-1';
+const board = document.getElementById('board');
+board.appendChild(mapImage);
 }
 
 document.getElementById('mapImageInput').addEventListener('change', loadMapImage);
 
-        function getRotationDegrees(element) {
-            const transform = window.getComputedStyle(element).getPropertyValue('transform');
-            if (transform && transform !== 'none') {
-                const matrix = new DOMMatrix(transform);
-                return Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI));
-            }
-            return 0;
-        }
+function getRotationDegrees(element) {
+const transform = window.getComputedStyle(element).getPropertyValue('transform');
+if (transform && transform !== 'none') {
+const matrix = new DOMMatrix(transform);
+return Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI));
+}
+return 0;
+}
 
-        function onDragStart(event) {
-            isDragging = true;
-            event.dataTransfer.setData('text/plain', event.target.id);
+function onDragStart(event) {
+ isDragging = true;
+ event.dataTransfer.setData('text/plain', event.target.id);
 
-            const rect = event.target.getBoundingClientRect();
-            offsetX = event.clientX - rect.left;
-            offsetY = event.clientY - rect.top;
-            draggedElement = event.target;
-        }
+ const rect = event.target.getBoundingClientRect();
+ offsetX = event.clientX - rect.left;
+ offsetY = event.clientY - rect.top;
+ draggedElement = event.target;
 
-        function createUnit() {
-            const unitElement=document.createElement('div');
-            unitElement.className='unit';
-            unitElement.draggable=true;
-            unitElement.id=`unit-${unitCount}`;
-            unitElement.ondragstart = onDragStart;
+ highestZIndex++;
+ draggedElement.style.zIndex = highestZIndex;
+}
 
-            const rotateButton=document.createElement('button');
-            rotateButton.textContent='R';
-            rotateButton.className='rotate-button';
+function onDragOver(event) {
+event.preventDefault();
+}
 
-            rotateButton.addEventListener('click', function(){
-                let currentRotation=0;
+function onDrop(event) {
+event.preventDefault();
+const data = event.dataTransfer.getData('text/plain');
+const draggedElement = document.getElementById(data);
+const cellSize = 100;
 
-                const transform=unitElement.style.transform;
-                const match=transform && transform.match(/\d+/);
+if (draggedElement) {
+const mouseX = event.clientX - board.offsetLeft;
+const mouseY = event.clientY - board.offsetTop;
 
-                if (match){
-                    currentRotation=parseInt(match[0], 10);
-                }
-                unitElement.style.transform=`rotate(${(currentRotation + 45) % 360}deg)`;
-            });
+const cellX = Math.floor(mouseX / cellSize) * cellSize;
+const cellY = Math.floor(mouseY / cellSize) * cellSize;
 
-            const menuButton=document.createElement('button');
-            menuButton.className='menu-button';
-            menuButton.textContent='M';
+draggedElement.style.left = `${cellX}px`;
+draggedElement.style.top = `${cellY}px`;
+}
+}
 
-            const menu=document.createElement('div');
-            menu.className='menu';
+function createUnit() {
+const unitElement=document.createElement('div');
+unitElement.className='unit';
+unitElement.draggable=true;
+unitElement.id=`unit-${unitCount}`;
+unitElement.ondragstart = onDragStart;
 
-            const menuText=document.createElement('input');
-            menuText.type='text';
-            menuText.className='menu-input';
-            menuText.placeholder='character or monster name';
-            menuText.maxLength = 20;
-            menuText.size = 20;
-            menuText.style.width = '18em';
+ const rotateButton = document.createElement('button');
+ rotateButton.textContent = 'R';
+ rotateButton.className = 'rotate-button';
 
-            const addImageButton = document.createElement('button');
-            addImageButton.className = 'menu-button';
-            addImageButton.textContent = 'Add an image?';
+ rotateButton.addEventListener('click', function(event) {
+ event.stopPropagation(); // Stop event from bubbling up
+ let currentRotation = 0;
 
-            addImageButton.addEventListener('click', function() {
-                imageInput.click();
-            });
+ const transform = unitElement.style.transform;
+ const match = transform && transform.match(/\d+/);
 
-            const imageInput = document.createElement('input');
-            imageInput.type = 'file';
-            imageInput.accept = 'image/*';
-            imageInput.style.display = 'none';
-            menu.appendChild(imageInput);
+ if (match) {
+ currentRotation = parseInt(match[0], 10);
+ }
+ unitElement.style.transform = `rotate(${(currentRotation + 45) % 360}deg)`;
+ });
 
-            imageInput.addEventListener('change', function() {
-                const file = this.files[0];
-                const reader = new FileReader();
+const menuButton=document.createElement('button');
+menuButton.className='menu-button';
+menuButton.textContent='M';
 
-                reader.onload = function() {
-                    const imageElement = document.createElement('img');
-                    imageElement.src = reader.result;
-                    unitElement.appendChild(imageElement);
-                }
+const menu=document.createElement('div');
+menu.className='menu';
 
-                reader.readAsDataURL(file);
-            });
+const menuText=document.createElement('input');
+menuText.type='text';
+menuText.className='menu-input';
+menuText.placeholder='character or monster name';
+menuText.maxLength = 20;
+menuText.size = 20;
+menuText.style.width = '18em';
 
-            const menuACText=document.createElement('div');
-            menuACText.className='menu-item';
-            menuACText.textContent='AC:';
+const addImageButton = document.createElement('button');
+addImageButton.className = 'menu-button';
+addImageButton.textContent = 'Add an image?';
 
-            const menuACInput=document.createElement('input');
-            menuACInput.className='menu-input';
-            menuACInput.maxLength=2;
-            menuACInput.size=2;
-            menuACInput.style.width='2em';
-            menuACInput.type='text';
+addImageButton.addEventListener('click', function() {
+imageInput.click();
+});
 
-            const menuMVText=document.createElement('div');
-            menuMVText.className='menu-item';
-            menuMVText.textContent='MV:';
+const imageInput = document.createElement('input');
+imageInput.type = 'file';
+imageInput.accept = 'image/*';
+imageInput.style.display = 'none';
+menu.appendChild(imageInput);
 
-            const menuMVInput=document.createElement('input');
-            menuMVInput.className='menu-input';
-            menuMVInput.maxLength=2;
-            menuMVInput.size=2;
-            menuMVInput.style.width='2em';
-            menuMVInput.type='text';
+imageInput.addEventListener('change', function() {
+const file = this.files[0];
+const reader = new FileReader();
 
-            const menuHDText=document.createElement('div');
-            menuHDText.className='menu-item';
-            menuHDText.textContent='HD:';
+reader.onload = function() {
+const imageElement = document.createElement('img');
+imageElement.src = reader.result;
+unitElement.appendChild(imageElement);
+}
 
-            const menuHDInput=document.createElement('input');
-            menuHDInput.className='menu-input';
-            menuHDInput.maxLength=8;
-            menuHDInput.size=8;
-            menuHDInput.style.width='6em';
-            menuHDInput.type='text';
+reader.readAsDataURL(file);
+});
 
-            const menuMaxHPText = document.createElement('div');
-            menuMaxHPText.className = 'menu-item';
-            menuMaxHPText.textContent = 'maxHP:';
+const menuACText=document.createElement('div');
+menuACText.className='menu-item';
+menuACText.textContent='AC:';
 
-            const menuMaxHPInput = document.createElement('input');
-            menuMaxHPInput.className = 'menu-input menu-max-hp-input';
-            menuMaxHPInput.maxLength = 3;
-            menuMaxHPInput.size = 3;
-            menuMaxHPInput.style.width = '3em';
-            menuMaxHPInput.type = 'text';
+const menuACInput=document.createElement('input');
+menuACInput.className='menu-input';
+menuACInput.maxLength=2;
+menuACInput.size=2;
+menuACInput.style.width='2em';
+menuACInput.type='text';
 
-            const menuCurHPText = document.createElement('div');
-            menuCurHPText.className = 'menu-item';
-            menuCurHPText.textContent = 'curHP:';
+const menuMVText=document.createElement('div');
+menuMVText.className='menu-item';
+menuMVText.textContent='MV:';
 
-            const menuCurHPInput = document.createElement('input');
-            menuCurHPInput.className = 'menu-input menu-cur-hp-input';
-            menuCurHPInput.maxLength = 3;
-            menuCurHPInput.size = 3;
-            menuCurHPInput.style.width = '3em';
-            menuCurHPInput.type = 'text';
+const menuMVInput=document.createElement('input');
+menuMVInput.className='menu-input';
+menuMVInput.maxLength=2;
+menuMVInput.size=2;
+menuMVInput.style.width='2em';
+menuMVInput.type='text';
 
-            const menuDamageDiceInput = document.createElement('input');
-            menuDamageDiceInput.className = 'menu-input menu-damage-dice-input';
-            menuDamageDiceInput.maxLength = 8;
-            menuDamageDiceInput.placeholder = 'XdY+Z';
-            menuDamageDiceInput.size = 8;
-            menuDamageDiceInput.style.width = '6em';
-            menuDamageDiceInput.type = 'text';
+const menuHDText=document.createElement('div');
+menuHDText.className='menu-item';
+menuHDText.textContent='HD:';
 
-            const menuAddRowButton = document.createElement('button');
-            menuAddRowButton.className = 'menu-button';
-            menuAddRowButton.textContent = 'Add a weapon or spell and effect?';
+const menuHDInput=document.createElement('input');
+menuHDInput.className='menu-input';
+menuHDInput.maxLength=8;
+menuHDInput.size=8;
+menuHDInput.style.width='6em';
+menuHDInput.type='text';
 
-            menuAddRowButton.addEventListener('click', function() {
-                const newRow = document.createElement('div');
-                newRow.className = 'menu-item';
+const menuMaxHPText = document.createElement('div');
+menuMaxHPText.className = 'menu-item';
+menuMaxHPText.textContent = 'maxHP:';
 
-                const newAttackName = document.createElement('input');
-                newAttackName.type = 'text';
-                newAttackName.className = 'menu-input';
-                newAttackName.placeholder = 'weapon or spell name and effect';
-                newAttackName.maxLength = 20;
-                newAttackName.size = 20;
-                newAttackName.style.width = '18em';
-                newRow.appendChild(newAttackName);
+const menuMaxHPInput = document.createElement('input');
+menuMaxHPInput.className = 'menu-input menu-max-hp-input';
+menuMaxHPInput.maxLength = 3;
+menuMaxHPInput.size = 3;
+menuMaxHPInput.style.width = '3em';
+menuMaxHPInput.type = 'text';
 
-                const newAttackRoll = document.createElement('input');
-                newAttackRoll.type = 'text';
-                newAttackRoll.className = 'menu-input';
-                newAttackRoll.placeholder = 'Attack Roll';
-                newAttackRoll.maxLength = 9;
-                newAttackRoll.size = 9;
-                newAttackRoll.style.width = '6em';
-                newRow.appendChild(newAttackRoll);
+const menuCurHPText = document.createElement('div');
+menuCurHPText.className = 'menu-item';
+menuCurHPText.textContent = 'curHP:';
 
-                const newDamageRoll = document.createElement('input');
-                newDamageRoll.type = 'text';
-                newDamageRoll.className = 'menu-input';
-                newDamageRoll.placeholder = 'Damage Roll';
-                newDamageRoll.maxLength = 9;
-                newDamageRoll.size = 9;
-                newDamageRoll.style.width = '6em';
-                newRow.appendChild(newDamageRoll);
+const menuCurHPInput = document.createElement('input');
+menuCurHPInput.className = 'menu-input menu-cur-hp-input';
+menuCurHPInput.maxLength = 3;
+menuCurHPInput.size = 3;
+menuCurHPInput.style.width = '3em';
+menuCurHPInput.type = 'text';
 
-                menu.insertBefore(newRow, menuAddRowButton);
-            });
+const menuDamageDiceInput = document.createElement('input');
+menuDamageDiceInput.className = 'menu-input menu-damage-dice-input';
+menuDamageDiceInput.maxLength = 8;
+menuDamageDiceInput.placeholder = 'XdY+Z';
+menuDamageDiceInput.size = 8;
+menuDamageDiceInput.style.width = '6em';
+menuDamageDiceInput.type = 'text';
 
-            const deleteButton=document.createElement('button');
-            deleteButton.className='menu-button';
-            deleteButton.textContent='Delete this piece?';
-            deleteButton.addEventListener('click', function(){
-                unitElement.remove();
-            });
+const menuAddRowButton = document.createElement('button');
+menuAddRowButton.className = 'menu-button';
+menuAddRowButton.textContent = 'Add a weapon or spell and effect?';
 
-            menuButton.addEventListener('click', function(event){
-                event.stopPropagation();
-                menu.style.display='block';
-            });
+menuAddRowButton.addEventListener('click', function() {
+const newRow = document.createElement('div');
+newRow.className = 'menu-item';
 
-            document.addEventListener('click', function(){
-                menu.style.display='none';
-            });
+const newAttackName = document.createElement('input');
+newAttackName.type = 'text';
+newAttackName.className = 'menu-input';
+newAttackName.placeholder = 'weapon or spell name and effect';
+newAttackName.maxLength = 20;
+newAttackName.size = 20;
+newAttackName.style.width = '18em';
+newRow.appendChild(newAttackName);
 
-            menu.addEventListener('click', function(event){
-                event.stopPropagation();
-            });
+const newAttackRoll = document.createElement('input');
+newAttackRoll.type = 'text';
+newAttackRoll.className = 'menu-input';
+newAttackRoll.placeholder = 'Attack Roll';
+newAttackRoll.maxLength = 9;
+newAttackRoll.size = 9;
+newAttackRoll.style.width = '6em';
+newRow.appendChild(newAttackRoll);
 
-            menuText.addEventListener('input', function(){
-                unitText.textContent=menuText.value;
-            });
+const newDamageRoll = document.createElement('input');
+newDamageRoll.type = 'text';
+newDamageRoll.className = 'menu-input';
+newDamageRoll.placeholder = 'Damage Roll';
+newDamageRoll.maxLength = 9;
+newDamageRoll.size = 9;
+newDamageRoll.style.width = '6em';
+newRow.appendChild(newDamageRoll);
 
-            menuACInput.addEventListener('input', function(){
-                unitElement.dataset.ac=menuACInput.value;
-            });
+menu.insertBefore(newRow, menuAddRowButton);
+});
 
-            menuMVInput.addEventListener('input', function(){
-                unitElement.dataset.mv=menuMVInput.value;
-            });
+const deleteButton=document.createElement('button');
+deleteButton.className='menu-button';
+deleteButton.textContent='Delete this piece?';
+deleteButton.addEventListener('click', function(){
+unitElement.remove();
+});
 
-            menuHDInput.addEventListener('input', function(){
-                unitElement.dataset.hd=menuHDInput.value;
-            });
+menuButton.addEventListener('click', function(event){
+event.stopPropagation();
+menu.style.display='block';
+});
 
-            const unitText=document.createElement('div');
-            unitText.className='unit-text';
-            unitText.textContent='Name';
+document.addEventListener('click', function(){
+menu.style.display='none';
+});
 
-            const lineBreak = document.createElement('br');
+menu.addEventListener('click', function(event){
+event.stopPropagation();
+});
 
-            unitElement.appendChild(rotateButton);
-            unitElement.appendChild(menuButton);
-            unitElement.appendChild(unitText);
-            menu.appendChild(menuText);
-            menu.appendChild(addImageButton);
-            menu.appendChild(menuACText);
-            menu.appendChild(menuACInput);
-            menu.appendChild(menuMVText);
-            menu.appendChild(menuMVInput);
-            menu.appendChild(menuHDText);
-            menu.appendChild(menuHDInput);
-            menu.appendChild(lineBreak);
-            menu.appendChild(menuMaxHPText);
-            menu.appendChild(menuMaxHPInput);
-            menu.appendChild(menuCurHPText);
-            menu.appendChild(menuCurHPInput);
-            menu.appendChild(lineBreak);
-            menu.appendChild(menuAddRowButton);
-            menu.appendChild(deleteButton);
-            unitElement.appendChild(menu);
+menuText.addEventListener('input', function(){
+unitText.textContent=menuText.value;
+});
 
-            const board=document.getElementById('board');
-            const cellSize=100;
-            const randomColumn=Math.floor(Math.random() * 7) * cellSize;
-            const randomRow=Math.floor(Math.random() * 7) * cellSize;
+menuACInput.addEventListener('input', function(){
+unitElement.dataset.ac=menuACInput.value;
+});
 
-            unitElement.style.left=`${Math.round(randomColumn / cellSize) * cellSize}px`;
-            unitElement.style.top=`${Math.round(randomRow / cellSize) * cellSize}px`;
+menuMVInput.addEventListener('input', function(){
+unitElement.dataset.mv=menuMVInput.value;
+});
 
-            board.appendChild(unitElement);
+menuHDInput.addEventListener('input', function(){
+unitElement.dataset.hd=menuHDInput.value;
+});
 
-            unitCount++;
-        }
+const unitText=document.createElement('div');
+unitText.className='unit-text';
+unitText.textContent='Name';
 
-        function deleteUnits(){
-            const units=document.getElementsByClassName('unit');
-            const unitsArray=Array.from(units);
-            unitsArray.forEach(unit => unit.remove());
-        }
+const lineBreak = document.createElement('br');
 
-        const board=document.getElementById('board');
-        for (let i=0; i < 119; i++){
-            const square=document.createElement('div');
-            square.className='square';
-            board.appendChild(square);
-        }
+unitElement.appendChild(rotateButton);
+unitElement.appendChild(menuButton);
+unitElement.appendChild(unitText);
+menu.appendChild(menuText);
+menu.appendChild(addImageButton);
+menu.appendChild(menuACText);
+menu.appendChild(menuACInput);
+menu.appendChild(menuMVText);
+menu.appendChild(menuMVInput);
+menu.appendChild(menuHDText);
+menu.appendChild(menuHDInput);
+menu.appendChild(lineBreak);
+menu.appendChild(menuMaxHPText);
+menu.appendChild(menuMaxHPInput);
+menu.appendChild(menuCurHPText);
+menu.appendChild(menuCurHPInput);
+menu.appendChild(lineBreak);
+menu.appendChild(menuAddRowButton);
+menu.appendChild(deleteButton);
+unitElement.appendChild(menu);
 
-        board.addEventListener('dragover', (event) =>{
-            event.preventDefault();
-        });
+const board=document.getElementById('board');
+const cellSize=100;
+const randomColumn=Math.floor(Math.random() * 7) * cellSize;
+const randomRow=Math.floor(Math.random() * 7) * cellSize;
 
-        board.addEventListener('drop', (event) =>{
-            event.preventDefault();
-            const data=event.dataTransfer.getData('text/plain');
-            const draggedElement=document.getElementById(data);
-            const cellSize=100;
+unitElement.style.left=`${Math.round(randomColumn / cellSize) * cellSize}px`;
+unitElement.style.top=`${Math.round(randomRow / cellSize) * cellSize}px`;
 
-            if (draggedElement){
-                const mouseX=event.clientX - board.offsetLeft;
-                const mouseY=event.clientY - board.offsetTop;
+board.appendChild(unitElement);
 
-                const cellX=Math.floor(mouseX / cellSize) * cellSize;
-                const cellY=Math.floor(mouseY / cellSize) * cellSize;
+unitCount++;
+}
 
-                draggedElement.style.left=`${cellX}px`;
-                draggedElement.style.top=`${cellY}px`;
-            }
-        });
+function deleteUnits(){
+const units=document.getElementsByClassName('unit');
+const unitsArray=Array.from(units);
+unitsArray.forEach(unit => unit.remove());
+}
 
-        let isDragging = false;
-        let offsetX, offsetY;
-        let draggedElement;
+const board=document.getElementById('board');
+for (let i=0; i < 119; i++){
+const square=document.createElement('div');
+square.className='square';
+board.appendChild(square);
+}
+
+board.addEventListener('dragover', (event) =>{
+event.preventDefault();
+});
+
+board.addEventListener('drop', (event) =>{
+event.preventDefault();
+const data=event.dataTransfer.getData('text/plain');
+const draggedElement=document.getElementById(data);
+const cellSize=100;
+
+if (draggedElement){
+const mouseX=event.clientX - board.offsetLeft;
+const mouseY=event.clientY - board.offsetTop;
+
+const cellX=Math.floor(mouseX / cellSize) * cellSize;
+const cellY=Math.floor(mouseY / cellSize) * cellSize;
+
+draggedElement.style.left=`${cellX}px`;
+draggedElement.style.top=`${cellY}px`;
+}
+});
 
 document.addEventListener('mousemove', onMouseMove);
 
-// Event listener for mousemove
 function onMouseMove(event) {
-    if (isDragging) {
-        const mouseX = event.clientX - offsetX;
-        const mouseY = event.clientY - offsetY;
-        const board = document.getElementById('board');
-        const boardRect = board.getBoundingClientRect();
-        const maxX = boardRect.width - draggedElement.offsetWidth;
-        const maxY = boardRect.height - draggedElement.offsetHeight;
-        const newX = Math.min(Math.max(0, mouseX), maxX);
-        const newY = Math.min(Math.max(0, mouseY), maxY);
-        draggedElement.style.left = `${newX}px`;
-        draggedElement.style.top = `${newY}px`;
-    }
+if (isDragging) {
+const mouseX = event.clientX - offsetX + window.scrollX;
+const mouseY = event.clientY - offsetY + window.scrollY;
+const board = document.getElementById('board');
+const boardRect = board.getBoundingClientRect();
+const maxX = boardRect.width - draggedElement.offsetWidth;
+const maxY = boardRect.height - draggedElement.offsetHeight;
+const newX = Math.min(Math.max(0, mouseX), maxX);
+const newY = Math.min(Math.max(0, mouseY), maxY);
+draggedElement.style.left = `${newX}px`;
+draggedElement.style.top = `${newY}px`;
+}
 }
 
 // Event listener for mouseup
 document.addEventListener('mouseup', onMouseUp);
 
 function onMouseUp() {
-    if (isDragging) {
-        isDragging = false;
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
-    }
+if (isDragging) {
+isDragging = false;
+}
 }
 
 document.addEventListener('dragend', () => {
-    isDragging = false;
-    draggedElement = null;
+isDragging = false;
+draggedElement = null;
 });
 
-    </script>
+document.getElementById('board').addEventListener('touchstart', onTouchStart);
+document.getElementById('board').addEventListener('touchmove', onTouchMove);
+document.getElementById('board').addEventListener('touchend', onTouchEnd);
+
+let touchStartX, touchStartY;
+
+function onTouchStart(event) {
+  const touch = event.touches[0];
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
+}
+
+function onTouchMove(event) {
+  event.preventDefault(); // Prevent scrolling
+
+  const touch = event.touches[0];
+  const mouseX = touch.clientX;
+  const mouseY = touch.clientY;
+  const board = document.getElementById('board');
+  const boardRect = board.getBoundingClientRect();
+  const maxX = boardRect.width - draggedElement.offsetWidth;
+  const maxY = boardRect.height - draggedElement.offsetHeight;
+  const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
+  const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
+  draggedElement.style.left = `${newX}px`;
+  draggedElement.style.top = `${newY}px`;
+  touchStartX = mouseX;
+  touchStartY = mouseY;
+}
+
+function onTouchEnd() {
+  isDragging = false;
+}
+
+</script>
 </body>
 </html>
