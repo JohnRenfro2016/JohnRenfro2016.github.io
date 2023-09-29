@@ -71,12 +71,12 @@ function enterWord()
 {
 const replsC =
 [
-{p1:/ ([а-яА-ЯёЁ\-])/ig,r1:'($1 '},
+{p1:/ ([а-яА-ЯёЁ\-])/ig,r1:'($1'},
 ];
 replsC.forEach(replace => {
  b = b.replace(replace.p1,replace.r1);
 });
-document.getElementById("enteredWord").innerHTML="{p1:/ ("+b+")/ig,r2:'$1 "+c+"'},";
+document.getElementById("enteredWord").innerHTML="{p1:/ ("+b+")/ig,r2:'$1 "+c+"~suf'},";
 }
 
 function translateB()
@@ -4455,7 +4455,6 @@ const replsB = [
 {p1:/ (влад)/ig,r2:'$1 possession,ownership~suf'},
 {p1:/ (владык)/ig,r2:'$1 master,ruler~suf'},
 {p1:/ (властн)/ig,r2:'$1 imperious,authoritative~suf'},
-{p1:/ (властн)/ig,r2:'$1 imperiously~suf'},
 {p1:/ (вложен)/ig,r2:'$1 enclosure(in letter),investment~suf'},
 {p1:/ (вместо)/ig,r2:'$1 instead of~suf'},
 {p1:/ (вмешив)/ig,r2:'$1 to interfere(in)~suf'},
@@ -5167,7 +5166,7 @@ const replsB = [
 {p1:/ (нечист)/ig,r2:'$1 unclean,impure~suf'},
 {p1:/ (никогд)/ig,r2:'$1 never~suf'},
 {p1:/ (ниточк)/ig,r2:'$1 thread~suf'},
-{p1:/ (ничего)/ig,r2:'$1(a/g)nothing~suf'},
+{p1:/ (ничего)/ig,r2:'$1 nothing~suf'},
 {p1:/ (ничего)/ig,r2:'$1 nothing,all right,not too bad,never mind~suf'},
 {p1:/ (новизн)/ig,r2:'$1 novelty,newness~suf'},
 {p1:/ (новинк)/ig,r2:'$1 novelty~suf'},
@@ -5951,7 +5950,7 @@ const replsB = [
 {p1:/ (симпат)/ig,r2:'$1 liking(for )~suf'},
 {p1:/ (систем)/ig,r2:'$1 system~suf'},
 {p1:/ (ситуац)/ig,r2:'$1 situation~suf'},
-{p1:/ (сказыв)/ig,r2:'$1 to have an effect(preposition)on,proclaim oneself~suf'},
+{p1:/ (сказыв)/ig,r2:'$1 to have an effect on,proclaim oneself~suf'},
 {p1:/ (скамья)/ig,r2:'$1 bench~suf'},
 {p1:/ (скатыв)/ig,r2:'$1 to roll down~suf'},
 {p1:/ (скачок)/ig,r2:'$1 leap~suf'},
@@ -5962,7 +5961,7 @@ const replsB = [
 {p1:/ (скидыв)/ig,r2:'$1 to throw off~suf'},
 {p1:/ (складк)/ig,r2:'$1 fold,crease~suf'},
 {p1:/ (склонн)/ig,r2:'$1 tendency(to),aptitude(for)~suf'},
-{p1:/ (склонн)/ig,r2:'$1( +d or +inf)inclined(to)~suf'},
+{p1:/ (склонн)/ig,r2:'$1 inclined(to)~suf'},
 {p1:/ (склянк)/ig,r2:'$1 phial,bottle~suf'},
 {p1:/ (скольз)/ig,r2:'$1 to slide~suf'},
 {p1:/ (скорбн)/ig,r2:'$1(grammatical term)mournful~suf'},
@@ -6033,7 +6032,7 @@ const replsB = [
 {p1:/ (солдат)/ig,r2:'$1 soldier~suf'},
 {p1:/ (солидн)/ig,r2:'$1 solid,sound,reliable~suf'},
 {p1:/ (солидн)/ig,r2:'$1 solidly,substantially,weightily~suf'},
-{p1:/ (сомнев)/ig,r2:'$1(preposition)to doubt~suf'},
+{p1:/ (сомнев)/ig,r2:'$1 doubt~suf'},
 {p1:/ (сомнен)/ig,r2:'$1 doubt~suf'},
 {p1:/ (сооруд)/ig,r2:'$1 to build,construct~suf'},
 {p1:/ (сооруж)/ig,r2:'$1 to build,construct~suf'},
@@ -6536,7 +6535,8 @@ const replsB = [
 {p1:/ (вкусн)/ig,r2:'$1 tasty~suf'},
 {p1:/ (вкусн)/ig,r2:'$1 tasty~suf'},
 {p1:/ (влажн)/ig,r2:'$1 damp~suf'},
-{p1:/ (власт)/ig,r2:'$1 power~suf'},
+{p1:/ (Венгри)/ig,r2:'$1 Hungary~suf'},
+{p1:/ (власт)/ig,r2:'$1 authorities~suf'},
 {p1:/ (влево)/ig,r2:'$1 to the left~suf'},
 {p1:/ (влезт)/ig,r2:'$1 to climb in~suf'},
 {p1:/ (влиян)/ig,r2:'$1 influence~suf'},
@@ -6592,8 +6592,8 @@ const replsB = [
 {p1:/ (вспыл)/ig,r2:'$1()to flare up~suf'},
 {p1:/ (встав)/ig,r2:'$1 to insert~suf'},
 {p1:/ (встав)/ig,r2:'$1 to get up,stand up~suf'},
-{p1:/ (вступ)/ig,r2:'$1 to enter,join(organization)~suf'},
-{p1:/ (вступ)/ig,r2:'$1 to enter,join(organization)~suf'},
+{p1:/ (вступ)/ig,r2:'$1 join an organization~suf'},
+{p1:/ (вступ)/ig,r2:'$1 join an organization~suf'},
 {p1:/ (всход)/ig,r2:'$1 to ascend~suf'},
 {p1:/ (всюду)/ig,r2:'$1 everywhere~suf'},
 {p1:/ (вторг)/ig,r2:'$1 to invade~suf'},
@@ -7389,7 +7389,7 @@ const replsB = [
 {p1:/ (никто)/ig,r2:'$1 nobody~suf'},
 {p1:/ (никуд)/ig,r2:'$1 nowhere~suf'},
 {p1:/ (ничей)/ig,r2:'$1 nobody’s~suf'},
-{p1:/ (ничто)/ig,r2:'$1(a/g)nothing~suf'},
+{p1:/ (ничто)/ig,r2:'$1 nothing~suf'},
 {p1:/ (нищет)/ig,r2:'$1 poverty~suf'},
 {p1:/ (ногот)/ig,r2:'$1 fingernail,toenail~suf'},
 {p1:/ (ножик)/ig,r2:'$1 small knife,penknife~suf'},
@@ -7411,6 +7411,7 @@ const replsB = [
 {p1:/ (обдум)/ig,r2:'$1 to consider,ponder,think over~suf'},
 {p1:/ (оберн)/ig,r2:'$1 to turn round,turn out~suf'},
 {p1:/ (обжеч)/ig,r2:'$1 to burn,bake,fire(bricks etc.)~suf'},
+{p1:/ (Швеци)/ig,r2:'$1 Sweden~suf'},
 {p1:/ (обжиг)/ig,r2:'$1 to burn,bake,fire(bricks etc.)~suf'},
 {p1:/ (обзор)/ig,r2:'$1 survey,review~suf'},
 {p1:/ (обидн)/ig,r2:'$1 it hurts,it’s annoying~suf'},
@@ -8134,7 +8135,7 @@ const replsB = [
 {p1:/ (снизу)/ig,r2:'$1 from below~suf'},
 {p1:/ (собак)/ig,r2:'$1 dog~suf'},
 {p1:/ (собач)/ig,r2:'$1 dog’s~suf'},
-{p1:/ (собир)/ig,r2:'$1 to gather,collect~suf'},
+{p1:/ (собир)/ig,r2:'$1 gather~suf'},
 {p1:/ (травл)/ig,r2:'$1 hounding~suf'},
 {p1:/ (собор)/ig,r2:'$1 cathedral~suf'},
 {p1:/ (событ)/ig,r2:'$1 event~suf'},
@@ -8705,11 +8706,12 @@ const replsB = [
 {p1:/ (втро)/ig,r2:'$1 three times(as much)~suf'},
 {p1:/ (втян)/ig,r2:'$1 to pull in~suf'},
 {p1:/ (вход)/ig,r2:'$1 entrance~suf'},
-{p1:/ (вход)/ig,r2:'$1 to enter~suf'},
+{p1:/ (Швед)/ig,r2:'$1 Sweden~suf'},
 {p1:/ (вцеп)/ig,r2:'$1 to grip,grip hold of~suf'},
 {p1:/ (вчер)/ig,r2:'$1 yesterday~suf'},
 {p1:/ (выбр)/ig,r2:'$1 to choose~suf'},
 {p1:/ (выбр)/ig,r2:'$1 to get out~suf'},
+{p1:/ (НАТО)/ig,r2:'$1 NATO~suf'},
 {p1:/ (выгн)/ig,r2:'$1 to expel,drive out~suf'},
 {p1:/ (выех)/ig,r2:'$1 to leave(by transport)~suf'},
 {p1:/ (выжд)/ig,r2:'$1 to wait(for)~suf'},
@@ -9482,7 +9484,7 @@ const replsB = [
 {p1:/ (сдав)/ig,r2:'$1 to hand in,hand over,rent,let,surrender,give up,i: take(exam),p: to pass(exam)~suf'},
 {p1:/ (сдав)/ig,r2:'$1 to surrender,give up~suf'},
 {p1:/ (сдач)/ig,r2:'$1 handing over,change(money returned)~suf'},
-{p1:/ (сдел)/ig,r2:'$1 to do,make~suf'},
+{p1:/ (сдел)/ig,r2:'$1 make~suf'},
 {p1:/ (сдел)/ig,r2:'$1(preposition)to become,be done~suf'},
 {p1:/ (себя)/ig,r2:'$1 self [(a)pronoun]~suf'},
 {p1:/ (секц)/ig,r2:'$1 section~suf'},
@@ -9587,7 +9589,7 @@ const replsB = [
 {p1:/ (снов)/ig,r2:'$1 again~suf'},
 {p1:/ (снос)/ig,r2:'$1 to demolish,take down,take off,carry away~suf'},
 {p1:/ (снох)/ig,r2:'$1 daughterinlaw(of husband’s father)~suf'},
-{p1:/ (собр)/ig,r2:'$1 to gather,collect~suf'},
+{p1:/ (собр)/ig,r2:'$1 gather~suf'},
 {p1:/ (собр)/ig,r2:'$1(+inf)to gather,intend to,be about to~suf'},
 {p1:/ (совр)/ig,r2:'$1 to tell lies,talk nonsense~suf'},
 {p1:/ (согн)/ig,r2:'$1 to bend~suf'},
@@ -10165,7 +10167,7 @@ const replsB = [
 {p1:/ (дев)/ig,r2:'$1 to get to,vanish~suf'},
 {p1:/ (дед)/ig,r2:'$1 grandfather~suf'},
 {p1:/ (дел)/ig,r2:'$1 to divide,share~suf'},
-{p1:/ (дел)/ig,r2:'$1 to do,make~suf'},
+{p1:/ (дел)/ig,r2:'$1 make~suf'},
 {p1:/ (дел)/ig,r2:'$1(+inst c +inst)to share(sth with )~suf'},
 {p1:/ (дел)/ig,r2:'$1(preposition)to become,be done~suf'},
 {p1:/ (дел)/ig,r2:'$1 to be divided(into)~suf'},
@@ -10455,6 +10457,7 @@ const replsB = [
 {p1:/ (обн)/ig,r2:'$1 to embrace one another~suf'},
 {p1:/ (общ)/ig,r2:'$1(preposition)associate,socialize(with)~suf'},
 {p1:/ (общ)/ig,r2:'$1 general~suf'},
+{p1:/ (мож)/ig,r2:'$1 can do~suf'},
 {p1:/ (овц)/ig,r2:'$1 sheep~suf'},
 {p1:/ (ого)/ig,r2:'$1 oho!~suf'},
 {p1:/ (озл)/ig,r2:'$1 to get angry~suf'},
@@ -10652,8 +10655,7 @@ const replsB = [
 {p1:/ (ткн)/ig,r2:'$1(+inst +a or +a +a)to prod,jab(sth into )~suf'},
 {p1:/ (тож)/ig,r2:'$1 too~suf'},
 {p1:/ (ток)/ig,r2:'$1 electric current~suf'},
-{p1:/ (том)/ig,r2:'$1 to languish,suffer~suf'},
-{p1:/ (том)/ig,r2:'$1 volume(book)~suf'},
+{p1:/ (том)/ig,r2:'$1 is(be verb)~suf'},
 {p1:/ (тон)/ig,r2:'$1 to drown~suf'},
 {p1:/ (тон)/ig,r2:'$1 tone,musical tone,colour tone,tint~suf'},
 {p1:/ (топ)/ig,r2:'$1 to stoke,heat,(p)sink(sth),drown( )~suf'},
@@ -10830,13 +10832,11 @@ const replsB = [
 {p1:/ (зр)/ig,r2:'$1 to ripen,mature~suf'},
 {p1:/ (ив)/ig,r2:'$1 willow~suf'},
 {p1:/ (из)/ig,r2:'$1(preposition)out of,from~suf'},
-{p1:/ (им)/ig,r2:'$1 to have(with nonconcrete object)~suf'},
-{p1:/ (им)/ig,r2:'$1 to be,be available~suf'},
 {p1:/ (ин)/ig,r2:'$1 other~suf'},
 {p1:/ (их)/ig,r2:'$1 their~suf'},
 {p1:/ (иш)/ig,r2:'$1 look(drawing attention to )~suf'},
 {p1:/ (лг)/ig,r2:'$1 to lie,tell lies,tell a lie~suf'},
-{p1:/ (ли)/ig,r2:'$1 whether [question word]~suf'},
+{p1:/ (ли)/ig,r2:'$1 whether~suf'},
 {p1:/ (мч)/ig,r2:'$1 to rush,speed along~suf'},
 {p1:/ (мч)/ig,r2:'$1 to rush~suf'},
 {p1:/ (мы)/ig,r2:'$1 we~suf'},
@@ -10870,7 +10870,7 @@ const replsB = [
 {p1:/ (сл)/ig,r2:'$1 layer,stratum~suf'},
 {p1:/ (сл)/ig,r2:'$1 to merge,join together~suf'},
 {p1:/ (см)/ig,r2:'$1 to crumple,crush~suf'},
-{p1:/ (см)/ig,r2:'$1(+inf)to dare~suf'},
+{p1:/ (не)/ig,r2:'$1 not do~suf'},
 {p1:/ (см)/ig,r2:'$1 to burst out laughing~suf'},
 {p1:/ (см)/ig,r2:'$1 to laugh~suf'},
 {p1:/ (сн)/ig,r2:'$1 to take off,photograph,rent~suf'},
@@ -10898,7 +10898,7 @@ const replsB = [
 {p1:/ (ун)/ig,r2:'$1 to calm down~suf'},
 {p1:/ (ур)/ig,r2:'$1 hurrah,hurray~suf'},
 {p1:/ (ус)/ig,r2:'$1 to strew,dot,litter(sth with )~suf'},
-{p1:/ (ус)/ig,r2:'$1 whisker~suf'},
+{p1:/ (им) /ig,r2:'$1 them~suf'},
 {p1:/ (ух)/ig,r2:'$1 fishsoup~suf'},
 {p1:/ (ух)/ig,r2:'$1 ooh!~suf'},
 {p1:/ (уч)/ig,r2:'$1 to learn(sth)~suf'},
@@ -10942,6 +10942,7 @@ const replsB = [
 
 {p1:/(~sufанн) /ig,r2:'$1 (verb)regularly(imperfective)gerund verb to~suf'},
 
+{p1:/(~sufения) /ig,r2:'$1 +ing,+ion, is done(passive)fem~suf'},
 {p1:/(~sufени) /ig,r2:'$1 +ing,+ion~suf'},
 
 {p1:/(~sufись) /ig,r2:'$1 (verb)completely(perfective)to do(infinitive)'},
@@ -10961,6 +10962,7 @@ const replsB = [
 {p1:/(~sufало) /ig,r2:'$1 it did third person past '},
 {p1:/(~sufами) /ig,r2:'$1 plu-ins'},
 {p1:/(~sufана) /ig,r2:'$1 will be done(future)(participle)'},
+{p1:/(~sufаем) /ig,r2:'$1 we(second person)do(present)'},
 {p1:/(~sufаны) /ig,r2:'$1 +ions,+s,(gerund)verbs into nouns'},
 {p1:/(~sufать) /ig,r2:'$1 regulary(imperfective)<br>to do(infinitive)'},
 {p1:/(~sufают) /ig,r2:'$1 (verb)regularly(imperfective)they(second person)do(present)'},
@@ -10997,14 +10999,14 @@ const replsB = [
 {p1:/(~sufат) /ig,r2:'$1 (verb)they(second person)do(present)'},
 {p1:/(~sufах) /ig,r2:'$1 (noun)plu-pre'},
 {p1:/(~sufии) /ig,r2:'$1 (noun)sin-pre'},
-{p1:/(~sufок) /ig,r2:'$1 plu-gen'},
+{p1:/(~sufок) /ig,r2:'$1 (noun)plu-gen'},
 {p1:/(~sufаю) /ig,r2:'$1(first person)I(present)do '},
 {p1:/(~sufая) /ig,r2:'$1(fem-present participle adverb)'},
-{p1:/(~sufев) /ig,r2:'$1 plu-gen'},
+{p1:/(~sufев) /ig,r2:'$1 (noun)plu-gen'},
 {p1:/(~sufее) /ig,r2:'$1 neu-nom-ani acc-ina acc'},
 {p1:/(~sufей) /ig,r2:'$1 (noun)plu-gen,sin-ins'},
 {p1:/(~sufел) /ig,r2:'$1 $1 <(verb)completely(perfective)he(third person)did(past)'},
-{p1:/(~sufем) /ig,r2:'$1 sin-ins'},
+{p1:/(~sufем) /ig,r2:'$1 (verb)we(second person)sin-ins'},
 {p1:/(~sufет) /ig,r2:'$1(verb)he or she(third person)does(present)'},
 {p1:/(~sufив) /ig,r2:'$1 while doing(past adverb participle)'},
 {p1:/(~sufие) /ig,r2:'$1 neu-(noun)plu-nom-ina acc'},
@@ -11013,13 +11015,13 @@ const replsB = [
 {p1:/(~sufим) /ig,r2:'$1 (adjective)plu-dat,mas-ins,neu-ins'},
 {p1:/(~sufин) /ig,r2:'$1 mas-nom-ani acc'},
 {p1:/(~sufит) /ig,r2:'$1 (verb)he or she(third person)does(present)'},
-{p1:/(~sufих) /ig,r2:'$1 (adjective)plu-gen-acc-pre'},
+{p1:/(~sufих) /ig,r2:'$1 (adjective)(noun)plu-gen-acc-pre'},
 {p1:/(~sufию) /ig,r2:'$1 sin-dat'},
 {p1:/(~sufия) /ig,r2:'$1(noun)fem-plu-nom-acc,sin-gen'},
 {p1:/(~sufла) /ig,r2:'$1 did(past)she(third person)'},
 {p1:/(~sufли) /ig,r2:'$1 did(past)they(second person)'},
 {p1:/(~sufло) /ig,r2:'$1 did(past)it(third person)'},
-{p1:/(~sufов) /ig,r2:'$1 plu-gen'},
+{p1:/(~sufов) /ig,r2:'$1 (noun)plu-gen'},
 {p1:/(~sufое) /ig,r2:'$1 (adjective)sin-neu-nom-ani-acc-ina acc'},
 {p1:/(~sufой) /ig,r2:'$1(adjective)fem-sin-gen-dat-ins'},
 {p1:/(~sufом) /ig,r2:'$1 (noun)plu-ins,mas-pre,neu-pre'},
@@ -11031,7 +11033,7 @@ const replsB = [
 {p1:/(~sufые) /ig,r2:'$1 (noun)plu-nom-ina acc'},
 {p1:/(~sufый) /ig,r2:'$1(adjective)mas-nom-ina acc'},
 {p1:/(~sufым) /ig,r2:'$1 (adjective)plu-dat,mas-ins,neu-ins'},
-{p1:/(~sufых) /ig,r2:'$1 (adjective)plu-gen-ani acc-pre'},
+{p1:/(~sufых) /ig,r2:'$1 (adjective)(noun)plu-gen-ani acc-pre'},
 {p1:/(~sufью) /ig,r2:'$1 sin-dat'},
 {p1:/(~sufья) /ig,r2:'$1 sin-nom'},
 {p1:/(~sufют) /ig,r2:'$1 (verb)they(second person)do(present)'},
@@ -11080,14 +11082,14 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Ким Чен Ын заявил о необходимости Северной Корее нарастить ядерный арсенал Усилия в сфере ядерного оружия нужны для реализации потенциала сдерживания в условиях угрозы ядерной войны против КНДР, утверждает он
+Власти Венгрии сомневаются, что Швеция собирается вступить в НАТО «Мы ничего не исключаем, вопрос в том, важно ли это для шведов? Потому что из поведения шведов мы можем сделать вывод, что им это не важно...», — сказал глава администрации венгерского премьера Гергей Гуйяш
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
 <p>
 source:GazeteRU
 <hr>
-<h3>Admin Only Work Area</h3>
+<!-- <h3>Admin Only Work Area</h3>Власти Венгрии сомневаются, что Швеция собирается вступить в НАТО «Мы ничего не исключаем, вопрос в том, важно ли это для шведов? Потому что из поведения шведов мы можем сделать вывод, что им это не важно...», — сказал глава администрации венгерского премьера Гергей Гуйяш -->
 <p>Enter a new Russian word. <input maxlength='80px' onChange='b=this.value'type='field' size='40px'>
 <p>Enter the definition. <input maxlength='80px' onChange='c=this.value,enterWord();' type='field' size='40px'>
 <p>
