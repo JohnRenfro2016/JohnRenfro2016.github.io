@@ -211,6 +211,7 @@ const replsB = [
 {p1:/(あ)(?!X)(い)(?!X)(づ)(?!X)(ち)(?!X)/g,r1:'$1X$2Xai$3Xz$4Xuchi-responsive sounds,chi-ming in~Noun'},
 {p1:/(あ)(?!X)(い)(?!X)(に)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xain$2X$3Xi-unfortunately$4X~KuVerb'},
 {p1:/(あ)(?!X)(き)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xaki$2Xre$3X-be stunned in disappointment,disbelief$4X~RuVerb'},
+{p1:/(浮)(?!X)(き)(?!X)(彫)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xu$2Xki$3Xbo-become distinct$4X~RuVerb'},
 {p1:/(あ)(?!X)(さ)(?!X)(っ)(?!X)(て)(?!X)/g,r1:'$1Xa$2Xsa$3Xt$4Xte-the day after tomorrow~Noun'},
 {p1:/(あ)(?!X)(た)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xa$2Xta-to be capable of doing$3X~UVerb'},
 {p1:/(あ)(?!X)(ち)(?!X)(こ)(?!X)(ち)(?!X)/g,r1:'$1X$2Xac$3Xh$4Xiko-chi,all over~Noun'},
@@ -905,7 +906,7 @@ const replsB = [
 {p1:/(ど)(?!X)(う)(?!X)(せ)(?!X)/g,r1:'$1Xdou$2Xse$3X-anyway~Noun'},
 {p1:/(ど)(?!X)(う)(?!X)(ぞ)(?!X)/g,r1:'$1Xdou$2Xzo$3X-please~Noun'},
 {p1:/(ど)(?!X)(う)(?!X)(も)(?!X)/g,r1:'$1Xdou$2Xmo$3X-somehow~Noun'},
-{p1:/(ど)(?!X)(ち)(?!X)(ら)(?!X)/g,r1:'$1Xdoc$2Xhi$3Xra-which~Noun'},
+{p1:/(ど)(?!X)(ち)(?!X)(ら)(?!X)/g,r1:'$1Xdo$2Xchi$3Xra-which~Noun'},
 {p1:/(ど)(?!X)(っ)(?!X)(ち)(?!X)/g,r1:'$1Xdoc$2Xch$3Xi-which~Noun'},
 {p1:/(ど)(?!X)(っ)(?!X)(と)(?!X)/g,r1:'$1Xdot$2Xto$3X-burst (out laughing)~Noun'},
 {p1:/(ど)(?!X)(な)(?!X)(た)(?!X)/g,r1:'$1Xdon$2Xat$3Xa-who~Noun'},
@@ -5606,6 +5607,7 @@ const replsB = [
 {p1:/(登)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xnobo-climb,mount,go up$2X~RuVerb'},
 {p1:/(登)(?!X)(場)(?!X)/g,r1:'$1Xtou$2Xjyou-stage appearance~Noun'},
 {p1:/(登)(?!X)(山)(?!X)/g,r1:'$1Xtoz$2Xan-climbing,mountaineer~Noun'},
+{p1:/(充)(?!X)(実)(?!X)/g,r1:'$1Xjyuu$2Xjitsu-enhancement~Noun'},
 {p1:/(登)(?!X)(板)(?!X)/g,r1:'$1Xtou$2Xban-pitching a game~Noun'},
 {p1:/(登)(?!X)(校)(?!X)/g,r1:'$1Xtou$2Xkou-attending school~Noun'},
 {p1:/(登)(?!X)(録)(?!X)/g,r1:'$1Xtou$2Xroku-registration~Noun'},
@@ -6426,7 +6428,7 @@ const replsB = [
 {p1:/(説)(?!X)(明)(?!X)/g,r1:'$1Xsetsu$2Xmei-explanation~Noun'},
 {p1:/(読)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xyo-read$2X~MuVerb'},
 {p1:/(読)(?!X)(み)(?!X)/g,r1:'$1Xyo$2Xmi-reading,judgment,foresight~Noun'},
-{p1:/(読)(?!X)(売)(?!X)/g,r1:'$1Xyomi$2Xuri-~Noun'},
+{p1:/(読)(?!X)(売)(?!X)/g,r1:'$1Xyomi$2Xuri-reading sales~Noun'},
 {p1:/(読)(?!X)(書)(?!X)/g,r1:'$1Xdok$2Xusyo-reading a book~Noun'},
 {p1:/(読)(?!X)(者)(?!X)/g,r1:'$1Xdoku$2Xsya-reader,subscriber~Noun'},
 {p1:/(誰)(?!X)(か)(?!X)/g,r1:'$1Xdare$2Xka-someone~Noun'},
@@ -6997,6 +6999,7 @@ const replsB = [
 {p1:/(集)(?!X)(団)(?!X)/g,r1:'$1Xsyuu$2Xdan-group,mass~Noun'},
 {p1:/(集)(?!X)(束)(?!X)/g,r1:'$1Xsyuu$2Xsoku-cluster~Noun'},
 {p1:/(集)(?!X)(積)(?!X)/g,r1:'$1Xsyuu$2Xseki-collection~Noun'},
+{p1:/(方)(?!X)(式)(?!X)/g,r1:'$1Xhou$2Xshiki-method~Noun'},
 {p1:/(集)(?!X)(計)(?!X)/g,r1:'$1Xsyuu$2Xkei-tallying votes~Noun'},
 {p1:/(雇)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xyato-employ,hire$2X~UVerb'},
 {p1:/(雇)(?!X)(用)(?!X)/g,r1:'$1Xko$2Xyou-employment~Noun'},
@@ -7325,6 +7328,7 @@ const replsB = [
 {p1:/(医)(?!X)/g,r1:'$1Xi-medical~Noun'},
 {p1:/(十)(?!X)/g,r1:'$1Xjyuu,ten~Noun'},
 {p1:/(へ)(?!X)/g,r1:'$1Xe-towards~Preposition'},
+{p1:/(の)(?!X)/g,r1:'$1Xno-of,verb to noun~Preposition'},
 {p1:/(尚)(?!X)/g,r1:'$1XNao-more~Noun'},
 {p1:/(喜)(?!X)/g,r1:'$1XKi-rejoicing~Noun'},
 {p1:/(千)(?!X)/g,r1:'$1Xsen,chi-thousand~Noun'},
@@ -8095,7 +8099,7 @@ const replsB = [
 {p1:/(Verbや|Nounや)(?!X)/g,r1:'$1Xya-and,comma~Postposition~Noun'},
 {p1:/(Verbよ)(?!X)/g,r1:'$1Xyo-exclamation~Punctuation~Noun'},
 
-{p1:/(Verbの|Nounの)(?!X)/g,r1:'$1Xno-of~Postposition~Noun'},
+{p1:/(Prepositionの|Verbの|Nounの)(?!X)/g,r1:'$1Xno-of~Postposition~Noun'},
 
 {p1:/(を)(?!X)/g,r1:'$1Xoo-direct object~Postposition~Noun'},
 
@@ -8196,7 +8200,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-原子力発電所から出る高レベル放射性廃棄物（核のごみ）を地中に埋める最終処分場の候補地として最初のステップとなる文献調査を受け入れるか否か――。長崎県対馬市の比田勝（ひたかつ）尚喜市長が27日に出した答えは「ノー」だった。受け入れへの賛否を巡って市民の分断が広がる中、市トップが下した決断の背景には何があったのか。
+読売新聞社は、少子化に関する全国世論調査（郵送方式）を実施した。少子化対策の財源を社会全体で負担することに「賛成」とした人は、「どちらかといえば」を含め６８％に上った。政府の少子化対策の具体案への評価では、現金給付の拡充より、子育て支援制度の充実を重視する割合が高く、「手当より環境整備」を求める意識が浮き彫りになった。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
