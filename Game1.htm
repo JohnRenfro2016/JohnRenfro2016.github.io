@@ -7,11 +7,11 @@
 <style>
 
 .board.touch {
-  touch-action: none;
+touch-action: none;
 }
 
 .unit.touch {
-  touch-action: none;
+touch-action: none;
 }
 
 .board {
@@ -25,11 +25,11 @@ width:700px;
 }
 
 .menu {
- background-color: #fff;
- border: 1px solid #ccc;
- display: inline-block;
- position: absolute;
- width: 300px;
+background-color: #fff;
+border: 1px solid #ccc;
+display: inline-block;
+position: absolute;
+width: 300px;
 }
 
 .menu-button {
@@ -75,15 +75,15 @@ z-index:1;
 }
 
 .unit-container {
- position: absolute;
+position: absolute;
 }
 
 .unit img {
 position:absolute;
-top:20px;
-left:0px;
-width:80%;
-height:80%;
+top:0px;
+left:40px;
+width:50%;
+height:50%;
 }
 
 .unit-text {
@@ -94,7 +94,6 @@ font-size:10px;
 </style>
 </head>
 <body>
-The drag and drop works on all Windows and Linux systems. It works on Android Chrome phones and tablets but not on Android FireFox.
 <button onclick="createUnit()">Create Piece</button>
 <button onclick="deleteUnits()">Delete Pieces</button>
 Load a map image.<input type="file" id="mapImageInput" accept="image/*">
@@ -125,31 +124,31 @@ document.getElementById('board').addEventListener('touchend', onTouchEnd);
 let touchStartX, touchStartY;
 
 function onTouchStart(event) {
-  const touch = event.touches[0];
-  touchStartX = touch.clientX;
-  touchStartY = touch.clientY;
+const touch = event.touches[0];
+touchStartX = touch.clientX;
+touchStartY = touch.clientY;
 }
 
 function onTouchMove(event) {
-  event.preventDefault(); // Prevent scrolling
+event.preventDefault(); // Prevent scrolling
 
-  const touch = event.touches[0];
-  const mouseX = touch.clientX;
-  const mouseY = touch.clientY;
-  const board = document.getElementById('board');
-  const boardRect = board.getBoundingClientRect();
-  const maxX = boardRect.width - draggedElement.offsetWidth;
-  const maxY = boardRect.height - draggedElement.offsetHeight;
-  const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
-  const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
-  draggedElement.style.left = `${newX}px`;
-  draggedElement.style.top = `${newY}px`;
-  touchStartX = mouseX;
-  touchStartY = mouseY;
+const touch = event.touches[0];
+const mouseX = touch.clientX;
+const mouseY = touch.clientY;
+const board = document.getElementById('board');
+const boardRect = board.getBoundingClientRect();
+const maxX = boardRect.width - draggedElement.offsetWidth;
+const maxY = boardRect.height - draggedElement.offsetHeight;
+const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
+const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
+draggedElement.style.left = `${newX}px`;
+draggedElement.style.top = `${newY}px`;
+touchStartX = mouseX;
+touchStartY = mouseY;
 }
 
 function onTouchEnd() {
-  isDragging = false;
+isDragging = false;
 }
 
 const lastRolls = [];
@@ -255,16 +254,16 @@ return 0;
 }
 
 function onDragStart(event) {
- isDragging = true;
- event.dataTransfer.setData('text/plain', event.target.id);
+isDragging = true;
+event.dataTransfer.setData('text/plain', event.target.id);
 
- const rect = event.target.getBoundingClientRect();
- offsetX = event.clientX - rect.left;
- offsetY = event.clientY - rect.top;
- draggedElement = event.target;
+const rect = event.target.getBoundingClientRect();
+offsetX = event.clientX - rect.left;
+offsetY = event.clientY - rect.top;
+draggedElement = event.target;
 
- highestZIndex++;
- draggedElement.style.zIndex = highestZIndex;
+highestZIndex++;
+draggedElement.style.zIndex = highestZIndex;
 }
 
 function onDragOver(event) {
@@ -296,22 +295,22 @@ unitElement.draggable=true;
 unitElement.id=`unit-${unitCount}`;
 unitElement.ondragstart = onDragStart;
 
- const rotateButton = document.createElement('button');
- rotateButton.textContent = 'R';
- rotateButton.className = 'rotate-button';
+const rotateButton = document.createElement('button');
+rotateButton.textContent = 'R';
+rotateButton.className = 'rotate-button';
 
- rotateButton.addEventListener('click', function(event) {
- event.stopPropagation(); // Stop event from bubbling up
- let currentRotation = 0;
+rotateButton.addEventListener('click', function(event) {
+event.stopPropagation(); // Stop event from bubbling up
+let currentRotation = 0;
 
- const transform = unitElement.style.transform;
- const match = transform && transform.match(/\d+/);
+const transform = unitElement.style.transform;
+const match = transform && transform.match(/\d+/);
 
- if (match) {
- currentRotation = parseInt(match[0], 10);
- }
- unitElement.style.transform = `rotate(${(currentRotation + 45) % 360}deg)`;
- });
+if (match) {
+currentRotation = parseInt(match[0], 10);
+}
+unitElement.style.transform = `rotate(${(currentRotation + 45) % 360}deg)`;
+});
 
 const menuButton=document.createElement('button');
 menuButton.className='menu-button';
@@ -495,6 +494,46 @@ unitElement.dataset.hd=menuHDInput.value;
 const unitText=document.createElement('div');
 unitText.className='unit-text';
 unitText.textContent='Name';
+
+const acValueElement = document.createElement('div');
+acValueElement.className = 'ac-value';
+acValueElement.textContent = 'AC: ';
+unitElement.appendChild(acValueElement);
+
+menuACInput.addEventListener('input', function(){
+  unitElement.dataset.ac = menuACInput.value;
+  acValueElement.textContent = `AC: ${menuACInput.value}`;
+});
+
+const mvValueElement = document.createElement('div');
+mvValueElement.className = 'mv-value';
+mvValueElement.textContent = 'MV: ';
+unitElement.appendChild(mvValueElement);
+
+menuMVInput.addEventListener('input', function(){
+  unitElement.dataset.mv = menuMVInput.value;
+  mvValueElement.textContent = `MV: ${menuMVInput.value}`;
+});
+
+const hdValueElement = document.createElement('div');
+hdValueElement.className = 'hd-value';
+hdValueElement.textContent = 'HD: ';
+unitElement.appendChild(hdValueElement);
+
+menuHDInput.addEventListener('input', function(){
+  unitElement.dataset.hd = menuHDInput.value;
+  hdValueElement.textContent = `HD: ${menuHDInput.value}`;
+});
+
+const curHpValueElement = document.createElement('div');
+curHpValueElement.className = 'curHp-value';
+curHpValueElement.textContent = 'HP: ';
+unitElement.appendChild(curHpValueElement);
+
+menuCurHPInput.addEventListener('input', function(){
+  unitElement.dataset.curHp = menuCurHPInput.value;
+  curHpValueElement.textContent = `HP: ${menuCurHPInput.value}`;
+});
 
 const lineBreak = document.createElement('br');
 
