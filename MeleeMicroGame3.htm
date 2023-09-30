@@ -1,100 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advanced Dungeons & Dragons 1st Edition</title>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steve Jackson's Melee MicroGame 3 programmed by ChatGPT</title>
+    <style>
+        .board.touch, .unit.touch {
+            touch-action: none;
+        }
 
-.board.touch {
-touch-action: none;
-}
+        .board {
+            border: 2px solid #000;
+            display: grid;
+            grid-template-columns: repeat(7, 100px);
+            grid-template-rows: repeat(7, 100px);
+            height: 700px;
+            position: relative;
+            width: 700px;
+        }
 
-.unit.touch {
-touch-action: none;
-}
+        .menu {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            display: block;
+            position: absolute;
+        }
 
-.board {
-border:2px solid #000;
-display:grid;
-grid-template-columns:repeat(7, 100px);
-grid-template-rows:repeat(7, 100px);
-height:700px;
-position:relative;
-width:700px;
-}
+        .menu-button, .rotate-button {
+            cursor: pointer;
+            display: block;
+            font-size: 10px;
+        }
 
-.menu {
-background-color: #fff;
-border: 1px solid #ccc;
-display: block;
-position: absolute;
-}
+        .menu-input {
+            box-sizing: border-box;
+            font-size: 10px;
+            z-index: 3;
+        }
 
-.menu-button {
-cursor:pointer;
-display:block;
-font-size:10px;
-}
+        .menu-item {
+            display: block;
+        }
 
-.menu-input {
-box-sizing:border-box;
-font-size:10px;
-z-index:3;
-}
+        .square {
+            border: 1px solid #ccc;
+            height: 100px;
+            position: relative;
+            width: 100px;
+        }
 
-.menu-item {
-display:block;
-}
+        .unit {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            cursor: move;
+            font-size: 10px;
+            height: 100px;
+            position: absolute;
+            transform-origin: center;
+            user-select: none;
+            width: 100px;
+            z-index: 1;
+        }
 
-.rotate-button {
-font-size:10px;
-}
+        .unit img {
+            position: absolute;
+        }
 
-.square {
-border:1px solid #ccc;
-height:100px;
-position:relative;
-width:100px;
-}
-
-.unit {
-background-color:#f9f9f9;
-border:1px solid #ccc;
-cursor:move;
-font-size:10px;
-height:100px;
-position:absolute;
-transform-origin:center;
-user-select:none;
-width:100px;
-z-index:1;
-}
-
-.unit img {
-position:absolute;
-}
-
-.unit-text {
-text-align:right;
-font-size:10px;
-}
-
-</style>
+        .unit-text {
+            text-align: right;
+            font-size: 10px;
+        }
+    </style>
 </head>
 <body>
-<button onclick="createUnit()">Create a piece?</button>
-<button onclick="deleteUnits()">Delete all the pieces?</button>
-Load a map image.<input type="file" id="mapImageInput" accept="image/*">
-<br>
-<button id="rollD6Button">Roll D6</button>
+    <button onclick="createUnit()">Create a piece?</button>
+    <button onclick="deleteUnits()">Delete all the pieces?</button>
+    Load a map image.<input type="file" id="mapImageInput" accept="image/*">
+    <br>
+    <button id="rollD6Button">Roll D6</button>
 
-<div id="resultsContainer"></div>
+    <div id="resultsContainer"></div>
 
-<div class="board" id="board"></div>
+    <div class="board" id="board"></div>
 
 <script>
-
 const defaultMapImage = new Image();
 defaultMapImage.src = 'MeleeMap.jpg';
 
@@ -117,133 +106,123 @@ document.getElementById('board').addEventListener('touchend', onTouchEnd);
 let touchStartX, touchStartY;
 
 function onTouchStart(event) {
-const touch = event.touches[0];
-touchStartX = touch.clientX;
-touchStartY = touch.clientY;
+  const touch = event.touches[0];
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
 }
 
 function onTouchMove(event) {
-event.preventDefault(); // Prevent scrolling
-
-const touch = event.touches[0];
-const mouseX = touch.clientX;
-const mouseY = touch.clientY;
-const board = document.getElementById('board');
-const boardRect = board.getBoundingClientRect();
-const maxX = boardRect.width - draggedElement.offsetWidth;
-const maxY = boardRect.height - draggedElement.offsetHeight;
-const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
-const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
-draggedElement.style.left = `${newX}px`;
-draggedElement.style.top = `${newY}px`;
-touchStartX = mouseX;
-touchStartY = mouseY;
+  event.preventDefault();
+  const touch = event.touches[0];
+  const mouseX = touch.clientX;
+  const mouseY = touch.clientY;
+  const board = document.getElementById('board');
+  const boardRect = board.getBoundingClientRect();
+  const maxX = boardRect.width - draggedElement.offsetWidth;
+  const maxY = boardRect.height - draggedElement.offsetHeight;
+  const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
+  const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
+  draggedElement.style.left = `${newX}px`;
+  draggedElement.style.top = `${newY}px`;
+  touchStartX = mouseX;
+  touchStartY = mouseY;
 }
 
 function onTouchEnd() {
-isDragging = false;
+  isDragging = false;
 }
 
 const lastRolls = [];
 
-// Function to display the last 5 rolls on the webpage
 function displayLastRolls() {
-const resultsContainer = document.getElementById('resultsContainer');
-resultsContainer.innerHTML = lastRolls.join('<br>');
+  const resultsContainer = document.getElementById('resultsContainer');
+  resultsContainer.innerHTML = lastRolls.join('<br>');
 }
 
-// Function to roll a 6-sided die (D6)
 function rollD6() {
-const result = Math.floor(Math.random() * 6) + 1;
-lastRolls.push(`D6 Result: ${result}`);
-if (lastRolls.length > 5) {
-lastRolls.shift(); // Remove the oldest roll
-}
-displayLastRolls();
+  const result = Math.floor(Math.random() * 6) + 1;
+  lastRolls.push(`D6 Result: ${result}`);
+  if (lastRolls.length > 5) {
+    lastRolls.shift();
+  }
+  displayLastRolls();
 }
 
-// Function to roll a 4-sided die (D4)
 function rollD4() {
-const result = Math.floor(Math.random() * 4) + 1;
-lastRolls.push(`D4 Result: ${result}`);
-if (lastRolls.length > 5) {
-lastRolls.shift(); // Remove the oldest roll
-}
-displayLastRolls();
+  const result = Math.floor(Math.random() * 4) + 1;
+  lastRolls.push(`D4 Result: ${result}`);
+  if (lastRolls.length > 5) {
+    lastRolls.shift();
+  }
+  displayLastRolls();
 }
 
-// Event listeners for rolling each die
 document.addEventListener('DOMContentLoaded', function() {
-document.getElementById('rollD6Button').addEventListener('click', rollD6);
+  document.getElementById('rollD6Button').addEventListener('click', rollD6);
 });
 
 function loadMapImage(event) {
-const mapImage = document.createElement('img');
-mapImage.src = URL.createObjectURL(event.target.files[0]);
-mapImage.style.position = 'absolute';
-mapImage.style.width = '100%';
-mapImage.style.height = '100%';
-mapImage.style.top = '0';
-mapImage.style.left = '0';
-mapImage.style.zIndex = '-1';
-const board = document.getElementById('board');
-board.appendChild(mapImage);
+  const mapImage = document.createElement('img');
+  mapImage.src = URL.createObjectURL(event.target.files[0]);
+  mapImage.style.position = 'absolute';
+  mapImage.style.width = '100%';
+  mapImage.style.height = '100%';
+  mapImage.style.top = '0';
+  mapImage.style.left = '0';
+  mapImage.style.zIndex = '-1';
+  const board = document.getElementById('board');
+  board.appendChild(mapImage);
 }
 
 document.getElementById('mapImageInput').addEventListener('change', loadMapImage);
 
 function getRotationDegrees(element) {
-const transform = window.getComputedStyle(element).getPropertyValue('transform');
-if (transform && transform !== 'none') {
-const matrix = new DOMMatrix(transform);
-return Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI));
-}
-return 0;
+  const transform = window.getComputedStyle(element).getPropertyValue('transform');
+  if (transform && transform !== 'none') {
+    const matrix = new DOMMatrix(transform);
+    return Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI));
+  }
+  return 0;
 }
 
 function onDragStart(event) {
-isDragging = true;
-event.dataTransfer.setData('text/plain', event.target.id);
-
-const rect = event.target.getBoundingClientRect();
-offsetX = event.clientX - rect.left;
-offsetY = event.clientY - rect.top;
-draggedElement = event.target;
-
-highestZIndex++;
-draggedElement.style.zIndex = highestZIndex;
+  isDragging = true;
+  event.dataTransfer.setData('text/plain', event.target.id);
+  const rect = event.target.getBoundingClientRect();
+  offsetX = event.clientX - rect.left;
+  offsetY = event.clientY - rect.top;
+  draggedElement = event.target;
+  highestZIndex++;
+  draggedElement.style.zIndex = highestZIndex;
 }
 
 function onDragOver(event) {
-event.preventDefault();
+  event.preventDefault();
 }
 
 function onDrop(event) {
-event.preventDefault();
-const data = event.dataTransfer.getData('text/plain');
-const draggedElement = document.getElementById(data);
-const cellSize = 100;
-
-if (draggedElement) {
-const mouseX = event.clientX - board.offsetLeft;
-const mouseY = event.clientY - board.offsetTop;
-
-const cellX = Math.floor(mouseX / cellSize) * cellSize;
-const cellY = Math.floor(mouseY / cellSize) * cellSize;
-
-draggedElement.style.left = `${cellX}px`;
-draggedElement.style.top = `${cellY}px`;
-}
+  event.preventDefault();
+  const data = event.dataTransfer.getData('text/plain');
+  const draggedElement = document.getElementById(data);
+  const cellSize = 100;
+  if (draggedElement) {
+    const mouseX = event.clientX - board.offsetLeft;
+    const mouseY = event.clientY - board.offsetTop;
+    const cellX = Math.floor(mouseX / cellSize) * cellSize;
+    const cellY = Math.floor(mouseY / cellSize) * cellSize;
+    draggedElement.style.left = `${cellX}px`;
+    draggedElement.style.top = `${cellY}px`;
+  }
 }
 
 function createUnit() {
-const unitElement = Object.assign(document.createElement('div'), {
-  className: 'unit',
-  draggable: true,
-  id: `unit-${unitCount}`,
-  ondragstart: onDragStart,
-  style: 'user-select:none;'
-});
+  const unitElement = Object.assign(document.createElement('div'), {
+    className: 'unit',
+    draggable: true,
+    id: `unit-${unitCount}`,
+    ondragstart: onDragStart,
+    style: 'user-select:none;'
+  });
 
 const rotateButton = Object.assign(document.createElement('button'), {
   textContent: 'R',
@@ -544,85 +523,85 @@ menu.appendChild(menuAddRowButton);
 menu.appendChild(deleteButton);
 unitElement.appendChild(menu);
 
-const board=document.getElementById('board');
-const cellSize=100;
-const randomColumn=Math.floor(Math.random() * 7) * cellSize;
-const randomRow=Math.floor(Math.random() * 7) * cellSize;
+  const board=document.getElementById('board');
+  const cellSize=100;
+  const randomColumn=Math.floor(Math.random() * 7) * cellSize;
+  const randomRow=Math.floor(Math.random() * 7) * cellSize;
 
-unitElement.style.left=`${Math.round(randomColumn / cellSize) * cellSize}px`;
-unitElement.style.top=`${Math.round(randomRow / cellSize) * cellSize}px`;
+  unitElement.style.left=`${Math.round(randomColumn / cellSize) * cellSize}px`;
+  unitElement.style.top=`${Math.round(randomRow / cellSize) * cellSize}px`;
 
-board.appendChild(unitElement);
+  board.appendChild(unitElement);
 
-unitCount++;
+  unitCount++;
 }
 
 function deleteUnits(){
-const units=document.getElementsByClassName('unit');
-const unitsArray=Array.from(units);
-unitsArray.forEach(unit => unit.remove());
+  const units=document.getElementsByClassName('unit');
+  const unitsArray=Array.from(units);
+  unitsArray.forEach(unit => unit.remove());
 }
 
 const board=document.getElementById('board');
 for (let i=0; i < 49; i++){
-const square=document.createElement('div');
-square.className='square';
-board.appendChild(square);
+  const square=document.createElement('div');
+  square.className='square';
+  board.appendChild(square);
 }
 
 board.addEventListener('dragover', (event) =>{
-event.preventDefault();
+  event.preventDefault();
 });
 
 board.addEventListener('drop', (event) =>{
-event.preventDefault();
-const data=event.dataTransfer.getData('text/plain');
-const draggedElement=document.getElementById(data);
-const cellSize=100;
+  event.preventDefault();
+  const data=event.dataTransfer.getData('text/plain');
+  const draggedElement=document.getElementById(data);
+  const cellSize=100;
 
-if (draggedElement){
-const mouseX=event.clientX - board.offsetLeft;
-const mouseY=event.clientY - board.offsetTop;
+  if (draggedElement){
+    const mouseX=event.clientX - board.offsetLeft;
+    const mouseY=event.clientY - board.offsetTop;
 
-const cellX=Math.floor(mouseX / cellSize) * cellSize;
-const cellY=Math.floor(mouseY / cellSize) * cellSize;
+    const cellX=Math.floor(mouseX / cellSize) * cellSize;
+    const cellY=Math.floor(mouseY / cellSize) * cellSize;
 
-draggedElement.style.left=`${cellX}px`;
-draggedElement.style.top=`${cellY}px`;
-}
+    draggedElement.style.left=`${cellX}px`;
+    draggedElement.style.top=`${cellY}px`;
+  }
 });
 
 document.addEventListener('mousemove', onMouseMove);
 
 function onMouseMove(event) {
-if (isDragging) {
-const mouseX = event.clientX - offsetX + window.scrollX;
-const mouseY = event.clientY - offsetY + window.scrollY;
-const board = document.getElementById('board');
-const boardRect = board.getBoundingClientRect();
-const maxX = boardRect.width - draggedElement.offsetWidth;
-const maxY = boardRect.height - draggedElement.offsetHeight;
-const newX = Math.min(Math.max(0, mouseX), maxX);
-const newY = Math.min(Math.max(0, mouseY), maxY);
-draggedElement.style.left = `${newX}px`;
-draggedElement.style.top = `${newY}px`;
-}
+  if (isDragging) {
+    const mouseX = event.clientX - offsetX + window.scrollX;
+    const mouseY = event.clientY - offsetY + window.scrollY;
+    const board = document.getElementById('board');
+    const boardRect = board.getBoundingClientRect();
+    const maxX = boardRect.width - draggedElement.offsetWidth;
+    const maxY = boardRect.height - draggedElement.offsetHeight;
+    const newX = Math.min(Math.max(0, mouseX), maxX);
+    const newY = Math.min(Math.max(0, mouseY), maxY);
+    draggedElement.style.left = `${newX}px`;
+    draggedElement.style.top = `${newY}px`;
+  }
 }
 
-// Event listener for mouseup
 document.addEventListener('mouseup', onMouseUp);
 
 function onMouseUp() {
-if (isDragging) {
-isDragging = false;
-}
+  if (isDragging) {
+    isDragging = false;
+  }
 }
 
 document.addEventListener('dragend', () => {
-isDragging = false;
-draggedElement = null;
+  isDragging = false;
+  draggedElement = null;
 });
 
 </script>
+
 </body>
 </html>
