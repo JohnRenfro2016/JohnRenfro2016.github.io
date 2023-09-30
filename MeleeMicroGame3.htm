@@ -75,6 +75,8 @@
 <body>
     <button onclick="createUnit()">Create a piece?</button>
     <button onclick="deleteUnits()">Delete all the pieces?</button>
+	<button id="initiativeButton" onclick="rollInitiative()">Roll all initiatives?</button>"The winner may choose either to move his figure(s) first that turn, or to have the
+other player(s) move their figure(s) first."
     Load a map image.<input type="file" id="mapImageInput" accept="image/*">
     <br>
     <button id="rollD6Button">Roll D6</button>
@@ -148,18 +150,28 @@ function rollD6() {
   displayLastRolls();
 }
 
-function rollD4() {
-  const result = Math.floor(Math.random() * 4) + 1;
-  lastRolls.push(`D4 Result: ${result}`);
-  if (lastRolls.length > 5) {
-    lastRolls.shift();
-  }
-  displayLastRolls();
-}
-
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('rollD6Button').addEventListener('click', rollD6);
 });
+
+function rollInitiative() {
+  const units = document.getElementsByClassName('unit');
+  const initiativeResults = [];
+
+  for (let i = 0; i < units.length; i++) {
+    const result = Math.floor(Math.random() * 6) + 1;
+    const unitName = units[i].querySelector('.unit-text').textContent;
+    initiativeResults.push(`${unitName}: ${result}`);
+  }
+
+  displayInitiativeResults(initiativeResults);
+}
+function displayInitiativeResults(results) {
+  const resultsContainer = document.getElementById('resultsContainer');
+  resultsContainer.innerHTML = results.join('<br>');
+}
+document.getElementById('initiativeButton').addEventListener('click', rollInitiative);
+
 
 function loadMapImage(event) {
   const mapImage = document.createElement('img');
@@ -299,10 +311,27 @@ imageInput.addEventListener('change', function() {
 });
 
 const imageOptions = [
-  { src: 'CounterO.jpg', label: 'or Choose a Counter?' },
-  { src: 'CounterO.jpg', label: 'Counter O' },
-  { src: 'CounterC.jpg', label: 'Counter C' },
+  { src: 'CounterO.jpg', label: 'or choose a counter?' },
+  { src: 'CounterM.jpg', label: 'Counter M' },
 ];
+
+function setFlaviusAttributes() {
+  menuText.value = "Flavius";
+  menuMaximumDexterityInput.value = "12";
+  menuCurrentDexterityInput.value = "8";
+  menuMaximumStrengthInput.value = "12";
+  menuCurrentStrengthInput.value = "12";
+  menuMovementAllowanceInput.value = "6";
+}
+
+function setWulfAttributes() {
+  menuText.value = "Wulf";
+  menuMaximumDexterityInput.value = "10";
+  menuCurrentDexterityInput.value = "10";
+  menuMaximumStrengthInput.value = "14";
+  menuCurrentStrengthInput.value = "14";
+  menuMovementAllowanceInput.value = "10";
+}
 
 const imageSelect = document.createElement('select');
 imageSelect.className = 'menu-input';
@@ -319,10 +348,32 @@ imageSelect.addEventListener('change', function() {
   const imageElement = document.createElement('img');
   imageElement.src = selectedImageSrc;
   unitElement.style.backgroundImage = `url(${selectedImageSrc})`;
+
+  switch (selectedImageSrc) {
+    case 'CounterO.jpg':
+      setFlaviusAttributes();
+      break;
+    case 'CounterC.jpg':
+      setWulfAttributes(); 
+      break;
+    default:
+  }
 });
 
 // Add the dropdown menu to the menu
 menu.appendChild(imageSelect);
+
+const 
+flaviusOption = document.createElement('option');
+flaviusOption.value = 'CounterO.jpg';
+flaviusOption.text = 'Flavius';
+imageSelect.add(flaviusOption);
+
+const 
+wulfOption = document.createElement('option');
+wulfOption.value = 'CounterC.jpg';
+wulfOption.text = 'Wulf';
+imageSelect.add(wulfOption);
 
 const menuMovementAllowanceText = Object.assign(
   document.createElement('div'), 
@@ -369,7 +420,7 @@ const menuCurrentDexterityText = Object.assign(
   document.createElement('div'), 
   {
     className: 'menu-item', 
-    textContent: '(curDX)Current Dexterity:'
+    textContent: '(curDX)Current Dexterity: Roll (3d6)3 six-sided dice. If the result is lower than this current DX, the attack hits. If the defender dodges, the attacker must roll 4d6.'
   }
 );
 
@@ -410,7 +461,7 @@ const menuCurrentStrengthText = Object.assign(
   document.createElement('div'), 
   {
     className: 'menu-item', 
-    textContent: '(curST)Current Strength:'
+    textContent: '(curST)Current Strength: On an attack hit, the attacker rolls 1d6 for every number on the left of its weapon dice + or - the number on the right. The defender armor subtracts attacker dice.'
   }
 );
 
