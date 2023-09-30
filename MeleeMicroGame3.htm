@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Dungeons & Dragons 1st Edition</title>
+<style>
+
+.board.touch {
+touch-action: none;
+}
+
+.unit.touch {
+touch-action: none;
+}
+
+.board {
+border:2px solid #000;
+display:grid;
+grid-template-columns:repeat(7, 100px);
+grid-template-rows:repeat(7, 100px);
+height:700px;
+position:relative;
+width:700px;
+}
+
+.menu {
+background-color: #fff;
+border: 1px solid #ccc;
+display: block;
+position: absolute;
+}
+
+.menu-button {
+cursor:pointer;
+display:block;
+font-size:10px;
+}
+
+.menu-input {
+box-sizing:border-box;
+font-size:10px;
+z-index:3;
+}
+
+.menu-item {
+display:block;
+}
+
+.rotate-button {
+font-size:10px;
+}
+
+.square {
+border:1px solid #ccc;
+height:100px;
+position:relative;
+width:100px;
+}
+
+.unit {
+background-color:#f9f9f9;
+border:1px solid #ccc;
+cursor:move;
+font-size:10px;
+height:100px;
+position:absolute;
+transform-origin:center;
+user-select:none;
+width:100px;
+z-index:1;
+}
+
+.unit img {
+position:absolute;
+}
+
+.unit-text {
+text-align:right;
+font-size:10px;
+}
+
+</style>
+</head>
+<body>
+<button onclick="createUnit()">Create a piece?</button>
+<button onclick="deleteUnits()">Delete all the pieces?</button>
+Load a map image.<input type="file" id="mapImageInput" accept="image/*">
+<br>
+<button id="rollD6Button">Roll D6</button>
+
+<div id="resultsContainer"></div>
+
+<div class="board" id="board"></div>
+
+<script>
+
+const defaultMapImage = new Image();
+defaultMapImage.src = 'MeleeMap.jpg';
+
+defaultMapImage.onload = function() {
+  const board = document.getElementById('board');
+  board.style.backgroundImage = `url(${defaultMapImage.src})`;
+  board.style.backgroundSize = 'cover';
+}
+
+let unitCount = 0;
+let isDragging = false;
+let offsetX, offsetY;
+let draggedElement;
+let highestZIndex = 1;
+
+document.getElementById('board').addEventListener('touchstart', onTouchStart);
+document.getElementById('board').addEventListener('touchmove', onTouchMove);
+document.getElementById('board').addEventListener('touchend', onTouchEnd);
+
+let touchStartX, touchStartY;
+
+function onTouchStart(event) {
+const touch = event.touches[0];
+touchStartX = touch.clientX;
+touchStartY = touch.clientY;
+}
+
+function onTouchMove(event) {
+event.preventDefault(); // Prevent scrolling
+
+const touch = event.touches[0];
+const mouseX = touch.clientX;
+const mouseY = touch.clientY;
+const board = document.getElementById('board');
+const boardRect = board.getBoundingClientRect();
+const maxX = boardRect.width - draggedElement.offsetWidth;
+const maxY = boardRect.height - draggedElement.offsetHeight;
+const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
+const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
+draggedElement.style.left = `${newX}px`;
+draggedElement.style.top = `${newY}px`;
+touchStartX = mouseX;
+touchStartY = mouseY;
+}
+
+function onTouchEnd() {
+isDragging = false;
+}
+
+const lastRolls = [];
+
+// Function to display the last 5 rolls on the webpage
+function displayLastRolls() {
+const resultsContainer = document.getElementById('resultsContainer');
+resultsContainer.innerHTML = lastRolls.join('<br>');
+}
+
+// Function to roll a 6-sided die (D6)
+function rollD6() {
+const result = Math.floor(Math.random() * 6) + 1;
+lastRolls.push(`D6 Result: ${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
+}
+
+// Function to roll a 4-sided die (D4)
+function rollD4() {
+const result = Math.floor(Math.random() * 4) + 1;
+lastRolls.push(`D4 Result: ${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
+}
+
+// Event listeners for rolling each die
+document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('rollD6Button').addEventListener('click', rollD6);
+});
+
+function loadMapImage(event) {
+const mapImage = document.createElement('img');
+mapImage.src = URL.createObjectURL(event.target.files[0]);
+mapImage.style.position = 'absolute';
+mapImage.style.width = '100%';
+mapImage.style.height = '100%';
+mapImage.style.top = '0';
+mapImage.style.left = '0';
+mapImage.style.zIndex = '-1';
+const board = document.getElementById('board');
+board.appendChild(mapImage);
+}
+
+document.getElementById('mapImageInput').addEventListener('change', loadMapImage);
+
+function getRotationDegrees(element) {
+const transform = window.getComputedStyle(element).getPropertyValue('transform');
+if (transform && transform !== 'none') {
+const matrix = new DOMMatrix(transform);
+return Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI));
+}
+return 0;
+}
+
+function onDragStart(event) {
+isDragging = true;
+event.dataTransfer.setData('text/plain', event.target.id);
+
+const rect = event.target.getBoundingClientRect();
+offsetX = event.clientX - rect.left;
+offsetY = event.clientY - rect.top;
+draggedElement = event.target;
+
+highestZIndex++;
+draggedElement.style.zIndex = highestZIndex;
+}
+
+function onDragOver(event) {
+event.preventDefault();
+}
+
+function onDrop(event) {
+event.preventDefault();
+const data = event.dataTransfer.getData('text/plain');
+const draggedElement = document.getElementById(data);
+const cellSize = 100;
+
+if (draggedElement) {
+const mouseX = event.clientX - board.offsetLeft;
+const mouseY = event.clientY - board.offsetTop;
+
+const cellX = Math.floor(mouseX / cellSize) * cellSize;
+const cellY = Math.floor(mouseY / cellSize) * cellSize;
+
+draggedElement.style.left = `${cellX}px`;
+draggedElement.style.top = `${cellY}px`;
+}
+}
+
+function createUnit() {
+const unitElement = Object.assign(document.createElement('div'), {
+  className: 'unit',
+  draggable: true,
+  id: `unit-${unitCount}`,
+  ondragstart: onDragStart,
+  style: 'user-select:none;'
+});
+
+const rotateButton = Object.assign(document.createElement('button'), {
+  textContent: 'R',
+  className: 'rotate-button',
+  onclick: function(event) {
+    event.stopPropagation();
+    let currentRotation = 0;
+    const transform = unitElement.style.transform;
+    const match = transform && transform.match(/\d+/);
+    if (match) {
+      currentRotation = parseInt(match[0], 10);
+    }
+    unitElement.style.transform = `rotate(${(currentRotation + 45) % 360}deg)`;
+  }
+});
+
+const menuButton = Object.assign(document.createElement('button'), {
+  className: 'menu-button',
+  textContent: 'M',
+  onclick: function(event) {
+    event.stopPropagation();
+    menu.style.display = 'block';
+  }
+});
+
+const menu = Object.assign(document.createElement('div'), {
+  className: 'menu',
+  style: 'display:none;'
+});
+
+const menuText = Object.assign(document.createElement('input'), {
+  type: 'text',
+  className: 'menu-input',
+  placeholder: 'character or monster name',
+  maxLength: 20,
+  size: 20,
+  style: 'width: 21em;'
+});
+
+const addImageButton = Object.assign(document.createElement('button'), {
+  className: 'menu-button',
+  textContent: 'Add an image?',
+  onclick: function() {
+    imageInput.click();
+  }
+});
+
+const imageInput = Object.assign(document.createElement('input'), {
+  type: 'file',
+  accept: 'image/*',
+  style: 'display: none;'
+});
+
+imageInput.addEventListener('change', function() {
+  const file = this.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function() {
+    const imageElement = document.createElement('img');
+    imageElement.src = reader.result;
+
+    // Add an event listener to the image to prevent dragging
+    imageElement.addEventListener('dragstart', function(event) {
+      event.preventDefault();
+    });
+
+    unitElement.style.backgroundImage = `url(${reader.result})`; // Set image as background
+
+    // Remove the added image element
+    imageElement.remove();
+  }
+
+  reader.readAsDataURL(file);
+});
+
+const imageOptions = [
+  { src: 'CounterO.jpg', label: 'or Choose a Counter?' },
+  { src: 'CounterO.jpg', label: 'Counter O' },
+  { src: 'CounterC.jpg', label: 'Counter C' },
+];
+
+const imageSelect = document.createElement('select');
+imageSelect.className = 'menu-input';
+
+imageOptions.forEach(option => {
+  const imageOption = document.createElement('option');
+  imageOption.value = option.src;
+  imageOption.text = option.label;
+  imageSelect.add(imageOption);
+});
+
+imageSelect.addEventListener('change', function() {
+  const selectedImageSrc = this.value;
+  const imageElement = document.createElement('img');
+  imageElement.src = selectedImageSrc;
+  unitElement.style.backgroundImage = `url(${selectedImageSrc})`;
+});
+
+// Add the dropdown menu to the menu
+menu.appendChild(imageSelect);
+
+const menuMovementAllowanceText = Object.assign(
+  document.createElement('div'), 
+  {
+    className: 'menu-item', 
+    textContent: '(MA)Movement Allowance:'
+  }
+);
+
+const menuMovementAllowanceInput = Object.assign(
+  document.createElement('input'),
+  {
+    className: 'menu-input',
+    maxLength: 2,
+    size: 2,
+    style: 'width: 3em;',
+    type: 'text',
+  }
+);
+
+const menuMaximumDexterityText = Object.assign(
+  document.createElement('div'), 
+  {
+    className: 'menu-item', 
+    textContent: '(maxDX)maximum Dexterity:'
+  }
+);
+
+const menuMaximumDexterityInput = Object.assign(
+  document.createElement('input'),
+  {
+    className: 'menu-input',
+    maxLength: 2,
+    size: 2,
+    style: 'width: 3em;',
+    type: 'text',
+	oninput: function() {
+      menuCurrentDexterityInput.value = this.value;
+    }
+  }
+);
+
+const menuCurrentDexterityText = Object.assign(
+  document.createElement('div'), 
+  {
+    className: 'menu-item', 
+    textContent: '(curDX)Current Dexterity:'
+  }
+);
+
+const menuCurrentDexterityInput = Object.assign(
+  document.createElement('input'),
+  {
+    className: 'menu-input',
+    maxLength: 2,
+    size: 2,
+    style: 'width: 3em;',
+    type: 'text'
+  }
+);
+
+const menuMaximumStrengthText = Object.assign(
+  document.createElement('div'), 
+  {
+    className: 'menu-item', 
+    textContent: '(maxST)maximum Strength:'
+  }
+);
+
+const menuMaximumStrengthInput = Object.assign(
+  document.createElement('input'),
+  {
+    className: 'menu-input',
+    maxLength: 2,
+    size: 2,
+    style: 'width: 3em;',
+    type: 'text',
+    oninput: function() {
+      menuCurrentStrengthInput.value = this.value;
+    }
+  }
+);
+
+const menuCurrentStrengthText = Object.assign(
+  document.createElement('div'), 
+  {
+    className: 'menu-item', 
+    textContent: '(curST)Current Strength:'
+  }
+);
+
+const menuCurrentStrengthInput = Object.assign(
+  document.createElement('input'),
+  {
+    className: 'menu-input',
+    maxLength: 2,
+    size: 2,
+    style: 'width: 3em;',
+    type: 'text'
+  }
+);
+
+const menuAddRowButton = Object.assign(
+  document.createElement('button'),
+  {
+    className: 'menu-button',
+    textContent: 'Add a weapon or armor.'
+  }
+);
+
+menuAddRowButton.addEventListener('click', function() {
+const newRow = document.createElement('div');
+newRow.className = 'menu-item';
+
+const newAttackName = Object.assign(
+  document.createElement('input'),
+  {
+    type: 'text',
+    className: 'menu-input',
+    placeholder: 'weapon or armor name',
+    maxLength: 20,
+    size: 20,
+    style: 'width: 21em;'
+  }
+);
+
+newRow.appendChild(newAttackName);
+
+
+newRow.appendChild(
+  Object.assign(
+    document.createElement('input'),
+    {
+      type: 'text',
+      className: 'menu-input',
+      placeholder: 'dice+bonus',
+      maxLength: 3,
+      size: 3,
+      style: 'width: 4em;'
+    }
+  )
+);
+
+menu.insertBefore(newRow, menuAddRowButton);
+});
+
+const deleteButton=document.createElement('button');
+deleteButton.className='menu-button';
+deleteButton.textContent='Delete this piece?';
+deleteButton.addEventListener('click', function(){
+unitElement.remove();
+});
+
+menuButton.addEventListener('click', function(event){
+event.stopPropagation();
+menu.style.display='block';
+});
+
+document.addEventListener('click', function(){
+menu.style.display='none';
+});
+
+menu.addEventListener('click', function(event){
+event.stopPropagation();
+});
+
+menuText.addEventListener('input', function(){
+unitText.textContent=menuText.value;
+});
+
+menuMaximumDexterityInput.addEventListener('input', function(){
+unitElement.dataset.hd=menuMaximumDexterityInput.value;
+});
+
+const unitText=document.createElement('div');
+unitText.className='unit-text';
+unitText.textContent='Name';
+
+const lineBreak = document.createElement('br');
+
+unitElement.appendChild(rotateButton);
+unitElement.appendChild(menuButton);
+unitElement.appendChild(unitText);
+menu.appendChild(menuText);
+menu.appendChild(addImageButton);
+menu.appendChild(imageSelect);
+menu.appendChild(menuMaximumStrengthText);
+menu.appendChild(menuMaximumStrengthInput);
+menu.appendChild(menuCurrentStrengthText);
+menu.appendChild(menuCurrentStrengthInput);
+menu.appendChild(menuMaximumDexterityText);
+menu.appendChild(menuMaximumDexterityInput);
+menu.appendChild(menuCurrentDexterityText);
+menu.appendChild(menuCurrentDexterityInput);
+menu.appendChild(menuMovementAllowanceText);
+menu.appendChild(menuMovementAllowanceInput);
+menu.appendChild(menuAddRowButton);
+menu.appendChild(deleteButton);
+unitElement.appendChild(menu);
+
+const board=document.getElementById('board');
+const cellSize=100;
+const randomColumn=Math.floor(Math.random() * 7) * cellSize;
+const randomRow=Math.floor(Math.random() * 7) * cellSize;
+
+unitElement.style.left=`${Math.round(randomColumn / cellSize) * cellSize}px`;
+unitElement.style.top=`${Math.round(randomRow / cellSize) * cellSize}px`;
+
+board.appendChild(unitElement);
+
+unitCount++;
+}
+
+function deleteUnits(){
+const units=document.getElementsByClassName('unit');
+const unitsArray=Array.from(units);
+unitsArray.forEach(unit => unit.remove());
+}
+
+const board=document.getElementById('board');
+for (let i=0; i < 49; i++){
+const square=document.createElement('div');
+square.className='square';
+board.appendChild(square);
+}
+
+board.addEventListener('dragover', (event) =>{
+event.preventDefault();
+});
+
+board.addEventListener('drop', (event) =>{
+event.preventDefault();
+const data=event.dataTransfer.getData('text/plain');
+const draggedElement=document.getElementById(data);
+const cellSize=100;
+
+if (draggedElement){
+const mouseX=event.clientX - board.offsetLeft;
+const mouseY=event.clientY - board.offsetTop;
+
+const cellX=Math.floor(mouseX / cellSize) * cellSize;
+const cellY=Math.floor(mouseY / cellSize) * cellSize;
+
+draggedElement.style.left=`${cellX}px`;
+draggedElement.style.top=`${cellY}px`;
+}
+});
+
+document.addEventListener('mousemove', onMouseMove);
+
+function onMouseMove(event) {
+if (isDragging) {
+const mouseX = event.clientX - offsetX + window.scrollX;
+const mouseY = event.clientY - offsetY + window.scrollY;
+const board = document.getElementById('board');
+const boardRect = board.getBoundingClientRect();
+const maxX = boardRect.width - draggedElement.offsetWidth;
+const maxY = boardRect.height - draggedElement.offsetHeight;
+const newX = Math.min(Math.max(0, mouseX), maxX);
+const newY = Math.min(Math.max(0, mouseY), maxY);
+draggedElement.style.left = `${newX}px`;
+draggedElement.style.top = `${newY}px`;
+}
+}
+
+// Event listener for mouseup
+document.addEventListener('mouseup', onMouseUp);
+
+function onMouseUp() {
+if (isDragging) {
+isDragging = false;
+}
+}
+
+document.addEventListener('dragend', () => {
+isDragging = false;
+draggedElement = null;
+});
+
+</script>
+</body>
+</html>
