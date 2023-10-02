@@ -6,10 +6,12 @@
 <title>Advanced Dungeons & Dragons 1st Edition</title>
 <style>
 
-body,button,input,radio,text,textArea
+body,button,input,radio,text,textArea,a:link,a:visited
 {
 background-color:#24505d;
-border-color:#337082;
+border-color:#000;
+border-style:solid;
+border-width:2px;
 color:#b6d9e3;
 }
 
@@ -18,13 +20,6 @@ table,tr,td
 background-color:#2b606f;
 border-color:#3a8094;
 color:#ecf5f8;
-}
-
-a:active,a:hover,a:link,a:selected,a:visited
-{
-background-color:#2b606f;
-border-color:#3a8094;
-color:#c8e2ea;
 }
 
 .board.touch {
@@ -36,19 +31,19 @@ touch-action:none;
 }
 
 .board {
- border:2px solid #000;
- display:grid;
- grid-template-columns:repeat(7, 100px);
- grid-template-rows:repeat(7, 100px);
- height:700px;
- position:relative;
- width:700px;
+border-style:solid;
+color:inherit;
+display:grid;
+grid-template-columns:repeat(7, 100px);
+grid-template-rows:repeat(7, 100px);
+height:700px;
+position:relative;
+width:700px;
 }
 
 .menu {
- border:1px solid #ccc;
- position:relative;
- max-width:none;
+position:relative;
+max-width:none;
 }
 
 .menu-button {
@@ -75,15 +70,21 @@ font-size:10px;
 }
 
 .square {
- border:1px solid ;
- height:100px;
- position:relative;
- width:100px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000; /* Add border color here */
+  position: relative;
+}
+
+#board {
+  position: relative;
+  width: 700px; /* Set the width of the board */
+  height: 700px; /* Set the height of the board */
+  border: 1px solid #000; /* Add border color here */
 }
 
 .unit {
-background-color: #ffffff;
-border:1px solid #ccc;
+background-color:#ffffff;
 color:black;
 cursor:move;
 font-size:10px;
@@ -108,6 +109,10 @@ font-size:10px;
 </head>
 <body>
 
+<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>1st Edition Dungeon Masters Guide Combat Tables</a>
+<a href='https://archive.org/details/tsr02009addmonstermanual/mode/1up' target='_blank'>1st Edition Monster Manual</a>
+<a href='https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up' target='_blank'>Dungeon Module L1 "The Secret of Bone Hill</a>
+
 <button onclick="createUnit()">Create a character or monster?</button>
 
 Load a map image.<input type="file" id="mapImageInput" accept="image/*">
@@ -131,7 +136,18 @@ let offsetX, offsetY;
 let draggedElement;
 let highestZIndex = 1;
 
-//begin drag and drop functions
+//start const declarations
+
+const board = document.getElementById('board');
+for (let i = 0; i < 49; i++) {
+  const square = document.createElement('div');
+  square.className = 'square';
+  board.appendChild(square);
+}
+
+//end const declarations
+
+//start drag and drop functions
 
 document.getElementById('board').addEventListener('touchstart', onTouchStart);
 document.getElementById('board').addEventListener('touchmove', onTouchMove);
@@ -140,31 +156,30 @@ document.getElementById('board').addEventListener('touchend', onTouchEnd);
 let touchStartX, touchStartY;
 
 function onTouchStart(event) {
-const touch = event.touches[0];
-touchStartX = touch.clientX;
-touchStartY = touch.clientY;
+  const touch = event.touches[0];
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
 }
 
 function onTouchMove(event) {
-event.preventDefault(); // Prevent scrolling
-
-const touch = event.touches[0];
-const mouseX = touch.clientX;
-const mouseY = touch.clientY;
-const board = document.getElementById('board');
-const boardRect = board.getBoundingClientRect();
-const maxX = boardRect.width - draggedElement.offsetWidth;
-const maxY = boardRect.height - draggedElement.offsetHeight;
-const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
-const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
-draggedElement.style.left = `${newX}px`;
-draggedElement.style.top = `${newY}px`;
-touchStartX = mouseX;
-touchStartY = mouseY;
+  event.preventDefault();
+  const touch = event.touches[0];
+  const mouseX = touch.clientX;
+  const mouseY = touch.clientY;
+  const board = document.getElementById('board');
+  const boardRect = board.getBoundingClientRect();
+  const maxX = boardRect.width - draggedElement.offsetWidth;
+  const maxY = boardRect.height - draggedElement.offsetHeight;
+  const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
+  const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
+  draggedElement.style.left = `${newX}px`;
+  draggedElement.style.top = `${newY}px`;
+  touchStartX = mouseX;
+  touchStartY = mouseY;
 }
 
 function onTouchEnd() {
-isDragging = false;
+  isDragging = false;
 }
 
 //end of the drag and drop functions
@@ -251,23 +266,23 @@ document.getElementById('rollD4Button').addEventListener('click', rollD4);
 let currentMapImage = 'Map.png';
 
 function loadMapImage(event) {
- const mapImage = document.createElement('img');
- const file = event.target.files[0];
+const mapImage = document.createElement('img');
+const file = event.target.files[0];
 
- if (file) {
- currentMapImage = URL.createObjectURL(file);
- mapImage.src = currentMapImage;
- mapImage.style.position = 'absolute';
- mapImage.style.width = '100%';
- mapImage.style.height = '100%';
- mapImage.style.top = '0';
- mapImage.style.left = '0';
- mapImage.style.zIndex = '-1';
- const board = document.getElementById('board');
- board.innerHTML = '';
- board.appendChild(mapImage);
- changeMap();
- }
+if (file) {
+currentMapImage = URL.createObjectURL(file);
+mapImage.src = currentMapImage;
+mapImage.style.position = 'absolute';
+mapImage.style.width = '100%';
+mapImage.style.height = '100%';
+mapImage.style.top = '0';
+mapImage.style.left = '0';
+mapImage.style.zIndex = '-1';
+const board = document.getElementById('board');
+board.innerHTML = '';
+board.appendChild(mapImage);
+changeMap();
+}
 }
 
 document.getElementById('mapImageInput').addEventListener('change', loadMapImage);
@@ -276,15 +291,15 @@ const defaultMapImage = new Image();
 defaultMapImage.src = 'Map.png';
 
 defaultMapImage.onload = function() {
- const board = document.getElementById('board');
- board.style.backgroundImage = `url(${defaultMapImage.src})`;
- board.style.backgroundSize = 'cover';
+const board = document.getElementById('board');
+board.style.backgroundImage = `url(${defaultMapImage.src})`;
+board.style.backgroundSize = 'cover';
 }
 
 function changeMap() {
- const board = document.getElementById('board');
- board.style.backgroundImage = `url(${currentMapImage})`;
- board.style.backgroundSize = 'cover';
+const board = document.getElementById('board');
+board.style.backgroundImage = `url(${currentMapImage})`;
+board.style.backgroundSize = 'cover';
 }
 //end of map image loading functions
 
@@ -297,40 +312,95 @@ return Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI));
 return 0;
 }
 
+//start drag and drop functions
+
 function onDragStart(event) {
-isDragging = true;
-event.dataTransfer.setData('text/plain', event.target.id);
+  isDragging = true;
+  event.dataTransfer.setData('text/plain', event.target.id);
 
-const rect = event.target.getBoundingClientRect();
-offsetX = event.clientX - rect.left;
-offsetY = event.clientY - rect.top;
-draggedElement = event.target;
+  const rect = event.target.getBoundingClientRect();
+  offsetX = event.clientX - rect.left;
+  offsetY = event.clientY - rect.top;
+  draggedElement = event.target;
 
-highestZIndex++;
-draggedElement.style.zIndex = highestZIndex;
+  highestZIndex++;
+  draggedElement.style.zIndex = highestZIndex;
 }
 
 function onDragOver(event) {
-event.preventDefault();
+  event.preventDefault();
 }
 
 function onDrop(event) {
-event.preventDefault();
-const data = event.dataTransfer.getData('text/plain');
-const draggedElement = document.getElementById(data);
-const cellSize = 100;
+  event.preventDefault();
+  const data = event.dataTransfer.getData('text/plain');
+  const draggedElement = document.getElementById(data);
+  const cellSize = 100;
 
-if (draggedElement) {
-const mouseX = event.clientX - board.offsetLeft;
-const mouseY = event.clientY - board.offsetTop;
+  if (draggedElement) {
+    const mouseX = event.clientX - board.offsetLeft;
+    const mouseY = event.clientY - board.offsetTop;
 
-const cellX = Math.floor(mouseX / cellSize) * cellSize;
-const cellY = Math.floor(mouseY / cellSize) * cellSize;
+    const cellX = Math.floor(mouseX / cellSize) * cellSize;
+    const cellY = Math.floor(mouseY / cellSize) * cellSize;
 
-draggedElement.style.left = `${cellX}px`;
-draggedElement.style.top = `${cellY}px`;
+    draggedElement.style.left = `${cellX}px`;
+    draggedElement.style.top = `${cellY}px`;
+  }
 }
+
+board.addEventListener('dragover', (event) => {
+  event.preventDefault();
+});
+
+board.addEventListener('drop', (event) => {
+  event.preventDefault();
+  const data = event.dataTransfer.getData('text/plain');
+  const draggedElement = document.getElementById(data);
+  const cellSize = 100;
+
+  if (draggedElement) {
+    const mouseX = event.clientX - board.offsetLeft;
+    const mouseY = event.clientY - board.offsetTop;
+
+    const cellX = Math.floor(mouseX / cellSize) * cellSize;
+    const cellY = Math.floor(mouseY / cellSize) * cellSize;
+
+    draggedElement.style.left = `${cellX}px`;
+    draggedElement.style.top = `${cellY}px`;
+  }
+});
+
+document.addEventListener('mousemove', onMouseMove);
+
+function onMouseMove(event) {
+  if (isDragging) {
+    const mouseX = event.clientX - offsetX + window.scrollX;
+    const mouseY = event.clientY - offsetY + window.scrollY;
+    const boardRect = board.getBoundingClientRect();
+    const maxX = boardRect.width - draggedElement.offsetWidth;
+    const maxY = boardRect.height - draggedElement.offsetHeight;
+    const newX = Math.min(Math.max(0, mouseX), maxX);
+    const newY = Math.min(Math.max(0, mouseY), maxY);
+    draggedElement.style.left = `${newX}px`;
+    draggedElement.style.top = `${newY}px`;
+  }
 }
+
+document.addEventListener('mouseup', onMouseUp);
+
+function onMouseUp() {
+  if (isDragging) {
+    isDragging = false;
+  }
+}
+
+document.addEventListener('dragend', () => {
+  isDragging = false;
+  draggedElement = null;
+});
+
+//end drag and drop functions
 
 function createUnit() {
 const unitElement=document.createElement('div');
@@ -378,39 +448,39 @@ nameInput.addEventListener('input', function()
 {unitText.textContent=nameInput.value;});
 
 const addImageButton = Object.assign(document.createElement('button'), {
-  className: 'menu-button',
-  textContent: 'Add an image?',
-  onclick: function() {
-    imageInput.click();
-  }
+className:'menu-button',
+textContent:'Add a miniature?',
+onclick:function() {
+imageInput.click();
+}
 });
 
 const imageInput = Object.assign(document.createElement('input'), {
-  type: 'file',
-  accept: 'image/*',
-  style: 'display: none;'
+type:'file',
+accept:'image/*',
+style:'display:none;'
 });
 
 imageInput.addEventListener('change', function() {
-  const file = this.files[0];
-  const reader = new FileReader();
+const file = this.files[0];
+const reader = new FileReader();
 
-  reader.onload = function() {
-    const imageElement = document.createElement('img');
-    imageElement.src = reader.result;
+reader.onload = function() {
+const imageElement = document.createElement('img');
+imageElement.src = reader.result;
 
-    // Add an event listener to the image to prevent dragging
-    imageElement.addEventListener('dragstart', function(event) {
-      event.preventDefault();
-    });
+// Add an event listener to the image to prevent dragging
+imageElement.addEventListener('dragstart', function(event) {
+event.preventDefault();
+});
 
-    unitElement.style.backgroundImage = `url(${reader.result})`; // Set image as background
+unitElement.style.backgroundImage = `url(${reader.result})`; // Set image as background
 
-    // Remove the added image element
-    imageElement.remove();
-  }
+// Remove the added image element
+imageElement.remove();
+}
 
-  reader.readAsDataURL(file);
+reader.readAsDataURL(file);
 });
 
 const movementLabel=document.createElement('div');
@@ -459,18 +529,18 @@ const menuMaxHPText = document.createElement('div');
 menuMaxHPText.className = 'menu-item';
 menuMaxHPText.textContent = 'maxHP:';
 const menuMaxHPInput = Object.assign(
- document.createElement('input'),
- {
- className:'menu-input',
- maxLength:3,
- size:3,
- style:'width:4em;',
- type:'text',
+document.createElement('input'),
+{
+className:'menu-input',
+maxLength:3,
+size:3,
+style:'width:4em;',
+type:'text',
 	oninput:function() {
- menuCurHPInput.value = this.value;
- curHpValueElement.textContent = this.value;
- }
- }
+menuCurHPInput.value = this.value;
+curHpValueElement.textContent = this.value;
+}
+}
 );
 
 const menuCurHPText = document.createElement('div');
@@ -544,8 +614,6 @@ menu.addEventListener('click', function(event){
 event.stopPropagation();
 });
 
-
-
 movementInput.addEventListener('input', function()
 {
 unitElement.dataset.mv=movementInput.value;
@@ -617,8 +685,8 @@ unitElement.appendChild(menu);
 
 const board=document.getElementById('board');
 const cellSize=100;
-const randomColumn=Math.floor(Math.random() * 7) * cellSize;
-const randomRow=Math.floor(Math.random() * 7) * cellSize;
+const randomColumn = Math.floor(Math.random() * 7) * cellSize;
+const randomRow = Math.floor(Math.random() * 7) * cellSize;
 
 unitElement.style.left=`${Math.round(randomColumn / cellSize) * cellSize}px`;
 unitElement.style.top=`${Math.round(randomRow / cellSize) * cellSize}px`;
@@ -628,66 +696,6 @@ board.appendChild(unitElement);
 
 unitCount++;
 }
-
-const board=document.getElementById('board');
-for (let i=0; i < 49; i++){
-const square=document.createElement('div');
-square.className='square';
-board.appendChild(square);
-}
-
-board.addEventListener('dragover', (event) =>{
-event.preventDefault();
-});
-
-board.addEventListener('drop', (event) =>{
-event.preventDefault();
-const data=event.dataTransfer.getData('text/plain');
-const draggedElement=document.getElementById(data);
-const cellSize=100;
-
-if (draggedElement){
-const mouseX=event.clientX - board.offsetLeft;
-const mouseY=event.clientY - board.offsetTop;
-
-const cellX=Math.floor(mouseX / cellSize) * cellSize;
-const cellY=Math.floor(mouseY / cellSize) * cellSize;
-
-draggedElement.style.left=`${cellX}px`;
-draggedElement.style.top=`${cellY}px`;
-}
-});
-
-document.addEventListener('mousemove', onMouseMove);
-
-function onMouseMove(event) {
-if (isDragging) {
-const mouseX = event.clientX - offsetX + window.scrollX;
-const mouseY = event.clientY - offsetY + window.scrollY;
-const board = document.getElementById('board');
-const boardRect = board.getBoundingClientRect();
-const maxX = boardRect.width - draggedElement.offsetWidth;
-const maxY = boardRect.height - draggedElement.offsetHeight;
-const newX = Math.min(Math.max(0, mouseX), maxX);
-const newY = Math.min(Math.max(0, mouseY), maxY);
-draggedElement.style.left = `${newX}px`;
-draggedElement.style.top = `${newY}px`;
-}
-}
-
-// Event listener for mouseup
-document.addEventListener('mouseup', onMouseUp);
-
-function onMouseUp() {
-if (isDragging) {
-isDragging = false;
-}
-}
-
-document.addEventListener('dragend', () => {
-isDragging = false;
-draggedElement = null;
-});
 
 </script>
 </body>
