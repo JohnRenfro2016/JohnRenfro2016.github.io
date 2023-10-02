@@ -5,698 +5,663 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Advanced Dungeons & Dragons 1st Edition</title>
 <style>
+    body, button, input, radio, text, textArea, a:link, a:visited {
+        background-color: #24505d;
+        border-color: #000;
+        border-style: solid;
+        border-width: 2px;
+        color: #b6d9e3;
+    }
 
-body,button,input,radio,text,textArea,a:link,a:visited
-{
-background-color:#24505d;
-border-color:#000;
-border-style:solid;
-border-width:2px;
-color:#b6d9e3;
-}
+    table, tr, td {
+        background-color: #2b606f;
+        border-color: #3a8094;
+        color: #ecf5f8;
+    }
 
-table,tr,td
-{
-background-color:#2b606f;
-border-color:#3a8094;
-color:#ecf5f8;
-}
+    .board.touch, .unit.touch {
+        touch-action: none;
+    }
 
-.board.touch {
-touch-action:none;
-}
+    .board {
+        border-style: solid;
+        color: inherit;
+        display: grid;
+        grid-template-columns: repeat(7, 100px);
+        grid-template-rows: repeat(7, 100px);
+        height: 700px;
+        position: relative;
+        width: 700px;
+    }
 
-.unit.touch {
-touch-action:none;
-}
+    .menu {
+        position: relative;
+        max-width: none;
+    }
 
-.board {
-border-style:solid;
-color:inherit;
-display:grid;
-grid-template-columns:repeat(7, 100px);
-grid-template-rows:repeat(7, 100px);
-height:700px;
-position:relative;
-width:700px;
-}
+    .menu-button {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 10px;
+    }
 
-.menu {
-position:relative;
-max-width:none;
-}
+    .menu-input {
+        display: inline-block;
+        box-sizing: border-box;
+        font-size: 10px;
+        z-index: 3;
+    }
 
-.menu-button {
-cursor:pointer;
-display:block;
-font-size:10px;
-}
+    .menu-item {
+        display: inline-block;
+    }
 
-.menu-input
-{
-display:block;
-box-sizing:border-box;
-font-size:10px;
-z-index:3;
-}
+    .rotate-button {
+        display: inline-block;
+        font-size: 10px;
+    }
 
-.menu-item {
-display:block;
-}
+    .square {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+    }
 
-.rotate-button {
-display:block;
-font-size:10px;
-}
+    #board {
+        position: relative;
+        width: 700px;
+        height: 700px;
+        border: 1px solid #000;
+    }
 
-.square {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #000; /* Add border color here */
-  position: relative;
-}
+    .unit {
+        background-color: #ffffff;
+        color: black;
+        cursor: move;
+        font-size: 10px;
+        height: 100px;
+        position: absolute;
+        transform-origin: center;
+        user-select: none;
+        width: 100px;
+        z-index: 1;
+    }
 
-#board {
-  position: relative;
-  width: 700px; /* Set the width of the board */
-  height: 700px; /* Set the height of the board */
-  border: 1px solid #000; /* Add border color here */
-}
+    .unit img {
+        position: absolute;
+    }
 
-.unit {
-background-color:#ffffff;
-color:black;
-cursor:move;
-font-size:10px;
-height:100px;
-position:absolute;
-transform-origin:center;
-user-select:none;
-width:100px;
-z-index:1;
-}
-
-.unit img {
-position:absolute;
-}
-
-.unit-text {
-display:block;
-font-size:10px;
-}
-
+    .unit-text {
+        display: inline-block;
+        font-size: 10px;
+    }
 </style>
 </head>
 <body>
-
-<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>1st Edition Dungeon Masters Guide Combat Tables</a>
-<a href='https://archive.org/details/tsr02009addmonstermanual/mode/1up' target='_blank'>1st Edition Monster Manual</a>
-<a href='https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up' target='_blank'>Dungeon Module L1 "The Secret of Bone Hill</a>
-
-<button onclick="createUnit()">Create a character or monster?</button>
-
-Load a map image.<input type="file" id="mapImageInput" accept="image/*">
-
-<button id="rollD20Button">Roll D20</button>
-<button id="rollD12Button">Roll D12</button>
-<button id="rollD10Button">Roll D10</button>
-<button id="rollD8Button">Roll D8</button>
-<button id="rollD6Button">Roll D6</button>
-<button id="rollD4Button">Roll D4</button>
-
-<div id="resultsContainer"></div>
-
-<div class="board" id="board"></div>
-
-<script>
-
-let unitCount = 0;
-let isDragging = false;
-let offsetX, offsetY;
-let draggedElement;
-let highestZIndex = 1;
-
-//start const declarations
-
-const board = document.getElementById('board');
-for (let i = 0; i < 49; i++) {
-  const square = document.createElement('div');
-  square.className = 'square';
-  board.appendChild(square);
-}
-
-//end const declarations
-
-//start drag and drop functions
-
-document.getElementById('board').addEventListener('touchstart', onTouchStart);
-document.getElementById('board').addEventListener('touchmove', onTouchMove);
-document.getElementById('board').addEventListener('touchend', onTouchEnd);
-
-let touchStartX, touchStartY;
-
-function onTouchStart(event) {
-  const touch = event.touches[0];
-  touchStartX = touch.clientX;
-  touchStartY = touch.clientY;
-}
-
-function onTouchMove(event) {
-  event.preventDefault();
-  const touch = event.touches[0];
-  const mouseX = touch.clientX;
-  const mouseY = touch.clientY;
-  const board = document.getElementById('board');
-  const boardRect = board.getBoundingClientRect();
-  const maxX = boardRect.width - draggedElement.offsetWidth;
-  const maxY = boardRect.height - draggedElement.offsetHeight;
-  const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
-  const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
-  draggedElement.style.left = `${newX}px`;
-  draggedElement.style.top = `${newY}px`;
-  touchStartX = mouseX;
-  touchStartY = mouseY;
-}
-
-function onTouchEnd() {
-  isDragging = false;
-}
-
-//end of the drag and drop functions
-
-const lastRolls = [];
-
-// Function to display the last 5 rolls on the webpage
-function displayLastRolls() {
-const resultsContainer = document.getElementById('resultsContainer');
-resultsContainer.innerHTML = lastRolls.join('<br>');
-}
-
-// Function to roll a random 20-sided die (D20)
-function rollD20() {
-const result = Math.floor(Math.random() * 20) + 1;
-lastRolls.push(`D20 Result:${result}`);
-if (lastRolls.length > 5) {
-lastRolls.shift(); // Remove the oldest roll
-}
-displayLastRolls();
-}
-
-// Function to roll a 12-sided die (D12)
-function rollD12() {
-const result = Math.floor(Math.random() * 12) + 1;
-lastRolls.push(`D12 Result:${result}`);
-if (lastRolls.length > 5) {
-lastRolls.shift(); // Remove the oldest roll
-}
-displayLastRolls();
-}
-
-// Function to roll a 10-sided die (D10)
-function rollD10() {
-const result = Math.floor(Math.random() * 10) + 1;
-lastRolls.push(`D10 Result:${result}`);
-if (lastRolls.length > 5) {
-lastRolls.shift(); // Remove the oldest roll
-}
-displayLastRolls();
-}
-
-// Function to roll an 8-sided die (D8)
-function rollD8() {
-const result = Math.floor(Math.random() * 8) + 1;
-lastRolls.push(`D8 Result:${result}`);
-if (lastRolls.length > 5) {
-lastRolls.shift(); // Remove the oldest roll
-}
-displayLastRolls();
-}
-
-// Function to roll a 6-sided die (D6)
-function rollD6() {
-const result = Math.floor(Math.random() * 6) + 1;
-lastRolls.push(`D6 Result:${result}`);
-if (lastRolls.length > 5) {
-lastRolls.shift(); // Remove the oldest roll
-}
-displayLastRolls();
-}
-
-// Function to roll a 4-sided die (D4)
-function rollD4() {
-const result = Math.floor(Math.random() * 4) + 1;
-lastRolls.push(`D4 Result:${result}`);
-if (lastRolls.length > 5) {
-lastRolls.shift(); // Remove the oldest roll
-}
-displayLastRolls();
-}
-
-// Event listeners for rolling each die
-document.addEventListener('DOMContentLoaded', function() {
-document.getElementById('rollD20Button').addEventListener('click', rollD20);
-document.getElementById('rollD12Button').addEventListener('click', rollD12);
-document.getElementById('rollD10Button').addEventListener('click', rollD10);
-document.getElementById('rollD8Button').addEventListener('click', rollD8);
-document.getElementById('rollD6Button').addEventListener('click', rollD6);
-document.getElementById('rollD4Button').addEventListener('click', rollD4);
-});
-
-//beginning of map image loading functions
-let currentMapImage = 'Map.png';
-
-function loadMapImage(event) {
-const mapImage = document.createElement('img');
-const file = event.target.files[0];
-
-if (file) {
-currentMapImage = URL.createObjectURL(file);
-mapImage.src = currentMapImage;
-mapImage.style.position = 'absolute';
-mapImage.style.width = '100%';
-mapImage.style.height = '100%';
-mapImage.style.top = '0';
-mapImage.style.left = '0';
-mapImage.style.zIndex = '-1';
-const board = document.getElementById('board');
-board.innerHTML = '';
-board.appendChild(mapImage);
-changeMap();
-}
-}
-
-document.getElementById('mapImageInput').addEventListener('change', loadMapImage);
-
-const defaultMapImage = new Image();
-defaultMapImage.src = 'Map.png';
-
-defaultMapImage.onload = function() {
-const board = document.getElementById('board');
-board.style.backgroundImage = `url(${defaultMapImage.src})`;
-board.style.backgroundSize = 'cover';
-}
-
-function changeMap() {
-const board = document.getElementById('board');
-board.style.backgroundImage = `url(${currentMapImage})`;
-board.style.backgroundSize = 'cover';
-}
-//end of map image loading functions
-
-function getRotationDegrees(element) {
-const transform = window.getComputedStyle(element).getPropertyValue('transform');
-if (transform && transform !== 'none') {
-const matrix = new DOMMatrix(transform);
-return Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI));
-}
-return 0;
-}
-
-//start drag and drop functions
-
-function onDragStart(event) {
-  isDragging = true;
-  event.dataTransfer.setData('text/plain', event.target.id);
-
-  const rect = event.target.getBoundingClientRect();
-  offsetX = event.clientX - rect.left;
-  offsetY = event.clientY - rect.top;
-  draggedElement = event.target;
-
-  highestZIndex++;
-  draggedElement.style.zIndex = highestZIndex;
-}
-
-function onDragOver(event) {
-  event.preventDefault();
-}
-
-function onDrop(event) {
-  event.preventDefault();
-  const data = event.dataTransfer.getData('text/plain');
-  const draggedElement = document.getElementById(data);
-  const cellSize = 100;
-
-  if (draggedElement) {
-    const mouseX = event.clientX - board.offsetLeft;
-    const mouseY = event.clientY - board.offsetTop;
-
-    const cellX = Math.floor(mouseX / cellSize) * cellSize;
-    const cellY = Math.floor(mouseY / cellSize) * cellSize;
-
-    draggedElement.style.left = `${cellX}px`;
-    draggedElement.style.top = `${cellY}px`;
-  }
-}
-
-board.addEventListener('dragover', (event) => {
-  event.preventDefault();
-});
-
-board.addEventListener('drop', (event) => {
-  event.preventDefault();
-  const data = event.dataTransfer.getData('text/plain');
-  const draggedElement = document.getElementById(data);
-  const cellSize = 100;
-
-  if (draggedElement) {
-    const mouseX = event.clientX - board.offsetLeft;
-    const mouseY = event.clientY - board.offsetTop;
-
-    const cellX = Math.floor(mouseX / cellSize) * cellSize;
-    const cellY = Math.floor(mouseY / cellSize) * cellSize;
-
-    draggedElement.style.left = `${cellX}px`;
-    draggedElement.style.top = `${cellY}px`;
-  }
-});
-
-document.addEventListener('mousemove', onMouseMove);
-
-function onMouseMove(event) {
-  if (isDragging) {
-    const mouseX = event.clientX - offsetX + window.scrollX;
-    const mouseY = event.clientY - offsetY + window.scrollY;
-    const boardRect = board.getBoundingClientRect();
-    const maxX = boardRect.width - draggedElement.offsetWidth;
-    const maxY = boardRect.height - draggedElement.offsetHeight;
-    const newX = Math.min(Math.max(0, mouseX), maxX);
-    const newY = Math.min(Math.max(0, mouseY), maxY);
-    draggedElement.style.left = `${newX}px`;
-    draggedElement.style.top = `${newY}px`;
-  }
-}
-
-document.addEventListener('mouseup', onMouseUp);
-
-function onMouseUp() {
-  if (isDragging) {
-    isDragging = false;
-  }
-}
-
-document.addEventListener('dragend', () => {
-  isDragging = false;
-  draggedElement = null;
-});
-
-//end drag and drop functions
-
-function createUnit() {
-const unitElement=document.createElement('div');
-unitElement.className='unit';
-unitElement.draggable=true;
-unitElement.id=`unit-${unitCount}`;
-unitElement.ondragstart = onDragStart;
-
-const rotateButton = document.createElement('button');
-rotateButton.textContent = 'R';
-rotateButton.className = 'rotate-button';
-
-rotateButton.addEventListener('click', function(event) {
-event.stopPropagation(); // Stop event from bubbling up
-let currentRotation = 0;
-
-const transform = unitElement.style.transform;
-const match = transform && transform.match(/\d+/);
-
-if (match) {
-currentRotation = parseInt(match[0], 10);
-}
-unitElement.style.transform = `rotate(${(currentRotation + 45) % 360}deg)`;
-});
-
-const menuButton=document.createElement('button');
-menuButton.className='menu-button';
-menuButton.textContent='M';
-
-const menu=document.createElement('div');
-menu.className='menu';
-
-const nameLabel=document.createElement('div');
-nameLabel.className='menu-item';
-nameLabel.textContent='Name:';
-
-const nameInput=document.createElement('input');
-nameInput.type='text';
-nameInput.className='menu-input';
-nameInput.placeholder='character or monster name';
-nameInput.maxLength = 9;
-nameInput.size = 9;
-nameInput.style.width = '10em';
-nameInput.addEventListener('input', function()
-{unitText.textContent=nameInput.value;});
-
-const addImageButton = Object.assign(document.createElement('button'), {
-className:'menu-button',
-textContent:'Add a miniature?',
-onclick:function() {
-imageInput.click();
-}
-});
-
-const imageInput = Object.assign(document.createElement('input'), {
-type:'file',
-accept:'image/*',
-style:'display:none;'
-});
-
-imageInput.addEventListener('change', function() {
-const file = this.files[0];
-const reader = new FileReader();
-
-reader.onload = function() {
-const imageElement = document.createElement('img');
-imageElement.src = reader.result;
-
-// Add an event listener to the image to prevent dragging
-imageElement.addEventListener('dragstart', function(event) {
-event.preventDefault();
-});
-
-unitElement.style.backgroundImage = `url(${reader.result})`; // Set image as background
-
-// Remove the added image element
-imageElement.remove();
-}
-
-reader.readAsDataURL(file);
-});
-
-const movementLabel=document.createElement('div');
-movementLabel.className='menu-item';
-movementLabel.textContent='MV:';
-const movementInput=document.createElement('input');
-movementInput.className='menu-input';
-movementInput.maxLength=2;
-movementInput.size=2;
-movementInput.style.width='3em';
-movementInput.type='text';
-
-const armorClassLabel=document.createElement('div');
-armorClassLabel.className='menu-item';
-armorClassLabel.textContent='AC:';
-menu.appendChild(armorClassLabel);
-
-const armorClassInput=document.createElement('input');
-armorClassInput.className='menu-input';
-armorClassInput.maxLength=2;
-armorClassInput.size=2;
-armorClassInput.style.width='3em';
-armorClassInput.type='text';
-armorClassInput.addEventListener('input', function()
-{unitElement.dataset.ac=armorClassInput.value;});
-menu.appendChild(armorClassInput);
-armorClassInput.addEventListener('input', function()
-{unitElement.dataset.ac = armorClassInput.value;
-acValueElement.textContent = `AC:${armorClassInput.value}`;});
-const acValueElement = document.createElement('div');
-acValueElement.className = 'ac-value';
-acValueElement.textContent = 'AC:';
-unitElement.appendChild(acValueElement);
-
-const hitDiceLabel=document.createElement('div');
-hitDiceLabel.className='menu-item';
-hitDiceLabel.textContent='HD:';
-const hitDiceInput=document.createElement('input');
-hitDiceInput.className='menu-input';
-hitDiceInput.maxLength=8;
-hitDiceInput.size=8;
-hitDiceInput.style.width='9em';
-hitDiceInput.type='text';
-
-const menuMaxHPText = document.createElement('div');
-menuMaxHPText.className = 'menu-item';
-menuMaxHPText.textContent = 'maxHP:';
-const menuMaxHPInput = Object.assign(
-document.createElement('input'),
-{
-className:'menu-input',
-maxLength:3,
-size:3,
-style:'width:4em;',
-type:'text',
-	oninput:function() {
-menuCurHPInput.value = this.value;
-curHpValueElement.textContent = this.value;
-}
-}
-);
-
-const menuCurHPText = document.createElement('div');
-menuCurHPText.className = 'menu-item';
-menuCurHPText.textContent = 'curHP:';
-const menuCurHPInput = document.createElement('input');
-menuCurHPInput.className = 'menu-input';
-menuCurHPInput.maxLength = 3;
-menuCurHPInput.size = 3;
-menuCurHPInput.style.width = '4em';
-menuCurHPInput.type = 'text';
-
-const menuAddRowButton = document.createElement('button');
-menuAddRowButton.className = 'menu-button';
-menuAddRowButton.textContent = 'Add a weapon or spell and effect?';
-
-menuAddRowButton.addEventListener('click', function() {
-const newRow = document.createElement('div');
-newRow.className = 'menu-item';
-
-const newAttackName = document.createElement('input');
-newAttackName.type = 'text';
-newAttackName.className = 'menu-input';
-newAttackName.placeholder = 'weapon or spell name and effect';
-newAttackName.maxLength = 9;
-newAttackName.size = 9;
-newAttackName.style.width = '10em';
-newRow.appendChild(newAttackName);
-
-const newAttackRoll = document.createElement('input');
-newAttackRoll.type = 'text';
-newAttackRoll.className = 'menu-input';
-newAttackRoll.placeholder = 'Attack Roll';
-newAttackRoll.maxLength = 8;
-newAttackRoll.size = 8;
-newAttackRoll.style.width = '9em';
-newRow.appendChild(newAttackRoll);
-
-const newDamageRoll = document.createElement('input');
-newDamageRoll.type = 'text';
-newDamageRoll.className = 'menu-input';
-newDamageRoll.placeholder = 'Damage Roll';
-newDamageRoll.maxLength = 8;
-newDamageRoll.size = 8;
-newDamageRoll.style.width = '9em';
-newRow.appendChild(newDamageRoll);
-
-menu.insertBefore(newRow, menuAddRowButton);
-});
-
-const deleteButton=document.createElement('button');
-deleteButton.className='menu-button';
-deleteButton.textContent='Delete this piece?';
-deleteButton.addEventListener('click', function()
-{
-menu.remove();
-unitElement.remove();
-});
-
-menuButton.addEventListener('click', function(event){
-event.stopPropagation();
-menu.style.display='block';
-});
-
-document.addEventListener('click', function()
-{
-//menu.style.display='none';
-});
-
-menu.addEventListener('click', function(event){
-event.stopPropagation();
-});
-
-movementInput.addEventListener('input', function()
-{
-unitElement.dataset.mv=movementInput.value;
-});
-
-hitDiceInput.addEventListener('input', function()
-{
-unitElement.dataset.hd=hitDiceInput.value;
-});
-
-const unitText=document.createElement('div');
-unitText.className='unit-text';
-unitText.textContent='Name';
-
-const mvValueElement = document.createElement('div');
-mvValueElement.className = 'mv-value';
-mvValueElement.textContent = 'MV:';
-unitElement.appendChild(mvValueElement);
-
-movementInput.addEventListener('input', function()
-{
-unitElement.dataset.mv = movementInput.value;
-mvValueElement.textContent = `MV:${movementInput.value}`;
-});
-
-const hdValueElement = document.createElement('div');
-hdValueElement.className = 'hd-value';
-hdValueElement.textContent = 'HD:';
-unitElement.appendChild(hdValueElement);
-
-hitDiceInput.addEventListener('input', function()
-{
-unitElement.dataset.hd = hitDiceInput.value;
-hdValueElement.textContent = `HD:${hitDiceInput.value}`;
-});
-
-const curHpValueElement = document.createElement('div');
-curHpValueElement.className = 'curHp-value';
-curHpValueElement.textContent = 'HP:';
-unitElement.appendChild(curHpValueElement);
-
-menuCurHPInput.addEventListener('input', function()
-{
-unitElement.dataset.curHp = menuCurHPInput.value;
-curHpValueElement.textContent = `HP:${menuCurHPInput.value}`;
-});
-
-//const lineBreak = document.createElement('br');
-
-unitElement.appendChild(rotateButton);
-//unitElement.appendChild(menuButton);
-menu.appendChild(nameLabel);
-menu.appendChild(nameInput);
-menu.appendChild(armorClassLabel);
-menu.appendChild(armorClassInput);
-menu.appendChild(movementLabel);
-menu.appendChild(movementInput);
-menu.appendChild(hitDiceLabel);
-menu.appendChild(hitDiceInput);
-menu.appendChild(menuMaxHPText);
-menu.appendChild(menuMaxHPInput);
-menu.appendChild(menuCurHPText);
-menu.appendChild(menuCurHPInput);
-menu.appendChild(addImageButton);
-menu.appendChild(menuAddRowButton);
-unitElement.appendChild(unitText);
-menu.appendChild(deleteButton);
-unitElement.appendChild(menu);
-
-const board=document.getElementById('board');
-const cellSize=100;
-const randomColumn = Math.floor(Math.random() * 7) * cellSize;
-const randomRow = Math.floor(Math.random() * 7) * cellSize;
-
-unitElement.style.left=`${Math.round(randomColumn / cellSize) * cellSize}px`;
-unitElement.style.top=`${Math.round(randomRow / cellSize) * cellSize}px`;
-
-board.appendChild(menu);
-board.appendChild(unitElement);
-
-unitCount++;
-}
-
-</script>
+    <a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>1st Edition Dungeon Masters Guide Combat Tables</a>
+    <a href='https://archive.org/details/tsr02009addmonstermanual/mode/1up' target='_blank'>1st Edition Monster Manual</a>
+    <a href='https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up' target='_blank'>Dungeon Module L1 "The Secret of Bone Hill</a>
+
+    <button onclick="createUnit()">Create a character or monster?</button>
+
+    Load a map image.
+    <input type="file" id="mapImageInput" accept="image/*">
+
+    <button id="rollD20Button">Roll D20</button>
+    <button id="rollD12Button">Roll D12</button>
+    <button id="rollD10Button">Roll D10</button>
+    <button id="rollD8Button">Roll D8</button>
+    <button id="rollD6Button">Roll D6</button>
+    <button id="rollD4Button">Roll D4</button>
+
+    <div id="resultsContainer"></div>
+
+    <div class="board" id="board"></div>
+
+    <script>
+        let unitCount = 0;
+        let isDragging = false;
+        let offsetX, offsetY;
+        let draggedElement;
+        let highestZIndex = 1;
+
+        // Start constant declarations
+        const board = document.getElementById('board');
+        for (let i = 0; i < 49; i++) {
+            const square = document.createElement('div');
+            square.className = 'square';
+            board.appendChild(square);
+        }
+        // End constant declarations
+
+        // Start drag and drop functions
+        document.getElementById('board').addEventListener('touchstart', onTouchStart);
+        document.getElementById('board').addEventListener('touchmove', onTouchMove);
+        document.getElementById('board').addEventListener('touchend', onTouchEnd);
+
+        let touchStartX, touchStartY;
+
+        function onTouchStart(event) {
+            const touch = event.touches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+        }
+
+        function onTouchMove(event) {
+            event.preventDefault();
+            const touch = event.touches[0];
+            const mouseX = touch.clientX;
+            const mouseY = touch.clientY;
+            const board = document.getElementById('board');
+            const boardRect = board.getBoundingClientRect();
+            const maxX = boardRect.width - draggedElement.offsetWidth;
+            const maxY = boardRect.height - draggedElement.offsetHeight;
+            const newX = Math.min(Math.max(0, mouseX - touchStartX + draggedElement.offsetLeft), maxX);
+            const newY = Math.min(Math.max(0, mouseY - touchStartY + draggedElement.offsetTop), maxY);
+            draggedElement.style.left = `${newX}px`;
+            draggedElement.style.top = `${newY}px`;
+            touchStartX = mouseX;
+            touchStartY = mouseY;
+        }
+
+        function onTouchEnd() {
+            isDragging = false;
+        }
+        // End of the drag and drop functions
+
+        const lastRolls = [];
+
+        // Function to display the last 5 rolls on the webpage
+        function displayLastRolls() {
+            const resultsContainer = document.getElementById('resultsContainer');
+            resultsContainer.innerHTML = lastRolls.join('<br>');
+        }
+
+        // Function to roll a random 20-sided die (D20)
+        function rollD20() {
+            const result = Math.floor(Math.random() * 20) + 1;
+            lastRolls.push(`D20 Result:${result}`);
+            if (lastRolls.length > 5) {
+                lastRolls.shift(); // Remove the oldest roll
+            }
+            displayLastRolls();
+        }
+
+        // Function to roll a 12-sided die (D12)
+        function rollD12() {
+            const result = Math.floor(Math.random() * 12) + 1;
+            lastRolls.push(`D12 Result:${result}`);
+            if (lastRolls.length > 5) {
+                lastRolls.shift(); // Remove the oldest roll
+            }
+            displayLastRolls();
+        }
+
+        // Function to roll a 10-sided die (D10)
+        function rollD10() {
+            const result = Math.floor(Math.random() * 10) + 1;
+            lastRolls.push(`D10 Result:${result}`);
+            if (lastRolls.length > 5) {
+                lastRolls.shift(); // Remove the oldest roll
+            }
+            displayLastRolls();
+        }
+
+        // Function to roll an 8-sided die (D8)
+        function rollD8() {
+            const result = Math.floor(Math.random() * 8) + 1;
+            lastRolls.push(`D8 Result:${result}`);
+            if (lastRolls.length > 5) {
+                lastRolls.shift(); // Remove the oldest roll
+            }
+            displayLastRolls();
+        }
+
+        // Function to roll a 6-sided die (D6)
+        function rollD6() {
+            const result = Math.floor(Math.random() * 6) + 1;
+            lastRolls.push(`D6 Result:${result}`);
+            if (lastRolls.length > 5) {
+                lastRolls.shift(); // Remove the oldest roll
+            }
+            displayLastRolls();
+        }
+
+        // Function to roll a 4-sided die (D4)
+        function rollD4() {
+            const result = Math.floor(Math.random() * 4) + 1;
+            lastRolls.push(`D4 Result:${result}`);
+            if (lastRolls.length > 5) {
+                lastRolls.shift(); // Remove the oldest roll
+            }
+            displayLastRolls();
+        }
+
+        // Event listeners for rolling each die
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('rollD20Button').addEventListener('click', rollD20);
+            document.getElementById('rollD12Button').addEventListener('click', rollD12);
+            document.getElementById('rollD10Button').addEventListener('click', rollD10);
+            document.getElementById('rollD8Button').addEventListener('click', rollD8);
+            document.getElementById('rollD6Button').addEventListener('click', rollD6);
+            document.getElementById('rollD4Button').addEventListener('click', rollD4);
+        });
+
+        // Beginning of map image loading functions
+        let currentMapImage = 'Map.png';
+
+        function loadMapImage(event) {
+            const mapImage = document.createElement('img');
+            const file = event.target.files[0];
+
+            if (file) {
+                currentMapImage = URL.createObjectURL(file);
+                mapImage.src = currentMapImage;
+                mapImage.style.position = 'absolute';
+                mapImage.style.width = '100%';
+                mapImage.style.height = '100%';
+                mapImage.style.top = '0';
+                mapImage.style.left = '0';
+                mapImage.style.zIndex = '-1';
+                const board = document.getElementById('board');
+                board.innerHTML = '';
+                board.appendChild(mapImage);
+                changeMap();
+            }
+        }
+
+        document.getElementById('mapImageInput').addEventListener('change', loadMapImage);
+
+        const defaultMapImage = new Image();
+        defaultMapImage.src = 'Map.png';
+
+        defaultMapImage.onload = function() {
+            const board = document.getElementById('board');
+            board.style.backgroundImage = `url(${defaultMapImage.src})`;
+            board.style.backgroundSize = 'cover';
+        }
+
+        function changeMap() {
+            const board = document.getElementById('board');
+            board.style.backgroundImage = `url(${currentMapImage})`;
+            board.style.backgroundSize = 'cover';
+        }
+        // End of map image loading functions
+
+        function getRotationDegrees(element) {
+            const transform = window.getComputedStyle(element).getPropertyValue('transform');
+            if (transform && transform !== 'none') {
+                const matrix = new DOMMatrix(transform);
+                return Math.round(Math.atan2(matrix.b, matrix.a) * (180/Math.PI));
+            }
+            return 0;
+        }
+
+        // Start drag and drop functions
+        function onDragStart(event) {
+            isDragging = true;
+            event.dataTransfer.setData('text/plain', event.target.id);
+
+            const rect = event.target.getBoundingClientRect();
+            offsetX = event.clientX - rect.left;
+            offsetY = event.clientY - rect.top;
+            draggedElement = event.target;
+
+            highestZIndex++;
+            draggedElement.style.zIndex = highestZIndex;
+        }
+
+        function onDragOver(event) {
+            event.preventDefault();
+        }
+
+        function onDrop(event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData('text/plain');
+            const draggedElement = document.getElementById(data);
+            const cellSize = 100;
+
+            if (draggedElement) {
+                const mouseX = event.clientX - board.offsetLeft;
+                const mouseY = event.clientY - board.offsetTop;
+
+                const cellX = Math.floor(mouseX / cellSize) * cellSize;
+                const cellY = Math.floor(mouseY / cellSize) * cellSize;
+
+                draggedElement.style.left = `${cellX}px`;
+                draggedElement.style.top = `${cellY}px`;
+            }
+        }
+
+        board.addEventListener('dragover', (event) => {
+            event.preventDefault();
+        });
+
+        board.addEventListener('drop', (event) => {
+            event.preventDefault();
+            const data = event.dataTransfer.getData('text/plain');
+            const draggedElement = document.getElementById(data);
+            const cellSize = 100;
+
+            if (draggedElement) {
+                const mouseX = event.clientX - board.offsetLeft;
+                const mouseY = event.clientY - board.offsetTop;
+
+                const cellX = Math.floor(mouseX / cellSize) * cellSize;
+                const cellY = Math.floor(mouseY / cellSize) * cellSize;
+
+                draggedElement.style.left = `${cellX}px`;
+                draggedElement.style.top = `${cellY}px`;
+            }
+        });
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        function onMouseMove(event) {
+            if (isDragging) {
+                const mouseX = event.clientX - offsetX + window.scrollX;
+                const mouseY = event.clientY - offsetY + window.scrollY;
+                const boardRect = board.getBoundingClientRect();
+                const maxX = boardRect.width - draggedElement.offsetWidth;
+                const maxY = boardRect.height - draggedElement.offsetHeight;
+                const newX = Math.min(Math.max(0, mouseX), maxX);
+                const newY = Math.min(Math.max(0, mouseY), maxY);
+                draggedElement.style.left = `${newX}px`;
+                draggedElement.style.top = `${newY}px`;
+            }
+        }
+
+        document.addEventListener('mouseup', onMouseUp);
+
+        function onMouseUp() {
+            if (isDragging) {
+                isDragging = false;
+            }
+        }
+
+        document.addEventListener('dragend', () => {
+            isDragging = false;
+            draggedElement = null;
+        });
+        // End drag and drop functions
+
+        function createUnit() {
+            const unitElement = document.createElement('div');
+            unitElement.className = 'unit';
+            unitElement.draggable = true;
+            unitElement.id = `unit-${unitCount}`;
+            unitElement.ondragstart = onDragStart;
+
+            const rotateButton = document.createElement('button');
+            rotateButton.textContent = 'R';
+            rotateButton.className = 'rotate-button';
+
+            rotateButton.addEventListener('click', function(event) {
+                event.stopPropagation(); // Stop event from bubbling up
+                let currentRotation = 0;
+
+                const transform = unitElement.style.transform;
+                const match = transform && transform.match(/\d+/);
+
+                if (match) {
+                    currentRotation = parseInt(match[0], 10);
+                }
+                unitElement.style.transform = `rotate(${(currentRotation + 45) % 360}deg)`;
+            });
+
+            const menuButton = document.createElement('button');
+            menuButton.className = 'menu-button';
+            menuButton.textContent = 'M';
+
+            const menu = document.createElement('div');
+            menu.className = 'menu';
+
+            const nameLabel = document.createElement('div');
+            nameLabel.className = 'menu-item';
+            nameLabel.textContent = 'Name:';
+
+            const nameInput = document.createElement('input');
+            nameInput.type = 'text';
+            nameInput.className = 'menu-input';
+            nameInput.placeholder = 'character or monster name';
+            nameInput.maxLength = 9;
+            nameInput.size = 9;
+            nameInput.style.width = '10em';
+            nameInput.addEventListener('input', function() {
+                unitText.textContent = nameInput.value;
+            });
+
+            const addImageButton = Object.assign(document.createElement('button'), {
+                className: 'menu-button',
+                textContent: 'Add a miniature?',
+                onclick: function() {
+                    imageInput.click();
+                }
+            });
+
+            const imageInput = Object.assign(document.createElement('input'), {
+                type: 'file',
+                accept: 'image/*',
+                style: 'display:none;'
+            });
+
+            imageInput.addEventListener('change', function() {
+                const file = this.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function() {
+                    const imageElement = document.createElement('img');
+                    imageElement.src = reader.result;
+
+                    // Add an event listener to the image to prevent dragging
+                    imageElement.addEventListener('dragstart', function(event) {
+                        event.preventDefault();
+                    });
+
+                    unitElement.style.backgroundImage = `url(${reader.result})`; // Set image as background
+
+                    // Remove the added image element
+                    imageElement.remove();
+                }
+
+                reader.readAsDataURL(file);
+            });
+
+            const movementLabel = document.createElement('div');
+            movementLabel.className = 'menu-item';
+            movementLabel.textContent = 'MV:';
+            const movementInput = document.createElement('input');
+            movementInput.className = 'menu-input';
+            movementInput.maxLength = 2;
+            movementInput.size = 2;
+            movementInput.style.width = '3em';
+            movementInput.type = 'text';
+
+            const armorClassLabel = document.createElement('div');
+            armorClassLabel.className = 'menu-item';
+            armorClassLabel.textContent = 'AC:';
+            menu.appendChild(armorClassLabel);
+
+            const armorClassInput = document.createElement('input');
+            armorClassInput.className = 'menu-input';
+            armorClassInput.maxLength = 2;
+            armorClassInput.size = 2;
+            armorClassInput.style.width = '3em';
+            armorClassInput.type = 'text';
+            armorClassInput.addEventListener('input', function() {
+                unitElement.dataset.ac = armorClassInput.value;
+                acValueElement.textContent = `AC:${armorClassInput.value}`;
+            });
+            menu.appendChild(armorClassInput);
+            armorClassInput.addEventListener('input', function() {
+                unitElement.dataset.ac = armorClassInput.value;
+                acValueElement.textContent = `AC:${armorClassInput.value}`;
+            });
+            const acValueElement = document.createElement('div');
+            acValueElement.className = 'ac-value';
+            acValueElement.textContent = 'AC:';
+            unitElement.appendChild(acValueElement);
+
+            const hitDiceLabel = document.createElement('div');
+            hitDiceLabel.className = 'menu-item';
+            hitDiceLabel.textContent = 'HD:';
+            const hitDiceInput = document.createElement('input');
+            hitDiceInput.className = 'menu-input';
+            hitDiceInput.maxLength = 8;
+            hitDiceInput.size = 8;
+            hitDiceInput.style.width = '9em';
+            hitDiceInput.type = 'text';
+
+            const menuMaxHPText = document.createElement('div');
+            menuMaxHPText.className = 'menu-item';
+            menuMaxHPText.textContent = 'maxHP:';
+            const menuMaxHPInput = Object.assign(
+                document.createElement('input'),
+                {
+                    className: 'menu-input',
+                    maxLength: 3,
+                    size: 3,
+                    style: 'width:4em;',
+                    type: 'text',
+                    oninput: function() {
+                        currentHitPointInput.value = this.value;
+                        currentHitPointInput.textContent = this.value;
+                    }
+                }
+            );
+
+            const menuCurHPText = document.createElement('div');
+            menuCurHPText.className = 'menu-item';
+            menuCurHPText.textContent = 'curHP:';
+            const currentHitPointInput = document.createElement('input');
+            currentHitPointInput.className = 'menu-input';
+            currentHitPointInput.maxLength = 3;
+            currentHitPointInput.size = 3;
+            currentHitPointInput.style.width = '4em';
+            currentHitPointInput.type = 'text';
+
+            const menuAddRowButton = document.createElement('button');
+            menuAddRowButton.className = 'menu-button';
+            menuAddRowButton.textContent = 'Add a weapon or spell and effect?';
+
+            menuAddRowButton.addEventListener('click', function() {
+                const newRow = document.createElement('div');
+                newRow.className = 'menu-item';
+
+                const newAttackName = document.createElement('input');
+                newAttackName.type = 'text';
+                newAttackName.className = 'menu-input';
+                newAttackName.placeholder = 'weapon or spell name and effect';
+                newAttackName.maxLength = 9;
+                newAttackName.size = 9;
+                newAttackName.style.width = '10em';
+                newRow.appendChild(newAttackName);
+
+                const newAttackRoll = document.createElement('input');
+                newAttackRoll.type = 'text';
+                newAttackRoll.className = 'menu-input';
+                newAttackRoll.placeholder = 'Attack Roll';
+                newAttackRoll.maxLength = 8;
+                newAttackRoll.size = 8;
+                newAttackRoll.style.width = '9em';
+                newRow.appendChild(newAttackRoll);
+
+                const newDamageRoll = document.createElement('input');
+                newDamageRoll.type = 'text';
+                newDamageRoll.className = 'menu-input';
+                newDamageRoll.placeholder = 'Damage Roll';
+                newDamageRoll.maxLength = 8;
+                newDamageRoll.size = 8;
+                newDamageRoll.style.width = '9em';
+                newRow.appendChild(newDamageRoll);
+
+                menu.insertBefore(newRow, menuAddRowButton);
+            });
+
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'menu-button';
+            deleteButton.textContent = 'Delete this piece?';
+            deleteButton.addEventListener('click', function() {
+                menu.remove();
+                unitElement.remove();
+            });
+
+            menuButton.addEventListener('click', function(event) {
+                event.stopPropagation();
+                menu.style.display = 'inline-block';
+            });
+
+            document.addEventListener('click', function() {
+                //menu.style.display='none';
+            });
+
+            menu.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+
+            movementInput.addEventListener('input', function() {
+                unitElement.dataset.mv = movementInput.value;
+                mvValueElement.textContent = `MV:${movementInput.value}`;
+            });
+
+            hitDiceInput.addEventListener('input', function() {
+                unitElement.dataset.hd = hitDiceInput.value;
+                hdValueElement.textContent = `HD:${hitDiceInput.value}`;
+            });
+
+            const unitText = document.createElement('div');
+            unitText.className = 'unit-text';
+            unitText.textContent = 'Name';
+
+            const mvValueElement = document.createElement('div');
+            mvValueElement.className = 'mv-value';
+            mvValueElement.textContent = 'MV:';
+            unitElement.appendChild(mvValueElement);
+
+            movementInput.addEventListener('input', function() {
+                unitElement.dataset.mv = movementInput.value;
+                mvValueElement.textContent = `MV:${movementInput.value}`;
+            });
+
+            const hdValueElement = document.createElement('div');
+            hdValueElement.className = 'hd-value';
+            hdValueElement.textContent = 'HD:';
+            unitElement.appendChild(hdValueElement);
+
+            hitDiceInput.addEventListener('input', function() {
+                unitElement.dataset.hd = hitDiceInput.value;
+                hdValueElement.textContent = `HD:${hitDiceInput.value}`;
+            });
+
+            menu.appendChild(nameLabel);
+            menu.appendChild(nameInput);
+            menu.appendChild(addImageButton);
+            menu.appendChild(imageInput);
+            menu.appendChild(movementLabel);
+            menu.appendChild(movementInput);
+            menu.appendChild(armorClassLabel);
+            menu.appendChild(armorClassInput);
+            menu.appendChild(hitDiceLabel);
+            menu.appendChild(hitDiceInput);
+            menu.appendChild(menuMaxHPText);
+            menu.appendChild(menuMaxHPInput);
+            menu.appendChild(menuCurHPText);
+            menu.appendChild(currentHitPointInput);
+
+            menu.appendChild(menuAddRowButton);
+
+            menu.appendChild(deleteButton);
+
+            document.body.appendChild(menu);
+
+            unitElement.appendChild(unitText);
+            unitElement.appendChild(rotateButton);
+            unitElement.style.left = '0';
+            unitElement.style.top = '0';
+            board.appendChild(unitElement);
+
+            unitCount++;
+        }
+    </script>
 </body>
 </html>
