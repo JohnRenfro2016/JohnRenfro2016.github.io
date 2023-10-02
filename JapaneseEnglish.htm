@@ -1091,6 +1091,7 @@ const replsB = [
 {p1:/(乱)(?!X)(れ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xmi$2Xdare-be disordered,be disturbed$3X~RuVerb'},
 {p1:/(乾)(?!X)(か)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xkaw$2Xaka-dry$3X~SuVerb'},
 {p1:/(事)(?!X)(務)(?!X)(員)(?!X)/g,r1:'$1Xjim$2Xui$3Xn-clerk,clerical staff~Noun'},
+{p1:/(ハ)(?!X)(イ)(?!X)(チ)(?!X)/g,r1:'$1Xha$2Xi$3Xchi-deployment~Noun'},
 {p1:/(事)(?!X)(務)(?!X)(室)(?!X)/g,r1:'$1Xji$2Xmu$3Xshitsu-office~Noun'},
 {p1:/(事)(?!X)(務)(?!X)(所)(?!X)/g,r1:'$1Xji$2Xmu$3Xsyo-office~Noun'},
 {p1:/(二)(?!X)(十)(?!X)(日)(?!X)/g,r1:'$1Xhatsu$2Xka$3X-20 days,20th of the month~Noun'},
@@ -3738,7 +3739,8 @@ const replsB = [
 {p1:/(大)(?!X)(戦)(?!X)/g,r1:'$1Xtai$2Xsen-world war~Noun'},
 {p1:/(大)(?!X)(手)(?!X)/g,r1:'$1Xoo$2Xte-major company~Noun'},
 {p1:/(大)(?!X)(抵)(?!X)/g,r1:'$1Xtai$2Xtei-generally,mostly~Noun'},
-{p1:/(大)(?!X)(根)(?!X)/g,r1:'$1Xdai$2Xkon-dai-kon radish,oriental radish~Noun'},
+{p1:/(大)(?!X)(抵)(?!X)/g,r1:'$1Xtai$2Xtei-generally,mostly~Noun'},
+{p1:/(権)(?!X)(限)(?!X)/g,r1:'$1Xken$2Xgen-jurisdiction~Noun'},
 {p1:/(大)(?!X)(概)(?!X)/g,r1:'$1Xtai$2Xgai-generally,probably~Noun'},
 {p1:/(大)(?!X)(正)(?!X)/g,r1:'$1Xtai$2Xsyou-tai-sho era~Noun'},
 {p1:/(大)(?!X)(気)(?!X)/g,r1:'$1Xtai$2Xki-atmosphere~Noun'},
@@ -6811,6 +6813,7 @@ const replsB = [
 {p1:/(選)(?!X)(抜)(?!X)/g,r1:'$1Xsen$2Xbatsu-selection~Noun'},
 {p1:/(選)(?!X)(択)(?!X)/g,r1:'$1Xsen$2Xtaku-selection,choice~Noun'},
 {p1:/(選)(?!X)(挙)(?!X)/g,r1:'$1Xsen$2Xkyo-election~Noun'},
+{p1:/(治)(?!X)(安)(?!X)/g,r1:'$1Xchi$2Xan-public order~Noun'},
 {p1:/(選)(?!X)(考)(?!X)/g,r1:'$1Xsen$2Xkou-selection~Noun'},
 {p1:/(遺)(?!X)(体)(?!X)/g,r1:'$1Xi$2Xtai-corpse~Noun'},
 {p1:/(遺)(?!X)(憾)(?!X)/g,r1:'$1Xi$2Xkan-deplorable~Noun'},
@@ -7331,8 +7334,8 @@ const replsB = [
 {p1:/(夕)(?!X)/g,r1:'$1Xyuu-night~Noun'},
 {p1:/(医)(?!X)/g,r1:'$1Xi-medical~Noun'},
 {p1:/(十)(?!X)/g,r1:'$1Xjyuu,ten~Noun'},
-{p1:/(へ)(?!X)/g,r1:'$1Xe-towards~Preposition'},
-{p1:/(の)(?!X)/g,r1:'$1Xno-of,verb to noun~Preposition'},
+{p1:/(へ)(?!X)/g,r1:'$1Xe-towards~Postposition'},
+{p1:/(の)(?!X)/g,r1:'$1Xno-of,verb to noun~Postposition'},
 {p1:/(尚)(?!X)/g,r1:'$1XNao-more~Noun'},
 {p1:/(喜)(?!X)/g,r1:'$1XKi-rejoicing~Noun'},
 {p1:/(千)(?!X)/g,r1:'$1Xsen,chi-thousand~Noun'},
@@ -8179,7 +8182,7 @@ const replsB = [
 {p1:/(IAdjective)/g,r1:'$1<p>'},
 {p1:/(~Noun)/g,r1:'<p><p>'},
 {p1:/(Verb)/g,r1:'$1<p>'},
-
+{p1:/(Postposition)/g,r1:'$1<p>'},
 {p1:/(Punctuation)/g,r1:'$1<hr>'},
 
 {p1:/X/g,r1:''},
@@ -8204,7 +8207,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-読売新聞社は、少子化に関する全国世論調査（郵送方式）を実施した。少子化対策の財源を社会全体で負担することに「賛成」とした人は、「どちらかといえば」を含め６８％に上った。政府の少子化対（ＣＮＮ）　３０日投開票のスロバキア総選挙で、親ロシア派のフィツォ元首相が率いる左派政党「スメル」（道標）が第１党になった。ただし過半数には届かず、他党と連立政権を組む必要がある。統計局が１日早朝に発表した暫定集計によると、９９％を超える選挙区の開票が終わった時点で、スメルが得票率２３．３％とトップに立った。策の具体案への評価では、現金給付の拡充より、子育て支援制度の充実を重視する割合が高く、「手当より環境整備」を求める意識が浮き彫りになった。
+【ニューヨーク共同】国連安全保障理事会は2日、ギャングによる拉致や殺害が横行するカリブ海の島国ハイチの治安回復に向け、加盟国に多国籍部隊を派遣する権限を与える決議案を賛成多数で採択した。国連による平和維持活動（PKO）とは異なるが「例外的に緊急かつ一時的な措置」として他国での武力行使を容認した。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
