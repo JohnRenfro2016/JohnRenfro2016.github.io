@@ -6,6 +6,8 @@
 <title>Advanced Dungeons & Dragons 1st Edition</title>
 <style>
 
+body{background-color: #228B22;}
+
 .board.touch {
 touch-action: none;
 }
@@ -15,24 +17,25 @@ touch-action: none;
 }
 
 .board {
-border:2px solid #000;
-display:grid;
-grid-template-columns:repeat(7, 100px);
-grid-template-rows:repeat(7, 100px);
-height:700px;
-position:relative;
-width:700px;
+    border: 2px solid #000;
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(7, 100px);
+    height: 700px;
+    position: relative;
+    width: 700px;
 }
 
 .menu {
-background-color: #fff;
-border: 1px solid #ccc;
-display: block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: relative;
+    max-width: none;
 }
 
 .menu-button {
 cursor:pointer;
-display:block;
+display:inline-block;
 font-size:10px;
 }
 
@@ -49,15 +52,15 @@ display:inline-block;
 }
 
 .rotate-button {
-display:block;
+display:inline-block;
 font-size:10px;
 }
 
 .square {
-border:1px solid #ccc;
-height:100px;
-position:relative;
-width:100px;
+    border: 1px solid #d2b48c;
+    height: 100px;
+    position: relative;
+    width: 100px;
 }
 
 .unit {
@@ -89,8 +92,11 @@ font-size:10px;
 </style>
 </head>
 <body>
-<button onclick="createUnit()">Create Piece</button>
-<button onclick="deleteUnits()">Delete Pieces</button>
+
+<button onclick="createUnit()">Create a character or monster?</button>
+
+<button onclick="cloneSelectedUnit()">Clone the selected monster?</button>
+
 Load a map image.<input type="file" id="mapImageInput" accept="image/*">
 
 <button id="rollD20Button">Roll D20</button>
@@ -111,6 +117,8 @@ let isDragging = false;
 let offsetX, offsetY;
 let draggedElement;
 let highestZIndex = 1;
+
+//begin drag and drop functions
 
 document.getElementById('board').addEventListener('touchstart', onTouchStart);
 document.getElementById('board').addEventListener('touchmove', onTouchMove);
@@ -145,6 +153,8 @@ touchStartY = mouseY;
 function onTouchEnd() {
 isDragging = false;
 }
+
+//end of the drag and drop functions
 
 const lastRolls = [];
 
@@ -224,20 +234,46 @@ document.getElementById('rollD6Button').addEventListener('click', rollD6);
 document.getElementById('rollD4Button').addEventListener('click', rollD4);
 });
 
+//beginning of map image loading functions
+let currentMapImage = 'Map.png';
+
 function loadMapImage(event) {
-const mapImage = document.createElement('img');
-mapImage.src = URL.createObjectURL(event.target.files[0]);
-mapImage.style.position = 'absolute';
-mapImage.style.width = '100%';
-mapImage.style.height = '100%';
-mapImage.style.top = '0';
-mapImage.style.left = '0';
-mapImage.style.zIndex = '-1';
-const board = document.getElementById('board');
-board.appendChild(mapImage);
+    const mapImage = document.createElement('img');
+    const file = event.target.files[0];
+
+    if (file) {
+        currentMapImage = URL.createObjectURL(file);
+        mapImage.src = currentMapImage;
+        mapImage.style.position = 'absolute';
+        mapImage.style.width = '100%';
+        mapImage.style.height = '100%';
+        mapImage.style.top = '0';
+        mapImage.style.left = '0';
+        mapImage.style.zIndex = '-1';
+        const board = document.getElementById('board');
+        board.innerHTML = '';
+        board.appendChild(mapImage);
+        changeMap();
+    }
 }
 
 document.getElementById('mapImageInput').addEventListener('change', loadMapImage);
+
+const defaultMapImage = new Image();
+defaultMapImage.src = 'Map.png';
+
+defaultMapImage.onload = function() {
+    const board = document.getElementById('board');
+    board.style.backgroundImage = `url(${defaultMapImage.src})`;
+    board.style.backgroundSize = 'cover';
+}
+
+function changeMap() {
+    const board = document.getElementById('board');
+    board.style.backgroundImage = `url(${currentMapImage})`;
+    board.style.backgroundSize = 'cover';
+}
+//end of map image loading functions
 
 function getRotationDegrees(element) {
 const transform = window.getComputedStyle(element).getPropertyValue('transform');
@@ -321,6 +357,8 @@ menuText.placeholder='character or monster name';
 menuText.maxLength = 15;
 menuText.size = 15;
 menuText.style.width = '16em';
+menuText.addEventListener('input', function()
+{unitText.textContent=menuText.value;});
 
 const addImageButton = document.createElement('button');
 addImageButton.className = 'menu-button';
@@ -349,6 +387,16 @@ unitElement.appendChild(imageElement);
 reader.readAsDataURL(file);
 });
 
+const menuMVText=document.createElement('div');
+menuMVText.className='menu-item';
+menuMVText.textContent='MV:';
+const menuMVInput=document.createElement('input');
+menuMVInput.className='menu-input';
+menuMVInput.maxLength=2;
+menuMVInput.size=2;
+menuMVInput.style.width='3em';
+menuMVInput.type='text';
+
 const menuArmorClassText=document.createElement('div');
 menuArmorClassText.className='menu-item';
 menuArmorClassText.textContent='AC:';
@@ -357,45 +405,32 @@ const menuArmorClassInput=document.createElement('input');
 menuArmorClassInput.className='menu-input';
 menuArmorClassInput.maxLength=2;
 menuArmorClassInput.size=2;
-menuArmorClassInput.style.width='2em';
+menuArmorClassInput.style.width='3em';
 menuArmorClassInput.type='text';
 menuArmorClassInput.addEventListener('input', function()
-{
-unitElement.dataset.ac=menuArmorClassInput.value;
-});
+{unitElement.dataset.ac=menuArmorClassInput.value;});
 menu.appendChild(menuArmorClassInput);
 menuArmorClassInput.addEventListener('input', function()
-{
-unitElement.dataset.ac = menuArmorClassInput.value;
-acValueElement.textContent = `AC: ${menuArmorClassInput.value}`;
-});
-
-const menuMVText=document.createElement('div');
-menuMVText.className='menu-item';
-menuMVText.textContent='MV:';
-
-const menuMVInput=document.createElement('input');
-menuMVInput.className='menu-input';
-menuMVInput.maxLength=2;
-menuMVInput.size=2;
-menuMVInput.style.width='2em';
-menuMVInput.type='text';
+{unitElement.dataset.ac = menuArmorClassInput.value;
+acValueElement.textContent = `AC: ${menuArmorClassInput.value}`;});
+const acValueElement = document.createElement('div');
+acValueElement.className = 'ac-value';
+acValueElement.textContent = 'AC: ';
+unitElement.appendChild(acValueElement);
 
 const menuHDText=document.createElement('div');
 menuHDText.className='menu-item';
 menuHDText.textContent='HD:';
-
 const menuHDInput=document.createElement('input');
 menuHDInput.className='menu-input';
 menuHDInput.maxLength=8;
 menuHDInput.size=8;
-menuHDInput.style.width='6em';
+menuHDInput.style.width='9em';
 menuHDInput.type='text';
 
 const menuMaxHPText = document.createElement('div');
 menuMaxHPText.className = 'menu-item';
 menuMaxHPText.textContent = 'maxHP:';
-
 const menuMaxHPInput = Object.assign(
   document.createElement('input'),
   {
@@ -413,21 +448,12 @@ const menuMaxHPInput = Object.assign(
 const menuCurHPText = document.createElement('div');
 menuCurHPText.className = 'menu-item';
 menuCurHPText.textContent = 'curHP:';
-
 const menuCurHPInput = document.createElement('input');
 menuCurHPInput.className = 'menu-input';
 menuCurHPInput.maxLength = 3;
 menuCurHPInput.size = 3;
-menuCurHPInput.style.width = '3em';
+menuCurHPInput.style.width = '4em';
 menuCurHPInput.type = 'text';
-
-const menuDamageDiceInput = document.createElement('input');
-menuDamageDiceInput.className = 'menu-input menu-damage-dice-input';
-menuDamageDiceInput.maxLength = 8;
-menuDamageDiceInput.placeholder = 'XdY+Z';
-menuDamageDiceInput.size = 8;
-menuDamageDiceInput.style.width = '6em';
-menuDamageDiceInput.type = 'text';
 
 const menuAddRowButton = document.createElement('button');
 menuAddRowButton.className = 'menu-button';
@@ -461,7 +487,7 @@ newDamageRoll.className = 'menu-input';
 newDamageRoll.placeholder = 'Damage Roll';
 newDamageRoll.maxLength = 9;
 newDamageRoll.size = 9;
-newDamageRoll.style.width = '6em';
+newDamageRoll.style.width = '10em';
 newRow.appendChild(newDamageRoll);
 
 menu.insertBefore(newRow, menuAddRowButton);
@@ -472,6 +498,7 @@ deleteButton.className='menu-button';
 deleteButton.textContent='Delete this piece?';
 deleteButton.addEventListener('click', function()
 {
+menu.remove();
 unitElement.remove();
 });
 
@@ -482,17 +509,14 @@ menu.style.display='block';
 
 document.addEventListener('click', function()
 {
-menu.style.display='none';
+//menu.style.display='none';
 });
 
 menu.addEventListener('click', function(event){
 event.stopPropagation();
 });
 
-menuText.addEventListener('input', function()
-{
-unitText.textContent=menuText.value;
-});
+
 
 menuMVInput.addEventListener('input', function()
 {
@@ -507,11 +531,6 @@ unitElement.dataset.hd=menuHDInput.value;
 const unitText=document.createElement('div');
 unitText.className='unit-text';
 unitText.textContent='Name';
-
-const acValueElement = document.createElement('div');
-acValueElement.className = 'ac-value';
-acValueElement.textContent = 'AC: ';
-unitElement.appendChild(acValueElement);
 
 const mvValueElement = document.createElement('div');
 mvValueElement.className = 'mv-value';
@@ -549,23 +568,18 @@ curHpValueElement.textContent = `HP: ${menuCurHPInput.value}`;
 const lineBreak = document.createElement('br');
 
 unitElement.appendChild(rotateButton);
-unitElement.appendChild(menuButton);
+//unitElement.appendChild(menuButton);
 unitElement.appendChild(unitText);
 menu.appendChild(menuText);
-menu.appendChild(lineBreak);
-menu.appendChild(addImageButton);
 menu.appendChild(menuMVText);
 menu.appendChild(menuMVInput);
-menu.appendChild(lineBreak);
 menu.appendChild(menuHDText);
 menu.appendChild(menuHDInput);
-menu.appendChild(lineBreak);
 menu.appendChild(menuMaxHPText);
 menu.appendChild(menuMaxHPInput);
-menu.appendChild(lineBreak);
 menu.appendChild(menuCurHPText);
 menu.appendChild(menuCurHPInput);
-menu.appendChild(lineBreak);
+menu.appendChild(addImageButton);
 menu.appendChild(menuAddRowButton);
 menu.appendChild(lineBreak);
 menu.appendChild(deleteButton);
@@ -583,12 +597,6 @@ board.appendChild(menu);
 board.appendChild(unitElement);
 
 unitCount++;
-}
-
-function deleteUnits(){
-const units=document.getElementsByClassName('unit');
-const unitsArray=Array.from(units);
-unitsArray.forEach(unit => unit.remove());
 }
 
 const board=document.getElementById('board');
