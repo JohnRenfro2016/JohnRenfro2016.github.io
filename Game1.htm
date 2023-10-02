@@ -97,10 +97,6 @@ z-index:1;
 
 .unit img {
 position:absolute;
-top:0px;
-left:40px;
-width:50%;
-height:50%;
 }
 
 .unit-text {
@@ -381,31 +377,40 @@ nameInput.style.width = '10em';
 nameInput.addEventListener('input', function()
 {unitText.textContent=nameInput.value;});
 
-const addImageButton = document.createElement('button');
-addImageButton.className = 'menu-button';
-addImageButton.textContent = 'Add a figure?';
-
-addImageButton.addEventListener('click', function() {
-imageInput.click();
+const addImageButton = Object.assign(document.createElement('button'), {
+  className: 'menu-button',
+  textContent: 'Add an image?',
+  onclick: function() {
+    imageInput.click();
+  }
 });
 
-const imageInput = document.createElement('input');
-imageInput.type = 'file';
-imageInput.accept = 'image/*';
-imageInput.style.display = 'none';
-menu.appendChild(imageInput);
+const imageInput = Object.assign(document.createElement('input'), {
+  type: 'file',
+  accept: 'image/*',
+  style: 'display: none;'
+});
 
 imageInput.addEventListener('change', function() {
-const file = this.files[0];
-const reader = new FileReader();
+  const file = this.files[0];
+  const reader = new FileReader();
 
-reader.onload = function() {
-const imageElement = document.createElement('img');
-imageElement.src = reader.result;
-unitElement.appendChild(imageElement);
-}
+  reader.onload = function() {
+    const imageElement = document.createElement('img');
+    imageElement.src = reader.result;
 
-reader.readAsDataURL(file);
+    // Add an event listener to the image to prevent dragging
+    imageElement.addEventListener('dragstart', function(event) {
+      event.preventDefault();
+    });
+
+    unitElement.style.backgroundImage = `url(${reader.result})`; // Set image as background
+
+    // Remove the added image element
+    imageElement.remove();
+  }
+
+  reader.readAsDataURL(file);
 });
 
 const movementLabel=document.createElement('div');
