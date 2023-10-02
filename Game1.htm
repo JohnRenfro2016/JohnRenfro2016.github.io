@@ -6,66 +6,85 @@
 <title>Advanced Dungeons & Dragons 1st Edition</title>
 <style>
 
-body{background-color: #228B22;}
+body,button,input,radio,text,textArea
+{
+background-color:#24505d;
+border-color:#337082;
+color:#b6d9e3;
+}
+
+table,tr,td
+{
+background-color:#2b606f;
+border-color:#3a8094;
+color:#ecf5f8;
+}
+
+a:active,a:hover,a:link,a:selected,a:visited
+{
+background-color:#2b606f;
+border-color:#3a8094;
+color:#c8e2ea;
+}
 
 .board.touch {
-touch-action: none;
+touch-action:none;
 }
 
 .unit.touch {
-touch-action: none;
+touch-action:none;
 }
 
 .board {
-    border: 2px solid #000;
-    display: grid;
-    grid-template-columns: repeat(7, 100px);
-    grid-template-rows: repeat(7, 100px);
-    height: 700px;
-    position: relative;
-    width: 700px;
+ border:2px solid #000;
+ display:grid;
+ grid-template-columns:repeat(7, 100px);
+ grid-template-rows:repeat(7, 100px);
+ height:700px;
+ position:relative;
+ width:700px;
 }
 
 .menu {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    position: relative;
-    max-width: none;
+ border:1px solid #ccc;
+ position:relative;
+ max-width:none;
 }
 
 .menu-button {
 cursor:pointer;
-display:inline-block;
+display:block;
 font-size:10px;
 }
 
 .menu-input
 {
-display:inline-block;
+display:block;
 box-sizing:border-box;
 font-size:10px;
 z-index:3;
 }
 
 .menu-item {
-display:inline-block;
+display:block;
 }
 
 .rotate-button {
-display:inline-block;
+display:block;
 font-size:10px;
 }
 
 .square {
-    border: 1px solid #d2b48c;
-    height: 100px;
-    position: relative;
-    width: 100px;
+ border:1px solid ;
+ height:100px;
+ position:relative;
+ width:100px;
 }
 
 .unit {
-background-color:#f9f9f9;
+background-color: #ffffff;
 border:1px solid #ccc;
+color:black;
 cursor:move;
 font-size:10px;
 height:100px;
@@ -85,7 +104,7 @@ height:50%;
 }
 
 .unit-text {
-display:inline-block;
+display:block;
 font-size:10px;
 }
 
@@ -94,8 +113,6 @@ font-size:10px;
 <body>
 
 <button onclick="createUnit()">Create a character or monster?</button>
-
-<button onclick="cloneSelectedUnit()">Clone the selected monster?</button>
 
 Load a map image.<input type="file" id="mapImageInput" accept="image/*">
 
@@ -167,7 +184,7 @@ resultsContainer.innerHTML = lastRolls.join('<br>');
 // Function to roll a random 20-sided die (D20)
 function rollD20() {
 const result = Math.floor(Math.random() * 20) + 1;
-lastRolls.push(`D20 Result: ${result}`);
+lastRolls.push(`D20 Result:${result}`);
 if (lastRolls.length > 5) {
 lastRolls.shift(); // Remove the oldest roll
 }
@@ -177,7 +194,7 @@ displayLastRolls();
 // Function to roll a 12-sided die (D12)
 function rollD12() {
 const result = Math.floor(Math.random() * 12) + 1;
-lastRolls.push(`D12 Result: ${result}`);
+lastRolls.push(`D12 Result:${result}`);
 if (lastRolls.length > 5) {
 lastRolls.shift(); // Remove the oldest roll
 }
@@ -187,7 +204,7 @@ displayLastRolls();
 // Function to roll a 10-sided die (D10)
 function rollD10() {
 const result = Math.floor(Math.random() * 10) + 1;
-lastRolls.push(`D10 Result: ${result}`);
+lastRolls.push(`D10 Result:${result}`);
 if (lastRolls.length > 5) {
 lastRolls.shift(); // Remove the oldest roll
 }
@@ -197,7 +214,7 @@ displayLastRolls();
 // Function to roll an 8-sided die (D8)
 function rollD8() {
 const result = Math.floor(Math.random() * 8) + 1;
-lastRolls.push(`D8 Result: ${result}`);
+lastRolls.push(`D8 Result:${result}`);
 if (lastRolls.length > 5) {
 lastRolls.shift(); // Remove the oldest roll
 }
@@ -207,7 +224,7 @@ displayLastRolls();
 // Function to roll a 6-sided die (D6)
 function rollD6() {
 const result = Math.floor(Math.random() * 6) + 1;
-lastRolls.push(`D6 Result: ${result}`);
+lastRolls.push(`D6 Result:${result}`);
 if (lastRolls.length > 5) {
 lastRolls.shift(); // Remove the oldest roll
 }
@@ -217,7 +234,7 @@ displayLastRolls();
 // Function to roll a 4-sided die (D4)
 function rollD4() {
 const result = Math.floor(Math.random() * 4) + 1;
-lastRolls.push(`D4 Result: ${result}`);
+lastRolls.push(`D4 Result:${result}`);
 if (lastRolls.length > 5) {
 lastRolls.shift(); // Remove the oldest roll
 }
@@ -238,23 +255,23 @@ document.getElementById('rollD4Button').addEventListener('click', rollD4);
 let currentMapImage = 'Map.png';
 
 function loadMapImage(event) {
-    const mapImage = document.createElement('img');
-    const file = event.target.files[0];
+ const mapImage = document.createElement('img');
+ const file = event.target.files[0];
 
-    if (file) {
-        currentMapImage = URL.createObjectURL(file);
-        mapImage.src = currentMapImage;
-        mapImage.style.position = 'absolute';
-        mapImage.style.width = '100%';
-        mapImage.style.height = '100%';
-        mapImage.style.top = '0';
-        mapImage.style.left = '0';
-        mapImage.style.zIndex = '-1';
-        const board = document.getElementById('board');
-        board.innerHTML = '';
-        board.appendChild(mapImage);
-        changeMap();
-    }
+ if (file) {
+ currentMapImage = URL.createObjectURL(file);
+ mapImage.src = currentMapImage;
+ mapImage.style.position = 'absolute';
+ mapImage.style.width = '100%';
+ mapImage.style.height = '100%';
+ mapImage.style.top = '0';
+ mapImage.style.left = '0';
+ mapImage.style.zIndex = '-1';
+ const board = document.getElementById('board');
+ board.innerHTML = '';
+ board.appendChild(mapImage);
+ changeMap();
+ }
 }
 
 document.getElementById('mapImageInput').addEventListener('change', loadMapImage);
@@ -263,15 +280,15 @@ const defaultMapImage = new Image();
 defaultMapImage.src = 'Map.png';
 
 defaultMapImage.onload = function() {
-    const board = document.getElementById('board');
-    board.style.backgroundImage = `url(${defaultMapImage.src})`;
-    board.style.backgroundSize = 'cover';
+ const board = document.getElementById('board');
+ board.style.backgroundImage = `url(${defaultMapImage.src})`;
+ board.style.backgroundSize = 'cover';
 }
 
 function changeMap() {
-    const board = document.getElementById('board');
-    board.style.backgroundImage = `url(${currentMapImage})`;
-    board.style.backgroundSize = 'cover';
+ const board = document.getElementById('board');
+ board.style.backgroundImage = `url(${currentMapImage})`;
+ board.style.backgroundSize = 'cover';
 }
 //end of map image loading functions
 
@@ -350,19 +367,23 @@ menuButton.textContent='M';
 const menu=document.createElement('div');
 menu.className='menu';
 
-const menuText=document.createElement('input');
-menuText.type='text';
-menuText.className='menu-input';
-menuText.placeholder='character or monster name';
-menuText.maxLength = 15;
-menuText.size = 15;
-menuText.style.width = '16em';
-menuText.addEventListener('input', function()
-{unitText.textContent=menuText.value;});
+const nameLabel=document.createElement('div');
+nameLabel.className='menu-item';
+nameLabel.textContent='Name:';
+
+const nameInput=document.createElement('input');
+nameInput.type='text';
+nameInput.className='menu-input';
+nameInput.placeholder='character or monster name';
+nameInput.maxLength = 9;
+nameInput.size = 9;
+nameInput.style.width = '10em';
+nameInput.addEventListener('input', function()
+{unitText.textContent=nameInput.value;});
 
 const addImageButton = document.createElement('button');
 addImageButton.className = 'menu-button';
-addImageButton.textContent = 'Add an image?';
+addImageButton.textContent = 'Add a figure?';
 
 addImageButton.addEventListener('click', function() {
 imageInput.click();
@@ -387,62 +408,64 @@ unitElement.appendChild(imageElement);
 reader.readAsDataURL(file);
 });
 
-const menuMVText=document.createElement('div');
-menuMVText.className='menu-item';
-menuMVText.textContent='MV:';
-const menuMVInput=document.createElement('input');
-menuMVInput.className='menu-input';
-menuMVInput.maxLength=2;
-menuMVInput.size=2;
-menuMVInput.style.width='3em';
-menuMVInput.type='text';
+const movementLabel=document.createElement('div');
+movementLabel.className='menu-item';
+movementLabel.textContent='MV:';
+const movementInput=document.createElement('input');
+movementInput.className='menu-input';
+movementInput.maxLength=2;
+movementInput.size=2;
+movementInput.style.width='3em';
+movementInput.type='text';
 
-const menuArmorClassText=document.createElement('div');
-menuArmorClassText.className='menu-item';
-menuArmorClassText.textContent='AC:';
-menu.appendChild(menuArmorClassText);
-const menuArmorClassInput=document.createElement('input');
-menuArmorClassInput.className='menu-input';
-menuArmorClassInput.maxLength=2;
-menuArmorClassInput.size=2;
-menuArmorClassInput.style.width='3em';
-menuArmorClassInput.type='text';
-menuArmorClassInput.addEventListener('input', function()
-{unitElement.dataset.ac=menuArmorClassInput.value;});
-menu.appendChild(menuArmorClassInput);
-menuArmorClassInput.addEventListener('input', function()
-{unitElement.dataset.ac = menuArmorClassInput.value;
-acValueElement.textContent = `AC: ${menuArmorClassInput.value}`;});
+const armorClassLabel=document.createElement('div');
+armorClassLabel.className='menu-item';
+armorClassLabel.textContent='AC:';
+menu.appendChild(armorClassLabel);
+
+const armorClassInput=document.createElement('input');
+armorClassInput.className='menu-input';
+armorClassInput.maxLength=2;
+armorClassInput.size=2;
+armorClassInput.style.width='3em';
+armorClassInput.type='text';
+armorClassInput.addEventListener('input', function()
+{unitElement.dataset.ac=armorClassInput.value;});
+menu.appendChild(armorClassInput);
+armorClassInput.addEventListener('input', function()
+{unitElement.dataset.ac = armorClassInput.value;
+acValueElement.textContent = `AC:${armorClassInput.value}`;});
 const acValueElement = document.createElement('div');
 acValueElement.className = 'ac-value';
-acValueElement.textContent = 'AC: ';
+acValueElement.textContent = 'AC:';
 unitElement.appendChild(acValueElement);
 
-const menuHDText=document.createElement('div');
-menuHDText.className='menu-item';
-menuHDText.textContent='HD:';
-const menuHDInput=document.createElement('input');
-menuHDInput.className='menu-input';
-menuHDInput.maxLength=8;
-menuHDInput.size=8;
-menuHDInput.style.width='9em';
-menuHDInput.type='text';
+const hitDiceLabel=document.createElement('div');
+hitDiceLabel.className='menu-item';
+hitDiceLabel.textContent='HD:';
+const hitDiceInput=document.createElement('input');
+hitDiceInput.className='menu-input';
+hitDiceInput.maxLength=8;
+hitDiceInput.size=8;
+hitDiceInput.style.width='9em';
+hitDiceInput.type='text';
 
 const menuMaxHPText = document.createElement('div');
 menuMaxHPText.className = 'menu-item';
 menuMaxHPText.textContent = 'maxHP:';
 const menuMaxHPInput = Object.assign(
-  document.createElement('input'),
-  {
-    className: 'menu-input',
-    maxLength: 3,
-    size: 3,
-    style: 'width: 4em;',
-    type: 'text',
-	oninput: function() {
-      menuCurHPInput.value = this.value;
-    }
-  }
+ document.createElement('input'),
+ {
+ className:'menu-input',
+ maxLength:3,
+ size:3,
+ style:'width:4em;',
+ type:'text',
+	oninput:function() {
+ menuCurHPInput.value = this.value;
+ curHpValueElement.textContent = this.value;
+ }
+ }
 );
 
 const menuCurHPText = document.createElement('div');
@@ -467,27 +490,27 @@ const newAttackName = document.createElement('input');
 newAttackName.type = 'text';
 newAttackName.className = 'menu-input';
 newAttackName.placeholder = 'weapon or spell name and effect';
-newAttackName.maxLength = 15;
-newAttackName.size = 15;
-newAttackName.style.width = '16em';
+newAttackName.maxLength = 9;
+newAttackName.size = 9;
+newAttackName.style.width = '10em';
 newRow.appendChild(newAttackName);
 
 const newAttackRoll = document.createElement('input');
 newAttackRoll.type = 'text';
 newAttackRoll.className = 'menu-input';
 newAttackRoll.placeholder = 'Attack Roll';
-newAttackRoll.maxLength = 9;
-newAttackRoll.size = 9;
-newAttackRoll.style.width = '6em';
+newAttackRoll.maxLength = 8;
+newAttackRoll.size = 8;
+newAttackRoll.style.width = '9em';
 newRow.appendChild(newAttackRoll);
 
 const newDamageRoll = document.createElement('input');
 newDamageRoll.type = 'text';
 newDamageRoll.className = 'menu-input';
 newDamageRoll.placeholder = 'Damage Roll';
-newDamageRoll.maxLength = 9;
-newDamageRoll.size = 9;
-newDamageRoll.style.width = '10em';
+newDamageRoll.maxLength = 8;
+newDamageRoll.size = 8;
+newDamageRoll.style.width = '9em';
 newRow.appendChild(newDamageRoll);
 
 menu.insertBefore(newRow, menuAddRowButton);
@@ -518,14 +541,14 @@ event.stopPropagation();
 
 
 
-menuMVInput.addEventListener('input', function()
+movementInput.addEventListener('input', function()
 {
-unitElement.dataset.mv=menuMVInput.value;
+unitElement.dataset.mv=movementInput.value;
 });
 
-menuHDInput.addEventListener('input', function()
+hitDiceInput.addEventListener('input', function()
 {
-unitElement.dataset.hd=menuHDInput.value;
+unitElement.dataset.hd=hitDiceInput.value;
 });
 
 const unitText=document.createElement('div');
@@ -534,54 +557,56 @@ unitText.textContent='Name';
 
 const mvValueElement = document.createElement('div');
 mvValueElement.className = 'mv-value';
-mvValueElement.textContent = 'MV: ';
+mvValueElement.textContent = 'MV:';
 unitElement.appendChild(mvValueElement);
 
-menuMVInput.addEventListener('input', function()
+movementInput.addEventListener('input', function()
 {
-unitElement.dataset.mv = menuMVInput.value;
-mvValueElement.textContent = `MV: ${menuMVInput.value}`;
+unitElement.dataset.mv = movementInput.value;
+mvValueElement.textContent = `MV:${movementInput.value}`;
 });
 
 const hdValueElement = document.createElement('div');
 hdValueElement.className = 'hd-value';
-hdValueElement.textContent = 'HD: ';
+hdValueElement.textContent = 'HD:';
 unitElement.appendChild(hdValueElement);
 
-menuHDInput.addEventListener('input', function()
+hitDiceInput.addEventListener('input', function()
 {
-unitElement.dataset.hd = menuHDInput.value;
-hdValueElement.textContent = `HD: ${menuHDInput.value}`;
+unitElement.dataset.hd = hitDiceInput.value;
+hdValueElement.textContent = `HD:${hitDiceInput.value}`;
 });
 
 const curHpValueElement = document.createElement('div');
 curHpValueElement.className = 'curHp-value';
-curHpValueElement.textContent = 'HP: ';
+curHpValueElement.textContent = 'HP:';
 unitElement.appendChild(curHpValueElement);
 
 menuCurHPInput.addEventListener('input', function()
 {
 unitElement.dataset.curHp = menuCurHPInput.value;
-curHpValueElement.textContent = `HP: ${menuCurHPInput.value}`;
+curHpValueElement.textContent = `HP:${menuCurHPInput.value}`;
 });
 
-const lineBreak = document.createElement('br');
+//const lineBreak = document.createElement('br');
 
 unitElement.appendChild(rotateButton);
 //unitElement.appendChild(menuButton);
-unitElement.appendChild(unitText);
-menu.appendChild(menuText);
-menu.appendChild(menuMVText);
-menu.appendChild(menuMVInput);
-menu.appendChild(menuHDText);
-menu.appendChild(menuHDInput);
+menu.appendChild(nameLabel);
+menu.appendChild(nameInput);
+menu.appendChild(armorClassLabel);
+menu.appendChild(armorClassInput);
+menu.appendChild(movementLabel);
+menu.appendChild(movementInput);
+menu.appendChild(hitDiceLabel);
+menu.appendChild(hitDiceInput);
 menu.appendChild(menuMaxHPText);
 menu.appendChild(menuMaxHPInput);
 menu.appendChild(menuCurHPText);
 menu.appendChild(menuCurHPInput);
 menu.appendChild(addImageButton);
 menu.appendChild(menuAddRowButton);
-menu.appendChild(lineBreak);
+unitElement.appendChild(unitText);
 menu.appendChild(deleteButton);
 unitElement.appendChild(menu);
 
