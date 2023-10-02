@@ -104,34 +104,15 @@ z-index:1;
 }
 
 </style>
-</head>
+
 <body>
 <table><tr><td>
-<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>1st Edition Dungeon Masters Guide Combat Tables</a>
-<br>
-<a href='https://archive.org/details/tsr02009addmonstermanual/mode/1up' target='_blank'>1st Edition Monster Manual</a>
-<br>
-<a href='https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up' target='_blank'>Dungeon Module L1 "The Secret of Bone Hill</a>
-<br>
 <button onclick="createUnit()">Create a character or monster?</button>
-<br>
+
 Load a map image.
 <input type="file" id="mapImageInput" accept="image/*">
 
-<img src='Decorations/DiceSprite.png'><br>
-<button id="rollD20Button">Roll D20</button>
-<button id="rollD12Button">Roll D12</button>
-<button id="rollD10Button">Roll D10</button>
-<button id="rollD8Button">Roll D8</button>
-<button id="rollD6Button">Roll D6</button>
-<button id="rollD4Button">Roll D4</button>
-
-<div id="resultsContainer"></div>
-</td></tr><tr><td>
-
 <div class="board" id="board"></div>
-
-</td></tr></table>
 
 <script>
 let unitCount=0;
@@ -701,5 +682,25 @@ document.body.appendChild(menu);
 unitCount++;
 }
 </script>
+</head>
+
+</td></tr><tr><td>
+<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>1st Edition Dungeon Masters Guide Combat Tables</a>
+<br>
+<a href='https://archive.org/details/tsr02009addmonstermanual/mode/1up' target='_blank'>1st Edition Monster Manual</a>
+<br>
+<a href='https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up' target='_blank'>Dungeon Module L1 "The Secret of Bone Hill</a>
+<br>
+
+<img src='Decorations/DiceSprite.png'><br>
+<button id="rollD20Button">Roll D20</button>
+<button id="rollD12Button">Roll D12</button>
+<button id="rollD10Button">Roll D10</button>
+<button id="rollD8Button">Roll D8</button>
+<button id="rollD6Button">Roll D6</button>
+<button id="rollD4Button">Roll D4</button>
+
+<div id="resultsContainer"></div>
+</td></tr></table>
 </body>
 </html>
