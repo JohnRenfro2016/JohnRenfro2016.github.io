@@ -30,6 +30,8 @@ display:grid;
 grid-template-columns:repeat(7,100px);
 grid-template-rows:repeat(7,100px);
 height:700px;
+max-height: 700px;
+max-width: 700px;
 position:relative;
 width:700px;
 }
@@ -50,6 +52,8 @@ color:#b6d9e3;
 display:inline-block;
 box-sizing:border-box;
 font-size:10px;
+max-height: 100px;
+max-width: 100px;
 z-index:3;
 }
 
@@ -105,6 +109,7 @@ position:absolute;
 </style>
 </head>
 <body>
+<table><tr><td>
 <a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>1st Edition Dungeon Masters Guide Combat Tables</a>
 <a href='https://archive.org/details/tsr02009addmonstermanual/mode/1up' target='_blank'>1st Edition Monster Manual</a>
 <a href='https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up' target='_blank'>Dungeon Module L1 "The Secret of Bone Hill</a>
@@ -122,14 +127,14 @@ Load a map image.
 <button id="rollD4Button">Roll D4</button>
 
 <div id="resultsContainer"></div>
+</td></tr><tr><td>
 
 <div class="board" id="board"></div>
 
+</td></tr></table>
+
 <script>
 let unitCount=0;
-let isDragging=false;
-let offsetX,offsetY;
-let draggedElement;
 let highestZIndex=1;
 
 // Start constant declarations
@@ -141,40 +146,50 @@ board.appendChild(square);
 }
 // End constant declarations
 
-// Start drag and drop functions
-document.getElementById('board').addEventListener('touchstart',onTouchStart);
-document.getElementById('board').addEventListener('touchmove',onTouchMove);
-document.getElementById('board').addEventListener('touchend',onTouchEnd);
+// start of drag functions
 
-let touchStartX,touchStartY;
+let isDragging = false;
+let draggedElement = null;
+let offsetX, offsetY;
 
-function onTouchStart(event) {
-const touch=event.touches[0];
-touchStartX=touch.clientX;
-touchStartY=touch.clientY;
+document.addEventListener('mousedown', onMouseDown);
+document.addEventListener('mousemove', onMouseMove);
+document.addEventListener('mouseup', onMouseUp);
+
+function onMouseDown(event) {
+    if (event.target.classList.contains('unit')) {
+        isDragging = true;
+        draggedElement = event.target;
+        offsetX = event.clientX - draggedElement.offsetLeft;
+        offsetY = event.clientY - draggedElement.offsetTop;
+        draggedElement.style.zIndex = '2'; // Bring the element to the top
+        document.addEventListener('selectstart', preventDefault); // Prevent text selection during drag
+    }
 }
 
-function onTouchMove(event) {
-event.preventDefault();
-const touch=event.touches[0];
-const mouseX=touch.clientX;
-const mouseY=touch.clientY;
-const board=document.getElementById('board');
-const boardRect=board.getBoundingClientRect();
-const maxX=boardRect.width - draggedElement.offsetWidth;
-const maxY=boardRect.height - draggedElement.offsetHeight;
-const newX=Math.min(Math.max(0,mouseX - touchStartX + draggedElement.offsetLeft),maxX);
-const newY=Math.min(Math.max(0,mouseY - touchStartY + draggedElement.offsetTop),maxY);
-draggedElement.style.left=`${newX}px`;
-draggedElement.style.top=`${newY}px`;
-touchStartX=mouseX;
-touchStartY=mouseY;
+function onMouseMove(event) {
+    if (isDragging) {
+        event.preventDefault();
+        const mouseX = event.clientX - offsetX;
+        const mouseY = event.clientY - offsetY;
+        draggedElement.style.left = `${mouseX}px`;
+        draggedElement.style.top = `${mouseY}px`;
+    }
 }
 
-function onTouchEnd() {
-isDragging=false;
+function onMouseUp() {
+    if (isDragging) {
+        isDragging = false;
+        draggedElement.style.zIndex = '1'; // Restore the z-index
+        document.removeEventListener('selectstart', preventDefault);
+    }
 }
-// End of the drag and drop functions
+
+function preventDefault(event) {
+    event.preventDefault();
+}
+
+// End of the drag functions
 
 const lastRolls=[];
 
