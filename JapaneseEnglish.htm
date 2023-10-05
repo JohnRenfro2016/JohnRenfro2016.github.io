@@ -2204,7 +2204,7 @@ const replsB = [
 {p1:/(風)(?!X)(呂)(?!X)(屋)(?!X)/g,r1:'$1Xfur$2Xoy$3Xa-bathhouse,public bath~Noun'},
 {p1:/(風)(?!X)(邪)(?!X)(薬)(?!X)/g,r1:'$1Xkaz$2Xeg$3Xusuri-remedy for a cold~Noun'},
 {p1:/(飛)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xtob$2Xa-fly,shoot$3X~SuVerb'},
-{p1:/(飛)(?!X)(行)(?!X)(場)(?!X)/g,r1:'$1Xhi$2Xkou$3Xjyou-airport,airfield~Noun'},
+{p1:/(飛)(?!X)(行)(?!X)(場)(?!X)/g,r1:'$1Xhi$2Xkou$3Xjyou-airbase~Noun'},
 {p1:/(飛)(?!X)(行)(?!X)(機)(?!X)/g,r1:'$1Xhi$2Xkou$3Xki-airplane~Noun'},
 {p1:/(食)(?!X)(べ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xtab$2Xe-eat$3X~RuVerb'},
 {p1:/(食)(?!X)(べ)(?!X)(物)(?!X)/g,r1:'$1Xtabe$2Xmo$3Xno-food~Noun'},
@@ -4848,6 +4848,7 @@ const replsB = [
 {p1:/(有)(?!X)(事)(?!X)/g,r1:'$1Xyuu$2Xji-emergency~Noun'},
 {p1:/(有)(?!X)(人)(?!X)/g,r1:'$1Xyuu$2Xjin-piloted~Noun'},
 {p1:/(有)(?!X)(利)(?!X)/g,r1:'$1Xyuu$2Xri-advantageous,profitable~Noun'},
+{p1:/(粗)(?!X)(勝)(?!X)/g,r1:'$1Xso$2Xsyou-winnign a lawsuit~Noun'},
 {p1:/(有)(?!X)(力)(?!X)/g,r1:'$1Xyuu$2Xryoku-powerful,influential~Noun'},
 {p1:/(有)(?!X)(効)(?!X)/g,r1:'$1Xyuu$2Xkou-effective,valid~Noun'},
 {p1:/(有)(?!X)(名)(?!X)/g,r1:'$1Xyuu$2Xmei-famous~Noun'},
@@ -5189,6 +5190,7 @@ const replsB = [
 {p1:/(治)(?!X)(療)(?!X)/g,r1:'$1Xchi$2Xryou-medical treatment~Noun'},
 {p1:/(沿)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xso-lie along,follow along$2X~UVerb'},
 {p1:/(沿)(?!X)(岸)(?!X)/g,r1:'$1Xen$2Xgan-coast~Noun'},
+{p1:/(移)(?!X)(設)(?!X)/g,r1:'$1Xi$2Xsetsu-relocation~Noun'},
 {p1:/(沿)(?!X)(海)(?!X)/g,r1:'$1Xen$2Xkai-coastal waters~Noun'},
 {p1:/(法)(?!X)(人)(?!X)/g,r1:'$1Xhou$2Xjin-legal entity~Noun'},
 {p1:/(法)(?!X)(制)(?!X)/g,r1:'$1Xhou$2Xsei-legislation~Noun'},
@@ -7391,7 +7393,7 @@ const replsB = [
 {p1:/(坂)(?!X)/g,r1:'$1Xsaka-slope~Noun'},
 {p1:/(垂)(?!X)/g,r1:'$1Xtaru-water,sauce~Noun'},
 {p1:/(型)(?!X)/g,r1:'$1Xkata,gata,type,mold~Noun'},
-{p1:/(城)(?!X)/g,r1:'$1Xshiro,jyou,gi,castle~Noun'},
+{p1:/(城)(?!X)/g,r1:'$1Xshiro,jyou,ki,gi-castle~Noun'},
 {p1:/(埼)(?!X)/g,r1:'$1Xsai-peninsula~Noun'},
 {p1:/(堂)(?!X)/g,r1:'$1Xdou-temple~Noun'},
 {p1:/(報)(?!X)/g,r1:'$1Xhou-advisory~Noun'},
@@ -7492,8 +7494,10 @@ const replsB = [
 {p1:/(年)(?!X)/g,r1:'$1Xnen-year~Noun'},
 {p1:/(幸)(?!X)/g,r1:'$1Xsaiwai-good luck~Noun'},
 {p1:/(幹)(?!X)/g,r1:'$1Xmiki,Gi,tree trunk~Noun'},
+{p1:/(裁)(?!X)/g,r1:'$1Xsai-judge~Noun'},
 {p1:/(庁)(?!X)/g,r1:'$1Xcyou-agency~Noun'},
 {p1:/(広)(?!X)/g,r1:'$1Xhiro-wide~Noun'},
+{p1:/(普)(?!X)/g,r1:'$1Xfu-vault~Noun'},
 {p1:/(床)(?!X)/g,r1:'$1Xyuka-floor~Noun'},
 {p1:/(底)(?!X)/g,r1:'$1Xsoko-bottom,depths~Noun'},
 {p1:/(店)(?!X)/g,r1:'$1Xmise,ten,shop~Noun'},
@@ -7958,10 +7962,14 @@ const replsB = [
 {p1:/(鐘)(?!X)/g,r1:'$1Xkane-bell~Noun'},
 {p1:/(長)(?!X)/g,r1:'$1Xchou-chairperson,commander;naga-long~Noun'},
 {p1:/(門)(?!X)/g,r1:'$1Xmon-gate~Noun'},
-{p1:/(間)(?!X)/g,r1:'$1Xkan-time period;aida,while~Noun'},
+{p1:/(間)(?!X)/g,r1:'$1Xkan-time period,aida,ma-while~Noun'},
 {p1:/(関)(?!X)/g,r1:'$1Xkan-in relation to~Noun'},
 {p1:/(闇)(?!X)/g,r1:'$1Xyami-night,illegal~Noun'},
 {p1:/(阜)(?!X)/g,r1:'$1Xfu,mound~Noun'},
+{p1:/(宜)(?!X)/g,r1:'$1Xyoshi,gi-good~Noun'},
+{p1:/(宜)(?!X)/g,r1:'$1Xyoshi,gi-good~Noun'},
+{p1:/(護)(?!X)/g,r1:'$1Xgo-safeguard~Noun'},
+{p1:/(阪)(?!X)/g,r1:'$1Xsaka-slope~Noun'},
 {p1:/(阪)(?!X)/g,r1:'$1Xsaka-slope~Noun'},
 {p1:/(防)(?!X)/g,r1:'$1Xbou-defense~Noun'},
 {p1:/(限)(?!X)/g,r1:'$1Xgen-limited~Noun'},
@@ -8209,7 +8217,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-　首相で自民党総裁の岸田文雄（６６）は、自民政調会長の萩生田光一（６０）への言葉に、いざとなれば衆院解散をためらわないという覚悟をにじませた。【写真】岸田首相インタビュー　経済対策はスピード重視…解散「予算成立後」焦点に ２人のやり取りがあったのは、経済対策策定に向け、関係閣僚への指示が出された９月２６日の約２週間前のことだった。岸田は党役員人事での留任を固めていた萩生田を党本部総裁室に呼び、本格的な経済対策への意欲を語った。
+玉城デニー知事は4日、米軍普天間飛行場（宜野湾市）の名護市辺野古への移設工事を巡り、同日までに工事の設計変更申請を承認するよう指示した斉藤鉄夫国土交通相に対し、「期限までに承認するのは困難」と回答した。政府の指示を事実上拒否した。政府は県に代わって承認する「代執行」に向け、5日にも福岡高裁那覇支部へ提訴。勝訴すれば工事に着手できる。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
