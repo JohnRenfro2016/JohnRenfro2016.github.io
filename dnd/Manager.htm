@@ -6,100 +6,117 @@
 <title>Advanced Dungeons & Dragons 1st Edition(for Android and Desktop Chrome)</title>
 <style>
 
-body,button,input,radio,text,textArea,a:link,a:visited {
+body,
+button,
+input,
+radio,
+text,
+textArea,
+a:link,
+a:visited {
 background: url("Decorations/Panel.png") repeat;
-border-color:#000;
-border-style:solid;
-border-width:2px;
-color:#000;
+border-color: #000;
+border-style: solid;
+border-width: 2px;
+color: #000;
 }
 
-table,tr,td {
+table,
+tr,
+td {
 background: url("Decorations/Panel.png") repeat;
-border-color:#3a8094;
-color:#000;
-}
-
-.board.touch,.unit.touch {
-touch-action:none;
-}
-
-.board {
-border-style:solid;
-color:inherit;
-display:grid;
-grid-template-columns:repeat(7,100px);
-grid-template-rows:repeat(7,100px);
-height:700px;
-max-height: 700px;
-max-width: 700px;
-position:relative;
-width:700px;
-}
-
-.menu {
-position:relative;
-max-width:100%;
-}
-
-.menu-button {
-cursor:pointer;
-display:inline-block;
-font-size:10px;
-}
-
-.menu-input {
-color:#000;
-display:inline-block;
-box-sizing:border-box;
-font-size:10px;
-max-height: 100px;
-max-width: 100px;
-z-index:3;
-}
-
-.menu-item {
-color:#000;
-display:inline-block;
-}
-
-.unit-display {
-float:right;
-position:absolute;
-bottom:0;
-right:0;
-clear:right;
-}
-
-.rotate-button {
-display:inline-block;
-font-size:10px;
-}
-
-.square {
-width:100px;
-height:100px;
-border:1px solid #000;
+border-color: #3a8094;
+color: #000;
 }
 
 #board {
-position:relative;
-width:700px;
-height:700px;
-border:1px solid #000;
+position: relative;
+width: 700px;
+height: 700px;
+border: 1px solid #000;
+}
+
+.attack-roll-result,
+.damage-roll-result {
+display: block;
+font-size: 12px;
+margin-top: 5px;
+}
+
+.board {
+border-style: solid;
+color: inherit;
+display: grid;
+grid-template-columns: repeat(7, 100px);
+grid-template-rows: repeat(7, 100px);
+height: 700px;
+max-height: 700px;
+max-width: 700px;
+position: relative;
+width: 700px;
+}
+
+.board.touch,
+.unit.touch {
+touch-action: none;
+}
+
+.menu {
+position: relative;
+max-width: 100%;
+}
+
+.menu-button {
+cursor: pointer;
+display: inline-block;
+font-size: 10px;
+}
+
+.menu-input {
+color: #000;
+display: inline-block;
+box-sizing: border-box;
+font-size: 10px;
+max-height: 100px;
+max-width: 100px;
+z-index: 3;
+}
+
+.menu-item {
+color: #000;
+display: inline-block;
 }
 
 .unit {
 background: url("Decorations/Panel.png") repeat;
-color:black;
-cursor:move;
-font-size:10px;
-height:100px;
-position:absolute;
-transform-origin:center;
-user-select:none;
-width:100px;
-z-index:1;
+color: black;
+cursor: move;
+font-size: 10px;
+height: 100px;
+position: absolute;
+transform-origin: center;
+user-select: none;
+width: 100px;
+z-index: 1;
+}
+
+.unit-display {
+float: right;
+position: absolute;
+bottom: 0;
+right: 0;
+clear: right;
+}
+
+.rotate-button {
+display: inline-block;
+font-size: 10px;
+}
+
+.square {
+width: 100px;
+height: 100px;
+border: 1px solid #000;
 }
 
 </style>
@@ -109,7 +126,7 @@ z-index:1;
 <button onclick="createUnit()">Create a character or monster?</button>
 
 Load a map image.
-<input type="file" id="mapImageInput" accept="image/*">
+<input type="file" id="mapImageInput" accept="image/*" name="mapImageInput">
 
 <div class="board" id="board"></div>
 
@@ -138,49 +155,49 @@ document.addEventListener('mousemove', onMouseMove);
 document.addEventListener('mouseup', onMouseUp);
 
 function onMouseDown(event) {
-    if (event.target.classList.contains('unit')) {
-        isDragging = true;
-        draggedElement = event.target;
-        offsetX = event.clientX - draggedElement.offsetLeft;
-        offsetY = event.clientY - draggedElement.offsetTop;
-        draggedElement.style.zIndex = '2'; // Bring the element to the top
-        document.addEventListener('selectstart', preventDefault); // Prevent text selection during drag
-        boardRect = document.getElementById('board').getBoundingClientRect(); // Get board dimensions
-    }
+if (event.target.classList.contains('unit')) {
+isDragging = true;
+draggedElement = event.target;
+offsetX = event.clientX - draggedElement.offsetLeft;
+offsetY = event.clientY - draggedElement.offsetTop;
+draggedElement.style.zIndex = '2'; // Bring the element to the top
+document.addEventListener('selectstart', preventDefault); // Prevent text selection during drag
+boardRect = document.getElementById('board').getBoundingClientRect(); // Get board dimensions
+}
 }
 
 function onMouseMove(event) {
-    if (isDragging) {
-        event.preventDefault();
-        const mouseX = event.clientX - offsetX;
-        const mouseY = event.clientY - offsetY;
+if (isDragging) {
+event.preventDefault();
+const mouseX = event.clientX - offsetX;
+const mouseY = event.clientY - offsetY;
 
-        // Enforce maximum draggable area
-        const maxX = boardRect.width - draggedElement.offsetWidth;
-        const maxY = boardRect.height - draggedElement.offsetHeight;
-        const newX = Math.min(Math.max(0, mouseX), maxX);
-        const newY = Math.min(Math.max(0, mouseY), maxY);
+// Enforce maximum draggable area
+const maxX = boardRect.width - draggedElement.offsetWidth;
+const maxY = boardRect.height - draggedElement.offsetHeight;
+const newX = Math.min(Math.max(0, mouseX), maxX);
+const newY = Math.min(Math.max(0, mouseY), maxY);
 
-        // Snap to grid
-        const cellSize = 100;
-        const gridX = Math.round(newX / cellSize) * cellSize;
-        const gridY = Math.round(newY / cellSize) * cellSize;
+// Snap to grid
+const cellSize = 100;
+const gridX = Math.round(newX / cellSize) * cellSize;
+const gridY = Math.round(newY / cellSize) * cellSize;
 
-        draggedElement.style.left = `${gridX}px`;
-        draggedElement.style.top = `${gridY}px`;
-    }
+draggedElement.style.left = `${gridX}px`;
+draggedElement.style.top = `${gridY}px`;
+}
 }
 
 function onMouseUp() {
-    if (isDragging) {
-        isDragging = false;
-        draggedElement.style.zIndex = '1'; // Restore the z-index
-        document.removeEventListener('selectstart', preventDefault);
-    }
+if (isDragging) {
+isDragging = false;
+draggedElement.style.zIndex = '1'; // Restore the z-index
+document.removeEventListener('selectstart', preventDefault);
+}
 }
 
 function preventDefault(event) {
-    event.preventDefault();
+event.preventDefault();
 }
 
 // End of the drag functions
@@ -401,12 +418,38 @@ draggedElement=null;
 });
 // End drag and drop functions
 
+let selectedUnit = null; // Variable to keep track of the selected unit
+
 function createUnit() {
 const unitElement=document.createElement('div');
 unitElement.className='unit';
 unitElement.draggable=true;
 unitElement.id=`unit-${unitCount}`;
 unitElement.ondragstart=onDragStart;
+
+// Create a radio button for targeting
+const targetRadio = document.createElement('input');
+targetRadio.type = 'radio';
+targetRadio.name = 'target';
+targetRadio.id = `target-${unitCount}`;
+targetRadio.style.position = 'relative';
+
+// Label for the radio button (optional)
+const targetLabel = document.createElement('label');
+targetLabel.htmlFor = `target-${unitCount}`;
+targetLabel.textContent = `Target Unit ${unitCount}`;
+targetLabel.style.position = 'relative';
+
+// Add an event listener to handle targeting
+targetRadio.addEventListener('change', function() {
+if (selectedUnit) {
+selectedUnit.style.border = '2px solid black'; // Reset border of previously selected unit
+}
+selectedUnit = unitElement; // Update the selected unit
+// Set visual indication on unit face
+unitElement.style.border = '2px solid red'; // Change border color to indicate selection
+unitElement.style.boxShadow = '0px 0px 10px rgba(255, 0, 0, 0.5)'; // Add shadow for emphasis
+});
 
 const rotateButton=document.createElement('button');
 rotateButton.textContent='R';
@@ -437,8 +480,10 @@ nameLabel.className='menu-item';
 nameLabel.textContent='Name:';
 
 const nameInput=document.createElement('input');
+nameInput.id = 'nameInputId-' + unitCount;
 nameInput.type='text';
 nameInput.className='menu-input';
+nameInput.name = 'nameInputName-' + unitCount;
 nameInput.placeholder='character or monster name';
 nameInput.maxLength=9;
 nameInput.size=9;
@@ -446,6 +491,161 @@ nameInput.style.width='10em';
 nameInput.addEventListener('input',function() {
 nameUnit.textContent=nameInput.value;
 });
+
+const classLabel = document.createElement('div');
+classLabel.className = 'menu-item';
+classLabel.textContent = 'Class:';
+
+const classSelect = document.createElement('select');
+classSelect.className = 'menu-input';
+classSelect.setAttribute('id', `classSelectId-${unitCount}`); // Unique ID for each selection
+classSelect.setAttribute('name', `classSelectName-${unitCount}`); // Unique name for each selection
+
+const classes = ['Cleric', 'Fighter', 'Magic-User', 'Paladin', 'Ranger', 'Thief'];
+
+classes.forEach(className => {
+const option = document.createElement('option');
+option.value = className;
+option.textContent = className;
+classSelect.appendChild(option);
+});
+
+classSelect.addEventListener('change', function() {
+classUnit.textContent = classSelect.value;
+});
+
+const classUnit = document.createElement('div');
+classUnit.className = 'menu-item';
+classUnit.textContent = 'Class:';
+
+// Append everything to the container
+const container = document.createElement('div');
+container.appendChild(nameLabel);
+container.appendChild(nameInput);
+container.appendChild(classLabel);
+container.appendChild(classSelect);
+container.appendChild(classUnit);
+
+// Create a container for the race dropdown menu
+const raceContainer = document.createElement('div');
+
+// Race Label
+const raceLabel = document.createElement('div');
+raceLabel.className = 'menu-item';
+raceLabel.textContent = 'Race:';
+
+// Race Dropdown Select
+const raceSelect = document.createElement('select');
+raceSelect.className = 'menu-input';
+raceSelect.setAttribute('id', `raceSelectId-${unitCount}`); // Unique ID for each selection
+raceSelect.setAttribute('name', `raceSelectName-${unitCount}`); // Unique name for each selection
+
+const races = ['Dwarf', 'Elf', 'Half-Elf', 'Gnome', 'Human', 'Halfling', 'Orc', 'Half-Orc'];
+
+races.forEach(raceName => {
+const option = document.createElement('option');
+option.value = raceName;
+option.textContent = raceName;
+raceSelect.appendChild(option);
+});
+
+raceSelect.addEventListener('change', function() {
+raceUnit.textContent = raceSelect.value;
+});
+
+// Race Unit
+const raceUnit = document.createElement('div');
+raceUnit.className = 'menu-item';
+raceUnit.textContent = 'Race:';
+
+// Append race elements to the race container
+raceContainer.appendChild(raceLabel);
+raceContainer.appendChild(raceSelect);
+raceContainer.appendChild(raceUnit);
+
+// Strength
+const strengthLabel = document.createElement('div');
+strengthLabel.className = 'menu-item';
+strengthLabel.textContent = 'S:';
+
+const strengthInput = document.createElement('input');
+strengthInput.className = 'menu-input';
+strengthInput.id = 'strengthInputId-' + unitCount;
+strengthInput.maxLength = 2;
+strengthInput.name='strengthInputName-' +unitCount;
+strengthInput.size = 2;
+strengthInput.style.width = '3em';
+strengthInput.type = 'text';
+
+// Dexterity
+const dexterityLabel = document.createElement('div');
+dexterityLabel.className = 'menu-item';
+dexterityLabel.textContent = 'D:';
+
+const dexterityInput = document.createElement('input');
+dexterityInput.className = 'menu-input';
+dexterityInput.id = 'dexterityInputId-' + unitCount;
+dexterityInput.maxLength = 2;
+dexterityInput.name = 'dexterityInputName-' + unitCount;
+dexterityInput.size = 2;
+dexterityInput.style.width = '3em';
+dexterityInput.type = 'text';
+
+// Constitution
+const constitutionLabel = document.createElement('div');
+constitutionLabel.className = 'menu-item';
+constitutionLabel.textContent = 'Co:';
+
+const constitutionInput = document.createElement('input');
+constitutionInput.className = 'menu-input';
+constitutionInput.id = 'constitutionInputId-' + unitCount;
+constitutionInput.maxLength = 2;
+constitutionInput.name = 'constitutionInputName-' + unitCount;
+constitutionInput.size = 2;
+constitutionInput.style.width = '3em';
+constitutionInput.type = 'text';
+
+// Intelligence
+const intelligenceLabel = document.createElement('div');
+intelligenceLabel.className = 'menu-item';
+intelligenceLabel.textContent = 'I:';
+
+const intelligenceInput = document.createElement('input');
+intelligenceInput.className = 'menu-input';
+intelligenceInput.id = 'intelligenceInputId-' + unitCount;
+intelligenceInput.maxLength = 2;
+intelligenceInput.name = 'intelligenceInputName-' + unitCount;
+intelligenceInput.size = 2;
+intelligenceInput.style.width = '3em';
+intelligenceInput.type = 'text';
+
+// Wisdom
+const wisdomLabel = document.createElement('div');
+wisdomLabel.className = 'menu-item';
+wisdomLabel.textContent = 'W:';
+
+const wisdomInput = document.createElement('input');
+wisdomInput.className = 'menu-input';
+wisdomInput.id = 'wisdomInputId-' + unitCount;
+wisdomInput.maxLength = 2;
+wisdomInput.name = 'wisdomInputName-' + unitCount;
+wisdomInput.size = 2;
+wisdomInput.style.width = '3em';
+wisdomInput.type = 'text';
+
+// Charisma
+const charismaLabel = document.createElement('div');
+charismaLabel.className = 'menu-item';
+charismaLabel.textContent = 'Ch:';
+
+const charismaInput = document.createElement('input');
+charismaInput.className = 'menu-input';
+charismaInput.id = 'charismaInputId-' + unitCount;
+charismaInput.maxLength = 2;
+charismaInput.name = 'charismaInputName-' + unitCount;
+charismaInput.size = 2;
+charismaInput.style.width = '3em';
+charismaInput.type = 'text';
 
 const addImageButton=Object.assign(document.createElement('button'),{
 className:'menu-button',
@@ -486,9 +686,12 @@ reader.readAsDataURL(file);
 const movementLabel=document.createElement('div');
 movementLabel.className='menu-item';
 movementLabel.textContent='MV:';
+
 const movementInput=document.createElement('input');
 movementInput.className='menu-input';
+movementInput.id='movementInputId'+unitCount;
 movementInput.maxLength=2;
+movementInput.name='movementInputName'+unitCount;
 movementInput.size=2;
 movementInput.style.width='3em';
 movementInput.type='text';
@@ -496,9 +699,12 @@ movementInput.type='text';
 const armorClassLabel=document.createElement('div');
 armorClassLabel.className='menu-item';
 armorClassLabel.textContent='AC:';
+
 const armorClassInput=document.createElement('input');
 armorClassInput.className='menu-input';
+armorClassInput.id = 'armorClassInputId-' + unitCount;
 armorClassInput.maxLength=2;
+armorClassInput.name = 'armorClassInputName-' + unitCount;
 armorClassInput.size=2;
 armorClassInput.style.width='3em';
 armorClassInput.type='text';
@@ -515,7 +721,9 @@ hitDiceLabel.className='menu-item';
 hitDiceLabel.textContent='HD:';
 const hitDiceInput=document.createElement('input');
 hitDiceInput.className='menu-input';
+hitDiceInput.id='hitDiceInputId'+unitCount;
 hitDiceInput.maxLength=8;
+hitDiceInput.name='hitDiceInputName'+unitCount;
 hitDiceInput.size=8;
 hitDiceInput.style.width='9em';
 hitDiceInput.type='text';
@@ -523,18 +731,23 @@ hitDiceInput.type='text';
 const maximumHitPointsLabel=document.createElement('div');
 maximumHitPointsLabel.className='menu-item';
 maximumHitPointsLabel.textContent='maxHP:';
-const maximumHitPointsInput=Object.assign(
+
+const maximumHitPointsInput=Object.assign
+(
 document.createElement('input'),
 {
 className:'menu-input',
+id:'maximumHitPointsInputId'+unitCount,
 maxLength:3,
+name:'maximumHitPointsInputName'+unitCount,
+oninput:function()
+{
+currentHitPointsInput.value=this.value;
+currentHitPointsUnit.textContent=`HP:${this.value}`;
+},
 size:3,
 style:'width:4em;',
 type:'text',
-oninput:function() {
-currentHitPointsInput.value=this.value;
-currentHitPointsUnit.textContent=`HP:${this.value}`;
-}
 }
 );
 
@@ -543,7 +756,9 @@ currentHitPointsLabel.className='menu-item';
 currentHitPointsLabel.textContent='curHP:';
 const currentHitPointsInput=document.createElement('input');
 currentHitPointsInput.className='menu-input';
+currentHitPointsInput.id='currentHitPointsInputId'+unitCount;
 currentHitPointsInput.maxLength=3;
+currentHitPointsInput.name='currentHitPointsInputName'+unitCount;
 currentHitPointsInput.size=3;
 currentHitPointsInput.style.width='4em';
 currentHitPointsInput.type='text';
@@ -582,14 +797,53 @@ newAttackRoll.size=8;
 newAttackRoll.style.width='9em';
 newRow.appendChild(newAttackRoll);
 
+const attackRollResult = document.createElement('span');
+attackRollResult.className = 'attack-roll-result';
+
+newRow.appendChild(newAttackRoll);
+newRow.appendChild(attackRollResult);
+
+newAttackRoll.addEventListener('mouseout', function() {
+  const attackRollValue = newAttackRoll.value;
+  const rollResult = rollDice(attackRollValue);
+  attackRollResult.textContent = `Attack Result: ${rollResult}`; // Update the result display
+});
+
 const newDamageRoll=document.createElement('input');
 newDamageRoll.type='text';
 newDamageRoll.className='menu-input';
 newDamageRoll.placeholder='Damage Roll';
 newDamageRoll.maxLength=8;
 newDamageRoll.size=8;
-newDamageRoll.style.width='9em';
+newDamageRoll.style.width='17em';
 newRow.appendChild(newDamageRoll);
+
+function rollDice(diceString) {
+const [numDice, numSides, modifier] = diceString.match(/(\d+)d(\d+)(\+\d+)?/).slice(1).map(Number);
+let total = 0;
+for (let i = 0; i < numDice; i++) {
+total += Math.floor(Math.random() * numSides) + 1;
+}
+total += modifier || 0;
+return total;
+}
+
+const damageRollResult = document.createElement('span');
+damageRollResult.className = 'damage-roll-result';
+
+newRow.appendChild(newDamageRoll);
+newRow.appendChild(damageRollResult);
+
+newDamageRoll.addEventListener('mouseout', function() {
+  const damageRollValue = newDamageRoll.value;
+  const rollResult = rollDice(damageRollValue);
+  damageRollResult.textContent = `Damage Result: ${rollResult}`; // Update the result display
+});
+
+newRow.appendChild(newDamageRoll);
+
+// ... (rest of the code remains the same)
+
 
 menu.insertBefore(newRow,menuAddRowButton);
 });
@@ -650,6 +904,8 @@ hitDiceUnit.textContent=`HD:${hitDiceInput.value}`;
 unitElement.appendChild(rotateButton);
 unitElement.style.left='0';
 unitElement.style.top='0';
+unitElement.appendChild(targetRadio);
+unitElement.appendChild(targetLabel);
 unitElement.appendChild(armorClassUnit);
 unitElement.appendChild(hitDiceUnit);
 unitElement.appendChild(currentHitPointsUnit);
@@ -673,12 +929,26 @@ menu.appendChild(currentHitPointsInput);
 menu.appendChild(movementLabel);
 menu.appendChild(movementInput);
 menu.appendChild(menuAddRowButton);
-
+menu.appendChild(strengthLabel);
+menu.appendChild(strengthInput);
+menu.appendChild(dexterityLabel);
+menu.appendChild(dexterityInput);
+menu.appendChild(constitutionLabel);
+menu.appendChild(constitutionInput);
+menu.appendChild(intelligenceLabel);
+menu.appendChild(intelligenceInput);
+menu.appendChild(wisdomLabel);
+menu.appendChild(wisdomInput);
+menu.appendChild(charismaLabel);
+menu.appendChild(charismaInput);
+menu.appendChild(container);
+menu.appendChild(raceContainer);
 menu.appendChild(deleteButton);
 
 document.body.appendChild(menu);
 
 unitCount++;
+return unitElement;
 }
 </script>
 </head>
