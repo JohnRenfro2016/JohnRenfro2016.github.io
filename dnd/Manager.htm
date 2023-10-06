@@ -9,120 +9,76 @@
 body,
 button,
 input,
+object,
 radio,
+select,
+table,
+td,
 text,
 textArea,
+tr,
 a:link,
 a:visited {
-background: url("Decorations/Panel.png") repeat;
-border-color: #000;
-border-style: solid;
-border-width: 2px;
-color: #000;
+background:url("Decorations/Panel.png") repeat;
+color:#000;
+display:inline-block;
+font-size:10px;
 }
 
-table,
-tr,
-td {
-background: url("Decorations/Panel.png") repeat;
-border-color: #3a8094;
-color: #000;
-}
-
-#board {
-position: relative;
-width: 700px;
-height: 700px;
-border: 1px solid #000;
-}
-
-.attack-roll-result,
-.damage-roll-result {
-display: block;
-font-size: 12px;
-margin-top: 5px;
+div
+{
+display:inline-block;
 }
 
 .board {
-border-style: solid;
-color: inherit;
-display: grid;
-grid-template-columns: repeat(7, 100px);
-grid-template-rows: repeat(7, 100px);
-height: 700px;
-max-height: 700px;
-max-width: 700px;
-position: relative;
-width: 700px;
+display:grid;
+grid-template-columns:repeat(7, 100px);
+grid-template-rows:repeat(7, 100px);
+height:700px;
+position:relative;
+width:700px;
 }
 
 .board.touch,
-.unit.touch {
-touch-action: none;
+.unit.touch
+{
+touch-action:none;
 }
 
-.menu {
-position: relative;
-max-width: 100%;
+.menu
+{
+height:auto;
+position:relative;
+width:600px;
 }
 
-.menu-button {
-cursor: pointer;
-display: inline-block;
-font-size: 10px;
+.square
+{
+width:100px;
+height:100px;
+border:1px solid #000;
 }
 
-.menu-input {
-color: #000;
-display: inline-block;
-box-sizing: border-box;
-font-size: 10px;
-max-height: 100px;
-max-width: 100px;
-z-index: 3;
+.unit
+{
+background:url("Decorations/Panel.png") repeat;
+cursor:move;
+height:100px;
+position:absolute;
+transform-origin:center;
+user-select:none;
+width:100px;
+z-index:1;
 }
 
-.menu-item {
-color: #000;
-display: inline-block;
-}
-
-.unit {
-background: url("Decorations/Panel.png") repeat;
-color: black;
-cursor: move;
-font-size: 10px;
-height: 100px;
-position: absolute;
-transform-origin: center;
-user-select: none;
-width: 100px;
-z-index: 1;
-}
-
-.unit-display {
-float: right;
-position: absolute;
-bottom: 0;
-right: 0;
-clear: right;
-}
-
-.rotate-button {
-display: inline-block;
-font-size: 10px;
-}
-
-.square {
-width: 100px;
-height: 100px;
-border: 1px solid #000;
+.unit-style
+{
+display:block;
 }
 
 </style>
 
 <body>
-<table><tr><td>
 <button onclick="createUnit()">Create a character or monster?</button>
 
 Load a map image.
@@ -204,7 +160,6 @@ event.preventDefault();
 
 const lastRolls=[];
 
-// Function to display the last 5 rolls on the webpage
 function displayLastRolls() {
 const resultsContainer=document.getElementById('resultsContainer');
 resultsContainer.innerHTML=lastRolls.join('<br>');
@@ -437,7 +392,7 @@ targetRadio.style.position = 'relative';
 // Label for the radio button (optional)
 const targetLabel = document.createElement('label');
 targetLabel.htmlFor = `target-${unitCount}`;
-targetLabel.textContent = `Target Unit ${unitCount}`;
+targetLabel.textContent = `Target ${unitCount}`;
 targetLabel.style.position = 'relative';
 
 // Add an event listener to handle targeting
@@ -453,7 +408,6 @@ unitElement.style.boxShadow = '0px 0px 10px rgba(255, 0, 0, 0.5)'; // Add shadow
 
 const rotateButton=document.createElement('button');
 rotateButton.textContent='R';
-rotateButton.className='rotate-button';
 
 rotateButton.addEventListener('click',function(event) {
 event.stopPropagation(); // Stop event from bubbling up
@@ -469,35 +423,30 @@ unitElement.style.transform=`rotate(${(currentRotation + 45) % 360}deg)`;
 });
 
 const menuButton=document.createElement('button');
-menuButton.className='menu-button';
 menuButton.textContent='M';
 
 const menu=document.createElement('div');
 menu.className='menu';
 
 const nameLabel=document.createElement('div');
-nameLabel.className='menu-item';
 nameLabel.textContent='Name:';
 
 const nameInput=document.createElement('input');
 nameInput.id = 'nameInputId-' + unitCount;
 nameInput.type='text';
-nameInput.className='menu-input';
 nameInput.name = 'nameInputName-' + unitCount;
 nameInput.placeholder='character or monster name';
-nameInput.maxLength=9;
-nameInput.size=9;
-nameInput.style.width='10em';
+nameInput.maxLength=20 ;
+nameInput.size=20;
+nameInput.style.width='21em';
 nameInput.addEventListener('input',function() {
 nameUnit.textContent=nameInput.value;
 });
 
 const classLabel = document.createElement('div');
-classLabel.className = 'menu-item';
 classLabel.textContent = 'Class:';
 
 const classSelect = document.createElement('select');
-classSelect.className = 'menu-input';
 classSelect.setAttribute('id', `classSelectId-${unitCount}`); // Unique ID for each selection
 classSelect.setAttribute('name', `classSelectName-${unitCount}`); // Unique name for each selection
 
@@ -515,7 +464,6 @@ classUnit.textContent = classSelect.value;
 });
 
 const classUnit = document.createElement('div');
-classUnit.className = 'menu-item';
 classUnit.textContent = 'Class:';
 
 // Append everything to the container
@@ -531,12 +479,10 @@ const raceContainer = document.createElement('div');
 
 // Race Label
 const raceLabel = document.createElement('div');
-raceLabel.className = 'menu-item';
 raceLabel.textContent = 'Race:';
 
 // Race Dropdown Select
 const raceSelect = document.createElement('select');
-raceSelect.className = 'menu-input';
 raceSelect.setAttribute('id', `raceSelectId-${unitCount}`); // Unique ID for each selection
 raceSelect.setAttribute('name', `raceSelectName-${unitCount}`); // Unique name for each selection
 
@@ -555,7 +501,6 @@ raceUnit.textContent = raceSelect.value;
 
 // Race Unit
 const raceUnit = document.createElement('div');
-raceUnit.className = 'menu-item';
 raceUnit.textContent = 'Race:';
 
 // Append race elements to the race container
@@ -565,11 +510,9 @@ raceContainer.appendChild(raceUnit);
 
 // Strength
 const strengthLabel = document.createElement('div');
-strengthLabel.className = 'menu-item';
 strengthLabel.textContent = 'S:';
 
 const strengthInput = document.createElement('input');
-strengthInput.className = 'menu-input';
 strengthInput.id = 'strengthInputId-' + unitCount;
 strengthInput.maxLength = 2;
 strengthInput.name='strengthInputName-' +unitCount;
@@ -579,11 +522,9 @@ strengthInput.type = 'text';
 
 // Dexterity
 const dexterityLabel = document.createElement('div');
-dexterityLabel.className = 'menu-item';
 dexterityLabel.textContent = 'D:';
 
 const dexterityInput = document.createElement('input');
-dexterityInput.className = 'menu-input';
 dexterityInput.id = 'dexterityInputId-' + unitCount;
 dexterityInput.maxLength = 2;
 dexterityInput.name = 'dexterityInputName-' + unitCount;
@@ -593,11 +534,9 @@ dexterityInput.type = 'text';
 
 // Constitution
 const constitutionLabel = document.createElement('div');
-constitutionLabel.className = 'menu-item';
 constitutionLabel.textContent = 'Co:';
 
 const constitutionInput = document.createElement('input');
-constitutionInput.className = 'menu-input';
 constitutionInput.id = 'constitutionInputId-' + unitCount;
 constitutionInput.maxLength = 2;
 constitutionInput.name = 'constitutionInputName-' + unitCount;
@@ -607,11 +546,9 @@ constitutionInput.type = 'text';
 
 // Intelligence
 const intelligenceLabel = document.createElement('div');
-intelligenceLabel.className = 'menu-item';
 intelligenceLabel.textContent = 'I:';
 
 const intelligenceInput = document.createElement('input');
-intelligenceInput.className = 'menu-input';
 intelligenceInput.id = 'intelligenceInputId-' + unitCount;
 intelligenceInput.maxLength = 2;
 intelligenceInput.name = 'intelligenceInputName-' + unitCount;
@@ -621,11 +558,9 @@ intelligenceInput.type = 'text';
 
 // Wisdom
 const wisdomLabel = document.createElement('div');
-wisdomLabel.className = 'menu-item';
 wisdomLabel.textContent = 'W:';
 
 const wisdomInput = document.createElement('input');
-wisdomInput.className = 'menu-input';
 wisdomInput.id = 'wisdomInputId-' + unitCount;
 wisdomInput.maxLength = 2;
 wisdomInput.name = 'wisdomInputName-' + unitCount;
@@ -635,11 +570,9 @@ wisdomInput.type = 'text';
 
 // Charisma
 const charismaLabel = document.createElement('div');
-charismaLabel.className = 'menu-item';
 charismaLabel.textContent = 'Ch:';
 
 const charismaInput = document.createElement('input');
-charismaInput.className = 'menu-input';
 charismaInput.id = 'charismaInputId-' + unitCount;
 charismaInput.maxLength = 2;
 charismaInput.name = 'charismaInputName-' + unitCount;
@@ -648,7 +581,6 @@ charismaInput.style.width = '3em';
 charismaInput.type = 'text';
 
 const addImageButton=Object.assign(document.createElement('button'),{
-className:'menu-button',
 textContent:'Add a miniature?',
 onclick:function() {
 imageInput.click();
@@ -658,7 +590,6 @@ imageInput.click();
 const imageInput=Object.assign(document.createElement('input'),{
 type:'file',
 accept:'image/*',
-style:'display:none;'
 });
 
 imageInput.addEventListener('change',function() {
@@ -684,11 +615,9 @@ reader.readAsDataURL(file);
 });
 
 const movementLabel=document.createElement('div');
-movementLabel.className='menu-item';
 movementLabel.textContent='MV:';
 
 const movementInput=document.createElement('input');
-movementInput.className='menu-input';
 movementInput.id='movementInputId'+unitCount;
 movementInput.maxLength=2;
 movementInput.name='movementInputName'+unitCount;
@@ -697,11 +626,9 @@ movementInput.style.width='3em';
 movementInput.type='text';
 
 const armorClassLabel=document.createElement('div');
-armorClassLabel.className='menu-item';
 armorClassLabel.textContent='AC:';
 
 const armorClassInput=document.createElement('input');
-armorClassInput.className='menu-input';
 armorClassInput.id = 'armorClassInputId-' + unitCount;
 armorClassInput.maxLength=2;
 armorClassInput.name = 'armorClassInputName-' + unitCount;
@@ -713,14 +640,12 @@ unitElement.dataset.ac=armorClassInput.value;
 armorClassUnit.textContent=`AC:${armorClassInput.value}`;
 });
 const armorClassUnit=document.createElement('div');
-armorClassUnit.className='menu-item';
 armorClassUnit.textContent='AC:';
+armorClassUnit.className='unit-style';
 
 const hitDiceLabel=document.createElement('div');
-hitDiceLabel.className='menu-item';
 hitDiceLabel.textContent='HD:';
 const hitDiceInput=document.createElement('input');
-hitDiceInput.className='menu-input';
 hitDiceInput.id='hitDiceInputId'+unitCount;
 hitDiceInput.maxLength=8;
 hitDiceInput.name='hitDiceInputName'+unitCount;
@@ -729,14 +654,12 @@ hitDiceInput.style.width='9em';
 hitDiceInput.type='text';
 
 const maximumHitPointsLabel=document.createElement('div');
-maximumHitPointsLabel.className='menu-item';
 maximumHitPointsLabel.textContent='maxHP:';
 
 const maximumHitPointsInput=Object.assign
 (
 document.createElement('input'),
 {
-className:'menu-input',
 id:'maximumHitPointsInputId'+unitCount,
 maxLength:3,
 name:'maximumHitPointsInputName'+unitCount,
@@ -752,10 +675,8 @@ type:'text',
 );
 
 const currentHitPointsLabel=document.createElement('div');
-currentHitPointsLabel.className='menu-item';
 currentHitPointsLabel.textContent='curHP:';
 const currentHitPointsInput=document.createElement('input');
-currentHitPointsInput.className='menu-input';
 currentHitPointsInput.id='currentHitPointsInputId'+unitCount;
 currentHitPointsInput.maxLength=3;
 currentHitPointsInput.name='currentHitPointsInputName'+unitCount;
@@ -763,34 +684,30 @@ currentHitPointsInput.size=3;
 currentHitPointsInput.style.width='4em';
 currentHitPointsInput.type='text';
 const currentHitPointsUnit=document.createElement('div');
-currentHitPointsUnit.className='menu-item';
 currentHitPointsUnit.textContent='HP:';
 currentHitPointsInput.addEventListener('input',
 function() {
 unitElement.dataset.curHP=currentHitPointsInput.value;
 currentHitPointsUnit.textContent=`HP:${currentHitPointsInput.value}`;
+currentHitPointsUnit.className='unit-style';
 });
 
 const menuAddRowButton=document.createElement('button');
-menuAddRowButton.className='menu-button';
 menuAddRowButton.textContent='Add a weapon or spell and effect?';
 
 menuAddRowButton.addEventListener('click',function() {
 const newRow=document.createElement('div');
-newRow.className='menu-item';
 
 const newAttackName=document.createElement('input');
 newAttackName.type='text';
-newAttackName.className='menu-input';
 newAttackName.placeholder='weapon or spell name and effect';
-newAttackName.maxLength=9;
-newAttackName.size=9;
-newAttackName.style.width='10em';
+newAttackName.maxLength=20;
+newAttackName.size=20;
+newAttackName.style.width='21em';
 newRow.appendChild(newAttackName);
 
 const newAttackRoll=document.createElement('input');
 newAttackRoll.type='text';
-newAttackRoll.className='menu-input';
 newAttackRoll.placeholder='Attack Roll';
 newAttackRoll.maxLength=8;
 newAttackRoll.size=8;
@@ -798,7 +715,6 @@ newAttackRoll.style.width='9em';
 newRow.appendChild(newAttackRoll);
 
 const attackRollResult = document.createElement('span');
-attackRollResult.className = 'attack-roll-result';
 
 newRow.appendChild(newAttackRoll);
 newRow.appendChild(attackRollResult);
@@ -806,16 +722,15 @@ newRow.appendChild(attackRollResult);
 newAttackRoll.addEventListener('mouseout', function() {
   const attackRollValue = newAttackRoll.value;
   const rollResult = rollDice(attackRollValue);
-  attackRollResult.textContent = `Attack Result: ${rollResult}`; // Update the result display
+  attackRollResult.textContent = `Attack Result:${rollResult}`;
 });
 
 const newDamageRoll=document.createElement('input');
 newDamageRoll.type='text';
-newDamageRoll.className='menu-input';
 newDamageRoll.placeholder='Damage Roll';
 newDamageRoll.maxLength=8;
 newDamageRoll.size=8;
-newDamageRoll.style.width='17em';
+newDamageRoll.style.width='9em';
 newRow.appendChild(newDamageRoll);
 
 function rollDice(diceString) {
@@ -829,7 +744,6 @@ return total;
 }
 
 const damageRollResult = document.createElement('span');
-damageRollResult.className = 'damage-roll-result';
 
 newRow.appendChild(newDamageRoll);
 newRow.appendChild(damageRollResult);
@@ -837,7 +751,7 @@ newRow.appendChild(damageRollResult);
 newDamageRoll.addEventListener('mouseout', function() {
   const damageRollValue = newDamageRoll.value;
   const rollResult = rollDice(damageRollValue);
-  damageRollResult.textContent = `Damage Result: ${rollResult}`; // Update the result display
+  damageRollResult.textContent = ` Damage Result:${rollResult}`;
 });
 
 newRow.appendChild(newDamageRoll);
@@ -849,7 +763,6 @@ menu.insertBefore(newRow,menuAddRowButton);
 });
 
 const deleteButton=document.createElement('button');
-deleteButton.className='menu-button';
 deleteButton.textContent='Delete this piece?';
 deleteButton.addEventListener('click',function() {
 menu.remove();
@@ -858,11 +771,9 @@ unitElement.remove();
 
 menuButton.addEventListener('click',function(event) {
 event.stopPropagation();
-menu.style.display='inline-block';
 });
 
 document.addEventListener('click',function() {
-//menu.style.display='none';
 });
 
 menu.addEventListener('click',function(event) {
@@ -872,19 +783,19 @@ event.stopPropagation();
 movementInput.addEventListener('input',function() {
 unitElement.dataset.mv=movementInput.value;
 movementUnit.textContent=`MV:${movementInput.value}`;
+movementUnit.className='unit-style';
 });
 
 hitDiceInput.addEventListener('input',function() {
 unitElement.dataset.hd=hitDiceInput.value;
 hitDiceUnit.textContent=`HD:${hitDiceInput.value}`;
+hitDiceUnit.className='unit-style';
 });
 
 const nameUnit=document.createElement('div');
-nameUnit.className='menu-item';
 nameUnit.textContent='Name';
 
 const movementUnit=document.createElement('div');
-movementUnit.className='menu-item';
 movementUnit.textContent='MV:';
 
 movementInput.addEventListener('input',function() {
@@ -893,7 +804,6 @@ movementUnit.textContent=`MV:${movementInput.value}`;
 });
 
 const hitDiceUnit=document.createElement('div');
-hitDiceUnit.className='menu-item';
 hitDiceUnit.textContent='HD:';
 
 hitDiceInput.addEventListener('input',function() {
@@ -914,6 +824,12 @@ unitElement.appendChild(nameUnit);
 
 board.appendChild(unitElement);
 
+const horizontalRule = document.createElement('hr');
+horizontalRule.style.border = '0';
+horizontalRule.style.height = '2px';
+horizontalRule.style.background = 'red';
+
+menu.appendChild(horizontalRule);
 menu.appendChild(nameLabel);
 menu.appendChild(nameInput);
 menu.appendChild(addImageButton);
@@ -960,7 +876,6 @@ return unitElement;
 <br>
 <a href='https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up' target='_blank'>Dungeon Module L1 "The Secret of Bone Hill</a>
 <br>
-
 <img src='Decorations/DiceSprite.png'><br>
 <button id="rollD20Button">Roll D20</button>
 <button id="rollD12Button">Roll D12</button>
@@ -970,13 +885,11 @@ return unitElement;
 <button id="rollD4Button">Roll D4</button>
 
 <div id="resultsContainer"></div>
-</td></tr><td></td><tr><td>
 <img src=Decorations/Table1.png>
 <img src=Decorations/Table2.png>
 <img src=Decorations/Table3.png>
 <img src=Decorations/Table4.png>
 <img src=Decorations/Table5.png>
 <img src=Decorations/Table6.png>
-</td></tr></table>
 </body>
 </html>
