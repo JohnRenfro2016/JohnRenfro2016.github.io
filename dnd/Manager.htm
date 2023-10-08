@@ -49,14 +49,13 @@ touch-action:none;
 {
 height:auto;
 position:relative;
-width:600px;
 }
 
 .square
 {
-width:100px;
-height:100px;
 border:1px solid #000;
+height:100px;
+width:100px;
 }
 
 .unit
@@ -438,43 +437,11 @@ nameInput.name = 'nameInputName-' + unitCount;
 nameInput.placeholder='character or monster name';
 nameInput.maxLength=20 ;
 nameInput.size=20;
-nameInput.style.width='21em';
+nameInput.style.width='21';
 nameInput.addEventListener('input',function() {
 nameUnit.textContent=nameInput.value;
 });
 
-const classLabel = document.createElement('div');
-classLabel.textContent = 'Class:';
-
-const classSelect = document.createElement('select');
-classSelect.setAttribute('id', `classSelectId-${unitCount}`); // Unique ID for each selection
-classSelect.setAttribute('name', `classSelectName-${unitCount}`); // Unique name for each selection
-
-const classes = ['Cleric', 'Fighter', 'Magic-User', 'Paladin', 'Ranger', 'Thief'];
-
-classes.forEach(className => {
-const option = document.createElement('option');
-option.value = className;
-option.textContent = className;
-classSelect.appendChild(option);
-});
-
-classSelect.addEventListener('change', function() {
-classUnit.textContent = classSelect.value;
-});
-
-const classUnit = document.createElement('div');
-classUnit.textContent = 'Class:';
-
-// Append everything to the container
-const container = document.createElement('div');
-container.appendChild(nameLabel);
-container.appendChild(nameInput);
-container.appendChild(classLabel);
-container.appendChild(classSelect);
-container.appendChild(classUnit);
-
-// Create a container for the race dropdown menu
 const raceContainer = document.createElement('div');
 
 // Race Label
@@ -496,89 +463,30 @@ raceSelect.appendChild(option);
 });
 
 raceSelect.addEventListener('change', function() {
-raceUnit.textContent = raceSelect.value;
+    raceUnit.textContent = raceSelect.value;
+    if (raceSelect.value === "Orc") {
+        nameInput.value = 'Orc';
+        nameUnit.textContent=`Name:${'Orc'}`;
+        armorClassInput.value = '6';
+        armorClassUnit.textContent=`AC:${6}`;
+        hitDiceInput.value = '1';
+        hitDiceUnit.textContent=`HD:${1}`;
+        currentHitPointsInput.value=8;
+        currentHitPointsUnit.textContent=`HP:${8}`;
+        movementInput.value = '9';
+        movementUnit.textContent=`MV:${9}`;
+    }
+    else {
+        // Reset stats to default values for other races if needed
+    }
 });
 
-// Race Unit
 const raceUnit = document.createElement('div');
 raceUnit.textContent = 'Race:';
 
 // Append race elements to the race container
 raceContainer.appendChild(raceLabel);
 raceContainer.appendChild(raceSelect);
-raceContainer.appendChild(raceUnit);
-
-// Strength
-const strengthLabel = document.createElement('div');
-strengthLabel.textContent = 'S:';
-
-const strengthInput = document.createElement('input');
-strengthInput.id = 'strengthInputId-' + unitCount;
-strengthInput.maxLength = 2;
-strengthInput.name='strengthInputName-' +unitCount;
-strengthInput.size = 2;
-strengthInput.style.width = '3em';
-strengthInput.type = 'text';
-
-// Dexterity
-const dexterityLabel = document.createElement('div');
-dexterityLabel.textContent = 'D:';
-
-const dexterityInput = document.createElement('input');
-dexterityInput.id = 'dexterityInputId-' + unitCount;
-dexterityInput.maxLength = 2;
-dexterityInput.name = 'dexterityInputName-' + unitCount;
-dexterityInput.size = 2;
-dexterityInput.style.width = '3em';
-dexterityInput.type = 'text';
-
-// Constitution
-const constitutionLabel = document.createElement('div');
-constitutionLabel.textContent = 'Co:';
-
-const constitutionInput = document.createElement('input');
-constitutionInput.id = 'constitutionInputId-' + unitCount;
-constitutionInput.maxLength = 2;
-constitutionInput.name = 'constitutionInputName-' + unitCount;
-constitutionInput.size = 2;
-constitutionInput.style.width = '3em';
-constitutionInput.type = 'text';
-
-// Intelligence
-const intelligenceLabel = document.createElement('div');
-intelligenceLabel.textContent = 'I:';
-
-const intelligenceInput = document.createElement('input');
-intelligenceInput.id = 'intelligenceInputId-' + unitCount;
-intelligenceInput.maxLength = 2;
-intelligenceInput.name = 'intelligenceInputName-' + unitCount;
-intelligenceInput.size = 2;
-intelligenceInput.style.width = '3em';
-intelligenceInput.type = 'text';
-
-// Wisdom
-const wisdomLabel = document.createElement('div');
-wisdomLabel.textContent = 'W:';
-
-const wisdomInput = document.createElement('input');
-wisdomInput.id = 'wisdomInputId-' + unitCount;
-wisdomInput.maxLength = 2;
-wisdomInput.name = 'wisdomInputName-' + unitCount;
-wisdomInput.size = 2;
-wisdomInput.style.width = '3em';
-wisdomInput.type = 'text';
-
-// Charisma
-const charismaLabel = document.createElement('div');
-charismaLabel.textContent = 'Ch:';
-
-const charismaInput = document.createElement('input');
-charismaInput.id = 'charismaInputId-' + unitCount;
-charismaInput.maxLength = 2;
-charismaInput.name = 'charismaInputName-' + unitCount;
-charismaInput.size = 2;
-charismaInput.style.width = '3em';
-charismaInput.type = 'text';
 
 const addImageButton=Object.assign(document.createElement('button'),{
 textContent:'Add a miniature?',
@@ -605,9 +513,8 @@ imageElement.addEventListener('dragstart',function(event) {
 event.preventDefault();
 });
 
-unitElement.style.backgroundImage=`url(${reader.result})`; // Set image as background
+unitElement.style.backgroundImage=`url(${reader.result})`;
 
-// Remove the added image element
 imageElement.remove();
 }
 
@@ -622,7 +529,7 @@ movementInput.id='movementInputId'+unitCount;
 movementInput.maxLength=2;
 movementInput.name='movementInputName'+unitCount;
 movementInput.size=2;
-movementInput.style.width='3em';
+movementInput.style.width='3';
 movementInput.type='text';
 
 const armorClassLabel=document.createElement('div');
@@ -633,11 +540,12 @@ armorClassInput.id = 'armorClassInputId-' + unitCount;
 armorClassInput.maxLength=2;
 armorClassInput.name = 'armorClassInputName-' + unitCount;
 armorClassInput.size=2;
-armorClassInput.style.width='3em';
+armorClassInput.style.width='3';
 armorClassInput.type='text';
 armorClassInput.addEventListener('input',function() {
 unitElement.dataset.ac=armorClassInput.value;
 armorClassUnit.textContent=`AC:${armorClassInput.value}`;
+armorClassUnit.className='unit-style';
 });
 const armorClassUnit=document.createElement('div');
 armorClassUnit.textContent='AC:';
@@ -650,7 +558,7 @@ hitDiceInput.id='hitDiceInputId'+unitCount;
 hitDiceInput.maxLength=8;
 hitDiceInput.name='hitDiceInputName'+unitCount;
 hitDiceInput.size=8;
-hitDiceInput.style.width='9em';
+hitDiceInput.style.width='9';
 hitDiceInput.type='text';
 
 const maximumHitPointsLabel=document.createElement('div');
@@ -669,7 +577,7 @@ currentHitPointsInput.value=this.value;
 currentHitPointsUnit.textContent=`HP:${this.value}`;
 },
 size:3,
-style:'width:4em;',
+style:'width:4;',
 type:'text',
 }
 );
@@ -681,7 +589,7 @@ currentHitPointsInput.id='currentHitPointsInputId'+unitCount;
 currentHitPointsInput.maxLength=3;
 currentHitPointsInput.name='currentHitPointsInputName'+unitCount;
 currentHitPointsInput.size=3;
-currentHitPointsInput.style.width='4em';
+currentHitPointsInput.style.width='4';
 currentHitPointsInput.type='text';
 const currentHitPointsUnit=document.createElement('div');
 currentHitPointsUnit.textContent='HP:';
@@ -703,15 +611,15 @@ newAttackName.type='text';
 newAttackName.placeholder='weapon or spell name and effect';
 newAttackName.maxLength=20;
 newAttackName.size=20;
-newAttackName.style.width='21em';
+newAttackName.style.width='21';
 newRow.appendChild(newAttackName);
 
 const newAttackRoll=document.createElement('input');
 newAttackRoll.type='text';
-newAttackRoll.placeholder='Attack Roll';
+newAttackRoll.placeholder='Attack XdY+Z';
 newAttackRoll.maxLength=8;
 newAttackRoll.size=8;
-newAttackRoll.style.width='9em';
+newAttackRoll.style.width='9';
 newRow.appendChild(newAttackRoll);
 
 const attackRollResult = document.createElement('span');
@@ -722,15 +630,15 @@ newRow.appendChild(attackRollResult);
 newAttackRoll.addEventListener('mouseout', function() {
   const attackRollValue = newAttackRoll.value;
   const rollResult = rollDice(attackRollValue);
-  attackRollResult.textContent = `Attack Result:${rollResult}`;
+  attackRollResult.textContent = `Attack Result:  ${rollResult}`;
 });
 
 const newDamageRoll=document.createElement('input');
 newDamageRoll.type='text';
-newDamageRoll.placeholder='Damage Roll';
+newDamageRoll.placeholder='Damage XdY+Z';
 newDamageRoll.maxLength=8;
 newDamageRoll.size=8;
-newDamageRoll.style.width='9em';
+newDamageRoll.style.width='9';
 newRow.appendChild(newDamageRoll);
 
 function rollDice(diceString) {
@@ -751,7 +659,7 @@ newRow.appendChild(damageRollResult);
 newDamageRoll.addEventListener('mouseout', function() {
   const damageRollValue = newDamageRoll.value;
   const rollResult = rollDice(damageRollValue);
-  damageRollResult.textContent = ` Damage Result:${rollResult}`;
+  damageRollResult.textContent = `  Damage Result:  ${rollResult}`;
 });
 
 newRow.appendChild(newDamageRoll);
@@ -783,13 +691,11 @@ event.stopPropagation();
 movementInput.addEventListener('input',function() {
 unitElement.dataset.mv=movementInput.value;
 movementUnit.textContent=`MV:${movementInput.value}`;
-movementUnit.className='unit-style';
 });
 
 hitDiceInput.addEventListener('input',function() {
 unitElement.dataset.hd=hitDiceInput.value;
 hitDiceUnit.textContent=`HD:${hitDiceInput.value}`;
-hitDiceUnit.className='unit-style';
 });
 
 const nameUnit=document.createElement('div');
@@ -797,6 +703,7 @@ nameUnit.textContent='Name';
 
 const movementUnit=document.createElement('div');
 movementUnit.textContent='MV:';
+movementUnit.className='unit-style';
 
 movementInput.addEventListener('input',function() {
 unitElement.dataset.mv=movementInput.value;
@@ -805,6 +712,7 @@ movementUnit.textContent=`MV:${movementInput.value}`;
 
 const hitDiceUnit=document.createElement('div');
 hitDiceUnit.textContent='HD:';
+hitDiceUnit.className='unit-style';
 
 hitDiceInput.addEventListener('input',function() {
 unitElement.dataset.hd=hitDiceInput.value;
@@ -845,19 +753,6 @@ menu.appendChild(currentHitPointsInput);
 menu.appendChild(movementLabel);
 menu.appendChild(movementInput);
 menu.appendChild(menuAddRowButton);
-menu.appendChild(strengthLabel);
-menu.appendChild(strengthInput);
-menu.appendChild(dexterityLabel);
-menu.appendChild(dexterityInput);
-menu.appendChild(constitutionLabel);
-menu.appendChild(constitutionInput);
-menu.appendChild(intelligenceLabel);
-menu.appendChild(intelligenceInput);
-menu.appendChild(wisdomLabel);
-menu.appendChild(wisdomInput);
-menu.appendChild(charismaLabel);
-menu.appendChild(charismaInput);
-menu.appendChild(container);
 menu.appendChild(raceContainer);
 menu.appendChild(deleteButton);
 
