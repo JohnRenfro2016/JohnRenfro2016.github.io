@@ -1458,6 +1458,7 @@ const replsB = [
 {p1:/(度)(?!X)(忘)(?!X)(れ)(?!X)/g,r1:'$1Xdo$2Xwa$3Xsure-memory lapse,mental block~Noun'},
 {p1:/(座)(?!X)(布)(?!X)(団)(?!X)/g,r1:'$1Xzab$2Xut$3Xon-cushion~Noun'},
 {p1:/(廃)(?!X)(棄)(?!X)(物)(?!X)/g,r1:'$1Xhai$2Xki$3Xbutsu-waste~Noun'},
+{p1:/(自)(?!X)(治)(?!X)(区)(?!X)/g,r1:'$1Xji$2Xchi$3Xku-autonomous region~Noun'},
 {p1:/(延)(?!X)(ば)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xnob$2Xa-extend,postpone$3X~SuVerb'},
 {p1:/(延)(?!X)(び)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xnob$2Xi-extend,postpone$3X~RuVerb'},
 {p1:/(建)(?!X)(て)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xtat$2Xe-build,erect$3X~RuVerb'},
@@ -6635,7 +6636,7 @@ const replsB = [
 {p1:/(農)(?!X)(業)(?!X)/g,r1:'$1Xnou$2Xgyou-agriculture~Noun'},
 {p1:/(農)(?!X)(民)(?!X)/g,r1:'$1Xnou$2Xmin-peasants~Noun'},
 {p1:/(辺)(?!X)(り)(?!X)/g,r1:'$1Xata$2Xri-vicinity,around~Noun'},
-{p1:/(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xko-a lot,rapidly,strongly~MuVerb'},
+{p1:/(込)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xko-a lot,rapidly,strongly~$2XMuVerb'},
 {p1:/(込)(?!X)(め)(?!X)/g,r1:'$1Xko$2Xme-put in or up~IchidanVerb'},
 {p1:/(迂)(?!X)(回)(?!X)/g,r1:'$1Xu$2Xkai-detour~Noun'},
 {p1:/(迅)(?!X)(速)(?!X)/g,r1:'$1Xjin$2Xsoku-expedited~Noun'},
@@ -7145,6 +7146,7 @@ const replsB = [
 {p1:/(駐)(?!X)(在)(?!X)/g,r1:'$1Xcyuu$2Xzai-overseas post~Noun'},
 {p1:/(駐)(?!X)(日)(?!X)/g,r1:'$1Xcyuu$2Xnichi-expatriot~Noun'},
 {p1:/(駐)(?!X)(留)(?!X)/g,r1:'$1Xcyuu$2Xryuu-stationing of troops~Noun'},
+{p1:/(掃)(?!X)(討)(?!X)/g,r1:'$1Xsou$2Xtou-mopping up the enemy~Noun'},
 {p1:/(駐)(?!X)(車)(?!X)/g,r1:'$1Xcyuu$2Xsya-parking~Noun'},
 {p1:/(騒)(?!X)(が|ぎ|ぐ|げ|ご|い)(?!X)/g,r1:'$1Xsawa-comotion$2X~GuVerb'},
 {p1:/(騒)(?!X)(ぎ)(?!X)/g,r1:'$1Xsawa$2Xgi-commotion~Noun'},
@@ -8168,6 +8170,7 @@ const replsB = [
 {p1:/(べX)(~BuVerb)/g,r1:'<p>べXbe,can do$2'},
 {p1:/(ぼX)(~BuVerb)/g,r1:'<p>ぼXbo,let us do$2'},
 {p1:/(まX)(~MuVerb)/g,r1:'<p>まXma$2'},
+{p1:/(んX)(~MuVerb)/g,r1:'<p>んXn$2'},
 {p1:/(みX)(~MuVerb)/g,r1:'<p>みXmi$2'},
 {p1:/(むX)(~MuVerb)/g,r1:'<p>むXmu,to do,will do$2'},
 {p1:/(めX)(~MuVerb)/g,r1:'<p>めXme,can do$2'},
@@ -8220,7 +8223,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-地震によって発生する津波の全てを正確に予測する事はできず、人的被害を免れた多くの例は、可能な限り早く高くへ逃げるという津波襲来時の避難の原則に従ったケースでした。東日本大震災では、押し寄せる津波が当初予測された数値よりも遙かに高い例が多くありました。
+パレスチナ自治区のイスラム組織「ハマス」とイスラエルの武力衝突による死者は1600人近くにのぼっていて、事態がさらに悪化する懸念もでています。ハマスが7日におこなった大規模攻撃への報復として、イスラエルはガザにあるハマスの拠点などへの空爆や、ハマスの戦闘員の掃討作戦を続けています。ハマス側も断続的にイスラエルにロケット弾を撃ち込んでいて、イスラエルメディアはおよそ900人が死亡したと伝えています。一方、パレスチナ側の保健当局はこれまでに687人が死亡したとしていて、双方の死者は1600人近くにのぼっています。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
