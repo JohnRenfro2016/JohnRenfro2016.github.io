@@ -453,7 +453,7 @@ const raceSelect = document.createElement('select');
 raceSelect.setAttribute('id', `raceSelectId-${unitCount}`); // Unique ID for each selection
 raceSelect.setAttribute('name', `raceSelectName-${unitCount}`); // Unique name for each selection
 
-const races = ['Dwarf', 'Elf', 'Half-Elf', 'Gnome', 'Human', 'Halfling', 'Orc', 'Half-Orc'];
+const races = ['Dwarf', 'Elf', 'Elf,Half', 'Gnoll', 'Gnome', 'Human', 'Halfling', 'Orc', 'Orc,Half'];
 
 races.forEach(raceName => {
 const option = document.createElement('option');
@@ -464,13 +464,27 @@ raceSelect.appendChild(option);
 
 raceSelect.addEventListener('change', function() {
     raceUnit.textContent = raceSelect.value;
+    if (raceSelect.value === "Gnoll") {
+        nameInput.value = 'Gnoll 1';
+        nameUnit.textContent=`Name:${'Gnoll 1'}`;
+        armorClassInput.value = '5';
+        armorClassUnit.textContent=`AC:${5}`;
+        hitDiceInput.value = '2';
+        hitDiceUnit.textContent=`HD:${2}`;
+        maximumHitPointsInput.value=16;
+        currentHitPointsInput.value=16;
+        currentHitPointsUnit.textContent=`HP:${16}`;
+        movementInput.value = '9';
+        movementUnit.textContent=`MV:${9}`;
+    }
     if (raceSelect.value === "Orc") {
-        nameInput.value = 'Orc';
-        nameUnit.textContent=`Name:${'Orc'}`;
+        nameInput.value = 'Orc 1';
+        nameUnit.textContent=`Name:${'Orc 1'}`;
         armorClassInput.value = '6';
         armorClassUnit.textContent=`AC:${6}`;
         hitDiceInput.value = '1';
         hitDiceUnit.textContent=`HD:${1}`;
+        maximumHitPointsInput.value=8;
         currentHitPointsInput.value=8;
         currentHitPointsUnit.textContent=`HP:${8}`;
         movementInput.value = '9';
@@ -780,11 +794,8 @@ return unitElement;
 <button id="rollD4Button">Roll D4</button>
 
 <div id="resultsContainer"></div>
-<img src=Decorations/Table1.png>
-<img src=Decorations/Table2.png>
+<img src=Decorations/Table1.png><br>
+<img src=Decorations/Table2.png><br>
 <img src=Decorations/Table3.png>
-<img src=Decorations/Table4.png>
-<img src=Decorations/Table5.png>
-<img src=Decorations/Table6.png>
 </body>
 </html>
