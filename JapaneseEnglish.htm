@@ -4715,6 +4715,7 @@ const replsB = [
 {p1:/(日)(?!X)(常)(?!X)/g,r1:'$1Xnichi$2Xjyou-daily,everyday~Noun'},
 {p1:/(日)(?!X)(数)(?!X)/g,r1:'$1Xnis$2Xsuu-number of days~Noun'},
 {p1:/(日)(?!X)(日)(?!X)/g,r1:'$1Xhi$2Xnichi-date,number of days~Noun'},
+{p1:/(搬)(?!X)(出)(?!X)/g,r1:'$1Xhan$2Xsyutsu-carry out~Noun'},
 {p1:/(日)(?!X)(時)(?!X)/g,r1:'$1Xnichi$2Xji-calendar date~Noun'},
 {p1:/(日)(?!X)(本)(?!X)/g,r1:'$1Xni$2Xhon-Japan~Noun'},
 {p1:/(日)(?!X)(程)(?!X)/g,r1:'$1Xnit$2Xtei-schedule~Noun'},
@@ -4837,6 +4838,7 @@ const replsB = [
 {p1:/(最)(?!X)(高)(?!X)/g,r1:'$1Xsai$2Xkou-maximum~Noun'},
 {p1:/(月)(?!X)(内)(?!X)/g,r1:'$1Xgetsu$2Xnai-within month~Noun'},
 {p1:/(月)(?!X)(刊)(?!X)/g,r1:'$1Xgek$2Xkan-published monthly~Noun'},
+{p1:/(貯)(?!X)(蔵)(?!X)/g,r1:'$1Xcyo$2Xzou-storage~Noun'},
 {p1:/(月)(?!X)(夜)(?!X)/g,r1:'$1Xtsu$2Xkiyo-moonlit night~Noun'},
 {p1:/(月)(?!X)(日)(?!X)/g,r1:'$1Xgap$2Xpi-date~Noun'},
 {p1:/(月)(?!X)(日)(?!X)/g,r1:'$1Xtsu$2Xkihi-time,days~Noun'},
@@ -5186,6 +5188,7 @@ const replsB = [
 {p1:/(沸)(?!X)(騰)(?!X)/g,r1:'$1Xfut$2Xtou-boiling~Noun'},
 {p1:/(油)(?!X)(断)(?!X)/g,r1:'$1Xyu$2Xdan-inattention~Noun'},
 {p1:/(油)(?!X)(絵)(?!X)/g,r1:'$1Xabu$2Xrae-oil painting~Noun'},
+{p1:/(関)(?!X)(電)(?!X)/g,r1:'$1Xkan$2Xden-electrode~Noun'},
 {p1:/(治)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xnao-cure,heal$2X~SuVerb'},
 {p1:/(治)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xnao-be cured,get well$2X~RuVerb'},
 {p1:/(治)(?!X)(療)(?!X)/g,r1:'$1Xchi$2Xryou-medical treatment~Noun'},
@@ -7385,6 +7388,8 @@ const replsB = [
 {p1:/(噂)(?!X)/g,r1:'$1Xuwasa-gossip,rumor~Noun'},
 {p1:/(器)(?!X)/g,r1:'$1Xutsuwa-vessel,dish~Noun'},
 {p1:/(囚)(?!X)/g,r1:'$1Xsyuu-prisoner~Noun'},
+{p1:/(康)(?!X)/g,r1:'$1Xyasu-peaceful~Noun'},
+{p1:/(稔)(?!X)/g,r1:'$1Xtoshi-harvest~Noun'},
 {p1:/(回)(?!X)/g,r1:'$1Xkai-repitition~Noun'},
 {p1:/(団)(?!X)/g,r1:'$1Xdan-corps~Noun'},
 {p1:/(図)(?!X)/g,r1:'$1Xzu-figure,map~Noun'},
@@ -7416,7 +7421,7 @@ const replsB = [
 {p1:/(声)(?!X)/g,r1:'$1Xkoe-voice~Noun'},
 {p1:/(変)(?!X)/g,r1:'$1Xhen-strange,funny~Noun'},
 {p1:/(夏)(?!X)/g,r1:'$1Xnatsu-summer~Noun'},
-{p1:/(外)(?!X)/g,r1:'$1Xsoto-outside~Noun'},
+{p1:/(外)(?!X)/g,r1:'$1Xsoto,+gai+-outside~Noun'},
 {p1:/(多)(?!X)/g,r1:'$1Xta-multi~Noun'},
 {p1:/(夜)(?!X)/g,r1:'$1Xyoru,ya,evening~Noun'},
 {p1:/(夢)(?!X)/g,r1:'$1Xyume-dream~Noun'},
@@ -7542,10 +7547,11 @@ const replsB = [
 {p1:/(扉)(?!X)/g,r1:'$1Xtobira-door~Noun'},
 {p1:/(手)(?!X)/g,r1:'$1Xte-hand~Noun'},
 {p1:/(拓)(?!X)/g,r1:'$1Xtaku-clear the land~Noun'},
+{p1:/(望)(?!X)/g,r1:'$1Xmochi-bou-full moon~Noun'},
 {p1:/(指)(?!X)/g,r1:'$1Xyubi-finger,toe~Noun'},
 {p1:/(損)(?!X)/g,r1:'$1Xson-loss,damage~Noun'},
 {p1:/(敗)(?!X)/g,r1:'$1Xhai-losses~Noun'},
-{p1:/(敦)(?!X)/g,r1:'$1Xatsu-industry~Noun'},
+{p1:/(敦)(?!X)/g,r1:'$1Xatsu,tsuru-industry~Noun'},
 {p1:/(数)(?!X)/g,r1:'$1Xsu,kazu,a number of~Noun'},
 {p1:/(敵)(?!X)/g,r1:'$1Xteki-enemy~Noun'},
 {p1:/(文)(?!X)/g,r1:'$1Xbun,Fumi,sentence~Noun'},
@@ -7853,6 +7859,8 @@ const replsB = [
 {p1:/(色)(?!X)/g,r1:'$1Xiro-color~Noun'},
 {p1:/(芋)(?!X)/g,r1:'$1Ximo-potato,yam~Noun'},
 {p1:/(肘)(?!X)/g,r1:'$1Xhiji-elbow~Noun'},
+{p1:/(達)(?!X)/g,r1:'$1Xtatsu-accomplished~Noun'},
+{p1:/(杉)(?!X)/g,r1:'$1Xsugi-cedar~Noun'},
 {p1:/(花|華)(?!X)/g,r1:'$1Xhana,ka-flower~Noun'},
 {p1:/(芳)(?!X)/g,r1:'$1Xyoshi-favorable~Noun'},
 {p1:/(芽)(?!X)/g,r1:'$1Xme-bud,sprout~Noun'},
@@ -7923,11 +7931,12 @@ const replsB = [
 {p1:/(費)(?!X)/g,r1:'$1Xhi-expense~Noun'},
 {p1:/(賀)(?!X)/g,r1:'$1Xka,ga-celebration~Noun'},
 {p1:/(賃)(?!X)/g,r1:'$1Xchin-wages~Noun'},
+{p1:/(基)(?!X)/g,r1:'$1Xmoto-base,origin~Noun'},
 {p1:/(賞)(?!X)/g,r1:'$1Xsyou-award~Noun'},
 {p1:/(賢)(?!X)/g,r1:'$1Xken-genius~Noun'},
 {p1:/(質)(?!X)/g,r1:'$1Xshitsu-quality,nature~Noun'},
 {p1:/(赤)(?!X)/g,r1:'$1Xaka-red,crimson~Noun'},
-{p1:/(超)(?!X)/g,r1:'$1Xcyou-over;very~Noun'},
+{p1:/(超)(?!X)/g,r1:'$1Xcyou,koe-over;very~Noun'},
 {p1:/(越)(?!X)/g,r1:'$1Xkoshi,etsu-yew~Noun'},
 {p1:/(足)(?!X)/g,r1:'$1Xashi-leg,foot~Noun'},
 {p1:/(跡)(?!X)/g,r1:'$1Xato-trace~Noun'},
@@ -8228,7 +8237,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-元乃木坂46の衛藤美彩（30）が12日朝、自身のインスタグラムを更新した。夫西武源田壮亮内野手（30）や息子との家族ショットを公開し、第2子を妊娠したことを報告した。
+関西電力が福井県内の原子力発電所から出る使用済み核燃料をフランスに搬出する計画を巡り、同県の杉本達治知事が１３日、同県敦賀市内で西村康稔経済産業相、関電の森望社長と会談した。知事は計画を受け入れると表明した。関電は、使用済み燃料を一時保管する中間貯蔵の県外立地を年内に確定できなければ、運転開始から４０年超の県内の原発３基（美浜３、高浜１、２号機）を停止すると約束していたが、停止は回避される見通し。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
