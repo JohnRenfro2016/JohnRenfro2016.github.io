@@ -76,7 +76,7 @@ const replsC =
 replsC.forEach(replace => {
  b = b.replace(replace.p1,replace.r1);
 });
-document.getElementById("enteredWord").innerHTML="{p:/ ("+b+")/ig,r:'$1|"+c+"'},";
+document.getElementById("enteredWord").innerHTML="{p:/ ("+b+")/ig,r:'$1|"+c+"~suff~'},";
 }
 
 function translateB()
@@ -88,7 +88,8 @@ const replsB = [
 
 {p:/ /ig,r:' <p> '},
 
-{p:/ (гос)/ig,r:'~$1~suff~tate '},
+{p:/ (контр)/ig,r:'$1|counter| '},
+{p:/ (гос)/ig,r:'$1|state| '},
 
 {p:/ (превосходительств)/ig,r:'$1|excellency(title)~suff~'},
 {p:/ (сельскохозяйственн)/ig,r:'$1|agricultural~suff~'},
@@ -903,7 +904,7 @@ const replsB = [
 {p:/ (сентябрьск)/ig,r:'$1|September~suff~'},
 {p:/ (следовател)/ig,r:'$1|investigator~suff~'},
 {p:/ (собеседник)/ig,r:'$1|interlocutor one is talking to~suff~'},
-{p:/ (согласовыв)/ig,r:'$1|coordinate~suff~'},
+{p:/ (согласован)/ig,r:'$1|coordinate~suff~'},
 {p:/ (сознательн)/ig,r:'$1|awareness~suff~'},
 {p:/ (сомнительн)/ig,r:'$1|doubtful~suff~'},
 {p:/ (соответств)/ig,r:'$1|accordance~suff~'},
@@ -1615,6 +1616,7 @@ const replsB = [
 {p:/ (утопическ)/ig,r:'$1|utopian~suff~'},
 {p:/ (фактическ)/ig,r:'$1|actual~suff~'},
 {p:/ (факультет)/ig,r:'$1|faculty~suff~'},
+{p:/ (наступлен)/ig,r:'$1|offensive~suff~'},
 {p:/ (фантастик)/ig,r:'$1|fantastic~suff~'},
 {p:/ (физически)/ig,r:'$1|physically~suff~'},
 {p:/ (философск)/ig,r:'$1|philosophical~suff~'},
@@ -1882,6 +1884,7 @@ const replsB = [
 {p:/ (инструкц)/ig,r:'$1|instructions~suff~'},
 {p:/ (интервью)/ig,r:'$1|(n indecl)interview~suff~'},
 {p:/ (интересн)/ig,r:'$1|interesting~suff~'},
+{p:/ (логистик)/ig,r:'$1|logistic~suff~'},
 {p:/ (информац)/ig,r:'$1|information~suff~'},
 {p:/ (исключен)/ig,r:'$1|exception~suff~'},
 {p:/ (исподвол)/ig,r:'$1|gradually~suff~'},
@@ -3034,7 +3037,7 @@ const replsB = [
 {p:/ (намерен)/ig,r:'$1|intention~suff~'},
 {p:/ (намного)/ig,r:'$1|by a lot~suff~'},
 {p:/ (нанести)/ig,r:'$1|inflict ,pile up~suff~'},
-{p:/ (напад)/ig,r:'$1|attack~suff~'},
+{p:/ (нападен)/ig,r:'$1|attack~suff~'},
 {p:/ (напечат)/ig,r:'$1|print~suff~'},
 {p:/ (напиток)/ig,r:'$1|drink~suff~'},
 {p:/ (наподоб)/ig,r:'$1|like~suff~'},
@@ -3384,7 +3387,6 @@ const replsB = [
 {p:/ (помидор)/ig,r:'$1|tomato~suff~'},
 {p:/ (помилов)/ig,r:'$1|pardon~suff~'},
 {p:/ (понадоб)/ig,r:'$1|be necessity~suff~'},
-{p:/ (понести)/ig,r:'$1|carry~suff~'},
 {p:/ (понижен)/ig,r:'$1|lowering~suff~'},
 {p:/ (пониман)/ig,r:'$1|understanding~suff~'},
 {p:/ (поперёк)/ig,r:'$1|across~suff~'},
@@ -3412,7 +3414,7 @@ const replsB = [
 {p:/ (посмотр)/ig,r:'$1|watch,at~suff~'},
 {p:/ (поспешн)/ig,r:'$1|hastily~suff~'},
 {p:/ (посреди)/ig,r:'$1|in the middle~suff~'},
-{p:/ (поставк)/ig,r:'$1|delivery~suff~'},
+{p:/ (постав)/ig,r:'$1|delivery~suff~'},
 {p:/ (поставл)/ig,r:'$1|deliver~suff~'},
 {p:/ (постесн)/ig,r:'$1|be shy~suff~'},
 {p:/ (пострад)/ig,r:'$1|suffer~suff~'},
@@ -4567,7 +4569,6 @@ const replsB = [
 {p:/ (настав)/ig,r:'$1|come(of seasons etc.)~suff~'},
 {p:/ (настеж)/ig,r:'$1|wide open~suff~'},
 {p:/ (настро)/ig,r:'$1|tune in the mood(for )~suff~'},
-{p:/ (наступ)/ig,r:'$1|advance on(of time)~suff~'},
 {p:/ (насущн)/ig,r:'$1|vital~suff~'},
 {p:/ (насчёт)/ig,r:'$1|about~suff~'},
 {p:/ (натвор)/ig,r:'$1|get up to(sth bad)~suff~'},
@@ -4782,6 +4783,7 @@ const replsB = [
 {p:/ (поближ)/ig,r:'$1|a bit closer~suff~'},
 {p:/ (поболт)/ig,r:'$1|shake~suff~'},
 {p:/ (поброд)/ig,r:'$1|wander~suff~'},
+{p:/ (Бейрут)/ig,r:'$1|Beirut'},
 {p:/ (повадк)/ig,r:'$1|habit,(habitual)behaviour~suff~'},
 {p:/ (поверн)/ig,r:'$1|turn~suff~'},
 {p:/ (поверт)/ig,r:'$1|twirl~suff~'},
@@ -6203,6 +6205,7 @@ const replsB = [
 {p:/ (кефир)/ig,r:'$1|drink~suff~'},
 {p:/ (кител)/ig,r:'$1|military jacket tunic~suff~'},
 {p:/ (кладк)/ig,r:'$1|laying~suff~'},
+{p:/ (Ирана)/ig,r:'$1|Iran'},
 {p:/ (класс)/ig,r:'$1|class~suff~'},
 {p:/ (класт)/ig,r:'$1|put~suff~'},
 {p:/ (клетк)/ig,r:'$1|cage,(biol)~suff~'},
@@ -6360,7 +6363,7 @@ const replsB = [
 {p:/ (миров)/ig,r:'$1|world~suff~'},
 {p:/ (мишен)/ig,r:'$1|target~suff~'},
 {p:/ (младш)/ig,r:'$1|younger~suff~'},
-{p:/ (много)/ig,r:'$1|much lot~suff~'},
+{p:/ (много)/ig,r:'$1|much~suff~'},
 {p:/ (могил)/ig,r:'$1|grave~suff~'},
 {p:/ (могуч)/ig,r:'$1|powerful~suff~'},
 {p:/ (модел)/ig,r:'$1|model~suff~'},
@@ -6425,7 +6428,6 @@ const replsB = [
 {p:/ (налож)/ig,r:'$1|to lay on ,put on~suff~'},
 {p:/ (налёт)/ig,r:'$1|raid~suff~'},
 {p:/ (намек)/ig,r:'$1|allude to~suff~'},
-{p:/ (контр)/ig,r:'$1|counter~suff~'},
 {p:/ (намет)/ig,r:'$1|plan~suff~'},
 {p:/ (намеч)/ig,r:'$1|plan~suff~'},
 {p:/ (намёк)/ig,r:'$1|hint~suff~'},
@@ -6870,6 +6872,7 @@ const replsB = [
 {p:/ (появл)/ig,r:'$1|appear~suff~'},
 {p:/ (поясн)/ig,r:'$1|explain~suff~'},
 {p:/ (правд)/ig,r:'$1|truth~suff~'},
+{p:/ (понес)/ig,r:'$1|carry~suff~'},
 {p:/ (право)/ig,r:'$1|right~suff~'},
 {p:/ (прежд)/ig,r:'$1|before~suff~'},
 {p:/ (прежн)/ig,r:'$1|former~suff~'},
@@ -7627,7 +7630,7 @@ const replsB = [
 {p:/ (догн)/ig,r:'$1|catch up(with)~suff~'},
 {p:/ (доех)/ig,r:'$1|reach~suff~'},
 {p:/ (дожд)/ig,r:'$1|wait(for)~suff~'},
-{p:/ (долг)/ig,r:'$1|debt,(sg only)duty~suff~'},
+{p:/ (долг)/ig,r:'$1|debt,duty~suff~'},
 {p:/ (доля)/ig,r:'$1|portion~suff~'},
 {p:/ (домн)/ig,r:'$1|blast furnace~suff~'},
 {p:/ (доск)/ig,r:'$1|board~suff~'},
@@ -7830,6 +7833,7 @@ const replsB = [
 {p:/ (люди)/ig,r:'$1|people~suff~'},
 {p:/ (лёгк)/ig,r:'$1|easiness~suff~'},
 {p:/ (мало)/ig,r:'$1|few~suff~'},
+{p:/ (офис)/ig,r:'$1|office~suff~'},
 {p:/ (марк)/ig,r:'$1|postage stamp mark~suff~'},
 {p:/ (март)/ig,r:'$1|March(month)~suff~'},
 {p:/ (марш)/ig,r:'$1|march~suff~'},
@@ -8574,6 +8578,7 @@ const replsB = [
 {p:/ (США)/ig,r:'$1|United States of America~suff~'},
 {p:/ (ФНС)/ig,r:'$1|Federal Tax Service~suff~'},
 {p:/ (акт)/ig,r:'$1|act~suff~'},
+{p:/ (сво)/ig,r:'$1|their own~suff~'},
 {p:/ (сет)/ig,r:'$1|network~suff~'},
 {p:/ (акц)/ig,r:'$1|share(in company)~suff~'},
 {p:/ (али)/ig,r:'$1|or~suff~'},
@@ -8691,7 +8696,7 @@ const replsB = [
 {p:/ (дым)/ig,r:'$1|smoke~suff~'},
 {p:/ (дыр)/ig,r:'$1|hole~suff~'},
 {p:/ (дыш)/ig,r:'$1|to breathe~suff~'},
-{p:/ (его)/ig,r:'$1|his~suff~'},
+{p:/ (его)/ig,r:'$1|his~pron-masc-sing-geni'},
 {p:/ (едв)/ig,r:'$1|hardly just~suff~'},
 {p:/ (едк)/ig,r:'$1|acrid~suff~'},
 {p:/ (езд)/ig,r:'$1|travel there and back~suff~'},
@@ -8960,7 +8965,6 @@ const replsB = [
 {p:/ (руг)/ig,r:'$1|abuse~suff~'},
 {p:/ (руд)/ig,r:'$1|ore~suff~'},
 {p:/ (рук)/ig,r:'$1|hand~suff~'},
-{p:/(ост)/ig,r:'$1|state of being in~suff~'},
 {p:/ (рул)/ig,r:'$1|steeringwheel~suff~'},
 {p:/ (рус)/ig,r:'$1|light brown(hair)~suff~'},
 {p:/ (руч)/ig,r:'$1|( +)to vouch for~suff~'},
@@ -9158,9 +9162,9 @@ const replsB = [
 {p:/ (зл)/ig,r:'$1|spite~suff~'},
 {p:/ (зн)/ig,r:'$1|know~suff~'},
 {p:/ (зр)/ig,r:'$1|ripen~suff~'},
-{p:/ (за) /ig,r:'$1|for someone~suff~'},
+{p:/ (за) /ig,r:'$1|for someone~prep'},
 {p:/ (ив)/ig,r:'$1|willow~suff~'},
-{p:/ (из)/ig,r:'$1|out of~suff~'},
+{p:/ (из)/ig,r:'$1|out of~prep'},
 {p:/ (им)/ig,r:'$1|them~suff~'},
 {p:/ (РФ)/ig,r:'$1|Russian Federation~suff~'},
 {p:/ (ин)/ig,r:'$1|other~suff~'},
@@ -9187,7 +9191,6 @@ const replsB = [
 {p:/ (но)/ig,r:'$1|(conjunction)but~suff~'},
 {p:/ (рв)/ig,r:'$1|tear~suff~'},
 {p:/ (сб)/ig,r:'$1|knock down~suff~'},
-{p:/ (св)/ig,r:'$1|one’s own~suff~'},
 {p:/ (сд)/ig,r:'$1|hand in over up: take(exam),p: to pass(exam)~suff~'},
 {p:/ (сж)/ig,r:'$1|clench~suff~'},
 {p:/ (си)/ig,r:'$1|shine~suff~'},
@@ -9232,12 +9235,14 @@ const replsB = [
 {p:/ (ещ)/ig,r:'$1|yet~suff~'},
 
 {p:/ (а) /ig,r:'$1|and,(slight contrast)~suff~'},
-{p:/ (в) /ig,r:'$1|in~suff~'},
-{p:/ (и) /ig,r:'$1|and~suff~'},
+{p:/ (в) /ig,r:'$1|in~prep'},
+{p:/ (и) /ig,r:'$1|and~conj'},
 {p:/ (к) /ig,r:'$1|involved in~suff~'},
 {p:/ (о) /ig,r:'$1|about~suff~'},
 {p:/ (с) /ig,r:'$1|from,with~suff~'},
 {p:/ (у) /ig,r:'$1|by ~suff~'},
+
+{p:/~suff~(ост)/ig,r:'$1|state of being in~suff~'},
 
 {p:/~suff~(ает )/ig,r:'~$1~he does regularly'},
 {p:/~suff~(ала )/ig,r:'~$1~(verb past feminine)'},
@@ -9246,19 +9251,51 @@ const replsB = [
 {p:/~suff~(ила )/ig,r:'~$1~suff~he did'},
 {p:/~suff~(ило )/ig,r:'~$1~it did'},
 {p:/~suff~(ить )/ig,r:'~$1~to do completely'},
+{p:/~suff~(ого )/ig,r:'~$1~adje-masc-sing-geni or adje-masc-sing-anim accu or adje-neut-sing-geni'},
+{p:/~suff~(ому )/ig,r:'~$1~adje-masc-dati or neut dati'},
 {p:/~suff~(ует )/ig,r:'~$1~he does'},
+{p:/~suff~(ыми )/ig,r:'~$1~adje-plur-inst'},
+{p:/~suff~(ями )/ig,r:'~$1~noun-plur-inst'},
 
+{p:/~suff~(ое )/ig,r:'~$1~adje-neut-nomi or anim accu or inan accu'},
 {p:/~suff~(<!а)(ет) /ig,r:'~$1~he does'},
 {p:/~suff~(ал )/ig,r:'~$1~he did'},
+{p:/~suff~(ая )/ig,r:'~$1~adje-femi-nomi'},
+{p:/~suff~(ой )/ig,r:'~$1~adje-femi-geni or dati or inst'},
+{p:/~suff~(ую )/ig,r:'~$1~adje-femi-anim accu or inan accu'},
+{p:/~suff~(ем )/ig,r:'~$1~noun-sing-inst'},
+{p:/~suff~(ен )/ig,r:'~$1~adje-masc-shor'},
+{p:/~suff~(ие )/ig,r:'~$1~noun-sing-nomi or accu'},
+{p:/~suff~(ии )/ig,r:'~$1~noun-sing-prep'},
+{p:/~suff~(ий )/ig,r:'~$1~noun-plur-geni'},
 {p:/~suff~(ил(?!а) )/ig,r:'~$1~he did'},
 {p:/~suff~(ит )/ig,r:'~$1~they do'},
+{p:/~suff~(их )/ig,r:'~$1~noun-plur-geni'},
+{p:/~suff~(ию )/ig,r:'~$1~noun-sing-dati'},
+{p:/~suff~(ия )/ig,r:'~$1~noun-plur-nomi or accu or femi-sing-geni'},
+{p:/~suff~(ия )/ig,r:'~$1~noun-sing-geni'},
 {p:/~suff~(ли )/ig,r:'~$1~they did'},
-{p:/~suff~(ут )/ig,r:'~$1~they will'},
+{p:/~suff~(ом )/ig,r:'~$1~adje-masc-prep or neut-prep'},
+{p:/~suff~(ут )/ig,r:'~$1|they will~verb-plur-futu'},
+{p:/~suff~(ые )/ig,r:'~$1~adje-plur-nomi or inan accu'},
+{p:/~suff~(ые )/ig,r:'~$1~adje-plur-nomi'},
+{p:/~suff~(ый )/ig,r:'~$1~adje-masc-nomi or inan accu'},
+{p:/~suff~(ым )/ig,r:'~$1~adje-plur-dati or masc-inst or neut-inst'},
+{p:/~suff~(ок )/ig,r:'~$1~noun-plur-geni'},
+{p:/~suff~(ых )/ig,r:'~$1~adje-plur-geni or anim accu or prep'},
+{p:/~suff~(ям )/ig,r:'~$1~noun-plur-dati'},
 {p:/~suff~(ят )/ig,r:'~$1~they do'},
+{p:/~suff~(ях )/ig,r:'~$1~noun-plur-prep'},
 
-{p:/(~suff~ии )(.+?~suff~я )/ig,r:'~$1~noun-femi-sing-geni+~$2~adje+masc+sing+geni'},
+{p:/~suff~(ы )/ig,r:'~$1~adje-plur-shor or noun-femi-sing-geni'},
+{p:/~suff~(и )/ig,r:'~$1~noun-masc-plur-nomi'},
+{p:/~suff~(ь )/ig,r:'~$1~noun-masc-sing-nomi'},
+{p:/~suff~(а )/ig,r:'~$1~adje-femi-shor'},
+{p:/~suff~(о )/ig,r:'~$1~adje-neut-shor'},
 
 {p:/([а-яА-ЯёЁ]+)/ig,r:'<font color=gray>$1</font>'},
+
+{p:/~suff/ig,r:' '},
 
 ];
 
@@ -9282,7 +9319,9 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Начальник Генштаба армии Израиля признал,что военные не справились 7 октября,в день атаки ХАМАС,с обеспечением безопасности страны
+Контрнаступление ВСУ провалилось из-за долгих поставок западного оружия, заявил Михаил Подоляк «Это медленно разворачивалось, логистика отрабатывалась, было много согласований, и, кроме того, мы тогда вышли из графика поставок», — отметил он.
+
+Советник офиса президента Украины…
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
