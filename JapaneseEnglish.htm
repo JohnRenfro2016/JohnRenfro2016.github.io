@@ -66,18 +66,6 @@ word-wrap:break-word;
 </head>
 <script>
 
-function enterWord()
-{
-const replsC =
-[
-{p1:/([一-龠ぁ-ゔァ-ヴーa-zA-Z0-9ａ-ｚＡ-Ｚ０-９々〆〤])/g,r1:'($1)(?!X)'},
-];
-replsC.forEach(replace => {
- b = b.replace(replace.p1,replace.r1);
-});
-document.getElementById("enteredWord").innerHTML="{p1:/"+b+"/g,r1:'"+c+"'},";
-}
-
 function translateB()
 {
 
@@ -6052,6 +6040,7 @@ const replsB = [
 {p1:/(習)(?!X)(慣)(?!X)/g,r1:'$1Xsyuu$2Xkan-habit~Noun'},
 {p1:/(翻)(?!X)(訳)(?!X)/g,r1:'$1Xhon$2Xyaku-translation~Noun'},
 {p1:/(老)(?!X)(人)(?!X)/g,r1:'$1Xrou$2Xjin-elderly~Noun'},
+{p1:/(地)(?!X)(区)(?!X)/g,r1:'$1Xchi$2Xku-district~Noun'},
 {p1:/(老)(?!X)(舗)(?!X)/g,r1:'$1Xrou$2Xho-long established shop~Noun'},
 {p1:/(考)(?!X)(え)(?!X)/g,r1:'$1Xkanga$2Xe;think~IchidanVerb'},
 {p1:/(考)(?!X)(察)(?!X)/g,r1:'$1Xkou$2Xsatsu-investigative research~Noun'},
@@ -8238,16 +8227,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-　国土交通省が立ち入り検査した全34工場で不正が認定され、12工場で民間車検場の指定取り消し処分の方針が明らかになった中古車販売大手ビッグモーター
+イスラエル軍が、パレスチナ自治区ガザ地区への地上侵攻にいつ踏み切るのか。住民退避の期限はすでに経過していて、緊張が高まっています。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
 <hr>
-<h3>Admin Only Work Area</h3>
-<p>Enter a new Japanese word. <input maxlength='80px' onChange='b=this.value'type='field' size='40px'>
-<p>Enter the definition. <input maxlength='80px' onChange='c=this.value,enterWord();' type='field' size='40px' value='$1X$2X$3X$4X$5X-~Noun'>
-<p>
-<span id="enteredWord"></span>
 <h3>Memorizing Kanji</h3>
 <ul>
 <li>Use <a href='https://addons.mozilla.org/en-US/firefox/addon/10ten-ja-reader/' target="Xblank">10ten Japanese Reader</a> browser extension to read kanji on your desktop/laptop computer.
