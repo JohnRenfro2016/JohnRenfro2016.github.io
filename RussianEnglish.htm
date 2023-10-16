@@ -11,8 +11,8 @@ href="MyFavicon.png"
 
 @font-face
 {
-font-family:"Squealer";
-src:url("Squealer.otf");
+font-family:"Ineptic";
+src:url("Ineptic.ttf");
 }
 
 a:link,
@@ -41,7 +41,7 @@ font-size:60px;
 .HeaderStyle
 {
 color:#f6d356;
-font-family:"Squealer";
+font-family:"Ineptic";
 font-size:30px;
 margin-bottom:20px;
 text-shadow:0px -2px 4px #3179c6,0px -2px 10px #cc9029,0px -10px 20px #F90,0px -20px 40px #cf7b31;
@@ -3409,6 +3409,7 @@ const replsB = [
 {p:/ (последн)/ig,r:'$1|last~suff~'},
 {p:/ (послушн)/ig,r:'$1|obedient~suff~'},
 {p:/ (посмеив)/ig,r:'$1|chuckle~suff~'},
+{p:/ (спонсор)/ig,r:'$1|sponsor~suff~'},
 {p:/ (посмотр)/ig,r:'$1|watch,at~suff~'},
 {p:/ (поспешн)/ig,r:'$1|hastily~suff~'},
 {p:/ (посреди)/ig,r:'$1|in the middle~suff~'},
@@ -9155,6 +9156,7 @@ const replsB = [
 {p:/ (вы)/ig,r:'$1|you all~suff~'},
 {p:/ (гд)/ig,r:'$1|where~suff~'},
 {p:/ (гн)/ig,r:'$1|bend~suff~'},
+{p:/ (ищ)/ig,r:'$1|look for~suff~'},
 {p:/ (гр)/ig,r:'$1|heat~suff~'},
 {p:/ (дв)/ig,r:'$1|two~suff~'},
 {p:/ (дл)/ig,r:'$1|last~suff~'},
@@ -9186,7 +9188,7 @@ const replsB = [
 {p:/ (ли)/ig,r:'$1|whether~suff~'},
 {p:/ (мч)/ig,r:'$1|rush~suff~'},
 {p:/ (мы)/ig,r:'$1|we~suff~'},
-{p:/ (на)/ig,r:'$1|at,to~prep'},
+{p:/ (на)/ig,r:'$1|at,in,to~prep'},
 {p:/ (не)/ig,r:'$1|not~suff~'},
 {p:/ (ни)/ig,r:'$1|not a~suff~'},
 {p:/ (но)/ig,r:'$1|but~conj'},
@@ -9258,6 +9260,8 @@ const replsB = [
 {p:/~suff~(ост)/ig,r:'$1~state of being in~suff~'},
 
 {p:/~suff~(или )/ig,r:'~$1~they did'},
+{p:/~suff~(ают )/ig,r:'~$1~they do'},
+{p:/~suff~(али )/ig,r:'~$1~they did'},
 {p:/~suff~(ами )/ig,r:'~$1~noun-plur-inst'},
 {p:/~suff~(ает )/ig,r:'~$1~he does regularly'},
 {p:/~suff~(ала )/ig,r:'~$1~(verb past feminine)'},
@@ -9346,7 +9350,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Премьер Польши Моравецкий сообщил о готовности сформировать новое правительство, несмотря на получение оппозицией большинства голосов на парламентских выборах
+США ищут выход из конфликта на Украине из-за провалов ВСУ, но открыто это не показывают, сообщил экс-советник главы Пентагона Дуглас Макгрегор отметил, что Владимир Зеленский и его политические спонсоры в НАТО обещали больших успехов в контрнаступе, но не добились их
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
