@@ -105,6 +105,7 @@ const replsB = [
 {p:/ (пресс-конференц)/ig,r:'$1|press conference~suff~'},
 {p:/ (продемонстриров)/ig,r:'$1|demonstrate~suff~'},
 {p:/ (продовольственн)/ig,r:'$1|food~suff~'},
+{p:/ (несогласованн)/ig,r:'$1|uncoordinated~suff~'},
 {p:/ (совершенствован)/ig,r:'$1|improvement~suff~'},
 {p:/ (соотечественник)/ig,r:'$1|compatriot~suff~'},
 {p:/ (Северо\-Восточн)/ig,r:'$1|north-east~suff~'},
@@ -464,7 +465,9 @@ const replsB = [
 {p:/ (организатор)/ig,r:'$1|organizer~suff~'},
 {p:/ (организовыв)/ig,r:'$1|organize~suff~'},
 {p:/ (освобожденн)/ig,r:'$1|liberated~suff~'},
+{p:/ (неуправляем)/ig,r:'$1|non-management~suff~'},
 {p:/ (ослепительн)/ig,r:'$1|dazzling~suff~'},
+{p:/ (превышен)/ig,r:'$1|above~suff~'},
 {p:/ (основательн)/ig,r:'$1|solidly~suff~'},
 {p:/ (осуществлен)/ig,r:'$1|carrying out~suff~'},
 {p:/ (генпрокурор)/ig,r:'$1|attorney general~suff~'},
@@ -1375,6 +1378,7 @@ const replsB = [
 {p:/ (пожалуйст)/ig,r:'$1|please’t mention it~suff~'},
 {p:/ (пожертв)/ig,r:'$1|donate,sacrifice~suff~'},
 {p:/ (позавидов)/ig,r:'$1|envy~suff~'},
+{p:/ (ориентируя)/ig,r:'$1|orientation~suff~'},
 {p:/ (показател)/ig,r:'$1|index~suff~'},
 {p:/ (поклонник)/ig,r:'$1|admirer~suff~'},
 {p:/ (покрывало)/ig,r:'$1|cover~suff~'},
@@ -2457,6 +2461,7 @@ const replsB = [
 {p:/ (телескоп)/ig,r:'$1|telescope~suff~'},
 {p:/ (телефонн)/ig,r:'$1|telephone~suff~'},
 {p:/ (теперешн)/ig,r:'$1|present~suff~'},
+{p:/ (полномоч)/ig,r:'$1|proxy~suff~'},
 {p:/ (теплоход)/ig,r:'$1|motorvessel~suff~'},
 {p:/ (терпелив)/ig,r:'$1|patient~suff~'},
 {p:/ (территор)/ig,r:'$1|territory~suff~'},
@@ -5520,7 +5525,7 @@ const replsB = [
 {p:/ (ученик)/ig,r:'$1|pupil~suff~'},
 {p:/ (училищ)/ig,r:'$1|college(vocational)~suff~'},
 {p:/ (учител)/ig,r:'$1|teacher~suff~'},
-{p:/ (учитыв)/ig,r:'$1|take into account take into consideration in mind~suff~'},
+{p:/ (учитыв)/ig,r:'$1|take into account~suff~'},
 {p:/ (фабрик)/ig,r:'$1|factory~suff~'},
 {p:/ (фактор)/ig,r:'$1|factor~suff~'},
 {p:/ (фантаз)/ig,r:'$1|imagination~suff~'},
@@ -6506,7 +6511,7 @@ const replsB = [
 {p:/ (ноябр)/ig,r:'$1|November~suff~'},
 {p:/ (няньк)/ig,r:'$1|nurse~suff~'},
 {p:/ (обаян)/ig,r:'$1|charm~suff~'},
-{p:/ (обвин)/ig,r:'$1|accuse( of )~suff~'},
+{p:/ (обвин)/ig,r:'$1|accuse~suff~'},
 {p:/ (обвод)/ig,r:'$1|take round,surround(with)~suff~'},
 {p:/ (обгон)/ig,r:'$1|overtake~suff~'},
 {p:/ (обдум)/ig,r:'$1|consider over~suff~'},
@@ -6635,7 +6640,7 @@ const replsB = [
 {p:/ (отнын)/ig,r:'$1|henceforth~suff~'},
 {p:/ (отнюд)/ig,r:'$1|not at all~suff~'},
 {p:/ (отобр)/ig,r:'$1|take away~suff~'},
-{p:/ (отозв)/ig,r:'$1|respond to,express a view of an opinion of~suff~'},
+{p:/ (отозв)/ig,r:'$1|respond to~suff~'},
 {p:/ (оторв)/ig,r:'$1|tear off away~suff~'},
 {p:/ (отпер)/ig,r:'$1|unlock~suff~'},
 {p:/ (отпир)/ig,r:'$1|unlock~suff~'},
@@ -7297,7 +7302,7 @@ const replsB = [
 {p:/ (ухмыл)/ig,r:'$1|smirk~suff~'},
 {p:/ (участ)/ig,r:'$1|fate,(in life)~suff~'},
 {p:/ (учебн)/ig,r:'$1|educational~suff~'},
-{p:/ (учест)/ig,r:'$1|take into account take into consideration in mind~suff~'},
+{p:/ (учест)/ig,r:'$1|take into account~suff~'},
 {p:/ (ущерб)/ig,r:'$1|damage~suff~'},
 {p:/ (факел)/ig,r:'$1|torch~suff~'},
 {p:/ (фамил)/ig,r:'$1|surname~suff~'},
@@ -9318,6 +9323,7 @@ const replsB = [
 {p:/~suff~(ят )/ig,r:'~$1~they do verb-plur-pres'},
 {p:/~suff~(ях )/ig,r:'~$1~noun-plur-prep'},
 {p:/~suff~(ил )/ig,r:'~$1~they did verb-plur-past'},
+{p:/~suff~(сь )/ig,r:'~$1~participle gerund present'},
 
 {p:/~suff~(ы )/ig,r:'~$1~adje-plur-shor or noun-femi-sing-geni'},
 {p:/~suff~(и )/ig,r:'~$1~noun-masc-sing-nomi'},
@@ -9355,7 +9361,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Дмитрий Песков назвал бездоказательными утверждения Запада о поставках оружия из КНДР в Россию «Ну это не только британская разведка, это и американская разведка, они все время это сообщают, никаких не предоставляя доказательств», — сказал он
+Урсулу фон дер Ляйен обвинили в «неуправляемости» и превышении полномочий из-за ее несогласованной поездки в Израиль Дипломаты ЕС утверждают, что она не учитывает мнение стран-участниц объединения, ориентируясь лишь на ближайших советников
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
