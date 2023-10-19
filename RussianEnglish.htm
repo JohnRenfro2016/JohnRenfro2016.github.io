@@ -469,7 +469,7 @@ const replsB = [
 {p:/ (ослепительн)/ig,r:'$1|dazzling~suff~'},
 {p:/ (превышен)/ig,r:'$1|above~suff~'},
 {p:/ (основательн)/ig,r:'$1|solidly~suff~'},
-{p:/ (осуществлен)/ig,r:'$1|carrying out~suff~'},
+{p:/ (осуществленн)/ig,r:'$1|carrying out~suff~'},
 {p:/ (генпрокурор)/ig,r:'$1|attorney general~suff~'},
 {p:/ (ответственн)/ig,r:'$1|responsibility~suff~'},
 {p:/ (Азербайджан)/ig,r:'$1|Azerbaijan~suff~'},
@@ -1268,7 +1268,7 @@ const replsB = [
 {p:/ (неразрывн)/ig,r:'$1|inseparably~suff~'},
 {p:/ (гамбургер)/ig,r:'$1|hamburger~suff~'},
 {p:/ (чизбургер)/ig,r:'$1|cheeseburger~suff~'},
-{p:/ (несколько)/ig,r:'$1|several~suff~'},
+{p:/ (нескольк)/ig,r:'$1|several~suff~'},
 {p:/ (неслыханн)/ig,r:'$1|unprecedented~suff~'},
 {p:/ (несомненн)/ig,r:'$1|undoubted~suff~'},
 {p:/ (неуверенн)/ig,r:'$1|uncertainly~suff~'},
@@ -8179,7 +8179,7 @@ const replsB = [
 {p:/ (свод)/ig,r:'$1|take( somewhere),bring together,(c +g)take down~suff~'},
 {p:/ (свыш)/ig,r:'$1|from above than~suff~'},
 {p:/ (связ)/ig,r:'$1|tie~suff~'},
-{p:/ (свят)/ig,r:'$1|sacred~suff~'},
+{p:/ (свят)/ig,r:'$1|sacred,Saint~suff~'},
 {p:/ (сгиб)/ig,r:'$1|bend~suff~'},
 {p:/ (сгор)/ig,r:'$1|burn~suff~'},
 {p:/ (сдав)/ig,r:'$1|hand in over up: take(exam),p: to pass(exam)~suff~'},
@@ -9291,21 +9291,22 @@ const replsB = [
 {p:/~suff~(ила )/ig,r:'~$1~suff~he did verb-singular-past'},
 {p:/~suff~(ило )/ig,r:'~$1~it did'},
 {p:/~suff~(ить )/ig,r:'~$1~to do completely'},
-{p:/~suff~(ого )/ig,r:'~$1~adje-masc-singular-geni or adje-masc-singular-anim accu or adje-neut-singular-geni'},
+{p:/~suff~(ого )/ig,r:'~$1~adje-masculine-singular-genitive or adjective-masculine-singular-animate accusative or adjective-neutral-singular-genitive'},
 {p:/~suff~(ому )/ig,r:'~$1~adje-masc-dati or neut dati'},
 {p:/~suff~(ует )/ig,r:'~$1~he does'},
 {p:/~suff~(ыми )/ig,r:'~$1~adje-plur-inst'},
 {p:/~suff~(ями )/ig,r:'~$1~noun-plur-inst'},
 {p:/~suff~(ало )/ig,r:'~$1~it did'},
+{p:/~suff~(овь )/ig,r:'~$1~noun-feminine-singular-nominative or noun-feminine-singular-accusative'},
 
 {p:/~suff~(ое )/ig,r:'~$1~adje-neut-nomi or anim accu or inan accu'},
 {p:/~suff~(<!а)(ет) /ig,r:'~$1~he does'},
 {p:/~suff~(ал )/ig,r:'~$1~he did verb-singular-past'},
 {p:/~suff~(ет )/ig,r:'~$1~he or she does verb-singular-present'},
-{p:/~suff~(ая )/ig,r:'~$1~adje-femi-nomi'},
-{p:/~suff~(ой )/ig,r:'~$1~adje-femi-geni or adje-femi-dati or adje-femi-inst'},
+{p:/~suff~(ая )/ig,r:'~$1~adjective-feminine-singular-nominative'},
+{p:/~suff~(ой )/ig,r:'~$1~adjective-feminine-singular-genitive or adjective-feminine-singular-dative or adjective-feminine-singular-instrumental'},
 {p:/~suff~(ую )/ig,r:'~$1~adje-femi-anim accu or inan accu'},
-{p:/~suff~(ем )/ig,r:'~$1~noun-singular-inst'},
+{p:/~suff~(ем )/ig,r:'~$1~noun-feminine-singular-instrumental'},
 {p:/~suff~(ен )/ig,r:'~$1~adje-masc-shor'},
 {p:/~suff~(ие )/ig,r:'~$1~noun-singular-nomi or accu'},
 {p:/~suff~(ии )/ig,r:'~$1~noun-singular-prep'},
@@ -9313,6 +9314,7 @@ const replsB = [
 {p:/~suff~(ил(?!а) )/ig,r:'~$1~he did verb-singular-past'},
 {p:/~suff~(ит )/ig,r:'~$1~they do verb-plur-pres'},
 {p:/~suff~(их )/ig,r:'~$1~adje-plur-geni'},
+{p:/~suff~(ла )/ig,r:'~$1~she did verb-feminine-singular-past'},
 {p:/~suff~(ию )/ig,r:'~$1~noun-singular-dati'},
 {p:/~suff~(ия )/ig,r:'~$1~noun-plur-nomi or noun-plur-accu or femi-singular-geni'},
 {p:/~suff~(ия )/ig,r:'~$1~noun-singular-geni'},
@@ -9324,7 +9326,7 @@ const replsB = [
 {p:/~suff~(ют )/ig,r:'~$1|they are'},
 {p:/~suff~(ые )/ig,r:'~$1~adje-plur-nomi or inan accu'},
 {p:/~suff~(ам )/ig,r:'~$1~noun-masc-plur-dati'},
-{p:/~suff~(ей )/ig,r:'~$1~noun-singular-inst'},
+{p:/~suff~(ей )/ig,r:'~$1~noun-feminine-singular-instrumental'},
 {p:/~suff~(ый )/ig,r:'~$1~adje-masc-nomi or inan accu'},
 {p:/~suff~(ым )/ig,r:'~$1~adje-plur-dati or masc-inst or neut-inst'},
 {p:/~suff~(ок )/ig,r:'~$1~noun-plur-geni'},
@@ -9336,13 +9338,13 @@ const replsB = [
 {p:/~suff~(ил )/ig,r:'~$1~they did verb-plur-past'},
 {p:/~suff~(сь )/ig,r:'~$1~participle gerund present'},
 
-{p:/~suff~(ы )/ig,r:'~$1~adje-plur-shor or noun-femi-singular-geni'},
-{p:/~suff~(и )/ig,r:'~$1~noun-masc-singular-nomi'},
-{p:/~suff~(ь )/ig,r:'~$1~noun-masc-singular-nomi'},
-{p:/~suff~(а )/ig,r:'~$1~noun-femi-singular-geni'},
-{p:/~suff~(о )/ig,r:'~$1~adje-neut-shor'},
+{p:/~suff~(и )/ig,r:'~$1~noun-masculine-singular-nominative or noun-feminine-singular-genitive'},
+{p:/~suff~(ь )/ig,r:'~$1~noun-masculine-singular-nominative or noun-feminine-singular-genitive'},
+{p:/~suff~(а )/ig,r:'~$1~noun-feminine-singular-nominative or noun-feminine-singular-genitive'},
+{p:/~suff~(о )/ig,r:'~$1~adjective-plural-nominative'},
 {p:/~suff~(у )/ig,r:'~$1~noun-singular-dati'},
-{p:/~suff~(е )/ig,r:'~$1~noun-masculine-singular-prepositional or noun-feminine-singular-dative'},
+{p:/~suff~(е )/ig,r:'~$1~noun-masculine-singular-prepositional or noun-feminine-singular-dative or noun-feminine-singular-prepositional'},
+{p:/~suff~(ы )/ig,r:'~$1~noun-masculine-plural-nominative'},
 
 {p:/(ся )/ig,r:'~$1~was done verb-passive'},
 
@@ -9372,7 +9374,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Вячеслав Володин предложил со школы готовить мальчиков к отношениям, семье и отцовству По его словам, молодежь не хочет думать о семье — «заводят кошечек и живут», а в 40 лет уже «обязательства на себя не возьмут, они боятся этого» «Без мужчины нет семьи», — подытожил он
+Греческая православная церковь Святого Порфирия в Газе разрушена в результате бомбардировки, осуществленной Израилем, погибла девочка, несколько человек ранены
 <p>
 <textArea cols='25' rows='6' onChange='a=" "+this.value+" ",translateC()'></textArea><br>
 <span id="translatedTextDisplay"></span>
