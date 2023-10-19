@@ -5,23 +5,23 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
+        body, button, input {
+            display: inline-block;
+            font-size: 9px;
+        }
+
         .delete-btn,
         .rotate-btn {
-            display: block;
+
         }
 
         .drag-handle {
-            width: 100%;
-            height: 10px;
             background-color: #ccc;
-            position: absolute;
-            top: 0;
-            left: 0;
+            color: #000;
             cursor: move;
             text-align: center;
-            line-height: 10px;
-            font-size: 10px;
-            color: #000;
+            top: 0;
+            width: 100%;
         }
 
         .game-container {
@@ -47,22 +47,65 @@
         .unit {
             border: 1px solid #000;
             cursor: move;
-            height: 50px;
+            height: 100px;
             position: absolute;
-            width: 50px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        .unit .armor-class {
+            width: 2ch;
+        }
+
+        .unit .hit-dice {
+            width: 8ch;
+        }
+
+        .unit .hit-points {
+            width: 3ch;
         }
 
         .unit input {
             width: 8ch;
         }
 
-    </style>
+        .unit .image-container {
+            bottom: 0;
+            right: 0;
+            position: absolute;
+        }
+
+        .unit img {
+            max-width: 30%;
+            max-height: 30%;
+            margin: 0 auto;
+        }
+
+        .unit input[type="file"] {
+            display: none;
+        }
+                .attack-dice-container {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .attack-dice-input {
+            width: 10ch;
+        }
+        </style>
 
 </head>
 
 <body>
 This game works in Chrome.
     <button onclick="createUnit()">Create Unit</button>
+        Attack Dice for all pieces.<span class="attack-dice-container">
+        <input type="text" class="attack-dice-input" placeholder="XdY+Z" onmouseout="calculateAttackResult(this)"
+        value="1d20+0"
+        >
+        <span class="result"></span>
+    </span>
     <div id="game-container" class="game-container">
         <div class="grid-row">
             <div class="grid-cell"></div>
@@ -120,18 +163,50 @@ This game works in Chrome.
 <script>
 let units = [];
 
+    function calculateAttackResult(input) {
+        let attackDiceValue = input.value;
+        let resultElement = input.nextElementSibling;
+
+        let regex = /^(\d+)d(4|6|8|10|12|20)\+(\d+)$/;
+        let match = attackDiceValue.match(regex);
+
+        if (match) {
+            let numDice = parseInt(match[1]);
+            let numSides = parseInt(match[2]);
+            let constant = parseInt(match[3]);
+
+            if (!isNaN(numDice) && !isNaN(numSides) && !isNaN(constant) && [4, 6, 8, 10, 12, 20].includes(numSides)) {
+                let result = constant;
+                for (let i = 0; i < numDice; i++) {
+                    result += Math.floor(Math.random() * numSides) + 1;
+                }
+
+                resultElement.textContent = `Result: ${result}`;
+            } else {
+                resultElement.textContent = 'Invalid input format';
+            }
+        } else {
+            resultElement.textContent = 'Invalid input format';
+        }
+    }
+
 function createUnit() {
     let unit = document.createElement("div");
     unit.className = "unit";
     unit.innerHTML = `
         <div class="drag-handle">Drag</div>
-        <input type="button" class="rotate-btn" value="Rotate" onclick="rotateUnit(this)">
-        <input type="text" class="armor-class" placeholder="AC">
-        <input type="text" class="hit-dice" placeholder="HD">
-        <input type="text" class="hit-points" placeholder="HP">
-        <input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
+        <input type="button" class="rotate-btn" value="R" onclick="rotateUnit(this)">
+        AC:<input type="text" class="armor-class" placeholder="AC">
+        HD:<input type="text" class="hit-dice" placeholder="HD">
+        HP:<input type="text" class="hit-points" placeholder="HP">
+        Dmg:<input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
         <div class="damage-result"></div>
-        <input type="button" class="delete-btn" value="Delete" onclick="deleteUnit(this)">
+                    <div class="image-container">
+                <button onclick="selectImage(this)">Miniature</button>
+                <img src="">
+                <input type="file" accept="image/*" onchange="loadImage(event)">
+            </div>
+        <input type="button" class="delete-btn" value="X" onclick="deleteUnit(this)">
     `;
 
     unit.style.left = "0px";
@@ -193,8 +268,32 @@ function calculateDamageResult(input) {
     }
 }
 
+  function selectImage(button) {
+        let unit = button.parentElement.parentElement;
+        let fileInput = unit.querySelector('input[type="file"]');
+        fileInput.click();
+    }
+
+    function loadImage(event) {
+        let input = event.target;
+        let unit = input.parentElement.parentElement; // Go up two levels to reach .unit
+
+        let img = unit.querySelector('img');
+        let file = input.files[0];
+        let reader = new FileReader();
+
+        reader.onload = function() {
+            img.src = reader.result;
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
 function saveGame() {
     let savedUnits = units.map(unit => {
+        let imageSrc = unit.querySelector('.image-container img').src; // Get the image source
         return {
             left: unit.style.left,
             top: unit.style.top,
@@ -202,7 +301,8 @@ function saveGame() {
             ac: unit.querySelector('.armor-class').value,
             hd: unit.querySelector('.hit-dice').value,
             hp: unit.querySelector('.hit-points').value,
-            damageDice: unit.querySelector('.damage-dice').value
+            damageDice: unit.querySelector('.damage-dice').value,
+            imageSrc: imageSrc // Include the image source in the saved data
         };
     });
     localStorage.setItem("units", JSON.stringify(savedUnits));
@@ -216,13 +316,18 @@ function loadGame() {
             unit.className = "unit";
             unit.innerHTML = `
                 <div class="drag-handle">Drag</div>
-                <input type="button" class="rotate-btn" value="Rotate" onclick="rotateUnit(this)">
-                <input type="text" class="armor-class" placeholder="AC">
-                <input type="text" class="hit-dice" placeholder="HD">
-                <input type="text" class="hit-points" placeholder="HP">
-                <input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
+                <input type="button" class="rotate-btn" value="R" onclick="rotateUnit(this)">
+                AC:<input type="text" class="armor-class" placeholder="AC">
+                HD:<input type="text" class="hit-dice" placeholder="HD">
+                HP:<input type="text" class="hit-points" placeholder="HP">
+                Dmg:<input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
                 <div class="damage-result"></div>
-                <input type="button" class="delete-btn" value="Delete" onclick="deleteUnit(this)">
+                <div class="image-container">
+                    <button onclick="selectImage(this)">Miniature</button>
+                    <img src="">
+                    <input type="file" accept="image/*" onchange="loadImage(event)">
+                </div>
+                <input type="button" class="delete-btn" value="X" onclick="deleteUnit(this)">
             `;
 
             unit.style.left = savedUnit.left;
@@ -232,6 +337,9 @@ function loadGame() {
             unit.querySelector('.hit-dice').value = savedUnit.hd;
             unit.querySelector('.hit-points').value = savedUnit.hp;
             unit.querySelector('.damage-dice').value = savedUnit.damageDice;
+
+            let img = unit.querySelector('img');
+            img.src = savedUnit.imageSrc;
 
             document.getElementById("game-container").appendChild(unit);
             units.push(unit);
