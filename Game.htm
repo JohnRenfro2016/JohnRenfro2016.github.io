@@ -195,7 +195,7 @@ function createUnit() {
     unit.className = "unit";
     unit.innerHTML = `
         <div class="drag-handle">Drag</div>
-        <input type="button" class="rotate-btn" value="R" onclick="rotateUnit(this)">
+        <input type="button" class="rotate-btn" value="Rotate" onclick="rotateUnit(this)">
         AC:<input type="text" class="armor-class" placeholder="AC">
         HD:<input type="text" class="hit-dice" placeholder="HD">
         HP:<input type="text" class="hit-points" placeholder="HP">
@@ -206,7 +206,7 @@ function createUnit() {
                 <img src="">
                 <input type="file" accept="image/*" onchange="loadImage(event)">
             </div>
-        <input type="button" class="delete-btn" value="X" onclick="deleteUnit(this)">
+        <input type="button" class="delete-btn" value="Delete" onclick="deleteUnit(this)">
     `;
 
     unit.style.left = "0px";
@@ -316,7 +316,7 @@ function loadGame() {
             unit.className = "unit";
             unit.innerHTML = `
                 <div class="drag-handle">Drag</div>
-                <input type="button" class="rotate-btn" value="R" onclick="rotateUnit(this)">
+                <input type="button" class="rotate-btn" value="Rotate" onclick="rotateUnit(this)">
                 AC:<input type="text" class="armor-class" placeholder="AC">
                 HD:<input type="text" class="hit-dice" placeholder="HD">
                 HP:<input type="text" class="hit-points" placeholder="HP">
@@ -327,7 +327,7 @@ function loadGame() {
                     <img src="">
                     <input type="file" accept="image/*" onchange="loadImage(event)">
                 </div>
-                <input type="button" class="delete-btn" value="X" onclick="deleteUnit(this)">
+                <input type="button" class="delete-btn" value="Delete" onclick="deleteUnit(this)">
             `;
 
             unit.style.left = savedUnit.left;
