@@ -2,383 +2,441 @@
 <html>
 
 <head>
-    <style>
-        body, button, input {
-            display: inline-block;
-            font-size: 9px;
-        }
+<style>
+body, button, input {
+display: block;
+font-size: 9px;
+}
 
-        .delete-btn,
-        .rotate-btn {
+.delete-btn,
+.rotate-btn {
 
-        }
+}
 
-        .drag-handle {
-            background-color: #ccc;
-            color: #000;
-            cursor: move;
-            text-align: center;
-            top: 0;
-            width: 100%;
-        }
+.drag-handle {
+background-color: #ccc;
+color: #000;
+cursor: move;
+text-align: center;
+top: 0;
+width: 100%;
+}
 
-        .game-container {
+.game-container {
 background-image: url("Map.png");
-            border: 1px solid #000;
-            height: 600px;
-            position: relative;
-            width: 600px;
-        }
+border: 1px solid #000;
+height: 600px;
+position: relative;
+width: 600px;
+}
 
-        .grid-cell {
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            height: 100px;
-            position: relative;
-            width: 100px;
-        }
+.grid-cell {
+border: 1px solid #ccc;
+box-sizing: border-box;
+height: 100px;
+position: relative;
+width: 100px;
+}
 
-        .grid-row {
-            display: flex;
-            height: 100px;
-        }
+.grid-row {
+display: flex;
+height: 100px;
+}
 
-        .unit {
-            border: 1px solid #000;
-            cursor: move;
-            height: 100px;
-            position: absolute;
-            width: 100px;
-            border-radius: 50%;
-            background-color: #fff;
-        }
+.unit {
+border: 1px solid #000;
+cursor: move;
+height: 100px;
+position: absolute;
+width: 100px;
+border-radius: 50%;
+background-color: #fff;
+background-size: cover;
+background-position: center;
+}
 
-        .unit .armor-class {
-            width: 2ch;
-        }
+.unit .armor-class {
+width: 2ch;
+}
 
-        .unit .hit-dice {
-            width: 8ch;
-        }
+.unit .hit-dice {
+width: 8ch;
+}
 
-        .unit .hit-points {
-            width: 3ch;
-        }
+.unit .hit-points {
+width: 3ch;
+}
 
-        .unit input {
-            width: 8ch;
-        }
+.unit input {
+width: 8ch;
+}
 
-        .unit .image-container {
-            bottom: 0;
-            right: 0;
-            position: absolute;
-        }
+.unit .image-container {
+bottom: 0;
+right: 0;
+}
 
-        .unit img {
-            max-width: 30%;
-            max-height: 30%;
-            margin: 0 auto;
-        }
+.unit .strength {
+width: 2ch;
+}
+.unit .dexterity {
+width: 2ch;
+}
 
-        .unit input[type="file"] {
-            display: none;
-        }
-                .attack-dice-container {
-            display: inline-block;
-            margin-left: 10px;
-        }
+.unit .constitution {
+width: 2ch;
+}
 
-        .attack-dice-input {
-            width: 10ch;
-        }
-        </style>
+.unit .intelligence{
+width: 2ch;
+}
+
+.unit .wisdom{
+width: 2ch;
+}
+
+.unit .charisma{
+width: 2ch;
+}
+
+.unit input[type="file"] {
+display: none;
+}
+.attack-dice-container {
+display: inline-block;
+margin-left: 10px;
+}
+
+.attack-dice-input {
+width: 10ch;
+}
+</style>
 
 </head>
 
 <body>
 This game works in Chrome.
-    <button onclick="createUnit()">Create Unit</button>
-        Attack Dice for all pieces.<span class="attack-dice-container">
-        <input type="text" class="attack-dice-input" placeholder="XdY+Z" onmouseout="calculateAttackResult(this)"
-        value="1d20+0"
-        >
-        <span class="result"></span>
-    </span>
-    <div id="game-container" class="game-container">
-        <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-        </div>
-        <div class="grid-row">
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-            <div class="grid-cell"></div>
-        </div>
-    </div>
+<button onclick="createUnit()">Create Unit</button>
+Attack Dice for all pieces.<span class="attack-dice-container">
+<input type="text" class="attack-dice-input" placeholder="XdY+Z" onmouseout="calculateAttackResult(this)"
+value="1d20+0"
+>
+<span class="result"></span>
+</span>
+<div id="game-container" class="game-container">
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+<div class="grid-row">
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+<div class="grid-cell"></div>
+</div>
+</div>
 
-    <button onclick="saveGame()">Save Game</button>
+<button onclick="saveGame()">Save Game</button>
 </body>
 
 <script>
 let units = [];
 
-    function calculateAttackResult(input) {
-        let attackDiceValue = input.value;
-        let resultElement = input.nextElementSibling;
+function calculateAttackResult(input) {
+let attackDiceValue = input.value;
+let resultElement = input.nextElementSibling;
 
-        let regex = /^(\d+)d(4|6|8|10|12|20)\+(\d+)$/;
-        let match = attackDiceValue.match(regex);
+let regex = /^(\d+)d(4|6|8|10|12|20)\+(\d+)$/;
+let match = attackDiceValue.match(regex);
 
-        if (match) {
-            let numDice = parseInt(match[1]);
-            let numSides = parseInt(match[2]);
-            let constant = parseInt(match[3]);
+if (match) {
+let numDice = parseInt(match[1]);
+let numSides = parseInt(match[2]);
+let constant = parseInt(match[3]);
 
-            if (!isNaN(numDice) && !isNaN(numSides) && !isNaN(constant) && [4, 6, 8, 10, 12, 20].includes(numSides)) {
-                let result = constant;
-                for (let i = 0; i < numDice; i++) {
-                    result += Math.floor(Math.random() * numSides) + 1;
-                }
+if (!isNaN(numDice) && !isNaN(numSides) && !isNaN(constant) && [4, 6, 8, 10, 12, 20].includes(numSides)) {
+let result = constant;
+for (let i = 0; i < numDice; i++) {
+result += Math.floor(Math.random() * numSides) + 1;
+}
 
-                resultElement.textContent = `Result: ${result}`;
-            } else {
-                resultElement.textContent = 'Invalid input format';
-            }
-        } else {
-            resultElement.textContent = 'Invalid input format';
-        }
-    }
+resultElement.textContent = `Result: ${result}`;
+} else {
+resultElement.textContent = 'Invalid input format';
+}
+} else {
+resultElement.textContent = 'Invalid input format';
+}
+}
 
 function createUnit() {
-    let unit = document.createElement("div");
-    unit.className = "unit";
-    unit.innerHTML = `
-        <div class="drag-handle">Drag</div>
-        <input type="button" class="rotate-btn" value="Rotate" onclick="rotateUnit(this)">
-        AC:<input type="text" class="armor-class" placeholder="AC">
-        HD:<input type="text" class="hit-dice" placeholder="HD">
-        HP:<input type="text" class="hit-points" placeholder="HP">
-        Dmg:<input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
-        <div class="damage-result"></div>
-                    <div class="image-container">
-                <button onclick="selectImage(this)">Miniature</button>
-                <img src="">
-                <input type="file" accept="image/*" onchange="loadImage(event)">
-            </div>
-        <input type="button" class="delete-btn" value="Delete" onclick="deleteUnit(this)">
-    `;
+let unit = document.createElement("div");
+unit.className = "unit";
+unit.innerHTML = `
+<div class="unit-image"></div>
+<button class="rotate-btn" value="Rotate" onclick="rotateUnit(this)">Rotate</button>
+<button class="menu-btn" onclick="toggleMenu(this)">Menu</button>
+<div class="menu-area" style="display: none;">
+AC:<input type="text" class="armor-class" placeholder="AC">
+HD:<input type="text" class="hit-dice" placeholder="HD">
+HP:<input type="text" class="hit-points" placeholder="HP">
+Dmg:<input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
+<div class="damage-result"></div>
+Strength: <input type="text" class="strength" placeholder="Strength">
+Dexterity: <input type="text" class="dexterity" placeholder="Dexterity">
+Constitution: <input type="text" class="constitution" placeholder="00">
+Intelligence: <input type="text" class="intelligence" placeholder="00">
+Wisdom: <input type="text" class="wisdom" placeholder="00">
+Charisma: <input type="text" class="charisma" placeholder="00">
+<div class="image-container">
+<button onclick="selectImage(this)">Miniature</button>
+<input type="file" accept="image/*" onchange="loadImage(event)">
+</div>
+<input type="button" class="delete-btn" value="Delete" onclick="deleteUnit(this)">
+</div>
+`;
 
-    unit.style.left = "0px";
-    unit.style.top = "0px";
+unit.style.left = "0px";
+unit.style.top = "0px";
 
-    document.getElementById("game-container").appendChild(unit);
-    units.push(unit);
+document.getElementById("game-container").appendChild(unit);
+units.push(unit);
 
-    unit.draggable = true;
-    unit.addEventListener('dragstart', (e) => {
-        e.dataTransfer.setData('text/plain', null);
-        e.target.classList.add('dragging');
-    });
-    unit.addEventListener('dragend', (e) => {
-        e.target.classList.remove('dragging');
-        saveGame();
-    });
+unit.draggable = true;
+unit.addEventListener('dragstart', (e) => {
+e.dataTransfer.setData('text/plain', null);
+e.target.classList.add('dragging');
+});
+unit.addEventListener('dragend', (e) => {
+e.target.classList.remove('dragging');
+saveGame();
+});
+}
+
+function toggleMenu(button) {
+let menuArea = button.nextElementSibling;
+menuArea.style.display = menuArea.style.display === 'none' ? 'block' : 'none';
 }
 
 function deleteUnit(button) {
-    let unit = button.parentElement;
-    unit.parentNode.removeChild(unit);
-    units = units.filter(u => u !== unit);
-    saveGame();
+let unit = button.parentElement.parentElement;
+unit.parentNode.removeChild(unit);
+units = units.filter(u => u !== unit);
+saveGame();
 }
 
 function rotateUnit(button) {
-    let unit = button.parentElement;
-    let rotation = (parseInt(unit.style.transform.replace("rotate(", "").replace("deg)", "")) || 0) + 45;
-    unit.style.transform = `rotate(${rotation}deg)`;
-    saveGame();
+let unit = button.parentElement;
+let rotation = (parseInt(unit.style.transform.replace("rotate(", "").replace("deg)", "")) || 0) + 45;
+unit.style.transform = `rotate(${rotation}deg)`;
+saveGame();
 }
 
 function calculateDamageResult(input) {
-    let damageDiceValue = input.value;
-    let unit = input.parentElement;
-    let damageResultElement = unit.querySelector('.damage-result');
+let damageDiceValue = input.value;
+let unit = input.parentElement;
+let damageResultElement = unit.querySelector('.damage-result');
 
-    let regex = /^(\d+)d(\d+)\+(\d+)$/;
-    let match = damageDiceValue.match(regex);
+let regex = /^(\d+)d(\d+)\+(\d+)$/;
+let match = damageDiceValue.match(regex);
 
-    if (match) {
-        let numDice = parseInt(match[1]);
-        let numSides = parseInt(match[2]);
-        let constant = parseInt(match[3]);
+if (match) {
+let numDice = parseInt(match[1]);
+let numSides = parseInt(match[2]);
+let constant = parseInt(match[3]);
 
-        if (!isNaN(numDice) && !isNaN(numSides) && !isNaN(constant)) {
-            let result = constant;
-            for (let i = 0; i < numDice; i++) {
-                result += Math.floor(Math.random() * numSides) + 1;
-            }
-
-            damageResultElement.textContent = `Result: ${result}`;
-        } else {
-            damageResultElement.textContent = 'Invalid input format';
-        }
-    } else {
-        damageResultElement.textContent = 'Invalid input format';
-    }
+if (!isNaN(numDice) && !isNaN(numSides) && !isNaN(constant)) {
+let result = constant;
+for (let i = 0; i < numDice; i++) {
+result += Math.floor(Math.random() * numSides) + 1;
 }
 
-  function selectImage(button) {
-        let unit = button.parentElement.parentElement;
-        let fileInput = unit.querySelector('input[type="file"]');
-        fileInput.click();
-    }
+damageResultElement.textContent = `Result: ${result}`;
+} else {
+damageResultElement.textContent = 'Invalid input format';
+}
+} else {
+damageResultElement.textContent = 'Invalid input format';
+}
+}
 
-    function loadImage(event) {
-        let input = event.target;
-        let unit = input.parentElement.parentElement; // Go up two levels to reach .unit
+function selectImage(button) {
+let unit = button.parentElement.parentElement;
+let fileInput = unit.querySelector('input[type="file"]');
+fileInput.click();
+}
 
-        let img = unit.querySelector('img');
-        let file = input.files[0];
-        let reader = new FileReader();
+function loadImage(event) {
+let input = event.target;
+let unit = input.parentElement.parentElement; // Go up two levels to reach .unit
 
-        reader.onload = function() {
-            img.src = reader.result;
-        }
+let img = unit.querySelector('.unit-image');
+let file = input.files[0];
+let reader = new FileReader();
 
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    }
+reader.onload = function() {
+unit.style.backgroundImage = `url(${reader.result})`;
+saveGame(); // Save the background image after loading
+}
+
+if (file) {
+reader.readAsDataURL(file);
+}
+}
 
 function saveGame() {
-    let savedUnits = units.map(unit => {
-        let imageSrc = unit.querySelector('.image-container img').src; // Get the image source
-        return {
-            left: unit.style.left,
-            top: unit.style.top,
-            transform: unit.style.transform,
-            ac: unit.querySelector('.armor-class').value,
-            hd: unit.querySelector('.hit-dice').value,
-            hp: unit.querySelector('.hit-points').value,
-            damageDice: unit.querySelector('.damage-dice').value,
-            imageSrc: imageSrc // Include the image source in the saved data
-        };
-    });
-    localStorage.setItem("units", JSON.stringify(savedUnits));
+let savedUnits = units.map(unit => {
+return {
+left: unit.style.left,
+top: unit.style.top,
+transform: unit.style.transform,
+ac: unit.querySelector('.armor-class').value,
+hd: unit.querySelector('.hit-dice').value,
+hp: unit.querySelector('.hit-points').value,
+damageDice: unit.querySelector('.damage-dice').value,
+strength: unit.querySelector('.strength').value,
+dexterity: unit.querySelector('.dexterity').value,
+constitution: unit.querySelector('.constitution').value,
+intelligence: unit.querySelector('.intelligence').value,
+wisdom: unit.querySelector('.wisdom').value,
+charisma: unit.querySelector('.charisma').value,
+imageSrc: unit.style.backgroundImage,
+rotation: (parseInt(unit.style.transform.replace("rotate(", "").replace("deg)", "")) || 0)
+};
+});
+localStorage.setItem("units", JSON.stringify(savedUnits));
 }
 
 function loadGame() {
-    let savedUnits = JSON.parse(localStorage.getItem("units"));
-    if (savedUnits) {
-        savedUnits.forEach(savedUnit => {
-            let unit = document.createElement("div");
-            unit.className = "unit";
-            unit.innerHTML = `
-                <div class="drag-handle">Drag</div>
-                <input type="button" class="rotate-btn" value="Rotate" onclick="rotateUnit(this)">
-                AC:<input type="text" class="armor-class" placeholder="AC">
-                HD:<input type="text" class="hit-dice" placeholder="HD">
-                HP:<input type="text" class="hit-points" placeholder="HP">
-                Dmg:<input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
-                <div class="damage-result"></div>
-                <div class="image-container">
-                    <button onclick="selectImage(this)">Miniature</button>
-                    <img src="">
-                    <input type="file" accept="image/*" onchange="loadImage(event)">
-                </div>
-                <input type="button" class="delete-btn" value="Delete" onclick="deleteUnit(this)">
-            `;
+let savedUnits = JSON.parse(localStorage.getItem("units"));
+if (savedUnits) {
+savedUnits.forEach(savedUnit => {
+let unit = document.createElement("div");
+unit.className = "unit";
+unit.style.backgroundImage = savedUnit.imageSrc; // Set background image
+unit.innerHTML = `
+<div class="unit">
+    <img class="unit-image">
+<button class="rotate-btn" value="Rotate" onclick="rotateUnit(this)">Rotate</button>
+<button class="menu-btn" onclick="toggleMenu(this)">Menu</button>
+<div class="menu-area" style="display: none;">
+AC:<input type="text" class="armor-class" placeholder="AC">
+HD:<input type="text" class="hit-dice" placeholder="HD">
+HP:<input type="text" class="hit-points" placeholder="HP">
+Dmg:<input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
+<div class="damage-result"></div>
+Strength: <input type="text" class="strength" placeholder="00">
+Dexterity: <input type="text" class="dexterity" placeholder="00">
+Constitution: <input type="text" class="constitution" placeholder="00">
+Intelligence: <input type="text" class="intelligence" placeholder="00">
+Wisdom: <input type="text" class="wisdom" placeholder="00">
+Charisma: <input type="text" class="charisma" placeholder="00">
+<div class="image-container">
+<button onclick="selectImage(this)">Miniature</button>
+<input type="file" accept="image/*" onchange="loadImage(event)">
+</div>
+<input type="button" class="delete-btn" value="Delete" onclick="deleteUnit(this)">
+</div>
+`;
 
-            unit.style.left = savedUnit.left;
-            unit.style.top = savedUnit.top;
-            unit.style.transform = savedUnit.transform;
-            unit.querySelector('.armor-class').value = savedUnit.ac;
-            unit.querySelector('.hit-dice').value = savedUnit.hd;
-            unit.querySelector('.hit-points').value = savedUnit.hp;
-            unit.querySelector('.damage-dice').value = savedUnit.damageDice;
+unit.style.left = savedUnit.left;
+unit.style.top = savedUnit.top;
+unit.style.transform = `rotate(${savedUnit.rotation}deg)`; // Set rotation value
 
-            let img = unit.querySelector('img');
-            img.src = savedUnit.imageSrc;
+unit.querySelector('.armor-class').value = savedUnit.ac;
+unit.querySelector('.hit-dice').value = savedUnit.hd;
+unit.querySelector('.hit-points').value = savedUnit.hp;
+unit.querySelector('.damage-dice').value = savedUnit.damageDice;
 
-            document.getElementById("game-container").appendChild(unit);
-            units.push(unit);
+let strengthInput = unit.querySelector('.strength');
+strengthInput.value = savedUnit.strength || "";
+let dexterityInput = unit.querySelector('.dexterity');
+dexterityInput.value = savedUnit.dexterity || "";
+let constitutionInput = unit.querySelector('.constitution');
+constitutionInput.value = savedUnit.constitution || "";
+let intelligenceInput = unit.querySelector('.intelligence');
+intelligenceInput.value = savedUnit.intelligence || "";
+let wisdomInput = unit.querySelector('.wisdom');
+wisdomInput.value = savedUnit.wisdom || "";
+document.getElementById("game-container").appendChild(unit);
+units.push(unit);
+let charismaInput = unit.querySelector('.charisma');
+charismaInput.value = savedUnit.charisma || "";
 
-            unit.draggable = true;
-            unit.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', null);
-                e.target.classList.add('dragging');
-            });
-            unit.addEventListener('dragend', (e) => {
-                e.target.classList.remove('dragging');
-                saveGame();
-            });
-        });
-    }
+unit.draggable = true;
+unit.addEventListener('dragstart', (e) => {
+e.dataTransfer.setData('text/plain', null);
+e.target.classList.add('dragging');
+});
+unit.addEventListener('dragend', (e) => {
+e.target.classList.remove('dragging');
+saveGame();
+});
+});
+}
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadGame();
+loadGame();
 });
 
 document.addEventListener('dragover', function (e) {
-    e.preventDefault();
+e.preventDefault();
 });
 
 document.addEventListener('drop', function (e) {
-    e.preventDefault();
+e.preventDefault();
 });
 
 document.addEventListener('drag', function (e) {
-    let unit = document.querySelector('.unit.dragging');
-    if (unit) {
-        let rect = document.getElementById("game-container").getBoundingClientRect();
+let unit = document.querySelector('.unit.dragging');
+if (unit) {
+let rect = document.getElementById("game-container").getBoundingClientRect();
 
-        let newX = e.clientX - rect.left;
-        let newY = e.clientY - rect.top;
+let newX = e.clientX - rect.left;
+let newY = e.clientY - rect.top;
 
-        unit.style.left = `${newX}px`;
-        unit.style.top = `${newY}px`;
-    }
+unit.style.left = `${newX}px`;
+unit.style.top = `${newY}px`;
+}
 });
 
 </script>
