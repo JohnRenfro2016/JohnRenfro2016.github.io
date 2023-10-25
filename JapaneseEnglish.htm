@@ -888,6 +888,7 @@ const replsB = [
 {p1:/(と)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xto$2Xga-be sharp$3X~RuVerb'},
 {p1:/(と)(?!X)(こ)(?!X)(ろ)(?!X)/g,r1:'$1Xto$2Xko$3Xro-about to do~Noun'},
 {p1:/(と)(?!X)(さ)(?!X)(れ)(?!X)/g,r1:'$1Xto$2Xsa$3Xre-is considered to be~IchidanVerb'},
+{p1:/(裏)(?!X)(付)(?!X)(け)(?!X)/g,r1:'$1Xura$2Xzu$3Xke-back up,substantiate~IchidanVerb'},
 {p1:/(と)(?!X)(し)(?!X)(て)(?!X)/g,r1:'$1Xto$2Xshi$3Xte-in the role of~Noun'},
 {p1:/(と)(?!X)(じ)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xto$2Xji-bind,file$3X~RuVerb'},
 {p1:/(と)(?!X)(っ)(?!X)(て)(?!X)/g,r1:'$1Xto$2Xt$3Xte-handle,grip~Noun'},
@@ -1183,6 +1184,7 @@ const replsB = [
 {p1:/(共)(?!X)(和)(?!X)(国)(?!X)/g,r1:'$1Xkyou$2Xwa$3Xkoku-republic~Noun'},
 {p1:/(共)(?!X)(通)(?!X)(語)(?!X)/g,r1:'$1Xkyou$2Xtsuu$3Xgo-common language,lingua franca~Noun'},
 {p1:/(リ)(?!X)(ス)(?!X)(ト)(?!X)/g,r1:'$1Xri$2Xsu$3Xto-list;wrist~Noun'},
+{p1:/(公)(?!X)(文)(?!X)(書)(?!X)/g,r1:'$1Xkou$2Xbun$3Xsyo-official document~Noun'},
 {p1:/(共|と)(?!X)(も)(?!X)(に)(?!X)/g,r1:'$1Xto$2Xmo$3X ni-jointly~Noun'},
 {p1:/(具)(?!X)(体)(?!X)(化)(?!X)/g,r1:'$1Xgu$2Xtai$3Xka-actualization~Noun'},
 {p1:/(具)(?!X)(体)(?!X)(的)(?!X)/g,r1:'$1Xgu$2Xtai$3Xteki-specific~Noun'},
@@ -5074,6 +5076,7 @@ const replsB = [
 {p1:/(殴)(?!X)(打)(?!X)/g,r1:'$1Xou$2Xda-strike~Noun'},
 {p1:/(段)(?!X)(々)(?!X)/g,r1:'$1Xdan$2Xdan-gradually,one after another~Noun'},
 {p1:/(段)(?!X)(落)(?!X)/g,r1:'$1Xdan$2Xraku-end~Noun'},
+{p1:/(照)(?!X)(合)(?!X)/g,r1:'$1Xsyou$2Xgou-collation,comparison~Noun'},
 {p1:/(段)(?!X)(階)(?!X)/g,r1:'$1Xdan$2Xkai-stage~Noun'},
 {p1:/(殺)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xkoro-kill,smother$2X~SuVerb'},
 {p1:/(殺)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xkoro-to kill$2X~SuVerb'},
@@ -5365,7 +5368,7 @@ const replsB = [
 {p1:/(炎)(?!X)(上)(?!X)/g,r1:'$1Xen$2Xjyou-going up in flames~Noun'},
 {p1:/(炭)(?!X)(素)(?!X)/g,r1:'$1Xtan$2Xso-carbon~Noun'},
 {p1:/(点)(?!X)(数)(?!X)/g,r1:'$1Xten$2Xsuu-score~Noun'},
-{p1:/(為)(?!X)(替)(?!X)/g,r1:'$1Xkaw$2Xase-exchange~Noun'},
+{p1:/(為)(?!X)(替)(?!X)/g,r1:'$1Xka$2Xwase-exchange~Noun'},
 {p1:/(焚)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xt a fire$2X~KuVerb'},
 {p1:/(無)(?!X)(い|く|か|さ)(?!X)/g,r1:'$1Xna-to not be$2X~IAdjective~Noun'},
 {p1:/(無)(?!X)(事)(?!X)/g,r1:'$1Xbu$2Xji-safely~Noun'},
@@ -8232,7 +8235,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-2002年に米兵による性暴力被害に遭ったオーストラリア人のキャサリン・ジェーン・フィッシャーさんは10月4日、国会内で記者会見を開き、性犯罪の根絶と日米地位協定の改定を求めた。
+米国のトランプ前大統領が2021～22年、世界平和統一家庭連合（旧統一教会）の関連団体「UPF」からビデオ出演3回の講演料として計250万ドル（当時の為替レートで約3億円）を受け取り、ペンス前副大統領も講演1回で55万ドル（約6000万円）の報酬を得ていたことが判明した。毎日新聞は受領を示す米公文書を入手し、日本国内の訴訟資料などと照合して裏付けた。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
