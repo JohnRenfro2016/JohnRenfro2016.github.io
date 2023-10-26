@@ -885,6 +885,7 @@ const replsB = [
 {p1:/(つ)(?!X)(ま)(?!X)(り)(?!X)/g,r1:'$1Xtsu$2Xma$3Xri-in short~Noun'},
 {p1:/(つ)(?!X)(も)(?!X)(り)(?!X)/g,r1:'$1Xtsu$2Xmo$3Xri-intention~Noun'},
 {p1:/(と)(?!X)(い)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xto$2Xi-to be called$3X~UVerb'},
+{p1:/(し)(?!X)(ま)(?!X)(わ|い|う|え|お|っ)(?!X)/g,r1:'$1Xshi$2Xma-to bring to a close$3X~UVerb'},
 {p1:/(と)(?!X)(が)(?!X)(ら|り|る|れ|ろ|っ)(?!X)/g,r1:'$1Xto$2Xga-be sharp$3X~RuVerb'},
 {p1:/(と)(?!X)(こ)(?!X)(ろ)(?!X)/g,r1:'$1Xto$2Xko$3Xro-about to do~Noun'},
 {p1:/(と)(?!X)(さ)(?!X)(れ)(?!X)/g,r1:'$1Xto$2Xsa$3Xre-is considered to be~IchidanVerb'},
@@ -2242,6 +2243,8 @@ const replsB = [
 {p1:/(３|3)(?!X)(０|0)(?!X)(日)(?!X)/g,r1:'$1Xsan jyuu$2X$3Xnichi-thirtieth day of the month~Noun'},
 {p1:/(３|3)(?!X)(１|1)(?!X)(日)(?!X)/g,r1:'$1Xsan jyuu$2Xichi$3Xnichi-thirty-first day of the month~Noun'},
 
+{p1:/(負)(?!X)(担)(?!X)/g,r1:'$1Xfu$2Xtan-burden~Noun'},
+
 {p1:/(1|１)(?!X)(0|０)(?!X)/g,r1:'$1Xjyuu$2X-ten~Noun'},
 {p1:/(1|１)(?!X)(1|１)(?!X)/g,r1:'$1Xjyuu$2Xichi-eleven~Noun'},
 {p1:/(1|１)(?!X)(2|２)(?!X)/g,r1:'$1Xjyuu$2Xni-twelve~Noun'},
@@ -2366,7 +2369,6 @@ const replsB = [
 {p1:/(ま)(?!X)(あ)(?!X)/g,r1:'$1Xmaa$2X-well~Noun'},
 {p1:/(ま)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xma-scatter,plant$2X~KuVerb'},
 {p1:/(ま)(?!X)(か|き|く|け|こ|い)(?!X)/g,r1:'$1Xma-sow,scatter$2X~KuVerb'},
-{p1:/(ま)(?!X)(ず)(?!X)/g,r1:'$1Xmaz$2Xu-first~Noun'},
 {p1:/(ま)(?!X)(た)(?!X)/g,r1:'$1Xma$2Xta-again~Noun'},
 {p1:/(ま)(?!X)(だ)(?!X)/g,r1:'$1Xma$2Xda-yet~Noun'},
 {p1:/(ま)(?!X)(ね)(?!X)/g,r1:'$1Xma$2Xne-imitation,mimicry~Noun'},
@@ -6408,7 +6410,7 @@ const replsB = [
 {p1:/(試)(?!X)(算)(?!X)/g,r1:'$1Xshi$2Xsan-estimation~Noun'},
 {p1:/(試)(?!X)(験)(?!X)/g,r1:'$1Xshi$2Xken-test~Noun'},
 {p1:/(詩)(?!X)(人)(?!X)/g,r1:'$1Xshi$2Xjin-poet~Noun'},
-{p1:/(詰)(?!X)(め)(?!X)/g,r1:'$1Xtsu$2Xme-pack~IchidanVerb'},
+{p1:/(詰)(?!X)(め)(?!X)/g,r1:'$1Xtsu$2Xme-do intensly;pack~IchidanVerb'},
 {p1:/(話)(?!X)(さ|し|す|せ|そ)(?!X)/g,r1:'$1Xhana-speak$2X~SuVerb'},
 {p1:/(話)(?!X)(題)(?!X)/g,r1:'$1Xwa$2Xdai-topic~Noun'},
 {p1:/(該)(?!X)(当)(?!X)/g,r1:'$1Xgai$2Xtou-relevant~Noun'},
@@ -6437,6 +6439,7 @@ const replsB = [
 {p1:/(説)(?!X)(得)(?!X)/g,r1:'$1Xset$2Xtoku-persuasion~Noun'},
 {p1:/(説)(?!X)(明)(?!X)/g,r1:'$1Xsetsu$2Xmei-explanation~Noun'},
 {p1:/(読)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xyo-read$2X~MuVerb'},
+{p1:/(進)(?!X)(ま|み|む|め|も|ん)(?!X)/g,r1:'$1Xsusu-to advance$2X~MuVerb'},
 {p1:/(読)(?!X)(み)(?!X)/g,r1:'$1Xyo$2Xmi-reading,judgment,foresight~Noun'},
 {p1:/(読)(?!X)(売)(?!X)/g,r1:'$1Xyomi$2Xuri-reading sales~Noun'},
 {p1:/(読)(?!X)(書)(?!X)/g,r1:'$1Xdok$2Xusyo-reading a book~Noun'},
@@ -8235,7 +8238,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p>
-米国のトランプ前大統領が2021～22年、世界平和統一家庭連合（旧統一教会）の関連団体「UPF」からビデオ出演3回の講演料として計250万ドル（当時の為替レートで約3億円）を受け取り、ペンス前副大統領も講演1回で55万ドル（約6000万円）の報酬を得ていたことが判明した。毎日新聞は受領を示す米公文書を入手し、日本国内の訴訟資料などと照合して裏付けた。
+意思に反して急に体を動かしたり、大きな声を出したりしてしまう神経疾患「トゥレット症」の当事者にとって、病気への理解が広がることは大きな意味を持つ。不安やストレスなど心理的な負担が減り、症状の軽減にもつながるからだ。学校側の理解が進まず悩んだ経験を持つ女子学生はかつて、「自分はここにいたらだめなのかな」と思い詰めた。
 <p>
 <textArea cols='40' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
