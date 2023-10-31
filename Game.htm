@@ -29,6 +29,11 @@ body
 {
 }
 
+.character {
+  /* ... */
+  touch-action: none; /* Disable default touch action to enable dragging */
+}
+
 .gameControls 
 {
 display:flex;
@@ -185,6 +190,58 @@ gameBoard.appendChild(character);
  // Make character draggable
  let isDragging = false;
  let offsetX, offsetY;
+ 
+dragArea.addEventListener('mousedown', handleMouseDown);
+dragArea.addEventListener('touchstart', handleTouchStart);
+
+document.addEventListener('mousemove', handleMouseMove);
+document.addEventListener('touchmove', handleTouchMove);
+
+document.addEventListener('mouseup', handleMouseUp);
+document.addEventListener('touchend', handleTouchEnd);
+
+function handleMouseDown(event) {
+  isDragging = true;
+  offsetX = event.offsetX;
+  offsetY = event.offsetY - 20; // Adjusted for the px offset
+}
+
+function handleMouseMove(event) {
+  if (isDragging) {
+    const newX = event.clientX - offsetX;
+    const newY = event.clientY - offsetY;
+
+    character.style.left = newX + 'px';
+    character.style.top = newY + 'px';
+  }
+}
+
+function handleMouseUp() {
+  isDragging = false;
+}
+
+function handleTouchStart(event) {
+  event.preventDefault();
+  const touch = event.touches[0];
+  isDragging = true;
+  offsetX = touch.clientX - character.offsetLeft;
+  offsetY = touch.clientY - character.offsetTop - 20; // Adjusted for the px offset
+}
+
+function handleTouchMove(event) {
+  if (isDragging) {
+    const touch = event.touches[0];
+    const newX = touch.clientX - offsetX;
+    const newY = touch.clientY - offsetY;
+
+    character.style.left = newX + 'px';
+    character.style.top = newY + 'px';
+  }
+}
+
+function handleTouchEnd() {
+  isDragging = false;
+}
 
  dragArea.addEventListener('mousedown', (event) => {
  isDragging = true;
