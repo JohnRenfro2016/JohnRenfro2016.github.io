@@ -5,215 +5,242 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simple RPG Game</title>
 <style>
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
 
-  .gameControls {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
+.custom-file-upload {
+  cursor: pointer;
+  color: black;
+}
 
-  .gameBoard {
-    width: 700px;
-    height: 700px;
-    background-color: #f0f0f0;
-    display: grid;
-    grid-template-columns: repeat(7, 100px);
-    grid-template-rows: repeat(7, 100px);
-    position: relative;
-  }
+.custom-file-upload input[type="file"] {
+  display: none;
+}
 
-  .square {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    box-sizing: border-box;
-  }
+.custom-file-upload:hover {
+  background-color: #f0f0f0;
+}
 
-  .character {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    position: absolute;
-    z-index: 1;
-  }
+button,html,input,
+{
+display:inline-block;
+font-size:10px;
+}
 
-  .dragArea {
-    width: 100%;
-    height: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    cursor: move;
-    text-align: center;
-    color: white;
-    font-size: 12px;
-  }
+body
+{
+}
 
-  .inputField {
-    width: 3ch;
-  }
-  
-  .HitDiceInput {
-    width: 8ch;
-  }
-  .DiceInputField {
-    width: 9ch;
-  }    
+.gameControls 
+{
+display:flex;
+}
+
+ .gameBoard {
+ width: 700px;
+ height: 700px;
+ background-color: #f0f0f0;
+ display: grid;
+ grid-template-columns: repeat(7, 100px);
+ grid-template-rows: repeat(7, 100px);
+ position: relative;
+ }
+
+ .square {
+ width: 100px;
+ height: 100px;
+ border: 1px solid black;
+ box-sizing: border-box;
+ }
+
+ .character {
+ width: 100px;
+ height: 100px;
+ border: 1px solid black;
+ position: absolute;
+ z-index: 1;
+ }
+
+ .dragArea {
+ background-color: rgba(0, 0, 0, 0.5);
+ position: relative;
+ cursor: move;
+ color: white;
+ }
+
+ .inputField {
+ width: 12ch;
+ }
+ 
+ .DiceInputField {
+ width: 10ch;
+ } 
 </style>
 </head>
 <body>
 
 <div class="gameControls">
-  <button id="createCharacterButton">Create Character</button>
-  <button id="saveButton">Save Game</button>
+ <button id="createCharacterButton">Create Character</button>
+ <button id="saveButton">Save Game</button>
 </div>
 
 <div class="gameBoard" id="gameBoard">
-  <!-- Add squares dynamically with JavaScript -->
+ <!-- Add squares dynamically with JavaScript -->
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const gameControls = document.querySelector('.gameControls');
-  const gameBoard = document.getElementById('gameBoard');
-  const createCharacterButton = document.getElementById('createCharacterButton');
-  const saveButton = document.getElementById('saveButton');
-  let pieceCount = 0;
+ const gameControls = document.querySelector('.gameControls');
+ const gameBoard = document.getElementById('gameBoard');
+ const createCharacterButton = document.getElementById('createCharacterButton');
+ const saveButton = document.getElementById('saveButton');
+ let pieceCount = 0;
 
-  // Create a character
-  function createCharacter(x, y) {
-    pieceCount++;
-    const character = document.createElement('div');
-    character.className = 'character';
-    character.style.left = x + 'px';
-    character.style.top = y + 'px';
-    character.id = `piece${pieceCount}`;
-	
-  // Add delete button
-  const deleteButton = document.createElement('button');
-  deleteButton.textContent = 'Delete';
-  deleteButton.addEventListener('click', () => deleteCharacter(character.id));
-  character.appendChild(deleteButton);
+ // Create a character
+ function createCharacter(x, y) {
+ pieceCount++;
+ const character = document.createElement('div');
+ character.className = 'character';
+ character.style.left = x + 'px';
+ character.style.top = y + 'px';
+ character.id = `piece${pieceCount}`;
+ 
+const imageSelectButton = document.createElement('input');
+imageSelectButton.type = 'file';
+imageSelectButton.accept = 'image/*';
+imageSelectButton.addEventListener('change', (event) => handleImageSelection(event, character));
 
-    // Add rotation button
-    const rotateButton = document.createElement('button');
-    rotateButton.textContent = 'Rotate';
-    rotateButton.addEventListener('click', () => rotateCharacter(character.id));
-    character.appendChild(rotateButton);
-	
-    // Add drag area
-    const dragArea = document.createElement('div');
-    dragArea.className = 'dragArea';
-    dragArea.textContent = 'Drag';
-    character.appendChild(dragArea);
+const label = document.createElement('label');
+label.className = 'custom-file-upload'; // Apply custom styling if needed
+label.appendChild(imageSelectButton);
+label.appendChild(document.createTextNode('miniature')); // Set the label text
 
-    // Add input field
-    const inputField = document.createElement('input');
-    inputField.className = 'inputField';
-    inputField.type = 'text';
-    inputField.maxLength = '3';
-    inputField.placeholder = 'AC';
-    character.appendChild(inputField);
+character.appendChild(label);
+gameBoard.appendChild(character);
 	
-	const HitDiceInput = document.createElement('input');
-    HitDiceInput.className = 'HitDiceInput';
-    HitDiceInput.type = 'text';
-    HitDiceInput.maxLength = '8';
-    HitDiceInput.placeholder = 'HD';
-    character.appendChild(HitDiceInput);
-	
-  // Add dice input field
-  const diceInput = document.createElement('input');
-  diceInput.className = 'DiceInputField';
-  diceInput.type = 'text';
-  diceInput.maxLength = '10';
-  diceInput.placeholder = 'XdY+Z';
-  character.appendChild(diceInput);
-
-  // Add dice result element
-  const diceResult = document.createElement('div');
-  diceResult.className = 'diceResult';
-  character.appendChild(diceResult);
-  
-  // Calculate dice result on mouseout
-  diceInput.addEventListener('mouseout', () => {
-    const diceNotation = diceInput.value;
-    if (diceNotation) {
-      const result = rollDice(diceNotation);
-      diceResult.textContent = `Result: ${result}`;
+	  // Function to handle image selection
+  function handleImageSelection(event, character) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        const imageUrl = reader.result;
+        character.style.backgroundImage = `url(${imageUrl})`;
+        
+        // Save game state after image selection
+        saveGameState();
+      };
+      reader.readAsDataURL(file);
     }
-  });
+  }
+
+//Add drag area
+ const dragArea = document.createElement('span');
+ dragArea.className = 'dragArea';
+ dragArea.textContent = 'Drag';
+ character.appendChild(dragArea);
 	
-    gameBoard.appendChild(character);
+ // Add rotation button
+ const rotateButton = document.createElement('button');
+ rotateButton.textContent = 'R';
+ rotateButton.addEventListener('click', () => rotateCharacter(character.id));
+ character.appendChild(rotateButton);
+	
+ // Add input field
+ const inputField = document.createElement('input');
+ inputField.className = 'inputField';
+ inputField.type = 'text';
+ inputField.maxLength = '30';
+ inputField.placeholder = 'Name AC HD maxHP/curHP';
+ character.appendChild(inputField);
+	
+ // Add dice input field
+ const diceInput = document.createElement('input');
+ diceInput.className = 'DiceInputField';
+ diceInput.type = 'text';
+ diceInput.maxLength = '10';
+ diceInput.placeholder = 'XdY+Z';
+ character.appendChild(diceInput);
 
-    // Make character draggable
-    let isDragging = false;
-    let offsetX, offsetY;
+ // Add dice result element
+ const diceResult = document.createElement('span');
+ diceResult.className = 'diceResult';
+ character.appendChild(diceResult);
+ 
+ // Calculate dice result on mouseout
+ diceInput.addEventListener('mouseout', () => {
+ const diceNotation = diceInput.value;
+ if (diceNotation) {
+ const result = rollDice(diceNotation);
+ diceResult.textContent = `=${result}`;
+ }
+ });
 
-    dragArea.addEventListener('mousedown', (event) => {
-      isDragging = true;
-      offsetX = event.offsetX;
-      offsetY = event.offsetY - 20; // Adjusted for the px offset
-    });
+ // Add delete button
+ const deleteButton = document.createElement('button');
+ deleteButton.textContent = 'X';
+ deleteButton.addEventListener('click', () => deleteCharacter(character.id));
+ character.appendChild(deleteButton);
+	
+ gameBoard.appendChild(character);
 
-    document.addEventListener('mousemove', (event) => {
-      if (isDragging) {
-        const newX = event.clientX - offsetX;
-        const newY = event.clientY - offsetY;
+ // Make character draggable
+ let isDragging = false;
+ let offsetX, offsetY;
 
-        character.style.left = newX + 'px';
-        character.style.top = newY + 'px';
-      }
-    });
+ dragArea.addEventListener('mousedown', (event) => {
+ isDragging = true;
+ offsetX = event.offsetX;
+ offsetY = event.offsetY - 20; // Adjusted for the px offset
+ });
 
-    document.addEventListener('mouseup', () => {
-      isDragging = false;
-    });
+ document.addEventListener('mousemove', (event) => {
+ if (isDragging) {
+ const newX = event.clientX - offsetX;
+ const newY = event.clientY - offsetY;
 
-    character.ondragstart = function() {
-      return false;
-    };
-  }
+ character.style.left = newX + 'px';
+ character.style.top = newY + 'px';
+ }
+ });
 
-  // Delete a character
-  function deleteCharacter(id) {
-    const character = document.getElementById(id);
-    character.remove();
+ document.addEventListener('mouseup', () => {
+ isDragging = false;
+ });
 
-    // Update local storage
-    saveGameState();
-  }
+ character.ondragstart = function() {
+ return false;
+ };
+ }
 
-  // Rotate a character
-  function rotateCharacter(id) {
-    const character = document.getElementById(id);
-    let rotation = character.dataset.rotation || 0;
-    rotation = (parseInt(rotation) + 45) % 360;
-    character.style.transform = `rotate(${rotation}deg)`;
-    character.dataset.rotation = rotation;
-  }
-  
-  // Roll dice function
-  function rollDice(diceNotation) {
-    const [numDice, diceSize, constant] = diceNotation.split(/[d+]/).map(Number);
-    let result = constant || 0;
+ // Delete a character
+ function deleteCharacter(id) {
+ const character = document.getElementById(id);
+ character.remove();
 
-    for (let i = 0; i < numDice; i++) {
-      result += Math.floor(Math.random() * diceSize) + 1;
-    }
+ // Update local storage
+ saveGameState();
+ }
 
-    return result;
-  }  
+ // Rotate a character
+ function rotateCharacter(id) {
+ const character = document.getElementById(id);
+ let rotation = character.dataset.rotation || 0;
+ rotation = (parseInt(rotation) + 45) % 360;
+ character.style.transform = `rotate(${rotation}deg)`;
+ character.dataset.rotation = rotation;
+ }
+ 
+ // Roll dice function
+ function rollDice(diceNotation) {
+ const [numDice, diceSize, constant] = diceNotation.split(/[d+]/).map(Number);
+ let result = constant || 0;
 
-  // Save game state to local storage
+ for (let i = 0; i < numDice; i++) {
+ result += Math.floor(Math.random() * diceSize) + 1;
+ }
+
+ return result;
+ } 
+
   function saveGameState() {
     const characters = gameBoard.querySelectorAll('.character');
     const gameState = [];
@@ -224,45 +251,47 @@ document.addEventListener('DOMContentLoaded', function() {
       const y = character.offsetTop;
       const rotation = character.dataset.rotation || 0;
       const ac = character.querySelector('.inputField').value || '';
-      const hd = character.querySelector('.HitDiceInput').value || '';
       const diceInput = character.querySelector('.DiceInputField').value || '';
-      const diceResult = character.querySelector('.diceResult').textContent || '';	  
-      gameState.push({ id, x, y, rotation, ac, hd, diceInput, diceResult });
+      const diceResult = character.querySelector('.diceResult').textContent || '';
+      const imageUrl = character.style.backgroundImage.replace('url("', '').replace('")', '');
+
+      gameState.push({ id, x, y, rotation, ac, diceInput, diceResult, imageUrl });
     });
 
     localStorage.setItem('gameState', JSON.stringify(gameState));
   }
 
-  // Load game state from local storage
-  function loadGameState() {
-    const gameState = JSON.parse(localStorage.getItem('gameState'));
+function loadGameState() {
+  const gameState = JSON.parse(localStorage.getItem('gameState'));
 
-    if (gameState) {
-      gameState.forEach(({ id, x, y, rotation, ac, hd, diceInput, diceResult }) => {
-        createCharacter(x, y);
-        const character = document.getElementById(id);
-        character.dataset.rotation = rotation;
-        character.style.transform = `rotate(${rotation}deg)`;
-        character.querySelector('.inputField').value = ac;
-        character.querySelector('.HitDiceInput').value = hd;
-        character.querySelector('.DiceInputField').value = diceInput;	 	
-        character.querySelector('.diceResult').textContent = diceResult;		
-      });
-    }
+  if (gameState) {
+    gameState.forEach(({ id, x, y, rotation, ac, diceInput, diceResult, imageUrl }) => {
+      createCharacter(x, y);
+
+      const character = document.getElementById(id);
+      character.dataset.rotation = rotation;
+      character.style.transform = `rotate(${rotation}deg)`;
+      character.querySelector('.inputField').value = ac;
+      character.querySelector('.DiceInputField').value = diceInput;
+      character.querySelector('.diceResult').textContent = diceResult;
+      character.style.backgroundImage = `url(${imageUrl})`; // Set the background image
+    });
   }
+}
 
-  // Add event listener for create character button
-  createCharacterButton.addEventListener('click', () => {
-    const x = Math.floor(Math.random() * 600); // Random x position (between 0 and 600)
-    const y = Math.floor(Math.random() * 600); // Random y position (between 0 and 600)
-    createCharacter(x, y);
-  });
 
-  // Add event listener for save button
-  saveButton.addEventListener('click', saveGameState);
+ // Add event listener for create character button
+ createCharacterButton.addEventListener('click', () => {
+ const x = Math.floor(Math.random() * 600); // Random x position (between 0 and 600)
+ const y = Math.floor(Math.random() * 600); // Random y position (between 0 and 600)
+ createCharacter(x, y);
+ });
 
-  // Load game state when page loads
-  loadGameState();
+ // Add event listener for save button
+ saveButton.addEventListener('click', saveGameState);
+
+ // Load game state when page loads
+ loadGameState();
 });
 </script>
 
