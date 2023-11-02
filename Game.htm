@@ -6,6 +6,28 @@
 <title>Simple RPG Game</title>
 <style>
 
+/* Style for all textarea elements */
+textarea {
+    max-height: 300px; /* Set the maximum height for the textarea */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Add a border for visibility */
+}
+
+/* Style for the scrollbar track */
+textarea::-webkit-scrollbar {
+    width: 6px; /* Set the width of the scrollbar */
+}
+
+/* Style for the scrollbar handle */
+textarea::-webkit-scrollbar-thumb {
+    background-color: #888; /* Set the color of the handle */
+}
+
+/* Style for the scrollbar track on hover */
+textarea::-webkit-scrollbar-track:hover {
+    background-color: #f0f0f0; /* Set the color of the track on hover */
+}
+
 .statsArea {
   background-color: black;
   color: white;
@@ -318,6 +340,28 @@ diceResult.textContent = `=${result}`;
 }
 });
 
+// Add duplication button
+const duplicateButton = document.createElement('button');
+duplicateButton.textContent = 'New dice roll?';
+duplicateButton.className = 'duplicateButton';
+statsArea.appendChild(duplicateButton);
+
+duplicateButton.addEventListener('click', () => {
+  const newDiceInput = diceInput.cloneNode(true);
+  const newDiceResult = diceResult.cloneNode(true);
+
+  statsArea.appendChild(newDiceInput);
+  statsArea.appendChild(newDiceResult);
+
+  newDiceInput.addEventListener('mouseout', () => {
+    const diceNotation = newDiceInput.value;
+    if (diceNotation) {
+      const result = rollDice(diceNotation);
+      newDiceResult.textContent = `=${result}`;
+    }
+  });
+});
+
 // Add delete button
 const deleteButton = document.createElement('button');
 deleteButton.className = 'rotateButton'; 
@@ -480,7 +524,10 @@ const diceInput = character.querySelector('.DiceInputField').value || '';
 const diceResult = character.querySelector('.diceResult').textContent || '';
 const imageUrl = character.style.backgroundImage.replace('url("', '').replace('")', '');
 
-gameState.push({ id, x, y, rotation, ac, diceInput, diceResult, imageUrl });
+        const diceInputsArray = Array.from(diceInputs).map(input => input.value);
+        const diceResultsArray = Array.from(diceResults).map(result => result.textContent);
+
+gameState.push({ id, x, y, rotation, ac, diceInput, diceResult, imageUrl, diceInputsArray, diceResultsArray });
 });
 
 localStorage.setItem('gameState', JSON.stringify(gameState));
@@ -519,7 +566,6 @@ character.style.backgroundImage = `url(${imageUrl})`; // Set the background imag
 });
 }
 }
-
 
 // Add event listener for create character button
 createCharacterButton.addEventListener('click', () => {
