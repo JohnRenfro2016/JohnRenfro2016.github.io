@@ -6,135 +6,156 @@
 <title>Simple RPG Game</title>
 <style>
 
+.statsArea {
+  background-color: black;
+  color: white;
+  border: 1px solid #000;
+  padding: 10px;
+  position: absolute;
+  top: 120px; /* Adjust the position as needed */
+  left: 0;
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
+}
+
 .custom-file-upload {
-cursor: pointer;
-color: white;
+    cursor: pointer;
+    color: #eedd82; /* Gold color for treasure chest */
 }
 
 .custom-file-upload input[type="file"] {
-display: none;
+    display: none;
 }
 
 .custom-file-upload:hover {
-background-color: #f0f0f0;
+    background-color: #f0f0f0;
 }
 
-button,html,input,
-{
-color:white;
-display:inline-block;
-font-size:10px;
-opacity: 0.5;
+button, html, input {
+    background-color: #8b4513; /* Dark brown color for background (old wood) */
+    color: #eedd82; /* Gold color for treasure chest */
+    display: inline-block;
+    font-size: 10px;
+    opacity: 0.8; /* Slightly reduce opacity for a vintage look */
 }
 
-body
-{
-}
-
-.character {
-/* ... */
-touch-action: none; /* Disable default touch action to enable dragging */
-}
-
-.inputField, .DiceInputField {
-  background: transparent;
-  color: white;
-  border: none; /* Remove border */
-}
-
-::placeholder {
-  color: white;
-}
-
-.gameControls 
-{
-display:flex;
-}
-
-.gameBoard {
-width: 700px;
-height: 700px;
-background-color: #f0f0f0;
-display: grid;
-grid-template-columns: repeat(7, 100px);
-grid-template-rows: repeat(7, 100px);
-position: relative;
-}
-
-.square {
-width: 100px;
-height: 100px;
-border: 1px solid black;
-box-sizing: border-box;
+body {
+    background-color: #8b4513; /* Dark brown color for background (old wood) */
 }
 
 .character {
-background-color:black;
-width: 100px;
-height: 100px;
-border: 1px solid black;
-position: absolute;
-z-index: 1;
-}
-
-.dragArea {
-background-color: rgba(0, 0, 0, 0.5);
-position: relative;
-cursor: move;
-color: white;
-}
-
-.inputField {
-width: 12ch;
-}
-
-.DiceInputField {
-width: 10ch;
-} 
-
-.diceRoller {
-  margin-top: 10px;
-}
-
-.diceRoller input[type="text"] {
-  width: 10ch;
+    background-color: #8b4513; /* Brown color for character */
+    width: 100px;
+    height: 100px;
+    border: 1px solid #8b4513; /* Brown color for borders */
+    position: absolute;
+    touch-action: none;
+    z-index: 1;
 }
 
 .diceResult {
-  display: inline-block;
-  margin-left: 10px;
-  font-size: 14px; /* Adjust font size as needed */
-  color: white; /* Adjust color as needed */
+    color: #eedd82; /* Gold color for text */
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.diceRoller {
+    margin-top: 10px;
+}
+
+.diceRoller input[type="text"] {
+    width: 10ch;
+}
+
+.dragArea {
+    background-color: rgba(139, 69, 19, 0.5); /* Semi-transparent brown color for drag area */
+    color: #eedd82; /* Gold color for text */
+    cursor: move;
+    position: relative;
+}
+
+.gameBoard {
+    background-color: #8b4513; /* Dark brown color for background (old wood) */
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(7, 100px);
+    height: 700px;
+    position: relative;
+    width: 700px;
+}
+
+.gameControls {
+    display: flex;
+}
+
+.inputField, .DiceInputField {
+    background: transparent;
+    border: none;
+    color: #eedd82; /* Gold color for treasure chest */
+}
+
+.inputField {
+    width: 12ch;
+}
+
+.DiceInputField {
+    width: 10ch;
 }
 
 .rotateButton {
-  cursor: pointer; /* Add pointer cursor for interaction */
-  color: white; /* Set the color of the text */
-  background: none; /* Remove background */
-  border: none; /* Remove border */
-  padding: 0; /* Remove padding */
+    background: none;
+    border: none;
+    color: #eedd82; /* Gold color for text */
+    cursor: pointer;
+    padding: 0;
 }
 
 .rotateButton:hover {
-background-color: #f0f0f0;
+    background-color: #f0f0f0;
+}
+
+.square {
+    border: 1px solid #8b4513; /* Brown color for borders */
+    box-sizing: border-box;
+    height: 100px;
+    width: 100px;
+}
+
+a {
+    color: #eedd82; /* Gold color for links */
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.3s; /* Add transition for smoother hover effect */
+}
+
+a:hover {
+    color: #f0f0f0; /* Lighter shade for hover effect */
+}
+
+/* Placeholder text color */
+::placeholder {
+    color: #eedd82; /* Gold color for treasure chest */
 }
 
 </style>
 </head>
 <body>
-<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='blank'>Dungeon Master Guide Combat Tables</a>
-<br>
-<a href='https://archive.org/details/ad-d-monster-manual' target='blank'>Monster Manual</a>
-<br>
-<a href='https://archive.org/details/tsr09045addthesecretofbonehill' target='blank'>The Secret of Bone Hill</a>
-<br>
+<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>Dungeon Master Guide Combat Tables</a>
+|
+<a href='https://archive.org/details/ad-d-monster-manual' target='_blank'>Monster Manual</a>
+|
+<a href='https://archive.org/details/tsr09045addthesecretofbonehill' target='_blank'>The Secret of Bone Hill</a>
+|
 <div class="gameControls">
 <input type="file" id="mapImageInput" accept="image/*">
 <button id="createCharacterButton">Create Character</button>
 <button id="saveButton">Save Game</button>
 </div>
-<div class="diceRoller">
-  <input id="diceNotationInput" type="text" maxlength="10" placeholder="XdY+Z">
+<div class="diceRoller">Attack Dice:
+  <input id="diceNotationInput" type="text" maxlength="10" placeholder="XdY+Z" value="1d20+0">
   <span id="diceResult" class="diceResultStyle"></span>
 </div>
 
@@ -208,6 +229,8 @@ character.style.left = x + 'px';
 character.style.top = y + 'px';
 character.id = `piece${pieceCount}`;
 
+
+
 const imageSelectButton = document.createElement('input');
 imageSelectButton.type = 'file';
 imageSelectButton.accept = 'image/*';
@@ -249,15 +272,29 @@ rotateButton.className = 'rotateButton';
 rotateButton.textContent = 'R';
 rotateButton.addEventListener('click', () => rotateCharacter(character.id));
 character.appendChild(rotateButton);
-	
-// Add input field
-const inputField = document.createElement('input');
+
+const statsButton = document.createElement('button');
+statsButton.className = 'statsButton'; 
+statsButton.textContent = 'Stats';
+statsButton.addEventListener('click', () => toggleStats(character.id));
+character.appendChild(statsButton);
+
+const statsArea = document.createElement('div');
+statsArea.className = 'statsArea hidden'; // Initially hidden
+statsArea.style.zIndex = 2;
+statsArea.innerHTML = `
+  <div>more content hereAC</div>
+`;
+character.appendChild(statsArea);
+
+// Add textarea for stats
+const inputField = document.createElement('textarea');
 inputField.className = 'inputField';
-inputField.type = 'text';
-inputField.maxLength = '30';
+inputField.rows = 4; // Set the number of rows
+inputField.maxLength = '120'; // Adjust the maximum length if needed
 inputField.placeholder = 'Name AC HD maxHP/curHP';
 inputField.id = `input_${pieceCount}`; // Assigning a unique ID
-character.appendChild(inputField);
+statsArea.appendChild(inputField);
 	
 // Add dice input field
 const diceInput = document.createElement('input');
@@ -265,12 +302,12 @@ diceInput.className = 'DiceInputField';
 diceInput.type = 'text';
 diceInput.maxLength = '10';
 diceInput.placeholder = 'XdY+Z';
-character.appendChild(diceInput);
+statsArea.appendChild(diceInput);
 
 // Add dice result element
 const diceResult = document.createElement('span');
 diceResult.className = 'diceResult';
-character.appendChild(diceResult);
+statsArea.appendChild(diceResult);
 
 // Calculate dice result on mouseout
 diceInput.addEventListener('mouseout', () => {
@@ -286,65 +323,93 @@ const deleteButton = document.createElement('button');
 deleteButton.className = 'rotateButton'; 
 deleteButton.textContent = 'X';
 deleteButton.addEventListener('click', () => deleteCharacter(character.id));
-character.appendChild(deleteButton);
+statsArea.appendChild(deleteButton);
 	
 gameBoard.appendChild(character);
 
+function toggleStats(id) {
+  const character = document.getElementById(id);
+  const statsArea = character.querySelector('.statsArea');
+  statsArea.classList.toggle('hidden');
+}
+
 // Make character draggable
 let isDragging = false;
-let offsetX, offsetY;
+let isDraggingStats = false;
+let draggedCharacter = null;
 
-dragArea.addEventListener('mousedown', handleMouseDown);
-dragArea.addEventListener('touchstart', handleTouchStart);
+function handleMouseDown(event) {
+    if (event.target.classList.contains('dragArea')) {
+        isDragging = true;
+        draggedCharacter = event.target.parentElement;
+        draggedCharacter.style.zIndex = 2;
+        const rect = draggedCharacter.getBoundingClientRect();
+        offsetX = event.clientX - rect.left;
+        offsetY = event.clientY - rect.top;
+    } else if (event.target.classList.contains('statsButton')) {
+        isDraggingStats = true;
+        draggedCharacter = event.target.parentElement;
+        draggedCharacter.style.zIndex = 2;
+    }
+}
+
+function handleMouseMove(event) {
+    if (isDragging) {
+        const newX = event.clientX - offsetX;
+        const newY = event.clientY - offsetY;
+        draggedCharacter.style.left = newX + 'px';
+        draggedCharacter.style.top = newY + 'px';
+    }
+}
+
+function handleMouseUp() {
+    if (isDragging || isDraggingStats) {
+        isDragging = false;
+        isDraggingStats = false;
+        draggedCharacter.style.zIndex = 1;
+        draggedCharacter = null;
+    }
+}
+
+function handleTouchStart(event) {
+    if (event.target.classList.contains('dragArea')) {
+        event.preventDefault();
+        isDragging = true;
+        draggedCharacter = event.target.parentElement;
+        draggedCharacter.style.zIndex = 2;
+        const rect = draggedCharacter.getBoundingClientRect();
+        offsetX = event.touches[0].clientX - rect.left;
+        offsetY = event.touches[0].clientY - rect.top;
+    } else if (event.target.classList.contains('statsButton')) {
+        isDraggingStats = true;
+        draggedCharacter = event.target.parentElement;
+        draggedCharacter.style.zIndex = 2;
+    }
+}
+
+function handleTouchMove(event) {
+    if (isDragging) {
+        const newX = event.touches[0].clientX - offsetX;
+        const newY = event.touches[0].clientY - offsetY;
+        draggedCharacter.style.left = newX + 'px';
+        draggedCharacter.style.top = newY + 'px';
+    }
+}
+
+function handleTouchEnd() {
+    if (isDragging || isDraggingStats) {
+        isDragging = false;
+        isDraggingStats = false;
+        draggedCharacter.style.zIndex = 1;
+        draggedCharacter = null;
+    }
+}
 
 document.addEventListener('mousemove', handleMouseMove);
 document.addEventListener('touchmove', handleTouchMove);
 
 document.addEventListener('mouseup', handleMouseUp);
 document.addEventListener('touchend', handleTouchEnd);
-
-function handleMouseDown(event) {
-isDragging = true;
-offsetX = event.offsetX;
-offsetY = event.offsetY - 20; // Adjusted for the px offset
-}
-
-function handleMouseMove(event) {
-if (isDragging) {
-const newX = event.clientX - offsetX;
-const newY = event.clientY - offsetY;
-
-character.style.left = newX + 'px';
-character.style.top = newY + 'px';
-}
-}
-
-function handleMouseUp() {
-isDragging = false;
-}
-
-function handleTouchStart(event) {
-event.preventDefault();
-const touch = event.touches[0];
-isDragging = true;
-offsetX = touch.clientX - character.offsetLeft;
-offsetY = touch.clientY - character.offsetTop - 20; // Adjusted for the px offset
-}
-
-function handleTouchMove(event) {
-if (isDragging) {
-const touch = event.touches[0];
-const newX = touch.clientX - offsetX;
-const newY = touch.clientY - offsetY;
-
-character.style.left = newX + 'px';
-character.style.top = newY + 'px';
-}
-}
-
-function handleTouchEnd() {
-isDragging = false;
-}
 
 dragArea.addEventListener('mousedown', (event) => {
 isDragging = true;
