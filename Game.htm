@@ -1,591 +1,795 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple RPG Game</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Advanced Dungeons &amp; Dragons 1st Edition(for Android and Desktop Chrome)</title>
 <style>
 
-/* Style for all textarea elements */
-textarea {
- max-height: 300px; /* Set the maximum height for the textarea */
- overflow-y: auto; /* Enable vertical scrolling */
- border: 1px solid #ccc; /* Add a border for visibility */
+body,
+button,
+input,
+object,
+radio,
+select,
+table,
+td,
+text,
+textArea,
+tr,
+a:link,
+a:visited {
+color:#000;
+display:inline-block;
+font-size:10px;
 }
 
-/* Style for the scrollbar track */
-textarea::-webkit-scrollbar {
- width: 6px; /* Set the width of the scrollbar */
+div
+{
+display:inline-block;
 }
 
-/* Style for the scrollbar handle */
-textarea::-webkit-scrollbar-thumb {
- background-color: #888; /* Set the color of the handle */
+.board {
+display:grid;
+grid-template-columns:repeat(7, 100px);
+grid-template-rows:repeat(7, 100px);
+height:700px;
+position:relative;
+width:700px;
 }
 
-/* Style for the scrollbar track on hover */
-textarea::-webkit-scrollbar-track:hover {
- background-color: #f0f0f0; /* Set the color of the track on hover */
+.board.touch,
+.unit.touch
+{
+touch-action:none;
 }
 
-.statsArea {
- background-color: black;
- color: white;
- border: 1px solid #000;
- padding: 10px;
- position: absolute;
- top: 120px; /* Adjust the position as needed */
- left: 0;
- z-index: 2;
+.menu
+{
+height:auto;
+position:relative;
 }
 
-.hidden {
- display: none;
+.square
+{
+border:1px solid #000;
+height:100px;
+width:100px;
 }
 
-.custom-file-upload {
- cursor: pointer;
- color: #eedd82; /* Gold color for treasure chest */
+.unit
+{
+cursor:move;
+height:100px;
+position:absolute;
+transform-origin:center;
+user-select:none;
+width:100px;
+z-index:1;
 }
 
-.custom-file-upload input[type="file"] {
- display: none;
-}
-
-.custom-file-upload:hover {
- background-color: #f0f0f0;
-}
-
-button, html, input {
- background-color: #8b4513; /* Dark brown color for background (old wood) */
- color: #eedd82; /* Gold color for treasure chest */
- display: inline-block;
- font-size: 10px;
- opacity: 0.8; /* Slightly reduce opacity for a vintage look */
-}
-
-body {
- background-color: #8b4513; /* Dark brown color for background (old wood) */
-}
-
-.character {
- background-color: #8b4513; /* Brown color for character */
- width: 100px;
- height: 100px;
- border: 1px solid #8b4513; /* Brown color for borders */
- position: absolute;
- touch-action: none;
- z-index: 1;
-}
-
-.diceResult {
- color: #eedd82; /* Gold color for text */
- display: inline-block;
- font-size: 14px;
- margin-left: 10px;
-}
-
-.diceRoller {
- margin-top: 10px;
-}
-
-.diceRoller input[type="text"] {
- width: 10ch;
-}
-
-.dragAreaStyle {
- background-color: rgba(139, 69, 19, 0.5); /* Semi-transparent brown color for drag area */
- color: #eedd82; /* Gold color for text */
- cursor: move;
- position: relative;
-}
-
-.gameBoard {
- background-color: #8b4513; /* Dark brown color for background (old wood) */
- display: grid;
- grid-template-columns: repeat(7, 100px);
- grid-template-rows: repeat(7, 100px);
- height: 700px;
- position: relative;
- width: 700px;
-}
-
-.gameControls {
- display: flex;
-}
-
-.inputField, .DiceInputField {
- background: transparent;
- border: none;
- color: #eedd82; /* Gold color for treasure chest */
-}
-
-.inputField {
- width: 12ch;
-}
-
-.DiceInputField {
- width: 10ch;
-}
-
-.rotateButton {
- background: none;
- border: none;
- color: #eedd82; /* Gold color for text */
- cursor: pointer;
- padding: 0;
-}
-
-.rotateButton:hover {
- background-color: #f0f0f0;
-}
-
-.square {
- border: 1px solid #8b4513; /* Brown color for borders */
- box-sizing: border-box;
- height: 100px;
- width: 100px;
-}
-
-a {
- color: #eedd82; /* Gold color for links */
- text-decoration: none; /* Remove default underline */
- transition: color 0.3s; /* Add transition for smoother hover effect */
-}
-
-a:hover {
- color: #f0f0f0; /* Lighter shade for hover effect */
-}
-
-/* Placeholder text color */
-::placeholder {
- color: #eedd82; /* Gold color for treasure chest */
+.unit-style
+{
+display:block;
 }
 
 </style>
-</head>
-<body>
-<a href='https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up' target='_blank'>Dungeon Master Guide Combat Tables</a>
-|
-<a href='https://archive.org/details/ad-d-monster-manual' target='_blank'>Monster Manual</a>
-|
-<a href='https://archive.org/details/tsr09045addthesecretofbonehill' target='_blank'>The Secret of Bone Hill</a>
-|
-<div class="gameControls">
-<input type="file" id="mapImageInput" accept="image/*">
-<button id="createCharacterButton">Create Character</button>
-<button id="saveButton">Save Game</button>
-</div>
-<div class="diceRoller">Attack Dice:
- <input id="diceNotationInput" type="text" maxlength="10" placeholder="XdY+Z" value="1d20+0">
- <span id="diceResult" class="diceResultStyle"></span>
-</div>
 
-<div class="gameBoard" id="gameBoard">
-<!-- Add squares dynamically with JavaScript -->
-</div>
+<body>
+ 
+<button onclick="createUnit()">Create a character or monster?</button>
+
+Load a map image.
+<input type="file" id="mapImageInput" accept="image/*" name="mapImageInput">
+
+<div class="board" id="board"></div>
 
 <script>
+let unitCount=0;
+let highestZIndex=1;
 
-const mapImageInput = document.getElementById('mapImageInput');
-const gameBoard = document.getElementById('gameBoard');
-
-mapImageInput.addEventListener('change', handleMapImageSelection);
-
-function handleMapImageSelection(event) {
- const file = event.target.files[0];
- if (file) {
- const reader = new FileReader();
- reader.onload = function() {
- const imageUrl = reader.result;
- gameBoard.style.backgroundImage = `url(${imageUrl})`;
- 
- // Save map image URL in local storage
- localStorage.setItem('mapImage', imageUrl);
- };
- reader.readAsDataURL(file);
- }
+// Start constant declarations
+const board=document.getElementById('board');
+for (let i=0; i < 49; i++) {
+const square=document.createElement('div');
+square.className='square';
+board.appendChild(square);
 }
+// End constant declarations
 
-// Roll dice function
-function rollDice2(diceNotation) {
- const [numDice, diceSize, constant] = diceNotation.split(/[d+]/).map(Number);
- let result = constant || 0;
+// start of drag functions
 
- for (let i = 0; i < numDice; i++) {
- result += Math.floor(Math.random() * diceSize) + 1;
- }
-
- return result;
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-
- // Add event listener for dice input field
- const diceInput = document.getElementById('diceNotationInput');
- const diceResultElement = document.getElementById('diceResult');
-
- // Calculate dice result on mouseout
- diceInput.addEventListener('mouseout', () => {
- const diceNotation = diceInput.value;
- if (diceNotation) {
- const result = rollDice2(diceNotation);
- diceResultElement.textContent = `Result: ${result}`;
- }
- });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-const gameControls = document.querySelector('.gameControls');
-const gameBoard = document.getElementById('gameBoard');
-const createCharacterButton = document.getElementById('createCharacterButton');
-const saveButton = document.getElementById('saveButton');
-let pieceCount = 0;
-
-// Create a character
-function createCharacter(x, y) {
-pieceCount++;
-const character = document.createElement('div');
-character.className = 'character';
-character.style.left = x + 'px';
-character.style.top = y + 'px';
-character.id = `piece${pieceCount}`;
-
-
-
-const imageSelectButton = document.createElement('input');
-imageSelectButton.type = 'file';
-imageSelectButton.accept = 'image/*';
-imageSelectButton.addEventListener('change', (event) => handleImageSelection(event, character));
-
-const label = document.createElement('label');
-label.className = 'custom-file-upload'; // Apply custom styling if needed
-label.appendChild(imageSelectButton);
-label.appendChild(document.createTextNode('M')); // Set the label text
-
-character.appendChild(label);
-gameBoard.appendChild(character);
-	
-	 // Function to handle image selection
-function handleImageSelection(event, character) {
-const file = event.target.files[0];
-if (file) {
-const reader = new FileReader();
-reader.onload = function() {
-const imageUrl = reader.result;
-character.style.backgroundImage = `url(${imageUrl})`;
-
-// Save game state after image selection
-saveGameState();
-};
-reader.readAsDataURL(file);
-}
-}
-
-//Add drag area
-const dragArea = document.createElement('span');
-dragArea.className = 'dragAreaStyle';
-dragArea.textContent = ' Drag ';
-character.appendChild(dragArea);
-	
-// Add rotation button
-const rotateButton = document.createElement('button');
-rotateButton.className = 'rotateButton'; 
-rotateButton.textContent = 'R';
-rotateButton.addEventListener('click', () => rotateCharacter(character.id));
-character.appendChild(rotateButton);
-
-const statsButton = document.createElement('button');
-statsButton.className = 'statsButton'; 
-statsButton.textContent = 'Stats';
-statsButton.addEventListener('click', () => toggleStats(character.id));
-character.appendChild(statsButton);
-
-const statsArea = document.createElement('div');
-statsArea.className = 'statsArea hidden'; // Initially hidden
-statsArea.style.zIndex = 2;
-statsArea.innerHTML = `
-Stats
-`;
-character.appendChild(statsArea);
-
-// Add textarea for stats
-const inputField = document.createElement('textarea');
-inputField.className = 'inputField';
-inputField.rows = 4; // Set the number of rows
-inputField.maxLength = '120'; // Adjust the maximum length if needed
-inputField.placeholder = 'Name AC HD maxHP/curHP';
-inputField.id = `input_${pieceCount}`; // Assigning a unique ID
-statsArea.appendChild(inputField);
-	
-// Add dice input field
-const diceInput = document.createElement('input');
-diceInput.className = 'DiceInputField';
-diceInput.type = 'text';
-diceInput.maxLength = '10';
-diceInput.placeholder = 'XdY+Z';
-statsArea.appendChild(diceInput);
-
-// Add dice result element
-const diceResult = document.createElement('span');
-diceResult.className = 'diceResult';
-statsArea.appendChild(diceResult);
-
-// Calculate dice result on mouseout
-diceInput.addEventListener('mouseout', () => {
-const diceNotation = diceInput.value;
-if (diceNotation) {
-const result = rollDice(diceNotation);
-diceResult.textContent = `=${result}`;
-}
-});
-
-// Add duplication button
-const duplicateButton = document.createElement('button');
-duplicateButton.textContent = 'New dice roll?';
-duplicateButton.className = 'duplicateButton';
-statsArea.appendChild(duplicateButton);
-
-duplicateButton.addEventListener('click', () => {
- const newDiceInput = diceInput.cloneNode(true);
- const newDiceResult = diceResult.cloneNode(true);
-
- statsArea.appendChild(newDiceInput);
- statsArea.appendChild(newDiceResult);
-
- newDiceInput.addEventListener('mouseout', () => {
- const diceNotation = newDiceInput.value;
- if (diceNotation) {
- const result = rollDice(diceNotation);
- newDiceResult.textContent = `=${result}`;
- }
- });
-});
-
-// Add delete button
-const deleteButton = document.createElement('button');
-deleteButton.className = 'rotateButton'; 
-deleteButton.textContent = 'X';
-deleteButton.addEventListener('click', () => deleteCharacter(character.id));
-statsArea.appendChild(deleteButton);
-	
-gameBoard.appendChild(character);
-
-function toggleStats(id) {
- const character = document.getElementById(id);
- const statsArea = character.querySelector('.statsArea');
- statsArea.classList.toggle('hidden');
-}
-
-// Make character draggable
 let isDragging = false;
-let isDraggingStats = false;
-let draggedCharacter = null;
+let draggedElement = null;
+let offsetX, offsetY;
+let boardRect;
 
-function handleMouseDown(event) {
- if (event.target.classList.contains('dragArea')) {
- isDragging = true;
- draggedCharacter = event.target.parentElement;
- draggedCharacter.style.zIndex = 2;
- const rect = draggedCharacter.getBoundingClientRect();
- offsetX = event.clientX - rect.left;
- offsetY = event.clientY - rect.top;
- } else if (event.target.classList.contains('statsButton')) {
- isDraggingStats = true;
- draggedCharacter = event.target.parentElement;
- draggedCharacter.style.zIndex = 2;
- }
-}
+document.addEventListener('mousedown', onMouseDown);
+document.addEventListener('mousemove', onMouseMove);
+document.addEventListener('mouseup', onMouseUp);
 
-function handleMouseMove(event) {
- if (isDragging) {
- const newX = event.clientX - offsetX;
- const newY = event.clientY - offsetY;
- draggedCharacter.style.left = newX + 'px';
- draggedCharacter.style.top = newY + 'px';
- }
-}
-
-function handleMouseUp() {
- if (isDragging || isDraggingStats) {
- isDragging = false;
- isDraggingStats = false;
- draggedCharacter.style.zIndex = 1;
- draggedCharacter = null;
- }
-}
-
-// Add touch event listeners for character dragging
-document.addEventListener('touchstart', handleTouchStart);
-document.addEventListener('touchmove', handleTouchMove);
-document.addEventListener('touchend', handleTouchEnd);
-
-// Make character draggable on touch devices
-let touchStartX, touchStartY;
-
-function handleTouchStart(event) {
- if (event.target.classList.contains('dragArea')) {
- event.preventDefault();
- isDragging = true;
- draggedCharacter = event.target.parentElement;
- draggedCharacter.style.zIndex = 2;
-
- const touch = event.touches[0];
- touchStartX = touch.clientX - draggedCharacter.offsetLeft;
- touchStartY = touch.clientY - draggedCharacter.offsetTop;
- } else if (event.target.classList.contains('statsButton')) {
- isDraggingStats = true;
- draggedCharacter = event.target.parentElement;
- draggedCharacter.style.zIndex = 2;
- }
-}
-
-function handleTouchMove(event) {
- if (isDragging) {
- const touch = event.touches[0];
- const newX = touch.clientX - touchStartX;
- const newY = touch.clientY - touchStartY;
- draggedCharacter.style.left = newX + 'px';
- draggedCharacter.style.top = newY + 'px';
- }
-}
-
-function handleTouchEnd() {
- if (isDragging || isDraggingStats) {
- isDragging = false;
- isDraggingStats = false;
- draggedCharacter.style.zIndex = 1;
- draggedCharacter = null;
-
- // Save game state after touch end
- saveGameState();
- }
-}
-
-document.addEventListener('touchstart', handleTouchStart);
-document.addEventListener('touchmove', handleTouchMove);
-document.addEventListener('touchend', handleTouchEnd);
-
-document.addEventListener('mousemove', handleMouseMove);
-document.addEventListener('touchmove', handleTouchMove);
-
-document.addEventListener('mouseup', handleMouseUp);
-document.addEventListener('touchend', handleTouchEnd);
-
-dragArea.addEventListener('mousedown', (event) => {
+function onMouseDown(event) {
+if (event.target.classList.contains('unit')) {
 isDragging = true;
-offsetX = event.offsetX;
-offsetY = event.offsetY - 20; // Adjusted for the px offset
-});
+draggedElement = event.target;
+offsetX = event.clientX - draggedElement.offsetLeft;
+offsetY = event.clientY - draggedElement.offsetTop;
+draggedElement.style.zIndex = '2'; // Bring the element to the top
+document.addEventListener('selectstart', preventDefault); // Prevent text selection during drag
+boardRect = document.getElementById('board').getBoundingClientRect(); // Get board dimensions
+}
+}
 
-document.addEventListener('mousemove', (event) => {
+function onMouseMove(event) {
 if (isDragging) {
-const newX = event.clientX - offsetX;
-const newY = event.clientY - offsetY;
+event.preventDefault();
+const mouseX = event.clientX - offsetX;
+const mouseY = event.clientY - offsetY;
 
-character.style.left = newX + 'px';
-character.style.top = newY + 'px';
+// Enforce maximum draggable area
+const maxX = boardRect.width - draggedElement.offsetWidth;
+const maxY = boardRect.height - draggedElement.offsetHeight;
+const newX = Math.min(Math.max(0, mouseX), maxX);
+const newY = Math.min(Math.max(0, mouseY), maxY);
+
+// Snap to grid
+const cellSize = 100;
+const gridX = Math.round(newX / cellSize) * cellSize;
+const gridY = Math.round(newY / cellSize) * cellSize;
+
+draggedElement.style.left = `${gridX}px`;
+draggedElement.style.top = `${gridY}px`;
 }
-});
+}
 
-document.addEventListener('mouseup', () => {
+function onMouseUp() {
+if (isDragging) {
 isDragging = false;
+draggedElement.style.zIndex = '1'; // Restore the z-index
+document.removeEventListener('selectstart', preventDefault);
+}
+}
+
+function preventDefault(event) {
+event.preventDefault();
+}
+
+// End of the drag functions
+
+const lastRolls=[];
+
+function displayLastRolls() {
+const resultsContainer=document.getElementById('resultsContainer');
+resultsContainer.innerHTML=lastRolls.join('<br>');
+}
+
+// Function to roll a random 20-sided die (D20)
+function rollD20() {
+const result=Math.floor(Math.random() * 20) + 1;
+lastRolls.push(`D20 Result:${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
+}
+
+// Function to roll a 12-sided die (D12)
+function rollD12() {
+const result=Math.floor(Math.random() * 12) + 1;
+lastRolls.push(`D12 Result:${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
+}
+
+// Function to roll a 10-sided die (D10)
+function rollD10() {
+const result=Math.floor(Math.random() * 10) + 1;
+lastRolls.push(`D10 Result:${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
+}
+
+// Function to roll an 8-sided die (D8)
+function rollD8() {
+const result=Math.floor(Math.random() * 8) + 1;
+lastRolls.push(`D8 Result:${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
+}
+
+// Function to roll a 6-sided die (D6)
+function rollD6() {
+const result=Math.floor(Math.random() * 6) + 1;
+lastRolls.push(`D6 Result:${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
+}
+
+// Function to roll a 4-sided die (D4)
+function rollD4() {
+const result=Math.floor(Math.random() * 4) + 1;
+lastRolls.push(`D4 Result:${result}`);
+if (lastRolls.length > 5) {
+lastRolls.shift(); // Remove the oldest roll
+}
+displayLastRolls();
+}
+
+// Event listeners for rolling each die
+document.addEventListener('DOMContentLoaded',function() {
+document.getElementById('rollD20Button').addEventListener('click',rollD20);
+document.getElementById('rollD12Button').addEventListener('click',rollD12);
+document.getElementById('rollD10Button').addEventListener('click',rollD10);
+document.getElementById('rollD8Button').addEventListener('click',rollD8);
+document.getElementById('rollD6Button').addEventListener('click',rollD6);
+document.getElementById('rollD4Button').addEventListener('click',rollD4);
 });
 
-character.ondragstart = function() {
-return false;
-};
+// Beginning of map image loading functions
+let currentMapImage='Map.png';
+
+function loadMapImage(event) {
+const mapImage=document.createElement('img');
+const file=event.target.files[0];
+
+if (file) {
+currentMapImage=URL.createObjectURL(file);
+mapImage.src=currentMapImage;
+mapImage.style.position='absolute';
+mapImage.style.width='100%';
+mapImage.style.height='100%';
+mapImage.style.top='0';
+mapImage.style.left='0';
+mapImage.style.zIndex='-1';
+const board=document.getElementById('board');
+board.innerHTML='';
+board.appendChild(mapImage);
+changeMap();
+}
 }
 
-// Delete a character
-function deleteCharacter(id) {
-const character = document.getElementById(id);
-character.remove();
+document.getElementById('mapImageInput').addEventListener('change',loadMapImage);
 
-// Update local storage
-saveGameState();
+const defaultMapImage=new Image();
+defaultMapImage.src='Map.png';
+
+defaultMapImage.onload=function() {
+const board=document.getElementById('board');
+board.style.backgroundImage=`url(${defaultMapImage.src})`;
+board.style.backgroundSize='cover';
 }
 
-// Rotate a character
-function rotateCharacter(id) {
-const character = document.getElementById(id);
-let rotation = character.dataset.rotation || 0;
-rotation = (parseInt(rotation) + 45) % 360;
-character.style.transform = `rotate(${rotation}deg)`;
-character.dataset.rotation = rotation;
+function changeMap() {
+const board=document.getElementById('board');
+board.style.backgroundImage=`url(${currentMapImage})`;
+board.style.backgroundSize='cover';
+}
+// End of map image loading functions
+
+function getRotationDegrees(element) {
+const transform=window.getComputedStyle(element).getPropertyValue('transform');
+if (transform && transform !== 'none') {
+const matrix=new DOMMatrix(transform);
+return Math.round(Math.atan2(matrix.b,matrix.a) * (180/Math.PI));
+}
+return 0;
 }
 
-// Roll dice function
-function rollDice(diceNotation) {
-const [numDice, diceSize, constant] = diceNotation.split(/[d+]/).map(Number);
-let result = constant || 0;
+// Start drag and drop functions
+function onDragStart(event) {
+isDragging=true;
+event.dataTransfer.setData('text/plain',event.target.id);
 
+const rect=event.target.getBoundingClientRect();
+offsetX=event.clientX - rect.left;
+offsetY=event.clientY - rect.top;
+draggedElement=event.target;
+
+highestZIndex++;
+draggedElement.style.zIndex=highestZIndex;
+}
+
+function onDragOver(event) {
+event.preventDefault();
+}
+
+function onDrop(event) {
+event.preventDefault();
+const data=event.dataTransfer.getData('text/plain');
+const draggedElement=document.getElementById(data);
+const cellSize=100;
+
+if (draggedElement) {
+const mouseX=event.clientX - board.offsetLeft;
+const mouseY=event.clientY - board.offsetTop;
+
+const cellX=Math.floor(mouseX / cellSize) * cellSize;
+const cellY=Math.floor(mouseY / cellSize) * cellSize;
+
+draggedElement.style.left=`${cellX}px`;
+draggedElement.style.top=`${cellY}px`;
+}
+}
+
+board.addEventListener('dragover',(event) => {
+event.preventDefault();
+});
+
+board.addEventListener('drop',(event) => {
+event.preventDefault();
+const data=event.dataTransfer.getData('text/plain');
+const draggedElement=document.getElementById(data);
+const cellSize=100;
+
+if (draggedElement) {
+const mouseX=event.clientX - board.offsetLeft;
+const mouseY=event.clientY - board.offsetTop;
+
+const cellX=Math.floor(mouseX / cellSize) * cellSize;
+const cellY=Math.floor(mouseY / cellSize) * cellSize;
+
+draggedElement.style.left=`${cellX}px`;
+draggedElement.style.top=`${cellY}px`;
+}
+});
+
+document.addEventListener('mousemove',onMouseMove);
+
+function onMouseMove(event) {
+if (isDragging) {
+const mouseX=event.clientX - offsetX + window.scrollX;
+const mouseY=event.clientY - offsetY + window.scrollY;
+const boardRect=board.getBoundingClientRect();
+const maxX=boardRect.width - draggedElement.offsetWidth;
+const maxY=boardRect.height - draggedElement.offsetHeight;
+const newX=Math.min(Math.max(0,mouseX),maxX);
+const newY=Math.min(Math.max(0,mouseY),maxY);
+draggedElement.style.left=`${newX}px`;
+draggedElement.style.top=`${newY}px`;
+}
+}
+
+document.addEventListener('mouseup',onMouseUp);
+
+function onMouseUp() {
+if (isDragging) {
+isDragging=false;
+}
+}
+
+document.addEventListener('dragend',() => {
+isDragging=false;
+draggedElement=null;
+});
+// End drag and drop functions
+
+let selectedUnit = null; // Variable to keep track of the selected unit
+
+function createUnit() {
+const unitElement=document.createElement('div');
+unitElement.className='unit';
+unitElement.draggable=true;
+unitElement.id=`unit-${unitCount}`;
+unitElement.ondragstart=onDragStart;
+
+// Create a radio button for targeting
+const targetRadio = document.createElement('input');
+targetRadio.type = 'radio';
+targetRadio.name = 'target';
+targetRadio.id = `target-${unitCount}`;
+targetRadio.style.position = 'relative';
+
+// Label for the radio button (optional)
+const targetLabel = document.createElement('label');
+targetLabel.htmlFor = `target-${unitCount}`;
+targetLabel.textContent = `Target ${unitCount}`;
+targetLabel.style.position = 'relative';
+
+// Add an event listener to handle targeting
+targetRadio.addEventListener('change', function() {
+if (selectedUnit) {
+selectedUnit.style.border = '2px solid black'; // Reset border of previously selected unit
+}
+selectedUnit = unitElement; // Update the selected unit
+// Set visual indication on unit face
+unitElement.style.border = '2px solid red'; // Change border color to indicate selection
+unitElement.style.boxShadow = '0px 0px 10px rgba(255, 0, 0, 0.5)'; // Add shadow for emphasis
+});
+
+const rotateButton=document.createElement('button');
+rotateButton.textContent='R';
+
+rotateButton.addEventListener('click',function(event) {
+event.stopPropagation(); // Stop event from bubbling up
+let currentRotation=0;
+
+const transform=unitElement.style.transform;
+const match=transform && transform.match(/\d+/);
+
+if (match) {
+currentRotation=parseInt(match[0],10);
+}
+unitElement.style.transform=`rotate(${(currentRotation + 45) % 360}deg)`;
+});
+
+const menuButton=document.createElement('button');
+menuButton.textContent='M';
+
+const menu=document.createElement('div');
+menu.className='menu';
+
+const nameLabel=document.createElement('div');
+nameLabel.textContent='Name:';
+
+const nameInput=document.createElement('input');
+nameInput.id = 'nameInputId-' + unitCount;
+nameInput.type='text';
+nameInput.name = 'nameInputName-' + unitCount;
+nameInput.placeholder='character or monster name';
+nameInput.maxLength=20 ;
+nameInput.size=20;
+nameInput.style.width='21';
+nameInput.addEventListener('input',function() {
+nameUnit.textContent=nameInput.value;
+});
+
+const raceContainer = document.createElement('div');
+
+// Race Label
+const raceLabel = document.createElement('div');
+raceLabel.textContent = 'Race:';
+
+// Race Dropdown Select
+const raceSelect = document.createElement('select');
+raceSelect.setAttribute('id', `raceSelectId-${unitCount}`); // Unique ID for each selection
+raceSelect.setAttribute('name', `raceSelectName-${unitCount}`); // Unique name for each selection
+
+const races = ['Dwarf', 'Elf', 'Elf,Half', 'Gnoll', 'Gnome', 'Human', 'Halfling', 'Orc', 'Orc,Half'];
+
+races.forEach(raceName => {
+const option = document.createElement('option');
+option.value = raceName;
+option.textContent = raceName;
+raceSelect.appendChild(option);
+});
+
+raceSelect.addEventListener('change', function() {
+    raceUnit.textContent = raceSelect.value;
+    if (raceSelect.value === "Gnoll") {
+        nameInput.value = 'Gnoll 1';
+        nameUnit.textContent=`Name:${'Gnoll 1'}`;
+        armorClassInput.value = '5';
+        armorClassUnit.textContent=`AC:${5}`;
+        hitDiceInput.value = '2';
+        hitDiceUnit.textContent=`HD:${2}`;
+        maximumHitPointsInput.value=16;
+        currentHitPointsInput.value=16;
+        currentHitPointsUnit.textContent=`HP:${16}`;
+        movementInput.value = '9';
+        movementUnit.textContent=`MV:${9}`;
+    }
+    if (raceSelect.value === "Orc") {
+        nameInput.value = 'Orc 1';
+        nameUnit.textContent=`Name:${'Orc 1'}`;
+        armorClassInput.value = '6';
+        armorClassUnit.textContent=`AC:${6}`;
+        hitDiceInput.value = '1';
+        hitDiceUnit.textContent=`HD:${1}`;
+        maximumHitPointsInput.value=8;
+        currentHitPointsInput.value=8;
+        currentHitPointsUnit.textContent=`HP:${8}`;
+        movementInput.value = '9';
+        movementUnit.textContent=`MV:${9}`;
+    }
+    else {
+        // Reset stats to default values for other races if needed
+    }
+});
+
+const raceUnit = document.createElement('div');
+raceUnit.textContent = 'Race:';
+
+// Append race elements to the race container
+raceContainer.appendChild(raceLabel);
+raceContainer.appendChild(raceSelect);
+
+const addImageButton=Object.assign(document.createElement('button'),{
+textContent:'Add a miniature?',
+onclick:function() {
+imageInput.click();
+}
+});
+
+const imageInput=Object.assign(document.createElement('input'),{
+type:'file',
+accept:'image/*',
+});
+
+imageInput.addEventListener('change',function() {
+const file=this.files[0];
+const reader=new FileReader();
+
+reader.onload=function() {
+const imageElement=document.createElement('img');
+imageElement.src=reader.result;
+
+// Add an event listener to the image to prevent dragging
+imageElement.addEventListener('dragstart',function(event) {
+event.preventDefault();
+});
+
+unitElement.style.backgroundImage=`url(${reader.result})`;
+
+imageElement.remove();
+}
+
+reader.readAsDataURL(file);
+});
+
+const movementLabel=document.createElement('div');
+movementLabel.textContent='MV:';
+
+const movementInput=document.createElement('input');
+movementInput.id='movementInputId'+unitCount;
+movementInput.maxLength=2;
+movementInput.name='movementInputName'+unitCount;
+movementInput.size=2;
+movementInput.style.width='3';
+movementInput.type='text';
+
+const armorClassLabel=document.createElement('div');
+armorClassLabel.textContent='AC:';
+
+const armorClassInput=document.createElement('input');
+armorClassInput.id = 'armorClassInputId-' + unitCount;
+armorClassInput.maxLength=2;
+armorClassInput.name = 'armorClassInputName-' + unitCount;
+armorClassInput.size=2;
+armorClassInput.style.width='3';
+armorClassInput.type='text';
+armorClassInput.addEventListener('input',function() {
+unitElement.dataset.ac=armorClassInput.value;
+armorClassUnit.textContent=`AC:${armorClassInput.value}`;
+armorClassUnit.className='unit-style';
+});
+const armorClassUnit=document.createElement('div');
+armorClassUnit.textContent='AC:';
+armorClassUnit.className='unit-style';
+
+const hitDiceLabel=document.createElement('div');
+hitDiceLabel.textContent='HD:';
+const hitDiceInput=document.createElement('input');
+hitDiceInput.id='hitDiceInputId'+unitCount;
+hitDiceInput.maxLength=8;
+hitDiceInput.name='hitDiceInputName'+unitCount;
+hitDiceInput.size=8;
+hitDiceInput.style.width='9';
+hitDiceInput.type='text';
+
+const maximumHitPointsLabel=document.createElement('div');
+maximumHitPointsLabel.textContent='maxHP:';
+
+const maximumHitPointsInput=Object.assign
+(
+document.createElement('input'),
+{
+id:'maximumHitPointsInputId'+unitCount,
+maxLength:3,
+name:'maximumHitPointsInputName'+unitCount,
+oninput:function()
+{
+currentHitPointsInput.value=this.value;
+currentHitPointsUnit.textContent=`HP:${this.value}`;
+},
+size:3,
+style:'width:4;',
+type:'text',
+}
+);
+
+const currentHitPointsLabel=document.createElement('div');
+currentHitPointsLabel.textContent='curHP:';
+const currentHitPointsInput=document.createElement('input');
+currentHitPointsInput.id='currentHitPointsInputId'+unitCount;
+currentHitPointsInput.maxLength=3;
+currentHitPointsInput.name='currentHitPointsInputName'+unitCount;
+currentHitPointsInput.size=3;
+currentHitPointsInput.style.width='4';
+currentHitPointsInput.type='text';
+const currentHitPointsUnit=document.createElement('div');
+currentHitPointsUnit.textContent='HP:';
+currentHitPointsInput.addEventListener('input',
+function() {
+unitElement.dataset.curHP=currentHitPointsInput.value;
+currentHitPointsUnit.textContent=`HP:${currentHitPointsInput.value}`;
+currentHitPointsUnit.className='unit-style';
+});
+
+const menuAddRowButton=document.createElement('button');
+menuAddRowButton.textContent='Add a weapon or spell and effect?';
+
+menuAddRowButton.addEventListener('click',function() {
+const newRow=document.createElement('div');
+
+const newAttackName=document.createElement('input');
+newAttackName.type='text';
+newAttackName.placeholder='weapon or spell name and effect';
+newAttackName.maxLength=20;
+newAttackName.size=20;
+newAttackName.style.width='21';
+newRow.appendChild(newAttackName);
+
+const newAttackRoll=document.createElement('input');
+newAttackRoll.type='text';
+newAttackRoll.placeholder='Attack XdY+Z';
+newAttackRoll.maxLength=8;
+newAttackRoll.size=8;
+newAttackRoll.style.width='9';
+newRow.appendChild(newAttackRoll);
+
+const attackRollResult = document.createElement('span');
+
+newRow.appendChild(newAttackRoll);
+newRow.appendChild(attackRollResult);
+
+newAttackRoll.addEventListener('mouseout', function() {
+  const attackRollValue = newAttackRoll.value;
+  const rollResult = rollDice(attackRollValue);
+  attackRollResult.textContent = `Attack Result:  ${rollResult}`;
+});
+
+const newDamageRoll=document.createElement('input');
+newDamageRoll.type='text';
+newDamageRoll.placeholder='Damage XdY+Z';
+newDamageRoll.maxLength=8;
+newDamageRoll.size=8;
+newDamageRoll.style.width='9';
+newRow.appendChild(newDamageRoll);
+
+function rollDice(diceString) {
+const [numDice, numSides, modifier] = diceString.match(/(\d+)d(\d+)(\+\d+)?/).slice(1).map(Number);
+let total = 0;
 for (let i = 0; i < numDice; i++) {
-result += Math.floor(Math.random() * diceSize) + 1;
+total += Math.floor(Math.random() * numSides) + 1;
+}
+total += modifier || 0;
+return total;
 }
 
-return result;
-} 
+const damageRollResult = document.createElement('span');
 
+newRow.appendChild(newDamageRoll);
+newRow.appendChild(damageRollResult);
 
-
-function saveGameState() {
- const characters = gameBoard.querySelectorAll('.character');
- const gameState = [];
-
- characters.forEach(character => {
- const id = character.id;
- const x = character.offsetLeft;
- const y = character.offsetTop;
- const rotation = character.dataset.rotation || 0;
- const ac = character.querySelector('.inputField').value || '';
- const diceInput = character.querySelector('.DiceInputField').value || '';
- const diceResult = character.querySelector('.diceResult').textContent || '';
- const imageUrl = character.style.backgroundImage.replace('url("', '').replace('")', '');
-
- gameState.push({ id, x, y, rotation, ac, diceInput, diceResult, imageUrl });
- });
-
-
-}
-
-function loadGameState() {
- const gameState = JSON.parse(localStorage.getItem('gameState'));
- const mapImageUrl = localStorage.getItem('mapImage');
-
- if (mapImageUrl) {
- gameBoard.style.backgroundImage = `url(${mapImageUrl})`;
- }
-
- if (gameState) {
- gameState.forEach(({ id, x, y, rotation, ac, diceInput, diceResult, imageUrl }) => {
- createCharacter(x, y);
-
- const character = document.getElementById(id);
- character.dataset.rotation = rotation;
- character.style.transform = `rotate(${rotation}deg)`;
- character.querySelector('.inputField').value = ac;
- character.querySelector('.DiceInputField').value = diceInput;
- character.querySelector('.diceResult').textContent = diceResult;
- character.style.backgroundImage = `url(${imageUrl})`; // Set the background image
- });
- }
-}
-
-// Add event listener for create character button
-createCharacterButton.addEventListener('click', () => {
-const x = Math.floor(Math.random() * 600); // Random x position (between 0 and 600)
-const y = Math.floor(Math.random() * 600); // Random y position (between 0 and 600)
-createCharacter(x, y);
+newDamageRoll.addEventListener('mouseout', function() {
+  const damageRollValue = newDamageRoll.value;
+  const rollResult = rollDice(damageRollValue);
+  damageRollResult.textContent = `  Damage Result:  ${rollResult}`;
 });
 
-// Add event listener for save button
-saveButton.addEventListener('click', saveGameState);
+newRow.appendChild(newDamageRoll);
 
-// Load game state when page loads
-loadGameState();
+// ... (rest of the code remains the same)
+
+
+menu.insertBefore(newRow,menuAddRowButton);
 });
+
+const deleteButton=document.createElement('button');
+deleteButton.textContent='Delete this piece?';
+deleteButton.addEventListener('click',function() {
+menu.remove();
+unitElement.remove();
+});
+
+menuButton.addEventListener('click',function(event) {
+event.stopPropagation();
+});
+
+document.addEventListener('click',function() {
+});
+
+menu.addEventListener('click',function(event) {
+event.stopPropagation();
+});
+
+movementInput.addEventListener('input',function() {
+unitElement.dataset.mv=movementInput.value;
+movementUnit.textContent=`MV:${movementInput.value}`;
+});
+
+hitDiceInput.addEventListener('input',function() {
+unitElement.dataset.hd=hitDiceInput.value;
+hitDiceUnit.textContent=`HD:${hitDiceInput.value}`;
+});
+
+const nameUnit=document.createElement('div');
+nameUnit.textContent='Name';
+
+const movementUnit=document.createElement('div');
+movementUnit.textContent='MV:';
+movementUnit.className='unit-style';
+
+movementInput.addEventListener('input',function() {
+unitElement.dataset.mv=movementInput.value;
+movementUnit.textContent=`MV:${movementInput.value}`;
+});
+
+const hitDiceUnit=document.createElement('div');
+hitDiceUnit.textContent='HD:';
+hitDiceUnit.className='unit-style';
+
+hitDiceInput.addEventListener('input',function() {
+unitElement.dataset.hd=hitDiceInput.value;
+hitDiceUnit.textContent=`HD:${hitDiceInput.value}`;
+});
+
+unitElement.appendChild(rotateButton);
+unitElement.style.left='0';
+unitElement.style.top='0';
+unitElement.appendChild(targetRadio);
+unitElement.appendChild(targetLabel);
+unitElement.appendChild(armorClassUnit);
+unitElement.appendChild(hitDiceUnit);
+unitElement.appendChild(currentHitPointsUnit);
+unitElement.appendChild(movementUnit);
+unitElement.appendChild(nameUnit);
+
+board.appendChild(unitElement);
+
+const horizontalRule = document.createElement('hr');
+horizontalRule.style.border = '0';
+horizontalRule.style.height = '2px';
+horizontalRule.style.background = 'red';
+
+menu.appendChild(horizontalRule);
+menu.appendChild(nameLabel);
+menu.appendChild(nameInput);
+menu.appendChild(addImageButton);
+menu.appendChild(imageInput);
+menu.appendChild(armorClassLabel);
+menu.appendChild(armorClassInput);
+menu.appendChild(hitDiceLabel);
+menu.appendChild(hitDiceInput);
+menu.appendChild(maximumHitPointsLabel);
+menu.appendChild(maximumHitPointsInput);
+menu.appendChild(currentHitPointsLabel);
+menu.appendChild(currentHitPointsInput);
+menu.appendChild(movementLabel);
+menu.appendChild(movementInput);
+menu.appendChild(menuAddRowButton);
+menu.appendChild(raceContainer);
+menu.appendChild(deleteButton);
+
+document.body.appendChild(menu);
+
+unitCount++;
+return unitElement;
+}
+
 </script>
+</head>
 
+</td></tr><tr><td>
+<br>
+<img src="DiceSprite.png"><br>
+<button id="rollD20Button">Roll D20</button>
+<button id="rollD12Button">Roll D12</button>
+<button id="rollD10Button">Roll D10</button>
+<button id="rollD8Button">Roll D8</button>
+<button id="rollD6Button">Roll D6</button>
+<button id="rollD4Button">Roll D4</button>
+
+<div id="resultsContainer"></div>
+<img src="Table1.png"><br>
+<img src="Table2.png"><br>
+<img src="Table3.png">
 </body>
 </html>
