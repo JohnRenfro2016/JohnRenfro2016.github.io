@@ -4677,10 +4677,15 @@ const replsB = [
 {p1:/(敷)(?!X)(地)(?!X)/g,r1:'$1Xshiki$2Xchi-grounds~Noun'},
 {p1:/(敷)(?!X)(金)(?!X)/g,r1:'$1Xshi$2Xkikin-deposit,key money~Noun'},
 {p1:/(文)(?!X)(化)(?!X)/g,r1:'$1Xbun$2Xka-culture~Noun'},
+{p1:/(抹)(?!X)(殺)(?!X)/g,r1:'$1Xmas$2Xsatsu-obliteration~Noun'},
+{p1:/(奇)(?!X)(襲)(?!X)/g,r1:'$1Xki$2Xsyuu-ambush~Noun'},
 {p1:/(文)(?!X)(句)(?!X)/g,r1:'$1Xmon$2Xku-complaint~Noun'},
 {p1:/(文)(?!X)(学)(?!X)/g,r1:'$1Xbun$2Xgaku-literature~Noun'},
+{p1:/(言)(?!X)(明)(?!X)/g,r1:'$1Xgen$2Xmei-statement~Noun'},
 {p1:/(文)(?!X)(明)(?!X)/g,r1:'$1Xbun$2Xmei-civilization,culture~Noun'},
 {p1:/(文)(?!X)(書)(?!X)/g,r1:'$1Xbun$2Xsyo-document archive~Noun'},
+{p1:/(独)(?!X)(裁)(?!X)/g,r1:'$1Xdoku$2Xsai-dictatorship~Noun'},
+{p1:/(遮)(?!X)(断)(?!X)/g,r1:'$1Xsya$2Xdan-isolation~Noun'},
 {p1:/(文)(?!X)(法)(?!X)/g,r1:'$1Xbun$2Xpou-grammar~Noun'},
 {p1:/(文)(?!X)(献)(?!X)/g,r1:'$1Xbun$2Xken-reference documents~Noun'},
 {p1:/(文)(?!X)(章)(?!X)/g,r1:'$1Xbun$2Xsyou-writing,prose~Noun'},
@@ -7545,6 +7550,7 @@ const replsB = [
 {p1:/(心)(?!X)/g,r1:'$1Xkokoro-heart,mind~Noun'},
 {p1:/(志)(?!X)/g,r1:'$1Xshi-will~Noun'},
 {p1:/(急)(?!X)/g,r1:'$1Xkyuu-dire~Noun'},
+{p1:/(教)(?!X)/g,r1:'$1Xkyou-religion~Noun'},
 {p1:/(性)(?!X)/g,r1:'$1Xsei-sex,nature~Noun'},
 {p1:/(恋)(?!X)/g,r1:'$1Xkoi-love,romance~Noun'},
 {p1:/(恥)(?!X)/g,r1:'$1Xhaji-shame,disgrace~Noun'},
@@ -8245,7 +8251,19 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-「SMBC日本シリーズ2023」第7戦（4戦先勝）、オリックス・バファローズ対阪神タイガースの試合が5日、オリックス本拠地の京セラドーム大阪で開催。阪神が7-1でオリックスとの“関西対決”を制し、対戦成績4勝3敗で38年ぶり2度目となる悲願の日本一を達成した。
+【エルサレム時事】イスラエル軍報道官は5日夜、イスラム組織ハマスの実効支配下にあるパレスチナ自治区ガザへの激しい攻撃で「ガザを北部と南部に事実上二分した」と宣言した。
+
+【ひと目でわかる】ガザ地区
+
+　北部にある中心都市ガザ市を完全に包囲したと説明。激戦が予想されるガザ北部の住民に、南部へ退避するよう重ねて促した。サターフィールド米特使（中東人道問題担当）によると、ガザ北部には今も住民35万～40万人が残っているとみられる。
+
+　ガザの保健省によると、ハマスがイスラエルを奇襲した10月7日以降、ガザでは9770人が死亡。イスラエル側は1400人以上が命を落とした。
+
+　ネタニヤフ首相は5日、南部の空軍基地で「人質解放がなければ停戦はない」と改めて言明した。地元メディアによると、ネタニヤフ氏はハマスのガザ地区トップ、ヤヒヤ・シンワル氏を「地下に隠れている小さな（ナチス・ドイツの独裁者）ヒトラー」と形容。「彼は市民のことは気にしていない」と主張した。ガラント国防相も4日、主要標的としてシンワル氏を「抹殺する」と警告している。
+
+　中東の衛星テレビ局アルジャジーラによると、ガザ全域では5日も電話やインターネットなどの通信が遮断された。ガザの通信事業者はイスラエルの仕業と指摘。パレスチナ赤新月社はX（旧ツイッター）で、ガザの職員との連絡が再び完全に途絶えたとした上で「市民約230万人が現在、緊急医療を受けられない状態だ」と訴えた。
+
+　一方、イスラエル北部では5日、イスラエル軍と隣国レバノンのイスラム教シーア派組織ヒズボラの爆撃の応酬が一段と激化した。報道では、レバノン南部へのイスラエル軍のドローン攻撃で車両が被弾し、子供を含む4人が死亡。ヒズボラもイスラエル領内にロケット弾を撃ち込み、市民1人が死亡した。イスラエルのハレビ軍参謀総長は、「われわれは北部でいつでも攻撃に着手する用意がある」とヒズボラをけん制した。
 <p> 
 <textArea cols='35' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
