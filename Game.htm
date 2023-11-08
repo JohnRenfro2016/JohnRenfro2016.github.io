@@ -7,7 +7,7 @@
 .draggable-handle {
     cursor: move;
     background-color: #ccc;
-    padding: 20px; /* Increase padding to increase touch area */
+    padding: 5px; 
     border: 1px solid #333;
     text-align: center;
     user-select: none;
@@ -44,6 +44,7 @@ grid-template-rows:repeat(7, 100px);
 height:700px;
 position:relative;
 width:700px;
+z-index:1;
 }
 
 .board.touch,
@@ -54,13 +55,12 @@ touch-action:none;
 
 .menu
 {
-height:auto;
+right:0;
 position:relative;
 }
 
 .square
 {
-border:1px solid #000;
 height:100px;
 width:100px;
 }
@@ -74,7 +74,6 @@ position:absolute;
 transform-origin:center;
 user-select:none;
 width:100px;
-z-index:1;
 }
 
 .unit-style
@@ -85,13 +84,23 @@ display:block;
 </style>
 
 <body>
- 
-<button onclick="createUnit()">Create a character or monster?</button>
 
+<a href="https://web.archive.org/web/20231010011237/https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up" target="_blank">1st Edition Dungeon Masters Guide Combat Tables</a>
+|
+<a href="https://web.archive.org/web/20231010011237/https://archive.org/details/tsr02009addmonstermanual/mode/1up" target="_blank">1st Edition Monster Manual</a>
+|
+<a href="https://web.archive.org/web/20231010011237/https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up" target="_blank">Dungeon Module L1 "The Secret of Bone Hill</a>
+|
+
+<button onclick="createUnit()">Create a character or monster?</button>
+|
 Load a map image.
 <input type="file" id="mapImageInput" accept="image/*" name="mapImageInput">
 
+
 <div class="board" id="board" style="background-image: url(Game_files/Map.png); background-size: cover;"><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div></div>
+
+<img src="./Game_files/DiceSprite.png"> 
 
 <script>
 let unitCount=0;
@@ -365,7 +374,7 @@ unitElement.ondragstart=onDragStart;
     // Create a draggable handle
     const draggableHandle = document.createElement('div');
     draggableHandle.className = 'draggable-handle';
-    draggableHandle.textContent = 'Drag Me';
+    draggableHandle.textContent = 'Drag Here';
     
     // Add touchstart event listener to handle touch drag
     draggableHandle.addEventListener('touchstart', function(event) {
@@ -409,7 +418,7 @@ unitElement.style.boxShadow = '0px 0px 10px rgba(255, 0, 0, 0.5)'; // Add shadow
 });
 
 const rotateButton=document.createElement('button');
-rotateButton.textContent='R';
+rotateButton.textContent='Rotate';
 
 rotateButton.addEventListener('click',function(event) {
 event.stopPropagation(); // Stop event from bubbling up
@@ -780,18 +789,12 @@ return unitElement;
 }
 </script>
 
-<a href="https://web.archive.org/web/20231010011237/https://archive.org/details/tsr02011advanceddungeonsdragonsadd1steddungeonmastersguide/page/n74/mode/1up" target="_blank">1st Edition Dungeon Masters Guide Combat Tables</a>
-<br>
-<a href="https://web.archive.org/web/20231010011237/https://archive.org/details/tsr02009addmonstermanual/mode/1up" target="_blank">1st Edition Monster Manual</a>
-<br>
-<a href="https://web.archive.org/web/20231010011237/https://archive.org/details/tsr09045addthesecretofbonehill/mode/1up" target="_blank">Dungeon Module L1 "The Secret of Bone Hill</a>
-<br>
-<img src="./Game_files/DiceSprite.png"><br>
 
-<div id="resultsContainer"></div>
-<img src="./Game_files/Table1.png"><br>
-<img src="./Game_files/Table2.png"><br>
+
+<img src="./Game_files/Table1.png">|
+<img src="./Game_files/Table2.png">|
 <img src="./Game_files/Table3.png">
+
 
 </body>
 
