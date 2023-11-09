@@ -65,6 +65,8 @@ function translateB()
 
 const replsB = [
 
+{p1:/(せ)(?!X)(ざ)(?!X)(る)(?!X)(を)(?!X)(え)(?!X)(な)(?!X)(い)(?!X)/g,r1:'$1Xse$2Xza$3Xru$4Xo$5Xe$6Xna$7Xi-can\'t help but do~Noun'},
+
 {p1:/(プ)(?!X)(ロ)(?!X)(デ)(?!X)(ュ)(?!X)(ー)(?!X)(サ)(?!X)(ー)(?!X)/g,r1:'$1Xpu$2Xro$3Xde$4Xyu$5Xu$6Xsa$7Xa-producer~Noun'},
 
 {p1:/(ア)(?!X)(ニ)(?!X)(メ)(?!X)(ー)(?!X)(シ)(?!X)(ョ)(?!X)(ン)(?!X)/g,r1:'$1Xa$2Xni$3Xme$4Xe$5Xs$6Xyo$7Xn-animation~Noun'},
@@ -1667,6 +1669,7 @@ const replsB = [
 {p1:/(植)(?!X)(民)(?!X)(地)(?!X)/g,r1:'$1Xsyoku$2Xmin$3Xchi-colony,settlement~Noun'},
 {p1:/(植)(?!X)(物)(?!X)(園)(?!X)/g,r1:'$1Xsyoku$2Xbutsu$3Xen-botanical garden~Noun'},
 {p1:/(検)(?!X)(問)(?!X)(所)(?!X)/g,r1:'$1Xken$2Xmon$3Xsyo-checkpoint~Noun'},
+{p1:/(年)(?!X)(明)(?!X)(け)(?!X)/g,r1:'$1Xtoshi$2Xa$3Xke-New Year dawn~Noun'},
 {p1:/(極)(?!X)(め)(?!X)(て)(?!X)/g,r1:'$1Xkiwa$2Xme$3Xte-extremely~Noun'},
 {p1:/(楽)(?!X)(し)(?!X)([いくかさ])(?!X)/g,r1:'$1Xtano$2Xshi-fun,enjoyable$3X~IAdjective~Noun'},
 {p1:/(楽)(?!X)(し)(?!X)([まみむめもん])(?!X)/g,r1:'$1Xtano$2Xshi-enjoy$3X~MuVerb'},
@@ -4131,6 +4134,7 @@ const replsB = [
 {p1:/(府)(?!X)(立)(?!X)/g,r1:'$1Xfu$2Xritsu-prefectural~Noun'},
 {p1:/(度)(?!X)(々)(?!X)/g,r1:'$1Xtab$2Xitabi-often~Noun'},
 {p1:/(座)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xsuwa-sit,sit down$2X~RuVerb'},
+{p1:/(探)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xsagu-to feel around for$2X~RuVerb'},
 {p1:/(座)(?!X)(席)(?!X)/g,r1:'$1Xza$2Xseki-seat~Noun'},
 {p1:/(座)(?!X)(敷)(?!X)/g,r1:'$1Xza$2Xshiki-drawing room,Japanese-style room~Noun'},
 {p1:/(廃)(?!X)(業)(?!X)/g,r1:'$1Xhai$2Xgyou-business closure~Noun'},
@@ -8253,17 +8257,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-【（ＣＮＮ）　パレスチナ自治政府のカイラ保健相は６日、自治区ガザ地区にある医療機関の６割以上が業務の休止を余儀なくされていると訴えた。
-
-燃料や医療用品の不足とイスラエル軍の空爆により、ガザ地区の病院３５カ所のうち１６カ所、医療センター７２カ所のうち５１カ所が業務を続行できなくなったという。
-
-また、パレスチナ赤新月社は同日、避難民１万４０００人が身を寄せるガザ市のアルクッズ病院について、４８時間以内に燃料が底をつき、救命装置や新生児用の保育器、集中治療室（ＩＣＵ）の稼働が止まってしまうと警告。国際団体に支援を要請した。
-
-赤新月社によると、６日夜にはアルクッズ病院の門から約５０メートルの地点に、イスラエル軍のミサイル２発が撃ち込まれた。
-
-同病院の周辺では５日も大規模な爆発があり、死傷者が出ていた。
-
-イスラエル軍はこれまでの声明で、ガザ市の住民に市南部への避難を呼び掛けていると主張してきた。直近の２４時間で、イスラム組織ハマスの拠点など４５０カ所の標的を攻撃したと発表している。
+岸田文雄首相が年内の衆院解散を見送る意向を固めた。11月に衆院議員の任期が折り返しを迎え、選挙に勝てるタイミングでの解散を探っていたが、内閣支持率が政権発足から最低水準に落ち込んでいる現状を踏まえ、当面は経済対策などに集中せざるをえないと判断。年明け以降に改めて解散の機会を探る。政権幹部が明らかにした。
 <p> 
 <textArea cols='35' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
