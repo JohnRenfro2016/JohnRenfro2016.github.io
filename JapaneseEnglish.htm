@@ -3086,7 +3086,7 @@ const replsB = [
 {p1:/(処)(?!X)(罰)(?!X)/g,r1:'$1Xsyo$2Xbatsu-punishment~Noun'},
 {p1:/(凱)(?!X)(旋)(?!X)/g,r1:'$1Xgai$2Xsen-triumphant return~Noun'},
 {p1:/(凶)(?!X)(器)(?!X)/g,r1:'$1Xkyou$2Xki-dangerous weapon~Noun'},
-{p1:/(出)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xda-take out$2X~SuVerb'},
+{p1:/(?<!検)(出)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xda-take out$2X~SuVerb'},
 {p1:/(出)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xde-go out,leave$2X~RuVerb'},
 {p1:/(出)(?!X)(世)(?!X)/g,r1:'$1Xsyu$2Xsse-success,promotion~Noun'},
 {p1:/(出)(?!X)(前)(?!X)/g,r1:'$1Xde$2Xmae-home delivery of food~Noun'},
@@ -5992,12 +5992,15 @@ const replsB = [
 {p1:/(続)(?!X)([かきくけこい])(?!X)/g,r1:'$1Xtsuzu-continue$2X~KuVerb'},
 {p1:/(続)(?!X)(々)(?!X)/g,r1:'$1Xzoku$2Xzoku-in rapid succession,one after another~Noun'},
 {p1:/(続)(?!X)(出)(?!X)/g,r1:'$1Xzoku$2Xsyutsu-one after another~Noun'},
-{p1:/(続)(?!X)(出)(?!X)/g,r1:'$1Xzoku$2Xsyutsu;one after the other~Noun'},
 {p1:/(続)(?!X)(投)(?!X)/g,r1:'$1Xzoku$2Xtou-staying on~Noun'},
+{p1:/(浄)(?!X)(水)(?!X)/g,r1:'$1Xjyou$2Xsui-water filtration~Noun'},
+{p1:/(素)(?!X)(化)(?!X)/g,r1:'$1Xso$2Xka-fluoride~Noun'},
 {p1:/(続)(?!X)(編)(?!X)/g,r1:'$1Xzoku$2Xhen-sequel~Noun'},
 {p1:/(続)(?!X)(行)(?!X)/g,r1:'$1Xzok$2Xkou-resume~Noun'},
+{p1:/(検)(?!X)(出)(?!X)/g,r1:'$1Xken$2Xsyutsu-detection~Noun'},
 {p1:/(維)(?!X)(持)(?!X)/g,r1:'$1Xi$2Xji-maintenance~Noun'},
 {p1:/(維)(?!X)(新)(?!X)/g,r1:'$1Xi$2Xshin-revival~Noun'},
+{p1:/(吉)(?!X)(備)(?!X)/g,r1:'$1Xki$2Xbi-luck+provision~Noun'},
 {p1:/(綾)(?!X)(部)(?!X)/g,r1:'$1Xaya$2Xbe-AyaBe,Japan~Noun'},
 {p1:/(緊)(?!X)(密)(?!X)/g,r1:'$1Xkin$2Xmitsu-closely knit~Noun'},
 {p1:/(緊)(?!X)(張)(?!X)/g,r1:'$1Xkin$2Xcyou-tension~Noun'},
@@ -8257,7 +8260,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-岸田文雄首相が年内の衆院解散を見送る意向を固めた。11月に衆院議員の任期が折り返しを迎え、選挙に勝てるタイミングでの解散を探っていたが、内閣支持率が政権発足から最低水準に落ち込んでいる現状を踏まえ、当面は経済対策などに集中せざるをえないと判断。年明け以降に改めて解散の機会を探る。政権幹部が明らかにした。
+　岡山県吉備中央町の円城浄水場（同町上田西）から有害な有機フッ素化合物（PFAS＝ピーファス）が検出された問題で、周辺の沢から国の暫定目標値（1リットル当たり50ナノグラム＝ナノは10億分の1）の1240倍に当たる6万2千ナノグラムの濃度が新たに検出されたことが9日、関係者への取材で分かった。浄水場に流入する沢の最上流部に当たる地点で、PFASの発生源を特定するため岡山県が進めている水質調査で確認された。
 <p> 
 <textArea cols='35' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
