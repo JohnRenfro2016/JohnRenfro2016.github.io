@@ -1505,6 +1505,7 @@ const replsB = [
 {p1:/(従)(?!X)(兄)(?!X)(弟)(?!X)/g,r1:'$1Xito$2Xko$3X-cousin~Noun'},
 {p1:/(後)(?!X)(書)(?!X)(き)(?!X)/g,r1:'$1Xato$2Xga$3Xki-postscript,afterword~Noun'},
 {p1:/(後)(?!X)(押)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xato$2Xo-boost support$3X~SuVerb'},
+{p1:/(ひ)(?!X)(ょ)(?!X)(う)(?!X)/g,r1:'$1Xhi$2Xyo$3Xu-hail~Noun'},
 {p1:/(後)(?!X)(戻)(?!X)(り)(?!X)/g,r1:'$1Xato$2Xmo$3Xdori-turning back,retreat~Noun'},
 {p1:/(後)(?!X)(回)(?!X)(し)(?!X)/g,r1:'$1Xatomawa$2Xsh$3Xi-deferment,postponement~Noun'},
 {p1:/(待)(?!X)(合)(?!X)(室)(?!X)/g,r1:'$1Xmac$2Xhi$3Xaishitsu-waiting room~Noun'},
@@ -1775,7 +1776,7 @@ const replsB = [
 {p1:/(冷)(?!X)(や)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xhi$2Xya-cool,chill$3X~SuVerb'},
 {p1:/(冷)(?!X)(め)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xsam$2Xe-cool off,subside$3X~RuVerb'},
 {p1:/(冷)(?!X)(ま)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xsa$2Xma-cool,let cool$3X~SuVerb'},
-{p1:/(冷)(?!X)(た)(?!X)([いくかさ])(?!X)/g,r1:'$1Xtsu$2Xmeta-cold (things,touch)$3X~IAdjective~Noun'},
+{p1:/(冷)(?!X)(た)(?!X)([いくかさ])(?!X)/g,r1:'$1Xtsume$2Xta-cold$3X~IAdjective~Noun'},
 {p1:/(冷)(?!X)(え)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xhie$2X-cool down,feel chilly$3X~RuVerb'},
 {p1:/(冬)(?!X)(休)(?!X)(み)(?!X)/g,r1:'$1Xfuyu$2Xya$3Xsumi-winter vacation~Noun'},
 {p1:/(再)(?!X)(来)(?!X)(週)(?!X)/g,r1:'$1Xsarai$2Xsy$3Xuu-week after next~Noun'},
@@ -2727,6 +2728,7 @@ const replsB = [
 {p1:/(連)(?!X)(行)(?!X)/g,r1:'$1Xren$2Xkou-dragging someone away~Noun'},
 {p1:/(連)(?!X)(続)(?!X)/g,r1:'$1Xren$2Xzoku-continuation~Noun'},
 {p1:/(連)(?!X)(絡)(?!X)/g,r1:'$1Xren$2Xraku-communication~Noun'},
+{p1:/(日)(?!X)(陰)(?!X)/g,r1:'$1Xhi$2Xkage-shade~Noun'},
 {p1:/(連)(?!X)(結)(?!X)/g,r1:'$1Xren$2Xketsu-consolidated~Noun'},
 {p1:/(連)(?!X)(立)(?!X)/g,r1:'$1Xren$2Xritsu-coallition~Noun'},
 {p1:/(連)(?!X)(盟)(?!X)/g,r1:'$1Xren$2Xmei-federation~Noun'},
@@ -4690,7 +4692,7 @@ const replsB = [
 {p1:/(昼)(?!X)(食)(?!X)/g,r1:'$1Xcyuu$2Xsyoku-lunch~Noun'},
 {p1:/(昼)(?!X)(間)(?!X)/g,r1:'$1Xhiru$2Xma-daytime~Noun'},
 {p1:/(昼)(?!X)(寝)(?!X)/g,r1:'$1Xhiru$2Xne-siesta,nap~Noun'},
-{p1:/(昼)(?!X)(前)(?!X)/g,r1:'$1Xhiru$2Xmae-in morning,before noon~Noun'},
+{p1:/(昼)(?!X)(前)(?!X)/g,r1:'$1Xhiru$2Xmae-before noon~Noun'},
 {p1:/(是)(?!X)(非)(?!X)/g,r1:'$1Xze$2Xhi-by all means,at any cost~Noun'},
 {p1:/(昭)(?!X)(和)(?!X)/g,r1:'$1Xsyou$2Xwa-Showa era~Noun'},
 {p1:/(昨)(?!X)(晩)(?!X)/g,r1:'$1Xsaku$2Xban~last night~last evening~Noun'},
@@ -7245,7 +7247,7 @@ const replsB = [
 {p1:/(６|6|六)(?!X)/g,r1:'$1Xroku-six~Noun'},
 {p1:/(４|4|四)(?!X)/g,r1:'$1Xyon,shi-four~Noun'},
 {p1:/(３|3|三)(?!X)/g,r1:'$1Xsan,zou-three~Noun'},
-{p1:/(．)(?!X)/g,r1:'$1Xdot,decimal point~Punctuation~Noun'},
+{p1:/(．)(?!X)/g,r1:'$1Xdot,decimal point~Punctuation'},
 {p1:/(鼻)(?!X)/g,r1:'$1Xhana-nose~Noun'},
 {p1:/(黒)(?!X)/g,r1:'$1Xkuro,guro-black~Noun'},
 {p1:/(麦)(?!X)/g,r1:'$1Xmugi-wheat~Noun'},
@@ -8072,19 +8074,6 @@ const replsB = [
 {p1:/(へ)(?!X)/g,r1:'$1Xe-towards~Postposition'},
 {p1:/(の)(?!X)/g,r1:'$1Xno-of,verb to noun~Postposition'},
 {p1:/(き)(?!X)/g,r1:'$1Xki-come,start to do~Verb'},
-{p1:/(】)(?!X)/g,r1:'$1Xclose bracket~Punctuation~Noun'},
-{p1:/(【)(?!X)/g,r1:'$1Xopen bracket~Punctuation~Noun'},
-{p1:/(」|』)(?!X)/g,r1:'$1Xclose quote~Punctuation~Noun'},
-{p1:/(「|『)(?!X)/g,r1:'$1Xopen quote~Punctuation~Noun'},
-{p1:/(々)(?!X)/g,r1:'$1Xka-repeats the first kanji~Noun'},
-{p1:/(。)(?!X)/g,r1:'$1Xperiod~Punctuation~Noun'},
-{p1:/(、)(?!X)/g,r1:'$1Xcomma~Punctuation~Noun'},
-{p1:/(\）)(?!X)/g,r1:'$1Xclose parenthesis~Punctuation~Noun'},
-{p1:/(\（)(?!X)/g,r1:'$1Xopen parenthesis~Punctuation~Noun'},
-{p1:/(\・)(?!X)/g,r1:'$1X-word separator~Punctuation~Noun'},
-{p1:/(\.)(?!X)/g,r1:'$1Xten-decimal~Punctuation~Noun'},
-{p1:/(\))(?!X)/g,r1:'$1Xclose parenthesis~Punctuation~Noun'},
-{p1:/(\()(?!X)/g,r1:'$1Xopen parenthesis~Punctuation~Noun'},
 {p1:/(?![ァ-ヾ]+)(カ)(?!X|[ァ-ヾ]+)/g,r1:'$2Xka-counter for things~Noun'},
 {p1:/(9|９|九)(?!X)/g,r1:'$1Xkyuu-nine~Noun'},
 {p1:/(7|７|七)(?!X)/g,r1:'$1Xnana,shichi,seven~Noun'},
@@ -8164,7 +8153,7 @@ const replsB = [
 {p1:/(Verbば)(?!X)/g,r1:'$1Xba-if~Postposition~Noun'},
 {p1:/(Verbも|Nounも)(?!X)/g,r1:'$1Xmo-too~Postposition~Noun'},
 {p1:/(Verbや|Nounや)(?!X)/g,r1:'$1Xya-and,comma~Postposition~Noun'},
-{p1:/(Verbよ)(?!X)/g,r1:'$1Xyo-exclamation~Punctuation~Noun'},
+{p1:/(Verbよ)(?!X)/g,r1:'$1Xyo-exclamation~Punctuation'},
 
 {p1:/(Prepositionの|Verbの|Nounの)(?!X)/g,r1:'$1Xno-of~Postposition~Noun'},
 
@@ -8245,7 +8234,9 @@ const replsB = [
 {p1:/(Verb)/g,r1:'$1 '},
 {p1:/(Adverb)/g,r1:'$1 '},
 {p1:/(Postposition)/g,r1:'$1 '},
-{p1:/(Punctuation)/g,r1:'$1<hr>'},
+{p1:/([\（\】【」』「『。、\(\）\・\.])(?!X)/g,r1:'<br>$1~Punctuation'},
+
+{p1:/(々)(?!X)/g,r1:'$1Xka-repeats the first kanji~Noun'},
 
 {p1:/X/g,r1:''},
 
@@ -8268,7 +8259,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-【サンフランシスコ時事】15日の米中首脳会談は、軍当局間の対話再開や人工知能（AI）規制での協力を打ち出し、緊張緩和を演出した。【ひと目でわかる】経済問題を巡る米中対立の構図 ただ、半導体や重要鉱物に関する輸出規制や投資規制など経済問題を巡る対立構造は維持されたまま。米国がうたう「健全な競争関係」の実現は見通せない状況だ。 「正しい方向への具体的なステップだ」―。バイデン米大統領は首脳会談後の記者会見で、AIを巡って協力すると説明し、関係安定化への成果を強調した。
+20日（月）は、前線や上空の寒気の影響で、北陸や東北の日本海側を中心に昼前にかけて大気の状態が非常に不安定になる見込み。落雷や強い雨、竜巻などの激しい突風、ひょうに注意が必要。東京から西の地域では、広く晴れて気温が上がるが、日陰では風が冷たく感じられそうだ。
 <p> 
 <textArea cols='35' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
