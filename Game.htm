@@ -14,6 +14,7 @@
         }
 
         .piece {
+            color: brown;
             position: absolute;
             width: 150px;
             height: 200px;
@@ -27,6 +28,18 @@
             cursor: pointer;
             margin-bottom: 5px;
             background-color: #2ecc71; /* Green background color */
+            color: white; /* White text color */
+            border: none; /* Remove borders */
+            padding: 5px 10px; /* Some padding */
+            font-size: 12px; /* Set a font size */
+            cursor: pointer; /* Mouse pointer on hover */
+            z-index: 1; /* Ensure the button is above other elements */
+        }
+
+        .delete-button {
+            cursor: pointer;
+            margin-bottom: 5px;
+            background-color: #e74c3c; /* Red background color */
             color: white; /* White text color */
             border: none; /* Remove borders */
             padding: 5px 10px; /* Some padding */
@@ -53,7 +66,6 @@
             position: absolute;
             width: 100%;
             height: 20px;
-            background-color: #ecf0f1;
             cursor: move;
             touch-action: none;
         }
@@ -89,8 +101,13 @@
             rotateButton.innerHTML = 'Rotate';
             rotateButton.onclick = () => rotatePiece(piece);
 
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-button';
+            deleteButton.innerHTML = 'Delete Piece';
+            deleteButton.onclick = () => deletePiece(piece);
+
             const textarea = document.createElement('textarea');
-            textarea.placeholder = 'Type here...';
+            textarea.placeholder = 'Name, AC HD, curHP/maxHP, MV';
 
             const diceFields = createDiceFields();
 
@@ -103,6 +120,7 @@
 
             piece.appendChild(textarea);
             piece.appendChild(rotateButton);
+            piece.appendChild(deleteButton);
             piece.appendChild(diceFields);
             piece.appendChild(dragStrip);
             piece.appendChild(imageUploadButton);
@@ -110,6 +128,12 @@
             board.appendChild(piece);
             pieces.push(piece);
             makeDraggable(piece);
+        }
+
+        function deletePiece(piece) {
+            const board = document.getElementById('board');
+            board.removeChild(piece);
+            pieces = pieces.filter(p => p !== piece);
         }
 
         function rotatePiece(piece) {
@@ -291,6 +315,11 @@
                 rotateButton.innerHTML = 'Rotate';
                 rotateButton.onclick = () => rotatePiece(piece);
 
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'delete-button';
+                deleteButton.innerHTML = 'Delete Piece';
+                deleteButton.onclick = () => deletePiece(piece);
+
                 const textarea = document.createElement('textarea');
                 textarea.value = data.text;
                 textarea.placeholder = 'Type here...';
@@ -307,6 +336,7 @@
 
                 piece.appendChild(textarea);
                 piece.appendChild(rotateButton);
+                piece.appendChild(deleteButton);
                 piece.appendChild(diceFields);
                 piece.appendChild(createDragStrip(piece));
 
