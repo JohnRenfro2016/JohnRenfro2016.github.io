@@ -1,360 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        #board {
-            position: relative;
-            width: 600px;
-            height: 600px;
-            border: 1px solid #000;
-            margin: 20px auto;
-            touch-action: none;
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+	
+body,button,input,textArea{color:black;background-color:white;display:inline-block;font-size:10px;}
+	
+ #board {
+ position: relative;
+ width: 700px;
+ height: 700px;
+ border: 1px solid #000;
+ touch-action: none;
+ }
 
-        .piece {
-            color: brown;
-            position: absolute;
-            width: 150px;
-            height: 200px;
-            background-color: #3498db;
-            cursor: move;
-            display: flex;
-            flex-direction: column;
-        }
+.piece 
+{
+display:block;
+height: 200px;
+position: absolute;
+width: 200px;
+}
 
-        .rotate-button {
-            cursor: pointer;
-            margin-bottom: 5px;
-            background-color: #2ecc71; /* Green background color */
-            color: white; /* White text color */
-            border: none; /* Remove borders */
-            padding: 5px 10px; /* Some padding */
-            font-size: 12px; /* Set a font size */
-            cursor: pointer; /* Mouse pointer on hover */
-            z-index: 1; /* Ensure the button is above other elements */
-        }
+.buttonStyle 
+{
+ z-index: 1; /* Ensure the button is above other elements */
+}
 
-        .delete-button {
-            cursor: pointer;
-            margin-bottom: 5px;
-            background-color: #e74c3c; /* Red background color */
-            color: white; /* White text color */
-            border: none; /* Remove borders */
-            padding: 5px 10px; /* Some padding */
-            font-size: 12px; /* Set a font size */
-            cursor: pointer; /* Mouse pointer on hover */
-            z-index: 1; /* Ensure the button is above other elements */
-        }
+textarea 
+{
+height: 10ch;
+resize: none;
+width: 30ch;
+}
 
-        textarea {
-            resize: none;
-            flex-grow: 1;
-        }
+ .dice-input 
+ {
+ width: 10ch;
+ }
 
-        .dice-input {
-            width: 50px;
-        }
+ .dice-result {
+ font-weight: bold;
+ }
 
-        .dice-result {
-            margin-top: 5px;
-            font-weight: bold;
-        }
+ .drag-strip {
+ position: absolute;
+ touch-action: none;
+ }
 
-        .drag-strip {
-            position: absolute;
-            width: 100%;
-            height: 20px;
-            cursor: move;
-            touch-action: none;
-        }
+ .image-upload-button {
 
-        .image-upload-button {
-            margin-top: 5px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-    </style>
+ background-color: #f9f9f9;
+ }
+ </style>
 </head>
 <body>
-    <button onclick="createPiece()">Create Piece</button>
-    <button onclick="saveGame()">Save Game</button>
-    <div id="board"></div>
+ <button onclick="createPiece()">Create Piece</button>
+ <button onclick="saveGame()">Save Game</button>
+ <div id="board"></div>
 
-    <script>
-        let pieces = [];
+ <script>
+ let pieces = [];
 
-        function createPiece() {
-            const board = document.getElementById('board');
-            const piece = document.createElement('div');
-            piece.className = 'piece';
-            piece.style.left = Math.random() * (board.offsetWidth - 150) + 'px';
-            piece.style.top = Math.random() * (board.offsetHeight - 200) + 'px';
+ function createPiece() {
+ const board = document.getElementById('board');
+ const piece = document.createElement('div');
+ piece.className = 'piece';
+ piece.style.left = Math.random() * (board.offsetWidth - 150) + 'px';
+ piece.style.top = Math.random() * (board.offsetHeight - 200) + 'px';
 
-            const rotateButton = document.createElement('button');
-            rotateButton.className = 'rotate-button';
-            rotateButton.innerHTML = 'Rotate';
-            rotateButton.onclick = () => rotatePiece(piece);
+ const rotateButton = document.createElement('button');
+ rotateButton.className = 'buttonStyle';
+ rotateButton.innerHTML = 'Rotate';
+ rotateButton.onclick = () => rotatePiece(piece);
 
-            const deleteButton = document.createElement('button');
-            deleteButton.className = 'delete-button';
-            deleteButton.innerHTML = 'Delete Piece';
-            deleteButton.onclick = () => deletePiece(piece);
+ const deleteButton = document.createElement('button');
+ deleteButton.className = 'buttonStyle';
+ deleteButton.innerHTML = 'Delete';
+ deleteButton.onclick = () => deletePiece(piece);
 
-            const textarea = document.createElement('textarea');
-            textarea.placeholder = 'Name, AC HD, curHP/maxHP, MV';
+ const textarea = document.createElement('textarea');
+ textarea.placeholder = 'Name, AC HD, curHP/maxHP, MV';
 
-            const diceFields = createDiceFields();
+ const diceFields = createDiceFields();
 
-            const dragStrip = createDragStrip(piece);
+ const dragStrip = createDragStrip(piece);
 
-            const imageUploadButton = document.createElement('input');
-            imageUploadButton.type = 'file';
-            imageUploadButton.className = 'image-upload-button';
-            imageUploadButton.addEventListener('change', (e) => handleImageUpload(e, piece));
+ const imageUploadButton = document.createElement('input');
+ imageUploadButton.type = 'file';
+ imageUploadButton.className = 'image-upload-button';
+ imageUploadButton.addEventListener('change', (e) => handleImageUpload(e, piece));
 
-            piece.appendChild(textarea);
-            piece.appendChild(rotateButton);
-            piece.appendChild(deleteButton);
-            piece.appendChild(diceFields);
-            piece.appendChild(dragStrip);
-            piece.appendChild(imageUploadButton);
+ piece.appendChild(rotateButton);
+ piece.appendChild(deleteButton);
+ piece.appendChild(diceFields);
+ piece.appendChild(imageUploadButton);
+ piece.appendChild(textarea);
 
-            board.appendChild(piece);
-            pieces.push(piece);
-            makeDraggable(piece);
-        }
+ board.appendChild(piece);
+ pieces.push(piece);
+ makeDraggable(piece);
+ }
 
-        function deletePiece(piece) {
-            const board = document.getElementById('board');
-            board.removeChild(piece);
-            pieces = pieces.filter(p => p !== piece);
-        }
+ function deletePiece(piece) {
+ const board = document.getElementById('board');
+ board.removeChild(piece);
+ pieces = pieces.filter(p => p !== piece);
+ }
 
-        function rotatePiece(piece) {
-            const currentRotation = parseInt(piece.style.transform.replace('rotate(', '').replace('deg)', '')) || 0;
-            const newRotation = currentRotation + 45;
-            piece.style.transform = `rotate(${newRotation}deg)`;
-        }
+ function rotatePiece(piece) {
+ const currentRotation = parseInt(piece.style.transform.replace('rotate(', '').replace('deg)', '')) || 0;
+ const newRotation = currentRotation + 45;
+ piece.style.transform = `rotate(${newRotation}deg)`;
+ }
 
-        function makeDraggable(element) {
-            let offsetX, offsetY, isDragging = false;
+ function makeDraggable(element) {
+ let offsetX, offsetY, isDragging = false;
 
-            element.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                offsetX = e.clientX - element.getBoundingClientRect().left;
-                offsetY = e.clientY - element.getBoundingClientRect().top;
-            });
+ element.addEventListener('mousedown', (e) => {
+ isDragging = true;
+ offsetX = e.clientX - element.getBoundingClientRect().left;
+ offsetY = e.clientY - element.getBoundingClientRect().top;
+ });
 
-            document.addEventListener('mousemove', (e) => {
-                if (isDragging) {
-                    const x = e.clientX - offsetX;
-                    const y = e.clientY - offsetY;
-                    element.style.left = `${x}px`;
-                    element.style.top = `${y}px`;
-                }
-            });
+ document.addEventListener('mousemove', (e) => {
+ if (isDragging) {
+ const x = e.clientX - offsetX;
+ const y = e.clientY - offsetY;
+ element.style.left = `${x}px`;
+ element.style.top = `${y}px`;
+ }
+ });
 
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
+ document.addEventListener('mouseup', () => {
+ isDragging = false;
+ });
 
-            // Touch events
-            element.addEventListener('touchstart', (e) => {
-                const touch = e.touches[0];
-                offsetX = touch.clientX - element.getBoundingClientRect().left;
-                offsetY = touch.clientY - element.getBoundingClientRect().top;
-                e.preventDefault();
-            });
+ // Touch events
+ element.addEventListener('touchstart', (e) => {
+ const touch = e.touches[0];
+ offsetX = touch.clientX - element.getBoundingClientRect().left;
+ offsetY = touch.clientY - element.getBoundingClientRect().top;
+ e.preventDefault();
+ });
 
-            element.addEventListener('touchmove', (e) => {
-                const touch = e.touches[0];
-                const x = touch.clientX - offsetX;
-                const y = touch.clientY - offsetY;
-                element.style.left = `${x}px`;
-                element.style.top = `${y}px`;
-                e.preventDefault();
-            });
+ element.addEventListener('touchmove', (e) => {
+ const touch = e.touches[0];
+ const x = touch.clientX - offsetX;
+ const y = touch.clientY - offsetY;
+ element.style.left = `${x}px`;
+ element.style.top = `${y}px`;
+ e.preventDefault();
+ });
 
-            element.addEventListener('touchend', (e) => {
-                e.preventDefault();
-            });
-        }
+ element.addEventListener('touchend', (e) => {
+ e.preventDefault();
+ });
+ }
 
-        function createDiceFields() {
-            const container = document.createElement('div');
-            container.className = 'dice-container';
+ function createDiceFields() {
+ const container = document.createElement('div');
+ container.className = 'dice-container';
 
-            const diceTypes = ['20', '8'];
-            diceTypes.forEach(type => {
-                const label = document.createElement('label');
-                label.innerHTML = `1d${type}+0: `;
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.className = 'dice-input';
-                input.value = `1d${type}+0`;
-                input.addEventListener('mouseover', () => rollDice(input, type));
-                const result = document.createElement('div');
-                result.className = 'dice-result';
-                container.appendChild(label);
-                container.appendChild(input);
-                container.appendChild(result);
-            });
+ const diceTypes = ['20', '8'];
+ diceTypes.forEach(type => {
+ const label = document.createElement('label');
+ label.innerHTML = `Attack Dice`;
+ const input = document.createElement('input');
+ input.type = 'text';
+ input.className = 'dice-input';
+ input.value = `1d${type}+0`;
+ input.addEventListener('mouseover', () => rollDice(input, type));
+ const result = document.createElement('div');
+ result.className = 'dice-result';
+ container.appendChild(label);
+ container.appendChild(input);
+ container.appendChild(result);
+ });
 
-            return container;
-        }
+ return container;
+ }
 
-        function rollDice(input, type) {
-            const resultElement = input.nextElementSibling;
-            const [num, sides, modifier] = input.value.match(/(\d+)d(\d+)\+(\d+)/).slice(1);
-            const total = roll(num, sides) + parseInt(modifier);
-            resultElement.innerHTML = `Result: ${total}`;
-        }
+ function rollDice(input, type) {
+ const resultElement = input.nextElementSibling;
+ const [num, sides, modifier] = input.value.match(/(\d+)d(\d+)\+(\d+)/).slice(1);
+ const total = roll(num, sides) + parseInt(modifier);
+ resultElement.innerHTML = `Result: ${total}`;
+ }
 
-        function roll(num, sides) {
-            let result = 0;
-            for (let i = 0; i < num; i++) {
-                result += Math.floor(Math.random() * sides) + 1;
-            }
-            return result;
-        }
+ function roll(num, sides) {
+ let result = 0;
+ for (let i = 0; i < num; i++) {
+ result += Math.floor(Math.random() * sides) + 1;
+ }
+ return result;
+ }
 
-        function createDragStrip(element) {
-            const dragStrip = document.createElement('div');
-            dragStrip.className = 'drag-strip';
+ function createDragStrip(element) {
+ const dragStrip = document.createElement('div');
+ dragStrip.className = 'drag-strip';
 
-            dragStrip.addEventListener('mousedown', (e) => {
-                const offsetY = e.clientY - element.getBoundingClientRect().top;
-                document.addEventListener('mousemove', dragMouseMove);
-                document.addEventListener('mouseup', dragMouseUp);
+ dragStrip.addEventListener('mousedown', (e) => {
+ const offsetY = e.clientY - element.getBoundingClientRect().top;
+ document.addEventListener('mousemove', dragMouseMove);
+ document.addEventListener('mouseup', dragMouseUp);
 
-                function dragMouseMove(e) {
-                    const y = e.clientY - offsetY;
-                    element.style.top = `${y}px`;
-                }
+ function dragMouseMove(e) {
+ const y = e.clientY - offsetY;
+ element.style.top = `${y}px`;
+ }
 
-                function dragMouseUp() {
-                    document.removeEventListener('mousemove', dragMouseMove);
-                    document.removeEventListener('mouseup', dragMouseUp);
-                }
-            });
+ function dragMouseUp() {
+ document.removeEventListener('mousemove', dragMouseMove);
+ document.removeEventListener('mouseup', dragMouseUp);
+ }
+ });
 
-            // Touch events
-            dragStrip.addEventListener('touchstart', (e) => {
-                const touch = e.touches[0];
-                const offsetY = touch.clientY - element.getBoundingClientRect().top;
-                document.addEventListener('touchmove', dragTouchMove);
-                document.addEventListener('touchend', dragTouchEnd);
+ // Touch events
+ dragStrip.addEventListener('touchstart', (e) => {
+ const touch = e.touches[0];
+ const offsetY = touch.clientY - element.getBoundingClientRect().top;
+ document.addEventListener('touchmove', dragTouchMove);
+ document.addEventListener('touchend', dragTouchEnd);
 
-                function dragTouchMove(e) {
-                    const touch = e.touches[0];
-                    const y = touch.clientY - offsetY;
-                    element.style.top = `${y}px`;
-                }
+ function dragTouchMove(e) {
+ const touch = e.touches[0];
+ const y = touch.clientY - offsetY;
+ element.style.top = `${y}px`;
+ }
 
-                function dragTouchEnd() {
-                    document.removeEventListener('touchmove', dragTouchMove);
-                    document.removeEventListener('touchend', dragTouchEnd);
-                }
+ function dragTouchEnd() {
+ document.removeEventListener('touchmove', dragTouchMove);
+ document.removeEventListener('touchend', dragTouchEnd);
+ }
 
-                e.preventDefault();
-            });
+ e.preventDefault();
+ });
 
-            return dragStrip;
-        }
+ return dragStrip;
+ }
 
-        function handleImageUpload(event, piece) {
-            const fileInput = event.target;
-            const file = fileInput.files[0];
+ function handleImageUpload(event, piece) {
+ const fileInput = event.target;
+ const file = fileInput.files[0];
 
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    piece.style.backgroundImage = `url('${e.target.result}')`;
-                    piece.style.backgroundSize = 'cover';
-                };
-                reader.readAsDataURL(file);
-            }
-        }
+ if (file) {
+ const reader = new FileReader();
+ reader.onload = function (e) {
+ piece.style.backgroundImage = `url('${e.target.result}')`;
+ piece.style.backgroundSize = 'cover';
+ };
+ reader.readAsDataURL(file);
+ }
+ }
 
-        function saveGame() {
-            const savedData = [];
-            pieces.forEach(piece => {
-                const diceResults = Array.from(piece.querySelectorAll('.dice-result')).map(result => result.innerHTML);
-                savedData.push({
-                    left: piece.style.left,
-                    top: piece.style.top,
-                    rotation: parseInt(piece.style.transform.replace('rotate(', '').replace('deg)', '')) || 0,
-                    text: piece.querySelector('textarea').value,
-                    diceInputs: Array.from(piece.querySelectorAll('.dice-input')).map(input => input.value),
-                    diceResults: diceResults,
-                    backgroundImage: piece.style.backgroundImage,
-                });
-            });
-            localStorage.setItem('savedGame', JSON.stringify(savedData));
-        }
+ function saveGame() {
+ const savedData = [];
+ pieces.forEach(piece => {
+ const diceResults = Array.from(piece.querySelectorAll('.dice-result')).map(result => result.innerHTML);
+ savedData.push({
+ left: piece.style.left,
+ top: piece.style.top,
+ rotation: parseInt(piece.style.transform.replace('rotate(', '').replace('deg)', '')) || 0,
+ text: piece.querySelector('textarea').value,
+ diceInputs: Array.from(piece.querySelectorAll('.dice-input')).map(input => input.value),
+ diceResults: diceResults,
+ backgroundImage: piece.style.backgroundImage,
+ });
+ });
+ localStorage.setItem('savedGame', JSON.stringify(savedData));
+ }
 
-        function loadGame() {
-            const savedData = JSON.parse(localStorage.getItem('savedGame')) || [];
-            savedData.forEach(data => {
-                const piece = document.createElement('div');
-                piece.className = 'piece';
-                piece.style.left = data.left;
-                piece.style.top = data.top;
-                piece.style.transform = `rotate(${data.rotation}deg)`;
-                piece.style.backgroundImage = data.backgroundImage;
-                piece.style.backgroundSize = 'cover';
+ function loadGame() {
+ const savedData = JSON.parse(localStorage.getItem('savedGame')) || [];
+ savedData.forEach(data => {
+ const piece = document.createElement('div');
+ piece.className = 'piece';
+ piece.style.left = data.left;
+ piece.style.top = data.top;
+ piece.style.transform = `rotate(${data.rotation}deg)`;
+ piece.style.backgroundImage = data.backgroundImage;
+ piece.style.backgroundSize = 'cover';
 
-                const rotateButton = document.createElement('button');
-                rotateButton.className = 'rotate-button';
-                rotateButton.innerHTML = 'Rotate';
-                rotateButton.onclick = () => rotatePiece(piece);
+ const rotateButton = document.createElement('button');
+ rotateButton.className = 'buttonStyle';
+ rotateButton.innerHTML = 'Rotate';
+ rotateButton.onclick = () => rotatePiece(piece);
 
-                const deleteButton = document.createElement('button');
-                deleteButton.className = 'delete-button';
-                deleteButton.innerHTML = 'Delete Piece';
-                deleteButton.onclick = () => deletePiece(piece);
+ const deleteButton = document.createElement('button');
+ deleteButton.className = 'buttonStyle';
+ deleteButton.innerHTML = 'Delete';
+ deleteButton.onclick = () => deletePiece(piece);
 
-                const textarea = document.createElement('textarea');
-                textarea.value = data.text;
-                textarea.placeholder = 'Type here...';
+ const textarea = document.createElement('textarea');
+ textarea.value = data.text;
+ textarea.placeholder = 'Type here...';
 
-                const diceFields = createDiceFields();
-                const diceInputs = Array.from(diceFields.querySelectorAll('.dice-input'));
-                const diceResults = Array.from(diceFields.querySelectorAll('.dice-result'));
-                data.diceInputs.forEach((input, index) => {
-                    diceInputs[index].value = input;
-                });
-                data.diceResults.forEach((result, index) => {
-                    diceResults[index].innerHTML = result;
-                });
+ const diceFields = createDiceFields();
+ const diceInputs = Array.from(diceFields.querySelectorAll('.dice-input'));
+ const diceResults = Array.from(diceFields.querySelectorAll('.dice-result'));
+ data.diceInputs.forEach((input, index) => {
+ diceInputs[index].value = input;
+ });
+ data.diceResults.forEach((result, index) => {
+ diceResults[index].innerHTML = result;
+ });
 
-                piece.appendChild(textarea);
-                piece.appendChild(rotateButton);
-                piece.appendChild(deleteButton);
-                piece.appendChild(diceFields);
-                piece.appendChild(createDragStrip(piece));
+ piece.appendChild(rotateButton);
+ piece.appendChild(deleteButton);
+ piece.appendChild(diceFields);
 
-                const imageUploadButton = document.createElement('input');
-                imageUploadButton.type = 'file';
-                imageUploadButton.className = 'image-upload-button';
-                imageUploadButton.addEventListener('change', (e) => handleImageUpload(e, piece));
+  piece.appendChild(textarea);
 
-                piece.appendChild(imageUploadButton);
+ const imageUploadButton = document.createElement('input');
+ imageUploadButton.type = 'file';
+ imageUploadButton.className = 'image-upload-button';
+ imageUploadButton.addEventListener('change', (e) => handleImageUpload(e, piece));
 
-                document.getElementById('board').appendChild(piece);
-                pieces.push(piece);
-                makeDraggable(piece);
-            });
-        }
+ piece.appendChild(imageUploadButton);
 
-        // Load saved game on page load
-        loadGame();
-    </script>
+ document.getElementById('board').appendChild(piece);
+ pieces.push(piece);
+ makeDraggable(piece);
+ });
+ }
+
+ // Load saved game on page load
+ loadGame();
+ </script>
 </body>
 </html>
