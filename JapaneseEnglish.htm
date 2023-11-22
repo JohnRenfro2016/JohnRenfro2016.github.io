@@ -1792,6 +1792,7 @@ const replsB = [
 {p1:/(共)(?!X)(和)(?!X)(国)(?!X)/g,r1:'$1Xkyou$2Xwa$3Xkoku-republic~Noun'},
 {p1:/(共)(?!X)(和)(?!X)(党)(?!X)/g,r1:'$1Xkyou$2Xwa$3Xtou-Republican Party~Noun'},
 {p1:/(公)(?!X)(聴)(?!X)(会)(?!X)/g,r1:'$1Xkou$2Xcyou$3Xkai-public hearing~Noun'},
+{p1:/(装)(?!X)(備)(?!X)(品)(?!X)/g,r1:'$1Xsou$2Xbi$3Xhin-accessories~Noun'},
 {p1:/(公)(?!X)(明)(?!X)(党)(?!X)/g,r1:'$1Xkou$2Xmei$3Xtou-The Koumeito Party of Japan~Noun'},
 {p1:/(公)(?!X)(文)(?!X)(書)(?!X)/g,r1:'$1Xkou$2Xbun$3Xsyo-official document~Noun'},
 {p1:/(公)(?!X)(務)(?!X)(員)(?!X)/g,r1:'$1Xkou$2Xmu$3Xin-public officer,government worker~Noun'},
@@ -1867,7 +1868,7 @@ const replsB = [
 {p1:/(付)(?!X)(き)(?!X)(合)(?!X)([いくかさ])(?!X)/g,r1:'$1Xtsu$2Xki$3Xa-friendship,association$4X~IAdjective~Noun'},
 {p1:/(仕)(?!X)(舞)(?!X)([わいうえおっ])(?!X)/g,r1:'$1Xshi$2Xma-put away$3X~UVerb'},
 {p1:/(仕)(?!X)(組)(?!X)(み)(?!X)/g,r1:'$1Xshi$2Xku$3Xmi-arrangement~Noun'},
-{p1:/(仕)(?!X)(上)(?!X)(げ)(?!X)/g,r1:'$1Xshi$2Xag$3Xe-completion,finishing~Noun'},
+{p1:/(仕)(?!X)(上)(?!X)(げ)(?!X)/g,r1:'$1Xshi$2Xag$3Xe-completioning~Noun'},
 {p1:/(今)(?!X)(年)(?!X)(度)(?!X)/g,r1:'$1Xkon$2Xnen$3Xdo-this year~Noun'},
 {p1:/(今)(?!X)(ま)(?!X)(で)(?!X)/g,r1:'$1Xima$2Xma$3Xde-until now,so far~Noun'},
 {p1:/(今)(?!X)(に)(?!X)(も)(?!X)/g,r1:'$1Xima$2Xni$3Xmo-at any moment~Noun'},
@@ -5609,7 +5610,7 @@ const replsB = [
 {p1:/(官)(?!X)(房)(?!X)/g,r1:'$1Xkan$2Xbou-government secretariat~Noun'},
 {p1:/(官)(?!X)(庁)(?!X)/g,r1:'$1Xkan$2Xcyou-government office~Noun'},
 {p1:/(宗)(?!X)(教)(?!X)/g,r1:'$1Xsyuu$2Xkyou-religion~Noun'},
-{p1:/(完)(?!X)(成)(?!X)/g,r1:'$1Xkan$2Xsei-completion,finish~Noun'},
+{p1:/(完)(?!X)(成)(?!X)/g,r1:'$1Xkan$2Xsei-completion~Noun'},
 {p1:/(完)(?!X)(全)(?!X)/g,r1:'$1Xkan$2Xzen-complete~Noun'},
 {p1:/(完)(?!X)(了)(?!X)/g,r1:'$1Xkan$2Xryou-completion~Noun'},
 {p1:/(安)(?!X)(心)(?!X)/g,r1:'$1Xan$2Xshin-relief~Noun'},
@@ -8226,6 +8227,7 @@ const replsB = [
 {p1:/(Verb)(る)(?!X)/g,r1:' $1X$2Xru-do,will do~InformalVerb '},
 
 {p1:/(Verb)(と)(?!X)/g,r1:'$1 $2Xto-by way of~Postposition~Noun'},
+{p1:/(Verb)(で)(?!X)/g,r1:'$1 $2Xde-at,with~Postposition'},
 
 {p1:/(ご)(?!X)/g,r1:' $1Xgo-honorable,makes words polite '},
 
@@ -8259,7 +8261,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-20日（月）は、前線や上空の寒気の影響で、北陸や東北の日本海側を中心に昼前にかけて大気の状態が非常に不安定になる見込み。落雷や強い雨、竜巻などの激しい突風、ひょうに注意が必要。東京から西の地域では、広く晴れて気温が上がるが、日陰では風が冷たく感じられそうだ。
+政府・与党は、米国企業に特許料を支払い、日本で製造する「ライセンス生産」の防衛装備品を巡り、完成品について、米国への輸出に加え、米国から第三国への輸出も条件付きで容認する方向で調整に入った。輸出先はウクライナなど「戦闘が行われている国・地域」を除外する案が有力だ。
 <p> 
 <textArea cols='35' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
