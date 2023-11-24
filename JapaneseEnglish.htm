@@ -65,6 +65,9 @@ function translateB()
 
 const replsB = [
 
+{p1:/([0-9]+)(?!X)/g,r1:'<br>$1~Number'},
+{p1:/([０-９]+)(?!X)/g,r1:'<br>$1~Number'},
+
 {p1:/(せ)(?!X)(ざ)(?!X)(る)(?!X)(を)(?!X)(え)(?!X)(な)(?!X)(い)(?!X)/g,r1:'$1Xse$2Xza$3Xru$4Xo$5Xe$6Xna$7Xi-can\'t help but do~Noun'},
 
 {p1:/(プ)(?!X)(ロ)(?!X)(デ)(?!X)(ュ)(?!X)(ー)(?!X)(サ)(?!X)(ー)(?!X)/g,r1:'$1Xpu$2Xro$3Xde$4Xyu$5Xu$6Xsa$7Xa-producer~Noun'},
@@ -797,6 +800,7 @@ const replsB = [
 {p1:/(非)(?!X)(正)(?!X)(規)(?!X)/g,r1:'$1Xhi$2Xsei$3Xki-temporary~Noun'},
 {p1:/(非)(?!X)(常)(?!X)(識)(?!X)/g,r1:'$1Xhi$2Xjyou$3Xshiki-lack of common sense~Noun'},
 {p1:/(非)(?!X)(常)(?!X)(口)(?!X)/g,r1:'$1Xhi$2Xjyou$3Xguchi-emergency exit~Noun'},
+{p1:/(赤)(?!X)(十)(?!X)(字)(?!X)/g,r1:'$1Xaka$2Xjyuu$3Xji-Red Cross~Noun'},
 {p1:/(非)(?!X)(常)(?!X)(に)(?!X)/g,r1:'$1Xhi$2Xjyou$3Xni-extremely~adverb~Noun'},
 {p1:/(非)(?!X)(友)(?!X)(好)(?!X)/g,r1:'$1Xhi$2Xyuu$3Xkou-unfriendly~Noun'},
 {p1:/(静)(?!X)(ま)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xshi$2Xzuma-become quiet,calm down$3X~RuVerb'},
@@ -5814,8 +5818,10 @@ const replsB = [
 {p1:/(増)(?!X)(え)(?!X)/g,r1:'$1Xfu$2Xe,increase~IchidanVerb'},
 {p1:/(増)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xma-increase$2X~SuVerb'},
 {p1:/(墓)(?!X)(地)(?!X)/g,r1:'$1Xbo$2Xchi-graveyard,cemetery~Noun'},
+{p1:/(人)(?!X)(質)(?!X)/g,r1:'$1Xhito$2Xjichi-hostage~Noun'},
 {p1:/(境)(?!X)(目)(?!X)/g,r1:'$1Xsakai$2Xme-borderline~Noun'},
-{p1:/(境)(?!X)(界)(?!X)/g,r1:'$1Xkyou$2Xkai-boundary,border~Noun'},
+{p1:/(休)(?!X)(止)(?!X)/g,r1:'$1Xkyuu$2Xshi-cease-fire,pause,suspension~Noun'},
+{p1:/(境)(?!X)(界)(?!X)/g,r1:'$1Xkyou$2Xkai-border~Noun'},
 {p1:/(塹)(?!X)(壕)(?!X)/g,r1:'$1Xzan$2Xgou-trench~Noun'},
 {p1:/(塩)(?!X)(素)(?!X)/g,r1:'$1Xen$2Xso-chlorine~Noun'},
 {p1:/(塞)(?!X)([がぎぐげごい])(?!X)/g,r1:'$1Xfusa-close,shut$2X~GuVerb'},
@@ -8262,7 +8268,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-家庭で消費するモノやサービスの値動きをみる10月の全国の消費者物価指数は去年より2.9%上昇しました。伸び率は先月よりも0.1ポイント上がり、4か月ぶりに拡大しました。
+［ガザ／イスラエル・ガザ境界／カイロ２４日ロイター］ - パレスチナ自治区ガザを実効支配するイスラム組織ハマスは２４日、イスラエルとの戦闘休止合意に基づき、拘束している人質のうちイスラエル人の女性と子ども１３人を含む２４人を解放した。赤十字国際委員会（ＩＣＲＣ）が明らかにした。
 <p> 
 <textArea cols='35' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
