@@ -8016,7 +8016,7 @@ const replsB = [
 {p1:/(偽)(?!X)/g,r1:'$1Xitsuwa-fake~IchidanVerb'},
 {p1:/(側)(?!X)/g,r1:'$1Xkawa,gawa,side~Noun'},
 {p1:/(健)(?!X)/g,r1:'$1Xken-health,strength~Noun'},
-{p1:/(値)(?!X)/g,r1:'$1Xatai-value~Noun'},
+{p1:/(値)(?!X)/g,r1:'$1Xne,atai-value~Noun'},
 {p1:/(倍)(?!X)/g,r1:'$1Xbai,bei,double~Noun'},
 {p1:/(倉)(?!X)/g,r1:'$1Xkura-warehouse~Noun'},
 {p1:/(俺)(?!X)/g,r1:'$1Xore-I,me~Noun'},
@@ -8236,7 +8236,8 @@ const replsB = [
 {p1:/(Verb)/g,r1:'$1 '},
 {p1:/(Adverb)/g,r1:'$1 '},
 {p1:/(Postposition)/g,r1:'$1 '},
-{p1:/([\（\】【」』「『。、\(\）\・\.])(?!X)/g,r1:'<br>$1~Punctuation'},
+{p1:/(\.)/g,r1:'$1ten-decimal '},
+{p1:/([\（\】【」』「『。、\(\）\・])(?!X)/g,r1:'<br>$1~Punctuation'},
 
 {p1:/(々)(?!X)/g,r1:'$1Xka-repeats the first kanji~Noun'},
 
@@ -8261,7 +8262,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-政府・与党は、米国企業に特許料を支払い、日本で製造する「ライセンス生産」の防衛装備品を巡り、完成品について、米国への輸出に加え、米国から第三国への輸出も条件付きで容認する方向で調整に入った。輸出先はウクライナなど「戦闘が行われている国・地域」を除外する案が有力だ。
+家庭で消費するモノやサービスの値動きをみる10月の全国の消費者物価指数は去年より2.9%上昇しました。伸び率は先月よりも0.1ポイント上がり、4か月ぶりに拡大しました。
 <p> 
 <textArea cols='35' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
