@@ -684,6 +684,7 @@ const replsB = [
 {p1:/(お)(?!X)(嬢)(?!X)(さ)(?!X)(ん)(?!X)/g,r1:'$1X$2Xoj$3Xy$4Xousan-young lady,someone\'s daughter~Noun'},
 {p1:/(お)(?!X)(姉)(?!X)(さ)(?!X)(ん)(?!X)/g,r1:'$1X$2Xon$3Xe$4Xesan-older sister~Noun'},
 {p1:/(お)(?!X)(坊)(?!X)(さ)(?!X)(ん)(?!X)/g,r1:'$1X$2Xob$3Xo$4Xusan-monk,priest~Noun'},
+{p1:/(晩)(?!X)(さ)(?!X)(ん)(?!X)(会)(?!X)/g,r1:'$1Xban$2Xsa$3Xn$4Xkai-banquet~Noun'},
 {p1:/(お)(?!X)(兄)(?!X)(さ)(?!X)(ん)(?!X)/g,r1:'$1X$2Xon$3Xi$4Xisan-older brother~Noun'},
 {p1:/(お)(?!X)(や)(?!X)([たちつてとっ])(?!X)/g,r1:'$1Xoya$2X,snack,refreshment$3X~TsuVerb'},
 {p1:/(お)(?!X)(も)(?!X)(ち)(?!X)(ゃ)(?!X)/g,r1:'$1X$2Xom$3Xo$4Xchya-toy,plaything~Noun'},
@@ -742,7 +743,7 @@ const replsB = [
 {p1:/(１|1)(?!X)(９|9)(?!X)(日)(?!X)/g,r1:'$1Xjyuu$2Xku$3Xnichi-nineteenth day of the month~Noun'},
 {p1:/(１|1)(?!X)(７|7)(?!X)(日)(?!X)/g,r1:'$1Xjyuu$2Xshichi$3Xnichi-seventeenth	day of the month~Noun'},
 {p1:/(１|1)(?!X)(５|5)(?!X)(日)(?!X)/g,r1:'$1Xjyuu$2Xgo$3Xnichi-fifteenth day of the month~Noun'},
-{p1:/(１|1)(?!X)(４|4)(?!X)(日)(?!X)/g,r1:'$1Xjyuu$2Xyok$3Xka-fourteenth day of the month~Noun'},
+{p1:/(１|1)(?!X)(4|４|4)(?!X)(日)(?!X)/g,r1:'$1Xjyuu$2Xyok$3Xka-fourteenth day of the month~Noun'},
 {p1:/(１|1)(?!X)(３|3)(?!X)(日)(?!X)/g,r1:'$1Xjyuu$2Xsan$3Xnichi-thirteenth day of the month~Noun'},
 {p1:/(１|1)(?!X)(２|2)(?!X)(月)(?!X)/g,r1:'$1Xjyuu$2Xni$3Xgatsu December~Noun'},
 {p1:/(１|1)(?!X)(１|1)(?!X)(月)(?!X)/g,r1:'$1Xjyuu$2Xichi$3Xgatsu November~Noun'},
@@ -3133,6 +3134,7 @@ const replsB = [
 {p1:/(解)(?!X)(雇)(?!X)/g,r1:'$1Xkai$2Xko-dismissal~Noun'},
 {p1:/(解)(?!X)(除)(?!X)/g,r1:'$1Xkai$2Xjyo-lifting a ban~Noun'},
 {p1:/(解)(?!X)(釈)(?!X)/g,r1:'$1Xkai$2Xsyaku-interpretation~Noun'},
+{p1:/(発)(?!X)(表)(?!X)/g,r1:'$1Xhap$2Xpyou-announce~Noun'},
 {p1:/(解)(?!X)(説)(?!X)/g,r1:'$1Xkai$2Xsetsu-commentary~Noun'},
 {p1:/(解)(?!X)(約)(?!X)/g,r1:'$1Xkai$2Xyaku-contract cancellation~Noun'},
 {p1:/(解)(?!X)(答)(?!X)/g,r1:'$1Xkai$2Xtou-solution~Noun'},
@@ -3141,7 +3143,7 @@ const replsB = [
 {p1:/(解)(?!X)(析)(?!X)/g,r1:'$1Xkai$2Xseki-parsing~Noun'},
 {p1:/(解)(?!X)(明)(?!X)/g,r1:'$1Xkai$2Xmei-revelation~Noun'},
 {p1:/(解)(?!X)(散)(?!X)/g,r1:'$1Xkai$2Xsan-breakup,dissolution~Noun'},
-{p1:/(解)(?!X)(放)(?!X)/g,r1:'$1Xkai$2Xhou-unleashing~Noun'},
+{p1:/(解)(?!X)(放)(?!X)/g,r1:'$1Xkai$2Xhou-release~Noun'},
 {p1:/(解)(?!X)(剖)(?!X)/g,r1:'$1Xkai$2Xbou-autopsy~Noun'},
 {p1:/(解)(?!X)([かきくけこい])(?!X)/g,r1:'$1Xto-solve$2X~KuVerb'},
 {p1:/(角)(?!X)(度)(?!X)/g,r1:'$1Xkaku$2Xdo-angle~Noun'},
@@ -3371,6 +3373,7 @@ const replsB = [
 {p1:/(自)(?!X)(慢)(?!X)/g,r1:'$1Xji$2Xman-showing off~Noun'},
 {p1:/(自)(?!X)(己)(?!X)/g,r1:'$1Xji$2Xko-oneself~Noun'},
 {p1:/(自)(?!X)(宅)(?!X)/g,r1:'$1Xji$2Xtaku-one\'s home~Noun'},
+{p1:/(の)(?!X)(は)(?!X)/g,r1:'$1Xno$2Xwa-as for this in noun form~Postposition'},
 {p1:/(自)(?!X)(国)(?!X)/g,r1:'$1Xji$2Xkoku-one\'s own countries~Noun'},
 {p1:/(自)(?!X)(動)(?!X)/g,r1:'$1Xji$2Xdou-automatic operation~Noun'},
 {p1:/(自)(?!X)(分)(?!X)/g,r1:'$1Xji$2Xbun-self,oneself~Noun'},
@@ -7657,7 +7660,7 @@ const replsB = [
 {p1:/(氷)(?!X)/g,r1:'$1Xkoori-ice~Noun'},
 {p1:/(水)(?!X)/g,r1:'$1Xmizu-water,mi,sui-Wednesday~Noun'},
 {p1:/(気)(?!X)/g,r1:'$1Xki-spirit,energy,mood~Noun'},
-{p1:/(氏)(?!X)/g,r1:'$1Xshi-Mr.~Noun'},
+{p1:/(氏)(?!X)/g,r1:'$1Xshi-Mister,Ms,Mrs~Noun'},
 {p1:/(毛)(?!X)/g,r1:'$1Xke-hair,wool~Noun'},
 {p1:/(比)(?!X)/g,r1:'$1XHi-compare~Noun'},
 {p1:/(毒)(?!X)/g,r1:'$1Xdoku-poison,harm~Noun'},
@@ -8268,7 +8271,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-［ガザ／イスラエル・ガザ境界／カイロ２４日ロイター］ - パレスチナ自治区ガザを実効支配するイスラム組織ハマスは２４日、イスラエルとの戦闘休止合意に基づき、拘束している人質のうちイスラエル人の女性と子ども１３人を含む２４人を解放した。赤十字国際委員会（ＩＣＲＣ）が明らかにした。
+【エルサレム共同】イスラエル首相府は26日、イスラム組織ハマスが拘束する人質のうち、第3弾として17人が解放されたと発表した。24日からの人質解放で、イスラエル側に引き渡されたのは計58人となった。ハマスは26日、イスラエルと合意した4日間の戦闘休止の「延長を求める」との声明を発表。イスラエルのネタニヤフ首相も同日、人質解放が続けば延長の用意があると述べた。
 <p> 
 <textArea cols='35' rows='6' onChange='a=this.value;translateB()'></textArea>
 <span id="translatedTextDisplay"></span>
