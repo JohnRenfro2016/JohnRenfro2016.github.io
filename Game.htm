@@ -81,11 +81,28 @@ max-width: 50%;
  .unit .damage-dice {
  width: 10ch;
  }
+ 
+     .unit .drag-handle {
+      cursor: move;
+      user-select: none;
+      display: inline-block;
+      font-size: 10px;
+      line-height: 20px;
+      width: 100%;
+      text-align: center;
+      touch-action: pan-x pan-y;
+    }
+
+    .unit .drag-handle span {
+      pointer-events: none;
+    }
 </style>
 </head>
 
 <body>
 
+<button onclick="useMapImage()">Use Map Image</button>
+<p>
 <button onclick="createUnit()">Create Unit</button><p>
  Attack Dice for all pieces.<span class="attack-dice-container">
 <input type="text" class="attack-dice-input" placeholder="XdY+Z" onmouseout="calculateAttackResult(this)" value="1d20+0">
@@ -97,6 +114,64 @@ max-width: 50%;
 <button onclick="saveGame()">Save Game</button>
 
 <script>
+
+function useMapImage() {
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'image/*';
+  fileInput.onchange = function (event) {
+    const input = event.target;
+    const file = input.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const gameContainer = document.getElementById('game-container');
+        gameContainer.style.backgroundImage = `url('${reader.result}')`;
+
+        // Save the image source to localStorage
+        localStorage.setItem('mapImage', reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  fileInput.click();
+}
+
+let currentDraggedUnit = null;
+
+function onTouchStart(e) {
+  const touch = e.touches[0];
+  const target = document.elementFromPoint(touch.clientX, touch.clientY);
+
+  if (target && target.classList.contains('drag-handle')) {
+    currentDraggedUnit = target.closest('.unit');
+    currentDraggedUnit.classList.add('dragging');
+  }
+}
+
+function onTouchMove(e) {
+  if (currentDraggedUnit) {
+    const touch = e.touches[0];
+    const rect = document.getElementById("game-container").getBoundingClientRect();
+    const newX = touch.clientX - rect.left;
+    const newY = touch.clientY - rect.top;
+    currentDraggedUnit.style.left = `${newX}px`;
+    currentDraggedUnit.style.top = `${newY}px`;
+  }
+}
+
+function onTouchEnd() {
+  if (currentDraggedUnit) {
+    currentDraggedUnit.classList.remove('dragging');
+    saveGame();
+    currentDraggedUnit = null;
+  }
+}
+
+document.addEventListener('touchstart', onTouchStart);
+document.addEventListener('touchmove', onTouchMove);
+document.addEventListener('touchend', onTouchEnd);
+
  let units = [];
 
  function calculateAttackResult(input) {
@@ -240,75 +315,83 @@ max-width: 50%;
  localStorage.setItem("units", JSON.stringify(savedUnits));
  }
 
- function loadGame() {
- let savedUnits = JSON.parse(localStorage.getItem("units"));
- if (savedUnits) {
- savedUnits.forEach(savedUnit => {
- let unit = document.createElement("div");
- unit.className = "unit";
- unit.innerHTML = `
- Stat<input type="text" class="armor-class" placeholder="AC: HD: curHP:/maxHP:">
- Dice<input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
-<span class="damage-result"></span>
-<span class="drag-handle">Drag</span>
-<input type="button" value="Rota" onclick="rotateUnit(this)">
-<span class="image-container">
-<button onclick="selectImage(this)">Mini</button>
-<img src="">
-<input type="file" accept="image/*" onchange="loadImage(event)">
-</span>
-<input type="button" value="Dele" onclick="deleteUnit(this)">
- `;
+function loadGame() {
+  let savedUnits = JSON.parse(localStorage.getItem("units"));
+  if (savedUnits) {
+    savedUnits.forEach(savedUnit => {
+      let unit = document.createElement("div");
+      unit.className = "unit";
+      unit.innerHTML = `
+        Stat<input type="text" class="armor-class" placeholder="AC HD curHP/maxHP">
+        Dice<input type="text" class="damage-dice" placeholder="XdY+Z" onmouseout="calculateDamageResult(this)">
+        <span class="damage-result"></span>
+        <span class="drag-handle">Drag</span>
+        <input type="button" value="Rota" onclick="rotateUnit(this)">
+        <span class="image-container">
+          <button onclick="selectImage(this)">Mini</button>
+          <img src="">
+          <input type="file" accept="image/*" onchange="loadImage(event)">
+        </span>
+        <input type="button" value="Dele" onclick="deleteUnit(this)">
+      `;
 
- unit.style.left = savedUnit.left;
- unit.style.top = savedUnit.top;
- unit.style.transform = savedUnit.transform;
- unit.querySelector('.armor-class').value = savedUnit.ac;
- unit.querySelector('.damage-dice').value = savedUnit.damageDice;
+      unit.style.left = savedUnit.left;
+      unit.style.top = savedUnit.top;
+      unit.style.transform = savedUnit.transform;
+      unit.querySelector('.armor-class').value = savedUnit.ac;
+      unit.querySelector('.damage-dice').value = savedUnit.damageDice;
 
- let img = unit.querySelector('img');
- img.src = savedUnit.imageSrc;
+      let img = unit.querySelector('img');
+      img.src = savedUnit.imageSrc;
 
- document.getElementById("game-container").appendChild(unit);
- units.push(unit);
+      document.getElementById("game-container").appendChild(unit);
+      units.push(unit);
 
- unit.draggable = true;
- unit.addEventListener('dragstart', (e) => {
- e.dataTransfer.setData('text/plain', null);
- e.target.classList.add('dragging');
- });
- unit.addEventListener('dragend', (e) => {
- e.target.classList.remove('dragging');
- saveGame();
- });
- });
- }
- }
+      unit.draggable = true;
+      unit.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', null);
+        e.target.classList.add('dragging');
+      });
+      unit.addEventListener('dragend', (e) => {
+        e.target.classList.remove('dragging');
+        saveGame();
+      });
+    });
+  }
 
- document.addEventListener("DOMContentLoaded", () => {
- loadGame();
- });
+  // Load map image from localStorage
+  const mapImageSrc = localStorage.getItem('mapImage');
+  if (mapImageSrc) {
+    const gameContainer = document.getElementById('game-container');
+    gameContainer.style.backgroundImage = `url('${mapImageSrc}')`;
+  }
+}
 
- document.addEventListener('dragover', function (e) {
- e.preventDefault();
- });
+document.addEventListener("DOMContentLoaded", () => {
+  loadGame();
+});
 
- document.addEventListener('drop', function (e) {
- e.preventDefault();
- });
+document.addEventListener('dragover', function (e) {
+  e.preventDefault();
+});
 
- document.addEventListener('drag', function (e) {
- let unit = document.querySelector('.unit.dragging');
- if (unit) {
- let rect = document.getElementById("game-container").getBoundingClientRect();
- let newX = e.clientX - rect.left;
- let newY = e.clientY - rect.top;
- unit.style.left = `${newX}px`;
- unit.style.top = `${newY}px`;
- }
- });
+document.addEventListener('drop', function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener('drag', function (e) {
+  let unit = document.querySelector('.unit.dragging');
+  if (unit) {
+    let rect = document.getElementById("game-container").getBoundingClientRect();
+    let newX = e.clientX - rect.left;
+    let newY = e.clientY - rect.top;
+    unit.style.left = `${newX}px`;
+    unit.style.top = `${newY}px`;
+  }
+});
 </script>
 
 </body>
 
 </html>
+
