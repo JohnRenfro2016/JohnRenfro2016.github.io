@@ -221,10 +221,33 @@ function createUnit() {
   unit.className = "unit";
   unit.innerHTML = `
     <div class="unit-menu">
-      <button onclick="toggleMenu(this.parentElement)">Toggle Menu</button>
+      <button onclick="toggleMenu(this.parentElement)">Character or Monster (Stat)istics:</button>
+		          Race:<select class="unit-race">
+      <option value="Bugbear">Bugbear</option>				  
+      <option value="Dragonborn">Dragonborn</option>
+      <option value="Duergar">Duergar</option>		  
+      <option value="Dwarf">Dwarf</option>
+      <option value="Eladrin">Eladrin</option>
+      <option value="Elf">Elf</option>	  
+      <option value="Fairy">Fairy</option>
+      <option value="Firbolg">Firbolg</option>	  
+      <option value="Genasi">Genasi</option>	  
+      <option value="Gnome">Gnome</option>	  
+      <option value="Goliath">Goliath</option>
+      <option value="Halfling">Halfling</option>	  
+      <option value="Kenku">Kenku</option>
+      <option value="Kobold">Kobold</option>
+      <option value="Tabaxi">Tabaxi</option>	  
+      <option value="Tiefling">Tiefling</option>
+         </select>		  
 	      Class<select class="unit-class">
+      <option value="Artificer">Artificer</option>	  
+      <option value="Bard">Bard</option>
+      <option value="Barbarian">Barbarian</option>
       <option value="Cleric">Cleric</option>
+      <option value="Rogue">Rogue</option>
       <option value="Fighter">Fighter</option>
+      <option value="Sorcerer">Sorcerer</option>
     </select>
       <div class="dice-stats">
         Attack Dice<span class="attack-dice-container">
@@ -344,7 +367,8 @@ function saveGame() {
       top: unit.style.top,
       transform: unit.style.transform,
       ac: unit.querySelector('.armor-class').value,
-      unitClass: unit.querySelector('.unit-class').value, // Save the selected class
+      unitRace: unit.querySelector('.unit-race').value,	  
+      unitClass: unit.querySelector('.unit-class').value,
       damageDice: unit.querySelector('.damage-dice-input').value,
       imageSrc: imageSrc
     };
@@ -360,10 +384,33 @@ function loadGame() {
       unit.className = "unit";
       unit.innerHTML = `
         <div class="unit-menu">
-          <button onclick="toggleMenu(this.parentElement)">Toggle Menu</button>
-		          Class<select class="unit-class">
-          <option value="Cleric">Cleric</option>
-          <option value="Fighter">Fighter</option>
+          <button onclick="toggleMenu(this.parentElement)">Character or Monster (Stat)istics:</button>
+		          Race:<select class="unit-race">
+      <option value="Bugbear">Bugbear</option>				  
+      <option value="Dragonborn">Dragonborn</option>
+      <option value="Duergar">Duergar</option>		  
+      <option value="Dwarf">Dwarf</option>
+      <option value="Eladrin">Eladrin</option>
+      <option value="Elf">Elf</option>	  
+      <option value="Fairy">Fairy</option>
+      <option value="Firbolg">Firbolg</option>	  
+      <option value="Genasi">Genasi</option>	  
+      <option value="Gnome">Gnome</option>	  
+      <option value="Goliath">Goliath</option>
+      <option value="Halfling">Halfling</option>	  
+      <option value="Kenku">Kenku</option>
+      <option value="Kobold">Kobold</option>
+      <option value="Tabaxi">Tabaxi</option>	  
+      <option value="Tiefling">Tiefling</option>
+         </select>		  
+		          Class:<select class="unit-class">
+      <option value="Artificer">Artificer</option>	  
+      <option value="Bard">Bard</option>
+      <option value="Barbarian">Barbarian</option>
+      <option value="Cleric">Cleric</option>
+      <option value="Rogue">Rogue</option>
+      <option value="Fighter">Fighter</option>
+      <option value="Sorcerer">Sorcerer</option>
         </select>
           <div class="dice-stats">
             Attack Dice<span class="attack-dice-container">
@@ -392,6 +439,7 @@ function loadGame() {
       unit.style.top = savedUnit.top;
       unit.style.transform = savedUnit.transform;
       unit.querySelector('.armor-class').value = savedUnit.ac;
+	  unit.querySelector('.unit-race').value = savedUnit.unitRace;
       unit.querySelector('.unit-class').value = savedUnit.unitClass;
       unit.querySelector('.damage-dice-input').value = savedUnit.damageDice;
 
