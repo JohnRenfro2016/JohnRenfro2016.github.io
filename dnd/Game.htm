@@ -148,9 +148,10 @@ a:active{color:#610C04
       width: 10ch;
     }
 	
-    .unit .unit-current-hit-points {
-      width: 3ch;
-    }	
+.unit-current-hit-points, .unit-maximum-hit-points
+{
+width: 3ch;
+}	
 	
 .unit .unit-hit-dice
 {
@@ -436,8 +437,19 @@ function createUnit() {
 </select>
 :Shield Type
 </td></tr><tr><td>
-<input type="text" class="unit-current-hit-points" placeholder="10">
+<input type="text" class="unit-current-hit-points" placeholder="10" value="6">
 :Current Hit Points(curHP)
+</td></tr><tr><td>
+<input type="text" class="unit-maximum-hit-points" placeholder="10" value="5">
+:Maximum Hit Points(curHP)
+</td></tr><tr><td>
+<input type="text" class="unit-vulnerabilities" placeholder="10" value="vulnerabilities here">
+:Vulnerabilities (Damage x 2)
+</td></tr><tr><td>
+<input type="text" class="unit-resistances" placeholder="10" value="resistances here">
+:Resistances (Damage / 2)
+<input type="text" class="unit-damage-conditions" placeholder="10" value="damage conditions here">
+:Damage Conditions (str-3, ac-2, hp+20)
 </td></tr></table>		
  </div>
  </div>
@@ -724,6 +736,10 @@ function saveGame() {
  name: unit.querySelector('.unit-name').value,
  ac: unit.querySelector('.armor-class').value,
 unitCurrentHitPoints: unit.querySelector('.unit-current-hit-points').value,
+unitMaximumHitPoints: unit.querySelector('.unit-maximum-hit-points').value,
+unitVulnerabilities: unit.querySelector('.unit-vulnerabilities').value,
+unitResistances: unit.querySelector('.unit-resistances').value,
+unitDamageConditions: unit.querySelector('.unit-damage-conditions').value,
 unitArmorType: unit.querySelector('.unit-armor-type').value,
 unitShieldType: unit.querySelector('.unit-shield-type').value,
 unitRace: unit.querySelector('.unit-race').value,
@@ -851,8 +867,20 @@ unit.innerHTML = `
 </select>
 :Shield Type
 </td></tr><tr><td>
-<input type="text" class="unit-current-hit-points" placeholder="10">
+<input type="text" class="unit-current-hit-points" placeholder="10" value="6">
 :Current Hit Points(curHP)
+</td></tr><tr><td>
+<input type="text" class="unit-maximum-hit-points" placeholder="10" value="5">
+:Maximum Hit Points(maxHP)
+</td></tr><tr><td>
+<input type="text" class="unit-vulnerabilities" placeholder="10" value="resistances here">
+:Vulnerabilities (Damage x 2)
+</td></tr><tr><td>
+<input type="text" class="unit-resistances" placeholder="10" value="vulnerabilities here">
+:Resistances (Damage / 2)
+</td></tr><tr><td>
+<input type="text" class="unit-damage-conditions" placeholder="10" value="damage conditions here">
+:Damage Conditions (str-3, ac-2, hp+20)
 </td></tr></table>		
  </div>
  </div>
@@ -992,6 +1020,10 @@ unit.style.transform = savedUnit.transform;
 unit.querySelector('.unit-name').value = savedUnit.name; 
 unit.querySelector('.armor-class').value = savedUnit.ac;
 unit.querySelector('.unit-current-hit-points').value = savedUnit.unitCurrentHitPoints;
+unit.querySelector('.unit-maximum-hit-points').value = savedUnit.unitMaximumHitPoints;
+unit.querySelector('.unit-vulnerabilities').value = savedUnit.unitVulnerabilities;
+unit.querySelector('.unit-resistances').value = savedUnit.unitResistances;
+unit.querySelector('.unit-damage-conditions').value = savedUnit.unitDamageConditions;
 unit.querySelector('.unit-armor-type').value = savedUnit.unitArmorType;
 unit.querySelector('.unit-shield-type').value = savedUnit.unitShieldType;
 unit.querySelector('.unit-race').value = savedUnit.unitRace;
