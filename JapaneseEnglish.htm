@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>John T.'s Journal</title>
 <link rel="icon" type="image/png" href="MyFavicon.png">
 <style>
@@ -28,6 +29,11 @@ width:500px;
 word-wrap:break-word;
 }
 
+.ComicTitle
+{
+color:#ffffff;
+}
+
 .HeaderStyle
 {
 color:#f6d356;
@@ -37,9 +43,48 @@ margin-bottom:20px;
 text-shadow:0px -2px 4px #3179c6,0px -2px 10px #cc9029,0px -10px 20px #F90,0px -20px 40px #cf7b31;
 }
 
+.paper {
+ background:#fff;
+ color:#000000;
+ padding:30px;
+ position:relative;
+}
+
+.paper,
+.paper::before,
+.paper::after {
+ /* Styles to distinguish sheets from one another */
+ box-shadow:1px 1px 1px rgba(0,0,0,0.25);
+ border:1px solid #bbb;
+}
+
+.paper::before,
+.paper::after {
+ content:"";
+ position:absolute;
+ height:95%;
+ width:99%;
+ background-color:#eee;
+}
+
+.paper::before {
+ right:15px;
+ top:0;
+ transform:rotate(-1deg);
+ z-index:-1;
+}
+
+.paper::after {
+ top:5px;
+ right:-5px;
+ transform:rotate(1deg);
+ z-index:-2;
+}
+
 .TheStripe
 {
-background:repeating-linear-gradient(45deg,transparent,transparent 10px,#000000 10px,#000000 20px),linear-gradient(to bottom,#f5c103,#000000)
+background:repeating-linear-gradient(45deg,transparent,transparent 10px,#000000 10px,#000000 20px),linear-gradient(to bottom,#f5c103,#000000);
+font-size:30px;
 }
 
 input,textarea
@@ -51,8 +96,9 @@ font-size:30px;
 text-shadow:2px 2px 4px #3d2526;
 word-wrap:break-word;
 }
-}
+
 </style>
+
 <script>
 
 function translateB()
@@ -8287,8 +8333,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 }
 
 </script>
+
+</head>
+<body>
  
-<div class="TheStripe">John's Journal</div>
+<h3>The Japanese to English Grammar Parser</h3>
  
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
