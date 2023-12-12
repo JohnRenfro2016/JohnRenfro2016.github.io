@@ -692,7 +692,7 @@ const replsB = [
 {p:/ (измельченн)/ig,r:'$1|crumbled~suff~'},
 {p:/ (израсходов)/ig,r:'$1|spend~suff~'},
 {p:/ (изумительн)/ig,r:'$1|amazing~suff~'},
-{p:/ (иностранец)/ig,r:'$1|foreigner~suff~'},
+{p:/ (иностранц)/ig,r:'$1|foreigner~suff~'},
 {p:/ (инструмент)/ig,r:'$1|instrument~suff~'},
 {p:/ (иронически)/ig,r:'$1|ironically~suff~'},
 {p:/ (исполнител)/ig,r:'$1|executor~suff~'},
@@ -748,6 +748,7 @@ const replsB = [
 {p:/ (наполовину)/ig,r:'$1|half~suff~'},
 {p:/ (напоследок)/ig,r:'$1|in the end~suff~'},
 {p:/ (направленн)/ig,r:'$1|directed~suff~'},
+{p:/ (заблокиров)/ig,r:'$1|block~suff~'},
 {p:/ (мусульманин)/ig,r:'$1|Muslim~suff~'},
 {p:/ (наследств)/ig,r:'$1|inheritance~suff~'},
 {p:/ (насмешливо)/ig,r:'$1|mockingly~suff~'},
@@ -995,6 +996,7 @@ const replsB = [
 {p:/ (электроник)/ig,r:'$1|electronics~suff~'},
 {p:/ (элементарн)/ig,r:'$1|elementary~suff~'},
 {p:/ (эстетическ)/ig,r:'$1|aesthetic~suff~'},
+{p:/ (усынов(лен)?)/ig,r:'$1|adopt~suff~'},
 
 {p:/ (планирующ)/ig,r:'$1|plan~suff~'},
 {p:/ (Богородиц)/ig,r:'$1|the Virgin~suff~'},
@@ -4408,8 +4410,9 @@ const replsB = [
 {p:/ (киевск)/ig,r:'$1|Kiev~suff~'},
 {p:/ (кинжал)/ig,r:'$1|dagger~suff~'},
 {p:/ (кирпич)/ig,r:'$1|brick~suff~'},
+{p:/ (Колумб)/ig,r:'$1|Columbia~suff~'},
 {p:/ (кислот)/ig,r:'$1|acid~suff~'},
-{p:/ (китаец)/ig,r:'$1|Chinaman~suff~'},
+{p:/ (кита)/ig,r:'$1|China~suff~'},
 {p:/ (классн)/ig,r:'$1|class~suff~'},
 {p:/ (клевет)/ig,r:'$1|slander~suff~'},
 {p:/ (клиент)/ig,r:'$1|client~suff~'},
@@ -5489,7 +5492,7 @@ const replsB = [
 {p:/ (туалет)/ig,r:'$1|toilet~suff~'},
 {p:/ (туманн)/ig,r:'$1|misty~suff~'},
 {p:/ (туннел)/ig,r:'$1|tunnel~suff~'},
-{p:/ (турецк)/ig,r:'$1|Turkish~suff~'},
+{p:/ (турц)/ig,r:'$1|Turkey~suff~'},
 {p:/ (туризм)/ig,r:'$1|tourism~suff~'},
 {p:/ (турист)/ig,r:'$1|tourist~suff~'},
 {p:/ (турнир)/ig,r:'$1|tournament~suff~'},
@@ -7065,7 +7068,7 @@ const replsB = [
 {p:/ (седьм)/ig,r:'$1|seventh~suff~'},
 {p:/ (сезон)/ig,r:'$1|season~suff~'},
 {p:/ (селен)/ig,r:'$1|settlement~suff~'},
-{p:/ (семья)/ig,r:'$1|family~suff~'},
+{p:/ (семья(м)?)/ig,r:'$1|family~suff~'},
 {p:/ (сердц)/ig,r:'$1|heart~suff~'},
 {p:/ (сестр)/ig,r:'$1|sister~suff~'},
 {p:/ (сетов)/ig,r:'$1|( +pr +)to lament(about)~suff~'},
@@ -7619,6 +7622,7 @@ const replsB = [
 {p:/ (гамм)/ig,r:'$1|scale~suff~'},
 {p:/ (гасн)/ig,r:'$1|go out extinguished~suff~'},
 {p:/ (герб)/ig,r:'$1|coat of arms~suff~'},
+{p:/ (вето) /ig,r:'$1|veto'},
 {p:/ (гибк)/ig,r:'$1|flexible~suff~'},
 {p:/ (гибн)/ig,r:'$1|perish~suff~'},
 {p:/ (гимн)/ig,r:'$1|hymn~suff~'},
@@ -7676,7 +7680,7 @@ const replsB = [
 {p:/ (держ)/ig,r:'$1|hold on to ,keep to~suff~'},
 {p:/ (дерз)/ig,r:'$1|rudeness~suff~'},
 {p:/ (деск)/ig,r:'$1|(indicating reported speech)‘he said’,‘they said’ etc.~suff~'},
-{p:/ (дети)/ig,r:'$1|children~suff~'},
+{p:/ (дет)/ig,r:'$1|children~suff~'},
 {p:/ (деян)/ig,r:'$1|act~suff~'},
 {p:/ (дико)/ig,r:'$1|wildly~suff~'},
 {p:/ (диск)/ig,r:'$1|disk~suff~'},
@@ -8889,7 +8893,7 @@ const replsB = [
 {p:/ (миг)/ig,r:'$1|moment~suff~'},
 {p:/ (мил)/ig,r:'$1|favour~suff~'},
 {p:/ (мин)/ig,r:'$1|mine~suff~'},
-{p:/ (мир)/ig,r:'$1|world~suff~'},
+{p:/ (мир)/ig,r:'$1|peace,world~suff~'},
 {p:/ (миф)/ig,r:'$1|myth~suff~'},
 {p:/ (млн)/ig,r:'$1|billion~suff~'},
 {p:/ (мог)/ig,r:'$1|can~suff~'},
@@ -9406,7 +9410,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Вячеслав Володин предложил со школы готовить мальчиков к отношениям, семье и отцовству По его словам, молодежь не хочет думать о семье — «заводят кошечек и живут», а в 40 лет уже «обязательства на себя не возьмут, они боятся этого» «Без мужчины нет семьи», — подытожил он
+Фильмы с Депардье перестали показывать во Франции после обвинений в домогательствах «Мы не должны прославлять Жерара Депардье. Это просто невозможно», — объяснили в гостелекомпании France Télévisions
 </p><p>
 <textarea cols="30" rows="6" onchange="a=&quot; &quot;+this.value+&quot; &quot;,translateC()"></textarea><br>
 <span id="translatedTextDisplay"></span>

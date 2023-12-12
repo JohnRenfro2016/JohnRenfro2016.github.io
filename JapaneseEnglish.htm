@@ -144,6 +144,29 @@ const replsB = [
 
 {p1:/(1)(?!X)(人)(?!X)/g,r1:'$1X$2Xhitori-one person~Noun'},
 
+{p1:/(9|９)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xkyuu jyuu,ninety~Noun$2'},
+{p1:/(9)(?!X)(日)(?!X)/g,r1:'$1Xkokono$2Xka-nineth day of the month~Noun'},
+{p1:/(8|８)(?!X)(日)(?!X)/g,r1:'$1Xyou$2Xka-eighth day of the month~Noun'},
+{p1:/(8|８)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xhachi jyuu,eighty~Noun$2'},
+{p1:/(7|７)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xshichi jyuu,seventy~Noun$2'},
+{p1:/(6|６)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xroku jyuu,sixty~Noun$2'},
+{p1:/(6|6)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xroku jyuu,sixty~Noun$2'},
+{p1:/(5|５)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xgo jyuu,fifty~Noun$2'},
+{p1:/(4|４)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xyon jyuu,fourty~Noun$2'},
+{p1:/(3|３)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xsan jyuu-thirty~Noun$2'},
+{p1:/(2|２)(?!X)(人)(?!X)/g,r1:'$1Xfu$2Xtari-two people~Noun'},
+{p1:/(2|２)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xni jyuu-twenty~Noun$2'},
+{p1:/(2)(?!X)(日)(?!X)/g,r1:'$1Xfutsu$2Xka-second day of the month~Noun'},
+{p1:/(1|１)(?!X)(9|９)(?!X)/g,r1:'$1Xjyuu$2Xkyuu-nineteen~Noun'},
+{p1:/(1|１)(?!X)(8|８)(?!X)/g,r1:'$1Xjyuu$2Xhachi-eighteen~Noun'},
+{p1:/(1|１)(?!X)(7|７)(?!X)/g,r1:'$1Xjyuu$2Xnana-seventeen~Noun'},
+{p1:/(1|１)(?!X)(6|６)(?!X)/g,r1:'$1Xjyuu$2Xroku-sixteen~Noun'},
+{p1:/(1|１)(?!X)(5|５)(?!X)/g,r1:'$1Xjyuu$2Xgo-fifteen~Noun'},
+{p1:/(1|１)(?!X)(4|４)(?!X)/g,r1:'$1Xjyuu$2Xyon-fourteen~Noun'},
+{p1:/(1|１)(?!X)(3|３)(?!X)/g,r1:'$1Xjyuu$2Xsan-thirteen~Noun'},
+{p1:/(1|１)(?!X)(2|２)(?!X)/g,r1:'$1Xjyuu$2Xni-twelve~Noun'},
+{p1:/(1|１)(?!X)(1|１)(?!X)/g,r1:'$1Xjyuu$2Xichi-eleven~Noun'},
+{p1:/(1|１)(?!X)(0|０)(?!X)/g,r1:'$1Xjyuu$2X-ten~Noun'},
 {p1:/(2|２)(?!X)(９|9)(?!X)(日)(?!X)/g,r1:'$1Xni jyuu$2Xku$3Xnichi-twenty-nineth day of the month~Noun'},
 {p1:/(2|２)(?!X)(７|7)(?!X)(日)(?!X)/g,r1:'$1Xni jyuu$2Xshichi$3Xnichi,twenty-seventh day of the month~Noun'},
 {p1:/(2|２)(?!X)(６|6)(?!X)(日)(?!X)/g,r1:'$1Xni jyuu$2Xroku$3Xnichi-twenty-sixth day of the month~Noun'},
@@ -3290,6 +3313,7 @@ const replsB = [
 {p1:/(表)(?!X)(現)(?!X)/g,r1:'$1Xhyou$2Xgen-expression~Noun'},
 {p1:/(表)(?!X)(明)(?!X)/g,r1:'$1Xhyou$2Xmei-assertion,showing~Noun'},
 {p1:/(表)(?!X)(情)(?!X)/g,r1:'$1Xhyou$2Xjyou-expression~Noun'},
+{p1:/(発)(?!X)(表)(?!X)/g,r1:'$1Xhap$2Xpyou-announcement~Noun'},
 {p1:/(表)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xarawa-express,represent$2X~SuVerb'},
 {p1:/(衣)(?!X)(類)(?!X)/g,r1:'$1Xi$2Xrui-clothes,garments~Noun'},
 {p1:/(衣)(?!X)(服)(?!X)/g,r1:'$1Xi$2Xfuku-clothes~Noun'},
@@ -3913,7 +3937,6 @@ const replsB = [
 {p1:/(発)(?!X)(覚)(?!X)/g,r1:'$1Xhak$2Xkaku-detection~Noun'},
 {p1:/(発)(?!X)(見)(?!X)/g,r1:'$1Xhak$2Xken-discovery~Noun'},
 {p1:/(発)(?!X)(表)(?!X)/g,r1:'$1Xhap$2Xpyou-announce~Noun'},
-{p1:/(発)(?!X)(表)(?!X)/g,r1:'$1Xhap$2Xpyou-announcement~Noun'},
 {p1:/(発)(?!X)(行)(?!X)/g,r1:'$1Xhak$2Xkou-publication,issue~Noun'},
 {p1:/(発)(?!X)(給)(?!X)/g,r1:'$1Xhak$2Xkyuu-issuance of a passport~Noun'},
 {p1:/(発)(?!X)(砲)(?!X)/g,r1:'$1Xhap$2Xpou-firing a missile~Noun'},
@@ -6594,6 +6617,7 @@ const replsB = [
 {p1:/(免)(?!X)(除)(?!X)/g,r1:'$1Xmen$2Xjyo-exemption~Noun'},
 {p1:/(免)(?!X)(責)(?!X)/g,r1:'$1Xmen$2Xseki-exemption~Noun'},
 {p1:/(免)(?!X)(許)(?!X)/g,r1:'$1Xmen$2Xkyo-license,permit~Noun'},
+{p1:/(発)(?!X)(表)(?!X)/g,r1:'$1Xhap$2Xpyou-announcement~Noun'},
 {p1:/(免)(?!X)(税)(?!X)/g,r1:'$1Xmen$2Xzei-tax exemption~Noun'},
 {p1:/(免)(?!X)(疫)(?!X)/g,r1:'$1Xme$2Xneki-immunity~Noun'},
 {p1:/(免)(?!X)(れ)(?!X)/g,r1:'$1Xmanuga$2Xre-rescued from~IchidanVerb'},
@@ -7288,29 +7312,6 @@ const replsB = [
 {p1:/(\d{1})(?!X)(時)(?!X)/g,r1:'$1$2Xji-hour~Noun'},
 {p1:/(\d{1})(?!X)(分)(?!X)/g,r1:'$1$2Xpun-minutes~Noun'},
 {p1:/(?<!検)(出)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xda-take out$2X~SuVerb'},
-{p1:/(9|９)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xkyuu jyuu,ninety~Noun$2'},
-{p1:/(9)(?!X)(日)(?!X)/g,r1:'$1Xkokono$2Xka-nineth day of the month~Noun'},
-{p1:/(8|８)(?!X)(日)(?!X)/g,r1:'$1Xyou$2Xka-eighth day of the month~Noun'},
-{p1:/(8|８)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xhachi jyuu,eighty~Noun$2'},
-{p1:/(7|７)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xshichi jyuu,seventy~Noun$2'},
-{p1:/(6|６)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xroku jyuu,sixty~Noun$2'},
-{p1:/(6|6)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xroku jyuu,sixty~Noun$2'},
-{p1:/(5|５)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xgo jyuu,fifty~Noun$2'},
-{p1:/(4|４)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xyon jyuu,fourty~Noun$2'},
-{p1:/(3|３)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xsan jyuu-thirty~Noun$2'},
-{p1:/(2|２)(?!X)(人)(?!X)/g,r1:'$1Xfu$2Xtari-two people~Noun'},
-{p1:/(2|２)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xni jyuu-twenty~Noun$2'},
-{p1:/(2)(?!X)(日)(?!X)/g,r1:'$1Xfutsu$2Xka-second day of the month~Noun'},
-{p1:/(1|１)(?!X)(9|９)(?!X)/g,r1:'$1Xjyuu$2Xkyuu-nineteen~Noun'},
-{p1:/(1|１)(?!X)(8|８)(?!X)/g,r1:'$1Xjyuu$2Xhachi-eighteen~Noun'},
-{p1:/(1|１)(?!X)(7|７)(?!X)/g,r1:'$1Xjyuu$2Xnana-seventeen~Noun'},
-{p1:/(1|１)(?!X)(6|６)(?!X)/g,r1:'$1Xjyuu$2Xroku-sixteen~Noun'},
-{p1:/(1|１)(?!X)(5|５)(?!X)/g,r1:'$1Xjyuu$2Xgo-fifteen~Noun'},
-{p1:/(1|１)(?!X)(4|４)(?!X)/g,r1:'$1Xjyuu$2Xyon-fourteen~Noun'},
-{p1:/(1|１)(?!X)(3|３)(?!X)/g,r1:'$1Xjyuu$2Xsan-thirteen~Noun'},
-{p1:/(1|１)(?!X)(2|２)(?!X)/g,r1:'$1Xjyuu$2Xni-twelve~Noun'},
-{p1:/(1|１)(?!X)(1|１)(?!X)/g,r1:'$1Xjyuu$2Xichi-eleven~Noun'},
-{p1:/(1|１)(?!X)(0|０)(?!X)/g,r1:'$1Xjyuu$2X-ten~Noun'},
 
 {p1:/(さ)(?!X)(れ)(?!X)/g,r1:'$1Xsa$2Xre-is done~IchidanVerb'},
 {p1:/(し)(?!X)(て)(?!X)/g,r1:'$1Xshi$2Xte-do and~SuruVerb'},
@@ -8340,7 +8341,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-自民党派閥の政治資金パーティー券問題で、安倍派（清和政策研究会）からキックバックを受け、裏金にしたとされる所属議員の秘書らを、東京地検特捜部が任意で事情聴取していることが5日、関係者への取材で分かった。派閥からの還流で少なくとも数千万円を受領した所属議員がいたとみられることも判明した。特捜部は政治資金規正法違反（不記載・虚偽記入）の疑いで捜査。受領額が多い議員を抽出し、13日の国会閉会後、一斉に聴取する見通しだ。
+エンゼルスから自身初めてFAに、オフの目玉と注目されていた
+　　エンゼルスからFAとなっていた大谷翔平投手が9日（日本時間10日）、ドジャースと10年総額7億ドル（約1014億円）の超大型契約を結ぶことで合意したと発表した。メジャー史上最高額で北米プロスポーツ最高額となる。自身のインスタグラムと代理人のネズ・バレロ氏が発表した。
 </p><p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
