@@ -5012,6 +5012,7 @@ const replsB = [
 {p1:/(換)(?!X)(気)(?!X)/g,r1:'$1Xkan$2Xki-arousal~Noun'},
 {p1:/(揚)(?!X)(げ)(?!X)/g,r1:'$1Xa$2Xge-fry~IchidanVerb'},
 {p1:/(提)(?!X)(訴)(?!X)/g,r1:'$1Xtei$2Xso-starting a lawsuit~Noun'},
+{p1:/(生)(?!X)(成)(?!X)/g,r1:'$1Xsei$2Xsei-generative~Noun'},
 {p1:/(提)(?!X)(言)(?!X)/g,r1:'$1Xtei$2Xgen-proposal~Noun'},
 {p1:/(提)(?!X)(示)(?!X)/g,r1:'$1Xtei$2Xji-presentation~Noun'},
 {p1:/(提)(?!X)(案)(?!X)/g,r1:'$1Xtei$2Xan-proposal~Noun'},
@@ -8094,7 +8095,7 @@ const replsB = [
 {p1:/(像)(?!X)/g,r1:'$1Xzou-picture~Noun'},
 {p1:/(傷)(?!X)/g,r1:'$1Xkizu,syou,wound~Noun'},
 {p1:/(傘)(?!X)/g,r1:'$1Xkasa-umbrella~Noun'},
-{p1:/(偽)(?!X)/g,r1:'$1Xitsuwa-fake~IchidanVerb'},
+{p1:/(偽)(?!X)/g,r1:'$1Xnise,itsuwa-fake~IchidanVerb'},
 {p1:/(側)(?!X)/g,r1:'$1Xkawa,gawa,side~Noun'},
 {p1:/(健)(?!X)/g,r1:'$1Xken-health,strength~Noun'},
 {p1:/(値)(?!X)/g,r1:'$1Xne,atai-value~Noun'},
@@ -8317,6 +8318,7 @@ const replsB = [
 {p1:/(Verb)/g,r1:'$1 '},
 {p1:/(Adverb)/g,r1:'$1 '},
 {p1:/(Postposition)/g,r1:'$1 '},
+{p1:/([0-9０−９])/g,r1:'<br>$1 '},
 {p1:/(\.)/g,r1:'$1ten-decimal '},
 {p1:/([\（\】【」』「『。、\(\）\・])(?!X)/g,r1:'<br>$1~Punctuation'},
 
@@ -8346,7 +8348,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-松野博一官房長官は14日午前の会見で、自民党安倍派のパーティー問題の責任をとる形で、官房長官の辞任を表明した。 【画像】後任に内定している林芳正前外相 さらに自身を含む安倍派の4人の閣僚の辞表を岸田首相に提出し、安倍派の5人の副大臣も大臣に対して辞表を提出したことを明らかにした。また上野首相補佐官、佐藤財務政務官、和田防衛大臣補佐官も辞表を提出したと明らかにした。
+政府は来年１月にも、人工知能（ＡＩ）の安全性確保を担う組織を新設する方針を固めた。生成ＡＩの開発企業などが安全性を評価するための基準策定や、偽情報対策に有効な技術などについて調査や研究を実施する。米国や英国政府も同様の組織の新設を表明しており、日米英で連携して安全なＡＩの確立を目指す。
 </p><p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
