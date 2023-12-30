@@ -743,7 +743,7 @@ const replsB = [
 {p1:/(す)(?!X)(や)(?!X)(す)(?!X)(や)(?!X)/g,r1:'$1X$2Xpe$3Xa$4Xceful and content~Noun'},
 {p1:/(す)(?!X)(べ)(?!X)(す)(?!X)(べ)(?!X)/g,r1:'$1X$2Xsm$3Xo$4Xoth~Noun'},
 {p1:/(す)(?!X)(っ)(?!X)(き)(?!X)(り)(?!X)/g,r1:'$1X$2Xre$3Xf$4Xreshed~Noun'},
-{p1:/(す)(?!X)(っ)(?!X)(か)(?!X)(り)(?!X)/g,r1:'$1X$2Xal$3Xl$4X-completely~Noun'},
+{p1:/(す)(?!X)(っ)(?!X)(か)(?!X)(り)(?!X)/g,r1:'$1Xsu$2Xk$3Xka$4Xri-completely~Noun'},
 {p1:/(す)(?!X)(き)(?!X)(焼)(?!X)(き)(?!X)/g,r1:'$1X$2Xsu$3Xk$4Xiyaki~Noun'},
 {p1:/(じ)(?!X)(ろ)(?!X)(じ)(?!X)(ろ)(?!X)/g,r1:'$1X$2Xst$3Xa$4Xre~Noun'},
 {p1:/(じ)(?!X)(め)(?!X)(じ)(?!X)(め)(?!X)/g,r1:'$1X$2Xfe$3Xe$4Xl damp,clammy~Noun'},
@@ -1179,7 +1179,7 @@ const replsB = [
 {p1:/(絶)(?!X)(望)(?!X)(的)(?!X)/g,r1:'$1Xzetsu$2Xbou$3Xteki-hopeless~Noun'},
 {p1:/(絶)(?!X)(対)(?!X)(に)(?!X)/g,r1:'$1Xzet$2Xtai$3Xni-absolutely~Noun'},
 {p1:/(絶)(?!X)(え)(?!X)(間)(?!X)/g,r1:'$1Xtae$2Xma$3X-pause~Noun'},
-{p1:/(絶)(?!X)(え)(?!X)(ず)(?!X)/g,r1:'$1Xtae$2Xzu$3X-constantly,always~Noun'},
+{p1:/(絶)(?!X)(え)(?!X)(ず)(?!X)/g,r1:'$1Xtae$2Xzu$3X-constantly~Noun'},
 {p1:/(絵)(?!X)(葉)(?!X)(書)(?!X)/g,r1:'$1Xeha$2Xga$3Xki-picture postcard~Noun'},
 {p1:/(給)(?!X)(付)(?!X)(金)(?!X)/g,r1:'$1Xkyuu$2Xfu$3Xkin-entitlements~Noun'},
 {p1:/(経)(?!X)(済)(?!X)(的)(?!X)/g,r1:'$1Xkei$2Xzai$3Xteki-economic~Noun'},
@@ -2902,7 +2902,7 @@ const replsB = [
 {p1:/(近)(?!X)(所)(?!X)/g,r1:'$1Xkin$2Xjyo-neighborhood~Noun'},
 {p1:/(近)(?!X)(年)(?!X)/g,r1:'$1Xkin$2Xnen-in recent years~Noun'},
 {p1:/(近)(?!X)(代)(?!X)/g,r1:'$1Xkin$2Xdai-modern times~Noun'},
-{p1:/(近)(?!X)([かきくけこい])(?!X)/g,r1:'$1Xchika,vicinity,nearby$2X~KuVerb'},
+{p1:/(近)(?!X)([かきくけこい])(?!X)/g,r1:'$1Xchika,vicinity$2X~KuVerb'},
 {p1:/(近)(?!X)([かきくけこい])(?!X)/g,r1:'$1Xchika,near,close to$2X~KuVerb'},
 {p1:/(近)(?!X)([いくかさ])(?!X)/g,r1:'$1Xchika-near,soon$2X~IAdjective~Noun'},
 {p1:/(迎)(?!X)(撃)(?!X)/g,r1:'$1Xgei$2Xgeki-intercept~Noun'},
@@ -4047,6 +4047,8 @@ const replsB = [
 {p1:/(理)(?!X)(解)(?!X)/g,r1:'$1Xri$2Xkai-comprehension~Noun'},
 {p1:/(理)(?!X)(系)(?!X)/g,r1:'$1Xri$2Xkei-science~Noun'},
 {p1:/(理)(?!X)(科)(?!X)/g,r1:'$1Xri$2Xka-science~Noun'},
+{p1:/(疲)(?!X)(弊)(?!X)/g,r1:'$1Xhi$2Xhei-fatigue~Noun'},
+{p1:/(切)(?!X)(望)(?!X)/g,r1:'$1Xsetsu$2Xbou-hope~Noun'},
 {p1:/(理)(?!X)(由)(?!X)/g,r1:'$1Xri$2Xyuu-reason~Noun'},
 {p1:/(理)(?!X)(想)(?!X)/g,r1:'$1Xri$2Xsou-ideal~Noun'},
 {p1:/(理)(?!X)(性)(?!X)/g,r1:'$1Xri$2Xsei-reason,reasoning power~Noun'},
@@ -8348,8 +8350,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-政府は来年１月にも、人工知能（ＡＩ）の安全性確保を担う組織を新設する方針を固めた。生成ＡＩの開発企業などが安全性を評価するための基準策定や、偽情報対策に有効な技術などについて調査や研究を実施する。米国や英国政府も同様の組織の新設を表明しており、日米英で連携して安全なＡＩの確立を目指す。
-</p><p> 
+【AFP＝時事】イスラエルによるイスラム組織ハマス（Hamas）掃討作戦は年明けも続くとみられる中、パレスチナ自治区ガザ地区（Gaza Strip）の人々は、3か月近くにわたって攻撃が続き、多数の死者が出ている中で絶えず避難を迫られ、すっかり疲弊し、戦闘の終結を切望している。
+<p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
 </p><hr>
