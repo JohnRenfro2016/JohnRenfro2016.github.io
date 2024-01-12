@@ -200,9 +200,6 @@ const replsB = [
 {p1:/(１|1)(?!X)(月)(?!X)/g,r1:'$1Xichi$2Xgatsu-January~Noun'},
 {p1:/(１)(?!X)(つ)(?!X)/g,r1:'$1Xhito$2Xtsu-one thing~Noun'},
 
-{p1:/([0-9]+)(?!X)/g,r1:'<br>$1~Number'},
-{p1:/([０-９]+)(?!X)/g,r1:'<br>$1~Number'},
-
 {p1:/(せ)(?!X)(ざ)(?!X)(る)(?!X)(を)(?!X)(え)(?!X)(な)(?!X)(い)(?!X)/g,r1:'$1Xse$2Xza$3Xru$4Xo$5Xe$6Xna$7Xi-can\'t help but do~Noun'},
 
 {p1:/(プ)(?!X)(ロ)(?!X)(デ)(?!X)(ュ)(?!X)(ー)(?!X)(サ)(?!X)(ー)(?!X)/g,r1:'$1Xpu$2Xro$3Xde$4Xyu$5Xu$6Xsa$7Xa-producer~Noun'},
@@ -2117,6 +2114,7 @@ const replsB = [
 {p1:/(ゆ)(?!X)(で)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xyu$2Xde-boil$3X~RuVerb'},
 {p1:/(や)(?!X)(り)(?!X)(方)(?!X)/g,r1:'$1Xyari$2Xka$3Xta-way of doing~Noun'},
 {p1:/(や)(?!X)(は)(?!X)(り)(?!X)/g,r1:'$1Xyah$2Xar$3Xi-as expected,also,still~Noun'},
+{p1:/(子)(?!X)(会)(?!X)(社)(?!X)/g,r1:'$1Xko$2Xgai$3Xsya-subsidiary~Noun'},
 {p1:/(や)(?!X)(っ)(?!X)(と)(?!X)/g,r1:'$1Xfin$2Xal$3Xly~Noun'},
 {p1:/(や)(?!X)(け)(?!X)(ど)(?!X)/g,r1:'$1Xyake$2Xdo$3X-burn~Noun'},
 {p1:/(や)(?!X)(が)(?!X)(て)(?!X)/g,r1:'$1Xya$2Xgat$3Xe-soon,before long~Noun'},
@@ -2285,6 +2283,7 @@ const replsB = [
 {p1:/(か)(?!X)(ら)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xka$2Xra-crow,raven$3X~SuVerb'},
 {p1:/(か)(?!X)(ゆ)(?!X)([いくかさ])(?!X)/g,r1:'$1X$2Xkaゆ,itchy$3X~IAdjective~Noun'},
 {p1:/(か)(?!X)(な)(?!X)(り)(?!X)/g,r1:'$1Xka$2Xna$3Xri-fairly close to~Noun'},
+{p1:/(改)(?!X)(ざ)(?!X)(ん)(?!X)/g,r1:'$1Xkai$2Xza$3Xn-falsification~Noun'},
 {p1:/(か)(?!X)(つ)(?!X)(て)(?!X)/g,r1:'$1Xkat$2Xsu$3Xte-formerly~Noun'},
 {p1:/(か)(?!X)(っ)(?!X)(と)(?!X)/g,r1:'$1Xkat$2Xto$3X-lose one\'s temper,fly into a rage~Noun'},
 {p1:/(か)(?!X)(じ)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xka$2Xji-nibble,bite$3X~RuVerb'},
@@ -3310,6 +3309,7 @@ const replsB = [
 {p1:/(裁)(?!X)(量)(?!X)/g,r1:'$1Xsai$2Xryou-discretion~Noun'},
 {p1:/(裁)(?!X)(判)(?!X)/g,r1:'$1Xsai$2Xban-trial~Noun'},
 {p1:/(被)(?!X)(爆)(?!X)/g,r1:'$1Xhi$2Xbaku-being bombed~Noun'},
+{p1:/(家)(?!X)(電)(?!X)/g,r1:'$1Xka$2Xden-electronics~Noun'},	
 {p1:/(被)(?!X)(災)(?!X)/g,r1:'$1Xhi$2Xsai-disaster victims~Noun'},
 {p1:/(被)(?!X)(害)(?!X)/g,r1:'$1Xhi$2Xgai-damage~Noun'},
 {p1:/(被)(?!X)(告)(?!X)/g,r1:'$1Xhi$2Xkoku-defendant~Noun'},
@@ -8325,7 +8325,8 @@ const replsB = [
 {p1:/(Verb)/g,r1:'$1 '},
 {p1:/(Adverb)/g,r1:'$1 '},
 {p1:/(Postposition)/g,r1:'$1 '},
-//{p1:/([0-9０−９])/g,r1:'<br>$1 '},
+{p1:/([0-9])/g,r1:'<br>$1 '},
+{p1:/([０-９])/g,r1:'<br>$1 '},	
 {p1:/(\.)/g,r1:'$1ten-decimal '},
 {p1:/([\（\】【」』「『。、\(\）\・])(?!X)/g,r1:'<br>$1~Punctuation'},
 
@@ -8355,7 +8356,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-9日発表された午後2時時点の能登半島地震による石川県内の死者は202人で、200人を超えました。安否不明者は102人でした。
+パナソニックホールディングス（ＨＤ）子会社のパナソニックインダストリー（大阪府門真市）は１２日、自動車や家電に使われる電子部品向け材料の認証取得に際し、数値改ざんなどの不正があったと発表した。対象は国内外７工場で生産された５２種類の製品で、古いものは１９８０年代から不正があった
 <p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
