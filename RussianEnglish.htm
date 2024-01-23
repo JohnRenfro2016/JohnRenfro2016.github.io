@@ -1195,6 +1195,7 @@ const replsB = [
 {p:/ (комендант)/ig,r:'$1|warden(of hostel),commandant~suff~'},
 {p:/ (коммент)/ig,r:'$1|comment~suff~'},
 {p:/ (коммунизм)/ig,r:'$1|communism~suff~'},
+{p:/ (мусульман)/ig,r:'$1|Muslim~suff~'},	
 {p:/ (коммунист)/ig,r:'$1|communist~suff~'},
 {p:/ (комплексн)/ig,r:'$1|complex several parts~suff~'},
 {p:/ (компьютер)/ig,r:'$1|computer~suff~'},
@@ -3247,6 +3248,7 @@ const replsB = [
 {p:/ (абсурдн)/ig,r:'$1|absurd~suff~'},
 {p:/ (откидыв)/ig,r:'$1|throw away back~suff~'},
 {p:/ (откликн)/ig,r:'$1|respond(to )~suff~'},
+{p:/ (вытурну)/ig,r:'$1|pull out~suff~'},	
 {p:/ (открытк)/ig,r:'$1|postcard~suff~'},
 {p:/ (отмахив)/ig,r:'$1|brush off~suff~'},
 {p:/ (отнести)/ig,r:'$1|take(somewhere)~suff~'},
@@ -9353,6 +9355,7 @@ const replsB = [
 {p:/~suff~(ен )/ig,r:'~$1~adje-masc-shor'},
 {p:/~suff~(ие )/ig,r:'~$1~noun-singular-nomi or accu'},
 {p:/~suff~(ии )/ig,r:'~$1~noun-singular-prep'},
+{p:/~suff~(ть )/ig,r:'~$1~infinitive verb-to do'},	
 {p:/~suff~(ий )/ig,r:'~$1~noun-plur-geni'},
 {p:/~suff~(ил(?!а) )/ig,r:'~$1~he did verb-singular-past'},
 {p:/~suff~(ит )/ig,r:'~$1~they do verb-plur-pres'},
@@ -9417,8 +9420,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Силы ПВО пресекли еще одну попытку пролета беспилотника к Москве над Наро-Фоминским городским округом, пострадавших нет, сообщил мэр столицы Сергей Собянин
-</p><p>
+«Лучше Матвеева вытурнуть»: депутат Думы извинился после критики Кадырова за слова о мусульманах 
+<p>
 <textarea cols="30" rows="6" onchange="a=&quot; &quot;+this.value+&quot; &quot;,translateC()"></textarea><br>
 <span id="translatedTextDisplay"></span>
 </p><p>
