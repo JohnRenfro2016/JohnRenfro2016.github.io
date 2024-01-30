@@ -150,6 +150,7 @@ const replsB = [
 {p:/ (вице-президент)/ig,r:'$1|vicepresident~suff~'},
 {p:/ (гостеприимств)/ig,r:'$1|hospitality~suff~'},
 {p:/ (доказательств)/ig,r:'$1|proof~suff~'},
+{p:/ (инфраструктур)/ig,r:'$1|infrastructure~suff~'},
 {p:/ (животноводств)/ig,r:'$1|stockraising~suff~'},
 {p:/ (заинтересованн)/ig,r:'$1|interest(in)~suff~'},
 {p:/ (замешательств)/ig,r:'$1|confusion~suff~'},
@@ -648,7 +649,7 @@ const replsB = [
 {p:/ (возрастающ)/ig,r:'$1|growing~suff~'},
 {p:/ (воинственн)/ig,r:'$1|warlike~suff~'},
 {p:/ (воротничок)/ig,r:'$1|(small)collar~suff~'},
-{p:/ (воспольз)/ig,r:'$1|use use of~suff~'},
+{p:/ (воспольз)/ig,r:'$1|use of~suff~'},
 {p:/ (воспоминан)/ig,r:'$1|memory~suff~'},
 {p:/ (восторженн)/ig,r:'$1|enthusiastic~suff~'},
 {p:/ (всевозможн)/ig,r:'$1|all kinds of~suff~'},
@@ -1325,6 +1326,7 @@ const replsB = [
 {p:/ (объединен)/ig,r:'$1|union~suff~'},
 {p:/ (объективн)/ig,r:'$1|objectivity~suff~'},
 {p:/ (ограничен)/ig,r:'$1|limitation~suff~'},
+{p:/ (пользоват)/ig,r:'$1|user~suff~'},	
 {p:/ (ограничив)/ig,r:'$1|limit~suff~'},
 {p:/ (одинаково)/ig,r:'$1|identically~suff~'},
 {p:/ (озабоченн)/ig,r:'$1|worried~suff~'},
@@ -2314,6 +2316,7 @@ const replsB = [
 {p:/ (прогресс)/ig,r:'$1|progress~suff~'},
 {p:/ (прогулив)/ig,r:'$1|take a walk~suff~'},
 {p:/ (продавец)/ig,r:'$1|salesman~suff~'},
+{p:/ (глобальн)/ig,r:'$1|global~suff~'},	
 {p:/ (проделыв)/ig,r:'$1|make~suff~'},
 {p:/ (продрогн)/ig,r:'$1|be chilled~suff~'},
 {p:/ (продумыв)/ig,r:'$1|think through~suff~'},
@@ -3423,7 +3426,7 @@ const replsB = [
 {p:/ (ближайш)/ig,r:'$1|next~suff~'},
 {p:/ (получен)/ig,r:'$1|receiving~suff~'},
 {p:/ (полушар)/ig,r:'$1|hemisphere~suff~'},
-{p:/ (польз)/ig,r:'$1|use use of~suff~'},
+{p:/ (польз)/ig,r:'$1|use of~suff~'},
 {p:/ (полюбов)/ig,r:'$1|(+inst or +a)to admire~suff~'},
 {p:/ (поменьш)/ig,r:'$1|a little less~suff~'},
 {p:/ (померещ)/ig,r:'$1|seem~suff~'},
@@ -5052,10 +5055,10 @@ const replsB = [
 {p:/ (прийти)/ig,r:'$1|arrive(on foot)~suff~'},
 {p:/ (приказ)/ig,r:'$1|order~suff~'},
 {p:/ (прикин)/ig,r:'$1|pretend(to be )~suff~'},
-{p:/ (прилаг)/ig,r:'$1|place in contact with to~suff~'},
+{p:/ (прилаг)/ig,r:'$1|place in contact with~suff~'},
 {p:/ (прилет)/ig,r:'$1|arrive(by air)~suff~'},
 {p:/ (прилив)/ig,r:'$1|rising tide~suff~'},
-{p:/ (прилож)/ig,r:'$1|place in contact with to~suff~'},
+{p:/ (прилож)/ig,r:'$1|place in contact with~suff~'},
 {p:/ (примен)/ig,r:'$1|use~suff~'},
 {p:/ (пример)/ig,r:'$1|example~suff~'},
 {p:/ (примес)/ig,r:'$1|admixture~suff~'},
@@ -8020,6 +8023,7 @@ const replsB = [
 {p:/ (оказ)/ig,r:'$1|give~suff~'},
 {p:/ (окин)/ig,r:'$1|glance over~suff~'},
 {p:/ (окоп)/ig,r:'$1|trench~suff~'},
+{p:/ (сайт)/ig,r:'$1|website~suff~'},	
 {p:/ (олен)/ig,r:'$1|deer~suff~'},
 {p:/ (омут)/ig,r:'$1|pool in river~suff~'},
 {p:/ (опас)/ig,r:'$1|be afraid of~suff~'},
@@ -9324,7 +9328,8 @@ const replsB = [
 {p:/~suff~(еств)/ig,r:'$1~verb to noun,+ings~suff~'},
 {p:/~suff~(ост)/ig,r:'$1~state of being in~suff~'},
 
-{p:/~suff~(или )/ig,r:'~$1~they did verb-plur-past'},
+{p:/~suff~(ели )/ig,r:'~$1~nominative,plural'},
+{p:/~suff~(или )/ig,r:'~$1~they did verb-plur-past'},	
 {p:/~suff~(ают )/ig,r:'~$1~they do verb-plur-pres'},
 {p:/~suff~(али )/ig,r:'~$1~they did verb-plur-past'},
 {p:/~suff~(ами )/ig,r:'~$1~noun-plur-inst'},
@@ -9338,6 +9343,7 @@ const replsB = [
 {p:/~suff~(ила )/ig,r:'~$1~suff~he did verb-singular-past'},
 {p:/~suff~(ило )/ig,r:'~$1~it did'},
 {p:/~suff~(ить )/ig,r:'~$1~to do completely'},
+{p:/~suff~(ись )/ig,r:'~$1~passive,plural,past'},	
 {p:/~suff~(ого )/ig,r:'~$1~adje-masc-singular-geni or adje-masc-singular-anim accu or adje-neut-singular-geni'},
 {p:/~suff~(ому )/ig,r:'~$1~adje-masc-dati or neut dati'},
 {p:/~suff~(ует )/ig,r:'~$1~he does'},
@@ -9348,6 +9354,7 @@ const replsB = [
 {p:/~suff~(ое )/ig,r:'~$1~adje-neut-nomi or anim accu or inan accu'},
 {p:/~suff~(<!а)(ет) /ig,r:'~$1~he does'},
 {p:/~suff~(ал )/ig,r:'~$1~he did verb-singular-past'},
+{p:/~suff~(ел )/ig,r:'~$1~it did verb-singular-past'},	
 {p:/~suff~(ет )/ig,r:'~$1~he or she does verb-singular-present'},
 {p:/~suff~(ая )/ig,r:'~$1~adje-femi-nomi'},
 {p:/~suff~(ой )/ig,r:'~$1~adje-femi-geni or adje-femi-dati or adje-femi-inst'},
@@ -9421,8 +9428,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
--gazeta.ru: Сейчас никто не может сказать, как катастрофа с самолетом Ил-76 отразится на перспективах продолжения обмена пленными между Россией и Украиной. Об этом журналистам заявил пресс-секретарь президента Российской Федерации Дмитрий Песков, передает РИА Новости. 
-	
+В рунете произошел масштабный сбой, и сотни популярных сайтов и приложений перестали открываться. С проблемами столкнулись пользователи во всех российских регионах. В Минцифры заявили, что сайты в зоне .ru затронула техническая проблема, связанная с глобальной инфраструктурой DNSSEC. Что такое DNSSEC, зачем он нужен и почему произошел сбой — в материале «Газеты.Ru». 
 <p>
 <textarea cols="30" rows="6" onchange="a=&quot; &quot;+this.value+&quot; &quot;,translateC()"></textarea><br>
 <span id="translatedTextDisplay"></span>

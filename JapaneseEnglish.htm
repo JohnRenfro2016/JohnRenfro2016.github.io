@@ -144,15 +144,15 @@ const replsB = [
 
 {p1:/(1)(?!X)(人)(?!X)/g,r1:'$1X$2Xhitori-one person~Noun'},
 
-{p1:/(9|９)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xkyuu jyuu,ninety~Noun$2'},
-{p1:/(9)(?!X)(日)(?!X)/g,r1:'$1Xkokono$2Xka-nineth day of the month~Noun'},
+{p1:/(9|９)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xkyuu jyuu-ninety~Noun$2'},
+{p1:/(9|９)(?!X)(日)(?!X)/g,r1:'$1Xkokono$2Xka-nineth day of the month~Noun'},
 {p1:/(8|８)(?!X)(日)(?!X)/g,r1:'$1Xyou$2Xka-eighth day of the month~Noun'},
-{p1:/(8|８)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xhachi jyuu,eighty~Noun$2'},
-{p1:/(7|７)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xshichi jyuu,seventy~Noun$2'},
-{p1:/(6|６)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xroku jyuu,sixty~Noun$2'},
-{p1:/(6|6)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xroku jyuu,sixty~Noun$2'},
-{p1:/(5|５)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xgo jyuu,fifty~Noun$2'},
-{p1:/(4|４)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xyon jyuu,fourty~Noun$2'},
+{p1:/(8|８)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xhachi jyuu-eighty~Noun$2'},
+{p1:/(7|７)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xshichi jyuu-seventy~Noun$2'},
+{p1:/(6|６)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xroku jyuu-sixty~Noun$2'},
+{p1:/(6|6)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xroku jyuu-sixty~Noun$2'},
+{p1:/(5|５)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xgo jyuu-fifty~Noun$2'},
+{p1:/(4|４)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xyon jyuu-fourty~Noun$2'},
 {p1:/(3|３)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xsan jyuu-thirty~Noun$2'},
 {p1:/(2|２)(?!X)(人)(?!X)/g,r1:'$1Xfu$2Xtari-two people~Noun'},
 {p1:/(2|２)(?!X)([0-9]|[０-９])(?!X)/g,r1:'$1Xni jyuu-twenty~Noun$2'},
@@ -2555,6 +2555,7 @@ const replsB = [
 {p1:/(除)(?!X)(雪)(?!X)/g,r1:'$1Xjyo$2Xsetsu-snow removal~Noun'},
 {p1:/(除)(?!X)(外)(?!X)/g,r1:'$1Xjyo$2Xgai-exception~Noun'},
 {p1:/(除)(?!X)(名)(?!X)/g,r1:'$1Xjyo$2Xmei-blackballing someone~Noun'},
+{p1:/(指)(?!X)(名)(?!X)/g,r1:'$1Xshi$2Xmei-named~Noun'},	
 {p1:/(除)(?!X)(去)(?!X)/g,r1:'$1Xjyou$2Xkyo-removal~Noun'},
 {p1:/(除)(?!X)([かきくけこい])(?!X)/g,r1:'$1Xnozo-exclude$2X~KuVerb'},
 {p1:/(陣)(?!X)(営)(?!X)/g,r1:'$1Xjin$2Xei-camp,supporters~Noun'},
@@ -5160,6 +5161,7 @@ const replsB = [
 {p1:/(技)(?!X)(術)(?!X)/g,r1:'$1Xgi$2Xjyutsu-skill,technology~Noun'},
 {p1:/(技)(?!X)(能)(?!X)/g,r1:'$1Xgi$2Xnou-technical skill~Noun'},
 {p1:/(技)(?!X)(師)(?!X)/g,r1:'$1Xgi$2Xshi-engineer,technician~Noun'},
+{p1:/(過)(?!X)(激)(?!X)/g,r1:'$1Xka$2Xgeki-extreme violence~Noun'},	
 {p1:/(承)(?!X)(認)(?!X)/g,r1:'$1Xsyou$2Xnin-approval~Noun'},
 {p1:/(承)(?!X)(知)(?!X)/g,r1:'$1Xsyou$2Xchi-consent~Noun'},
 {p1:/(批)(?!X)(評)(?!X)/g,r1:'$1Xhi$2Xhyou-criticism,comment~Noun'},
@@ -5179,7 +5181,7 @@ const replsB = [
 {p1:/(才)(?!X)(能)(?!X)/g,r1:'$1Xsai$2Xnou-talent,ability~Noun'},
 {p1:/(手)(?!X)(首)(?!X)/g,r1:'$1Xte$2Xkubi-wrist~Noun'},
 {p1:/(手)(?!X)(間)(?!X)/g,r1:'$1Xte$2Xma-trouble,time~Noun'},
-{p1:/(手)(?!X)(配)(?!X)/g,r1:'$1Xte$2Xhai-police search~Noun'},
+{p1:/(手)(?!X)(配)(?!X)/g,r1:'$1Xte$2Xhai-wanted list~Noun'},
 {p1:/(手)(?!X)(軽)(?!X)/g,r1:'$1Xte$2Xgaru-easy,light~Noun'},
 {p1:/(手)(?!X)(足)(?!X)/g,r1:'$1Xtea$2Xshi-hands and feet,limbs~Noun'},
 {p1:/(手)(?!X)(製)(?!X)/g,r1:'$1Xte$2Xsei-homemade~Noun'},
@@ -5592,7 +5594,7 @@ const replsB = [
 {p1:/(小)(?!X)(麦)(?!X)/g,r1:'$1Xkom$2Xugi-wheat~Noun'},
 {p1:/(小)(?!X)(雨)(?!X)/g,r1:'$1Xkos$2Xame-drizzle~Noun'},
 {p1:/(小)(?!X)(雨)(?!X)/g,r1:'$1Xkos$2Xame-drizzle~Noun'},
-{p1:/(小)(?!X)(銃)(?!X)/g,r1:'$1Xsyou$2Xjyuu,small arms,rifle~Noun'},
+{p1:/(小)(?!X)(銃)(?!X)/g,r1:'$1Xsyou$2Xjyuu-small arms,rifle~Noun'},
 {p1:/(小)(?!X)(量)(?!X)/g,r1:'$1Xsyou$2Xryou-small amount~Noun'},
 {p1:/(小)(?!X)(説)(?!X)/g,r1:'$1Xsyou$2Xsetsu-novel,story~Noun'},
 {p1:/(小)(?!X)(数)(?!X)/g,r1:'$1Xsyou$2Xsuu-decimal~Noun'},
@@ -5853,7 +5855,9 @@ const replsB = [
 {p1:/(大)(?!X)(分)(?!X)/g,r1:'$1Xdai$2Xbu-very,greatly~Noun'},
 {p1:/(大)(?!X)(便)(?!X)/g,r1:'$1Xdai$2Xben-stool,feces~Noun'},
 {p1:/(大)(?!X)(使)(?!X)/g,r1:'$1Xtai$2Xshi-ambassador~Noun'},
-{p1:/(大)(?!X)(体)(?!X)/g,r1:'$1Xdai$2Xtai-ou-tline,generally~Noun'},
+{p1:/(大)(?!X)(体)(?!X)/g,r1:'$1Xdai$2Xtai-outline,generally~Noun'},
+{p1:/(公)(?!X)(安)(?!X)/g,r1:'$1Xkou$2Xan-public safety~Noun'},	
+{p1:/(戦)(?!X)(線)(?!X)/g,r1:'$1Xsen$2Xsen-war front~Noun'},	
 {p1:/(大)(?!X)(会)(?!X)/g,r1:'$1Xtai$2Xkai-tournament~Noun'},
 {p1:/(大)(?!X)(人)(?!X)/g,r1:'$1Xo$2Xtona-adult~Noun'},
 {p1:/(大)(?!X)(事)(?!X)/g,r1:'$1Xdai$2Xji-importance~Noun'},
@@ -7419,7 +7423,7 @@ const replsB = [
 {p1:/(鍋)(?!X)/g,r1:'$1Xnabe-pot~Noun'},
 {p1:/(鋏)(?!X)/g,r1:'$1Xhasami-scissors,pincers,tongs~Noun'},
 {p1:/(銅)(?!X)/g,r1:'$1Xdou-copper~Noun'},
-{p1:/(銃)(?!X)/g,r1:'$1Xjyuu,gun~Noun'},
+{p1:/(銃)(?!X)/g,r1:'$1Xjyuu-gun~Noun'},
 {p1:/(銀)(?!X)/g,r1:'$1Xgin-silver~Noun'},
 {p1:/(鉄)(?!X)/g,r1:'$1X-tetsu,iron~Noun'},
 {p1:/(針)(?!X)/g,r1:'$1Xhari-needle~Noun'},
@@ -8054,7 +8058,7 @@ const replsB = [
 {p1:/(南)(?!X)/g,r1:'$1Xminami,mina,nan-south~Noun'},
 {p1:/(半)(?!X)/g,r1:'$1Xhan-half~Noun'},
 {p1:/(千)(?!X)/g,r1:'$1Xsen,chi-thousand~Noun'},
-{p1:/(十)(?!X)/g,r1:'$1Xjyuu,ten~Noun'},
+{p1:/(十)(?!X)/g,r1:'$1Xjyuu-ten~Noun'},
 {p1:/(医)(?!X)/g,r1:'$1Xi-medical~Noun'},
 {p1:/(区)(?!X)/g,r1:'$1Xku-ward~Noun'},
 {p1:/(匹)(?!X)/g,r1:'$1Xpiki-counter for small animals~Noun'},
@@ -8136,6 +8140,7 @@ const replsB = [
 {p1:/(仮)(?!X)/g,r1:'$1Xkari-provisional,temporary~Noun'},
 {p1:/(令)(?!X)/g,r1:'$1Xrei-order~Noun'},
 {p1:/(代)(?!X)/g,r1:'$1Xdai-era~Noun'},
+{p1:/(反)(?!X)/g,r1:'$1Xhan-anti-~Noun'},	
 {p1:/(付)(?!X)/g,r1:'$1Xtsuki-assistant;tsuke-date~Noun'},
 {p1:/(他)(?!X)/g,r1:'$1Xta-others~Noun'},
 {p1:/(仏)(?!X)/g,r1:'$1Xhotoke-buddha,Buddhist image~Noun'},
@@ -8360,7 +8365,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-思うように発話できない障害「吃音（きつおん）」があっても教師になりたい。そんな目標を応援する模擬授業イベント「号令に時間がかかる教室」が21日に徳島県鳴門市であり、教員志望の若者2人が教壇に立った。
+昭和４９～５０年の連続企業爆破事件で、爆発物取締罰則違反容疑で重要指名手配された過激派「東アジア反日武装戦線」のメンバー、桐島聡容疑者（７０）とみられる男が、警視庁公安部の任意聴取に対し、韓国産業経済研究所爆破事件への関与を否定し、間組（現安藤・間）爆破事件への関与をほのめかす趣旨の話をしていたことが３０日、捜査関係者への取材で分かった。男は２９日に死亡。公安部はＤＮＡ型鑑定を行い身元の確認を進めている。
 <p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
