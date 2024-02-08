@@ -2344,8 +2344,6 @@ const replsB = [
 {p1:/(あ)(?!X)(く)(?!X)(び)(?!X)/g,r1:'$1Xa$2Xku$3Xbi-yawn~Noun'},
 {p1:/(あ)(?!X)(え)(?!X)(て)(?!X)/g,r1:'$1Xaet$2X$3Xe-boldly~Noun'},
 
-{p1:/(負)(?!X)(担)(?!X)/g,r1:'$1Xfu$2Xtan-burden~Noun'},
-
 {p1:/(?<!検)(出)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xda-take out$2X~SuVerb'},
 {p1:/(\d{1})(?!X)(分)(?!X)/g,r1:'$1$2Xpun-minutes~Noun'},
 {p1:/(\d{1})(?!X)(時)(?!X)/g,r1:'$1$2Xji-hour~Noun'},
@@ -4656,6 +4654,7 @@ const replsB = [
 {p1:/(揃)(?!X)([わいうえおっ])(?!X)/g,r1:'$1Xsoro-be (all) together$2X~UVerb'},
 {p1:/(描)(?!X)([かきくけこい])(?!X)/g,r1:'$1Xega-depict,describe$2X~KuVerb'},
 {p1:/(提)(?!X)(供)(?!X)/g,r1:'$1Xtei$2Xkyou-sponsorship~Noun'},
+{p1:/(提)(?!X)(出)(?!X)/g,r1:'$1Xtei$2Xsyutsu-file documents~Noun'},
 {p1:/(提)(?!X)(出)(?!X)/g,r1:'$1Xtei$2Xsyutsu-submittal~Noun'},
 {p1:/(提)(?!X)(唱)(?!X)/g,r1:'$1Xtei$2Xsyou-advocacy~Noun'},
 {p1:/(提)(?!X)(国)(?!X)/g,r1:'$1Xkan$2Xkoku-Korea~Noun'},
@@ -4748,6 +4747,7 @@ const replsB = [
 {p1:/(救)(?!X)(助)(?!X)/g,r1:'$1Xkyuu$2Xjyo-rescue~Noun'},
 {p1:/(救)(?!X)(命)(?!X)/g,r1:'$1Xkyuu$2Xmei-lifesaving~Noun'},
 {p1:/(救)(?!X)(急)(?!X)/g,r1:'$1Xkyuu$2Xkyuu-emergency~Noun'},
+{p1:/(救)(?!X)(済)(?!X)/g,r1:'$1Xkyuu$2Xsai-aid~Noun'},
 {p1:/(救)(?!X)(護)(?!X)/g,r1:'$1Xkyuu$2Xgo-first aid~Noun'},
 {p1:/(敗)(?!X)(戦)(?!X)/g,r1:'$1Xhai$2Xsen-defeat~Noun'},
 {p1:/(敗)(?!X)(者)(?!X)/g,r1:'$1Xhai$2Xsya-loser~Noun'},
@@ -6630,6 +6630,7 @@ const replsB = [
 {p1:/(負)(?!X)([わいうえおっ])(?!X)/g,r1:'$1Xo-take damage$2X~UVerb'},
 {p1:/(負)(?!X)(け)(?!X)/g,r1:'$1Xma$2Xke-defeat,loss~Noun'},
 {p1:/(負)(?!X)(傷)(?!X)/g,r1:'$1Xfu$2Xsyou-injury~Noun'},
+{p1:/(負)(?!X)(担)(?!X)/g,r1:'$1Xfu$2Xtan-burden~Noun'},
 {p1:/(負)(?!X)(担)(?!X)/g,r1:'$1Xfu$2Xtan-shouldered responsibility~Noun'},
 {p1:/(財)(?!X)(務)(?!X)/g,r1:'$1Xzai$2Xmu-financial affairs~Noun'},
 {p1:/(財)(?!X)(布)(?!X)/g,r1:'$1Xsai$2Xfu-purse,wallet~Noun'},
@@ -7593,6 +7594,7 @@ const replsB = [
 {p1:/(尾)(?!X)/g,r1:'$1Xo-tail~Noun'},
 {p1:/(局)(?!X)/g,r1:'$1Xkyoku-bureau~Noun'},
 {p1:/(居|い)(?!X)/g,r1:'$1Xi-+ing continuous verb;there is an animate being~IchidanVerb'},
+{p1:/(届)(?!X)/g,r1:'$1Xtodoke-filing~Noun'},
 {p1:/(屋)(?!X)/g,r1:'$1Xya-store~Noun'},
 {p1:/(屏)(?!X)/g,r1:'$1Xhei-wall~Noun'},
 {p1:/(屑)(?!X)/g,r1:'$1Xkuzu-waste,scraps~Noun'},
@@ -8063,7 +8065,7 @@ const replsB = [
 {p1:/(赤)(?!X)/g,r1:'$1Xaka-red,crimson~Noun'},
 {p1:/(超)(?!X)/g,r1:'$1Xcyou,koe-over;very~Noun'},
 {p1:/(越)(?!X)/g,r1:'$1Xkoshi,etsu-yew~Noun'},
-{p1:/(足)(?!X)/g,r1:'$1Xashi-leg,foot~Noun'},
+{p1:/(越)(?!X)/g,r1:'$1Xkoshi,etsu-yew~Noun'},
 {p1:/(跡)(?!X)/g,r1:'$1Xato-trace~Noun'},
 {p1:/(路)(?!X)/g,r1:'$1Xmichi,ji-street~Noun'},
 {p1:/(身)(?!X)/g,r1:'$1Xmi-self~Noun'},
@@ -8370,7 +8372,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-女優の杏（３７）が映画「かくしごと」（６月７日公開）に主演することが６日、分かった。長編映画主演は２０１６年の「オケ老人！」以来、８年ぶりで２作目。記憶喪失の少年に、自分が母親だとうそをついて一緒に暮らし始める主人公を演じる。
+　政府は、犯罪被害者らが事件直後から弁護士による継続的な支援を受けられる制度を創設するため、改正法案を今国会に提出する方針を固めた。殺人や性犯罪などの被害者や遺族を対象に、被害届の提出や裁判対応などを弁護士が一括して担い、大きな精神的・経済的負担を強いられる被害者らを救済する狙いがある。
 <p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
