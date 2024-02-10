@@ -1198,10 +1198,12 @@ const replsB = [
 {p1:/(立)(?!X)(て)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xtat$2Xe-stand,set up,establish$3X~RuVerb'},
 {p1:/(窃)(?!X)(盗)(?!X)(罪)(?!X)/g,r1:'$1Xset$2Xtou$3Xzai-larceny~Noun'},
 {p1:/(空)(?!X)(の)(?!X)(便)(?!X)/g,r1:'$1Xsor$2X$3Xa no bin,plane flight~Noun'},
+{p1:/(圧)(?!X)(倒)(?!X)(的)(?!X)/g,r1:'$1Xat$2Xtou$3Xteki-overwhelming~Noun'},
 {p1:/(空)(?!X)(っ)(?!X)(ぽ)(?!X)/g,r1:'$1Xkar$2Xap$3Xpo-empty~Noun'},
 {p1:/(空)(?!X)(け)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xake$2X-empty,clear out$3X~RuVerb'},
 {p1:/(空)(?!X)(き)(?!X)(地)(?!X)/g,r1:'$1Xa$2Xki$3Xchi-vacant lot~Noun'},
 {p1:/(穏)(?!X)(や)(?!X)(か)(?!X)/g,r1:'$1Xoda$2Xya$3Xka-calm,mild~Noun'},
+{p1:/(目)(?!X)(配)(?!X)(せ)(?!X)/g,r1:'$1Xme$2Xkuba$3Xse-signal with the eyes~Noun'},
 {p1:/(積)(?!X)(極)(?!X)(的)(?!X)/g,r1:'$1Xsek$2Xkyoku$3Xteki-positive,active~Noun'},
 {p1:/(積)(?!X)(乱)(?!X)(雲)(?!X)/g,r1:'$1Xseki$2Xran$3Xun-cumulonimbus cloud~Noun'},
 {p1:/(積)(?!X)(も)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xtsu$2Xmo-accumulate,get accumulated$3X~RuVerb'},
@@ -2735,6 +2737,7 @@ const replsB = [
 {p1:/(人)(?!X)(情)(?!X)/g,r1:'$1Xnin$2Xjyou-human feelings,humanity~Noun'},
 {p1:/(人)(?!X)(手)(?!X)/g,r1:'$1Xhito$2Xde-man-power~Noun'},
 {p1:/(人)(?!X)(数)(?!X)/g,r1:'$1Xnin$2Xzuu-number of people~Noun'},
+{p1:/(献)(?!X)(身)(?!X)/g,r1:'$1Xken$2Xshin-devotion~Noun'},
 {p1:/(人)(?!X)(材)(?!X)/g,r1:'$1Xjin$2Xzai-personnel~Noun'},
 {p1:/(人)(?!X)(柄)(?!X)/g,r1:'$1Xhito$2Xgara-character,personality~Noun'},
 {p1:/(人)(?!X)(格)(?!X)/g,r1:'$1Xjin$2Xkaku-character,personality~Noun'},
@@ -2742,7 +2745,7 @@ const replsB = [
 {p1:/(人)(?!X)(民)(?!X)/g,r1:'$1Xjin$2Xmin-populace~Noun'},
 {p1:/(人)(?!X)(気)(?!X)/g,r1:'$1Xnin$2Xki-popularity~Noun'},
 {p1:/(人)(?!X)(物)(?!X)/g,r1:'$1Xjin$2Xbutsu-character~Noun'},
-{p1:/(人)(?!X)(生)(?!X)/g,r1:'$1Xjin$2Xsei-human life,life~Noun'},
+{p1:/(人)(?!X)(生)(?!X)/g,r1:'$1Xjin$2Xsei-human life~Noun'},
 {p1:/(人)(?!X)(種)(?!X)/g,r1:'$1Xjin$2Xsyu-race~Noun'},
 {p1:/(人)(?!X)(質)(?!X)/g,r1:'$1Xhito$2Xjichi-hostage~Noun'},
 {p1:/(人)(?!X)(道)(?!X)/g,r1:'$1Xjin$2Xdou-humanitarian~Noun'},
@@ -3302,6 +3305,7 @@ const replsB = [
 {p1:/(助)(?!X)(詞)(?!X)/g,r1:'$1Xjyo$2Xshi-particle,postpositionnoun'},
 {p1:/(助)(?!X)(長)(?!X)/g,r1:'$1Xjyo$2Xcyou-encouragement~Noun'},
 {p1:/(努)(?!X)(め)(?!X)/g,r1:'$1Xtsuto$2Xme-strive to do~IchidanVerb'},
+{p1:/(極)(?!X)(め)(?!X)/g,r1:'$1Xkiwa$2Xme-carry to extremes~IchidanVerb'},
 {p1:/(努)(?!X)(力)(?!X)/g,r1:'$1Xdo$2Xryoku-endeavor to do~Noun'},
 {p1:/(労)(?!X)(働)(?!X)/g,r1:'$1Xrou$2Xdou-labor~Noun'},
 {p1:/(労)(?!X)(力)(?!X)/g,r1:'$1Xrou$2Xryoku-labor,work~Noun'},
@@ -7581,7 +7585,7 @@ const replsB = [
 {p1:/(室)(?!X)/g,r1:'$1Xshitsu,ya-room,shop~Noun'},
 {p1:/(宮)(?!X)/g,r1:'$1Xmiya,no miya,kyuu,palace~Noun'},
 {p1:/(害)(?!X)/g,r1:'$1Xgai-harm,damage~Noun'},
-{p1:/(家)(?!X)/g,r1:'$1Xie,ka,home,master artisan~Noun'},
+{p1:/(家)(?!X)/g,r1:'$1Xie,uchi-home,ka-master artisan~Noun'},
 {p1:/(富)(?!X)/g,r1:'$1Xto-fortune~Noun'},
 {p1:/(富)(?!X)/g,r1:'$1Xto-fortune~Noun'},
 {p1:/(寝)(?!X)/g,r1:'$1Xne-sleep~IchidanVerb'},
@@ -8372,7 +8376,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-　政府は、犯罪被害者らが事件直後から弁護士による継続的な支援を受けられる制度を創設するため、改正法案を今国会に提出する方針を固めた。殺人や性犯罪などの被害者や遺族を対象に、被害届の提出や裁判対応などを弁護士が一括して担い、大きな精神的・経済的負担を強いられる被害者らを救済する狙いがある。
+大きな目を見開き、音楽家たちに目配せをして、息を深く吸ってタイミングを示す。ひとたび手を振り下ろすと、圧倒的な音色と響き、リズムがあふれ出して止まらなかった。音楽に献身し、音楽を極め、そして音楽に愛された人生だった。ただ、決して才能だけで舞台に立ち続けたわけではない。妥協を許さない学びを生涯続けたマエストロだった。
 <p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
