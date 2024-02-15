@@ -1969,7 +1969,7 @@ const replsB = [
 {p:/ (коренаст)/ig,r:'$1|thickset~suff~'},
 {p:/ (коричнев)/ig,r:'$1|brown~suff~'},
 {p:/ (коробочк)/ig,r:'$1|small box~suff~'},
-{p:/ (невыгодно)/ig,r:'$1|disadvantage~adve'},
+{p:/ (невыгодно)/ig,r:'$1|disadvantage ~adve'},
 {p:/ (котлован)/ig,r:'$1|foundation pit~suff~'},
 {p:/ (красавец)/ig,r:'$1|handsome man~suff~'},
 {p:/ (красавиц)/ig,r:'$1|beautiful woman~suff~'},
@@ -8246,6 +8246,7 @@ const replsB = [
 {p:/ (село)/ig,r:'$1|village~suff~'},
 {p:/ (семя)/ig,r:'$1|seed~suff~'},
 {p:/ (сени)/ig,r:'$1|entrance hall(of peasant hut)~suff~'},
+{p:/ (Холл)/ig,r:'$1|hall~suff~'},
 {p:/ (серд)/ig,r:'$1|be angry(with)~suff~'},
 {p:/ (сери)/ig,r:'$1|series~suff~'},
 {p:/ (серн)/ig,r:'$1|sulphuric~suff~'},
@@ -8720,7 +8721,7 @@ const replsB = [
 {p:/ (виш)/ig,r:'$1|look!~suff~'},
 {p:/ (вли)/ig,r:'$1|influence~suff~'},
 {p:/ (вод)/ig,r:'$1|water~suff~'},
-{p:/ (воз)/ig,r:'$1|transport(around there and back)~suff~'},
+{p:/ (воз)/ig,r:'$1|transport~suff~'},
 {p:/ (вол)/ig,r:'$1|ox~suff~'},
 {p:/ (вон)/ig,r:'$1|to stink~suff~'},
 {p:/ (вор)/ig,r:'$1|thief~suff~'},
@@ -8787,7 +8788,7 @@ const replsB = [
 {p:/ (дым)/ig,r:'$1|smoke~suff~'},
 {p:/ (дыр)/ig,r:'$1|hole~suff~'},
 {p:/ (дыш)/ig,r:'$1|to breathe~suff~'},
-{p:/ (его)/ig,r:'$1|his~pron-masc-sing-geni'},
+{p:/ (его)/ig,r:'$1|his ~pron-masc-sing-geni'},
 {p:/ (едв)/ig,r:'$1|hardly just~suff~'},
 {p:/ (едк)/ig,r:'$1|acrid~suff~'},
 {p:/ (езд)/ig,r:'$1|travel there and back~suff~'},
@@ -9014,7 +9015,7 @@ const replsB = [
 {p:/ (пор)/ig,r:'$1|at times~suff~'},
 {p:/ (пос)/ig,r:'$1|sow~suff~'},
 {p:/ (пот)/ig,r:'$1|sweat~suff~'},
-{p:/ (при)/ig,r:'$1|in the presence time of to~suff~'},
+{p:/ (при)/ig,r:'$1|pre-~suff~'},
 {p:/ (про)/ig,r:'$1|about~suff~'},
 {p:/ (пуг)/ig,r:'$1|frighten~suff~'},
 {p:/ (пуд)/ig,r:'$1|pood(16.38 kg)~suff~'},
@@ -9267,7 +9268,7 @@ const replsB = [
 {p:/ (мч)/ig,r:'$1|rush~suff~'},
 {p:/ (мы)/ig,r:'$1|we~suff~'},
 {p:/ (на)/ig,r:'$1|at,in,to ~prep'},
-{p:/ (не)/ig,r:'$1|not~adverb'},
+{p:/ (не)/ig,r:'$1|not ~adve'},
 {p:/ (ни)/ig,r:'$1|not a~suff~'},
 {p:/ (но)/ig,r:'$1|but ~conj'},
 {p:/ (ну)/ig,r:'$1|well~suff~'},
@@ -9332,7 +9333,7 @@ const replsB = [
 {p:/ (к) /ig,r:'$1|involved in~suff~'},
 {p:/ (о) /ig,r:'$1|about~suff~'},
 {p:/ (с) /ig,r:'$1|from,with ~prep'},
-{p:/ (у) /ig,r:'$1|by ~suff~'},
+{p:/ (у) /ig,r:'$1|by ~prep'},
 
 {p:/~suff~(еств)/ig,r:'$1~verb to noun,+ings~suff~'},
 {p:/~suff~(ост)/ig,r:'$1~state of being in~suff~'},
@@ -9370,7 +9371,7 @@ const replsB = [
 {p:/~suff~(ую )/ig,r:'~$1~adje-femi-anim accu or inan accu'},
 {p:/~suff~(ем )/ig,r:'~$1~noun-sing-inst'},
 {p:/~suff~(ен )/ig,r:'~$1~adje-masc-shor'},
-{p:/~suff~(ие )/ig,r:'~$1~noun-sing-nomi or accu'},
+{p:/~suff~(ие )/ig,r:'~$1~noun-sing-nomi or -accu'},
 {p:/~suff~(ии )/ig,r:'~$1~noun-sing-prep'},
 {p:/~suff~(ть )/ig,r:'~$1~infinitive ~verb-to do'},
 {p:/~suff~(ий )/ig,r:'~$1~noun-plur-geni'},
@@ -9378,7 +9379,7 @@ const replsB = [
 {p:/~suff~(ит )/ig,r:'~$1~they do ~verb-plur-pres'},
 {p:/~suff~(их )/ig,r:'~$1~adje-plur-geni'},
 {p:/~suff~(ию )/ig,r:'~$1~noun-sing-dati'},
-{p:/~suff~(ия )/ig,r:'~$1~noun-plur-nomi or ~noun-plur-accu or femi-sing-geni'},
+{p:/~suff~(ия )/ig,r:'~$1~noun-plur-nomi or ~noun-plur-accu or -femi-sing-geni'},
 {p:/~suff~(ия )/ig,r:'~$1~noun-sing-geni'},
 {p:/~suff~(ли )/ig,r:'~$1~they did ~verb-plur-past'},
 {p:/~suff~(ом )/ig,r:'~$1~adje-masc-prep or ~adje-neut-prep'},
@@ -9390,7 +9391,7 @@ const replsB = [
 {p:/~suff~(ам )/ig,r:'~$1~noun-masc-plur-dati'},
 {p:/~suff~(ей )/ig,r:'~$1~noun-sing-inst'},
 {p:/~suff~(ый )/ig,r:'~$1~adje-masc-nomi or inan accu'},
-{p:/~suff~(ым )/ig,r:'~$1~adje-plur-dati or masc-inst or neut-inst'},
+{p:/~suff~(ым )/ig,r:'~$1~adje-plur-dati or -masc-inst or neut-inst'},
 {p:/~suff~(ок )/ig,r:'~$1~noun-plur-geni'},
 {p:/~suff~(ах )/ig,r:'~$1~noun-plur-prep'},
 {p:/~suff~(ых )/ig,r:'~$1~adje-plur-geni or ~adje-plur-anim accu or ~adje-plur-prep'},
@@ -9416,9 +9417,11 @@ const replsB = [
 {p:/ ~(conj)/ig,r:'<font color=green><font size=3px><br>$1unction</font></font>'},
 
 {p:/ ~(noun)/ig,r:'<font color=#008fff><font size=3px><br>$1</font></font>'},
+{p:/ ~(pron)/ig,r:'<font color=#008fff><font size=3px><br>$1oun</font></font>'},
 {p:/ ~(adje)/ig,r:'<font color=#0082f2><font size=3px><br>$1ctive</font></font>'},
 
 {p:/ ~(verb)/ig,r:'<font color=red><font size=3px><br>$1</font></font>'},
+{p:/ ~(adve)/ig,r:'<font color=orange><font size=3px><br>$1rb</font></font>'},
 
 {p:/-(past)/ig,r:'<font color=red><font size=3px><br>$1 tense</font></font>'},
 
@@ -9434,6 +9437,7 @@ const replsB = [
 {p:/-(nomi)/ig,r:'<font color=indigo><font size=3px><br>$1native case(who or what acts)</font></font>'},
 {p:/-(dati)/ig,r:'<font color=indigo><font size=3px><br>$1ve case(to whom or what)</font></font>'},
 {p:/-(geni)/ig,r:'<font color=indigo><font size=3px><br>$1tive case(of whose or from what)</font></font>'},
+{p:/-(accu)/ig,r:'<font color=indigo><font size=3px><br>$1sative case(who or what is acted on)</font></font>'},
 {p:/-(prep)/ig,r:'<font color=green><font size=3px><br>$1ositional case(at,in,on)</font></font>'},
 {p:/-(inst)/ig,r:'<font color=green><font size=3px><br>$1rumental case(with who or with what)</font></font>'},
 
@@ -9462,9 +9466,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Американское руководство не вело переговоры с РФ по поводу прекращения конфликта на Украине и не собирается делать этого в будущем. Об этом заявили в Государственном департаменте США, передает РБК.
-
-Таким образом в ведомстве ответили на просьбу журналистов прокомментировать публикацию Reuters, согласно которой российский президент Владимир Путин предлагал Вашингтону заморозить украинский конфликт. Речь идет о прекращении боевых действий с сохранением текущих позиций и без уступок Киеву каких-либо территорий, уточнялось в материале.
+Пожар произошел у здания «Известия Холл» в центре Москвы, его площадь достигла 1500 кв. м. По данным Mash и Shot, от огня пострадали ночной клуб Lookin Rooms и бар «Резиденция», во внутреннем дворе обрушился металлический купол. При этом МЧС сообщило, что огонь охватил три неэксплуатируемых строения внутри двора. Из-за пожара ограничили движение по Тверской улице и перекрыли вход на станцию метро «Пушкинская». Сейчас возгорание ликвидировано, СМИ сообщили об одном пострадавшем.
 <p>
 <textarea cols="30" rows="6" onchange="a=&quot; &quot;+this.value+&quot; &quot;,translateC()"></textarea><br>
 <span id="translatedTextDisplay"></span>
