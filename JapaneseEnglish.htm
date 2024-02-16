@@ -953,7 +953,7 @@ const replsB = [
 {p1:/(金)(?!X)(曜)(?!X)(日)(?!X)/g,r1:'$1Xkin$2Xyou$3Xbi-Friday~Noun'},
 {p1:/(金)(?!X)(持)(?!X)(ち)(?!X)/g,r1:'$1Xka$2Xnemo$3Xchi-wealthy person~Noun'},
 {p1:/(重)(?!X)(ね)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xkas$2Xane-pile up,repeat$3X~RuVerb'},
-{p1:/(重)(?!X)(な)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xkas$2Xana-be piled up,come one after another$3X~RuVerb'},
+{p1:/(重)(?!X)(な)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xkas$2Xana-be piled up,one after another$3X~RuVerb'},
 {p1:/(重)(?!X)(た)(?!X)([いくかさ])(?!X)/g,r1:'$1Xomo$2Xta-heavy$3X~IAdjective~Noun'},
 {p1:/(酸)(?!X)(っ)(?!X)(ぱ)(?!X)([いくかさ])(?!X)/g,r1:'$1Xsup$2Xpa$3X-sou-r$4X~IAdjective~Noun'},
 {p1:/(酔)(?!X)(っ)(?!X)(払)(?!X)([いくかさ])(?!X)/g,r1:'$1Xyop$2Xpa$3Xra-drunkard,boozer$4X~IAdjective~Noun'},
@@ -1188,7 +1188,7 @@ const replsB = [
 {p1:/(終)(?!X)(止)(?!X)(符)(?!X)/g,r1:'$1Xsyuu$2Xshi$3Xfu-full stop~Noun'},
 {p1:/(終)(?!X)(わ)(?!X)(り)(?!X)/g,r1:'$1Xowa$2Xri$3X-conclusion~Noun'},
 {p1:/(終)(?!X)(わ)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xowa$2X-finish$3X~RuVerb'},
-{p1:/(終)(?!X)(え)(?!X)([らりるれろっ])(?!X)/g,r1:'$1X$2Xoe-end,finish$3X~RuVerb'},
+{p1:/(終)(?!X)(え)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xo$2Xe-end$3X~RuVerb'},
 {p1:/(細)(?!X)(長)(?!X)([いくかさ])(?!X)/g,r1:'$1Xho$2Xsonaga-long and thin,slender$3X~IAdjective~Noun'},
 {p1:/(細)(?!X)(か)(?!X)([いくかさ])(?!X)/g,r1:'$1Xko$2Xmaka-minute,elaborate$3X~IAdjective~Noun'},
 {p1:/(素)(?!X)(早)(?!X)([いくかさ])(?!X)/g,r1:'$1Xsub$2Xaya-nimble$3X~IAdjective~Noun'},
@@ -4527,6 +4527,7 @@ const replsB = [
 {p1:/(承)(?!X)(知)(?!X)/g,r1:'$1Xsyou$2Xchi-consent~Noun'},
 {p1:/(承)(?!X)(認)(?!X)/g,r1:'$1Xsyou$2Xnin-approval~Noun'},
 {p1:/(技)(?!X)(師)(?!X)/g,r1:'$1Xgi$2Xshi-engineer,technician~Noun'},
+{p1:/(燃)(?!X)(油)(?!X)/g,r1:'$1Xnen$2Xyu-fuel~Noun'},
 {p1:/(技)(?!X)(能)(?!X)/g,r1:'$1Xgi$2Xnou-technical skill~Noun'},
 {p1:/(技)(?!X)(術)(?!X)/g,r1:'$1Xgi$2Xjyutsu-skill,technology~Noun'},
 {p1:/(把)(?!X)(握)(?!X)/g,r1:'$1Xha$2Xaku-catch the meaning~Noun'},
@@ -5495,7 +5496,7 @@ const replsB = [
 {p1:/(火)(?!X)(星)(?!X)/g,r1:'$1Xka$2Xsei-planet Mars~Noun'},
 {p1:/(火)(?!X)(災)(?!X)/g,r1:'$1Xka$2Xsai-fire~Noun'},
 {p1:/(火)(?!X)(葬)(?!X)/g,r1:'$1Xka$2Xsou-cremation~Noun'},
-{p1:/(灯)(?!X)(油)(?!X)/g,r1:'$1Xtou$2Xyu-kerosene,lamp oil~Noun'},
+{p1:/(灯)(?!X)(油)(?!X)/g,r1:'$1Xtou$2Xyu-kerosene~Noun'},
 {p1:/(灰)(?!X)(皿)(?!X)/g,r1:'$1Xhai$2Xzara-ashtray~Noun'},
 {p1:/(灰)(?!X)(色)(?!X)/g,r1:'$1Xhai$2Xiro-ash color,gray~Noun'},
 {p1:/(災)(?!X)(害)(?!X)/g,r1:'$1Xsai$2Xgai-disaster~Noun'},
@@ -8378,7 +8379,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-　時事通信が9～12日に実施した2月の世論調査によると、岸田内閣の支持率は前月比1．7ポイント減の16．9％となり、発足以来の過去最低を更新した。
+　政府が、ガソリンや灯油など燃油価格の高騰を抑えるための補助金について、期限を迎える4月末以降も継続する方向で検討していることが16日分かった。延長の期間は夏ごろまでを視野に調整する。食品をはじめ物価全般の上昇が続いており、家計支援を継続する必要があると判断。度重なる延長で国の財政負担が膨らんでいることから、支援を終える「出口」に向け、補助の段階的な縮小も併せて検討する。
 <p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>

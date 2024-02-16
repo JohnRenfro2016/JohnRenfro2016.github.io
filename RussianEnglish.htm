@@ -3787,7 +3787,7 @@ const replsB = [
 {p:/ (спокойн)/ig,r:'$1|calm~suff~'},
 {p:/ (packageн)/ig,r:'$1|ability~suff~'},
 {p:/ (спохват)/ig,r:'$1|remember suddenly~suff~'},
-{p:/ (спрашив)/ig,r:'$1|ask( about )~suff~'},
+{p:/ (спрашив)/ig,r:'$1|ask about~suff~'},
 {p:/ (спрыгив)/ig,r:'$1|jump off~suff~'},
 {p:/ (спутник)/ig,r:'$1|travelling companion~suff~'},
 {p:/ (сравнен)/ig,r:'$1|comparison~suff~'},
@@ -5031,6 +5031,7 @@ const replsB = [
 {p:/ (предан)/ig,r:'$1|legend~suff~'},
 {p:/ (предел)/ig,r:'$1|limit~suff~'},
 {p:/ (предок)/ig,r:'$1|ancestor~suff~'},
+{p:/ (ключев)/ig,r:'$1|key,crucial~suff~'},
 {p:/ (предст)/ig,r:'$1|appear(before)~suff~'},
 {p:/ (презир)/ig,r:'$1|despise~suff~'},
 {p:/ (прерыв)/ig,r:'$1|interrupt~suff~'},
@@ -7170,7 +7171,7 @@ const replsB = [
 {p:/ (спляс)/ig,r:'$1|dance~suff~'},
 {p:/ (спорт)/ig,r:'$1|sport~suff~'},
 {p:/ (справ)/ig,r:'$1|ask about,cope with~suff~'},
-{p:/ (спрос)/ig,r:'$1|ask( about )~suff~'},
+{p:/ (спрос)/ig,r:'$1|ask about~suff~'},
 {p:/ (спрят)/ig,r:'$1|hide~suff~'},
 {p:/ (спуск)/ig,r:'$1|lower~suff~'},
 {p:/ (спуст)/ig,r:'$1|lower~suff~'},
@@ -7180,7 +7181,9 @@ const replsB = [
 {p:/ (средн)/ig,r:'$1|middle~suff~'},
 {p:/ (срочн)/ig,r:'$1|urgent~suff~'},
 {p:/ (ссылк)/ig,r:'$1|internal exile(inside Russia)~suff~'},
-{p:/ (ставк)/ig,r:'$1|rate,(gambling),headquarters~suff~'},
+{p:/ (ставк)/ig,r:'$1|gambling rate,headquarters~suff~'},
+{p:/ (следу)/ig,r:'$1|following~suff~'},
+{p:/ (уровн)/ig,r:'$1|level~suff~'},
 {p:/ (стадо)/ig,r:'$1|herd~suff~'},
 {p:/ (станц)/ig,r:'$1|station~suff~'},
 {p:/ (старт)/ig,r:'$1|start(sport)~suff~'},
@@ -9354,7 +9357,7 @@ const replsB = [
 {p:/~suff~(ило )/ig,r:'~$1~it did'},
 {p:/~suff~(ить )/ig,r:'~$1~to do completely'},
 {p:/~suff~(ись )/ig,r:'~$1~passive,plural,past'},	
-{p:/~suff~(ого )/ig,r:'~$1~adje-masc-sing-geni or ~adje-masc-sing-anim accu or ~adje-neut-sing-geni'},
+{p:/~suff~(ого )/ig,r:'~$1~adje-masc-sing-geni or ~adje-masc-sing-anim -accu or ~adje-neut-sing-geni'},
 {p:/~suff~(ому )/ig,r:'~$1~adje-masc-dati or neut dati'},
 {p:/~suff~(ует )/ig,r:'~$1~he does'},
 {p:/~suff~(ыми )/ig,r:'~$1~adje-plur-inst'},
@@ -9368,7 +9371,7 @@ const replsB = [
 {p:/~suff~(ет )/ig,r:'~$1~he or she does ~verb-sing-present'},
 {p:/~suff~(ая )/ig,r:'~$1~adje-femi-nomi'},
 {p:/~suff~(ой )/ig,r:'~$1~adje-femi-geni or ~adje-femi-dati or ~adje-femi-inst'},
-{p:/~suff~(ую )/ig,r:'~$1~adje-femi-anim accu or inan accu'},
+{p:/~suff~(ую )/ig,r:'~$1~adje-femi-anim -accu or -inan -accu'},
 {p:/~suff~(ем )/ig,r:'~$1~noun-sing-inst'},
 {p:/~suff~(ен )/ig,r:'~$1~adje-masc-shor'},
 {p:/~suff~(ие )/ig,r:'~$1~noun-sing-nomi or -accu'},
@@ -9387,14 +9390,14 @@ const replsB = [
 {p:/~suff~(ов )/ig,r:'~$1~noun-plur-geni or ~noun-plur-accu'},
 {p:/~suff~(ут )/ig,r:'~$1|they will~verb-plur-futu'},
 {p:/~suff~(ют )/ig,r:'~$1|they are'},
-{p:/~suff~(ые )/ig,r:'~$1~adje-plur-nomi or inan accu'},
+{p:/~suff~(ые )/ig,r:'~$1~adje-plur-nomi or -inan -accu'},
 {p:/~suff~(ам )/ig,r:'~$1~noun-masc-plur-dati'},
 {p:/~suff~(ей )/ig,r:'~$1~noun-sing-inst'},
-{p:/~suff~(ый )/ig,r:'~$1~adje-masc-nomi or inan accu'},
+{p:/~suff~(ый )/ig,r:'~$1~adje-masc-nomi or -inan -accu'},
 {p:/~suff~(ым )/ig,r:'~$1~adje-plur-dati or -masc-inst or neut-inst'},
 {p:/~suff~(ок )/ig,r:'~$1~noun-plur-geni'},
 {p:/~suff~(ах )/ig,r:'~$1~noun-plur-prep'},
-{p:/~suff~(ых )/ig,r:'~$1~adje-plur-geni or ~adje-plur-anim accu or ~adje-plur-prep'},
+{p:/~suff~(ых )/ig,r:'~$1~adje-plur-geni or ~adje-plur-anim -accu or ~adje-plur-prep'},
 {p:/~suff~(ям )/ig,r:'~$1~noun-plur-dati'},
 {p:/~suff~(ят )/ig,r:'~$1~they do ~verb-plur-pres'},
 {p:/~suff~(ях )/ig,r:'~$1~noun-plur-prep'},
@@ -9437,6 +9440,8 @@ const replsB = [
 {p:/-(nomi)/ig,r:'<font color=indigo><font size=3px><br>$1native case(who or what acts)</font></font>'},
 {p:/-(dati)/ig,r:'<font color=indigo><font size=3px><br>$1ve case(to whom or what)</font></font>'},
 {p:/-(geni)/ig,r:'<font color=indigo><font size=3px><br>$1tive case(of whose or from what)</font></font>'},
+{p:/-(anim)/ig,r:'<font color=indigo><font size=3px><br>$1ate(living things)</font></font>'},
+{p:/-(inan)/ig,r:'<font color=indigo><font size=3px><br>$1imate(non-living things)</font></font>'},
 {p:/-(accu)/ig,r:'<font color=indigo><font size=3px><br>$1sative case(who or what is acted on)</font></font>'},
 {p:/-(prep)/ig,r:'<font color=green><font size=3px><br>$1ositional case(at,in,on)</font></font>'},
 {p:/-(inst)/ig,r:'<font color=green><font size=3px><br>$1rumental case(with who or with what)</font></font>'},
@@ -9466,7 +9471,11 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Пожар произошел у здания «Известия Холл» в центре Москвы, его площадь достигла 1500 кв. м. По данным Mash и Shot, от огня пострадали ночной клуб Lookin Rooms и бар «Резиденция», во внутреннем дворе обрушился металлический купол. При этом МЧС сообщило, что огонь охватил три неэксплуатируемых строения внутри двора. Из-за пожара ограничили движение по Тверской улице и перекрыли вход на станцию метро «Пушкинская». Сейчас возгорание ликвидировано, СМИ сообщили об одном пострадавшем.
+
+
+Центробанк РФ на заседании совета директоров в пятницу оставил ключевую ставку неизменной — на уровне 16% годовых. Это следует из пресс-релиза, опубликованного на сайте регулятора.
+
+«Текущее инфляционное давление снизилось по сравнению с осенними месяцами, но остается высоким. Внутренний спрос продолжает значительно опережать возможности расширения производства товаров и услуг. Судить об устойчивости складывающихся дезинфляционных тенденций преждевременно. Проводимая Банком России денежно-кредитная политика закрепит процесс дезинфляции в экономике», — отметил ЦБ.
 <p>
 <textarea cols="30" rows="6" onchange="a=&quot; &quot;+this.value+&quot; &quot;,translateC()"></textarea><br>
 <span id="translatedTextDisplay"></span>
