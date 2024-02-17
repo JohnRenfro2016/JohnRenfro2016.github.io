@@ -3414,6 +3414,7 @@ const replsB = [
 {p1:/(占)(?!X)(め)(?!X)/g,r1:'$1Xshi$2Xme-account for~IchidanVerb'},
 {p1:/(占)(?!X)(領)(?!X)/g,r1:'$1Xsen$2Xryou-occupation~Noun'},
 {p1:/(印)(?!X)(刷)(?!X)/g,r1:'$1Xin$2Xsatsu-printing~Noun'},
+{p1:/(主)(?!X)(力)(?!X)/g,r1:'$1Xsyu$2Xryoku-main force~Noun'},
 {p1:/(印)(?!X)(象)(?!X)/g,r1:'$1Xin$2Xsyou-impression~Noun'},
 {p1:/(印)(?!X)(鑑)(?!X)/g,r1:'$1Xin$2Xkan-personal seal~Noun'},
 {p1:/(危)(?!X)(機)(?!X)/g,r1:'$1Xki$2Xki-emergency~Noun'},
@@ -4065,6 +4066,7 @@ const replsB = [
 {p1:/(対)(?!X)(話)(?!X)/g,r1:'$1Xtai$2Xwa-dialogue~Noun'},
 {p1:/(対)(?!X)(談)(?!X)/g,r1:'$1Xtai$2Xdan-interview~Noun'},
 {p1:/(対)(?!X)(象)(?!X)/g,r1:'$1Xtai$2Xsyou-target~Noun'},
+{p1:/(発)(?!X)(射)(?!X)/g,r1:'$1Xhas$2Xsya-launch~Noun'},
 {p1:/(対)(?!X)(面)(?!X)/g,r1:'$1Xtai$2Xmen-face to face~Noun'},
 {p1:/(寿)(?!X)(司)(?!X)/g,r1:'$1Xsu$2Xshi-sushi~Noun'},
 {p1:/(寿)(?!X)(命)(?!X)/g,r1:'$1Xjyu$2Xmyou-life span~Noun'},
@@ -4073,7 +4075,7 @@ const replsB = [
 {p1:/(専)(?!X)(攻)(?!X)/g,r1:'$1Xsen$2Xkou-major,specialization~Noun'},
 {p1:/(専)(?!X)(用)(?!X)/g,r1:'$1Xsen$2Xyou-private use~Noun'},
 {p1:/(専)(?!X)(門)(?!X)/g,r1:'$1Xsen$2Xmon-specialty,profession~Noun'},
-{p1:/(射)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xsa-shin-e on$2X~SuVerb'},
+{p1:/(射)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xsa,shin,e-on$2X~SuVerb'},
 {p1:/(射)(?!X)(撃)(?!X)/g,r1:'$1Xsya$2Xgeki,firing~Noun'},
 {p1:/(射)(?!X)(殺)(?!X)/g,r1:'$1Xsya$2Xsatsu-shot dead~Noun'},
 {p1:/(将)(?!X)(来)(?!X)/g,r1:'$1Xsyou$2Xrai-future prospects~Noun'},
@@ -5077,6 +5079,7 @@ const replsB = [
 {p1:/(根)(?!X)(本)(?!X)/g,r1:'$1Xkon$2Xpon-basis~Noun'},
 {p1:/(根)(?!X)(絶)(?!X)/g,r1:'$1Xkon$2Xzetsu-eradication~Noun'},
 {p1:/(格)(?!X)(好)(?!X)/g,r1:'$1Xkak$2Xkou-shape,appearance~Noun'},
+{p1:/(燃)(?!X)(焼)(?!X)/g,r1:'$1Xnen$2Xsyou-combustion~Noun'},
 {p1:/(格)(?!X)(差)(?!X)/g,r1:'$1Xkaku$2Xsa-gap,disparity~Noun'},
 {p1:/(栽)(?!X)(培)(?!X)/g,r1:'$1Xsai$2Xbai-cultivation,raising~Noun'},
 {p1:/(案)(?!X)(内)(?!X)/g,r1:'$1Xan$2Xnai-guide information~Noun'},
@@ -7646,7 +7649,7 @@ const replsB = [
 {p1:/(庫)(?!X)/g,r1:'$1Xgo,kura-warehouse~Noun'},
 {p1:/(庭)(?!X)/g,r1:'$1Xniwa-garden,court~Noun'},
 {p1:/(康)(?!X)/g,r1:'$1Xyasu-peaceful~Noun'},
-{p1:/(式)(?!X)/g,r1:'$1Xshiki-ceremony~Noun'},
+{p1:/(式)(?!X)/g,r1:'$1Xshiki-ceremony,stage,step~Noun'},
 {p1:/(弟)(?!X)/g,r1:'$1Xotouto-younger brother~Noun'},
 {p1:/(強)(?!X)/g,r1:'$1Xkyou-counter for strength~Noun'},
 {p1:/(弾)(?!X)/g,r1:'$1Xtama,dan-shot~Noun'},
@@ -8379,7 +8382,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-　政府が、ガソリンや灯油など燃油価格の高騰を抑えるための補助金について、期限を迎える4月末以降も継続する方向で検討していることが16日分かった。延長の期間は夏ごろまでを視野に調整する。食品をはじめ物価全般の上昇が続いており、家計支援を継続する必要があると判断。度重なる延長で国の財政負担が膨らんでいることから、支援を終える「出口」に向け、補助の段階的な縮小も併せて検討する。
+宇宙航空研究開発機構（JAXA）は17日、新型主力ロケット「H3」2号機を種子島宇宙センター（鹿児島県）から発射した。JAXAによると、2段式のエンジンは順調に燃焼し、搭載した超小型衛星の分離に成功した。
 <p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>

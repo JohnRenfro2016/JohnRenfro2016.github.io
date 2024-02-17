@@ -2642,6 +2642,7 @@ const replsB = [
 {p:/ (блаженн)/ig,r:'$1|blessed~suff~'},
 {p:/ (блестящ)/ig,r:'$1|brilliantly~suff~'},
 {p:/ (близнец)/ig,r:'$1|twin~suff~'},
+{p:/ (близняш)/ig,r:'$1|twin~suff~'},
 {p:/ (блиндаж)/ig,r:'$1|dug out~suff~'},
 {p:/ (блокнот)/ig,r:'$1|notepad~suff~'},
 {p:/ (богатыр)/ig,r:'$1|bogatyr~suff~'},
@@ -3447,6 +3448,7 @@ const replsB = [
 {p:/ (поперёк)/ig,r:'$1|across~suff~'},
 {p:/ (пополам)/ig,r:'$1|in half~suff~'},
 {p:/ (поправк)/ig,r:'$1|correction~suff~'},
+{p:/ (балерин)/ig,r:'$1|ballerina~suff~'},
 {p:/ (поправл)/ig,r:'$1|correct~suff~'},
 {p:/ (поработ)/ig,r:'$1|work~suff~'},
 {p:/ (порадов)/ig,r:'$1|gladden~suff~'},
@@ -5514,6 +5516,7 @@ const replsB = [
 {p:/ (турнир)/ig,r:'$1|tournament~suff~'},
 {p:/ (тюремн)/ig,r:'$1|prison~suff~'},
 {p:/ (тяжел)/ig,r:'$1|serious~suff~'},
+{p:/ (сестер)/ig,r:'$1|sister~suff~'},
 {p:/ (тяжест)/ig,r:'$1|weight~suff~'},
 {p:/ (тётушк)/ig,r:'$1|auntie,(old)lady~suff~'},
 {p:/ (убыток)/ig,r:'$1|loss~suff~'},
@@ -5943,6 +5946,7 @@ const replsB = [
 {p:/ (высып)/ig,r:'$1|get enough sleep~suff~'},
 {p:/ (вытащ)/ig,r:'$1|drag out out(from)~suff~'},
 {p:/ (вытек)/ig,r:'$1|flow out~suff~'},
+{p:/ (родил)/ig,r:'$1|be born~suff~'},
 {p:/ (вытер)/ig,r:'$1|wipe~suff~'},
 {p:/ (вытеч)/ig,r:'$1|flow out~suff~'},
 {p:/ (вытир)/ig,r:'$1|wipe~suff~'},
@@ -7614,6 +7618,7 @@ const replsB = [
 {p:/ (враг)/ig,r:'$1|enemy~suff~'},
 {p:/ (враз)/ig,r:'$1|all together~suff~'},
 {p:/ (врач)/ig,r:'$1|doctor~suff~'},
+{p:/ (кино)/ig,r:'$1|film,theater~suff~'},
 {p:/ (вращ)/ig,r:'$1|revolve~suff~'},
 {p:/ (вред)/ig,r:'$1|harm~suff~'},
 {p:/ (врод)/ig,r:'$1|like~suff~'},
@@ -9197,6 +9202,7 @@ const replsB = [
 {p:/ (шар)/ig,r:'$1|to grope~suff~'},
 {p:/ (шат)/ig,r:'$1|sway about~suff~'},
 {p:/ (шеф)/ig,r:'$1|boss~suff~'},
+{p:/ (она)/ig,r:'$1|she-pron'},
 {p:/ (шея)/ig,r:'$1|neck~suff~'},
 {p:/ (шип)/ig,r:'$1|hiss~suff~'},
 {p:/ (шир)/ig,r:'$1|spread~suff~'},
@@ -9341,13 +9347,14 @@ const replsB = [
 {p:/~suff~(еств)/ig,r:'$1~verb to noun,+ings~suff~'},
 {p:/~suff~(ост)/ig,r:'$1~state of being in~suff~'},
 
+{p:/~suff~(ась )/ig,r:'~$1~verb-femi-past'},
 {p:/~suff~(ели )/ig,r:'~$1~nominative,plural'},
 {p:/~suff~(или )/ig,r:'~$1~they did ~verb-plur-past'},
 {p:/~suff~(ают )/ig,r:'~$1~they do ~verb-plur-pres'},
 {p:/~suff~(али )/ig,r:'~$1~they did ~verb-plur-past'},
 {p:/~suff~(ами )/ig,r:'~$1~noun-plur-inst'},
 {p:/~suff~(ает )/ig,r:'~$1~he does regularly'},
-{p:/~suff~(ала )/ig,r:'~$1~(verb past feminine)'},
+{p:/~suff~(ала )/ig,r:'~$1~verb-femi-past'},
 {p:/~suff~(ать )/ig,r:'~$1~to do regularly'},
 {p:/~suff~(уть )/ig,r:'~$1~to do ~verb-infi'},
 {p:/~suff~(ете )/ig,r:'~$1~you all do'},
@@ -9374,6 +9381,7 @@ const replsB = [
 {p:/~suff~(ую )/ig,r:'~$1~adje-femi-anim -accu or -inan -accu'},
 {p:/~suff~(ем )/ig,r:'~$1~noun-sing-inst'},
 {p:/~suff~(ен )/ig,r:'~$1~adje-masc-shor'},
+{p:/~suff~(ав )/ig,r:'~$1~verb-past-gerund'},
 {p:/~suff~(ие )/ig,r:'~$1~noun-sing-nomi or -accu'},
 {p:/~suff~(ии )/ig,r:'~$1~noun-sing-prep'},
 {p:/~suff~(ть )/ig,r:'~$1~infinitive ~verb-to do'},
@@ -9411,8 +9419,9 @@ const replsB = [
 {p:/~suff~(о )/ig,r:'~$1~adje-neut-shor'},
 {p:/~suff~(у )/ig,r:'~$1~noun-sing-dati'},
 {p:/~suff~(е )/ig,r:'~$1~noun-sing-prep'},
+{p:/~suff~(я )/ig,r:'~$1~noun-masc-sing-geni'},
 
-{p:/(ся )/ig,r:'~$1~was done ~verb-passive'},
+{p:/(ся )/ig,r:'~$1~was done ~verb-pass'},
 
 {p:/([а-яА-ЯёЁ]+)/ig,r:'<font color=#4e2b00>$1</font>'},
 
@@ -9427,6 +9436,7 @@ const replsB = [
 {p:/ ~(adve)/ig,r:'<font color=orange><font size=3px><br>$1rb</font></font>'},
 
 {p:/-(past)/ig,r:'<font color=red><font size=3px><br>$1 tense</font></font>'},
+{p:/-(pass)/ig,r:'<font color=red><font size=3px><br>$1ive tense</font></font>'},
 
 {p:/-(masc)/ig,r:'<font color=#0075e4><font size=3px><br>$1uline gender</font></font>'},
 {p:/-(femi)/ig,r:'<font color=#0068d7><font size=3px><br>$1nine gender</font></font>'},
@@ -9471,11 +9481,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-
-
-Центробанк РФ на заседании совета директоров в пятницу оставил ключевую ставку неизменной — на уровне 16% годовых. Это следует из пресс-релиза, опубликованного на сайте регулятора.
-
-«Текущее инфляционное давление снизилось по сравнению с осенними месяцами, но остается высоким. Внутренний спрос продолжает значительно опережать возможности расширения производства товаров и услуг. Судить об устойчивости складывающихся дезинфляционных тенденций преждевременно. Проводимая Банком России денежно-кредитная политика закрепит процесс дезинфляции в экономике», — отметил ЦБ.
+Американская актриса Элизабет Олсен родилась 16 февраля 1989 года в пригороде Лос-Анджелеса в семье банкира и бывшей балерины. Она начала сниматься в кино в раннем возрасте, последовав примеру старших сестер
 <p>
 <textarea cols="30" rows="6" onchange="a=&quot; &quot;+this.value+&quot; &quot;,translateC()"></textarea><br>
 <span id="translatedTextDisplay"></span>
