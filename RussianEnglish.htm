@@ -897,6 +897,7 @@ const replsB = [
 {p:/ (промежуток)/ig,r:'$1|interval~suff~'},
 {p:/ (королевств)/ig,r:'$1|kingdom~suff~'},
 {p:/ (промышленн)/ig,r:'$1|industry~suff~'},
+{p:/ (Узбекистан)/ig,r:'$1|Uzbekistan~suff~'},
 {p:/ (проповедов)/ig,r:'$1|preach~suff~'},
 {p:/ (просматрив)/ig,r:'$1|look over through~suff~'},
 {p:/ (противореч)/ig,r:'$1|contradict( or )~suff~'},
@@ -1479,6 +1480,7 @@ const replsB = [
 {p:/ (прекращен)/ig,r:'$1|stopping~suff~'},
 {p:/ (пренебрег)/ig,r:'$1|scorn( or )~suff~'},
 {p:/ (пренебреч)/ig,r:'$1|scorn( or )~suff~'},
+{p:/ (Петербург)/ig,r:'$1|Saint Petersburg~suff~'},
 {p:/ (преодолев)/ig,r:'$1|overcome~suff~'},
 {p:/ (преодолен)/ig,r:'$1|overcoming~suff~'},
 {p:/ (препятств)/ig,r:'$1|obstacle~suff~'},
@@ -2974,6 +2976,7 @@ const replsB = [
 {p:/ (кладбищ)/ig,r:'$1|cemetery~suff~'},
 {p:/ (классов)/ig,r:'$1|class(political)~suff~'},
 {p:/ (клетчат)/ig,r:'$1|checked~suff~'},
+{p:/ (уроженц)/ig,r:'$1|native~suff~'},
 {p:/ (кое-как)/ig,r:'$1|anyhow or other~suff~'},
 {p:/ (кое-кто)/ig,r:'$1|somebody~suff~'},
 {p:/ (кое-что)/ig,r:'$1|something or two~suff~'},
@@ -3246,6 +3249,7 @@ const replsB = [
 {p:/ (осужд)/ig,r:'$1|condemnation~suff~'},
 {p:/ (отблеск)/ig,r:'$1|reflection~suff~'},
 {p:/ (отвалив)/ig,r:'$1|push away(sth heavy),cast off(boat)~suff~'},
+{p:/ (покушен)/ig,r:'$1|attempted~suff~'},
 {p:/ (отвезти)/ig,r:'$1|transport away~suff~'},
 {p:/ (отвергн)/ig,r:'$1|reject~suff~'},
 {p:/ (отверст)/ig,r:'$1|opening~suff~'},
@@ -6852,7 +6856,7 @@ const replsB = [
 {p:/ (покуд)/ig,r:'$1|while~suff~'},
 {p:/ (покуп)/ig,r:'$1|buy~suff~'},
 {p:/ (покур)/ig,r:'$1|smoke~suff~'},
-{p:/ (покуш)/ig,r:'$1|eat(polite usage)~suff~'},
+{p:/ (покуш)/ig,r:'$1|eat~suff~'},
 {p:/ (полаг)/ig,r:'$1|suppose~suff~'},
 {p:/ (полад)/ig,r:'$1|get on with~suff~'},
 {p:/ (полаз)/ig,r:'$1|climb~suff~'},
@@ -7210,7 +7214,7 @@ const replsB = [
 {p:/ (страж)/ig,r:'$1|custody~suff~'},
 {p:/ (стран)/ig,r:'$1|country~suff~'},
 {p:/ (страх)/ig,r:'$1|fear~suff~'},
-{p:/ (стрел)/ig,r:'$1|( +a or +d)to shoot at~suff~'},
+{p:/ (стрел)/ig,r:'$1|to shoot at~suff~'},
 {p:/ (стрем)/ig,r:'$1strive for~suff~'},
 {p:/ (стрич)/ig,r:'$1|cut~suff~'},
 {p:/ (строг)/ig,r:'$1|strictness~suff~'},
@@ -9436,6 +9440,7 @@ const replsB = [
 {p:/ ~(adve)/ig,r:'<font color=orange><font size=3px><br>$1rb</font></font>'},
 
 {p:/-(past)/ig,r:'<font color=red><font size=3px><br>$1 tense</font></font>'},
+{p:/-(futu)/ig,r:'<font color=red><font size=3px><br>$1re tense</font></font>'},
 {p:/-(pass)/ig,r:'<font color=red><font size=3px><br>$1ive tense</font></font>'},
 
 {p:/-(masc)/ig,r:'<font color=#0075e4><font size=3px><br>$1uline gender</font></font>'},
@@ -9481,7 +9486,8 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Russian Language</div>
 Cut and paste this Russian text into text area below.
 <p>
-Американская актриса Элизабет Олсен родилась 16 февраля 1989 года в пригороде Лос-Анджелеса в семье банкира и бывшей балерины. Она начала сниматься в кино в раннем возрасте, последовав примеру старших сестер
+В Петербурге у здания школы тяжело ранили 42-летнего уроженца Узбекистана, который привез на занятия двух детей своего начальника-адвоката. Мужчина подъехал на черной Toyota Camry и провожал несовершеннолетних в школу, но в него выстрелили в упор из пистолета Макарова. Целью стрелявшего, вероятно, мог быть отец учеников — адвокат Виктор Патрушев. Следователи возбудили дело о покушении на убийство. Преступника ищут.
+
 <p>
 <textarea cols="30" rows="6" onchange="a=&quot; &quot;+this.value+&quot; &quot;,translateC()"></textarea><br>
 <span id="translatedTextDisplay"></span>

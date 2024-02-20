@@ -323,6 +323,7 @@ const replsB = [
 {p1:/(騒)(?!X)(々)(?!X)(し)(?!X)([いくかさ])(?!X)/g,r1:'$1Xsouzou$2Xsh$3Xi-noisy,rowdy$4X~IAdjective~Noun'},
 {p1:/(食)(?!X)(い)(?!X)(込)(?!X)([まみむめもん])(?!X)/g,r1:'$1Xku$2Xi$3Xko-cut into$4X~MuVerb'},
 {p1:/(食)(?!X)(い)(?!X)(止)(?!X)(め)(?!X)/g,r1:'$1Xku$2Xi$3Xto$4Xme-stem~IchidanVerb'},
+{p1:/(気)(?!X)(を)(?!X)(つ)(?!X)(け)(?!X)/g,r1:'$1Xki$2Xo$3Xtsu$4Xke-be careful to do~IchidanVerb'},
 {p1:/(飛)(?!X)(び)(?!X)(込)(?!X)([まみむめもん])(?!X)/g,r1:'$1Xtob$2Xik$3Xo-dive into$4X~MuVerb'},
 {p1:/(飛)(?!X)(び)(?!X)(出)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xtob$2Xid$3Xa-fly out,dash out$4X~SuVerb'},
 {p1:/(隣)(?!X)(り)(?!X)(合)(?!X)([わいうえおっ])(?!X)/g,r1:'$1Xton$2Xar$3Xia-adjoin,be next door to each other$4X~UVerb'},
@@ -642,7 +643,7 @@ const replsB = [
 {p1:/(ぽ)(?!X)(か)(?!X)(ぽ)(?!X)(か)(?!X)/g,r1:'$1X$2Xpl$3Xe$4Xasantly warm~Noun'},
 {p1:/(ぼ)(?!X)(ん)(?!X)(や)(?!X)(り)(?!X)/g,r1:'$1X$2Xva$3Xg$4Xuely-absent-mindedly~Noun'},
 {p1:/(ほ)(?!X)(ほ)(?!X)(え)(?!X)([まみむめもん])(?!X)/g,r1:'$1Xho$2Xhoe$3X-smile$4X~MuVerb'},
-{p1:/(ほ)(?!X)(と)(?!X)(ん)(?!X)(ど)(?!X)/g,r1:'$1X$2Xho$3Xt$4Xondo-mostly,hardly~Noun'},
+{p1:/(ほ)(?!X)(と)(?!X)(ん)(?!X)(ど)(?!X)/g,r1:'$1Xho$2Xto$3Xn$4Xdo-mostly,hardly~Noun'},
 {p1:/(ぺ)(?!X)(ら)(?!X)(ぺ)(?!X)(ら)(?!X)/g,r1:'$1X$2Xfl$3Xu$4Xently~Noun'},
 {p1:/(ぺ)(?!X)(ら)(?!X)(ぺ)(?!X)(ら)(?!X)/g,r1:'$1X$2Xfl$3Xo$4Xppy-flimsy~Noun'},
 {p1:/(ぺ)(?!X)(こ)(?!X)(ぺ)(?!X)(こ)(?!X)/g,r1:'$1X$2Xhu$3Xn$4Xgry-starving~Noun'},
@@ -1442,7 +1443,7 @@ const replsB = [
 {p1:/(枠)(?!X)(組)(?!X)(み)(?!X)/g,r1:'$1Xwaku$2Xgu$3Xmi-framework~Noun'},
 {p1:/(果)(?!X)(た)(?!X)([さしすせそ])(?!X)/g,r1:'$1Xha$2Xta-accomplish$3X~SuVerb'},
 {p1:/(東)(?!X)(海)(?!X)(道)(?!X)/g,r1:'$1Xtou$2Xkai$3Xdo-Highway Japan~Noun'},
-{p1:/(東)(?!X)(京)(?!X)(都)(?!X)/g,r1:'$1Xtou$2Xkyou$3Xto-Tokyo metropolitan area~Noun'},
+{p1:/(急)(?!X)(降)(?!X)(下)(?!X)/g,r1:'$1Xkyuu$2Xkou$3Xka-sudden drop~Noun'},
 {p1:/(来)(?!X)(園)(?!X)(者)(?!X)/g,r1:'$1Xrai$2Xen$3Xsya-park visitor~Noun'},
 {p1:/(本)(?!X)(格)(?!X)(的)(?!X)/g,r1:'$1Xhon$2Xkaku$3Xteki-full-scale~Noun'},
 {p1:/(本)(?!X)(格)(?!X)(化)(?!X)/g,r1:'$1Xhon$2Xkaku$3Xka-regularization~Noun'},
@@ -2725,7 +2726,6 @@ const replsB = [
 {p1:/(交)(?!X)(番)(?!X)/g,r1:'$1Xkou$2Xban-police box~Noun'},
 {p1:/(交)(?!X)(通)(?!X)/g,r1:'$1Xkou$2Xtsuu-traffic~Noun'},
 {p1:/(交)(?!X)(際)(?!X)/g,r1:'$1Xkou$2Xsai-association,friendship~Noun'},
-{p1:/(京)(?!X)(都)(?!X)/g,r1:'$1Xkyou$2Xto-Japan~Noun'},
 {p1:/(人)(?!X)(々)(?!X)/g,r1:'$1Xhito$2Xbito-people~Noun'},
 {p1:/(人)(?!X)(事)(?!X)/g,r1:'$1Xjin$2Xji-human affairs~Noun'},
 {p1:/(人)(?!X)(出)(?!X)/g,r1:'$1Xhito$2Xde-turnout,crowd~Noun'},
@@ -2740,6 +2740,7 @@ const replsB = [
 {p1:/(人)(?!X)(数)(?!X)/g,r1:'$1Xnin$2Xzuu-number of people~Noun'},
 {p1:/(献)(?!X)(身)(?!X)/g,r1:'$1Xken$2Xshin-devotion~Noun'},
 {p1:/(人)(?!X)(材)(?!X)/g,r1:'$1Xjin$2Xzai-personnel~Noun'},
+{p1:/(寒)(?!X)(暖)(?!X)/g,r1:'$1Xkan$2Xdan-temperature in degrees~Noun'},
 {p1:/(人)(?!X)(柄)(?!X)/g,r1:'$1Xhito$2Xgara-character,personality~Noun'},
 {p1:/(人)(?!X)(格)(?!X)/g,r1:'$1Xjin$2Xkaku-character,personality~Noun'},
 {p1:/(人)(?!X)(権)(?!X)/g,r1:'$1Xjin$2Xken-human rights~Noun'},
@@ -4733,6 +4734,7 @@ const replsB = [
 {p1:/(放)(?!X)(出)(?!X)/g,r1:'$1Xhou$2Xsyutsu-release~Noun'},
 {p1:/(放)(?!X)(射)(?!X)/g,r1:'$1Xhou$2Xsya-radiation~Noun'},
 {p1:/(放)(?!X)(棄)(?!X)/g,r1:'$1Xhou$2Xki-abandonment~Noun'},
+{p1:/(都)(?!X)(心)(?!X)/g,r1:'$1Xto$2Xshin-city center~Noun'},
 {p1:/(放)(?!X)(火)(?!X)/g,r1:'$1Xhou$2Xka-arson~Noun'},
 {p1:/(放)(?!X)(置)(?!X)/g,r1:'$1Xhou$2Xchi-left~Noun'},
 {p1:/(放)(?!X)(送)(?!X)/g,r1:'$1Xhou$2Xsou-broadcast~Noun'},
@@ -8382,7 +8384,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-宇宙航空研究開発機構（JAXA）は17日、新型主力ロケット「H3」2号機を種子島宇宙センター（鹿児島県）から発射した。JAXAによると、2段式のエンジンは順調に燃焼し、搭載した超小型衛星の分離に成功した。
+21日(水)は前日の暖かさが嘘のように気温が急降下しそうです。東京都心の気温は朝からほとんど上がらず、最高気温は9℃と前日より15℃も低くなるでしょう。激しい寒暖差で体調を崩さないよう、服装選びにお気をつけください。
 <p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
