@@ -196,9 +196,6 @@ const replsB = [
 {p1:/(１|1)(?!X)(月)(?!X)/g,r1:'$1Xichi$2Xgatsu-January~Noun'},
 {p1:/(１)(?!X)(つ)(?!X)/g,r1:'$1Xhito$2Xtsu-one thing~Noun'},
 
-{p1:/(0|０)/g,r1:'$1rei-zero~often unspoken'},
-{p1:/([0-9]|[０-９])/g,r1:'<br>$1 '},
-
 {p1:/(せ)(?!X)(ざ)(?!X)(る)(?!X)(を)(?!X)(え)(?!X)(な)(?!X)(い)(?!X)/g,r1:'$1Xse$2Xza$3Xru$4Xo$5Xe$6Xna$7Xi-can\'t help but do~Noun'},
 
 {p1:/(プ)(?!X)(ロ)(?!X)(デ)(?!X)(ュ)(?!X)(ー)(?!X)(サ)(?!X)(ー)(?!X)/g,r1:'$1Xpu$2Xro$3Xde$4Xyu$5Xu$6Xsa$7Xa-producer~Noun'},
@@ -3380,6 +3377,7 @@ const replsB = [
 {p1:/(十)(?!X)(分)(?!X)/g,r1:'$1Xjyuu$2X-bun,enough~Noun'},
 {p1:/(十)(?!X)(日)(?!X)/g,r1:'$1Xtoo$2Xka-ten days,10th of the month~Noun'},
 {p1:/(午)(?!X)(前)(?!X)/g,r1:'$1Xgo$2Xzen-in morning~Noun'},
+{p1:/(婚)(?!X)(姻)(?!X)/g,r1:'$1Xkon$2Xin-marriage~Noun'},
 {p1:/(午)(?!X)(後)(?!X)/g,r1:'$1Xgo$2Xgo-in the afternoon~Noun'},
 {p1:/(半)(?!X)(ば)(?!X)/g,r1:'$1Xna$2Xkaba-middle,halfway~Noun'},
 {p1:/(半)(?!X)(分)(?!X)/g,r1:'$1Xhan$2Xbun-half~Noun'},
@@ -3816,6 +3814,7 @@ const replsB = [
 {p1:/(多)(?!X)(分)(?!X)/g,r1:'$1Xta$2Xbun-probably,perhaps~Noun'},
 {p1:/(多)(?!X)(子)(?!X)/g,r1:'$1Xta$2Xshi-many children~Noun'},
 {p1:/(多)(?!X)(少)(?!X)/g,r1:'$1Xta$2Xsyou-a little,somewhat~Noun'},
+{p1:/(最)(?!X)(少)(?!X)/g,r1:'$1Xsai$2Xsyou-the least~Noun'},
 {p1:/(多)(?!X)(忙)(?!X)/g,r1:'$1Xta$2Xbou-very busy~Noun'},
 {p1:/(多)(?!X)(数)(?!X)/g,r1:'$1Xta$2Xsuu-many~Noun'},
 {p1:/(多)(?!X)(発)(?!X)/g,r1:'$1Xta$2Xhatsu-repeated occurences~Noun'},
@@ -7360,7 +7359,7 @@ const replsB = [
 {p1:/(%|％)(?!X)/g,r1:'$1Xpa-cento,percent~Noun'},
 {p1:/(2|２|二)(?!X)/g,r1:'$1Xni-two~Noun'},
 {p1:/(5|５|五)(?!X)/g,r1:'$1Xgo-five~Noun'},
-{p1:/(7|７|七)(?!X)/g,r1:'$1Xnana,shichi,seven~Noun'},
+{p1:/([7７七])(?!X)/g,r1:'$1Xnana,shichi,seven~Noun'},
 {p1:/(9|９|九)(?!X)/g,r1:'$1Xkyuu-nine~Noun'},
 {p1:/(?![ァ-ヾ]+)(カ)(?!X|[ァ-ヾ]+)/g,r1:'$2Xka-counter for things~Noun'},
 {p1:/(き)(?!X)/g,r1:'$1Xki-come,start to do~Verb'},
@@ -7420,7 +7419,7 @@ const replsB = [
 {p1:/(俺)(?!X)/g,r1:'$1Xore-I,me~Noun'},
 {p1:/(倉)(?!X)/g,r1:'$1Xkura-warehouse~Noun'},
 {p1:/(倍)(?!X)/g,r1:'$1Xbai,bei,double~Noun'},
-{p1:/(値)(?!X)/g,r1:'$1Xne,atai-value~Noun'},
+{p1:/(値)(?!X)/g,r1:'$1Xchi,ne,atai-value~Noun'},
 {p1:/(健)(?!X)/g,r1:'$1Xken-health,strength~Noun'},
 {p1:/(側)(?!X)/g,r1:'$1Xkawa,gawa,side~Noun'},
 {p1:/(偽)(?!X)/g,r1:'$1Xnise,itsuwa-fake~IchidanVerb'},
@@ -7787,7 +7786,7 @@ const replsB = [
 {p1:/(母)(?!X)/g,r1:'$1Xhaha-mother~Noun'},
 {p1:/(毎)(?!X)/g,r1:'$1Xmai,every~Noun'},
 {p1:/(毒)(?!X)/g,r1:'$1Xdoku-poison,harm~Noun'},
-{p1:/(比)(?!X)/g,r1:'$1XHi-compare~Noun'},
+{p1:/(比)(?!X)/g,r1:'$1Xhi-compare~Noun'},
 {p1:/(毛)(?!X)/g,r1:'$1Xke-hair,wool~Noun'},
 {p1:/(氏)(?!X)/g,r1:'$1Xshi-Mister,Ms,Mrs~Noun'},
 {p1:/(気)(?!X)/g,r1:'$1Xki-spirit,energy,mood~Noun'},
@@ -8363,6 +8362,8 @@ const replsB = [
 {p1:/(こ)(?!X)(と)(?!X)/g,r1:'$1Xko$2Xto-matter,thing~Noun'},
 {p1:/(々)(?!X)/g,r1:'$1Xka-repeats the first kanji~Noun'},
 
+{p1:/([0-9]|[０-９])/g,r1:'<br>$1 '},
+
 {p1:/X/g,r1:''},
 
 {p1:/([一-龠ぁ-ゔァ-ヴー々〆〤0-9０−９]+)/g,r1:'<br><font color=#4e2b00>$1</font>'},
@@ -8385,7 +8386,7 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-26日午後3時24分頃、愛媛県南予を震源とするマグニチュード5.1の地震が発生し、広島県、愛媛県で最大震度4を観測しました。この地震による津波の心配はありません。
+厚生労働省は２７日、２０２３年の国内の出生数（速報値）が過去最少の７５万８６３１人だったと発表した。前年比５・１％減で、過去最少の更新は８年連続となる。婚姻件数は同５・９％減の４８万９２８１組で、９０年ぶりに５０万組を下回った。婚姻数の増減は数年遅れて出生数に反映されることが多く、少子化は今後も進行すると予想される。
 <p> 
 <textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
