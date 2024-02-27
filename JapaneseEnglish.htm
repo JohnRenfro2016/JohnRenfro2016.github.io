@@ -8356,17 +8356,15 @@ const replsB = [
 {p1:/(Adverb)/g,r1:'$1 '},
 {p1:/(postposition)/g,r1:'$1 '},
 {p1:/(\.)/g,r1:'$1ten-decimal '},
-{p1:/([\（\】【」』「『。、\(\）\・])(?!X)/g,r1:'<br>$1'},
+{p1:/([\（\】【」』「『。、\(\）\・])(?!X)/g,r1:'$1'},
 
 {p1:/(ま)(?!X)(で)(?!X)/g,r1:'$1Xma$2Xde-up to~postposition~Noun'},
 {p1:/(こ)(?!X)(と)(?!X)/g,r1:'$1Xko$2Xto-matter,thing~Noun'},
 {p1:/(々)(?!X)/g,r1:'$1Xka-repeats the first kanji~Noun'},
 
-{p1:/([0-9]|[０-９])/g,r1:'<br>$1 '},
-
 {p1:/X/g,r1:''},
 
-{p1:/([一-龠ぁ-ゔァ-ヴー々〆〤0-9０−９]+)/g,r1:'<br><font color=#4e2b00>$1</font>'},
+{p1:/([一-龠ぁ-ゔァ-ヴー々〆〤0-9０−９]+)/g,r1:'<font color=#4e2b00>$1</font>'},
 
 ];
 
