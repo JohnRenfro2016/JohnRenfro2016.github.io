@@ -1498,6 +1498,7 @@ const replsB = [
 {p1:/(子)(?!X)(会)(?!X)(社)(?!X)/g,r1:'$1Xko$2Xgai$3Xsya-subsidiary~Noun'},
 {p1:/(存)(?!X)(じ)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xzon$2Xji-think,know$3X~RuVerb'},
 {p1:/(宇)(?!X)(宙)(?!X)(人)(?!X)/g,r1:'$1Xu$2Xcyuu$3Xjin,alien~Noun'},
+{p1:/(二)(?!X)(輪)(?!X)(車)(?!X)/g,r1:'$1Xni$2Xrin$3Xsya-two wheeled vehicle~Noun'},
 {p1:/(安)(?!X)(っ)(?!X)(ぽ)(?!X)([いくかさ])(?!X)/g,r1:'$1Xyas$2X$3Xuっぽ,cheap,tacky$4X~IAdjective~Noun'},
 {p1:/(安)(?!X)(売)(?!X)(り)(?!X)/g,r1:'$1Xyasu$2Xur$3Xi-sale~Noun'},
 {p1:/(定)(?!X)(ま)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xsada$2Xma-be settled$3X~RuVerb'},
@@ -2356,7 +2357,7 @@ const replsB = [
 {p1:/(あ)(?!X)(あ)(?!X)/g,r1:'$1X$2Xaa-that kind of~Noun'},
 {p1:/(あ)(?!X)(す)(?!X)/g,r1:'$1Xasu$2X-morning~Noun'},
 {p1:/(あ)(?!X)(れ)(?!X)/g,r1:'$1Xare$2X-that over there~Noun'},
-{p1:/(う)(?!X)(ち)(?!X)/g,r1:'$1Xu$2Xchi-house~Noun'},
+{p1:/(う)(?!X)(ち)(?!X)/g,r1:'$1Xu$2Xchi-house or ones own~Noun'},
 {p1:/(う)(?!X)(つ)(?!X)/g,r1:'$1Xu$2Xtsu-depression~Noun'},
 {p1:/(え)(?!X)(び)(?!X)/g,r1:'$1X$2Xbi-lobster,shrimp~Noun'},
 {p1:/(お)(?!X)(じ)(?!X)/g,r1:'$1Xo$2Xji-uncle~Noun'},
@@ -4981,7 +4982,7 @@ const replsB = [
 {p1:/(最)(?!X)(適)(?!X)/g,r1:'$1Xsai$2Xteki-optimum~Noun'},
 {p1:/(最)(?!X)(長)(?!X)/g,r1:'$1Xsai$2Xcyou-longest,oldest~Noun'},
 {p1:/(最)(?!X)(高)(?!X)/g,r1:'$1Xsai$2Xkou-maximum~Noun'},
-{p1:/(月)(?!X)(内)(?!X)/g,r1:'$1Xgetsu$2Xnai-within month~Noun'},
+{p1:/(月)(?!X)(内)(?!X)/g,r1:'$1Xgetsu$2Xnai-within the month~Noun'},
 {p1:/(月)(?!X)(刊)(?!X)/g,r1:'$1Xgek$2Xkan-published monthly~Noun'},
 {p1:/(月)(?!X)(夜)(?!X)/g,r1:'$1Xtsu$2Xkiyo-moonlit night~Noun'},
 {p1:/(月)(?!X)(日)(?!X)/g,r1:'$1Xgap$2Xpi-date~Noun'},
@@ -5947,7 +5948,10 @@ const replsB = [
 {p1:/(禁)(?!X)(輸)(?!X)/g,r1:'$1Xkin$2X-yu,embargo~Noun'},
 {p1:/(禁)(?!X)(酒)(?!X)/g,r1:'$1Xkin$2Xsyu-abstention from alcohol~Noun'},
 {p1:/(福)(?!X)(祉)(?!X)/g,r1:'$1Xfuku$2Xshi-welfare~Noun'},
+{p1:/(車)(?!X)(種)(?!X)/g,r1:'$1Xsya$2Xsyu-car model~Noun'},
 {p1:/(私)(?!X)(用)(?!X)/g,r1:'$1Xshi$2Xyou-private business,private use~Noun'},
+{p1:/(型)(?!X)(式)(?!X)/g,r1:'$1Xkei$2Xshiki-model~Noun'},
+{p1:/(量)(?!X)(産)(?!X)/g,r1:'$1Xryou$2Xsan-mass production~Noun'},
 {p1:/(私)(?!X)(立)(?!X)/g,r1:'$1Xshi$2Xritsu-private~Noun'},
 {p1:/(私)(?!X)(費)(?!X)/g,r1:'$1Xshi$2Xhi-private expense~Noun'},
 {p1:/(私)(?!X)(鉄)(?!X)/g,r1:'$1Xshi$2Xtetsu-private railway~Noun'},
@@ -8412,9 +8416,9 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 <div class="HeaderStyle">Studying Japanese Language</div>
 Cut and paste this Japanese text into text area below.
 <p> 
-離婚後も父母双方が子どもの親権を持つ「共同親権」の導入を柱とする民法などの改正案は１６日、参院法務委員会で自民、公明、立憲民主、日本維新の会、国民民主各党などの賛成多数で可決された。１７日の参院本会議で可決・成立する見通しだ。
+自動車・二輪車メーカー大手５社による量産に必要な認証「型式指定」を巡る不正で、国土交通省が不正のあった３８車種のうち、不正が判明するまで生産・出荷していた６車種の安全性などの試験を月内に完了する方針を固めたことがわかった。経済への影響を最小限に抑えるとともに、早期にユーザーの安全・安心を確保する必要があると判断した。
 <p>
-<textarea cols="35" rows="6" onchange="a=this.value;translateB()"></textarea>
+<textarea cols="30" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
 </p><hr>
 <h3>Memorizing Kanji</h3>
