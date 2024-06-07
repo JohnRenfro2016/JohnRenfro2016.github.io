@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>John T.'s Journal</title>
+<title>The Japanese to English Reader</title>
 <link rel="icon" type="image/png" href="MyFavicon.png">
 <style>
 
@@ -17,21 +17,28 @@ a:hover,
 a:active,
 a:visited {color:#ffffff}
 
-body
+body, textarea
 {
 background-image:linear-gradient(180deg,#99aaa2,#6c777a,#4f5457);
 border-radius:25px;
 color:#ffffff;
-font-size:30px;
+font-size:25px;
 margin-left:5%;
-margin-top:5%;
+margin-top:15%;
+text-align: left;
 width:500px;
 word-wrap:break-word;
 }
 
-.ComicTitle
-{
-color:#ffffff;
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
 }
 
 .HeaderStyle
@@ -43,58 +50,24 @@ margin-bottom:20px;
 text-shadow:0px -2px 4px #3179c6,0px -2px 10px #cc9029,0px -10px 20px #F90,0px -20px 40px #cf7b31;
 }
 
-.paper {
- background:#fff;
- color:#000000;
- padding:30px;
- position:relative;
-}
-
-.paper,
-.paper::before,
-.paper::after {
- /* Styles to distinguish sheets from one another */
- box-shadow:1px 1px 1px rgba(0,0,0,0.25);
- border:1px solid #bbb;
-}
-
-.paper::before,
-.paper::after {
- content:"";
- position:absolute;
- height:95%;
- width:99%;
- background-color:#eee;
-}
-
-.paper::before {
- right:15px;
- top:0;
- transform:rotate(-1deg);
- z-index:-1;
-}
-
-.paper::after {
- top:5px;
- right:-5px;
- transform:rotate(1deg);
- z-index:-2;
-}
-
-.TheStripe
+.HeaderStyle2
 {
-background:repeating-linear-gradient(45deg,transparent,transparent 10px,#000000 10px,#000000 20px),linear-gradient(to bottom,#f5c103,#000000);
-font-size:30px;
+border-color:black;
+border-style:dotted;
+border-width:2px;
+color:#f6d356;
+font-family:"SnackerComic";
+font-size:35px;
+margin-bottom:20px;
+text-shadow:0px -2px 4px #e17a57,0px -2px 10px #c74b4b,0px -10px 20px  #a13b3b,0px -20px 40px #852b2b;
 }
 
-input,textarea
-{
-background-color:#000000;
-border-radius:25px;
-color:inherit;
-font-size:30px;
-text-shadow:2px 2px 4px #3d2526;
-word-wrap:break-word;
+.content-box {
+  column-count: 2;
+  column-rule: dotted 2px #852b2b;
+  font-size: 50%;
+  padding: 0.3em;
+text-shadow:0px -2px 4px #e17a57,0px -2px 10px #c74b4b,0px -10px 20px  #a13b3b,0px -20px 40px #852b2b;
 }
 
 </style>
@@ -1297,6 +1270,7 @@ const replsB = [
 {p1:/(公)(?!X)(明)(?!X)(党)(?!X)/g,r1:'$1Xkou$2Xmei$3Xtou-The Koumeito Party of Japan~Noun'},
 {p1:/(公)(?!X)(聴)(?!X)(会)(?!X)/g,r1:'$1Xkou$2Xcyou$3Xkai-public hearing~Noun'},
 {p1:/(共)(?!X)(和)(?!X)(党)(?!X)/g,r1:'$1Xkyou$2Xwa$3Xtou-Republican Party~Noun'},
+{p1:/(法)(?!X)(整)(?!X)(備)(?!X)/g,r1:'$1Xhou$2Xsei$3Xbi-legislation~Noun'},
 {p1:/(共)(?!X)(和)(?!X)(国)(?!X)/g,r1:'$1Xkyou$2Xwa$3Xkoku-republic~Noun'},
 {p1:/(共)(?!X)(通)(?!X)(語)(?!X)/g,r1:'$1Xkyou$2Xtsuu$3Xgo-common language,lingua franca~Noun'},
 {p1:/(共|と)(?!X)(も)(?!X)(に)(?!X)/g,r1:'$1Xto$2Xmo$3X ni-jointly~Noun'},
@@ -5556,6 +5530,7 @@ const replsB = [
 {p1:/(照)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xte-shine$2X~RuVerb'},
 {p1:/(照)(?!X)(合)(?!X)/g,r1:'$1Xsyou$2Xgou-collation,comparison~Noun'},
 {p1:/(照)(?!X)(明)(?!X)/g,r1:'$1Xsyou$2Xmei-lighting~Noun'},
+{p1:/(白)(?!X)(書)(?!X)/g,r1:'$1Xhaku$2Xsyo-white paper~Noun'},
 {p1:/(煮)(?!X)([らりるれろっ])(?!X)/g,r1:'$1Xni-boil,cook$2X~RuVerb'},
 {p1:/(熟)(?!X)(慮)(?!X)/g,r1:'$1Xjyuku$2Xryo-deliberation~Noun'},
 {p1:/(熱)(?!X)([いくかさ])(?!X)/g,r1:'$1Xatsu-hot (things,touch)$2X~IAdjective~Noun'},
@@ -8413,14 +8388,17 @@ document.getElementById("translatedTextDisplay").innerHTML=a;
 </head>
 <body>
  
-<div class="HeaderStyle">Studying Japanese Language</div>
+<div class="HeaderStyle2">Studying Japanese Language</div>
+<span class="HeaderStyle">
 Cut and paste this Japanese text into the text area below.
-<p> 
-自動車・二輪車メーカー大手５社による量産に必要な認証「型式指定」を巡る不正で、国土交通省が不正のあった３８車種のうち、不正が判明するまで生産・出荷していた６車種の安全性などの試験を月内に完了する方針を固めたことがわかった。経済への影響を最小限に抑えるとともに、早期にユーザーの安全・安心を確保する必要があると判断した。
-<p>
+</span>
+<br>
+総務省が策定中の2024年版情報通信白書に、こうした調査結果を盛り込む。災害時に偽情報や誤った情報が拡散されると救助や復旧の妨げになりかねない。同省は「国際的な動向を踏まえつつ、制度面を含む総合的な対策を推進する」と白書に明記し、今後、法整備などを検討する。
+<br>
 <textarea cols="30" rows="6" onchange="a=this.value;translateB()"></textarea>
 <span id="translatedTextDisplay"></span>
-</p><hr>
+</p>
+<hr>
 <h3>Memorizing Kanji</h3>
 <ul>
 <li>Use <a href="https://addons.mozilla.org/en-US/firefox/addon/10ten-ja-reader/" target="Xblank">10ten Japanese Reader</a> browser extension to read kanji on your desktop/laptop computer.
